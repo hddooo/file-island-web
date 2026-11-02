@@ -1,0 +1,6 @@
+{
+  "volume": "fileisland-web-releases",
+  "network": "fileisland-npm-review",
+  "healthOrigin": "http://fileisland-web-candidate:8080",
+  "controlRoot": "C:/Users/INNOGRID/Documents/Codex/2026-11-02/task-3/home-front-cd-controller/controls"
+}

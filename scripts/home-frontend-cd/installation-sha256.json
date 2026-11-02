@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "status": "review only; not installed",
+  "controllerRoot": "C:/Users/INNOGRID/Documents/Codex/2026-11-02/task-3/home-front-cd-controller",
+  "files": [
+    {
+      "source": "scripts/home-frontend-cd/deploy.cjs",
+      "target": "deploy.cjs",
+      "sha256": "9e98b01a0690e93859d6e840aa2e223c199b8c80f57d1e0c3cd23eb28c7ab48e"
+    },
+    {
+      "source": "scripts/home-frontend-cd/verify-artifact.cjs",
+      "target": "verify-artifact.cjs",
+      "sha256": "c0f1e383894113bf7f566674c301a7d4c3774506459f2def2a566e051de19673"
+    },
+    {
+      "source": "scripts/home-frontend-cd/release.sh",
+      "target": "release.sh",
+      "sha256": "3925467d60cf515b12770b177c22c04b011b45489786fc932090fe0e75a497a2"
+    },
+    {
+      "source": "scripts/home-frontend-cd/bootstrap.sh",
+      "target": "bootstrap.sh",
+      "sha256": "c4f670713a6e5afd1695fa9e1cde0822357b2450ca999b6389b7fecd40d7cdae"
+    },
+    {
+      "source": "scripts/home-frontend-cd/config.example.json",
+      "target": "config.json",
+      "sha256": "f113b07884746216215cf2cad87a179c8cb27717421b801c796f5fc56765c703"
+    },
+    {
+      "source": "scripts/home-frontend-cd/runtime/nginx-releases.conf",
+      "target": "runtime/nginx-releases.conf",
+      "sha256": "29d5af54934f4488e7717d3e1a0a5a3e4790167f2e6005c3fa8de2a971994174"
+    },
+    {
+      "source": "scripts/home-frontend-cd/runtime/compose.yaml.disabled",
+      "target": "runtime/compose.yaml.disabled",
+      "sha256": "91e833ba661ed440a636290d185b94b34174fad1cccaf0c76b9ec6f237963239"
+    },
+    {
+      "source": ".github/workflows-held/home-frontend-cd.yml.disabled",
+      "target": "REPOSITORY:.github/workflows/home-frontend-cd.yml",
+      "sha256": "3f60244e6bd77ac8dc4ac1f8dc3488ad23b2aa8acf21f4c7951e6e623f46291e"
+    }
+  ]
+}

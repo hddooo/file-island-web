@@ -1,0 +1,64 @@
+# INACTIVE until runner registration, permissions and installation are explicitly approved.
+name: Home frontend deploy
+on:
+  workflow_run:
+    workflows: [Frontend contract checks]
+    types: [completed]
+    branches: [main]
+permissions:
+  actions: read
+  contents: read
+concurrency:
+  group: home-frontend-production
+  cancel-in-progress: false
+jobs:
+  deploy:
+    if: >-
+      github.repository == 'hddooo/file-island-web' &&
+      github.event.workflow_run.head_repository.full_name == 'hddooo/file-island-web' &&
+      github.event.workflow_run.head_branch == 'main' &&
+      github.event.workflow_run.event == 'push' &&
+      github.event.workflow_run.path == '.github/workflows/ci.yml' &&
+      github.event.workflow_run.conclusion == 'success'
+    runs-on: [self-hosted, Windows, X64, file-island-web-cd]
+    timeout-minutes: 20
+    env:
+      FE_EXPECTED_SHA: ${{ github.event.workflow_run.head_sha }}
+      FE_SOURCE_RUN: ${{ github.event.workflow_run.id }}
+      FE_CD_ROOT: C:/Users/INNOGRID/Documents/Codex/2026-11-02/task-3/home-front-cd-controller
+    steps:
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - name: Verify successful CI is still the current main commit
+        id: gate
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ($env:FE_EXPECTED_SHA -notmatch '^[a-f0-9]{40}$' -or $env:FE_SOURCE_RUN -notmatch '^\d{1,15}$') { throw 'Invalid CI identity' }
+          $headers = @{ Authorization = "Bearer $env:GH_TOKEN"; Accept = 'application/vnd.github+json' }
+          $ref = Invoke-RestMethod -Uri 'https://api.github.com/repos/hddooo/file-island-web/git/ref/heads/main' -Headers $headers
+          if ($ref.object.sha -eq $env:FE_EXPECTED_SHA) { 'ready=true' >> $env:GITHUB_OUTPUT } else { 'ready=false' >> $env:GITHUB_OUTPUT; 'Skipped stale frontend CI commit.' >> $env:GITHUB_STEP_SUMMARY }
+      - name: Download only this successful CI artifact
+        if: steps.gate.outputs.ready == 'true'
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+        with:
+          name: frontend-static-${{ github.event.workflow_run.head_sha }}
+          repository: hddooo/file-island-web
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+          digest-mismatch: error
+          path: ${{ runner.temp }}/frontend-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Verify and atomically deploy with installed controller
+        if: steps.gate.outputs.ready == 'true'
+        shell: pwsh
+        env:
+          FE_ARTIFACT: ${{ runner.temp }}/frontend-${{ github.run_id }}-${{ github.run_attempt }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $headers = @{ Authorization = "Bearer $env:GH_TOKEN"; Accept = 'application/vnd.github+json' }
+          $ref = Invoke-RestMethod -Uri 'https://api.github.com/repos/hddooo/file-island-web/git/ref/heads/main' -Headers $headers
+          if ($ref.object.sha -ne $env:FE_EXPECTED_SHA) { throw 'Main advanced during artifact download; deployment skipped' }
+          node "$env:FE_CD_ROOT/deploy.cjs" "$env:FE_ARTIFACT" "$env:FE_EXPECTED_SHA" "$env:FE_SOURCE_RUN" "$env:FE_CD_ROOT/config.json"
+          if ($LASTEXITCODE -ne 0) { throw 'Frontend deployment failed; inspect installed controller log' }

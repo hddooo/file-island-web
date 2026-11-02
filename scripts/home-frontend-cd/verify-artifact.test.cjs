@@ -1,0 +1,14 @@
+'use strict';
+const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),os=require('node:os'),path=require('node:path'),crypto=require('node:crypto');
+const {verify,writeControls}=require('./verify-artifact.cjs');
+const SHA='a'.repeat(40),hash=b=>crypto.createHash('sha256').update(b).digest('hex');
+const {fixture}=require('./test-fixture.cjs');
+function setup(t){const root=fs.mkdtempSync(path.join(os.tmpdir(),'fe-cd-test-'));t.after(()=>{assert(path.resolve(root).startsWith(path.resolve(os.tmpdir())+path.sep));fs.rmSync(root,{recursive:true,force:true});});fixture(root);return root;}
+function manifest(root,edit){const p=path.join(root,'build-manifest.json'),m=JSON.parse(fs.readFileSync(p));edit(m);fs.writeFileSync(p,JSON.stringify(m));}
+test('valid artifact generates copy list and hashes without executing JS',t=>{const r=setup(t),out=path.join(r,'..',path.basename(r)+'-control');t.after(()=>fs.rmSync(out,{recursive:true,force:true}));const result=writeControls(r,SHA,out);assert.equal(result.sha,SHA);assert(fs.readFileSync(path.join(out,'SHA256SUMS'),'utf8').includes('  build-manifest.json'));assert.throws(()=>writeControls(r,SHA,out),/exists/);});
+test('wrong SHA and version identities fail',t=>{const r=setup(t);assert.throws(()=>verify(r,'b'.repeat(40)),/identity/);fs.writeFileSync(path.join(r,'app-version.json'),'{"buildId":"wrong"}');assert.throws(()=>verify(r,SHA));});
+test('checksum corruption and extra private file fail',t=>{const r=setup(t);fs.appendFileSync(path.join(r,'media/app.js'),'bad');assert.throws(()=>verify(r,SHA),/checksum/);fixture(r);fs.writeFileSync(path.join(r,'.env'),'synthetic-only');assert.throws(()=>verify(r,SHA),/Unsafe/);});
+test('unlisted public file fails',t=>{const r=setup(t);fs.writeFileSync(path.join(r,'media/unlisted.js'),'x');assert.throws(()=>verify(r,SHA),/Unlisted/);});
+test('Linux symlink artifacts are rejected',{skip:process.platform==='win32'},t=>{const r=setup(t);fs.symlinkSync('app.js',path.join(r,'media/link.js'));assert.throws(()=>verify(r,SHA),/symlink/);});
+test('manifest path traversal, ADS, private paths and case collisions fail',t=>{const r=setup(t);for(const p of ['../secret','/root','media/a:stream','media/a\\b','media/.env','media/private-data/a','media/Private-Data/a','media/server.key','docs/a','media/CON.txt']){fixture(r);manifest(r,m=>m.files.push({path:p,bytes:0,sha256:hash('')}));assert.throws(()=>verify(r,SHA),/Unsafe artifact path|Invalid manifest entry/,p);}fixture(r);manifest(r,m=>m.files.push({...m.files.find(x=>x.path==='media/app.js'),path:'media/APP.js'}));assert.throws(()=>verify(r,SHA),/manifest/);});
+test('inconsistent release metadata fails even with matching file hash',t=>{const r=setup(t),p=path.join(r,'RELEASE_VERSION');fs.writeFileSync(p,'9.9.9\n');manifest(r,m=>{const f=m.files.find(x=>x.path==='RELEASE_VERSION');f.bytes=6;f.sha256=hash('9.9.9\n');});assert.throws(()=>verify(r,SHA),/metadata/);});

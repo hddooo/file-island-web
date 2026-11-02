@@ -1,0 +1,30 @@
+# INACTIVE. Replaces only the existing FE container after approved volume bootstrap.
+name: fileisland-web-candidate
+services:
+  frontend:
+    container_name: fileisland-web-candidate
+    image: nginx/nginx-unprivileged@sha256:74804a97de25921ce78f9e87f10ba5961eced57e2a74fd5294dfb94958436057
+    pull_policy: never
+    entrypoint: [nginx]
+    command: [-g, "daemon off;"]
+    read_only: true
+    tmpfs: [/tmp:size=32m]
+    volumes:
+      - type: volume
+        source: frontend_releases
+        target: /srv/releases
+        read_only: true
+      - type: bind
+        source: C:/Users/INNOGRID/Documents/Codex/2026-11-02/task-3/home-front-cd-controller/runtime/nginx-releases.conf
+        target: /etc/nginx/nginx.conf
+        read_only: true
+    expose: ["8080"]
+    networks: [npm_existing]
+volumes:
+  frontend_releases:
+    external: true
+    name: fileisland-web-releases
+networks:
+  npm_existing:
+    external: true
+    name: fileisland-npm-review

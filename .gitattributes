@@ -1,0 +1,3 @@
+scripts/home-frontend-cd/** text eol=lf
+.github/workflows-held/home-frontend-cd.yml.disabled text eol=lf
+docs/home-frontend-cd.md text eol=lf
