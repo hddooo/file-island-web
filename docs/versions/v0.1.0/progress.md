@@ -645,3 +645,8 @@ v0.1.2와 f50a70f 후보 모두 합성 로그인 후 320×568에서 ri-game/host
 3차 흐름/경계: 일반 상태의 네이티브 지도 이동 48조합과 합성 profile-ready 계약 기반 페이지 행렬을 검수했다. 실제 지도 버튼 클릭 차단은 요청 대기창/입장 전환/초대 창이 겹친 뒤 과거 inert boolean을 복원하던 경합으로 재현했다. ui-locks.js의 개별 lease로 root 잠금을 관리하며 6개 종료 순서·초기 부모 잠금·계정 전환·실제 포인터 클릭을 검증한다. 공부 텍스트 선택·입력·스크롤·pinch zoom, 기존 저장·attempt·원본 자료는 보존한다.
 
 실제 격리 API 인증 상태 검수·정확 SHA CI·Vercel·운영 자산/화면 재확인은 후보 커밋 이후 별도 증거로 기록한다. 이 문단 자체는 운영 완료나 전체 core-ui qualification receipt를 뜻하지 않는다. 사용자 첨부 원본 세 장은 Mac materialization 실패로 직접 읽지 못한 한계를 유지하며 부모의 실제 픽셀 관찰과 저장소 원화/직접 렌더링을 대조했다.
+
+
+### 2026-11-03 · FE 장면/프로필 검토 후보
+
+`codex/island-scene-review-20261103`, 원격 기준 `061de840…`. 섬 원화 고정+독립 날씨/수면/숲 모션, MyPage 통합 sanctuary, 문의 통합 배경, Growth 공개 프로필/활동 children/old987 fallback을 구현·로컬 검수했다. selected-partner XP는 운영987에 probe하지 않는 기본 비활성이다. [상세 검토 결과](report.md#2026-11-03--섬-장면통합-프로필growth-ui-검토-후보)의 5개 검토 축과 실제 evidence/검증 한계를 확인한다. 운영 미반영. 최종 exact-SHA CI와 통합 배포는 후속 인계 상태를 따른다. 한국사 source-data/빈칸/revision·독서 renderer/CSS는 수정하지 않았고 별도 역사 작업에 소유를 넘겼다.

@@ -419,3 +419,70 @@ API/DB는 이번에도 변경하지 않으며 알 구매·60초 부화·신규 �
 서버 계약이 확인된 계정에는0Coin 알 구매·개별 XP/보관함·장착·자동 부화 결과를 연결한다. 기존 미지원 응답은 실패를 숨기지 않고 재확인 안내로 처리한다. 구매 확정은 confirmed receipt 후에만 표시하고 같은 계열은 보유 중으로 표시한다. 전체 기능 후보의 시각 장면으로 덮어쓰지 않고 최신 행복의 마을 동선과 그림을 유지했다.
 
 함께 반영하는 화면은 판매점 hover/focus/active 투명 배경, 팝업 복귀 시 장면 재생성 방지, 퍼펫몬 명칭, My Page 제목 배경·계정/개별XP 분리·옷장 슬라이드, 명예의 전당/얼음섬 전용 장면 배경이다. 검수는 계약/데이터 보존, 실제 브라우저 상호작용과 모션, 최종 회귀/CI·배포의 세 그룹으로 구분한다. 정확한 SHA·CI·Production·공개 파일 근거는 최종 실행 결과에 남긴다. 운영 테스트 계정이 없어 실제 사용자 구매/장착/출석은 실행하지 않았고 Mac의 API 읽기 요청 시간 초과 한계를 남긴다.
+
+
+## 2026-11-03 · 섬 장면·통합 프로필·Growth UI 검토 후보
+
+상태: **구현/로컬 검수 완료, 검토 브랜치 push 대상, 운영 미반영**. 사용자의 자연스러운 장면 움직임·날씨·사진과 정보 통합 요청을 FE에서 처리했다. 규칙 `hanq-collaboration-2026-11-01-v5`. 운영 main 이동과 배포는 통합 담당의 기존 CI/CD 순서로 조율한다.
+
+- 작업: `/Users/handonglee/Documents/Codex/2026-11-03/task/fe-scene`, branch `codex/island-scene-review-20261103`.
+- 원격 기준: `061de840b05eeea34cee19d21fce4988d915e7a8`. 최초 원격 조회·fetch로 확인했으며 기존 checkout은 수정하지 않았다.
+- 섬 장면 `222ee7a`, 통합 MyPage `bf49fd5a03864a4011943614d3f53634ada460a9`, 느린 원화 위치 고정 `6889171`, 문의/외곽 `e9c4a79`, Growth 호환 통합 `593719ad7d19e75711a243d87714b2d23b089875`, 문의 대비 `e3aeaa2eb87790e0d22326925ca615813783fad9`로 경계를 나눴다. 문서 후속 커밋과 최종 CI SHA는 최종 인계 증거에서 별도로 확인한다.
+- 소유: `island-harbors.js/.css`, `world-scene.js`, `account-ui.js/.css`, `characters.js`의 성장 XP 위치, `hall-of-fame.js/.css`, `my-records.js`, FE `api-client.js`의 공개 프로필 GET 어댑터, `admin-xp.js`, `admin-dashboard.css`, `portal-ui.js`, 문의 HTML의 장면 include와 관련 검사.
+- 제외: 영어 Practice/LC/audio/player 제품, dependencies·lockfile, API/DB·migration·권한·infra, 전체지도 원화·click masks, 실제 계정 데이터. header/router/XP 계산은 바꾸지 않았다.
+
+### 1. 요구·화면 구조 검토
+
+영어섬/역사숲 원화는 고정한다. 독립 구름·수면 파문·안개·빛·숲의 잎과 150초의 맑음→구름→약한 비→개는 흐름을 CSS로 합성한다. 원화 전체의 포인터 이동을 제거했고 메뉴 hit 영역은 애니메이션하지 않는다. 원화 decode 전부터 실제 자산 크기(모바일 900×1200, desktop 영어 1671×941/역사 1672×941)를 사용해 메뉴를 배치한다. 320px 가장자리에서도 전체 터치 영역을 내부로 제한한다.
+
+MyPage는 별도 풍경 배너와 큰 세로 사진을 없애고 실제 장착 파트너·닉네임·성장 XP·진화 진행을 같은 정원 카드 안에 배치한다. 기존 DOM IDs/진화 단추/출석/보관함/계정 설정/기록과 실제 파트너 idle을 유지한다. Hall 공개 프로필은 보유 파트너 그림과 XP를 같은 행에 표시하며 같은 종류의 알도 소유 개체 수만큼 표시한다. 문의는 풍경 안에 제목과 작성 폼을 결합한다.
+
+| 사진/배경 host · 실제 source | 결정·사유 |
+|---|---|
+| `.island-harbors .harbor-chart` · `island-harbors.js/.css` | 원화 그대로 + 주제별 독립 장면 레이어, 가독성 있는 고정 목적지 표지 |
+| `.ac-hero` · `account-ui.js/.css`, `world-scene.js` | 풍경·실제 파트너·정보 통합, detached account banner 제거 |
+| `#hallHost`, `#battleHost` · `world-cinematic.css`, `world-scene.js` | 기존 통합 그림을 보존하고 pointer-free 장면 추가; 대전 판정/타이머에는 관여하지 않음 |
+| 문의 `.device-content` · `inquiries/index.html`, `world-scene.js` | 별도 postcard 제거, 입력/검색/목록과 배경을 한 책상으로 통합 |
+| `body::before` · `game-world.css`, `world-immersion.css`, `world-cinematic.css` | 원화 고정, visible desktop 외곽의 구름/조명만 공유 레이어로 변화. 1180px 이하 외곽 레이어 display:none과 offscreen pause |
+| 로그인·역사 hero·전환 `.world-scenery` · `world-scene.js` | 원화 보존, 공유 atmosphere 적용. 종료/비가시 수명은 기존 WorldScene 상태와 intersection을 사용 |
+| 학습 내부 `.world-island-banner` · `device-shell.css` | 기존 hidden 규칙 보존. 읽기 화면에 새 사진 배너를 추가하지 않음 |
+| 전체지도 · `world-map.js/.css` | 원화·mask·기존 배회 애니메이션 보존 |
+| 행복의 마을·캐릭터 sprite/atlas·battle effect | 기존 자연스러운 idle/scene 수명·원본 등록 좌표 보존 |
+| `.ha-player` · `audio-player-ui.css` | 동시 Practice/player 담당 소유 경계. 파일 수정 없음; 후속 미확인 항목으로 남김 |
+| 교재/문항/해설/출처의 그림 | 의미 자료 보존, 장식 모션 적용 안 함 |
+
+CSS raster reference의 전수 파일/행/자산 목록은 작업 evidence의 `background-inventory.json`, 화면·소유 경계는 `checkpoint.json`에 있다.
+
+### 2. 원문·시대·답안/source revision 검토 경계
+
+요청 PDF는 144쪽·35,449,421바이트, SHA-256 `35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442`로 기존 semantic manifest의 원본과 일치했다. 메타데이터는 79회 대비 최종 v2(2026-06-23)이다. PDF 8–10쪽을 실제 렌더/텍스트로 확인하고 기존 선사시대 학습·빈칸 36문항의 오프라인 baseline을 확보했다. 새 판본이라고 표시하거나 답안을 임의 갱신하지 않았다.
+
+**한국사 source-data·문항·revision·독서 renderer/CSS 수정 없음.** 별도 역사 담당 `01a19cd8-488d-7211-aeed-c9f2aade2012`에 데이터 소유를 인계하고 FE는 해당 파일을 더 수정하지 않는다. 이 FE 검수가 전체 144쪽 또는 모든 답안의 대조 완료를 뜻하지 않는다. 기존 기록/점수/XP를 삭제·초기화하지 않았다.
+
+### 3. 학습·기록·XP/Hall 계약 검토
+
+Growth UI의 이전 `ca0113` worktree는 account CSS를 제외한 제품 7개 파일의 원본이 현재 기준과 같음을 확인한 뒤 해당 패치만 선별했다. account CSS는 활동 children layout 부분만 추가해 새 sanctuary 구조를 보존했다.
+
+- Hall: JWT GET/실제 32자리 `profileRef`가 있을 때만 프로필 API 요청. old987의 ref 없는 행은 새 endpoint를 요청하지 않는다. public DTO를 투영하며 email/소유 UUID/개인 답안은 표시하지 않는다. lastSigninAt/null, 개체별 XP와 합계, 최근 공개 활동 최대 3개를 검증한다. 같은 `digitama` 2개를 dedupe하지 않는다.
+- MyRecords: 실제 shape 기준 새 `pageSize:10` 활동/children와 old987의 pageSize/children 없는 20행 fallback을 유지한다. total/snapshot/KST/필터/문제·해설 및 modal Back/Forward/초점/펼침 상태를 보존한다.
+- 관리자: selected-partner workflow는 검토된 기존 패치를 보존하되 **배포 readiness 기본 비활성**이다. 현재 `/ops` HTML에는 `hanq-partner-xp-api=056-reviewed` meta가 없으므로 개체 endpoint probe나 선택 XP UI를 만들지 않는다. API capability 필드를 가정한 것이 아니며, schema056/BE 배포 검증 뒤 통합 담당이 별도 릴리스로 켜야 한다. 현재 운영987에 상시404 probe를 하지 않는다. 기존 계정 XP 기능은 보존한다.
+- CAS/동일 requestId/명시 확인/음수 방지 흐름은 합성 API로 검사했다. 저장 ack 후 refresh 실패는 저장됨/조회 실패로 분리하고 GET 재시도만 제공한다. 실제 운영 XP 쓰기는 하지 않았다.
+
+### 4. 모바일·접근성·모션·회귀 검토
+
+- `qa-island-scene.cjs`: Chromium/WebKit ×320/355/390/1440, normal/reduced-motion, 고정 원화·표지 hit·키보드/focus·각 메뉴 이동·Back/Forward·성장 dialog Escape/초점 복귀·긴 닉네임·재진입·offscreen/global pause **28개 통과**.
+- `qa-scene-assets.cjs`: 두 엔진/두 섬, 지연 이미지 decode 전후 버튼 좌표 동일/취소 focus **4개 통과**. 각 2초 headless desktop 표본 121프레임·long task 0; 실제 휴대폰 성능 보장은 아니다.
+- `qa-inquiry-scene.cjs`: 두 엔진 ×4폭, 문의 폼 16px 입력/overflow/통합 배경·synthetic 입력 유지 **8개 통과**, 전송0.
+- `qa-growth-shell.cjs`: 최신 전체 앱에서 두 엔진 ×4폭, 공개 profile·동일 종류 알2개·활동 children·modal Back/Forward/초점 **8개 통과**.
+- `qa-integrated-account-edges.cjs` **6개**, `qa-mypage-activities.cjs` **36개**, `qa-hall-public-profile.cjs` **6개 통과**. 모두 synthetic/local이다.
+- 기존 header readability/parent navigation/global navigation/map shell/map header/header refinement/UI lock/final review/baby blink/poyomon seam browser 검사 통과. 글자를 줄이거나 XP를 숨기지 않았다.
+- 기존 auth/profile/remember-session/characters/account/mypage/collection/XP/header/UI lock/기록·전투수명·문법·단어·디바이스 관련 소스 검사와 새 Growth 단위 검사 통과. 기존 `test-device-scroll`은 exit0/21 assertions 통과하나 JSDOM의 `requestAnimationFrame` 없는 fixture 경고를 출력한다. 해당 hardware 코드는 수정하지 않았다.
+- 정적 build는 clean 제품 커밋에서 1,632 runtime 파일의 반복 manifest/full SHA/공개·비공개 경계를 통과했다. 원문 PDF와 개인 자료는 public tree나 공유 ZIP에 넣지 않았다.
+
+PNG만으로 모션 완료를 주장하지 않는다. `motion-0/2`는 실제 2초 간격, weather PNG는 150초 CSS 타임라인의 0/65/90/138초를 Web Animations로 샘플링한 정지 프레임이다. 코드·computed animation·offscreen pause를 별도로 검사했다. 실제 iPhone/Safari·운영 서버 실연결은 미검증이다.
+
+### 5. 최종 SHA CI·배포 검토 경계
+
+첫 후보 `bf49fd5a03864a4011943614d3f53634ada460a9`는 검토 브랜치 push와 원격 SHA를 확인했다. 첫 검수 ZIP은 Library `libfile_543c62a2d3048191869bd08df5e106fe` v0, 21,774,119바이트, SHA-256 `f702139d68fcd55215e81416a59a5df7ac5a4c68933beca33ed1079460737563`이다. 합성 baseline/후보390·desktop과 장면 시퀀스·목록·결과만 포함한다.
+
+최종 정확 SHA의 필수 CI는 push 후 결과를 별도 인계한다. 운영 main·Vercel·홈서버 배포·DB056은 이 작업에서 이동/실행하지 않았다. 운영 반영은 루트의 실제 픽셀 검수와 기존 CI/CD 순서 조율 뒤 수행하며, BE 확정 SHA·schema056 검증 없이는 선택 개체 XP readiness를 켜지 않는다. 남은 source-data 대조·빈칸 갱신은 별도 역사 작업, 실BE 연결은 Growth/통합 담당의 범위다.
