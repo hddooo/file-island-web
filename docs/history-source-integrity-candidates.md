@@ -29,3 +29,11 @@ human audit. Save commands, final commit/tree, per-file bundle hashes, visual co
 failed/not-checked items and unreviewed scope in private evidence. Keep renderer-only
 width/emphasis findings separate. Do not mark a candidate active or release-ready on
 these source checks alone.
+
+`apply-history-source-styles.py` supports a separate `style-integrity-*` candidate
+for the agreed reviewed per-span style union. Its character-level normalization
+permits span splitting and the two style/audit fields only; text, order, original
+properties, manifest, quiz and asset bytes remain identical. Unknown colors,
+yellow backgrounds, false emphasis flags and missing/wrong source audits fail.
+Private style reviews and original pixels remain outside Git. The source worker's
+unchanged renderer smoke does not prove that a later FE applies these styles.
