@@ -8,14 +8,14 @@ const semantic=path.join(root,'semantic'),front=path.resolve(__dirname,'..');
 const review=JSON.parse(fs.readFileSync(path.join(root,'validation/source-relation-reviews.json')));
 const manifest=JSON.parse(fs.readFileSync(path.join(semantic,'manifest.json')));
 const figures=Object.fromEntries(manifest.figures.map(f=>[f.id,f]));
-const transport=process.env.HISTORY_QA_ASSET_TRANSPORT||'url';assert(['url','blob'].includes(transport));
+const transport=process.env.HISTORY_QA_ASSET_TRANSPORT||'blob';assert(['url','blob'].includes(transport));
 (async()=>{const results=[];
 for(const [engine,type] of [['Chromium',chromium],['WebKit',webkit]]){
  const browser=await type.launch({headless:true});
  for(const width of [320,390,1440]){
   const page=await browser.newPage({viewport:{width,height:1000},reducedMotion:'reduce'});
   const html='<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{margin:12px;font-family:Arial,"Apple SD Gothic Neo",sans-serif}main{max-width:760px;margin:auto}</style><main></main></html>';
-  await page.route('**/*',async route=>{const u=new URL(route.request().url()),f=figures[u.pathname.slice(1)];if(u.hostname!=='history-source.invalid')return route.abort();if(u.pathname==='/')return route.fulfill({contentType:'text/html',body:html});if(!f)return route.abort();return route.fulfill({contentType:f.extension==='png'?'image/png':'image/jpeg',body:fs.readFileSync(path.join(semantic,'assets',`${f.id}.${f.extension}`))});});
+  await page.route('**/*',async route=>{const u=new URL(route.request().url());if(u.protocol==='blob:')return route.continue();const f=figures[u.pathname.slice(1)];if(u.hostname!=='history-source.invalid')return route.abort();if(u.pathname==='/')return route.fulfill({contentType:'text/html',body:html});if(!f)return route.abort();return route.fulfill({contentType:f.extension==='png'?'image/png':'image/jpeg',body:fs.readFileSync(path.join(semantic,'assets',`${f.id}.${f.extension}`))});});
   await page.goto('https://history-source.invalid/');
   for(const file of ['textbook-semantic.css'])await page.addStyleTag({path:path.join(front,'media',file)});
   for(const file of ['textbook-figure-groups.js','textbook-semantic.js'])await page.addScriptTag({path:path.join(front,'media',file)});

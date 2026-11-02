@@ -43,7 +43,7 @@ node scripts/qa-history-source-relations.cjs "$HISTORY_CORRECTION" "$HISTORY_REL
 
 전체 재생성에는 `rebuild-history-revision.py --relation-reviews "$HISTORY_RELATION_REVIEWS"`를 덧붙인다. 동일 입력으로 byte 재현한 뒤 native/문항/그림/구판 보존 검사와 전체 독서 브라우저 회귀를 다시 실행한다. 원문 PDF SHA·quiz digest·숫자 CAS revision은 서로 다른 값이며 교정 후보 식별자로 덮어쓰지 않는다. 원문/자료/검수 입력은 Git에 넣지 않으며 이 명령들은 업로드·활성화·운영 배포를 하지 않는다.
 
-독서/관계 브라우저 QA는 로컬 intercept된 HTTPS 그림 URL을 기본으로 쓰며 `HISTORY_QA_ASSET_TRANSPORT=blob`으로 Blob 경로를 별도 실행할 수 있다. 결과의 `figureTransport`를 확인한다. 제거된 이미지도 `figure_load_failed` 상태로 검사한다. URL 경로 통과를 실제 앱의 인증/Blob 전송 통과로 확대하지 않는다.
+독서/관계 브라우저 QA는 로컬 intercept된 HTTPS 원본을 Blob으로 전달하며 `HISTORY_QA_ASSET_TRANSPORT=url`로 URL 계약을 별도 검사할 수 있다. WebKit의 내부 `blob:` 요청은 continue하고 실제 외부 요청은 차단한다. 결과의 `figureTransport`를 확인한다. 제거된 이미지도 `figure_load_failed` 상태로 검사하며, 이 검사를 실제 앱의 인증/API 전송 검수로 확대하지 않는다.
 
 Offline only. Never copy `hanq-private-data` into a frontend public directory or deploy it. Source rights have not been cleared for publication.
 

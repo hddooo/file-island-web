@@ -7,7 +7,7 @@ assert(revision.includes('private-data')&&output!==process.cwd(),'Provide privat
 fs.mkdirSync(output,{recursive:true});
 const front=path.resolve(__dirname,'..'),semantic=path.join(revision,'semantic');
 const manifest=JSON.parse(fs.readFileSync(path.join(semantic,'manifest.json')));
-const transport=process.env.HISTORY_QA_ASSET_TRANSPORT||'url';assert(['url','blob'].includes(transport));
+const transport=process.env.HISTORY_QA_ASSET_TRANSPORT||'blob';assert(['url','blob'].includes(transport));
 assert.equal(manifest.source.sha256,'d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de');
 const figures=Object.fromEntries(manifest.figures.map(f=>[f.id,f]));
 const pages=manifest.pages.map(p=>JSON.parse(fs.readFileSync(path.join(semantic,'pages',`page-${String(p.pdfPage).padStart(3,'0')}.json`))));
@@ -20,7 +20,10 @@ const selected=new Set([2,5,6,7,9,17,18,36,60,65,89,124,140,147]);
    const page=await browser.newPage({viewport:{width,height},reducedMotion:'reduce'});
    const html='<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{margin:12px;background:#08110d;color:#f1f5f0;font-family:Arial,"Apple SD Gothic Neo",sans-serif}main{max-width:760px;margin:auto}</style><main></main></html>';
    await page.route('**/*',async route=>{
-    const u=new URL(route.request().url()),id=decodeURIComponent(u.pathname.slice(1)),f=figures[id];
+    const u=new URL(route.request().url());
+    // WebKit routes local Blob URLs too. They are not external requests.
+    if(u.protocol==='blob:')return route.continue();
+    const id=decodeURIComponent(u.pathname.slice(1)),f=figures[id];
     if(u.hostname!=='history-source.invalid')return route.abort();
     if(u.pathname==='/')return route.fulfill({contentType:'text/html',body:html});
     if(!f)return route.abort();
