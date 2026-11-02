@@ -6,7 +6,7 @@
 
 활성 CI의 기존 4개 job/68개 직접 호출 스크립트/Chromium·WebKit 검사는 보존합니다. 새 `static-build` job은 네 job 모두 성공한 뒤 아래 명령을 실행하고 `frontend-static-<전체 SHA>` artifact를 7일 보관합니다. runner는 GitHub-hosted, 권한은 기존 `contents: read`이며 배포 credential은 사용하지 않습니다. **artifact 생성은 운영 배포가 아닙니다.**
 
-Windows 로컬 검증에서 발견한 테스트 환경 문제도 수정합니다. `qa-vocabulary-redesign.cjs`의 합성 스크린샷은 고정 `/tmp` 대신 OS 임시 경로로 저장합니다. `test-device-place.cjs`의 history back/go 검사는 임의의 15ms 지연 대신 실제 popstate 완료를 기다립니다. 기존 화면·경로·기대값·assertion은 유지하고, 제품 UI/API 코드는 바꾸지 않습니다.
+Windows 로컬 검증에서 발견한 테스트 환경 문제도 수정합니다. `qa-vocabulary-redesign.cjs`의 합성 스크린샷은 고정 `/tmp` 대신 OS 임시 경로로 저장합니다. `test-device-place.cjs`의 history back/go 검사는 임의의 15ms 지연 대신 실제 popstate 완료를 기다립니다. `qa-collection-life.cjs`의 합성 자산 경로 경계는 `root + path.sep`으로 검사하여 Windows에서도 같은 디렉터리 제한을 유지합니다. 기존 화면·경로·기대값·assertion은 유지하고, 제품 UI/API 코드는 바꾸지 않습니다.
 
 ```sh
 node scripts/test-static-site-build.cjs
