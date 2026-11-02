@@ -14,6 +14,7 @@ def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def main():
  p=argparse.ArgumentParser(description=__doc__)
  for name in ['raw-root','reviews','baseline','legacy-source','output']:p.add_argument('--'+name,type=Path,required=True)
+ p.add_argument('--relation-reviews',type=Path,help='Optional private, pinned correction records; output must be a fresh correction-candidates path')
  a=p.parse_args();out=a.output.resolve();scripts=Path(__file__).resolve().parent
  assert fitz.VersionBind=='1.26.6','Use the source extraction version'
  assert out.name==SHA and 'private-data' in out.parts and not out.exists(),'A new private revision directory is required'
@@ -34,6 +35,9 @@ def main():
  run('repair-history-figure-revisions.py','--revision',out,'--baseline',a.baseline)
  run('compose-history-source-figures.py',out)
  run('prepare-history-source-alpha.py',out)
+ if a.relation_reviews:
+  shutil.copy2(a.relation_reviews,v/'source-relation-reviews.json')
+  run('apply-history-relation-corrections.py',out,v/'source-relation-reviews.json')
  run('verify-history-semantic-coverage.py',out)
  print('Rebuilt private candidate; activation, archive API, renderer compatibility and deployment remain separate.')
 if __name__=='__main__':main()

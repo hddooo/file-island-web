@@ -32,6 +32,19 @@ python scripts/package-history-revisions.py --revisions "$HISTORY_REVISIONS" --o
 
 신규 활성화 전 FE/API의 SHA별 144/147 상한·시대 범위·원문 보기와 source별 조회를 통합해야 한다. 현재 구판 풀이 목록·오답·중단 이어보기는 현재 quiz와 workspace를 함께 읽으므로 DB row만 남기는 것으로 기능이 보존되지 않는다. 구판 원문/정답/문항/workspace를 같은 source로 읽고 이어풀 수 있어야 한다. `source_version`은 원문 SHA 자체가 아니라 기존 API의 `SHA256(JSON.stringify({schema,source,items}))` 계산을 유지한다. 검토 브랜치 CI와 운영 반영은 통합 담당이 정확 SHA로 별도 확인한다.
 
+### 원문 관계 교정 후보
+
+사람 대조에서 확인한 사진/이름 셀, 출처표, raster 연표 문구 교정은 기존 후보를 보존한 새 `private-data/correction-candidates/.../<SHA>`에만 적용한다. 비공개 `source-relation-reviews.json`은 적용 전 페이지 hash, 원문 render/그림 hash, native 문자 ID와 검수한 표 경계를 고정한다. 출처 좌우 패널을 각각 3열로 복원하고 페이지 병합을 유지하며, 경계를 넘은 글자는 검수한 ID로만 지정한다. 글자 총량 일치만으로 사진명/출처 관계가 맞다고 판단하지 않는다.
+
+```sh
+python scripts/apply-history-relation-corrections.py "$HISTORY_CORRECTION" "$HISTORY_RELATION_REVIEWS"
+node scripts/qa-history-source-relations.cjs "$HISTORY_CORRECTION" "$HISTORY_RELATION_QA"
+```
+
+전체 재생성에는 `rebuild-history-revision.py --relation-reviews "$HISTORY_RELATION_REVIEWS"`를 덧붙인다. 동일 입력으로 byte 재현한 뒤 native/문항/그림/구판 보존 검사와 전체 독서 브라우저 회귀를 다시 실행한다. 원문 PDF SHA·quiz digest·숫자 CAS revision은 서로 다른 값이며 교정 후보 식별자로 덮어쓰지 않는다. 원문/자료/검수 입력은 Git에 넣지 않으며 이 명령들은 업로드·활성화·운영 배포를 하지 않는다.
+
+독서/관계 브라우저 QA는 로컬 intercept된 HTTPS 그림 URL을 기본으로 쓰며 `HISTORY_QA_ASSET_TRANSPORT=blob`으로 Blob 경로를 별도 실행할 수 있다. 결과의 `figureTransport`를 확인한다. 제거된 이미지도 `figure_load_failed` 상태로 검사한다. URL 경로 통과를 실제 앱의 인증/Blob 전송 통과로 확대하지 않는다.
+
 Offline only. Never copy `hanq-private-data` into a frontend public directory or deploy it. Source rights have not been cleared for publication.
 
 Reproduce from the workspace root (Python 3.12, PyMuPDF 1.26.6):
