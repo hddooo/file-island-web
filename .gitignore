@@ -10,6 +10,7 @@ node_modules/
 
 # Emitted alongside index.html by the deployment build.
 app-version.json
+.artifacts/
 
 # File Island migration: local credentials and private learning inputs stay outside Git.
 .env

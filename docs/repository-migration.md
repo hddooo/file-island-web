@@ -1,5 +1,60 @@
 # File Island 저장소 이관 기록
 
+## 새 저장소의 배포 산출물과 호스팅 후보 (2026-11-02)
+
+새 저장소는 `hddooo/file-island-web`, 기준 소스는 `main`의 `4e51eb7425bb3cad7a71ab9735a9f9e1b96dd242` / `0.2.9-beta`입니다. 기존 `hanq.vercel.app`의 Git 연결, 운영 API, DNS, 인증 및 Secrets는 이번 준비에서 변경하지 않습니다. 시험용 파일 호스트 `digimon-world.duckdns.org`도 그대로 유지합니다.
+
+활성 CI의 기존 4개 job/68개 직접 호출 스크립트/Chromium·WebKit 검사는 보존합니다. 새 `static-build` job은 네 job 모두 성공한 뒤 아래 명령을 실행하고 `frontend-static-<전체 SHA>` artifact를 7일 보관합니다. runner는 GitHub-hosted, 권한은 기존 `contents: read`이며 배포 credential은 사용하지 않습니다. **artifact 생성은 운영 배포가 아닙니다.**
+
+Windows 로컬 검증에서 발견한 테스트 환경 문제도 수정합니다. `qa-vocabulary-redesign.cjs`의 합성 스크린샷은 고정 `/tmp` 대신 OS 임시 경로로 저장합니다. `test-device-place.cjs`의 history back/go 검사는 임의의 15ms 지연 대신 실제 popstate 완료를 기다립니다. 기존 화면·경로·기대값·assertion은 유지하고, 제품 UI/API 코드는 바꾸지 않습니다.
+
+```sh
+node scripts/test-static-site-build.cjs
+node scripts/build-static-site.cjs
+```
+
+기본 출력은 `.artifacts/site/`입니다. 재실행은 `node scripts/build-static-site.cjs /새/출력/경로`처럼 존재하지 않는 경로를 지정합니다. 기존 출력은 덮어쓰거나 삭제하지 않습니다. 빌드는 tracked 공개 실행 파일만 복사하고, source의 수정 여부를 검사합니다. `index.html`, 앱 아이콘·manifest·RELEASE_VERSION, `media/`, `inquiries/`, `ops/`가 대상이며 docs/scripts/test/워크플로/숨김 파일·비공개 자료 디렉터리·렌더 결과는 포함하지 않습니다. PDF는 기존 배포 허용 파일 `media/connector-summary.pdf` 하나만 보존합니다. 개인 교재나 사용자 데이터를 추가하지 않습니다. 원본 checkout은 수정하지 않습니다.
+
+공개 파일은 clean Git index에서 LF 기준으로 추출하여 Windows autocrlf에 따른 바이트 차이를 방지합니다. 기존 `build-app-version.cjs`가 복사본에 전체 Git SHA/릴리스/JS·CSS cache key를 기록합니다. `build-manifest.json`은 자기 자신을 제외한 각 공개 파일의 SHA256·바이트 수를 정렬해 담으며 시간값이 없어 같은 commit의 출력 바이트를 재현할 수 있습니다. `app-version.json`·HTML meta·자산의 build query·checksum을 운영 반영 후 함께 대조해야 합니다. artifact에는 호스팅별 API 프록시 설정이 포함되지 않습니다.
+
+| 후보 | 구체적인 다음 조치 | 승인·선행조건 |
+|---|---|---|
+| 기존 Vercel 유지 | 기존 프로젝트에서 Git 저장소를 새 repo로 변경하고 기존 `vercel.json` build/rewrite/header 사용. 기존 도메인·API 계약 유지 | 프로젝트의 현재 연결·preview/production branch·GitHub app 접근 범위를 먼저 확인하고 저장소 연결 변경을 승인받음. 기존 프로젝트 disconnect/delete 금지 |
+| 별도 홈호스팅 | 검증한 artifact를 새 전용 release 디렉터리에 올리고 원자적으로 current 링크 변경. HTTPS 도메인에서 같은 origin의 `/api/v1/` 프록시 제공 | 호스트·별도 경로·공개 도메인·TLS·DNS·API 허용 origin·cookie 정책을 확정하고 변경 승인. 파일 호스트 루트 재사용 금지 |
+
+홈호스팅은 정적 파일만 복사해서 완료되지 않습니다. API 경로는 현재 `https://file-island.duckdns.org/api/v1/`이고 클라이언트는 credentials/cookie, `Authorization`, `X-HanQ-CSRF`, `/api/v1/battle/events` SSE를 사용합니다. 새 프록시는 요청 Origin·인증·CSRF header와 Set-Cookie를 보존하고 upstream 경로를 제거하거나 중복하지 않아야 합니다. 쿠키 Domain/SameSite/Secure 및 API origin 허용 변경이 필요하면 API 담당과 승인 후 진행하며 우회·완화하지 않습니다.
+
+아래는 **미적용 Nginx location 후보**입니다. 별도 HTTPS server의 `root`를 승인한 release 경로로 정하고 기존 운영 설정에 합치기 전 `nginx -t`와 정상/오류 응답 검증이 필요합니다. DNS resolver·TLS 인증서·server_name·방화벽·업스트림 인증 정책과 CA bundle의 실제 경로는 호스트별로 별도 확정합니다. DuckDNS 주소 변경 시 upstream DNS 재해석/재로드 정책도 정합니다.
+
+```nginx
+location ^~ /api/v1/ {
+    proxy_pass https://file-island.duckdns.org;
+    proxy_ssl_server_name on;
+    proxy_ssl_name file-island.duckdns.org;
+    proxy_ssl_verify on;
+    proxy_ssl_trusted_certificate /etc/ssl/certs/ca-certificates.crt;
+    proxy_set_header Host file-island.duckdns.org;
+    proxy_http_version 1.1;
+    proxy_set_header Connection "";
+    proxy_buffering off;
+    proxy_cache off;
+    proxy_read_timeout 300s;
+    proxy_hide_header Cache-Control;
+    add_header Cache-Control "private, no-store" always;
+}
+location = / { add_header Cache-Control "no-store" always; try_files /index.html =404; }
+location = /index.html { add_header Cache-Control "no-store" always; }
+location = /app-version.json { add_header Cache-Control "no-store" always; }
+location = /manifest.webmanifest { add_header Cache-Control "public, max-age=0, must-revalidate" always; }
+location = /apple-touch-icon.png { add_header Cache-Control "public, max-age=0, must-revalidate" always; }
+location = /favicon.ico { add_header Cache-Control "public, max-age=0, must-revalidate" always; }
+location / { add_header Cache-Control "public, max-age=0, must-revalidate" always; try_files $uri $uri/ =404; }
+```
+
+전환 검증은 먼저 비로그인 정적 응답/버전/SHA/대표 자산 checksum 및 cache header를 확인한 다음 승인된 테스트 계정으로 login·refresh·logout·CSRF 실패·SSE 연결/중단을 확인합니다. 실사용자 기록이나 교재를 공개 검사 자료로 복사하지 않습니다. 실패 시 이전 release 경로 또는 기존 Vercel 연결로 복귀할 수 있도록 현재 설정과 release를 보존합니다.
+
+이전 CI `https://github.com/hddooo/file-island-web/actions/runs/41431871004`의 최종 결과는 이번 환경의 GitHub connector가 workflow jobs 조회에 HTTP 404를 반환하여 미확인입니다. git clone/fetch/push와 CI 상태 조회의 접근 경계는 다릅니다. 토큰·쿠키 추출이나 권한 확장 없이 별도 승인된 Actions 읽기 경로에서 정확 SHA 결과를 확인해야 합니다. 로컬 검사를 GitHub CI 성공으로 표기하지 않습니다.
+
 원본 저장소: `blockmonkey1992/hanq`
 
 원본 SHA: `93190fae4656dad5a2337c9a1173c3a7107d339c`
