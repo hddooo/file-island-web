@@ -315,3 +315,11 @@ html body .ac-me .mr-activity-children .mr-row{background:#0c2118!important}
 @keyframes mr-activity-reveal{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:no-preference){html body .ac-me .mr-activity-children:not([hidden]){animation:mr-activity-reveal .22s ease-out}}
 @media(prefers-reduced-motion:no-preference){html[data-hanq-theme="terminal"] body .ac-me .mr-activity-children:not([hidden]){animation:mr-activity-reveal .22s ease-out!important}}
+
+/* Match the island's available header width on small account screens. The
+   3px-per-side shell gutter difference alone forced an unnecessary second row
+   at390px; header fonts,44px controls and the shared fit algorithm stay intact. */
+@media(max-width:700px){html body #app.digivice-v2:has(#acRoot){padding-inline:max(8px,env(safe-area-inset-left,0px)) max(8px,env(safe-area-inset-right,0px))!important}}
+/* Retire an empty action row only when every native button is a proven alias. */
+html body #app .module-actions:has(>#acBack[data-header-parent-control]):not(:has(>button:not([data-header-parent-control]))){display:none!important}
+html body #app #acBack[data-header-parent-control],html body #app #acHome[data-header-parent-control]{display:none!important}

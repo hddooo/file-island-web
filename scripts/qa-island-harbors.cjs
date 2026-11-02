@@ -3,7 +3,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
 const {chromium,webkit}=require(process.env.HANQ_PLAYWRIGHT||'../.test-tools/node_modules/playwright');
 const root=path.resolve(__dirname,'..'),out=path.resolve(process.env.HANQ_QA_OUTPUT||path.join(root,'../evidence/island-harbors'));
 fs.mkdirSync(out,{recursive:true});
-const subjects={history:{hash:'#history',labels:['시대별 학습','모의고사','오답노트'],routes:['#past-exams','#formal-exams','#wrongnotes']},toeic:{hash:'#toeic/map',labels:['단어','오답노트','문법노트','플레이어'],routes:['#toeic/notebook','#toeic/wrongnotes','#toeic/grammar','#toeic/player']}};
+const subjects={history:{hash:'#history',labels:['시대별 학습','모의고사','오답노트'],routes:['#past-exams','#formal-exams','#wrongnotes']},toeic:{hash:'#toeic/map',labels:['Vocabulary','Practice','Grammar','Listening'],routes:['#toeic/notebook','#toeic/wrongnotes','#toeic/grammar','#toeic/player']}};
 (async()=>{const results=[],errors=[],requests=[];
 async function setup(browser,width,motion='reduce'){
  const p=await browser.newPage({viewport:{width,height:844},reducedMotion:motion,hasTouch:width<700});
@@ -35,7 +35,7 @@ for(const [engine,launch] of [['chrome',chromium],['webkit',webkit]]){
    await p.goBack();await p.locator('.island-harbors').waitFor();await verify(p,kind);
   }
   await p.evaluate(()=>{HanqWorldScene.sync();HanqWorldScene.sync();HanqWorldScene.sync();});assert.equal(await p.locator('.harbor-chart').count(),1);
-  const pane=p.locator('.device-content');await pane.evaluate(n=>{const spacer=document.createElement('div');spacer.style.height='900px';spacer.dataset.qaSpacer='true';n.appendChild(spacer);n.scrollTop=0;});const chart=await p.locator('.harbor-chart').boundingBox();await p.mouse.move(chart.x+chart.width/2,chart.y+30);await p.mouse.wheel(0,240);await p.waitForTimeout(120);assert(await pane.evaluate(n=>n.scrollTop>0),'wheel must scroll across scene');
+  const pane=p.locator('.device-content');await pane.evaluate(n=>{const spacer=document.createElement('div');spacer.style.height='900px';spacer.style.flexShrink='0';spacer.dataset.qaSpacer='true';n.appendChild(spacer);n.scrollTop=0;});assert(await pane.evaluate(n=>n.scrollHeight>n.clientHeight),'wheel fixture must create real overflow');const chart=await p.locator('.island-harbors').boundingBox();assert(chart.y+30>=0&&chart.y+30<p.viewportSize().height,'wheel pointer must be inside the visible map viewport');await p.mouse.move(chart.x+chart.width/2,chart.y+30);await p.mouse.wheel(0,240);await p.waitForTimeout(120);assert(await pane.evaluate(n=>n.scrollTop>0),'wheel must scroll across scene');
   results.push({engine,width,theme,kind,motion:'reduce',stops:boxes.length,keyboard:true,routeBack:true,overlap:false,wheel:true});await p.close();
  }
  for(const kind of ['history','toeic']){

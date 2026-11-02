@@ -429,7 +429,7 @@ API/DB는 이번에도 변경하지 않으며 알 구매·60초 부화·신규 �
 - 원격 기준: `061de840b05eeea34cee19d21fce4988d915e7a8`. 최초 원격 조회·fetch로 확인했으며 기존 checkout은 수정하지 않았다.
 - 섬 장면 `222ee7a`, 통합 MyPage `bf49fd5a03864a4011943614d3f53634ada460a9`, 느린 원화 위치 고정 `6889171`, 문의/외곽 `e9c4a79`, Growth 호환 통합 `593719ad7d19e75711a243d87714b2d23b089875`, 문의 대비 `e3aeaa2eb87790e0d22326925ca615813783fad9`로 경계를 나눴다. 문서 후속 커밋과 최종 CI SHA는 최종 인계 증거에서 별도로 확인한다.
 - 소유: `island-harbors.js/.css`, `world-scene.js`, `account-ui.js/.css`, `characters.js`의 성장 XP 위치, `hall-of-fame.js/.css`, `my-records.js`, FE `api-client.js`의 공개 프로필 GET 어댑터, `admin-xp.js`, `admin-dashboard.css`, `portal-ui.js`, 문의 HTML의 장면 include와 관련 검사.
-- 제외: 영어 Practice/LC/audio/player 제품, dependencies·lockfile, API/DB·migration·권한·infra, 전체지도 원화·click masks, 실제 계정 데이터. header/router/XP 계산은 바꾸지 않았다.
+- 제외: 영어 Practice/LC/audio/player 제품, dependencies·lockfile, API/DB·migration·권한·infra, 전체지도 원화·click masks, 실제 계정 데이터. 기존 header 측정 알고리즘/router/XP 계산을 유지했다. 후속 account 수정은 기존 Back 콜백의 최소 위임과 account 전용 여백/중복 표시 범위다.
 
 ### 1. 요구·화면 구조 검토
 
@@ -455,7 +455,7 @@ CSS raster reference의 전수 파일/행/자산 목록은 작업 evidence의 `b
 
 ### 2. 원문·시대·답안/source revision 검토 경계
 
-요청 PDF는 144쪽·35,449,421바이트, SHA-256 `35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442`로 기존 semantic manifest의 원본과 일치했다. 메타데이터는 79회 대비 최종 v2(2026-06-23)이다. PDF 8–10쪽을 실제 렌더/텍스트로 확인하고 기존 선사시대 학습·빈칸 36문항의 오프라인 baseline을 확보했다. 새 판본이라고 표시하거나 답안을 임의 갱신하지 않았다.
+FE가 먼저 찾은 기존 후보 PDF는 144쪽·35,449,421바이트, SHA-256 `35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442`로 기존 semantic manifest의 원본과 일치했다. 메타데이터는 79회 대비 최종 v2(2026-06-23)이다. PDF 8–10쪽을 실제 렌더/텍스트로 확인하고 기존 선사시대 학습·빈칸 36문항의 오프라인 baseline을 확보했다. 새 판본이라고 표시하거나 답안을 임의 갱신하지 않았다. 이후 별도 역사 담당이 확인한 새147쪽 자료는 별도 revision의 작업 범위이며 이 FE에서 원문을 다시 검증하거나 현재 경로로 활성화하지 않았다.
 
 **한국사 source-data·문항·revision·독서 renderer/CSS 수정 없음.** 별도 역사 담당 `01a19cd8-488d-7211-aeed-c9f2aade2012`에 데이터 소유를 인계하고 FE는 해당 파일을 더 수정하지 않는다. 이 FE 검수가 전체 144쪽 또는 모든 답안의 대조 완료를 뜻하지 않는다. 기존 기록/점수/XP를 삭제·초기화하지 않았다.
 
@@ -486,3 +486,24 @@ PNG만으로 모션 완료를 주장하지 않는다. `motion-0/2`는 실제 2�
 첫 후보 `bf49fd5a03864a4011943614d3f53634ada460a9`는 검토 브랜치 push와 원격 SHA를 확인했다. 첫 검수 ZIP은 Library `libfile_543c62a2d3048191869bd08df5e106fe` v0, 21,774,119바이트, SHA-256 `f702139d68fcd55215e81416a59a5df7ac5a4c68933beca33ed1079460737563`이다. 합성 baseline/후보390·desktop과 장면 시퀀스·목록·결과만 포함한다.
 
 최종 정확 SHA의 필수 CI는 push 후 결과를 별도 인계한다. 운영 main·Vercel·홈서버 배포·DB056은 이 작업에서 이동/실행하지 않았다. 운영 반영은 루트의 실제 픽셀 검수와 기존 CI/CD 순서 조율 뒤 수행하며, BE 확정 SHA·schema056 검증 없이는 선택 개체 XP readiness를 켜지 않는다. 남은 source-data 대조·빈칸 갱신은 별도 역사 작업, 실BE 연결은 Growth/통합 담당의 범위다.
+
+
+기존 `qa-island-harbors.cjs` 추가 검토: 기준061의 320px 버튼 잘림은 새 위치 clamp로 해결했다. 기존 wheel fixture의 900px spacer는 flex-shrink로373px가 되어 scrollHeight=clientHeight=645였으며, 실제 crop 원화 좌표는 화면 밖을 가리킬 수 있었다. fixture의 shrink를 막고 실제 지도 viewport 안에서 wheel을 보내도록 바로잡았다. 현재 제품 라벨 Vocabulary/Practice/Grammar/Listening을 정확히 검사하도록 갱신하며 기존 hit/중첩/keyboard/route/scroll assertions는 보존했다. 제품 코드는 이 검사 정정으로 바꾸지 않았다.
+
+
+2026-11-03 test-only 후속: `qa-island-harbors.cjs`는 현재 `.github/workflows/ci.yml`의 필수 job에서 호출하지 않는 수동 섬 회귀다. 그래도 장면 릴리스의 관련 검사를 유효하게 유지하기 위해 라벨/scroll fixture를 정정하고 실제 overflow와 화면 내 wheel 좌표 assertion을 추가했다. 기존 target/keyboard/route/wheel assertion을 삭제·완화하지 않았다. 검사/PDF 설명 정정 자체는 runtime을 바꾸지 않는다. 이후 루트의 실제 PNG 검수로 추가 승인된 account 수정은 아래에 별도로 기록한다. 새147쪽의 실제 SHA/안전 메타데이터는 별도 역사 담당의 인계 문서로 확인했고 원문 재처리나 해당 worktree 쓰기는 하지 않았다.
+
+
+### 루트 픽셀 검수 후 account 최소 수정 · 2026-11-03
+
+- 같은390px에서 섬 header는380px/60px, account는374px/108px였다. account shell의 좌우 여백11px와 섬8px의6px 차이가 동일한131px 프로필을 두 번째 행으로 밀었다. account host `#acRoot`가 있는700px 이하 화면의 가용 폭만 맞췄다. 헤더 측정 JS/글자 크기/XP/실제44px 타깃/중앙 브랜드는 유지한다. 필요한 좁은 폭·긴 이름·큰XP의 두 줄은 허용한다.
+- `index.html`의 account 진입에서 기존 `bindHeaderParent`를 재사용해 `#acBack`의 원래 callback을 헤더에 위임했다. 직접 진입 fallback 또는 원래 진입지가 역사숲임을 확인한 경우에만 같은 `#acHome`을 alias로 표시하고 빈 행을 숨긴다. 기존 history.state에 목적지 동일성 boolean만 보존해 Forward 복원에서도 판정이 바뀌지 않게 하며 이동 자체는 기존 callback이 맡는다. 이전 학습 화면 복귀와 역사숲 이동이 다르면 후자를 보존하고 실제 목적지를 표시한다. 일반 라우터/다른 모듈의 parent 소유권은 바꾸지 않는다.
+- `qa-account-header-parent.cjs`: Chromium/WebKit ×320/355/390/1440. 정상/긴닉네임·큰XP/글자·hit 검수, 직접root/main alias/toeic-records, Back/Forward와 snapshot, 별도 역사숲 목적지, disabled·성장 modal·초점, 합성 password 저장 대기 중 native 이탈과 늦은ack, 공통 저장 이탈 취소/대기/승인 후 기존callback1회 검증. 모든 API는 fixture이며 운영 쓰기는0이다.
+- 기존 필수 `qa-header-parent-navigation.cjs`의 성공 경로가 새 account 회귀를 별도 child process로 실행하고 실패를 전파한다. workflow/인프라 파일은 수정하지 않고 기존 header-parent CI에 account 검증을 포함한다. 기존 header readability/parent, 섬, Growth shell 관련 회귀를 같은 최종 후보로 다시 실행한다. 새 정확 SHA의 필수 CI와 루트의 실제 PNG/실API 검수 뒤에만 main FF·운영 반영을 조율한다. 새147 dataset 완성은 이번 장면·프로필·문의 릴리스의 선행조건으로 묶지 않는다.
+- `media/api-client.js` blob `c773725643ff129155a2954f05e5a6e06a78c0cc`, `media/admin-xp.js` blob `632e9728655910fe0d70e80a8d2d38b9a44427f6`은 잠금7d81724와 동일하다. selected XP 기본 비활성/개체probe0과 합성old987 검증 한계를 유지한다.
+
+### 자연 시간 날씨 추가 검수
+
+시간 이동·재생속도 변경 없이 영어/역사섬에서 각각 약150.13초의 한 주기를 실행했다. 0/55/65/75/78/81/90/120/138/150초에서 실제 UTC/경과 시간/opacity/animationTime/고정 메뉴 좌표를 읽고 PNG를 저장했다. 55초에는 구름opacity 약0.629·비0,90초에는 구름0.7·비0.44,138초에는 비0·일광 약0.681로 점진 변화했다. reduced-motion의350ms 간격 PNG는 byte-identical이었다. 테스트용 host를 viewport 밖으로 옮긴 실제 intersection에서 CSS 시계가500ms 동안 동일했고 복귀 후 이어졌다. 제품 원화나 메뉴를 움직이는 애니메이션을 추가한 것이 아니다. 별도 `natural-weather-cycle/result.json` 및 자연 시간 PNG는 앞선 Web Animations 시간 이동 검수와 구분한다.
+
+최종 장면 후보의 사용자 버전은 루트가 승인한 `0.2.10-beta`다. RELEASE_VERSION·CHANGELOG·README를 함께 갱신하며, source HTML의 development marker는 유지하고 정식 static build가 정확 커밋 SHA·release meta·JS/CSS build query를 생성한다. review branch push와 운영 배포는 별개이며 main FF 및 실제 도메인 확인은 루트 검수/실 API 조율 뒤에 진행한다.

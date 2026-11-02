@@ -209,7 +209,7 @@ Vercel은 `vercel.json`의 `buildCommand: node scripts/build-app-version.cjs`, `
 
 ### 버전과 협업 완료 기준
 
-사용자 표시 버전의 기준은 `RELEASE_VERSION`이다. 이 checkout의 기계용 버전은 `0.2.9-beta` (서비스 표시 `v0.2.9 - Beta`)이며 [변경 이력](CHANGELOG.md)을 함께 갱신한다. 기존 정책에 따라 호환 기능은 minor, 오류 수정은 patch, 비호환 변경은 major를 올리고 실제 배포 커밋에 태그를 연결한다. 문서 기준선 `docs/versions/v0.1.0/`과 현재 사용자 릴리스 번호는 같은 개념이 아니다. 날짜·commit·검사·운영 반영을 구분하며 예정 기능을 완료로 기록하지 않는다.
+사용자 표시 버전의 기준은 `RELEASE_VERSION`이다. 이 checkout의 기계용 버전은 `0.2.10-beta` (서비스 표시 `v0.2.10 - Beta`)이며 [변경 이력](CHANGELOG.md)을 함께 갱신한다. 기존 정책에 따라 호환 기능은 minor, 오류 수정은 patch, 비호환 변경은 major를 올리고 실제 배포 커밋에 태그를 연결한다. 문서 기준선 `docs/versions/v0.1.0/`과 현재 사용자 릴리스 번호는 같은 개념이 아니다. 날짜·commit·검사·운영 반영을 구분하며 예정 기능을 완료로 기록하지 않는다.
 
 디자이너 변경 제안에는 대상 화면/라우트, 사용자 목적, desktop·mobile·축소 모션 모습, 바꿀 JS/CSS/에셋, 유지할 저장·접근 계약을 적는다. 구현자는 작은 범위부터 적용하고 다음을 확인한다.
 
