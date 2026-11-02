@@ -50,3 +50,7 @@
 2026-11-02 로컬 결과: Linux 단위 7/7, Linux 통합 7개 시나리오 통과. Windows 단위는 6 통과/1 Linux symlink 항목 제외이며 해당 항목은 Linux에서 통과했다. 비활성 workflow YAML·정책 검사, 내장 PowerShell parser의 두 실행 블록 구문 검사, runtime Compose 및 Nginx 구문 검사도 통과했다. 실제 현재 artifact 1,632개와 manifest를 검증했다. 모든 Docker 검수는 캐시 image의 일회성 network-none 컨테이너와 합성 tmpfs에서 수행했고 운영 설치는 하지 않았다.
 
 근거: [workflow_run 조건과 권한](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#workflow_run), [공식 artifact 다운로드 action](https://github.com/actions/download-artifact), [고정 v8 action runtime/입력](https://github.com/actions/download-artifact/blob/9000827ccba6bdab643e8b6fd33ac0654aef8333/action.yml).
+
+### Windows CI shell correction
+
+Main CI `41461786562` succeeded. Automatic CD `41464689065` failed before artifact download because the default Windows PowerShell shell dot-sourced a temporary `.ps1` while script execution is disabled. The existing `12e57783038dd4f299d2ac7a2804392dc0262985` frontend remained HTTP 200. No execution policy is changed. The two run steps now invoke an installed Node helper using the ordinary `cmd` shell; it preserves main-head checks before download and deployment, fixed GitHub API scope, UTF-8 outputs, and the installed artifact verifier/deployment controller. Automatic deployment validation remains pending until a new exact-SHA CI and CD complete.

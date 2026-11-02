@@ -1,12 +1,17 @@
 {
   "schema": 1,
-  "status": "runtime installed; workflow activation and main CI/CD verification in progress",
+  "status": "runtime installed; Node cmd fix prepared after PowerShell temporary-script failure",
   "controllerRoot": "C:/Users/INNOGRID/Documents/Codex/2026-11-02/task-3/home-front-cd-controller",
   "files": [
     {
       "source": "scripts/home-frontend-cd/deploy.cjs",
       "target": "deploy.cjs",
       "sha256": "9e98b01a0690e93859d6e840aa2e223c199b8c80f57d1e0c3cd23eb28c7ab48e"
+    },
+    {
+      "source": "scripts/home-frontend-cd/ci-step.cjs",
+      "target": "ci-step.cjs",
+      "sha256": "8691a959e36e1aef3df016cd85b2dc809f41593fbe4b3abac3e95036cc010426"
     },
     {
       "source": "scripts/home-frontend-cd/verify-artifact.cjs",
@@ -41,7 +46,7 @@
     {
       "source": ".github/workflows/home-frontend-cd.yml",
       "target": "REPOSITORY:.github/workflows/home-frontend-cd.yml",
-      "sha256": "a720e62e3b7d0535d7bad6911501caf6f8ad348b211a16ce005db2f7e005c06f"
+      "sha256": "37d09b422282e41617ce5b453a9e0967c2107b58b2431d04abba6976591025ca"
     }
   ]
 }
