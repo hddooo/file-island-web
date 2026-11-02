@@ -1,4 +1,4 @@
-# INACTIVE until runner registration, permissions and installation are explicitly approved.
+# Approved dedicated runner and release store are installed. Deploy only successful main CI.
 name: Home frontend deploy
 on:
   workflow_run:
@@ -32,14 +32,16 @@ jobs:
           node-version: '24'
       - name: Verify successful CI is still the current main commit
         id: gate
-        shell: pwsh
+        shell: powershell
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           if ($env:FE_EXPECTED_SHA -notmatch '^[a-f0-9]{40}$' -or $env:FE_SOURCE_RUN -notmatch '^\d{1,15}$') { throw 'Invalid CI identity' }
+          [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
           $headers = @{ Authorization = "Bearer $env:GH_TOKEN"; Accept = 'application/vnd.github+json' }
           $ref = Invoke-RestMethod -Uri 'https://api.github.com/repos/hddooo/file-island-web/git/ref/heads/main' -Headers $headers
-          if ($ref.object.sha -eq $env:FE_EXPECTED_SHA) { 'ready=true' >> $env:GITHUB_OUTPUT } else { 'ready=false' >> $env:GITHUB_OUTPUT; 'Skipped stale frontend CI commit.' >> $env:GITHUB_STEP_SUMMARY }
+          $utf8 = [Text.UTF8Encoding]::new($false)
+          if ($ref.object.sha -eq $env:FE_EXPECTED_SHA) { [IO.File]::AppendAllText($env:GITHUB_OUTPUT, 'ready=true' + [Environment]::NewLine, $utf8) } else { [IO.File]::AppendAllText($env:GITHUB_OUTPUT, 'ready=false' + [Environment]::NewLine, $utf8); [IO.File]::AppendAllText($env:GITHUB_STEP_SUMMARY, 'Skipped stale frontend CI commit.' + [Environment]::NewLine, $utf8) }
       - name: Download only this successful CI artifact
         if: steps.gate.outputs.ready == 'true'
         uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
@@ -52,11 +54,12 @@ jobs:
           path: ${{ runner.temp }}/frontend-${{ github.run_id }}-${{ github.run_attempt }}
       - name: Verify and atomically deploy with installed controller
         if: steps.gate.outputs.ready == 'true'
-        shell: pwsh
+        shell: powershell
         env:
           FE_ARTIFACT: ${{ runner.temp }}/frontend-${{ github.run_id }}-${{ github.run_attempt }}
           GH_TOKEN: ${{ github.token }}
         run: |
+          [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
           $headers = @{ Authorization = "Bearer $env:GH_TOKEN"; Accept = 'application/vnd.github+json' }
           $ref = Invoke-RestMethod -Uri 'https://api.github.com/repos/hddooo/file-island-web/git/ref/heads/main' -Headers $headers
           if ($ref.object.sha -ne $env:FE_EXPECTED_SHA) { throw 'Main advanced during artifact download; deployment skipped' }

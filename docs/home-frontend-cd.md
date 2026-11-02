@@ -1,6 +1,8 @@
 # 홈 프론트 CD 설치 검토안
 
-현재 `fileisland-web-candidate`는 `12e57783038dd4f299d2ac7a2804392dc0262985`의 정적 폴더를 직접 read-only bind한다. 새 repo push → CI → 홈 프론트 자동 배포 연결은 아직 설치되지 않았다. 이 변경은 CD 코드·비활성 workflow·격리 검수까지이며 runner/권한/운영 mount를 변경하지 않는다. API controller·DB·파일 서버·056·NPM 설정과 저장소는 대상 밖이다.
+2026-11-02 실행 상태: 명시 승인 후 전용 repo runner `file-island-web-cd`를 등록했고 GitHub에서 Idle을 확인했다. `FileIslandWebGitHubRunner`는 현재 사용자 로그온 시 숨김으로 시작하는 지속 작업이다. 전용 controller 파일 해시 검증·Linux 볼륨 bootstrap·프론트 readonly volume mount 전환·동일 12e5778 설치 재배포 검수도 통과했다. NPM HTTPS vhost의 프론트 version/API health 200을 정상 인증서 검증으로 확인했다. 자동 CD 완료는 아직 선언하지 않으며 활성 workflow의 main CI→CD→실제 새 SHA 검증이 남아 있다. Windows PowerShell 7은 전역 설치돼 있지 않아 기본 PowerShell 5와 명시 UTF-8 출력으로 workflow를 구성했다. API/NPM/DB/파일 서버 설정은 변경하지 않았다.
+
+현재 `fileisland-web-candidate`는 전용 Linux release volume의 `current`를 read-only로 제공하며 기존 `12e57783038dd4f299d2ac7a2804392dc0262985`가 유지된다. 새 repo push → main CI → 홈 프론트 자동 CD의 마지막 실행 검증을 진행 중이다. 승인된 runner/controller/volume/mount만 설치했고 API controller·DB·파일 서버·056·NPM 설정과 저장소는 변경하지 않았다.
 
 ## 실행 흐름
 

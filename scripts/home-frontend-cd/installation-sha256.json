@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "status": "review only; not installed",
+  "status": "runtime installed; workflow activation and main CI/CD verification in progress",
   "controllerRoot": "C:/Users/INNOGRID/Documents/Codex/2026-11-02/task-3/home-front-cd-controller",
   "files": [
     {
@@ -39,9 +39,9 @@
       "sha256": "91e833ba661ed440a636290d185b94b34174fad1cccaf0c76b9ec6f237963239"
     },
     {
-      "source": ".github/workflows-held/home-frontend-cd.yml.disabled",
+      "source": ".github/workflows/home-frontend-cd.yml",
       "target": "REPOSITORY:.github/workflows/home-frontend-cd.yml",
-      "sha256": "3f60244e6bd77ac8dc4ac1f8dc3488ad23b2aa8acf21f4c7951e6e623f46291e"
+      "sha256": "a720e62e3b7d0535d7bad6911501caf6f8ad348b211a16ce005db2f7e005c06f"
     }
   ]
 }
