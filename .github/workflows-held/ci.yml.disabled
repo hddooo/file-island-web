@@ -175,3 +175,71 @@ jobs:
             evidence/player-repeat/webkit-390-off-controls.png
             evidence/player-repeat/webkit-390-all-controls.png
             evidence/player-repeat/webkit-390-one-controls.png
+
+  header-parent-readability:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NODE_PATH: ${{ github.workspace }}/.ci-tools/node_modules
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: .ci-tools/package-lock.json
+      - run: npm ci --prefix .ci-tools --no-fund
+      - run: ln -s .ci-tools .test-tools
+      - run: node scripts/test-header-parent-navigation.cjs
+      - run: .ci-tools/node_modules/.bin/playwright install --with-deps chromium webkit
+      - name: Verify readable chrome and current-view parent lifetimes independently
+        run: |
+          set -uo pipefail
+          set +e
+          node scripts/qa-header-readability-matrix.cjs
+          typography=$?
+          node scripts/qa-header-parent-navigation.cjs
+          navigation=$?
+          echo "Typography exit=$typography; parent navigation exit=$navigation"
+          test "$typography" -eq 0 && test "$navigation" -eq 0
+      - name: Validate exact synthetic header frames on final review branch
+        id: header_privacy
+        if: always() && github.ref == 'refs/heads/codex/header-parent-readability-release-20261102'
+        run: |
+          node <<'NODE'
+          const fs=require('node:fs');let count=0;
+          const files=["evidence/header-readability-matrix/chromium-320-normal.png","evidence/header-readability-matrix/chromium-320-large-header.png","evidence/header-readability-matrix/chromium-355-normal.png","evidence/header-readability-matrix/chromium-355-large-header.png","evidence/header-readability-matrix/chromium-390-normal.png","evidence/header-readability-matrix/chromium-390-large-header.png","evidence/header-readability-matrix/chromium-1024-normal.png","evidence/header-readability-matrix/chromium-1024-large-header.png","evidence/header-readability-matrix/webkit-320-normal.png","evidence/header-readability-matrix/webkit-320-large-header.png","evidence/header-readability-matrix/webkit-355-normal.png","evidence/header-readability-matrix/webkit-355-large-header.png","evidence/header-readability-matrix/webkit-390-normal.png","evidence/header-readability-matrix/webkit-390-large-header.png","evidence/header-readability-matrix/webkit-1024-normal.png","evidence/header-readability-matrix/webkit-1024-large-header.png","evidence/header-readability-matrix/chromium-390-focus-header.png","evidence/header-readability-matrix/webkit-390-focus-header.png"];
+          for(const file of files){if(!fs.existsSync(file))continue;const b=fs.readFileSync(file);if(!b.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10]))||b.readUInt32BE(16)>2300||b.readUInt32BE(20)>2200)throw Error('Unexpected synthetic header frame: '+file);count++;}
+          console.log('Checked '+count+' exact synthetic frames; no actual profile/learner data.');
+          NODE
+      - name: Save exact synthetic header frames
+        if: always() && github.ref == 'refs/heads/codex/header-parent-readability-release-20261102' && steps.header_privacy.outcome == 'success'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: synthetic-header-parent-${{ github.run_id }}
+          retention-days: 1
+          if-no-files-found: ignore
+          path: |
+            evidence/header-readability-matrix/chromium-320-normal.png
+            evidence/header-readability-matrix/chromium-320-large-header.png
+            evidence/header-readability-matrix/chromium-355-normal.png
+            evidence/header-readability-matrix/chromium-355-large-header.png
+            evidence/header-readability-matrix/chromium-390-normal.png
+            evidence/header-readability-matrix/chromium-390-large-header.png
+            evidence/header-readability-matrix/chromium-1024-normal.png
+            evidence/header-readability-matrix/chromium-1024-large-header.png
+            evidence/header-readability-matrix/webkit-320-normal.png
+            evidence/header-readability-matrix/webkit-320-large-header.png
+            evidence/header-readability-matrix/webkit-355-normal.png
+            evidence/header-readability-matrix/webkit-355-large-header.png
+            evidence/header-readability-matrix/webkit-390-normal.png
+            evidence/header-readability-matrix/webkit-390-large-header.png
+            evidence/header-readability-matrix/webkit-1024-normal.png
+            evidence/header-readability-matrix/webkit-1024-large-header.png
+            evidence/header-readability-matrix/chromium-390-focus-header.png
+            evidence/header-readability-matrix/webkit-390-focus-header.png
+            evidence/header-readability-matrix/result.json
+            evidence/header-parent-navigation/result.json

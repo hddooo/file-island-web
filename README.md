@@ -8,7 +8,7 @@
 
 원본: `blockmonkey1992/hanq` / `93190fae4656dad5a2337c9a1173c3a7107d339c`. Git 과거 이력 대신 검증한 소스 스냅샷으로 이관했습니다.
 
-프론트엔드 원격 `dev`의 0.2.8-beta 기준입니다.
+초기 snapshot은 0.2.8-beta입니다. `prep/windows-fe-029`에서 원본 `cfc9892a2a180a33b177a8689bcdfa8f0b5607f7`의 0.2.9-beta delta를 새 저장소에 동기화합니다. 운영 연결은 아직 변경하지 않았습니다.
 
 코드 스냅샷 이관 단계이며 운영 전환·배포 연결·Secrets 등록은 진행하지 않았습니다. 원본 workflow는 `.github/workflows-held/*.disabled`에 보존하여 이관 push로 실행되지 않게 했습니다.
 
@@ -209,7 +209,7 @@ Vercel은 `vercel.json`의 `buildCommand: node scripts/build-app-version.cjs`, `
 
 ### 버전과 협업 완료 기준
 
-사용자 표시 버전의 기준은 `RELEASE_VERSION`이다. 이 checkout의 기계용 버전은 `0.2.7-beta` (서비스 표시 `v0.2.7 - Beta`)이며 [변경 이력](CHANGELOG.md)을 함께 갱신한다. 기존 정책에 따라 호환 기능은 minor, 오류 수정은 patch, 비호환 변경은 major를 올리고 실제 배포 커밋에 태그를 연결한다. 문서 기준선 `docs/versions/v0.1.0/`과 현재 사용자 릴리스 번호는 같은 개념이 아니다. 날짜·commit·검사·운영 반영을 구분하며 예정 기능을 완료로 기록하지 않는다.
+사용자 표시 버전의 기준은 `RELEASE_VERSION`이다. 이 checkout의 기계용 버전은 `0.2.9-beta` (서비스 표시 `v0.2.9 - Beta`)이며 [변경 이력](CHANGELOG.md)을 함께 갱신한다. 기존 정책에 따라 호환 기능은 minor, 오류 수정은 patch, 비호환 변경은 major를 올리고 실제 배포 커밋에 태그를 연결한다. 문서 기준선 `docs/versions/v0.1.0/`과 현재 사용자 릴리스 번호는 같은 개념이 아니다. 날짜·commit·검사·운영 반영을 구분하며 예정 기능을 완료로 기록하지 않는다.
 
 디자이너 변경 제안에는 대상 화면/라우트, 사용자 목적, desktop·mobile·축소 모션 모습, 바꿀 JS/CSS/에셋, 유지할 저장·접근 계약을 적는다. 구현자는 작은 범위부터 적용하고 다음을 확인한다.
 
@@ -242,9 +242,9 @@ Vercel은 `vercel.json`의 `buildCommand: node scripts/build-app-version.cjs`, `
 
 행복의 마을 장식 NPC는 기존 6종 자산의 12마리를 서로 다른 놀이 무리·크기·타이밍으로 배치한다. 실제 소유 디지몬 수나 사용자 collection 데이터로 취급하지 않는다. 퍼펫몬은 72초의 가시 왕복 순환을 사용하며 opacity 숨김/시작점 순간 복귀를 하지 않는다. 기차는 별도의 기존 레일 동작이다. 위치/너비는 resize 때 측정하고 아기 이동 frame에서는 캐시한 node/너비를 재사용한다. `test-rainbow-patrol.cjs`와 `qa-village-nursery.cjs`에서 방향·루프·가게 hitbox·대사·축소 모션을 검수한다.
 
-상단 프로필은 실제 닉네임과 작은 XP 두 줄을 44px 높이 안에 표시한다. 닉네임은 128px 안에서 줄이되 title과 버튼 접근성 이름에 전체 값을 유지한다. 학습 화면의 뒤로는 해당 섬 학습지도라는 명시 경로이며, 학습지도·MyPage·Hall·마을의 전체 지도는 파일섬 전체 지도로 이동한다. 전체 지도에 이미 있으면 같은 목적지 버튼을 감춘다. root 학습 페이지의 중복 뒤로는 감추고 내용 안의 목차 이동은 유지하며, 마을 아래의 중복 지도 버튼은 추가하지 않는다.
+상단 프로필은 실제 닉네임과 장착/총 XP를 불투명한 글자로 표시한다. 긴 이름·큰 숫자는 글자를 줄이거나 숨기지 않고 필요한 만큼 감싸며, 버튼과 전체 값의 접근성 이름을 보존한다. Vocabulary·Grammar/연습·Practice·한국사 학습 상세의 부모 이동은 현재 활성 화면의 기존 목차/뒤로 handler를 헤더가 재사용한다. 같은 동작의 내부 버튼만 감추고, 파트/문제·묶음 선택·필터·이전/다음 학습 기능과 목적지가 다른 메인 바로가기는 유지한다. Account/Battle/진행 중 모의고사 등 이번에 동선을 대조하지 않은 화면은 정리 대상이 아니다. 학습지도·MyPage·Hall·마을의 전체 지도는 기존 파일섬 전체 지도로 이동하며, 전체 지도 자체에서는 같은 목적지 버튼을 감춘다.
 
-최상단 `.topline.device-crown` 하나가 Global Nav Bar다. `device-shell.js`는 기존 헤더에 기기 표시를 합치고 독립된 두 번째 헤더를 만들지 않는다. 폭이 실제 프로필보다 좁을 때만 같은 바 안에서 프로필을 오른쪽 둘째 행으로 옮긴다. `device-shell.css`의 단일 바 규칙이 36px 프로필과 44px 클릭 범위, 장착 디지몬의 기존 애니메이션, 닉네임·XP를 함께 유지한다. 서비스 Beta는 버전에만 표시하며 행복의 마을 타일·제목에는 붙이지 않는다. 마을 알은 구매/부화 상태를 바꾸지 않는 비동기 CSS 흔들림과 빛만 사용하고 reduced-motion에서는 정지한다.
+최상단 `.topline.device-crown` 하나가 Global Nav Bar다. `device-shell.js`는 기존 헤더에 기기 표시를 합치고 독립된 두 번째 헤더를 만들지 않는다. 폭이 실제 프로필보다 좁을 때만 같은 바 안에서 프로필을 오른쪽 둘째 행으로 옮긴다. `device-shell.css`의 단일 바 규칙은 최소 44px의 실제 버튼과 기존 파트너 모션을 유지한다. 제작자 줄은 제거하고 상하 6px 여백으로 각 행/전체 두 행 묶음을 세로 가운데에 놓는다. 주요 글자는 모바일 12~14px·desktop 13~14px이고 버전은 9px이다. 정상 1행은 60px, 좁은 2행은 108px이므로 기존 56/58px 높이를 유지한다고 설명하지 않는다. 프로필이 보이면 오른쪽 순수 장식, 이동 버튼이 보이면 왼쪽 장식을 감춰 내용과의 겹침을 없앤다. 서비스 Beta는 버전에만 표시하며 행복의 마을 타일·제목에는 붙이지 않는다. 마을 알은 구매/부화 상태를 바꾸지 않는 비동기 CSS 흔들림과 빛만 사용하고 reduced-motion에서는 정지한다.
 
 Grammar 집중 연습은 현재 문제·보기·해설·이전/다음과 진행번호가 중심이다. 출처는 접힌 상세에 남기고, 성공·최근 이력·결과 대시보드는 상시 노출하지 않는다. 자동저장·첫 결과·재풀이 이력은 `weakness-records.js`에 보존되며 실제 오류일 때만 복구 버튼을 제공한다. 전체 연습 진입은 본인/은행별 마지막 위치를 사용하고 명시한 문제 URL은 그대로 존중한다. Practice 완료는 고유 `(collectionId, number)`의 실제 `practiceReviewed`가 모두 확인됐을 때만 우측 체크·테두리로 표현한다. LC/RC 자료의 운영 등록 여부나 새 backend 기능 활성화를 이 UI 릴리스와 혼동하지 않는다.
 
@@ -266,3 +266,11 @@ Grammar 집중 연습은 현재 문제·보기·해설·이전/다음과 진행�
 - 작은 글자는 청록, 총 XP는 대비를 확보한 짙은 호박색이다. 밝은 금속 및 상호작용 상태의 계산 최소 대비는 각각5.92:1/4.71:1이다. 이전0.2.6의 dark panel/밝은 노랑 스타일 설명은 이 버전의 현재 헤더에는 적용하지 않는다.
 - 36px borderless 버튼의 확장 영역은 `::before` used-height 및 시각 상·하3.5px 실제 `elementFromPoint`로 검수한다. 이전0.2.6의42px used-height를44px 실측으로 간주하지 않는다. `qa-header-refinement.cjs`는 ca0113 baseline과355/390/1024 하위화면의 전체 지도/뒤로·프로필을 실제 합성 렌더로 비교한다.
 - 대본은 source/status/timing/정답 근거를 보존한 채 중복 안내 표시만 줄인다. 실제 대본 없음/시간 정보 없음 안내는 남긴다. `test-lc-script-labels.cjs`를 기존 Practice/Script 검사와 함께 실행한다.
+
+### 0.2.9-beta 헤더 가독성·활성 부모 이동
+
+- `bindHeaderParent`는 현재 header/host의 실제 부모 control만 위임한다. module의 busy/disabled·기존 discard/저장 계약을 재사용하고 page/view 교체에서 observer·위임 표식을 정리한다. 늦은 저장 승인은 원래 action과 현재 control identity가 같을 때만 재실행한다. park된 Listening이나 제거된 view의 handler를 찾지 않는다.
+- 프로필은 실제 `refreshHeader`의 menu outerHTML 교체를 관찰하고 ResizeObserver를 새 model/menu에 재등록한다. rAF 측정을 모으고 pagehide에서 예약 작업과 관찰을 정리한다.
+- 합성 검수 기준은 320/355/390/1024 Chromium/WebKit, 정상/긴 닉네임·큰 XP·정상 복귀, 장식 교차 없음, 실제 44px 양방향 hit와 Tab/Shift+Tab focus, 직접 링크/기존 depth BackForward·모달·저장 취소/수락·파트/목차 복귀다. 본문 학습과 0.2.8 Full Test/Practice 회귀 검사는 별도로 보존한다. 실제 iPhone 및 운영 사용자 자료 검증으로 혼동하지 않는다.
+
+- macOS WebKit의 기본 Tab은 시스템 키보드 탐색 상태에 따라 버튼을 건너뛸 수 있다. 검사는 설정/DOM focus를 바꾸지 않고 기본 Tab을 먼저 사용하며, 해당 환경에서만 표준 Option-Tab(Playwright Alt+Tab) 순회도 검증한다. [Apple Safari 키보드 안내](https://support.apple.com/guide/safari/keyboard-shortcuts-and-gestures-cpsh003/mac)의 동작과 물리적 Safari 검수 범위를 구분한다.

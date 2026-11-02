@@ -27,3 +27,9 @@
 - 이 저장소는 정적 웹 소스이며 package.json 기반 frontend build는 없습니다. 실제 버전 빌더는 원본 index를 변형하므로 독립 임시 fixture 테스트로 검증했습니다.
 
 이 기록은 snapshot commit과 함께 보존합니다. 원격 main SHA와 파일 checksum을 별도로 재조회하여 push 결과를 검증합니다. 기존 공백 문제는 원본 그대로 유지했으며 staged diff --check 경고를 이관 코드 수정과 섞지 않았습니다.
+
+## Windows 전환 전 0.2.9 소스 준비 (2026-11-02)
+
+로컬 branch: `prep/windows-fe-029`, 원격 기준: `e4f81da41b00376d5d96dc16c75716ffc7a23802`. 원본 `93190fae4656dad5a2337c9a1173c3a7107d339c` → `cfc9892a2a180a33b177a8689bcdfa8f0b5607f7`의 17개 파일 delta를 대조했습니다. 16개 일반 소스/QA/문서 파일은 patch로 반영했고, 나머지 원본 `.github/workflows/ci.yml`은 `.github/workflows-held/ci.yml.disabled`에만 반영했습니다. README의 새 저장소 이관 안내는 보존했습니다. 활성 workflow는 만들지 않았습니다.
+
+기존 dev/Vercel 0.2.9 배포와 HTML/19개 자산 검증 완료는 FE 담당이 전달한 상태이며 이 작업이 다시 배포하거나 검증한 결과가 아닙니다. 사전 전체 CI 41423020199 SUCCESS 및 postpush 41425999577 추적도 FE 담당 범위입니다. 이 변경은 새 저장소의 소스 동기화이며 CI 실행·운영 반영은 별도입니다. 원본17파일의 내용 대조, 변경 JavaScript 구문, diff 검사는 통과했고 Windows에서 unit/브라우저 QA를 다시 실행하지 않았습니다. 새 저장소의 빌드 SHA는 원본 SHA와 달라지므로 전환 후 app-version과 자산 해시는 새 commit 기준으로 재검증해야 합니다.
