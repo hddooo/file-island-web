@@ -14,6 +14,24 @@
     history:[{id:'homePastExams',icon:'gate',x:47,y:28,mx:50,my:18},{id:'homeFormalExams',icon:'flag',x:23,y:45,mx:26,my:42},{id:'homeWrongNotes',icon:'review',x:66,y:59,mx:71,my:66}],
     toeic:[{id:'notebook',icon:'book',x:84,y:21,mx:26,my:17},{id:'wrongnotes',icon:'review',x:27,y:55,mx:26,my:52},{id:'grammar',icon:'notes',x:57,y:33,mx:73,my:34},{id:'player',icon:'audio',x:80,y:55,mx:73,my:70}]
   };
+  // One decorative layer tree, driven by CSS time. The art and click targets never move.
+  // Share WorldScene's visibility/low-power state and observe only this layer's viewport.
+  function atmosphere(host,kind){
+    var layer=document.createElement('span');layer.className='scene-atmosphere';layer.dataset.scene=kind;layer.setAttribute('aria-hidden','true');
+    var html='<span class="scene-weather"><i class="scene-cloud scene-cloud-far"></i><i class="scene-cloud scene-cloud-near"></i><i class="scene-sunlight"></i><i class="scene-overcast"></i><span class="scene-rain">';
+    for(var i=0;i<18;i++)html+='<i style="--drop-x:'+((i*37+9)%100)+'%;--drop-y:'+((i*23)%100)+'%;--delay:'+(-i*.137)+'s"></i>';
+    html+='</span></span><span class="scene-mist"></span><span class="scene-water">';
+    for(var j=0;j<8;j++)html+='<i style="--ripple-x:'+((j*29+8)%88)+'%;--ripple-y:'+((j*43+12)%85)+'%;--delay:'+(-j*.71)+'s"></i>';
+    html+='</span><span class="scene-leaves">';
+    for(var k=0;k<5;k++)html+='<i style="--leaf-x:'+((k*31+6)%95)+'%;--delay:'+(-k*3.7)+'s;--drift:'+(24+k*11)+'px"></i>';
+    layer.innerHTML=html+'</span>';host.appendChild(layer);
+    // Initial pause avoids a frame of animation before intersection is known.
+    layer.classList.add('scene-offscreen');
+    var io=root.IntersectionObserver?new IntersectionObserver(function(entries){entries.forEach(function(e){layer.classList.toggle('scene-offscreen',!e.isIntersecting);});},{threshold:0.01}):null;
+    if(io)io.observe(layer);else layer.classList.remove('scene-offscreen');
+    var cleanup=new MutationObserver(function(){if(!host.isConnected){if(io)io.disconnect();cleanup.disconnect();}});cleanup.observe(document.body,{childList:true,subtree:true});
+    return layer;
+  }
   function enhance(map){
     if(map.classList.contains('island-harbors'))return;
     var kind=map.classList.contains('history-travel-map')?'history':'toeic';
@@ -24,8 +42,7 @@
     map.querySelectorAll('.world-map-trail,.world-map-scale').forEach(function(n){n.remove();});
     var chart=document.createElement('picture');chart.className='harbor-chart';chart.setAttribute('aria-hidden','true');
     var source=document.createElement('source');source.media='(max-width:700px)';source.srcset='media/world-art/'+kind+'-harbors-mobile-v1.webp';chart.appendChild(source);
-    var art=document.createElement('img');art.src='media/world-art/'+kind+'-v1.webp';art.alt='';art.width=1672;art.height=942;art.decoding='async';chart.appendChild(art);map.prepend(chart);
-    var foreground=document.createElement('span');foreground.className='harbor-foreground';foreground.setAttribute('aria-hidden','true');map.appendChild(foreground);
+    var art=document.createElement('img');art.src='media/world-art/'+kind+'-v1.webp';art.alt='';art.width=1672;art.height=942;art.decoding='async';chart.appendChild(art);map.prepend(chart);atmosphere(chart,kind);
     if(kind==='history'){var guide=document.createElement('span');guide.className='harbor-chart-caption';guide.textContent='시간의 숲길';guide.setAttribute('aria-hidden','true');map.appendChild(guide);}
     controls.forEach(function(control,i){
       var key=control.dataset.toeicView||control.id,stop=stops[kind].find(function(s){return s.id===key;});
@@ -41,15 +58,9 @@
     // Preserve the source aspect ratio, center the camera on the actual waypoints,
     // and keep text plaques inside the viewport while retaining the larger touch controls.
     function fitScene(){if(!map.isConnected||!art.naturalWidth||!art.naturalHeight)return;var w=map.clientWidth,h=map.clientHeight,mobile=matchMedia('(max-width:700px)').matches,points=stops[kind],xs=points.map(function(p){return mobile?p.mx:p.x;}),ys=points.map(function(p){return mobile?p.my:p.y;}),cx=(Math.min.apply(null,xs)+Math.max.apply(null,xs))/200,cy=(Math.min.apply(null,ys)+Math.max.apply(null,ys))/200,scale=Math.max(w/art.naturalWidth,h/art.naturalHeight),iw=art.naturalWidth*scale,ih=art.naturalHeight*scale,ox=Math.max(w-iw,Math.min(0,w/2-iw*cx)),oy=Math.max(h-ih,Math.min(0,(h-66)/2-ih*cy));
-     chart.style.left=ox+'px';chart.style.top=oy+'px';chart.style.width=iw+'px';chart.style.height=ih+'px';controls.forEach(function(control){var key=control.dataset.toeicView||control.id,stop=points.find(function(x){return x.id===key;});if(!stop)return;var x=ox+iw*(mobile?stop.mx:stop.x)/100;control.style.setProperty('left',x+'px','important');control.style.setProperty('top',(oy+ih*(mobile?stop.my:stop.y)/100)+'px','important');var sign=control.querySelector('.harbor-sign');if(sign){var half=sign.offsetWidth/2,left=x-half,right=x+half,shift=left<4?4-left:right>w-4?w-4-right:0;sign.style.transform='translateX('+shift+'px)';}});}
+     chart.style.left=ox+'px';chart.style.top=oy+'px';chart.style.width=iw+'px';chart.style.height=ih+'px';controls.forEach(function(control){var key=control.dataset.toeicView||control.id,stop=points.find(function(x){return x.id===key;});if(!stop)return;var halfControl=control.offsetWidth/2,x=Math.max(halfControl+4,Math.min(w-halfControl-4,ox+iw*(mobile?stop.mx:stop.x)/100)),y=Math.max(4,Math.min(h-control.offsetHeight-4,oy+ih*(mobile?stop.my:stop.y)/100));control.style.setProperty('left',x+'px','important');control.style.setProperty('top',y+'px','important');var sign=control.querySelector('.harbor-sign');if(sign){var half=sign.offsetWidth/2,left=x-half,right=x+half,shift=left<4?4-left:right>w-4?w-4-right:0;sign.style.transform='translateX('+shift+'px)';}});}
     art.addEventListener('load',fitScene);var fitObserver=root.ResizeObserver?new ResizeObserver(fitScene):null;if(fitObserver){fitObserver.observe(map);controls.forEach(function(n){var sign=n.querySelector('.harbor-sign');if(sign)fitObserver.observe(sign);});}var detached=new MutationObserver(function(){if(!map.isConnected){if(fitObserver)fitObserver.disconnect();detached.disconnect();art.removeEventListener('load',fitScene);}});detached.observe(document.body,{childList:true,subtree:true});fitScene();
-    var reduced=matchMedia('(prefers-reduced-motion: reduce)'),frame=0;
-    map.addEventListener('pointermove',function(event){
-      if(reduced.matches||event.pointerType!=='mouse'||navigator.connection&&navigator.connection.saveData)return;
-      if(frame)cancelAnimationFrame(frame);
-      frame=requestAnimationFrame(function(){frame=0;if(!map.isConnected)return;var box=map.getBoundingClientRect();map.style.setProperty('--scene-x',((event.clientX-box.left)/box.width-.5)*5+'px');map.style.setProperty('--scene-y',((event.clientY-box.top)/box.height-.5)*4+'px');});
-    });
-    map.addEventListener('pointerleave',function(){if(frame)cancelAnimationFrame(frame);frame=0;map.style.setProperty('--scene-x','0px');map.style.setProperty('--scene-y','0px');map.querySelectorAll('.harbor-selected').forEach(function(n){n.classList.remove('harbor-selected');});});
+    map.addEventListener('pointerleave',function(){map.querySelectorAll('.harbor-selected').forEach(function(n){n.classList.remove('harbor-selected');});});
   }
-  root.HanqIslandHarbors={enhance:enhance};
+  root.HanqIslandHarbors={enhance:enhance,atmosphere:atmosphere};
 })(window);

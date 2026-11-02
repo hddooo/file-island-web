@@ -1,13 +1,12 @@
 /* Playable island scenes. Scoped to subject maps; no scroll/auth/device ownership. */
 html body #app .subject-travel-map.island-harbors{
-  --scene-x:0px;--scene-y:0px;--harbor-ink:#f6f4d8;--harbor-muted:#d0ddbf;--harbor-sign:#173b2ef5;--harbor-edge:#c4d8a6;
+  --harbor-ink:#f6f4d8;--harbor-muted:#d0ddbf;--harbor-sign:#173b2ef5;--harbor-edge:#c4d8a6;
   position:relative!important;display:block!important;aspect-ratio:16/9;min-height:340px!important;padding:0!important;margin:0 0 10px!important;
   border:1px solid #789c77!important;border-radius:10px!important;background:#284f3d!important;box-shadow:inset 0 0 0 2px #e6ecc13b!important;overflow:hidden;isolation:isolate;
 }
 html body #app .island-harbors[data-harbor-island=toeic]{--harbor-sign:#123e53f5;--harbor-muted:#c8e3e9;--harbor-edge:#b8dbe2;border-color:#86b9bc!important;background:#187f9d!important}
-html body #app .island-harbors .harbor-chart{position:absolute;inset:0;display:block;pointer-events:none;transform:translate3d(var(--scene-x),var(--scene-y),0) scale(1.015);transition:transform .2s ease-out}
+html body #app .island-harbors .harbor-chart{position:absolute;inset:0;display:block;pointer-events:none;transform:none;transition:none}
 html body #app .island-harbors .harbor-chart>img{display:block;width:100%;height:100%;max-width:none;object-fit:cover;border-radius:0;opacity:1;filter:none}
-html body #app .island-harbors .harbor-foreground{position:absolute;z-index:1;inset:-3%;pointer-events:none;background:url('world-art/garden-foreground-v1.webp') center/100% 100%!important;mask-image:linear-gradient(transparent 75%,#0009);transform:translate3d(calc(var(--scene-x)*-2),calc(var(--scene-y)*-2),0);transition:transform .3s ease-out}
 html body #app .island-harbors .harbor-chart-caption{position:absolute;z-index:2;left:12px;top:12px;padding:4px 8px;border:1px solid #d8e9c76b;border-radius:4px;background:var(--harbor-sign)!important;color:#f5f3d8!important;font-size:12px;line-height:1.5;letter-spacing:.04em;pointer-events:none}
 html body #app .island-harbors .harbor-stop{
   position:absolute!important;z-index:3;left:calc(var(--pin-x)*1%)!important;top:calc(var(--pin-y)*1%)!important;right:auto!important;bottom:auto!important;transform:translateX(-50%)!important;
@@ -56,13 +55,56 @@ html body .device-content>.toeic-menu:has(.island-harbors){display:flex;flex-dir
 html body .device-content>.toeic-menu:has(.island-harbors)>#toeicSection:empty{display:none}
 html body .device-content:has(.island-harbors) .world-map-help{display:none!important}
 html body #app .subject-travel-map.island-harbors{flex:1 0 260px;aspect-ratio:auto!important;width:100%!important;height:100%;min-height:260px!important;margin:0!important;border-radius:6px!important}
-html body #app .island-harbors .harbor-chart{inset:auto;z-index:1;transform:translate3d(var(--scene-x),var(--scene-y),0)}
+html body #app .island-harbors .harbor-chart{inset:auto;z-index:1;transform:none}
 html body #app .island-harbors .harbor-chart>img{object-fit:contain}
-html body #app .island-harbors .harbor-foreground{z-index:2;opacity:.55}
 html body #app:has(.island-harbors){display:flex!important;flex-direction:column;height:calc(var(--study-viewport-height,100dvh) - var(--study-footer-height,80px) - 16px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px))!important;max-height:none!important;min-height:260px!important}
 html body #app:has(.island-harbors)>.device-content{flex:1;min-height:0;padding-bottom:2px!important}
-html body #app .island-harbors .harbor-foreground{display:none!important}
 html body.subject-map-history .device-content>.help,html body.subject-map-history .history-map-title{display:none!important}
 html body.subject-map-history .device-content>.footer{display:none!important;margin:0!important;padding:0!important}
 @media(max-width:700px){html body #app:has(.island-harbors){width:100%!important;max-width:none!important;margin:0!important;padding:calc(6px + env(safe-area-inset-top,0px)) max(8px,env(safe-area-inset-right,0px)) 4px max(8px,env(safe-area-inset-left,0px))!important;border-width:3px!important;border-top-width:7px!important;border-radius:26px!important}html body #app:has(.island-harbors)>.device-content{padding-inline:0!important}}
 html body #app .island-harbors :is(.harbor-chart-caption,.harbor-sign .world-place-name){display:none!important}
+
+/* The landmark and its destination form one fixed, legible signpost. */
+html body #app .island-harbors{--harbor-sign:#073b49f5;--harbor-edge:#c1e9e3;--harbor-ink:#f8fff5}
+html body #app .island-harbors[data-harbor-island=history]{--harbor-sign:#193c29f5;--harbor-edge:#e0dca6}
+html body #app .island-harbors .harbor-pin{width:42px;height:42px;border:1px solid var(--harbor-edge);border-radius:13px 13px 13px 3px;box-shadow:0 3px 8px #001b3480,inset 0 0 0 3px #ffffff16;color:#f4edc3!important;transition:box-shadow .2s,border-color .2s}
+html body #app .island-harbors .harbor-sign{padding:6px 10px;border-radius:5px;border-color:var(--harbor-edge);background:var(--harbor-sign)!important;box-shadow:0 3px 10px #001b3470;min-width:72px}
+html body #app .island-harbors .harbor-sign>strong,html body #app .island-harbors .harbor-sign .wn-entry-t{font-size:15px!important;line-height:1.4!important;letter-spacing:.01em}
+html body #app .island-harbors .harbor-stop:focus-visible .harbor-pin,html body #app .island-harbors .harbor-stop.harbor-selected .harbor-pin{box-shadow:0 0 0 5px #fff5bb40,0 0 22px #b9ffdc99}
+@media(hover:hover){html body #app .island-harbors .harbor-stop:hover .harbor-pin{transform:none;box-shadow:0 0 0 5px #fff5bb30,0 0 20px #bbffec80}}
+@media(max-width:700px){html body #app .island-harbors .harbor-sign{max-width:124px;padding:5px 8px}html body #app .island-harbors .harbor-sign>strong,html body #app .island-harbors .harbor-sign .wn-entry-t{font-size:14px!important}}
+
+/* Ambient weather is entirely local: clear light -> passing cloud -> a gentle
+   shower -> clearing. Opacity changes over tens of seconds; never flash. */
+html body .scene-atmosphere{position:absolute;display:block;inset:0;overflow:hidden;pointer-events:none!important;isolation:isolate;contain:layout paint;z-index:1;background:transparent!important}
+html body .scene-atmosphere *{pointer-events:none!important}
+html body .scene-atmosphere :is(.scene-weather,.scene-rain,.scene-leaves){position:absolute;display:block;inset:0;background:transparent!important}
+html body .scene-atmosphere .scene-cloud{position:absolute;display:block;width:64%;height:21%;top:-6%;left:-17%;border-radius:50%;background:radial-gradient(ellipse at 35% 50%,#f3ffff8c,transparent 63%),radial-gradient(ellipse at 65% 60%,#e6f3ff99,transparent 62%)!important;animation:scene-cloud-pass 52s linear infinite!important;opacity:.32}
+html body .scene-atmosphere .scene-cloud-near{top:2%;left:40%;width:80%;height:24%;animation-duration:73s!important;animation-delay:-33s!important;opacity:.21}
+html body .scene-atmosphere .scene-sunlight{position:absolute;inset:0;display:block;background:radial-gradient(ellipse at 78% -12%,#fff0b45c,transparent 62%)!important;animation:scene-daylight 150s ease-in-out infinite!important}
+html body .scene-atmosphere .scene-overcast{position:absolute;inset:0;display:block;background:linear-gradient(160deg,#183c6399,#254a683d 60%,#102f4b40)!important;opacity:0;animation:scene-overcast 150s ease-in-out infinite!important}
+html body .scene-atmosphere .scene-rain{opacity:0;animation:scene-shower 150s ease-in-out infinite!important}
+html body .scene-atmosphere .scene-rain>i{position:absolute;left:var(--drop-x);top:var(--drop-y);width:1px;height:17px;background:linear-gradient(transparent,#defbff99)!important;animation:scene-raindrop 1.3s var(--delay) linear infinite!important}
+html body .scene-atmosphere .scene-mist{position:absolute;display:block;left:-10%;right:-10%;bottom:6%;height:28%;background:radial-gradient(ellipse at 25% 60%,#e7fffa22,transparent 60%),radial-gradient(ellipse at 80% 80%,#cbf8ff33,transparent 55%)!important;animation:scene-mist 26s ease-in-out infinite alternate!important}
+html body .scene-atmosphere .scene-water{position:absolute;display:block;left:44%;top:58%;width:38%;height:22%;background:transparent!important}
+html body .scene-atmosphere .scene-water>i{position:absolute;left:var(--ripple-x);top:var(--ripple-y);width:clamp(14px,2vw,34px);height:5px;border-top:1px solid #e2ffffbb;border-radius:50%;opacity:0;animation:scene-ripple 6.3s var(--delay) ease-out infinite!important}
+html body .scene-atmosphere .scene-leaves>i{position:absolute;left:var(--leaf-x);top:-3%;width:5px;height:10px;border-radius:1px 80%;background:#d1d98b!important;opacity:0;animation:scene-leaf 19s var(--delay) linear infinite!important}
+html body .scene-atmosphere[data-scene=toeic] .scene-leaves{display:none}
+html body .scene-atmosphere[data-scene=history] .scene-sunlight{background:conic-gradient(from 138deg at 82% -12%,transparent 0deg,#fff0a438 7deg,transparent 15deg,#eaffbd22 21deg,transparent 29deg)!important}
+html body .scene-atmosphere[data-scene=history] .scene-mist{bottom:29%;height:30%;opacity:.7}
+html body .scene-atmosphere[data-scene=history] .scene-water{left:5%;top:72%;width:28%;height:13%}
+html body .scene-atmosphere[data-scene=account] .scene-water,html body .scene-atmosphere[data-scene=inquiry] .scene-water,html body .scene-atmosphere[data-scene=hall] .scene-water{display:none}
+html body .scene-atmosphere[data-scene=ice] .scene-rain>i{width:3px;height:3px;border-radius:50%;background:#efffff!important;animation-duration:7s!important}
+html body .scene-atmosphere[data-scene=ice] .scene-leaves,html body .scene-atmosphere[data-scene=ice] .scene-water{display:none}
+@keyframes scene-cloud-pass{from{transform:translateX(-18%)}to{transform:translateX(45%)}}
+@keyframes scene-daylight{0%,18%,100%{opacity:.85}42%,76%{opacity:.12}}
+@keyframes scene-overcast{0%,18%,100%{opacity:0}42%,68%{opacity:.7}82%{opacity:.18}}
+@keyframes scene-shower{0%,38%,86%,100%{opacity:0}52%,66%{opacity:.44}}
+@keyframes scene-raindrop{from{transform:translate3d(0,-100px,0) rotate(12deg)}to{transform:translate3d(-35px,160px,0) rotate(12deg)}}
+@keyframes scene-mist{from{transform:translateX(-3%);opacity:.35}to{transform:translateX(4%);opacity:.8}}
+@keyframes scene-ripple{0%,100%{opacity:0;transform:scaleX(.5)}30%{opacity:.7}85%{opacity:0;transform:scaleX(1.45)}}
+@keyframes scene-leaf{0%{opacity:0;transform:translate3d(0,0,0) rotate(-20deg)}12%,75%{opacity:.65}100%{opacity:0;transform:translate3d(var(--drift),440px,0) rotate(230deg)}}
+@media(max-width:700px){html body .harbor-chart .scene-atmosphere .scene-water{left:30%;top:58%;width:26%;height:19%}html body .harbor-chart .scene-atmosphere[data-scene=history] .scene-water{left:5%;top:75%;width:39%;height:14%}.scene-atmosphere .scene-rain>i:nth-child(even){display:none}}
+/* No JS frame loop/timer; paused animations keep their phase on return. */
+html.world-motion-paused body .scene-atmosphere *,html.world-low-power body .scene-atmosphere *,html body .scene-atmosphere.scene-offscreen *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){html body .scene-atmosphere :is(.scene-cloud,.scene-sunlight,.scene-overcast,.scene-rain,.scene-rain>i,.scene-mist,.scene-water>i,.scene-leaves>i){animation:none!important;transition:none!important}html body .scene-atmosphere :is(.scene-rain,.scene-leaves,.scene-cloud,.scene-mist){display:none!important}html body .scene-atmosphere .scene-overcast{opacity:0}html body .scene-atmosphere .scene-sunlight{opacity:.4}}
