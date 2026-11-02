@@ -136,8 +136,9 @@ html body #app #privateTextbook select,html body dialog.textbook-original-dialog
 html body #app #privateTextbook .textbook-status,html body dialog.textbook-original-dialog .textbook-status{color:#34536a!important}
 /* Only source-verified, same-PDF span metadata can emit these attributes. */
 .textbook-semantic [data-source-ink=default],html body :is(#privateTextbook,.textbook-original-dialog) [data-source-ink=default]{color:#1c2b33!important}
-.textbook-semantic [data-source-ink=muted],html body :is(#privateTextbook,.textbook-original-dialog) [data-source-ink=muted]{color:#626b73!important}
+.textbook-semantic [data-source-ink=muted],html body :is(#privateTextbook,.textbook-original-dialog) [data-source-ink=muted]{color:#586169!important}
 .textbook-semantic [data-source-ink=red],html body :is(#privateTextbook,.textbook-original-dialog) [data-source-ink=red]{color:#b42318!important}
 .textbook-semantic [data-source-ink=green],html body :is(#privateTextbook,.textbook-original-dialog) [data-source-ink=green]{color:#216e39!important}
 .textbook-semantic [data-source-underline]{text-decoration-line:underline;text-decoration-thickness:.08em;text-underline-offset:.14em}
-.textbook-semantic [data-source-highlight=green],html body :is(#privateTextbook,.textbook-original-dialog) [data-source-highlight=green]{background-color:#d5f2b8!important;color:#1c2b33!important}
+.textbook-semantic [data-source-highlight=green],html body :is(#privateTextbook,.textbook-original-dialog) [data-source-highlight=green]{background-color:#d5f2b8!important}
+.textbook-semantic [data-source-highlight=green]:not([data-source-ink]),html body :is(#privateTextbook,.textbook-original-dialog) [data-source-highlight=green]:not([data-source-ink]){color:#1c2b33!important}

@@ -280,11 +280,15 @@ async function browserChecks() {
       stylePage.blocks=[{id:'styles',type:'text',lines:[{spans:[
         {text:'검증된 회색 글자',bold:true,sourceStyle:{ink:'muted',bold:false},sourceStyleAudit:{verified:true,sourceRevision:source}},
         {text:' 검증된 빨간 밑줄',sourceStyle:{ink:'red',underline:true},sourceStyleAudit:{verified:true,sourceRevision:source}},
-        {text:' 검증된 녹색 강조',sourceStyle:{highlight:'green'},sourceStyleAudit:{verified:true,sourceRevision:source}}
+        {text:' 검증된 녹색 강조',sourceStyle:{highlight:'green'},sourceStyleAudit:{verified:true,sourceRevision:source}},
+        {text:' 합성 빨간 강조',sourceStyle:{ink:'red',highlight:'green'},sourceStyleAudit:{verified:true,sourceRevision:source}},
+        {text:' 합성 회색 강조',sourceStyle:{ink:'muted',highlight:'green'},sourceStyleAudit:{verified:true,sourceRevision:source}}
       ]}]}];
       await page.evaluate(data=>{testView.cleanup();window.testView=HanqTextbookSemantic.render(document.querySelector('main'),data);},stylePage);
       const styles=await page.evaluate(()=>{const gray=document.querySelector('[data-source-ink=muted]'),red=document.querySelector('[data-source-ink=red]'),highlight=document.querySelector('[data-source-highlight]');return{gray:getComputedStyle(gray).color,weight:getComputedStyle(gray).fontWeight,red:getComputedStyle(red).color,underline:getComputedStyle(red).textDecorationLine,highlight:getComputedStyle(highlight).backgroundColor,overflow:document.documentElement.scrollWidth>innerWidth+1};});
-      same(styles,{gray:'rgb(98, 107, 115)',weight:'400',red:'rgb(180, 35, 24)',underline:'underline',highlight:'rgb(213, 242, 184)',overflow:false},'verified source style computed pixels and overflow at '+width);count++;
+      same(await page.locator('[data-source-ink=red][data-source-highlight]').evaluate(n=>getComputedStyle(n).color),'rgb(180, 35, 24)','highlight preserves verified red ink at '+width);count++;
+      same(await page.locator('[data-source-ink=muted][data-source-highlight]').evaluate(n=>getComputedStyle(n).color),'rgb(88, 97, 105)','highlight preserves readable muted ink at '+width);count++;
+      same(styles,{gray:'rgb(88, 97, 105)',weight:'400',red:'rgb(180, 35, 24)',underline:'underline',highlight:'rgb(213, 242, 184)',overflow:false},'verified source style computed pixels and overflow at '+width);count++;
     }
     same(errors, [], 'no browser runtime exceptions'); count++;
     same(requests, [], 'text-only page makes zero network requests'); count++;
