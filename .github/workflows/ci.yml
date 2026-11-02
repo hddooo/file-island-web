@@ -1,0 +1,245 @@
+name: Frontend contract checks
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: frontend-ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  auth-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - run: node scripts/test-api-timeout-10s.cjs
+      - run: node scripts/test-auth-session.cjs
+      - run: node scripts/test-auth-restoration.cjs
+      - run: node scripts/test-profile-navigation.cjs
+      - run: node scripts/test-remember-session.cjs
+      - run: node scripts/test-frontend-release-lock.cjs
+      - run: node scripts/test-rainbow-station.cjs
+      - run: node scripts/test-grammar-quick-recall.cjs
+      - run: node scripts/test-focused-grammar-content.cjs
+      - run: node scripts/test-vocabulary-paraphrases.cjs
+
+  compact-ui-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      NODE_PATH: ${{ github.workspace }}/.ci-tools/node_modules
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: .ci-tools/package-lock.json
+      - run: npm ci --prefix .ci-tools --no-fund
+      - run: ln -s .ci-tools .test-tools
+      - name: Verify source, XP and navigation lifetimes
+        run: |
+          set -euo pipefail
+          for test in test-header-refinement test-map-header-visuals test-grammar-simple test-app-version-build test-device-scroll test-review-completion-cards test-weakness-records test-weakness-records-race test-rainbow-patrol test-ui-lock-ownership test-characters test-xp-label-separation test-battle-navigation-lifecycle test-battle-invite-owner-races test-battle-stream test-account-ui test-collection-life test-collection-life-loading test-portrait-pixel-audit test-collection-battle-gate test-vocabulary-repartition test-toeic-practice test-toeic-recall test-mypage test-device-place test-device-buttons test-subject-player-menu; do
+            node "scripts/$test.cjs"
+          done
+      - run: .ci-tools/node_modules/.bin/playwright install --with-deps chromium webkit
+      - name: Verify compact UI, popup, PDF and mobile scene
+        run: |
+          set -euo pipefail
+          node scripts/qa-vocabulary-redesign.cjs
+          node scripts/qa-phone-viewport-shop.cjs
+          node scripts/qa-shop-portrait-lifecycle.cjs
+          node scripts/qa-global-navigation.cjs
+          node scripts/qa-grammar-simple.cjs
+          node scripts/qa-vocabulary-video-bar.cjs
+          node scripts/qa-toeic-compact-ui.cjs
+          node scripts/qa-map-shell-polish.cjs
+          node scripts/qa-map-header-visuals.cjs
+          node scripts/qa-header-refinement.cjs
+          node scripts/qa-rainbow-viewport.cjs
+          SCENE_ENGINE=chromium SCENE_WIDTH=390 node scripts/qa-rainbow-collection.cjs
+          SCENE_ENGINE=webkit SCENE_WIDTH=390 node scripts/qa-rainbow-collection.cjs
+          node scripts/qa-village-nursery.cjs
+          node scripts/qa-ui-lock-ownership.cjs
+          node scripts/qa-ui-final-review.cjs
+          node scripts/qa-toeic-grading-no-spinner.cjs
+          node scripts/qa-baby-blink.cjs
+          node scripts/qa-poyomon-seam.cjs
+
+  practice-readiness-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NODE_PATH: ${{ github.workspace }}/.ci-tools/node_modules
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: .ci-tools/package-lock.json
+      - run: npm ci --prefix .ci-tools --no-fund
+      - run: ln -s .ci-tools .test-tools
+      - name: Verify Practice material and pending-answer lifetimes
+        run: |
+          set -euo pipefail
+          node --check media/toeic-cbt.js
+          node --check scripts/qa-toeic-partial-readiness.cjs
+          node scripts/test-toeic-practice-client.cjs
+          node scripts/test-toeic-script-status.cjs
+          node scripts/test-lc-script-labels.cjs
+          node scripts/test-toeic-partial-readiness.cjs
+          node scripts/qa-toeic-grading-no-spinner.cjs
+          node --check media/audio-player-ui.js
+          node --check media/lc-playlist.js
+          node --check scripts/qa-player-repeat-modes.cjs
+          node scripts/test-audio-player-ui.cjs
+          node scripts/test-player-repeat-modes.cjs
+          node --check media/lc-player.js
+          node --check scripts/qa-full-test-player.cjs
+          node scripts/test-full-test-player.cjs
+      - run: .ci-tools/node_modules/.bin/playwright install --with-deps chromium webkit
+      - run: node scripts/qa-toeic-partial-readiness.cjs
+      - run: node scripts/qa-player-repeat-modes.cjs
+      - run: node scripts/qa-full-test-player.cjs
+      - name: Validate final synthetic Practice crops on review branch
+        id: practice_privacy
+        if: always() && github.ref == 'refs/heads/codex/practice-readiness-release-20261102'
+        run: |
+          node <<'NODE'
+          const fs=require('node:fs');let count=0;
+          for(const engine of ['chromium','webkit'])for(const state of ['candidate-group','candidate-target','candidate-result','single-unavailable','player']){
+            const file=`evidence/practice-readiness/${engine}-390-${state}.png`;
+            if(!fs.existsSync(file))continue;const b=fs.readFileSync(file);
+            if(!b.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10]))||b.readUInt32BE(16)>1000||b.readUInt32BE(20)>2200)throw Error('Unexpected synthetic crop: '+file);count++;
+          }
+          console.log('Checked '+count+' exact synthetic Practice crops; no real learner or textbook data.');
+          NODE
+      - name: Save exact final synthetic Practice crops on review branch
+        if: always() && github.ref == 'refs/heads/codex/practice-readiness-release-20261102' && steps.practice_privacy.outcome == 'success'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: synthetic-practice-final-${{ github.run_id }}
+          retention-days: 1
+          if-no-files-found: ignore
+          path: |
+            evidence/practice-readiness/chromium-390-candidate-group.png
+            evidence/practice-readiness/chromium-390-candidate-target.png
+            evidence/practice-readiness/chromium-390-candidate-result.png
+            evidence/practice-readiness/chromium-390-single-unavailable.png
+            evidence/practice-readiness/chromium-390-player.png
+            evidence/practice-readiness/webkit-390-candidate-group.png
+            evidence/practice-readiness/webkit-390-candidate-target.png
+            evidence/practice-readiness/webkit-390-candidate-result.png
+            evidence/practice-readiness/webkit-390-single-unavailable.png
+            evidence/practice-readiness/webkit-390-player.png
+      - name: Validate exact synthetic repeat controls on review branch
+        id: repeat_privacy
+        if: always() && github.ref == 'refs/heads/codex/player-repeat-release-20261102'
+        run: |
+          node <<'NODE'
+          const fs=require('node:fs');let count=0;
+          for(const engine of ['chromium','webkit'])for(const mode of ['off','all','one']){
+            const file=`evidence/player-repeat/${engine}-390-${mode}-controls.png`;
+            if(!fs.existsSync(file))continue;const b=fs.readFileSync(file);
+            if(!b.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10]))||b.readUInt32BE(16)>1000||b.readUInt32BE(20)>250)throw Error('Unexpected synthetic control crop: '+file);count++;
+          }
+          console.log('Checked '+count+' exact synthetic repeat control crops; no account or textbook data.');
+          NODE
+      - name: Save exact synthetic repeat controls on review branch
+        if: always() && github.ref == 'refs/heads/codex/player-repeat-release-20261102' && steps.repeat_privacy.outcome == 'success'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: synthetic-player-repeat-${{ github.run_id }}
+          retention-days: 1
+          if-no-files-found: ignore
+          path: |
+            evidence/player-repeat/chromium-390-off-controls.png
+            evidence/player-repeat/chromium-390-all-controls.png
+            evidence/player-repeat/chromium-390-one-controls.png
+            evidence/player-repeat/webkit-390-off-controls.png
+            evidence/player-repeat/webkit-390-all-controls.png
+            evidence/player-repeat/webkit-390-one-controls.png
+
+  header-parent-readability:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NODE_PATH: ${{ github.workspace }}/.ci-tools/node_modules
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: .ci-tools/package-lock.json
+      - run: npm ci --prefix .ci-tools --no-fund
+      - run: ln -s .ci-tools .test-tools
+      - run: node scripts/test-header-parent-navigation.cjs
+      - run: .ci-tools/node_modules/.bin/playwright install --with-deps chromium webkit
+      - name: Verify readable chrome and current-view parent lifetimes independently
+        run: |
+          set -uo pipefail
+          set +e
+          node scripts/qa-header-readability-matrix.cjs
+          typography=$?
+          node scripts/qa-header-parent-navigation.cjs
+          navigation=$?
+          echo "Typography exit=$typography; parent navigation exit=$navigation"
+          test "$typography" -eq 0 && test "$navigation" -eq 0
+      - name: Validate exact synthetic header frames on final review branch
+        id: header_privacy
+        if: always() && github.ref == 'refs/heads/codex/header-parent-readability-release-20261102'
+        run: |
+          node <<'NODE'
+          const fs=require('node:fs');let count=0;
+          const files=["evidence/header-readability-matrix/chromium-320-normal.png","evidence/header-readability-matrix/chromium-320-large-header.png","evidence/header-readability-matrix/chromium-355-normal.png","evidence/header-readability-matrix/chromium-355-large-header.png","evidence/header-readability-matrix/chromium-390-normal.png","evidence/header-readability-matrix/chromium-390-large-header.png","evidence/header-readability-matrix/chromium-1024-normal.png","evidence/header-readability-matrix/chromium-1024-large-header.png","evidence/header-readability-matrix/webkit-320-normal.png","evidence/header-readability-matrix/webkit-320-large-header.png","evidence/header-readability-matrix/webkit-355-normal.png","evidence/header-readability-matrix/webkit-355-large-header.png","evidence/header-readability-matrix/webkit-390-normal.png","evidence/header-readability-matrix/webkit-390-large-header.png","evidence/header-readability-matrix/webkit-1024-normal.png","evidence/header-readability-matrix/webkit-1024-large-header.png","evidence/header-readability-matrix/chromium-390-focus-header.png","evidence/header-readability-matrix/webkit-390-focus-header.png"];
+          for(const file of files){if(!fs.existsSync(file))continue;const b=fs.readFileSync(file);if(!b.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10]))||b.readUInt32BE(16)>2300||b.readUInt32BE(20)>2200)throw Error('Unexpected synthetic header frame: '+file);count++;}
+          console.log('Checked '+count+' exact synthetic frames; no actual profile/learner data.');
+          NODE
+      - name: Save exact synthetic header frames
+        if: always() && github.ref == 'refs/heads/codex/header-parent-readability-release-20261102' && steps.header_privacy.outcome == 'success'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: synthetic-header-parent-${{ github.run_id }}
+          retention-days: 1
+          if-no-files-found: ignore
+          path: |
+            evidence/header-readability-matrix/chromium-320-normal.png
+            evidence/header-readability-matrix/chromium-320-large-header.png
+            evidence/header-readability-matrix/chromium-355-normal.png
+            evidence/header-readability-matrix/chromium-355-large-header.png
+            evidence/header-readability-matrix/chromium-390-normal.png
+            evidence/header-readability-matrix/chromium-390-large-header.png
+            evidence/header-readability-matrix/chromium-1024-normal.png
+            evidence/header-readability-matrix/chromium-1024-large-header.png
+            evidence/header-readability-matrix/webkit-320-normal.png
+            evidence/header-readability-matrix/webkit-320-large-header.png
+            evidence/header-readability-matrix/webkit-355-normal.png
+            evidence/header-readability-matrix/webkit-355-large-header.png
+            evidence/header-readability-matrix/webkit-390-normal.png
+            evidence/header-readability-matrix/webkit-390-large-header.png
+            evidence/header-readability-matrix/webkit-1024-normal.png
+            evidence/header-readability-matrix/webkit-1024-large-header.png
+            evidence/header-readability-matrix/chromium-390-focus-header.png
+            evidence/header-readability-matrix/webkit-390-focus-header.png
+            evidence/header-readability-matrix/result.json
+            evidence/header-parent-navigation/result.json

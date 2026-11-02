@@ -1,0 +1,46 @@
+{
+  "repository": "blockmonkey1992/hanq",
+  "purpose": "Exact public frontend source baselines for unchanged regression assertions; no original Git history",
+  "files": [
+    {
+      "sourceCommit": "ca0113e84ba0bcb7b1d223ec3d7636589592339c",
+      "sourcePath": "index.html",
+      "fixture": "ca0113e84ba0bcb7b1d223ec3d7636589592339c/index.html",
+      "gitBlob": "f130cc149b7ce84a6c00520cbff9a9a2af69891c",
+      "sha256": "7c84d2cc6ba96678d0467e22298de746e8c2a7ee39747484950b623209f53dcf",
+      "bytes": 702201
+    },
+    {
+      "sourceCommit": "ca0113e84ba0bcb7b1d223ec3d7636589592339c",
+      "sourcePath": "media/device-shell.js",
+      "fixture": "ca0113e84ba0bcb7b1d223ec3d7636589592339c/media/device-shell.js",
+      "gitBlob": "a1d73f5e78b9a0136535e6d4e8abdcb98794ebc7",
+      "sha256": "9f9e2eb598b5b1668d7c42e4e3183a0fda4ab7620f2fafad062e593f7a80444a",
+      "bytes": 7106
+    },
+    {
+      "sourceCommit": "ca0113e84ba0bcb7b1d223ec3d7636589592339c",
+      "sourcePath": "media/device-shell.css",
+      "fixture": "ca0113e84ba0bcb7b1d223ec3d7636589592339c/media/device-shell.css",
+      "gitBlob": "a3c1a39fea953f25c068cdba29b99e33e76d0047",
+      "sha256": "e9d39f430a8b637274731d13eb2808a07e42b0d4d0bd0b09326dc4efd7481fda",
+      "bytes": 23854
+    },
+    {
+      "sourceCommit": "51c1c098a07c4c22a8cfc0694d978bdfb6a03830",
+      "sourcePath": "media/toeic-grammar-data.js",
+      "fixture": "51c1c098a07c4c22a8cfc0694d978bdfb6a03830/media/toeic-grammar-data.js",
+      "gitBlob": "1708a039d1bdb80369c4ae0f76fb678dac925501",
+      "sha256": "4723deb8730396626fc6877f262d9a74755ad09fe466e375a4f0f5141876e527",
+      "bytes": 445001
+    },
+    {
+      "sourceCommit": "35b5ce95a2caae9cad321092ba26c8993dbd0937",
+      "sourcePath": "media/toeic-supplement.js",
+      "fixture": "35b5ce95a2caae9cad321092ba26c8993dbd0937/media/toeic-supplement.js",
+      "gitBlob": "b1a7a94dec98b8efde6f640d95d8491bd7ba8836",
+      "sha256": "5d6cab7caee0a8ae2c3a60dba11d09bd7bad8ace57fe51c8feecc63bf5a5af62",
+      "bytes": 17463
+    }
+  ]
+}

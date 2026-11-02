@@ -1,0 +1,149 @@
+html{--device-shell-ready:1}
+/* Second hardware pass. Keep the study DOM black, full-width and stationary. */
+html[data-hanq-theme=terminal] body{--device-shell:#b9c9c6;--device-light:#eff5ec;--device-shadow:#4c666e;--device-rubber:#172c36;--device-accent:#98d9e3}
+html[data-hanq-theme=terminal] body[data-island=history]{--device-shell:#bec9aa;--device-light:#f0f2dc;--device-shadow:#586d52;--device-accent:#c0d99a}
+html[data-hanq-theme=terminal] body .shell.digivice-v2{border:9px solid var(--device-shell)!important;border-top:11px solid var(--device-light)!important;border-radius:55px 55px 48px 48px;background:#050a08!important;box-shadow:0 0 0 3px var(--device-rubber),0 0 0 7px var(--device-shadow),inset 0 0 0 3px #213c43,0 18px 0 #10222b,0 28px 45px #0009!important;padding:12px 24px 32px;max-width:1180px}
+.shell.digivice-v2::before,.shell.digivice-v2::after{content:'';position:absolute;pointer-events:none;z-index:2;top:126px;width:7px;height:102px;border-radius:6px;background:repeating-linear-gradient(0deg,#344c55 0 9px,#c7d7cf 10px 14px);border:1px solid #10222b;transform:none}
+.shell.digivice-v2::before{left:-7px}.shell.digivice-v2::after{right:-7px}
+html body .device-crown{position:relative;display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px;margin:-3px -12px 18px;padding:8px 22px 14px;isolation:isolate;background:linear-gradient(180deg,var(--device-light),var(--device-shell) 58%,var(--device-shadow))!important;border:2px solid var(--device-rubber)!important;border-radius:35px 35px 36% 36%/25px 25px 18px 18px;box-shadow:inset 0 2px 0 #fff9,0 4px 0 #0c1f29!important;color:#152c36!important}
+html body .device-model{display:grid;grid-template-columns:10px 1fr;column-gap:9px;align-items:center;color:#142e37!important;letter-spacing:.13em;font-size:13px;line-height:1.5}
+html body .device-model>span{color:#142e37!important}.device-model>b{grid-column:2;color:#263f47!important;font-size:10px;letter-spacing:.09em}
+.device-signal{display:block;width:8px;height:8px;border-radius:50%;background:#217c5b;border:1px solid #103329;box-shadow:0 0 0 3px #6c9c88,inset 0 1px 2px #e9fff0!important}
+.device-speaker{display:flex;gap:5px;transform:rotate(-10deg)}.device-speaker i{display:block;width:4px;height:24px;border-radius:4px;background:#29444d;box-shadow:1px 1px 0 #eff4e7!important}
+.device-shoulder{position:absolute;top:13px;width:11px;height:11px;border-radius:50%;background:linear-gradient(135deg,#f5f6de,#849b9d);border:1px solid #314951;box-shadow:inset 0 1px 2px #fff8!important}.device-shoulder::after{content:'';position:absolute;inset:4px 2px;border-top:1px solid #314951;transform:rotate(-35deg)}.device-shoulder-left{left:5px}.device-shoulder-right{right:5px}
+html body .digivice-v2>.topline{padding:10px 0 16px;margin-bottom:18px;border-bottom:3px double #557778}
+html body .digivice-v2 :is(#homeBrand,#headerAccount,#headerLogout,.hero-start,.tool-btn,.tg-contents button,.tg-drill-navigation button){border-radius:12px!important;border:1px solid #70918a!important;box-shadow:inset 0 1px 0 #b7d0c333,0 3px 0 #233c3a!important;transition:transform 120ms ease,box-shadow 120ms ease!important}
+html body .digivice-v2 :is(#homeBrand,#headerAccount,#headerLogout,.hero-start,.tool-btn,.tg-contents button,.tg-drill-navigation button):active{transform:translateY(2px);box-shadow:inset 0 1px 2px #0006,0 1px 0 #233c3a!important}
+html body .device-boot .device-signal{animation:devicePowerReady 600ms ease-out both!important}@keyframes devicePowerReady{0%{opacity:.25}65%{opacity:1}100%{opacity:1}}
+/* Fixed navigation is the device's thumb controls, never inside a transformed root. */
+@media(max-width:700px),(max-width:1000px) and (pointer:coarse){
+html[data-hanq-theme=terminal] body.study-global-footer .shell.digivice-v2{width:100%;max-width:none;margin:0;border-width:3px!important;border-top-width:7px!important;border-radius:26px 26px 0 0;padding:calc(8px + env(safe-area-inset-top,0px)) max(11px,env(safe-area-inset-right,0px)) 24px max(11px,env(safe-area-inset-left,0px));box-shadow:inset 0 0 0 2px #1e3c42!important;min-height:calc(var(--study-viewport-height,100dvh) - var(--study-footer-height,80px))}
+html body .device-crown{min-height:57px;margin:-5px -8px 12px;padding:7px 18px 11px;border-radius:20px 20px 33% 33%/15px 15px 13px 13px;gap:12px}.device-model{font-size:11px!important;letter-spacing:.1em!important}.device-speaker{gap:4px}.device-speaker i{height:20px;width:3px}
+.shell.digivice-v2::before,.shell.digivice-v2::after{top:115px;width:3px;height:78px;border:0}.shell.digivice-v2::before{left:0}.shell.digivice-v2::after{right:0}
+html body.study-global-footer :is(.world-global-nav,.toeic-sections){border:0!important;border-top:6px solid var(--device-shell)!important;border-radius:20px 20px 0 0!important;background:#172c30!important;box-shadow:0 -2px 0 #4f6f72,inset 0 2px 1px #fff5!important;padding-top:5px!important;padding-bottom:calc(5px + env(safe-area-inset-bottom,0px))!important}
+html body.study-global-footer :is(.world-global-nav a,.toeic-sections button){border:1px solid #708d83!important;border-radius:15px 15px 20px 20px!important;box-shadow:inset 0 2px 0 #b2cec42b,0 3px 0 #071913!important;background:#091a16!important;margin:0 2px!important;min-height:54px!important}
+html body.study-global-footer :is(.world-global-nav a[aria-current=page],.toeic-sections button[aria-current=page]){background:#193d2c!important;border-color:#9ce3b6!important;box-shadow:inset 0 3px 0 #86dca9,0 3px 0 #071913!important}
+}
+@media(max-height:500px) and (orientation:landscape) and (max-width:1000px){html body .device-crown{min-height:34px;padding-block:3px;margin-bottom:7px}.device-model>b{display:none}.device-speaker i{height:15px}.shell.digivice-v2::before,.shell.digivice-v2::after{display:none}html body .digivice-v2>.topline{margin-bottom:7px;padding:0 0 5px}}
+@media(prefers-reduced-motion:reduce){html body .device-boot .device-signal{animation:none!important}html body .digivice-v2 :is(button,a){transition:none!important}}
+html body .device-crown .device-model>b{color:#263f47!important}
+@media(max-height:500px) and (orientation:landscape) and (max-width:1000px){
+html body .digivice-v2 .world-atlas{min-height:112px;height:clamp(112px,calc(100svh - var(--study-footer-height,80px) - 145px),190px)}
+html body .digivice-v2 .world-history-base{min-height:160px!important;padding:8px 12px!important}
+html body .digivice-v2 .world-history-base h1{font-size:20px!important;line-height:1.2!important;margin:4px 0 10px!important}
+html body .digivice-v2 .world-history-base .hero-stamp{font-size:11px;padding:3px 7px}
+}
+@media(max-height:340px) and (orientation:landscape) and (max-width:1000px){html body .digivice-v2 .world-history-base .hero-stamp{display:none}}
+
+@media(max-width:700px) and (orientation:portrait){html body .digivice-v2 .world-atlas{min-height:300px;height:clamp(300px,calc(100svh - var(--study-footer-height,80px) - 310px),470px)}}
+@media(max-width:700px),(max-width:1000px) and (pointer:coarse){
+html body .digivice-v2:has(.toeic-menu) .device-crown{min-height:34px;padding-block:4px;margin-bottom:8px}
+html body .digivice-v2:has(.toeic-menu) .device-model>b{display:none}
+html body .digivice-v2:has(.toeic-menu) .device-speaker i{height:16px}
+html body .digivice-v2:has(.toeic-menu)>.topline{padding-block:5px;margin-bottom:12px}
+}
+html body .world-journey .adventure-device{border-color:var(--device-shell)!important;border-style:solid!important;border-radius:34px!important;background:#050a08!important;box-shadow:0 0 0 3px var(--device-rubber),0 0 0 6px var(--device-shadow),inset 0 2px 0 #eef4e755,0 20px 70px #0008!important}
+html body .world-journey .adventure-device::before{border-color:var(--device-accent)!important;border-radius:22px}
+.device-crown{pointer-events:none}
+
+/* Quiet installation help belongs inside the device screen. */
+html body .device-install-tip{margin:20px 0 0;padding:10px 0 0;border-top:1px solid #344b43;color:#bdcec6;font-size:14px;line-height:1.65;overflow-wrap:anywhere}
+html body .device-install-tip>summary{min-height:44px;padding:10px 0;cursor:pointer;font-size:14px;color:#bdcec6}
+html body .device-install-tip>p{margin:5px 0 8px;font-size:14px;line-height:1.65;color:#bdcec6}
+/* One visible device, one primary reading scroll area. No nested card scroll. */
+@media(min-width:1px){html body.study-global-footer .shell.digivice-v2{display:flex;flex-direction:column;height:calc(var(--study-viewport-height,100dvh) - 94px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));max-height:1000px;min-height:260px;margin-block:6px!important;overflow:hidden;padding-bottom:12px!important}body.study-global-footer .device-crown,body.study-global-footer .digivice-v2>.topline{flex-shrink:0}body.study-global-footer .device-content{min-height:0;flex:1 1 auto;overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:contain;scrollbar-width:thin;scrollbar-color:#76b794 #0d201a;border-block:1px solid #3a5f4b;padding:10px 2px 16px;scroll-padding-block:12px}body.study-global-footer .device-content:focus-visible{outline:2px solid #8be8b1;outline-offset:-2px}body.study-global-footer .device-install-tip{flex-shrink:0;margin-top:5px;padding-top:0}body.study-global-footer .device-install-tip[open]{max-height:28dvh;overflow-y:auto}body.study-global-footer .device-install-tip>summary{padding:6px 0;min-height:36px}body.study-global-footer .digivice-v2>.topline{margin-bottom:8px!important;padding-bottom:8px!important}}
+@media(max-width:700px){html body.study-global-footer .device-crown{min-height:34px;margin-bottom:4px!important}body.study-global-footer .topline{gap:6px!important}body.study-global-footer .header-member{font-size:12px!important}}
+@media(min-width:701px) and (hover:hover) and (pointer:fine){html body.study-global-footer .shell.digivice-v2{height:calc(var(--study-viewport-height,100dvh) - 28px);margin-inline:auto!important}body.study-global-footer .device-content{padding-inline:12px}}
+@media(max-height:500px){html body.study-global-footer .device-crown{display:none}body.study-global-footer .digivice-v2>.topline{padding-block:3px!important}.world-location{display:none!important}}
+
+body.study-global-footer{height:100dvh;overflow:hidden!important;padding-bottom:0!important}.device-content>.subject-menu{max-width:none!important}.device-content .toeic-menu{padding:0!important}
+html body.study-global-footer .shell.digivice-v2{box-sizing:border-box!important}
+html[data-hanq-theme=terminal] body.study-global-footer .shell.digivice-v2{min-height:0!important}
+
+body.study-global-footer{position:fixed;inset:0;width:100%}.device-content .subject-menu>h1{margin-top:0!important}.device-content #accountHost>h1{font-size:22px!important;margin:6px 0!important}
+html body.study-global-footer .shell.digivice-v2{overflow:clip!important}.device-content::before{content:none;display:none}
+
+@media(max-height:500px){.lc-mini-player{display:flex;align-items:center;gap:8px}.lc-mini-title{flex:1;min-width:0}.lc-mini-player>div{flex-shrink:0}.lc-mini-player button,.lc-mini-player a{padding-inline:7px}}
+body.study-keyboard .shell.digivice-v2{height:calc(var(--study-viewport-height,100dvh) - 16px)!important}body.study-keyboard .device-crown{display:none!important}
+@media(max-width:700px),(max-width:1000px) and (pointer:coarse){html body.study-global-footer .shell.digivice-v2{border-radius:26px!important}}
+body.study-global-footer .device-install-tip>summary{min-height:44px}.lc-mini-player button,.lc-mini-player a{min-height:44px}
+/* Preserve the screen for study; account details remain in My and its accessible name. */
+@media(max-width:700px),(max-width:1000px) and (pointer:coarse){html body.study-global-footer .digivice-v2>.topline{flex-wrap:nowrap!important;align-items:center;gap:6px!important;padding-block:3px!important;margin-bottom:5px!important}html body.study-global-footer .topline .header-menu{flex-wrap:nowrap;gap:5px}html body.study-global-footer .topline .hm-text,html body.study-global-footer .topline>.world-location{display:none!important}html body.study-global-footer .topline .header-member.is-member{width:44px;min-width:44px;padding:4px!important;justify-content:center}html body.study-global-footer .topline .hm-pic{width:32px;height:32px}html body.study-global-footer .topline .brand{min-height:44px;padding:6px 8px}html body.study-global-footer .device-content:has(.toeic-travel-map)::before{margin-bottom:2px}}
+.device-content .toeic-menu:not(:has(.toeic-travel-map))>h1{display:none}
+html body .device-content .toeic-menu:not(:has(.toeic-travel-map))>h1{display:none!important}
+html body .device-content .toeic-menu:not(:has(.toeic-travel-map))>.world-island-banner{display:none!important}
+
+/* Current island belongs to the hardware title, away from the action row. */
+html body .device-crown{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:10px}
+html body .device-model{grid-column:1;justify-self:start;min-width:0}
+html body .device-version{font-size:.85em;letter-spacing:0;white-space:nowrap;color:#263f47!important}
+html body .device-credit{grid-column:3;grid-row:1;justify-self:end;max-width:160px;color:#263f47;font-size:10px;line-height:1.25;text-align:right;overflow-wrap:normal}
+html body .device-place{grid-column:2;grid-row:1;justify-self:center;color:#142e37!important;font-family:inherit;font-size:15px;font-weight:700;line-height:1.5;letter-spacing:.08em;white-space:nowrap;text-align:center}
+html body .device-place[hidden]{display:none}
+html body .device-speaker{grid-column:3;grid-row:1;justify-self:end}
+html body[data-island=toeic] .toeic-menu>h1,html body[data-island=history] .history-map-title{display:none!important}
+html body .digivice-v2>.topline :is(#homeBrand,#headerLogout){display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;font-family:inherit!important;font-size:13px!important;font-weight:700!important;line-height:1.4!important;min-height:44px!important;height:44px;margin:0!important;padding:8px 10px!important;white-space:nowrap}
+html body .digivice-v2>.topline #homeBrand>span{font:inherit!important;line-height:inherit!important}
+@media(max-width:450px){html body .device-crown{gap:6px;padding-inline:12px}html body .device-model{font-size:10px;letter-spacing:.06em;column-gap:5px}html body .device-model>b{font-size:8px}html body .device-place{font-size:12px;letter-spacing:.04em}html body .device-speaker{gap:3px}html body .device-speaker i{width:3px}html body .digivice-v2>.topline :is(#homeBrand,#headerLogout){font-size:12px!important;padding-inline:8px!important}}
+@media(max-width:600px){html body .device-crown{grid-template-columns:minmax(0,1fr) minmax(0,1fr);row-gap:2px}html body .device-place{grid-column:1 / -1;grid-row:2}html body .device-credit{grid-column:2;font-size:9px;max-width:140px}}
+/* A small consistent gutter separates neighbouring touch targets. */
+html body .world-global-nav,html body .toeic-sections{gap:6px!important;padding-inline:8px!important}
+html body .world-global-nav a,html body .toeic-sections button{margin-inline:0!important}
+html body .digivice-v2>.topline .header-menu,html body.study-global-footer .digivice-v2>.topline .header-menu{gap:8px!important}
+
+/* A single unbroken copyright line; compact screens give it its own full-width row. */
+html body .device-credit{white-space:nowrap;max-width:none;font-size:9px;line-height:1.2}
+@media(max-width:600px){html body .device-crown{grid-template-columns:minmax(0,1fr) auto;column-gap:8px;row-gap:2px;padding-block:5px;min-height:34px}html body .device-model{grid-column:1;grid-row:1}html body .device-place{grid-column:2;grid-row:1}html body .device-credit{grid-column:1 / -1;grid-row:2;justify-self:end;white-space:nowrap;max-width:none;font-size:8px!important;line-height:1.2}}
+/* Account total stays visible at 320px. Decorative stage/tier remain in the accessible name. */
+html body #app>.topline{display:grid!important;grid-template-columns:auto minmax(0,1fr);gap:8px!important;padding-block:6px!important;margin-bottom:6px!important}
+html body #app>.topline .header-menu{display:flex;width:100%;min-width:0;margin-left:0!important}
+html body #app>.topline .header-menu #headerAccount{flex:1 1 auto;min-width:0;max-width:100%;width:100%}
+html body #app>.topline .header-menu #headerAccount.is-member{display:flex!important;gap:6px;padding:4px 8px!important;white-space:normal}
+html body #app>.topline .header-menu #headerAccount .hm-text{display:flex!important;flex-direction:column;flex:1;min-width:0;overflow:visible;max-width:100%}
+html body #app>.topline .header-menu #headerAccount .hm-name{max-width:100%;font-size:12px!important;line-height:1.25}
+html body #app>.topline .header-menu #headerAccount .hm-meta{display:flex;min-width:0;max-width:100%;line-height:1.35}
+html body #app>.topline .header-menu #headerAccount .hm-pts{display:block!important;visibility:visible!important;font-size:clamp(9px,2.7vw,12px)!important;line-height:1.35!important;white-space:normal;overflow:visible;font-variant-numeric:tabular-nums}
+html body #app>.topline .header-menu #headerAccount :is(.hm-stage,.hm-tier){display:none!important}
+
+/* Compact chrome keeps the study/map itself large. XP remains one readable line. */
+html body #app>.device-crown{min-height:34px;padding-block:4px;margin-bottom:6px}
+html body #app>.topline .header-menu{justify-content:flex-end}
+html body #app>.topline .header-menu #headerAccount{flex:0 1 auto;width:auto;max-width:100%;min-height:44px;height:44px;padding:4px 8px!important}
+html body #app>.topline .header-menu #headerAccount .hm-name{display:block!important;max-width:128px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+html body #app>.topline .header-menu #headerAccount .hm-pic{flex:none;width:24px;height:24px}
+html body #app>.topline .header-menu #headerAccount .hm-text{flex:0 1 auto;flex-direction:column}
+html body #app>.topline .header-menu #headerAccount .hm-meta{align-items:center}
+html body #app>.topline .header-menu #headerAccount .hm-pts{display:inline-flex!important;align-items:baseline;gap:3px;white-space:nowrap!important;font-size:clamp(9px,2.5vw,12px)!important}
+html body #app>.topline .header-menu #headerAccount .hm-total{color:#f1d46c!important}
+
+html body #app>.topline .header-menu #headerAccount .hm-pts{font-size:12px!important}
+html body #app>.topline .header-menu #headerAccount .hm-pts.is-wide{font-size:9px!important}
+
+/* Equal side tracks keep FILE ISLAND at the hardware centre, independently of
+   the real profile width. Only genuinely constrained bars move the profile down. */
+html body #app.digivice-v2>.topline.device-crown{position:relative;display:grid!important;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)!important;align-items:center;gap:4px!important;box-sizing:border-box;min-height:56px;height:auto;max-width:none;width:auto;grid-column:1;grid-row:1;justify-self:stretch;align-self:stretch;margin:-3px -12px 6px!important;padding:4px 10px 12px!important;border:2px solid var(--device-rubber)!important;border-radius:18px 18px 8px 8px!important;pointer-events:auto}
+html body #app.digivice-v2>.topline.device-crown .device-model{grid-column:2;grid-row:1;justify-self:center;grid-template-columns:14px max-content;column-gap:4px;min-width:max-content;font-size:10px!important;letter-spacing:0!important;line-height:1.25;text-align:center;pointer-events:none}
+html body #app.digivice-v2>.topline.device-crown .device-version{display:block;font-size:8px;line-height:1.25}
+html body #app.digivice-v2>.topline.device-crown .device-signal{display:block;width:14px;height:14px;border:0;border-radius:0;background:none;box-shadow:none!important;animation:none!important}
+html body #app.digivice-v2>.topline.device-crown .device-signal svg{display:block;width:100%;height:100%;shape-rendering:crispEdges}
+html body #app.digivice-v2>.topline.device-crown .device-place{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+html body #app.digivice-v2>.topline.device-crown .device-credit{position:absolute;grid-column:auto;grid-row:auto;bottom:2px;right:10px;font-size:7px!important;line-height:1;pointer-events:none}
+html body #app.digivice-v2>.topline.device-crown #homeBrand{position:relative;grid-column:1;grid-row:1;justify-self:start;display:inline-flex;gap:4px;min-width:44px;min-height:36px!important;height:36px;padding:4px 6px!important;font-size:11px!important;border-radius:6px!important;clip-path:none!important}
+html body #app.digivice-v2>.topline.device-crown #homeBrand .device-back-icon{width:12px;height:12px;flex:none;pointer-events:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter}
+html body #app.digivice-v2>.topline.device-crown .header-menu{grid-column:3;grid-row:1;justify-self:end;width:max-content;min-width:0;margin:0!important;justify-content:flex-end}
+html body #app.digivice-v2>.topline.device-crown .header-menu #headerAccount{position:relative;display:flex!important;flex:none;min-height:36px!important;height:36px!important;min-width:44px;width:max-content;max-width:none;gap:4px;padding:3px 5px!important;overflow:visible}
+/* Background alpha only. Small text stays fully opaque and exceeds 4.5:1 even
+   over the lightest metal highlight (ivory and account-total gold). */
+html body #app.digivice-v2>.topline.device-crown :is(#homeBrand,#headerAccount){background:linear-gradient(180deg,#ffffff05,#00000014),rgba(23,54,64,.84)!important;color:#eef4e9!important;border:1px solid #91aaa7!important;border-radius:6px!important;clip-path:none!important;box-shadow:inset 0 1px 0 #eef4e938,inset 0 -1px 0 #10252d66,0 1px 2px #10222b55!important;text-shadow:0 1px 0 #0b202755!important;opacity:1!important}
+html body #app.digivice-v2>.topline.device-crown :is(#homeBrand,#headerAccount)::before{content:'';position:absolute;inset:-4px 0;pointer-events:auto;background:transparent!important;border:0!important;box-shadow:none!important;transform:none!important;clip-path:none!important}
+html body #app.digivice-v2>.topline.device-crown :is(#homeBrand,#headerAccount):hover{filter:brightness(1.08)}
+html body #app.digivice-v2>.topline.device-crown :is(#homeBrand,#headerAccount):active{background:rgba(15,40,48,.94)!important;box-shadow:inset 0 1px 3px #081c2b99!important;filter:none}
+html body #app.digivice-v2>.topline.device-crown :is(#homeBrand,#headerAccount):focus-visible{outline:2px solid #eef4e9!important;outline-offset:2px!important}
+html body #app.digivice-v2>.topline.device-crown #headerAccount .hm-pic{display:grid!important;flex:none;width:26px;height:26px;border-radius:4px;pointer-events:none}
+html body #app.digivice-v2>.topline.device-crown #headerAccount .hm-pic :is(.collection-portrait,.hanq-mascot,.hanq-growth-portrait){--mascot-size:26px;width:26px;height:26px}
+html body #app.digivice-v2>.topline.device-crown #headerAccount .hm-text{display:flex!important;flex-direction:column;flex:0 1 auto;min-width:0;pointer-events:none}
+html body #app.digivice-v2>.topline.device-crown #headerAccount .hm-name{font-size:11px!important;line-height:1.15;max-width:96px}
+html body #app.digivice-v2>.topline.device-crown #headerAccount :is(.hm-pts,.hm-pts.is-wide){font-family:inherit!important;font-size:11px!important;line-height:1.2!important}
+html body #app.digivice-v2>.topline.device-crown.device-crown-stacked .header-menu{grid-column:1 / -1;grid-row:2;justify-self:end}
+@media(max-width:600px){html body #app.digivice-v2>.topline.device-crown{margin:-3px -6px 6px!important;padding-inline:8px!important}html body #app.digivice-v2>.topline.device-crown .device-model{font-size:9px!important}}
+@media(max-height:500px){html body #app.digivice-v2>.topline.device-crown{min-height:48px;padding-block:2px 8px!important}html body #app.digivice-v2>.topline.device-crown .device-credit{font-size:6px!important;bottom:1px}}

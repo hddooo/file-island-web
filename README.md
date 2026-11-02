@@ -10,7 +10,7 @@
 
 초기 snapshot은 0.2.8-beta입니다. `prep/windows-fe-029`에서 원본 `cfc9892a2a180a33b177a8689bcdfa8f0b5607f7`의 0.2.9-beta delta를 새 저장소에 동기화합니다. 운영 연결은 아직 변경하지 않았습니다.
 
-코드 스냅샷 이관 단계이며 운영 전환·배포 연결·Secrets 등록은 진행하지 않았습니다. 원본 workflow는 `.github/workflows-held/*.disabled`에 보존하여 이관 push로 실행되지 않게 했습니다.
+운영 전환·배포 연결·Secrets 등록은 진행하지 않았습니다. 테스트 전용 CI는 `.github/workflows/ci.yml`에서 GitHub-hosted runner와 `contents: read`만 사용합니다. 원본 workflow는 `.github/workflows-held/*.disabled`에 보존하고 나머지 두 시각 검토 workflow는 계속 비활성입니다.
 
 검증 범위는 [이관 기록](docs/repository-migration.md), 서버 비밀값과 전환 순서는 [API 설정 계획](https://github.com/hddooo/file-island-api/blob/main/docs/secrets-plan.md)을 확인하세요.
 

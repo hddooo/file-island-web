@@ -33,3 +33,11 @@
 로컬 branch: `prep/windows-fe-029`, 원격 기준: `e4f81da41b00376d5d96dc16c75716ffc7a23802`. 원본 `93190fae4656dad5a2337c9a1173c3a7107d339c` → `cfc9892a2a180a33b177a8689bcdfa8f0b5607f7`의 17개 파일 delta를 대조했습니다. 16개 일반 소스/QA/문서 파일은 patch로 반영했고, 나머지 원본 `.github/workflows/ci.yml`은 `.github/workflows-held/ci.yml.disabled`에만 반영했습니다. README의 새 저장소 이관 안내는 보존했습니다. 활성 workflow는 만들지 않았습니다.
 
 기존 dev/Vercel 0.2.9 배포와 HTML/19개 자산 검증 완료는 FE 담당이 전달한 상태이며 이 작업이 다시 배포하거나 검증한 결과가 아닙니다. 사전 전체 CI 41423020199 SUCCESS 및 postpush 41425999577 추적도 FE 담당 범위입니다. 이 변경은 새 저장소의 소스 동기화이며 CI 실행·운영 반영은 별도입니다. 원본17파일의 내용 대조, 변경 JavaScript 구문, diff 검사는 통과했고 Windows에서 unit/브라우저 QA를 다시 실행하지 않았습니다. 새 저장소의 빌드 SHA는 원본 SHA와 달라지므로 전환 후 app-version과 자산 해시는 새 commit 기준으로 재검증해야 합니다.
+
+## 새 저장소의 테스트 CI 활성화 (2026-11-02)
+
+held `ci.yml.disabled`를 활성 `.github/workflows/ci.yml`로 그대로 복사합니다. 기존4개 job과68개 직접 호출 스크립트, Chromium/WebKit 회귀 범위를 유지합니다. push/PR/수동 trigger는 원본과 같아 main에 별도 branch 치환이 필요하지 않습니다. 리뷰 branch 전용 합성 artifact 조건도 유지합니다. 배포 단계·Secrets 참조·Vercel 연결·self-hosted runner가 없고 GitHub 권한은 `contents: read`입니다. 활성화 commit의 실제 run 성공은 별도로 확인해야 하며 이 문서가 성공을 선언하지 않습니다.
+
+snapshot 이관에는 원본 history가 없어 기존 테스트3개가 참조하던 과거 commit을 새 CI에서 읽을 수 없었습니다. 공개 프런트 기준 파일5개만 `test/fixtures/regression-baselines/`에 원본 바이트 그대로 보존하고 Git blob ID와 SHA256을 manifest에 기록합니다. 공통 reader가 두 hash를 검증한 뒤 기존 assertion에 같은 bytes를 전달합니다. 원본 Git history·비공개 교재·인증 fixture는 추가하지 않았고 assertion·검사 범위를 줄이지 않았습니다. `.vercelignore`에 `test/`를 추가하여 baseline fixture를 웹 배포에서 제외합니다.
+
+원본 baseline: header `ca0113e84ba0bcb7b1d223ec3d7636589592339c`의 index/device-shell JS·CSS, grammar `51c1c098a07c4c22a8cfc0694d978bdfb6a03830`의 grammar data, vocabulary `35b5ce95a2caae9cad321092ba26c8993dbd0937`의 supplement입니다. 사용자 화면 소스·API 계약·RELEASE_VERSION은 이번 CI 준비에서 변경하지 않습니다.
