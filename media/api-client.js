@@ -377,6 +377,7 @@
          실패해도 로그인(토큰·사용자)은 그대로 두고, 믿을 수 없는 성장·출석 값만 지운다(0으로 꾸미지 않음).
          늦게 온 결과는 이 호출이 가장 최근 me()이고 같은 로그인(authEpoch)·같은 계정일 때만 상태를 바꾼다 */
       hallOwnLearning:function(){return call('GET','/api/v1/hall-of-fame/my-learning');},
+      hallPublicProfile:function(ref){if(!/^[a-f0-9]{32}$/.test(ref))return Promise.reject(new Error('invalid profile'));return call('GET','/api/v1/hall-of-fame/profiles/'+ref);},
       hallOfFame: function(page,limit){return call('GET','/api/v1/hall-of-fame'+q({page:page||1,limit:limit||20}));},
       me: function () {
         if(profileSuspended)return Promise.reject(ApiError(0,'aborted'));

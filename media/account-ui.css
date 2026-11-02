@@ -298,3 +298,20 @@ html body .world-integrated-scene>.scene-atmosphere{z-index:0;bottom:auto;height
 html body .world-integrated-scene>:not(.scene-atmosphere){position:relative;z-index:1}
 @media(max-width:520px){html body #app .ac-me .ac-hero.ac-sanctuary{grid-template-columns:100px minmax(0,1fr);gap:10px 12px;padding:16px 12px!important;min-height:260px}html body #app .ac-me .ac-sanctuary>.ac-hero-name{font-size:20px!important}html body #app .ac-me .ac-sanctuary .ac-pet :is(.hanq-mascot,.hanq-growth-portrait){--mascot-size:100px!important}html body #app .ac-me .ac-sanctuary .ac-pet .collection-life,html body #app .ac-me .ac-sanctuary .ac-pet .collection-life:has(.cm-blob),html body #app .ac-me .ac-sanctuary .ac-pet .collection-portrait{width:100px;height:100px}html body #app .ac-me .ac-sanctuary .ac-growth-next{font-size:15px!important}html body #app .ac-me .ac-sanctuary .ac-progress-label{font-size:10px!important}html body #app .ac-me .ac-sanctuary .ac-pet-hint{font-size:10px}html body #app .ac-me .ac-sanctuary .ac-collection-link{font-size:11px}}
 @media(prefers-reduced-motion:reduce){html body #app .ac-sanctuary *{transition:none!important}}
+
+/* Activity children remain grouped; dates and navigation keep their own tracks. */
+html body .ac-me .mr-list{container:mr-records / inline-size}
+html body .ac-me .mr-card .mr-row{grid-template-columns:var(--mr-columns,60px minmax(70px,1fr) 52px minmax(100px,1.2fr) 150px 12px);gap:var(--mr-gap,10px)}
+html body .ac-me .mr-card .mr-row time{grid-column:var(--mr-time-column,auto);grid-row:var(--mr-time-row,auto);white-space:normal;overflow:visible}
+html body .ac-me .mr-card .mr-row .mr-arrow{display:block;grid-column:var(--mr-arrow-column,auto);grid-row:var(--mr-arrow-row,auto)}
+html body .ac-me .mr-card .mr-row .mr-number{white-space:normal;overflow:visible;overflow-wrap:anywhere}
+html body .ac-me .mr-activity-children{list-style:none;margin:0;padding:0 0 0 var(--mr-child-indent,20px);border-top:1px solid #355347}
+html body .ac-me .mr-activity-children[hidden]{display:none}
+html body .ac-me .mr-activity-children .mr-row{background:#0c2118!important}
+/* A second date row preserves information instead of clipping the last arrow.
+   The container fallback also covers a narrow records panel on a wide screen. */
+@media(max-width:600px){html body .ac-me .mr-card{--mr-columns:48px minmax(50px,1fr) 44px minmax(60px,1fr) 12px;--mr-gap:4px;--mr-time-column:2 / -1;--mr-time-row:2;--mr-arrow-column:5;--mr-arrow-row:1;--mr-child-indent:10px}}
+@container mr-records (max-width:560px){html body .ac-me .mr-card{--mr-columns:48px minmax(50px,1fr) 44px minmax(60px,1fr) 12px;--mr-gap:4px;--mr-time-column:2 / -1;--mr-time-row:2;--mr-arrow-column:5;--mr-arrow-row:1;--mr-child-indent:10px}}
+@keyframes mr-activity-reveal{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:no-preference){html body .ac-me .mr-activity-children:not([hidden]){animation:mr-activity-reveal .22s ease-out}}
+@media(prefers-reduced-motion:no-preference){html[data-hanq-theme="terminal"] body .ac-me .mr-activity-children:not([hidden]){animation:mr-activity-reveal .22s ease-out!important}}

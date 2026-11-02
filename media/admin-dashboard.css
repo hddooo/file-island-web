@@ -5,3 +5,5 @@
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 
 .daily-scroll{max-height:475px;overflow:auto}.daily-table thead th{position:sticky;top:0;z-index:1}.stat-value{overflow-wrap:anywhere}
+.admin-xp select{display:block;width:100%;min-height:44px;max-width:100%;padding:10px 12px;border:1px solid #d4dbe6;border-radius:5px;background:white;color:var(--ink);font:inherit}
+.admin-xp select:focus-visible{outline:3px solid #3f6bdd;outline-offset:3px}
