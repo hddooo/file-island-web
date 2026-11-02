@@ -1,5 +1,37 @@
 # Private textbook extraction
 
+## 81회 대비 판본 후보 재생성
+
+새 원문은 147쪽이며 SHA256은 `d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de`다. 기존 144쪽 원문은 `35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442`로 불변 보존한다. 아래 도구는 비공개 데이터 후보만 생성하며 활성 자료·사용자 답안·XP·DB를 변경하지 않는다. 원문과 검수 입력 JSON은 Git에 포함하지 않는다.
+
+PyMuPDF 1.26.6 환경에서 새 `private-data/.../<새 SHA>` 디렉터리를 출력으로 지정한다. `--reviews`에는 원문을 직접 대조한 문항/정답 패널·도표·페이지 전사·장식 분류 기록 7개가 필요하다. 도구는 출력 디렉터리가 이미 있거나 원문 SHA가 다르면 중단한다.
+
+```sh
+python scripts/rebuild-history-revision.py \
+  --raw-root "$HISTORY_NEW_RAW" --reviews "$HISTORY_REVIEW_INPUTS" \
+  --baseline "$HISTORY_OLD_SEMANTIC" --legacy-source "$HISTORY_OLD_PDF" \
+  --output "$HISTORY_NEW_REBUILD"
+python scripts/verify-history-revision.py "$HISTORY_REVISIONS"
+python scripts/verify-history-semantic-coverage.py "$HISTORY_NEW_REVISION"
+node scripts/history-source-versions.cjs "$HISTORY_REVISIONS"
+```
+
+추출부터 다시 시작할 때는 기존 `extract_textbook.py --expected-pages 147 --scale 1.5`를 쓴다. `extract-history-question-anchors.py`와 `extract-history-answer-anchors.py`는 source SHA에 묶인 native 문자/번호 후보를 만들며, 독립적인 정답 패널 검수 없이 자동 승인하지 않는다. 재생성 출력의 raw 디렉터리는 기존 raw를 읽는 symlink다. 전달용 원본 디렉터리는 실제 파일로 유지하며 패키지 도구는 symlink를 거절한다.
+
+신규 8개 시대는 원문 PDF쪽 기준으로 선사8–15, 삼국16–30, 남북국31–40, 고려41–58, 조선59–87, 개화88–107, 일제108–125, 현대126–139다. 인물140–141·지역142–144·출처/발행145–147·앞부분1–7도 남긴다. 현재 후보는 원문 빈칸697문항/702응답칸이며 문항 ID는 새 원문 namespace를 쓴다. 원문 공백·기호·부분 주석을 기존 정답 형식에 맞추어 개작하지 않는다.
+
+원문 문자119809개와 ID, 모든 원문 페이지, 그림 bytes/soft-mask 및 문항/정답 anchor를 검사한다. 벡터 제목은 실제 path program 일치, glyph 표시 치환은 embedded font와 CMap 일치를 별도로 증명한다. 이 검사는 전체 문장의 독립 역사적 사실 확인이나 모든 표의 사람 검수 완료를 뜻하지 않는다. 본문 리플로우와 원문 전체 보기/확대를 함께 제공해야 하며 기존 승인보류 그림을 임의 활성화하지 않는다.
+
+```sh
+node scripts/qa-history-revision.cjs "$HISTORY_NEW_REVISION" "$HISTORY_READING_QA"
+node scripts/qa-history-source-quiz.cjs "$HISTORY_NEW_REVISION" "$HISTORY_QUIZ_QA" "$HISTORY_CANDIDATE_RENDERER"
+python scripts/package-history-revisions.py --revisions "$HISTORY_REVISIONS" --output "$HISTORY_PRIVATE_ARCHIVE"
+```
+
+브라우저 도구는 설치된 Playwright를 사용한다(`PLAYWRIGHT_PATH` 선택 가능). 실제 renderer/CSS를 사용하되 자료 로드는 로컬 intercept, 답안 저장은 메모리 어댑터다. 제안 renderer 경로로 실행한 결과와 실제 제품 renderer 결과를 구분한다. 320/390/1440px·낮은 가로 화면, Chromium/WebKit, 축소 모션을 대조하며 실제 기기·운영 인증·배포 검사를 대신하지 않는다. 화면 캡처는 로컬 검수 전용이다.
+
+신규 활성화 전 FE/API의 SHA별 144/147 상한·시대 범위·원문 보기와 source별 조회를 통합해야 한다. 현재 구판 풀이 목록·오답·중단 이어보기는 현재 quiz와 workspace를 함께 읽으므로 DB row만 남기는 것으로 기능이 보존되지 않는다. 구판 원문/정답/문항/workspace를 같은 source로 읽고 이어풀 수 있어야 한다. `source_version`은 원문 SHA 자체가 아니라 기존 API의 `SHA256(JSON.stringify({schema,source,items}))` 계산을 유지한다. 검토 브랜치 CI와 운영 반영은 통합 담당이 정확 SHA로 별도 확인한다.
+
 Offline only. Never copy `hanq-private-data` into a frontend public directory or deploy it. Source rights have not been cleared for publication.
 
 Reproduce from the workspace root (Python 3.12, PyMuPDF 1.26.6):
