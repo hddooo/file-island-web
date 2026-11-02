@@ -1,0 +1,10 @@
+/* Learning text follows the existing TOEIC CBT typography (toeic-notes.css / toeic-cbt.css).
+   Battle HUD, countdown, action buttons and effects keep the digital-world typeface. */
+html body .battle-island :is(.bi-question-content,.bi-review-passage,.bi-review-round .bi-item){font-family:Arial,Helvetica,FileIslandMenu,"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif!important;letter-spacing:normal;font-weight:400;line-height:1.8}
+html body .battle-island :is(.bi-question-content,.bi-review-passage,.bi-review-round .bi-item) *{font-family:inherit!important;letter-spacing:normal}
+html body .battle-island :is(.bi-passage>p,.bi-review-passage){font-size:16px;line-height:1.7;font-weight:400;overflow-wrap:anywhere}
+html body .battle-island :is(.bi-item legend,.bi-review-round .bi-item h4){font-size:20px;line-height:1.8;font-weight:800;overflow-wrap:anywhere}
+html body .battle-island .bi-question-content .bi-choice{font-size:18px;line-height:1.45;font-weight:650;min-height:44px}
+html body .battle-island .bi-review-round .bi-item>p{font-size:18px;line-height:1.45;font-weight:650}
+html body .battle-island .bi-review-round .bi-review-explanation{font-size:16px;line-height:1.7;font-weight:400}
+html body .battle-island .bi-p6-blank{font-family:inherit!important;font-weight:700}

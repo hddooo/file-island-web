@@ -1,0 +1,4514 @@
+{
+  "scope": {
+    "grammer01": 150,
+    "grammer02": 124,
+    "ETS_separate_P56": 14,
+    "paper_exam_1_P56": 16,
+    "whitedog_test1_P56": 14,
+    "totalReviewed": 318
+  },
+  "policy": "Primary tested point only. Reattempts absent. Exact normalized stem+choices duplicate excluded. Practice-bank counts are not real ETS frequency. Ambiguous source options excluded. Original wrong flags not inferred; 1회133/134/141 not resolved. Topic-level evidence ranks tables; individual row counts are not claimed. Grammar absent in this corpus remains web-supported coverage, not observed frequency.",
+  "points": [
+    {
+      "topicId": "aa-adverb-roles",
+      "uniqueQuestions": 38,
+      "references": [
+        {
+          "source": "grammer01-user-practice",
+          "number": "455",
+          "sourceIndex": 3
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "466",
+          "sourceIndex": 6
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "467",
+          "sourceIndex": 7
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "433",
+          "sourceIndex": 13
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "440",
+          "sourceIndex": 16
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "408",
+          "sourceIndex": 19
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "411",
+          "sourceIndex": 20
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "424",
+          "sourceIndex": 24
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "384",
+          "sourceIndex": 26
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "387",
+          "sourceIndex": 28
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "369",
+          "sourceIndex": 35
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "375",
+          "sourceIndex": 36
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "339",
+          "sourceIndex": 40
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "354",
+          "sourceIndex": 47
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "356",
+          "sourceIndex": 48
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "316",
+          "sourceIndex": 50
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "324",
+          "sourceIndex": 53
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "325",
+          "sourceIndex": 54
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "301",
+          "sourceIndex": 60
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "302",
+          "sourceIndex": 61
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "276",
+          "sourceIndex": 66
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "225",
+          "sourceIndex": 78
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "233",
+          "sourceIndex": 81
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "202",
+          "sourceIndex": 85
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "219",
+          "sourceIndex": 89
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "192",
+          "sourceIndex": 95
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "179",
+          "sourceIndex": 107
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "135",
+          "sourceIndex": 108
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "157",
+          "sourceIndex": 114
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "102",
+          "sourceIndex": 124
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "88",
+          "sourceIndex": 133
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "49",
+          "sourceIndex": 136
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "60",
+          "sourceIndex": 138
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "62",
+          "sourceIndex": 139
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "27",
+          "sourceIndex": 144
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "41",
+          "sourceIndex": 149
+        },
+        {
+          "source": "whitedog3-test1",
+          "number": 102,
+          "sourceIndex": null
+        },
+        {
+          "source": "whitedog3-test1",
+          "number": 122,
+          "sourceIndex": null
+        }
+      ]
+    },
+    {
+      "topicId": "aa-number-adverbs",
+      "uniqueQuestions": 4,
+      "references": [
+        {
+          "source": "grammer01-user-practice",
+          "number": "422",
+          "sourceIndex": 23
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "366",
+          "sourceIndex": 34
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "81",
+          "sourceIndex": 131
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "23",
+          "sourceIndex": 143
+        }
+      ]
+    },
+    {
+      "topicId": "aa-participial",
+      "uniqueQuestions": 1,
+      "references": [
+        {
+          "source": "whitedog3-test1",
+          "number": 109,
+          "sourceIndex": null
+        }
+      ]
+    },
+    {
+      "topicId": "aa-position",
+      "uniqueQuestions": 22,
+      "references": [
+        {
+          "source": "grammer01-user-practice",
+          "number": "382",
+          "sourceIndex": 25
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "349",
+          "sourceIndex": 44
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "352",
+          "sourceIndex": 46
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "unnumbered-51",
+          "sourceIndex": 51
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "326",
+          "sourceIndex": 55
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "327",
+          "sourceIndex": 56
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "337",
+          "sourceIndex": 59
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "308",
+          "sourceIndex": 63
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "272",
+          "sourceIndex": 65
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "238",
+          "sourceIndex": 82
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "207",
+          "sourceIndex": 86
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "216",
+          "sourceIndex": 88
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "196",
+          "sourceIndex": 96
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "200",
+          "sourceIndex": 99
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "150",
+          "sourceIndex": 111
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "126",
+          "sourceIndex": 119
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "98",
+          "sourceIndex": 123
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "107",
+          "sourceIndex": 126
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "108",
+          "sourceIndex": 127
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "73",
+          "sourceIndex": 129
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "22",
+          "sourceIndex": 142
+        },
+        {
+          "source": "paper-exam-1",
+          "number": 125,
+          "sourceIndex": null
+        }
+      ]
+    },
+    {
+      "topicId": "cc-conj-prep",
+      "uniqueQuestions": 33,
+      "references": [
+        {
+          "source": "grammer02-user-practice",
+          "number": "465",
+          "sourceIndex": 1
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "452",
+          "sourceIndex": 4
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "429",
+          "sourceIndex": 7
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "410",
+          "sourceIndex": 9
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "419",
+          "sourceIndex": 10
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "380",
+          "sourceIndex": 14
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "360",
+          "sourceIndex": 15
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "351",
+          "sourceIndex": 19
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "334",
+          "sourceIndex": 20
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "314",
+          "sourceIndex": 22
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "309",
+          "sourceIndex": 24
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "252",
+          "sourceIndex": 28
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "248",
+          "sourceIndex": 29
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "234",
+          "sourceIndex": 32
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "214",
+          "sourceIndex": 34
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "208",
+          "sourceIndex": 36
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "180",
+          "sourceIndex": 40
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "unnumbered-41",
+          "sourceIndex": 41
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "164",
+          "sourceIndex": 42
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "159",
+          "sourceIndex": 43
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "146",
+          "sourceIndex": 45
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "114",
+          "sourceIndex": 47
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "123",
+          "sourceIndex": 48
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "131",
+          "sourceIndex": 49
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "100",
+          "sourceIndex": 51
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "76",
+          "sourceIndex": 55
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "70",
+          "sourceIndex": 56
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "53",
+          "sourceIndex": 58
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "44",
+          "sourceIndex": 60
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "40",
+          "sourceIndex": 61
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "14",
+          "sourceIndex": 62
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "21",
+          "sourceIndex": 63
+        },
+        {
+          "source": "whitedog3-test1",
+          "number": 113,
+          "sourceIndex": null
+        }
+      ]
+    },
+    {
+      "topicId": "cc-noun-clause",
+      "uniqueQuestions": 8,
+      "references": [
+        {
+          "source": "grammer02-user-practice",
+          "number": "415",
+          "sourceIndex": 8
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "401",
+          "sourceIndex": 11
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "396",
+          "sourceIndex": 12
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "290",
+          "sourceIndex": 26
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "unnumbered-31",
+          "sourceIndex": 31
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "195",
+          "sourceIndex": 37
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "103",
+          "sourceIndex": 50
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "87",
+          "sourceIndex": 54
+        }
+      ]
+    },
+    {
+      "topicId": "cc-parallel",
+      "uniqueQuestions": 1,
+      "references": [
+        {
+          "source": "whitedog3-test1",
+          "number": 114,
+          "sourceIndex": null
+        }
+      ]
+    },
+    {
+      "topicId": "cc-relative",
+      "uniqueQuestions": 18,
+      "references": [
+        {
+          "source": "grammer02-user-practice",
+          "number": "453",
+          "sourceIndex": 3
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "445",
+          "sourceIndex": 5
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "395",
+          "sourceIndex": 13
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "unnumbered-21",
+          "sourceIndex": 21
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "298",
+          "sourceIndex": 25
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "270",
+          "sourceIndex": 27
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "226",
+          "sourceIndex": 30
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "212",
+          "sourceIndex": 35
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "189",
+          "sourceIndex": 38
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "158",
+          "sourceIndex": 44
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "117",
+          "sourceIndex": 46
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "93",
+          "sourceIndex": 52
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "92",
+          "sourceIndex": 53
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "51",
+          "sourceIndex": 59
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "4",
+          "sourceIndex": 64
+        },
+        {
+          "source": "paper-exam-1",
+          "number": 128,
+          "sourceIndex": null
+        },
+        {
+          "source": "whitedog3-test1",
+          "number": 126,
+          "sourceIndex": null
+        },
+        {
+          "source": "whitedog3-test1",
+          "number": 135,
+          "sourceIndex": null
+        }
+      ]
+    },
+    {
+      "topicId": "np-determiners",
+      "uniqueQuestions": 4,
+      "references": [
+        {
+          "source": "grammer01-user-practice",
+          "number": "461",
+          "sourceIndex": 5
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "286",
+          "sourceIndex": 69
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "247",
+          "sourceIndex": 72
+        },
+        {
+          "source": "ets-practice-2026-10-20",
+          "number": 12,
+          "sourceIndex": null
+        }
+      ]
+    },
+    {
+      "topicId": "np-indefinite",
+      "uniqueQuestions": 1,
+      "references": [
+        {
+          "source": "paper-exam-1",
+          "number": 134,
+          "sourceIndex": null
+        }
+      ]
+    },
+    {
+      "topicId": "np-ing-nouns",
+      "uniqueQuestions": 2,
+      "references": [
+        {
+          "source": "ets-practice-2026-10-20",
+          "number": 10,
+          "sourceIndex": null
+        },
+        {
+          "source": "ets-practice-2026-10-20",
+          "number": 11,
+          "sourceIndex": null
+        }
+      ]
+    },
+    {
+      "topicId": "np-multipos",
+      "uniqueQuestions": 1,
+      "references": [
+        {
+          "source": "ets-practice-2026-10-20",
+          "number": 14,
+          "sourceIndex": null
+        }
+      ]
+    },
+    {
+      "topicId": "np-suffix",
+      "uniqueQuestions": 47,
+      "references": [
+        {
+          "source": "grammer01-user-practice",
+          "number": "448",
+          "sourceIndex": 1
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "450",
+          "sourceIndex": 2
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "426",
+          "sourceIndex": 9
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "431",
+          "sourceIndex": 11
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "420",
+          "sourceIndex": 22
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "385",
+          "sourceIndex": 27
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "389",
+          "sourceIndex": 29
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "399",
+          "sourceIndex": 31
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "403",
+          "sourceIndex": 32
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "379",
+          "sourceIndex": 38
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "381",
+          "sourceIndex": 39
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "341",
+          "sourceIndex": 41
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "350",
+          "sourceIndex": 45
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "358",
+          "sourceIndex": 49
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "321",
+          "sourceIndex": 52
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "335",
+          "sourceIndex": 58
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "310",
+          "sourceIndex": 64
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "279",
+          "sourceIndex": 67
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "293",
+          "sourceIndex": 71
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "263",
+          "sourceIndex": 74
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "239",
+          "sourceIndex": 83
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "181",
+          "sourceIndex": 93
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "197",
+          "sourceIndex": 97
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "199",
+          "sourceIndex": 98
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "201",
+          "sourceIndex": 100
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "161",
+          "sourceIndex": 102
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "163",
+          "sourceIndex": 103
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "171",
+          "sourceIndex": 105
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "140",
+          "sourceIndex": 109
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "113",
+          "sourceIndex": 115
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "121",
+          "sourceIndex": 117
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "96",
+          "sourceIndex": 121
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "97",
+          "sourceIndex": 122
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "106",
+          "sourceIndex": 125
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "69",
+          "sourceIndex": 128
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "80",
+          "sourceIndex": 130
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "89",
+          "sourceIndex": 134
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "64",
+          "sourceIndex": 140
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "68",
+          "sourceIndex": 141
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "42",
+          "sourceIndex": 150
+        },
+        {
+          "source": "ets-practice-2026-10-20",
+          "number": 2,
+          "sourceIndex": null
+        },
+        {
+          "source": "ets-practice-2026-10-20",
+          "number": 3,
+          "sourceIndex": null
+        },
+        {
+          "source": "ets-practice-2026-10-20",
+          "number": 7,
+          "sourceIndex": null
+        },
+        {
+          "source": "ets-practice-2026-10-20",
+          "number": 8,
+          "sourceIndex": null
+        },
+        {
+          "source": "ets-practice-2026-10-20",
+          "number": 9,
+          "sourceIndex": null
+        },
+        {
+          "source": "ets-practice-2026-10-20",
+          "number": 13,
+          "sourceIndex": null
+        },
+        {
+          "source": "paper-exam-1",
+          "number": 117,
+          "sourceIndex": null
+        }
+      ]
+    },
+    {
+      "topicId": "pc-comparative",
+      "uniqueQuestions": 4,
+      "references": [
+        {
+          "source": "grammer01-user-practice",
+          "number": "446",
+          "sourceIndex": 17
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "364",
+          "sourceIndex": 33
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "287",
+          "sourceIndex": 70
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "122",
+          "sourceIndex": 118
+        }
+      ]
+    },
+    {
+      "topicId": "pc-phrase",
+      "uniqueQuestions": 23,
+      "references": [
+        {
+          "source": "grammer02-user-practice",
+          "number": "439",
+          "sourceIndex": 68
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "421",
+          "sourceIndex": 71
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "418",
+          "sourceIndex": 72
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "412",
+          "sourceIndex": 73
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "unnumbered-75",
+          "sourceIndex": 75
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "378",
+          "sourceIndex": 77
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "322",
+          "sourceIndex": 82
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "unnumbered-85",
+          "sourceIndex": 85
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "275",
+          "sourceIndex": 88
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "230",
+          "sourceIndex": 93
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "193",
+          "sourceIndex": 96
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "155",
+          "sourceIndex": 102
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "145",
+          "sourceIndex": 103
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "unnumbered-105",
+          "sourceIndex": 105
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "118",
+          "sourceIndex": 106
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "110",
+          "sourceIndex": 107
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "109",
+          "sourceIndex": 108
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "71",
+          "sourceIndex": 110
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "57",
+          "sourceIndex": 114
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "50",
+          "sourceIndex": 115
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "48",
+          "sourceIndex": 116
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "34",
+          "sourceIndex": 119
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "32",
+          "sourceIndex": 120
+        }
+      ]
+    },
+    {
+      "topicId": "pc-superlative",
+      "uniqueQuestions": 7,
+      "references": [
+        {
+          "source": "grammer01-user-practice",
+          "number": "468",
+          "sourceIndex": 8
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "427",
+          "sourceIndex": 10
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "262",
+          "sourceIndex": 73
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "209",
+          "sourceIndex": 87
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "174",
+          "sourceIndex": 106
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "82",
+          "sourceIndex": 132
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "59",
+          "sourceIndex": 137
+        }
+      ]
+    },
+    {
+      "topicId": "pc-time",
+      "uniqueQuestions": 24,
+      "references": [
+        {
+          "source": "grammer02-user-practice",
+          "number": "345",
+          "sourceIndex": 18
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "184",
+          "sourceIndex": 39
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "unnumbered-65",
+          "sourceIndex": 65
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "454",
+          "sourceIndex": 66
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "447",
+          "sourceIndex": 67
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "423",
+          "sourceIndex": 70
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "388",
+          "sourceIndex": 76
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "368",
+          "sourceIndex": 78
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "357",
+          "sourceIndex": 79
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "338",
+          "sourceIndex": 80
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "315",
+          "sourceIndex": 84
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "296",
+          "sourceIndex": 86
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "266",
+          "sourceIndex": 90
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "254",
+          "sourceIndex": 91
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "250",
+          "sourceIndex": 92
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "218",
+          "sourceIndex": 95
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "186",
+          "sourceIndex": 97
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "182",
+          "sourceIndex": 98
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "170",
+          "sourceIndex": 101
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "46",
+          "sourceIndex": 117
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "17",
+          "sourceIndex": 123
+        },
+        {
+          "source": "grammer02-user-practice",
+          "number": "11",
+          "sourceIndex": 124
+        },
+        {
+          "source": "paper-exam-1",
+          "number": 111,
+          "sourceIndex": null
+        },
+        {
+          "source": "whitedog3-test1",
+          "number": 119,
+          "sourceIndex": null
+        }
+      ]
+    },
+    {
+      "topicId": "sp-elements",
+      "uniqueQuestions": 2,
+      "references": [
+        {
+          "source": "ets-practice-2026-10-20",
+          "number": 1,
+          "sourceIndex": null
+        },
+        {
+          "source": "ets-practice-2026-10-20",
+          "number": 6,
+          "sourceIndex": null
+        }
+      ]
+    },
+    {
+      "topicId": "sp-object-complement",
+      "uniqueQuestions": 2,
+      "references": [
+        {
+          "source": "grammer01-user-practice",
+          "number": "120",
+          "sourceIndex": 116
+        },
+        {
+          "source": "ets-practice-2026-10-20",
+          "number": 4,
+          "sourceIndex": null
+        }
+      ]
+    },
+    {
+      "topicId": "sp-subject-complement",
+      "uniqueQuestions": 17,
+      "references": [
+        {
+          "source": "grammer01-user-practice",
+          "number": "458",
+          "sourceIndex": 4
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "432",
+          "sourceIndex": 12
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "438",
+          "sourceIndex": 15
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "405",
+          "sourceIndex": 18
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "417",
+          "sourceIndex": 21
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "343",
+          "sourceIndex": 42
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "305",
+          "sourceIndex": 62
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "280",
+          "sourceIndex": 68
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "267",
+          "sourceIndex": 75
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "191",
+          "sourceIndex": 94
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "154",
+          "sourceIndex": 112
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "156",
+          "sourceIndex": 113
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "128",
+          "sourceIndex": 120
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "45",
+          "sourceIndex": 135
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "33",
+          "sourceIndex": 145
+        },
+        {
+          "source": "grammer01-user-practice",
+          "number": "39",
+          "sourceIndex": 148
+        },
+        {
+          "source": "ets-practice-2026-10-20",
+          "number": 5,
+          "sourceIndex": null
+        }
+      ]
+    },
+    {
+      "topicId": "vv-causative",
+      "uniqueQuestions": 1,
+      "references": [
+        {
+          "source": "paper-exam-1",
+          "number": 130,
+          "sourceIndex": null
+        }
+      ]
+    },
+    {
+      "topicId": "vv-participle",
+      "uniqueQuestions": 1,
+      "references": [
+        {
+          "source": "whitedog3-test1",
+          "number": 136,
+          "sourceIndex": null
+        }
+      ]
+    }
+  ],
+  "records": [
+    {
+      "source": "grammer01-user-practice",
+      "number": "448",
+      "sourceIndex": 1,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "526a8b84d52240ada8e1535e2a74cfd49d46d9a68e186a51eae33caeea174662"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "450",
+      "sourceIndex": 2,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "b938b287174fe30e4740dff31384b14deb224b80f18335fb4316a49b22a7c587"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "455",
+      "sourceIndex": 3,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "b428aec2d34d8f90276899e412d802eb09f13faf53c864584802d849ffda02ad"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "458",
+      "sourceIndex": 4,
+      "point": "sp-subject-complement",
+      "status": "included",
+      "fingerprint": "e6b926461e7fbf5b45add0da37213fb700143aa6e53267ca0afd3072fb4aa5e0"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "461",
+      "sourceIndex": 5,
+      "point": "np-determiners",
+      "status": "included",
+      "fingerprint": "edb5045fa852b4f73fe04581f1ff5380c0e88f30ddb865f9a7217c7fff38191e"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "466",
+      "sourceIndex": 6,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "759c805c12faa5974807ff054bcf6e0e644629bad19750e18c52a93117229cd2"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "467",
+      "sourceIndex": 7,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "ad0546073b7d7cf56aa2ede2575aae80623a80d9d1a498425eee1809dd0c02f5"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "468",
+      "sourceIndex": 8,
+      "point": "pc-superlative",
+      "status": "included",
+      "fingerprint": "c0875a070452227ab92342df67d6d852276609b287c91ed78ae4cfd9417ae957"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "426",
+      "sourceIndex": 9,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "9464a16f52dca41771fe0384262087d2c5f6135fe31b5b71390499effcacf971"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "427",
+      "sourceIndex": 10,
+      "point": "pc-superlative",
+      "status": "included",
+      "fingerprint": "4453864ec25f07d680f76d632f6f15a12ecb5a09dcc155a797fb275d6a3b7aa4"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "431",
+      "sourceIndex": 11,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "e355bfb9fbdacfa28a4ea4598737b2b713f934360cd516cf2d68eb5a80b996b6"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "432",
+      "sourceIndex": 12,
+      "point": "sp-subject-complement",
+      "status": "included",
+      "fingerprint": "b5a95d38b35867676dfff06ae149679dd0498904924abba65baabfe0aa344398"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "433",
+      "sourceIndex": 13,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "492ec60f63b5dd6d76ab3048626dd9fc1b00bac3da804fb55907f0931413abc0"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "436",
+      "sourceIndex": 14,
+      "point": "aa-adverb-roles",
+      "status": "ambiguous_or_outside_core_excluded",
+      "fingerprint": "587be5c000cb5c7d0eb07a91bdd0235827dd6afd34b8256d00733746a1950b11"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "438",
+      "sourceIndex": 15,
+      "point": "sp-subject-complement",
+      "status": "included",
+      "fingerprint": "88a739d67463fc544b5e8a0b3393b11e8e2760d2fa45a5acc36a2383008c7232"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "440",
+      "sourceIndex": 16,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "3a9fe179da74bbba92236b5200951493b86c6de507257665ccda3ae070bfacd8"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "446",
+      "sourceIndex": 17,
+      "point": "pc-comparative",
+      "status": "included",
+      "fingerprint": "6b0de0b4791465ccfbb6ef3661a7d16fd00be86867dea1613cedf4e129781b3e"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "405",
+      "sourceIndex": 18,
+      "point": "sp-subject-complement",
+      "status": "included",
+      "fingerprint": "9c8189f423bb27a57effa140964e8c2eb60a6576d92836764f302a4b60f35462"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "408",
+      "sourceIndex": 19,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "ec03fc398f8732fd7a3172cf75d42fbfff8b3f0691f6aec2e4a6805f65564bc9"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "411",
+      "sourceIndex": 20,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "aed3976b71c04c2a454a177c179622d347abff9586727135dd1c671f001e76aa"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "417",
+      "sourceIndex": 21,
+      "point": "sp-subject-complement",
+      "status": "included",
+      "fingerprint": "37ae004c668797d81160ebd60409c7b5aede8bfb570bc79f76826a38f61a235e"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "420",
+      "sourceIndex": 22,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "e7d17f24b9c7bca0b0dacdd8d6e6cf6cb3bcefab70e9a7b9353cb1c651f6410c"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "422",
+      "sourceIndex": 23,
+      "point": "aa-number-adverbs",
+      "status": "included",
+      "fingerprint": "1130226dcd991d1bc2069888e4ce421eef3eb615ec8734a447c6bc32deef5865"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "424",
+      "sourceIndex": 24,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "70b500923e91783653275f174c20dacbee173d1a6afb1cb1a1abe0adf26960df"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "382",
+      "sourceIndex": 25,
+      "point": "aa-position",
+      "status": "included",
+      "fingerprint": "6cb43466b036c9f27bcd39a00cb8b9f663d06570f97bd65481ae2d2c30e7c73a"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "384",
+      "sourceIndex": 26,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "e13c17af0028b6ffa8bb783855c33beebe0a0662ffad7a80631ff1f2ddb038a5"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "385",
+      "sourceIndex": 27,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "e6caf05f5952707180740e6789cdcd792758df48cafbf6250a44c692ac3468b6"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "387",
+      "sourceIndex": 28,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "0eb4f122a4084db79c50c7a0ca123857ab8d873892f7c8149babb9fbf7a94064"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "389",
+      "sourceIndex": 29,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "60fbf8c9d506dbe7e34b1cd71d96b040f231e72ac3fec6fcb9c54a6e21cb0810"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "393",
+      "sourceIndex": 30,
+      "point": "aa-adverb-roles",
+      "status": "ambiguous_or_outside_core_excluded",
+      "fingerprint": "7254ec72e6294606d1ff08f0c0509a2bc5dc3b5042c94320f2f35409520a0f6a"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "399",
+      "sourceIndex": 31,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "f3a03d1b85c77e18b656c0207bfa9214cd25f386110d60a5705c8802972f5fb8"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "403",
+      "sourceIndex": 32,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "6475edda732089ce11d10a59866026051077351c97f21816b6eba8e6fe0dd593"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "364",
+      "sourceIndex": 33,
+      "point": "pc-comparative",
+      "status": "included",
+      "fingerprint": "ef264990273a50fef485d0933a50dad58db9676835b1ab58a4382ac9178a330c"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "366",
+      "sourceIndex": 34,
+      "point": "aa-number-adverbs",
+      "status": "included",
+      "fingerprint": "3d093b88aa1940da3687de169938982fbd30285a7872286d1133bb0d61f4839c"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "369",
+      "sourceIndex": 35,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "d74227c8a29f72b0a06c6b8b614874d4d6addfe3d1be211d7f9baaa8678ff32d"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "375",
+      "sourceIndex": 36,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "a622f13a98882630ca769ad1e17f92007a74ddff00ba38ccf7fe212e684d244e"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "376",
+      "sourceIndex": 37,
+      "point": "aa-adverb-roles",
+      "status": "ambiguous_or_outside_core_excluded",
+      "fingerprint": "939852251659358d9a398fb3303e674f3b1461ba30803db85ee2b3fc0ec4fa27"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "379",
+      "sourceIndex": 38,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "4ff4cde536f8307c85504c9bc75d30a3117ba576eefce1c627372bc11ddab183"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "381",
+      "sourceIndex": 39,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "27c6828cde87e4d10915284ec7fc24db956c2a267a743d722688b870d5a24351"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "339",
+      "sourceIndex": 40,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "c39da59f7766f39b720e0dec6057982496c9f13aab9e385bf2e3d8cbefa9437c"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "341",
+      "sourceIndex": 41,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "cae55ba10c238c432033270d48b5d5ae7acd03b2370c5ac749e8693d4dd7b72f"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "343",
+      "sourceIndex": 42,
+      "point": "sp-subject-complement",
+      "status": "included",
+      "fingerprint": "0b6d74edd7171c5b6f54a9a43a5fe6a654f6985f06ea7470ee79cb88e76bbe9b"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "346",
+      "sourceIndex": 43,
+      "point": "aa-adverb-roles",
+      "status": "ambiguous_or_outside_core_excluded",
+      "fingerprint": "8713f5751df9cc634a5597fd0529f83c166f0bcca459accf3e6c5907cfdcbbe9"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "349",
+      "sourceIndex": 44,
+      "point": "aa-position",
+      "status": "included",
+      "fingerprint": "5521f5286233687d88280f55fbe5c6fafcdd8f3b4eb3cc921eba14971b40d047"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "350",
+      "sourceIndex": 45,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "d9ac99ae6a8f8e16e76d74081b211c7a6df3a8257fa50606c5f81a4e2cb06eb6"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "352",
+      "sourceIndex": 46,
+      "point": "aa-position",
+      "status": "included",
+      "fingerprint": "d8e5c3c899f01e2cdd97a503681690f1ddee7a1d2e9558ba41f97d8b4b801de5"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "354",
+      "sourceIndex": 47,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "e329d554f66ac36589bac2b06b468a9f8e00ac1e78056ce89792690824a0225c"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "356",
+      "sourceIndex": 48,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "81dd0b520dd1d3ed5b1ccd3ac07941fb2c5f1c491dd3ea0b3fe33f2741618090"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "358",
+      "sourceIndex": 49,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "3464514597d4af2b877d7da13ef44bd02704e8ec689b619c437da57e5008ef31"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "316",
+      "sourceIndex": 50,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "45db788574cb26eb68efd6077bf791d569c1f3c27f5f943999b10b22a133062a"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "unnumbered-51",
+      "sourceIndex": 51,
+      "point": "aa-position",
+      "status": "included",
+      "fingerprint": "0532f707a60347329ad4f06170dbc6d8f226dff295ee03eb512255c8fb36b1d9"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "321",
+      "sourceIndex": 52,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "9c70665c739d8b411285b221c9d777f4bca766b91cb1014503dcefa8d8d570b8"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "324",
+      "sourceIndex": 53,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "477817c4c2f84f0ad40d6803c06f72c503393a9bf7c03c70779b60a4e714fefa"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "325",
+      "sourceIndex": 54,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "d895256015b3ca7af7fcca783a7cc5b3e45cd4dc40cdd13c719deffce7df3529"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "326",
+      "sourceIndex": 55,
+      "point": "aa-position",
+      "status": "included",
+      "fingerprint": "6d7ce895f0b300705f9b605180cba615e1e7cb07f9404b0fd36fff650cee8724"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "327",
+      "sourceIndex": 56,
+      "point": "aa-position",
+      "status": "included",
+      "fingerprint": "501009fd78dc1e6358d81884e11dd4cb88e4a4fc26a569dff956ad642153eebf"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "332",
+      "sourceIndex": 57,
+      "point": "aa-number-adverbs",
+      "status": "ambiguous_or_outside_core_excluded",
+      "fingerprint": "50e3f0d31961f41aaa712a099f4fb35e90347c011e20044fcd0bdda1d4a4806f"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "335",
+      "sourceIndex": 58,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "5d6400572a072c11d4eec141ad3d391ffdc5280cc8e63fd05105552055dc6b27"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "337",
+      "sourceIndex": 59,
+      "point": "aa-position",
+      "status": "included",
+      "fingerprint": "ebf869db93f6ef0172f8e185408d22b3a2f05bbc46677662187f77c68a6b3761"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "301",
+      "sourceIndex": 60,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "b5d82042e83f02a4e02a0bb06db46880c1bd3f2794040f1b8f647ef5c23334ff"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "302",
+      "sourceIndex": 61,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "bd86ea680be99f8ecc4b07e6a2c4172f6acbed84d17d5428d2640a063c55dae6"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "305",
+      "sourceIndex": 62,
+      "point": "sp-subject-complement",
+      "status": "included",
+      "fingerprint": "cea9ccae0f0063dfbd5f3cbc22a6ad611b5dc7bc5a6ba78f8e0145397929534c"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "308",
+      "sourceIndex": 63,
+      "point": "aa-position",
+      "status": "included",
+      "fingerprint": "624a64ee31ac2cabdfee5f90a984b43f3fb0d7b303d69e2f8857afe9472c089d"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "310",
+      "sourceIndex": 64,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "1e3f157d5d4c68f1deeaafaa5af3aeab728198c2e5060ffafb54ad2675763d75"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "272",
+      "sourceIndex": 65,
+      "point": "aa-position",
+      "status": "included",
+      "fingerprint": "548db8e1551a65659553fff88a9c8e440fc8384519d61a9de63e5a4988730d06"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "276",
+      "sourceIndex": 66,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "9a871715aea60d07f8bd1f24637d38b2ff76055602af90032bb44c2d2de439e6"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "279",
+      "sourceIndex": 67,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "a9fcdf424c7a0c60c7499c0061927ece75f72c9c06016c52e5a9f45a78a451b8"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "280",
+      "sourceIndex": 68,
+      "point": "sp-subject-complement",
+      "status": "included",
+      "fingerprint": "f0b6aaf27497e3f32c035ba190ca811f6571793188e020f5c7b4f16ba720a774"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "286",
+      "sourceIndex": 69,
+      "point": "np-determiners",
+      "status": "included",
+      "fingerprint": "9e6e78821ba861a1843312178522d806bab5c91ef098fb8209d5ee83454c7180"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "287",
+      "sourceIndex": 70,
+      "point": "pc-comparative",
+      "status": "included",
+      "fingerprint": "a395335f56105a1f62232af36a4105429a67bf01968aee1864717da8610acca4"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "293",
+      "sourceIndex": 71,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "481059327005503e851af28cd77ced6eaf4dae9a7228c1f93945bbfca6c086ba"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "247",
+      "sourceIndex": 72,
+      "point": "np-determiners",
+      "status": "included",
+      "fingerprint": "ab1ca39b2d7968c0fbd46ed319ffae33b1387209d52851b9d8ed7cc437371281"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "262",
+      "sourceIndex": 73,
+      "point": "pc-superlative",
+      "status": "included",
+      "fingerprint": "c0e8ed36ad5c6bd1091521a47afdcde5b81af1b6b3bb579f51e1c52b0216c7cc"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "263",
+      "sourceIndex": 74,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "5253fffe49d99b4928f93c9c81a5a78f1cd6512e4cd5346ca69c0f6521ea5348"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "267",
+      "sourceIndex": 75,
+      "point": "sp-subject-complement",
+      "status": "included",
+      "fingerprint": "fd372023ab9b4c44b74015e5d0b984e0643ceb7e7031370e681084cefb595ede"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "268",
+      "sourceIndex": 76,
+      "point": "aa-adverb-roles",
+      "status": "ambiguous_or_outside_core_excluded",
+      "fingerprint": "8940763aa6c5fa25c2eb143e9eea48e2be4d7ca866e0c80b1769ba142cc48526"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "269",
+      "sourceIndex": 77,
+      "point": "aa-adverb-roles",
+      "status": "ambiguous_or_outside_core_excluded",
+      "fingerprint": "cc5e82dfc9c1f46aa066281fb6d4c4a39fef00c4e6f0c82ee0490f6c65c18e0d"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "225",
+      "sourceIndex": 78,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "3b32ed5cf4f0ad43c581fc28c0ca74c15cfa293cc394310a52de4d0c03ef3556"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "229",
+      "sourceIndex": 79,
+      "point": "aa-adverb-roles",
+      "status": "ambiguous_or_outside_core_excluded",
+      "fingerprint": "cff10bb556f69a16e1ba56ef6b17ff2ff09b614487e0b8ed226a3d37cf45e76e"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "231",
+      "sourceIndex": 80,
+      "point": "aa-adverb-roles",
+      "status": "ambiguous_or_outside_core_excluded",
+      "fingerprint": "bb30cb500adadcfcc9e5d05d760b10b697d369a024694a5a31aff7251745a69b"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "233",
+      "sourceIndex": 81,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "aed0c29b54edb34a2e3493c8ea652fcf9963983d6ad6a38fb61516ff43e16e94"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "238",
+      "sourceIndex": 82,
+      "point": "aa-position",
+      "status": "included",
+      "fingerprint": "f5da10b27c7bf922ee58f4214256f2bd4c923c5510eea12945b119b9ba032709"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "239",
+      "sourceIndex": 83,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "25494147fc0b49c8383a79821407f07c7611109b036f80ce7484880fb99478a3"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "240",
+      "sourceIndex": 84,
+      "point": "aa-adverb-roles",
+      "status": "ambiguous_or_outside_core_excluded",
+      "fingerprint": "bffadefe866ea4dc453ec49e45b17f4faaf56c11a7506abee5fba897c789fa98"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "202",
+      "sourceIndex": 85,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "21a9679fac8a90dbc72c1d03634b1f750b56168f275bb485e835b08137281a40"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "207",
+      "sourceIndex": 86,
+      "point": "aa-position",
+      "status": "included",
+      "fingerprint": "4f6dd3fef558bdb757f761514ab0ce5a545ca28af18af991f359fc30a277ea6e"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "209",
+      "sourceIndex": 87,
+      "point": "pc-superlative",
+      "status": "included",
+      "fingerprint": "707e2b0dbd9fdd034d6c75443c99d95a9de5b108d69f9b9f95b159961ed55469"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "216",
+      "sourceIndex": 88,
+      "point": "aa-position",
+      "status": "included",
+      "fingerprint": "1a13a4a29c9041e7591c7b10743ba543040e90f2d91324567346d2e5af1b0890"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "219",
+      "sourceIndex": 89,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "d581624138afc0cfc4274ba57a6a285c64f20e887c15e7c090e0d65a7bd7a15e"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "221",
+      "sourceIndex": 90,
+      "point": "aa-adverb-roles",
+      "status": "ambiguous_or_outside_core_excluded",
+      "fingerprint": "496d239bdba9a87a518373a69900b5892dc58573d6a618164a6851de37dea27a"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "222",
+      "sourceIndex": 91,
+      "point": "aa-adverb-roles",
+      "status": "ambiguous_or_outside_core_excluded",
+      "fingerprint": "caf2e2472b67c30e795a4d49b9abea86b240aedc275372fcdf608503213f75ec"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "224",
+      "sourceIndex": 92,
+      "point": "aa-adverb-roles",
+      "status": "ambiguous_or_outside_core_excluded",
+      "fingerprint": "83ff0356d23b8671f8484004a3c8c8dac8da6db438ccf43ad285b2c2077e5f54"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "181",
+      "sourceIndex": 93,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "c6338782f3259d951ee4c3f314041690d5296ada79410b6b21920a686121c239"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "191",
+      "sourceIndex": 94,
+      "point": "sp-subject-complement",
+      "status": "included",
+      "fingerprint": "6e808b6ec594d08f0d92f5b1bc56995dce5c4e68bf22bf6f63ea4e0b5ca25c3f"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "192",
+      "sourceIndex": 95,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "29c1cd18101eab94a87ef525eee8a1b5385dbb6feb57ae925689aafc00897235"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "196",
+      "sourceIndex": 96,
+      "point": "aa-position",
+      "status": "included",
+      "fingerprint": "414c8397dec5767d5c7f075a4d5704636d4989b813d3b24d3323d1329ec3cc63"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "197",
+      "sourceIndex": 97,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "d9cfcc76fa32953239a980175f6948ca9bff2c0bb00a06f38b8339f90716553b"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "199",
+      "sourceIndex": 98,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "c382ef37b1d41cdb8514fefddabb6d2bd1db441458faba94bfd6c69e759df652"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "200",
+      "sourceIndex": 99,
+      "point": "aa-position",
+      "status": "included",
+      "fingerprint": "f784eeb5cbddae0f888e486f4207341e68f6cab3ca9680fb491f8d816ccf240b"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "201",
+      "sourceIndex": 100,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "52e4033c8746f6fca5a7d5c75f97125df9030cd608db5d1fc2be674ef5aa2275"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "160",
+      "sourceIndex": 101,
+      "point": "aa-adverb-roles",
+      "status": "ambiguous_or_outside_core_excluded",
+      "fingerprint": "5e3474e2856366d019b95c4a387ccbf0acfa636f2eb7f393b8a9a25c0c6635e7"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "161",
+      "sourceIndex": 102,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "55e6eb861e443d45a2087d5ddc6968465656c54e5d829821554c1b05d3981e15"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "163",
+      "sourceIndex": 103,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "a3eb26a1c53fcf98853650e7ba0574af0dcacf78643071d53a32ee0be253baf9"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "168",
+      "sourceIndex": 104,
+      "point": "aa-adverb-roles",
+      "status": "ambiguous_or_outside_core_excluded",
+      "fingerprint": "d69628ba5a26311bc2d3e0e15d8088aac7af5b59c19175d00f9777fea0a39b7b"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "171",
+      "sourceIndex": 105,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "af07f6793e425346887c3995b5141d739a1b44a87d8ef80ecca3e7fc3480535f"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "174",
+      "sourceIndex": 106,
+      "point": "pc-superlative",
+      "status": "included",
+      "fingerprint": "a2f411f0eebcb5491bd4f7fac1ab84fa050901761b9dc9d14c9e9b016e98453b"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "179",
+      "sourceIndex": 107,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "964570f1bebef1b122ec9f4132c95d3b61ed4723b962cc51dbe4123e8094d1ce"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "135",
+      "sourceIndex": 108,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "58a609a8c1ed91eb63993e219a7fb882928eb282b27032f93f08b07abf91abb4"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "140",
+      "sourceIndex": 109,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "bbbc414addcc603e5ad1682f91bb7d72bee5244f97d86b2e2d55545cf5a153c4"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "141",
+      "sourceIndex": 110,
+      "point": "aa-adverb-roles",
+      "status": "ambiguous_or_outside_core_excluded",
+      "fingerprint": "3009864c23a79cff0039da10b877ca0c502573825a25865d95db7910029afc32"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "150",
+      "sourceIndex": 111,
+      "point": "aa-position",
+      "status": "included",
+      "fingerprint": "b7418206f575d2200540e8ae599cb00a3064b5de467256e89d883473871a01da"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "154",
+      "sourceIndex": 112,
+      "point": "sp-subject-complement",
+      "status": "included",
+      "fingerprint": "02e7c0c3eb4f4f3adc3f9017a6cd1c7b22557a0e389b562d01cb47f9d81d6e2c"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "156",
+      "sourceIndex": 113,
+      "point": "sp-subject-complement",
+      "status": "included",
+      "fingerprint": "8c98fb9e2fabefcac65ff5a50202c802b64ad08cf960ec4300eb1e1cfe9405a4"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "157",
+      "sourceIndex": 114,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "2f9ed37dc7a93fc1807bd5feda7d3ed29eca515cf02fa4c9137433ed8cc995bb"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "113",
+      "sourceIndex": 115,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "283290d80da9ed44701c77d5087c16bf0817eb6c1f164fd6203d0503a2aa010f"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "120",
+      "sourceIndex": 116,
+      "point": "sp-object-complement",
+      "status": "included",
+      "fingerprint": "2dee04bdd57609e75d45c2a4d95d2defd27663992fa40199708d2f9a7dd38745"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "121",
+      "sourceIndex": 117,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "1713ea8b03bfa6fe001ad9f3d74dd3b8deae3655fdaab8b0545ea2d32c8f824f"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "122",
+      "sourceIndex": 118,
+      "point": "pc-comparative",
+      "status": "included",
+      "fingerprint": "8eb3415e863731b9e24e1a559aa34aa30fc1573c20589669c8e063572f998ca2"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "126",
+      "sourceIndex": 119,
+      "point": "aa-position",
+      "status": "included",
+      "fingerprint": "6f1cd12d8f749affdb9bec43615a5e0b0af677a7c7e27928bfe277d87728189a"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "128",
+      "sourceIndex": 120,
+      "point": "sp-subject-complement",
+      "status": "included",
+      "fingerprint": "668212d259ca6f45e57865cf71286a900ed4bd840711d73e90027fab269905c0"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "96",
+      "sourceIndex": 121,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "6717e8632e6a7e9fb334cc258a8cd1706399dbc7be5823c3726e4c94c62d9e32"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "97",
+      "sourceIndex": 122,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "b4823f5c521ac901276c12c4dd506e33de44a71655920cba4f4e1b4b610b0ca8"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "98",
+      "sourceIndex": 123,
+      "point": "aa-position",
+      "status": "included",
+      "fingerprint": "2cb853102683edfbf7cbb4454810851eb0b369bac0a808736779fee7fcb1295d"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "102",
+      "sourceIndex": 124,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "a58eee94f9038605475b4c91f3b8a3ac0f3fed0956a3441309f27e385245fb33"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "106",
+      "sourceIndex": 125,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "738a0138086c19dbf3183535d0ace7cb569cd794048ca863c9e747042f9627f1"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "107",
+      "sourceIndex": 126,
+      "point": "aa-position",
+      "status": "included",
+      "fingerprint": "5b300d15aa76fa112de76e189d86dbfcdc64efac99ca491c519aa9cc0329b269"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "108",
+      "sourceIndex": 127,
+      "point": "aa-position",
+      "status": "included",
+      "fingerprint": "4478f02a98f4d4a0de98fbe386fbaa736e2016fc9ac069f5db2c79d831ffe13e"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "69",
+      "sourceIndex": 128,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "19d78fbdc6ed198e0eb8bec2242c8239d3f63095bb70c194dad07c701ca067b0"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "73",
+      "sourceIndex": 129,
+      "point": "aa-position",
+      "status": "included",
+      "fingerprint": "858533fac3162ccf6264775bd9368344cdfd63ef29b1e9cf725a5b43030c03d7"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "80",
+      "sourceIndex": 130,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "e804376952aea5f8720fbe8fb4623debce7e069e73ab515031c6acaa7dcf84a8"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "81",
+      "sourceIndex": 131,
+      "point": "aa-number-adverbs",
+      "status": "included",
+      "fingerprint": "a5e2f8abb886f9c8d182c1884e73b8c7477e4d00ef60b8e3a632f1b41b745858"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "82",
+      "sourceIndex": 132,
+      "point": "pc-superlative",
+      "status": "included",
+      "fingerprint": "89f664a809506682a538d62807c71563da1c7f2979fc472f0c32851fcaa0ab25"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "88",
+      "sourceIndex": 133,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "9207214e4615a42cbd4eefb695dc42a791a9f09b931a764d85878b1db61981e8"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "89",
+      "sourceIndex": 134,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "7c59138ba89d95fc65d8eda9770a77a174feb14e7becd32409d78da10daab9f9"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "45",
+      "sourceIndex": 135,
+      "point": "sp-subject-complement",
+      "status": "included",
+      "fingerprint": "094c2e924973570cc552ca3d7fd935768c313e070eca6f903f2466fc692131e0"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "49",
+      "sourceIndex": 136,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "4cfa4de70147630a97821d4a07adf8c694703caff719ea18df481c855d4980e6"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "59",
+      "sourceIndex": 137,
+      "point": "pc-superlative",
+      "status": "included",
+      "fingerprint": "69395cb7343dbd17fcfc1e752048a54d93738cd59f19f785155ab2e51d555f09"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "60",
+      "sourceIndex": 138,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "b6f85864045e12b62380583b0f1d3f76fced1e40a223e93087c7addb9a7a0dce"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "62",
+      "sourceIndex": 139,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "fbc8ea2de396b9577a60cd6c0bbf15189d8d1d0ddda5914b042dbd358ff34845"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "64",
+      "sourceIndex": 140,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "96987ba371a6befd8fbaa3c1c72be15dce0dd404250ae69fc215eb92d259862c"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "68",
+      "sourceIndex": 141,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "87047d33eb5749ea32c05921fc596da00e948f52b0bf7f16950e0b37526bcc5c"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "22",
+      "sourceIndex": 142,
+      "point": "aa-position",
+      "status": "included",
+      "fingerprint": "f76ee3599348c7713dc3b101dc0b733373e0c84b0395db2a98a46d3b68fe1098"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "23",
+      "sourceIndex": 143,
+      "point": "aa-number-adverbs",
+      "status": "included",
+      "fingerprint": "a9dc022e542a6e887370d05696508723d2668f7f35f36b170c5b0e512b77cba0"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "27",
+      "sourceIndex": 144,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "8f74978314afaa565ebde2f645d766da414cd95a0161e2efae0dca75c86787c5"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "33",
+      "sourceIndex": 145,
+      "point": "sp-subject-complement",
+      "status": "included",
+      "fingerprint": "29bfae47079075b2cc56569a199dff4f6f3e922c9bb30555c1f3b169a23a5564"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "35",
+      "sourceIndex": 146,
+      "point": "aa-adverb-roles",
+      "status": "ambiguous_or_outside_core_excluded",
+      "fingerprint": "4895880f37ff756f8a107558034f6f45714e9a44d402d7eaa4d0422d9f863a2c"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "37",
+      "sourceIndex": 147,
+      "point": "aa-adverb-roles",
+      "status": "ambiguous_or_outside_core_excluded",
+      "fingerprint": "05b3e4bed15199dd99f7471f108cc1933be3e03fc2c7c4caf56fb5a26df7ccf8"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "39",
+      "sourceIndex": 148,
+      "point": "sp-subject-complement",
+      "status": "included",
+      "fingerprint": "ecc98864d23704c07c2486fa02326af6b10d96ea63a3223310156e37c986c053"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "41",
+      "sourceIndex": 149,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "60f00788fdc0c3f57e56ce6ba0c13ff7b6f0c78947d8fd22256d47c8f32e7ce5"
+    },
+    {
+      "source": "grammer01-user-practice",
+      "number": "42",
+      "sourceIndex": 150,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "a2dd6027df10b1b8c8f58e2a65ed2558c7e0ada321bc22edfc068300cdd3d33e"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "465",
+      "sourceIndex": 1,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "b4be42fa673678a8a23903ace29324c0c324b6954c25629a0651eba3ce70550f"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "457",
+      "sourceIndex": 2,
+      "point": "cc-conj-prep",
+      "status": "ambiguous_or_duplicate_type_excluded",
+      "fingerprint": "bb916cc28c4ae39bd1f98576482ea2f767c7c918141dfa40b9366560da67cee3"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "453",
+      "sourceIndex": 3,
+      "point": "cc-relative",
+      "status": "included",
+      "fingerprint": "de3a52de115b1700679dae1a70109e2d56de0d0b4dace295db00f30092b80a6e"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "452",
+      "sourceIndex": 4,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "39ae7de03084f235b41f1665b8bbc6cac4aee7eb8a99ffa78b2f2b26d60bd8c8"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "445",
+      "sourceIndex": 5,
+      "point": "cc-relative",
+      "status": "included",
+      "fingerprint": "72bfa7e665c36406ffc12a6bc450dcbd5830241c9c392b13e0309cba8d8e3be2"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "435",
+      "sourceIndex": 6,
+      "point": "cc-conj-prep",
+      "status": "ambiguous_or_duplicate_type_excluded",
+      "fingerprint": "16d52e9cd8b65bfb420f2c13fe162fceadcaada09f2cbd21e18c363d075a9941"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "429",
+      "sourceIndex": 7,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "637a5f390e68babd756b7cf842ff7f292f906a43850cc2ca862f01bea9c90e87"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "415",
+      "sourceIndex": 8,
+      "point": "cc-noun-clause",
+      "status": "included",
+      "fingerprint": "9f3973a7ab3ab8e10a531d626a8b9b371c680d944fb491c84d93112859b935bc"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "410",
+      "sourceIndex": 9,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "a35b1613aea2d092febd81969b61f346a915f5ab1ba8e2f88802e1de3243f59c"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "419",
+      "sourceIndex": 10,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "0bd0e93a3becde060350f766643a3fb6b5e3919fe7cb5b93148eb61918919f7b"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "401",
+      "sourceIndex": 11,
+      "point": "cc-noun-clause",
+      "status": "included",
+      "fingerprint": "65a0d3b9a45229a0cbe5fc7f2d2e6ef4e4379fe0bec07d21c48e33799c594e8c"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "396",
+      "sourceIndex": 12,
+      "point": "cc-noun-clause",
+      "status": "included",
+      "fingerprint": "8edceded68a73766f24957e2115a0ccf7f3241a054bc000eb151185dc32a032c"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "395",
+      "sourceIndex": 13,
+      "point": "cc-relative",
+      "status": "included",
+      "fingerprint": "dfa1da8ecd0c4011950017ba04a6c07294474410039ec871e46df365e23ce7db"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "380",
+      "sourceIndex": 14,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "f28d3aaecf5d8943bdeb6f8fefe5283517dd6330588d9e7e8e6c9e159a361413"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "360",
+      "sourceIndex": 15,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "d9bd0976de75074af7b700cc717711dcdcd1051947dedc6ddff453a6e048818d"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "353",
+      "sourceIndex": 16,
+      "point": "pc-phrase",
+      "status": "ambiguous_or_duplicate_type_excluded",
+      "fingerprint": "fb55abcdd2f35d591f24ff2d6a4f4103775fe72b02af36b48a22a238779b8448"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "342",
+      "sourceIndex": 17,
+      "point": "cc-conj-prep",
+      "status": "ambiguous_or_duplicate_type_excluded",
+      "fingerprint": "d87ef70dfdf6fb68d606d558d83b70d8bf3c286c3727d92dfeb8b0f26d6d9090"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "345",
+      "sourceIndex": 18,
+      "point": "pc-time",
+      "status": "included",
+      "fingerprint": "86700520afb9314a99d60689181e4bcbbb3e9109254aa0d1268d56fe48cdddfb"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "351",
+      "sourceIndex": 19,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "8849e9639c61587b57f872b0a8b97773cab318e0137089417ef254bd0dde6a80"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "334",
+      "sourceIndex": 20,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "d12f36df3b2637123713b2455c69fdc6edccf6e49b9dbeddf813aa6ef7ca4209"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "unnumbered-21",
+      "sourceIndex": 21,
+      "point": "cc-relative",
+      "status": "included",
+      "fingerprint": "2ea8e878bedae29b0dc02a7400c5feb58dae9dc543c114861a123dbcd2dda438"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "314",
+      "sourceIndex": 22,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "8ed49cc4cd0637e32107bc090cf2b5e7f83832c8d3bab5b3ca838df61643911e"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "312",
+      "sourceIndex": 23,
+      "point": "cc-conj-prep",
+      "status": "ambiguous_or_duplicate_type_excluded",
+      "fingerprint": "39dd32569da58f42cc9364b5781d8feb0e78f2d4de0c5819cfc34d451585400a"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "309",
+      "sourceIndex": 24,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "9f4689337030f12411840b33c44c517b432a9042495405526624b43294b77d66"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "298",
+      "sourceIndex": 25,
+      "point": "cc-relative",
+      "status": "included",
+      "fingerprint": "d5e68a137e83c0633e350f3f3df41109a41ab2877d74aa32f0cf509163236475"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "290",
+      "sourceIndex": 26,
+      "point": "cc-noun-clause",
+      "status": "included",
+      "fingerprint": "20ca7d1d3ae9c7aa22f5059359580225c9649fa7d14ab76c9ac08760ad3de4b5"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "270",
+      "sourceIndex": 27,
+      "point": "cc-relative",
+      "status": "included",
+      "fingerprint": "181da95273e43678de52ebc56571d4b71b5f69c56c5beeacfbf76feeca859b04"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "252",
+      "sourceIndex": 28,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "21c5e1f56364021385f0765324e65d494e3ed42a2c1186411433eb2d1f642587"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "248",
+      "sourceIndex": 29,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "48a5e9c3e5ece6a8aa13d106d85b5d96d517231ea32444766f78a566d96a3334"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "226",
+      "sourceIndex": 30,
+      "point": "cc-relative",
+      "status": "included",
+      "fingerprint": "dcfe504c4c413034e996f320eb4dcef6884d4b68e052f09199607d76e8eeba61"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "unnumbered-31",
+      "sourceIndex": 31,
+      "point": "cc-noun-clause",
+      "status": "included",
+      "fingerprint": "919d39c7159ac27cef674e9feb9eb31f55134e1fceb081562f5f9c87b5778fa0"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "234",
+      "sourceIndex": 32,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "73eddcc5a2e97be928b106705f90b29dbe47936ce0bc0580113e663157a561f5"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "217",
+      "sourceIndex": 33,
+      "point": "cc-conj-prep",
+      "status": "ambiguous_or_duplicate_type_excluded",
+      "fingerprint": "819c8272dac6dc5d08461863a685aa43c24778b3da3c6d11ab480277df256db4"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "214",
+      "sourceIndex": 34,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "3d92c9ef8ffd313c22acfd7c2968ee767701a5bb399a07059e0d2b74300182dc"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "212",
+      "sourceIndex": 35,
+      "point": "cc-relative",
+      "status": "included",
+      "fingerprint": "534d74f0bad246d0c83cdc1e6b4eaa65e9264a4a2f531d8793563d72a184d5df"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "208",
+      "sourceIndex": 36,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "7bb49b831601e37795e189a97fbf49b134fa06403d3f74fcb4cf30c2e2ce8fc1"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "195",
+      "sourceIndex": 37,
+      "point": "cc-noun-clause",
+      "status": "included",
+      "fingerprint": "a085cfd84b02f4c0571dadbb0585a6b7ef2e4d754f320db1975929ee3cd8114b"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "189",
+      "sourceIndex": 38,
+      "point": "cc-relative",
+      "status": "included",
+      "fingerprint": "711ea940b16a78ed2bd39fe4bd980176ea1e86c7d08784d93e7889f2ed7a2340"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "184",
+      "sourceIndex": 39,
+      "point": "pc-time",
+      "status": "included",
+      "fingerprint": "f11de7e9ad29b08002db57e1992d127239fb79da156da56a8ecce5f5fb24e5da"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "180",
+      "sourceIndex": 40,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "65e08ab40a4a48eacf2f363764547b8cd1c8a5b8b22fdb01428495ff264eda5b"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "unnumbered-41",
+      "sourceIndex": 41,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "ec46895727a71744e2508765c92e68176da379ad2816757131de98d3d8c29f3f"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "164",
+      "sourceIndex": 42,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "49d30131a5fb555d84c2f8af62b80be1e05a152c28a6252dc3b58fd4499eee07"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "159",
+      "sourceIndex": 43,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "72b929ca649a7cdb74a8599b07924b0f8918da99eece7349a4b24139b0c8a8c8"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "158",
+      "sourceIndex": 44,
+      "point": "cc-relative",
+      "status": "included",
+      "fingerprint": "e7198ad5e66d53e87e3bb3b7923f52dc2f9c42ce3c92ff53f5450f3c4f79da46"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "146",
+      "sourceIndex": 45,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "f3396911719661cf61085ad1f1178cde65a5c950a4fd3f27a9e723c58049fe96"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "117",
+      "sourceIndex": 46,
+      "point": "cc-relative",
+      "status": "included",
+      "fingerprint": "a77d16639380fb1eb0fd300daab6be7d03fc4bf75210533f342962a70b89239e"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "114",
+      "sourceIndex": 47,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "e8736a484af1ce0c003e275334740cbf9511b6c0910c3fb5afb6853679196998"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "123",
+      "sourceIndex": 48,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "bd444e365fd4388bbaee5e6a1a40025149712abd97ce07b5ca2bf124a243ce7a"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "131",
+      "sourceIndex": 49,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "3829e2be7d21cb1a98d8231260c6421814667269084db70e1b2be7a04ef233db"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "103",
+      "sourceIndex": 50,
+      "point": "cc-noun-clause",
+      "status": "included",
+      "fingerprint": "774a3de4bc7d715b15133c1ce8d0210865ff1b2c974b8ac1ee32938d4168747e"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "100",
+      "sourceIndex": 51,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "eff0a779d7b63649ea6b09787c73fb90f217dc250839347def61d02724a60676"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "93",
+      "sourceIndex": 52,
+      "point": "cc-relative",
+      "status": "included",
+      "fingerprint": "0ec0e4a9dc0102f2eb0f71727fe73beabe36bc438452cddd07e1e3a8fd7186ad"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "92",
+      "sourceIndex": 53,
+      "point": "cc-relative",
+      "status": "included",
+      "fingerprint": "1a13b51be61f3b028f1524c8e0a12972f003577eddbd63a94c8e27833354778c"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "87",
+      "sourceIndex": 54,
+      "point": "cc-noun-clause",
+      "status": "included",
+      "fingerprint": "4dca6655914f36403031879425b0171eb8bdc9f510f77ffb130c510616376809"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "76",
+      "sourceIndex": 55,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "7b2efdb823bb0656024500c365b2d048ce17dbcf6b8ff04c6d154a0b73e3d896"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "70",
+      "sourceIndex": 56,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "e00096ba2ee16724576a9aa51bf12bbfbf4edc07adef1c9c3dd14b6c98abb64a"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "63",
+      "sourceIndex": 57,
+      "point": "cc-conj-prep",
+      "status": "ambiguous_or_duplicate_type_excluded",
+      "fingerprint": "74559dcf49617a91bbbf7f73ac83f6f186054c4bc05384bad0d011e51244a85e"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "53",
+      "sourceIndex": 58,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "d8df8788f65928e1d4be4516cb0fe9020beb43434be59e9e7f30533fc1b802df"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "51",
+      "sourceIndex": 59,
+      "point": "cc-relative",
+      "status": "included",
+      "fingerprint": "9da752ce71f0f3d84fe578b5cf1cce1ab5b4374a2aee5ac53c8c3615abf462b0"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "44",
+      "sourceIndex": 60,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "0dff09683e0d1c322320c2f4ad4f47a85b3bd4de08f2791e14da67067a572aa4"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "40",
+      "sourceIndex": 61,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "7d617698a1734be9eff24fdf9066eed05f8f31bc260bf606a06d25c8f5079fe2"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "14",
+      "sourceIndex": 62,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "e7420c45c3f5f2d5bf128c0797194c1f2c122422eb11a667c734a7cc84f03dbc"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "21",
+      "sourceIndex": 63,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "6830eb1cdda96dcd54d030a2efcd66e3638130fa46ab764ad71dd42d53db6d49"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "4",
+      "sourceIndex": 64,
+      "point": "cc-relative",
+      "status": "included",
+      "fingerprint": "281f881a1d3d1923806284ce88f89742bbf993d427c2a536ed2d85c44ec6b61b"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "unnumbered-65",
+      "sourceIndex": 65,
+      "point": "pc-time",
+      "status": "included",
+      "fingerprint": "18dc832930a50ed0d4f95fec6727f6b0c82c03046d391b2dc2ca10eabc9482a1"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "454",
+      "sourceIndex": 66,
+      "point": "pc-time",
+      "status": "included",
+      "fingerprint": "beb70363bc4a807baaabdec66b971624955e9743441d2e0b55ef2aa9a262ea67"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "447",
+      "sourceIndex": 67,
+      "point": "pc-time",
+      "status": "included",
+      "fingerprint": "78093eae339b80d6ed1cb3e1d980d368f0a755ca331e7b6c4c5e45355bdd03d5"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "439",
+      "sourceIndex": 68,
+      "point": "pc-phrase",
+      "status": "included",
+      "fingerprint": "6ceae24751a28dcc75da726c598e44821cc8907350da63d675bb75ecd7692674"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "437",
+      "sourceIndex": 69,
+      "point": "pc-time",
+      "status": "ambiguous_or_duplicate_type_excluded",
+      "fingerprint": "6aa98e6ffa68ddac27e372709e1be073b8ac0012a5c39d630bb05ec948304c53"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "423",
+      "sourceIndex": 70,
+      "point": "pc-time",
+      "status": "included",
+      "fingerprint": "59748d02d00a8778d5221d50dfeb8dabdad402dc22ba37b9cc48ba12324401c8"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "421",
+      "sourceIndex": 71,
+      "point": "pc-phrase",
+      "status": "included",
+      "fingerprint": "532ee1920adfa9cbffb1ee73ff7699fd93b16f2a941fc6e693ec6feb4201662f"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "418",
+      "sourceIndex": 72,
+      "point": "pc-phrase",
+      "status": "included",
+      "fingerprint": "23c392ee0cc5285b2bcdefa4a079abc9dba01fd78e9bffcc518a13dc0ce16ed4"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "412",
+      "sourceIndex": 73,
+      "point": "pc-phrase",
+      "status": "included",
+      "fingerprint": "11bcfbfb9a6caa6c1c125ddba208212432a28617e1c0c41a87bb3b67b5d94665"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "409",
+      "sourceIndex": 74,
+      "point": "pc-phrase",
+      "status": "ambiguous_or_duplicate_type_excluded",
+      "fingerprint": "c5ee72d7759c675e32ee7834833481a4d4432b3fd509cb268f4f5e46384ba3e4"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "unnumbered-75",
+      "sourceIndex": 75,
+      "point": "pc-phrase",
+      "status": "included",
+      "fingerprint": "15862566c9da93990b02120ce46b658991ea83fae13f56e76b9fa59e6493611d"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "388",
+      "sourceIndex": 76,
+      "point": "pc-time",
+      "status": "included",
+      "fingerprint": "1b6aaa35ed6a303516acb90ad80f79b2ac51d8cf9740ab668d5edc8e600ca334"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "378",
+      "sourceIndex": 77,
+      "point": "pc-phrase",
+      "status": "included",
+      "fingerprint": "0522195779bb9b66af9fcd7b073c8277bc7e72dc4bc06a0b3b824e71a0d132b4"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "368",
+      "sourceIndex": 78,
+      "point": "pc-time",
+      "status": "included",
+      "fingerprint": "c14a9f1a90d385a3381fd13ad4415fa8ec6f978f8e6cfba92d4c59d18542c231"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "357",
+      "sourceIndex": 79,
+      "point": "pc-time",
+      "status": "included",
+      "fingerprint": "369da5f666470c83e305e04bce3a4b68abe62b44640b74df21b5a336043019cc"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "338",
+      "sourceIndex": 80,
+      "point": "pc-time",
+      "status": "included",
+      "fingerprint": "1ac24e8b2dd5fc72a03c50fa6623798f74f000ea1ae5e177a070b7fc2e8f05b8"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "330",
+      "sourceIndex": 81,
+      "point": "pc-time",
+      "status": "ambiguous_or_duplicate_type_excluded",
+      "fingerprint": "00ba6c2ff88e5f682b77d21431943309d0ccb758437741c6533c96cd1583454d"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "322",
+      "sourceIndex": 82,
+      "point": "pc-phrase",
+      "status": "included",
+      "fingerprint": "65dc3fb021bbe77038bc7a13ccca051e2cff3bccefdeddc7598f28d81315cc5d"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "317",
+      "sourceIndex": 83,
+      "point": "pc-phrase",
+      "status": "ambiguous_or_duplicate_type_excluded",
+      "fingerprint": "42aaf441f545b071a130749b95425b5bc4a04b97cd64cb7db68a593430d09e68"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "315",
+      "sourceIndex": 84,
+      "point": "pc-time",
+      "status": "included",
+      "fingerprint": "a32ab4a4a4ac85b73aa624c3e781925569eab1582b8cd66545d65289706697c0"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "unnumbered-85",
+      "sourceIndex": 85,
+      "point": "pc-phrase",
+      "status": "included",
+      "fingerprint": "49e3f4d848ec0df0c0548e9836446b39ccb3d48e7387b23e228e2f58962893ed"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "296",
+      "sourceIndex": 86,
+      "point": "pc-time",
+      "status": "included",
+      "fingerprint": "b2945941115d59125fc20a4a25c1beea867f2e29a6d57ad7e368e4dffee87212"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "285",
+      "sourceIndex": 87,
+      "point": "pc-time",
+      "status": "ambiguous_or_duplicate_type_excluded",
+      "fingerprint": "7d5b5260c5d7ef893265f4bc92524aa769facbb4cf59d091859753e9207f80d4"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "275",
+      "sourceIndex": 88,
+      "point": "pc-phrase",
+      "status": "included",
+      "fingerprint": "a27a92caf3327b2bea734f98433e1c794985c6823f6940952138ac987209dd4a"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "273",
+      "sourceIndex": 89,
+      "point": "pc-time",
+      "status": "ambiguous_or_duplicate_type_excluded",
+      "fingerprint": "07f06129b38d54c4048a16e25deca4cf1efb83b0aeb7073ed5f0a3f16190c799"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "266",
+      "sourceIndex": 90,
+      "point": "pc-time",
+      "status": "included",
+      "fingerprint": "e012b378781e211ac1647fbe13c2700c86af8204d6dcb944df003430bedae661"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "254",
+      "sourceIndex": 91,
+      "point": "pc-time",
+      "status": "included",
+      "fingerprint": "729dd7046049456f94998dbe584bc81d40afd0a836bc0676f395c0b28a6c200a"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "250",
+      "sourceIndex": 92,
+      "point": "pc-time",
+      "status": "included",
+      "fingerprint": "c343d82d1b828d6c7c870fe517547f3446ec95cb35ed6bb0d6464495278ff394"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "230",
+      "sourceIndex": 93,
+      "point": "pc-phrase",
+      "status": "included",
+      "fingerprint": "5b8640f4683ee905f9181b168929d76b56255b934e340a36eccf14d4d8259b30"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "223",
+      "sourceIndex": 94,
+      "point": "pc-phrase",
+      "status": "ambiguous_or_duplicate_type_excluded",
+      "fingerprint": "6e9c370fd5934065ffc0d1efa0d56740bcb8c0f2470afd8d512bd879828ec4d3"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "218",
+      "sourceIndex": 95,
+      "point": "pc-time",
+      "status": "included",
+      "fingerprint": "ece2b2475df7fb04094265699c3c6031472c88c30db7e71136f645ffb92ca263"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "193",
+      "sourceIndex": 96,
+      "point": "pc-phrase",
+      "status": "included",
+      "fingerprint": "5d944e071e1704fe40e47ab9b223ba012e60760c308182f7e55ae26713ee0b30"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "186",
+      "sourceIndex": 97,
+      "point": "pc-time",
+      "status": "included",
+      "fingerprint": "4e078828f7c89d57411cef92a168b2f02cf311dfb32aec619a703330c8becdd2"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "182",
+      "sourceIndex": 98,
+      "point": "pc-time",
+      "status": "included",
+      "fingerprint": "27a26514b10310584e5ac05540f4513bcadeb3e5d5af6e6db692b731dc0bb52c"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "178",
+      "sourceIndex": 99,
+      "point": "pc-phrase",
+      "status": "ambiguous_or_duplicate_type_excluded",
+      "fingerprint": "0364fa43dba54173609da8b9deb194fb940e9aa46aec62b7f516a40c1c3a06c4"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "175",
+      "sourceIndex": 100,
+      "point": "pc-phrase",
+      "status": "ambiguous_or_duplicate_type_excluded",
+      "fingerprint": "88e8e32690502039a8db1a505aeb1fbc09b73aa1f1fad00a5041a04df9bf012f"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "170",
+      "sourceIndex": 101,
+      "point": "pc-time",
+      "status": "included",
+      "fingerprint": "7121a8c0697bc45b264a965f65bc8fc7eb8c094eea0a512dd856a56dd0db573a"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "155",
+      "sourceIndex": 102,
+      "point": "pc-phrase",
+      "status": "included",
+      "fingerprint": "3200156f2a1c0e37392a6794884d773d609a9d9975847c274726f103ee49f8b7"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "145",
+      "sourceIndex": 103,
+      "point": "pc-phrase",
+      "status": "included",
+      "fingerprint": "3bf21c0301e9436f056c480ff0044956bc9b1ce4adcd735218f4d97cffe8a387"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "137",
+      "sourceIndex": 104,
+      "point": "pc-phrase",
+      "status": "ambiguous_or_duplicate_type_excluded",
+      "fingerprint": "0e6f52718533517f695132a63f8d37282ca9b37929b73ff8020222a608bcaad7"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "unnumbered-105",
+      "sourceIndex": 105,
+      "point": "pc-phrase",
+      "status": "included",
+      "fingerprint": "e46e20b469953811eb6575714358fb1742255d434f784cb500d710c40a6dd7e1"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "118",
+      "sourceIndex": 106,
+      "point": "pc-phrase",
+      "status": "included",
+      "fingerprint": "aa4dfc57a20c062706c8b5f0ecbfe60f26f4bd7eefe08f27a39adf84814aee78"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "110",
+      "sourceIndex": 107,
+      "point": "pc-phrase",
+      "status": "included",
+      "fingerprint": "534c89257930dbe21983d7d0cde3fe91dee10950d59f2d04c17cfab4465ee35c"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "109",
+      "sourceIndex": 108,
+      "point": "pc-phrase",
+      "status": "included",
+      "fingerprint": "cc31153a39346cda98598a120f46bdcdbf6e378cd324bf97ce3819e4decf1b5d"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "84",
+      "sourceIndex": 109,
+      "point": "pc-phrase",
+      "status": "ambiguous_or_duplicate_type_excluded",
+      "fingerprint": "dd8609476de7c1489ae656a71264eafab3b6bc3277e505b1b50f2e62255790c4"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "71",
+      "sourceIndex": 110,
+      "point": "pc-phrase",
+      "status": "included",
+      "fingerprint": "a21d29e565ecca333fa40b5a1d137bbdf9678a516d5839ceb2d161db410dcfc0"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "79",
+      "sourceIndex": 111,
+      "point": "pc-time",
+      "status": "ambiguous_or_duplicate_type_excluded",
+      "fingerprint": "6879ab02a7c39004e10b34e4060874bf931fb8c42ec41b6a0d0bcb4e437f49dd"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "67",
+      "sourceIndex": 112,
+      "point": "pc-phrase",
+      "status": "ambiguous_or_duplicate_type_excluded",
+      "fingerprint": "5bf03ef15308789aeb5985b8e3b2a878b42ce0dd996655c6227581ae0afbb281"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "61",
+      "sourceIndex": 113,
+      "point": "pc-phrase",
+      "status": "ambiguous_or_duplicate_type_excluded",
+      "fingerprint": "c881f2d2b956139a8fda157db5b5b52b9b985357dfad7bf065bbd35a1063bdea"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "57",
+      "sourceIndex": 114,
+      "point": "pc-phrase",
+      "status": "included",
+      "fingerprint": "dc718452deb9c44d2efe7bde7e3fa6613a1dac57e84de9b2a30ab720351aad56"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "50",
+      "sourceIndex": 115,
+      "point": "pc-phrase",
+      "status": "included",
+      "fingerprint": "487c043fcc3f244f9ae937dbed9e5bf5b43698a47f055a7c252bae057a4cceb2"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "48",
+      "sourceIndex": 116,
+      "point": "pc-phrase",
+      "status": "included",
+      "fingerprint": "5afab46b87c47b92c2b009bb1931f6567fd5aa7fd89a24fc889a2fe26628ec18"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "46",
+      "sourceIndex": 117,
+      "point": "pc-time",
+      "status": "included",
+      "fingerprint": "066d5c20a909b14cebdb76bd70e0934d16d4c1e39a320873a9b218f019f76fbe"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "38",
+      "sourceIndex": 118,
+      "point": "pc-time",
+      "status": "ambiguous_or_duplicate_type_excluded",
+      "fingerprint": "b5cc7980f7bf2f33ccfe0fe58fa6188c33572e785063f4af1457138ad748576b"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "34",
+      "sourceIndex": 119,
+      "point": "pc-phrase",
+      "status": "included",
+      "fingerprint": "8e666b2bc76b8e6a714bd82e9e1188c8771ecfaaf5c7123d711d7507f363a078"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "32",
+      "sourceIndex": 120,
+      "point": "pc-phrase",
+      "status": "included",
+      "fingerprint": "6caa31caf052839e5d9020f256e12932c0d6112fabba7bc10ef26e2447754ce3"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "24",
+      "sourceIndex": 121,
+      "point": "pc-phrase",
+      "status": "ambiguous_or_duplicate_type_excluded",
+      "fingerprint": "6a066f42387b2a05e6aca8da2d089de99207a3de03e8ae187f252282713e2aaf"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "3",
+      "sourceIndex": 122,
+      "point": "pc-phrase",
+      "status": "ambiguous_or_duplicate_type_excluded",
+      "fingerprint": "d73a352cb7f67f2f6f189d126776b7c217baf129468419bbb4c7a36b137b8483"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "17",
+      "sourceIndex": 123,
+      "point": "pc-time",
+      "status": "included",
+      "fingerprint": "8daa63f789b5db847fa2c8ba144b2bcbf3e3a7408cb577bf74b4b29bf79108ab"
+    },
+    {
+      "source": "grammer02-user-practice",
+      "number": "11",
+      "sourceIndex": 124,
+      "point": "pc-time",
+      "status": "included",
+      "fingerprint": "614fb2f1be21176c51d43ef7ab68e3e10d9c4aa11a3ec66cd7e7bf15424ba19a"
+    },
+    {
+      "source": "ets-practice-2026-10-20",
+      "number": 1,
+      "sourceIndex": null,
+      "point": "sp-elements",
+      "status": "included",
+      "fingerprint": "e38121e9f8c90e3c9eff4f6c1c2598b70cf071d2939f2e0bede257d9191ff6fa"
+    },
+    {
+      "source": "ets-practice-2026-10-20",
+      "number": 2,
+      "sourceIndex": null,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "6ac501595093faa568ac3e881b05acbeb85f7fcb55b7a4412f440424fce4eee3"
+    },
+    {
+      "source": "ets-practice-2026-10-20",
+      "number": 3,
+      "sourceIndex": null,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "76896617dc3baf2c06c230582e0770bcc639b6ad81b0571aedb62e185431c5c4"
+    },
+    {
+      "source": "ets-practice-2026-10-20",
+      "number": 4,
+      "sourceIndex": null,
+      "point": "sp-object-complement",
+      "status": "included",
+      "fingerprint": "43b14f6a8bf87a7534318787a72021c73ebc930912e5e30bef51ae26d558abb3"
+    },
+    {
+      "source": "ets-practice-2026-10-20",
+      "number": 5,
+      "sourceIndex": null,
+      "point": "sp-subject-complement",
+      "status": "included",
+      "fingerprint": "604699ceb870e73c75aeeaa652d714206d4f7d99944bdc48267d3a34351cddb9"
+    },
+    {
+      "source": "ets-practice-2026-10-20",
+      "number": 6,
+      "sourceIndex": null,
+      "point": "sp-elements",
+      "status": "included",
+      "fingerprint": "08660313bbceff1e1c76c62722626d3c86f83d3dd95e238799ed5294aade554c"
+    },
+    {
+      "source": "ets-practice-2026-10-20",
+      "number": 7,
+      "sourceIndex": null,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "6b54ef5da8852fe52a15782b008338a041e43e076e6a90794bf375ba65fc94f7"
+    },
+    {
+      "source": "ets-practice-2026-10-20",
+      "number": 8,
+      "sourceIndex": null,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "1ee6279388b149c9011a76f1d92579fef0196c2cef8eee4d89ab1330ddf6b773"
+    },
+    {
+      "source": "ets-practice-2026-10-20",
+      "number": 9,
+      "sourceIndex": null,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "bb5defca9d270b23de8753605faacafb6ea8c751795c6ba5430b959ba2508edf"
+    },
+    {
+      "source": "ets-practice-2026-10-20",
+      "number": 10,
+      "sourceIndex": null,
+      "point": "np-ing-nouns",
+      "status": "included",
+      "fingerprint": "792ec6ec0c080e3234d2f5d1ed6af9b56987b63b05d51ed593934f324f05cc72"
+    },
+    {
+      "source": "ets-practice-2026-10-20",
+      "number": 11,
+      "sourceIndex": null,
+      "point": "np-ing-nouns",
+      "status": "included",
+      "fingerprint": "ae2265cf2b4a30cfe0311c71b7537d70e42f6780ffd055e167c767bcf780c300"
+    },
+    {
+      "source": "ets-practice-2026-10-20",
+      "number": 12,
+      "sourceIndex": null,
+      "point": "np-determiners",
+      "status": "included",
+      "fingerprint": "afb48440b469aceb93b4694af00a44afa94c616c4396a61ec5b6979ba8687eb6"
+    },
+    {
+      "source": "ets-practice-2026-10-20",
+      "number": 13,
+      "sourceIndex": null,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "75cd9811281d1545087ce60f12549d8f8a9b8a6e618d8c5a3ccd6873cffa649a"
+    },
+    {
+      "source": "ets-practice-2026-10-20",
+      "number": 14,
+      "sourceIndex": null,
+      "point": "np-multipos",
+      "status": "included",
+      "fingerprint": "4d15e35c1d2d9152c6618d0a1aeabf733401e832653dee9453d5a97def509618"
+    },
+    {
+      "source": "paper-exam-1",
+      "number": 109,
+      "sourceIndex": null,
+      "point": null,
+      "status": "vocabulary_or_context_not_grammar",
+      "fingerprint": "0fef855e098c5b5c4efb737af154a68a016cf801cf82747af19062a3d87808a1"
+    },
+    {
+      "source": "paper-exam-1",
+      "number": 111,
+      "sourceIndex": null,
+      "point": "pc-time",
+      "status": "included",
+      "fingerprint": "3b03893d7d5e630349a6b6c912a3c3acebcd059402eb864167c0ea809e4a2a20"
+    },
+    {
+      "source": "paper-exam-1",
+      "number": 117,
+      "sourceIndex": null,
+      "point": "np-suffix",
+      "status": "included",
+      "fingerprint": "7ca9241647ead699b39ff4e48fbf89c83ab18aa23c7129e2341043d5559cb928"
+    },
+    {
+      "source": "paper-exam-1",
+      "number": 120,
+      "sourceIndex": null,
+      "point": null,
+      "status": "vocabulary_or_context_not_grammar",
+      "fingerprint": "4165dd844b9fa462faa3c3b8aa2edc5a75147788b8bc73274cc6420195e94427"
+    },
+    {
+      "source": "paper-exam-1",
+      "number": 123,
+      "sourceIndex": null,
+      "point": null,
+      "status": "vocabulary_or_context_not_grammar",
+      "fingerprint": "6fb133ab57aafe98c7589d45b14d3b6781b8a8798599d75f54d1410e4e8e4a7d"
+    },
+    {
+      "source": "paper-exam-1",
+      "number": 125,
+      "sourceIndex": null,
+      "point": "aa-position",
+      "status": "included",
+      "fingerprint": "be7e8a58c8b4cb5591ea629a4c80790a513140ded7062d281fdc9aad43d75e21"
+    },
+    {
+      "source": "paper-exam-1",
+      "number": 128,
+      "sourceIndex": null,
+      "point": "cc-relative",
+      "status": "included",
+      "fingerprint": "ea39e1ab8783bd329f2dd9faa2136e21a9f48d46aaf8bb1d675c9eee1a475d8c"
+    },
+    {
+      "source": "paper-exam-1",
+      "number": 130,
+      "sourceIndex": null,
+      "point": "vv-causative",
+      "status": "included",
+      "fingerprint": "fdfdeeb3f30a399635ec3184707bccd6e9cbdd37e8a1f2cbb067d56029ac238a"
+    },
+    {
+      "source": "paper-exam-1",
+      "number": 131,
+      "sourceIndex": null,
+      "point": null,
+      "status": "vocabulary_or_context_not_grammar",
+      "fingerprint": "1487cd70e0a3b7a7fa66b900962efa439971f0a04927d0cc33640e92180ad1f7"
+    },
+    {
+      "source": "paper-exam-1",
+      "number": 132,
+      "sourceIndex": null,
+      "point": null,
+      "status": "vocabulary_or_context_not_grammar",
+      "fingerprint": "4a97b8bc445b50daa1fa4fa4d43880b55ddefb4bccc37035e3bd536c6df7c5ff"
+    },
+    {
+      "source": "paper-exam-1",
+      "number": 133,
+      "sourceIndex": null,
+      "point": null,
+      "status": "vocabulary_or_context_not_grammar",
+      "fingerprint": "10ff6371bd4bb20e5403b59a52cb8ce25e134468fc7590feea1b3841ff871f1e"
+    },
+    {
+      "source": "paper-exam-1",
+      "number": 134,
+      "sourceIndex": null,
+      "point": "np-indefinite",
+      "status": "included",
+      "fingerprint": "c294cfc6d0aae377a16412a384d122a16265455a515d12da10221ec262077f65"
+    },
+    {
+      "source": "paper-exam-1",
+      "number": 139,
+      "sourceIndex": null,
+      "point": null,
+      "status": "vocabulary_or_context_not_grammar",
+      "fingerprint": "9dede0afffadb362ff744cf1b93127047d7278f8e7d0e613c9ad8600dabdf19a"
+    },
+    {
+      "source": "paper-exam-1",
+      "number": 140,
+      "sourceIndex": null,
+      "point": null,
+      "status": "vocabulary_or_context_not_grammar",
+      "fingerprint": "c94983e05136255bba86ce73393c61f0a6921c685f7f2bc60eda320b0b8ea256"
+    },
+    {
+      "source": "paper-exam-1",
+      "number": 141,
+      "sourceIndex": null,
+      "point": null,
+      "status": "vocabulary_or_context_not_grammar",
+      "fingerprint": "4bc461d9f14f2dd13a6217b97663b2e9955ec593a46f43f70bca2590e03d6ff1"
+    },
+    {
+      "source": "paper-exam-1",
+      "number": 142,
+      "sourceIndex": null,
+      "point": null,
+      "status": "vocabulary_or_context_not_grammar",
+      "fingerprint": "b94a61d3ed869c417d3f676d70de28d80b9a9ef0930057412b9895e504f44969"
+    },
+    {
+      "source": "whitedog3-test1",
+      "number": 102,
+      "sourceIndex": null,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "1a669c319fed89fc95583ba36b75ea22fa2ae3acc895442f13759fdbac5de8db"
+    },
+    {
+      "source": "whitedog3-test1",
+      "number": 107,
+      "sourceIndex": null,
+      "point": null,
+      "status": "vocabulary_or_context_not_grammar",
+      "fingerprint": "3082f04293c8ad4e9c7046d7cb2cacfd89df2a456a1fe10da7eaaa54b88d3b70"
+    },
+    {
+      "source": "whitedog3-test1",
+      "number": 109,
+      "sourceIndex": null,
+      "point": "aa-participial",
+      "status": "included",
+      "fingerprint": "9578c6f5efc78eefd88e1070c1449bce6379143b17c5320c6b189769e8820058"
+    },
+    {
+      "source": "whitedog3-test1",
+      "number": 113,
+      "sourceIndex": null,
+      "point": "cc-conj-prep",
+      "status": "included",
+      "fingerprint": "ebce19c863cc7443de11fc353ff2c1ca4ef38f13c00da09a56d35d99be09bce9"
+    },
+    {
+      "source": "whitedog3-test1",
+      "number": 114,
+      "sourceIndex": null,
+      "point": "cc-parallel",
+      "status": "included",
+      "fingerprint": "4d6c14d6ad95082ef0011027bde2e9aa6772ee62b28ad53d51784201fbf026d8"
+    },
+    {
+      "source": "whitedog3-test1",
+      "number": 119,
+      "sourceIndex": null,
+      "point": "pc-time",
+      "status": "included",
+      "fingerprint": "d8e2781101271ca2122b8c598f3be4e62336410ce91400e215929318cf3cd2a3"
+    },
+    {
+      "source": "whitedog3-test1",
+      "number": 122,
+      "sourceIndex": null,
+      "point": "aa-adverb-roles",
+      "status": "included",
+      "fingerprint": "b67635d6c47633509627d620d3388e79ce73e7d0c13a6a20c763546bd7e29292"
+    },
+    {
+      "source": "whitedog3-test1",
+      "number": 125,
+      "sourceIndex": null,
+      "point": null,
+      "status": "vocabulary_or_context_not_grammar",
+      "fingerprint": "9c896f544d3d34a9c0f626bdbcd91bd3efa1614d6430886e42009058e4aaa7b5"
+    },
+    {
+      "source": "whitedog3-test1",
+      "number": 126,
+      "sourceIndex": null,
+      "point": "cc-relative",
+      "status": "included",
+      "fingerprint": "0b7d40ec966370816814b80fac081d5167c549197c26f031ee97b4430fc1c83a"
+    },
+    {
+      "source": "whitedog3-test1",
+      "number": 129,
+      "sourceIndex": null,
+      "point": null,
+      "status": "vocabulary_or_context_not_grammar",
+      "fingerprint": "7c650e6c015aa2b6959cfa1b0be00b9270deadd7e4cad3a223e8de77cccf0400"
+    },
+    {
+      "source": "whitedog3-test1",
+      "number": 135,
+      "sourceIndex": null,
+      "point": "cc-relative",
+      "status": "included",
+      "fingerprint": "80020e193e3248cef87b3f7abfdb9b6c286dfb3a682ef5f3b93a5b44f0c7eb2f"
+    },
+    {
+      "source": "whitedog3-test1",
+      "number": 136,
+      "sourceIndex": null,
+      "point": "vv-participle",
+      "status": "included",
+      "fingerprint": "39361f70cf89a177cb609edac96b21ddea1e3a2353f93a458f098a1aedb0800f"
+    },
+    {
+      "source": "whitedog3-test1",
+      "number": 137,
+      "sourceIndex": null,
+      "point": null,
+      "status": "vocabulary_or_context_not_grammar",
+      "fingerprint": "2a18373d915d5334918a3cae19f5823ece4d8a814574472a738840c7124e3446"
+    },
+    {
+      "source": "whitedog3-test1",
+      "number": 138,
+      "sourceIndex": null,
+      "point": null,
+      "status": "vocabulary_or_context_not_grammar",
+      "fingerprint": "21c07460f70464f4753ffda0904794c6be08491e6a1f8b18818100ce9e022480"
+    }
+  ],
+  "tableOrder": [
+    {
+      "chapter": "sentence-patterns",
+      "topic": "sp-elements",
+      "patterns": [
+        "S + V (+ O / C)",
+        "중심 동사구가 빠진 절 → 동사 형태 확인",
+        "S·V 확인 → 남은 빈칸 역할 판단"
+      ],
+      "evidenceAvailable": true
+    },
+    {
+      "chapter": "sentence-patterns",
+      "topic": "sp-noun-phrase",
+      "patterns": [
+        "a/the/소유격 + (형용사) + 명사",
+        "명사 + 명사",
+        "recommendation letter / letter of recommendation"
+      ],
+      "evidenceAvailable": false
+    },
+    {
+      "chapter": "sentence-patterns",
+      "topic": "sp-ing-ed",
+      "patterns": [
+        "-ing구 = 주어·목적어",
+        "be + -ing",
+        "명사 + -ing/-ed 구"
+      ],
+      "evidenceAvailable": false
+    },
+    {
+      "chapter": "sentence-patterns",
+      "topic": "sp-subject-complement",
+      "patterns": [
+        "seem / remain + 형용사",
+        "become + 명사구",
+        "동사 뒤 ≠ 부사 자동 선택"
+      ],
+      "evidenceAvailable": true
+    },
+    {
+      "chapter": "sentence-patterns",
+      "topic": "sp-object-complement",
+      "patterns": [
+        "keep/leave/find O + 형용사",
+        "consider O + 명사구",
+        "make O do ↔ O be made to do",
+        "keep O informed / secure"
+      ],
+      "evidenceAvailable": true
+    },
+    {
+      "chapter": "sentence-patterns",
+      "topic": "sp-multi-pattern",
+      "patterns": [
+        "keep + O",
+        "keep + O + C",
+        "make + O"
+      ],
+      "evidenceAvailable": false
+    },
+    {
+      "chapter": "nouns-pronouns",
+      "topic": "np-suffix",
+      "patterns": [
+        "assistant / assistance",
+        "distributor · architect · recipient",
+        "representative · associate · professional · critic",
+        "replacement · addition"
+      ],
+      "evidenceAvailable": true
+    },
+    {
+      "chapter": "nouns-pronouns",
+      "topic": "np-ing-nouns",
+      "patterns": [
+        "work in publishing / advertising",
+        "a drawing / job openings",
+        "earnings",
+        "shipping and handling"
+      ],
+      "evidenceAvailable": true
+    },
+    {
+      "chapter": "nouns-pronouns",
+      "topic": "np-multipos",
+      "patterns": [
+        "a parking permit / permit A to do",
+        "an increase in / increase by",
+        "a rental car / car rental",
+        "a 없음 ≠ 복수",
+        "authorization [U/C] / an advisory"
+      ],
+      "evidenceAvailable": true
+    },
+    {
+      "chapter": "nouns-pronouns",
+      "topic": "np-determiners",
+      "patterns": [
+        "some / any / all + 복수·불가산",
+        "each / every / another + 단수명사",
+        "many / few / several / various + 복수명사",
+        "much / little + 불가산",
+        "a selection of",
+        "few / little ↔ a few / a little"
+      ],
+      "evidenceAvailable": true
+    },
+    {
+      "chapter": "nouns-pronouns",
+      "topic": "np-pronoun-case",
+      "patterns": [
+        "they · them · their · theirs · themselves",
+        "by oneself",
+        "S + V ... oneself"
+      ],
+      "evidenceAvailable": false
+    },
+    {
+      "chapter": "nouns-pronouns",
+      "topic": "np-indefinite",
+      "patterns": [
+        "those who + 복수동사",
+        "those with + 명사",
+        "that/those of(at) ~",
+        "either/neither of + 복수명사"
+      ],
+      "evidenceAvailable": true
+    },
+    {
+      "chapter": "adjectives-adverbs",
+      "topic": "aa-adj-form",
+      "patterns": [
+        "friendly · costly · likely · timely",
+        "daily · weekly · monthly · quarterly",
+        "state-of-the-art · cost-effective",
+        "complimentary / complementary"
+      ],
+      "evidenceAvailable": false
+    },
+    {
+      "chapter": "adjectives-adverbs",
+      "topic": "aa-position",
+      "patterns": [
+        "a/the + ___ + 명사",
+        "be/seem/remain + ___",
+        "___ + 형용사/부사",
+        "완성 문장 + ___",
+        "be + 부사 + 명사구 보어",
+        "be of + 형용사 + 추상명사"
+      ],
+      "evidenceAvailable": true
+    },
+    {
+      "chapter": "adjectives-adverbs",
+      "topic": "aa-participial",
+      "patterns": [
+        "사물·결과 + is encouraging / impressive",
+        "사람 + is impressed / satisfied (by/with)",
+        "be + p.p. + by 행위자",
+        "be qualified for / be located in"
+      ],
+      "evidenceAvailable": true
+    },
+    {
+      "chapter": "adjectives-adverbs",
+      "topic": "aa-adverb-roles",
+      "patterns": [
+        "have/be + ___ + p.p.",
+        "V + O + ___",
+        "___, S + V"
+      ],
+      "evidenceAvailable": true
+    },
+    {
+      "chapter": "adjectives-adverbs",
+      "topic": "aa-time-adverbs",
+      "patterns": [
+        "have not p.p. yet / still have not p.p.",
+        "hardly · seldom · rarely",
+        "Only after/if + 절, 조동사 + S + V",
+        "even · only"
+      ],
+      "evidenceAvailable": false
+    },
+    {
+      "chapter": "adjectives-adverbs",
+      "topic": "aa-number-adverbs",
+      "patterns": [
+        "approximately / about + 숫자",
+        "at least / up to + 숫자",
+        "more than / over + 숫자",
+        "right / shortly / immediately after"
+      ],
+      "evidenceAvailable": true
+    },
+    {
+      "chapter": "verbs-verbals",
+      "topic": "vv-verb-forms",
+      "patterns": [
+        "modernize · simplify · strengthen · finalize",
+        "must / should / will + 원형",
+        "Please + 원형"
+      ],
+      "evidenceAvailable": false
+    },
+    {
+      "chapter": "verbs-verbals",
+      "topic": "vv-help-mandative",
+      "patterns": [
+        "help (O) (to) do",
+        "request/require/recommend that S (should) + 원형",
+        "The data suggest that S + 시제동사"
+      ],
+      "evidenceAvailable": false
+    },
+    {
+      "chapter": "verbs-verbals",
+      "topic": "vv-causative",
+      "patterns": [
+        "have O do / have O done",
+        "get O to do / get O done"
+      ],
+      "evidenceAvailable": true
+    },
+    {
+      "chapter": "verbs-verbals",
+      "topic": "vv-transitivity",
+      "patterns": [
+        "respond to · comply with · depend on",
+        "discuss · attend · contact + O",
+        "run a store / The bus runs",
+        "receive permission · make arrangements"
+      ],
+      "evidenceAvailable": false
+    },
+    {
+      "chapter": "verbs-verbals",
+      "topic": "vv-infinitive",
+      "patterns": [
+        "would like · need · plan · intend · decide",
+        "fail · strive · promise · afford · expect",
+        "(In order) to do, S + V",
+        "encourage / invite / advise O to do"
+      ],
+      "evidenceAvailable": false
+    },
+    {
+      "chapter": "verbs-verbals",
+      "topic": "vv-gerund",
+      "patterns": [
+        "enjoy · avoid · consider · finish · postpone + -ing",
+        "look forward to · be accustomed to + -ing",
+        "by -ing / upon -ing",
+        "not -ing / being p.p.",
+        "stop -ing / stop to do · remember -ing / to do"
+      ],
+      "evidenceAvailable": false
+    },
+    {
+      "chapter": "verbs-verbals",
+      "topic": "vv-participle",
+      "patterns": [
+        "leading · existing · lasting · outstanding · following",
+        "attached · enclosed · revised · qualified · designated",
+        "unless otherwise stated · once submitted · than expected · as planned",
+        "Having p.p., S + V",
+        "with + O + -ing/p.p.",
+        "as planned / as CEO"
+      ],
+      "evidenceAvailable": true
+    },
+    {
+      "chapter": "agreement-voice-tense",
+      "topic": "avt-agreement",
+      "patterns": [
+        "Each of the + 복수명사 + 단수동사",
+        "A number of + 복수명사 + 복수동사",
+        "The number of + 복수명사 + 단수동사",
+        "동명사구 주어 + 단수동사"
+      ],
+      "evidenceAvailable": false
+    },
+    {
+      "chapter": "agreement-voice-tense",
+      "topic": "avt-tense-basic",
+      "patterns": [
+        "yesterday / last week / in 2019 / ago",
+        "be + -ing + 미래 시점",
+        "recently"
+      ],
+      "evidenceAvailable": false
+    },
+    {
+      "chapter": "agreement-voice-tense",
+      "topic": "avt-perfect",
+      "patterns": [
+        "since + 과거 시점 / for + 기간",
+        "over the past + 기간",
+        "had p.p.",
+        "By the time/By + 미래, will have p.p."
+      ],
+      "evidenceAvailable": false
+    },
+    {
+      "chapter": "agreement-voice-tense",
+      "topic": "avt-time-clause",
+      "patterns": [
+        "until / as soon as / when + 현재·현재완료",
+        "know / ask + whether·when + will"
+      ],
+      "evidenceAvailable": false
+    },
+    {
+      "chapter": "agreement-voice-tense",
+      "topic": "avt-voice",
+      "patterns": [
+        "S + be given / sent / offered + O",
+        "arrive · occur · happen · rise",
+        "be kept secure / be considered essential",
+        "V + 전치사 ≠ 수동",
+        "will be + p.p."
+      ],
+      "evidenceAvailable": false
+    },
+    {
+      "chapter": "clauses-connectors",
+      "topic": "cc-conj-prep",
+      "patterns": [
+        "before the meeting / before we meet / before leaving",
+        "while + S V / during + 명사구",
+        "if · unless · provided that · as long as + 절",
+        "although/though + S V / despite/in spite of + 명사구",
+        "because + S V / because of + 명사구",
+        "so that + 절 / in order to + 원형"
+      ],
+      "evidenceAvailable": true
+    },
+    {
+      "chapter": "clauses-connectors",
+      "topic": "cc-parallel",
+      "patterns": [
+        "-ing, -ing, and -ing",
+        "both A and B / either A or B / neither A nor B",
+        "A as well as B + A에 맞춘 동사",
+        "A rather than B"
+      ],
+      "evidenceAvailable": true
+    },
+    {
+      "chapter": "clauses-connectors",
+      "topic": "cc-conj-adverb",
+      "patterns": [
+        "S + V. However, S + V.",
+        "therefore · as a result",
+        "meanwhile · in addition",
+        "no matter how + 형/부 + S + V"
+      ],
+      "evidenceAvailable": false
+    },
+    {
+      "chapter": "clauses-connectors",
+      "topic": "cc-noun-clause",
+      "patterns": [
+        "whether (or not) + 완전한 절",
+        "that + 완전한 절",
+        "be sure / confident + that절",
+        "what + 불완전한 절",
+        "의문사 + S + V",
+        "whoever + V / 의문사 + S + V"
+      ],
+      "evidenceAvailable": true
+    },
+    {
+      "chapter": "clauses-connectors",
+      "topic": "cc-relative",
+      "patterns": [
+        ", which / , who",
+        "사람 + who + V",
+        "전치사 + which/whom",
+        "장소 + where + 완전한 절 / which + 불완전한 절",
+        "whom / 전치사 + which",
+        "명사 + whose + 명사"
+      ],
+      "evidenceAvailable": true
+    },
+    {
+      "chapter": "clauses-connectors",
+      "topic": "cc-that-test",
+      "patterns": [
+        "명사 + that + 불완전한 절",
+        "동사 + that + 완전한 절",
+        "선행사 없음 + ___ + 불완전한 절"
+      ],
+      "evidenceAvailable": false
+    },
+    {
+      "chapter": "clauses-connectors",
+      "topic": "pc-time",
+      "patterns": [
+        "for + 기간 길이 / during + 특정 기간",
+        "within + 기간",
+        "until + 시점",
+        "not A until B",
+        "since + 시작점 / from A to B",
+        "by + 시점",
+        "at 9 / on Monday / in May"
+      ],
+      "evidenceAvailable": true
+    },
+    {
+      "chapter": "clauses-connectors",
+      "topic": "pc-phrase",
+      "patterns": [
+        "prior to / ahead of + 명사",
+        "in addition to + 명사/-ing",
+        "regardless of · according to",
+        "at the entrance · on the desk · in the office",
+        "interested in / responsible for / in person"
+      ],
+      "evidenceAvailable": true
+    },
+    {
+      "chapter": "prepositions-comparison",
+      "topic": "pc-as-as",
+      "patterns": [
+        "be + as 형용사 as",
+        "V + as 부사 as",
+        "as many/much + 명사 + as"
+      ],
+      "evidenceAvailable": false
+    },
+    {
+      "chapter": "prepositions-comparison",
+      "topic": "pc-comparative",
+      "patterns": [
+        "be more efficient",
+        "work more efficiently",
+        "fast → faster",
+        "as + 형용사/부사 원급 + as",
+        "much / far / a lot + 비교급",
+        "even / still + 비교급",
+        "considerably / significantly + 비교급",
+        "slightly / a little + 비교급",
+        "very + 원급 / much + 비교급",
+        "more time / more employees"
+      ],
+      "evidenceAvailable": true
+    },
+    {
+      "chapter": "prepositions-comparison",
+      "topic": "pc-superlative",
+      "patterns": [
+        "the -est / the most + 형용사 + of 복수명사",
+        "the -est + 명사 + (that) S have ever p.p.",
+        "the -est ... possible / yet"
+      ],
+      "evidenceAvailable": true
+    },
+    {
+      "chapter": "conditionals",
+      "topic": "cd-real",
+      "patterns": [
+        "If + S + 현재, S + will/can + 원형",
+        "If + S + 현재, 명령문"
+      ],
+      "evidenceAvailable": false
+    },
+    {
+      "chapter": "conditionals",
+      "topic": "cd-past-subj",
+      "patterns": [
+        "If + S + 과거, S + would/could + 원형",
+        "If S were ..."
+      ],
+      "evidenceAvailable": false
+    },
+    {
+      "chapter": "conditionals",
+      "topic": "cd-past-perfect",
+      "patterns": [
+        "If + had p.p., would/could have p.p.",
+        "would / could have p.p. 단독",
+        "; otherwise, S + would have p.p."
+      ],
+      "evidenceAvailable": false
+    },
+    {
+      "chapter": "conditionals",
+      "topic": "cd-mixed",
+      "patterns": [
+        "If + had p.p. (과거), would + 원형 (now)",
+        "would be -ing"
+      ],
+      "evidenceAvailable": false
+    },
+    {
+      "chapter": "conditionals",
+      "topic": "cd-inversion",
+      "patterns": [
+        "Had + S + p.p., S + would have p.p.",
+        "Should + S + 원형, 명령문/will",
+        "Were + S + 보어/to do, would + 원형"
+      ],
+      "evidenceAvailable": false
+    },
+    {
+      "chapter": "conditionals",
+      "topic": "cd-wish-asif",
+      "patterns": [
+        "S wish + S + 과거(were)",
+        "S wish + S + had p.p.",
+        "as if / as though + 과거·had p.p."
+      ],
+      "evidenceAvailable": false
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+name: Header refinement pixels (synthetic only)
+on:
+  push:
+    branches: [codex/header-refinement-review-20261102]
+permissions:
+  contents: read
+concurrency:
+  group: header-refinement-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  header-pixels:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      NODE_PATH: ${{ github.workspace }}/.ci-tools/node_modules
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: .ci-tools/package-lock.json
+      - run: npm ci --prefix .ci-tools --no-fund
+      - run: node scripts/test-header-refinement.cjs
+      - run: .ci-tools/node_modules/.bin/playwright install --with-deps chromium webkit
+        if: always()
+      - run: node scripts/qa-header-refinement.cjs
+        if: always()
+      - name: Validate exact synthetic screenshot names
+        id: privacy
+        if: always()
+        run: |
+          node <<'NODE'
+          const fs=require('node:fs'),files=["evidence/header-refinement/chromium-355-history-baseline.png", "evidence/header-refinement/chromium-355-history-baseline-header.png", "evidence/header-refinement/chromium-355-history-candidate.png", "evidence/header-refinement/chromium-355-history-candidate-header.png", "evidence/header-refinement/chromium-355-history-candidate-focus.png", "evidence/header-refinement/chromium-355-toeic-map-baseline.png", "evidence/header-refinement/chromium-355-toeic-map-baseline-header.png", "evidence/header-refinement/chromium-355-toeic-map-candidate.png", "evidence/header-refinement/chromium-355-toeic-map-candidate-header.png", "evidence/header-refinement/chromium-355-toeic-map-candidate-focus.png", "evidence/header-refinement/chromium-355-toeic-notebook-baseline.png", "evidence/header-refinement/chromium-355-toeic-notebook-baseline-header.png", "evidence/header-refinement/chromium-355-toeic-notebook-candidate.png", "evidence/header-refinement/chromium-355-toeic-notebook-candidate-header.png", "evidence/header-refinement/chromium-355-toeic-notebook-candidate-focus.png", "evidence/header-refinement/chromium-390-history-baseline.png", "evidence/header-refinement/chromium-390-history-baseline-header.png", "evidence/header-refinement/chromium-390-history-candidate.png", "evidence/header-refinement/chromium-390-history-candidate-header.png", "evidence/header-refinement/chromium-390-history-candidate-focus.png", "evidence/header-refinement/chromium-390-toeic-map-baseline.png", "evidence/header-refinement/chromium-390-toeic-map-baseline-header.png", "evidence/header-refinement/chromium-390-toeic-map-candidate.png", "evidence/header-refinement/chromium-390-toeic-map-candidate-header.png", "evidence/header-refinement/chromium-390-toeic-map-candidate-focus.png", "evidence/header-refinement/chromium-390-toeic-notebook-baseline.png", "evidence/header-refinement/chromium-390-toeic-notebook-baseline-header.png", "evidence/header-refinement/chromium-390-toeic-notebook-candidate.png", "evidence/header-refinement/chromium-390-toeic-notebook-candidate-header.png", "evidence/header-refinement/chromium-390-toeic-notebook-candidate-focus.png", "evidence/header-refinement/chromium-1024-history-baseline.png", "evidence/header-refinement/chromium-1024-history-baseline-header.png", "evidence/header-refinement/chromium-1024-history-candidate.png", "evidence/header-refinement/chromium-1024-history-candidate-header.png", "evidence/header-refinement/chromium-1024-history-candidate-focus.png", "evidence/header-refinement/chromium-1024-toeic-map-baseline.png", "evidence/header-refinement/chromium-1024-toeic-map-baseline-header.png", "evidence/header-refinement/chromium-1024-toeic-map-candidate.png", "evidence/header-refinement/chromium-1024-toeic-map-candidate-header.png", "evidence/header-refinement/chromium-1024-toeic-map-candidate-focus.png", "evidence/header-refinement/chromium-1024-toeic-notebook-baseline.png", "evidence/header-refinement/chromium-1024-toeic-notebook-baseline-header.png", "evidence/header-refinement/chromium-1024-toeic-notebook-candidate.png", "evidence/header-refinement/chromium-1024-toeic-notebook-candidate-header.png", "evidence/header-refinement/chromium-1024-toeic-notebook-candidate-focus.png", "evidence/header-refinement/webkit-355-history-baseline.png", "evidence/header-refinement/webkit-355-history-baseline-header.png", "evidence/header-refinement/webkit-355-history-candidate.png", "evidence/header-refinement/webkit-355-history-candidate-header.png", "evidence/header-refinement/webkit-355-history-candidate-focus.png", "evidence/header-refinement/webkit-355-toeic-map-baseline.png", "evidence/header-refinement/webkit-355-toeic-map-baseline-header.png", "evidence/header-refinement/webkit-355-toeic-map-candidate.png", "evidence/header-refinement/webkit-355-toeic-map-candidate-header.png", "evidence/header-refinement/webkit-355-toeic-map-candidate-focus.png", "evidence/header-refinement/webkit-355-toeic-notebook-baseline.png", "evidence/header-refinement/webkit-355-toeic-notebook-baseline-header.png", "evidence/header-refinement/webkit-355-toeic-notebook-candidate.png", "evidence/header-refinement/webkit-355-toeic-notebook-candidate-header.png", "evidence/header-refinement/webkit-355-toeic-notebook-candidate-focus.png", "evidence/header-refinement/webkit-390-history-baseline.png", "evidence/header-refinement/webkit-390-history-baseline-header.png", "evidence/header-refinement/webkit-390-history-candidate.png", "evidence/header-refinement/webkit-390-history-candidate-header.png", "evidence/header-refinement/webkit-390-history-candidate-focus.png", "evidence/header-refinement/webkit-390-toeic-map-baseline.png", "evidence/header-refinement/webkit-390-toeic-map-baseline-header.png", "evidence/header-refinement/webkit-390-toeic-map-candidate.png", "evidence/header-refinement/webkit-390-toeic-map-candidate-header.png", "evidence/header-refinement/webkit-390-toeic-map-candidate-focus.png", "evidence/header-refinement/webkit-390-toeic-notebook-baseline.png", "evidence/header-refinement/webkit-390-toeic-notebook-baseline-header.png", "evidence/header-refinement/webkit-390-toeic-notebook-candidate.png", "evidence/header-refinement/webkit-390-toeic-notebook-candidate-header.png", "evidence/header-refinement/webkit-390-toeic-notebook-candidate-focus.png", "evidence/header-refinement/webkit-1024-history-baseline.png", "evidence/header-refinement/webkit-1024-history-baseline-header.png", "evidence/header-refinement/webkit-1024-history-candidate.png", "evidence/header-refinement/webkit-1024-history-candidate-header.png", "evidence/header-refinement/webkit-1024-history-candidate-focus.png", "evidence/header-refinement/webkit-1024-toeic-map-baseline.png", "evidence/header-refinement/webkit-1024-toeic-map-baseline-header.png", "evidence/header-refinement/webkit-1024-toeic-map-candidate.png", "evidence/header-refinement/webkit-1024-toeic-map-candidate-header.png", "evidence/header-refinement/webkit-1024-toeic-map-candidate-focus.png", "evidence/header-refinement/webkit-1024-toeic-notebook-baseline.png", "evidence/header-refinement/webkit-1024-toeic-notebook-baseline-header.png", "evidence/header-refinement/webkit-1024-toeic-notebook-candidate.png", "evidence/header-refinement/webkit-1024-toeic-notebook-candidate-header.png", "evidence/header-refinement/webkit-1024-toeic-notebook-candidate-focus.png"];let count=0;
+          for(const f of files){if(!fs.existsSync(f))continue;const b=fs.readFileSync(f);if(!b.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10]))||b.readUInt32BE(16)>2200||b.readUInt32BE(20)>2200)throw Error('Unexpected synthetic screen '+f);count++;}console.log('Exact '+count+' synthetic-only frames checked; no real profiles, user photos, environment or broad globs.');
+          NODE
+      - name: Save exact synthetic comparison frames
+        if: always() && steps.privacy.outcome == 'success'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: synthetic-header-refinement-${{ github.run_id }}
+          retention-days: 1
+          if-no-files-found: ignore
+          path: |
+            evidence/header-refinement/chromium-355-history-baseline.png
+            evidence/header-refinement/chromium-355-history-baseline-header.png
+            evidence/header-refinement/chromium-355-history-candidate.png
+            evidence/header-refinement/chromium-355-history-candidate-header.png
+            evidence/header-refinement/chromium-355-history-candidate-focus.png
+            evidence/header-refinement/chromium-355-toeic-map-baseline.png
+            evidence/header-refinement/chromium-355-toeic-map-baseline-header.png
+            evidence/header-refinement/chromium-355-toeic-map-candidate.png
+            evidence/header-refinement/chromium-355-toeic-map-candidate-header.png
+            evidence/header-refinement/chromium-355-toeic-map-candidate-focus.png
+            evidence/header-refinement/chromium-355-toeic-notebook-baseline.png
+            evidence/header-refinement/chromium-355-toeic-notebook-baseline-header.png
+            evidence/header-refinement/chromium-355-toeic-notebook-candidate.png
+            evidence/header-refinement/chromium-355-toeic-notebook-candidate-header.png
+            evidence/header-refinement/chromium-355-toeic-notebook-candidate-focus.png
+            evidence/header-refinement/chromium-390-history-baseline.png
+            evidence/header-refinement/chromium-390-history-baseline-header.png
+            evidence/header-refinement/chromium-390-history-candidate.png
+            evidence/header-refinement/chromium-390-history-candidate-header.png
+            evidence/header-refinement/chromium-390-history-candidate-focus.png
+            evidence/header-refinement/chromium-390-toeic-map-baseline.png
+            evidence/header-refinement/chromium-390-toeic-map-baseline-header.png
+            evidence/header-refinement/chromium-390-toeic-map-candidate.png
+            evidence/header-refinement/chromium-390-toeic-map-candidate-header.png
+            evidence/header-refinement/chromium-390-toeic-map-candidate-focus.png
+            evidence/header-refinement/chromium-390-toeic-notebook-baseline.png
+            evidence/header-refinement/chromium-390-toeic-notebook-baseline-header.png
+            evidence/header-refinement/chromium-390-toeic-notebook-candidate.png
+            evidence/header-refinement/chromium-390-toeic-notebook-candidate-header.png
+            evidence/header-refinement/chromium-390-toeic-notebook-candidate-focus.png
+            evidence/header-refinement/chromium-1024-history-baseline.png
+            evidence/header-refinement/chromium-1024-history-baseline-header.png
+            evidence/header-refinement/chromium-1024-history-candidate.png
+            evidence/header-refinement/chromium-1024-history-candidate-header.png
+            evidence/header-refinement/chromium-1024-history-candidate-focus.png
+            evidence/header-refinement/chromium-1024-toeic-map-baseline.png
+            evidence/header-refinement/chromium-1024-toeic-map-baseline-header.png
+            evidence/header-refinement/chromium-1024-toeic-map-candidate.png
+            evidence/header-refinement/chromium-1024-toeic-map-candidate-header.png
+            evidence/header-refinement/chromium-1024-toeic-map-candidate-focus.png
+            evidence/header-refinement/chromium-1024-toeic-notebook-baseline.png
+            evidence/header-refinement/chromium-1024-toeic-notebook-baseline-header.png
+            evidence/header-refinement/chromium-1024-toeic-notebook-candidate.png
+            evidence/header-refinement/chromium-1024-toeic-notebook-candidate-header.png
+            evidence/header-refinement/chromium-1024-toeic-notebook-candidate-focus.png
+            evidence/header-refinement/webkit-355-history-baseline.png
+            evidence/header-refinement/webkit-355-history-baseline-header.png
+            evidence/header-refinement/webkit-355-history-candidate.png
+            evidence/header-refinement/webkit-355-history-candidate-header.png
+            evidence/header-refinement/webkit-355-history-candidate-focus.png
+            evidence/header-refinement/webkit-355-toeic-map-baseline.png
+            evidence/header-refinement/webkit-355-toeic-map-baseline-header.png
+            evidence/header-refinement/webkit-355-toeic-map-candidate.png
+            evidence/header-refinement/webkit-355-toeic-map-candidate-header.png
+            evidence/header-refinement/webkit-355-toeic-map-candidate-focus.png
+            evidence/header-refinement/webkit-355-toeic-notebook-baseline.png
+            evidence/header-refinement/webkit-355-toeic-notebook-baseline-header.png
+            evidence/header-refinement/webkit-355-toeic-notebook-candidate.png
+            evidence/header-refinement/webkit-355-toeic-notebook-candidate-header.png
+            evidence/header-refinement/webkit-355-toeic-notebook-candidate-focus.png
+            evidence/header-refinement/webkit-390-history-baseline.png
+            evidence/header-refinement/webkit-390-history-baseline-header.png
+            evidence/header-refinement/webkit-390-history-candidate.png
+            evidence/header-refinement/webkit-390-history-candidate-header.png
+            evidence/header-refinement/webkit-390-history-candidate-focus.png
+            evidence/header-refinement/webkit-390-toeic-map-baseline.png
+            evidence/header-refinement/webkit-390-toeic-map-baseline-header.png
+            evidence/header-refinement/webkit-390-toeic-map-candidate.png
+            evidence/header-refinement/webkit-390-toeic-map-candidate-header.png
+            evidence/header-refinement/webkit-390-toeic-map-candidate-focus.png
+            evidence/header-refinement/webkit-390-toeic-notebook-baseline.png
+            evidence/header-refinement/webkit-390-toeic-notebook-baseline-header.png
+            evidence/header-refinement/webkit-390-toeic-notebook-candidate.png
+            evidence/header-refinement/webkit-390-toeic-notebook-candidate-header.png
+            evidence/header-refinement/webkit-390-toeic-notebook-candidate-focus.png
+            evidence/header-refinement/webkit-1024-history-baseline.png
+            evidence/header-refinement/webkit-1024-history-baseline-header.png
+            evidence/header-refinement/webkit-1024-history-candidate.png
+            evidence/header-refinement/webkit-1024-history-candidate-header.png
+            evidence/header-refinement/webkit-1024-history-candidate-focus.png
+            evidence/header-refinement/webkit-1024-toeic-map-baseline.png
+            evidence/header-refinement/webkit-1024-toeic-map-baseline-header.png
+            evidence/header-refinement/webkit-1024-toeic-map-candidate.png
+            evidence/header-refinement/webkit-1024-toeic-map-candidate-header.png
+            evidence/header-refinement/webkit-1024-toeic-map-candidate-focus.png
+            evidence/header-refinement/webkit-1024-toeic-notebook-baseline.png
+            evidence/header-refinement/webkit-1024-toeic-notebook-baseline-header.png
+            evidence/header-refinement/webkit-1024-toeic-notebook-candidate.png
+            evidence/header-refinement/webkit-1024-toeic-notebook-candidate-header.png
+            evidence/header-refinement/webkit-1024-toeic-notebook-candidate-focus.png

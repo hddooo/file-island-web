@@ -1,0 +1,160 @@
+/* File Island: scenery belongs outside the opaque learning display.
+   Reuses the supplied map and existing characters; no remote visual dependencies. */
+html[data-hanq-theme=terminal] body{--world-frame:#9eb9ab;--world-edge:#365f61;--world-accent:#83dcb1;background:#081e29!important;isolation:isolate}
+body::before{background:linear-gradient(180deg,#163b590d 0%,#12384732 35%,#061a22d9 100%),url('file-island-map.png') center 40%/cover no-repeat!important;filter:none;opacity:1}
+body::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(120deg,#113b5c80,transparent 45%,#15433555),linear-gradient(0deg,#06151c 0%,transparent 35%)}
+body[data-island=toeic]{--world-edge:#386d82;--world-accent:#9bdbec}
+body[data-island=toeic]::before{background:linear-gradient(180deg,#103c6180,#09263d8c 45%,#071b26ed),url('file-island-map.png') 95% 80%/max(150vw,1600px) auto no-repeat!important}
+body[data-island=history]{--world-edge:#527655;--world-accent:#b9dfab}
+body[data-island=history]::before{background:linear-gradient(180deg,#264d3c70,#173e2c70 45%,#071b16ed),url('file-island-map.png') 8% 65%/max(150vw,1600px) auto no-repeat!important}
+html[data-hanq-theme=terminal] body .shell{position:relative;margin:36px auto 44px;padding:24px 28px;background:#050b0aF7!important;border:2px solid var(--world-frame)!important;border-radius:28px 28px 40px 40px;box-shadow:0 0 0 5px #193235,0 0 0 7px var(--world-edge),0 22px 64px #0008!important}
+html[data-hanq-theme=terminal] body .digivice-screen{border-top:14px solid var(--world-edge)!important;box-shadow:0 0 0 4px #172f33,0 0 0 7px var(--world-frame),0 24px 72px #0009!important}
+.shell::before{content:'';display:block;position:absolute;top:8px;left:50%;width:64px;height:4px;transform:translateX(-50%);border-radius:8px;background:repeating-linear-gradient(90deg,#9eb9ab 0 4px,transparent 4px 8px);pointer-events:none}
+.topline{flex-wrap:wrap;gap:10px 16px;padding-bottom:16px;margin-bottom:22px;border-bottom:1px solid #38594e}
+.world-location{flex-basis:100%;font-size:11px;letter-spacing:.13em;color:#bed6ca!important;line-height:1.6;order:3}
+html[data-hanq-theme=terminal] body .topline #homeBrand{padding:6px 10px;border:1px solid #55796c;border-radius:5px;background:#10251e!important;font-size:15px}
+/* Arrival is an open landscape, then the same frame becomes the study device. */
+html[data-hanq-theme=terminal] body .login-landing{background:linear-gradient(145deg,#0d2733f5,#061a1df5)!important}
+.login-landing .module-head{margin-bottom:20px}
+html[data-hanq-theme=terminal] body .login-landing .module-head h1{border:0;border-left:4px solid #d5c08c;border-radius:0;background:transparent!important;padding:6px 14px;font-size:clamp(28px,5vw,42px)}
+html[data-hanq-theme=terminal] body .login-landing .file-island-welcome{max-width:none;min-height:300px;padding:26px 20px 0;border:1px solid #88b6bd!important;border-radius:14px;background:linear-gradient(180deg,#0c2538e8,#163c4c55 55%,#0e302be6),url('file-island-map.png') center 52%/cover no-repeat!important}
+html[data-hanq-theme=terminal] body .login-landing .file-island-welcome h2{color:#fff!important;font-size:clamp(24px,4vw,32px);text-shadow:0 2px 4px #000}
+html[data-hanq-theme=terminal] body .login-landing .file-island-welcome p{display:inline-block;max-width:38ch;margin:8px auto;padding:8px 14px;background:#071c2ae8!important;border:1px solid #81a4a6;border-radius:5px;color:#fff!important;line-height:1.8}
+.login-landing .island-friends{height:180px;gap:38px;filter:drop-shadow(0 8px 7px #0007)}
+html[data-hanq-theme=terminal] body .login-landing .ac-panel{max-width:540px;margin:24px auto 0}
+html[data-hanq-theme=terminal] body .login-landing .ac-sec{background:#071512!important;border:1px solid #71978a!important;border-top:5px solid #71978a!important;border-radius:10px;padding:22px;box-shadow:none!important}
+html[data-hanq-theme=terminal] body .login-landing .ac-form input{background:#030a09!important;color:#fff!important;border-color:#78988b!important;border-radius:5px;min-height:46px}
+html[data-hanq-theme=terminal] body .login-landing :is(.ac-switch button,#acNameCheck,#acEmailCheck){background:#16372c!important;color:#e3f8ed!important;border-color:#719b86!important;border-radius:5px;min-height:44px}
+html[data-hanq-theme=terminal] body .login-landing #acAuthSubmit{background:#b9dfc6!important;color:#092117!important;border:2px solid #d6efe0!important;border-radius:6px;font-size:20px;min-height:52px}
+/* Navigation atlas preserves all four terrains in the supplied art. */
+body[data-world-scene=map] .shell{max-width:1100px}
+html[data-hanq-theme=terminal] body .subject-menu>h1{background:transparent!important;border:0;border-left:4px solid #cfba80;border-radius:0;padding:5px 14px;box-shadow:none!important;font-size:clamp(25px,4vw,36px)}
+.subject-menu>.subject-eyebrow{font-size:12px;letter-spacing:.1em;color:#bed6ca!important}
+html[data-hanq-theme=terminal] body .subject-menu .file-island-map{position:relative;margin-top:26px;border:3px solid #b6b58e!important;border-radius:18px!important;background:#b2d6df!important;box-shadow:0 0 0 5px #163a47,0 12px 30px #0005!important}
+.file-island-map-art{display:block;mix-blend-mode:multiply}
+html[data-hanq-theme=terminal] body .island-region-label{background:#102f24f5!important;border:3px double #dbd5a7!important;border-radius:6px;box-shadow:0 4px 0 #061a19!important;transition:transform .45s cubic-bezier(.2,.65,.2,1)!important}
+html[data-hanq-theme=terminal] body .island-region-toeic .island-region-label{background:#123646f5!important}
+.island-region:hover .island-region-label,.island-region:focus-visible .island-region-label{transform:translate(-50%,-55%)}
+html[data-hanq-theme=terminal] body .island-region::before{transition:transform .8s cubic-bezier(.2,.65,.2,1),opacity .5s,filter .5s!important}
+/* Repeated panels use a physical console edge; prose stays solid black. */
+html[data-hanq-theme=terminal] body :is(.tn,.tc,.tg,.tr,.tp,.fe-card,.ac-me,.ac-profile,.ac-profile-card,.ac-quick-card,.ac-records,.panel,.lesson-frame,.question,.lc-playlist){background:#050a08!important;border-color:#526f60!important;border-radius:9px}
+html[data-hanq-theme=terminal] body :is(.tn-head,.tc-head,.tg-head,.ac-hero,.section-title,.lesson-head){border-bottom:1px solid #526f60;padding-bottom:14px}
+html[data-hanq-theme=terminal] body :is(.tn-card,.tn-item,.tc-group,.period,.wn-entry,.tr-row){border-color:#466455!important;border-radius:7px;background:#091610!important}
+html[data-hanq-theme=terminal] body .home-hero{position:relative;overflow:hidden;min-height:270px;border:1px solid #789478!important;border-radius:12px;background:linear-gradient(90deg,#071b12fa,#071b12cf 65%,#143f2555),url('file-island-map.png') 7% 55%/160% auto no-repeat!important;padding:28px}
+.home-hero .hero-copy{position:relative;max-width:650px}
+html[data-hanq-theme=terminal] body .hero-copy h1{font-size:clamp(25px,3.2vw,38px);line-height:1.45}
+html[data-hanq-theme=terminal] body .study-path{background:#0d2119!important;border-color:#456950!important}
+html[data-hanq-theme=terminal] body :is(.ac-banner,.ac-hero,.ac-profile-card){background:linear-gradient(130deg,#14322f,#07130f)!important;border-color:#6f9585!important}
+.ac-company{min-width:0}.ac-hero-name{line-height:1.5!important;overflow-wrap:anywhere}
+html[data-hanq-theme=terminal] body :is(dialog,.modal,.mock-zoom-dialog,.request-dialog){background:#07130f!important;color:#f4f7f5!important;border:3px double #9cb8a5!important;border-radius:12px;box-shadow:0 24px 80px #000b!important}
+::backdrop{background:#03121bdb;backdrop-filter:blur(4px)}
+html[data-hanq-theme=terminal] body :is(.subject-empty,.tn-empty,.tc-empty,.tg-empty,.lc-empty,.ac-empty,[role=status]){color:#d3e7da!important;line-height:1.8}
+html[data-hanq-theme=terminal] body :is(.ac-notice,.hp-notice,.read-notice){background:#102a21!important;color:#d8f2e3!important;border:1px solid #719680!important;border-radius:6px}
+html[data-hanq-theme=terminal] body :is(.ac-err,[role=alert],.mock-save-fail){color:#ffc5ba!important;background-color:#281813!important;border-color:#c58b80!important}
+html[data-hanq-theme=terminal] body .lc-track-list{background:#030a08!important;border:1px solid #668b77!important;border-radius:7px}
+html[data-hanq-theme=terminal] body .lc-track.is-current{background:#18392a!important;border-left:4px solid #8de9b1!important}
+html[data-hanq-theme=terminal] body .toeic-sections button[aria-current]{background:#183a2c!important;border-color:#92c6a7!important;color:#d5f3e0!important}
+/* Only navigation scenery animates. Study tabs and the audio node never animate. */
+html[data-hanq-theme=terminal] body .adventure-zoom{animation:worldDive 1.35s cubic-bezier(.45,0,.2,1) forwards!important}
+html[data-hanq-theme=terminal] body .adventure-device{animation:worldDevice 1.35s cubic-bezier(.2,.7,.25,1) both!important;border:10px ridge #94b7aa;background:#071a15f5!important;box-shadow:0 20px 80px #0008!important}
+html[data-hanq-theme=terminal] body .adventure-arrival{animation:worldArrival .7s ease-out!important}
+@keyframes worldDive{0%{transform:scale(1);filter:brightness(1)}65%{filter:brightness(.75)}100%{transform:scale(3.2);filter:brightness(.18)}}
+@keyframes worldDevice{0%,35%{opacity:0;transform:translateY(32px) scale(.85)}80%,100%{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes worldArrival{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(min-width:1050px){body[data-world-scene=arrival] .login-landing{display:grid;grid-template-columns:1.1fr 1fr;gap:0 30px;align-items:start}body[data-world-scene=arrival] .login-landing>:is(.topline,.module-head){grid-column:1/-1}body[data-world-scene=arrival] .login-landing .file-island-welcome{min-height:470px}body[data-world-scene=arrival] .login-landing .island-friends{height:285px}body[data-world-scene=arrival] .login-landing .island-friends img{width:190px;height:220px}html[data-hanq-theme=terminal] body .login-landing .ac-panel{margin:0;width:100%;max-width:none}}
+@media(max-width:700px), (max-width:1000px) and (pointer:coarse){html[data-hanq-theme=terminal] body .shell{margin:18px 10px 28px;padding:18px 12px;border-radius:19px 19px 27px 27px;width:calc(100% - 20px);box-shadow:0 0 0 3px #193235,0 0 0 5px var(--world-edge),0 16px 35px #0007!important}.topline{gap:8px;margin-bottom:18px}.world-location{font-size:10px;letter-spacing:.05em}.login-landing .island-friends{height:145px;gap:22px}html[data-hanq-theme=terminal] body .login-landing .file-island-welcome{min-height:260px;padding:18px 10px 0}html[data-hanq-theme=terminal] body .login-landing .ac-sec{padding:16px 12px}.login-landing .module-head h1{font-size:28px!important}.subject-menu{padding-top:0}.subject-menu .file-island-map{margin-inline:0!important}.island-region-label>span{font-size:10px}.world-location{overflow-wrap:anywhere}.home-hero{padding:20px!important}.toeic-menu .toeic-sections{border-top:3px double #9db7a4!important;border-radius:14px 14px 0 0;background:#0b2019fa!important}.toeic-menu .toeic-sections button{min-height:56px!important}.adventure-device{inset:30% 6%;border-width:7px!important}}
+@media(prefers-reduced-motion:reduce){html[data-hanq-theme=terminal] body :is(.adventure-zoom,.adventure-device,.adventure-arrival,.island-region::before,.island-region-label){animation:none!important;transition:none!important;transform:none}.island-region-label{transform:translate(-50%,-50%)!important}}
+.login-landing .file-island-welcome p{word-break:keep-all!important;overflow-wrap:normal!important}
+html[data-hanq-theme=terminal] body :is(.ac-err,.ac-ok,[role=status]):empty{display:none}
+.world-location{display:flex;align-items:center;gap:9px;min-height:32px}
+.world-location::before{content:'';width:32px;height:32px;flex:0 0 32px;background:url('koromon-web-transparent-192-20261023.png') center/contain no-repeat}
+body[data-world-scene=map] .subject-menu{position:relative}
+body[data-world-scene=map] .subject-menu>.subject-eyebrow{padding-right:52px}
+body[data-world-scene=map] .subject-menu::after{content:'';position:absolute;right:5px;top:0;width:48px;height:48px;background:url('koromon-web-transparent-192-20261023.png') center/contain no-repeat;pointer-events:none}
+html[data-hanq-theme=terminal] body[data-world-scene=map] .subject-menu{animation:atlasArrive 1s cubic-bezier(.2,.65,.2,1) both!important}
+@keyframes atlasArrive{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){html[data-hanq-theme=terminal] body[data-world-scene=map] .subject-menu{animation:none!important}}
+@media(max-width:700px), (max-width:1000px) and (pointer:coarse){.toeic-menu .toeic-sections{backdrop-filter:none!important}}
+/* Before sign-in there is no accessible map destination yet. */
+html[data-hanq-theme=terminal] body .login-landing .topline #homeBrand{display:none}
+/* Keep Korean heading words together; long technical tokens may still wrap. */
+html body :is(h1,h2,h3){word-break:keep-all;overflow-wrap:break-word}
+body[data-world-scene=map] .subject-menu::after{content:none}
+body[data-world-scene=map] .subject-menu>.subject-eyebrow{padding-right:0}
+/* One mobile viewport and one footer contract across both islands and account/map. */
+.world-global-nav{display:none}
+@media(max-width:700px), (max-width:1000px) and (pointer:coarse){
+html{scroll-padding-bottom:calc(var(--study-footer-height,80px) + 20px)}
+html[data-hanq-theme=terminal] body.study-global-footer{padding-bottom:calc(var(--study-footer-height,80px) + 12px)!important}
+html[data-hanq-theme=terminal] body.study-global-footer .shell{width:100%;margin:0;padding:calc(12px + env(safe-area-inset-top,0px)) max(14px,env(safe-area-inset-right,0px)) 24px max(14px,env(safe-area-inset-left,0px));min-height:calc(var(--study-viewport-height,100dvh) - var(--study-footer-height,80px));border:0!important;border-top:5px solid var(--world-edge)!important;border-radius:0;box-shadow:none!important}
+body.study-global-footer .shell::before{display:none}
+body.study-global-footer .mobile-nav{display:none!important}
+.world-global-nav{position:fixed;display:flex;left:0;right:0;bottom:0;z-index:9000;gap:4px;box-sizing:border-box;padding:7px max(8px,env(safe-area-inset-right,0px)) calc(7px + env(safe-area-inset-bottom,0px)) max(8px,env(safe-area-inset-left,0px));background:#071b14fa;border-top:3px double #97b6a3;border-radius:12px 12px 0 0}
+.world-global-nav[hidden]{display:none!important}
+.world-global-nav a{display:flex;flex:1;min-width:0;min-height:56px;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#edf5ef!important;text-decoration:none;font-size:14px;line-height:1.5;border-radius:6px}
+.world-global-nav a>span:first-child{font-size:23px;line-height:24px}.world-global-nav a[aria-current]{background:#173b29;color:#b6ebc7!important;box-shadow:inset 0 3px #72ef9d!important}
+body.study-keyboard .world-global-nav,body.study-keyboard .toeic-sections{display:none!important}
+body.study-global-footer.study-keyboard{padding-bottom:12px!important}
+body.study-global-footer :is(input,textarea,select){scroll-margin-block:100px}
+body.study-global-footer :is(dialog,.ac-growth-dialog){max-height:calc(var(--study-viewport-height,100dvh) - 32px)!important;max-width:calc(100vw - 24px);box-sizing:border-box}
+body.study-global-footer .topline{margin-bottom:14px;padding-bottom:12px}
+body.study-global-footer .world-location{font-size:10px;min-height:24px}.world-location::before{width:28px;height:28px;flex-basis:28px}
+}
+@media(max-width:700px), (max-width:1000px) and (pointer:coarse){html[data-hanq-theme=terminal] body.study-global-footer{padding-bottom:max(90px,calc(var(--study-footer-height,80px) + 12px))!important}}
+/* Island entrance: terrain dives into a quiet digital plane, then the device settles. */
+.adventure-entry::after{content:'';position:absolute;inset:42% -20% -50%;pointer-events:none;background:linear-gradient(transparent,#345c4a66),repeating-linear-gradient(90deg,transparent 0 79px,#a3d6bf66 80px 81px),repeating-linear-gradient(0deg,transparent 0 79px,#a3d6bf66 80px 81px);transform-origin:center top;animation:worldPlane 1.35s cubic-bezier(.3,.5,.25,1) both!important}
+.adventure-device{z-index:1}.adventure-device::before{content:'';position:absolute;inset:12px;border:1px solid #9ebbaa;border-radius:20px;pointer-events:none}
+.adventure-device::after{content:'';position:absolute;left:15%;right:15%;bottom:12px;height:4px;background:repeating-linear-gradient(90deg,#9ebbaa 0 7px,transparent 7px 14px);pointer-events:none}
+@keyframes worldPlane{0%,20%{opacity:0;transform:perspective(500px) rotateX(68deg) translateY(80px)}50%{opacity:.7}100%{opacity:0;transform:perspective(500px) rotateX(68deg) translateY(-120px)}}
+@media(prefers-reduced-motion:reduce){.adventure-entry::after{display:none}}
+
+/* Portrait pixels already carry alpha. Never add a separate rectangular matte. */
+html body :is(.hm-pic,.header-character,.ac-pet,.hanq-growth-portrait,.island-friends img){background-color:transparent!important}
+
+/* Keep subject tabs readable on the narrowest phones without shrinking text. */
+.world-global-nav a>span:last-child{white-space:nowrap}
+
+/* One arrival scene: existing map art behind the form, partners at its sides. */
+html body #app.login-integrated{display:block!important}
+html body #app.login-integrated .login-stage{position:relative;display:grid;grid-template-columns:minmax(80px,1fr) minmax(0,420px) minmax(80px,1fr);gap:16px 12px;padding:24px 16px!important;min-height:0!important;align-items:center;isolation:isolate;background:linear-gradient(180deg,#10283ec9,#103529bb),url("file-island-map.png") center/cover no-repeat!important}
+html body #app.login-integrated .login-scene-copy{grid-column:1/-1;text-align:center}
+html body #app.login-integrated .login-scene-copy p{margin:8px auto!important}
+html body #app.login-integrated .island-friends{display:contents;filter:none}
+html body #app.login-integrated .island-friends img{position:relative;width:min(100%,190px);height:auto;max-height:240px;object-fit:contain;justify-self:center;grid-row:2;filter:drop-shadow(0 8px 7px #0008);pointer-events:none}
+html body #app.login-integrated .island-friends img:first-child{grid-column:1}
+html body #app.login-integrated .island-friends img:last-child{grid-column:3}
+html body #app.login-integrated .login-stage #acRoot{grid-column:2;grid-row:2;width:100%;min-width:0;max-width:none;margin:0!important;padding:0!important;background:transparent!important;border:0!important;z-index:2}
+html body #app.login-integrated .login-stage .ac-sec{margin:0!important;background:#071512f0!important;color:#f0fff6!important;box-shadow:0 8px 24px #0006!important}
+html body #app.login-integrated .login-stage .ac-sec h2{color:#f0fff6!important}
+.ac-auth-footer{display:flex;justify-content:center;margin-top:14px;padding-top:14px;border-top:1px solid #71978a66}
+.ac-auth-footer button{min-height:44px;min-width:120px}
+@media(max-width:700px){html body #app.login-integrated .login-stage{display:block;padding:100px 8px 14px!important}
+html body #app.login-integrated .island-friends img{position:absolute;top:8px;width:80px;height:90px;max-height:none;z-index:1}
+html body #app.login-integrated .island-friends img:first-child{left:8px}html body #app.login-integrated .island-friends img:last-child{right:8px}
+html body #app.login-integrated .login-scene-copy{position:relative;z-index:2;margin:0 0 14px}
+html body #app.login-integrated .login-scene-copy h2{font-size:21px!important;margin:0 0 6px}html body #app.login-integrated .login-scene-copy p{font-size:13px!important;padding:5px 8px!important}
+html body #app.login-integrated .login-stage .ac-sec{padding:18px 12px!important}}
+html body #app.login-integrated .login-scene-copy{background:transparent!important}
+html body #app.login-integrated .login-scene-copy h2{background:transparent!important;padding:0!important;margin:0!important}
+html body #app.login-integrated .login-scene-copy p{display:block!important;background:transparent!important;border:0!important;padding:0!important;margin:6px auto 0!important;box-shadow:none!important}
+html body #app.login-integrated #acAuthMsg:empty,html body #app.login-integrated #acEmailCheckMsg:empty,html body #app.login-integrated #acNameCheckMsg:empty{display:none!important}
+html body #app.login-integrated .ac-auth-footer{background:transparent!important}
+@media(max-width:700px){html body #app.login-integrated .login-stage{padding-top:90px!important}html body #app.login-integrated .login-scene-copy p{font-size:13px!important}html body #app.login-integrated .module-head{margin-bottom:14px!important}}
+html body #app.login-integrated .login-stage .login-scene-copy{background:rgba(5,22,31,.74)!important;border-radius:8px;padding:10px 12px!important;text-shadow:0 1px 3px #000}
+
+/* Shared gate, destination-specific atmosphere. */
+.world-journey[data-destination=ice] .world-destination{filter:none}
+.world-journey[data-destination=hall] .world-destination{filter:sepia(.5) saturate(1.2)}
+.world-journey[data-destination=account] .world-destination{filter:hue-rotate(45deg) saturate(.7)}
+.world-journey[data-destination=inquiry] .world-destination{filter:hue-rotate(315deg) saturate(.65)}
+.world-journey[data-destination=ice] .adventure-device{border-color:#c6f5ff}
+.world-journey[data-destination=hall] .adventure-device{border-color:#f6d787}
+.world-journey[data-destination=account] .adventure-device{border-color:#c6dfb7}
+.world-journey[data-destination=inquiry] .adventure-device{border-color:#d7cdf4}
+
+/* The ice gate uses the approved glacier island over its own snowy landscape. */
+.world-scenery[data-terrain=ice]{background:#123654!important}
+.world-scenery[data-terrain=ice] .world-ice-landscape{opacity:1!important}
+.world-scenery[data-terrain=ice] .world-panorama{inset:auto 0 7%;left:0;width:100%;height:77%;max-width:none;object-fit:contain;object-position:center;transform:none;filter:drop-shadow(0 20px 24px #062c4b99)}
+.world-scenery[data-terrain=ice] .world-mist{background:linear-gradient(transparent,#c7f3ff22)!important}
+.world-scenery[data-terrain=ice] .world-data-motes{display:none}

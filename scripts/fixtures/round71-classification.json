@@ -1,0 +1,508 @@
+{
+  "schema": 1,
+  "round": 71,
+  "basis": "원본 자료와 공식 정답의 핵심 학습 대상을 기준으로 한 수동 분류. 다른 선지의 시대를 섞지 않는다.",
+  "sourcePDFSHA256": "4faa9016aa092da3684782b3c46f7ba04165c954649334ad5ba9956f4399c4a6",
+  "items": [
+    {
+      "number": 1,
+      "questionId": "exam-71-01",
+      "version": "69fbd0b36906828c",
+      "era": "ancient",
+      "part": "사회",
+      "topic": "구석기 생활",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 2,
+      "questionId": "exam-71-02",
+      "version": "f8427ba38f268a86",
+      "era": "ancient",
+      "part": "정치",
+      "topic": "부여 사출도",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 3,
+      "questionId": "exam-71-03",
+      "version": "4eb975b1be60b083",
+      "era": "ancient",
+      "part": "대외관계",
+      "topic": "금관가야 멸망",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 4,
+      "questionId": "exam-71-04",
+      "version": "179fffde97e466c5",
+      "era": "ancient",
+      "part": "문화",
+      "topic": "원광 세속 5계",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 5,
+      "questionId": "exam-71-05",
+      "version": "bb09d9e6a108e3d7",
+      "era": "ancient",
+      "part": "정치",
+      "topic": "백제 왕대 순서",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 6,
+      "questionId": "exam-71-06",
+      "version": "84cd0257398a8da8",
+      "era": "ancient",
+      "part": "정치",
+      "topic": "지증왕 우산국",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 7,
+      "questionId": "exam-71-07",
+      "version": "b29eb688304d9435",
+      "era": "ancient",
+      "part": "문화",
+      "topic": "불국사 삼층석탑",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 8,
+      "questionId": "exam-71-08",
+      "version": "e91ee90c6e5f56ad",
+      "era": "ancient",
+      "part": "군사",
+      "topic": "고구려 부흥 운동",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 9,
+      "questionId": "exam-71-09",
+      "version": "03335d813c0cd55a",
+      "era": "ancient",
+      "part": "대외관계",
+      "topic": "발해 무왕 장문휴",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 10,
+      "questionId": "exam-71-10",
+      "version": "a262be33f8de9bd2",
+      "era": "goryeo",
+      "part": "경제",
+      "topic": "벽란도 국제 교역",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 11,
+      "questionId": "exam-71-11",
+      "version": "47cadac0bf51a50d",
+      "era": "goryeo",
+      "part": "정치",
+      "topic": "광종 과거제",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 12,
+      "questionId": "exam-71-12",
+      "version": "5c8744776707b8b6",
+      "era": "ancient",
+      "part": "정치",
+      "topic": "궁예 광평성",
+      "note": "궁예·광평성이 정답 핵심인 후삼국 문항으로 고려 건국 이전에 해당한다.",
+      "verified": true
+    },
+    {
+      "number": 13,
+      "questionId": "exam-71-13",
+      "version": "f8645dea40d0deaf",
+      "era": "goryeo",
+      "part": "문화",
+      "topic": "예종 관학 진흥",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 14,
+      "questionId": "exam-71-14",
+      "version": "880d7c506ddf992d",
+      "era": "goryeo",
+      "part": "사회",
+      "topic": "무신 집권기 하층민 봉기",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 15,
+      "questionId": "exam-71-15",
+      "version": "69f6c553063bdc56",
+      "era": "goryeo",
+      "part": "군사",
+      "topic": "몽골 침입과 강화 천도",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 16,
+      "questionId": "exam-71-16",
+      "version": "ef9f1d896a005b21",
+      "era": "joseon",
+      "part": "문화",
+      "topic": "신윤복 연소답청",
+      "note": "고려 문화유산이 아닌 것을 고르는 부정형 문항이다. 정답인 신윤복의 연소답청을 기준으로 조선 문화로 분류하며 고려 유산 비교도 함께 다룬다.",
+      "verified": true
+    },
+    {
+      "number": 17,
+      "questionId": "exam-71-17",
+      "version": "29a43b4e8ba8b250",
+      "era": "goryeo",
+      "part": "문화",
+      "topic": "이제현 만권당",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 18,
+      "questionId": "exam-71-18",
+      "version": "5a9a1ed9c16baa5c",
+      "era": "goryeo",
+      "part": "정치",
+      "topic": "왕건 고창 전투",
+      "note": "안동의 여러 시대 단서 중 정답인 왕건의 고창 전투를 기준으로 고려에 분류한다.",
+      "verified": true
+    },
+    {
+      "number": 19,
+      "questionId": "exam-71-19",
+      "version": "1de108826367cfc6",
+      "era": "joseon",
+      "part": "정치",
+      "topic": "태조 왕자의 난",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 20,
+      "questionId": "exam-71-20",
+      "version": "10b7f5d1b9ac766a",
+      "era": "joseon",
+      "part": "정치",
+      "topic": "비변사",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 21,
+      "questionId": "exam-71-21",
+      "version": "114b53d1709b4d2b",
+      "era": "joseon",
+      "part": "정치",
+      "topic": "을사사화",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 22,
+      "questionId": "exam-71-22",
+      "version": "52d035403b1b5df6",
+      "era": "joseon",
+      "part": "군사",
+      "topic": "인조 병자호란",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 23,
+      "questionId": "exam-71-23",
+      "version": "a5e8a4bc5b161349",
+      "era": "joseon",
+      "part": "경제",
+      "topic": "정조 신해통공",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 24,
+      "questionId": "exam-71-24",
+      "version": "1b9103116925acca",
+      "era": "joseon",
+      "part": "정치",
+      "topic": "숙종 환국",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 25,
+      "questionId": "exam-71-25",
+      "version": "972f777428da636f",
+      "era": "joseon",
+      "part": "문화",
+      "topic": "김정희 금석학",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 26,
+      "questionId": "exam-71-26",
+      "version": "667a3d9951c2acbe",
+      "era": "joseon",
+      "part": "경제",
+      "topic": "조선 전기 염포 왜관",
+      "note": "순조 대 상황에 해당하지 않는 조선 전기 염포 왜관을 고르는 부정형 문항이다.",
+      "verified": true
+    },
+    {
+      "number": 27,
+      "questionId": "exam-71-27",
+      "version": "3b67389ca4ab17e3",
+      "era": "joseon",
+      "part": "사회",
+      "topic": "세도 정치 삼정이정청",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 28,
+      "questionId": "exam-71-28",
+      "version": "ab46323b6a55705a",
+      "era": "opening",
+      "part": "대외관계",
+      "topic": "신미양요 척화비",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 29,
+      "questionId": "exam-71-29",
+      "version": "486c43a870f002fe",
+      "era": "opening",
+      "part": "대외관계",
+      "topic": "조청 상민 수륙 무역 장정",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 30,
+      "questionId": "exam-71-30",
+      "version": "70579145e9015648",
+      "era": "ancient",
+      "part": "문화",
+      "topic": "처용 설화와 처용무",
+      "note": "궁중 전승까지 이어진 처용무를 묻지만 정답 핵심인 신라 처용 설화를 기준으로 고대 문화에 분류한다.",
+      "verified": true
+    },
+    {
+      "number": 31,
+      "questionId": "exam-71-31",
+      "version": "8240ac91ffdc9cea",
+      "era": "opening",
+      "part": "정치",
+      "topic": "을미개혁",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 32,
+      "questionId": "exam-71-32",
+      "version": "0b2653bef80e674b",
+      "era": "opening",
+      "part": "정치",
+      "topic": "통리기무아문 별기군",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 33,
+      "questionId": "exam-71-33",
+      "version": "851c7f7643a9e9f9",
+      "era": "opening",
+      "part": "문화",
+      "topic": "대한매일신보",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 34,
+      "questionId": "exam-71-34",
+      "version": "7e9169de1a481148",
+      "era": "opening",
+      "part": "정치",
+      "topic": "독립협회 의회 설립",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 35,
+      "questionId": "exam-71-35",
+      "version": "36da52b99b32dbcc",
+      "era": "opening",
+      "part": "경제",
+      "topic": "화폐 정리 사업",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 36,
+      "questionId": "exam-71-36",
+      "version": "4b5121fad0fc9be6",
+      "era": "colonial",
+      "part": "독립운동",
+      "topic": "연해주 권업회",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 37,
+      "questionId": "exam-71-37",
+      "version": "29b17ee1075cfbe5",
+      "era": "opening",
+      "part": "독립운동",
+      "topic": "안중근 하얼빈 의거",
+      "note": "안중근의 하얼빈 의거는 1909년 국권 피탈 이전이므로 개항기에 분류한다.",
+      "verified": true
+    },
+    {
+      "number": 38,
+      "questionId": "exam-71-38",
+      "version": "b072e4e83e6d7990",
+      "era": "colonial",
+      "part": "통치정책",
+      "topic": "무단 통치 조선 물산 공진회",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 39,
+      "questionId": "exam-71-39",
+      "version": "bd92d4a502b8408c",
+      "era": "colonial",
+      "part": "독립운동",
+      "topic": "물산 장려 운동",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 40,
+      "questionId": "exam-71-40",
+      "version": "5db6ef4f850cc5c2",
+      "era": "colonial",
+      "part": "독립운동",
+      "topic": "민립 대학 설립 운동",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 41,
+      "questionId": "exam-71-41",
+      "version": "ee3a928d104caaec",
+      "era": "colonial",
+      "part": "사회",
+      "topic": "노동 운동과 강주룡",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 42,
+      "questionId": "exam-71-42",
+      "version": "51e1d10ed70b878d",
+      "era": "colonial",
+      "part": "사회",
+      "topic": "전시 여성 생활",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 43,
+      "questionId": "exam-71-43",
+      "version": "c4c43ab62ba7b99e",
+      "era": "colonial",
+      "part": "독립운동",
+      "topic": "한국광복군 국내 진공 작전",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 44,
+      "questionId": "exam-71-44",
+      "version": "bb29b386206838f7",
+      "era": "opening",
+      "part": "통치정책",
+      "topic": "원각사 은세계",
+      "note": "일제 전시 체제에 해당하지 않는 1908년 원각사 은세계 공연을 고르는 부정형 문항이다. 정답의 시기를 기준으로 개항기에 분류한다.",
+      "verified": true
+    },
+    {
+      "number": 45,
+      "questionId": "exam-71-45",
+      "version": "1c3c3c4faffaa376",
+      "era": "ancient",
+      "part": "문화",
+      "topic": "공주 무령왕릉",
+      "note": "공주 지역의 교차 시대 문항이다. 정답 핵심인 백제 무령왕릉과 대외 교류를 기준으로 고대 문화로 분류한다.",
+      "verified": true
+    },
+    {
+      "number": 46,
+      "questionId": "exam-71-46",
+      "version": "be6c815461d41cd6",
+      "era": "modern",
+      "part": "정치",
+      "topic": "한국 전쟁 발췌 개헌",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 47,
+      "questionId": "exam-71-47",
+      "version": "5933bdf7bfa83f89",
+      "era": "modern",
+      "part": "정치",
+      "topic": "5·10 총선거",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 48,
+      "questionId": "exam-71-48",
+      "version": "55eb854b4f999082",
+      "era": "modern",
+      "part": "정치",
+      "topic": "노태우 정부 3당 합당",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 49,
+      "questionId": "exam-71-49",
+      "version": "2570e3367fa3d03d",
+      "era": "modern",
+      "part": "민주화",
+      "topic": "부마 민주 항쟁",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 50,
+      "questionId": "exam-71-50",
+      "version": "476fc1916cd51271",
+      "era": "modern",
+      "part": "통일",
+      "topic": "김대중 정부 6·15 공동 선언",
+      "note": "",
+      "verified": true
+    }
+  ]
+}

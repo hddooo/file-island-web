@@ -1,0 +1,1100 @@
+{
+  "round": 79,
+  "method": "원문 문항 이미지 직접 열람 → 지문·5보기 대조 → 교재 원문(PDF 쪽과 인쇄 쪽 병기) 및 공신력 자료 교차확인. OCR은 참고만 사용.",
+  "items": {
+    "13": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "4d7872a606a4c1242df412d1485475e4638fc89fcbcfeecadc2e0e105b9e0a9c",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 42쪽 / 교재 35쪽, PDF 43쪽 / 교재 36쪽",
+          "supports": "현종의 거란 항쟁과 나성; ②성종 시무28조 ③숙종 별무반/예종 동북9성 ④태조 만부교 ⑤광종 연호·노비안검법·과거제."
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0057046",
+          "supports": "현종의 피란과 1011년 초조대장경 조성 서원·거란 항쟁."
+        }
+      ],
+      "corrections": [
+        "원문에 없는 5도 양계 정비의 단독 현종 귀속 삭제. 각 보기를 원문 단서→왕→정책 의미로 재작성.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "19": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "e4f77e9c3bc2cbe624308a8a5c2b9f8eb631abfd80cc5c24204563e7e8468cb7",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 65쪽 / 교재 58쪽, PDF 76쪽 / 교재 69쪽",
+          "supports": "집현전·삼강행실도·칠정산 세종, ①태종 계미자/세종 갑인자 ②광해군 동의보감 ③정조 대전통편·규장각·초계문신 ④성종 국조오례의 ⑤세종 칠정산."
+        },
+        {
+          "type": "web",
+          "reference": "https://dh.aks.ac.kr/sillokwiki/index.php/권채(權採)",
+          "supports": "세종실록 8년12월11일 근거로 권채·신석견·남수문의 사가독서 확인."
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/mobile/km/view.do?levelId=km_010_0040_0010_0020",
+          "supports": "국가 오례의 종류와 의례의 기능."
+        }
+      ],
+      "corrections": [
+        "OCR의 컨채를 원본 이미지 권채로 확인. 모든 보기의 책 이름을 앞세워 왕·목적을 연결.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "20": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "9165bc2b1e7f616e106b5b7296b659096c1273dafdbbdb22d973c253dc2b7cb7",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 42쪽 / 교재 35쪽, PDF 51쪽 / 교재 44쪽, PDF 72쪽 / 교재 65쪽",
+          "supports": "고려 역분전·공음전·전시과, 조선 과전법→직전법(수신전·휼양전 폐지)→관수관급제→직전법 폐지."
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0012953",
+          "supports": "1272년 원종 때 경기8현 녹과전 시행, 부족한 녹봉 보충."
+        },
+        {
+          "type": "web",
+          "reference": "https://dh.aks.ac.kr/sillokwiki/index.php/관수관급(官收官給)",
+          "supports": "직전 수조권자들의 과다징수 폐단과 1470년 성종 때 관수관급 시행."
+        }
+      ],
+      "corrections": [
+        "직전 과다수취→관청 수취·지급의 인과관계 명료화; 각 보기의 실제 제도어를 앞에 명시."
+      ],
+      "blockers": []
+    },
+    "01": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "15d9179ded8d05e9c64362bab1838675d3bb1f1fb083bc7e705738388b3182a0",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 9쪽 / 교재 2쪽, PDF 10쪽 / 교재 3쪽",
+          "supports": "구석기 뗀석기·막집, 신석기 가락바퀴·빗살무늬토기, 청동기 청동방울·고인돌"
+        }
+      ],
+      "corrections": [
+        "원문 보기 핵심어를 먼저 배치하고 국가·왕·의미 연결을 검수.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "02": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "1b96fc07ec5b4d5b9e58557c495b98a6bc56c824553860bb7bff69d84674b895",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 11쪽 / 교재 4쪽, PDF 12쪽 / 교재 5쪽, PDF 13쪽 / 교재 6쪽",
+          "supports": "부여 영고·형사취수·12배배상, 동예 책화·특산물, 삼한 소도, 고조선 8조법, 고구려 제가회의"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/front/hm/view.do?levelId=hm_005_0020",
+          "supports": "檀弓은 길이가 아닌 재료를 뜻하므로 박달나무 활로 교정"
+        }
+      ],
+      "corrections": [
+        "원문 보기 핵심어를 먼저 배치하고 국가·왕·의미 연결을 검수.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강.",
+        "독립 교차 검수 반영: 檀弓은 길이가 아닌 재료를 뜻하므로 박달나무 활로 교정"
+      ],
+      "blockers": []
+    },
+    "03": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "b1e08f5cf2df4675abac565cf65792509d7e18a006ea573f05a3240fb080c124",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 20쪽 / 교재 13쪽, PDF 21쪽 / 교재 14쪽",
+          "supports": "근초고왕 서기·고국원왕 전사, 침류왕 불교, 무령왕22담로와 웅진기 왕대"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0022355",
+          "supports": "광개토왕에게 백제가 58성700촌을 상실한 아신왕 때의 상황."
+        }
+      ],
+      "corrections": [
+        "원문 보기 핵심어를 먼저 배치하고 국가·왕·의미 연결을 검수.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "04": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "a893768ad74ffd17a217d79864ab8be11aaa4b02158cffc78905e629c071509f",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 17쪽 / 교재 10쪽, PDF 23쪽 / 교재 16쪽, PDF 26쪽 / 교재 19쪽, PDF 43쪽 / 교재 36쪽, PDF 51쪽 / 교재 44쪽",
+          "supports": "금관가야 수로왕·김해·철 교역, 고구려 부경, 고려 숙종 은병·해동통보, 벽란도, 신라 지증왕 동시전"
+        }
+      ],
+      "corrections": [
+        "원문 보기 핵심어를 먼저 배치하고 국가·왕·의미 연결을 검수.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "05": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "416c129b694110c1a7a4ad30d09158159c684f61dd16cce7ad1a725437f9a429",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 32쪽 / 교재 25쪽",
+          "supports": "강수 청방인문표, 설총 화왕계·이두, 혜초 왕오천축국전, 삼대목"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0014053",
+          "supports": "진성여왕2년 위홍·대구화상의 삼대목 편찬."
+        },
+        {
+          "type": "web",
+          "reference": "https://db.history.go.kr/id/sg_046r_0020_0010",
+          "supports": "삼국사기 강수전 해설: 무열왕 국서해석·강수명명, 외교문서작성 및 청방인문표의 김인문석방요청 의미."
+        }
+      ],
+      "corrections": [
+        "원문 보기 핵심어를 먼저 배치하고 국가·왕·의미 연결을 검수.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "06": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "a4b7bc89dfc7b07a41e330f2fe1b9f2d86d8681d4cfc91bb380bd1fa899b5b2c",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 21쪽 / 교재 14쪽, PDF 33쪽 / 교재 26쪽, PDF 36쪽 / 교재 29쪽, PDF 53쪽 / 교재 46쪽, PDF 54쪽 / 교재 47쪽",
+          "supports": "정림사지 석탑과 소정방 명문, 불국사 다보탑, 발해 영광탑, 고려 월정사 팔각구층석탑; 원문보기의 외형 직접 대조"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0064794",
+          "supports": "화엄사 사사자삼층석탑: 통일신라, 사자 네 마리가 받치는 삼층석탑."
+        }
+      ],
+      "corrections": [
+        "OCR의 보기 유물명은 실제 이미지 순서와 불일치. 원문①정림사지②다보탑③영광탑④사사자삼층석탑⑤월정사로 확인; 기존올바른 해설 유지.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "07": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "116e911a132bdc5aa39e45555e0a756019b8c5d10536ba491e2e4a42c6d66aff",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 17쪽 / 교재 10쪽, PDF 20쪽 / 교재 13쪽, PDF 23쪽 / 교재 16쪽, PDF 35쪽 / 교재 28쪽, PDF 37쪽 / 교재 30쪽, PDF 42쪽 / 교재 35쪽",
+          "supports": "발해5경 및 무왕 인안·문왕 대흥·선왕 건흥, 신라 골품·백제 정사암·고구려 진대법·고려 기인"
+        }
+      ],
+      "corrections": [
+        "원문 보기 핵심어를 먼저 배치하고 국가·왕·의미 연결을 검수.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "08": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "290b185abd63227e22ed62676101b9621e34cae7f5b9af860a8f6978139948f6",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 31쪽 / 교재 24쪽, PDF 43쪽 / 교재 36쪽, PDF 53쪽 / 교재 46쪽, PDF 72쪽 / 교재 65쪽",
+          "supports": "신문왕 국학·원성왕 독서삼품과, 예종7재·양현고, 조선 향교·성균관"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0006550",
+          "supports": "국학 신문왕2년 설치·예부소속·박사조교·경덕왕 태학감 개칭."
+        }
+      ],
+      "corrections": [
+        "국학 설치(신문왕)와 사료 후반 독서삼품과(원성왕)를 분리; 7재를 모두 유학전문강좌라고 한 단정 완화.",
+        "독립 교차 검수 반영: 같은 왕이라는 모순을 신문왕·원성왕의 서로 다른 정책으로 교정"
+      ],
+      "blockers": []
+    },
+    "09": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "be4c0dcd6a70131038f70ebc32c3b4357b41b23d63ec9b18db17222bad71f5d8",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 31쪽 / 교재 24쪽, PDF 32쪽 / 교재 25쪽, PDF 34쪽 / 교재 27쪽",
+          "supports": "궁예 양길 휘하·철원·태봉·광평성, 신숭겸 공산전투, 김부 사심관, 견훤 외교, 왕건 일리천"
+        }
+      ],
+      "corrections": [
+        "원문 보기 핵심어를 먼저 배치하고 국가·왕·의미 연결을 검수.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "10": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "63f22ca5bee22238cf19bee477a00dc042863be2d9d668c8131e377502de3161",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 23쪽 / 교재 16쪽, PDF 24쪽 / 교재 17쪽, PDF 31쪽 / 교재 24쪽, PDF 32쪽 / 교재 25쪽, PDF 34쪽 / 교재 27쪽",
+          "supports": "혜공왕 피살→김헌창 난→장보고 난, 삼국기 원광·김춘추, 신라말 최치원·견훤"
+        }
+      ],
+      "corrections": [
+        "단순 앞뒤 비교를 삼국통일 전/신라하대 순서로 구체화; 필요없는 논쟁적 장보고 연도 삭제.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "11": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "2805b75e84dd1372e2f92cc9975581b5624f7818fd1a1e7f4298779c7aa2550a",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 18쪽 / 교재 11쪽, PDF 21쪽 / 교재 14쪽, PDF 24쪽 / 교재 17쪽, PDF 36쪽 / 교재 29쪽, PDF 53쪽 / 교재 46쪽, PDF 54쪽 / 교재 47쪽",
+          "supports": "고려 흥덕사 직지·상감청자; ①발해 이불병좌상 ②신라금관 ③고구려 금동여래입상 ④백제금동대향로의 원문그림 대조"
+        }
+      ],
+      "corrections": [
+        "원문 그림에서 두 부처·신라금관·광배불상·봉황향로·상감청자 형태 확인.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강.",
+        "독립 교차 검수 반영: 발해 이불병좌상을 삼국 시대로 묶는 범주 오류 교정"
+      ],
+      "blockers": []
+    },
+    "12": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "20bd684704af591bf13a578d70f1b15f4ac43e860939ebf6706afcbcdb57c1d1",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 35쪽 / 교재 28쪽, PDF 43쪽 / 교재 36쪽, PDF 51쪽 / 교재 44쪽, PDF 73쪽 / 교재 66쪽",
+          "supports": "고려 화폐와 소, 발해 솔빈부말, 조선후기 상품작물·덕대·개시/후시"
+        }
+      ],
+      "corrections": [
+        "원문 보기 핵심어를 먼저 배치하고 국가·왕·의미 연결을 검수.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "14": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "295978aaebc475ba33f18a0408eb98a970744411f02f75439b40140d8daa7365",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 42쪽 / 교재 35쪽, PDF 43쪽 / 교재 36쪽, PDF 44쪽 / 교재 37쪽, PDF 45쪽 / 교재 38쪽",
+          "supports": "이자겸 난·묘청 난·무신정변 순서, 광종 과거·성종 서희·최충헌 만적·최우 정방"
+        }
+      ],
+      "corrections": [
+        "원문 보기 핵심어→시대·인물·사건과 의미 연결 검수.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "15": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "6eea948eac2caea6270c1177ff1abff3a0ea0e893a7b5b8b1f59ca709b1f5221",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 53쪽 / 교재 46쪽, PDF 78쪽 / 교재 71쪽",
+          "supports": "삼국유사 일연·불교설화, 삼국사기 김부식·기전체, 동명왕편 이규보, 발해고 유득공"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0032329",
+          "supports": "삼국사기의 신라 상대·중대·하대 구분 명칭 대조(구간세부연도는 인용하지 않음)."
+        }
+      ],
+      "corrections": [
+        "원문 보기 핵심어→시대·인물·사건과 의미 연결 검수.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "16": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "47de54e0f5fd77f245310c0c2e5bdd0558fae10be0e7ded3baccb058d928f70f",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 42쪽 / 교재 35쪽, PDF 44쪽 / 교재 37쪽, PDF 45쪽 / 교재 38쪽, PDF 46쪽 / 교재 39쪽, PDF 73쪽 / 교재 66쪽, PDF 76쪽 / 교재 69쪽",
+          "supports": "응방·몽골풍 원간섭기; 서얼통청·정감록 조선후기, 명학소 무신정권, 흑창 태조"
+        }
+      ],
+      "corrections": [
+        "응방의 매 사육 기능을 사료 해석에 연결; 서얼 통청을 청요직 진출 요구로 정밀화."
+      ],
+      "blockers": []
+    },
+    "17": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "fd8b46a12434fc9620a2f6a61893269d010142d39ba08d36ebf7b7ab6e53a66b",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 44쪽 / 교재 37쪽, PDF 46쪽 / 교재 39쪽, PDF 47쪽 / 교재 40쪽, PDF 58쪽 / 교재 51쪽",
+          "supports": "무신정권·강화천도→원간섭 일본원정→공민왕 쌍성총관부→우왕 회군→과전법→조선건국·왕자의 난"
+        }
+      ],
+      "corrections": [
+        "원문 연표5구간 직접 확인; 원문에 없는 위화도를 clue에서 회군으로 교체하고 해설에서 사건명 설명.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "18": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "b304665516bb803ba309a9f9c04063f90a07478fed702015a483ba88e4c701c4",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 53쪽 / 교재 46쪽, PDF 76쪽 / 교재 69쪽, PDF 77쪽 / 교재 70쪽",
+          "supports": "목은 이색·성균관, 김부식 삼국사기, 정도전 불씨잡변, 이황 예안향약"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0044640",
+          "supports": "이곡 아들·목은집·1367년 공민왕 때 성균관 대사성 및 정몽주 학관 채용."
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0064592",
+          "supports": "김대문의 화랑세기·고승전·한산기 등 저술 대조."
+        }
+      ],
+      "corrections": [
+        "불필요한 단독 왕 귀속을 삭제하고 저자·저술·기능 구별 중심으로 정리.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "21": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "f59c2fd8c8d7130e0e11ea8e70fed65d00d1e94402599b784f9337015e210ab8",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 35쪽 / 교재 28쪽, PDF 51쪽 / 교재 44쪽, PDF 53쪽 / 교재 46쪽, PDF 72쪽 / 교재 65쪽, PDF 73쪽 / 교재 66쪽",
+          "supports": "발해 주자감; 조선후기 전기수·상평통보·초량왜관; 고려 팔관회·제위보"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/front/tg/view.do?ganada=&levelId=tg_001_0700&pageUnit=10&treeId=0103",
+          "supports": "빈공과는 당이 외국인을 대상으로 시행한 과거; 신라6두품유학생과 연결."
+        }
+      ],
+      "corrections": [
+        "원문 보기 핵심어→시대·인물·사건과 의미 연결 검수.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "22": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "ec5e99079a76e776e0adbe19d64eb12da8decdba0f06a9cc41e31bfaaa5ae912",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 44쪽 / 교재 37쪽, PDF 64쪽 / 교재 57쪽",
+          "supports": "김윤후 대몽항쟁, 선조 임진왜란·행주, 광해군 사르후, 인조 정묘호란·병자호란 광교산"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_30&levelId=kc_i300430",
+          "supports": "세조 때 남이 등의 건주위 여진 정벌."
+        }
+      ],
+      "corrections": [
+        "원문 보기 핵심어→시대·인물·사건과 의미 연결 검수.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "23": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "7c0d87d01d759bc19e867af0ef7132045405707cd31b9fd8d15e96811ffaef2f",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 64쪽 / 교재 57쪽, PDF 65쪽 / 교재 58쪽, PDF 76쪽 / 교재 69쪽",
+          "supports": "영조 청계천·균역법·이인좌 난; 정조 장용영·현종 예송·숙종 백두산정계비·효종 나선정벌"
+        }
+      ],
+      "corrections": [
+        "원문 보기 핵심어→시대·인물·사건과 의미 연결 검수.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "24": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "cbd7f28ad3e3036f841db611b803b6925dd5098f3a08054328b32787c95837e0",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 65쪽 / 교재 58쪽, PDF 71쪽 / 교재 64쪽, PDF 74쪽 / 교재 67쪽, PDF 76쪽 / 교재 69쪽",
+          "supports": "승정원 승지·왕명출납, 비변사 상설화, 홍문관 대제학·경연, 양사 서경권, 규장각"
+        },
+        {
+          "type": "web",
+          "reference": "https://sjw.history.go.kr/intro/intro.do",
+          "supports": "승정원의 왕명출납 기능·후원/은대 별칭."
+        },
+        {
+          "type": "web",
+          "reference": "https://kyudb.snu.ac.kr/series/main.do?item_cd=NGK",
+          "supports": "내각일력이 규장각 일지임을 원문 소장기관 설명으로 확인."
+        }
+      ],
+      "corrections": [
+        "원문 보기 핵심어→시대·인물·사건과 의미 연결 검수.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "25": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "ce86d03f47ab9fa8fa2465725bc0b234d69b109c4167ada632bd3b53619be88d",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 78쪽 / 교재 71쪽",
+          "supports": "홍대용 의산문답·지전설·무한우주론, 박지원 양반전, 박제가 북학의"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0054094",
+          "supports": "지구전요 저자 최한기·세계지리서."
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0003351",
+          "supports": "고금석림 저자 이의봉·다언어 어휘집."
+        }
+      ],
+      "corrections": [
+        "원문 보기 핵심어→시대·인물·사건과 의미 연결 검수.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "26": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "bc9a0c54e5744f8a9810a34ab83885907874a0b6dfaec22500457838ef9c04d9",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 71쪽 / 교재 64쪽, PDF 74쪽 / 교재 67쪽, PDF 76쪽 / 교재 69쪽",
+          "supports": "역관 중인, 신량역천·관찰사·노비·춘추관 사관의 직무/신분 구별"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_r200130",
+          "supports": "노걸대 중국어 회화 학습 교재·사역원 사용."
+        }
+      ],
+      "corrections": [
+        "원문 보기 핵심어→시대·인물·사건과 의미 연결 검수.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "27": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "c4ef09c8c4057449a56e7c4314a254163f68e86353c9d664ded98789d9dad63f",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 64쪽 / 교재 57쪽, PDF 65쪽 / 교재 58쪽, PDF 89쪽 / 교재 82쪽, PDF 93쪽 / 교재 86쪽, PDF 94쪽 / 교재 87쪽",
+          "supports": "순조 홍경래 난; 임오군란·동학농민운동 청군개입; 집강소; 인조 이괄난 공주피란; 철종 임술봉기·박규수"
+        }
+      ],
+      "corrections": [
+        "임술봉기를 진주에서 시작했다고 단정한 부분 삭제, 박규수의 진주 파견으로 한정.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "28": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "bb2960959962a64867df3f1be5eb2f0ea1620b84bdd08f6daab5d1dc81c8aad9",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 86쪽 / 교재 79쪽, PDF 88쪽 / 교재 81쪽, PDF 89쪽 / 교재 82쪽, PDF 90쪽 / 교재 83쪽, PDF 97쪽 / 교재 90쪽",
+          "supports": "프랑스 병인양요·외규장각·조불조약; 영국 거문도·러시아 용암포·미국 신미양요"
+        },
+        {
+          "type": "web",
+          "reference": "https://waks.aks.ac.kr/dir/achieveView.aspx?dataID=AKS-2007-HZ-2002_DIC%40FND_DIC_OKY_GOKS_0138",
+          "supports": "1895년7월 미국의 운산금광 채굴계약 체결."
+        }
+      ],
+      "corrections": [
+        "운산금광 채굴권을 대한제국기로 잘못 묶은 초안을1895년 조선 고종 때로 정정. 조불조약 후 선교활동 확대를 원문 수준으로 서술.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "29": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "630185e963773055a2bd1a5da82992df5df34d3a12918198d2e570b4a40bcf46",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 65쪽 / 교재 58쪽, PDF 86쪽 / 교재 79쪽, PDF 89쪽 / 교재 82쪽, PDF 90쪽 / 교재 83쪽, PDF 97쪽 / 교재 90쪽",
+          "supports": "임오군란→제물포조약, 정미의병→13도창의군, 갑신정변 입헌군주제, 신미양요 척화비, 신유박해 황사영"
+        }
+      ],
+      "corrections": [
+        "원문 보기 핵심어→시대·인물·사건과 의미 연결 검수.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "30": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "636d8287aaf22d688ab60010e148901402c4b51f17914c5d7d941955184b644e",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 76쪽 / 교재 69쪽, PDF 89쪽 / 교재 82쪽, PDF 90쪽 / 교재 83쪽, PDF 93쪽 / 교재 86쪽, PDF 94쪽 / 교재 87쪽, PDF 95쪽 / 교재 88쪽",
+          "supports": "통리기무아문·영선사·2영, 영조 동국문헌비고,2차갑오23부,광무개혁·대한국국제"
+        }
+      ],
+      "corrections": [
+        "원문 보기 핵심어→시대·인물·사건과 의미 연결 검수.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "31": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "40b12702a0504f8b2cc6d944f6d54d380d9a58c48ceb151d5f4e61d5d4bd235c",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 90쪽 / 교재 83쪽, PDF 93쪽 / 교재 86쪽, PDF 95쪽 / 교재 88쪽, PDF 102쪽 / 교재 95쪽",
+          "supports": "군국기무처·공사노비 폐지=1차 갑오, 건양·태양력=을미개혁; ①톈진1885 ②한성사범1895 ③독립신문1896 ④경부선1905 ⑤원산학사1883."
+        }
+      ],
+      "corrections": [
+        "독립신문 창간을 독립협회 활동 시기로 포괄한 표현 대신 서재필·1896 창간으로 정확화. 기억어 보강.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "32": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "9a353bffe8fc05c8ab03df3761e32dbfddaaffbd11e7ea0f29f71f0bb9f6f75e",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 97쪽 / 교재 90쪽, PDF 101쪽 / 교재 94쪽, PDF 102쪽 / 교재 95쪽",
+          "supports": "한일의정서 군사요충지와 러일전쟁1904; ②고종퇴위1907 ③군대해산1907 ④메가타 화폐정리1905."
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/front/tg/view.do?levelId=tg_004_0810",
+          "supports": "⑤일진회의 합방청원서 제출1909년12월; 의정서 뒤임을 확인."
+        }
+      ],
+      "corrections": [
+        "의정서와 제1차 한일협약의 규정 구별; 보기 실제 키워드 우선.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "33": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "1d41c7cd25a4325499da9a6846c1f7fea2f82668516c499ecd15aad5e5ce5255",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 86쪽 / 교재 79쪽, PDF 88쪽 / 교재 81쪽, PDF 89쪽 / 교재 82쪽, PDF 90쪽 / 교재 83쪽, PDF 93쪽 / 교재 86쪽, PDF 97쪽 / 교재 90쪽",
+          "supports": "단발령·을미의병·고종해산권고 및 아관파천; 원본 연표5구간(고종즉위/신미양요/갑신정변/을미사변/을사늑약/국권피탈)과 각 대표사건 확인."
+        }
+      ],
+      "corrections": [
+        "OCR 연표 오인식 배제. 원본 5구간을 그대로 해설 첫머리에 명시; 필요없는 왕 즉위 서기 연도 삭제.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "34": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "bf5562222c9d908f503f8e9ee5ca9b7b424ce584d7ea8b6bcae38f86eda84bf4",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 90쪽 / 교재 83쪽, PDF 94쪽 / 교재 87쪽, PDF 102쪽 / 교재 95쪽",
+          "supports": "황제 대원수·원수부 및 광무개혁 지계; ①박문국한성순보1883 ③육영공원1886 ④보빙사1883 ⑤우정총국갑신정변1884."
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0040727",
+          "supports": "원수부1899설치·황제군권강화."
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0054070",
+          "supports": "지계아문1901설치·토지소유권증명 지계 발급."
+        }
+      ],
+      "corrections": [
+        "원수부1899→지계아문1901 선후를 짧게 명시.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "35": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "d0403272355ff8c1ea59721f4173033f43f2e92e6555e8abf73ebf0b41d6e21e",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 97쪽 / 교재 90쪽, PDF 102쪽 / 교재 95쪽, PDF 106쪽 / 교재 99쪽, PDF 109쪽 / 교재 102쪽",
+          "supports": "국채보상1907·서상돈김광제·금연·1,300만원·통감부탄압 및 대한매일신보 지원; ①천일은행1899 ③민립대학모금 ④형평사백정차별 ⑤자작회토산애용부인회 물산장려."
+        }
+      ],
+      "corrections": [
+        "원문 각 단체명으로 보기 시작; 운동별 목적과 기억어 보강.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "36": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "f400f0b1c5fa3bc74b1403df483e048be6ba9064e77d3e256c585b74b1ccb5d3",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 93쪽 / 교재 86쪽, PDF 107쪽 / 교재 100쪽, PDF 110쪽 / 교재 103쪽, PDF 113쪽 / 교재 106쪽, PDF 116쪽 / 교재 109쪽",
+          "supports": "박상진대한광복회1915대구·공화주의; ②멕시코숭무학교 ③독립협회만민공동회 ④임병찬독립의군부국권반환 ⑤임정독립공채."
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0032067",
+          "supports": "멕시코 메리다 숭무학교, 이근영 등 설립·독립군양성."
+        }
+      ],
+      "corrections": [
+        "각보기 실제 단서→단체·인물·목적으로 정리.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "37": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "a11b3a021eeb624d9b00b5086c177fd34b3c748747681fc7de16d396a2d35155",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 93쪽 / 교재 86쪽, PDF 102쪽 / 교재 95쪽, PDF 106쪽 / 교재 99쪽, PDF 120쪽 / 교재 113쪽",
+          "supports": "아리랑1926단성사·경성제국대학1924·카프신경향파; ①원각사은세계1908 ②독립협회독립문모금 ③카프1925 ④석조전1910 ⑤한성전기전차1899."
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0052252",
+          "supports": "카프1925결성·계급문예운동."
+        },
+        {
+          "type": "web",
+          "reference": "https://www.odii.kr/smarttour_web/story/detail?lang=ko&sid=5526&slid=16524&tid=2581&tlid=2581",
+          "supports": "한국관광공사 오디: 석조전1900착공1910완공."
+        }
+      ],
+      "corrections": [
+        "은세계의 논쟁적 장르 단정(신극) 대신 교재의 연극 표현 사용.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "38": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "0d525e634b79d0049df31ff4111a228d8e9f59f9dc5d85e9da5c9785415884ec",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 89쪽 / 교재 82쪽, PDF 94쪽 / 교재 87쪽, PDF 106쪽 / 교재 99쪽, PDF 108쪽 / 교재 101쪽, PDF 110쪽 / 교재 103쪽",
+          "supports": "조선노농총동맹1924→농민/노동총동맹1927; ①함경황해방곡령 ②농광회사황무지개간권 ③황국중앙총상회상권수호 ④회사령1910 ⑤원산총파업1929."
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_40&levelId=kc_i402600",
+          "supports": "1928년9월 구타사건에서 1929년 원산총파업으로 전개된 시점 구별."
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0013083",
+          "supports": "농광회사1904설립, 일제황무지개간권요구에대응."
+        }
+      ],
+      "corrections": [
+        "구타사건1928와 총파업1929의 시점을 분리.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "39": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "a241f88bc6d1c001b6e1e2590cf19ab686b937343f02313e9c763b5d8950a2a3",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 97쪽 / 교재 90쪽, PDF 106쪽 / 교재 99쪽, PDF 107쪽 / 교재 100쪽, PDF 109쪽 / 교재 102쪽",
+          "supports": "나주역한일학생충돌·광주학생항일1929·신간회진상조사; ①형평운동 ②국채보상통감부탄압 ③순종장례6.10 ④정우회1926 ⑤신간회지원."
+        }
+      ],
+      "corrections": [
+        "각보기 원문 단체·사건 키워드를 먼저 명시.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "40": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "81c7bc8629ba6862afb3b6a5ac599167ab05e79e49d63266f371969d4601e0c1",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 93쪽 / 교재 86쪽, PDF 102쪽 / 교재 95쪽, PDF 106쪽 / 교재 99쪽, PDF 107쪽 / 교재 100쪽, PDF 120쪽 / 교재 113쪽",
+          "supports": "손기정베를린올림픽1936일장기말소; ①태형령1912 ②교육입국1895 ③여권통문1898 ④국민학교1941 ⑤토월회1923."
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/front/km/print.do?levelId=km_002_0060_0010_0040&w+hereStr=",
+          "supports": "1941년 국민학교령으로 소학교 명칭 변경."
+        }
+      ],
+      "corrections": [
+        "1936→1941 핵심 연도 기억어 및 오답별 의미 보강.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "41": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "fcb5ff0c25126e9ed1fa5bec53cf645af909a83094cdf3a19e970b4afe763579",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 98쪽 / 교재 91쪽, PDF 108쪽 / 교재 101쪽, PDF 110쪽 / 교재 103쪽, PDF 120쪽 / 교재 113쪽",
+          "supports": "방정환잡지어린이·소년운동; ②심훈상록수농촌계몽 ④안창호대성학교; 문화운동과인물구분."
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0078226",
+          "supports": "천도교소년회와 어린이날·잡지어린이 활동."
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0045444",
+          "supports": "③이육사 광야·절정과 저항·광복염원의 시세계."
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0004640",
+          "supports": "⑤과학조선, 김용관·발명학회 과학대중화."
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0004639",
+          "supports": "김용관 과학데이 제창1934."
+        }
+      ],
+      "corrections": [
+        "각 저작·학교·행사를 먼저 명시하고 인물 귀속을 연결.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "42": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "2eb31f6a10f79e80fdc9bee92177c2c8cd2a0d8c00656373f49b05ec3ee2fadb",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 98쪽 / 교재 91쪽, PDF 102쪽 / 교재 95쪽, PDF 120쪽 / 교재 113쪽",
+          "supports": "최현배정인승·사전편찬탄압=조선어학회; ①진단학보진단학회 ②제국신문국문신문 ③태극서관신민회 ④맞춤법·표준어 ⑤학부국문연구소1907."
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0051244",
+          "supports": "제국신문의 이종일 등 창간·발행주체."
+        },
+        {
+          "type": "web",
+          "reference": "https://hangeul.or.kr/board/normal/article/60713",
+          "supports": "한글학회 제공 한글맞춤법통일안1933."
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0025951",
+          "supports": "사정한 조선어 표준말 모음1936 조선어학회간행."
+        }
+      ],
+      "corrections": [
+        "국문연구소의 관청 소속과 조선어학회의 민간단체 성격 구별.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "43": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "c16fd3afee81ee90f8a583ef9b2291ffd4a1fe5e3db81c735c50ef26849260be",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 102쪽 / 교재 95쪽, PDF 106쪽 / 교재 99쪽, PDF 107쪽 / 교재 100쪽, PDF 109쪽 / 교재 102쪽, PDF 114쪽 / 교재 107쪽, PDF 117쪽 / 교재 110쪽, PDF 120쪽 / 교재 113쪽",
+          "supports": "궁성요배·황국신민서사·국방헌금·금속공출=전시체제; ①신문지법1907 ②미쓰야협정1925 ④토지조사1910년대 ⑤제1교육령1911."
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/id/hm_125_0080",
+          "supports": "황국신민서사1937 제정·암송강요."
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/mobile/mid/hm_125_0070?tabId=e",
+          "supports": "③국가총동원법1938 시행, 인력물자동원."
+        }
+      ],
+      "corrections": [
+        "원본 날짜는 19○○년으로 OCR1900 배제. 기존 시간축 총동원법→서사 오류를 1937서사→1938법으로 교정.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "44": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "aa6efb49d994d0d91e43fec93672caf0ced58d99d8ae8b8836572fb66f0abdbc",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 113쪽 / 교재 106쪽, PDF 114쪽 / 교재 107쪽, PDF 115쪽 / 교재 108쪽, PDF 116쪽 / 교재 109쪽, PDF 117쪽 / 교재 110쪽",
+          "supports": "OSS국내진공준비=한국광복군; ①청산리북로군정서대한독립군 ②박용만하와이대조선국민군단 ③양세봉조선혁명군흥경성 ④한국광복군인도미얀마 ⑤김원봉조선의용대중국관내최초."
+        }
+      ],
+      "corrections": [
+        "전투·지역·인물 실제키워드를 우선 배치해 군사조직 구별.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "45": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "4a6838b2eb237e987af4f52a3dbe8a3e2224f49b234a19677d787336e7c885c1",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 106쪽 / 교재 99쪽, PDF 108쪽 / 교재 101쪽, PDF 124쪽 / 교재 117쪽, PDF 125쪽 / 교재 118쪽, PDF 126쪽 / 교재 119쪽, PDF 127쪽 / 교재 120쪽, PDF 128쪽 / 교재 121쪽, PDF 129쪽 / 교재 122쪽",
+          "supports": "제주4.3단독선거반대·민간인희생과 특별법2000/정부보고서사과2003; ①제암리3.1 ②모스크바회의미소공위 ③4.19허정 ④한일회담6.3 ⑤4.3특별법."
+        }
+      ],
+      "corrections": [
+        "시간축을 사건→특별법2000→정부사과2003으로 정리; 원본 북촌·너븐숭이 단서를 유지.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "46": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "889b1e8facb3e05681677d0c23d3a18d8991d57f0825e524776942003d9f86e2",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 107쪽 / 교재 100쪽, PDF 113쪽 / 교재 106쪽, PDF 114쪽 / 교재 107쪽, PDF 115쪽 / 교재 108쪽, PDF 116쪽 / 교재 109쪽, PDF 117쪽 / 교재 110쪽, PDF 124쪽 / 교재 117쪽, PDF 125쪽 / 교재 118쪽",
+          "supports": "김구한인애국단윤봉길충칭주석; ①김규식남북협상1948 ②안창호흥사단1913 ③여운형건국동맹1944 ④이승만정읍1946 ⑤김원봉혁명간부학교."
+        }
+      ],
+      "corrections": [
+        "원문 각단체·지명→인물의 활동·목적 연결.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "47": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "e3c1bef8281d0fbc678c5df48d7025c5a5ff7f555f1f660fe8e1acb52e191680",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 128쪽 / 교재 121쪽, PDF 129쪽 / 교재 122쪽, PDF 130쪽 / 교재 123쪽, PDF 131쪽 / 교재 124쪽, PDF 132쪽 / 교재 125쪽, PDF 133쪽 / 교재 126쪽",
+          "supports": "파독광부·경제개발박정희; ①김대중국민기초생활 ③노태우소련수교 ⑤김영삼지방자치전면. 아래자료로②기간·④출범확인."
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0068929",
+          "supports": "1963년 광부 파견 시작; 실업해소·외화획득, 3년계약600마르크 등 지문단서."
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_50&levelId=kc_i501600",
+          "supports": "제1차계획1962~1966; 군정기공표·산업기반자립경제."
+        },
+        {
+          "type": "web",
+          "reference": "https://news.seoulsports.or.kr/web/pds/pdsView.do?catid=15&pdsid=1051&scattit=",
+          "supports": "서울시체육회 서울스포츠: 제5공화국 시기1982프로야구출범."
+        }
+      ],
+      "corrections": [
+        "1962년 계획 시작을 1963년 취임후로 오해하지 않도록 군정기시작·정부출범후계속 명시."
+      ],
+      "blockers": []
+    },
+    "48": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "45a0830b2f7e37b94e4e448a3fa7018c83d208e1aaedfbead8dfe45e78413f85",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 126쪽 / 교재 119쪽, PDF 127쪽 / 교재 120쪽, PDF 128쪽 / 교재 121쪽, PDF 129쪽 / 교재 122쪽, PDF 130쪽 / 교재 123쪽, PDF 131쪽 / 교재 124쪽",
+          "supports": "이한열·호헌철폐=6월항쟁1987; ①5.18시민군 ②부마항쟁유신위기와10.26종결 ③3.15부정4.19 ④김영삼제명부마 ⑤6.29/9차개헌5년단임직선."
+        }
+      ],
+      "corrections": [
+        "원문 민주화운동 구분 단서를 맨앞에 명시. 기존 부마항쟁과10.26의 구별 설명 보존.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "49": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "c57558efa134b2a7bcd11444ca459b025845e639c6edca263073b1bc73c5c182",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 128쪽 / 교재 121쪽, PDF 129쪽 / 교재 122쪽, PDF 130쪽 / 교재 123쪽, PDF 131쪽 / 교재 124쪽, PDF 132쪽 / 교재 125쪽, PDF 133쪽 / 교재 126쪽",
+          "supports": "노태우북방외교·유엔동시가입1991; ①박정희7.4 ③노무현개성경협사무소 ④전두환이산가족1985 ⑤문재인평창2018."
+        },
+        {
+          "type": "web",
+          "reference": "https://theme.archives.go.kr/next/chronology/archiveDetail.do?evntId=0050754098&flag=1&page=20&sort=",
+          "supports": "대통령비서실1991.11.8 한반도의비핵화와평화구축선언; 핵무기·핵재처리시설보유포기."
+        },
+        {
+          "type": "web",
+          "reference": "https://world.kbs.co.kr/service/contents_view.htm?board_code=&board_seq=348359&id=&lang=k&menu_cate=history&page=5",
+          "supports": "KBS 2005년 남북경제협력협의사무소개소 기사: 개성공단사무소개소시점."
+        },
+        {
+          "type": "web",
+          "reference": "https://www.olympics.com/ko/news/olympic-spirit-the-story-of-korea-s-unified-ice-hockey-team-at-the-2018-pyeongch",
+          "supports": "IOC 평창2018 여자아이스하키 남북단일팀."
+        }
+      ],
+      "corrections": [
+        "대통령의1991.11.8비핵화선언과 뒤의 남북비핵화공동선언을 분명히 구분.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    },
+    "50": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "c908411014acba8ff5329514335b1d868beb3c18627bd59410329e1ce27af2b6",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt; PDF 32쪽 / 교재 25쪽, PDF 44쪽 / 교재 37쪽, PDF 45쪽 / 교재 38쪽, PDF 64쪽 / 교재 57쪽, PDF 65쪽 / 교재 58쪽, PDF 66쪽 / 교재 59쪽, PDF 76쪽 / 교재 69쪽",
+          "supports": "고려중앙군과 조선임진왜란훈련도감 구분; ②삼별초좌우별초신의군 ③훈련도감선조류성룡삼수병 ⑤정조무예도보통지. 원본5군영·금위영맥락대조."
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0043087",
+          "supports": "고려2군6위중 응양군·용호군2군의 친위기능."
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0023089",
+          "supports": "①병마절도사 조선 각도 지방군지휘."
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0065793",
+          "supports": "훈련도감 선조1593설치·포수살수사수·급료병상비군."
+        }
+      ],
+      "corrections": [
+        "각 보기의 군사조직·무예서 실제단어를 앞에 명시.",
+        "258 참고글의 설명 밀도 기준에 따라 정답 제목 반복을 줄이고 기존 검증 범위의 용어 뜻·원인·시점·역할을 why에 보강."
+      ],
+      "blockers": []
+    }
+  }
+}

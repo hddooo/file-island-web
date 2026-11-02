@@ -1,0 +1,31 @@
+{
+  "generator": "built-in image_gen",
+  "createdAt": "2026-10-28",
+  "assets": [
+    {
+      "region": "ice-foreground",
+      "file": "media/world-art/ice-foreground-v1.webp",
+      "original": "../generated_images/exec-e7cb9c90-dbac-48f7-9fba-ae71a7dffa38.png",
+      "prompt": "An isolated foreground game-art overlay: near-camera crystalline blue ice shards, snowy rock ledges and soft frosted pine boughs framing ONLY lower left and lower right corners, a few thin upper-corner frost branches. Center and upper-middle must be completely transparent. Landscape 16:9. Match the provided ice environment's hand-painted anime JRPG illustration style, bright sapphire/cyan/white, high texture, sharp foreground facets. No background, no horizon, no middle objects, no text, no characters. Genuine transparent alpha PNG cutout for parallax.",
+      "transparent": true,
+      "sha256": "a22cdc875e0f13660e42cd476cafa874fb15e0254b614a5d24fbe8b4efda3d84",
+      "bytes": 332532,
+      "width": 1672,
+      "height": 941,
+      "webpAlphaPreserved": true
+    },
+    {
+      "region": "garden-foreground",
+      "file": "media/world-art/garden-foreground-v1.webp",
+      "original": "../generated_images/exec-912d28fd-ba33-422b-8421-072895a69f25.png",
+      "prompt": "An isolated foreground game-art overlay: close-up lush tropical fern leaves, soft sunlit leafy branches framing ONLY far left and right edges and lower corners, small pink and white flowers along bottom corners. Center and upper-middle must be completely transparent. Landscape 16:9. Match reference's hand-painted anime JRPG game illustration, rich greens, saturated clean daylight, detailed leaf veins and painterly 3D shading. No background, no horizon, no middle objects, no text, no characters. Genuine transparent alpha PNG cutout for parallax.",
+      "transparent": true,
+      "sha256": "d26161a5fb9281b336f484714068383c8a8d9aafcb5a972486f89f1858d47651",
+      "bytes": 448160,
+      "width": 1672,
+      "height": 941,
+      "webpAlphaPreserved": true
+    }
+  ],
+  "webpQuality": 88
+}

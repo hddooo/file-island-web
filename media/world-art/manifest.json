@@ -1,0 +1,201 @@
+{
+  "generator": "built-in image_gen",
+  "createdAt": "2026-10-28",
+  "reference": "media/world-map-approved-source-v1.png",
+  "usage": "Dedicated entrance cinematics and internal region scenery; original map preserved",
+  "assets": [
+    {
+      "region": "ice",
+      "file": "media/world-art/ice-v1.webp",
+      "original": "../generated_images/exec-a18b3412-6470-429b-8cd4-4348005a9f9b.png",
+      "prompt": "Use case: stylized-concept. Asset: high-detail game environment panorama for HanQ File Island RPG. Reference image is STYLE AND WORLD REFERENCE ONLY, not an edit target. Generate a NEW dedicated ICE ISLAND environment at immersive traveler eye level: an immense luminous blue glacier citadel, layered jagged crystalline ice spires, intricately carved ice arch with turquoise portal, broad snowy approach descending to icy sapphire ocean and floes, detailed frosted pines, snow-covered stone stairs, sparkling ice crystals, distant mountains and volumetric clouds. Match reference's polished hand-painted anime JRPG environment art, richly detailed surfaces, crisp saturated colors, coherent bright daylight and painterly 3D depth; absolutely not flat vector, simple polygons, photorealism or dark cinematic realism. Landscape 16:9 wide composition with a central entry landmark and foreground left/right layers for camera parallax, center safe for a portrait crop. No characters, no readable text, no signs, no UI, no borders, no watermark. Full bleed finished game background, high resolution. Maintain clear separation of near foreground, middle environment and distant horizon.",
+      "sha256": "f1fc357fd70a5e63d2db03a7435b3b930be39be759b6eb5221ec805fb461c198",
+      "bytes": 520776,
+      "width": 1672,
+      "height": 941,
+      "poster": {
+        "file": "media/world-art/ice-poster-v1.webp",
+        "bytes": 63174,
+        "width": 640,
+        "height": 360,
+        "sha256": "55731a3cfe1efc42b0cd5a47533a6d1187827902243cabc105c313eba7c0b3cd"
+      }
+    },
+    {
+      "region": "history",
+      "file": "media/world-art/history-v1.webp",
+      "original": "../generated_images/exec-95a39213-ef63-4092-b889-26ede1554e46.png",
+      "prompt": "Use case: stylized-concept. Asset: finished wide 16:9 game environment panorama for HanQ File Island JRPG. Input image 1 is STYLE AND WORLD REFERENCE ONLY. Create a NEW immersive traveler-eye-level environment. Match its polished hand-painted anime JRPG world art, rich intricate texture, crisp saturated color, bright daylight, coherent 3D painterly depth, layered foreground/middle/distant horizon. Full bleed high-resolution game background; center-safe portrait crop with a prominent center landmark. No people or characters, no readable text, no UI, no watermarks or borders. Absolutely no flat vector, low-poly placeholder, photorealism or dark realism. A lush HISTORICAL FOREST ISLAND sanctuary: colossal ancient trees intertwined with beautifully carved weathered stone arches, cyan magical gateway, mossy stepped ruins, cascading waterfalls, climbing vines, fern-lined cobblestone path across clear stream, forest canopy framing near edges, golden shafts of sunlight, distant tropical blue sea. Visually match the reference's history forest island as if walking inside it.",
+      "sha256": "6e92c30eaff0e7c966da957b4e5462033074259a211b3fe2fc4d7b5186dc4f80",
+      "bytes": 609252,
+      "width": 1672,
+      "height": 941,
+      "poster": {
+        "file": "media/world-art/history-poster-v1.webp",
+        "bytes": 75846,
+        "width": 640,
+        "height": 360,
+        "sha256": "ae7af9a7386b497534477e0849fa2229e60e9b04ef4e05ea4dfbb8db45806f9e"
+      }
+    },
+    {
+      "region": "toeic",
+      "file": "media/world-art/toeic-v1.webp",
+      "original": "../generated_images/exec-55464071-08bc-43df-875a-04c604cb7304.png",
+      "prompt": "Use case: stylized-concept. Asset: finished wide 16:9 game environment panorama for HanQ File Island JRPG. Input image 1 is STYLE AND WORLD REFERENCE ONLY. Create a NEW immersive traveler-eye-level environment. Match its polished hand-painted anime JRPG world art, rich intricate texture, crisp saturated color, bright daylight, coherent 3D painterly depth, layered foreground/middle/distant horizon. Full bleed high-resolution game background; center-safe portrait crop with a prominent center landmark. No people or characters, no readable text, no UI, no watermarks or borders. Absolutely no flat vector, low-poly placeholder, photorealism or dark realism. A sunny ENGLISH LEARNING BEACH ISLAND: turquoise lagoon, coral and starfish near shore, tropical palms, intricately crafted wooden pier leading to a large coral-stone arch and cyan portal, small colorful sailboats and blue-roofed coastal study huts, warm sandstone paths, deep ocean horizon and airy cloudscape. Visually match the reference's tropical beach island as if walking inside it.",
+      "sha256": "1633418576c02f6707145ecc1bd73ec5ff78beb0ca5c3150035f9d0d7566d726",
+      "bytes": 539412,
+      "width": 1672,
+      "height": 941,
+      "poster": {
+        "file": "media/world-art/toeic-poster-v1.webp",
+        "bytes": 67516,
+        "width": 640,
+        "height": 360,
+        "sha256": "b2b618801196a26be6fd81357f50237b5a1a331772f47dd7db770f09d5c74b83"
+      }
+    },
+    {
+      "region": "hall",
+      "file": "media/world-art/hall-v1.webp",
+      "original": "../generated_images/exec-d0ad0aeb-c235-4448-9bf1-daf9096bf410.png",
+      "prompt": "Use case: stylized-concept. Asset: finished wide 16:9 game environment panorama for HanQ File Island JRPG. Input image 1 is STYLE AND WORLD REFERENCE ONLY. Create a NEW immersive traveler-eye-level environment. Match its polished hand-painted anime JRPG world art, rich intricate texture, crisp saturated color, bright daylight, coherent 3D painterly depth, layered foreground/middle/distant horizon. Full bleed high-resolution game background; center-safe portrait crop with a prominent center landmark. No people or characters, no readable text, no UI, no watermarks or borders. Absolutely no flat vector, low-poly placeholder, photorealism or dark realism. A majestic HALL OF FAME ISLAND: bright golden trophy monument atop intricate white-stone ceremonial terraces, laurel wreath ornament, gold-trimmed pillars, colorful blue and violet hanging banners without text, flower gardens and waterfalls spilling toward sapphire sea, ascending broad central path, distant floating cliffs, optimistic afternoon light. Visually match the reference's small trophy island as if walking inside it.",
+      "sha256": "f20c1c966e255ae65ede7ceff6905e5db43fedd2c30731332053bc0a37dc2c6c",
+      "bytes": 566380,
+      "width": 1672,
+      "height": 941,
+      "poster": {
+        "file": "media/world-art/hall-poster-v1.webp",
+        "bytes": 67592,
+        "width": 640,
+        "height": 360,
+        "sha256": "9c4d5604c6f7b6d73291ef602356728d10a50c08e25f5f7234e9344968ad1388"
+      }
+    },
+    {
+      "region": "inquiry",
+      "file": "media/world-art/inquiry-v1.webp",
+      "original": "../generated_images/exec-e2d166ac-6163-4f34-9043-becd8ee371fd.png",
+      "prompt": "Use case: stylized-concept. Asset: finished wide 16:9 game environment panorama for HanQ File Island JRPG. Input image 1 is STYLE AND WORLD REFERENCE ONLY. Create a NEW immersive traveler-eye-level environment. Match its polished hand-painted anime JRPG world art, rich intricate texture, crisp saturated color, bright daylight, coherent 3D painterly depth, layered foreground/middle/distant horizon. Full bleed high-resolution game background; center-safe portrait crop with a prominent center landmark. No people or characters, no readable text, no UI, no watermarks or borders. Absolutely no flat vector, low-poly placeholder, photorealism or dark realism. A charming INQUIRY POST ISLAND harbor: beautifully crafted whimsical red-roof post office cottage with envelope relief above door (icon only), large polished red mailbox, wooden arrival pier, warm stone path, palms and flower beds, turquoise inlet, tiny sailboats and distant sea cliffs, white gulls far in sky. Match reference's mail island as if walking inside it, detailed materials and inviting central entry.",
+      "sha256": "cdc371ed9c25101f3fdf80d1385617c37e9f91228d3b5cbf96f1d80e28716eb3",
+      "bytes": 552390,
+      "width": 1672,
+      "height": 941,
+      "poster": {
+        "file": "media/world-art/inquiry-poster-v1.webp",
+        "bytes": 68686,
+        "width": 640,
+        "height": 360,
+        "sha256": "cd74f5ce13fde4650c52624abed922b2fc4ba5726e858ed5b9f49cab58c2609e"
+      }
+    },
+    {
+      "region": "account",
+      "file": "media/world-art/account-v1.webp",
+      "original": "../generated_images/exec-b437ab41-c81b-4311-bb62-cad496426b4d.png",
+      "prompt": "Use case: stylized-concept. Asset: finished wide 16:9 game environment panorama for HanQ File Island JRPG. Input image 1 is STYLE AND WORLD REFERENCE ONLY. Create a NEW immersive traveler-eye-level environment. Match its polished hand-painted anime JRPG world art, rich intricate texture, crisp saturated color, bright daylight, coherent 3D painterly depth, layered foreground/middle/distant horizon. Full bleed high-resolution game background; center-safe portrait crop with a prominent center landmark. No people or characters, no readable text, no UI, no watermarks or borders. Absolutely no flat vector, low-poly placeholder, photorealism or dark realism. A cozy PERSONAL ADVENTURER HOME ISLAND garden: cheerful fantasy cottage with blue and copper tiled roofs, warm wooden balcony and elegant stone steps, little courtyard with round fountain and glowing crystal, flower beds, leafy fruit trees, wooden bridge over clear stream, distant sapphire sea and soft cliffs; refined inviting private retreat in same world as reference's rainbow village, without rainbow or oversized eggs. Central cottage entry; no characters.",
+      "sha256": "a1b46f3291929a646079899cb494b31fbfe98a7da43f0af0d5125a87eb9b8b2b",
+      "bytes": 614130,
+      "width": 1672,
+      "height": 941,
+      "poster": {
+        "file": "media/world-art/account-poster-v1.webp",
+        "bytes": 76016,
+        "width": 640,
+        "height": 360,
+        "sha256": "62bbd089b68770e10768ece14a6afa71813337dcc65b55157e519b9ef0e8f312"
+      }
+    },
+    {
+      "region": "rainbow",
+      "file": "media/world-art/rainbow-v1.webp",
+      "original": "../generated_images/exec-56649d1a-d0e0-48a2-abf5-d2e672dcb54a.png",
+      "generator": "built-in imagegen",
+      "promptFile": "docs/versions/v0.1.0/rainbow-art-prompts.json",
+      "width": 1672,
+      "height": 941,
+      "sha256": "249acdc22153124dfdb5c9ac3e5a179e8202c7f10a5970d319626f61e0e09f90",
+      "bytes": 519380,
+      "poster": {
+        "file": "media/world-art/rainbow-poster-v1.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 100144,
+        "sha256": "7f1e3bf8d7e9381f532f14c6d1f115212281453f5242b1dbbcdb99e733f06b91"
+      }
+    },
+    {
+      "region": "rainbow-scene",
+      "file": "media/world-art/rainbow-park-wide-v2.webp",
+      "generator": "built-in imagegen",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "f6fa63257babb195fa3dd2e5eacdd6e82b9b392de7b4d96c790606e2f0cfe26a",
+      "bytes": 558376,
+      "originalCandidates": [
+        "../generated_images/exec-092b52fd-4820-48e2-87f1-0d0c2d1c44f0.png",
+        "../generated_images/exec-f19c24a1-1dad-4fe0-8f0d-753ef30a9aa7.png"
+      ],
+      "promptFile": null,
+      "note": "Prompt was not recorded before the 10/29 session interruption; original matched by size/time only."
+    },
+    {
+      "region": "rainbow-scene",
+      "file": "media/world-art/rainbow-park-tall-v2.webp",
+      "generator": "built-in imagegen",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "1f0b91917d038b5a3b35ca5677bb9372be7a2175916018bcc19fa774d4d17ece",
+      "bytes": 586272,
+      "original": "../generated_images/exec-2fe3d49c-0f58-4df8-970c-b3515904cf2d.png",
+      "promptFile": null,
+      "note": "Prompt was not recorded before the 10/29 session interruption; original matched by size/time only."
+    },
+    {
+      "region": "rainbow-scene",
+      "file": "media/world-art/rainbow-park-sprites-v2.webp",
+      "generator": "built-in imagegen",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "93a50140c1dc389ece4303ad58ea17696bb078965aed65e6c63a7c5afd227b43",
+      "bytes": 418936,
+      "originalCandidates": [
+        "../generated_images/exec-092b52fd-4820-48e2-87f1-0d0c2d1c44f0.png",
+        "../generated_images/exec-f19c24a1-1dad-4fe0-8f0d-753ef30a9aa7.png"
+      ],
+      "promptFile": null,
+      "note": "Prompt was not recorded before the 10/29 session interruption; original matched by size/time only. Transparent sprite sheet; CSS background positions in rainbow-island.css."
+    },
+    {
+      "region": "history",
+      "file": "media/world-art/history-harbors-mobile-v1.webp",
+      "generator": "built-in imagegen",
+      "width": 900,
+      "height": 1200,
+      "sha256": "3fd229c007661c5f58b0d6931b485379efa2871135456190afc91f8114689914",
+      "bytes": 406366,
+      "originalCandidates": [
+        "../generated_images/exec-ef2147b0-74dd-42ad-a8c3-eb848dbba7e6.png",
+        "../generated_images/exec-01857241-63ec-47b8-a798-242955b1faa7.png"
+      ],
+      "promptFile": "docs/versions/v0.1.0/island-harbor-art-prompts.json",
+      "note": "Mobile (<=700px) harbor map; desktop keeps history-v1.webp."
+    },
+    {
+      "region": "toeic",
+      "file": "media/world-art/toeic-harbors-mobile-v1.webp",
+      "generator": "built-in imagegen",
+      "width": 900,
+      "height": 1200,
+      "sha256": "ca1bb3a68cb8b27d451c56add24f69421c3b98bb306d70025d90005fa1995910",
+      "bytes": 393076,
+      "originalCandidates": [
+        "../generated_images/exec-ef2147b0-74dd-42ad-a8c3-eb848dbba7e6.png",
+        "../generated_images/exec-01857241-63ec-47b8-a798-242955b1faa7.png"
+      ],
+      "promptFile": "docs/versions/v0.1.0/island-harbor-art-prompts.json",
+      "note": "Mobile (<=700px) harbor map; desktop keeps toeic-v1.webp."
+    }
+  ],
+  "webpQuality": 88
+}

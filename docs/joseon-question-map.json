@@ -1,0 +1,2379 @@
+{
+ "generated_by": "scripts/build_joseon_question_map.cjs",
+ "note": "앱에 실제로 들어 있는 조선 문항과 웹툰·강의 요약 글의 글자 대조. 출제 비중·대표성 추정이 아님. modules는 강조어 포함 여부로 어림 연결한 것.",
+ "counts": {
+  "joseon-early": {
+   "total": 33,
+   "comic_visible": 33
+  },
+  "joseon-late": {
+   "total": 140,
+   "comic_folded": 11,
+   "comic_visible": 114,
+   "not_found": 11,
+   "summary_only": 4
+  }
+ },
+ "inline": {
+  "joseon-early": [
+   {
+    "id": "joseon-early#001",
+    "q": "현직 관리에게만 수조지를 지급하는 직전법을 실시하였다",
+    "a": [
+     "세조"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J03",
+     "J13"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#002",
+    "q": "국가의 기본 법전인 경국대전이 완성되었다",
+    "a": [
+     "성종"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J03"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#003",
+    "q": "풍흉에 따라 9등급으로 전세를 거두었다",
+    "a": [
+     "세종"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J02"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#004",
+    "q": "반정 공신의 위훈 삭제를 주장한 조광조 일파를 제거한 기묘사화가 일어났다",
+    "a": [
+     "중종"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J04"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#005",
+    "q": "불씨잡변을 지어 불교를 비판하였다",
+    "a": [
+     "정도전"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J01"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#006",
+    "q": "김종직의 조의제문을 구실로 사림을 탄압한 무오사화가 일어났다",
+    "a": [
+     "연산군"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J04"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#007",
+    "q": "이징옥이 함길도에서 반란을 일으켰다",
+    "a": [
+     "단종"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#008",
+    "q": "김종서가 두만강 일대에 6진을 개척하였다",
+    "a": [
+     "세종"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J02"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#009",
+    "q": "외척 간의 권력 다툼으로 사림이 피해를 입은 을사사화가 일어났다",
+    "a": [
+     "명종"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J04"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#010",
+    "q": "문하부를 폐지하고 낭사를 사간원으로 독립시켰다",
+    "a": [
+     "태종"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J02"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#011",
+    "q": "계유정난을 통해 정권을 장악하였다",
+    "a": [
+     "세조"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J03"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#012",
+    "q": "폐비 윤씨 사사사건을 빌미로 신하들이 숙청된 갑자사화가 일어났다",
+    "a": [
+     "연산군"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J04"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#013",
+    "q": "계해약조가 체결되어 일본과 교역하였으며, 삼포를 개방하였다",
+    "a": [
+     "세종"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J02",
+     "J12"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#014",
+    "q": "재상 중심의 정치를 강조한 조선경국전을 저술하였다",
+    "a": [
+     "정도전"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J01"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#015",
+    "q": "유자광의 고변을 계기로 남이를 처형하였다",
+    "a": [
+     "예종"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#016",
+    "q": "수조권이 세습되던 수신전과 휼양전이 폐지되었다",
+    "a": [
+     "세조"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J03"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#017",
+    "q": "단종의 복위를 꾀한 성삼문 등을 처형하였다",
+    "a": [
+     "세조"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J03"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#018",
+    "q": "이종무가 왜구의 근거지인 쓰시마섬을 정벌하였다",
+    "a": [
+     "세종"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J02"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#019",
+    "q": "소학의 보급과 현량과 실시를 주장하였다",
+    "a": [
+     "조광조"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J04"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#020",
+    "q": "국방 문제를 논의하기 위한 임시 기구로 비변사가 설치되었다",
+    "a": [
+     "중종"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J12"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#021",
+    "q": "왕권 강화를 위해 6조 직계제를 처음으로 실시하였다",
+    "a": [
+     "태종"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J02"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#022",
+    "q": "길주를 근거지로 이시애의 난이 일어났다",
+    "a": [
+     "세조"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J03"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#023",
+    "q": "무오사화, 갑자사화 등 반복된 폭정으로 폐위되었다",
+    "a": [
+     "연산군"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J04"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#024",
+    "q": "최윤덕이 이만주 부대를 정벌하였다",
+    "a": [
+     "세종"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J02",
+     "J17"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#025",
+    "q": "이덕형이 구원병 요청을 위해 명에 청원사로 파견되었다 (전쟁)",
+    "a": [
+     "임진왜란"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J05"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#026",
+    "q": "동래 부사 송상현이 항전하였다 (전쟁)",
+    "a": [
+     "임진왜란"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J05",
+     "J14"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#027",
+    "q": "신립이 탄금대에서 배수의 진을 치고 전투를 벌였다 (전쟁)",
+    "a": [
+     "임진왜란"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J05"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#028",
+    "q": "인조가 남한산성으로 피란하여 항전하였다 (전쟁)",
+    "a": [
+     "병자호란"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J07"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#029",
+    "q": "삼수병으로 구성된 훈련도감이 설치되었다 (전쟁/왕)",
+    "a": [
+     "임진왜란"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J05"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#030",
+    "q": "김준룡이 광교산 전투에서 승리하였다 (전쟁)",
+    "a": [
+     "병자호란"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J07"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#031",
+    "q": "정문부가 북관대첩을 이끌었다(길주에서 의병을 이끌었다) (전쟁)",
+    "a": [
+     "임진왜란"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J05"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#032",
+    "q": "조헌이 금산에서 의병을 이끌고 활약하였다 (전쟁)",
+    "a": [
+     "임진왜란"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [
+     "J05"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-early#033",
+    "q": "정봉수와 이립이 용골산성에서 항전하였다 (전쟁/왕)",
+    "a": [
+     "정묘호란"
+    ],
+    "section": "임진왜란과 호란",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": true
+   }
+  ],
+  "joseon-late": [
+   {
+    "id": "joseon-late#001",
+    "q": "기유약조를 체결하여 일본과의 교역을 재개하였다 (왕)",
+    "a": [
+     "광해군"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J06",
+     "J12"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#002",
+    "q": "이괄의 난이 일어나 공주(공산성)로 피란하였다 (왕)",
+    "a": [
+     "인조"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J07"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#003",
+    "q": "자의 대비의 복상 문제로 예송이 일어났다 (왕)",
+    "a": [
+     "현종"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J08"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#004",
+    "q": "국왕의 친위부대인 장용영이 창설되었다 (왕)",
+    "a": [
+     "정조"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J09"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#005",
+    "q": "이조 전랑 임명을 둘러싸고 김효원과 심의겸이 대립하였다 (왕)",
+    "a": [
+     "선조"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J05"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#006",
+    "q": "목호룡의 고변으로 연잉군과 노론이 곤경에 처했다 (왕)",
+    "a": [
+     "경종"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#007",
+    "q": "이덕형이 구원병 요청을 위해 명에 청원사로 파견되었다 (전쟁)",
+    "a": [
+     "임진왜란"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J05"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#008",
+    "q": "어영청을 중심으로 북벌을 추진하였다 (왕)",
+    "a": [
+     "효종"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J07"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#009",
+    "q": "정여립 모반 사건을 빌미로 기축옥사가 일어났다 (왕)",
+    "a": [
+     "선조"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J05"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#010",
+    "q": "백두산정계비를 세워 청과의 국경을 획정하였다 (왕)",
+    "a": [
+     "숙종"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J08"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#011",
+    "q": "삼정의 문란을 시정하고자 삼정이정청을 설치하였다 (왕)",
+    "a": [
+     "철종"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J10"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#012",
+    "q": "동래 부사 송상현이 항전하였다 (전쟁)",
+    "a": [
+     "임진왜란"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J05",
+     "J14"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#013",
+    "q": "부족한 재정 보충을 위해 선무군관포를 징수하였다 (제도/왕)",
+    "a": [
+     "균역법(영조)",
+     "균역법",
+     "영조"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J09",
+     "J13"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#014",
+    "q": "신립이 탄금대에서 배수의 진을 치고 전투를 벌였다 (전쟁)",
+    "a": [
+     "임진왜란"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J05"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#015",
+    "q": "관청에 물품을 조달하는 공인이 등장하는 배경이 되었다 (제도/왕)",
+    "a": [
+     "대동법(광해군)",
+     "대동법",
+     "광해군"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J06",
+     "J13"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#016",
+    "q": "경신환국 등 여러 차례 환국이 발생하였다 (왕)",
+    "a": [
+     "숙종"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J08"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#017",
+    "q": "인조가 남한산성으로 피란하여 항전하였다 (전쟁)",
+    "a": [
+     "병자호란"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J07"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#018",
+    "q": "조총 부대를 나선 정벌에 파견하였다 (왕)",
+    "a": [
+     "효종"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J07"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#019",
+    "q": "초계문신제를 시행하여 문신을 재교육하였다 (왕)",
+    "a": [
+     "정조"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J09"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#020",
+    "q": "이인좌를 중심으로 한 소론 세력이 난을 일으켰다 (왕)",
+    "a": [
+     "영조"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J09"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#021",
+    "q": "강홍립이 사르후 전투에 참전하였다 (왕)",
+    "a": [
+     "광해군"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J06"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#022",
+    "q": "황사영이 외국 군대의 출병을 요청하는 백서를 작성하였다 (왕)",
+    "a": [
+     "순조"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J10"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#023",
+    "q": "삼수병으로 구성된 훈련도감이 설치되었다 (전쟁/왕)",
+    "a": [
+     "임진왜란(선조)",
+     "임진왜란",
+     "선조"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J05"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#024",
+    "q": "초량 왜관을 통해 일본과 교역하였다 (시작한 왕)",
+    "a": [
+     "숙종"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J08",
+     "J12"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#025",
+    "q": "김준룡이 광교산 전투에서 승리하였다 (전쟁)",
+    "a": [
+     "병자호란"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J07"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#026",
+    "q": "수도 방어를 위해 금위영을 설치하였다 (왕)",
+    "a": [
+     "숙종"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J08"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#027",
+    "q": "각 궁방과 중앙 관서의 공노비 6만여 명을 해방하였다 (왕)",
+    "a": [
+     "순조"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J10"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#028",
+    "q": "명에 대한 의리를 내세운 기축봉사를 올렸다 (인물/왕)",
+    "a": [
+     "송시열(효종)",
+     "송시열"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J07"
+    ],
+    "status": "comic_visible",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#029",
+    "q": "정문부가 북관대첩을 이끌었다(길주에서 의병을 이끌었다) (전쟁)",
+    "a": [
+     "임진왜란"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J05"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#030",
+    "q": "토지 1결당 쌀 2두의 결작을 부과하였다 (제도/왕)",
+    "a": [
+     "균역법(영조)",
+     "균역법",
+     "영조"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J09",
+     "J13"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#031",
+    "q": "풍흉에 관계없이 전세를 1결당 4~6두로 고정하였다 (왕)",
+    "a": [
+     "인조(영정법)",
+     "인조"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J07",
+     "J13"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#032",
+    "q": "시전 상인의 특권을 축소한 신해통공을 단행하였다 (왕)",
+    "a": [
+     "정조"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J09"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#033",
+    "q": "진주에서 유계춘을 중심으로 임술농민봉기가 일어났다 (왕)",
+    "a": [
+     "철종"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J10"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#034",
+    "q": "영창대군을 죽이고 인목대비를 유폐하였다 (왕)",
+    "a": [
+     "광해군"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J06"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#035",
+    "q": "조헌이 금산에서 의병을 이끌고 활약하였다 (전쟁)",
+    "a": [
+     "임진왜란"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J05"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#036",
+    "q": "자주 범람하던 청계천을 정비하였다 (왕)",
+    "a": [
+     "영조"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J09"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#037",
+    "q": "인현 왕후가 폐위되고 남인이 권력을 차지한 사건을 알아본다 (왕)",
+    "a": [
+     "숙종"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J08"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#038",
+    "q": "홍경래 등이 봉기하여 정주성을 점령하였다 (왕)",
+    "a": [
+     "순조"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J10"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#039",
+    "q": "서얼 출신의 학자들이 규장각 검서관으로 기용되었다 (왕)",
+    "a": [
+     "정조"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J09",
+     "J15"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#040",
+    "q": "한성 방어를 위하여 총융청과 수어청을 창설하였다 (왕)",
+    "a": [
+     "인조"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J07"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#041",
+    "q": "신류가 조총 부대를 이끌고 흑룡강에서 전투를 벌였다 (왕)",
+    "a": [
+     "효종"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J07"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#042",
+    "q": "토산물 대신 쌀, 동전으로 납부하였다 (제도/왕)",
+    "a": [
+     "대동법(광해군)",
+     "대동법",
+     "광해군"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J06",
+     "J13"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#043",
+    "q": "정봉수와 이립이 용골산성에서 항전하였다 (전쟁/왕)",
+    "a": [
+     "정묘호란(인조)",
+     "정묘호란",
+     "인조"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J07"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#044",
+    "q": "사태 수습을 위해 박규수가 안핵사로 파견되었다 (왕)",
+    "a": [
+     "철종"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J10"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#045",
+    "q": "윤지충 등이 처형된 신해박해가 일어났다 (왕)",
+    "a": [
+     "정조"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J09"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#046",
+    "q": "허적과 윤후 등 남인이 대거 축출되다 (왕)",
+    "a": [
+     "숙종"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J08"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#047",
+    "q": "이원익이 방납의 폐단을 없애고자 선혜청을 두고 실시할 것을 주장하다 (제도/왕)",
+    "a": [
+     "대동법(광해군)",
+     "대동법",
+     "광해군"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J06",
+     "J13"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#048",
+    "q": "전개 과정에서 이승훈, 정약용 등이 연루되어 처벌되었다 (왕)",
+    "a": [
+     "순조"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J10",
+     "J18",
+     "J19"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#049",
+    "q": "붕당의 폐해를 경계하기 위한 탕평비가 건립되었다 (왕)",
+    "a": [
+     "영조"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J09"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#050",
+    "q": "명의 신종을 제사 지내는 만동묘가 설치되었다 (왕)",
+    "a": [
+     "숙종"
+    ],
+    "section": "조선 후기 · 정치",
+    "modules": [
+     "J08"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#051",
+    "q": "왕의 비서기관으로 도승지가 수장이었으며, 은대학사라고도 불렸다",
+    "a": [
+     "승정원"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J11"
+    ],
+    "status": "comic_folded",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#052",
+    "q": "국왕 직속 사법 기구로 반역죄 등을 다루었다",
+    "a": [
+     "의금부"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "summary_only",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#053",
+    "q": "변방의 국방 문제에 대해 논의하고 대비하기 위한 임시 기구였다",
+    "a": [
+     "비변사"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J12"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#054",
+    "q": "5품 이하의 관리 임명에 대한 서경권을 행사하였다",
+    "a": [
+     "양사 (사헌부,사간원)",
+     "양사"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J02",
+     "J11"
+    ],
+    "status": "not_found",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#055",
+    "q": "최고 교육기관으로 대사성이 수장이었다",
+    "a": [
+     "성균관"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#056",
+    "q": "대사헌을 수장으로 하고 백관의 규찰과 탄핵을 담당하였다",
+    "a": [
+     "사헌부"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J11"
+    ],
+    "status": "comic_folded",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#057",
+    "q": "수도의 행정과 치안을 담당하였다",
+    "a": [
+     "한성부"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "summary_only",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#058",
+    "q": "역사서를 편찬하고 사고에 보관하는 일을 맡았다",
+    "a": [
+     "춘추관"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "summary_only",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#059",
+    "q": "성종 때 만들어졌으며 경연을 주관하였고, 옥당이라고도 불렸다",
+    "a": [
+     "홍문관"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J03",
+     "J11"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#060",
+    "q": "언론 기능을 하였으며, 3사라고 불렸다",
+    "a": [
+     "사헌부, 사간원, 홍문관"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J02",
+     "J03",
+     "J11"
+    ],
+    "status": "comic_folded",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#061",
+    "q": "대성전과 명륜당을 두었다",
+    "a": [
+     "성균관"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#062",
+    "q": "조옥 또는 금오라고 불렸다",
+    "a": [
+     "의금부"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "summary_only",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#063",
+    "q": "학문 연구 등을 수행하도록 설치되었다가 세조에 의해 폐지되었다",
+    "a": [
+     "집현전"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J02",
+     "J03"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#064",
+    "q": "사대교린에 관한 문서를 관장하기 위해 설치되었다",
+    "a": [
+     "승문원"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "not_found",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#065",
+    "q": "관할 유향소 임원의 임명권을 행사하였다",
+    "a": [
+     "경재소"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "not_found",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#066",
+    "q": "좌수와 별감을 중심으로 운영되었다",
+    "a": [
+     "유향소"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "not_found",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#067",
+    "q": "초량 왜관을 설치하였다(왕)",
+    "a": [
+     "숙종"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J08",
+     "J12"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#068",
+    "q": "수령을 보좌하면서 향촌 실무를 담당하였다",
+    "a": [
+     "향리"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "not_found",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#069",
+    "q": "중앙에서 교수나 훈도가 파견되었다",
+    "a": [
+     "향교"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "not_found",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#070",
+    "q": "계해약조가 체결되어 일본과 교역하였다(왕)",
+    "a": [
+     "세종"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J02",
+     "J12"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#071",
+    "q": "진관 체제를 실시하였다(왕)",
+    "a": [
+     "세조"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J03"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#072",
+    "q": "(국가) 두만강 일대를 개척하여 6진을 설치하였다",
+    "a": [
+     "여진"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#073",
+    "q": "(국가) 연행사라는 이름으로 보내졌다",
+    "a": [
+     "청"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#074",
+    "q": "(국가) 한성에 동평관을 두어 무역을 허용하였다",
+    "a": [
+     "왜(일본)",
+     "왜",
+     "일본"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#075",
+    "q": "(국가) 경성과 경원에 무역소를 설치하였다",
+    "a": [
+     "여진"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#076",
+    "q": "중인들이 시사를 조직하여 작품 활동을 하였다",
+    "a": [
+     "조선(후기)",
+     "조선",
+     "후기"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J15"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#077",
+    "q": "서얼이 통청 운동을 통해 청요직으로 진출하였다",
+    "a": [
+     "조선(후기)",
+     "조선",
+     "후기"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J15"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#078",
+    "q": "병자에게 약을 지급하는 혜민국이 설치되었다",
+    "a": [
+     "고려"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#079",
+    "q": "신분 질서가 동요하였다",
+    "a": [
+     "조선(후기)",
+     "조선",
+     "후기"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#080",
+    "q": "빈민을 구휼하는 제위보를 운영하였다",
+    "a": [
+     "고려"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#081",
+    "q": "산대놀이, 판소리, 탈춤 공연을 했다",
+    "a": [
+     "조선(후기)",
+     "조선",
+     "후기"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J15"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#082",
+    "q": "호랑이 등을 소재로 민화를 그렸다",
+    "a": [
+     "조선(후기)",
+     "조선",
+     "후기"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#083",
+    "q": "사심관 제도가 시행된 사례를 조사한다",
+    "a": [
+     "고려"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#084",
+    "q": "특수 행정 구역으로 향, 부곡, 소가 있었다",
+    "a": [
+     "고려"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#085",
+    "q": "상민층이 납속과 공명첩을 활용하여 신분 상승을 꾀하였다",
+    "a": [
+     "조선(후기)",
+     "조선",
+     "후기"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J15"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#086",
+    "q": "구제도감을 두어 백성을 구호하였다",
+    "a": [
+     "고려"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#087",
+    "q": "한글소설이 유행하였다(홍길동전, 춘향전)",
+    "a": [
+     "조선(후기)",
+     "조선",
+     "후기"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J15"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#088",
+    "q": "구향과 신향의 싸움인 향전이 일어났다",
+    "a": [
+     "조선(후기)",
+     "조선",
+     "후기"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#089",
+    "q": "환자 치료와 빈민 구제를 위해 수도에 동서대비원을 두었다",
+    "a": [
+     "고려"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#090",
+    "q": "보부상이 장시를 돌아다니며 상업 활동을 하였다",
+    "a": [
+     "조선(후기)",
+     "조선",
+     "후기"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J14"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#091",
+    "q": "독점적 도매상인인 도고가 출현하였다",
+    "a": [
+     "조선(후기)",
+     "조선",
+     "후기"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J14"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#092",
+    "q": "서적점, 다점 등의 관영 상점을 운영하였다",
+    "a": [
+     "고려"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#093",
+    "q": "감자, 고구마 등을 구황작물로 재배하였다",
+    "a": [
+     "조선(후기)",
+     "조선",
+     "후기"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J14"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#094",
+    "q": "은병이 화폐 유통에 미친 영향을 알아본다",
+    "a": [
+     "고려"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#095",
+    "q": "관리에게 녹과전을 지급했다",
+    "a": [
+     "고려"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#096",
+    "q": "설점수세제의 시행으로 민간의 광산 개발이 허용되었고, 덕대가 활동하였다",
+    "a": [
+     "조선(후기)",
+     "조선",
+     "후기"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J14"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#097",
+    "q": "금속 화폐인 건원중보가 주조되었다",
+    "a": [
+     "고려(성종)",
+     "고려"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J03"
+    ],
+    "status": "comic_visible",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#098",
+    "q": "고추, 담배 등이 상품 작물로 재배되었다",
+    "a": [
+     "조선(후기)",
+     "조선",
+     "후기"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J14"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#099",
+    "q": "소를 이용한 깊이갈이가 일반화되었다",
+    "a": [
+     "고려"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#100",
+    "q": "송상(개성 상인)이 전국 각지에 송방을 설치하였다",
+    "a": [
+     "조선(후기)",
+     "조선",
+     "후기"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J14"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#101",
+    "q": "상평통보가 발행되어 법화로 사용되었다",
+    "a": [
+     "조선(후기)",
+     "조선",
+     "후기"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J14"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#102",
+    "q": "경기에 한하여 설치된 과전이 농민에게 미친 영향을 파악한다",
+    "a": [
+     "고려(말) (조선건국직전)"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "not_found",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#103",
+    "q": "모내기법의 확대로 벼와 보리의 이모작이 성행하였다",
+    "a": [
+     "조선(후기)",
+     "조선",
+     "후기"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J14"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#104",
+    "q": "경시서의 관리들이 시전의 상행위를 감독하였다",
+    "a": [
+     "고려"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#105",
+    "q": "여각이 포구에서 물품의 매매를 중개하였다",
+    "a": [
+     "조선(후기)",
+     "조선",
+     "후기"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#106",
+    "q": "전황이 심하였다",
+    "a": [
+     "조선(후기)",
+     "조선",
+     "후기"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#107",
+    "q": "벽란도를 통해 아라비아 상인과 무역하였다",
+    "a": [
+     "고려"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "comic_visible",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#108",
+    "q": "한양을 기준으로 한 역법서인 칠정산을 간행하였다(왕)",
+    "a": [
+     "세종"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J02",
+     "J16"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#109",
+    "q": "허준이 우리나라와 중국의 의서를 망라하여 집대성하였다(책/왕)",
+    "a": [
+     "동의보감"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J17"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#110",
+    "q": "주자소를 두어 계미자를 주조하였다(왕)",
+    "a": [
+     "태종"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J02",
+     "J16"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#111",
+    "q": "역대 문물제도를 정비한 동국문헌비고를 편찬하였다(왕)",
+    "a": [
+     "영조"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J09",
+     "J16"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#112",
+    "q": "주세붕이 최초의 서원을 건립하였다(서원)",
+    "a": [
+     "백운동서원"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J17"
+    ],
+    "status": "comic_folded",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#113",
+    "q": "성리학의 개념을 도식으로 설명한 성학십도를 지었다(인물)",
+    "a": [
+     "이황 (=소수서원)",
+     "이황"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J17"
+    ],
+    "status": "comic_folded",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#114",
+    "q": "의산문답을 통해 지전설과 무한 우주론을 주장했다(인물)",
+    "a": [
+     "홍대용"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J18"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#115",
+    "q": "신숙주가 일본에 다녀와서 편찬하였다(책)",
+    "a": [
+     "해동제국기"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J19"
+    ],
+    "status": "comic_folded",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#116",
+    "q": "우리 땅에 맞는 농법서인 농사직설이 간행되었다(왕)",
+    "a": [
+     "세종"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J02",
+     "J16"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#117",
+    "q": "훈련 교범인 무예도보통지가 간행되었다(왕)",
+    "a": [
+     "정조"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J09"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#118",
+    "q": "북학의를 저술하였고, 서자 출신으로 규장각 검서관에 기용되었다(인물)",
+    "a": [
+     "박제가"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J09",
+     "J15",
+     "J18"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#119",
+    "q": "거중기 등을 활용하여 수원 화성이 축조되었다(왕)",
+    "a": [
+     "정조"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J09",
+     "J19"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#120",
+    "q": "양반의 허례와 무능을 풍자한 양반전을 지었다(인물)",
+    "a": [
+     "박지원"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J18"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#121",
+    "q": "금석과안록에서 북한산비가 진흥왕 순수비임을 고증하였다(인물)",
+    "a": [
+     "김정희"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J20"
+    ],
+    "status": "comic_folded",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#122",
+    "q": "국산 약재와 치료 방법을 정리한 향약집성방이 간행되었다(왕)",
+    "a": [
+     "세종"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J02",
+     "J16"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#123",
+    "q": "음악 이론을 집대성한 악학궤범을 완성하였다(왕)",
+    "a": [
+     "성종"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J03",
+     "J16"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#124",
+    "q": "임진왜란 이후 에도 막부 요청으로 파견되었다(사신단)",
+    "a": [
+     "통신사"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J05",
+     "J12"
+    ],
+    "status": "comic_folded",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#125",
+    "q": "통치 체제를 정비하기 위해 속대전을 편찬하였다(왕)",
+    "a": [
+     "영조"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J09",
+     "J16"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#126",
+    "q": "금강전도, 인왕제색도를 통해 아름다움을 사실적으로 표현하였다(인물)",
+    "a": [
+     "정선"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J20"
+    ],
+    "status": "comic_folded",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#127",
+    "q": "불교 경전을 간행하는 간경도감이 설치되었다(왕)",
+    "a": [
+     "세조"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J03",
+     "J16"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#128",
+    "q": "성학집요를 짓고, 동호문답을 통해 다양한 개혁 방안을 제시하였다(인물)",
+    "a": [
+     "이이"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J17"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#129",
+    "q": "양명학을 연구하여 강화학파를 형성하였다(인물)",
+    "a": [
+     "정제두"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "not_found",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#130",
+    "q": "유득공이 지은 책으로 남북국이라는 용어가 처음 사용되었다(책)",
+    "a": [
+     "발해고"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J19"
+    ],
+    "status": "comic_folded",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#131",
+    "q": "유교 윤리의 보급을 위해 삼강행실도가 편찬되었다(왕)",
+    "a": [
+     "세종"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J02"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#132",
+    "q": "한전론과 나라를 망치는 여섯 가지 좀을 제시하였다(인물)",
+    "a": [
+     "이익"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J18"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#133",
+    "q": "기기도설을 참고하여 거중기를 설계하였다(인물)",
+    "a": [
+     "정약용"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J18",
+     "J19"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#134",
+    "q": "세계 지도인 혼일강리역대국도지도가 제작되었다(왕)",
+    "a": [
+     "태종"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J02"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#135",
+    "q": "기대승과 사당칠정 논쟁을 전개하였다(인물)",
+    "a": [
+     "이황"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J17"
+    ],
+    "status": "comic_folded",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#136",
+    "q": "예학을 조선의 현실에 맞게 정리한 가례집람을 저술하였다(왕)",
+    "a": [
+     "선조 (김장생)",
+     "선조"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J05"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   },
+   {
+    "id": "joseon-late#137",
+    "q": "역대 왕과 왕비의 신주가 모셔져 있다(건물)",
+    "a": [
+     "종묘"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "not_found",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#138",
+    "q": "최초로 100리 척을 사용하여 동국지도를 제작하였다(인물)",
+    "a": [
+     "정상기"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "not_found",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#139",
+    "q": "조선 말에는 왕조 교체를 예언하는 이 책이 유포되었다",
+    "a": [
+     "정감록"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [],
+    "status": "not_found",
+    "in_summary": false
+   },
+   {
+    "id": "joseon-late#140",
+    "q": "열하일기에서 수레와 선박의 사용을 강조하였다(인물)",
+    "a": [
+     "박지원"
+    ],
+    "section": "조선 후기 · 사회·경제·문화",
+    "modules": [
+     "J18"
+    ],
+    "status": "comic_visible",
+    "in_summary": true
+   }
+  ]
+ },
+ "past_exam": {
+  "joseon-early": [
+   {
+    "id": "75-19",
+    "topic": "제1차 왕자의 난",
+    "remember": "태조 이방석 책봉 → 제1차 왕자의 난 → 태종 즉위",
+    "modules": [
+     "J02"
+    ]
+   },
+   {
+    "id": "76-19",
+    "topic": "세종의 문화",
+    "remember": "세종 = 편경·삼강행실도 / 성종 = 악학궤범",
+    "modules": [
+     "J02",
+     "J03",
+     "J16"
+    ]
+   },
+   {
+    "id": "76-20",
+    "topic": "연산군의 사화",
+    "remember": "연산군 = 무오사화(조의제문) + 갑자사화(폐비 윤씨)",
+    "modules": [
+     "J04"
+    ]
+   },
+   {
+    "id": "77-20",
+    "topic": "세조의 직전법",
+    "remember": "세조 = 간경도감 + 직전법",
+    "modules": [
+     "J03",
+     "J13",
+     "J16"
+    ]
+   },
+   {
+    "id": "77-22",
+    "topic": "병자호란 이후 북벌",
+    "remember": "병자호란(인조) → 북벌 준비(효종·이완)",
+    "modules": [
+     "J07"
+    ]
+   }
+  ],
+  "joseon-late": [
+   {
+    "id": "75-24",
+    "topic": "영조의 탕평",
+    "remember": "영조 = 이인좌의 난 + 탕평비 + 균역법",
+    "modules": [
+     "J09",
+     "J13"
+    ]
+   },
+   {
+    "id": "76-23",
+    "topic": "대동법과 공인",
+    "remember": "대동법 = 공납 개혁 → 공인 등장",
+    "modules": [
+     "J06",
+     "J13"
+    ]
+   },
+   {
+    "id": "76-25",
+    "topic": "영조의 개혁",
+    "remember": "영조 = 청계천 준설 + 신문고 복구 + 속대전",
+    "modules": [
+     "J09",
+     "J16"
+    ]
+   },
+   {
+    "id": "77-24",
+    "topic": "숙종의 환국",
+    "remember": "숙종 = 환국 + 금위영 + 백두산정계비",
+    "modules": [
+     "J08"
+    ]
+   },
+   {
+    "id": "77-26",
+    "topic": "박제가의 북학의",
+    "remember": "박제가 = 북학의 + 규장각 검서관",
+    "modules": [
+     "J09",
+     "J15",
+     "J18"
+    ]
+   }
+  ]
+ }
+}

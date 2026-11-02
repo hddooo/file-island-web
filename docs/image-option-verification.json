@@ -1,0 +1,189 @@
+{
+  "counts": {
+    "total": 13,
+    "verified": 10,
+    "unresolved": 3
+  },
+  "rows": [
+    {
+      "optionId": "exam-72-23-option-1",
+      "questionId": "exam-72-23",
+      "identification": "전기 매화초옥도",
+      "brief": "매화초옥도 — 조선 후기, 전기",
+      "sourceUrls": [
+        "https://www.emuseum.go.kr/detail?relicId=PS0100100100900331800000",
+        "https://encykorea.aks.ac.kr/Article/E0049303",
+        "https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fbrunch%2Fservice%2Fuser%2FdxSi%2Fimage%2FbIqcFZ-ryuNAnUhvVnViySs-1ms.jpg"
+      ],
+      "visualEvidence": "기출 두 보기 동일 그림. 공개 고해상도 재현 사진 직접 대조: 누런 둥근 산, 흰 매화 점, 중앙 작은 사각창 속 초록옷 인물, 좌하단 다리의 붉은옷 인물, 우하단 제발·낙관 위치 일치. 공식 e뮤지엄 동원3318 명칭·작가·설명과 모두 부합. AKS의 다른 매화서옥도 사진과 ARTLECTURE의 다른 동명 구도는 원본과 달라 폐기.",
+      "confidence": "high",
+      "status": "verified",
+      "reason": "식별·시대·작가 근거는 공식 e뮤지엄. 이미지 정밀대조는 제3자 재현 사진; e뮤지엄 원본 이미지 다운로드는400로 제한되어 이 차이를 명시."
+    },
+    {
+      "optionId": "exam-72-23-option-3",
+      "questionId": "exam-72-23",
+      "identification": null,
+      "brief": null,
+      "sourceUrls": [],
+      "visualEvidence": "좌상단 제발과 여러 낙관, 달, 물·울창한 나무·낮은 산이 있는 가로 산수화. 김홍도 소림명월도와 김두량 월야산수도의 공개 사진은 구도 불일치하여 폐기.",
+      "confidence": "low",
+      "status": "unresolved",
+      "reason": "원본 그림 직접 확인·확대 대조했으나 공식 자료에서 동일 작품명/작가를 확정하지 못함. 유사 그림의 작가·시대만 옮겨 적는 방식은 제외."
+    },
+    {
+      "optionId": "exam-73-06-option-3",
+      "questionId": "exam-73-06",
+      "identification": "가야 판갑옷",
+      "brief": "판갑옷 — 가야, 철판을 이어 만든 갑옷",
+      "sourceUrls": [
+        "https://www.museum.go.kr/MUSEUM/contents/M0201030700.do?relicId=27007&schM=view&showHallId=760",
+        "https://cdn.museum.go.kr/attach_files/THUMB_H_20220802152819828_001.jpg"
+      ],
+      "visualEvidence": "국립중앙박물관 가야실의 투구와 판갑옷 공식 사진 직접 확인. 둥근 몸통 위 양쪽 어깨 보호판, 앞 중심 세로 틈과 앞가슴 철판의 녹/파손 배치가 원본 세 보기와 일치. 원본은 목 가리개를 세워 몸통 위에 놓았고 공식 전시는 투구를 별도 띄워 배치하여 상단 조립은 다름. 정확한 출토지 세부는 사용자 한줄에서 제외.",
+      "confidence": "high",
+      "status": "verified",
+      "reason": "국립중앙박물관 가야실 직접 소장품 해설과 동일 몸통 사진 확인. 복천동38호 추측은 폐기; 공식 설명은 고령 지산동32호로 확인됨."
+    },
+    {
+      "optionId": "exam-73-06-option-4",
+      "questionId": "exam-73-06",
+      "identification": "농경문 청동기",
+      "brief": "농경문 청동기 — 초기 철기, 농경·제사 의식",
+      "sourceUrls": [
+        "https://www.heritage.go.kr/heri/cul/culSelectDetail.do?ccbaCpno=1121118230000",
+        "https://encykorea.aks.ac.kr/Article/E0013076",
+        "https://devin.aks.ac.kr/image/2794b1fa-2782-4c18-92df-193ec7dd2dbc?preset=orig"
+      ],
+      "visualEvidence": "국립중앙박물관 저작권 표기가 있는 AKS 사진 직접 확인: 윗가장자리 네모구멍6개, 좌측 긴 아래돌기, 가운데 큰 파손부, 우하단 고리의 위치와 형태가 원본 보기와 일치. 검파형동기와 혼동하지 않음.",
+      "confidence": "high",
+      "status": "verified",
+      "reason": "공식 이미지와 명칭·시대 일치. 정확한 출토지는 미상이라 괴정동 출토라고 쓰지 않음."
+    },
+    {
+      "optionId": "exam-75-03-option-3",
+      "questionId": "exam-75-03",
+      "identification": "가야 판갑옷",
+      "brief": "판갑옷 — 가야, 철판을 이어 만든 갑옷",
+      "sourceUrls": [
+        "https://www.museum.go.kr/MUSEUM/contents/M0201030700.do?relicId=27007&schM=view&showHallId=760",
+        "https://cdn.museum.go.kr/attach_files/THUMB_H_20220802152819828_001.jpg"
+      ],
+      "visualEvidence": "국립중앙박물관 가야실의 투구와 판갑옷 공식 사진 직접 확인. 둥근 몸통 위 양쪽 어깨 보호판, 앞 중심 세로 틈과 앞가슴 철판의 녹/파손 배치가 원본 세 보기와 일치. 원본은 목 가리개를 세워 몸통 위에 놓았고 공식 전시는 투구를 별도 띄워 배치하여 상단 조립은 다름. 정확한 출토지 세부는 사용자 한줄에서 제외.",
+      "confidence": "high",
+      "status": "verified",
+      "reason": "국립중앙박물관 가야실 직접 소장품 해설과 동일 몸통 사진 확인. 복천동38호 추측은 폐기; 공식 설명은 고령 지산동32호로 확인됨."
+    },
+    {
+      "optionId": "exam-76-04-option-4",
+      "questionId": "exam-76-04",
+      "identification": "가야 판갑옷",
+      "brief": "판갑옷 — 가야, 철판을 이어 만든 갑옷",
+      "sourceUrls": [
+        "https://www.museum.go.kr/MUSEUM/contents/M0201030700.do?relicId=27007&schM=view&showHallId=760",
+        "https://cdn.museum.go.kr/attach_files/THUMB_H_20220802152819828_001.jpg"
+      ],
+      "visualEvidence": "국립중앙박물관 가야실의 투구와 판갑옷 공식 사진 직접 확인. 둥근 몸통 위 양쪽 어깨 보호판, 앞 중심 세로 틈과 앞가슴 철판의 녹/파손 배치가 원본 세 보기와 일치. 원본은 목 가리개를 세워 몸통 위에 놓았고 공식 전시는 투구를 별도 띄워 배치하여 상단 조립은 다름. 정확한 출토지 세부는 사용자 한줄에서 제외.",
+      "confidence": "high",
+      "status": "verified",
+      "reason": "국립중앙박물관 가야실 직접 소장품 해설과 동일 몸통 사진 확인. 복천동38호 추측은 폐기; 공식 설명은 고령 지산동32호로 확인됨."
+    },
+    {
+      "optionId": "exam-76-17-option-4",
+      "questionId": "exam-76-17",
+      "identification": "도기 바퀴장식 뿔잔",
+      "brief": "도기 바퀴장식 뿔잔 — 가야, 수레바퀴·뿔잔",
+      "sourceUrls": [
+        "https://www.heritage.go.kr/heri/cul/culSelectDetail.do?ccbaCpno=1123806370000",
+        "https://encykorea.aks.ac.kr/Article/E0055141",
+        "https://devin.aks.ac.kr/image/12e37f96-0193-4718-8c60-06c1c1fb18ce?preset=orig"
+      ],
+      "visualEvidence": "국립중앙박물관 저작권 AKS 사진 직접 확인: 좌우로 갈라진 뿔잔, 앞쪽 여섯 바퀴살, 한쪽만 남은 고사리 장식, 나팔형 받침의 구도가 원본 보기와 일치.",
+      "confidence": "high",
+      "status": "verified",
+      "reason": "국가유산청 원문검색 및 AKS 설명의 가야 귀속 일치. 출토지는 미상으로 유지."
+    },
+    {
+      "optionId": "exam-76-17-option-5",
+      "questionId": "exam-76-17",
+      "identification": "분청사기 코끼리 모양 제기(상준)",
+      "brief": "분청사기 상준 — 조선, 코끼리 모양 제기",
+      "sourceUrls": [
+        "https://www.denverartmuseum.org/en/exhibitions/perfectly-imperfect",
+        "https://d26jxt5097u8sr.cloudfront.net/s3fs-public/2023-09/Elephant-shaped-Ritual-Vessel-with-Tortoise--Motif.jpg"
+      ],
+      "visualEvidence": "국립중앙박물관 공동전시 Denver Art Museum 공식 사진 직접 확인. 코가 오른쪽으로 말려 있는 머리, 등 위 넓은 입구, 몸통의 큰 거북 두 마리와 사선 음각무늬, 네다리의 배치가 원본 보기와 일치.",
+      "confidence": "high",
+      "status": "verified",
+      "reason": "공식 전시 캡션은 Joseon dynasty, Buncheong with incised design, National Museum of Korea. 백자/고려청자로 오인하지 않음."
+    },
+    {
+      "optionId": "exam-76-27-option-2",
+      "questionId": "exam-76-27",
+      "identification": null,
+      "brief": null,
+      "sourceUrls": [],
+      "visualEvidence": "여러 남녀가 직사각형 상을 둘러싸고 서 있음. 김준근 쌍뉵치고는 5명이 바닥 말판을 둘러싼 구도로 원본과 불일치하여 폐기.",
+      "confidence": "low",
+      "status": "unresolved",
+      "reason": "원본 그림 직접 확인·확대 대조했으나 공식 자료에서 동일 작품명/작가를 확정하지 못함. 유사 그림의 작가·시대만 옮겨 적는 방식은 제외."
+    },
+    {
+      "optionId": "exam-76-27-option-4",
+      "questionId": "exam-76-27",
+      "identification": "김홍도 대장간",
+      "brief": "대장간 — 조선 후기, 김홍도",
+      "sourceUrls": [
+        "https://encykorea.aks.ac.kr/Article/E0013639",
+        "https://www.heritage.go.kr/heri/cul/culSelectDetail.do?ccbaCpno=1121105270000",
+        "https://smarthistory.org/wp-content/uploads/2022/08/A-Blacksmiths-Workshop-scaled.jpg"
+      ],
+      "visualEvidence": "공개 고해상도 대장간 재현 사진 직접 확인: 위 중앙 풀무, 왼쪽 앉아 집게 잡은 사람, 오른쪽 망치 든 두사람, 아래쪽 옆사람과 도구 배치, 좌상단 붉은 도장이 기출 보기와 동일.",
+      "confidence": "high",
+      "status": "verified",
+      "reason": "AKS 김홍도 필 풍속도화첩의 작가·조선후기·소장처를 확인, 대장간 구성 작품 명칭은 국가유산 설명과 정밀 사진 대조. 사진은 Smarthistory 재현 파일; 공식 국가유산 상세직접열기403 제한 명시."
+    },
+    {
+      "optionId": "exam-77-04-option-3",
+      "questionId": "exam-77-04",
+      "identification": "농경문 청동기",
+      "brief": "농경문 청동기 — 초기 철기, 농경·제사 의식",
+      "sourceUrls": [
+        "https://www.heritage.go.kr/heri/cul/culSelectDetail.do?ccbaCpno=1121118230000",
+        "https://encykorea.aks.ac.kr/Article/E0013076",
+        "https://devin.aks.ac.kr/image/2794b1fa-2782-4c18-92df-193ec7dd2dbc?preset=orig"
+      ],
+      "visualEvidence": "국립중앙박물관 저작권 표기가 있는 AKS 사진 직접 확인: 윗가장자리 네모구멍6개, 좌측 긴 아래돌기, 가운데 큰 파손부, 우하단 고리의 위치와 형태가 원본 보기와 일치. 검파형동기와 혼동하지 않음.",
+      "confidence": "high",
+      "status": "verified",
+      "reason": "공식 이미지와 명칭·시대 일치. 정확한 출토지는 미상이라 괴정동 출토라고 쓰지 않음."
+    },
+    {
+      "optionId": "exam-78-26-option-2",
+      "questionId": "exam-78-26",
+      "identification": "전기 매화초옥도",
+      "brief": "매화초옥도 — 조선 후기, 전기",
+      "sourceUrls": [
+        "https://www.emuseum.go.kr/detail?relicId=PS0100100100900331800000",
+        "https://encykorea.aks.ac.kr/Article/E0049303",
+        "https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fbrunch%2Fservice%2Fuser%2FdxSi%2Fimage%2FbIqcFZ-ryuNAnUhvVnViySs-1ms.jpg"
+      ],
+      "visualEvidence": "기출 두 보기 동일 그림. 공개 고해상도 재현 사진 직접 대조: 누런 둥근 산, 흰 매화 점, 중앙 작은 사각창 속 초록옷 인물, 좌하단 다리의 붉은옷 인물, 우하단 제발·낙관 위치 일치. 공식 e뮤지엄 동원3318 명칭·작가·설명과 모두 부합. AKS의 다른 매화서옥도 사진과 ARTLECTURE의 다른 동명 구도는 원본과 달라 폐기.",
+      "confidence": "high",
+      "status": "verified",
+      "reason": "식별·시대·작가 근거는 공식 e뮤지엄. 이미지 정밀대조는 제3자 재현 사진; e뮤지엄 원본 이미지 다운로드는400로 제한되어 이 차이를 명시."
+    },
+    {
+      "optionId": "exam-78-26-option-3",
+      "questionId": "exam-78-26",
+      "identification": null,
+      "brief": null,
+      "sourceUrls": [],
+      "visualEvidence": "절벽 소나무 아래 나룻배 두 척, 우상단 세로 제발·붉은 낙관. 심사정 강상야박도는 전체 구도가 불일치하여 폐기; 낙관만 읽고 작가 추정하지 않음.",
+      "confidence": "low",
+      "status": "unresolved",
+      "reason": "원본 그림 직접 확인·확대 대조했으나 공식 자료에서 동일 작품명/작가를 확정하지 못함. 유사 그림의 작가·시대만 옮겨 적는 방식은 제외."
+    }
+  ],
+  "scope": "Read-only image content review. Proposal only; exam bank, image pixels, option text/IDs/versions, code and git untouched."
+}

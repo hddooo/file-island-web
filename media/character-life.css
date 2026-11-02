@@ -1,0 +1,72 @@
+/* Reuse transparent art. Feet stay still; only the upper silhouette breathes.
+   Decorative layers have no hit targets, and pause outside the visible My hero. */
+html body .ac-me .pet-life{display:block;position:relative;grid-row:1;width:180px;height:180px;max-width:100%;isolation:isolate;pointer-events:none;background:transparent!important;--breath:3.7s;--chest:73%;--mouth-x:32%;--mouth-y:34%;--direction:-1;--lean:-.7deg}
+.pet-life :is(.pet-ink,.pet-upper,.pet-breath){display:block;position:absolute;inset:0;background-color:transparent!important;pointer-events:none}
+.pet-life .pet-ink{background-size:contain;background-repeat:no-repeat;background-position:center}
+.pet-life .pet-atlas{background-size:200% 200%;background-position:0 0}
+.pet-life .pet-atlas--agumon{background-image:url('characters/agumon-idle-sprite.png')}
+.pet-life .pet-atlas--patamon{background-image:url('characters/patamon-idle-sprite.png')}
+.pet-life .pet-feet{mask-image:linear-gradient(transparent 60%,#000 79%);-webkit-mask-image:linear-gradient(transparent 60%,#000 79%)}
+.pet-life .pet-face{mask-image:linear-gradient(#000 60%,transparent 79%);-webkit-mask-image:linear-gradient(#000 60%,transparent 79%)}
+html body .ac-pet .pet-life .pet-upper{transform-origin:50% 76%;animation:pet-attend 17s ease-in-out infinite!important;animation-play-state:paused!important}
+html body .ac-pet .pet-life .pet-breath{transform-origin:50% var(--chest);animation:pet-inhale var(--breath) ease-in-out infinite!important;animation-play-state:paused!important}
+.ac-pet.is-alive .pet-life :is(.pet-upper,.pet-breath,.pet-effect,.pet-effect i){animation-play-state:running!important}
+html body .ac-me .pet-life[data-stage=botamon]{--breath:2.8s;--chest:82%;--lean:1.1deg;--mouth-x:50%;--mouth-y:43%}
+html body .ac-me .pet-life[data-stage=koromon]{--breath:3.1s;--chest:85%;--lean:-1deg;--mouth-x:66%;--mouth-y:76%}
+html body .ac-me .pet-life[data-stage=agumon]{--breath:3.2s;--mouth-x:61%;--mouth-y:41%;--direction:1;--lean:1deg}
+html body .ac-me .pet-life[data-stage=metalgreymon]{--breath:4.4s;--mouth-x:31%;--mouth-y:30%;--lean:-.45deg}
+html body .ac-me .pet-life[data-stage=wargreymon]{--breath:4.8s;--chest:70%;--mouth-x:20%;--mouth-y:59%;--lean:.4deg}
+html body .ac-pet .pet-life .pet-effect{display:block;position:absolute;left:var(--mouth-x);top:var(--mouth-y);width:1px;height:1px;opacity:0;background:transparent!important;animation:pet-exhale 17s ease-in-out infinite!important;animation-play-state:paused!important}
+html body .ac-pet .pet-life .pet-effect i{display:block;position:absolute;width:24px;height:10px;left:0;top:-5px;transform-origin:left center;border-radius:35% 70% 65% 35%;background:linear-gradient(90deg,#fff4bd,#ffc14b 42%,#fa702c 78%,transparent)!important;transform:scaleX(var(--direction));box-shadow:none;animation:pet-flicker 360ms ease-in-out infinite alternate!important;animation-play-state:paused!important}
+html body .ac-pet .pet-life .pet-effect i:nth-child(2){width:17px;height:6px;top:-3px;animation-delay:-130ms;background:linear-gradient(90deg,#fff9d8,#ffd46a,transparent)!important}
+html body .ac-pet .pet-life .pet-effect i:nth-child(3){width:5px;height:3px;left:calc(25px * var(--direction));top:-6px;background:#ffc14b!important;animation-delay:-210ms}
+html body .ac-pet .pet-life .pet-mote i{width:5px;height:5px;border-radius:50%;background:#b3efd9!important;left:8px;top:-4px}
+html body .ac-pet .pet-life .pet-mote i:nth-child(2){left:17px;top:-10px;width:3px;height:3px;background:#d8fff1!important}
+html body .ac-pet .pet-life .pet-mote i:nth-child(3){left:23px;top:-2px;width:3px;height:3px;background:#b3efd9!important}
+html body .ac-pet .pet-life .pet-energy i{width:14px;height:14px;top:-7px;left:-7px;border-radius:50%;background:radial-gradient(circle,#fff6c9,#eeb14c 35%,transparent 70%)!important}
+html body .ac-pet .pet-life .pet-energy i:nth-child(2){width:5px;height:5px;left:-13px;top:-12px}html body .ac-pet .pet-life .pet-energy i:nth-child(3){width:4px;height:4px;left:8px;top:2px}
+html body .ac-pet .pet-life .pet-ember i{clip-path:polygon(0 32%,22%10%,43%30%,76%0,67%39%,100%55%,68%68%,80%100%,34%77%,0 67%)}
+@keyframes pet-inhale{0%,100%{transform:scale(1,1)}45%{transform:translateY(-2%) scale(1.025,1.065)}65%{transform:translateY(-.8%) scale(1.012,1.03)}}
+@keyframes pet-attend{0%,70%,100%{transform:rotate(0)}77%{transform:rotate(var(--lean))}82%{transform:rotate(0)}86%{transform:rotate(calc(var(--lean) * -.4))}92%{transform:rotate(0)}}
+@keyframes pet-exhale{0%,86%,97%,100%{opacity:0;transform:scale(.35)}89%,92%{opacity:.9;transform:scale(1)}95%{opacity:0;transform:scale(.7)}}
+@keyframes pet-flicker{from{scale:1 .85;rotate:-4deg}to{scale:1.13 1.1;rotate:5deg}}
+@media(prefers-reduced-motion:reduce){html body .ac-pet .pet-life :is(.pet-upper,.pet-breath,.pet-effect,.pet-effect i,.pet-face){animation:none!important;transform:none!important}html body .ac-pet .pet-life .pet-effect{display:none!important}}
+
+/* Shared small portraits: one compositor-friendly idle, no layout or JS loop.
+   MyPage keeps its existing upper-body layers; sprites keep their atlas motion. */
+@keyframes hanq-character-breathe{0%,100%{transform:translateY(0) scale(1,1)}45%{transform:translateY(-5%) scale(1.025,1.06)}65%{transform:translateY(-2%) scale(1.012,1.025)}}
+@media(prefers-reduced-motion:no-preference){
+  html body :is(.hanq-growth-portrait,.hall-portrait:not(.hanq-mascot),.island-friends img){transform-origin:50% 85%;animation:hanq-character-breathe 3.2s ease-in-out infinite!important}
+  html body .hanq-mascot--agumon:not(.hanq-mascot--static){animation:hanq-agumon-idle 4s steps(1,end) infinite!important}
+  html body .hanq-mascot--patamon:not(.hanq-mascot--static){animation:hanq-patamon-idle 3.6s steps(1,end) infinite!important}
+  .hall-person:nth-child(2n) .hall-portrait{animation-delay:-1.2s!important}
+  .hall-person:nth-child(3n) .hall-portrait{animation-delay:-2.4s!important}
+}
+@media(prefers-reduced-motion:reduce){html body :is(.hanq-growth-portrait,.hall-portrait,.island-friends img,.hanq-mascot){animation:none!important;transform:none!important}}
+
+/* Four edited frames keep body registration; only the tail changes pose.
+   A 4% paint overhang preserves the ground-contact tail tip at the atlas seam. */
+@keyframes hanq-greymon-tail{0%,66%,82%,100%{background-position:0 0}68%,74%{background-position:104.166667% 0}70%,76%{background-position:0 100%}72%,78%{background-position:104.166667% 100%}}
+.hall-greymon-tail{position:relative;display:inline-block;flex:none;background:transparent!important}
+.hall-greymon-tail::before{content:"";position:absolute;left:0;top:0;width:104%;height:100%;background:url('characters/greymon.png') 0 0/96.153846% 100% no-repeat;transform-origin:50% 85%}
+@media(prefers-reduced-motion:no-preference){
+  html body .ac-pet .pet-life[data-stage=greymon] .pet-ink{width:104%;background-image:url('characters/greymon-tail-idle-sprite.png')!important;background-size:192.307692% 200%;background-position:0 0;animation:hanq-greymon-tail 14s steps(1,end) infinite!important;animation-play-state:paused!important}
+  html body .ac-pet.is-alive .pet-life[data-stage=greymon] .pet-ink{animation-play-state:running!important}
+  html body .hall-podium .hall-greymon-tail{animation:none!important}
+  html body .hall-podium .hall-greymon-tail::before{background-image:url('characters/greymon-tail-idle-sprite.png');background-size:192.307692% 200%;animation:hanq-greymon-tail 14s steps(1,end) infinite,hanq-character-breathe 3.2s ease-in-out infinite!important}
+}
+@media(prefers-reduced-motion:reduce){html body .hall-greymon-tail::before{animation:none!important;transform:none!important}}
+
+/* Scratch once per three tail cycles, entirely inside a tail-rest interval.
+   The original 14s tail sequence and 3.2s/upper-body breathing stay intact. */
+@keyframes hanq-greymon-base-visible{0%,35.999%,43%,100%{opacity:1}36%,42.999%{opacity:0}}
+@keyframes hanq-greymon-scratch{0%,35.999%,43%,100%{opacity:0;background-position:0 0}36%{opacity:1;background-position:0 0}36.5%,42%{opacity:1;background-position:104.166667% 0}37.5%,39.5%,41.5%{opacity:1;background-position:0 100%}38.5%,40.5%{opacity:1;background-position:104.166667% 100%}42.8%{opacity:1;background-position:0 0}}
+.pet-life .pet-scratch-layer,.hall-greymon-tail::after{display:none}
+@media(prefers-reduced-motion:no-preference){
+  html body .ac-pet .pet-life[data-stage=greymon] .pet-ink:not(.pet-scratch-layer){animation:hanq-greymon-tail 14s steps(1,end) infinite,hanq-greymon-base-visible 42s steps(1,end) infinite!important;animation-play-state:paused!important}
+  html body .ac-pet .pet-life[data-stage=greymon] .pet-ink.pet-scratch-layer{display:block;background-image:url('characters/greymon-scratch-idle-sprite.png')!important;animation:hanq-greymon-scratch 42s steps(1,end) infinite!important;animation-play-state:paused!important;opacity:0}
+  html body .ac-pet.is-alive .pet-life[data-stage=greymon] .pet-ink:is(.pet-scratch-layer,:not(.pet-scratch-layer)){animation-play-state:running!important}
+  html body .hall-podium .hall-greymon-tail::before{animation:hanq-greymon-tail 14s steps(1,end) infinite,hanq-character-breathe 3.2s ease-in-out infinite,hanq-greymon-base-visible 42s steps(1,end) infinite!important}
+  html body .hall-podium .hall-greymon-tail::after{content:"";display:block;position:absolute;left:0;top:0;width:104%;height:100%;background:url('characters/greymon-scratch-idle-sprite.png') 0 0/192.307692% 200% no-repeat;transform-origin:50% 85%;animation:hanq-greymon-scratch 42s steps(1,end) infinite,hanq-character-breathe 3.2s ease-in-out infinite!important;opacity:0}
+}
+@media(prefers-reduced-motion:reduce){html body .pet-life .pet-scratch-layer,html body .hall-greymon-tail::after{display:none!important;animation:none!important;transform:none!important}}

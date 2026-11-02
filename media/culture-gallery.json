@@ -1,0 +1,692 @@
+{
+  "prehistory": [
+    {
+      "name": "빗살무늬 토기",
+      "country": "신석기",
+      "period": "신석기 시대",
+      "feature": "표면에 빗살처럼 새긴 무늬. 농경·정착 생활과 연결한다.",
+      "caution": "토기 한 점만으로 특정 유적을 단정하지 않는다.",
+      "src": "media/review-focus/comb-pottery.webp",
+      "source": {
+        "title": "국사편찬위원회 한능검 69회 01번 원본 자료",
+        "url": "exam-book/69-01.webp"
+      }
+    }
+  ],
+  "samguk": [
+    {
+      "name": "분황사 모전석탑",
+      "country": "신라",
+      "period": "선덕여왕",
+      "feature": "벽돌처럼 다듬은 돌을 쌓았다.",
+      "caution": "흙으로 구운 전돌을 쌓은 전탑과 구분한다.",
+      "src": "media/review-focus/bunhwang.webp",
+      "source": {
+        "title": "국사편찬위원회 한능검 72회 10번 원본 자료",
+        "url": "exam-expanded/72-10.webp"
+      }
+    },
+    {
+      "name": "호우명 그릇",
+      "country": "고구려",
+      "period": "삼국 시대",
+      "feature": "고구려 광개토왕 관련 명문이 있는 그릇.",
+      "caution": "경주 호우총 출토와 명문을 함께 보아야 고구려·신라 관계를 연결할 수 있다.",
+      "src": "media/review-focus/hou.webp",
+      "source": {
+        "title": "국사편찬위원회 한능검 65회 04번 원본 자료",
+        "url": "exam-book/65-04.webp"
+      }
+    },
+    {
+      "name": "연가 7년명 금동 여래 입상",
+      "country": "고구려",
+      "period": "삼국 시대",
+      "feature": "큰 광배가 있는 금동 불상.",
+      "caution": "나라 판별은 외형보다 광배 뒷면의 연가 명문이 결정적이다.",
+      "src": "media/review-focus/yeonga.webp",
+      "source": {
+        "title": "국사편찬위원회 한능검 69회 06번 원본 자료",
+        "url": "exam-book/69-06.webp"
+      }
+    },
+    {
+      "name": "사신도·산수무늬 벽돌 자료",
+      "country": "고구려·백제",
+      "period": "삼국 시대",
+      "feature": "방위를 지키는 신과 산수·신선의 표현을 살핀다.",
+      "caution": "서로 다른 자료 묶음이다. 신선·불로장생 단서는 도교와 연결한다.",
+      "src": "media/review-focus/dao-cues.webp",
+      "source": {
+        "title": "국사편찬위원회 한능검 70회 05번 원본 자료",
+        "url": "exam-expanded/70-05.webp"
+      }
+    },
+    {
+      "name": "부여 정림사지 오층 석탑",
+      "country": "백제",
+      "period": "삼국 시대 · 사비 시기",
+      "feature": "목탑의 형식을 돌로 표현한 정제된 오층 석탑.",
+      "caution": "1층 탑신의 대당평백제국비명은 백제 멸망 뒤 새겨졌다.",
+      "src": "media/culture-photos/ancient-jeongnim.png",
+      "source": {
+        "title": "국사편찬위원회 한능검 79회 6번 1번 보기 · 원본 사진",
+        "url": "/media/cbt-originals/79-06.webp"
+      },
+      "examRefs": [
+        {
+          "round": 79,
+          "number": 6,
+          "option": 1
+        },
+        {
+          "round": 78,
+          "number": 14,
+          "option": 1
+        }
+      ]
+    },
+    {
+      "name": "신라 금관",
+      "country": "신라",
+      "period": "삼국 시대",
+      "feature": "금으로 만든 관의 나뭇가지·사슴뿔 모양 장식과 곡옥을 살핀다.",
+      "caution": "가야의 금관과 구별할 때는 장식 형태와 출토 맥락을 함께 본다.",
+      "src": "media/culture-photos/ancient-silla-crown.png",
+      "source": {
+        "title": "국사편찬위원회 한능검 79회 11번 2번 보기 · 원본 사진",
+        "url": "/media/cbt-originals/79-11.webp"
+      },
+      "examRefs": [
+        {
+          "round": 79,
+          "number": 11,
+          "option": 2
+        }
+      ]
+    },
+    {
+      "name": "백제 금동 대향로",
+      "country": "백제",
+      "period": "삼국 시대 · 사비 시기",
+      "feature": "용이 받치고 봉황이 꼭대기에 앉은 산 모양 향로.",
+      "caution": "고려의 청자 투각 향로와 재료·형태가 다르다.",
+      "src": "media/culture-photos/ancient-baekje-incense.png",
+      "source": {
+        "title": "국사편찬위원회 한능검 79회 11번 4번 보기 · 원본 사진",
+        "url": "/media/cbt-originals/79-11.webp"
+      },
+      "examRefs": [
+        {
+          "round": 79,
+          "number": 11,
+          "option": 4
+        }
+      ]
+    }
+  ],
+  "nambuk": [
+    {
+      "name": "감은사지 동 삼층석탑",
+      "country": "통일 신라",
+      "period": "신문왕",
+      "feature": "세 층의 탑신과 지붕돌.",
+      "caution": "문무왕이 시작한 감은사를 신문왕이 완공했다. 삼층 모습만으로 모든 탑을 감은사지로 고르지 않는다.",
+      "src": "media/review-focus/gameunsa.webp",
+      "source": {
+        "title": "국사편찬위원회 한능검 72회 10번 원본 자료",
+        "url": "exam-expanded/72-10.webp"
+      }
+    },
+    {
+      "name": "쌍봉사 철감선사탑",
+      "country": "통일 신라",
+      "period": "신라 말",
+      "feature": "승려의 사리를 모신 장식적인 승탑.",
+      "caution": "선종 확산과 연결한다. 부처의 사리를 모시는 일반 석탑과 역할을 구별한다.",
+      "src": "media/review-focus/cheolgam.webp",
+      "source": {
+        "title": "국사편찬위원회 한능검 72회 10번 원본 자료",
+        "url": "exam-expanded/72-10.webp"
+      }
+    },
+    {
+      "name": "연꽃무늬 수막새·온돌 시설",
+      "country": "발해",
+      "period": "남북국 시대",
+      "feature": "연꽃무늬 기와와 온돌 유구를 함께 살핀다.",
+      "caution": "연꽃무늬만으로 나라를 특정하지 않는다. 발해 유적이라는 출토 단서와 고구려 문화 계승을 함께 본다.",
+      "src": "media/review-focus/balhae-cues.webp",
+      "source": {
+        "title": "국사편찬위원회 한능검 66회 08번 원본 자료",
+        "url": "exam-book/66-08.webp"
+      }
+    },
+    {
+      "name": "정혜 공주 묘",
+      "country": "발해",
+      "period": "문왕",
+      "feature": "모서리를 줄여 올린 모줄임 천장 구조.",
+      "caution": "고구려 양식 계승. 정효 공주 묘의 벽돌무덤과 구분한다.",
+      "src": "media/review-focus/jeonghye.webp",
+      "source": {
+        "title": "국사편찬위원회 한능검 72회 07번 원본 자료",
+        "url": "exam-expanded/72-07.webp"
+      }
+    },
+    {
+      "name": "경주 불국사 다보탑",
+      "country": "통일 신라",
+      "period": "남북국 시대",
+      "feature": "계단과 난간·기둥을 갖춘 복잡한 석탑 형태를 살핀다.",
+      "caution": "백제 정림사지 오층 석탑과 구별한다.",
+      "src": "media/culture-photos/ancient-dabotap.png",
+      "source": {
+        "title": "국사편찬위원회 한능검 79회 6번 2번 보기 · 원본 사진",
+        "url": "/media/cbt-originals/79-06.webp"
+      },
+      "examRefs": [
+        {
+          "round": 79,
+          "number": 6,
+          "option": 2
+        }
+      ]
+    },
+    {
+      "name": "발해 영광탑",
+      "country": "발해",
+      "period": "남북국 시대",
+      "feature": "벽돌로 쌓은 전탑. 각 층의 지붕과 벽돌 무늬를 살핀다.",
+      "caution": "돌을 벽돌처럼 다듬은 분황사 모전석탑과 구별한다.",
+      "src": "media/culture-photos/ancient-yeonggwang.png",
+      "source": {
+        "title": "국사편찬위원회 한능검 79회 6번 3번 보기 · 원본 사진",
+        "url": "/media/cbt-originals/79-06.webp"
+      },
+      "examRefs": [
+        {
+          "round": 79,
+          "number": 6,
+          "option": 3
+        },
+        {
+          "round": 78,
+          "number": 14,
+          "option": 2
+        }
+      ]
+    },
+    {
+      "name": "구례 화엄사 사사자 삼층 석탑",
+      "country": "통일 신라",
+      "period": "남북국 시대",
+      "feature": "네 마리 사자가 기단을 받치는 삼층 석탑.",
+      "caution": "양양 진전사지 삼층 석탑은 기단의 부조로 구별한다.",
+      "src": "media/culture-photos/ancient-four-lions.png",
+      "source": {
+        "title": "국사편찬위원회 한능검 79회 6번 4번 보기 · 원본 사진",
+        "url": "/media/cbt-originals/79-06.webp"
+      },
+      "examRefs": [
+        {
+          "round": 79,
+          "number": 6,
+          "option": 4
+        }
+      ]
+    },
+    {
+      "name": "발해 이불병좌상",
+      "country": "발해",
+      "period": "남북국 시대",
+      "feature": "두 부처가 한 광배 앞에 나란히 앉은 불상.",
+      "caution": "모든 이불병좌상이 발해 작품인 것은 아니다. 기출의 이 작품을 기준으로 나라를 구별한다.",
+      "src": "media/culture-photos/ancient-two-buddhas.png",
+      "source": {
+        "title": "국사편찬위원회 한능검 79회 11번 1번 보기 · 원본 사진",
+        "url": "/media/cbt-originals/79-11.webp"
+      },
+      "examRefs": [
+        {
+          "round": 79,
+          "number": 11,
+          "option": 1
+        },
+        {
+          "round": 78,
+          "number": 9,
+          "option": 3
+        }
+      ]
+    },
+    {
+      "name": "경주 구황동 금제 여래 좌상",
+      "country": "통일 신라",
+      "period": "남북국 시대",
+      "feature": "금으로 만든 작은 여래 좌상. 연꽃 모양 광배와 대좌를 살핀다.",
+      "caution": "고구려 연가7년명 금동 여래 입상은 서 있는 모습이다.",
+      "src": "media/culture-photos/ancient-guhwang-buddha.png",
+      "source": {
+        "title": "국사편찬위원회 한능검 78회 9번 5번 보기 · 원본 사진",
+        "url": "/media/cbt-originals/78-09.webp"
+      },
+      "examRefs": [
+        {
+          "round": 78,
+          "number": 9,
+          "option": 5
+        }
+      ]
+    },
+    {
+      "name": "양양 진전사지 삼층 석탑",
+      "country": "통일 신라",
+      "period": "남북국 시대",
+      "feature": "기단과 탑신에 불교 조각을 새긴 삼층 석탑.",
+      "caution": "사자가 기단을 받치는 화엄사 사사자 삼층 석탑과 구별한다.",
+      "src": "media/culture-photos/ancient-jinjeon.png",
+      "source": {
+        "title": "국사편찬위원회 한능검 78회 14번 4번 보기 · 원본 사진",
+        "url": "/media/cbt-originals/78-14.webp"
+      },
+      "examRefs": [
+        {
+          "round": 78,
+          "number": 14,
+          "option": 4
+        }
+      ]
+    }
+  ],
+  "goryeo": [
+    {
+      "name": "비색 순청자",
+      "country": "고려",
+      "period": "고려 시대",
+      "feature": "맑은 푸른 빛깔인 비색. 상감 무늬를 넣은 청자와 비교한다.",
+      "caution": "",
+      "src": "media/culture-photos/bisaek.png",
+      "source": {
+        "title": "문화재청 · 교재 47쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "상감청자",
+      "country": "고려",
+      "period": "고려 시대",
+      "feature": "바탕을 파고 다른 빛깔 흙을 메운 상감 무늬.",
+      "caution": "",
+      "src": "media/culture-photos/sanggam.png",
+      "source": {
+        "title": "문화재청 · 교재 47쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "청자 투각 칠보무늬 향로",
+      "country": "고려",
+      "period": "고려 시대",
+      "feature": "비색의 청자와 뚫어 장식한 칠보무늬.",
+      "caution": "비색은 고려 전체 문화가 아니라 고려청자의 빛깔을 설명하는 말이다.",
+      "src": "media/review-focus/goryeo-chilbo.png",
+      "source": {
+        "title": "국사편찬위원회 한능검 74회 13번 원본 자료",
+        "url": "exam-expanded/74-13.webp"
+      }
+    },
+    {
+      "name": "나전칠기",
+      "country": "고려",
+      "period": "고려 시대",
+      "feature": "옻칠한 바탕에 자개 조각을 붙여 무늬를 만든다.",
+      "caution": "나전칠기는 조선에도 있다. 사진의 출처·시대 단서를 함께 확인한다.",
+      "src": "media/review-focus/goryeo-najeon.png",
+      "source": {
+        "title": "국사편찬위원회 한능검 77회 13번 원본 자료",
+        "url": "exam-expanded/77-13.webp"
+      }
+    },
+    {
+      "name": "경천사지 십층석탑",
+      "country": "고려",
+      "period": "원 간섭기",
+      "feature": "여러 층으로 높게 쌓은 대리석 탑.",
+      "caution": "원의 영향을 받았다. 조선 세조 때 원각사지 십층석탑과 구분한다.",
+      "src": "media/review-focus/goryeo-gyeongcheon.png",
+      "source": {
+        "title": "국사편찬위원회 한능검 74회 13번 원본 자료",
+        "url": "exam-expanded/74-13.webp"
+      }
+    },
+    {
+      "name": "청자 어룡형 주전자",
+      "country": "고려",
+      "period": "고려 시대",
+      "feature": "물고기와 용을 결합한 모양을 본뜬 상형 청자.",
+      "caution": "상형은 형태를 본뜬다는 뜻이며, 표면에 다른 흙을 메우는 상감과 구별한다.",
+      "src": "media/review-focus/goryeo-figure.png",
+      "source": {
+        "title": "국사편찬위원회 한능검 76회 17번 원본 자료",
+        "url": "exam-expanded/76-17.webp"
+      }
+    },
+    {
+      "name": "관촉사 석조 미륵보살 입상",
+      "country": "고려",
+      "period": "고려 전기",
+      "feature": "큰 머리와 관을 가진 대형 석조 불상.",
+      "caution": "논산 관촉사라는 위치 단서를 함께 본다.",
+      "src": "media/review-focus/goryeo-gwanchok.png",
+      "source": {
+        "title": "국사편찬위원회 한능검 77회 13번 원본 자료",
+        "url": "exam-expanded/77-13.webp"
+      }
+    },
+    {
+      "name": "월정사 팔각구층석탑",
+      "country": "고려",
+      "period": "고려 전기",
+      "feature": "팔각 평면과 아홉 층의 지붕돌.",
+      "caution": "",
+      "src": "media/culture-photos/woljeong.png",
+      "source": {
+        "title": "문화재청 · 교재 47쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "직지심체요절",
+      "country": "고려",
+      "period": "1377년",
+      "feature": "금속활자로 찍은 책. 청주 흥덕사·현존 최고 금속활자본을 연결한다.",
+      "caution": "",
+      "src": "media/culture-photos/jikji.png",
+      "source": {
+        "title": "프랑스 국립도서관 · 교재 47쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "하남 하사창동 철조 석가여래 좌상",
+      "country": "고려",
+      "period": "고려 전기",
+      "feature": "철로 만든 앉은 불상. 소재와 출토지 단서를 함께 본다.",
+      "caution": "",
+      "src": "media/culture-photos/iron-buddha.png",
+      "source": {
+        "title": "국가유산포털 · 교재 47쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "부석사 소조 여래 좌상",
+      "country": "고려",
+      "period": "고려 시대",
+      "feature": "흙으로 빚은 소조 불상. 부석사 무량수전의 불상이다.",
+      "caution": "",
+      "src": "media/culture-photos/buseok.png",
+      "source": {
+        "title": "한국민족문화대백과사전 · 교재 47쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "수덕사 대웅전",
+      "country": "고려",
+      "period": "고려 후기",
+      "feature": "기둥 위에 공포를 둔 주심포 건축. 처마와 기둥의 짜임을 살핀다.",
+      "caution": "",
+      "src": "media/culture-photos/sudeok.png",
+      "source": {
+        "title": "수덕사 · 교재 47쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "봉정사 극락전",
+      "country": "고려",
+      "period": "고려 시대",
+      "feature": "주심포 건축. 현존하는 가장 오래된 목조 건물로 알려져 있다.",
+      "caution": "",
+      "src": "media/culture-photos/bongjeong.png",
+      "source": {
+        "title": "봉정사 · 교재 47쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "청동 은입사 정병",
+      "country": "고려",
+      "period": "고려 시대",
+      "feature": "청동 바탕에 은선을 넣어 무늬를 드러냈다.",
+      "caution": "",
+      "src": "media/culture-photos/kundika.png",
+      "source": {
+        "title": "문화재청 · 교재 47쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "수월관음도",
+      "country": "고려",
+      "period": "고려 시대",
+      "feature": "관음보살과 섬세한 옷의 표현을 살피는 고려 불화.",
+      "caution": "",
+      "src": "media/culture-photos/suwol.png",
+      "source": {
+        "title": "문화재청 · 교재 47쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "천산대렵도",
+      "country": "고려",
+      "period": "고려 말",
+      "feature": "말을 탄 인물들이 사냥하는 장면. 공민왕의 작품으로 전한다.",
+      "caution": "",
+      "src": "media/culture-photos/hunting.png",
+      "source": {
+        "title": "국립중앙박물관 · 교재 47쪽 사진",
+        "url": null
+      }
+    }
+  ],
+  "joseon": [
+    {
+      "name": "분청사기",
+      "country": "조선",
+      "period": "조선 전기",
+      "feature": "회색 바탕에 백토로 분장하고 무늬를 넣었다.",
+      "caution": "",
+      "src": "media/culture-photos/buncheong.png",
+      "source": {
+        "title": "한국학중앙연구원 · 교재 70쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "순백자",
+      "country": "조선",
+      "period": "조선 시대",
+      "feature": "흰 바탕과 단정한 형태. 고려청자의 비색과 구분한다.",
+      "caution": "",
+      "src": "media/culture-photos/white.png",
+      "source": {
+        "title": "국립중앙박물관 · 교재 70쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "청화백자",
+      "country": "조선",
+      "period": "조선 시대",
+      "feature": "흰 바탕에 푸른 안료로 그린 무늬. 상감청자의 무늬 기법과 다르다.",
+      "caution": "",
+      "src": "media/culture-photos/blue-white.png",
+      "source": {
+        "title": "국립중앙박물관 · 교재 70쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "상평통보",
+      "country": "조선",
+      "period": "조선 후기",
+      "feature": "가운데 네모난 구멍과 상평통보 명문.",
+      "caution": "고려의 건원중보·해동통보와 구분한다. 외형보다 글자를 읽는다.",
+      "src": "media/review-focus/goryeo-sangpyeong.png",
+      "source": {
+        "title": "국사편찬위원회 한능검 77회 13번 원본 자료",
+        "url": "exam-expanded/77-13.webp"
+      }
+    },
+    {
+      "name": "소수서원",
+      "country": "조선",
+      "period": "명종 때 사액",
+      "feature": "소수서원 현판. 백운동 서원이 왕에게 이름을 받은 사액서원이다.",
+      "caution": "",
+      "src": "media/culture-photos/sosu.png",
+      "source": {
+        "title": "한국학중앙연구원 · 교재 70쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "해인사 장경판전",
+      "country": "조선",
+      "period": "조선 전기",
+      "feature": "대장경판을 보관하는 목조 건물. 고려의 경판과 조선의 보관 건물을 구분한다.",
+      "caution": "",
+      "src": "media/culture-photos/janggyeong.png",
+      "source": {
+        "title": "문화재청 · 교재 70쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "종묘",
+      "country": "조선",
+      "period": "조선 시대",
+      "feature": "길게 이어진 정전. 조선 왕과 왕비의 신주를 모셨다.",
+      "caution": "",
+      "src": "media/culture-photos/jongmyo.png",
+      "source": {
+        "title": "문화재청 · 교재 70쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "법주사 팔상전",
+      "country": "조선",
+      "period": "조선 후기",
+      "feature": "다섯 층의 목탑. 돌로 쌓은 석탑과 재료를 구분한다.",
+      "caution": "",
+      "src": "media/culture-photos/palsang.png",
+      "source": {
+        "title": "국가유산청 · 교재 70쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "대동여지도",
+      "country": "조선",
+      "period": "철종·김정호",
+      "feature": "접어 사용할 수 있는 전국 지도. 10리마다 표시한 거리 단서를 연결한다.",
+      "caution": "",
+      "src": "media/culture-photos/daedong.png",
+      "source": {
+        "title": "문화재청 · 교재 70쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "몽유도원도",
+      "country": "조선",
+      "period": "조선 전기·안견",
+      "feature": "안평대군의 꿈을 산수로 그렸다. 조선 후기 진경산수화와 구분한다.",
+      "caution": "",
+      "src": "media/culture-photos/mongyu.png",
+      "source": {
+        "title": "한국학중앙연구원 · 교재 72쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "세한도",
+      "country": "조선",
+      "period": "조선 후기·김정희",
+      "feature": "겨울 나무와 집을 간결하게 그린 문인화. 추사 김정희와 연결한다.",
+      "caution": "",
+      "src": "media/culture-photos/sehan.png",
+      "source": {
+        "title": "국립중앙박물관 · 교재 72쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "금강전도",
+      "country": "조선",
+      "period": "조선 후기·정선",
+      "feature": "우리 금강산의 모습을 그린 진경산수화.",
+      "caution": "",
+      "src": "media/culture-photos/geumgang.png",
+      "source": {
+        "title": "한국학중앙연구원 · 교재 72쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "씨름",
+      "country": "조선",
+      "period": "조선 후기·김홍도",
+      "feature": "씨름하는 사람과 둘러선 구경꾼을 그린 풍속화.",
+      "caution": "",
+      "src": "media/culture-photos/ssireum.png",
+      "source": {
+        "title": "Wikimedia Commons(교재 출처표) · 교재 72쪽 사진",
+        "url": null
+      }
+    }
+  ],
+  "opening": [
+    {
+      "name": "전보 송신 장치",
+      "country": "조선·대한제국",
+      "period": "개항기",
+      "feature": "전기 신호를 보내는 장치. 우정총국의 우편과 전신을 구분한다.",
+      "caution": "",
+      "src": "media/culture-photos/telegraph.png",
+      "source": {
+        "title": "국가유산포털 · 교재 96쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "명동성당",
+      "country": "대한제국",
+      "period": "1898년 완공",
+      "feature": "높은 첨탑과 뾰족한 아치의 고딕식 성당.",
+      "caution": "",
+      "src": "media/culture-photos/cathedral.png",
+      "source": {
+        "title": "서울연구데이터베이스 · 교재 96쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "덕수궁 석조전",
+      "country": "대한제국",
+      "period": "대한제국기에 착공·1910년 완공",
+      "feature": "기둥을 갖춘 서양식 석조 건물. 대한제국의 근대 건축을 보여 준다.",
+      "caution": "",
+      "src": "media/culture-photos/seokjo.png",
+      "source": {
+        "title": "Wikimedia Commons(교재 출처표) · 교재 96쪽 사진",
+        "url": null
+      }
+    }
+  ]
+}

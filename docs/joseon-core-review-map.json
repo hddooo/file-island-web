@@ -1,0 +1,274 @@
+{
+  "generatedBy": "scripts/build_joseon_core_review.cjs",
+  "contentSHA256": "1b900d349e5b37ca34093ebf13cea4cf24745f9b7368828db7188f7a1e1b31ae",
+  "questionCount": 29,
+  "cardCount": 26,
+  "sceneCount": 26,
+  "timing": {
+    "baseMs": 401500,
+    "defaultRate": 0.75,
+    "rates": [
+      {
+        "rate": 0.5,
+        "ms": 803000,
+        "minutes": 13
+      },
+      {
+        "rate": 0.75,
+        "ms": 535333.3333333334,
+        "minutes": 9
+      },
+      {
+        "rate": 1,
+        "ms": 401500,
+        "minutes": 7
+      },
+      {
+        "rate": 1.25,
+        "ms": 321200,
+        "minutes": 5
+      },
+      {
+        "rate": 1.5,
+        "ms": 267666.6666666667,
+        "minutes": 4
+      }
+    ]
+  },
+  "policy": "Same public common content for guests and signed-in members. No personal answers, score, photograph or account identifiers included.",
+  "questionMap": [
+    {
+      "exam": 73,
+      "question": 21,
+      "officialAnswer": 3,
+      "cardIds": [
+        "jc-sejong"
+      ]
+    },
+    {
+      "exam": 76,
+      "question": 19,
+      "officialAnswer": 4,
+      "cardIds": [
+        "jc-sejong"
+      ]
+    },
+    {
+      "exam": 70,
+      "question": 19,
+      "officialAnswer": 3,
+      "cardIds": [
+        "jc-seongjong"
+      ]
+    },
+    {
+      "exam": 72,
+      "question": 20,
+      "officialAnswer": 2,
+      "cardIds": [
+        "jc-seongjong"
+      ]
+    },
+    {
+      "exam": 76,
+      "question": 20,
+      "officialAnswer": 5,
+      "cardIds": [
+        "jc-yeonsan"
+      ]
+    },
+    {
+      "exam": 75,
+      "question": 22,
+      "officialAnswer": 2,
+      "cardIds": [
+        "jc-jungjong-myeongjong"
+      ]
+    },
+    {
+      "exam": 75,
+      "question": 21,
+      "officialAnswer": 2,
+      "cardIds": [
+        "jc-border"
+      ]
+    },
+    {
+      "exam": 76,
+      "question": 21,
+      "officialAnswer": 1,
+      "cardIds": [
+        "jc-imjin"
+      ]
+    },
+    {
+      "exam": 75,
+      "question": 23,
+      "officialAnswer": 2,
+      "cardIds": [
+        "jc-byeongja"
+      ]
+    },
+    {
+      "exam": 74,
+      "question": 22,
+      "officialAnswer": 4,
+      "cardIds": [
+        "jc-bungdang"
+      ]
+    },
+    {
+      "exam": 76,
+      "question": 25,
+      "officialAnswer": 2,
+      "cardIds": [
+        "jc-yeongjo"
+      ]
+    },
+    {
+      "exam": 70,
+      "question": 24,
+      "officialAnswer": 2,
+      "cardIds": [
+        "jc-jeongjo"
+      ]
+    },
+    {
+      "exam": 74,
+      "question": 25,
+      "officialAnswer": 5,
+      "cardIds": [
+        "jc-sunjo-faith"
+      ]
+    },
+    {
+      "exam": 75,
+      "question": 27,
+      "officialAnswer": 4,
+      "cardIds": [
+        "jc-sunjo-hong"
+      ]
+    },
+    {
+      "exam": 77,
+      "question": 28,
+      "officialAnswer": 3,
+      "cardIds": [
+        "jc-cheoljong"
+      ]
+    },
+    {
+      "exam": 75,
+      "question": 20,
+      "officialAnswer": 5,
+      "cardIds": [
+        "jc-offices"
+      ]
+    },
+    {
+      "exam": 76,
+      "question": 22,
+      "officialAnswer": 2,
+      "cardIds": [
+        "jc-offices"
+      ]
+    },
+    {
+      "exam": 71,
+      "question": 20,
+      "officialAnswer": 2,
+      "cardIds": [
+        "jc-bibyeonsa"
+      ]
+    },
+    {
+      "exam": 68,
+      "question": 27,
+      "officialAnswer": 2,
+      "cardIds": [
+        "jc-jongmyo"
+      ]
+    },
+    {
+      "exam": 69,
+      "question": 21,
+      "officialAnswer": 4,
+      "cardIds": [
+        "jc-jogwangjo"
+      ]
+    },
+    {
+      "exam": 74,
+      "question": 23,
+      "officialAnswer": 4,
+      "cardIds": [
+        "jc-yihwang"
+      ]
+    },
+    {
+      "exam": 76,
+      "question": 24,
+      "officialAnswer": 4,
+      "cardIds": [
+        "jc-yiik"
+      ]
+    },
+    {
+      "exam": 70,
+      "question": 26,
+      "officialAnswer": 4,
+      "cardIds": [
+        "jc-parkjiwon"
+      ]
+    },
+    {
+      "exam": 70,
+      "question": 23,
+      "officialAnswer": 2,
+      "cardIds": [
+        "jc-daedong"
+      ]
+    },
+    {
+      "exam": 69,
+      "question": 19,
+      "officialAnswer": 3,
+      "cardIds": [
+        "jc-gyunyeok"
+      ]
+    },
+    {
+      "exam": 75,
+      "question": 26,
+      "officialAnswer": 1,
+      "cardIds": [
+        "jc-late-market"
+      ]
+    },
+    {
+      "exam": 71,
+      "question": 26,
+      "officialAnswer": 2,
+      "cardIds": [
+        "jc-late-market"
+      ]
+    },
+    {
+      "exam": 75,
+      "question": 25,
+      "officialAnswer": 1,
+      "cardIds": [
+        "jc-late-life"
+      ]
+    },
+    {
+      "exam": 76,
+      "question": 26,
+      "officialAnswer": 3,
+      "cardIds": [
+        "jc-late-life",
+        "jc-late-market"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2056 @@
+{
+  "schema": 1,
+  "chapter": "joseon",
+  "title": "조선 전체요약",
+  "lead": "왕 이름을 보고 제도·사건을 연결하고, 경제·사회·문화의 차이를 짧게 외워요.",
+  "scope": "조선 전기·양난·후기. 고려 말 건국 배경과 고려 비교는 따로 표시해요.",
+  "sections": [
+    {
+      "id": "rulers",
+      "title": "왕·정치 흐름",
+      "lead": "건국 → 체제 정비 → 사림·붕당 → 탕평 → 세도정치",
+      "groups": [
+        {
+          "title": "건국과 태종",
+          "rows": [
+            {
+              "key": "태조 · 조선 건국",
+              "fact": "고려 말 위화도 회군1388 → 과전법1391 → 조선 건국1392",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  1
+                ]
+              }
+            },
+            {
+              "key": "위화도 회군 · 과전법",
+              "fact": "고려 말 이성계 세력이 권력과 토지 제도를 장악",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 0,
+                "row": 0
+              }
+            },
+            {
+              "key": "정도전 · 조선경국전 · 불씨잡변",
+              "fact": "통치 구상 / 불교 비판",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 0,
+                "row": 1
+              }
+            },
+            {
+              "key": "태종 · 6조 직계제",
+              "fact": "6조가 왕에게 바로 보고 → 왕권 강화",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 0,
+                "row": 2
+              }
+            },
+            {
+              "key": "태종 · 사간원 독립",
+              "fact": "간쟁 기관을 따로 세움",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 0,
+                "row": 3
+              }
+            },
+            {
+              "key": "태종 · 호패법",
+              "fact": "16세 이상 남자에게 신분 패",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 0,
+                "row": 4
+              }
+            },
+            {
+              "key": "태종 · 저화",
+              "fact": "종이돈 발행",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 0,
+                "row": 5
+              }
+            },
+            {
+              "key": "왕자의 난 · 이방원",
+              "fact": "1398 1차 →1400 2차 → 태종 즉위",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  2
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "세종",
+          "rows": [
+            {
+              "key": "세종 · 의정부 서사제",
+              "fact": "재상 논의를 거쳐 왕에게 보고",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 1,
+                "row": 0
+              }
+            },
+            {
+              "key": "세종 · 연분 9등법 · 전분 6등법",
+              "fact": "풍흉 9단계·땅 6등급으로 전세 차등",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 1,
+                "row": 1
+              }
+            },
+            {
+              "key": "세종 · 집현전 · 훈민정음",
+              "fact": "학문 연구 기관 / 새 문자",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 1,
+                "row": 2
+              }
+            },
+            {
+              "key": "세종 · 4군 · 6진",
+              "fact": "최윤덕 4군, 김종서 6진 — 북방 개척",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 1,
+                "row": 3
+              }
+            },
+            {
+              "key": "세종 · 쓰시마섬 · 계해약조",
+              "fact": "왜구 근거지 정벌 / 교역 규모 약속",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 1,
+                "row": 4
+              }
+            },
+            {
+              "key": "세종 · 문화",
+              "fact": "훈민정음·집현전·삼강행실도·박연의 아악",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  3
+                ]
+              }
+            },
+            {
+              "key": "세종 · 이종무 · 3포",
+              "fact": "쓰시마 정벌 / 부산포·제포·염포 / 계해약조",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  4
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "단종 · 세조 · 예종 · 성종",
+          "rows": [
+            {
+              "key": "단종 · 계유정난",
+              "fact": "1453 · 단종 때 수양대군이 권력을 잡음",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 2,
+                "row": 0
+              }
+            },
+            {
+              "key": "1455 세조 즉위",
+              "fact": "1455 · 수양대군이 왕위에 오름(정난 2년 뒤)",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 2,
+                "row": 1
+              }
+            },
+            {
+              "key": "세조 · 직전법",
+              "fact": "현직 관리에게만 수조권",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 2,
+                "row": 2
+              }
+            },
+            {
+              "key": "세조 · 이시애의 난",
+              "fact": "길주를 근거로 일어난 반란",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 2,
+                "row": 3
+              }
+            },
+            {
+              "key": "예종 · 남이",
+              "fact": "이시애의 난을 진압한 남이가 역모 혐의로 처형",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  6
+                ]
+              }
+            },
+            {
+              "key": "성종 · 경국대전",
+              "fact": "나라 운영의 기본 법전 완성",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 2,
+                "row": 4
+              }
+            },
+            {
+              "key": "성종 · 홍문관",
+              "fact": "경연과 학문 자문을 맡은 기관",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 2,
+                "row": 5
+              }
+            },
+            {
+              "key": "단종 · 이징옥의 난",
+              "fact": "계유정난이 일어난1453년",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  5
+                ]
+              }
+            },
+            {
+              "key": "성종 · 김종직 · 사림",
+              "fact": "지방의 사림이 중앙 정치에 진출",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  7,
+                  8
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "중종 · 조광조의 개혁",
+          "rows": [
+            {
+              "key": "조광조 · 현량과",
+              "fact": "추천으로 인재를 뽑으려 함",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 4,
+                "row": 0
+              }
+            },
+            {
+              "key": "조광조 · 위훈 삭제",
+              "fact": "공신의 부풀린 공로를 지우자는 주장",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 4,
+                "row": 1
+              }
+            },
+            {
+              "key": "기묘사화",
+              "fact": "이 개혁에 반발한 세력이 조광조 일파를 몰아냄",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 4,
+                "row": 2
+              }
+            }
+          ]
+        },
+        {
+          "title": "선조 · 붕당의 시작",
+          "rows": [
+            {
+              "key": "선조 · 이조전랑",
+              "fact": "인사 담당 자리를 둘러싼 다툼 → 동인·서인",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 5,
+                "row": 0
+              }
+            },
+            {
+              "key": "정여립 모반 사건",
+              "fact": "선조 때 기축옥사의 발단이 된 사건",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 5,
+                "row": 1
+              }
+            },
+            {
+              "key": "선조 · 동인의 분화",
+              "fact": "세자 책봉 문제(정철 유배) 갈등 뒤 남인·북인",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 5,
+                "row": 2
+              }
+            }
+          ]
+        },
+        {
+          "title": "광해군",
+          "rows": [
+            {
+              "key": "광해군 · 중립외교",
+              "fact": "명과 후금 사이에서 균형",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 8,
+                "row": 0
+              }
+            },
+            {
+              "key": "광해군 · 기유약조",
+              "fact": "일본과 교역 재개",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 8,
+                "row": 1
+              }
+            },
+            {
+              "key": "영창대군 · 인목대비",
+              "fact": "광해군 때의 왕실 갈등",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 8,
+                "row": 2
+              }
+            },
+            {
+              "key": "대동법 · 이원익",
+              "fact": "광해군 때 경기에서 시작, 그 뒤 차츰 확대",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 8,
+                "row": 3
+              }
+            },
+            {
+              "key": "김육",
+              "fact": "대동법 확대를 건의",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 8,
+                "row": 4
+              }
+            },
+            {
+              "key": "선혜청 · 공인",
+              "fact": "대동법 담당 관청 / 관청 물품을 대는 상인",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 8,
+                "row": 5
+              }
+            },
+            {
+              "key": "강홍립 · 사르후 전투",
+              "fact": "명과 후금 사이 중립 외교의 단서",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  14
+                ]
+              }
+            },
+            {
+              "key": "방납의 폐단 → 대동법",
+              "fact": "공납 대납자의 과도한 비용 요구를 줄이려 개혁",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  13
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "효종 · 현종 · 숙종",
+          "rows": [
+            {
+              "key": "효종 · 북벌",
+              "fact": "청을 치려는 계획",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 0,
+                "row": 0
+              }
+            },
+            {
+              "key": "효종 · 나선 정벌",
+              "fact": "청의 요청으로 러시아와 싸움",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 0,
+                "row": 1
+              }
+            },
+            {
+              "key": "송시열 · 기축봉사",
+              "fact": "북벌의 뜻을 담아 올린 글",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 0,
+                "row": 2
+              }
+            },
+            {
+              "key": "현종 · 예송",
+              "fact": "왕실 상복 기간 논쟁(서인 vs 남인)",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 0,
+                "row": 3
+              }
+            },
+            {
+              "key": "숙종 · 환국",
+              "fact": "집권 붕당이 갑자기 바뀜",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 0,
+                "row": 4
+              }
+            },
+            {
+              "key": "숙종 · 금위영",
+              "fact": "5군영이 다 갖춰짐",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 0,
+                "row": 5
+              }
+            },
+            {
+              "key": "숙종 · 백두산 정계비",
+              "fact": "청과의 국경 표시",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 0,
+                "row": 6
+              }
+            },
+            {
+              "key": "숙종 · 초량 왜관",
+              "fact": "일본과 교역한 장소",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 0,
+                "row": 7
+              }
+            }
+          ]
+        },
+        {
+          "title": "영조 · 정조",
+          "rows": [
+            {
+              "key": "영조 · 탕평비",
+              "fact": "붕당 다툼을 경계",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 1,
+                "row": 0
+              }
+            },
+            {
+              "key": "영조 · 균역법",
+              "fact": "군포 2필 → 1필",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 1,
+                "row": 1
+              }
+            },
+            {
+              "key": "결작 · 선무군관포",
+              "fact": "줄어든 군포를 메운 부담(토지·선무군관)",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 1,
+                "row": 2
+              }
+            },
+            {
+              "key": "정조 · 규장각 · 초계문신제",
+              "fact": "학문 기관 / 젊은 문신 재교육",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 1,
+                "row": 3
+              }
+            },
+            {
+              "key": "정조 · 장용영",
+              "fact": "왕의 친위 부대",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 1,
+                "row": 4
+              }
+            },
+            {
+              "key": "정조 · 신해통공",
+              "fact": "육의전 제외 시전의 금난전권 폐지 → 난전 활동 허용",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 1,
+                "row": 5
+              }
+            },
+            {
+              "key": "영조 · 이인좌의 난",
+              "fact": "1728 진압 → 탕평 정책",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  19
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "세도정치기",
+          "rows": [
+            {
+              "key": "세도정치 · 순조·헌종·철종",
+              "fact": "왕실과 혼인한 외척 가문이 권력을 장악",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  22
+                ]
+              }
+            },
+            {
+              "key": "순조 · 공노비 해방",
+              "fact": "1801 · 내수사·중앙 관청의 납공 노비 해방(지방 관노비 등은 남음)",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 2,
+                "row": 0
+              }
+            },
+            {
+              "key": "순조 · 홍경래의 난",
+              "fact": "정주성을 차지한 봉기",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 2,
+                "row": 1
+              }
+            },
+            {
+              "key": "순조 · 신유박해 · 황사영 백서 사건",
+              "fact": "천주교 탄압 / 백서 사건",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 2,
+                "row": 2
+              }
+            },
+            {
+              "key": "철종 · 임술농민봉기",
+              "fact": "진주에서 유계춘이 이끈 봉기",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 2,
+                "row": 3
+              }
+            },
+            {
+              "key": "박규수 · 삼정이정청",
+              "fact": "안핵사로 파견 / 수취 제도 개선 기구",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 2,
+                "row": 4
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "conflicts",
+      "title": "사화·반정·전쟁",
+      "lead": "사화는 왕·계기, 전쟁은 침입 세력·피란지·지휘관을 묶어서",
+      "groups": [
+        {
+          "title": "사화 4개 · 연도 · 왕 · 계기",
+          "rows": [
+            {
+              "key": "무오사화",
+              "fact": "1498 · 연산군 · 김종직의 조의제문 문제",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 3,
+                "row": 0
+              }
+            },
+            {
+              "key": "갑자사화",
+              "fact": "1504 · 연산군 · 폐비 윤씨 사건",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 3,
+                "row": 1
+              }
+            },
+            {
+              "key": "기묘사화",
+              "fact": "1519 · 중종 · 조광조 개혁에 대한 훈구 반발",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 3,
+                "row": 2
+              }
+            },
+            {
+              "key": "을사사화",
+              "fact": "1545 · 명종 · 외척 윤임·윤원형 세력 대립",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 3,
+                "row": 3
+              }
+            }
+          ]
+        },
+        {
+          "title": "전쟁과 반정 · 연도 · 왕 · 계기",
+          "rows": [
+            {
+              "key": "임진왜란",
+              "fact": "1592 · 선조 · 일본의 침입",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 6,
+                "row": 0
+              }
+            },
+            {
+              "key": "인조반정",
+              "fact": "1623 · 인조 · 광해군을 몰아내고 즉위",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 6,
+                "row": 1
+              }
+            },
+            {
+              "key": "정묘호란",
+              "fact": "1627 · 인조 · 후금의 침입",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 6,
+                "row": 2
+              }
+            },
+            {
+              "key": "병자호란",
+              "fact": "1636 · 인조 · 청의 침입",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 6,
+                "row": 3
+              }
+            }
+          ]
+        },
+        {
+          "title": "임진왜란 · 선조",
+          "rows": [
+            {
+              "key": "선조 · 임진왜란",
+              "fact": "일본의 침략",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 7,
+                "row": 0
+              }
+            },
+            {
+              "key": "신립 · 탄금대",
+              "fact": "충주에서 배수진을 쳤으나 패배",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 7,
+                "row": 1
+              }
+            },
+            {
+              "key": "훈련도감",
+              "fact": "포수·사수·살수(삼수병)로 이룬 군대",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 7,
+                "row": 2
+              }
+            },
+            {
+              "key": "이순신 · 권율 · 김시민",
+              "fact": "한산도 · 행주 · 진주 (지휘관과 전투)",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 7,
+                "row": 3
+              }
+            },
+            {
+              "key": "조헌 · 정문부",
+              "fact": "금산의 의병 / 북관의 의병",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 7,
+                "row": 4
+              }
+            }
+          ]
+        },
+        {
+          "title": "인조",
+          "rows": [
+            {
+              "key": "인조 · 이괄의 난",
+              "fact": "공주(공산성)로 피란",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 9,
+                "row": 0
+              }
+            },
+            {
+              "key": "정묘호란 · 용골산성",
+              "fact": "후금의 침입, 정봉수·이립이 항전",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 9,
+                "row": 1
+              }
+            },
+            {
+              "key": "인조 · 영정법",
+              "fact": "풍흉과 관계없이 전세를 고정",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 9,
+                "row": 2
+              }
+            }
+          ]
+        },
+        {
+          "title": "병자호란 · 인조",
+          "rows": [
+            {
+              "key": "인조 · 남한산성",
+              "fact": "청이 쳐들어오자 피란해 항전",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 10,
+                "row": 0
+              }
+            },
+            {
+              "key": "김준룡 · 광교산",
+              "fact": "광교산 전투에서 승리",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 10,
+                "row": 1
+              }
+            },
+            {
+              "key": "병자호란 · 김상헌 · 최명길",
+              "fact": "끝까지 항전 / 화친 주장",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 10,
+                "row": 2
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "economy",
+      "title": "경제·사회",
+      "lead": "전세·공납·군역을 나누고, 후기 경제와 신분 변화를 연결하기",
+      "groups": [
+        {
+          "title": "세금 3종 · 조선 전 시기 비교",
+          "rows": [
+            {
+              "key": "전세(토지) · 영정법",
+              "fact": "인조 · 땅에 매긴 세 → 풍흉과 관계없이 고정",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 3,
+                "row": 0
+              }
+            },
+            {
+              "key": "공납(특산물) · 대동법",
+              "fact": "광해군 시작 · 집마다 특산물 → 토지 기준 쌀·베·동전",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 3,
+                "row": 1
+              }
+            },
+            {
+              "key": "군역(군포) · 균역법",
+              "fact": "영조 · 2필 → 1필, 결작 등으로 보충",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 3,
+                "row": 2
+              }
+            },
+            {
+              "key": "참고 · 연분 9등법 · 전분 6등법",
+              "fact": "세종 · 전세를 풍흉·비옥도로 나눔",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 3,
+                "row": 3
+              }
+            }
+          ]
+        },
+        {
+          "title": "경제의 변화 (조선 후기 사회)",
+          "rows": [
+            {
+              "key": "모내기법",
+              "fact": "벼·보리 이모작이 늘어남",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 4,
+                "row": 0
+              }
+            },
+            {
+              "key": "구황 작물 · 상품 작물",
+              "fact": "흉년 대비 작물 / 팔기 위한 작물",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 4,
+                "row": 1
+              }
+            },
+            {
+              "key": "도고 · 보부상",
+              "fact": "독점 도매 상인 / 장시를 도는 상인",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 4,
+                "row": 2
+              }
+            },
+            {
+              "key": "송상",
+              "fact": "개성 상인",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 4,
+                "row": 3
+              }
+            },
+            {
+              "key": "덕대 · 설점수세제",
+              "fact": "광산 경영자 / 민간 채굴 허용·세금",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 4,
+                "row": 4
+              }
+            },
+            {
+              "key": "상평통보",
+              "fact": "널리 쓰인 동전",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 4,
+                "row": 5
+              }
+            }
+          ]
+        },
+        {
+          "title": "신분과 사회의 변화 (조선 후기 사회)",
+          "rows": [
+            {
+              "key": "서얼 · 통청 운동 · 규장각 검서관",
+              "fact": "청요직 진출 요구 → 정조 때 서얼 기용",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  26
+                ]
+              }
+            },
+            {
+              "key": "중인 · 시사",
+              "fact": "시를 짓는 모임",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 5,
+                "row": 1
+              }
+            },
+            {
+              "key": "한글소설 · 판소리 · 탈춤",
+              "fact": "서민 문화의 성장",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  26
+                ]
+              }
+            },
+            {
+              "key": "혜민서 · 동서활인서",
+              "fact": "치료·빈민 구제 기관",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 5,
+                "row": 3
+              }
+            },
+            {
+              "key": "천주교",
+              "fact": "서학으로 들어와 퍼짐 · 박해",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 5,
+                "row": 4
+              }
+            },
+            {
+              "key": "동학",
+              "fact": "최제우가 창시한 종교",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 5,
+                "row": 5
+              }
+            },
+            {
+              "key": "공명첩 · 납속",
+              "fact": "재물을 내고 신분을 얻음 → 양반 증가·신분 동요",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  26
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "지방과 향촌 (조선 전 시기)",
+          "rows": [
+            {
+              "key": "유향소 · 좌수 · 별감",
+              "fact": "향촌 양반의 자치 조직과 그 임원",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 12,
+                "row": 0
+              }
+            },
+            {
+              "key": "경재소",
+              "fact": "중앙에서 유향소를 관리",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 12,
+                "row": 1
+              }
+            },
+            {
+              "key": "향교",
+              "fact": "지방의 국립 교육 기관",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 12,
+                "row": 2
+              }
+            },
+            {
+              "key": "향약",
+              "fact": "마을이 함께 지킨 규약",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 12,
+                "row": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "systems",
+      "title": "군대·교육·토지·화폐",
+      "lead": "비슷한 이름은 기능부터 구별하기",
+      "groups": [
+        {
+          "title": "중앙 기구 · 기능과 별칭 (조선 전 시기)",
+          "rows": [
+            {
+              "key": "승정원 · 도승지 · 은대",
+              "fact": "왕명을 전하는 비서 기관",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 11,
+                "row": 0
+              }
+            },
+            {
+              "key": "의금부 · 금오 · 조옥",
+              "fact": "왕이 직접 다스린 사법 기관",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 11,
+                "row": 1
+              }
+            },
+            {
+              "key": "사헌부 · 대사헌",
+              "fact": "관리를 감찰·탄핵",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 11,
+                "row": 2
+              }
+            },
+            {
+              "key": "사간원",
+              "fact": "왕의 잘못에 간쟁",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 11,
+                "row": 3
+              }
+            },
+            {
+              "key": "홍문관 · 옥당 · 경연",
+              "fact": "경연과 학문 자문",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 11,
+                "row": 4
+              }
+            },
+            {
+              "key": "사헌부 · 사간원 · 홍문관",
+              "fact": "셋을 묶어 삼사, 앞의 둘은 양사(서경권)",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 11,
+                "row": 5
+              }
+            },
+            {
+              "key": "한성부",
+              "fact": "수도의 행정·치안",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 11,
+                "row": 6
+              }
+            },
+            {
+              "key": "성균관 · 대사성",
+              "fact": "최고 교육 기관",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 11,
+                "row": 7
+              }
+            },
+            {
+              "key": "춘추관",
+              "fact": "역사 편찬",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 11,
+                "row": 8
+              }
+            }
+          ]
+        },
+        {
+          "title": "토지 제도의 흐름 (태조~명종)",
+          "rows": [
+            {
+              "key": "과전법 ·1391 고려 말",
+              "fact": "전·현직 관리에게 경기 땅의 수조권",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 13,
+                "row": 0
+              }
+            },
+            {
+              "key": "직전법 (세조)",
+              "fact": "현직 관리에게만 수조권",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 13,
+                "row": 1
+              }
+            },
+            {
+              "key": "관수관급제 (성종)",
+              "fact": "나라가 대신 거두어 관리에게 줌",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 13,
+                "row": 2
+              }
+            },
+            {
+              "key": "명종 · 직전 수조권 지급 중단",
+              "fact": "관리에게 녹봉만 지급 — 법의 명목상 존속과 구별",
+              "source": {
+                "file": "docs/reviewed-quiz-input.json",
+                "era": "joseon",
+                "term": "직전법",
+                "note": "검증된 기존 직전법 profile; 명종 지급 중단/임진왜란 무렵 완전 소멸 구별"
+              }
+            },
+            {
+              "key": "세조 직전법 · 수신전·휼양전 폐지",
+              "fact": "현직 관리에게만 수조권 → 유가족에게 주던 토지는 없앰",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  6
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "군대와 설치 왕",
+          "rows": [
+            {
+              "key": "훈련도감 · 선조",
+              "fact": "임진왜란 중 설치 → 포수·사수·살수(삼수병)",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  12
+                ]
+              }
+            },
+            {
+              "key": "어영청·총융청·수어청 · 인조",
+              "fact": "양난 전후 수도·주변 방어",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  15,
+                  16
+                ]
+              }
+            },
+            {
+              "key": "금위영 · 숙종",
+              "fact": "5군영 체제 완성",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  18
+                ]
+              }
+            },
+            {
+              "key": "장용영 · 정조",
+              "fact": "왕의 친위 부대",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  21
+                ]
+              }
+            },
+            {
+              "key": "나선 정벌 · 효종",
+              "fact": "청의 요청 → 조총 부대 파견 → 러시아와 전투",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  17
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "학교·향촌과 화폐",
+          "rows": [
+            {
+              "key": "성균관 / 향교 / 서원",
+              "fact": "최고 국립 교육 / 지방 국립 교육 / 사립 교육·선현 제사",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "groups": [
+                  11,
+                  12,
+                  14
+                ],
+                "note": "성균관/향교/서원 기능은 기준 교재 교육 기관 표에서 대조"
+              }
+            },
+            {
+              "key": "백운동 서원 → 소수 서원",
+              "fact": "주세붕 설립 → 왕에게 이름을 받은 사액 서원",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 14,
+                "row": 8
+              }
+            },
+            {
+              "key": "태종 저화 / 숙종 상평통보",
+              "fact": "종이돈 / 후기 상업에 널리 유통된 동전",
+              "source": {
+                "files": [
+                  "media/textbook-notes.js",
+                  "media/joseon-all-comic.html"
+                ],
+                "guide": "joseon-early.core[0].rows[5]",
+                "scene": 25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "culture",
+      "title": "문화·학문",
+      "lead": "인물 ↔ 저서·작품, 전기 ↔ 후기, 토지 개혁 ↔ 북학",
+      "groups": [
+        {
+          "title": "전기 왕들의 문화 사업",
+          "rows": [
+            {
+              "key": "태종 · 주자소 · 계미자",
+              "fact": "활자를 만드는 관청과 금속 활자",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 14,
+                "row": 0
+              }
+            },
+            {
+              "key": "태종 · 혼일강리역대국도지도",
+              "fact": "세계 지도",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 14,
+                "row": 1
+              }
+            },
+            {
+              "key": "세종 · 칠정산 · 갑인자",
+              "fact": "한양 기준 역법 / 금속 활자",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 14,
+                "row": 2
+              }
+            },
+            {
+              "key": "세종 · 농사직설 · 향약집성방",
+              "fact": "우리 농법서 / 우리 약재 의학서",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 14,
+                "row": 3
+              }
+            },
+            {
+              "key": "세조 · 간경도감",
+              "fact": "불경을 간행",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 14,
+                "row": 4
+              }
+            },
+            {
+              "key": "성종 · 악학궤범",
+              "fact": "음악을 정리",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 14,
+                "row": 5
+              }
+            },
+            {
+              "key": "명종 · 구황촬요",
+              "fact": "흉년을 견디는 법을 모은 책",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 14,
+                "row": 6
+              }
+            },
+            {
+              "key": "주세붕 · 백운동 서원 → 소수 서원",
+              "fact": "최초의 서원 → 사액 서원",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 14,
+                "row": 7
+              }
+            },
+            {
+              "key": "이황 · 성학십도 / 이이 · 성학집요",
+              "fact": "성리학을 정리한 대표 저서",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-early",
+                "group": 14,
+                "row": 8
+              }
+            }
+          ]
+        },
+        {
+          "title": "기록과 외교 (조선 전 시기 기록물)",
+          "rows": [
+            {
+              "key": "조선왕조실록",
+              "fact": "왕대별 국정 기록",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 6,
+                "row": 0
+              }
+            },
+            {
+              "key": "조선왕조의궤",
+              "fact": "왕실 행사 기록",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 6,
+                "row": 1
+              }
+            },
+            {
+              "key": "승정원일기",
+              "fact": "승정원이 남긴 업무·국정 기록",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 6,
+                "row": 2
+              }
+            },
+            {
+              "key": "동의보감",
+              "fact": "허준의 의학서",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 6,
+                "row": 3
+              }
+            },
+            {
+              "key": "통신사",
+              "fact": "일본에 보낸 사절",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 6,
+                "row": 4
+              }
+            }
+          ]
+        },
+        {
+          "title": "실학 · 토지 개혁",
+          "rows": [
+            {
+              "key": "유형원 · 균전론",
+              "fact": "신분에 따라 토지를 나눠 주자",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 7,
+                "row": 0
+              }
+            },
+            {
+              "key": "이익 · 한전론",
+              "fact": "토지 매매를 제한하자",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 7,
+                "row": 1
+              }
+            },
+            {
+              "key": "정약용 · 여전론",
+              "fact": "마을이 함께 짓고 일한 만큼 나누자",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 7,
+                "row": 2
+              }
+            },
+            {
+              "key": "정약용 · 경세유표 · 마과회통",
+              "fact": "제도 개혁 / 홍역 의학",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 7,
+                "row": 3
+              }
+            },
+            {
+              "key": "정약용 · 기기도설 · 거중기",
+              "fact": "서양 기술 참고 / 무거운 돌 들기",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 7,
+                "row": 4
+              }
+            }
+          ]
+        },
+        {
+          "title": "실학 · 상공업과 청 문물",
+          "rows": [
+            {
+              "key": "홍대용 · 의산문답 · 지전설",
+              "fact": "지구가 돈다는 주장",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 8,
+                "row": 0
+              }
+            },
+            {
+              "key": "박지원 · 열하일기 · 양반전",
+              "fact": "수레·선박 이용 / 양반 풍자",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 8,
+                "row": 1
+              }
+            },
+            {
+              "key": "박제가 · 북학의",
+              "fact": "청의 문물을 배우자",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 8,
+                "row": 2
+              }
+            },
+            {
+              "key": "유수원 · 우서",
+              "fact": "사농공상 직업의 평등",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 8,
+                "row": 3
+              }
+            },
+            {
+              "key": "이수광 · 지봉유설",
+              "fact": "백과사전식 저술",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 8,
+                "row": 4
+              }
+            },
+            {
+              "key": "서유구 · 임원경제지",
+              "fact": "농촌 생활 백과",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 8,
+                "row": 5
+              }
+            },
+            {
+              "key": "김육 · 시헌력",
+              "fact": "새 역법 도입",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 8,
+                "row": 6
+              }
+            }
+          ]
+        },
+        {
+          "title": "역사와 지리",
+          "rows": [
+            {
+              "key": "정인지 · 고려사",
+              "fact": "고려의 역사",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 9,
+                "row": 0
+              }
+            },
+            {
+              "key": "서거정 · 동국통감",
+              "fact": "고조선부터 고려까지 통사",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 9,
+                "row": 1
+              }
+            },
+            {
+              "key": "신숙주 · 해동제국기",
+              "fact": "일본 견문 기록",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 9,
+                "row": 2
+              }
+            },
+            {
+              "key": "유득공 · 발해고",
+              "fact": "발해를 우리 역사로(남북국)",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 9,
+                "row": 3
+              }
+            },
+            {
+              "key": "정상기 · 동국지도 · 100리 척",
+              "fact": "100리를 1척으로 줄인 지도",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 9,
+                "row": 4
+              }
+            },
+            {
+              "key": "김정호 · 대동여지도",
+              "fact": "10리마다 눈금",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 9,
+                "row": 5
+              }
+            },
+            {
+              "key": "종묘",
+              "fact": "왕실 조상을 모신 제례 공간",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 9,
+                "row": 6
+              }
+            }
+          ]
+        },
+        {
+          "title": "후기 왕과 예술",
+          "rows": [
+            {
+              "key": "영조 · 속대전 · 동국문헌비고",
+              "fact": "법전 정비 / 문물 백과",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 10,
+                "row": 0
+              }
+            },
+            {
+              "key": "정조 · 수원 화성",
+              "fact": "거중기를 써서 쌓은 성",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 10,
+                "row": 1
+              }
+            },
+            {
+              "key": "정제두 · 강화학파",
+              "fact": "양명학",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 10,
+                "row": 2
+              }
+            },
+            {
+              "key": "정선",
+              "fact": "진경산수화",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 10,
+                "row": 3
+              }
+            },
+            {
+              "key": "김정희 · 추사체 · 세한도",
+              "fact": "글씨체와 그림",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 10,
+                "row": 4
+              }
+            },
+            {
+              "key": "김정희 · 금석과안록",
+              "fact": "북한산비가 진흥왕 순수비임을 밝힘",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 10,
+                "row": 5
+              }
+            },
+            {
+              "key": "신윤복 · 월하정인 / 김득신 · 파적도",
+              "fact": "풍속화",
+              "source": {
+                "file": "media/textbook-notes.js",
+                "era": "joseon-late",
+                "group": 10,
+                "row": 6
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "compare",
+      "title": "헷갈리는 연결",
+      "lead": "같은 이름·비슷한 사건을 한 줄로 분리하기",
+      "groups": [
+        {
+          "title": "왕·정변·사화",
+          "rows": [
+            {
+              "key": "정조 · 조선",
+              "fact": "규장각·초계문신제·장용영·수원 화성·신해통공",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  20,
+                  21
+                ]
+              }
+            },
+            {
+              "key": "공민왕 · 고려 (범위 비교)",
+              "fact": "쌍성총관부 수복·신돈·전민변정도감 — 정조와 구별",
+              "source": {
+                "file": "media/lecture-flow-goryeo.js",
+                "term": "공민왕"
+              }
+            },
+            {
+              "key": "계유정난 / 세조 즉위",
+              "fact": "1453 단종 때 실권 장악 / 1455 왕위에 오름",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  5,
+                  6
+                ]
+              }
+            },
+            {
+              "key": "이징옥의 난 / 이시애의 난",
+              "fact": "단종 때 / 세조 때",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  5,
+                  6
+                ]
+              }
+            },
+            {
+              "key": "무갑기을 → 연연중명",
+              "fact": "무오·갑자=연산군 / 기묘=중종 / 을사=명종",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  8,
+                  9,
+                  10
+                ]
+              }
+            },
+            {
+              "key": "예송 / 환국",
+              "fact": "현종: 왕실 상복 기간 / 숙종: 집권 붕당 교체",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  18
+                ]
+              }
+            },
+            {
+              "key": "홍경래의 난 / 임술농민봉기",
+              "fact": "순조·평안도 / 철종·진주·유계춘",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  23
+                ]
+              }
+            }
+          ],
+          "note": "무갑기을·연연중명은 사화 순서. 왕위 계승은 중종 → 인종 → 명종이에요."
+        },
+        {
+          "title": "전쟁·세금·신앙·실학",
+          "rows": [
+            {
+              "key": "정묘호란 / 병자호란",
+              "fact": "후금·강화도·형제 관계 / 청·남한산성·군신 관계",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  15,
+                  16
+                ]
+              }
+            },
+            {
+              "key": "북벌 / 나선 정벌",
+              "fact": "청을 치려는 준비 / 청의 요청으로 러시아와 전투",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  17
+                ]
+              }
+            },
+            {
+              "key": "연분 9등 / 전분 6등",
+              "fact": "그해 풍흉 / 토지 비옥도 — 세종의 전세 기준",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  3
+                ]
+              }
+            },
+            {
+              "key": "대동법 / 균역법",
+              "fact": "광해군부터 공납 개혁 / 영조 군포 2필→1필",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  13,
+                  19
+                ]
+              }
+            },
+            {
+              "key": "신해통공 / 신해박해 / 신유박해",
+              "fact": "정조1791 경제 / 정조1791 윤지충 / 순조1801 천주교 탄압",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  20,
+                  22
+                ]
+              }
+            },
+            {
+              "key": "유형원 / 이익 / 정약용",
+              "fact": "균전론 / 한전론 / 여전론",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  27
+                ]
+              }
+            },
+            {
+              "key": "이익 / 이긍익",
+              "fact": "한전론 / 연려실기술 — 이름이 비슷한 다른 인물",
+              "source": {
+                "file": "media/joseon-all-comic.html",
+                "scenes": [
+                  27
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "photos": [
+    {
+      "name": "분청사기",
+      "country": "조선",
+      "period": "조선 전기",
+      "feature": "회색 바탕에 백토로 분장하고 무늬를 넣었다.",
+      "caution": "",
+      "src": "media/culture-photos/buncheong.png",
+      "source": {
+        "title": "한국학중앙연구원 · 교재 70쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "청화백자",
+      "country": "조선",
+      "period": "조선 시대",
+      "feature": "흰 바탕에 푸른 안료로 그린 무늬. 상감청자의 무늬 기법과 다르다.",
+      "caution": "",
+      "src": "media/culture-photos/blue-white.png",
+      "source": {
+        "title": "국립중앙박물관 · 교재 70쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "소수서원",
+      "country": "조선",
+      "period": "명종 때 사액",
+      "feature": "소수서원 현판. 백운동 서원이 왕에게 이름을 받은 사액서원이다.",
+      "caution": "",
+      "src": "media/culture-photos/sosu.png",
+      "source": {
+        "title": "한국학중앙연구원 · 교재 70쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "종묘",
+      "country": "조선",
+      "period": "조선 시대",
+      "feature": "길게 이어진 정전. 조선 왕과 왕비의 신주를 모셨다.",
+      "caution": "",
+      "src": "media/culture-photos/jongmyo.png",
+      "source": {
+        "title": "문화재청 · 교재 70쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "몽유도원도",
+      "country": "조선",
+      "period": "조선 전기·안견",
+      "feature": "안평대군의 꿈을 산수로 그렸다. 조선 후기 진경산수화와 구분한다.",
+      "caution": "",
+      "src": "media/culture-photos/mongyu.png",
+      "source": {
+        "title": "한국학중앙연구원 · 교재 72쪽 사진",
+        "url": null
+      }
+    },
+    {
+      "name": "세한도",
+      "country": "조선",
+      "period": "조선 후기·김정희",
+      "feature": "겨울 나무와 집을 간결하게 그린 문인화. 추사 김정희와 연결한다.",
+      "caution": "",
+      "src": "media/culture-photos/sehan.png",
+      "source": {
+        "title": "국립중앙박물관 · 교재 72쪽 사진",
+        "url": null
+      }
+    }
+  ],
+  "sources": {
+    "comic": {
+      "file": "media/joseon-all-comic.html",
+      "scenes": 27,
+      "sha256": "0dd1266e1f694f2c77b2a87116c48717e2d41dc9be833f9436e1cbe92d30c49f"
+    },
+    "guide": {
+      "file": "media/textbook-notes.js",
+      "groups": 26,
+      "sha256": "e84134bf73f127cc7de3964e3a6d0c471437b3b009e04aa7c5381eabdc13c164"
+    },
+    "textbook": {
+      "sha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+      "title": "벼락치기 한능검 요약서·선택지노트 (동일 원본)"
+    }
+  }
+}

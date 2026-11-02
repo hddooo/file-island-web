@@ -1,0 +1,743 @@
+{
+  "schema": 1,
+  "status": "applied-reviewed",
+  "title": "헷갈리는 포인트 잡기",
+  "groups": [
+    {
+      "topic": "군대",
+      "items": [
+        {
+          "name": "별무반",
+          "eras": [
+            "고려"
+          ],
+          "rulerOrSubject": "숙종 · 윤관",
+          "keyword": "여진 정벌을 위한 군대",
+          "sourceRefs": [
+            {
+              "file": "media/lecture-notes.js",
+              "path": "window.HANQ_LECTURE.goryeo.groups.1.rows.0.0",
+              "exactRow": "숙종 · 해동통보 · 별무반"
+            },
+            {
+              "file": "media/textbook-notes.js",
+              "path": "window.HANQ_TEXTBOOK.goryeo.core.4.rows.3.0",
+              "exactRow": "윤관 · 별무반 · 동북 9성"
+            },
+            {
+              "file": "media/textbook-notes.js",
+              "path": "window.HANQ_TEXTBOOK.goryeo.compare.0.rows.1.1",
+              "exactRow": "윤관 · 별무반 · 동북 9성"
+            }
+          ],
+          "sourceUrls": [
+            "https://encykorea.aks.ac.kr/Article/E0023022"
+          ],
+          "verification": "external-source-reviewed"
+        },
+        {
+          "name": "신기군",
+          "eras": [
+            "고려"
+          ],
+          "rulerOrSubject": "별무반",
+          "keyword": "기병",
+          "sourceRefs": [],
+          "sourceUrls": [
+            "https://encykorea.aks.ac.kr/Article/E0023022"
+          ],
+          "verification": "external-source-reviewed"
+        },
+        {
+          "name": "신보군",
+          "eras": [
+            "고려"
+          ],
+          "rulerOrSubject": "별무반",
+          "keyword": "보병",
+          "sourceRefs": [],
+          "sourceUrls": [
+            "https://encykorea.aks.ac.kr/Article/E0023022"
+          ],
+          "verification": "external-source-reviewed"
+        },
+        {
+          "name": "항마군",
+          "eras": [
+            "고려"
+          ],
+          "rulerOrSubject": "별무반",
+          "keyword": "승병",
+          "sourceRefs": [],
+          "sourceUrls": [
+            "https://encykorea.aks.ac.kr/Article/E0062389"
+          ],
+          "verification": "external-source-reviewed"
+        },
+        {
+          "name": "별기군",
+          "eras": [
+            "조선 개항기"
+          ],
+          "rulerOrSubject": "고종",
+          "keyword": "1881 신식 군대 · 일본인 교관",
+          "sourceRefs": [
+            {
+              "file": "media/lecture-notes-opening.js",
+              "path": "window.HANQ_LECTURE.opening.groups.2.rows.1.0",
+              "exactRow": "별기군"
+            },
+            {
+              "file": "media/textbook-notes.js",
+              "path": "window.HANQ_TEXTBOOK.opening.core.3.rows.0.0",
+              "exactRow": "통리기무아문 · 별기군"
+            }
+          ],
+          "sourceUrls": [
+            "https://encykorea.aks.ac.kr/Article/E0023007"
+          ],
+          "verification": "external-source-reviewed"
+        }
+      ]
+    },
+    {
+      "topic": "교육기관",
+      "items": [
+        {
+          "name": "태학",
+          "eras": [
+            "고구려"
+          ],
+          "rulerOrSubject": "소수림왕",
+          "keyword": "중앙 유학 교육",
+          "sourceRefs": [
+            {
+              "file": "media/textbook-notes.js",
+              "path": "window.HANQ_TEXTBOOK.samguk.core.0.rows.4.0",
+              "exactRow": "소수림왕 · 율령 · 태학 · 불교"
+            },
+            {
+              "file": "media/textbook-notes.js",
+              "path": "window.HANQ_TEXTBOOK.samguk.core.2.rows.1.0",
+              "exactRow": "태학 · 경당"
+            },
+            {
+              "file": "media/textbook-notes.js",
+              "path": "window.HANQ_TEXTBOOK.samguk.compare.0.rows.0.1",
+              "exactRow": "율령 · 태학 · 불교"
+            }
+          ],
+          "sourceUrls": [
+            "https://encykorea.aks.ac.kr/Article/E0030144"
+          ],
+          "verification": "external-source-reviewed"
+        },
+        {
+          "name": "주자감",
+          "eras": [
+            "발해"
+          ],
+          "rulerOrSubject": "발해의 최고 교육기관",
+          "keyword": "발해 자체의 유학 교육",
+          "sourceRefs": [
+            {
+              "file": "media/textbook-notes.js",
+              "path": "window.HANQ_TEXTBOOK.nambuk.core.7.rows.2.0",
+              "exactRow": "중정대 · 주자감 · 문적원"
+            },
+            {
+              "file": "media/textbook-notes.js",
+              "path": "window.HANQ_TEXTBOOK.nambuk.compare.1.rows.1.1",
+              "exactRow": "3성 6부 · 5경 15부 62주 · 중정대 · 주자감"
+            }
+          ],
+          "sourceUrls": [
+            "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART001953504"
+          ],
+          "verification": "external-source-reviewed",
+          "note": "설치 왕을 근거 없이 지정하지 않는다."
+        },
+        {
+          "name": "태학 · 국자학 유학",
+          "eras": [
+            "당"
+          ],
+          "rulerOrSubject": "발해 유학생",
+          "keyword": "당 국자감 소속 학교에서 수학",
+          "sourceRefs": [
+            {
+              "file": "media/textbook-notes.js",
+              "path": "window.HANQ_TEXTBOOK.samguk.core.0.rows.4.0",
+              "exactRow": "소수림왕 · 율령 · 태학 · 불교"
+            },
+            {
+              "file": "media/textbook-notes.js",
+              "path": "window.HANQ_TEXTBOOK.samguk.core.2.rows.1.0",
+              "exactRow": "태학 · 경당"
+            },
+            {
+              "file": "media/textbook-notes.js",
+              "path": "window.HANQ_TEXTBOOK.samguk.compare.0.rows.0.1",
+              "exactRow": "율령 · 태학 · 불교"
+            }
+          ],
+          "sourceUrls": [
+            "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART001953504"
+          ],
+          "verification": "external-source-reviewed",
+          "note": "발해 안의 태학이라는 별도 학교로 표시하지 않는다."
+        },
+        {
+          "name": "국자감",
+          "eras": [
+            "고려"
+          ],
+          "rulerOrSubject": "성종",
+          "keyword": "중앙 관학 정비",
+          "sourceRefs": [
+            {
+              "file": "media/lecture-notes.js",
+              "path": "window.HANQ_LECTURE.goryeo.groups.0.rows.6.0",
+              "exactRow": "성종 · 12목 · 국자감"
+            },
+            {
+              "file": "media/lecture-notes.js",
+              "path": "window.HANQ_LECTURE.goryeo.groups.1.rows.2.1",
+              "exactRow": "관학을 돕는 장학 기금 / 국자감의 전공 과정"
+            },
+            {
+              "file": "media/lecture-notes.js",
+              "path": "window.HANQ_LECTURE.goryeo.compare.0.rows.2.1",
+              "exactRow": "시무 28조 · 12목 · 국자감"
+            }
+          ],
+          "sourceUrls": [
+            "https://contents.history.go.kr/front/tg/view.do?levelId=tg_002_0340&treeId=0100"
+          ],
+          "verification": "external-source-reviewed"
+        },
+        {
+          "name": "성균관",
+          "eras": [
+            "고려 말",
+            "조선"
+          ],
+          "rulerOrSubject": "고려: 충선왕·공민왕 / 조선: 중앙 관학",
+          "keyword": "고려 국자감의 개칭 · 조선 최고 교육기관",
+          "sourceRefs": [
+            {
+              "file": "media/lecture-notes.js",
+              "path": "window.HANQ_LECTURE.joseon-early.groups.10.rows.4.0",
+              "exactRow": "의금부 · 한성부 · 춘추관 · 성균관"
+            },
+            {
+              "file": "media/textbook-notes.js",
+              "path": "window.HANQ_TEXTBOOK.joseon-early.core.11.rows.7.0",
+              "exactRow": "성균관 · 대사성"
+            }
+          ],
+          "sourceUrls": [
+            "https://contents.history.go.kr/front/tg/view.do?levelId=tg_002_0340&treeId=0100"
+          ],
+          "verification": "external-source-reviewed",
+          "note": "1308 충선왕 성균관 개칭, 1356 공민왕 국자감 복구, 1362 성균관 재개칭. 조선에서만 존재했다고 단정하지 않는다."
+        },
+        {
+          "name": "향교",
+          "eras": [
+            "고려",
+            "조선"
+          ],
+          "rulerOrSubject": "지방 관학",
+          "keyword": "지방 유학 교육 · 조선에서 확대",
+          "sourceRefs": [
+            {
+              "file": "media/textbook-notes.js",
+              "path": "window.HANQ_TEXTBOOK.joseon-early.core.12.rows.2.0",
+              "exactRow": "향교"
+            }
+          ],
+          "sourceUrls": [
+            "https://encykorea.aks.ac.kr/Article/E0062880"
+          ],
+          "verification": "external-source-reviewed"
+        }
+      ]
+    },
+    {
+      "topic": "토지제도",
+      "items": [
+        {
+          "name": "전시과",
+          "eras": [
+            "고려"
+          ],
+          "rulerOrSubject": "경종 시작 · 목종 개정 · 문종 경정",
+          "keyword": "전지·시지의 수조권",
+          "sourceRefs": [
+            {
+              "file": "media/lecture-notes.js",
+              "path": "window.HANQ_LECTURE.goryeo.groups.4.rows.3.0",
+              "exactRow": "경종 · 전시과"
+            },
+            {
+              "file": "media/lecture-notes.js",
+              "path": "window.HANQ_LECTURE.goryeo.compare.3.rows.1.1",
+              "exactRow": "전시과 (세금 거둘 권리)"
+            },
+            {
+              "file": "media/textbook-notes.js",
+              "path": "window.HANQ_TEXTBOOK.goryeo.core.1.rows.3.0",
+              "exactRow": "경종 · 전시과"
+            }
+          ],
+          "sourceUrls": [
+            "https://encykorea.aks.ac.kr/Article/E0049507"
+          ],
+          "verification": "external-source-reviewed",
+          "note": "문종 경정 전시과는 현직 관료 중심. 모든 전시과를 전현직으로 단정하지 않는다."
+        },
+        {
+          "name": "과전법",
+          "eras": [
+            "고려 말",
+            "조선 전기"
+          ],
+          "rulerOrSubject": "공양왕 시행",
+          "keyword": "경기 전현직 관리의 수조권",
+          "sourceRefs": [
+            {
+              "file": "media/lecture-notes.js",
+              "path": "window.HANQ_LECTURE.goryeo.groups.9.rows.4.0",
+              "exactRow": "위화도 회군 · 과전법"
+            },
+            {
+              "file": "media/lecture-notes.js",
+              "path": "window.HANQ_LECTURE.goryeo.compare.3.rows.2.1",
+              "exactRow": "과전법"
+            },
+            {
+              "file": "media/lecture-notes.js",
+              "path": "window.HANQ_LECTURE.joseon-early.groups.0.rows.1.0",
+              "exactRow": "과전법"
+            }
+          ],
+          "sourceUrls": [
+            "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_30&levelId=kc_i301300"
+          ],
+          "verification": "external-source-reviewed",
+          "note": "1391 시작은 고려 말. 과전 부족과 세습·은폐 문제 뒤 직전법으로 전환."
+        },
+        {
+          "name": "직전법",
+          "eras": [
+            "조선"
+          ],
+          "rulerOrSubject": "세조",
+          "keyword": "현직 관리만 · 수신전·휼양전 폐지",
+          "sourceRefs": [
+            {
+              "file": "media/lecture-notes.js",
+              "path": "window.HANQ_LECTURE.joseon-early.groups.2.rows.3.0",
+              "exactRow": "세조 · 직전법"
+            },
+            {
+              "file": "media/lecture-notes.js",
+              "path": "window.HANQ_LECTURE.joseon-early.compare.1.rows.1.0",
+              "exactRow": "직전법 (세조)"
+            },
+            {
+              "file": "media/lecture-notes.js",
+              "path": "window.HANQ_LECTURE.joseon-late.groups.4.rows.0.0",
+              "exactRow": "과전법 → 직전법"
+            }
+          ],
+          "sourceUrls": [
+            "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_30&levelId=kc_i301300"
+          ],
+          "verification": "external-source-reviewed"
+        },
+        {
+          "name": "수신전",
+          "eras": [
+            "고려 말",
+            "조선 전기"
+          ],
+          "rulerOrSubject": "공양왕 때 과전법 · 수절한 관리의 아내",
+          "keyword": "남편 사후 생계 보장 · 직전법 때 폐지",
+          "sourceRefs": [
+            {
+              "file": "media/lecture-notes.js",
+              "path": "window.HANQ_LECTURE.joseon-early.groups.2.rows.3.1",
+              "exactRow": "현직 관리에게만 수조권 (수신전·휼양전 폐지)"
+            }
+          ],
+          "sourceUrls": [
+            "https://db.history.go.kr/id/kr_078r_0010_0020_0060_0190",
+            "https://encykorea.aks.ac.kr/Article/E0031511",
+            "https://contents.history.go.kr/front/tg/view.do?levelId=tg_003_0370"
+          ],
+          "verification": "external-source-reviewed",
+          "note": "수절한 아내의 생계 보장; 1466 직전법 때 폐지. 고려 말 시행의 직접 근거는 추가 확인 필요.",
+          "candidateAdditionalEras": [
+            "고려 말"
+          ],
+          "evidence": "고려사 권78 식화1 녹과전 공양왕3년(1391)5월 과전법 제정 건의 기사: 토지 받은 사람이 사망한 뒤 수절하는 아내에게 자식 유무에 따라 전부 또는 절반을 전달하는 규정. 우리역사넷은 조선 운영 및1466폐지를 확인."
+        },
+        {
+          "name": "휼양전",
+          "eras": [
+            "고려 말",
+            "조선 전기"
+          ],
+          "rulerOrSubject": "공양왕 때 과전법 · 부모 잃은 어린 자녀",
+          "keyword": "부모 사망 뒤 생계 보장 · 직전법 때 폐지",
+          "sourceRefs": [
+            {
+              "file": "media/lecture-notes.js",
+              "path": "window.HANQ_LECTURE.joseon-early.groups.2.rows.3.1",
+              "exactRow": "현직 관리에게만 수조권 (수신전·휼양전 폐지)"
+            }
+          ],
+          "sourceUrls": [
+            "https://db.history.go.kr/id/kr_078r_0010_0020_0060_0190",
+            "https://encykorea.aks.ac.kr/Article/E0065865",
+            "https://contents.history.go.kr/front/tg/view.do?levelId=tg_003_0750"
+          ],
+          "verification": "external-source-reviewed",
+          "note": "조선 운영 확인. 고려 말 최초 규정은 과전법 원사료 추가 확인 필요; 그때까지 화면 시대는 조선 전기로 한정 가능.",
+          "candidateAdditionalEras": [
+            "고려 말"
+          ],
+          "evidence": "같은1391과전법 원사료에 부모가 모두 사망하고 자손이 어린 경우 부친 토지를 전부 전달하는 규정 확인. 우리역사넷은 조선 운영·1466직전법시 폐지 확인."
+        }
+      ]
+    },
+    {
+      "topic": "화폐",
+      "items": [
+        {
+          "name": "건원중보",
+          "eras": [
+            "고려"
+          ],
+          "rulerOrSubject": "성종",
+          "keyword": "철전 · 뒷면 동국",
+          "sourceRefs": [
+            {
+              "file": "media/lecture-notes.js",
+              "path": "window.HANQ_LECTURE.goryeo.groups.4.rows.4.0",
+              "exactRow": "건원중보 · 해동통보"
+            },
+            {
+              "file": "media/textbook-notes.js",
+              "path": "window.HANQ_TEXTBOOK.goryeo.core.10.rows.3.0",
+              "exactRow": "건원중보 · 은병"
+            }
+          ],
+          "sourceUrls": [
+            "https://contents.history.go.kr/mobile/eh/view.do?code=eh_age_20&levelId=eh_r0181_0010"
+          ],
+          "verification": "external-source-reviewed"
+        },
+        {
+          "name": "해동통보",
+          "eras": [
+            "고려"
+          ],
+          "rulerOrSubject": "숙종",
+          "keyword": "의천 건의 · 동전",
+          "sourceRefs": [
+            {
+              "file": "media/lecture-notes.js",
+              "path": "window.HANQ_LECTURE.goryeo.groups.1.rows.0.0",
+              "exactRow": "숙종 · 해동통보 · 별무반"
+            },
+            {
+              "file": "media/lecture-notes.js",
+              "path": "window.HANQ_LECTURE.goryeo.groups.4.rows.4.0",
+              "exactRow": "건원중보 · 해동통보"
+            },
+            {
+              "file": "media/textbook-notes.js",
+              "path": "window.HANQ_TEXTBOOK.goryeo.core.4.rows.1.0",
+              "exactRow": "숙종 · 해동통보"
+            }
+          ],
+          "sourceUrls": [
+            "https://encykorea.aks.ac.kr/Article/E0062558",
+            "https://contents.history.go.kr/mobile/eh/view.do?code=eh_age_20&levelId=eh_r0181_0010"
+          ],
+          "verification": "external-source-reviewed"
+        },
+        {
+          "name": "은병(활구)",
+          "eras": [
+            "고려"
+          ],
+          "rulerOrSubject": "숙종",
+          "keyword": "은으로 만든 고액 화폐",
+          "sourceRefs": [],
+          "sourceUrls": [
+            "https://contents.history.go.kr/mobile/eh/view.do?code=eh_age_20&levelId=eh_r0181_0010"
+          ],
+          "verification": "external-source-reviewed",
+          "note": "왕이 같은 이름인 조선 숙종과 구별."
+        },
+        {
+          "name": "상평통보",
+          "eras": [
+            "조선"
+          ],
+          "rulerOrSubject": "숙종 때 본격 유통",
+          "keyword": "엽전 · 전국 유통",
+          "sourceRefs": [
+            {
+              "file": "media/lecture-notes.js",
+              "path": "window.HANQ_LECTURE.joseon-late.groups.5.rows.6.0",
+              "exactRow": "상평통보"
+            },
+            {
+              "file": "media/textbook-notes.js",
+              "path": "window.HANQ_TEXTBOOK.joseon-late.core.4.rows.5.0",
+              "exactRow": "상평통보"
+            }
+          ],
+          "sourceUrls": [
+            "https://encykorea.aks.ac.kr/Article/E0027386"
+          ],
+          "verification": "external-source-reviewed",
+          "note": "상평통보 최초 주조와 1678 본격 유통을 혼동하지 않는다."
+        }
+      ]
+    },
+    {
+      "topic": "반란·정변",
+      "items": [
+        {
+          "name": "이자겸의 난",
+          "eras": [
+            "고려"
+          ],
+          "rulerOrSubject": "인종 · 이자겸",
+          "keyword": "외척의 권력 장악",
+          "sourceRefs": [],
+          "sourceUrls": [
+            "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_m71_0050_0020_0010_0030"
+          ],
+          "verification": "external-source-reviewed"
+        },
+        {
+          "name": "묘청의 서경 천도 운동",
+          "eras": [
+            "고려"
+          ],
+          "rulerOrSubject": "인종 · 묘청",
+          "keyword": "서경 천도 · 김부식 진압",
+          "sourceRefs": [],
+          "sourceUrls": [
+            "https://encykorea.aks.ac.kr/Article/E0018892",
+            "https://contents.history.go.kr/mobile/eh/view.do?code=eh_age_20&levelId=eh_n0290_0010"
+          ],
+          "verification": "external-source-reviewed"
+        },
+        {
+          "name": "김보당의 난",
+          "eras": [
+            "고려"
+          ],
+          "rulerOrSubject": "명종 때 · 김보당",
+          "keyword": "폐위된 의종 복위 시도",
+          "sourceRefs": [
+            {
+              "file": "media/textbook-notes.js",
+              "path": "window.HANQ_TEXTBOOK.goryeo.core.5.rows.2.0",
+              "exactRow": "김보당 · 조위총"
+            }
+          ],
+          "sourceUrls": [
+            "https://contents.history.go.kr/id/hm_050_0020"
+          ],
+          "verification": "external-source-reviewed",
+          "note": "사건 당시 왕 명종과 복위 대상 의종을 구별."
+        },
+        {
+          "name": "조위총의 난",
+          "eras": [
+            "고려"
+          ],
+          "rulerOrSubject": "명종 · 서경유수 조위총",
+          "keyword": "서경·북계 세력의 무신정권 저항",
+          "sourceRefs": [
+            {
+              "file": "media/textbook-notes.js",
+              "path": "window.HANQ_TEXTBOOK.goryeo.core.5.rows.2.0",
+              "exactRow": "김보당 · 조위총"
+            }
+          ],
+          "sourceUrls": [
+            "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_20&levelId=kc_i201310",
+            "https://contents.history.go.kr/id/hm_050_0020"
+          ],
+          "verification": "external-source-reviewed",
+          "note": "묘청의 서경 천도 운동과 구별."
+        },
+        {
+          "name": "이괄의 난",
+          "eras": [
+            "조선"
+          ],
+          "rulerOrSubject": "인조 · 이괄",
+          "keyword": "1624 · 인조반정의 논공행상 불만",
+          "sourceRefs": [
+            {
+              "file": "media/textbook-notes.js",
+              "path": "window.HANQ_TEXTBOOK.joseon-early.core.9.rows.0.0",
+              "exactRow": "인조 · 이괄의 난"
+            },
+            {
+              "file": "media/textbook-notes.js",
+              "path": "window.HANQ_TEXTBOOK.islands.core.2.rows.0.1",
+              "exactRow": "백제 웅진 · 이괄의 난 피란 · 우금치"
+            }
+          ],
+          "sourceUrls": [
+            "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_30&levelId=kc_i305000",
+            "https://encykorea.aks.ac.kr/Article/E0043666"
+          ],
+          "verification": "external-source-reviewed",
+          "note": "외부 근거 확인 전 적용 보류.",
+          "evidence": "국사편찬위원회 한국사연대기 이괄의난1624에서 반정 논공행상 불만·1624인조2년·서울점령·인조공주피란 확인."
+        },
+        {
+          "name": "홍경래의 난",
+          "eras": [
+            "조선"
+          ],
+          "rulerOrSubject": "순조 · 홍경래",
+          "keyword": "평안도 차별 · 정주성",
+          "sourceRefs": [
+            {
+              "file": "media/lecture-notes.js",
+              "path": "window.HANQ_LECTURE.joseon-late.groups.3.rows.3.0",
+              "exactRow": "순조 · 홍경래의 난"
+            },
+            {
+              "file": "media/lecture-notes.js",
+              "path": "window.HANQ_LECTURE.joseon-late.compare.4.rows.0.0",
+              "exactRow": "홍경래의 난"
+            },
+            {
+              "file": "media/textbook-notes.js",
+              "path": "window.HANQ_TEXTBOOK.joseon-late.core.2.rows.1.0",
+              "exactRow": "순조 · 홍경래의 난"
+            }
+          ],
+          "sourceUrls": [
+            "https://encykorea.aks.ac.kr/Article/E0063948"
+          ],
+          "verification": "external-source-reviewed"
+        },
+        {
+          "name": "임오군란",
+          "eras": [
+            "조선 개항기"
+          ],
+          "rulerOrSubject": "고종 때 · 구식 군인",
+          "keyword": "1882 · 차별·밀린 급료 · 제물포 조약",
+          "sourceRefs": [
+            {
+              "file": "media/lecture-notes-opening.js",
+              "path": "window.HANQ_LECTURE.opening.groups.4.rows.0.0",
+              "exactRow": "임오군란"
+            },
+            {
+              "file": "media/lecture-notes-opening.js",
+              "path": "window.HANQ_LECTURE.opening.compare.2.rows.0.0",
+              "exactRow": "임오군란 (1882)"
+            },
+            {
+              "file": "media/textbook-notes.js",
+              "path": "window.HANQ_TEXTBOOK.opening.core.3.rows.3.0",
+              "exactRow": "임오군란 · 제물포 조약"
+            }
+          ],
+          "sourceUrls": [
+            "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_40&levelId=kc_i403200",
+            "https://contents.history.go.kr/front/hm/view.do?levelId=hm_115_0030",
+            "https://encykorea.aks.ac.kr/Article/E0047565"
+          ],
+          "verification": "external-source-reviewed",
+          "note": "강의 정확 행 확인, 외부 근거 확인 전 적용 보류.",
+          "evidence": "국사편찬위원회 임오군란 연대기는1882고종19년, 구식군인의 상대적차별·급료체불 및불량급료를 설명. 사료로본한국사 제물포조약의 고종실록19권 원문과 해설은 사후배상·일본공사관경비병주둔허용 확인."
+        },
+        {
+          "name": "갑신정변",
+          "eras": [
+            "조선 개항기"
+          ],
+          "rulerOrSubject": "고종 때 · 김옥균 등 급진 개화파",
+          "keyword": "1884 · 우정총국 · 3일 천하",
+          "sourceRefs": [
+            {
+              "file": "media/lecture-notes-opening.js",
+              "path": "window.HANQ_LECTURE.opening.groups.4.rows.3.0",
+              "exactRow": "갑신정변 · 김옥균"
+            },
+            {
+              "file": "media/lecture-notes-opening.js",
+              "path": "window.HANQ_LECTURE.opening.compare.2.rows.1.0",
+              "exactRow": "갑신정변 (1884)"
+            },
+            {
+              "file": "media/textbook-notes.js",
+              "path": "window.HANQ_TEXTBOOK.opening.core.3.rows.5.0",
+              "exactRow": "갑신정변 · 김옥균 · 우정총국"
+            }
+          ],
+          "sourceUrls": [
+            "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_40&levelId=kc_i400500",
+            "https://contents.history.go.kr/mobile/nh/view.do?levelId=nh_038_0060_0040_0010_0030",
+            "https://digital.khs.go.kr/heri/heriDetail.do?ctptNo=1331102130000&ctptUid=13898859675567300831",
+            "https://contents.history.go.kr/front/tg/view.do?levelId=tg_004_1080",
+            "https://contents.history.go.kr/mobile/nh/view.do?levelId=nh_038_0060_0040_0010_0040"
+          ],
+          "verification": "external-source-reviewed",
+          "note": "강의 정확 행 확인, 외부 근거 확인 전 적용 보류.",
+          "evidence": "국사편찬위원회는1884고종21년 김옥균개화당의 우정국축하연계기 정변, 청군개입과3일실패 확인. 국가유산청 우정총국연혁도1884설치·갑신정변실패뒤폐쇄 확인. 한성조약사후체결은 국사편찬위원회신편한국사에서확인. 국사편찬위원회 톈진조약 용어해설은1885청·일간 갑신정변 사후처리조약, 한성조약은조선·일본임을확인."
+        }
+      ]
+    }
+  ],
+  "pairs": [
+    [
+      "이자겸의 난",
+      "묘청의 서경 천도 운동"
+    ],
+    [
+      "김보당의 난",
+      "조위총의 난"
+    ],
+    [
+      "이괄의 난",
+      "홍경래의 난"
+    ],
+    [
+      "임오군란",
+      "갑신정변"
+    ]
+  ],
+  "cautions": [
+    "발해 태학을 발해 자체 기관으로 만들지 않음",
+    "성균관·향교 공통 시대를 한 시대에만 귀속하지 않음",
+    "과전법 시작은 고려 말",
+    "전시과와 직전법 모두 현직이라는 단서만으로 정답을 구별하지 않음",
+    "sourceUrls는 UI용이 아닌 검수용; pending 항목은 적용하지 않음"
+  ],
+  "reviewCounts": {
+    "total": 28,
+    "externalReviewed": 23,
+    "partialEraOriginPending": 2,
+    "localOnlyExternalPending": 3
+  }
+}

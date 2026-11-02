@@ -1,0 +1,33 @@
+{
+  "generated": "2026-10-28",
+  "generator": "built-in imagegen",
+  "provenance": "AI-generated fan depiction; not official or officially licensed artwork.",
+  "promptFile": "docs/versions/v0.1.0/rainbow-art-prompts.json",
+  "file": "media/characters/collection-atlas-v1.webp",
+  "source": "../generated_images/exec-a89eb2da-c587-4cda-9c68-cd6d8b4403d8.png",
+  "width": 1254,
+  "height": 1254,
+  "grid": [
+    3,
+    3
+  ],
+  "cellSize": [
+    418,
+    418
+  ],
+  "rowMajor": [
+    "digitama",
+    "punimon",
+    "tsunomon",
+    "gabumon",
+    "garurumon",
+    "weregarurumon",
+    "metalgarurumon",
+    "poyomon",
+    "seraphimon"
+  ],
+  "alpha": true,
+  "format": "WebP quality90 alpha100, static portraits",
+  "bytes": 541048,
+  "sha256": "04b1d5dd49bbc4a956a521a7ae5c512efbb634ca24aac9dc5f6b46b483ef6591"
+}

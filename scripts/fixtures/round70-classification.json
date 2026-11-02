@@ -1,0 +1,508 @@
+{
+  "schema": 1,
+  "round": 70,
+  "basis": "원본 자료와 공식 정답의 핵심 학습 대상을 기준으로 한 수동 분류. 다른 선지의 시대를 섞지 않는다.",
+  "sourcePDFSHA256": "4e9195f278bfdb5223cef43d60ff3bb1d55f09e4db0af803476392b08acc978c",
+  "items": [
+    {
+      "number": 1,
+      "questionId": "exam-70-01",
+      "version": "fab89603d39bca56",
+      "era": "ancient",
+      "part": "사회",
+      "topic": "청동기 고인돌",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 2,
+      "questionId": "exam-70-02",
+      "version": "b8cd3461a0fd63b7",
+      "era": "ancient",
+      "part": "사회",
+      "topic": "동예 무천",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 3,
+      "questionId": "exam-70-03",
+      "version": "c434f0be5a6561ff",
+      "era": "ancient",
+      "part": "대외관계",
+      "topic": "백제 한성 함락과 나제 동맹",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 4,
+      "questionId": "exam-70-04",
+      "version": "a833a0a7389b7509",
+      "era": "ancient",
+      "part": "문화",
+      "topic": "소수림왕 불교 수용",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 5,
+      "questionId": "exam-70-05",
+      "version": "415cead94076d430",
+      "era": "ancient",
+      "part": "문화",
+      "topic": "도교와 연개소문",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 6,
+      "questionId": "exam-70-06",
+      "version": "20a6dedf9db13d56",
+      "era": "ancient",
+      "part": "문화",
+      "topic": "원효 불교 대중화",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 7,
+      "questionId": "exam-70-07",
+      "version": "c95b93ca2137c0e9",
+      "era": "ancient",
+      "part": "정치",
+      "topic": "발해 지방 행정",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 8,
+      "questionId": "exam-70-08",
+      "version": "b2f5de7b951153f1",
+      "era": "ancient",
+      "part": "문화",
+      "topic": "최치원 격황소서",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 9,
+      "questionId": "exam-70-09",
+      "version": "c0b446d7eeeb9f65",
+      "era": "ancient",
+      "part": "정치",
+      "topic": "원성왕 즉위",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 10,
+      "questionId": "exam-70-10",
+      "version": "081b0eca76819869",
+      "era": "goryeo",
+      "part": "정치",
+      "topic": "후삼국 통일과 사심관",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 11,
+      "questionId": "exam-70-11",
+      "version": "792e5646ca1e3a4d",
+      "era": "goryeo",
+      "part": "경제",
+      "topic": "고려 경시서",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 12,
+      "questionId": "exam-70-12",
+      "version": "6d49038890d29bd1",
+      "era": "goryeo",
+      "part": "문화",
+      "topic": "지눌 정혜쌍수",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 13,
+      "questionId": "exam-70-13",
+      "version": "f8f8c9e37dbaea4d",
+      "era": "goryeo",
+      "part": "군사",
+      "topic": "숙종 별무반",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 14,
+      "questionId": "exam-70-14",
+      "version": "a4ac599d439a0447",
+      "era": "goryeo",
+      "part": "정치",
+      "topic": "무신정변과 조위총",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 15,
+      "questionId": "exam-70-15",
+      "version": "590ea4457cc399e8",
+      "era": "goryeo",
+      "part": "군사",
+      "topic": "몽골 침입 김윤후",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 16,
+      "questionId": "exam-70-16",
+      "version": "7b6a55412268bb57",
+      "era": "goryeo",
+      "part": "사회",
+      "topic": "원 간섭기 몽골풍",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 17,
+      "questionId": "exam-70-17",
+      "version": "b2e5c8f42e3f0c19",
+      "era": "joseon",
+      "part": "정치",
+      "topic": "태종 사간원",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 18,
+      "questionId": "exam-70-18",
+      "version": "8e36dfd00ee859a0",
+      "era": "joseon",
+      "part": "대외관계",
+      "topic": "김종서 6진",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 19,
+      "questionId": "exam-70-19",
+      "version": "1b9af62145bb8c6c",
+      "era": "joseon",
+      "part": "문화",
+      "topic": "성종 국조오례의",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 20,
+      "questionId": "exam-70-20",
+      "version": "846d7df16204772d",
+      "era": "joseon",
+      "part": "정치",
+      "topic": "중종 조광조 개혁",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 21,
+      "questionId": "exam-70-21",
+      "version": "81dc2f6c72dee89e",
+      "era": "joseon",
+      "part": "군사",
+      "topic": "임진왜란 훈련도감",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 22,
+      "questionId": "exam-70-22",
+      "version": "097f0d4a7395f53e",
+      "era": "ancient",
+      "part": "문화",
+      "topic": "불국사 무구정광대다라니경",
+      "note": "여러 시대 사찰을 비교하는 부정형 문항이다. 정답 핵심인 무구정광대다라니경의 실제 발견지 불국사 삼층석탑을 기준으로 고대 문화로 분류한다.",
+      "verified": true
+    },
+    {
+      "number": 23,
+      "questionId": "exam-70-23",
+      "version": "166c18d47810a7c1",
+      "era": "joseon",
+      "part": "경제",
+      "topic": "대동법 선혜청 공인",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 24,
+      "questionId": "exam-70-24",
+      "version": "f4d183d0ad44a4f9",
+      "era": "joseon",
+      "part": "문화",
+      "topic": "정조 수원 화성",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 25,
+      "questionId": "exam-70-25",
+      "version": "f201702c1ab04403",
+      "era": "goryeo",
+      "part": "경제",
+      "topic": "고려 벽란도 교역",
+      "note": "조선 후기 경제 상황에 해당하지 않는 고려 벽란도의 송 상인을 고르는 부정형 문항이다. 정답의 시대를 기준으로 고려 경제로 분류한다.",
+      "verified": true
+    },
+    {
+      "number": 26,
+      "questionId": "exam-70-26",
+      "version": "4d073192d2b759ae",
+      "era": "joseon",
+      "part": "문화",
+      "topic": "박지원 양반전",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 27,
+      "questionId": "exam-70-27",
+      "version": "031079a286fe0fc6",
+      "era": "joseon",
+      "part": "문화",
+      "topic": "김홍도 씨름",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 28,
+      "questionId": "exam-70-28",
+      "version": "04698999a1d89ca0",
+      "era": "opening",
+      "part": "대외관계",
+      "topic": "오페르트 도굴 시도",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 29,
+      "questionId": "exam-70-29",
+      "version": "e127ba4a9b451e4d",
+      "era": "opening",
+      "part": "대외관계",
+      "topic": "조미 수호 통상 조약",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 30,
+      "questionId": "exam-70-30",
+      "version": "ce9c9b0321a35366",
+      "era": "opening",
+      "part": "정치",
+      "topic": "갑신정변 한성 조약",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 31,
+      "questionId": "exam-70-31",
+      "version": "aa407b847c115dfe",
+      "era": "modern",
+      "part": "정치",
+      "topic": "덕수궁 제1차 미소 공동 위원회",
+      "note": "궁궐 자체는 조선·대한제국 시대에 걸치지만 정답은 1946년 제1차 미소 공동 위원회 개최이므로 대한민국 정치로 분류한다.",
+      "verified": true
+    },
+    {
+      "number": 32,
+      "questionId": "exam-70-32",
+      "version": "e3f4dfe2aaecb167",
+      "era": "opening",
+      "part": "독립운동",
+      "topic": "정미의병 서울 진공 작전",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 33,
+      "questionId": "exam-70-33",
+      "version": "084fa069bd8a71fc",
+      "era": "opening",
+      "part": "문화",
+      "topic": "근대 교육 한성 사범 학교",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 34,
+      "questionId": "exam-70-34",
+      "version": "0918aed71d02f928",
+      "era": "colonial",
+      "part": "독립운동",
+      "topic": "서간도 경학사",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 35,
+      "questionId": "exam-70-35",
+      "version": "77cba2582448a8da",
+      "era": "colonial",
+      "part": "독립운동",
+      "topic": "3·1 운동 문화 통치",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 36,
+      "questionId": "exam-70-36",
+      "version": "3202a36d66ce4e8d",
+      "era": "colonial",
+      "part": "통치정책",
+      "topic": "무단 통치 조선 태형령",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 37,
+      "questionId": "exam-70-37",
+      "version": "26c5efa4278d02ce",
+      "era": "colonial",
+      "part": "독립운동",
+      "topic": "대종교 중광단",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 38,
+      "questionId": "exam-70-38",
+      "version": "d53ce9d676f99604",
+      "era": "colonial",
+      "part": "독립운동",
+      "topic": "간도 참변 자유시 참변 미쓰야 협정",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 39,
+      "questionId": "exam-70-39",
+      "version": "5bca380cc280a08d",
+      "era": "colonial",
+      "part": "문화",
+      "topic": "나운규 아리랑과 카프",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 40,
+      "questionId": "exam-70-40",
+      "version": "59f695c79a653f76",
+      "era": "colonial",
+      "part": "통치정책",
+      "topic": "민족 말살 통치",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 41,
+      "questionId": "exam-70-41",
+      "version": "730e81e727aefb0a",
+      "era": "colonial",
+      "part": "독립운동",
+      "topic": "조소앙 삼균주의",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 42,
+      "questionId": "exam-70-42",
+      "version": "f2528e8f93d852d4",
+      "era": "modern",
+      "part": "정치",
+      "topic": "김구 김규식 남북 협상",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 43,
+      "questionId": "exam-70-43",
+      "version": "7e2219f5c65127e4",
+      "era": "modern",
+      "part": "통일",
+      "topic": "노태우 정부 7·7 선언",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 44,
+      "questionId": "exam-70-44",
+      "version": "5379774ee33522fa",
+      "era": "modern",
+      "part": "정치",
+      "topic": "이승만 정부 조봉암 처형",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 45,
+      "questionId": "exam-70-45",
+      "version": "53a9d4e3117e268f",
+      "era": "modern",
+      "part": "정치",
+      "topic": "유신 헌법",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 46,
+      "questionId": "exam-70-46",
+      "version": "42956e540d2816f8",
+      "era": "modern",
+      "part": "경제",
+      "topic": "김영삼 정부 OECD 가입",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 47,
+      "questionId": "exam-70-47",
+      "version": "69988dc37d4d7688",
+      "era": "modern",
+      "part": "사회",
+      "topic": "노무현 정부 과거사 정리",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 48,
+      "questionId": "exam-70-48",
+      "version": "26eb43b5b3bbd73a",
+      "era": "joseon",
+      "part": "사회",
+      "topic": "사창제와 구휼 제도",
+      "note": "여러 시대 구휼 제도를 비교하는 부정형 문항이다. 정답은 조선 사창제와 고려 구제도감의 잘못된 연결이며 일차 학습 대상 사창제를 기준으로 조선 사회로 분류한다.",
+      "verified": true
+    },
+    {
+      "number": 49,
+      "questionId": "exam-70-49",
+      "version": "27910520151feb87",
+      "era": "modern",
+      "part": "사회",
+      "topic": "김대중 정부 국가 인권 위원회",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 50,
+      "questionId": "exam-70-50",
+      "version": "1b2860359a62c1fc",
+      "era": "unknown",
+      "part": "지역사",
+      "topic": "대구 국채 보상 운동과 광주 학생 항일 운동",
+      "note": "정답 ㄱ은 개항기 국채 보상 운동, ㄷ은 일제강점기 광주 학생 항일 운동이다. 두 시대가 동등한 정답 핵심이므로 단일 시대 분류는 확정하지 않는다.",
+      "verified": false
+    }
+  ]
+}

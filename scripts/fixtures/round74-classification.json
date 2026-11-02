@@ -1,0 +1,508 @@
+{
+  "schema": 1,
+  "round": 74,
+  "basis": "원본 문제·공식 정답의 주된 학습 대상을 기준으로 수동 분류. 부정형은 질문 대상 시대, 복합 시대는 정답 핵심을 기준으로 하며 동등한 복합 대상은 미확정으로 남긴다.",
+  "sourcePDFSHA256": "7d7322d680119d7b7b89c7465edc1dd8d0f06e8180594aff69b7d34502a44c79",
+  "items": [
+    {
+      "number": 1,
+      "questionId": "exam-74-01",
+      "version": "01cf2ec95be1e205",
+      "era": "ancient",
+      "part": "사회",
+      "topic": "신석기 생활",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 2,
+      "questionId": "exam-74-02",
+      "version": "fca7b53f71657d4d",
+      "era": "ancient",
+      "part": "정치",
+      "topic": "고조선 관직",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 3,
+      "questionId": "exam-74-03",
+      "version": "872e2f75871d1b2b",
+      "era": "ancient",
+      "part": "문화",
+      "topic": "고구려 경당",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 4,
+      "questionId": "exam-74-04",
+      "version": "b5b93b27f6fe530c",
+      "era": "ancient",
+      "part": "정치",
+      "topic": "진흥왕 대가야 정복",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 5,
+      "questionId": "exam-74-05",
+      "version": "8742de514a38ba33",
+      "era": "ancient",
+      "part": "사회",
+      "topic": "백제 지배층",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 6,
+      "questionId": "exam-74-06",
+      "version": "15764a653f43d177",
+      "era": "ancient",
+      "part": "정치",
+      "topic": "문무왕 외사정",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 7,
+      "questionId": "exam-74-07",
+      "version": "d3a86f1cd037257c",
+      "era": "ancient",
+      "part": "정치",
+      "topic": "발해 문적원",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 8,
+      "questionId": "exam-74-08",
+      "version": "7436b8a10c11ff4a",
+      "era": "ancient",
+      "part": "문화",
+      "topic": "선종 참선",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 9,
+      "questionId": "exam-74-09",
+      "version": "d759fc5a6ece237e",
+      "era": "ancient",
+      "part": "대외관계",
+      "topic": "장보고 적산 법화원",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 10,
+      "questionId": "exam-74-10",
+      "version": "6ffec7efeb360198",
+      "era": "goryeo",
+      "part": "정치",
+      "topic": "왕건 후삼국 통일",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 11,
+      "questionId": "exam-74-11",
+      "version": "08a4a920a8ed5b6b",
+      "era": "goryeo",
+      "part": "정치",
+      "topic": "광종 왕권 강화",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 12,
+      "questionId": "exam-74-12",
+      "version": "55dfcc6e000637c4",
+      "era": "goryeo",
+      "part": "대외관계",
+      "topic": "거란 침입과 서희",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 13,
+      "questionId": "exam-74-13",
+      "version": "77f9849f728bc6a0",
+      "era": "goryeo",
+      "part": "문화",
+      "topic": "고려 문화유산",
+      "note": "부정형 문항은 틀린 선지의 시대가 아니라 자료의 질문 대상을 기준으로 분류한다.",
+      "verified": true
+    },
+    {
+      "number": 14,
+      "questionId": "exam-74-14",
+      "version": "90b138417615112f",
+      "era": "goryeo",
+      "part": "정치",
+      "topic": "무신 정권 연대",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 15,
+      "questionId": "exam-74-15",
+      "version": "fab0ca94076ceaf9",
+      "era": "goryeo",
+      "part": "사회",
+      "topic": "예종 혜민국",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 16,
+      "questionId": "exam-74-16",
+      "version": "7612c54b0fde052f",
+      "era": "goryeo",
+      "part": "문화",
+      "topic": "지눌 돈오점수",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 17,
+      "questionId": "exam-74-17",
+      "version": "e8218b0a55562908",
+      "era": "goryeo",
+      "part": "경제",
+      "topic": "원 간섭기 농상집요",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 18,
+      "questionId": "exam-74-18",
+      "version": "fa8e20a4cfa95746",
+      "era": "goryeo",
+      "part": "정치",
+      "topic": "고려 중앙 관제",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 19,
+      "questionId": "exam-74-19",
+      "version": "c74e1c17c5496fb9",
+      "era": "joseon",
+      "part": "문화",
+      "topic": "종묘",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 20,
+      "questionId": "exam-74-20",
+      "version": "d2b5169d7b317415",
+      "era": "joseon",
+      "part": "정치",
+      "topic": "세조 간경도감",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 21,
+      "questionId": "exam-74-21",
+      "version": "1242534b416e5f92",
+      "era": "joseon",
+      "part": "대외관계",
+      "topic": "정유재란 이후 회답겸쇄환사",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 22,
+      "questionId": "exam-74-22",
+      "version": "9719533f40c64772",
+      "era": "joseon",
+      "part": "정치",
+      "topic": "예송 환국 연대",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 23,
+      "questionId": "exam-74-23",
+      "version": "9aa3414b91b5edda",
+      "era": "joseon",
+      "part": "문화",
+      "topic": "이황 예안 향약",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 24,
+      "questionId": "exam-74-24",
+      "version": "3717bad35ca9b66a",
+      "era": "joseon",
+      "part": "정치",
+      "topic": "정조 초계문신제",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 25,
+      "questionId": "exam-74-25",
+      "version": "9fe96bc2e7a9f726",
+      "era": "joseon",
+      "part": "사회",
+      "topic": "신유박해",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 26,
+      "questionId": "exam-74-26",
+      "version": "e076b4b84893ce73",
+      "era": "joseon",
+      "part": "문화",
+      "topic": "조선 후기 서민 문화",
+      "note": "부정형 문항은 틀린 선지의 시대가 아니라 자료의 질문 대상을 기준으로 분류한다.",
+      "verified": true
+    },
+    {
+      "number": 27,
+      "questionId": "exam-74-27",
+      "version": "1c07e68a9b6ecf7f",
+      "era": "joseon",
+      "part": "경제",
+      "topic": "조선 후기 초량 왜관",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 28,
+      "questionId": "exam-74-28",
+      "version": "6cc4bb6d2070eb44",
+      "era": "opening",
+      "part": "대외관계",
+      "topic": "조미 수호 통상 조약",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 29,
+      "questionId": "exam-74-29",
+      "version": "69c42cefb715aeb7",
+      "era": "opening",
+      "part": "정치",
+      "topic": "개화 인물",
+      "note": "부정형 문항은 틀린 선지의 시대가 아니라 자료의 질문 대상을 기준으로 분류한다.",
+      "verified": true
+    },
+    {
+      "number": 30,
+      "questionId": "exam-74-30",
+      "version": "958f28767d4d8f8c",
+      "era": "opening",
+      "part": "정치",
+      "topic": "광무개혁 지계",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 31,
+      "questionId": "exam-74-31",
+      "version": "06508ef4c5f4be60",
+      "era": "opening",
+      "part": "정치",
+      "topic": "동학 농민 운동",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 32,
+      "questionId": "exam-74-32",
+      "version": "d910c22859ce41d2",
+      "era": "opening",
+      "part": "항일운동",
+      "topic": "정미의병",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 33,
+      "questionId": "exam-74-33",
+      "version": "61db5583d38f7e6a",
+      "era": "colonial",
+      "part": "항일운동",
+      "topic": "하와이 대조선 국민군단",
+      "note": "자료는 1903년 이민이며 정답의 대조선 국민군단(1914년) 활동을 기준으로 일제 강점기에 분류한다.",
+      "verified": true
+    },
+    {
+      "number": 34,
+      "questionId": "exam-74-34",
+      "version": "26146ef4c56877d5",
+      "era": "opening",
+      "part": "문화",
+      "topic": "대한매일신보",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 35,
+      "questionId": "exam-74-35",
+      "version": "fb82d16c9d4ee27a",
+      "era": "opening",
+      "part": "대외관계",
+      "topic": "용암포 사건",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 36,
+      "questionId": "exam-74-36",
+      "version": "b3f59df1203d0dba",
+      "era": "colonial",
+      "part": "항일운동",
+      "topic": "3·1 운동",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 37,
+      "questionId": "exam-74-37",
+      "version": "6da8bfe37ff3e542",
+      "era": "colonial",
+      "part": "항일운동",
+      "topic": "대한민국 임시 정부",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 38,
+      "questionId": "exam-74-38",
+      "version": "68949992e16c61aa",
+      "era": "colonial",
+      "part": "항일운동",
+      "topic": "의열단",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 39,
+      "questionId": "exam-74-39",
+      "version": "f6e8bcff80643e12",
+      "era": "colonial",
+      "part": "문화",
+      "topic": "백남운 사회경제사학",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 40,
+      "questionId": "exam-74-40",
+      "version": "f88aea15eaf01236",
+      "era": "colonial",
+      "part": "사회",
+      "topic": "식민지 생활",
+      "note": "부정형 문항은 틀린 선지의 시대가 아니라 자료의 질문 대상을 기준으로 분류한다.",
+      "verified": true
+    },
+    {
+      "number": 41,
+      "questionId": "exam-74-41",
+      "version": "cff5209004382bf2",
+      "era": "colonial",
+      "part": "사회",
+      "topic": "국외 동포 생활",
+      "note": "부정형 문항은 틀린 선지의 시대가 아니라 자료의 질문 대상을 기준으로 분류한다.",
+      "verified": true
+    },
+    {
+      "number": 42,
+      "questionId": "exam-74-42",
+      "version": "9268237aafe144f3",
+      "era": "colonial",
+      "part": "항일운동",
+      "topic": "한국 독립군",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 43,
+      "questionId": "exam-74-43",
+      "version": "d5cde5e0e079ca0a",
+      "era": "colonial",
+      "part": "식민통치",
+      "topic": "민족 말살 통치",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 44,
+      "questionId": "exam-74-44",
+      "version": "bce7154de7cb3384",
+      "era": "modern",
+      "part": "정치",
+      "topic": "제주 4·3 사건",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 45,
+      "questionId": "exam-74-45",
+      "version": "c7af9f139b67ed05",
+      "era": "modern",
+      "part": "정치",
+      "topic": "6·25 전쟁과 발췌 개헌",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 46,
+      "questionId": "exam-74-46",
+      "version": "85536e43b235a13f",
+      "era": "modern",
+      "part": "민주화",
+      "topic": "4·19 혁명",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 47,
+      "questionId": "exam-74-47",
+      "version": "dc02c04e979ab546",
+      "era": "modern",
+      "part": "민주화",
+      "topic": "유신 체제와 YH 사건",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 48,
+      "questionId": "exam-74-48",
+      "version": "53badb0c5a8a201e",
+      "era": "modern",
+      "part": "경제",
+      "topic": "김대중 정부 노사정 위원회",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 49,
+      "questionId": "exam-74-49",
+      "version": "e0da987f5bbf1795",
+      "era": "modern",
+      "part": "통일",
+      "topic": "노무현 정부 개성 공단",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 50,
+      "questionId": "exam-74-50",
+      "version": "613d21b41f52ac3e",
+      "era": "opening",
+      "part": "정치",
+      "topic": "갑오개혁 관리 선발",
+      "note": "신라부터 개항기까지의 복합 문항이다. 정답 핵심은 대한 제국 이전 갑오개혁의 관리 선발 제도이므로 개항기로 분류한다. 부정형 문항은 틀린 선지의 시대가 아니라 자료의 질문 대상을 기준으로 분류한다.",
+      "verified": true
+    }
+  ]
+}

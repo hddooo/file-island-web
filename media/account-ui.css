@@ -1,0 +1,270 @@
+/* 계정 화면(#account)과 오답노트의 서버 안내 — media/account-ui.js. 좁은 화면(320px)부터, 누르는 곳 44px 이상 */
+.ac-panel{display:grid;gap:14px;min-width:0}
+.ac-sec{min-width:0;padding:14px 14px 16px;border:1px solid var(--line);border-radius:16px;background:#fff;overflow-wrap:anywhere}
+.ac-sec h2{margin:0 0 10px;font-size:18px;letter-spacing:-.02em}.ac-sec h3{margin:16px 0 8px;font-size:15px}
+.ac-conn{margin:0;font-size:13px;font-weight:800;color:var(--green)}.ac-conn.is-off{color:inherit}
+.ac-switch,.ac-row{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.ac-switch .tool-btn[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:#fff}
+.ac-form{display:grid;gap:6px;margin:0 0 10px;min-width:0}
+.ac-form label{font-size:14px;font-weight:800}
+.ac-form input{width:100%;min-height:44px;padding:8px 12px;border:1px solid #c9ced6;border-radius:12px;background:#fff;font-size:16px}
+.ac-form input:focus-visible,.ac-check input:focus-visible{outline:3px solid #294d8766;outline-offset:2px}
+.ac-form .check-one,.ac-form .tool-btn{margin-top:6px}
+.ac-inline{grid-template-columns:1fr}
+.ac-err{min-height:1.2em;margin:4px 0 0;font-size:14px;font-weight:700;color:#9b2c25;word-break:keep-all}
+.ac-dl{display:grid;gap:4px;margin:0 0 12px}.ac-dl div{display:flex;flex-wrap:wrap;gap:4px 10px}.ac-dl dt{min-width:3.5em;font-weight:900;color:var(--muted)}.ac-dl dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.ac-more{margin:8px 0 12px}.ac-more>summary{display:flex;align-items:center;min-height:44px;font-weight:900;cursor:pointer}
+.ac-status{margin:0 0 8px;font-size:15px}.ac-ok{color:var(--green)}
+.ac-facts{margin:0 0 12px;padding-left:20px;font-size:14px;line-height:1.65}
+.ac-test{margin:8px 0;padding:12px;border:2px dashed #b7791f;border-radius:12px;background:#fff8e8}.ac-test p{margin:0 0 8px;font-size:14px}
+.ac-list{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14px}.ac-list li span{display:block;color:var(--muted);font-size:13px}
+.ac-list .tool-btn{min-height:44px;text-align:left;white-space:normal}
+.ac-hist small{color:var(--muted)}.ac-when{color:var(--muted);font-variant-numeric:tabular-nums}
+.ac-check{display:flex;align-items:flex-start;gap:10px;min-height:44px;margin:6px 0 10px;font-size:15px;cursor:pointer}.ac-check input{flex:none;width:22px;height:22px;margin-top:2px}
+.ac-pick{margin:12px 0 8px}
+.ac-pos{margin:8px 0;font-size:14px;font-weight:800;color:var(--muted)}
+.ac-q .qtext{font-size:16px;line-height:1.65;margin:0 0 8px}.ac-q .mock-image{max-width:100%;height:auto}
+.ac-banner{margin:0 0 12px;padding:12px 14px;border:1px solid #c9d6ea;border-radius:14px;background:#f3f7fd}.ac-banner p{margin:0 0 8px;font-size:14px;line-height:1.6}
+.home-account{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 12px;width:100%;min-height:48px;margin:0 0 14px;padding:10px 14px;border:1px solid var(--line);border-radius:14px;background:#fff;color:var(--ink);text-align:left;font-size:15px;font-weight:850}
+.home-account span{font-size:13px;font-weight:700;color:var(--muted)}
+.home-account:focus-visible,.ac-banner .tool-btn:focus-visible{outline:3px solid #294d8766;outline-offset:2px}
+.ac-panel .tool-btn,.ac-panel .check-one,.ac-banner .tool-btn{min-height:44px}
+@media(max-width:400px){.ac-sec{padding:12px}.ac-row>button{flex:1 1 100%}}
+
+/* Shared account/study motion: decorative only, no delayed interaction. */
+.ac-sec{animation:ac-enter .22s ease-out both}.ac-q{animation:ac-enter .18s ease-out both}
+.ac-countdown{text-align:center;padding:40px 16px}.ac-countdown .result-score{display:block;margin:24px 0;font-size:72px;line-height:1;font-variant-numeric:tabular-nums;animation:ac-count .7s ease-out both}
+.ac-pos,.rc-time,.result-score{font-variant-numeric:tabular-nums}.ac-review-guide{margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}.ac-summary{min-height:44px}
+@keyframes ac-enter{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+@keyframes ac-count{from{opacity:.3;transform:scale(.88)}to{opacity:1;transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.ac-sec,.ac-q,.ac-countdown .result-score{animation:none!important;transition:none!important}}
+
+.ac-premium-modal{width:min(92vw,540px);max-height:85vh;overflow:auto;border:1px solid var(--line);border-radius:20px;padding:20px;color:var(--ink);box-sizing:border-box}.ac-premium-modal::backdrop{background:#18212f66}.ac-premium-modal .ac-sec{margin:12px 0 0}
+
+.header-menu{display:flex;align-items:center;gap:8px}.header-menu .tool-btn{min-height:44px;white-space:nowrap;padding:8px 10px;font-size:13px}.topline{gap:12px;align-items:center}.brand span:last-child{white-space:nowrap}@media(max-width:360px){.brand{gap:6px;font-size:13px}.header-menu .tool-btn{font-size:12px;padding:8px}.topline{gap:6px}}
+
+.review-panel{box-sizing:border-box;width:100%;max-width:960px;margin-inline:auto;min-width:0}
+.review-controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;position:sticky;top:calc(8px + env(safe-area-inset-top,0px));z-index:8;background:#fffdf7;padding:10px;border-radius:12px}.review-controls button,.review-controls select{min-height:44px;min-width:44px}.review-controls>*{flex:0 1 auto;max-width:100%}.review-status{font-weight:700;min-height:30px}.review-sheet-scroll{max-width:100%;overflow-x:auto;overflow-y:visible;margin:16px 0;border:1px solid #d8ccb7}.review-sheet{position:relative;container-type:inline-size;width:100%;min-width:0;background:#fff}.review-zoomed .review-sheet{width:200%}.review-sheet-scroll:focus-visible{outline:3px solid #294d8766;outline-offset:2px}.review-sheet input{scroll-margin:calc(env(safe-area-inset-top,0px) + 140px) calc(env(safe-area-inset-right,0px) + 16px) calc(env(safe-area-inset-bottom,0px) + 16px) calc(env(safe-area-inset-left,0px) + 16px)}.review-sheet img{display:block;width:100%;height:100%}.review-sheet input{position:absolute;box-sizing:border-box;margin:0;padding:0 2px;background:#fff;border:1px solid #24599c;text-align:center;color:#172a45}.review-current{background:#fff1b0!important;outline:2px solid #24599c}.review-page-no{position:absolute;top:8px;right:8px;background:#fff}.review-cover{position:absolute;z-index:3;background:#eee;border:1px dashed #999;font-size:12px}.review-keyword-card input{display:block;width:100%;min-height:44px;font-size:18px;margin:8px 0}@media(prefers-reduced-motion:reduce){.review-sheet-scroll{scroll-behavior:auto}}
+
+/* 일제강점기 복습 카드(review-player.js mountCards): PC 760px 가운데, 모바일은 고정 높이 없이 자연스럽게 세로로 늘어남. 버튼 44px */
+.memory-review{box-sizing:border-box;width:100%;max-width:760px;margin-inline:auto;min-width:0}.memory-review h2{margin:0 0 12px;font-size:18px}
+.memory-card{box-sizing:border-box;padding:clamp(18px,4vw,32px);border:1px solid #d8ccb7;border-radius:20px;background:#fffdf7;overflow-wrap:anywhere;word-break:keep-all}
+.memory-head{display:grid;gap:4px;margin:0 0 18px;padding-bottom:14px;border-bottom:3px solid #24599c}
+.memory-count{margin:0;font-size:15px;font-weight:800;color:var(--muted);font-variant-numeric:tabular-nums}
+.memory-review .memory-era{margin:0;font-size:clamp(32px,7vw,46px);line-height:1.15;letter-spacing:-.03em;color:#172a45}
+.memory-topic{margin:0;font-size:clamp(24px,5vw,30px);font-weight:900;line-height:1.3}.memory-sub{margin:0;font-size:clamp(17px,3.6vw,20px);font-weight:700;color:var(--muted)}.memory-sub[hidden]{display:none}
+.memory-points{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.memory-points li{padding:12px 16px;border-left:6px solid #d8ccb7;border-radius:12px;background:#fff;font-size:clamp(22px,4.6vw,28px);font-weight:800;line-height:1.4}
+.memory-points li.is-current{border-left-color:#24599c;background:#fff1b0}
+.memory-controls{display:flex;gap:8px;margin-top:16px}.memory-controls .tool-btn{flex:1 1 0;min-width:44px;min-height:44px;font-size:16px;white-space:normal}.memory-controls [aria-disabled="true"]{opacity:.45;cursor:default}
+.memory-controls .tool-btn:focus-visible{outline:3px solid #294d8766;outline-offset:2px}
+@media(prefers-reduced-motion:no-preference){.memory-points li{transition:background-color .25s ease,border-color .25s ease}}
+
+/* 마이페이지(account-ui.js profileHtml + characters.js mount): 캐릭터 중심 히어로 → 출석 · 단추 → 닫힌 계정 설정 → 로그아웃.
+   #acCharacter는 display:contents라 그 안의 .ac-pet(그림·말풍선)과 .ac-growth(점수·진화)가 히어로의 줄로 바로 놓인다 */
+.ac-sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.ac-sec.ac-me{padding:0;overflow:hidden}
+.ac-hero{display:flex;flex-direction:column;align-items:center;gap:6px;padding:18px 16px 22px;text-align:center;background:linear-gradient(160deg,#f3e7d0 0%,#f8efdf 58%,#eddfc4 100%);border-bottom:1px solid #e3d5b8}
+.ac-character{display:contents}
+.ac-pet{order:1;position:relative;display:grid;justify-items:center;width:100%;max-width:420px;padding-top:48px}
+.ac-pet:after{content:"";width:92px;height:12px;margin-top:-4px;border-radius:50%;background:#6e552b1f}
+.ac-pet .hanq-mascot,.ac-pet .hanq-growth-portrait{--mascot-size:112px}.ac-pet img.hanq-growth-portrait{display:block;width:var(--mascot-size);height:var(--mascot-size);object-fit:contain}
+.ac-bubble{position:static;grid-row:2;display:block;box-sizing:border-box;width:100%;min-width:0;max-width:100%;padding:3px 8px;border:0!important;border-radius:0;background:transparent!important;background-image:none!important;color:#fff!important;font-size:.875rem;font-weight:800;line-height:1.6;white-space:normal;word-break:normal;overflow-wrap:anywhere;text-shadow:0 1px 3px #000,0 0 6px #000;box-shadow:none!important;transform:none;animation:none}
+.ac-bubble:after{display:none;content:none}
+.ac-bubble[hidden]{display:none}
+@keyframes ac-bubble{from{opacity:0;transform:translate(-50%,4px) scale(.96)}to{opacity:1;transform:translateX(-50%)}}
+.ac-sec .ac-hero-name{order:2;max-width:100%;margin:8px 0 0;font-family:"AppleMyungjo","Nanum Myeongjo",serif;font-size:24px;line-height:1.25;letter-spacing:-.04em;color:#242b31;overflow-wrap:anywhere}
+.ac-hero-tier{order:3;margin:0;padding:2px 10px;border:1px solid #d9c8a6;border-radius:99px;background:#fffaf0;color:#726044;font-size:12px;font-weight:900}.ac-hero-tier.is-premium{border-color:var(--gold);background:var(--gold);color:#2b1d05}
+.ac-hero-wait{order:3;margin:0;font-size:14px;color:#725d3a}
+.ac-growth{order:4;display:grid;gap:7px;width:100%;max-width:300px;margin-top:8px}
+.ac-growth-stage{margin:0;font-size:14px;font-weight:750;color:#5d5c54}.ac-growth-stage b{color:var(--ink);font-weight:900}.ac-growth-pts{font-variant-numeric:tabular-nums}
+.ac-progress{position:relative;height:24px;min-height:24px;overflow:hidden;border-radius:99px;background:#e4d6b9}.ac-progress>.ac-progress-fill{display:block;height:100%;border-radius:inherit;background:var(--gold,#e5a337);transition:width .4s ease-out}
+/* 막대 안 XP 글자: 채운 곳(금색)·빈 곳(베이지) 모두 어두운 글자 + 밝은 테두리로 대비 유지 */
+.ac-progress>.ac-progress-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:0 8px;color:#2b1d05;font-size:13px;font-weight:900;line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap;text-shadow:0 0 2px #fffaf0,0 0 3px #fffaf0;pointer-events:none}
+.ac-growth.is-final .ac-progress>.ac-progress-fill{background:linear-gradient(90deg,var(--gold),#c98a2b)}
+/* 터미널 테마: terminal-theme.css의 div 검정 배경·span 색 상속·.ac-progress>span 초록 배경(모두 !important)이 글자 칸까지 초록·흰 글자로 덮으므로
+   html[data-hanq-theme] + 클래스로 더 높은 우선순위를 두고 꼭 필요한 곳만 !important. 빈 곳은 어두운 초록, 채운 곳은 --green, 글자는 가운데 작은 어두운 알약 위 밝은 글자(번짐 효과 없음) */
+html[data-hanq-theme="terminal"] .ac-progress{background:#16291d!important;background-image:none!important;box-shadow:inset 0 0 0 1px #3f7a55}
+html[data-hanq-theme="terminal"] .ac-progress>.ac-progress-fill{background:var(--green,#72ef9d)!important}
+html[data-hanq-theme="terminal"] .ac-progress>.ac-progress-label{inset:50% auto auto 50%;display:block;max-width:calc(100% - 8px);padding:3px 8px;overflow:hidden;text-overflow:ellipsis;border-radius:99px;background:#060c08e0!important;background-image:none!important;color:#f4f7f5!important;text-shadow:none;transform:translate(-50%,-50%)}
+.ac-growth-next{margin:0;font-size:13px;font-weight:750;color:#725d3a}.ac-growth.is-final .ac-growth-next{color:#8e3c31}
+.ac-me-body{display:grid;gap:12px;padding:16px}
+.ac-me .ac-attendance{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0 12px;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:#fffdf8}
+.ac-att-text{display:flex;align-items:baseline;gap:10px}.ac-sec .ac-att-text h3{margin:0;font-size:15px}.ac-att-text p{margin:0;font-size:14px;color:var(--muted)}.ac-att-text b{color:var(--ink);font-variant-numeric:tabular-nums}
+.ac-me #acAttendance:disabled{opacity:1;border-color:#cfe3d6;background:#eef7f0;color:var(--green);cursor:default}
+#acAttendanceMsg{flex-basis:100%;margin:0;font-size:13px;font-weight:700}#acAttendanceMsg:not(:empty){margin-top:6px}
+.ac-me .ac-row{margin:0}.ac-me .ac-actions>button{flex:1 1 0}
+.ac-sec .ac-settings{margin:0;border:1px solid var(--line);border-radius:14px;background:#fff}.ac-settings>summary{min-height:48px;padding:0 14px;font-size:15px}.ac-settings>summary:focus-visible{outline:3px solid #294d8766;outline-offset:2px;border-radius:14px}
+.ac-settings-body{display:grid;gap:14px;padding:4px 14px 14px;border-top:1px solid var(--line)}.ac-settings-body .ac-dl{margin:10px 0 0}.ac-settings-body .ac-form{margin:0}.ac-sec .ac-settings-body h3{margin:0 0 2px;font-size:14px}
+.ac-note{margin:0;font-size:13px;color:var(--muted)}
+.ac-me .ac-logout{justify-content:flex-end}.ac-me .ac-logout .tool-btn{border-color:transparent;background:transparent;color:var(--muted);font-weight:750}.ac-me .ac-logout .tool-btn:hover{color:var(--ink)}
+@media(min-width:650px){.ac-hero{padding:24px 24px 26px}.ac-pet .hanq-mascot,.ac-pet .hanq-growth-portrait{--mascot-size:128px}.ac-me-body{padding:18px 24px 20px}}
+@media(max-width:400px){.ac-hero{padding:14px 12px 18px}.ac-pet .hanq-mascot,.ac-pet .hanq-growth-portrait{--mascot-size:96px}.ac-pet:after{width:80px}.ac-sec .ac-hero-name{font-size:21px}.ac-me-body{padding:12px}.ac-me .ac-attendance{padding:10px 12px}.ac-me .ac-attendance>.tool-btn{flex:1 1 100%;margin-top:8px}.ac-me .ac-actions>button{flex:1 1 100%}.ac-me .ac-logout>button{flex:1 1 0}}
+@media(prefers-reduced-motion:reduce){.ac-bubble{animation:none}.ac-progress>.ac-progress-fill{transition:none}}
+
+.quiz-set,.quiz-tools{display:none!important}
+
+#quizGlobal{display:none}
+
+.header-character{display:flex;align-items:center}.header-character .hanq-mascot,.header-character .hanq-growth-portrait{--mascot-size:36px}
+
+/* 헤더 회원 영역(media/characters.js member()): 버튼 하나 #headerAccount — 캐릭터 · 닉네임 · 성장점수 · 일반/프리미엄. 320px부터 가로 넘침 없이(긴 닉네임은 말줄임), 누르는 곳 44px 이상 */
+.topline{min-width:0}.topline .brand{flex:0 0 auto}.topline .header-menu{flex:0 1 auto;min-width:0;margin-left:auto;justify-content:flex-end}
+.header-menu .header-member{display:inline-flex;align-items:center;gap:8px;min-width:44px;max-width:100%;min-height:44px;line-height:1.25;text-align:left}
+.header-menu .header-member.is-member{padding:4px 12px 4px 4px;border-radius:14px}.header-member.is-premium{border-color:#e5a337;background:#fff8e8}
+.hm-pic{flex:none;display:grid;place-items:center;width:36px;height:36px;overflow:hidden;border-radius:10px;background:transparent}.hm-pic .hanq-mascot,.hm-pic .hanq-growth-portrait{--mascot-size:36px}.hm-pic img{display:block;width:100%;height:100%;object-fit:contain}
+.hm-text{display:flex;flex-direction:column;min-width:0;overflow:hidden}
+.hm-name{min-width:0;max-width:16em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px;font-weight:900}
+.hm-meta{display:flex;flex-wrap:wrap;align-items:center;gap:0 6px;min-width:0;font-size:12px;font-weight:750;color:var(--muted)}.hm-meta>span{white-space:nowrap}
+.hm-pts{color:var(--ink);font-variant-numeric:tabular-nums}
+.hm-tier{padding:0 6px;border-radius:99px;background:#f0f1f3;color:#4b5565;font-size:11px;font-weight:900}.is-premium .hm-tier{background:#e5a337;color:#2b1d05}
+@media(max-width:400px){.topline{gap:6px}.topline .brand{gap:6px;font-size:14px}.topline #headerAccount.is-guest{font-size:12px;padding:8px}.header-menu .header-member.is-member{gap:6px;padding:4px 8px 4px 4px}.hm-pic{width:30px;height:30px}.hm-pic .hanq-mascot,.hm-pic .hanq-growth-portrait{--mascot-size:30px}.hm-name{font-size:12px}.hm-meta{font-size:11px}}
+@media(max-width:360px){.topline .brand-mark{width:32px;height:32px}.topline .brand span:last-child{font-size:15px}}
+
+.ac-panel.ac-profile-root{max-width:760px;margin-inline:auto}.ac-records{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}.ac-records>summary{min-height:44px;display:flex;align-items:center;font-size:14px;font-weight:700;cursor:pointer}.module-head p:empty{display:none}
+
+/* 마이페이지 정리(캐릭터 · 닉네임 · 지금 성장점수 → 출석 → 닫힌 계정 설정) · 헤더 로그아웃 · 성장점수 기록 창 · 이 기기 기록 동기화 */
+.header-menu .header-logout{flex:0 0 auto}
+.ac-score{order:3;display:inline-flex;align-items:baseline;flex-wrap:wrap;gap:4px 6px;min-height:44px;margin:6px 0 0;padding:8px 14px;border:1px solid #cfd6e4;border-radius:999px;background:#fff;color:inherit;font:inherit;font-size:15px;cursor:pointer;max-width:100%}
+.ac-score b{font-size:20px}.ac-score-hint{font-size:12px;color:#5b6475;text-decoration:underline}
+.ac-score:focus-visible,.ac-growth-dialog .tool-btn:focus-visible,.ac-gd-scroll:focus-visible{outline:3px solid #2b59c3;outline-offset:2px}
+.ac-sync{margin-top:16px;padding-top:12px;border-top:1px solid #e3e7ef}.ac-sync h3{margin:0 0 6px;font-size:15px}.ac-sync .tool-btn{min-height:44px}
+.ac-growth-dialog{width:min(480px,calc(100vw - 24px));max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);padding:0;border:1px solid #cfd6e4;border-radius:14px;box-sizing:border-box;overflow:hidden}
+.ac-growth-dialog[open]{display:flex;flex-direction:column}
+.ac-growth-dialog::backdrop{background:rgba(15,23,42,.45)}
+.ac-gd-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 14px 6px}.ac-gd-head h2{margin:0;font-size:18px}.ac-gd-head .tool-btn{min-height:44px;min-width:44px}
+.ac-gd-total{margin:0;padding:0 14px 8px;font-size:14px;color:#3b4252}
+.ac-gd-scroll{flex:1 1 auto;min-height:80px;overflow:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;border-top:1px solid #e3e7ef;border-bottom:1px solid #e3e7ef}
+.ac-gd-list{list-style:none;margin:0;padding:0}
+.ac-gd-item{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"reason points" "exam points" "time points";gap:2px 10px;padding:10px 14px;border-bottom:1px solid #f0f2f7}
+.ac-gd-item time{grid-area:time;font-size:12px;color:#5b6475}.ac-gd-reason{grid-area:reason;overflow-wrap:anywhere}
+.ac-gd-exam{grid-area:exam;font-size:14px;color:#3b4252;overflow-wrap:anywhere}.ac-gd-points{grid-area:points;align-self:center;white-space:nowrap}
+.ac-gd-item.is-plus .ac-gd-points{color:#1d6b3a}.ac-gd-item.is-minus .ac-gd-points{color:#a12a2a}
+.ac-gd-status{margin:0;padding:8px 14px;font-size:13px}.ac-gd-status[data-error]{color:#a12a2a}
+.ac-growth-dialog #acGrowthMore{margin:0 14px 14px;min-height:44px}
+@media(max-width:400px){.header-menu .header-logout{font-size:12px;padding:8px}.ac-growth-dialog{width:calc(100vw - 16px);max-height:calc(100dvh - 16px)}}
+
+/* 마이페이지 캐릭터 단추(누를 수 있는 진짜 캐릭터 · 숨은 안내 표시 없음)와 활성화 말풍선 */
+button.ac-pet{margin:0;border:0;background:none;color:inherit;font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+button.ac-pet:focus-visible{outline:3px solid #2b59c3;outline-offset:4px;border-radius:16px}
+.ac-pet-say{order:1;margin:-6px 0 4px;padding:7px 14px;border:1px solid var(--gold,#e5a337);border-radius:14px;background:#fff8e8;color:var(--ink);font-size:14px;font-weight:900;line-height:1.35;word-break:keep-all;max-width:100%}
+
+/* 오답 시험·풀이의 기출 그림: PC 읽기 폭 제한, 원본보다 키우지 않고 모바일에 맞춤. */
+.ac-q .mock-image-wrap{width:100%;max-width:640px;margin:12px auto}
+.ac-q .mock-image{display:block;width:auto;max-width:100%;height:auto;margin:0 auto;cursor:zoom-in}
+.ac-q .mock-image:focus-visible{outline:3px solid #294d8766;outline-offset:3px}
+
+.wn-parts{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:16px 0}.wn-parts .ac-part{display:flex;flex-direction:column;gap:6px;min-height:78px;align-items:center;justify-content:center}.wn-total{font-size:1.1rem}.wn-challenge{margin:16px 0}
+
+/* Secondary admin navigation at the very bottom; server role checks stay unchanged. */
+.ac-admin-footer{display:flex;justify-content:flex-end;margin-top:18px}.ac-admin-footer:empty{display:none}
+html body .ac-me .ac-admin-entry{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:44px;min-width:44px;margin:0;padding:10px 4px;background:transparent!important;border:0!important;box-shadow:none!important;font-size:12px!important;font-weight:400;text-decoration:underline;text-underline-offset:3px;opacity:.78}
+html body .ac-me .ac-admin-entry:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:4px;opacity:1}
+/* Profile growth is the character, not a second score card. */
+html[data-hanq-theme=terminal] body .ac-me,html[data-hanq-theme=terminal] body .ac-me .ac-hero{background:transparent!important;background-image:none!important}
+html body .ac-me .ac-pet{order:1;padding-top:0!important;padding-bottom:0;grid-template-rows:auto minmax(42px,auto);max-width:340px;background:transparent!important;border:0!important;box-shadow:none!important}
+html body .ac-me .ac-pet :is(.hanq-mascot,.hanq-growth-portrait){--mascot-size:180px!important}
+html body .ac-me .ac-hero-name{order:2;font-size:22px!important;margin:0!important}
+html body .ac-me .ac-bubble{position:static;inset:auto;transform:none;max-width:100%;font-size:.875rem;line-height:1.6;animation:none}
+html body .ac-me .ac-pet :is(.hanq-mascot,.hanq-growth-portrait){grid-row:1}
+html body .ac-me .ac-bubble:after{display:none}
+html body .ac-me .ac-growth{order:4;max-width:280px;gap:4px;margin-top:0;background:transparent!important}
+html body .ac-me .ac-evolution{display:flex;flex-wrap:wrap;justify-content:center;gap:3px 8px;font-size:12px;line-height:1.6;background:transparent!important;color:#bacac0!important}
+.ac-evolution [aria-current=step]{color:#79eea4!important;text-decoration:underline;text-underline-offset:3px}
+html body .ac-me .ac-progress{height:18px;min-height:18px;background:transparent!important}
+html body .ac-me .ac-progress-label{font-size:11px!important}
+html body .ac-me .ac-growth-next{font-size:12px;background:transparent!important;color:#b9cec0!important}
+html body .ac-growth-history{order:5;font-size:12px!important;min-height:36px;padding:5px 12px!important}
+html body .ac-pet-say{order:3;position:static;box-sizing:border-box;min-width:0;max-width:100%;font-size:.875rem;line-height:1.6;margin:0!important;padding:3px 8px;border:0!important;background:transparent!important;background-image:none!important;box-shadow:none!important;color:#fff!important;text-shadow:0 1px 3px #000,0 0 6px #000;word-break:normal;overflow-wrap:anywhere}
+.ac-activity{margin:16px 0;padding:14px 0;border-block:1px solid #395246}.ac-activity h3{font-size:19px}.ac-activity>p{font-size:14px;line-height:1.6}.ac-activity-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;max-width:450px;margin:12px auto}.ac-activity-weekday{text-align:center;font-size:12px;color:#bacac0!important}.ac-activity-grid button{min-width:0;min-height:32px;padding:2px!important;font:inherit;font-size:12px;border:1px solid #365244!important;border-radius:4px!important;color:#eaf8ee!important;box-shadow:none!important}.ac-activity-grid button[data-level="0"]{background:#12241b!important}.ac-activity-grid button[data-level="1"]{background:#1c5435!important}.ac-activity-grid button[data-level="2"]{background:#287244!important}.ac-activity-grid button[data-level="3"]{background:#36945a!important}.ac-activity-grid button[data-level="4"]{background:#79d898!important;color:#06180d!important}.ac-activity-grid button[data-level=before]{background:transparent!important;opacity:.35}.ac-activity-grid button[aria-pressed=true]{outline:2px solid white;outline-offset:1px}.ac-activity-detail{min-height:52px;color:#a0efbd!important}.ac-activity .ac-activity-help{font-size:12px;color:#bdcec4!important}
+body[data-world-scene=account] .device-content>.module-head{margin:0 0 8px!important;padding:4px 0!important}body[data-world-scene=account] .device-content>.module-head h1{font-size:22px!important;margin:4px 0!important}body[data-world-scene=account] .device-content>.module-head p:empty{display:none}
+html[data-hanq-theme=terminal] body .ac-profile-root{background:transparent!important;padding:6px!important}html[data-hanq-theme=terminal] body .ac-profile-root .ac-me{padding:0!important}.ac-activity-grid button{touch-action:manipulation}
+html[data-hanq-theme=terminal] body #acRoot.ac-profile-root{background:transparent!important}body[data-world-scene=account] .hm-pts{display:none!important}html body .ac-evolution>span{background:transparent!important}
+.ac-activity-subjects{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}.ac-activity-subjects button{min-height:44px;padding:5px 10px;font:inherit;font-size:13px;border:1px solid #6b947d;border-radius:10px;background:#0d271b!important;color:white!important}.ac-activity-subjects button[aria-pressed=true]{border-color:#8cefaf;background:#204d33!important}
+.ac-activity-month{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:10px 0}.ac-activity-month strong{white-space:nowrap;font-size:18px}.ac-activity-month button{min-height:44px;min-width:44px;padding:6px 8px!important;font:inherit;font-size:14px}.ac-activity-grid button{min-height:38px}.ac-activity-help summary{cursor:pointer;min-height:32px}.ac-activity-help p{line-height:1.6}.ac-activity-month button:disabled{opacity:.45}
+/* Keep the signed-in profile retry label inside its own mobile touch target. */
+.topline .header-menu #headerAccount.is-guest{display:block;flex:1 1 auto;min-width:44px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.topline .header-menu #headerLogout{flex:0 0 auto}
+
+/* Opt-in identifier only, separate from the server session. */
+.ac-form .ac-remember-id{display:flex;align-items:center;gap:10px;min-height:44px;cursor:pointer;font-size:15px;line-height:1.5}
+.ac-form .ac-remember-id input{flex:0 0 20px;width:20px!important;height:20px;min-height:20px;margin:0;accent-color:#75e9a3}
+
+/* Keep the XP track and fill distinct on the black device surface, even at 0%. */
+html body .ac-me .ac-progress{box-sizing:border-box;border:2px solid #89958e!important;background:#1c2b23!important;box-shadow:none!important}
+html body .ac-me .ac-progress>.ac-progress-fill{background:#79e5a0!important;background-image:none!important}
+html body .ac-me .ac-hero-name{width:100%;min-width:0;overflow-wrap:anywhere;line-height:1.4}
+
+/* Separate sibling targets: hall navigation never activates the character button. */
+html body .ac-me .ac-hall-entry{order:0;align-self:flex-end;max-width:100%;font-size:12px;min-height:36px;box-sizing:border-box;padding:6px 12px;text-decoration:none}
+html body .ac-me .ac-pet-hint{grid-row:3;font-size:12px;line-height:1.5;color:#b5c4bc!important;font-weight:400}
+html body .ac-me .ac-pet:focus-visible{outline:2px solid #a9d9bc!important;outline-offset:3px}
+
+html body #app .ac-me .ac-growth-next{font-size:16px!important;font-weight:900!important;line-height:1.5;overflow-wrap:anywhere;font-variant-numeric:tabular-nums;color:#effff5!important}
+
+/* Give animated collection portraits the same real display area as the other
+   profile portraits. Blob atlas cells contain extra transparent margin. */
+html body .ac-me .ac-pet .collection-life{display:block;grid-row:1;width:180px;height:180px;max-width:100%;aspect-ratio:1}
+html body .ac-me .ac-pet .collection-life:has(.cm-blob){width:210px;height:210px}
+html body #app .ac-me .ac-growth-next{order:0;align-self:center;text-align:center;margin:0}
+html body .ac-me .ac-evolution-needed{margin:6px 0 0;color:#bed3c6;font-size:13px;line-height:1.5;overflow-wrap:anywhere}
+
+/* Readable XP text over both the filled and unfilled track; no painted label capsule. */
+html body .ac-me .ac-progress{height:34px;min-height:34px}
+html body .ac-me .ac-progress>.ac-progress-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;max-width:none;width:auto;padding:0 8px;transform:none;border:0;border-radius:0;background:transparent!important;background-image:none!important;box-shadow:none!important;color:#f4fff6!important;font-size:15px!important;line-height:1.3;font-weight:800;text-shadow:-1px -1px 0 #05150b,1px -1px 0 #05150b,-1px 1px 0 #05150b,1px 1px 0 #05150b;white-space:nowrap}
+/* My Page: one bottom record section, compact controls and readable mobile cards. */
+.ac-my-records{margin-top:32px;padding-top:24px;border-top:1px solid #355347}.ac-my-records>h2{font-size:1.35rem;margin-bottom:8px}.mr-filters,.mr-pages{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:18px 0}.mr-filters button[aria-pressed=true]{background:#d6f0df;color:#10291f;border-color:#d6f0df}.mr-list{list-style:none;padding:0;margin:0;display:grid;gap:10px}.mr-card{padding:16px;border:1px solid #355347;border-radius:14px;background:#10291f;display:flex;align-items:center;flex-wrap:wrap;gap:10px}.mr-card>strong{flex-basis:100%;overflow-wrap:anywhere;font-size:.95rem}.mr-card time{font-size:.8rem;color:#bed3c6}.mr-kind{font-size:.75rem;font-weight:700;border-radius:6px;padding:4px 8px;background:#244936;color:#d6f0df}.mr-detail{flex-basis:100%;overflow-wrap:anywhere}.mr-status{color:#bed3c6}.mr-pages button{min-height:42px}.mr-card small{overflow-wrap:anywhere}@media(max-width:520px){.mr-card{padding:13px}.mr-filters{display:grid;grid-template-columns:repeat(4,1fr)}.mr-filters button{padding:9px 4px;min-width:0}.mr-pages{justify-content:center}.ac-my-records{margin-top:24px}}
+.mr-filters label{display:flex;flex-direction:column;gap:6px;font-size:.8rem;font-weight:700}.mr-filters select{font:inherit;font-size:.9rem;min-height:44px;padding:8px;border:1px solid #638b74;border-radius:9px;background:#10291f;color:#d6f0df;max-width:100%}.mr-detail summary{cursor:pointer;padding:10px 0;font-weight:700}.mr-image{display:block;max-width:100%;height:auto;margin:12px 0}.mr-prose{white-space:pre-wrap}.mr-source{font-size:.78rem;color:#bed3c6}.ac-hero>.ac-attendance{position:absolute;top:12px;left:12px;z-index:2;margin:0;padding:10px 12px;display:flex;flex-direction:column;align-items:flex-start;gap:4px;max-width:180px;background:rgba(255,255,255,.95);border:1px solid #dbe2eb;border-radius:12px}.ac-hero>.ac-attendance h3{font-size:.78rem;margin:0}.ac-hero>.ac-attendance p{font-size:.8rem;margin:2px 0}.ac-hero>.ac-attendance button{font-size:.75rem;padding:6px 10px;min-height:34px}.ac-hero{position:relative}@media(max-width:520px){.mr-filters{grid-template-columns:1fr 1fr}.ac-hero>.ac-attendance{position:relative;top:auto;left:auto;align-self:flex-start;max-width:calc(100% - 125px);margin:12px 0 0 12px;padding:8px}.ac-hero>.ac-attendance .ac-att-text{display:block}.ac-hero>.ac-attendance #acAttendanceMsg:empty{display:none}}
+.ac-me .mr-card{color:#e8f6ed}.ac-me .ac-hero>.ac-attendance{color:#1b293b}.ac-me .ac-hero>.ac-attendance .ac-att-text{min-width:0}.ac-me .ac-hero>.ac-attendance>.tool-btn{flex:0 0 auto;margin-top:0}.ac-me .mr-filters select{color:#d6f0df!important;background:#10291f!important}
+.mr-card>strong{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.mr-detail{min-width:0}.mr-card .wn-ok{color:#8de6b3}.mr-card .wn-no{color:#ffb4ad}
+/* Record surfaces use the game palette even before the compact layout rules. */
+html body .ac-me .mr-card,html body .ac-me .mr-card :is(p,span,strong,small,time,summary,a,b,details){color:#e8f6ed!important;background-color:transparent!important;background-image:none!important;text-shadow:none!important}html body .ac-me .mr-card{background:#10291f!important}html body .ac-me .mr-card .mr-kind{background:#244936!important;color:#d6f0df!important}html body .ac-me .mr-card .wn-ok{color:#8de6b3!important}html body .ac-me .mr-card .wn-no{color:#ffb4ad!important}html body .ac-me .mr-card .tool-btn{border:1px solid #638b74!important;color:#d6f0df!important}html body .ac-me .mr-card details{border:0!important;padding:0!important}html body .ac-me .mr-card strong{font-size:15px!important;line-height:1.6!important}html body .ac-me .ac-hero>.ac-attendance :is(h3,p,b,button){color:#1b293b!important;text-shadow:none!important}html body .ac-me .ac-hero>.ac-attendance{background:#fff!important}
+html body .ac-me .ac-hero>.ac-attendance *{color:#1b293b!important;background-color:transparent!important;background-image:none!important;text-shadow:none!important}html body .ac-me .ac-hero>.ac-attendance .ac-att-text{display:flex!important;align-items:center;gap:6px}html body .ac-me .ac-hero>.ac-attendance>.tool-btn{background:#edf3fa!important;white-space:nowrap!important;font-size:12px!important;min-height:36px!important;max-width:100%;padding:6px 10px!important}html body .ac-me .ac-hero>.ac-attendance{width:160px;box-sizing:border-box;padding:10px!important;gap:6px!important}html body .ac-me .mr-list{grid-template-columns:minmax(0,1fr);min-width:0}html body .ac-me .mr-card{min-width:0;box-sizing:border-box;padding:14px!important;gap:8px!important}html body .ac-me .mr-card *{max-width:100%;box-sizing:border-box;overflow-wrap:anywhere}html body .ac-me .mr-card>strong{width:100%;min-width:0}@media(max-width:520px){html body .ac-me .ac-hero>.ac-attendance{max-width:calc(100% - 24px);margin:12px 0 0 0;padding:8px!important}}
+html body .ac-me .ac-me-body{grid-template-columns:minmax(0,1fr)}html body .ac-me .ac-my-records{min-width:0;width:100%;box-sizing:border-box}html body .ac-me .mr-filters{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}html body .ac-me .mr-filters :is(label,select){min-width:0;width:100%;box-sizing:border-box}html body .ac-me .mr-filters select{font-size:13px!important}@media(max-width:400px){html body .ac-me .ac-activity-month{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}html body .ac-me .ac-activity-month strong{order:-1;grid-column:1/-1;text-align:center}}
+/* Five-day quest board: actual streak and cycle position are separate. */
+html body .ac-me .ac-hero>.ac-attendance.ac-streak-card{width:250px;max-width:calc(100% - 24px);background:linear-gradient(145deg,#0e2638,#10201e)!important;border:1px solid #5b927d!important;box-shadow:0 3px 0 #03100c,0 0 18px #7ce5ad14!important;border-radius:14px!important;padding:12px!important;gap:7px!important;text-align:left}html body .ac-me .ac-hero>.ac-attendance.ac-streak-card :is(h3,p,span,strong,small,b,button,ol,li,div){color:#e8f6ed!important;text-shadow:none!important}html body .ac-me .ac-streak-card .ac-streak-heading,html body .ac-me .ac-streak-card .ac-streak-count{display:flex!important;justify-content:space-between;align-items:center;width:100%;gap:5px}html body .ac-me .ac-streak-card .ac-streak-heading h3{font-size:13px!important;color:#ffe3a0!important}html body .ac-me .ac-streak-card .ac-streak-heading>span{font-size:10px!important}html body .ac-me .ac-streak-card .ac-streak-count{margin:0!important;font-size:11px!important}html body .ac-me .ac-streak-card .ac-streak-count b{color:#89efbe!important}html body .ac-me .ac-streak-card .ac-streak-tiles{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr));width:100%;list-style:none!important;padding:0!important;margin:0!important;gap:4px!important}html body .ac-me .ac-streak-card .ac-streak-tile{display:flex!important;flex-direction:column;align-items:center;gap:4px!important;min-width:0;padding:7px 1px!important;border:1px solid #39566a!important;background:#102b40!important;border-radius:7px!important;line-height:1.2!important}html body .ac-me .ac-streak-card .ac-streak-tile>span{font-size:9px!important;white-space:nowrap}html body .ac-me .ac-streak-card .ac-streak-tile strong{font-size:17px!important;letter-spacing:-.04em}html body .ac-me .ac-streak-card .ac-streak-tile small{font-size:8px!important;margin-left:1px}html body .ac-me .ac-streak-card .ac-streak-tile.is-claimed{background:#163e32!important;border-color:#5da37b!important}html body .ac-me .ac-streak-card .ac-streak-tile.is-current,html body .ac-me .ac-streak-card .ac-streak-tile.is-today{background:#453718!important;border-color:#f3c468!important;box-shadow:inset 0 0 0 1px #f3c46855!important}html body .ac-me .ac-streak-card .ac-streak-tile.is-current strong,html body .ac-me .ac-streak-card .ac-streak-tile.is-today strong{color:#ffe4a4!important}html body .ac-me .ac-streak-card .ac-streak-progress{width:100%;height:5px;border-radius:9px;overflow:hidden;background:#213b40!important}html body .ac-me .ac-streak-card .ac-streak-progress>span{display:block;height:100%;background:#79e5a0!important}html body .ac-me .ac-hero>.ac-attendance.ac-streak-card>.tool-btn{width:100%;background:#f2c870!important;color:#17271f!important;border-color:#ffe5ae!important;font-weight:800!important}html body .ac-me .ac-streak-card .ac-att-reward{font-size:10px!important;line-height:1.4!important;width:100%;margin:0!important}html body .ac-me .ac-streak-card .ac-streak-rule{font-size:9px!important;color:#b7cec5!important;line-height:1.5!important;margin:0!important}html body .ac-me .ac-streak-card #acAttendanceMsg:empty{display:none}@media(max-width:520px){html body .ac-me .ac-hero>.ac-attendance.ac-streak-card{align-self:flex-start;margin-left:0;padding:10px!important}}@media(prefers-reduced-motion:reduce){html body .ac-me .ac-streak-card *{animation:none!important;transition:none!important}}
+@media(max-width:900px){html body .ac-me .ac-hero>.ac-attendance.ac-streak-card{position:relative;top:auto;left:auto;align-self:flex-start;margin-left:0}}
+/* One saved attempt per row; full content lives in the dialog. */
+html body .ac-me .mr-list{gap:0;border:1px solid #496a5b;border-radius:12px;overflow:hidden;background:#10291f}
+html body .ac-me .mr-card{display:block;border:0;border-bottom:1px solid #355347;border-radius:0;padding:0!important;gap:0!important}
+html body .ac-me .mr-card:last-child{border-bottom:0}
+html body .ac-me .mr-card .mr-row{width:100%;display:grid;grid-template-columns:60px minmax(70px,1fr) 40px minmax(110px,1.5fr) 100px 12px;align-items:center;gap:10px;min-height:48px;padding:8px 12px;border:0;border-radius:0;background:#10291f!important;color:#e8f6ed!important;text-align:left;cursor:pointer;font:inherit}
+html body .ac-me .mr-row:hover{background:#1b4030!important}html body .ac-me .mr-row:focus-visible{outline:3px solid #a6e7bf;outline-offset:-3px}
+html body .ac-me .mr-card .mr-row>*{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;overflow-wrap:normal;font-size:12px!important;line-height:1.4!important}
+html body .ac-me .mr-card .mr-row .mr-number{display:block;width:auto;font-weight:700}
+html body .ac-me .mr-card .mr-kind{padding:3px 5px;text-align:center}.mr-context{display:flex;align-items:center;gap:5px}.mr-opponent{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}.mr-outcome{flex:none;font-size:11px}.mr-correct{color:#8de6b3!important}.mr-wrong{color:#ffb4ad!important}
+.mr-modal{box-sizing:border-box;width:min(720px,calc(100% - 24px));max-height:85dvh;padding:0;border:1px solid #6c9781;border-radius:16px;background:#10291f;color:#e8f6ed;box-shadow:0 20px 90px #020d09bb}.mr-modal::backdrop{background:#020d09cc}.mr-modal-head{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;gap:12px;background:#17382a;border-bottom:1px solid #496a5b;padding:12px 18px;z-index:1}.mr-modal-head h2{font-size:18px;margin:0;overflow-wrap:anywhere}.mr-modal-head button{min-height:44px;flex:none}.mr-modal-body{padding:12px 20px 24px;overflow-wrap:anywhere;line-height:1.7}.mr-modal *{text-shadow:none!important}.mr-modal .mr-prose{white-space:pre-wrap}.mr-modal:focus{outline:none}
+@media(max-width:520px){html body .ac-me .mr-card .mr-row{grid-template-columns:30px minmax(30px,.6fr) 25px minmax(76px,1.4fr) 33px;gap:4px;padding:8px 6px}html body .ac-me .mr-card .mr-row>*{font-size:12px!important}html body .ac-me .mr-card .mr-row .mr-kind{padding:3px 1px}.mr-context{gap:3px}.mr-outcome{font-size:11px}.mr-row .mr-arrow{display:none}.mr-modal-body{padding:10px 14px 20px}}
+
+html body .ac-me .mr-card .mr-row .mr-correct{color:#8de6b3!important}html body .ac-me .mr-card .mr-row .mr-wrong{color:#ffb4ad!important}html body .ac-me .mr-card .mr-match-win{color:#8de6b3!important}html body .ac-me .mr-card .mr-match-loss{color:#ffb4ad!important}.mr-route{flex:none}
+
+/* Records share the device's forest palette; only these read-only surfaces. */
+html body .ac-me .ac-my-records{border-color:#496a5b!important;background:#080d0a!important;color:#e8f6ed!important}
+html body .ac-me .mr-list,html body .ac-me .mr-card{background:#10291f!important;border-color:#355347!important}
+html body .ac-me .mr-card .mr-row .mr-kind{background:#244936!important;color:#d6f0df!important;border:1px solid #537963}
+html body .ac-me .mr-row :is(time,.mr-context),html body .ac-me .mr-status{color:#bed3c6!important}
+html body .ac-me :is(.mr-filters,.mr-pages){background:transparent!important;color:#e8f6ed!important}
+html body .ac-me .mr-filters :is(label,select),html body .ac-me .mr-pages :is(button,span){color:#e8f6ed!important}
+html body .ac-me :is(.mr-filters select,.mr-pages button){background:#17382a!important;border-color:#638b74!important}
+html[data-hanq-theme] body dialog.mr-modal{background:#10291f!important;color:#e8f6ed!important;border-color:#6c9781!important;box-shadow:0 20px 90px #020d09bb!important}
+html body .mr-modal .mr-modal-head{background:#17382a!important;color:#e8f6ed!important;border-color:#496a5b!important}
+html body .mr-modal .mr-modal-body{background:#10291f!important;color:#e8f6ed!important}
+html body .mr-modal :is(p,li,span,h2){color:#e8f6ed!important}
+html body .mr-modal .mr-modal-head button{background:#244936!important;color:#e8f6ed!important;border-color:#7da68b!important}
+html body .mr-modal :is(button,a):focus-visible{outline:3px solid #a6e7bf!important;outline-offset:3px}
+html[data-hanq-theme] body .ac-me .mr-card .mr-row :is(.mr-number,.mr-arrow){color:#e8f6ed!important}
+html[data-hanq-theme] body .ac-me .mr-card .mr-row :is(.mr-context,.mr-opponent,.mr-route){color:#bed3c6!important;background:transparent!important}
+/* Native WebKit menulists ignore the padded hit area; keep the full 44px control. */
+html body .ac-me .mr-filters select{appearance:none;-webkit-appearance:none;height:44px;min-height:44px;padding-right:30px;color-scheme:dark;background-image:linear-gradient(45deg,transparent 50%,#d6f0df 50%),linear-gradient(135deg,#d6f0df 50%,transparent 50%)!important;background-position:calc(100% - 15px) 50%,calc(100% - 10px) 50%!important;background-size:5px 5px,5px 5px!important;background-repeat:no-repeat!important}
+
+/* A full-width attendance card lives immediately above the inventory. */
+html body .ac-me .ac-me-body>.ac-streak-card{position:static;display:flex;flex-direction:column;width:100%;max-width:100%;box-sizing:border-box;margin:0 0 18px;padding:16px!important;gap:10px;background:linear-gradient(145deg,#0e2638,#10201e)!important;border:1px solid #5b927d!important;color:#e8f6ed!important}
+html body .ac-me .ac-me-body>.ac-streak-card :is(h3,p,span,strong,small,b,button,ol,li,div){color:#e8f6ed!important;background-color:transparent;text-shadow:none!important}
+html body .ac-me .ac-me-body>.ac-streak-card>.tool-btn{width:100%;margin:0;background:#f2c870!important;color:#17271f!important;border-color:#ffe5ae!important;font-weight:800!important}
+html body .ac-me .mr-pages{justify-content:center}
+.ac-sync-error{margin-top:16px;border-left:2px solid #dfc37a;padding-left:12px;font-size:13px;line-height:1.6}.ac-sync-error[hidden]{display:none!important}
+@media(max-width:400px){html body .ac-me .ac-me-body>.ac-streak-card{padding:12px!important}.ac-me .ac-streak-card .ac-streak-heading{flex-wrap:wrap}}
+html body .ac-me .ac-me-body>.ac-streak-card>.tool-btn{flex:0 0 auto!important;min-height:44px!important}
+html body .ac-me .ac-me-body>.ac-streak-card>#acAttendanceMsg{flex:0 0 auto!important}
+/* Keep internal heading surfaces on their card, without terminal black blocks. */
+html[data-hanq-theme] body .ac-me .ac-streak-card .ac-streak-heading{background:transparent!important}
+.ac-growth-basis{margin:0;font-size:11px;opacity:.78}

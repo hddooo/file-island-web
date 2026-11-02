@@ -1,0 +1,53 @@
+{
+  "tool": "built-in image_gen",
+  "mode": "precise-object-edit",
+  "source": "media/characters/collection-atlas-v1.webp",
+  "output": "media/characters/collection-blink-overlay-v1.png",
+  "prompt": "Edit the transparent 1254x1254 atlas: close only the two eyes of top-middle pink Punimon and bottom-middle blue Poyomon in a natural blink, with thin dark curved eyelid creases and seamless skin shading. Preserve exact character positions, silhouettes, antennae, mouth, bodies, lighting, all other characters and transparency. No text or new elements.",
+  "usage": "Only four measured eye rectangles are consumed. Original atlas remains authoritative for all silhouettes, antennae, mouths and bodies. The generated full atlas must not replace the original.",
+  "eyeRegions": {
+    "punimon": [
+      [
+        522,
+        215,
+        50,
+        65
+      ],
+      [
+        627,
+        228,
+        58,
+        66
+      ]
+    ],
+    "poyomon": [
+      [
+        541,
+        1063,
+        52,
+        58
+      ],
+      [
+        637,
+        1071,
+        53,
+        58
+      ]
+    ]
+  },
+  "validation": {
+    "originalSourceHash": "verified by test-collection-life.cjs",
+    "browserEngines": [
+      "Chrome",
+      "WebKit"
+    ],
+    "widths": [
+      320,
+      390,
+      1440
+    ],
+    "largePortraitPx": 480,
+    "fallback": "Eyes remain open when overlay decode fails",
+    "reducedMotion": "No blinking or sway"
+  }
+}

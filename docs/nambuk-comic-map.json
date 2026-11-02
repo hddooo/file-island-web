@@ -1,0 +1,874 @@
+{
+ "generated_by": "scripts/build_nambuk_comic.py",
+ "note": "남북국 웹툰 장면(화면 순서 = 기존 s1–s32)·흐름·원본 그림판 칸(바이트 그대로, SVG viewBox로 칸 전체)·기존 제목·핵심 줄·강의 강조와 근거 행, 이 부분에서 외울 것 카드 위치.",
+ "panel_source": {
+  "width": 1086,
+  "height": 1448,
+  "sheets": {
+   "0": {
+    "file": "media/nambuk-sheets/0.png",
+    "sha256": "03e16087e8b66c87e896679994ff83a8c9d6c004476ffbf33d3a5585eaaffbed",
+    "bytes": 3135388
+   },
+   "1": {
+    "file": "media/nambuk-sheets/1.png",
+    "sha256": "b01abffcfd236b6fdac8e9db4ba5c95ae190d37fe9783e92066d39515c5126e6",
+    "bytes": 3333327
+   },
+   "2": {
+    "file": "media/nambuk-sheets/2.png",
+    "sha256": "ea8f29e32980d4265b98f73c8158ef33b1c4553a0d05341d94d891e773c1a0ee",
+    "bytes": 3167820
+   },
+   "3": {
+    "file": "media/nambuk-sheets/3.png",
+    "sha256": "f30e7bbffaf1d75c05d1f76018aba6b0dd8cdbd2a9da724e99542631568fc88e",
+    "bytes": 3317679
+   }
+  },
+  "extracted_from": "예전 media/nambuk-comic.html의 .sheet0–3 base64 PNG(다시 인코딩하지 않음)"
+ },
+ "scenes": [
+  {
+   "id": "s1",
+   "scene": 1,
+   "flow": "flow-1",
+   "orig": 1,
+   "title": "전쟁이 끝나도, 역사는 계속된다",
+   "key": "남쪽 통일 신라 · 북쪽 발해",
+   "panel": {
+    "sheet": "media/nambuk-sheets/0.png",
+    "sha256": "03e16087e8b66c87e896679994ff83a8c9d6c004476ffbf33d3a5585eaaffbed",
+    "rect": [
+     0,
+     0,
+     543,
+     349
+    ]
+   },
+   "speakers": [
+    "신라 병사",
+    "동료"
+   ],
+   "stress": null,
+   "teacher_lines": "338–348",
+   "source": "강의 338–348행"
+  },
+  {
+   "id": "s2",
+   "scene": 2,
+   "flow": "flow-1",
+   "orig": 2,
+   "title": "왕의 장인이 반란을 일으켰다",
+   "key": "김흠돌의 난 진압 → 왕권 강화",
+   "panel": {
+    "sheet": "media/nambuk-sheets/0.png",
+    "sha256": "03e16087e8b66c87e896679994ff83a8c9d6c004476ffbf33d3a5585eaaffbed",
+    "rect": [
+     543,
+     0,
+     543,
+     349
+    ]
+   },
+   "speakers": [
+    "신하",
+    "신문왕"
+   ],
+   "stress": "통일 신라에서 제일 중요한 왕은 신문왕이라고 짚었어요.",
+   "teacher_lines": "348–350 · 466–468",
+   "source": "강의 348–350 · 466–468행"
+  },
+  {
+   "id": "s3",
+   "scene": 3,
+   "flow": "flow-1",
+   "orig": 3,
+   "title": "왕에게는 인재도 필요하다",
+   "key": "신문왕 · 국학",
+   "panel": {
+    "sheet": "media/nambuk-sheets/0.png",
+    "sha256": "03e16087e8b66c87e896679994ff83a8c9d6c004476ffbf33d3a5585eaaffbed",
+    "rect": [
+     543,
+     349,
+     543,
+     335
+    ]
+   },
+   "speakers": [
+    "신하",
+    "신문왕"
+   ],
+   "stress": null,
+   "teacher_lines": "359 · 466",
+   "source": "강의 359 · 466행"
+  },
+  {
+   "id": "s4",
+   "scene": 4,
+   "flow": "flow-1",
+   "orig": 4,
+   "title": "귀족의 힘, 땅에서도 줄인다",
+   "key": "관료전 지급 · 녹읍 폐지",
+   "panel": {
+    "sheet": "media/nambuk-sheets/0.png",
+    "sha256": "03e16087e8b66c87e896679994ff83a8c9d6c004476ffbf33d3a5585eaaffbed",
+    "rect": [
+     0,
+     349,
+     543,
+     335
+    ]
+   },
+   "speakers": [
+    "귀족",
+    "신문왕"
+   ],
+   "stress": "너무 많다 싶으면 김흠돌의 난 · 관료전 지급 · 녹읍 폐지만이라도 신문왕으로 꼭 외우라고 짚었어요.",
+   "teacher_lines": "350–354 · 359–360",
+   "source": "강의 350–354 · 359–360행"
+  },
+  {
+   "id": "s5",
+   "scene": 5,
+   "flow": "flow-1",
+   "orig": 5,
+   "title": "커진 나라, 치우친 수도",
+   "key": "행정 조직 = 9주 5소경",
+   "panel": {
+    "sheet": "media/nambuk-sheets/0.png",
+    "sha256": "03e16087e8b66c87e896679994ff83a8c9d6c004476ffbf33d3a5585eaaffbed",
+    "rect": [
+     0,
+     684,
+     543,
+     332
+    ]
+   },
+   "speakers": [
+    "지방관",
+    "신문왕"
+   ],
+   "stress": "숫자 9로 시작하면 통일 신라이고, 9주 5소경 · 9서당 10정을 만든 왕을 물으면 신문왕이라고 짚었어요.",
+   "teacher_lines": "354–357 · 376–377",
+   "source": "강의 354–357 · 376–377행"
+  },
+  {
+   "id": "s6",
+   "scene": 6,
+   "flow": "flow-1",
+   "orig": 6,
+   "title": "행정과 군대는 숫자가 다르다",
+   "key": "군사 조직 = 9서당 10정",
+   "panel": {
+    "sheet": "media/nambuk-sheets/0.png",
+    "sha256": "03e16087e8b66c87e896679994ff83a8c9d6c004476ffbf33d3a5585eaaffbed",
+    "rect": [
+     543,
+     684,
+     543,
+     332
+    ]
+   },
+   "speakers": [
+    "병사",
+    "장수"
+   ],
+   "stress": "문제 풀이에서 ‘고구려·백제·말갈인을 포함한 군대’가 보이면 9서당, 곧 신문왕이라고 짚었어요.",
+   "teacher_lines": "357–359 · 466–468",
+   "source": "강의 357–359 · 466–468행"
+  },
+  {
+   "id": "s7",
+   "scene": 7,
+   "flow": "flow-1",
+   "orig": 7,
+   "title": "지방의 힘도, 관리의 행동도 살핀다",
+   "key": "상수리 제도 · 외사정",
+   "panel": {
+    "sheet": "media/nambuk-sheets/0.png",
+    "sha256": "03e16087e8b66c87e896679994ff83a8c9d6c004476ffbf33d3a5585eaaffbed",
+    "rect": [
+     0,
+     1016,
+     543,
+     432
+    ]
+   },
+   "speakers": [
+    "지방 세력가",
+    "관리"
+   ],
+   "stress": "외사정 파견은 문무왕 때 시작되었고, 상수리 제도가 나와도 통일 신라라고 짚었어요.",
+   "teacher_lines": "346–347 · 374–377",
+   "source": "강의 346–347 · 374–377행"
+  },
+  {
+   "id": "s8",
+   "scene": 8,
+   "flow": "flow-1",
+   "orig": 8,
+   "title": "땅의 제도가 다시 바뀌었다",
+   "key": "토지 제도의 변화 · 촌락 문서",
+   "panel": {
+    "sheet": "media/nambuk-sheets/0.png",
+    "sha256": "03e16087e8b66c87e896679994ff83a8c9d6c004476ffbf33d3a5585eaaffbed",
+    "rect": [
+     543,
+     1016,
+     543,
+     432
+    ]
+   },
+   "speakers": [
+    "백성",
+    "관리"
+   ],
+   "stress": "정전 지급이 나오면 통일 신라 전기 상황이라고 짚었어요.",
+   "teacher_lines": "361–363 · 440–442",
+   "source": "강의 361–363 · 440–442행"
+  },
+  {
+   "id": "s9",
+   "scene": 9,
+   "flow": "flow-2",
+   "orig": 9,
+   "title": "북쪽, 고구려를 잇는 나라가 서다",
+   "key": "대조영 · 동모산 · 발해 건국",
+   "panel": {
+    "sheet": "media/nambuk-sheets/1.png",
+    "sha256": "b01abffcfd236b6fdac8e9db4ba5c95ae190d37fe9783e92066d39515c5126e6",
+    "rect": [
+     0,
+     0,
+     543,
+     356
+    ]
+   },
+   "speakers": [
+    "고구려 유민",
+    "대조영"
+   ],
+   "stress": null,
+   "teacher_lines": "443–446",
+   "source": "강의 443–446행"
+  },
+  {
+   "id": "s10",
+   "scene": 10,
+   "flow": "flow-2",
+   "orig": 10,
+   "title": "무왕, 바다 건너 당을 치다",
+   "key": "무왕 · 인안 · 등주 공격",
+   "panel": {
+    "sheet": "media/nambuk-sheets/1.png",
+    "sha256": "b01abffcfd236b6fdac8e9db4ba5c95ae190d37fe9783e92066d39515c5126e6",
+    "rect": [
+     543,
+     0,
+     543,
+     356
+    ]
+   },
+   "speakers": [
+    "무왕",
+    "장문휴"
+   ],
+   "stress": "발해에서 시험에 제일 잘 나오는 왕은 무왕이고, ‘장문휴가 당의 등주를 공격했다’는 표현으로 나온다고 짚었어요.",
+   "teacher_lines": "446–448",
+   "source": "강의 446–448행"
+  },
+  {
+   "id": "s11",
+   "scene": 11,
+   "flow": "flow-2",
+   "orig": 11,
+   "title": "문왕, 문을 열고 길을 잇다",
+   "key": "문왕 · 신라도 · 상경 천도",
+   "panel": {
+    "sheet": "media/nambuk-sheets/1.png",
+    "sha256": "b01abffcfd236b6fdac8e9db4ba5c95ae190d37fe9783e92066d39515c5126e6",
+    "rect": [
+     0,
+     356,
+     543,
+     370
+    ]
+   },
+   "speakers": [
+    "신라 사신",
+    "문왕"
+   ],
+   "stress": "시험에 ‘수도를 상경으로 옮겼다’가 나오면 문왕 때라고 짚었어요.",
+   "teacher_lines": "448–450",
+   "source": "강의 448–450행"
+  },
+  {
+   "id": "s12",
+   "scene": 12,
+   "flow": "flow-2",
+   "orig": 12,
+   "title": "선왕, 바다 동쪽의 융성한 나라",
+   "key": "선왕 · 해동성국",
+   "panel": {
+    "sheet": "media/nambuk-sheets/1.png",
+    "sha256": "b01abffcfd236b6fdac8e9db4ba5c95ae190d37fe9783e92066d39515c5126e6",
+    "rect": [
+     543,
+     356,
+     543,
+     370
+    ]
+   },
+   "speakers": [
+    "신하",
+    "선왕"
+   ],
+   "stress": "숫자 62가 나오면 발해라고 짚었어요.",
+   "teacher_lines": "450–454",
+   "source": "강의 450–454행"
+  },
+  {
+   "id": "s13",
+   "scene": 13,
+   "flow": "flow-2",
+   "orig": 13,
+   "title": "발해 장터의 인기 상품",
+   "key": "솔빈부의 말 · 신라도 교역",
+   "panel": {
+    "sheet": "media/nambuk-sheets/1.png",
+    "sha256": "b01abffcfd236b6fdac8e9db4ba5c95ae190d37fe9783e92066d39515c5126e6",
+    "rect": [
+     0,
+     726,
+     543,
+     338
+    ]
+   },
+   "speakers": [
+    "상인",
+    "동료"
+   ],
+   "stress": "발해 사회에서 제일 잘 나오는 것은 솔빈부의 말이라며 꼭 기억하라고 짚었어요.",
+   "teacher_lines": "459–461",
+   "source": "강의 459–461행"
+  },
+  {
+   "id": "s14",
+   "scene": 14,
+   "flow": "flow-2",
+   "orig": 14,
+   "title": "발해는 스스로 누구의 후계라 했을까",
+   "key": "주자감 · 고구려 계승",
+   "panel": {
+    "sheet": "media/nambuk-sheets/1.png",
+    "sha256": "b01abffcfd236b6fdac8e9db4ba5c95ae190d37fe9783e92066d39515c5126e6",
+    "rect": [
+     543,
+     726,
+     543,
+     338
+    ]
+   },
+   "speakers": [
+    "학자",
+    "사신"
+   ],
+   "stress": "주자감이 발해의 학교였다는 것은 중요하니 꼭 외우라고 짚었어요.",
+   "teacher_lines": "454–459 · 473–474",
+   "source": "강의 454–459 · 473–474행"
+  },
+  {
+   "id": "s15",
+   "scene": 15,
+   "flow": "flow-3",
+   "orig": 15,
+   "title": "학교를 세우고, 가르치고, 뽑는다",
+   "key": "국학 → 박사·조교 → 독서삼품과",
+   "panel": {
+    "sheet": "media/nambuk-sheets/1.png",
+    "sha256": "b01abffcfd236b6fdac8e9db4ba5c95ae190d37fe9783e92066d39515c5126e6",
+    "rect": [
+     0,
+     1064,
+     543,
+     384
+    ]
+   },
+   "speakers": [
+    "학생",
+    "스승"
+   ],
+   "stress": "‘관리 선발을 위해 독서삼품과를 시행하였다’가 나오면 통일 신라 원성왕 때라고 짚었어요.",
+   "teacher_lines": "359 · 364–367 · 470",
+   "source": "강의 359 · 364–367 · 470행"
+  },
+  {
+   "id": "s16",
+   "scene": 16,
+   "flow": "flow-3",
+   "orig": 16,
+   "title": "꽃들의 이야기로 왕에게 조언하다",
+   "key": "설총 · 이두 · 화왕계",
+   "panel": {
+    "sheet": "media/nambuk-sheets/1.png",
+    "sha256": "b01abffcfd236b6fdac8e9db4ba5c95ae190d37fe9783e92066d39515c5126e6",
+    "rect": [
+     543,
+     1064,
+     543,
+     384
+    ]
+   },
+   "speakers": [
+    "설총",
+    "왕"
+   ],
+   "stress": "‘화왕계를 지었다’, ‘이두 문자를 정리했다’가 나오면 설총이라고 짚었어요.",
+   "teacher_lines": "426–439",
+   "source": "강의 426–439행"
+  },
+  {
+   "id": "s17",
+   "scene": 17,
+   "flow": "flow-3",
+   "orig": 17,
+   "title": "원효, 사람들 속으로 들어가다",
+   "key": "원효 · 무애가 · 불교 대중화",
+   "panel": {
+    "sheet": "media/nambuk-sheets/2.png",
+    "sha256": "ea8f29e32980d4265b98f73c8158ef33b1c4553a0d05341d94d891e773c1a0ee",
+    "rect": [
+     0,
+     0,
+     543,
+     351
+    ]
+   },
+   "speakers": [
+    "백성",
+    "원효"
+   ],
+   "stress": "마음이 중요하니 마음 심(心) 자가 많이 들어간 일체유심조 · 일심 사상, 그리고 화쟁 사상이 나오면 원효라고 짚었어요.",
+   "teacher_lines": "411–418",
+   "source": "강의 411–418행"
+  },
+  {
+   "id": "s18",
+   "scene": 18,
+   "flow": "flow-3",
+   "orig": 18,
+   "title": "의상, 화엄의 세계를 펼치다",
+   "key": "의상 · 부석사 · 화엄",
+   "panel": {
+    "sheet": "media/nambuk-sheets/2.png",
+    "sha256": "ea8f29e32980d4265b98f73c8158ef33b1c4553a0d05341d94d891e773c1a0ee",
+    "rect": [
+     543,
+     0,
+     543,
+     351
+    ]
+   },
+   "speakers": [
+    "제자",
+    "의상"
+   ],
+   "stress": "관음 신앙이 나와도 의상이라고 짚었어요.",
+   "teacher_lines": "418–420",
+   "source": "강의 418–420행"
+  },
+  {
+   "id": "s19",
+   "scene": 19,
+   "flow": "flow-3",
+   "orig": 19,
+   "title": "혜초, 먼 길의 기록을 남기다",
+   "key": "혜초 · 왕오천축국전",
+   "panel": {
+    "sheet": "media/nambuk-sheets/2.png",
+    "sha256": "ea8f29e32980d4265b98f73c8158ef33b1c4553a0d05341d94d891e773c1a0ee",
+    "rect": [
+     0,
+     351,
+     543,
+     327
+    ]
+   },
+   "speakers": [
+    "제자",
+    "혜초"
+   ],
+   "stress": "혜초는 거의 오답 선택지로 등장한다고 짚었어요.",
+   "teacher_lines": "420–421",
+   "source": "강의 420–421행"
+  },
+  {
+   "id": "s20",
+   "scene": 20,
+   "flow": "flow-3",
+   "orig": 20,
+   "title": "돌탑 안에서 나온 오래된 인쇄물",
+   "key": "무구정광대다라니경 · 목판 인쇄",
+   "panel": {
+    "sheet": "media/nambuk-sheets/2.png",
+    "sha256": "ea8f29e32980d4265b98f73c8158ef33b1c4553a0d05341d94d891e773c1a0ee",
+    "rect": [
+     543,
+     351,
+     543,
+     327
+    ]
+   },
+   "speakers": [
+    "승려",
+    "동료"
+   ],
+   "stress": "불국사 3층 석탑과 무구정광대다라니경은 세트로도 가끔 문제에 나온다고 짚었어요.",
+   "teacher_lines": "363 · 402–411",
+   "source": "강의 363 · 402–411행"
+  },
+  {
+   "id": "s21",
+   "scene": 21,
+   "flow": "flow-3",
+   "orig": 21,
+   "title": "후기로 갈수록, 마음의 수행을 찾다",
+   "key": "선종 확산 · 승탑 유행",
+   "panel": {
+    "sheet": "media/nambuk-sheets/2.png",
+    "sha256": "ea8f29e32980d4265b98f73c8158ef33b1c4553a0d05341d94d891e773c1a0ee",
+    "rect": [
+     0,
+     678,
+     543,
+     338
+    ]
+   },
+   "speakers": [
+    "승려",
+    "장인"
+   ],
+   "stress": "키가 작고 둥글둥글한 탑이 나오면 승탑, 곧 통일 신라 말에 유행한 선종으로 연결하라고 짚었어요.",
+   "teacher_lines": "421–425",
+   "source": "강의 421–425행"
+  },
+  {
+   "id": "s22",
+   "scene": 22,
+   "flow": "flow-3",
+   "orig": 22,
+   "title": "신라의 무덤도 달라졌다",
+   "key": "굴식 돌방무덤 · 12지 신상",
+   "panel": {
+    "sheet": "media/nambuk-sheets/2.png",
+    "sha256": "ea8f29e32980d4265b98f73c8158ef33b1c4553a0d05341d94d891e773c1a0ee",
+    "rect": [
+     543,
+     678,
+     543,
+     338
+    ]
+   },
+   "speakers": [
+    "신라 사람",
+    "안내자"
+   ],
+   "stress": null,
+   "teacher_lines": null,
+   "source": "기존 웹툰 설명(강의 337–478행·교재 PDF 31–37쪽에 없음)"
+  },
+  {
+   "id": "s23",
+   "scene": 23,
+   "flow": "flow-3",
+   "orig": 23,
+   "title": "천장에도 남은 고구려의 흔적",
+   "key": "정혜공주묘 · 모줄임 천장",
+   "panel": {
+    "sheet": "media/nambuk-sheets/2.png",
+    "sha256": "ea8f29e32980d4265b98f73c8158ef33b1c4553a0d05341d94d891e773c1a0ee",
+    "rect": [
+     0,
+     1016,
+     543,
+     432
+    ]
+   },
+   "speakers": [
+    "발해 사람",
+    "안내자"
+   ],
+   "stress": "발해는 고구려를 계승한 나라니 그것을 증명하는 정혜공주묘와 온돌이 중요하다고 짚었어요.",
+   "teacher_lines": "461–465",
+   "source": "강의 461–465행"
+  },
+  {
+   "id": "s24",
+   "scene": 24,
+   "flow": "flow-3",
+   "orig": 24,
+   "title": "장보고, 바닷길의 중심에 서다",
+   "key": "장보고 · 완도 · 청해진",
+   "panel": {
+    "sheet": "media/nambuk-sheets/2.png",
+    "sha256": "ea8f29e32980d4265b98f73c8158ef33b1c4553a0d05341d94d891e773c1a0ee",
+    "rect": [
+     543,
+     1016,
+     543,
+     432
+    ]
+   },
+   "speakers": [
+    "상인",
+    "장보고"
+   ],
+   "stress": null,
+   "teacher_lines": "377–381",
+   "source": "강의 377–381행"
+  },
+  {
+   "id": "s25",
+   "scene": 25,
+   "flow": "flow-4",
+   "orig": 25,
+   "title": "왕위를 둘러싼 싸움이 커지다",
+   "key": "귀족의 왕위 다툼 · 중앙의 동요",
+   "panel": {
+    "sheet": "media/nambuk-sheets/3.png",
+    "sha256": "f30e7bbffaf1d75c05d1f76018aba6b0dd8cdbd2a9da724e99542631568fc88e",
+    "rect": [
+     0,
+     0,
+     543,
+     351
+    ]
+   },
+   "speakers": [
+    "신하",
+    "백성"
+   ],
+   "stress": "혜공왕 피살 → 김헌창의 난 → 장보고의 난의 순서를 많이 묻는다고 짚었어요.",
+   "teacher_lines": "364–371",
+   "source": "강의 364–371행"
+  },
+  {
+   "id": "s26",
+   "scene": 26,
+   "flow": "flow-4",
+   "orig": 26,
+   "title": "최치원의 개혁 건의",
+   "key": "최치원 · 시무 10여 조",
+   "panel": {
+    "sheet": "media/nambuk-sheets/3.png",
+    "sha256": "f30e7bbffaf1d75c05d1f76018aba6b0dd8cdbd2a9da724e99542631568fc88e",
+    "rect": [
+     543,
+     0,
+     543,
+     351
+    ]
+   },
+   "speakers": [
+    "최치원",
+    "신하"
+   ],
+   "stress": null,
+   "teacher_lines": "372–374 · 426–433",
+   "source": "강의 372–374 · 426–433행"
+  },
+  {
+   "id": "s27",
+   "scene": 27,
+   "flow": "flow-4",
+   "orig": 27,
+   "title": "견디지 못한 농민들이 일어서다",
+   "key": "원종과 애노의 난 · 농민 봉기",
+   "panel": {
+    "sheet": "media/nambuk-sheets/3.png",
+    "sha256": "f30e7bbffaf1d75c05d1f76018aba6b0dd8cdbd2a9da724e99542631568fc88e",
+    "rect": [
+     0,
+     351,
+     543,
+     327
+    ]
+   },
+   "speakers": [
+    "농민",
+    "동료"
+   ],
+   "stress": "혼란스러운 통일 신라 후기를 대표하는 왕이 진성여왕이고, 그때의 대표 반란이 원종과 애노의 반란이라고 짚었어요.",
+   "teacher_lines": "371–373 · 442",
+   "source": "강의 371–373 · 442행"
+  },
+  {
+   "id": "s28",
+   "scene": 28,
+   "flow": "flow-4",
+   "orig": 28,
+   "title": "왕의 힘이 약해진 곳을 누가 채울까",
+   "key": "중앙 약화 → 지방 호족 성장",
+   "panel": {
+    "sheet": "media/nambuk-sheets/3.png",
+    "sha256": "f30e7bbffaf1d75c05d1f76018aba6b0dd8cdbd2a9da724e99542631568fc88e",
+    "rect": [
+     543,
+     351,
+     543,
+     327
+    ]
+   },
+   "speakers": [
+    "지방민",
+    "호족"
+   ],
+   "stress": null,
+   "teacher_lines": "381–382",
+   "source": "강의 381–382행"
+  },
+  {
+   "id": "s29",
+   "scene": 29,
+   "flow": "flow-4",
+   "orig": 29,
+   "title": "견훤, 후백제의 깃발을 들다",
+   "key": "견훤 · 완산주 · 후백제",
+   "panel": {
+    "sheet": "media/nambuk-sheets/3.png",
+    "sha256": "f30e7bbffaf1d75c05d1f76018aba6b0dd8cdbd2a9da724e99542631568fc88e",
+    "rect": [
+     0,
+     678,
+     543,
+     337
+    ]
+   },
+   "speakers": [
+    "견훤",
+    "백성"
+   ],
+   "stress": null,
+   "teacher_lines": "383–385 · 389–391",
+   "source": "강의 383–385 · 389–391행"
+  },
+  {
+   "id": "s30",
+   "scene": 30,
+   "flow": "flow-4",
+   "orig": 30,
+   "title": "궁예, 또 다른 나라를 세우다",
+   "key": "궁예 · 송악 → 철원",
+   "panel": {
+    "sheet": "media/nambuk-sheets/3.png",
+    "sha256": "f30e7bbffaf1d75c05d1f76018aba6b0dd8cdbd2a9da724e99542631568fc88e",
+    "rect": [
+     543,
+     678,
+     543,
+     337
+    ]
+   },
+   "speakers": [
+    "궁예",
+    "신하"
+   ],
+   "stress": "후고구려에서 시험에 제일 잘 나오는 것은 광평성이라고 짚었어요.",
+   "teacher_lines": "385–389 · 470–471",
+   "source": "강의 385–389 · 470–471행"
+  },
+  {
+   "id": "s31",
+   "scene": 31,
+   "flow": "flow-4",
+   "orig": 31,
+   "title": "북쪽의 강국도 무너지다",
+   "key": "거란의 침입 → 발해 멸망",
+   "panel": {
+    "sheet": "media/nambuk-sheets/3.png",
+    "sha256": "f30e7bbffaf1d75c05d1f76018aba6b0dd8cdbd2a9da724e99542631568fc88e",
+    "rect": [
+     0,
+     1015,
+     543,
+     433
+    ]
+   },
+   "speakers": [
+    "발해 사신",
+    "백성"
+   ],
+   "stress": null,
+   "teacher_lines": null,
+   "source": "기존 웹툰 설명(강의 337–478행·교재 PDF 31–37쪽에 없음)"
+  },
+  {
+   "id": "s32",
+   "scene": 32,
+   "flow": "flow-4",
+   "orig": 32,
+   "title": "이제, 무대는 후삼국으로",
+   "key": "남북국에서 후삼국으로",
+   "panel": {
+    "sheet": "media/nambuk-sheets/3.png",
+    "sha256": "f30e7bbffaf1d75c05d1f76018aba6b0dd8cdbd2a9da724e99542631568fc88e",
+    "rect": [
+     543,
+     1015,
+     543,
+     433
+    ]
+   },
+   "speakers": [
+    "학생",
+    "기록자"
+   ],
+   "stress": "공산 전투 · 고창 전투 · 신라 멸망 · 일리천 전투의 순서를 많이 물으니 앞 글자를 따서 ‘공고신일’로 외우라고 짚었어요.",
+   "teacher_lines": "388–401 · 471–473",
+   "source": "강의 388–401 · 471–473행"
+  }
+ ],
+ "memory": [
+  {
+   "after": "s8",
+   "scene": 8,
+   "chunks": [
+    "통일 완성과 신문왕의 왕권 강화",
+    "넓어진 나라를 다스리는 제도",
+    "토지 제도의 변화"
+   ]
+  },
+  {
+   "after": "s14",
+   "scene": 14,
+   "chunks": [
+    "발해의 네 왕",
+    "발해의 살림과 고구려 계승"
+   ]
+  },
+  {
+   "after": "s24",
+   "scene": 24,
+   "chunks": [
+    "유학과 인재 선발",
+    "원효 · 의상 · 혜초",
+    "탑과 인쇄물, 신라 말 선종",
+    "남과 북의 무덤",
+    "장보고와 바닷길"
+   ]
+  },
+  {
+   "after": "s32",
+   "scene": 32,
+   "chunks": [
+    "하대의 왕위 다툼",
+    "진성여왕 때의 혼란과 호족",
+    "후백제와 후고구려",
+    "북쪽 발해의 멸망",
+    "후삼국 통일 과정"
+   ]
+  }
+ ]
+}

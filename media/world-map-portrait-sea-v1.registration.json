@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "asset": "world-map-portrait-sea-v1.png",
+  "size": [
+    1254,
+    1254
+  ],
+  "sha256": "416ea1a852fdb934ba7e93048cb4e8b9a9c3ca7292ecad7fadc53bab1b03da1b",
+  "kind": "AI-edited sea-only derivative; not an exact restoration of the original artwork",
+  "source": "world-map-mobile-v1.png",
+  "sourceSha256": "ea57514276a9d0157f22f3ef528e31bcfe2a60947d4268795fbb06d73db71ad0",
+  "preserved": "Original mobile/wide PNGs and original main-island pixels, route IDs and coastline masks are unchanged.",
+  "display": "Tall coarse-pointer map only, proportional cover; no tiling, reflection or main-island stretch.",
+  "editing": "Existing image-generation edit removed the six main islands while retaining sea, clouds and decorative islets. Exact original image remains registered separately."
+}

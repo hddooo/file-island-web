@@ -1,0 +1,9 @@
+/* Selection is disabled only on game chrome. Study hosts and native editors remain selectable. */
+html body :is(.world-map,.subject-travel-map,.world-global-nav,.toeic-sections,.device-crown,.topline button,.ri-world,.cm-life,.hanq-mascot,.ac-character,.ac-partner-art,.collection-portrait,.hall-person,.hall-podium,.hall-pages,.bi-arena){-webkit-user-select:none;user-select:none}
+html body :is(.world-map,.subject-travel-map,.ri-world,.ac-character,.ac-partner-art,.hall-person,.hall-podium,.bi-arena) img{-webkit-user-drag:none}
+html body :is(input,textarea,[contenteditable=true],[contenteditable=""],.tn,.tg,.tc,.tp,.tn-recent-dialog,.lc-player-host,.lc-script-content){-webkit-user-select:text;user-select:text}
+
+/* Suppress double-tap zoom on controls while retaining pan + pinch zoom. */
+html body :is(button,a[role=button],.world-map,.subject-travel-map,.hall-person,.tn-chapter-row,.tn-recent-track){touch-action:manipulation}
+
+html body :is(.tn,.tg,.tc,.tp,.tn-recent-dialog,.lc-player-host,.lc-script-content) :is(p,li,td,th,h2,h3,h4,h5,h6,span,strong,em,mark){-webkit-user-select:text;user-select:text}

@@ -1,0 +1,229 @@
+[
+  {
+    "id": "z-goryeo-recall-01",
+    "source": {
+      "file": "lecture-notes.js",
+      "era": "goryeo",
+      "index": 0,
+      "q": "청연각·보문각을 두고 관학을 키운 왕은?",
+      "a": "예종",
+      "mod": [
+        "G03"
+      ]
+    },
+    "answer": "예종"
+  },
+  {
+    "id": "z-goryeo-recall-02",
+    "source": {
+      "file": "lecture-notes.js",
+      "era": "goryeo",
+      "index": 1,
+      "q": "교정도감과 봉사 10조의 주인공은?",
+      "a": "최충헌",
+      "mod": [
+        "G04"
+      ]
+    },
+    "answer": "최충헌"
+  },
+  {
+    "id": "z-goryeo-recall-03",
+    "source": {
+      "file": "lecture-notes.js",
+      "era": "goryeo",
+      "index": 2,
+      "q": "‘교관겸수’를 내세운 스님은?",
+      "a": "의천",
+      "mod": [
+        "G10"
+      ]
+    },
+    "answer": "의천"
+  },
+  {
+    "id": "z-goryeo-recall-04",
+    "source": {
+      "file": "lecture-notes.js",
+      "era": "goryeo",
+      "index": 3,
+      "q": "‘정혜쌍수·돈오점수’를 내세운 스님은?",
+      "a": "지눌",
+      "mod": [
+        "G10"
+      ]
+    },
+    "answer": "지눌"
+  },
+  {
+    "id": "z-goryeo-recall-05",
+    "source": {
+      "file": "lecture-notes.js",
+      "era": "goryeo",
+      "index": 4,
+      "q": "소를 이용한 깊이갈이가 널리 퍼진 시대는?",
+      "a": "고려",
+      "mod": [
+        "G09"
+      ]
+    },
+    "answer": "고려"
+  },
+  {
+    "id": "z-goryeo-recall-06",
+    "source": {
+      "file": "lecture-notes.js",
+      "era": "goryeo",
+      "index": 5,
+      "q": "직지심체요절을 찍은 절은?",
+      "a": "청주 흥덕사",
+      "mod": [
+        "G11"
+      ]
+    },
+    "answer": "청주 흥덕사"
+  },
+  {
+    "id": "z-goryeo-recall-07",
+    "source": {
+      "file": "lecture-notes.js",
+      "era": "goryeo",
+      "index": 6,
+      "q": "광종 다음, 전시과를 시작한 왕은?",
+      "a": "5대 경종 (그다음 6대 성종)",
+      "mod": [
+        "G01",
+        "G09"
+      ]
+    },
+    "answer": "경종"
+  },
+  {
+    "id": "z-goryeo-recall-08",
+    "source": {
+      "file": "lecture-notes.js",
+      "era": "goryeo",
+      "index": 7,
+      "q": "이자겸의 난(1126) 다음에 학습 흐름에서 다루는 사건은?",
+      "a": "묘청의 서경 천도 운동 (1126 → 1135, 9년 뒤) → 김부식이 진압",
+      "mod": [
+        "G03"
+      ]
+    },
+    "answer": "묘청"
+  },
+  {
+    "id": "z-goryeo-recall-09",
+    "source": {
+      "file": "lecture-notes.js",
+      "era": "goryeo",
+      "index": 8,
+      "q": "김윤후가 몽골군을 막아 낸 두 곳은?",
+      "a": "처인성 · 충주성",
+      "mod": [
+        "G05"
+      ]
+    },
+    "answer": "처인성·충주성"
+  },
+  {
+    "id": "z-goryeo-recall-10",
+    "source": {
+      "file": "lecture-notes.js",
+      "era": "goryeo",
+      "index": 9,
+      "q": "위화도 회군 뒤 조선 건국까지의 순서는?",
+      "a": "1388 위화도 회군 → 1391 과전법 → 1392 조선 건국",
+      "mod": [
+        "G07"
+      ]
+    },
+    "answer": "과전법"
+  },
+  {
+    "id": "z-goryeo-recall-11",
+    "source": {
+      "file": "textbook-notes.js",
+      "era": "goryeo",
+      "index": 0,
+      "q": "정방을 둔 무신 집권자는?",
+      "a": "최우",
+      "src": [
+        "goryeo-07"
+      ]
+    },
+    "answer": "최우"
+  },
+  {
+    "id": "z-goryeo-recall-12",
+    "source": {
+      "file": "textbook-notes.js",
+      "era": "goryeo",
+      "index": 1,
+      "q": "교정도감을 둔 무신 집권자는?",
+      "a": "최충헌",
+      "src": [
+        "goryeo-07"
+      ]
+    },
+    "answer": "최충헌"
+  },
+  {
+    "id": "z-goryeo-recall-13",
+    "source": {
+      "file": "textbook-notes.js",
+      "era": "goryeo",
+      "index": 2,
+      "q": "진포 대첩에서 화포를 쓴 인물은?",
+      "a": "최무선",
+      "src": [
+        "goryeo-12"
+      ]
+    },
+    "answer": "최무선"
+  },
+  {
+    "id": "z-goryeo-recall-14",
+    "source": {
+      "file": "study-notes.js",
+      "era": "goryeo",
+      "index": 0,
+      "q": "서희가 담판으로 얻은 땅은?",
+      "a": "강동 6주"
+    },
+    "answer": "강동6주"
+  },
+  {
+    "id": "z-goryeo-recall-15",
+    "source": {
+      "file": "study-notes.js",
+      "era": "goryeo",
+      "index": 1,
+      "q": "귀주 대첩을 이끈 인물은?",
+      "a": "강감찬"
+    },
+    "answer": "강감찬"
+  },
+  {
+    "id": "z-goryeo-recall-16",
+    "source": {
+      "file": "study-notes.js",
+      "era": "goryeo",
+      "index": 2,
+      "q": "원래 양인이던 노비를 풀어 준 왕은?",
+      "a": "광종(노비안검법)"
+    },
+    "answer": "광종"
+  },
+  {
+    "id": "z-goryeo-recall-17",
+    "source": {
+      "file": "study-notes.js",
+      "era": "goryeo",
+      "index": 3,
+      "q": "현존 최고 금속 활자본과 그 간행 장소는?",
+      "a": "『직지심체요절』, 청주 흥덕사"
+    },
+    "answer": "직지심체요절"
+  }
+]

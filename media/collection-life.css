@@ -1,0 +1,78 @@
+/* Same reviewed portrait, articulated parts. Visual state never determines stage, damage or XP. */
+html[data-hanq-theme] body .cm-life{position:relative;display:inline-block;width:100%;height:100%;aspect-ratio:1;isolation:isolate;vertical-align:middle;background:transparent!important;pointer-events:none;--cm-beat:4.8s;--cm-flight-base:0%;--cm-float:3%}
+html[data-hanq-theme] body .cm-life :is(.cm-reveal,.cm-rig,.cm-layer){display:block;position:absolute;inset:0;width:100%;height:100%;pointer-events:none;background-color:transparent!important}
+html[data-hanq-theme] body .cm-life .cm-layer{background-image:var(--cm-image)!important;background-size:var(--cm-size)!important;background-position:var(--cm-position);background-repeat:no-repeat;image-rendering:auto;mask-image:var(--cm-isolate,none);-webkit-mask-image:var(--cm-isolate,none);mask-size:100% 100%;-webkit-mask-size:100% 100%;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat}
+html[data-hanq-theme] body .cm-life .cm-core{mask-image:var(--cm-mask,none);-webkit-mask-image:var(--cm-mask,none);mask-size:100% 100%;-webkit-mask-size:100% 100%;mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat}
+.cm-life:not(.cm-ready) :is(.cm-core,.cm-part){visibility:hidden}.cm-life.cm-ready .cm-fallback{visibility:hidden}
+html[data-hanq-theme] body .cm-life .cm-shadow{display:block;position:absolute;left:24%;right:24%;bottom:1%;height:6%;border-radius:50%;background:radial-gradient(ellipse,#051b2570,transparent 72%)!important;filter:blur(1px);pointer-events:none;z-index:-1}
+html[data-hanq-theme] body .cm-life :is(.cm-part,.cm-rig,.cm-patamon-frames,.cm-shadow,.cm-reveal,.cm-evolution-light){animation-play-state:paused!important}
+html[data-hanq-theme] body .cm-life.cm-active :is(.cm-part,.cm-rig,.cm-patamon-frames,.cm-shadow,.cm-reveal,.cm-evolution-light){animation-play-state:running!important}
+html[data-hanq-theme] body .cm-life .cm-feeler{animation:cm-feeler var(--cm-beat) ease-in-out infinite!important}
+html[data-hanq-theme] body .cm-life .cm-horn{animation:cm-horn 6.3s ease-in-out infinite!important}
+html[data-hanq-theme] body .cm-life :is(.cm-ear,.cm-ear-left){animation:cm-ear 5.9s ease-in-out infinite!important}
+html[data-hanq-theme] body .cm-life .cm-ear-right{animation:cm-ear 5.9s -1.3s ease-in-out reverse infinite!important}
+html[data-hanq-theme] body .cm-life .cm-tail{animation:cm-tail 5.4s ease-in-out infinite!important}
+html[data-hanq-theme] body .cm-life :is(.cm-arm-left,.cm-foot-left){animation:cm-rest-left 7.6s ease-in-out infinite!important}
+html[data-hanq-theme] body .cm-life :is(.cm-arm-right,.cm-foot-right){animation:cm-rest-right 7.6s ease-in-out infinite!important}
+html[data-hanq-theme] body .cm-life .cm-blade-left{animation:cm-blade-left 5.8s ease-in-out infinite!important}html[data-hanq-theme] body .cm-life .cm-blade-right{animation:cm-blade-right 5.8s ease-in-out infinite!important}
+html[data-hanq-theme] body .cm-life :is(.cm-wing-left,.cm-wing-right){animation-duration:2.6s!important;animation-timing-function:ease-in-out!important;animation-iteration-count:infinite!important}
+html[data-hanq-theme] body .cm-life .cm-wing-left{animation-name:cm-wing-left!important}html[data-hanq-theme] body .cm-life .cm-wing-right{animation-name:cm-wing-right!important}
+html[data-hanq-theme] body .cm-life.cm-seraph :is(.cm-wing-left,.cm-wing-right){animation-duration:3.2s!important}
+html[data-hanq-theme] body .cm-life:is(.cm-angel,.cm-seraph,.cm-flying) .cm-rig{animation:cm-hover 3.6s ease-in-out infinite!important}
+html[data-hanq-theme] body .cm-life:is(.cm-angel,.cm-seraph,.cm-flying) .cm-shadow{animation:cm-hover-shadow 3.6s ease-in-out infinite!important}
+html[data-hanq-theme] body .cm-life.cm-flying{--cm-flight-base:4%;--cm-float:2.5%}
+html[data-hanq-theme] body .cm-life .cm-patamon-frames{animation:cm-patamon-flap .96s steps(1,end) infinite!important}
+html[data-hanq-theme] body .cm-life[data-motion="move"]:not(.cm-angel):not(.cm-seraph):not(.cm-flying) .cm-rig{animation:cm-ground-step 1.2s ease-in-out infinite!important}
+html[data-hanq-theme] body .cm-life[data-motion="move"] :is(.cm-foot-left,.cm-arm-left){animation:cm-step-left 1.2s ease-in-out infinite!important}html[data-hanq-theme] body .cm-life[data-motion="move"] :is(.cm-foot-right,.cm-arm-right){animation:cm-step-right 1.2s ease-in-out infinite!important}
+html[data-hanq-theme] body .cm-life[data-motion="move"]:is(.cm-angel,.cm-seraph,.cm-flying) .cm-rig{animation:cm-hover-travel 2.3s ease-in-out infinite!important}
+html[data-hanq-theme] body .cm-life[data-motion="move"] :is(.cm-feeler,.cm-horn,.cm-ear,.cm-ear-left,.cm-ear-right,.cm-tail){animation-duration:2.4s!important}
+/* The original img remains the combat fallback; pending/charge/hurt/defeat suspend the idle rig. */
+.bi-avatar-frame>.cm-life{position:absolute!important;inset:0}.bi-avatar-frame:has(>.cm-life.cm-ready)>.bi-avatar{visibility:hidden}.bi-avatar-frame:is(.bi-posed,.bi-hurting)>.cm-life{visibility:hidden!important}
+html[data-hanq-theme] body .bi-avatar-frame:is(.bi-posed,.bi-hurting,[data-collection-pending-pose])>.cm-life :is(.cm-part,.cm-rig,.cm-patamon-frames,.cm-shadow,.cm-reveal,.cm-evolution-light){animation-play-state:paused!important}
+.bi-participant .cm-life{max-width:70px}.ri-friend-portrait .cm-life{width:72px;height:72px}.ac-partner-art .cm-life{width:100%;height:100%}.hm-pic .cm-life{width:100%;height:100%}.cm-evolution-light{display:none}
+html[data-hanq-theme] body .cm-life.cm-evolving .cm-reveal{animation:cm-evolve-reveal 1.5s ease-out both!important}
+html[data-hanq-theme] body .cm-life.cm-evolving .cm-evolution-light{position:absolute;display:block;inset:-8%;z-index:4;border-radius:50%;pointer-events:none;background:radial-gradient(ellipse,#fff6d6 0 8%,#c5e8ff99 25%,#94b8ff44 44%,transparent 67%)!important;animation:cm-evolve-light 1.5s ease-out both!important}
+@keyframes cm-feeler{0%,62%,100%{transform:rotate(0)}68%{transform:rotate(4deg)}74%{transform:rotate(-3deg)}80%{transform:rotate(2deg)}87%{transform:rotate(0)}}
+/* Poyomon stays one continuous silhouette while it softly breathes. */
+html[data-hanq-theme] body .cm-life[data-character=poyomon][data-motion=idle] .cm-rig{transform-origin:50% 89%;animation:cm-poyomon-breathe 4.8s ease-in-out infinite!important;animation-play-state:paused!important}
+html[data-hanq-theme] body .cm-life.cm-active[data-character=poyomon][data-motion=idle] .cm-rig{animation-play-state:running!important}
+@keyframes cm-poyomon-breathe{0%,100%{transform:scale(1) skewX(0)}32%{transform:scale(1.008,.992) skewX(.45deg)}64%{transform:scale(1.012,.988) skewX(-.3deg)}}
+@media(prefers-reduced-motion:reduce){html[data-hanq-theme] body .cm-life[data-character=poyomon][data-motion=idle] .cm-rig{animation:none!important;transform:none!important}}
+@keyframes cm-horn{0%,70%,100%{transform:rotate(0)}77%{transform:rotate(-2deg)}83%{transform:rotate(1.7deg)}90%{transform:rotate(0)}}
+@keyframes cm-ear{0%,68%,100%{transform:rotate(0)}75%{transform:rotate(-4deg)}82%{transform:rotate(3deg)}89%{transform:rotate(0)}}
+@keyframes cm-tail{0%,48%,100%{transform:rotate(0)}60%{transform:rotate(4deg)}74%{transform:rotate(-3deg)}87%{transform:rotate(2deg)}}
+@keyframes cm-rest-left{0%,78%,100%{transform:rotate(0)}85%{transform:rotate(1.8deg)}92%{transform:rotate(-1deg)}}
+@keyframes cm-rest-right{0%,78%,100%{transform:rotate(0)}85%{transform:rotate(-1.5deg)}92%{transform:rotate(1deg)}}
+@keyframes cm-step-left{0%,100%{transform:rotate(-2deg)}25%{transform:translateY(-1.5%) rotate(3deg)}50%{transform:rotate(2deg)}75%{transform:rotate(-3deg)}}
+@keyframes cm-step-right{0%,100%{transform:rotate(2deg)}25%{transform:rotate(-3deg)}50%{transform:rotate(-2deg)}75%{transform:translateY(-1.5%) rotate(3deg)}}
+@keyframes cm-ground-step{0%,50%,100%{transform:translate(0,0)}25%{transform:translate(.8%,-.7%)}75%{transform:translate(-.8%,-.7%)}}
+@keyframes cm-wing-left{0%,100%{transform:rotate(-2deg) scaleX(1)}50%{transform:rotate(5deg) scaleX(.94)}}
+@keyframes cm-wing-right{0%,100%{transform:rotate(2deg) scaleX(1)}50%{transform:rotate(-5deg) scaleX(.94)}}
+@keyframes cm-blade-left{0%,100%{transform:rotate(0)}50%{transform:rotate(2deg)}}@keyframes cm-blade-right{0%,100%{transform:rotate(0)}50%{transform:rotate(-2deg)}}
+@keyframes cm-hover{0%,100%{transform:translateY(var(--cm-flight-base))}50%{transform:translateY(calc(var(--cm-flight-base) - var(--cm-float)))}}
+@keyframes cm-hover-travel{0%,100%{transform:translate(0,var(--cm-flight-base))}30%{transform:translate(2%,calc(var(--cm-flight-base) - var(--cm-float)))}70%{transform:translate(-2%,calc(var(--cm-flight-base) - var(--cm-float)))}}
+@keyframes cm-hover-shadow{0%,100%{transform:scaleX(1);opacity:.45}50%{transform:scaleX(.85);opacity:.3}}
+@keyframes cm-evolve-reveal{0%{opacity:.2;filter:brightness(2);scale:.86}55%{opacity:1;filter:brightness(1.45);scale:1.04}100%{opacity:1;filter:none;scale:1}}
+@keyframes cm-evolve-light{0%{opacity:0;scale:.4}25%{opacity:1;scale:1.1}100%{opacity:0;scale:1.6}}
+
+@keyframes cm-patamon-flap{
+ 0.0000000%{background-position:-3.478790040% -7.559334116%;clip-path:inset(17.681690087% 8.883890209% 13.653926351% 11.150356367%)}
+ 16.6666667%{background-position:49.912109375% -9.341974432%;clip-path:inset(33.065871147% 8.760835830% 12.995772688% 5.109027183%)}
+ 33.3333333%{background-position:103.060991437% -8.586947996%;clip-path:inset(40.202495065% 5.503533987% 13.050929592% 6.311534507%)}
+ 50.0000000%{background-position:-3.384998301% 101.011238302%;clip-path:inset(46.498382101% 7.838153455% 13.604357625% 9.113901340%)}
+ 66.6666667%{background-position:50.310676596% 100.173663546%;clip-path:inset(29.663678150% 10.266719383% 12.973308151% 8.226431302%)}
+ 83.3333333%{background-position:103.527022014% 100.381424603%;clip-path:inset(20.945502012% 9.345419448% 13.129840454% 11.887457264%)}
+ 100%{background-position:-3.478790040% -7.559334116%;clip-path:inset(17.681690087% 8.883890209% 13.653926351% 11.150356367%)}
+}
+
+html[data-hanq-theme] body .cm-life:not(.cm-active) :is(.cm-part,.cm-rig,.cm-patamon-frames,.cm-shadow,.cm-reveal,.cm-evolution-light){animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){html[data-hanq-theme] body .cm-life :is(.cm-part,.cm-rig,.cm-patamon-frames,.cm-shadow,.cm-reveal,.cm-evolution-light){animation:none!important;transform:none!important;scale:none!important;filter:none!important}.cm-evolution-light{display:none!important}}
+
+/* Brief upper-lid closure, measured against the unchanged original eye pixels. */
+html[data-hanq-theme] body .cm-life .cm-eyelid{position:absolute;display:block;border-radius:50%;background-image:url(/media/characters/collection-blink-overlay-v1.png)!important;background-repeat:no-repeat;mask-image:radial-gradient(ellipse,black 66%,transparent 73%);-webkit-mask-image:radial-gradient(ellipse,black 66%,transparent 73%);clip-path:inset(0 0 100% 0);animation:cm-blink var(--cm-blink-duration,6.1s) var(--cm-blink-delay,0s) linear infinite!important;animation-play-state:paused!important}
+html[data-hanq-theme] body .cm-life.cm-active .cm-eyelid{animation-play-state:running!important}
+html[data-hanq-theme] body .cm-life:not(.cm-blink-ready) .cm-eyelid{visibility:hidden}
+@keyframes cm-blink{0%,52%,55.2%,100%{clip-path:inset(0 0 100% 0)}53.2%,54%{clip-path:inset(0 0 0 0)}}
+@media(prefers-reduced-motion:reduce){html[data-hanq-theme] body .cm-life .cm-eyelid{animation:none!important;visibility:hidden!important}}
+
+html[data-hanq-theme] body .bi-avatar-frame:is(.bi-posed,.bi-hurting,[data-collection-pending-pose])>.cm-life .cm-eyelid{animation-play-state:paused!important}

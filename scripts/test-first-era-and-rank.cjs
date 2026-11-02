@@ -1,0 +1,41 @@
+'use strict';
+const fs=require('fs'),path=require('path'),assert=require('node:assert/strict');
+const {JSDOM,VirtualConsole}=require('../.test-tools/node_modules/jsdom');
+const root=path.resolve(__dirname,'..'),dataRoot=path.resolve(process.argv[2]||'../api/private-textbook-semantic-data');let checks=0;
+const eq=(a,b,m)=>{assert.deepEqual(a,b,m);checks++;},ok=(v,m)=>{assert(v,m);checks++;};
+const tick=()=>new Promise(r=>setTimeout(r,15));
+async function view(hash){
+ const calls=[],writes=[];let errors=[];
+ const state={enabled:false,signedIn:true,restoring:false,ownerId:'fixture-member',epoch:1,status:'disabled',premium:{active:true},user:{id:'fixture-member',displayName:'fixture'}};
+ const api={enabled:()=>false,state:()=>({...state}),onChange:()=>()=>{},init:async()=>state,hasSessionHint:()=>false,textbookSourceWorkspace:async()=>({version:"fixture",revision:0,workspace:{cursor:0,status:"active",responses:{}}}),textbookSemanticManifest:async()=>JSON.parse(fs.readFileSync(path.join(dataRoot,'manifest.json'))),textbookSemanticPage:async n=>{calls.push(n);return JSON.parse(fs.readFileSync(path.join(dataRoot,`pages/page-${String(n).padStart(3,'0')}.json`)));},textbookSemanticQuiz:async id=>JSON.parse(fs.readFileSync(path.join(dataRoot,`quizzes/${id}.json`))),textbookSemanticFigure:()=>Promise.reject(new Error('no real images in isolated DOM fixture'))};
+ for(const key of ['submitAttempt','answerRun','submitRun','setProfile','importProgress'])api[key]=()=>{writes.push(key);throw Error('forbidden production mutation in fixture');};
+ const vc=new VirtualConsole();vc.on('jsdomError',e=>{if(!/navigation|canvas|Not implemented: HTMLMediaElement/.test(e.message))errors.push(e.message);});
+ const d=new JSDOM(fs.readFileSync(path.join(root,'index.html'),'utf8'),{url:'https://fixture.test/'+hash,runScripts:'outside-only',virtualConsole:vc,beforeParse(w){w.HanqApi=api;w.scrollTo=()=>{};w.HTMLElement.prototype.scrollIntoView=()=>{};w.matchMedia=()=>({matches:true,addListener(){},removeListener(){}});w.localStorage.setItem('fixture-preserved-record',JSON.stringify({chapter:'gojoseon',selected:'old-answer',final:true}));w.fetch=async url=>{const u=new URL(url,w.location.href),file=path.join(root,u.pathname);if(u.origin!=='https://fixture.test'||!fs.existsSync(file))throw Error('fixture denied external request');return {ok:true,json:async()=>JSON.parse(fs.readFileSync(file))};};}});
+ for(const script of d.window.document.querySelectorAll('script')){let code=script.textContent;if(script.src){const u=new URL(script.src);if(u.origin!=='https://fixture.test'||u.pathname.endsWith('/api-client.js'))continue;const f=path.join(root,u.pathname);if(!fs.existsSync(f))continue;code=fs.readFileSync(f,'utf8');}d.window.eval(code);}
+ await tick();await tick();
+ return {w:d.window,doc:d.window.document,calls,writes,errors,close:()=>d.window.close()};
+}
+(async()=>{
+ let x=await view('#past-exams');try{
+  const cards=[...x.doc.querySelectorAll('.period')];eq(cards[0].dataset.id,'prehistory','merged first era keeps canonical ID');eq(cards[0].querySelector('strong').textContent,'선사시대·고조선과 여러 나라','requested merged title');eq(cards.filter(c=>c.dataset.id==='gojoseon').length,0,'duplicate era tile hidden');eq(cards.map(c=>c.querySelector('.number').textContent),cards.map((_,i)=>String(i+1).padStart(2,'0')),'visible era numbers contiguous');eq(cards[1].dataset.id,'samguk','second era is samguk');eq(cards[1].querySelector('.number').textContent,'02','following eras renumbered');
+  cards[0].click();await tick();await tick();eq([...x.doc.querySelectorAll('[data-reader-page]')].map(e=>+e.dataset.readerPage),[8,9,11,12],'merged body appears once in original order');eq(x.calls,[8,9,11,12],'no duplicated page requests');eq(x.doc.querySelectorAll('.textbook-reader-toc').length,0,'era TOC entirely absent');ok(!x.doc.querySelector('#privateTextbook > .textbook-semantic-library > h2'),'body not preceded by redundant reader heading');eq([...x.doc.querySelectorAll('.first-era-legacy a')].map(a=>a.getAttribute('href')),['#chapter/prehistory/quiz','#chapter/prehistory/mock','#chapter/gojoseon/quiz','#chapter/gojoseon/mock'],'both legacy quiz and past-paper entrypoints retained');
+ }finally{x.close();}
+ for(const era of ['prehistory','gojoseon'])for(const slug of ['webtoon','bookquiz','culture','quiz','mock']){
+  x=await view(`#chapter/${era}/${slug}`);try{
+   eq(x.w.location.hash,`#chapter/${era}/${slug}`,'legacy URL remains valid '+era+'/'+slug);eq(x.doc.querySelector('.module-head h1').textContent,'선사시대·고조선과 여러 나라','unified heading '+era+'/'+slug);
+   if(slug==='webtoon')eq([...x.doc.querySelectorAll('[data-reader-page]')].map(e=>+e.dataset.readerPage),[8,9,11,12],'old source alias is a single body');
+   if(slug==='bookquiz')eq(x.doc.querySelectorAll('[data-source-item-id]').length,36,'all source blanks once for either URL');
+   if(slug==='culture')ok(x.doc.querySelector('.gc-name').textContent==='빗살무늬 토기','legacy culture alias reads existing canonical asset');
+   if(slug==='quiz')ok(x.doc.querySelector('#quiz'),'legacy quiz player reachable');
+   if(slug==='mock')ok(x.doc.querySelector('#mock'),'legacy past-paper player reachable');
+   eq(x.doc.defaultView.localStorage.getItem('fixture-preserved-record'),JSON.stringify({chapter:'gojoseon',selected:'old-answer',final:true}),'previous record untouched');eq(x.writes,[],'read-only route makes no answer mutation');
+  }finally{x.close();}
+ }
+ const rank=JSON.parse(fs.readFileSync(path.join(dataRoot,'pages/page-023.json'))).blocks.find(b=>b.layoutRole==='source-rank-chart');
+ const renderer=require('../media/textbook-semantic'),dom=new JSDOM('<main></main>'),host=dom.window.document.querySelector('main');renderer.render(host,{schemaVersion:'hanq-semantic/1',pdfPage:23,blocks:[rank]});
+ const table=host.querySelector('table');eq(table.tHead.rows.length,1,'single exact header row above body');eq([...table.tHead.rows[0].cells].map(c=>c.textContent),['등급','관등명','공복','진골','6두품','5두품','4두품'],'flat header and robe column explicit');eq(table.caption.textContent,'관 등 · 골 품','original group words retained in caption');eq(table.tBodies[0].rows.length,17,'exactly seventeen rank rows');eq([...table.querySelectorAll('[data-range-start]')].map(c=>[+c.dataset.sourceColumn,+c.dataset.rangeStart,+c.dataset.rangeEnd,c.rowSpan]),[[3,1,17,17],[4,6,17,12],[5,10,17,8],[6,12,17,6]],'all four exact source range extents');eq(table.querySelectorAll('.textbook-source-range-fill').length,4,'all four visible graphic range bars');eq([...table.tBodies[0].rows].flatMap(r=>[...r.cells]).filter(c=>c.dataset.sourceColumn==='2').map(c=>[c.textContent,c.rowSpan]),[['자색',5],['비색',4],['청색',2],['황색',6]],'source robe-color merges');
+ eq([...table.tBodies[0].rows[0].cells].filter(c=>+c.dataset.sourceColumn>=4).map(c=>c.rowSpan),[5,9,11],'blank upper bone-rank areas remain merged');
+ let bad=structuredClone(rank);bad.rows[1].cells.find(c=>c.sourceRangeBar).sourceRangeStart=2;assert.throws(()=>renderer.validatePage({schemaVersion:'hanq-semantic/1',pdfPage:23,blocks:[bad]}),/range/);checks++;
+ const selection=dom.window.getSelection(),range=dom.window.document.createRange();range.selectNodeContents(table);selection.removeAllRanges();selection.addRange(range);const copied={};const event=new dom.window.Event('copy',{bubbles:true,cancelable:true});event.clipboardData={setData:(type,value)=>copied[type]=value};table.dispatchEvent(event);const tsv=copied['text/plain'].split('\n').map(r=>r.split('\t'));eq(tsv.length,18,'copy header plus seventeen ranks');ok(tsv.every(r=>r.length===7),'copy has seven explicit columns in every row');eq(tsv[0],['등급','관등명','공복','진골','6두품','5두품','4두품'],'copy exact column order');eq(tsv[1][2],'자색','copy robe under 공복');eq(tsv[6][2],'비색','copy merged robe repeated meaning');ok(tsv[6][4].includes('6두품'),'copy range stays in proper column');ok(copied['text/html'].includes('scope="col"'),'copy HTML accessible headers');
+ dom.window.close();console.log(JSON.stringify({checks,failures:0,scope:'merged era IDs and old routes; source body/blank/culture linking; synthetic record preservation; rank header and merged eligibility geometry; no production transport'}));
+})().catch(e=>{console.error(e);process.exitCode=1;});

@@ -1,0 +1,71 @@
+{
+  "generated_on": "2026-10-08",
+  "kind": "separate supplemental package",
+  "progression": [
+    "Tokomon",
+    "Patamon (reuse existing sprite)",
+    "Angemon",
+    "HolyAngemon (MagnaAngemon)"
+  ],
+  "provenance": "AI-generated fan depictions, not official or officially licensed. Built-in image_gen tool.",
+  "files": [
+    {
+      "file": "tokomon.png",
+      "format": "PNG",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "frame_count": 1,
+      "bytes": 688690,
+      "sha256": "b8ee011616f3c5aeea6fe0feefb5a2efc2e7e836ac37074878e018d39077989f",
+      "fully_transparent_percent": 68.53,
+      "visible_bbox_alpha_gt_128": [
+        222,
+        38,
+        1147,
+        1206
+      ]
+    },
+    {
+      "file": "angemon.png",
+      "format": "PNG",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "frame_count": 1,
+      "bytes": 1631056,
+      "sha256": "9b66596acc62fc31291c59a0f495b7bb4b15bba15d95890ac09d6df3a35090d3",
+      "fully_transparent_percent": 52.07,
+      "visible_bbox_alpha_gt_128": [
+        59,
+        24,
+        1196,
+        1231
+      ]
+    },
+    {
+      "file": "holyangemon.png",
+      "format": "PNG",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "frame_count": 1,
+      "bytes": 1837422,
+      "sha256": "b2af2dd92f7cb87b6f65404ea62a153a9cf6b577bd9b62cb047b49f5a6e00e89",
+      "fully_transparent_percent": 48.52,
+      "visible_bbox_alpha_gt_128": [
+        51,
+        6,
+        1215,
+        1243
+      ]
+    }
+  ],
+  "validation": {
+    "png_decode": "passed all three",
+    "rgba_transparency": "passed all three",
+    "visual_inspection": "completed all three",
+    "gif_or_animation": "none; all three are static portraits",
+    "previous_pack": "unchanged"
+  }
+}

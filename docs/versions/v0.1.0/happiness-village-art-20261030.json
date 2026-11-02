@@ -1,0 +1,62 @@
+{
+  "tool": "built-in image_gen",
+  "mode": "edit existing game backgrounds; user anime references used for composition and mood only",
+  "references": [
+    {
+      "filename": "ChatGPT 이미지 2026년 10월 30일 오후 03_05_52.png",
+      "sha256": "598aef718f7a87bd3bc077f386cf4596649bf8ee4bb30b7ae2f83add09e5f4d1",
+      "size": 2214085
+    },
+    {
+      "filename": "ChatGPT 이미지 2026년 10월 30일 오후 03_06_00.png",
+      "sha256": "9f4065643298090669040c61b0d41dde658d10b482c2df8717f105d619b29273",
+      "size": 1929936
+    },
+    {
+      "filename": "ChatGPT 이미지 2026년 10월 30일 오후 03_06_06.png",
+      "sha256": "fdc1a12658c6b567c419267cdb98c1a77bc722ab4aff87a0b1aeb72014f0d650",
+      "size": 1965283
+    },
+    {
+      "filename": "ChatGPT 이미지 2026년 10월 30일 오후 03_06_09.png",
+      "sha256": "2528ac08905a2e5478251702d4080edcfcfef95bf53833bd9fd49f951a9b2200",
+      "size": 1941869
+    },
+    {
+      "filename": "ChatGPT 이미지 2026년 10월 30일 오후 03_06_13.png",
+      "sha256": "3641405a8e74722e88e8ccbaee4e92ec0355ce83a72cce015612b21a06e6a8d1",
+      "size": 1327790
+    }
+  ],
+  "generated": [
+    {
+      "key": "wide",
+      "master": "generated_images/exec-9602700a-faf7-4e5d-8d6d-fcf71507916c.png",
+      "asset": "media/world-art/happiness-village-wide-v1.webp",
+      "sha256": "cc1a36a7fdd11accc2ba55a199806785241cb4e54078d03918d34f97feec91ef",
+      "bytes": 647676
+    },
+    {
+      "key": "tall",
+      "master": "generated_images/exec-75610d6b-d891-417a-848b-314335ae2c8a.png",
+      "asset": "media/world-art/happiness-village-tall-v1.webp",
+      "sha256": "edd5eefe73ef7dfcc342de2f885b413d634d68f0507e9a855d418ab727207eea",
+      "bytes": 685426
+    }
+  ],
+  "prompts": [
+    {
+      "key": "wide",
+      "prompt": "Use case: stylized-concept / precise-object-edit. This is a production game BACKGROUND, not a screenshot or UI mockup. Image 1 is the existing game background EDIT TARGET: preserve its premium detailed hand-painted storybook rendering, texture, soft volume, vibrant but harmonious palette. Recompose it completely following the user's reference mood, replacing the empty oval park. Other input images are REFERENCE ONLY, never paste or trace their screenshots. No anime people, UI, text, letters, labels, logos, watermarks, borders, or panel splits.\nBuild ONE coherent Happiness Village: LEFT is a charming amusement hamlet made of playful colorful toy-block houses, star/flower shapes, a little carousel and modest wheel, fruit trees; RIGHT is a huge mysterious fruit-bearing tree with a broad umbrella/mushroom-like crown of lush rounded leaves and pastel jewel fruits. Under that tree are two clear small grassy spots for interactive egg nests which will be layered separately. A warm open patchwork grass playground and short winding paths join the two areas through the middle. Fairy-tale park, not medieval castle plaza or waterfront. Keep visual richness in the buildings and canopy, calm readable ground in the middle and foreground. Camera at a gentle slightly elevated game diorama angle, believable soft sunlight, roots and vegetation grounded in the soil.\nDo NOT bake in any eggs, Digimon, bears, babies, people, train, clothing stall, or interface, since these are animated interactive layers in code. Leave places for them: a keeper clearing just left of the big tree, two egg positions underneath its right side, open central play patches, and room for a small clothing stall at the amusement side.\nA small garden railway is ONLY a short straight section in the lower LEFT foreground, not an oval or circuit. It has two continuous parallel rails with wooden sleepers at consistent spacing, running diagonally gently down to the RIGHT in the exact specified region. Both endpoints lead toward a tiny garden station/planting. Keep it subtle; no detached rails or extra crossings. This limited straight section supports a slow station shuttle with a single fixed perspective train sprite. LANDSCAPE 1536x1024, same dimensions as target. Composition left village occupies x=5–43%, tree on right x=58–96% with canopy near upper-right and trunk/ground at x=78%, y=65%. Keeper clearing x=57%,y=66%; egg clearings x=74%,y=77% and x=86%,y=77%. Central grass is uncluttered x=35–61%,y=65–80%. The short railway centerline runs in a genuinely straight line from x=8%,y=73% to x=44%,y=89%, about 17 degrees downward to the right in image pixels. Leave the bottommost 8% as quiet garden foreground. No giant background lake, full oval track, or empty central stadium. Everything feels like one magical nursery village."
+    },
+    {
+      "key": "tall",
+      "prompt": "Use case: stylized-concept / precise-object-edit. This is a production game BACKGROUND, not a screenshot or UI mockup. Image 1 is the existing game background EDIT TARGET: preserve its premium detailed hand-painted storybook rendering, texture, soft volume, vibrant but harmonious palette. Recompose it completely following the user's reference mood, replacing the empty oval park. Other input images are REFERENCE ONLY, never paste or trace their screenshots. No anime people, UI, text, letters, labels, logos, watermarks, borders, or panel splits.\nBuild ONE coherent Happiness Village: LEFT is a charming amusement hamlet made of playful colorful toy-block houses, star/flower shapes, a little carousel and modest wheel, fruit trees; RIGHT is a huge mysterious fruit-bearing tree with a broad umbrella/mushroom-like crown of lush rounded leaves and pastel jewel fruits. Under that tree are two clear small grassy spots for interactive egg nests which will be layered separately. A warm open patchwork grass playground and short winding paths join the two areas through the middle. Fairy-tale park, not medieval castle plaza or waterfront. Keep visual richness in the buildings and canopy, calm readable ground in the middle and foreground. Camera at a gentle slightly elevated game diorama angle, believable soft sunlight, roots and vegetation grounded in the soil.\nDo NOT bake in any eggs, Digimon, bears, babies, people, train, clothing stall, or interface, since these are animated interactive layers in code. Leave places for them: a keeper clearing just left of the big tree, two egg positions underneath its right side, open central play patches, and room for a small clothing stall at the amusement side.\nA small garden railway is ONLY a short straight section in the lower LEFT foreground, not an oval or circuit. It has two continuous parallel rails with wooden sleepers at consistent spacing, running diagonally gently down to the RIGHT in the exact specified region. Both endpoints lead toward a tiny garden station/planting. Keep it subtle; no detached rails or extra crossings. This limited straight section supports a slow station shuttle with a single fixed perspective train sprite. PORTRAIT 1024x1536, same dimensions as target. A specifically composed mobile view, NOT a crop of a landscape. BOTH places must read beside each other: toy amusement hamlet on left x=6–42%, tree and its crown on right x=54–97%. Keep the important buildings/canopy mostly within y=26–61%; upper quarter may be softly illustrated sky and distant toy roofs. Tree trunk/ground at x=79%,y=64%; keeper clearing x=56%,y=60%; egg clearings x=73%,y=72% and x=85%,y=72%; open play patches x=35–51%,y=66–75%. Short railway centerline is straight from x=8%,y=71% to x=42%,y=78%, about 17 degrees downward to the right in image pixels. Keep bottom quarter as soft garden/path foreground. Important interactive ground must remain clear if the top sky and bottom garden are cropped on a short mobile screen. No panoramic strip or whole oval track."
+    }
+  ],
+  "sourceImagesPublished": false,
+  "charactersAndEggsBakedIntoBackground": false,
+  "apiOrDbChanged": false,
+  "sourceFilesUnchanged": true,
+  "runtimeFormat": "WebP quality91"
+}

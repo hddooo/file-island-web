@@ -1,0 +1,2729 @@
+{
+  "policy": "Lexical audit locates candidate gaps; copied source-backed author notes supplement missing visible terms. Normal answer match does not prove entire cue was taught. No claim all 122 user problems were available. Existing reading/quiz IDs unchanged.",
+  "sources": {
+    "textbook": {
+      "file": "벼락치기한능검_요약서.pdf",
+      "sha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442"
+    },
+    "summaryNote": {
+      "file": "한국사능력검정_요약노트.pdf",
+      "sha256": "e7b8a2a9f4afa70b61cde05dc48cd3b363d8a03963224fb0a3cc970f0ba55e9e",
+      "physicalPages": 25,
+      "contentPages": [
+        5,
+        25
+      ],
+      "structure": "고대·중세 / 고려 / 조선 전기 / 조선 후기 / 개항기 / 일제 강점기 / 현대, 사회·경제·문화 비교",
+      "limits": "Separate work; source PDF untouched and not shipped. Structural comparison and selected sections checked; factual errors not carried into app."
+    }
+  },
+  "questionMappings": [
+    {
+      "era": "ancient",
+      "topicIndex": 1,
+      "title": "고구려 문화 계승",
+      "exam": 66,
+      "question": 8,
+      "officialAnswer": 5,
+      "bookProblemNumber": 73,
+      "summaryPdfPages": [
+        36
+      ],
+      "officialQuestionPage": 2,
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "nambuk",
+      "status": "weak",
+      "existingScenes": [],
+      "supplementScene": "study-cue-ancient-1",
+      "cue": "발해 유적의 연꽃무늬 수막새·온돌 → 고구려 문화 계승",
+      "correctFeature": "고구려",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "온돌",
+        "연꽃"
+      ],
+      "missingBefore": [
+        "연꽃"
+      ]
+    },
+    {
+      "era": "ancient",
+      "topicIndex": 2,
+      "title": "장보고의 바닷길",
+      "exam": 74,
+      "question": 9,
+      "officialAnswer": 2,
+      "bookProblemNumber": 72,
+      "summaryPdfPages": [],
+      "officialQuestionPage": 3,
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "nambuk",
+      "status": "weak",
+      "existingScenes": [],
+      "supplementScene": "study-cue-ancient-2",
+      "cue": "무령군 소장·청해진·암살 → 장보고 → 적산 법화원",
+      "correctFeature": "적산 법화원",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "청해진",
+        "적산"
+      ],
+      "missingBefore": [
+        "적산"
+      ]
+    },
+    {
+      "era": "ancient",
+      "topicIndex": 3,
+      "title": "신라의 탑",
+      "exam": 72,
+      "question": 10,
+      "officialAnswer": 5,
+      "bookProblemNumber": 71,
+      "summaryPdfPages": [],
+      "officialQuestionPage": 3,
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "nambuk",
+      "status": "normal",
+      "existingScenes": [
+        "s21"
+      ],
+      "supplementScene": "study-cue-ancient-3",
+      "cue": "분황사 모전석탑 / 감은사지 삼층석탑 / 쌍봉사 철감선사탑",
+      "correctFeature": "쌍봉사 철감선사탑 · 승탑",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "철감선사",
+        "승탑"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "ancient",
+      "topicIndex": 4,
+      "title": "발해 왕의 순서",
+      "exam": 71,
+      "question": 9,
+      "officialAnswer": 2,
+      "bookProblemNumber": 68,
+      "summaryPdfPages": [],
+      "officialQuestionPage": 3,
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "nambuk",
+      "status": "normal",
+      "existingScenes": [
+        "s10"
+      ],
+      "supplementScene": "study-cue-ancient-4",
+      "cue": "대조영 건국 → 무왕 등주 공격 → 문왕 상경 천도 → 선왕 해동성국",
+      "correctFeature": "무왕",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "무왕",
+        "등주"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "ancient",
+      "topicIndex": 5,
+      "title": "발해의 정치",
+      "exam": 72,
+      "question": 7,
+      "officialAnswer": 2,
+      "bookProblemNumber": 67,
+      "summaryPdfPages": [],
+      "officialQuestionPage": 2,
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "nambuk",
+      "status": "hard-to-find",
+      "existingScenes": [],
+      "supplementScene": "study-cue-ancient-5",
+      "cue": "정혜 공주 묘·모줄임 천장·황상 → 발해 → 정당성 대내상",
+      "correctFeature": "대내상",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "정혜",
+        "대내상"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "ancient",
+      "topicIndex": 6,
+      "title": "발해 교육과 왕별 연호",
+      "exam": 75,
+      "question": 8,
+      "officialAnswer": 2,
+      "bookProblemNumber": 66,
+      "summaryPdfPages": [],
+      "officialQuestionPage": 2,
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "nambuk",
+      "status": "normal",
+      "existingScenes": [
+        "s14"
+      ],
+      "supplementScene": "study-cue-ancient-6",
+      "cue": "발해 주자감 = 교육 / 무왕 인안·문왕 대흥·선왕 건흥",
+      "correctFeature": "주자감",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "주자감",
+        "인안",
+        "대흥",
+        "건흥"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "ancient",
+      "topicIndex": 7,
+      "title": "발해의 교역과 문서",
+      "exam": 74,
+      "question": 7,
+      "officialAnswer": 5,
+      "bookProblemNumber": 64,
+      "summaryPdfPages": [],
+      "officialQuestionPage": 2,
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "nambuk",
+      "status": "hard-to-find",
+      "existingScenes": [],
+      "supplementScene": "study-cue-ancient-7",
+      "cue": "5개 교역로·담비 가죽·약재·소그드 은화 → 발해 → 문적원",
+      "correctFeature": "문적원",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "문적원",
+        "교역"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "ancient",
+      "topicIndex": 8,
+      "title": "나라별 제도 비교",
+      "exam": 77,
+      "question": 7,
+      "officialAnswer": 2,
+      "bookProblemNumber": 63,
+      "summaryPdfPages": [],
+      "officialQuestionPage": 2,
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "nambuk",
+      "status": "weak",
+      "existingScenes": [],
+      "supplementScene": "study-cue-ancient-8",
+      "cue": "5경 15부 → 발해 → 주자감 교육",
+      "correctFeature": "발해 · 주자감",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "5경",
+        "주자감"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "ancient",
+      "topicIndex": 9,
+      "title": "후삼국 인물",
+      "exam": 72,
+      "question": 9,
+      "officialAnswer": 4,
+      "bookProblemNumber": null,
+      "summaryPdfPages": [],
+      "officialQuestionPage": 2,
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "nambuk",
+      "status": "normal",
+      "existingScenes": [
+        "s29",
+        "s30"
+      ],
+      "supplementScene": "study-cue-ancient-9",
+      "cue": "포석정 경애왕 습격·공산 전투 승리 → 견훤 → 완산주 후백제",
+      "correctFeature": "완산주 · 전주",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "견훤",
+        "완산주"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "ancient",
+      "topicIndex": 10,
+      "title": "문무왕과 신문왕",
+      "exam": 74,
+      "question": 6,
+      "officialAnswer": 5,
+      "bookProblemNumber": 55,
+      "summaryPdfPages": [],
+      "officialQuestionPage": 2,
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "nambuk",
+      "status": "normal",
+      "existingScenes": [
+        "s7"
+      ],
+      "supplementScene": "study-cue-ancient-10",
+      "cue": "삼국 통일·대왕암 수중릉 → 문무왕 → 외사정 파견",
+      "correctFeature": "문무왕",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "문무왕",
+        "외사정"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "ancient",
+      "topicIndex": 11,
+      "title": "신라 하대 순서",
+      "exam": 76,
+      "question": 9,
+      "officialAnswer": 2,
+      "bookProblemNumber": 54,
+      "summaryPdfPages": [],
+      "officialQuestionPage": 3,
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "nambuk",
+      "status": "weak",
+      "existingScenes": [],
+      "supplementScene": "study-cue-ancient-11",
+      "cue": "혜공왕 피살 → 김헌창의 난 → 원종·애노의 난",
+      "correctFeature": "김헌창",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "혜공왕",
+        "김헌창",
+        "원종"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "ancient",
+      "topicIndex": 12,
+      "title": "통일 신라 경제",
+      "exam": 76,
+      "question": 5,
+      "officialAnswer": 4,
+      "bookProblemNumber": 52,
+      "summaryPdfPages": [],
+      "officialQuestionPage": 2,
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "nambuk",
+      "status": "weak",
+      "existingScenes": [],
+      "supplementScene": "study-cue-ancient-12",
+      "cue": "쇼소인·서원경 4개 촌락 기록 → 신라 촌락 문서 → 청해진 무역",
+      "correctFeature": "청해진 · 장보고",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "촌락",
+        "청해진"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "ancient",
+      "topicIndex": 13,
+      "title": "신라 하대의 선종",
+      "exam": 77,
+      "question": 10,
+      "officialAnswer": 4,
+      "bookProblemNumber": 51,
+      "summaryPdfPages": [],
+      "officialQuestionPage": 3,
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "nambuk",
+      "status": "weak",
+      "existingScenes": [],
+      "supplementScene": "study-cue-ancient-13",
+      "cue": "청해진 폐지 → 신라 하대 → 참선하는 선종 승려",
+      "correctFeature": "선종",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "하대",
+        "선종"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "ancient",
+      "topicIndex": 14,
+      "title": "종교 단서",
+      "exam": 70,
+      "question": 5,
+      "officialAnswer": 2,
+      "bookProblemNumber": 50,
+      "summaryPdfPages": [],
+      "officialQuestionPage": 2,
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "samguk",
+      "status": "weak",
+      "existingScenes": [],
+      "supplementScene": "study-cue-ancient-14",
+      "cue": "현무도·산수무늬 벽돌·신선·불로장생 → 도교",
+      "correctFeature": "도교",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "도교",
+        "불로장생"
+      ],
+      "missingBefore": [
+        "불로장생"
+      ]
+    },
+    {
+      "era": "ancient",
+      "topicIndex": 15,
+      "title": "고구려와 신라의 관계",
+      "exam": 65,
+      "question": 4,
+      "officialAnswer": 1,
+      "bookProblemNumber": 49,
+      "summaryPdfPages": [
+        17,
+        18
+      ],
+      "officialQuestionPage": 1,
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "samguk",
+      "status": "weak",
+      "existingScenes": [],
+      "supplementScene": "study-cue-ancient-15",
+      "cue": "경주 호우총 출토·광개토대왕 관련 명문 → 호우명 그릇",
+      "correctFeature": "호우명 그릇",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "호우",
+        "명문"
+      ],
+      "missingBefore": [
+        "명문"
+      ]
+    },
+    {
+      "era": "ancient",
+      "topicIndex": 16,
+      "title": "벽돌처럼 생긴 돌",
+      "exam": 67,
+      "question": 4,
+      "officialAnswer": 4,
+      "bookProblemNumber": 48,
+      "summaryPdfPages": [
+        24
+      ],
+      "officialQuestionPage": 1,
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "samguk",
+      "status": "normal",
+      "existingScenes": [
+        "s19"
+      ],
+      "supplementScene": "study-cue-ancient-16",
+      "cue": "돌을 벽돌 모양으로 다듬은 탑·선덕여왕 → 분황사 모전석탑",
+      "correctFeature": "분황사 모전석탑 · 신라",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "분황사",
+        "모전"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "ancient",
+      "topicIndex": 17,
+      "title": "삼국 통일 이전",
+      "exam": 68,
+      "question": 5,
+      "officialAnswer": 2,
+      "bookProblemNumber": 47,
+      "summaryPdfPages": [
+        17,
+        27
+      ],
+      "officialQuestionPage": 2,
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "samguk",
+      "status": "missing",
+      "existingScenes": [],
+      "supplementScene": "study-cue-ancient-17",
+      "cue": "642 김춘추 고구려 청병 → 645 안시성 전투 → 648 나당 동맹",
+      "correctFeature": "안시성 전투 · 645년",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "642",
+        "645",
+        "648"
+      ],
+      "missingBefore": [
+        "642",
+        "645",
+        "648"
+      ]
+    },
+    {
+      "era": "ancient",
+      "topicIndex": 18,
+      "title": "불상의 명문",
+      "exam": 69,
+      "question": 6,
+      "officialAnswer": 2,
+      "bookProblemNumber": 46,
+      "summaryPdfPages": [
+        18
+      ],
+      "officialQuestionPage": 2,
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "samguk",
+      "status": "weak",
+      "existingScenes": [],
+      "supplementScene": "study-cue-ancient-18",
+      "cue": "경남 의령 출토·광배 뒷면 연가 명문·고구려 천불 → 연가 7년명 금동 여래 입상",
+      "correctFeature": "연가 7년명 금동 여래 입상 · 고구려",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "연가",
+        "명문"
+      ],
+      "missingBefore": [
+        "명문"
+      ]
+    },
+    {
+      "era": "ancient",
+      "topicIndex": 19,
+      "title": "나라별 생활",
+      "exam": 74,
+      "question": 2,
+      "officialAnswer": 5,
+      "bookProblemNumber": 10,
+      "summaryPdfPages": [],
+      "officialQuestionPage": 1,
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "gojoseon",
+      "status": "normal",
+      "existingScenes": [
+        "scene-1"
+      ],
+      "supplementScene": "study-cue-ancient-19",
+      "cue": "단군왕검·참성단 → 고조선 → 상·대부·장군",
+      "correctFeature": "고조선 · 상·대부·장군",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "고조선",
+        "상",
+        "대부",
+        "장군"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "ancient",
+      "topicIndex": 20,
+      "title": "신석기의 생활",
+      "exam": 69,
+      "question": 1,
+      "officialAnswer": 3,
+      "bookProblemNumber": 6,
+      "summaryPdfPages": [
+        9,
+        10
+      ],
+      "officialQuestionPage": 1,
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "prehistory",
+      "status": "normal",
+      "existingScenes": [
+        "scene-4"
+      ],
+      "supplementScene": "study-cue-ancient-20",
+      "cue": "동삼동 패총·빗살무늬 토기·농경 목축 → 신석기 → 가락바퀴·뼈바늘",
+      "correctFeature": "신석기 · 가락바퀴와 뼈바늘",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "신석기",
+        "가락바퀴",
+        "뼈바늘"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "ancient",
+      "topicIndex": 21,
+      "title": "시대의 시작 구분",
+      "exam": 74,
+      "question": 1,
+      "officialAnswer": 3,
+      "bookProblemNumber": 4,
+      "summaryPdfPages": [],
+      "officialQuestionPage": 1,
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "prehistory",
+      "status": "normal",
+      "existingScenes": [
+        "scene-3"
+      ],
+      "supplementScene": "study-cue-ancient-21",
+      "cue": "암사동·빗살무늬 토기·갈돌 갈판 → 신석기 → 농경과 목축 시작",
+      "correctFeature": "신석기 · 농경과 목축",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "신석기",
+        "농경",
+        "목축"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "goryeo",
+      "topicIndex": 1,
+      "title": "이제현과 원의 학술 교류",
+      "exam": 71,
+      "question": 17,
+      "officialAnswer": 5,
+      "bookProblemNumber": 124,
+      "summaryPdfPages": null,
+      "questionSource": "hanq-ancient-photo-source-check/71-questions.txt",
+      "answerSourceSha256": "f34b0047e051b3076dc5e0df41422e5519a0f1d3c01ab41ca1f276c4afc56e79",
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "goryeo",
+      "status": "hard-to-find",
+      "existingScenes": [],
+      "supplementScene": "study-cue-goryeo-1",
+      "cue": "역옹패설·유청신의 몽골어 → 이제현 → 원 만권당에서 조맹부 등과 교유.",
+      "correctFeature": "이제현 · 만권당",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "이제현",
+        "역옹패설",
+        "만권당"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "goryeo",
+      "topicIndex": 2,
+      "title": "고려 문화재의 경계",
+      "exam": 74,
+      "question": 13,
+      "officialAnswer": 1,
+      "bookProblemNumber": 123,
+      "summaryPdfPages": null,
+      "questionSource": "hanq-ancient-photo-source-check/74-questions.txt",
+      "answerSourceSha256": "e10687888039306fd677a2a7b1c359e216a791b5a6a00700ac1bae6499570f28",
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "goryeo",
+      "status": "weak",
+      "existingScenes": [],
+      "supplementScene": "study-cue-goryeo-2",
+      "cue": "청자·나전칠기·경천사지 석탑 → 고려. 기마 인물형 토기 → 신라.",
+      "correctFeature": "신라",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "청자",
+        "나전",
+        "신라"
+      ],
+      "missingBefore": [
+        "신라"
+      ]
+    },
+    {
+      "era": "goryeo",
+      "topicIndex": 3,
+      "title": "지눌의 수행",
+      "exam": 74,
+      "question": 16,
+      "officialAnswer": 2,
+      "bookProblemNumber": 121,
+      "summaryPdfPages": null,
+      "questionSource": "hanq-ancient-photo-source-check/74-questions.txt",
+      "answerSourceSha256": "e10687888039306fd677a2a7b1c359e216a791b5a6a00700ac1bae6499570f28",
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "goryeo",
+      "status": "normal",
+      "existingScenes": [
+        "culture"
+      ],
+      "supplementScene": "study-cue-goryeo-3",
+      "cue": "불일보조국사·수선사·정혜결사 → 지눌 → 돈오점수·정혜쌍수.",
+      "correctFeature": "돈오점수 · 지눌",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "지눌",
+        "정혜쌍수",
+        "돈오점수"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "goryeo",
+      "topicIndex": 4,
+      "title": "고려의 기술",
+      "exam": 75,
+      "question": 17,
+      "officialAnswer": 4,
+      "bookProblemNumber": 119,
+      "summaryPdfPages": null,
+      "questionSource": "hanq-ancient-photo-source-check/75-questions.txt",
+      "answerSourceSha256": "bff93b520516ce93fde3067b2abf0ea06411b8ceede0f292bc56f980065c8fb7",
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "goryeo",
+      "status": "weak",
+      "existingScenes": [],
+      "supplementScene": "study-cue-goryeo-4",
+      "cue": "고려 금속활자 → 직지심체요절. 화통도감 → 최무선의 화약 무기.",
+      "correctFeature": "고려 · 금속활자",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "직지",
+        "화통도감"
+      ],
+      "missingBefore": [
+        "화통도감"
+      ]
+    },
+    {
+      "era": "goryeo",
+      "topicIndex": 5,
+      "title": "상형 청자",
+      "exam": 76,
+      "question": 17,
+      "officialAnswer": 1,
+      "bookProblemNumber": 118,
+      "summaryPdfPages": null,
+      "questionSource": "hanq-ancient-photo-source-check/76-questions.txt",
+      "answerSourceSha256": "e81e3273706999f317c73ec1862fd3cb867fe4790ded0be4b7a1f8a8a2e79f43",
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "goryeo",
+      "status": "missing",
+      "existingScenes": [],
+      "supplementScene": "study-cue-goryeo-5",
+      "cue": "사람·동물의 형태를 본뜬 자기 → 상형자기. 공식 정답 사진은 청자 어룡형 주전자.",
+      "correctFeature": "청자 어룡형 주전자 · 고려",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "상형",
+        "어룡"
+      ],
+      "missingBefore": [
+        "상형",
+        "어룡"
+      ]
+    },
+    {
+      "era": "goryeo",
+      "topicIndex": 6,
+      "title": "문화재와 화폐",
+      "exam": 77,
+      "question": 13,
+      "officialAnswer": 4,
+      "bookProblemNumber": 117,
+      "summaryPdfPages": null,
+      "questionSource": "hanq-ancient-photo-source-check/77-questions.txt",
+      "answerSourceSha256": "21dbe5b97303f01548a45a92ca597cef7e374e02a2b906a3941018dd1c8127fc",
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "goryeo",
+      "status": "missing",
+      "existingScenes": [],
+      "supplementScene": "study-cue-goryeo-6",
+      "cue": "단산오옥명 먹·서긍·묵소·나전칠기 → 고려. 상평통보 → 조선.",
+      "correctFeature": "상평통보 · 조선",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "단산오옥",
+        "상평통보"
+      ],
+      "missingBefore": [
+        "단산오옥",
+        "상평통보"
+      ]
+    },
+    {
+      "era": "goryeo",
+      "topicIndex": 7,
+      "title": "개경의 관영 상점",
+      "exam": 72,
+      "question": 16,
+      "officialAnswer": 3,
+      "bookProblemNumber": 115,
+      "summaryPdfPages": null,
+      "questionSource": "hanq-ancient-photo-source-check/72-questions.txt",
+      "answerSourceSha256": "18c5a149db8f45649b322bd8a91562c7d67106c1e9789771c69e871983679d9c",
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "goryeo",
+      "status": "missing",
+      "existingScenes": [],
+      "supplementScene": "study-cue-goryeo-7",
+      "cue": "서긍·고려도경·예성항 → 고려. 개경에는 관영 서적점·다점이 있었다.",
+      "correctFeature": "서적점 · 다점",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "서적점",
+        "다점"
+      ],
+      "missingBefore": [
+        "서적점",
+        "다점"
+      ]
+    },
+    {
+      "era": "goryeo",
+      "topicIndex": 8,
+      "title": "기관의 역할",
+      "exam": 74,
+      "question": 18,
+      "officialAnswer": 4,
+      "bookProblemNumber": 114,
+      "summaryPdfPages": null,
+      "questionSource": "hanq-ancient-photo-source-check/74-questions.txt",
+      "answerSourceSha256": "e10687888039306fd677a2a7b1c359e216a791b5a6a00700ac1bae6499570f28",
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "goryeo",
+      "status": "hard-to-find",
+      "existingScenes": [],
+      "supplementScene": "study-cue-goryeo-8",
+      "cue": "중추원은 군사 기밀·왕명 출납. 도병마사는 재추가 국방·군사를 논의.",
+      "correctFeature": "삼사 · 어사대 · 도병마사",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "삼사",
+        "어사대",
+        "도병마사"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "goryeo",
+      "topicIndex": 9,
+      "title": "원 간섭의 권력",
+      "exam": 72,
+      "question": 15,
+      "officialAnswer": 1,
+      "bookProblemNumber": 106,
+      "summaryPdfPages": null,
+      "questionSource": "hanq-ancient-photo-source-check/72-questions.txt",
+      "answerSourceSha256": "18c5a149db8f45649b322bd8a91562c7d67106c1e9789771c69e871983679d9c",
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "goryeo",
+      "status": "normal",
+      "existingScenes": [
+        "yuan"
+      ],
+      "supplementScene": "study-cue-goryeo-9",
+      "cue": "충렬왕부터 원 공주와 혼인 → 원 간섭기. 권문세족은 도평의사사를 장악.",
+      "correctFeature": "권문세족 · 도평의사사",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "권문",
+        "도평의사사"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "goryeo",
+      "topicIndex": 10,
+      "title": "원 간섭과 농업",
+      "exam": 74,
+      "question": 17,
+      "officialAnswer": 1,
+      "bookProblemNumber": 102,
+      "summaryPdfPages": null,
+      "questionSource": "hanq-ancient-photo-source-check/74-questions.txt",
+      "answerSourceSha256": "e10687888039306fd677a2a7b1c359e216a791b5a6a00700ac1bae6499570f28",
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "goryeo",
+      "status": "weak",
+      "existingScenes": [],
+      "supplementScene": "study-cue-goryeo-10",
+      "cue": "공녀·변발·호복·권문세족 농장 → 원 간섭기. 원의 농상집요가 소개되었다.",
+      "correctFeature": "농상집요",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "원",
+        "농상집요"
+      ],
+      "missingBefore": [
+        "농상집요"
+      ]
+    },
+    {
+      "era": "goryeo",
+      "topicIndex": 11,
+      "title": "소민의 차별과 봉기",
+      "exam": 73,
+      "question": 14,
+      "officialAnswer": 2,
+      "bookProblemNumber": 96,
+      "summaryPdfPages": null,
+      "questionSource": "hanq-goryeo-73-questions.txt",
+      "answerSourceSha256": "a3839ed0e89afc96378ebf4453228828097d81610a434077f90813bff515a64b",
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "goryeo",
+      "status": "hard-to-find",
+      "existingScenes": [],
+      "supplementScene": "study-cue-goryeo-11",
+      "cue": "공주 명학소·현으로 승격·홍경원 공격 → 망이·망소이의 난.",
+      "correctFeature": "망이·망소이의 난",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "망이",
+        "명학소"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "goryeo",
+      "topicIndex": 12,
+      "title": "1174 → 1225 → 1270",
+      "exam": 72,
+      "question": 14,
+      "officialAnswer": 4,
+      "bookProblemNumber": 97,
+      "summaryPdfPages": null,
+      "questionSource": "hanq-ancient-photo-source-check/72-questions.txt",
+      "answerSourceSha256": "18c5a149db8f45649b322bd8a91562c7d67106c1e9789771c69e871983679d9c",
+      "adaptation": "chronological order retained",
+      "appEra": "goryeo",
+      "status": "weak",
+      "existingScenes": [],
+      "supplementScene": "study-cue-goryeo-12",
+      "cue": "조위총 봉기 → 최우의 정방 설치 → 임유무 제거·개경 환도.",
+      "correctFeature": "조위총 봉기 → 정방 설치 → 임유무 제거",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "조위총",
+        "1225",
+        "1270"
+      ],
+      "missingBefore": [
+        "1225"
+      ]
+    },
+    {
+      "era": "goryeo",
+      "topicIndex": 13,
+      "title": "1173 → 1196 → 1270",
+      "exam": 74,
+      "question": 14,
+      "officialAnswer": 1,
+      "bookProblemNumber": 95,
+      "summaryPdfPages": null,
+      "questionSource": "hanq-ancient-photo-source-check/74-questions.txt",
+      "answerSourceSha256": "e10687888039306fd677a2a7b1c359e216a791b5a6a00700ac1bae6499570f28",
+      "adaptation": "chronological order retained",
+      "appEra": "goryeo",
+      "status": "hard-to-find",
+      "existingScenes": [],
+      "supplementScene": "study-cue-goryeo-13",
+      "cue": "김보당의 의종 복위 시도 → 최충헌의 봉사10조 → 삼별초 항쟁.",
+      "correctFeature": "김보당의 난 → 봉사10조 → 삼별초 항쟁",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "김보당",
+        "1196",
+        "1270"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "goryeo",
+      "topicIndex": 14,
+      "title": "몽골과 대장경",
+      "exam": 75,
+      "question": 12,
+      "officialAnswer": 5,
+      "bookProblemNumber": 94,
+      "summaryPdfPages": null,
+      "questionSource": "hanq-ancient-photo-source-check/75-questions.txt",
+      "answerSourceSha256": "bff93b520516ce93fde3067b2abf0ea06411b8ceede0f292bc56f980065c8fb7",
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "goryeo",
+      "status": "weak",
+      "existingScenes": [],
+      "supplementScene": "study-cue-goryeo-14",
+      "cue": "삼별초의 진도 용장성·승화후 온 → 몽골과의 강화에 반발.",
+      "correctFeature": "대장도감 · 팔만대장경",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "삼별초",
+        "대장도감"
+      ],
+      "missingBefore": [
+        "대장도감"
+      ]
+    },
+    {
+      "era": "goryeo",
+      "topicIndex": 15,
+      "title": "강화 천도와 항쟁 사이",
+      "exam": 70,
+      "question": 15,
+      "officialAnswer": 4,
+      "bookProblemNumber": 93,
+      "summaryPdfPages": null,
+      "questionSource": "hanq-ancient-photo-source-check/70-questions.txt",
+      "answerSourceSha256": "51bdf65b06b2919925de3810875a643aa622fa540de9387afd17383bb2828071",
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "goryeo",
+      "status": "normal",
+      "existingScenes": [
+        ""
+      ],
+      "supplementScene": "study-cue-goryeo-15",
+      "cue": "1232 최우의 강화 천도 → 김윤후가 처인성에서 살리타 사살 → 1270 삼별초 항쟁.",
+      "correctFeature": "김윤후 · 살리타",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "1232",
+        "처인성",
+        "살리타"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "goryeo",
+      "topicIndex": 16,
+      "title": "최충헌과 최우",
+      "exam": 76,
+      "question": 12,
+      "officialAnswer": 3,
+      "bookProblemNumber": 92,
+      "summaryPdfPages": null,
+      "questionSource": "hanq-ancient-photo-source-check/76-questions.txt",
+      "answerSourceSha256": "e81e3273706999f317c73ec1862fd3cb867fe4790ded0be4b7a1f8a8a2e79f43",
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "goryeo",
+      "status": "weak",
+      "existingScenes": [],
+      "supplementScene": "study-cue-goryeo-16",
+      "cue": "야별초를 좌·우별초로 나눈 인물 → 최우. 최우는 인사 기구 정방을 설치했다.",
+      "correctFeature": "정방 · 교정도감",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "최우",
+        "정방",
+        "교정도감"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "goryeo",
+      "topicIndex": 17,
+      "title": "예종과 관학",
+      "exam": 71,
+      "question": 13,
+      "officialAnswer": 1,
+      "bookProblemNumber": 87,
+      "summaryPdfPages": null,
+      "questionSource": "hanq-ancient-photo-source-check/71-questions.txt",
+      "answerSourceSha256": "f34b0047e051b3076dc5e0df41422e5519a0f1d3c01ab41ca1f276c4afc56e79",
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "goryeo",
+      "status": "normal",
+      "existingScenes": [
+        ""
+      ],
+      "supplementScene": "study-cue-goryeo-17",
+      "cue": "문헌공도 등 사학이 발달 → 예종은 국자감에 전문 강좌 7재를 설치.",
+      "correctFeature": "예종",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "예종",
+        "7재"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "goryeo",
+      "topicIndex": 18,
+      "title": "여진과 윤관",
+      "exam": 69,
+      "question": 13,
+      "officialAnswer": 5,
+      "bookProblemNumber": 90,
+      "summaryPdfPages": null,
+      "questionSource": "hanq-ancient-photo-source-check/official-69-questions.txt",
+      "answerSourceSha256": "96d4e96723e34fbd61097dc026440d4a7dfe518648a684449edae4878ef3d822",
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "goryeo",
+      "status": "normal",
+      "existingScenes": [
+        "aristocrat"
+      ],
+      "supplementScene": "study-cue-goryeo-18",
+      "cue": "윤관·오연총·여진 정벌 → 별무반을 이끌고 동북9성을 축조.",
+      "correctFeature": "별무반 · 동북9성",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "윤관",
+        "별무반",
+        "동북"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "goryeo",
+      "topicIndex": 19,
+      "title": "숙종의 화폐",
+      "exam": 70,
+      "question": 13,
+      "officialAnswer": 1,
+      "bookProblemNumber": 88,
+      "summaryPdfPages": null,
+      "questionSource": "hanq-ancient-photo-source-check/70-questions.txt",
+      "answerSourceSha256": "51bdf65b06b2919925de3810875a643aa622fa540de9387afd17383bb2828071",
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "goryeo",
+      "status": "hard-to-find",
+      "existingScenes": [],
+      "supplementScene": "study-cue-goryeo-19",
+      "cue": "조카 헌종을 몰아냄·남경·주전도감·해동통보 → 숙종.",
+      "correctFeature": "숙종",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "숙종",
+        "주전도감",
+        "해동통보"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "goryeo",
+      "topicIndex": 20,
+      "title": "묘청과 서경",
+      "exam": 75,
+      "question": 14,
+      "officialAnswer": 3,
+      "bookProblemNumber": 86,
+      "summaryPdfPages": null,
+      "questionSource": "hanq-ancient-photo-source-check/75-questions.txt",
+      "answerSourceSha256": "bff93b520516ce93fde3067b2abf0ea06411b8ceede0f292bc56f980065c8fb7",
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "goryeo",
+      "status": "weak",
+      "existingScenes": [],
+      "supplementScene": "study-cue-goryeo-20",
+      "cue": "서경 반란군·음양·도참·대화궁 → 1135 묘청의 서경 천도 운동.",
+      "correctFeature": "묘청 · 김부식",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "묘청",
+        "대화궁"
+      ],
+      "missingBefore": [
+        "대화궁"
+      ]
+    },
+    {
+      "era": "goryeo",
+      "topicIndex": 21,
+      "title": "거란과 초조대장경",
+      "exam": 72,
+      "question": 12,
+      "officialAnswer": 3,
+      "bookProblemNumber": 82,
+      "summaryPdfPages": null,
+      "questionSource": "hanq-ancient-photo-source-check/72-questions.txt",
+      "answerSourceSha256": "18c5a149db8f45649b322bd8a91562c7d67106c1e9789771c69e871983679d9c",
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "goryeo",
+      "status": "hard-to-find",
+      "existingScenes": [],
+      "supplementScene": "study-cue-goryeo-21",
+      "cue": "현종 피란·개경 함락·초조대장경 → 거란 침입. 광군을 조직해 대비.",
+      "correctFeature": "광군",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "거란",
+        "광군",
+        "초조"
+      ],
+      "missingBefore": []
+    },
+    {
+      "era": "goryeo",
+      "topicIndex": 22,
+      "title": "귀주와 거란",
+      "exam": 77,
+      "question": 11,
+      "officialAnswer": 4,
+      "bookProblemNumber": 76,
+      "summaryPdfPages": null,
+      "questionSource": "hanq-ancient-photo-source-check/77-questions.txt",
+      "answerSourceSha256": "21dbe5b97303f01548a45a92ca597cef7e374e02a2b906a3941018dd1c8127fc",
+      "adaptation": "source cue → tested target → option distinctions; artifact photo or brief keyword recall",
+      "appEra": "goryeo",
+      "status": "normal",
+      "existingScenes": [
+        "khitan-2-3"
+      ],
+      "supplementScene": "study-cue-goryeo-22",
+      "cue": "현화사비의 태평 연호·귀주대첩 → 거란. 거란 침입 중 초조대장경 조판 시작.",
+      "correctFeature": "거란 · 초조대장경",
+      "method": "Explicit cue list and tested feature checked against original visible/folded DOM. Each supplemental scene includes the complete official source cue and correct feature; new mapping is not a claim of fully inspecting unavailable correct-question originals.",
+      "requiredClues": [
+        "귀주",
+        "거란",
+        "초조"
+      ],
+      "missingBefore": []
+    }
+  ],
+  "textbookGroups": [
+    {
+      "era": "prehistory",
+      "group": "구석기 · 옮겨 다니며 사냥",
+      "sourceConcepts": [
+        "early-01"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "prehistory",
+      "group": "신석기 · 머물며 기르기",
+      "sourceConcepts": [
+        "early-02"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "prehistory",
+      "group": "청동기 · 지배층의 등장",
+      "sourceConcepts": [
+        "early-03"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "prehistory",
+      "group": "철기 · 철과 교역",
+      "sourceConcepts": [
+        "early-04"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "gojoseon",
+      "group": "고조선",
+      "sourceConcepts": [
+        "early-05"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "gojoseon",
+      "group": "부여",
+      "sourceConcepts": [
+        "early-06"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "gojoseon",
+      "group": "초기 고구려",
+      "sourceConcepts": [
+        "early-07"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "gojoseon",
+      "group": "옥저 · 동예",
+      "sourceConcepts": [
+        "early-08"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "gojoseon",
+      "group": "삼한",
+      "sourceConcepts": [
+        "early-09"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "samguk",
+      "group": "고구려 초기 · 체제 정비",
+      "sourceConcepts": [
+        "three-kingdoms-01",
+        "three-kingdoms-02"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "samguk",
+      "group": "고구려 전성기와 전쟁",
+      "sourceConcepts": [
+        "three-kingdoms-03",
+        "three-kingdoms-04"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "samguk",
+      "group": "고구려 제도·문화",
+      "sourceConcepts": [
+        "three-kingdoms-05"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "samguk",
+      "group": "백제 전성기",
+      "sourceConcepts": [
+        "three-kingdoms-06"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "samguk",
+      "group": "백제 웅진 · 사비",
+      "sourceConcepts": [
+        "three-kingdoms-07"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "samguk",
+      "group": "백제 말기와 부흥 운동",
+      "sourceConcepts": [
+        "three-kingdoms-08"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "samguk",
+      "group": "백제 제도·문화",
+      "sourceConcepts": [
+        "three-kingdoms-09"
+      ],
+      "status": "hard-to-find",
+      "visibleMissingTerms": [
+        "정림사지5층석탑"
+      ],
+      "supplementScene": "study-samguk-7"
+    },
+    {
+      "era": "samguk",
+      "group": "신라 체제 정비",
+      "sourceConcepts": [
+        "three-kingdoms-10"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "samguk",
+      "group": "신라의 팽창과 통일",
+      "sourceConcepts": [
+        "three-kingdoms-11",
+        "three-kingdoms-12"
+      ],
+      "status": "hard-to-find",
+      "visibleMissingTerms": [
+        "골품제"
+      ],
+      "supplementScene": "study-samguk-9"
+    },
+    {
+      "era": "samguk",
+      "group": "신라 문화",
+      "sourceConcepts": [
+        "three-kingdoms-13"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "samguk",
+      "group": "가야",
+      "sourceConcepts": [
+        "three-kingdoms-14"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "수로왕",
+        "지산동고분"
+      ],
+      "supplementScene": "study-samguk-11"
+    },
+    {
+      "era": "nambuk",
+      "group": "통일 신라 왕별 제도",
+      "sourceConcepts": [
+        "north-south-01"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "nambuk",
+      "group": "통일 신라 통치 조직",
+      "sourceConcepts": [
+        "north-south-02"
+      ],
+      "status": "hard-to-find",
+      "visibleMissingTerms": [
+        "집사부"
+      ],
+      "supplementScene": "study-nambuk-2"
+    },
+    {
+      "era": "nambuk",
+      "group": "신라 말의 동요",
+      "sourceConcepts": [
+        "north-south-03"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "헌덕왕때김헌창의난"
+      ],
+      "supplementScene": "study-nambuk-3"
+    },
+    {
+      "era": "nambuk",
+      "group": "사상과 학문",
+      "sourceConcepts": [
+        "north-south-04"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "nambuk",
+      "group": "기록과 문화재",
+      "sourceConcepts": [
+        "north-south-05"
+      ],
+      "status": "hard-to-find",
+      "visibleMissingTerms": [
+        "삼대목"
+      ],
+      "supplementScene": "study-nambuk-5"
+    },
+    {
+      "era": "nambuk",
+      "group": "후삼국",
+      "sourceConcepts": [
+        "north-south-06"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "nambuk",
+      "group": "발해 왕별 정리",
+      "sourceConcepts": [
+        "north-south-07"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "nambuk",
+      "group": "발해 제도와 문화",
+      "sourceConcepts": [
+        "north-south-08",
+        "north-south-09"
+      ],
+      "status": "hard-to-find",
+      "visibleMissingTerms": [
+        "중정대",
+        "문적원",
+        "영광탑",
+        "이불병좌상"
+      ],
+      "supplementScene": "study-nambuk-8"
+    },
+    {
+      "era": "goryeo",
+      "group": "태조",
+      "sourceConcepts": [
+        "goryeo-01"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "정계와계백료서"
+      ],
+      "supplementScene": "study-goryeo-1"
+    },
+    {
+      "era": "goryeo",
+      "group": "광종 · 경종",
+      "sourceConcepts": [
+        "goryeo-02"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "goryeo",
+      "group": "성종",
+      "sourceConcepts": [
+        "goryeo-03"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "goryeo",
+      "group": "거란의 침입",
+      "sourceConcepts": [
+        "goryeo-04"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "goryeo",
+      "group": "문벌귀족 시기",
+      "sourceConcepts": [
+        "goryeo-05",
+        "goryeo-06"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "문헌공도",
+        "해동통보"
+      ],
+      "supplementScene": "study-goryeo-5"
+    },
+    {
+      "era": "goryeo",
+      "group": "무신 정권",
+      "sourceConcepts": [
+        "goryeo-07",
+        "goryeo-08"
+      ],
+      "status": "hard-to-find",
+      "visibleMissingTerms": [
+        "김보당",
+        "조위총",
+        "김사미",
+        "효심",
+        "망이",
+        "망소이",
+        "만적"
+      ],
+      "supplementScene": "study-goryeo-6"
+    },
+    {
+      "era": "goryeo",
+      "group": "몽골의 침입",
+      "sourceConcepts": [
+        "goryeo-07",
+        "goryeo-09"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "goryeo",
+      "group": "원 간섭기와 공민왕",
+      "sourceConcepts": [
+        "goryeo-10",
+        "goryeo-11"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "정치도감",
+        "신진사대부"
+      ],
+      "supplementScene": "study-goryeo-8"
+    },
+    {
+      "era": "goryeo",
+      "group": "고려 말 왜구와 건국",
+      "sourceConcepts": [
+        "goryeo-12"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "홍산전투",
+        "진포대첩",
+        "황산전투",
+        "박위"
+      ],
+      "supplementScene": "study-goryeo-9"
+    },
+    {
+      "era": "goryeo",
+      "group": "통치 기구와 지방",
+      "sourceConcepts": [
+        "goryeo-13"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "도병마사",
+        "어사대",
+        "삼사",
+        "대간",
+        "병마사",
+        "부곡"
+      ],
+      "supplementScene": "study-goryeo-10"
+    },
+    {
+      "era": "goryeo",
+      "group": "경제와 구휼",
+      "sourceConcepts": [
+        "goryeo-14"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "경시서",
+        "관영상점",
+        "건원중보",
+        "은병",
+        "제위보",
+        "혜민국"
+      ],
+      "supplementScene": "study-goryeo-11"
+    },
+    {
+      "era": "goryeo",
+      "group": "불교",
+      "sourceConcepts": [
+        "goryeo-15"
+      ],
+      "status": "hard-to-find",
+      "visibleMissingTerms": [
+        "교장",
+        "혜심",
+        "요세",
+        "백련결사"
+      ],
+      "supplementScene": "study-goryeo-12"
+    },
+    {
+      "era": "goryeo",
+      "group": "인쇄와 문화재",
+      "sourceConcepts": [
+        "goryeo-16"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "월정사팔각구층석탑",
+        "관촉사석조미륵보살입상"
+      ],
+      "supplementScene": "study-goryeo-13"
+    },
+    {
+      "era": "goryeo",
+      "group": "역사와 문학",
+      "sourceConcepts": [
+        "goryeo-17"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "joseon-early",
+      "group": "건국과 태종",
+      "sourceConcepts": [
+        "joseon-early-01",
+        "joseon-early-02"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "저화"
+      ],
+      "supplementScene": "study-joseon-early-1"
+    },
+    {
+      "era": "joseon-early",
+      "group": "세종",
+      "sourceConcepts": [
+        "joseon-early-03",
+        "joseon-early-04"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "쓰시마섬"
+      ],
+      "supplementScene": "study-joseon-early-2"
+    },
+    {
+      "era": "joseon-early",
+      "group": "단종 · 세조 · 성종",
+      "sourceConcepts": [
+        "joseon-early-05",
+        "joseon-early-06"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "joseon-early",
+      "group": "사화 4개 · 연도 · 왕 · 계기",
+      "sourceConcepts": [
+        "joseon-early-07",
+        "joseon-early-08",
+        "joseon-early-09"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "joseon-early",
+      "group": "중종 · 조광조의 개혁",
+      "sourceConcepts": [
+        "joseon-early-08"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "joseon-early",
+      "group": "선조 · 붕당의 시작",
+      "sourceConcepts": [
+        "joseon-late-01"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "동인의분화"
+      ],
+      "supplementScene": "study-joseon-early-6"
+    },
+    {
+      "era": "joseon-early",
+      "group": "전쟁과 반정 · 연도 · 왕 · 계기",
+      "sourceConcepts": [
+        "joseon-late-02",
+        "joseon-late-06",
+        "joseon-late-07"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "joseon-early",
+      "group": "임진왜란 · 선조",
+      "sourceConcepts": [
+        "joseon-late-02",
+        "joseon-late-03",
+        "joseon-society-05"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "신립",
+        "탄금대",
+        "권율",
+        "김시민",
+        "조헌",
+        "정문부"
+      ],
+      "supplementScene": "study-joseon-early-8"
+    },
+    {
+      "era": "joseon-early",
+      "group": "광해군",
+      "sourceConcepts": [
+        "joseon-late-04",
+        "joseon-late-05"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "joseon-early",
+      "group": "인조",
+      "sourceConcepts": [
+        "joseon-late-06"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "joseon-early",
+      "group": "병자호란 · 인조",
+      "sourceConcepts": [
+        "joseon-late-07"
+      ],
+      "status": "hard-to-find",
+      "visibleMissingTerms": [
+        "김상헌",
+        "최명길"
+      ],
+      "supplementScene": "study-joseon-early-11"
+    },
+    {
+      "era": "joseon-early",
+      "group": "중앙 기구 · 기능과 별칭 (조선 전 시기)",
+      "sourceConcepts": [
+        "joseon-society-01",
+        "joseon-society-02",
+        "joseon-society-03"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "승정원",
+        "도승지",
+        "은대",
+        "의금부",
+        "금오",
+        "조옥",
+        "사헌부",
+        "대사헌",
+        "사헌부",
+        "한성부",
+        "대사성",
+        "춘추관"
+      ],
+      "supplementScene": "study-joseon-early-12"
+    },
+    {
+      "era": "joseon-early",
+      "group": "지방과 향촌 (조선 전 시기)",
+      "sourceConcepts": [
+        "joseon-society-04",
+        "joseon-society-05"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "유향소",
+        "좌수",
+        "별감",
+        "경재소",
+        "향교"
+      ],
+      "supplementScene": "study-joseon-early-13"
+    },
+    {
+      "era": "joseon-early",
+      "group": "토지 제도의 흐름 (태조~명종)",
+      "sourceConcepts": [
+        "joseon-society-06"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "직전법(세조)",
+        "관수관급제(성종)",
+        "직전법폐지(명종)"
+      ],
+      "supplementScene": "study-joseon-early-14"
+    },
+    {
+      "era": "joseon-early",
+      "group": "전기 왕들의 문화 사업",
+      "sourceConcepts": [
+        "joseon-culture-01",
+        "joseon-culture-02",
+        "joseon-culture-04"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "혼일강리역대국도지도",
+        "구황촬요",
+        "주세붕",
+        "백운동서원",
+        "소수서원",
+        "이황",
+        "성학십도",
+        "성학집요"
+      ],
+      "supplementScene": "study-joseon-early-15"
+    },
+    {
+      "era": "joseon-late",
+      "group": "효종 · 현종 · 숙종",
+      "sourceConcepts": [
+        "joseon-late-08",
+        "joseon-late-09",
+        "joseon-late-10"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "기축봉사",
+        "초량왜관"
+      ],
+      "supplementScene": "study-joseon-late-1"
+    },
+    {
+      "era": "joseon-late",
+      "group": "영조 · 정조",
+      "sourceConcepts": [
+        "joseon-late-11",
+        "joseon-late-12"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "joseon-late",
+      "group": "세도정치기",
+      "sourceConcepts": [
+        "joseon-late-13",
+        "joseon-late-14"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "공노비해방"
+      ],
+      "supplementScene": "study-joseon-late-3"
+    },
+    {
+      "era": "joseon-late",
+      "group": "세금 3종 · 조선 전 시기 비교",
+      "sourceConcepts": [
+        "joseon-society-07",
+        "joseon-society-08"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "전세(토지)",
+        "공납(특산물)",
+        "군역(군포)",
+        "참고"
+      ],
+      "supplementScene": "study-joseon-late-4"
+    },
+    {
+      "era": "joseon-late",
+      "group": "경제의 변화 (조선 후기 사회)",
+      "sourceConcepts": [
+        "joseon-society-10",
+        "joseon-society-11"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "joseon-late",
+      "group": "신분과 사회의 변화 (조선 후기 사회)",
+      "sourceConcepts": [
+        "joseon-society-09",
+        "joseon-society-12"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "혜민서",
+        "동서활인서"
+      ],
+      "supplementScene": "study-joseon-late-6"
+    },
+    {
+      "era": "joseon-late",
+      "group": "기록과 외교 (조선 전 시기 기록물)",
+      "sourceConcepts": [
+        "joseon-culture-03"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "조선왕조실록",
+        "조선왕조의궤",
+        "승정원일기",
+        "통신사"
+      ],
+      "supplementScene": "study-joseon-late-7"
+    },
+    {
+      "era": "joseon-late",
+      "group": "실학 · 토지 개혁",
+      "sourceConcepts": [
+        "joseon-culture-06",
+        "joseon-culture-10"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "경세유표",
+        "마과회통",
+        "기기도설",
+        "거중기"
+      ],
+      "supplementScene": "study-joseon-late-8"
+    },
+    {
+      "era": "joseon-late",
+      "group": "실학 · 상공업과 청 문물",
+      "sourceConcepts": [
+        "joseon-culture-07",
+        "joseon-culture-08",
+        "joseon-culture-11"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "의산문답",
+        "양반전",
+        "유수원",
+        "우서",
+        "이수광",
+        "지봉유설",
+        "서유구",
+        "임원경제지",
+        "시헌력"
+      ],
+      "supplementScene": "study-joseon-late-9"
+    },
+    {
+      "era": "joseon-late",
+      "group": "역사와 지리",
+      "sourceConcepts": [
+        "joseon-culture-05",
+        "joseon-culture-09"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "정인지",
+        "고려사",
+        "서거정",
+        "동국통감",
+        "신숙주",
+        "해동제국기",
+        "유득공",
+        "발해고",
+        "정상기",
+        "동국지도",
+        "100리척",
+        "김정호",
+        "대동여지도",
+        "종묘"
+      ],
+      "supplementScene": "study-joseon-late-10"
+    },
+    {
+      "era": "joseon-late",
+      "group": "후기 왕과 예술",
+      "sourceConcepts": [
+        "joseon-culture-02",
+        "joseon-culture-04",
+        "joseon-culture-12"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "정제두",
+        "강화학파",
+        "정선",
+        "김정희",
+        "추사체",
+        "세한도",
+        "김정희",
+        "금석과안록",
+        "신윤복",
+        "월하정인",
+        "김득신",
+        "파적도"
+      ],
+      "supplementScene": "study-joseon-late-11"
+    },
+    {
+      "era": "islands",
+      "group": "섬과 국경",
+      "sourceConcepts": [
+        "three-kingdoms-10",
+        "joseon-late-10"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "islands",
+      "group": "국외 독립운동 기지",
+      "sourceConcepts": [
+        "colonial-09"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "권업회",
+        "대한광복군정부",
+        "흥사단",
+        "대조선국민군단"
+      ],
+      "supplementScene": "study-islands-2"
+    },
+    {
+      "era": "islands",
+      "group": "같은 장소, 다른 시대",
+      "sourceConcepts": [
+        "appendix-02"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "공주",
+        "강화",
+        "진주",
+        "평양",
+        "개성",
+        "정주",
+        "원산"
+      ],
+      "supplementScene": "study-islands-3"
+    },
+    {
+      "era": "opening",
+      "group": "흥선대원군",
+      "sourceConcepts": [
+        "modern-opening-01"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "opening",
+      "group": "양요",
+      "sourceConcepts": [
+        "modern-opening-02"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "opening",
+      "group": "개항과 수교",
+      "sourceConcepts": [
+        "modern-opening-03"
+      ],
+      "status": "hard-to-find",
+      "visibleMissingTerms": [
+        "방곡령"
+      ],
+      "supplementScene": "study-opening-3"
+    },
+    {
+      "era": "opening",
+      "group": "개화 정책과 반발",
+      "sourceConcepts": [
+        "modern-opening-04",
+        "modern-opening-05",
+        "modern-opening-06"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "opening",
+      "group": "동학농민운동",
+      "sourceConcepts": [
+        "modern-opening-07"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "교정청"
+      ],
+      "supplementScene": "study-opening-5"
+    },
+    {
+      "era": "opening",
+      "group": "개혁의 단계",
+      "sourceConcepts": [
+        "modern-opening-08",
+        "modern-opening-09",
+        "modern-opening-10"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "박성춘"
+      ],
+      "supplementScene": "study-opening-6"
+    },
+    {
+      "era": "opening",
+      "group": "국권 침탈과 저항",
+      "sourceConcepts": [
+        "modern-opening-11",
+        "modern-opening-12",
+        "modern-opening-13",
+        "modern-opening-14"
+      ],
+      "status": "hard-to-find",
+      "visibleMissingTerms": [
+        "동양척식주식회사"
+      ],
+      "supplementScene": "study-opening-7"
+    },
+    {
+      "era": "opening",
+      "group": "근대 문물",
+      "sourceConcepts": [
+        "modern-opening-15"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "신문지법"
+      ],
+      "supplementScene": "study-opening-8"
+    },
+    {
+      "era": "opening",
+      "group": "인물 연결",
+      "sourceConcepts": [
+        "appendix-01"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "colonial",
+      "group": "통치 방식",
+      "sourceConcepts": [
+        "colonial-01",
+        "colonial-02",
+        "colonial-03",
+        "colonial-05"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "조선사상범예방구금령"
+      ],
+      "supplementScene": "study-colonial-1"
+    },
+    {
+      "era": "colonial",
+      "group": "3·1 운동과 임시정부",
+      "sourceConcepts": [
+        "colonial-02",
+        "colonial-06"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "이륭양행",
+        "국민대표회의"
+      ],
+      "supplementScene": "study-colonial-2"
+    },
+    {
+      "era": "colonial",
+      "group": "민족 운동",
+      "sourceConcepts": [
+        "colonial-03",
+        "colonial-04"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "성진회"
+      ],
+      "supplementScene": "study-colonial-3"
+    },
+    {
+      "era": "colonial",
+      "group": "농민 · 노동 · 여성 · 소년",
+      "sourceConcepts": [
+        "colonial-07"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "colonial",
+      "group": "국내 결사와 국외 기지",
+      "sourceConcepts": [
+        "colonial-08",
+        "colonial-09",
+        "colonial-10"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "관동대지진",
+        "중앙아시아",
+        "에네켄농장"
+      ],
+      "supplementScene": "study-colonial-5"
+    },
+    {
+      "era": "colonial",
+      "group": "무장 투쟁",
+      "sourceConcepts": [
+        "colonial-11",
+        "colonial-12",
+        "colonial-13",
+        "colonial-14",
+        "colonial-15"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "조선혁명간부학교"
+      ],
+      "supplementScene": "study-colonial-6"
+    },
+    {
+      "era": "colonial",
+      "group": "민족 문화",
+      "sourceConcepts": [
+        "colonial-16",
+        "colonial-17"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "가갸날",
+        "상록수"
+      ],
+      "supplementScene": "study-colonial-7"
+    },
+    {
+      "era": "modern",
+      "group": "광복과 정부 수립",
+      "sourceConcepts": [
+        "republic-01",
+        "republic-02"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "modern",
+      "group": "이승만 정부",
+      "sourceConcepts": [
+        "republic-03",
+        "republic-04",
+        "republic-05"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "반민족행위특별조사위원회"
+      ],
+      "supplementScene": "study-modern-2"
+    },
+    {
+      "era": "modern",
+      "group": "박정희 정부",
+      "sourceConcepts": [
+        "republic-06",
+        "republic-07",
+        "republic-08",
+        "republic-09"
+      ],
+      "status": "missing-or-weak",
+      "visibleMissingTerms": [
+        "한일기본조약",
+        "베트남파병",
+        "함평고구마",
+        "향토예비군"
+      ],
+      "supplementScene": "study-modern-3"
+    },
+    {
+      "era": "modern",
+      "group": "전두환 정부와 6월 민주항쟁",
+      "sourceConcepts": [
+        "republic-10",
+        "republic-11"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    },
+    {
+      "era": "modern",
+      "group": "정부별 대표 단서",
+      "sourceConcepts": [
+        "republic-12",
+        "republic-13",
+        "republic-14",
+        "republic-15"
+      ],
+      "status": "normal",
+      "visibleMissingTerms": [],
+      "supplementScene": null
+    }
+  ],
+  "supplementCounts": {
+    "prehistory": 2,
+    "gojoseon": 1,
+    "samguk": 8,
+    "nambuk": 17,
+    "goryeo": 40,
+    "islands": 4,
+    "opening": 6,
+    "colonial": 8,
+    "modern": 3,
+    "joseon": 27
+  },
+  "originalScenesInspected": 200,
+  "questionStatusCounts": {
+    "missing": 4,
+    "weak": 16,
+    "hard-to-find": 8,
+    "normal": 15
+  },
+  "verifiedConceptIds": 145,
+  "additionalContextScenes": [
+    {
+      "scene": "study-context-goryeo-1",
+      "era": "goryeo",
+      "textbookPdfPages": [
+        51,
+        52
+      ],
+      "summaryNotePdfPage": 11,
+      "status": "newly written contextual comparison; page spans checked against extracted text; no images/paragraphs copied"
+    },
+    {
+      "scene": "study-context-goryeo-2",
+      "era": "goryeo",
+      "textbookPdfPages": [
+        51
+      ],
+      "summaryNotePdfPage": 11,
+      "status": "newly written contextual comparison; page spans checked against extracted text; no images/paragraphs copied"
+    },
+    {
+      "scene": "study-context-goryeo-3",
+      "era": "goryeo",
+      "textbookPdfPages": [
+        51,
+        52
+      ],
+      "summaryNotePdfPage": 9,
+      "status": "newly written contextual comparison; page spans checked against extracted text; no images/paragraphs copied"
+    },
+    {
+      "scene": "study-context-goryeo-4",
+      "era": "goryeo",
+      "textbookPdfPages": [
+        53
+      ],
+      "summaryNotePdfPage": 11,
+      "status": "newly written contextual comparison; page spans checked against extracted text; no images/paragraphs copied"
+    },
+    {
+      "scene": "study-context-goryeo-5",
+      "era": "goryeo",
+      "textbookPdfPages": [
+        53,
+        54
+      ],
+      "summaryNotePdfPage": 12,
+      "status": "newly written contextual comparison; page spans checked against extracted text; no images/paragraphs copied"
+    },
+    {
+      "scene": "study-context-opening-1",
+      "era": "opening",
+      "textbookPdfPages": [
+        96,
+        97,
+        99,
+        100,
+        101
+      ],
+      "summaryNotePdfPage": 20,
+      "status": "newly written contextual comparison; page spans checked against extracted text; no images/paragraphs copied",
+      "textbookEvidence": [
+        {
+          "pdfPage": 96,
+          "matched": [
+            "허위",
+            "창의군"
+          ]
+        },
+        {
+          "pdfPage": 97,
+          "matched": [
+            "허위",
+            "창의군"
+          ]
+        },
+        {
+          "pdfPage": 99,
+          "matched": [
+            "창의군"
+          ]
+        },
+        {
+          "pdfPage": 100,
+          "matched": [
+            "허위"
+          ]
+        },
+        {
+          "pdfPage": 101,
+          "matched": [
+            "창의군"
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "study-context-colonial-1",
+      "era": "colonial",
+      "textbookPdfPages": [
+        96,
+        98,
+        100,
+        101,
+        102,
+        104,
+        113,
+        116,
+        118,
+        137,
+        138,
+        140
+      ],
+      "summaryNotePdfPage": 21,
+      "status": "newly written contextual comparison; page spans checked against extracted text; no images/paragraphs copied",
+      "textbookEvidence": [
+        {
+          "pdfPage": 96,
+          "matched": [
+            "105인",
+            "신민회"
+          ]
+        },
+        {
+          "pdfPage": 98,
+          "matched": [
+            "105인",
+            "신민회"
+          ]
+        },
+        {
+          "pdfPage": 100,
+          "matched": [
+            "105인",
+            "신민회"
+          ]
+        },
+        {
+          "pdfPage": 101,
+          "matched": [
+            "105인",
+            "신민회"
+          ]
+        },
+        {
+          "pdfPage": 102,
+          "matched": [
+            "신민회"
+          ]
+        },
+        {
+          "pdfPage": 104,
+          "matched": [
+            "신민회"
+          ]
+        },
+        {
+          "pdfPage": 113,
+          "matched": [
+            "신민회",
+            "국권 반환"
+          ]
+        },
+        {
+          "pdfPage": 116,
+          "matched": [
+            "국권 반환"
+          ]
+        },
+        {
+          "pdfPage": 118,
+          "matched": [
+            "국권 반환"
+          ]
+        },
+        {
+          "pdfPage": 137,
+          "matched": [
+            "국권 반환"
+          ]
+        },
+        {
+          "pdfPage": 138,
+          "matched": [
+            "신민회"
+          ]
+        },
+        {
+          "pdfPage": 140,
+          "matched": [
+            "신민회"
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "study-context-colonial-2",
+      "era": "colonial",
+      "textbookPdfPages": [
+        115,
+        117,
+        118,
+        119
+      ],
+      "summaryNotePdfPage": 23,
+      "status": "newly written contextual comparison; page spans checked against extracted text; no images/paragraphs copied",
+      "textbookEvidence": [
+        {
+          "pdfPage": 115,
+          "matched": [
+            "홍커우",
+            "윤봉길"
+          ]
+        },
+        {
+          "pdfPage": 117,
+          "matched": [
+            "홍커우",
+            "윤봉길"
+          ]
+        },
+        {
+          "pdfPage": 118,
+          "matched": [
+            "윤봉길"
+          ]
+        },
+        {
+          "pdfPage": 119,
+          "matched": [
+            "홍커우",
+            "윤봉길"
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "study-context-modern-1",
+      "era": "modern",
+      "textbookPdfPages": [
+        32,
+        42,
+        73,
+        75,
+        82,
+        132,
+        133,
+        136,
+        140
+      ],
+      "summaryNotePdfPage": 25,
+      "status": "newly written contextual comparison; page spans checked against extracted text; no images/paragraphs copied",
+      "textbookEvidence": [
+        {
+          "pdfPage": 32,
+          "matched": [
+            "개성"
+          ]
+        },
+        {
+          "pdfPage": 42,
+          "matched": [
+            "개성"
+          ]
+        },
+        {
+          "pdfPage": 73,
+          "matched": [
+            "개성"
+          ]
+        },
+        {
+          "pdfPage": 75,
+          "matched": [
+            "개성"
+          ]
+        },
+        {
+          "pdfPage": 82,
+          "matched": [
+            "개성"
+          ]
+        },
+        {
+          "pdfPage": 132,
+          "matched": [
+            "공업 지구",
+            "개성"
+          ]
+        },
+        {
+          "pdfPage": 133,
+          "matched": [
+            "공업 지구",
+            "개성"
+          ]
+        },
+        {
+          "pdfPage": 136,
+          "matched": [
+            "공업 지구",
+            "개성"
+          ]
+        },
+        {
+          "pdfPage": 140,
+          "matched": [
+            "공업 지구",
+            "개성"
+          ]
+        }
+      ]
+    }
+  ],
+  "sourceConflicts": [
+    {
+      "notePdfPage": 9,
+      "issue": "Koryeo exam paragraph includes Joseon-specific 관시/한성시/향시",
+      "decision": "Do not reuse this sequence for Koryeo; retain verified 광종·과거 and school policies.",
+      "primarySource": "https://contents.history.go.kr/mobile/nh/view.do?levelId=nh_023_0060_0040_0010"
+    },
+    {
+      "notePdfPage": 25,
+      "issue": "one phrase labels 5·16 as democratization",
+      "decision": "Use 5·16 군사정변; keep distinct from 4·19/5·18/6월 민주항쟁.",
+      "primarySource": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_50&levelId=kc_i500900"
+    }
+  ]
+}

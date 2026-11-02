@@ -1,0 +1,631 @@
+{
+  "schema": 1,
+  "policy": "29 official source mappings and independently reviewed required clue/features; developer-only coverage",
+  "questions": [
+    {
+      "exam": 73,
+      "question": 21,
+      "officialAnswer": 3,
+      "beforeCardIds": [
+        "jc-sejong"
+      ],
+      "cardIds": [
+        "jc-sejong"
+      ],
+      "requiredTerms": [
+        "월인천강지곡",
+        "석보상절",
+        "세종",
+        "칠정산"
+      ]
+    },
+    {
+      "exam": 76,
+      "question": 19,
+      "officialAnswer": 4,
+      "beforeCardIds": [
+        "jc-sejong"
+      ],
+      "cardIds": [
+        "jc-sejong"
+      ],
+      "requiredTerms": [
+        "박연",
+        "편경",
+        "아악",
+        "삼강행실도"
+      ]
+    },
+    {
+      "exam": 70,
+      "question": 19,
+      "officialAnswer": 3,
+      "beforeCardIds": [
+        "jc-seongjong"
+      ],
+      "cardIds": [
+        "jc-seongjong"
+      ],
+      "requiredTerms": [
+        "성종",
+        "홍문관",
+        "국조오례의"
+      ]
+    },
+    {
+      "exam": 72,
+      "question": 20,
+      "officialAnswer": 2,
+      "beforeCardIds": [
+        "jc-seongjong"
+      ],
+      "cardIds": [
+        "jc-seongjong"
+      ],
+      "requiredTerms": [
+        "성현",
+        "악학궤범",
+        "경국대전"
+      ]
+    },
+    {
+      "exam": 76,
+      "question": 20,
+      "officialAnswer": 5,
+      "beforeCardIds": [
+        "jc-yeonsan"
+      ],
+      "cardIds": [
+        "jc-yeonsan"
+      ],
+      "requiredTerms": [
+        "연산군",
+        "조의제문",
+        "무오사화",
+        "갑자사화",
+        "폐비 윤씨",
+        "교동"
+      ]
+    },
+    {
+      "exam": 75,
+      "question": 22,
+      "officialAnswer": 2,
+      "beforeCardIds": [
+        "jc-jungjong-myeongjong"
+      ],
+      "cardIds": [
+        "jc-jungjong-myeongjong"
+      ],
+      "requiredTerms": [
+        "중종",
+        "인종",
+        "명종",
+        "기묘사화",
+        "현량과",
+        "윤임",
+        "을사사화",
+        "양재역"
+      ]
+    },
+    {
+      "exam": 75,
+      "question": 21,
+      "officialAnswer": 2,
+      "beforeCardIds": [
+        "jc-border"
+      ],
+      "cardIds": [
+        "jc-border"
+      ],
+      "requiredTerms": [
+        "여진",
+        "경성",
+        "경원",
+        "김종서",
+        "두만강",
+        "6진",
+        "최윤덕",
+        "압록강",
+        "4군",
+        "별무반"
+      ]
+    },
+    {
+      "exam": 76,
+      "question": 21,
+      "officialAnswer": 1,
+      "beforeCardIds": [
+        "jc-imjin"
+      ],
+      "cardIds": [
+        "jc-imjin"
+      ],
+      "requiredTerms": [
+        "선조",
+        "이치",
+        "권율",
+        "황진",
+        "북관대첩",
+        "정문부",
+        "정봉수",
+        "용골산성",
+        "정묘호란"
+      ]
+    },
+    {
+      "exam": 75,
+      "question": 23,
+      "officialAnswer": 2,
+      "beforeCardIds": [
+        "jc-byeongja"
+      ],
+      "cardIds": [
+        "jc-byeongja"
+      ],
+      "requiredTerms": [
+        "인조",
+        "청",
+        "남한산성",
+        "오달제",
+        "홍익한",
+        "윤집",
+        "삼학사전",
+        "광교산",
+        "김준룡",
+        "송상현",
+        "강홍립",
+        "북벌"
+      ]
+    },
+    {
+      "exam": 74,
+      "question": 22,
+      "officialAnswer": 4,
+      "beforeCardIds": [
+        "jc-bungdang"
+      ],
+      "cardIds": [
+        "jc-bungdang"
+      ],
+      "requiredTerms": [
+        "현종",
+        "기해예송",
+        "기년복",
+        "갑인예송",
+        "대공복",
+        "숙종",
+        "인현왕후",
+        "남인",
+        "기사환국",
+        "경종",
+        "목호룡",
+        "연잉군",
+        "노론",
+        "임인옥사"
+      ]
+    },
+    {
+      "exam": 76,
+      "question": 25,
+      "officialAnswer": 2,
+      "beforeCardIds": [
+        "jc-yeongjo"
+      ],
+      "cardIds": [
+        "jc-yeongjo"
+      ],
+      "requiredTerms": [
+        "영조",
+        "준천사",
+        "청계천",
+        "신문고",
+        "탕평",
+        "균역법",
+        "경국대전",
+        "속대전"
+      ]
+    },
+    {
+      "exam": 70,
+      "question": 24,
+      "officialAnswer": 2,
+      "beforeCardIds": [
+        "jc-jeongjo"
+      ],
+      "cardIds": [
+        "jc-jeongjo"
+      ],
+      "requiredTerms": [
+        "정조",
+        "이덕무",
+        "박제가",
+        "서얼",
+        "규장각",
+        "검서관",
+        "장용영",
+        "정약용",
+        "거중기",
+        "수원 화성"
+      ]
+    },
+    {
+      "exam": 75,
+      "question": 25,
+      "officialAnswer": 1,
+      "beforeCardIds": [
+        "jc-jeongjo"
+      ],
+      "cardIds": [
+        "jc-late-life"
+      ],
+      "requiredTerms": [
+        "장용영",
+        "정조",
+        "후기",
+        "춘향전",
+        "소설",
+        "대여",
+        "세책가"
+      ]
+    },
+    {
+      "exam": 74,
+      "question": 25,
+      "officialAnswer": 5,
+      "beforeCardIds": [
+        "jc-sunjo-faith"
+      ],
+      "cardIds": [
+        "jc-sunjo-faith"
+      ],
+      "requiredTerms": [
+        "순조",
+        "1801",
+        "신유박해",
+        "배론성지",
+        "황사영",
+        "백서",
+        "교회",
+        "신앙",
+        "이승훈",
+        "정약용"
+      ]
+    },
+    {
+      "exam": 75,
+      "question": 27,
+      "officialAnswer": 4,
+      "beforeCardIds": [
+        "jc-sunjo-hong"
+      ],
+      "cardIds": [
+        "jc-sunjo-hong"
+      ],
+      "requiredTerms": [
+        "순조",
+        "헌종",
+        "철종",
+        "김조순",
+        "옥호정",
+        "안동 김씨",
+        "홍경래",
+        "정주성",
+        "평안도",
+        "수탈"
+      ]
+    },
+    {
+      "exam": 77,
+      "question": 28,
+      "officialAnswer": 3,
+      "beforeCardIds": [
+        "jc-cheoljong"
+      ],
+      "cardIds": [
+        "jc-cheoljong"
+      ],
+      "requiredTerms": [
+        "철종",
+        "박규수",
+        "진주",
+        "안핵사",
+        "임술농민봉기",
+        "전정",
+        "군정",
+        "환곡",
+        "향곡",
+        "삼정이정청"
+      ]
+    },
+    {
+      "exam": 75,
+      "question": 20,
+      "officialAnswer": 5,
+      "beforeCardIds": [
+        "jc-offices"
+      ],
+      "cardIds": [
+        "jc-offices"
+      ],
+      "requiredTerms": [
+        "대사헌",
+        "집의",
+        "장령",
+        "백관",
+        "탄핵",
+        "사헌부"
+      ]
+    },
+    {
+      "exam": 76,
+      "question": 22,
+      "officialAnswer": 2,
+      "beforeCardIds": [
+        "jc-offices"
+      ],
+      "cardIds": [
+        "jc-offices"
+      ],
+      "requiredTerms": [
+        "경서",
+        "사적",
+        "자문",
+        "홍문관",
+        "사헌부",
+        "사간원",
+        "삼사"
+      ]
+    },
+    {
+      "exam": 71,
+      "question": 20,
+      "officialAnswer": 2,
+      "beforeCardIds": [
+        "jc-bibyeonsa"
+      ],
+      "cardIds": [
+        "jc-bibyeonsa"
+      ],
+      "requiredTerms": [
+        "비변사",
+        "주사",
+        "군사",
+        "국정",
+        "의정부",
+        "흥선대원군",
+        "혁파"
+      ]
+    },
+    {
+      "exam": 68,
+      "question": 27,
+      "officialAnswer": 2,
+      "beforeCardIds": [
+        "jc-jongmyo"
+      ],
+      "cardIds": [
+        "jc-jongmyo"
+      ],
+      "requiredTerms": [
+        "정전",
+        "국왕",
+        "왕비",
+        "신주",
+        "종묘",
+        "사직",
+        "토지",
+        "곡식"
+      ]
+    },
+    {
+      "exam": 69,
+      "question": 21,
+      "officialAnswer": 4,
+      "beforeCardIds": [
+        "jc-jogwangjo"
+      ],
+      "cardIds": [
+        "jc-jogwangjo"
+      ],
+      "requiredTerms": [
+        "중종",
+        "용인",
+        "심곡서원",
+        "조광조",
+        "소격서",
+        "현량과",
+        "향약",
+        "소학"
+      ]
+    },
+    {
+      "exam": 74,
+      "question": 23,
+      "officialAnswer": 4,
+      "beforeCardIds": [
+        "jc-yihwang"
+      ],
+      "cardIds": [
+        "jc-yihwang"
+      ],
+      "requiredTerms": [
+        "도산서원",
+        "성학십도",
+        "기대승",
+        "사단칠정",
+        "이황",
+        "예안 향약"
+      ]
+    },
+    {
+      "exam": 76,
+      "question": 24,
+      "officialAnswer": 4,
+      "beforeCardIds": [
+        "jc-yiik"
+      ],
+      "cardIds": [
+        "jc-yiik"
+      ],
+      "requiredTerms": [
+        "곽우록",
+        "한전론",
+        "영업전",
+        "매매 금지",
+        "이익",
+        "여섯 가지 좀",
+        "성호사설"
+      ]
+    },
+    {
+      "exam": 70,
+      "question": 26,
+      "officialAnswer": 4,
+      "beforeCardIds": [
+        "jc-parkjiwon"
+      ],
+      "cardIds": [
+        "jc-parkjiwon"
+      ],
+      "requiredTerms": [
+        "청",
+        "북학",
+        "생산",
+        "유통",
+        "열하일기",
+        "수레",
+        "선박",
+        "박지원",
+        "양반",
+        "허례",
+        "무능",
+        "양반전"
+      ]
+    },
+    {
+      "exam": 70,
+      "question": 23,
+      "officialAnswer": 2,
+      "beforeCardIds": [
+        "jc-daedong"
+      ],
+      "cardIds": [
+        "jc-daedong"
+      ],
+      "requiredTerms": [
+        "공납",
+        "방납",
+        "대동법",
+        "광해군",
+        "이원익",
+        "경기도",
+        "토지 결수",
+        "쌀",
+        "베",
+        "동전",
+        "선혜청",
+        "공인"
+      ]
+    },
+    {
+      "exam": 69,
+      "question": 19,
+      "officialAnswer": 3,
+      "beforeCardIds": [
+        "jc-gyunyeok"
+      ],
+      "cardIds": [
+        "jc-gyunyeok"
+      ],
+      "requiredTerms": [
+        "영조",
+        "군역",
+        "군포 2필",
+        "1필",
+        "재정",
+        "지주",
+        "토지 1결",
+        "결작",
+        "부유한 양인",
+        "선무군관포",
+        "어장세",
+        "선박세",
+        "대동법"
+      ]
+    },
+    {
+      "exam": 75,
+      "question": 26,
+      "officialAnswer": 1,
+      "beforeCardIds": [
+        "jc-late-market"
+      ],
+      "cardIds": [
+        "jc-late-market"
+      ],
+      "requiredTerms": [
+        "정조",
+        "농업",
+        "후기",
+        "상평통보",
+        "공인",
+        "송상",
+        "만상",
+        "대청 무역",
+        "덕대",
+        "물주",
+        "광산",
+        "염포",
+        "전기"
+      ]
+    },
+    {
+      "exam": 71,
+      "question": 26,
+      "officialAnswer": 2,
+      "beforeCardIds": [
+        "jc-late-market"
+      ],
+      "cardIds": [
+        "jc-late-market"
+      ],
+      "requiredTerms": [
+        "순조",
+        "공노비 해방",
+        "고추",
+        "담배",
+        "염포",
+        "전기"
+      ]
+    },
+    {
+      "exam": 76,
+      "question": 26,
+      "officialAnswer": 3,
+      "beforeCardIds": [
+        "jc-late-life"
+      ],
+      "cardIds": [
+        "jc-late-life",
+        "jc-late-market"
+      ],
+      "requiredTerms": [
+        "신유박해",
+        "1801",
+        "순조",
+        "송상",
+        "인삼",
+        "상평통보",
+        "객주",
+        "고추",
+        "담배",
+        "전기수",
+        "주자소",
+        "계미자",
+        "전기",
+        "태종"
+      ]
+    }
+  ]
+}

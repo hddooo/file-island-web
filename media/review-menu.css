@@ -1,0 +1,243 @@
+/* HanqReviewMenu - fits inside the existing memory panel; no fixed widths. */
+.hanq-rm,
+.hanq-rm *,
+.hanq-rm *::before,
+.hanq-rm *::after {
+  box-sizing: border-box;
+}
+
+.hanq-rm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+}
+
+.hanq-rm__title {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.35;
+}
+
+.hanq-rm__title:focus {
+  outline: none;
+}
+
+.hanq-rm__title:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.hanq-rm__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+}
+
+/* Only the menu view owns a group grid. */
+.hanq-rm[data-view="detail"] .hanq-rm__grid {
+  display: none;
+}
+
+.hanq-rm__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hanq-rm__btn {
+  min-height: 44px;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 10px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: 10px;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hanq-rm__btn:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.hanq-rm__btn:focus-visible,
+.hanq-rm__select:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* 시대 선택은 시대별 학습 목차(.toc .period.ready …)의 스타일을 그대로 쓴다 */
+.hanq-rm .toc {
+  width: 100%;
+}
+
+.hanq-rm__btn--ghost {
+  flex: 0 1 auto;
+  background: transparent;
+  font-weight: 500;
+}
+
+.hanq-rm__field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.hanq-rm__label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.hanq-rm__select {
+  width: 100%;
+  max-width: 100%;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  background-color: #fff;
+  color: inherit;
+  font: inherit;
+}
+
+.hanq-rm__related {
+  margin: 0;
+  padding: 10px 12px;
+  border-left: 4px solid #d97706;
+  border-radius: 6px;
+  background: rgba(217, 119, 6, 0.08);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.hanq-rm__tag {
+  font-weight: 700;
+}
+
+.hanq-rm__player {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+.hanq-rm__empty {
+  margin: 0;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.04);
+  font-size: 0.9rem;
+}
+
+@media (min-width: 560px) {
+  .hanq-rm__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 400px) {
+  .hanq-rm__btn {
+    padding: 10px 12px;
+  }
+  .hanq-rm__nav .hanq-rm__btn {
+    flex: 1 1 0;
+  }
+}
+
+.review-index{max-width:760px;margin:16px auto}.hanq-rm__player .memory-review>h2{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip-path:inset(50%)}
+
+/* 시기별 요약(review-player mountPages) · 쪽 → 장면 · 높이를 고정하지 않고 가로로 넘치지 않음 */
+.period-review .pr-head{gap:2px;margin-bottom:10px}
+.period-review .pr-kind{margin:0;font-size:15px;font-weight:800;color:#9b423c}
+.period-review .pr-title{margin:0;font-size:clamp(21px,4.6vw,28px);line-height:1.3;letter-spacing:-.02em;color:#172a45}
+.period-review .pr-title:focus{outline:none}
+.period-review .pr-period{margin:0;font-size:15px;font-weight:700;color:var(--muted,#5b6576)}
+.pr-tl{display:flex;gap:4px;margin:0 0 12px;padding:0;list-style:none;min-width:0}
+.pr-tl[hidden]{display:none}
+.pr-tl-node{flex:1 1 0;min-width:0;display:grid;gap:1px;padding:6px 6px 5px;border-radius:8px;border-top:4px solid #d8ccb7;background:#f7f3ea;font-size:15px;line-height:1.3;color:#5b6576;overflow-wrap:anywhere;word-break:keep-all}
+.pr-tl-name{font-weight:850;color:#172a45}
+.pr-tl-node.is-here{border-top-color:#9b423c;background:#fff1e8}
+.pr-tl-node.is-here .pr-tl-name{color:#9b423c}
+.pr-body{display:grid;gap:12px;min-width:0}
+.pr-scene{min-width:0}
+.pr-scene[hidden]{display:none}
+.pr-scene-title{margin:0 0 8px;font-size:17px;line-height:1.4;font-weight:900;color:#24599c}
+.pr-scene-no{display:inline-block;margin-right:4px;padding:1px 7px;border-radius:99px;background:#e8eef8;font-size:15px;color:#24599c}
+.pr-rows{display:grid;gap:7px;margin:0;padding:0;list-style:none}
+.pr-row{display:grid;gap:3px;min-width:0;padding:9px 11px;border-radius:10px;border:1px solid #ece3d3;background:#fff;line-height:1.6;font-size:16px;overflow-wrap:anywhere;word-break:keep-all;transition:background-color .2s,border-color .2s}
+.pr-row--cmp{background:#fff7f4;border-color:#f2d5cc}
+.pr-row--cmp .pr-row-head::before{content:"헷갈림 · ";color:#9b423c}
+.pr-row--flow,.pr-row--note{background:#f3f6fb;border-color:#dbe4f1}
+.pr-row.is-current{border-color:#24599c;background:#eef4ff;box-shadow:inset 4px 0 0 #24599c}
+.pr-row.is-recall .pr-blank{background:#ffe1d6;border-bottom-color:#c0392b}
+.pr-row-head{font-weight:850;color:#172a45}
+.pr-row-sub{font-size:15px;color:var(--muted,#5b6576)}
+.pr-items{display:grid;gap:2px;color:#2d3747}
+.pr-item{display:block}
+/* 다섯 시기와 읽기 카드는 모든 화면에서 위에서 아래로 한 줄씩 */
+.pr-scene--flow5 .pr-rows{grid-template-columns:1fr;gap:10px}
+.pr-scene--flow5 .pr-row{position:relative;border-top:4px solid #9b423c}
+.pr-scene--flow5 .pr-row--note{grid-column:1/-1;border-top-color:#24599c}
+.pr-blank{display:inline-block;min-width:2.4em;padding:0 4px;border-bottom:2px solid #9b423c;border-radius:4px;background:#fdecea;color:#9b423c;font-weight:800;line-height:1.35}
+.pr-revealed{background:#fff1c9;color:inherit;font-weight:800;border-radius:3px;padding:0 1px}
+.period-review .memory-controls{flex-wrap:wrap}
+.period-review .memory-controls .tool-btn{min-height:44px;min-width:44px}
+
+@media (max-width:520px){.pr-tl-years{display:none}.pr-tl-node{flex-grow:1!important;padding:5px 4px;font-size:15px}.pr-row{padding:8px 9px}.pr-scene--flow5 .pr-rows{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.pr-row{transition:none}}
+/* 떠올리기 질문 줄(최종 정리): 정답은 드러내기 전까지 통째로 가림 · 단계 이름(떠올리기/정답 확인) */
+.pr-items[hidden],.pr-ask-wait[hidden]{display:none}
+.pr-row--ask{border-color:#24599c;background:#f7f9fd}
+.pr-phase{display:inline-block;justify-self:start;padding:1px 8px;border-radius:99px;background:#e8eef8;color:#24599c;font-size:15px;font-weight:850}
+.pr-ask-wait{color:var(--muted,#5b6576);font-size:15px}
+
+.pr-visual{margin:10px 0 16px}.pr-picture{position:relative;width:min(100%,430px);margin:auto;line-height:0}.pr-picture img{display:block;width:100%;height:auto}.pr-feature-mark{position:absolute;border:3px solid #ef7b23;border-radius:10px;box-shadow:0 0 0 2px #fff8;color:#632b00;font:bold 16px/1.1 sans-serif;pointer-events:none}.pr-scene:has(.pr-visual){overflow:hidden}@media(max-width:420px){.pr-picture{width:100%}.pr-picture img{height:auto}}
+
+/* A single device-level playback setting; controls wrap at narrow widths. */
+.memory-controls,.review-controls{flex-wrap:wrap;gap:8px}
+.review-rate{display:inline-flex;align-items:center;gap:6px;max-width:100%;font-size:15px;white-space:nowrap}
+.review-rate select{min-height:44px;min-width:78px;padding:6px 10px;border:1px solid #c6c1b8;border-radius:9px;background:#fff;color:#172a45;font:inherit}
+.review-rate select:focus-visible{outline:3px solid #24599c;outline-offset:2px}
+.review-duration{margin:8px 0;color:var(--muted,#5b6576);font-size:15px;line-height:1.5;overflow-wrap:anywhere}
+
+/* Review slides use readable text; artifact images retain their natural ratio. */
+.memory-review .memory-points li,.period-review .pr-row{font-size:18px;line-height:1.65}
+.period-review .pr-scene-title{font-size:19px;line-height:1.5}
+.period-review .pr-row-head{font-size:18px}
+
+/* Narrative review keeps explanations in one readable vertical column. */
+.pr-scene--narrative{width:100%;max-width:64ch;margin-inline:auto}
+.pr-scene--narrative .pr-rows{grid-template-columns:minmax(0,1fr)}
+.pr-scene--narrative .pr-row{overflow-wrap:anywhere;line-height:1.75}
+.pr-scene--narrative .pr-row-head:empty{display:none}
+.pr-scene--narrative .pr-items{font-size:18px}
+@media(max-width:520px){.pr-scene--narrative .pr-items{font-size:17px}}
+@media(max-width:520px){
+ .period-review:has(.pr-scene--narrative) .memory-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%}
+ .period-review:has(.pr-scene--narrative) .memory-controls .tool-btn{min-width:0;min-height:44px;padding:10px 8px;white-space:normal;word-break:keep-all}
+ .period-review:has(.pr-scene--narrative) .review-rate{grid-column:1/-1;justify-content:flex-end}
+}
+
+/* Server-graded CBT overview; no labels are added before submission. */
+.fe-question-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:8px;margin:12px 0}
+.fe-question{display:grid;gap:3px;min-height:76px;padding:10px;border:1px solid #b8c4cc;border-radius:10px;background:#fff;text-align:left;font:inherit;cursor:pointer}
+.fe-question span,.fe-question small{display:block;overflow-wrap:anywhere}
+.fe-question--correct{border-color:#52836a}.fe-question--wrong{border-color:#b44c3d;background:#fff6f3}.fe-question--unanswered{border-color:#947c30;background:#fffbea}
+.fe-question:focus-visible{outline:3px solid #24599c;outline-offset:2px}
+.fe-priorities{padding-left:22px}.fe-priorities li{padding:10px 0;overflow-wrap:anywhere}.fe-priorities span{display:block;margin-top:4px}
+.fe-image-open{display:block;padding:8px;text-align:center;font-size:16px}
+
+.fe-image-pane{max-width:100%;min-width:0;overflow-x:auto}
+.fe-image-zoom{min-height:44px;margin:4px 0 8px}

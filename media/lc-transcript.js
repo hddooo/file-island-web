@@ -1,0 +1,17 @@
+(function(root){'use strict';
+ function mount(audio,host,track){var stopped=false,frame=null,spans=[],sentences=[],active=null,anchor=null,engaged=false,lastOffset=null;host.replaceChildren();var label=document.createElement('p');label.className='lc-script-label';label.textContent='ENGLISH SCRIPT';host.appendChild(label);var viewport=document.createElement('div');viewport.className='lc-script-window';viewport.setAttribute('aria-label','영어 스크립트 · 약 세 줄');viewport.tabIndex=0;host.appendChild(viewport);var content=document.createElement('div');content.className='lc-script-content';viewport.appendChild(content);
+ var script=String(track.script||''),mapper=root.HanqToeicReviewTiming,mapped=mapper?mapper.map(script,track.timing):[],matched=mapped.filter(function(p){return Number.isFinite(p.start)&&Number.isFinite(p.end)&&p.end>p.start;}).length;
+ if(!script){content.textContent='이 음원의 영어 스크립트가 아직 없어요.';return{stop:function(){}};}
+ var sentence=null;mapped.forEach(function(p){if(!sentence){sentence=document.createElement('span');sentence.className='lc-script-sentence';content.appendChild(sentence);sentences.push(sentence);}var n=document.createElement('span');n.textContent=p.text;sentence.appendChild(n);if(Number.isFinite(p.start)&&Number.isFinite(p.end)&&p.end>p.start)spans.push({node:n,sentence:sentence,start:p.start,end:p.end});if(/[.!?][”"']?\s*$/.test(p.text)&&p.text.trim().length>2)sentence=null;});
+ if(!mapped.length)content.textContent=script;
+ if(!matched){var note=document.createElement('p');note.className='lc-script-note';note.textContent='정확한 시간 정보가 없어 자동 강조하지 않아요.';host.appendChild(note);}
+ function update(event){if(stopped)return;if(event&&/^(play|seeking|seeked)$/.test(event.type))engaged=true;var time=audio.currentTime,found=null,nearest=null;for(var i=0;i<spans.length;i++){var s=spans[i];if(s.start<=time)nearest=s;if(time>=s.start&&time<s.end)found=s;}if(active!==found){if(active){active.node.classList.remove('is-word');active.sentence.classList.remove('is-speaking');}active=engaged&&!audio.ended?found:null;if(active){active.node.classList.add('is-word');active.sentence.classList.add('is-speaking');}}
+ anchor=active||nearest||spans[0];if(!anchor||!viewport.getBoundingClientRect().height)return;var y=anchor.node.getBoundingClientRect().top-content.getBoundingClientRect().top,line=parseFloat(getComputedStyle(content).lineHeight)||30,target=Math.max(0,Math.floor((y+1)/line)*line-line);if(target!==lastOffset){viewport.scrollTop=target;lastOffset=target;}}
+ function tick(){frame=null;update();if(!stopped&&!audio.paused&&!audio.ended)frame=requestAnimationFrame(tick);}
+ function play(e){update(e);if(frame!==null)cancelAnimationFrame(frame);tick();}
+ function visibility(){if(!document.hidden&&!audio.paused)play();}
+ var events=['timeupdate','seeking','seeked','ratechange','pause','ended','loadedmetadata'];events.forEach(function(e){audio.addEventListener(e,update);});audio.addEventListener('play',play);root.addEventListener('resize',update);document.addEventListener('visibilitychange',visibility);update();if(!audio.paused)play();
+ return{coverage:{mapped:matched,total:mapped.filter(function(p){return /[a-zA-Z]/.test(p.text);}).length},stop:function(){stopped=true;if(frame!==null)cancelAnimationFrame(frame);events.forEach(function(e){audio.removeEventListener(e,update);});audio.removeEventListener('play',play);root.removeEventListener('resize',update);document.removeEventListener('visibilitychange',visibility);}};
+ }
+ root.HanqLcTranscript={mount:mount};
+})(window);

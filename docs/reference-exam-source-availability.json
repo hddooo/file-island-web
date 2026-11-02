@@ -1,0 +1,162 @@
+{
+  "schema": 1,
+  "scope": "부모 에이전트의 별도 전체 키워드 대조에 앞선 원본 위치·정체성 확인 보고. 제품 수정 없음.",
+  "summarySource": {
+    "path": "/Users/handonglee/Desktop/ai_docs/한국사_자격증/벼락치기한능검_요약서.pdf",
+    "normalizedFilename": "벼락치기한능검_요약서.pdf",
+    "pages": 144,
+    "sha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "matchesEstablishedTextbookSHA256": true,
+    "available": true
+  },
+  "choiceNoteSource": {
+    "completeOriginalPDF": "unknown",
+    "completeOriginalIdentityVerified": false,
+    "scopedDiscovery": "known HanQ parent folder, exam folder, workspace source exports and known quiz folder only",
+    "availableExtract": {
+      "path": "hanq-confirmation-input/confirmation-questions-library-read.md",
+      "sha256": "d23689f9630e56792697a321c2fea43b621b4592e3d1baf0fd126c9b0eb6a83c",
+      "matchesPriorReadExportHash": true,
+      "declaredTitle": "벼락치기 한능검 2026 선택지분석 노트(79회 대비) — 각 단원 말미 공부 내용 확인",
+      "questionCount": 642,
+      "libraryId": "libfile_9821216813548191af7d24f8e62efb10",
+      "scope": "단원 말미 확인문제 발췌. 노트 본문 전체로 취급하지 않는다."
+    },
+    "availableLocalMarkdown": {
+      "path": "/Users/handonglee/Desktop/ai_docs/한국사_자격증/한능검_시대별_확인문제.md",
+      "sha256": "d23689f9630e56792697a321c2fea43b621b4592e3d1baf0fd126c9b0eb6a83c"
+    },
+    "limitation": "확인문제642개에서 단어가 없다는 사실은 선택지분석노트 전체에 없다는 증거가 아니다. 제목과 발췌 출처는 확인했으나 완전한 원본 파일 정체성은 아직 unknown."
+  },
+  "differentDocumentExcluded": {
+    "path": "/Users/handonglee/Desktop/ai_docs/한국사_자격증/한국사능력검정_요약노트.pdf",
+    "pages": 25,
+    "sha256": "e7b8a2a9f4afa70b61cde05dc48cd3b363d8a03963224fb0a3cc970f0ba55e9e",
+    "identity": "한국사 핵심 요약노트 · 2022년7월1일 · 꿈꾸는라이언",
+    "reason": "제목·발행정보가 다르므로 기준 선택지노트로 대체하지 않는다."
+  },
+  "examSources": [
+    {
+      "round": 70,
+      "normalizedQuestionCount": 50,
+      "questionPDF": "/Users/handonglee/Desktop/ai_docs/한국사_자격증/기출/70회 한국사_문제지(심화).pdf",
+      "questionPDFSHA256": "4e9195f278bfdb5223cef43d60ff3bb1d55f09e4db0af803476392b08acc978c",
+      "canonicalQuestionHashMatch": true,
+      "officialAnswerPDF": "/Users/handonglee/Desktop/ai_docs/한국사_자격증/기출/70회 한국사_정답지(심화).pdf",
+      "officialAnswerPDFSHA256": "06b1ae9f5e8a33b8b9cd5c3f5d3c4d0acd6049e31a4a4b45a38658c574a252c1",
+      "canonicalAnswerHashMatch": true
+    },
+    {
+      "round": 71,
+      "normalizedQuestionCount": 50,
+      "questionPDF": "/Users/handonglee/Desktop/ai_docs/한국사_자격증/기출/71회 한국사_문제지(심화).pdf",
+      "questionPDFSHA256": "4faa9016aa092da3684782b3c46f7ba04165c954649334ad5ba9956f4399c4a6",
+      "canonicalQuestionHashMatch": true,
+      "officialAnswerPDF": "/Users/handonglee/Desktop/ai_docs/한국사_자격증/기출/71회 심화 정답표.pdf",
+      "officialAnswerPDFSHA256": "d412bab448e17d15d0cfd71d6c98a524c109157362b854316d55b280ee6a2a4e",
+      "canonicalAnswerHashMatch": true
+    },
+    {
+      "round": 72,
+      "normalizedQuestionCount": 50,
+      "questionPDF": "/Users/handonglee/Desktop/ai_docs/한국사_자격증/기출/72회 심화 문제지.pdf",
+      "questionPDFSHA256": "87307e726a2605000a087b3c97ec2bae8e4c079ca2a2ef2b567cc9a4a415b9b5",
+      "canonicalQuestionHashMatch": true,
+      "officialAnswerPDF": "/Users/handonglee/Desktop/ai_docs/한국사_자격증/기출/72회 심화 정답표.pdf",
+      "officialAnswerPDFSHA256": "9f71656a1dfa110393e5097d3712c708e498470b3355ce680543ea959a59bfc7",
+      "canonicalAnswerHashMatch": true
+    },
+    {
+      "round": 73,
+      "normalizedQuestionCount": 50,
+      "questionPDF": "/Users/handonglee/Desktop/ai_docs/한국사_자격증/기출/73회 심화 문제지.pdf",
+      "questionPDFSHA256": "d6ad706f1bd7ce3a0b18d7b7cdda9439d10b7b712121428b21af2c31268c4836",
+      "canonicalQuestionHashMatch": true,
+      "officialAnswerPDF": "/Users/handonglee/Desktop/ai_docs/한국사_자격증/기출/73회 심화 정답표.pdf",
+      "officialAnswerPDFSHA256": "0dfeee4af303493e95a3a30c7f7cd890377f067789bdb7c00a9cc90af15c6347",
+      "canonicalAnswerHashMatch": true
+    },
+    {
+      "round": 74,
+      "normalizedQuestionCount": 50,
+      "questionPDF": "/Users/handonglee/Desktop/ai_docs/한국사_자격증/기출/74회 한국사_문제지(심화).pdf",
+      "questionPDFSHA256": "7d7322d680119d7b7b89c7465edc1dd8d0f06e8180594aff69b7d34502a44c79",
+      "canonicalQuestionHashMatch": true,
+      "officialAnswerPDF": "/Users/handonglee/Desktop/ai_docs/한국사_자격증/기출/74회 심화 정답표.pdf",
+      "officialAnswerPDFSHA256": "db21586adfbe6df757b51a87eb0824cb414379cbe8f984c8fe1709e5b3643b46",
+      "canonicalAnswerHashMatch": true
+    },
+    {
+      "round": 75,
+      "normalizedQuestionCount": 50,
+      "questionPDF": "/Users/handonglee/Desktop/ai_docs/한국사_자격증/기출/75회 심화 문제지.pdf",
+      "questionPDFSHA256": "2af5466f3be54d75eb65098f042f5f9c56de01fd213a71dfbe460ea222cc137e",
+      "canonicalQuestionHashMatch": true,
+      "officialAnswerPDF": "/Users/handonglee/Desktop/ai_docs/한국사_자격증/기출/75회 심화 정답표.pdf",
+      "officialAnswerPDFSHA256": "9ecff7c82b2f0343d3e6fd9dec389431411257e00fd8a53b11d519cb58c5dad1",
+      "canonicalAnswerHashMatch": true
+    },
+    {
+      "round": 76,
+      "normalizedQuestionCount": 50,
+      "questionPDF": "/Users/handonglee/Desktop/ai_docs/한국사_자격증/기출/76회 한국사_문제지(심화).pdf",
+      "questionPDFSHA256": "b25c8617eb817711a54e69c09040298bf1b102f59fe29aebaad3558981e834f3",
+      "canonicalQuestionHashMatch": true,
+      "officialAnswerPDF": "/Users/handonglee/Desktop/ai_docs/한국사_자격증/기출/76회 한국사_답지(심화)).pdf",
+      "officialAnswerPDFSHA256": "9da8824061aa649e0c1246edc70bf86cb29273cbe24eabf11b636123d3c9e98b",
+      "canonicalAnswerHashMatch": true
+    },
+    {
+      "round": 77,
+      "normalizedQuestionCount": 50,
+      "questionPDF": "/Users/handonglee/Desktop/ai_docs/한국사_자격증/기출/77회 한국사_문제지(심화).pdf",
+      "questionPDFSHA256": "c3ff51d9273f7812a2b84d7fac4e8e1cb9aa642e80a4f53ebfc2a8afc5503e88",
+      "canonicalQuestionHashMatch": true,
+      "officialAnswerPDF": "/Users/handonglee/Desktop/ai_docs/한국사_자격증/기출/77회 한국사_답지(심화).pdf",
+      "officialAnswerPDFSHA256": "71b9b6ef633f0e70b6a9b3c4565ec2f02a1ba2ef5f805f34d77d41427913b304",
+      "canonicalAnswerHashMatch": true
+    },
+    {
+      "round": 78,
+      "normalizedQuestionCount": 50,
+      "questionPDF": "/Users/handonglee/Desktop/ai_docs/한국사_자격증/기출/78회 한국사_문제지(심화) (1).pdf",
+      "questionPDFSHA256": "7d96d41c1686c5b3ea3c533d76fbb23235c44d8e55f53e81a320e31cf914fba0",
+      "canonicalQuestionHashMatch": true,
+      "officialAnswerPDF": "/Users/handonglee/Desktop/ai_docs/한국사_자격증/기출/78회 한국사_답지(심화).pdf",
+      "officialAnswerPDFSHA256": "a8e8513c5d73ae81594460354a7b8a83ddaec9894001ff66cecae40f4d280638",
+      "canonicalAnswerHashMatch": true
+    },
+    {
+      "round": 79,
+      "normalizedQuestionCount": 50,
+      "questionPDF": "/Users/handonglee/Desktop/ai_docs/한국사_자격증/기출/79회 한국사_문제지(심화).pdf",
+      "questionPDFSHA256": "fa82e6c8977670c1b55778b061e33ee367c55cd3f8707806f63d70d8353453d7",
+      "canonicalQuestionHashMatch": true,
+      "officialAnswerPDF": "/Users/handonglee/Desktop/ai_docs/한국사_자격증/기출/79회 한국사_답지(심화).pdf",
+      "officialAnswerPDFSHA256": "ea380c4a1f4f24ebd4c95ad171aa7ace3fc0654284fbe2d7be4d5b1f675ec393",
+      "canonicalAnswerHashMatch": true
+    }
+  ],
+  "examSourceSummary": {
+    "roundCount": 10,
+    "questionCount": 500,
+    "questionOriginalsAvailable": 10,
+    "officialAnswerOriginalsAvailable": 10,
+    "questionHashMatches": 10,
+    "answerHashMatches": 10
+  },
+  "confirmedHardMissingKeywords": [],
+  "keywordAuditStatus": "미실시. 부모 에이전트가 별도로 수행하므로 중복 전체 검색을 진행하지 않는다. 원본 없는 노트 전체나 무표제 이미지 내 단어를 확정 누락으로 판정하지 않는다.",
+  "recommendationRules": [
+    "정답 핵심의 누락과 오답 선지·제시문에만 등장한 단어를 별도 집계한다.",
+    "원문 이미지에서 인물·유물명이 표시되지 않고 시각 식별이 필요한 경우 unknown 또는 별도 시각 확인으로 남긴다.",
+    "빈도는 실제70–79회 문항번호를 근거로 집계하며 출제예측이나 전체선지출현횟수와 혼합하지 않는다.",
+    "보강 문구는 원문 정답·단서로 확인되는 핵심 연결만 짧게 제안한다."
+  ],
+  "mutationScope": "이 증거보고서 JSON만 작성. 원본PDF/은행/제품코드/Git/사용자기록 미변경.",
+  "parentAuditResolution": {
+    "summaryAndChoiceNote": "동일144쪽PDF두파일·SHA35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "evidenceFile": "hanq-independent-content-audit.md",
+    "note": "원래로컬검수의선택지노트미식별은후속부모검수로해결되었다. 500원문전수육안확인완료주장은하지않는다."
+  }
+}

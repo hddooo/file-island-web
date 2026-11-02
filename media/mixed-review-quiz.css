@@ -1,0 +1,25 @@
+/* Public all-era practice, separate from saved chapter quizzes and CBT. */
+.hanq-rm__mixed-entry{display:block;width:100%;min-height:76px;margin:12px 0 18px;text-align:left;font-weight:700;font-size:17px;background:#f2f6fc;border-color:#aebfd7}
+.hanq-rm__mixed-entry small{display:block;margin-top:7px;font-size:13px;font-weight:400;line-height:1.5;color:#52627a}
+.mixed-quiz{max-width:760px;margin:0 auto;padding:12px 0;overflow-wrap:anywhere}
+.mixed-quiz__progress{margin:0 0 12px;color:#52627a;font-size:14px}
+.mixed-quiz__question{margin:0 0 20px;font-size:22px;line-height:1.55;word-break:keep-all;overflow-wrap:anywhere}
+.mixed-quiz__choices{display:grid;gap:10px}
+.mixed-quiz__choice{display:flex;align-items:center;gap:12px;width:100%;min-height:60px;padding:14px;text-align:left;font-size:16px;line-height:1.55;white-space:normal;background:#fff;word-break:keep-all;overflow-wrap:anywhere}
+.mixed-quiz__number{flex:0 0 28px;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#edf0f5;font-size:14px;font-weight:700}
+.mixed-quiz__option-text{flex:1;min-width:0}
+.mixed-quiz__choice:disabled{opacity:1;color:#273347;cursor:default}
+.mixed-quiz__choice.is-correct{border:2px solid #327254;background:#eff8f2}
+.mixed-quiz__choice.is-wrong{border:2px solid #ad4949;background:#fff1f1}
+.mixed-quiz__badge{font-size:12px;font-weight:700;flex:0 0 auto}
+.mixed-quiz__feedback{margin:16px 0;padding:15px;border:1px solid #c7d4e7;border-radius:14px;background:#f4f7fb;font-size:15px;line-height:1.65}
+.mixed-quiz__feedback p{margin:8px 0 0}
+.mixed-quiz__era{font-size:13px;color:#52627a}
+.mixed-quiz__next,.mixed-quiz__restart{min-height:48px;margin-top:16px;font-size:16px}
+.mixed-quiz button:focus-visible,.mixed-quiz__feedback:focus-visible,.mixed-quiz__question:focus-visible{outline:3px solid #456ba2;outline-offset:3px}
+@media(max-width:600px){.mixed-quiz__question{font-size:19px}.mixed-quiz__choice{font-size:15px;padding:12px;gap:9px}.mixed-quiz__badge{font-size:11px}.mixed-quiz__next,.mixed-quiz__restart{width:100%}}
+.hanq-rm[data-view=mixed-quiz]{box-sizing:border-box;max-width:792px;margin:0 auto;padding:0 16px 20px}
+.hanq-rm[data-view=mixed-quiz] .hanq-rm__title{border:0;margin:20px 0 12px;font-size:24px;line-height:1.4}
+.mixed-quiz .mixed-quiz__choice{font-weight:400;border-radius:14px;font-size:16px}
+.mixed-quiz .mixed-quiz__next,.mixed-quiz .mixed-quiz__restart{font-size:16px}
+@media(max-width:600px){.mixed-quiz .mixed-quiz__choice{font-size:15px}.hanq-rm[data-view=mixed-quiz] .hanq-rm__title{font-size:22px}}

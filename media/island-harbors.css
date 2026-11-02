@@ -1,0 +1,68 @@
+/* Playable island scenes. Scoped to subject maps; no scroll/auth/device ownership. */
+html body #app .subject-travel-map.island-harbors{
+  --scene-x:0px;--scene-y:0px;--harbor-ink:#f6f4d8;--harbor-muted:#d0ddbf;--harbor-sign:#173b2ef5;--harbor-edge:#c4d8a6;
+  position:relative!important;display:block!important;aspect-ratio:16/9;min-height:340px!important;padding:0!important;margin:0 0 10px!important;
+  border:1px solid #789c77!important;border-radius:10px!important;background:#284f3d!important;box-shadow:inset 0 0 0 2px #e6ecc13b!important;overflow:hidden;isolation:isolate;
+}
+html body #app .island-harbors[data-harbor-island=toeic]{--harbor-sign:#123e53f5;--harbor-muted:#c8e3e9;--harbor-edge:#b8dbe2;border-color:#86b9bc!important;background:#187f9d!important}
+html body #app .island-harbors .harbor-chart{position:absolute;inset:0;display:block;pointer-events:none;transform:translate3d(var(--scene-x),var(--scene-y),0) scale(1.015);transition:transform .2s ease-out}
+html body #app .island-harbors .harbor-chart>img{display:block;width:100%;height:100%;max-width:none;object-fit:cover;border-radius:0;opacity:1;filter:none}
+html body #app .island-harbors .harbor-foreground{position:absolute;z-index:1;inset:-3%;pointer-events:none;background:url('world-art/garden-foreground-v1.webp') center/100% 100%!important;mask-image:linear-gradient(transparent 75%,#0009);transform:translate3d(calc(var(--scene-x)*-2),calc(var(--scene-y)*-2),0);transition:transform .3s ease-out}
+html body #app .island-harbors .harbor-chart-caption{position:absolute;z-index:2;left:12px;top:12px;padding:4px 8px;border:1px solid #d8e9c76b;border-radius:4px;background:var(--harbor-sign)!important;color:#f5f3d8!important;font-size:12px;line-height:1.5;letter-spacing:.04em;pointer-events:none}
+html body #app .island-harbors .harbor-stop{
+  position:absolute!important;z-index:3;left:calc(var(--pin-x)*1%)!important;top:calc(var(--pin-y)*1%)!important;right:auto!important;bottom:auto!important;transform:translateX(-50%)!important;
+  display:flex!important;flex-direction:column;align-items:center;justify-content:flex-start;gap:4px;
+  width:142px!important;max-width:none!important;min-width:0!important;min-height:84px!important;height:auto!important;margin:0!important;padding:0!important;
+  border:0!important;border-radius:8px!important;background:transparent!important;color:var(--harbor-ink)!important;box-shadow:none!important;filter:none!important;
+  text-decoration:none;text-align:center!important;line-height:1.4;cursor:pointer;touch-action:manipulation;transition:none!important;
+}
+html body #app .island-harbors .harbor-stop:before,html body #app .island-harbors .harbor-stop:after{display:none!important}
+html body #app .island-harbors .harbor-sign{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;min-height:54px;padding:6px 9px;border:1px solid var(--harbor-edge);border-radius:5px;background:var(--harbor-sign)!important;box-shadow:0 3px 0 #132f29cc,0 5px 12px #001b3455;position:relative}
+html body #app .island-harbors .harbor-sign:before{content:'';position:absolute;left:5px;top:5px;width:3px;height:3px;border-radius:50%;background:var(--harbor-edge);box-shadow:0 36px var(--harbor-edge)}
+html body #app .island-harbors .harbor-sign>strong,html body #app .island-harbors .wn-entry-t{font-size:16px!important;font-weight:700;line-height:1.4;white-space:nowrap;color:var(--harbor-ink)!important;letter-spacing:0;margin:0}
+html body #app .island-harbors .world-place-name{display:block;font-size:11px!important;line-height:1.5;color:var(--harbor-muted)!important;white-space:nowrap;margin:0;letter-spacing:0}
+html body #app .island-harbors .harbor-pin{display:grid;place-items:center;flex:none;width:38px;height:38px;padding:6px;border:2px solid #f2e9b9;border-radius:50%;background:var(--harbor-sign)!important;color:#fff2c4!important;box-shadow:0 2px 0 #183f34,0 3px 8px #001b3466;transition:transform .16s,box-shadow .16s}
+html body #app .island-harbors .harbor-pin svg{width:22px;height:22px;display:block}
+html body #app .island-harbors .harbor-stop:focus-visible{outline:3px solid #fff0a5!important;outline-offset:4px}
+html body #app .island-harbors .harbor-stop:focus-visible .harbor-sign,html body #app .island-harbors .harbor-stop.harbor-selected .harbor-sign{border-color:#fff2b7;box-shadow:0 0 0 2px #fff2b7,0 4px 14px #001b3499}
+html body #app .island-harbors .harbor-stop:active .harbor-pin{transform:translateY(2px);box-shadow:0 0 0 5px #fff3b455}
+html body #app .island-harbors .wn-entry-n{display:none!important}
+/* Keep the scene as the content, with the island name already in the device crown. */
+html body #app .toeic-menu:has(.island-harbors)>.world-island-banner{display:none!important}
+html body #app .world-map-help{font-size:12px!important;text-align:center;margin:8px 4px!important}
+@media(hover:hover){html body #app .island-harbors .harbor-stop:hover .harbor-pin{transform:translateY(-3px);box-shadow:0 0 0 4px #fff3b466,0 4px 12px #001b3499}html body #app .island-harbors .harbor-stop:hover .harbor-sign{border-color:#fff2b7;background:#245445f7!important}}
+@media(max-width:700px){
+  html body #app .subject-travel-map.island-harbors{aspect-ratio:3/4;min-height:0!important}
+  html body #app .island-harbors .harbor-stop{left:calc(var(--mobile-x)*1%)!important;top:calc(var(--mobile-y)*1%)!important;width:124px!important;gap:3px}
+  html body #app .island-harbors .harbor-sign>strong,html body #app .island-harbors .wn-entry-t{font-size:15px!important}
+  html body #app .island-harbors .harbor-chart-caption{font-size:11px;top:10px;left:10px}
+}
+@media(max-width:360px){
+  html body #app .island-harbors .harbor-stop{width:114px!important;gap:2px}
+  html body #app .island-harbors .harbor-sign{padding:5px 6px;min-height:49px}
+  html body #app .island-harbors .harbor-sign>strong,html body #app .island-harbors .wn-entry-t{font-size:14px!important}
+  html body #app .island-harbors .world-place-name{font-size:10px!important}
+  html body #app .island-harbors .harbor-pin{width:34px;height:34px;padding:5px}
+}
+@media(prefers-reduced-motion:reduce){html body #app .island-harbors *,html body #app .island-harbors .harbor-chart,html body #app .island-harbors .harbor-foreground{animation:none!important;transition:none!important}html body #app .island-harbors .harbor-chart,html body #app .island-harbors .harbor-foreground,html body #app .island-harbors .harbor-pin{transform:none!important}}
+/* Text-sized plaques inside the unchanged, larger map touch controls. */
+html body #app .island-harbors .harbor-sign{align-self:center;width:max-content;max-width:150px;min-height:0!important;height:auto;padding:4px 9px;border-radius:4px;background:color-mix(in srgb,var(--harbor-sign) 88%,transparent)!important;box-shadow:0 1px 5px #001b3455}
+html body #app .island-harbors .harbor-sign:before{display:none}
+html body #app .island-harbors .harbor-sign>strong,html body #app .island-harbors .harbor-sign .wn-entry-t{font-size:14px!important;line-height:1.3!important;white-space:normal;text-align:center}
+@media(max-width:700px){html body #app .island-harbors .harbor-sign{max-width:124px;padding:4px 7px}html body #app .island-harbors .harbor-sign>strong,html body #app .island-harbors .harbor-sign .wn-entry-t{font-size:13px!important}}
+/* Scene-only viewport fit; the camera keeps all waypoint controls in view. */
+html body .device-content:has(>.island-harbors){display:flex;flex-direction:column}
+html body .device-content>.toeic-menu:has(.island-harbors){display:flex;flex-direction:column;min-height:0;height:100%;padding:0!important;margin:0!important}
+html body .device-content>.toeic-menu:has(.island-harbors)>#toeicSection:empty{display:none}
+html body .device-content:has(.island-harbors) .world-map-help{display:none!important}
+html body #app .subject-travel-map.island-harbors{flex:1 0 260px;aspect-ratio:auto!important;width:100%!important;height:100%;min-height:260px!important;margin:0!important;border-radius:6px!important}
+html body #app .island-harbors .harbor-chart{inset:auto;z-index:1;transform:translate3d(var(--scene-x),var(--scene-y),0)}
+html body #app .island-harbors .harbor-chart>img{object-fit:contain}
+html body #app .island-harbors .harbor-foreground{z-index:2;opacity:.55}
+html body #app:has(.island-harbors){display:flex!important;flex-direction:column;height:calc(var(--study-viewport-height,100dvh) - var(--study-footer-height,80px) - 16px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px))!important;max-height:none!important;min-height:260px!important}
+html body #app:has(.island-harbors)>.device-content{flex:1;min-height:0;padding-bottom:2px!important}
+html body #app .island-harbors .harbor-foreground{display:none!important}
+html body.subject-map-history .device-content>.help,html body.subject-map-history .history-map-title{display:none!important}
+html body.subject-map-history .device-content>.footer{display:none!important;margin:0!important;padding:0!important}
+@media(max-width:700px){html body #app:has(.island-harbors){width:100%!important;max-width:none!important;margin:0!important;padding:calc(6px + env(safe-area-inset-top,0px)) max(8px,env(safe-area-inset-right,0px)) 4px max(8px,env(safe-area-inset-left,0px))!important;border-width:3px!important;border-top-width:7px!important;border-radius:26px!important}html body #app:has(.island-harbors)>.device-content{padding-inline:0!important}}
+html body #app .island-harbors :is(.harbor-chart-caption,.harbor-sign .world-place-name){display:none!important}

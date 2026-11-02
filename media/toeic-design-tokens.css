@@ -1,0 +1,3 @@
+/* Reuses the existing IMG_0742 sans-serif match and vocabulary/connector PDF stacks.
+   Local Arial/Helvetica, not a claim about the publisher's exact licensed font. */
+:root{--toeic-study-font:Arial,Helvetica,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",system-ui,sans-serif;--toeic-menu-font:FileIslandMenu,"Apple SD Gothic Neo",system-ui,sans-serif;--toeic-row-height:48px;--toeic-row-gap:8px;--toeic-row-text:14px;--toeic-row-muted:12px;--toeic-row-line:#355347;--toeic-row-focus:#bdd7cd}

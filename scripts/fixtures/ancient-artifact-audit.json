@@ -1,0 +1,206 @@
+[
+  {
+    "key": "jeongnim",
+    "era": "samguk",
+    "src": "media/culture-photos/ancient-jeongnim.png",
+    "input": "media/cbt-originals/79-06.webp",
+    "inputSha256": "a4b7bc89dfc7b07a41e330f2fe1b9f2d86d8681d4cfc91bb380bd1fa899b5b2c",
+    "rect": [
+      80,
+      545,
+      200,
+      738
+    ],
+    "outputSha256": "fd41535f8575dc95934b695c3d49d5368c799ee55a514d56847a8832723a3000",
+    "refs": [
+      {
+        "round": 79,
+        "number": 6,
+        "option": 1
+      },
+      {
+        "round": 78,
+        "number": 14,
+        "option": 1
+      }
+    ]
+  },
+  {
+    "key": "dabotap",
+    "era": "nambuk",
+    "src": "media/culture-photos/ancient-dabotap.png",
+    "input": "media/cbt-originals/79-06.webp",
+    "inputSha256": "a4b7bc89dfc7b07a41e330f2fe1b9f2d86d8681d4cfc91bb380bd1fa899b5b2c",
+    "rect": [
+      270,
+      545,
+      415,
+      738
+    ],
+    "outputSha256": "e193c4ddbd2c5e08243ebbbcaeb5cedabe00f431b759337422336c43f5a3edc6",
+    "refs": [
+      {
+        "round": 79,
+        "number": 6,
+        "option": 2
+      }
+    ]
+  },
+  {
+    "key": "yeonggwang",
+    "era": "nambuk",
+    "src": "media/culture-photos/ancient-yeonggwang.png",
+    "input": "media/cbt-originals/79-06.webp",
+    "inputSha256": "a4b7bc89dfc7b07a41e330f2fe1b9f2d86d8681d4cfc91bb380bd1fa899b5b2c",
+    "rect": [
+      470,
+      542,
+      600,
+      738
+    ],
+    "outputSha256": "61e4fbe8f081a25cd6774463da7924492d6af0539052a07b55b2bf407efaa265",
+    "refs": [
+      {
+        "round": 79,
+        "number": 6,
+        "option": 3
+      },
+      {
+        "round": 78,
+        "number": 14,
+        "option": 2
+      }
+    ]
+  },
+  {
+    "key": "four-lions",
+    "era": "nambuk",
+    "src": "media/culture-photos/ancient-four-lions.png",
+    "input": "media/cbt-originals/79-06.webp",
+    "inputSha256": "a4b7bc89dfc7b07a41e330f2fe1b9f2d86d8681d4cfc91bb380bd1fa899b5b2c",
+    "rect": [
+      80,
+      742,
+      205,
+      908
+    ],
+    "outputSha256": "6406287f890e9be782153a908eee3f4e233780b1bbd2a812d986e1c4cff4f651",
+    "refs": [
+      {
+        "round": 79,
+        "number": 6,
+        "option": 4
+      }
+    ]
+  },
+  {
+    "key": "two-buddhas",
+    "era": "nambuk",
+    "src": "media/culture-photos/ancient-two-buddhas.png",
+    "input": "media/cbt-originals/79-11.webp",
+    "inputSha256": "2805b75e84dd1372e2f92cc9975581b5624f7818fd1a1e7f4298779c7aa2550a",
+    "rect": [
+      80,
+      635,
+      185,
+      800
+    ],
+    "outputSha256": "2a555575c69afb58db7042579a89373babc01b3fb64cc6d18cae398884c426f0",
+    "refs": [
+      {
+        "round": 79,
+        "number": 11,
+        "option": 1
+      },
+      {
+        "round": 78,
+        "number": 9,
+        "option": 3
+      }
+    ]
+  },
+  {
+    "key": "silla-crown",
+    "era": "samguk",
+    "src": "media/culture-photos/ancient-silla-crown.png",
+    "input": "media/cbt-originals/79-11.webp",
+    "inputSha256": "2805b75e84dd1372e2f92cc9975581b5624f7818fd1a1e7f4298779c7aa2550a",
+    "rect": [
+      285,
+      635,
+      390,
+      800
+    ],
+    "outputSha256": "b32e18d6f74457678d5ca73b309ba521a71979983981958208f7824a2b1891d4",
+    "refs": [
+      {
+        "round": 79,
+        "number": 11,
+        "option": 2
+      }
+    ]
+  },
+  {
+    "key": "baekje-incense",
+    "era": "samguk",
+    "src": "media/culture-photos/ancient-baekje-incense.png",
+    "input": "media/cbt-originals/79-11.webp",
+    "inputSha256": "2805b75e84dd1372e2f92cc9975581b5624f7818fd1a1e7f4298779c7aa2550a",
+    "rect": [
+      75,
+      825,
+      185,
+      985
+    ],
+    "outputSha256": "926a6052ef59b479348e08f8bcd5d1040b692caf1ad71daaaee271d01c2bbafd",
+    "refs": [
+      {
+        "round": 79,
+        "number": 11,
+        "option": 4
+      }
+    ]
+  },
+  {
+    "key": "guhwang-buddha",
+    "era": "nambuk",
+    "src": "media/culture-photos/ancient-guhwang-buddha.png",
+    "input": "media/cbt-originals/78-09.webp",
+    "inputSha256": "4ccd785cb050d6527efebb8356ec861277a3298bd48a4be278971c856bf66941",
+    "rect": [
+      285,
+      785,
+      385,
+      955
+    ],
+    "outputSha256": "7301b84f8fea125c490c98edd3925a03257c6bce9d215687ac3bad3d18a97b40",
+    "refs": [
+      {
+        "round": 78,
+        "number": 9,
+        "option": 5
+      }
+    ]
+  },
+  {
+    "key": "jinjeon",
+    "era": "nambuk",
+    "src": "media/culture-photos/ancient-jinjeon.png",
+    "input": "media/cbt-originals/78-14.webp",
+    "inputSha256": "22dab8278c768b5c7c5920d76a5332b6cbd9d21dba0def93e7bf75c7b8088137",
+    "rect": [
+      80,
+      740,
+      205,
+      920
+    ],
+    "outputSha256": "19df83b694c6ed0f3c9a4a1b81798952c12def9c034fb6d95498894ec039e9cd",
+    "refs": [
+      {
+        "round": 78,
+        "number": 14,
+        "option": 4
+      }
+    ]
+  }
+]

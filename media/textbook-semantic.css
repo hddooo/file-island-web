@@ -1,0 +1,101 @@
+/* Scoped to the semantic reader: no global styles and no page-image layout. */
+.textbook-semantic{--textbook-semantic-blue:#0a3c82;box-sizing:border-box;min-width:0;max-width:100%;background:#fff;color:#18212f;font-family:inherit;font-size:17px;line-height:1.8;text-align:left;overflow-wrap:anywhere}
+.textbook-semantic *{box-sizing:border-box}
+.textbook-semantic-meta{margin:0 0 22px;padding:0 0 16px;border-bottom:1px solid #d6e0ec}
+.textbook-semantic-reference{font-size:16px;font-weight:600;margin:0 0 4px}
+.textbook-semantic-verification,.textbook-semantic-block-warning{font-size:16px;line-height:1.6;margin:4px 0;color:#6c4c0c}
+.textbook-semantic-verification[data-review-status=verified],.textbook-semantic-block-warning[data-review-status=verified]{color:#245735}
+.textbook-semantic-content{min-width:0;max-width:100%;display:block}
+.textbook-semantic-heading{font-size:22px;line-height:1.6;font-weight:400;margin:26px 0 12px;white-space:pre-wrap}
+.textbook-semantic h1.textbook-semantic-heading{font-size:28px}
+.textbook-semantic h2.textbook-semantic-heading{font-size:24px}
+.textbook-semantic h4.textbook-semantic-heading,.textbook-semantic h5.textbook-semantic-heading,.textbook-semantic h6.textbook-semantic-heading{font-size:20px}
+.textbook-semantic-text{font-size:17px;line-height:1.8;font-weight:400;margin:14px 0;white-space:pre-wrap}
+.textbook-semantic-source-quote{display:block;padding:10px 12px;margin:8px 0;border:1px solid #7a8da4;white-space:pre-wrap}
+.textbook-semantic .textbook-source-bold{color:var(--textbook-semantic-blue);font-weight:800}
+.textbook-semantic-table-group{min-width:0;max-width:100%;margin:0;padding:0}
+.textbook-semantic-table-scroll{min-width:0;max-width:100%;width:100%;margin:18px 0;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;border:1px solid #b8c8da;border-radius:8px;background:#fff}
+.textbook-semantic-table{display:table;width:100%;max-width:none;table-layout:auto;border-collapse:collapse;font-family:inherit;font-size:17px;line-height:1.8;background:#fff;color:#18212f;direction:ltr}
+.textbook-semantic-table tbody{display:table-row-group}
+.textbook-semantic-table tr{display:table-row}
+.textbook-semantic-table td,.textbook-semantic-table th{display:table-cell;position:static;min-width:0;padding:14px 16px;border:1px solid #b8c8da;vertical-align:top;white-space:pre-wrap;text-align:left;font-size:17px;line-height:1.8;font-weight:400;background:#fff;color:#18212f;overflow-wrap:anywhere}
+.textbook-semantic-table th{background:#f1f5fb}
+.textbook-semantic-table caption{padding:12px 16px;text-align:left;font-size:17px;font-weight:400;white-space:pre-wrap}
+.textbook-source-illustrated-table{table-layout:fixed}
+.textbook-source-illustrated-table .textbook-source-illustration-cell{border-left:0;padding:10px;vertical-align:middle}
+.textbook-source-illustration-cell .textbook-semantic-table-scroll{margin:0;border:0;border-radius:0;overflow:visible}
+.textbook-source-illustration-cell .textbook-source-gallery{min-width:0!important;table-layout:fixed}
+.textbook-source-illustration-cell .textbook-source-gallery td{border:0;padding:8px 0}
+.textbook-source-illustration-cell .textbook-semantic-block-warning{display:none}
+.textbook-source-gallery{table-layout:fixed}
+.textbook-source-gallery td{vertical-align:top}
+.textbook-semantic[data-pdf-page="21"] .textbook-source-gallery .textbook-figure-group-canvas,
+.textbook-semantic[data-pdf-page="54"] .textbook-source-gallery .textbook-figure-group-canvas{width:min(100%,calc(300px * var(--source-aspect-ratio)))!important}
+@media(max-width:600px){.textbook-semantic[data-pdf-page="21"] .textbook-source-gallery .textbook-figure-group-canvas,.textbook-semantic[data-pdf-page="54"] .textbook-source-gallery .textbook-figure-group-canvas{width:min(100%,calc(220px * var(--source-aspect-ratio)))!important}}
+.textbook-semantic-figure{margin:20px 0;padding:0;max-width:100%;min-width:0}
+.textbook-semantic-figure img{display:block;max-width:100%;height:auto;margin:0 auto}
+.textbook-semantic-figure figcaption,.textbook-semantic-figure-status,.textbook-semantic-figure-context{font-size:16px;line-height:1.6;white-space:pre-wrap}
+.textbook-semantic-exercises{margin:28px 0 0;padding:18px;border:1px solid #b8c8da;border-radius:10px;background:#f8faff}
+.textbook-semantic-exercises h2{font-size:21px;line-height:1.6;margin:0 0 10px}
+.textbook-semantic-exercise-help,.textbook-semantic-exercise-source,.textbook-semantic-answer-unverified{font-size:16px;line-height:1.6;margin:8px 0;color:#475569}
+.textbook-semantic-exercise+.textbook-semantic-exercise{margin-top:20px;padding-top:16px;border-top:1px solid #c8d4e3}
+.textbook-semantic-prompt,.textbook-semantic-answer p{font-size:17px;line-height:1.8;white-space:pre-wrap;margin:10px 0}
+.textbook-semantic-answer summary{min-height:44px;cursor:pointer;padding:10px 0;color:var(--textbook-semantic-blue);font-size:16px;font-weight:600}
+.textbook-semantic :focus-visible{outline:3px solid var(--textbook-semantic-blue);outline-offset:3px}
+@media(max-width:600px){.textbook-semantic-table td,.textbook-semantic-table th{padding:12px}.textbook-semantic-exercises{padding:14px}.textbook-semantic-heading{margin-top:22px}}
+@media(prefers-reduced-motion:reduce){.textbook-semantic *{scroll-behavior:auto}}
+/* Small source diagrams use native selectable text and real table spans. */
+.textbook-semantic .textbook-source-diagram td,.textbook-semantic .textbook-source-diagram th{text-align:center;vertical-align:middle}
+.textbook-semantic .textbook-source-shading-yellow{background:#fff09b}
+.textbook-semantic .textbook-source-shading-green{background:#d5f2b8}
+.textbook-semantic .textbook-source-shading-blue{background:#c3ecf9}
+.textbook-semantic .textbook-source-shading-peach{background:#f5d5bf}
+.textbook-semantic .textbook-source-range-bar{background:linear-gradient(90deg,#27a9bc,#d4faf7,#27a9bc);min-width:48px}
+.textbook-source-timeline-scroll{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;border:1px solid #b8c8da;border-radius:8px;margin:18px 0}
+.textbook-source-timeline{min-width:1000px;padding:56px 80px 8px}
+.textbook-source-timeline-axis{position:relative;margin:0;border-top:1px solid #1f2937}
+.textbook-source-timeline-band{position:absolute;top:0;height:15px;border-left:1px solid #1f2937;border-right:1px solid #1f2937}
+.textbook-source-timeline-band-label{position:absolute;left:0;right:0;bottom:24px;text-align:center;line-height:1.7}
+.textbook-source-timeline-events{list-style:none;margin:0;padding:0}
+.textbook-source-timeline-event{position:absolute;top:42px;width:126px;transform:translateX(-50%);text-align:center;white-space:pre-wrap;font-size:17px;line-height:1.8}
+.textbook-source-timeline-event::before{content:"";position:absolute;bottom:calc(100% + 5px);left:50%;height:22px;border-left:1px solid #1f2937}
+.textbook-source-timeline-boundary{position:absolute;transform:translateX(-50%);width:140px;text-align:center;line-height:1.7;white-space:pre-wrap}
+
+.textbook-semantic .textbook-source-tree{text-align:left;font-family:ui-monospace,monospace;white-space:pre}
+.textbook-source-diagram-hint{font-size:15px;line-height:1.6;color:#475569;margin:10px 12px}
+.textbook-semantic .textbook-source-bypass-down,.textbook-semantic .textbook-source-bypass-up{position:relative}
+.textbook-source-bypass-down::before,.textbook-source-bypass-up::before{content:"";position:absolute;top:15%;bottom:15%;width:35%;border-top:1px solid #334155;border-bottom:1px solid #334155;pointer-events:none}
+.textbook-source-bypass-down::before{right:0;border-left:1px solid #334155}
+.textbook-source-bypass-up::before{left:0;border-right:1px solid #334155}
+.textbook-source-bypass-down::after,.textbook-source-bypass-up::after{content:"";position:absolute;width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;pointer-events:none}
+.textbook-source-bypass-down::after{right:0;bottom:calc(15% - 4px);border-left:8px solid #334155}
+.textbook-source-bypass-up::after{left:0;top:calc(15% - 4px);border-right:8px solid #334155}
+
+.textbook-semantic .textbook-source-inset-gray{background:#f0f0f0}
+
+.textbook-semantic .textbook-source-shading-pink{background:#f1d4f0}
+.textbook-source-timeline-has-top-boundaries{padding-top:92px}
+.textbook-source-timeline-top-boundary{position:absolute;top:-78px;width:140px;transform:translateX(-50%);text-align:center;white-space:pre-wrap;line-height:1.6}
+
+.textbook-source-section-number{display:inline-block;min-width:1.3em;height:1.5em;text-align:center;line-height:1.4;border:1px solid #0a3c82;color:#0a3c82;margin-right:.3em}
+.textbook-reader-page{scroll-margin-top:90px;padding-top:20px;margin-top:28px;border-top:1px solid #d6e0ec}
+.textbook-reader-page [data-source-block]{scroll-margin-top:100px}
+.textbook-reader-page .textbook-semantic-meta{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin-bottom:12px;padding-bottom:6px}
+.textbook-reader-page .textbook-semantic-reference,.textbook-reader-page .textbook-semantic-verification,.textbook-reader-page .textbook-semantic-block-warning{font-size:12px;line-height:1.5;margin:2px 0}
+.textbook-reader-page .textbook-semantic-block-warning[data-review-status=verified]{display:none}
+.textbook-supplement-links{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0;padding-top:14px;border-top:1px solid #d6e0ec;font-size:16px}.textbook-supplement-links a{color:#0a3c82;min-height:44px;display:inline-flex;align-items:center}
+
+.first-era-legacy{margin:20px 0;padding:12px;border:1px solid #cbd5e1;border-radius:8px}.first-era-legacy summary{min-height:32px;cursor:pointer}.first-era-legacy nav{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:10px}.first-era-legacy a{color:#0a3c82;min-height:44px;display:inline-flex;align-items:center;font-size:16px}
+.textbook-semantic-coverage{font-size:13px!important;margin:8px 0!important}.textbook-semantic-library>.textbook-status{font-size:13px;margin:6px 0}.textbook-reader-page:first-child{margin-top:12px;padding-top:8px}
+/* Original rank chart labels appear once at the top for screen reading. */
+.textbook-semantic-table thead{display:table-header-group}
+.textbook-source-rank-chart{table-layout:fixed}
+.textbook-semantic .textbook-source-rank-chart td,.textbook-semantic .textbook-source-rank-chart th{padding:6px;line-height:1.6;border:1px solid #354f56;vertical-align:middle;text-align:center}
+.textbook-semantic .textbook-source-rank-chart thead th{background:#c3e7eb;font-weight:700}
+.textbook-semantic .textbook-source-rank-chart td.textbook-source-range-bar{position:relative;background:#e3f2e9}
+.textbook-source-range-fill{position:absolute;inset:0 22%;display:block;background:linear-gradient(90deg,#159db1 0%,#6dd7df 30%,#edffff 53%,#50c2d1 75%,#168d9d 100%);border-left:1px solid #3192a1;border-right:1px solid #3192a1;pointer-events:none}
+.textbook-semantic .textbook-source-rank-chart .textbook-source-shading-green{background:#e3f2e9}
+.textbook-semantic .textbook-source-rank-chart .textbook-rank-range-cell{position:relative}
+.textbook-rank-range-guide{position:absolute;left:0;right:0;border-top:1px dashed #354f56;pointer-events:none;z-index:0}
+.textbook-source-range-fill{z-index:1}
+.textbook-semantic .textbook-source-rank-chart .textbook-rank-boundary-end{border-bottom-style:dashed}

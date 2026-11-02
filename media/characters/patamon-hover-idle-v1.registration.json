@@ -1,0 +1,230 @@
+{
+  "sourceWidth": 1536,
+  "sourceHeight": 1024,
+  "viewBox": 584,
+  "anchor": [
+    328,
+    358
+  ],
+  "frames": [
+    {
+      "box": [
+        34,
+        72,
+        497,
+        469
+      ],
+      "mass": 85712,
+      "eyeCenter": [
+        294.8819188191882,
+        324.7389298892989
+      ],
+      "i": 0,
+      "backgroundPosition": [
+        -3.4787900400012424,
+        -7.559334116068431
+      ],
+      "clipInset": [
+        17.681690087448818,
+        8.883890208765099,
+        13.653926350907348,
+        11.150356366577368
+      ],
+      "registeredBounds": [
+        65.11808118081183,
+        103.2610701107011,
+        532.1180811808118,
+        504.2610701107011
+      ]
+    },
+    {
+      "box": [
+        507,
+        154,
+        1006,
+        465
+      ],
+      "mass": 78310,
+      "eyeCenter": [
+        803.16328125,
+        316.8953125
+      ],
+      "i": 1,
+      "backgroundPosition": [
+        49.912109375,
+        -9.341974431818183
+      ],
+      "clipInset": [
+        33.06587114726028,
+        8.760835830479444,
+        12.995772688356164,
+        5.109027183219186
+      ],
+      "registeredBounds": [
+        29.836718750000045,
+        193.1046875,
+        532.83671875,
+        508.1046875
+      ]
+    },
+    {
+      "box": [
+        1020,
+        199,
+        1531,
+        468
+      ],
+      "mass": 70238,
+      "eyeCenter": [
+        1309.1406384814495,
+        320.2174288179465
+      ],
+      "i": 2,
+      "backgroundPosition": [
+        103.06099143712706,
+        -8.586947995921253
+      ],
+      "clipInset": [
+        40.20249506542012,
+        5.503533986549574,
+        13.050929592114125,
+        6.31153450660111
+      ],
+      "registeredBounds": [
+        36.859361518550486,
+        234.78257118205352,
+        551.8593615185505,
+        507.7825711820535
+      ]
+    },
+    {
+      "box": [
+        23,
+        718,
+        504,
+        947
+      ],
+      "mass": 64712,
+      "eyeCenter": [
+        295.7748161764706,
+        802.4494485294117
+      ],
+      "i": 3,
+      "backgroundPosition": [
+        -3.384998300790903,
+        101.01123830213903
+      ],
+      "clipInset": [
+        46.49838210112813,
+        7.838153454875105,
+        13.604357624899265,
+        9.113901339645444
+      ],
+      "registeredBounds": [
+        53.22518382352939,
+        271.5505514705883,
+        538.2251838235294,
+        504.5505514705883
+      ]
+    },
+    {
+      "box": [
+        529,
+        616,
+        1001,
+        947
+      ],
+      "mass": 76248,
+      "eyeCenter": [
+        806.9576411960132,
+        798.764119601329
+      ],
+      "i": 4,
+      "backgroundPosition": [
+        50.310676596219885,
+        100.17366354575658
+      ],
+      "clipInset": [
+        29.66367815045737,
+        10.26671938287898,
+        12.973308150912494,
+        8.226431302052527
+      ],
+      "registeredBounds": [
+        48.04235880398676,
+        173.23588039867104,
+        524.0423588039868,
+        508.23588039867104
+      ]
+    },
+    {
+      "box": [
+        1057,
+        566,
+        1513,
+        947
+      ],
+      "mass": 85136,
+      "eyeCenter": [
+        1313.5772495755518,
+        799.6782682512734
+      ],
+      "i": 5,
+      "backgroundPosition": [
+        103.52702201423864,
+        100.38142460256213
+      ],
+      "clipInset": [
+        20.94550201176826,
+        9.345419447868464,
+        13.129840453985167,
+        11.887457264460302
+      ],
+      "registeredBounds": [
+        69.42275042444817,
+        122.32173174872662,
+        529.4227504244482,
+        507.3217317487266
+      ]
+    }
+  ],
+  "sourceFile": "media/characters/patamon-hover-idle-v1.png",
+  "sourceSha256": "b5f0d0334c3e258d1229dba222c204edd4bed8121053e64b6ba0ac97692bd827",
+  "libraryFileId": "libfile_188251b769748191b9bc7f853f4b1c92",
+  "sourceUnmodified": true,
+  "registration": "CSS background coordinates and per-frame isolated rectangle, no source pixel edits",
+  "qa": {
+    "backgrounds": [
+      "light",
+      "dark",
+      "checker"
+    ],
+    "rawNominalCellsRejected": "row shift33px and cell boundary overlap",
+    "registeredEyeAnchor": [
+      328,
+      358
+    ],
+    "registeredFootRangePixels": [
+      504.26,
+      508.24
+    ],
+    "runtimeValidationPending": false,
+    "externalStylesheetContext": true,
+    "engines": [
+      "Chromium",
+      "WebKit"
+    ],
+    "realIphone": false,
+    "realSafari": false,
+    "runtimeMatrix": {
+      "sizes": [
+        320,
+        390,
+        1440
+      ],
+      "passed": 6,
+      "report": "evidence/collection-life/result.json"
+    },
+    "fallback": "Original four-cell Patamon stays visible until candidate decode; failed-image online recovery checked in both engines."
+  }
+}

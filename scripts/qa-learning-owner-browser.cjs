@@ -1,0 +1,37 @@
+// Isolated whole app with local files and synthetic API. No production traffic.
+'use strict';
+const fs=require('fs'),path=require('path'),os=require('os'),vm=require('vm'),assert=require('assert/strict'),pw=require('playwright');
+const root=path.resolve(__dirname,'..'),out=path.resolve(root,'../evidence/final-learning-owner'),ctx={window:{}};
+vm.runInNewContext(fs.readFileSync(root+'/media/exam-pool.js','utf8'),ctx);const pool=ctx.window.HANQ_EXAM_POOL;
+const versions=['c'.repeat(40),'d'.repeat(40)],html={},tmp=fs.mkdtempSync(path.join(os.tmpdir(),'hanq-learning-owner-'));
+try{fs.copyFileSync(root+'/index.html',tmp+'/index.html');for(const v of versions){require('./build-app-version.cjs').build(tmp,v);html[v]=fs.readFileSync(tmp+'/index.html');}}finally{fs.rmSync(tmp,{recursive:true,force:true});}
+const run={id:'00000000-0000-4000-8000-000000000701',round:70,kind:'review',status:'active',answerMode:'batch',currentPosition:0,answered:0,paused:false,remainingMs:4800000,checkpointVersion:0};
+(async()=>{fs.mkdirSync(out,{recursive:true});const results=[];
+for(const engine of (process.env.QA_ENGINE?[process.env.QA_ENGINE]:['chromium','webkit'])){const browser=await pw[engine].launch(engine==='chromium'?{channel:'chrome'}:{});try{
+ const page=await browser.newPage({viewport:{width:390,height:900},reducedMotion:'reduce'}),errors=[],calls=[];let current=null,external=0;
+ page.on('pageerror',e=>errors.push(e.message));await page.addInitScript(()=>{localStorage.setItem('hanqacct:signedIn','1');localStorage.setItem('hanq:display-mode:v1','terminal');});
+ const q=pool.questions['exam-70-03'],item={questionId:q.id,version:q.v,exam:q.exam,number:q.number,points:q.points,position:0,image:'/api/v1/cbt/reviews/'+run.id+'/questions/0/image',options:q.options.map(o=>({id:o.id,number:o.number})),selectedOptionId:null};
+ await page.route('**/*',r=>{const u=new URL(r.request().url()),p=u.pathname,j=x=>r.fulfill({json:x});if(u.protocol==='blob:')return r.continue();if(u.origin!=='https://learning-owner.test'){external++;return r.abort();}
+ if(p==='/app-version.json')return j({schema:1,buildId:versions[1]});
+ if(p==='/api/v1/auth/refresh')return j({accessToken:'synthetic-only',user:{id:'fixture-learning',displayName:'격리 검수'}});
+ if(p==='/api/v1/me')return j({user:{id:'fixture-learning',displayName:'격리 검수'},growth:{points:1234},premium:{active:true},access:{total:1,today:true,freeSlots:[]}});
+ if(p.endsWith('/questions/0/image'))return r.fulfill({path:root+'/'+q.image});
+ if(p.endsWith('/stars'))return j({signature:JSON.stringify([[q.id,q.v,q.options.map(o=>o.id)]]),flags:[false]});
+ if(p.endsWith('/reviews/'+run.id))return j({run,items:[item]});
+ if(p.startsWith('/api/v1/battle/')){const route=p.slice('/api/v1/battle'.length);if(route.endsWith('/events'))return r.fulfill({contentType:'text/event-stream',body:''});if(route==='/enter')return j({matchId:current.id,serverNow:Date.now()});if(route.endsWith('/answers')){const body=r.request().postDataJSON();calls.push(body);current={...current,revision:current.revision+1,myAnswers:body.answers,locked:{left:body.answers.map(a=>a.id),right:[]}};}return j(current);}
+ if(p.startsWith('/api/v1/'))return j({items:[],notes:[],progress:[],available:false});
+ if(p==='/')return r.fulfill({contentType:'text/html',body:html[u.searchParams.has('_hanq_update')?versions[1]:versions[0]]});
+ const f=path.resolve(root,'.'+p);return f.startsWith(root+'/')&&fs.existsSync(f)&&fs.statSync(f).isFile()?r.fulfill({path:f}):r.fulfill({status:404,body:''});});
+ await page.goto('https://learning-owner.test/#formal-exams/review-'+run.id);await page.locator('.lr-choice-text').first().waitFor();await page.locator('.app-update:visible').waitFor();
+ await page.locator('[data-option$="-5"]').click();assert.equal(await page.locator('[data-apply-update]').isDisabled(),true);await page.locator('details.lr-history-original summary').click();await page.locator('.mock-image').click();await page.locator('.lr-image-dialog').waitFor();assert.equal(await page.locator('[data-apply-update]').isDisabled(),true);await page.keyboard.press('Escape');
+ await page.evaluate(()=>location.hash='#subjects');await page.waitForFunction(()=>!document.querySelector('[data-apply-update]').disabled);await page.getByRole('button',{name:'새 버전 적용',exact:true}).click();await page.waitForFunction(v=>document.querySelector('meta[name="hanq-app-version"]').content===v,versions[1]);await page.locator('.wm-rainbow').waitFor();
+ await page.evaluate(id=>location.hash='#formal-exams/review-'+id,run.id);await page.locator('.lr-choice-text').first().waitFor().catch(async e=>{await page.screenshot({path:out+'/'+engine+'-return-failure.png'});console.log('return-state',await page.evaluate(()=>({hash:location.hash,signedIn:HanqApi.state().signedIn,hasFormal:!!document.querySelector('#feImage')})));throw e;});assert.equal(await page.locator('[data-option][aria-pressed="true"]').getAttribute('data-option'),q.id+'-option-5');assert.equal(await page.evaluate(()=>HanqApi.state().growth.points),1234);await page.screenshot({path:out+'/'+engine+'-draft-after-update.png'});
+ const fighter={name:'합성',character:'agumon',characterName:'아구몬',hp:50,maxHp:50,atk:10,def:5,luk:1,stageIndex:3};
+ for(const sample of [{id:q.id,version:q.v,text:true},{id:q.id,version:'stale',text:false},{id:'exam-70-09',text:false},{id:'exam-70-35',text:false}]){
+  await page.evaluate(()=>location.hash='#subjects');await page.locator('.wm-rainbow').waitFor();const source=pool.questions[sample.id];current={id:'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa',subject:'history',side:'left',status:'playing',revision:1,serverNow:Date.now(),fighters:{left:fighter,right:fighter},ready:{left:true,right:true},round:1,start:Date.now()-1000,deadline:Date.now()+120000,submitted:{left:false,right:false},locked:{left:[],right:[]},myAnswers:[],question:{part:0,version:sample.version||source.v,prompt:'한국사 원문',items:[{id:'1',number:source.number,prompt:source.number+'번',choices:source.options.map(o=>({id:o.id,text:String(o.number)}))}],images:[source.commonImage,source.image].filter(Boolean),audio:null},result:null,winner:null,grace:null};
+  await page.evaluate(()=>location.hash='#battle');await page.locator('.bi-item').waitFor();await page.waitForFunction(()=>document.querySelector('.bi-question-image')?.naturalWidth>0);assert.equal(await page.locator('.lr-choice-text').count(),sample.text?5:0);assert.equal(await page.locator('details.bi-history-materials').count(),sample.text?1:0);
+  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false);if(sample.text){await page.locator('.bi-choice').nth(4).click();assert.equal(calls.length,0);await page.locator('.bi-submit').click();await page.waitForFunction(()=>!document.querySelector('.bi-submission-done').hidden);assert.equal(calls.length,1);assert.equal(calls[0].answers[0].optionId,source.id+'-option-5');assert.equal(calls[0].round,1);await page.screenshot({path:out+'/'+engine+'-battle-submitted.png'});}
+ }
+ assert.deepEqual(errors,[]);assert.equal(external,0);results.push({engine,passed:true,actualFormalDraftSurvivedUpdate:true,updateBlockedDuringLearningAndZoom:true,battleTextAndExplicitSubmission:true,staleImageAndPendingFallback:true,answers: calls.length,external,pageErrors:errors});await page.close();
+}finally{await browser.close();}}
+fs.writeFileSync(out+'/result.json',JSON.stringify({passed:true,results},null,2));console.log(JSON.stringify({passed:true,results}));})().catch(e=>{console.error(e);process.exitCode=1});

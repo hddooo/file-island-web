@@ -1,0 +1,891 @@
+{
+  "round": 74,
+  "method": "원문 WebP 지문과 5보기 직접 열람, 교재 원문 PDF쪽(인쇄쪽=PDF-7) 및 별도 명시한 공신력 자료와 해설 대조. OCR 명칭은 원본 사진을 우선함.",
+  "items": {
+    "01": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "8258456322751ca9439f338080593e421c35ca705053975f74b5a9d66ce6eaab",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 9, 10, 51쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "신석기 농경·목축·간석기와 청동기·철기 유물, 고려 소경 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "02": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "b172fc4e0d5c4db5aceb3594db65687793303b3745f5406ea86cc37f7f0eca37",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 11, 12, 13쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "고조선 관직과 부여·고구려·옥저·동예 풍습 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "03": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "ffa976c1d8a03af94ec313796507085e723ee193d0ba65bc9aa3b2beb28ee7d4",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 17, 18, 20, 24, 45, 51쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "장군총·경당과 녹과전·22담로·팔만대장경·자장 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "04": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "25150e8222283449b97b0f8d3aa9c71fccacd40852f7cda9ea77160c9905a8ed",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 20, 22, 23, 25, 26쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "성왕 관산성·의자왕 대야성 사이 대가야 정복, 국호·신주·나당동맹 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "05": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "43313240b704fcd0f1b7fa97fd61aabcbfa5df8fea65261f61d6e0610e3a573c",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 11, 12, 17, 20, 21, 25쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "백제 고분과 부여씨·8성, 신라·고구려 관등 및 동예·고조선 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "06": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "9e253c730bb48b3cb65bdcccab10814531742a5d90e6f138bbf609138f7eceef",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 23, 24, 25, 31, 32, 33쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "문무왕 통일·외사정과 지증왕·법흥왕·진흥왕·신문왕 정책 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "07": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "3500c5849135c578adb7d37f2ad461785da9ee365f223853f00762d66d41815f",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 12, 21, 31, 32, 35쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "발해 무역로·문적원과 칠지도·9서당10정·광평성·천군소도 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "08": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "fa1b31f6ed9ae961e1dde57ee867afa9f5a718ed2c1504854ec378f20c4c612a",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 21, 24, 32, 53, 120쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "선종·9산문·승탑과 도교·유교의 특징 관련 내용을 교재 해당 부분에서 대조함."
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0030507",
+          "supports": "손병희의 천도교 개칭과 인내천의 뜻(사람이 곧 하늘) 확인"
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "09": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "5f3f4e367ad9b654d159b681ed39aeafa71c16871a152a2eed62b95eeaccfea3",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 31, 32, 34쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "장보고 청해진·법화원과 설총·강수·최치원·혜초 저술 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "10": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "2e997f813ebd31a6304efb863ad8d2fba57648907bcf11e1061cf1875629fe56",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 17, 31, 32, 34쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "안승·원종애노 봉기와 공산·고창·일리천, 후삼국 통일 순서 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "11": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "703d8af8b1ef3d3b43dfb70c57ede96107888ce06ea63f43e0651ae1a5a27b9e",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 41, 42, 46, 51쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "광종 왕권 강화와 전시과·12목·정치도감, 고려 제도 흐름 관련 내용을 교재 해당 부분에서 대조함."
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/front/km/print.do?levelId=km_024_0030_0060&whereStr=",
+          "supports": "예종대 예의상정소 설치와 의종대 최윤의의 상정고금예문 편찬"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/id/hm_072_0010",
+          "supports": "상정예문 편찬과 고종대 주자인쇄 구분"
+        }
+      ],
+      "corrections": [
+        "상정고금예문의 편찬을 인종 한 왕에 단정하던 비교문구를 고려 중기 예제 정비로 조정하고 금속활자 인쇄와 구분함"
+      ],
+      "blockers": []
+    },
+    "12": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "2a0ea74a66d436a1165cf84e497571e429bfedcf466e7f0c8b436662267536d4",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 42, 43, 45쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "만부교·거란 침입의 순서와 강동6주·동북9성·몽골 항전 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "13": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "e7e0aa0c40b1b8566458ecbedb50f49deff2b3cf4a1121022c2cd7b8b5e3cfcd",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 24, 53, 54쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "신라 토기와 고려 청자·금속공예·나전칠기·석탑 사진 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "14": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "d6f4d3535a22923dfe2d05f560fac8e047950f79e6055a637bdc14e6ac2733bc",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 44, 45쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "김보당의 난·최충헌 봉사10조·개경환도 및 삼별초의 순서 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "15": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "a66facd68c7a21611f49191cb5e6a9c9f822e15cdc08e332c5bbfc565e2c6e34",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 43, 51, 73, 76, 86쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "7재와 관학 진흥·혜민국, 조선 서얼·사창제·정감록·향약집성방 관련 내용을 교재 해당 부분에서 대조함."
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0063591",
+          "supports": "혜민국 예종 7년(1112) 설치 및 시약 기능"
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "16": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "2ce3fa468a14660ba323865bf99e8039666f738f2e1a9fb459193117081be00c",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 53쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "지눌 돈오점수·정혜쌍수와 균여·요세·각훈·혜심 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "17": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "500a48c9e410d7277cff65a81a80d54e433dc762f4b5c2a7d6c1c41d9f290b19",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 41, 46, 53, 66, 73, 76쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "원 간섭기와 농상집요, 흑창·저화·상평통보·공가 관련 내용을 교재 해당 부분에서 대조함."
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0049125",
+          "supports": "태종대 사섬서의 저화 발행·유통"
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "18": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "02aeb22cb47be704cf63c26e8722360337b7e62c8601e20854b9dabd0381c070",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 35, 51, 52쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "고려 2성6부·중추원·도병마사·삼사·대간과 발해 좌우사정 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함",
+        "중앙 관제 도식과 맞는 조합의 이유·삼사의 회계 기능을 기본 해설에 보강함"
+      ],
+      "blockers": []
+    },
+    "19": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "70535bbd0410689ca3d297ca166fa5f745ec33815353da107561097ad3d6f6b0",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 77쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "교재 종묘 사진 및 조선 문화유산 관련 내용을 교재 해당 부분에서 대조함."
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0002452",
+          "supports": "향원정의 경복궁 내 위치와 육각 정자 형태"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0015365",
+          "supports": "정관헌의 대한제국기 건립과 전통·서양 혼합 양식"
+        },
+        {
+          "type": "web",
+          "reference": "https://www.korea.net/NewsFocus/policies/view?articleId=121689",
+          "supports": "정관헌 공식 사진과 원문③ 대조"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0055387",
+          "supports": "주합루·어수문 공식 사진 대조, 정조 때 건립 및 규장각"
+        },
+        {
+          "type": "web",
+          "reference": "https://www.geumsansa.org/",
+          "supports": "금산사 공식 미륵전 사진과 원문⑤ 대조"
+        },
+        {
+          "type": "web",
+          "reference": "https://www.khs.go.kr/cop/bbs/selectBoardArticle.do%3Bjsessionid%3DEVJdBy1CYxvVyBLKXBebvgy3NH3kLQOoOkLgvyQf5UnGskLAloHYQnyC96a7ns1a.cha-was01_servlet_engine1?bbsId=BBSMSTR_1008&ctgryLrcls=&ctgryMdcls=&ctgrySmcls=&mn=NS_01_09_01&ntcEndDt=&ntcStartDt=&nttId=90610&pageUnit=10&searchWrd=&searchcont=&searchkey=&searchtitle=title&searchwriter=",
+          "supports": "국가유산청 검색 본문에서 정전 보수공사와 2025년 환안제 안내 확인; 문항 원문 기사의 신위 환안 설명과 대조함"
+        }
+      ],
+      "corrections": [
+        "이름 대신 외형만 서술한 ②~⑤를 향원정·정관헌·주합루·미륵전으로 식별",
+        "⑤를 이층 건물로 설명한 오류를 삼층 불전으로 교정",
+        "신위·환안제의 뜻과 종묘 정전의 사진 특징을 기본 해설에 설명함"
+      ],
+      "blockers": []
+    },
+    "20": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "45034141ec91e1c90dca4521f46a527ce00b180a62af0ec2a0494e068bdbaf2f",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 58, 59, 76쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "세조 이시애의 난·간경도감과 조선경국전·국조오례의·지도 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "21": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "e5dcd18b5241c29762fa938acf34d623e5caf05c0f358edb91e2535810406e1a",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 47, 59, 64, 66, 72, 78쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "정유재란 이후 회답겸쇄환사, 진포·사량진·비변사·해동제국기 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "22": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "af15003ea96045924982df6459c63dec1c94f0a1cf461614bc7ebcd380f5d140",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 59, 64, 65, 67쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "갑인예송·기사환국·신임사화, 다른 사화·반정·탕평 정책 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "23": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "fd184846d1de74af378c4e7acca4a16533380ef6b630241df4983895fe9c884f",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 64, 67, 76, 77쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "이황·이이·송시열·주세붕·김장생의 사상과 저술·향약 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "24": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "f6d2f76567b5baa25fe9b59b6fe7ab963cfc39aa671f5360fc470b94e7aebdf5",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 65, 67, 68, 86쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "정조 장용영·초계문신제, 나선정벌·호포제·삼정이정청·공노비 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "25": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "354f576369da148d903d2d92d76d8cda82b01453b686a124135b0c988b63c932",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 65, 68, 72, 89, 90, 94쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "신유박해와 임오군란·갑신정변·임술봉기·영해 이필제 봉기 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "26": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "5f6eec9d3a774ec200ee7c317384311ab907a21890194b6c5facf67d549d8256",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 73, 75, 76쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "조선 후기 서민 문화와 태종 계미자 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "27": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "639ba6ac5afc6d9594b0e251c5f7f3fb1c21475f834b3110522dcea92bedb7aa",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 32, 43, 51, 65, 73쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "조선 후기 사상·초량왜관과 정전·동시전·고려 무역화폐 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "28": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "13c5bd67416a7ed0b1e81582c2c56e9a25f64000ede98dae11999d807fbfc7bf",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 88, 89, 96, 114쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "개항 조약의 관세·해관과 한일의정서·헤이그·미쓰야협정 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "29": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "b050025c51458a9150a74116896f406e30df6195f8028bdfcb874aef6e52d54f",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 89, 93, 95, 137쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "박규수·이만손·김홍집·유길준·박성춘의 개화기 활동 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "30": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "383f8da3ffd2c7a9fa9dc9b72d6aa31cfd3ec48ff108ceadd87379136338ed1a",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 89, 93, 94, 95, 102쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "광무개혁 지계와 개항초 기구·갑오을미개혁 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "31": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "b34790182d0e35e1dd7004068ec8d819887bc0b35a2b8a280428b0104533b33b",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 86, 90, 93, 94쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "고부 봉기·전주화약과 삼국간섭·척화비·거문도·병인양요 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "32": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "57f218dcd8261e50d1e2d5aea2326a5d3d98adeae8d1e8af5853655288daf15b",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 93, 95, 96쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "군대 해산과 정미의병·13도창의군, 이전 항일 사건 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "33": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "29ea4ed85da6db18d83f2a61aecc13a8f6198679bad84467d43dd94bf1b30994",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 106, 113, 116, 138쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "하와이 군사운동과 경학사·권업신문·2.8독립선언·신한청년당 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "34": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "a189f7204a6e02271db40663af100522ba0fe4b0e3ae2221f0b0551a8c8310f8",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 89, 102, 104, 106, 108, 120쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "1905년 경부선과 개항기 신문·학교·소년운동·원각사 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함",
+        "경의선과 을사늑약의 선후가 뒤바뀐 접힌 연표를 연도별 병렬 정리로 바로잡음"
+      ],
+      "blockers": []
+    },
+    "35": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "30ba911a8eb09911b1c104e7398ebb1c55a586f83696536d9e026c4533c88f6c",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 86, 90, 93, 96, 101쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "용암포 사건과 신미양요·갑신정변·청일전쟁·아관파천·러일전쟁 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "36": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "5af7b2b674e5c07c1c4676d160a86a348ab0458b5702cc1acfa11890184deeec",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 96, 106, 107, 108, 109쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "3.1운동과 제암리, 국채보상·신간회·6.10·광주학생운동 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함",
+        "제암리 학살을 임시 정부 수립보다 앞에 놓던 연표를 동시기 활동 설명으로 고침"
+      ],
+      "blockers": []
+    },
+    "37": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "950ded05568798ab646d05c86307a12bf8a9f63494faffa566f03f6d76bf0c0b",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 93, 95, 96, 107, 110, 113쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "임시정부의 연통제·독립공채와 대한자강회·보안회·독립협회·독립의군부 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "38": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "569730fdb021106bbfa85fb8396436ca880efbc766536b6177097a7e66e5031d",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 96, 107, 108, 113, 114, 115, 117쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "의열단·한인애국단·대한광복회 및 신간회 활동 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "39": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "f900c23aba9ff1ba9013c4ec018fade5efe50cb67dd44809323e2c8f8277bc5b",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 120, 121, 138쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "백남운의 사회경제사학과 신채호·한용운의 저술 관련 내용을 교재 해당 부분에서 대조함."
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0052072",
+          "supports": "이병도의 조선사편수회 수사관보 활동과 조선사 편찬"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_40&levelId=kc_o403520",
+          "supports": "이병도·손진태 등의 진단학회 조직과 실증적 연구"
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "40": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "aad76395564a531d71ec80e40f5af61381096ad075ee56eba50c402d70d293e3",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 106, 108, 120, 121, 128, 129쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "식민지 형평운동·농촌계몽·경성방직과 새마을운동 관련 내용을 교재 해당 부분에서 대조함."
+        },
+        {
+          "type": "web",
+          "reference": "https://dh.aks.ac.kr/Edu/wiki/index.php/태극성",
+          "supports": "경성방직의 태극성 상표와 1920년대 광고 자료"
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "41": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "408e449a13dff87b4d3d330ddef810551d4ca860a15aeb861e96d7ef6a1d9424",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 113, 114, 116, 138쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "국외 동포의 만주·일본·연해주·중앙아시아·미주 지역별 활동 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "42": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "c2b6dc42c53466e1c170a5e734b91ff1c3ef2a5542079bbb9e7a9d7469eaa34a",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 114, 115, 117, 138쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "한국독립군·조선혁명군·대한독립군·광복군·조선의용대 구분 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "43": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "a191d98705adab2237be6c6d0aa3056d30763477c97b5a58582840d7bbb8f4a7",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 106, 107, 108, 110, 120쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "전시체제의 국가총동원·민족말살과 1910·1920년대 제도운동 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "OCR의 노동 총동맹을 원문 노농 총동맹으로 바로잡아 노동·농민 공동 조직의 의미를 설명"
+      ],
+      "blockers": []
+    },
+    "44": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "57cc86e2bb74bf63b77fff0adf7b4c49d604d77a6888f465b3ee7bbf853c1f8a",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 124, 125, 126, 128, 129, 130, 131쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "제주4.3과 4.19·6.3·유신·6월항쟁의 구분 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "45": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "8bbaca3f04f4ca2330792b364e68773094caea471aed2d21525155e0239caf62",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 124, 126, 127, 130, 131쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "6.25전쟁 중 발췌개헌과 여순사건·정전뒤 동맹·신군부 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "46": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "6da65335ae09991a91ecc5947d6c271138e5bf0e67fd4f055e105121754639f8",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 126, 127, 128, 129, 130, 131쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "4.19와 허정정부, 5.18·부마·6월항쟁의 배경결과 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "47": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "3d91e2ca23aadb2238765fa57ffa7610a9be7a6398cd0d4dd45ddafd9480859c",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 126, 127, 128, 129쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "3.1민주구국선언·YH사건과 이승만·군정·3선개헌 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "48": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "2aa2c6f6f6e89369751d8f65b682418a4c1f464fdb134fab0c026145e3b45aa4",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 128, 129, 130, 131, 132, 133쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "외환위기·김대중의 극복 정책과 군정·3저호황·노무현FTA 관련 내용을 교재 해당 부분에서 대조함."
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0066326",
+          "supports": "외환 위기 극복을 위한 노사정위원회의 구성과 역할"
+        },
+        {
+          "type": "web",
+          "reference": "https://theme.archives.go.kr/next/economicDevelopment/viewMain.do",
+          "supports": "국가기록원의 제4차 경제개발 5개년 계획 기간 1977~1981년"
+        }
+      ],
+      "corrections": [
+        "제4차 계획의 기간을 1977~1981년으로 명시하여 박정희 재임 기간으로만 한정하지 않음"
+      ],
+      "blockers": []
+    },
+    "49": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "ff659c69e823ba5b6416db7766e1561b4e7226d05945ceb05071d43a8f1a2891",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 129, 130, 131, 132, 133쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "노무현 평화번영·개성공단과 정부별 남북관계 정책 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    },
+    "50": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "65942a9f5c4bf8db844634ab5abfeedb1791ee5303e679c083945018eb1373ce",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 31, 33, 41, 42, 59, 72, 74, 93, 95쪽 (인쇄쪽=PDF쪽-7)",
+          "supports": "독서삼품과·고려과거·조선문과현량과·갑오개혁선거조례 관련 내용을 교재 해당 부분에서 대조함."
+        }
+      ],
+      "corrections": [
+        "보기마다 원문 핵심어에 귀속과 의미·구분 근거를 보강함"
+      ],
+      "blockers": []
+    }
+  }
+}

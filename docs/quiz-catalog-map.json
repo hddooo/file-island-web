@@ -1,0 +1,2902 @@
+{
+ "generatedBy": "scripts/build_quiz_catalog.py",
+ "inputs": {
+  "hanq-existing-quiz-666.json": "12d5dd4c861e3e2755b3cded62ce04d09690482cfc9e5cba3594dacf6c8dc1da",
+  "hanq-confirmation-normalized-source.json": "04db08aca5fe881f48ac5a7e385c17b72c7e14cb599b444857197404db5ed5e0",
+  "hanq-confirmation-answer-corrections.json": "e821a753774702bd9bb52ae3bc95a07a9f3a8d9555299ffe9dab06299ea862c2",
+  "hanq-confirmation-question-context-clarifications.json": "87260485bd7571e89cecdb9b90fa9967646141314cf695d2c371bc0c632f51e7",
+  "hanq-confirmation-semantic-coverage.json": "c788e34ba7ee07025d3e4920222fcde6f35c9167d159c3a268c5a70001746276",
+  "hanq-confirmation-existing-coverage.json": "c9e75967956422350166b505701c7bc84f366ff0194cec62101db83fa39058eb",
+  "hanq-confirmation-source-audit.json": "beceedc387461b2f82ede7b8b2ac236d9607439bd42cc57cc80557c613c09aa7",
+  "hanq-full-textbook-original.txt": "97de3e34af41909bb9d27ef6af96cabd412ee8cb74066917e64f975f7d5768ed",
+  "teacher-script": "f421b2e4fae8692960a4e6d3f691918a698cdc73b510e33222d6c2617a2e4d15"
+ },
+ "counts": {
+  "items": 703,
+  "legacy": 666,
+  "source": 642,
+  "sourceAttachedToLegacy": 605,
+  "sourceOnly": 37,
+  "sourceDuplicateOfLegacy": 0,
+  "pool": 703,
+  "shapes": {
+   "map": 1,
+   "order": 14,
+   "roles": 3,
+   "set": 10,
+   "single": 675
+  }
+ },
+ "chapters": {
+  "joseon-late": {
+   "legacyCount": 140,
+   "sourceOnly": 0,
+   "poolCount": 140,
+   "sets": 7
+  },
+  "islands": {
+   "legacyCount": 8,
+   "sourceOnly": 0,
+   "poolCount": 8,
+   "sets": 1
+  },
+  "opening": {
+   "legacyCount": 111,
+   "sourceOnly": 0,
+   "poolCount": 111,
+   "sets": 6
+  },
+  "colonial": {
+   "legacyCount": 76,
+   "sourceOnly": 0,
+   "poolCount": 76,
+   "sets": 4
+  },
+  "modern": {
+   "legacyCount": 62,
+   "sourceOnly": 0,
+   "poolCount": 62,
+   "sets": 4
+  },
+  "samguk": {
+   "legacyCount": 66,
+   "sourceOnly": 0,
+   "poolCount": 66,
+   "sets": 4
+  },
+  "joseon-early": {
+   "legacyCount": 33,
+   "sourceOnly": 0,
+   "poolCount": 33,
+   "sets": 2
+  },
+  "nambuk": {
+   "legacyCount": 39,
+   "sourceOnly": 0,
+   "poolCount": 39,
+   "sets": 2
+  },
+  "goryeo": {
+   "legacyCount": 91,
+   "sourceOnly": 1,
+   "poolCount": 92,
+   "sets": 5
+  },
+  "prehistory": {
+   "legacyCount": 20,
+   "sourceOnly": 12,
+   "poolCount": 32,
+   "sets": 2
+  },
+  "gojoseon": {
+   "legacyCount": 20,
+   "sourceOnly": 24,
+   "poolCount": 44,
+   "sets": 3
+  }
+ },
+ "sourceToItems": {
+  "check-01-01": [
+   "check-01-01"
+  ],
+  "check-01-02": [
+   "check-01-02"
+  ],
+  "check-01-03": [
+   "check-01-03"
+  ],
+  "check-01-04": [
+   "check-01-04"
+  ],
+  "check-01-05": [
+   "check-01-05"
+  ],
+  "check-01-06": [
+   "check-01-06"
+  ],
+  "check-01-07": [
+   "check-01-07"
+  ],
+  "check-01-08": [
+   "check-01-08"
+  ],
+  "check-01-09": [
+   "check-01-09"
+  ],
+  "check-01-10": [
+   "check-01-10"
+  ],
+  "check-01-11": [
+   "check-01-11"
+  ],
+  "check-01-12": [
+   "check-01-12"
+  ],
+  "check-02-01": [
+   "check-02-01"
+  ],
+  "check-02-02": [
+   "check-02-02"
+  ],
+  "check-02-03": [
+   "check-02-03"
+  ],
+  "check-02-04": [
+   "check-02-04"
+  ],
+  "check-02-05": [
+   "check-02-05"
+  ],
+  "check-02-06": [
+   "check-02-06"
+  ],
+  "check-02-07": [
+   "check-02-07"
+  ],
+  "check-02-08": [
+   "check-02-08"
+  ],
+  "check-02-09": [
+   "check-02-09"
+  ],
+  "check-02-10": [
+   "check-02-10"
+  ],
+  "check-02-11": [
+   "check-02-11"
+  ],
+  "check-02-12": [
+   "check-02-12"
+  ],
+  "check-02-13": [
+   "check-02-13"
+  ],
+  "check-02-14": [
+   "check-02-14"
+  ],
+  "check-02-15": [
+   "check-02-15"
+  ],
+  "check-02-16": [
+   "check-02-16"
+  ],
+  "check-02-17": [
+   "check-02-17"
+  ],
+  "check-02-18": [
+   "check-02-18"
+  ],
+  "check-02-19": [
+   "check-02-19"
+  ],
+  "check-02-20": [
+   "check-02-20"
+  ],
+  "check-02-21": [
+   "check-02-21"
+  ],
+  "check-02-22": [
+   "check-02-22"
+  ],
+  "check-02-23": [
+   "check-02-23"
+  ],
+  "check-02-24": [
+   "check-02-24"
+  ],
+  "check-03-01": [
+   "legacy-samguk-000"
+  ],
+  "check-03-02": [
+   "legacy-samguk-001"
+  ],
+  "check-03-03": [
+   "legacy-samguk-002"
+  ],
+  "check-03-04": [
+   "legacy-samguk-003"
+  ],
+  "check-03-05": [
+   "legacy-samguk-004"
+  ],
+  "check-03-06": [
+   "legacy-samguk-005"
+  ],
+  "check-03-07": [
+   "legacy-samguk-006"
+  ],
+  "check-03-08": [
+   "legacy-samguk-007"
+  ],
+  "check-03-09": [
+   "legacy-samguk-008"
+  ],
+  "check-03-10": [
+   "legacy-samguk-009"
+  ],
+  "check-04-01": [
+   "legacy-samguk-010"
+  ],
+  "check-04-02": [
+   "legacy-samguk-011"
+  ],
+  "check-04-03": [
+   "legacy-samguk-012"
+  ],
+  "check-04-04": [
+   "legacy-samguk-013"
+  ],
+  "check-04-05": [
+   "legacy-samguk-014"
+  ],
+  "check-04-06": [
+   "legacy-samguk-015"
+  ],
+  "check-04-07": [
+   "legacy-samguk-016"
+  ],
+  "check-04-08": [
+   "legacy-samguk-017"
+  ],
+  "check-04-09": [
+   "legacy-samguk-018"
+  ],
+  "check-04-10": [
+   "legacy-samguk-019"
+  ],
+  "check-04-11": [
+   "legacy-samguk-020"
+  ],
+  "check-04-12": [
+   "legacy-samguk-021"
+  ],
+  "check-04-13": [
+   "legacy-samguk-022"
+  ],
+  "check-04-14": [
+   "legacy-samguk-023"
+  ],
+  "check-04-15": [
+   "legacy-samguk-024"
+  ],
+  "check-05-01": [
+   "legacy-samguk-025"
+  ],
+  "check-05-02": [
+   "legacy-samguk-026"
+  ],
+  "check-05-03": [
+   "legacy-samguk-027"
+  ],
+  "check-05-04": [
+   "legacy-samguk-028"
+  ],
+  "check-05-05": [
+   "legacy-samguk-029"
+  ],
+  "check-05-06": [
+   "legacy-samguk-030"
+  ],
+  "check-05-07": [
+   "legacy-samguk-031"
+  ],
+  "check-05-08": [
+   "legacy-samguk-032"
+  ],
+  "check-05-09": [
+   "legacy-samguk-033"
+  ],
+  "check-05-10": [
+   "legacy-samguk-034"
+  ],
+  "check-05-11": [
+   "legacy-samguk-035"
+  ],
+  "check-06-01": [
+   "legacy-samguk-036"
+  ],
+  "check-06-02": [
+   "legacy-samguk-037"
+  ],
+  "check-06-03": [
+   "legacy-samguk-038"
+  ],
+  "check-06-04": [
+   "legacy-samguk-039"
+  ],
+  "check-06-05": [
+   "legacy-samguk-040"
+  ],
+  "check-06-06": [
+   "legacy-samguk-041"
+  ],
+  "check-06-07": [
+   "legacy-samguk-042"
+  ],
+  "check-06-08": [
+   "legacy-samguk-043"
+  ],
+  "check-06-09": [
+   "legacy-samguk-044"
+  ],
+  "check-06-10": [
+   "legacy-samguk-045"
+  ],
+  "check-06-11": [
+   "legacy-samguk-046"
+  ],
+  "check-06-12": [
+   "legacy-samguk-047"
+  ],
+  "check-06-13": [
+   "legacy-samguk-048"
+  ],
+  "check-06-14": [
+   "legacy-samguk-049"
+  ],
+  "check-06-15": [
+   "legacy-samguk-050"
+  ],
+  "check-06-16": [
+   "legacy-samguk-051"
+  ],
+  "check-06-17": [
+   "legacy-samguk-052"
+  ],
+  "check-06-18": [
+   "legacy-samguk-053"
+  ],
+  "check-06-19": [
+   "legacy-samguk-054"
+  ],
+  "check-06-20": [
+   "legacy-samguk-055"
+  ],
+  "check-06-21": [
+   "legacy-samguk-056"
+  ],
+  "check-06-22": [
+   "legacy-samguk-057"
+  ],
+  "check-06-23": [
+   "legacy-samguk-058"
+  ],
+  "check-06-24": [
+   "legacy-samguk-059"
+  ],
+  "check-06-25": [
+   "legacy-samguk-060"
+  ],
+  "check-06-26": [
+   "legacy-samguk-061"
+  ],
+  "check-06-27": [
+   "legacy-samguk-062"
+  ],
+  "check-06-28": [
+   "legacy-samguk-063"
+  ],
+  "check-06-29": [
+   "legacy-samguk-064"
+  ],
+  "check-06-30": [
+   "legacy-samguk-065"
+  ],
+  "check-07-01": [
+   "legacy-nambuk-000"
+  ],
+  "check-07-02": [
+   "legacy-nambuk-001"
+  ],
+  "check-07-03": [
+   "legacy-nambuk-002"
+  ],
+  "check-07-04": [
+   "legacy-nambuk-003"
+  ],
+  "check-07-05": [
+   "legacy-nambuk-004"
+  ],
+  "check-07-06": [
+   "legacy-nambuk-005"
+  ],
+  "check-07-07": [
+   "legacy-nambuk-006"
+  ],
+  "check-07-08": [
+   "legacy-nambuk-007"
+  ],
+  "check-07-09": [
+   "legacy-nambuk-008"
+  ],
+  "check-07-10": [
+   "legacy-nambuk-009"
+  ],
+  "check-07-11": [
+   "legacy-nambuk-010"
+  ],
+  "check-07-12": [
+   "legacy-nambuk-011"
+  ],
+  "check-07-13": [
+   "legacy-nambuk-012"
+  ],
+  "check-07-14": [
+   "legacy-nambuk-013"
+  ],
+  "check-07-15": [
+   "legacy-nambuk-014"
+  ],
+  "check-07-16": [
+   "legacy-nambuk-015"
+  ],
+  "check-08-01": [
+   "legacy-nambuk-016"
+  ],
+  "check-08-02": [
+   "legacy-nambuk-017"
+  ],
+  "check-08-03": [
+   "legacy-nambuk-018"
+  ],
+  "check-08-04": [
+   "legacy-nambuk-019"
+  ],
+  "check-08-05": [
+   "legacy-nambuk-020"
+  ],
+  "check-08-06": [
+   "legacy-nambuk-021"
+  ],
+  "check-08-07": [
+   "legacy-nambuk-022"
+  ],
+  "check-08-08": [
+   "legacy-nambuk-023"
+  ],
+  "check-08-09": [
+   "legacy-nambuk-024"
+  ],
+  "check-08-10": [
+   "legacy-nambuk-025"
+  ],
+  "check-08-11": [
+   "legacy-nambuk-026"
+  ],
+  "check-08-12": [
+   "legacy-nambuk-027"
+  ],
+  "check-08-13": [
+   "legacy-nambuk-028"
+  ],
+  "check-08-14": [
+   "legacy-nambuk-029"
+  ],
+  "check-08-15": [
+   "legacy-nambuk-030"
+  ],
+  "check-08-16": [
+   "legacy-nambuk-031"
+  ],
+  "check-08-17": [
+   "legacy-nambuk-032"
+  ],
+  "check-08-18": [
+   "legacy-nambuk-033"
+  ],
+  "check-08-19": [
+   "legacy-nambuk-034"
+  ],
+  "check-08-20": [
+   "legacy-nambuk-035"
+  ],
+  "check-09-01": [
+   "legacy-nambuk-036"
+  ],
+  "check-09-02": [
+   "legacy-nambuk-037"
+  ],
+  "check-09-03": [
+   "legacy-nambuk-038"
+  ],
+  "check-10-01": [
+   "legacy-goryeo-000"
+  ],
+  "check-10-02": [
+   "legacy-goryeo-001"
+  ],
+  "check-10-03": [
+   "legacy-goryeo-002"
+  ],
+  "check-10-04": [
+   "legacy-goryeo-003"
+  ],
+  "check-10-05": [
+   "legacy-goryeo-004"
+  ],
+  "check-10-06": [
+   "legacy-goryeo-005"
+  ],
+  "check-10-07": [
+   "legacy-goryeo-006"
+  ],
+  "check-10-08": [
+   "legacy-goryeo-007"
+  ],
+  "check-10-09": [
+   "legacy-goryeo-008"
+  ],
+  "check-10-10": [
+   "legacy-goryeo-009"
+  ],
+  "check-10-11": [
+   "legacy-goryeo-010"
+  ],
+  "check-10-12": [
+   "legacy-goryeo-011"
+  ],
+  "check-11-01": [
+   "legacy-goryeo-012"
+  ],
+  "check-11-02": [
+   "legacy-goryeo-013"
+  ],
+  "check-11-03": [
+   "legacy-goryeo-014"
+  ],
+  "check-11-04": [
+   "legacy-goryeo-015"
+  ],
+  "check-11-05": [
+   "legacy-goryeo-016"
+  ],
+  "check-11-06": [
+   "legacy-goryeo-017"
+  ],
+  "check-11-07": [
+   "legacy-goryeo-018"
+  ],
+  "check-11-08": [
+   "legacy-goryeo-019"
+  ],
+  "check-11-09": [
+   "legacy-goryeo-020"
+  ],
+  "check-11-10": [
+   "legacy-goryeo-021"
+  ],
+  "check-11-11": [
+   "legacy-goryeo-022"
+  ],
+  "check-12-01": [
+   "legacy-goryeo-023"
+  ],
+  "check-12-02": [
+   "check-12-02"
+  ],
+  "check-12-03": [
+   "legacy-goryeo-028"
+  ],
+  "check-12-04": [
+   "legacy-goryeo-029"
+  ],
+  "check-12-05": [
+   "legacy-goryeo-030"
+  ],
+  "check-13-01": [
+   "legacy-goryeo-031"
+  ],
+  "check-13-02": [
+   "legacy-goryeo-032"
+  ],
+  "check-13-03": [
+   "legacy-goryeo-033"
+  ],
+  "check-13-04": [
+   "legacy-goryeo-034"
+  ],
+  "check-13-05": [
+   "legacy-goryeo-035"
+  ],
+  "check-13-06": [
+   "legacy-goryeo-036"
+  ],
+  "check-13-07": [
+   "legacy-goryeo-037"
+  ],
+  "check-13-08": [
+   "legacy-goryeo-038"
+  ],
+  "check-13-09": [
+   "legacy-goryeo-039"
+  ],
+  "check-14-01": [
+   "legacy-goryeo-040"
+  ],
+  "check-14-02": [
+   "legacy-goryeo-041"
+  ],
+  "check-14-03": [
+   "legacy-goryeo-042"
+  ],
+  "check-14-04": [
+   "legacy-goryeo-043"
+  ],
+  "check-14-05": [
+   "legacy-goryeo-044"
+  ],
+  "check-14-06": [
+   "legacy-goryeo-045"
+  ],
+  "check-15-01": [
+   "legacy-goryeo-046"
+  ],
+  "check-15-02": [
+   "legacy-goryeo-047"
+  ],
+  "check-15-03": [
+   "legacy-goryeo-048"
+  ],
+  "check-15-04": [
+   "legacy-goryeo-049"
+  ],
+  "check-15-05": [
+   "legacy-goryeo-050"
+  ],
+  "check-15-06": [
+   "legacy-goryeo-051"
+  ],
+  "check-15-07": [
+   "legacy-goryeo-052"
+  ],
+  "check-15-08": [
+   "legacy-goryeo-053"
+  ],
+  "check-15-09": [
+   "legacy-goryeo-054"
+  ],
+  "check-15-10": [
+   "legacy-goryeo-055"
+  ],
+  "check-15-11": [
+   "legacy-goryeo-056"
+  ],
+  "check-15-12": [
+   "legacy-goryeo-057"
+  ],
+  "check-16-01": [
+   "legacy-goryeo-058"
+  ],
+  "check-16-02": [
+   "legacy-goryeo-059"
+  ],
+  "check-16-03": [
+   "legacy-goryeo-060"
+  ],
+  "check-16-04": [
+   "legacy-goryeo-061"
+  ],
+  "check-16-05": [
+   "legacy-goryeo-062"
+  ],
+  "check-16-06": [
+   "legacy-goryeo-063"
+  ],
+  "check-16-07": [
+   "legacy-goryeo-064"
+  ],
+  "check-16-08": [
+   "legacy-goryeo-065"
+  ],
+  "check-16-09": [
+   "legacy-goryeo-066"
+  ],
+  "check-16-10": [
+   "legacy-goryeo-067"
+  ],
+  "check-16-11": [
+   "legacy-goryeo-068"
+  ],
+  "check-16-12": [
+   "legacy-goryeo-069"
+  ],
+  "check-16-13": [
+   "legacy-goryeo-070"
+  ],
+  "check-16-14": [
+   "legacy-goryeo-071"
+  ],
+  "check-17-01": [
+   "legacy-goryeo-072"
+  ],
+  "check-17-02": [
+   "legacy-goryeo-073"
+  ],
+  "check-17-03": [
+   "legacy-goryeo-074"
+  ],
+  "check-17-04": [
+   "legacy-goryeo-075"
+  ],
+  "check-17-05": [
+   "legacy-goryeo-076"
+  ],
+  "check-17-06": [
+   "legacy-goryeo-077"
+  ],
+  "check-17-07": [
+   "legacy-goryeo-078"
+  ],
+  "check-17-08": [
+   "legacy-goryeo-079"
+  ],
+  "check-17-09": [
+   "legacy-goryeo-080"
+  ],
+  "check-17-10": [
+   "legacy-goryeo-081"
+  ],
+  "check-17-11": [
+   "legacy-goryeo-082"
+  ],
+  "check-17-12": [
+   "legacy-goryeo-083"
+  ],
+  "check-17-13": [
+   "legacy-goryeo-084"
+  ],
+  "check-17-14": [
+   "legacy-goryeo-085"
+  ],
+  "check-17-15": [
+   "legacy-goryeo-086"
+  ],
+  "check-17-16": [
+   "legacy-goryeo-087"
+  ],
+  "check-17-17": [
+   "legacy-goryeo-088"
+  ],
+  "check-17-18": [
+   "legacy-goryeo-089"
+  ],
+  "check-17-19": [
+   "legacy-goryeo-090"
+  ],
+  "check-18-01": [
+   "legacy-joseon-early-000"
+  ],
+  "check-18-02": [
+   "legacy-joseon-early-001"
+  ],
+  "check-18-03": [
+   "legacy-joseon-early-002"
+  ],
+  "check-18-04": [
+   "legacy-joseon-early-003"
+  ],
+  "check-18-05": [
+   "legacy-joseon-early-004"
+  ],
+  "check-18-06": [
+   "legacy-joseon-early-005"
+  ],
+  "check-18-07": [
+   "legacy-joseon-early-006"
+  ],
+  "check-18-08": [
+   "legacy-joseon-early-007"
+  ],
+  "check-18-09": [
+   "legacy-joseon-early-008"
+  ],
+  "check-18-10": [
+   "legacy-joseon-early-009"
+  ],
+  "check-18-11": [
+   "legacy-joseon-early-010"
+  ],
+  "check-18-12": [
+   "legacy-joseon-early-011"
+  ],
+  "check-18-13": [
+   "legacy-joseon-early-012"
+  ],
+  "check-18-14": [
+   "legacy-joseon-early-013"
+  ],
+  "check-18-15": [
+   "legacy-joseon-early-014"
+  ],
+  "check-18-16": [
+   "legacy-joseon-early-015"
+  ],
+  "check-18-17": [
+   "legacy-joseon-early-016"
+  ],
+  "check-18-18": [
+   "legacy-joseon-early-017"
+  ],
+  "check-18-19": [
+   "legacy-joseon-early-018"
+  ],
+  "check-18-20": [
+   "legacy-joseon-early-019"
+  ],
+  "check-18-21": [
+   "legacy-joseon-early-020"
+  ],
+  "check-18-22": [
+   "legacy-joseon-early-021"
+  ],
+  "check-18-23": [
+   "legacy-joseon-early-022"
+  ],
+  "check-18-24": [
+   "legacy-joseon-early-023"
+  ],
+  "check-19-01": [
+   "legacy-joseon-late-000"
+  ],
+  "check-19-02": [
+   "legacy-joseon-late-001"
+  ],
+  "check-19-03": [
+   "legacy-joseon-late-002"
+  ],
+  "check-19-04": [
+   "legacy-joseon-late-003"
+  ],
+  "check-19-05": [
+   "legacy-joseon-late-004"
+  ],
+  "check-19-06": [
+   "legacy-joseon-late-005"
+  ],
+  "check-19-07": [
+   "legacy-joseon-late-006",
+   "legacy-joseon-early-024"
+  ],
+  "check-19-08": [
+   "legacy-joseon-late-007"
+  ],
+  "check-19-09": [
+   "legacy-joseon-late-008"
+  ],
+  "check-19-10": [
+   "legacy-joseon-late-009"
+  ],
+  "check-19-11": [
+   "legacy-joseon-late-010"
+  ],
+  "check-19-12": [
+   "legacy-joseon-late-011",
+   "legacy-joseon-early-025"
+  ],
+  "check-19-13": [
+   "legacy-joseon-late-012"
+  ],
+  "check-19-14": [
+   "legacy-joseon-late-013",
+   "legacy-joseon-early-026"
+  ],
+  "check-19-15": [
+   "legacy-joseon-late-014"
+  ],
+  "check-19-16": [
+   "legacy-joseon-late-015"
+  ],
+  "check-19-17": [
+   "legacy-joseon-late-016",
+   "legacy-joseon-early-027"
+  ],
+  "check-19-18": [
+   "legacy-joseon-late-017"
+  ],
+  "check-19-19": [
+   "legacy-joseon-late-018"
+  ],
+  "check-19-20": [
+   "legacy-joseon-late-019"
+  ],
+  "check-19-21": [
+   "legacy-joseon-late-020"
+  ],
+  "check-19-22": [
+   "legacy-joseon-late-021"
+  ],
+  "check-19-23": [
+   "legacy-joseon-late-022",
+   "legacy-joseon-early-028"
+  ],
+  "check-19-24": [
+   "legacy-joseon-late-023"
+  ],
+  "check-19-25": [
+   "legacy-joseon-late-024",
+   "legacy-joseon-early-029"
+  ],
+  "check-19-26": [
+   "legacy-joseon-late-025"
+  ],
+  "check-19-27": [
+   "legacy-joseon-late-026"
+  ],
+  "check-19-28": [
+   "legacy-joseon-late-027"
+  ],
+  "check-19-29": [
+   "legacy-joseon-late-028",
+   "legacy-joseon-early-030"
+  ],
+  "check-19-30": [
+   "legacy-joseon-late-029"
+  ],
+  "check-19-31": [
+   "legacy-joseon-late-030"
+  ],
+  "check-19-32": [
+   "legacy-joseon-late-031"
+  ],
+  "check-19-33": [
+   "legacy-joseon-late-032"
+  ],
+  "check-19-34": [
+   "legacy-joseon-late-033"
+  ],
+  "check-19-35": [
+   "legacy-joseon-late-034",
+   "legacy-joseon-early-031"
+  ],
+  "check-19-36": [
+   "legacy-joseon-late-035"
+  ],
+  "check-19-37": [
+   "legacy-joseon-late-036"
+  ],
+  "check-19-38": [
+   "legacy-joseon-late-037"
+  ],
+  "check-19-39": [
+   "legacy-joseon-late-038"
+  ],
+  "check-19-40": [
+   "legacy-joseon-late-039"
+  ],
+  "check-19-41": [
+   "legacy-joseon-late-040"
+  ],
+  "check-19-42": [
+   "legacy-joseon-late-041"
+  ],
+  "check-19-43": [
+   "legacy-joseon-late-042",
+   "legacy-joseon-early-032"
+  ],
+  "check-19-44": [
+   "legacy-joseon-late-043"
+  ],
+  "check-19-45": [
+   "legacy-joseon-late-044"
+  ],
+  "check-19-46": [
+   "legacy-joseon-late-045"
+  ],
+  "check-19-47": [
+   "legacy-joseon-late-046"
+  ],
+  "check-19-48": [
+   "legacy-joseon-late-047"
+  ],
+  "check-19-49": [
+   "legacy-joseon-late-048"
+  ],
+  "check-19-50": [
+   "legacy-joseon-late-049"
+  ],
+  "check-20-01": [
+   "legacy-joseon-late-050"
+  ],
+  "check-20-02": [
+   "legacy-joseon-late-051"
+  ],
+  "check-20-03": [
+   "legacy-joseon-late-052"
+  ],
+  "check-20-04": [
+   "legacy-joseon-late-053"
+  ],
+  "check-20-05": [
+   "legacy-joseon-late-054"
+  ],
+  "check-20-06": [
+   "legacy-joseon-late-055"
+  ],
+  "check-20-07": [
+   "legacy-joseon-late-056"
+  ],
+  "check-20-08": [
+   "legacy-joseon-late-057"
+  ],
+  "check-20-09": [
+   "legacy-joseon-late-058"
+  ],
+  "check-20-10": [
+   "legacy-joseon-late-059"
+  ],
+  "check-20-11": [
+   "legacy-joseon-late-060"
+  ],
+  "check-20-12": [
+   "legacy-joseon-late-061"
+  ],
+  "check-20-13": [
+   "legacy-joseon-late-062"
+  ],
+  "check-20-14": [
+   "legacy-joseon-late-063"
+  ],
+  "check-21-01": [
+   "legacy-joseon-late-064"
+  ],
+  "check-21-02": [
+   "legacy-joseon-late-065"
+  ],
+  "check-21-03": [
+   "legacy-joseon-late-066"
+  ],
+  "check-21-04": [
+   "legacy-joseon-late-067"
+  ],
+  "check-21-05": [
+   "legacy-joseon-late-068"
+  ],
+  "check-21-06": [
+   "legacy-joseon-late-069"
+  ],
+  "check-21-07": [
+   "legacy-joseon-late-070"
+  ],
+  "check-21-08": [
+   "legacy-joseon-late-071"
+  ],
+  "check-21-09": [
+   "legacy-joseon-late-072"
+  ],
+  "check-21-10": [
+   "legacy-joseon-late-073"
+  ],
+  "check-21-11": [
+   "legacy-joseon-late-074"
+  ],
+  "check-22-01": [
+   "legacy-joseon-late-075"
+  ],
+  "check-22-02": [
+   "legacy-joseon-late-076"
+  ],
+  "check-22-03": [
+   "legacy-joseon-late-077"
+  ],
+  "check-22-04": [
+   "legacy-joseon-late-078"
+  ],
+  "check-22-05": [
+   "legacy-joseon-late-079"
+  ],
+  "check-22-06": [
+   "legacy-joseon-late-080"
+  ],
+  "check-22-07": [
+   "legacy-joseon-late-081"
+  ],
+  "check-22-08": [
+   "legacy-joseon-late-082"
+  ],
+  "check-22-09": [
+   "legacy-joseon-late-083"
+  ],
+  "check-22-10": [
+   "legacy-joseon-late-084"
+  ],
+  "check-22-11": [
+   "legacy-joseon-late-085"
+  ],
+  "check-22-12": [
+   "legacy-joseon-late-086"
+  ],
+  "check-22-13": [
+   "legacy-joseon-late-087"
+  ],
+  "check-22-14": [
+   "legacy-joseon-late-088"
+  ],
+  "check-23-01": [
+   "legacy-joseon-late-089"
+  ],
+  "check-23-02": [
+   "legacy-joseon-late-090"
+  ],
+  "check-23-03": [
+   "legacy-joseon-late-091"
+  ],
+  "check-23-04": [
+   "legacy-joseon-late-092"
+  ],
+  "check-23-05": [
+   "legacy-joseon-late-093"
+  ],
+  "check-23-06": [
+   "legacy-joseon-late-094"
+  ],
+  "check-23-07": [
+   "legacy-joseon-late-095"
+  ],
+  "check-23-08": [
+   "legacy-joseon-late-096"
+  ],
+  "check-23-09": [
+   "legacy-joseon-late-097"
+  ],
+  "check-23-10": [
+   "legacy-joseon-late-098"
+  ],
+  "check-23-11": [
+   "legacy-joseon-late-099"
+  ],
+  "check-23-12": [
+   "legacy-joseon-late-100"
+  ],
+  "check-23-13": [
+   "legacy-joseon-late-101"
+  ],
+  "check-23-14": [
+   "legacy-joseon-late-102"
+  ],
+  "check-23-15": [
+   "legacy-joseon-late-103"
+  ],
+  "check-23-16": [
+   "legacy-joseon-late-104"
+  ],
+  "check-23-17": [
+   "legacy-joseon-late-105"
+  ],
+  "check-23-18": [
+   "legacy-joseon-late-106"
+  ],
+  "check-24-01": [
+   "legacy-joseon-late-107"
+  ],
+  "check-24-02": [
+   "legacy-joseon-late-108"
+  ],
+  "check-24-03": [
+   "legacy-joseon-late-109"
+  ],
+  "check-24-04": [
+   "legacy-joseon-late-110"
+  ],
+  "check-24-05": [
+   "legacy-joseon-late-111"
+  ],
+  "check-24-06": [
+   "legacy-joseon-late-112"
+  ],
+  "check-24-07": [
+   "legacy-joseon-late-113"
+  ],
+  "check-24-08": [
+   "legacy-joseon-late-114"
+  ],
+  "check-24-09": [
+   "legacy-joseon-late-115"
+  ],
+  "check-24-10": [
+   "legacy-joseon-late-116"
+  ],
+  "check-24-11": [
+   "legacy-joseon-late-117"
+  ],
+  "check-24-12": [
+   "legacy-joseon-late-118"
+  ],
+  "check-24-13": [
+   "legacy-joseon-late-119"
+  ],
+  "check-24-14": [
+   "legacy-joseon-late-120"
+  ],
+  "check-24-15": [
+   "legacy-joseon-late-121"
+  ],
+  "check-24-16": [
+   "legacy-joseon-late-122"
+  ],
+  "check-24-17": [
+   "legacy-joseon-late-123"
+  ],
+  "check-24-18": [
+   "legacy-joseon-late-124"
+  ],
+  "check-24-19": [
+   "legacy-joseon-late-125"
+  ],
+  "check-24-20": [
+   "legacy-joseon-late-126"
+  ],
+  "check-24-21": [
+   "legacy-joseon-late-127"
+  ],
+  "check-24-22": [
+   "legacy-joseon-late-128"
+  ],
+  "check-24-23": [
+   "legacy-joseon-late-129"
+  ],
+  "check-24-24": [
+   "legacy-joseon-late-130"
+  ],
+  "check-24-25": [
+   "legacy-joseon-late-131"
+  ],
+  "check-24-26": [
+   "legacy-joseon-late-132"
+  ],
+  "check-24-27": [
+   "legacy-joseon-late-133"
+  ],
+  "check-24-28": [
+   "legacy-joseon-late-134"
+  ],
+  "check-24-29": [
+   "legacy-joseon-late-135"
+  ],
+  "check-24-30": [
+   "legacy-joseon-late-136"
+  ],
+  "check-24-31": [
+   "legacy-joseon-late-137"
+  ],
+  "check-24-32": [
+   "legacy-joseon-late-138"
+  ],
+  "check-24-33": [
+   "legacy-joseon-late-139"
+  ],
+  "check-25-01": [
+   "legacy-opening-000"
+  ],
+  "check-25-02": [
+   "legacy-opening-001"
+  ],
+  "check-25-03": [
+   "legacy-opening-002"
+  ],
+  "check-25-04": [
+   "legacy-opening-003"
+  ],
+  "check-25-05": [
+   "legacy-opening-004"
+  ],
+  "check-25-06": [
+   "legacy-opening-005"
+  ],
+  "check-25-07": [
+   "legacy-opening-006"
+  ],
+  "check-25-08": [
+   "legacy-opening-007"
+  ],
+  "check-25-09": [
+   "legacy-opening-008"
+  ],
+  "check-25-10": [
+   "legacy-opening-009"
+  ],
+  "check-25-11": [
+   "legacy-opening-010"
+  ],
+  "check-25-12": [
+   "legacy-opening-011"
+  ],
+  "check-25-13": [
+   "legacy-opening-012"
+  ],
+  "check-26-01": [
+   "legacy-opening-013"
+  ],
+  "check-26-02": [
+   "legacy-opening-014"
+  ],
+  "check-26-03": [
+   "legacy-opening-015"
+  ],
+  "check-26-04": [
+   "legacy-opening-016"
+  ],
+  "check-26-05": [
+   "legacy-opening-017"
+  ],
+  "check-26-06": [
+   "legacy-opening-018"
+  ],
+  "check-26-07": [
+   "legacy-opening-019"
+  ],
+  "check-26-08": [
+   "legacy-opening-020"
+  ],
+  "check-26-09": [
+   "legacy-opening-021"
+  ],
+  "check-26-10": [
+   "legacy-opening-022"
+  ],
+  "check-26-11": [
+   "legacy-opening-023"
+  ],
+  "check-26-12": [
+   "legacy-opening-024"
+  ],
+  "check-26-13": [
+   "legacy-opening-025"
+  ],
+  "check-26-14": [
+   "legacy-opening-026"
+  ],
+  "check-26-15": [
+   "legacy-opening-027"
+  ],
+  "check-26-16": [
+   "legacy-opening-028"
+  ],
+  "check-26-17": [
+   "legacy-opening-029"
+  ],
+  "check-27-01": [
+   "legacy-opening-030"
+  ],
+  "check-27-02": [
+   "legacy-opening-031"
+  ],
+  "check-27-03": [
+   "legacy-opening-032"
+  ],
+  "check-27-04": [
+   "legacy-opening-033"
+  ],
+  "check-27-05": [
+   "legacy-opening-034"
+  ],
+  "check-27-06": [
+   "legacy-opening-035"
+  ],
+  "check-27-07": [
+   "legacy-opening-036"
+  ],
+  "check-27-08": [
+   "legacy-opening-037"
+  ],
+  "check-27-09": [
+   "legacy-opening-038"
+  ],
+  "check-27-10": [
+   "legacy-opening-039"
+  ],
+  "check-27-11": [
+   "legacy-opening-040"
+  ],
+  "check-27-12": [
+   "legacy-opening-041"
+  ],
+  "check-27-13": [
+   "legacy-opening-042"
+  ],
+  "check-27-14": [
+   "legacy-opening-043"
+  ],
+  "check-27-15": [
+   "legacy-opening-044"
+  ],
+  "check-27-16": [
+   "legacy-opening-045"
+  ],
+  "check-28-01": [
+   "legacy-opening-046"
+  ],
+  "check-29-01": [
+   "legacy-opening-047"
+  ],
+  "check-29-02": [
+   "legacy-opening-048"
+  ],
+  "check-29-03": [
+   "legacy-opening-049"
+  ],
+  "check-29-04": [
+   "legacy-opening-050"
+  ],
+  "check-29-05": [
+   "legacy-opening-051"
+  ],
+  "check-29-06": [
+   "legacy-opening-052"
+  ],
+  "check-29-07": [
+   "legacy-opening-053"
+  ],
+  "check-29-08": [
+   "legacy-opening-054"
+  ],
+  "check-29-09": [
+   "legacy-opening-055"
+  ],
+  "check-29-10": [
+   "legacy-opening-056"
+  ],
+  "check-29-11": [
+   "legacy-opening-057"
+  ],
+  "check-29-12": [
+   "legacy-opening-058"
+  ],
+  "check-29-13": [
+   "legacy-opening-059"
+  ],
+  "check-29-14": [
+   "legacy-opening-060"
+  ],
+  "check-29-15": [
+   "legacy-opening-061"
+  ],
+  "check-29-16": [
+   "legacy-opening-062"
+  ],
+  "check-29-17": [
+   "legacy-opening-063"
+  ],
+  "check-30-01": [
+   "legacy-opening-064"
+  ],
+  "check-30-02": [
+   "legacy-opening-065"
+  ],
+  "check-30-03": [
+   "legacy-opening-066"
+  ],
+  "check-30-04": [
+   "legacy-opening-067"
+  ],
+  "check-30-05": [
+   "legacy-opening-068"
+  ],
+  "check-31-01": [
+   "legacy-opening-069"
+  ],
+  "check-31-02": [
+   "legacy-opening-070"
+  ],
+  "check-31-03": [
+   "legacy-opening-071"
+  ],
+  "check-31-04": [
+   "legacy-opening-072"
+  ],
+  "check-31-05": [
+   "legacy-opening-073"
+  ],
+  "check-31-06": [
+   "legacy-opening-074"
+  ],
+  "check-31-07": [
+   "legacy-opening-075"
+  ],
+  "check-31-08": [
+   "legacy-opening-076"
+  ],
+  "check-31-09": [
+   "legacy-opening-077"
+  ],
+  "check-31-10": [
+   "legacy-opening-078"
+  ],
+  "check-31-11": [
+   "legacy-opening-079"
+  ],
+  "check-31-12": [
+   "legacy-opening-080"
+  ],
+  "check-31-13": [
+   "legacy-opening-081"
+  ],
+  "check-31-14": [
+   "legacy-opening-082"
+  ],
+  "check-31-15": [
+   "legacy-opening-083"
+  ],
+  "check-31-16": [
+   "legacy-opening-084"
+  ],
+  "check-31-17": [
+   "legacy-opening-085"
+  ],
+  "check-31-18": [
+   "legacy-opening-086"
+  ],
+  "check-31-19": [
+   "legacy-opening-087"
+  ],
+  "check-31-20": [
+   "legacy-opening-088"
+  ],
+  "check-31-21": [
+   "legacy-opening-089"
+  ],
+  "check-31-22": [
+   "legacy-opening-090"
+  ],
+  "check-31-23": [
+   "legacy-opening-091"
+  ],
+  "check-32-01": [
+   "legacy-opening-092"
+  ],
+  "check-32-02": [
+   "legacy-opening-093"
+  ],
+  "check-32-03": [
+   "legacy-opening-094"
+  ],
+  "check-32-04": [
+   "legacy-opening-095"
+  ],
+  "check-32-05": [
+   "legacy-opening-096"
+  ],
+  "check-32-06": [
+   "legacy-opening-097"
+  ],
+  "check-32-07": [
+   "legacy-opening-098"
+  ],
+  "check-32-08": [
+   "legacy-opening-099"
+  ],
+  "check-32-09": [
+   "legacy-opening-100"
+  ],
+  "check-32-10": [
+   "legacy-opening-101"
+  ],
+  "check-32-11": [
+   "legacy-opening-102"
+  ],
+  "check-32-12": [
+   "legacy-opening-103"
+  ],
+  "check-32-13": [
+   "legacy-opening-104"
+  ],
+  "check-32-14": [
+   "legacy-opening-105"
+  ],
+  "check-32-15": [
+   "legacy-opening-106"
+  ],
+  "check-32-16": [
+   "legacy-opening-107"
+  ],
+  "check-32-17": [
+   "legacy-opening-108"
+  ],
+  "check-32-18": [
+   "legacy-opening-109"
+  ],
+  "check-32-19": [
+   "legacy-opening-110"
+  ],
+  "check-33-01": [
+   "legacy-colonial-000"
+  ],
+  "check-33-02": [
+   "legacy-colonial-001"
+  ],
+  "check-33-03": [
+   "legacy-colonial-002"
+  ],
+  "check-33-04": [
+   "legacy-colonial-003"
+  ],
+  "check-33-05": [
+   "legacy-colonial-004"
+  ],
+  "check-33-06": [
+   "legacy-colonial-005"
+  ],
+  "check-33-07": [
+   "legacy-colonial-006"
+  ],
+  "check-33-08": [
+   "legacy-colonial-007"
+  ],
+  "check-33-09": [
+   "legacy-colonial-008"
+  ],
+  "check-33-10": [
+   "legacy-colonial-009"
+  ],
+  "check-33-11": [
+   "legacy-colonial-010"
+  ],
+  "check-33-12": [
+   "legacy-colonial-011"
+  ],
+  "check-33-13": [
+   "legacy-colonial-012"
+  ],
+  "check-33-14": [
+   "legacy-colonial-013"
+  ],
+  "check-33-15": [
+   "legacy-colonial-014"
+  ],
+  "check-34-01": [
+   "legacy-colonial-015"
+  ],
+  "check-34-02": [
+   "legacy-colonial-016"
+  ],
+  "check-34-03": [
+   "legacy-colonial-017"
+  ],
+  "check-34-04": [
+   "legacy-colonial-018"
+  ],
+  "check-34-05": [
+   "legacy-colonial-019"
+  ],
+  "check-34-06": [
+   "legacy-colonial-020"
+  ],
+  "check-34-07": [
+   "legacy-colonial-021"
+  ],
+  "check-34-08": [
+   "legacy-colonial-022"
+  ],
+  "check-34-09": [
+   "legacy-colonial-023"
+  ],
+  "check-34-10": [
+   "legacy-colonial-024"
+  ],
+  "check-34-11": [
+   "legacy-colonial-025"
+  ],
+  "check-34-12": [
+   "legacy-colonial-026"
+  ],
+  "check-34-13": [
+   "legacy-colonial-027"
+  ],
+  "check-34-14": [
+   "legacy-colonial-028"
+  ],
+  "check-34-15": [
+   "legacy-colonial-029"
+  ],
+  "check-34-16": [
+   "legacy-colonial-030"
+  ],
+  "check-34-17": [
+   "legacy-colonial-031"
+  ],
+  "check-34-18": [
+   "legacy-colonial-032"
+  ],
+  "check-35-01": [
+   "legacy-colonial-033"
+  ],
+  "check-35-02": [
+   "legacy-colonial-034"
+  ],
+  "check-35-03": [
+   "legacy-colonial-035"
+  ],
+  "check-35-04": [
+   "legacy-colonial-036"
+  ],
+  "check-35-05": [
+   "legacy-colonial-037"
+  ],
+  "check-35-06": [
+   "legacy-colonial-038"
+  ],
+  "check-35-07": [
+   "legacy-colonial-039"
+  ],
+  "check-35-08": [
+   "legacy-colonial-040"
+  ],
+  "check-35-09": [
+   "legacy-colonial-041"
+  ],
+  "check-35-10": [
+   "legacy-colonial-042"
+  ],
+  "check-35-11": [
+   "legacy-colonial-043"
+  ],
+  "check-35-12": [
+   "legacy-colonial-044"
+  ],
+  "check-35-13": [
+   "legacy-colonial-045"
+  ],
+  "check-35-14": [
+   "legacy-colonial-046"
+  ],
+  "check-35-15": [
+   "legacy-colonial-047"
+  ],
+  "check-35-16": [
+   "legacy-colonial-048"
+  ],
+  "check-35-17": [
+   "legacy-colonial-049"
+  ],
+  "check-35-18": [
+   "legacy-colonial-050"
+  ],
+  "check-35-19": [
+   "legacy-colonial-051"
+  ],
+  "check-35-20": [
+   "legacy-colonial-052"
+  ],
+  "check-35-21": [
+   "legacy-colonial-053"
+  ],
+  "check-35-22": [
+   "legacy-colonial-054"
+  ],
+  "check-35-23": [
+   "legacy-colonial-055"
+  ],
+  "check-35-24": [
+   "legacy-colonial-056"
+  ],
+  "check-35-25": [
+   "legacy-colonial-057"
+  ],
+  "check-36-01": [
+   "legacy-colonial-058"
+  ],
+  "check-36-02": [
+   "legacy-colonial-059"
+  ],
+  "check-36-03": [
+   "legacy-colonial-060"
+  ],
+  "check-36-04": [
+   "legacy-colonial-061"
+  ],
+  "check-36-05": [
+   "legacy-colonial-062"
+  ],
+  "check-36-06": [
+   "legacy-colonial-063"
+  ],
+  "check-36-07": [
+   "legacy-colonial-064"
+  ],
+  "check-36-08": [
+   "legacy-colonial-065"
+  ],
+  "check-36-09": [
+   "legacy-colonial-066"
+  ],
+  "check-36-10": [
+   "legacy-colonial-067"
+  ],
+  "check-36-11": [
+   "legacy-colonial-068"
+  ],
+  "check-36-12": [
+   "legacy-colonial-069"
+  ],
+  "check-36-13": [
+   "legacy-colonial-070"
+  ],
+  "check-36-14": [
+   "legacy-colonial-071"
+  ],
+  "check-36-15": [
+   "legacy-colonial-072"
+  ],
+  "check-36-16": [
+   "legacy-colonial-073"
+  ],
+  "check-36-17": [
+   "legacy-colonial-074"
+  ],
+  "check-36-18": [
+   "legacy-colonial-075"
+  ],
+  "check-37-01": [
+   "legacy-modern-000"
+  ],
+  "check-37-02": [
+   "legacy-modern-001"
+  ],
+  "check-37-03": [
+   "legacy-modern-002"
+  ],
+  "check-37-04": [
+   "legacy-modern-003"
+  ],
+  "check-37-05": [
+   "legacy-modern-004"
+  ],
+  "check-37-06": [
+   "legacy-modern-005"
+  ],
+  "check-37-07": [
+   "legacy-modern-006"
+  ],
+  "check-37-08": [
+   "legacy-modern-007"
+  ],
+  "check-37-09": [
+   "legacy-modern-008"
+  ],
+  "check-37-10": [
+   "legacy-modern-009"
+  ],
+  "check-37-11": [
+   "legacy-modern-010"
+  ],
+  "check-37-12": [
+   "legacy-modern-011"
+  ],
+  "check-37-13": [
+   "legacy-modern-012"
+  ],
+  "check-37-14": [
+   "legacy-modern-013"
+  ],
+  "check-37-15": [
+   "legacy-modern-014"
+  ],
+  "check-37-16": [
+   "legacy-modern-015"
+  ],
+  "check-37-17": [
+   "legacy-modern-016"
+  ],
+  "check-37-18": [
+   "legacy-modern-017"
+  ],
+  "check-37-19": [
+   "legacy-modern-018"
+  ],
+  "check-37-20": [
+   "legacy-modern-019"
+  ],
+  "check-37-21": [
+   "legacy-modern-020"
+  ],
+  "check-37-22": [
+   "legacy-modern-021"
+  ],
+  "check-37-23": [
+   "legacy-modern-022"
+  ],
+  "check-37-24": [
+   "legacy-modern-023"
+  ],
+  "check-37-25": [
+   "legacy-modern-024"
+  ],
+  "check-37-26": [
+   "legacy-modern-025"
+  ],
+  "check-37-27": [
+   "legacy-modern-026"
+  ],
+  "check-37-28": [
+   "legacy-modern-027"
+  ],
+  "check-37-29": [
+   "legacy-modern-028"
+  ],
+  "check-37-30": [
+   "legacy-modern-029"
+  ],
+  "check-37-31": [
+   "legacy-modern-030"
+  ],
+  "check-37-32": [
+   "legacy-modern-031"
+  ],
+  "check-38-01": [
+   "legacy-modern-032"
+  ],
+  "check-38-02": [
+   "legacy-modern-033"
+  ],
+  "check-38-03": [
+   "legacy-modern-034"
+  ],
+  "check-38-04": [
+   "legacy-modern-035"
+  ],
+  "check-38-05": [
+   "legacy-modern-036"
+  ],
+  "check-38-06": [
+   "legacy-modern-037"
+  ],
+  "check-38-07": [
+   "legacy-modern-038"
+  ],
+  "check-38-08": [
+   "legacy-modern-039"
+  ],
+  "check-38-09": [
+   "legacy-modern-040"
+  ],
+  "check-38-10": [
+   "legacy-modern-041"
+  ],
+  "check-38-11": [
+   "legacy-modern-042"
+  ],
+  "check-38-12": [
+   "legacy-modern-043"
+  ],
+  "check-38-13": [
+   "legacy-modern-044"
+  ],
+  "check-38-14": [
+   "legacy-modern-045"
+  ],
+  "check-39-01": [
+   "legacy-modern-046"
+  ],
+  "check-39-02": [
+   "legacy-modern-047"
+  ],
+  "check-39-03": [
+   "legacy-modern-048"
+  ],
+  "check-39-04": [
+   "legacy-modern-049"
+  ],
+  "check-39-05": [
+   "legacy-modern-050"
+  ],
+  "check-39-06": [
+   "legacy-modern-051"
+  ],
+  "check-39-07": [
+   "legacy-modern-052"
+  ],
+  "check-39-08": [
+   "legacy-modern-053"
+  ],
+  "check-39-09": [
+   "legacy-modern-054"
+  ],
+  "check-39-10": [
+   "legacy-modern-055"
+  ],
+  "check-39-11": [
+   "legacy-modern-056"
+  ],
+  "check-39-12": [
+   "legacy-modern-057"
+  ],
+  "check-39-13": [
+   "legacy-modern-058"
+  ],
+  "check-39-14": [
+   "legacy-modern-059"
+  ],
+  "check-39-15": [
+   "legacy-modern-060"
+  ],
+  "check-39-16": [
+   "legacy-modern-061"
+  ]
+ },
+ "distinctContextPairs": [
+  [
+   "check-05-06",
+   [
+    "legacy-samguk-030"
+   ],
+   "check-06-21",
+   [
+    "legacy-samguk-056"
+   ]
+  ],
+  [
+   "check-11-04",
+   [
+    "legacy-goryeo-015"
+   ],
+   "check-15-01",
+   [
+    "legacy-goryeo-046"
+   ]
+  ],
+  [
+   "check-33-12",
+   [
+    "legacy-colonial-011"
+   ],
+   "check-34-08",
+   [
+    "legacy-colonial-022"
+   ]
+  ]
+ ],
+ "corrections": [
+  "check-03-09",
+  "check-03-10",
+  "check-05-09",
+  "check-05-11",
+  "check-06-11",
+  "check-06-12",
+  "check-06-16",
+  "check-06-17",
+  "check-11-09",
+  "check-11-11",
+  "check-15-07",
+  "check-24-02",
+  "check-24-03",
+  "check-24-05",
+  "check-24-06",
+  "check-26-15",
+  "check-31-19",
+  "check-31-23"
+ ],
+ "clarifications": [
+  "check-21-08",
+  "check-21-09",
+  "check-21-10",
+  "check-21-11"
+ ],
+ "flags": {
+  "legacy-colonial-000": [
+   "options-3"
+  ],
+  "legacy-colonial-001": [
+   "options-3"
+  ],
+  "legacy-colonial-002": [
+   "options-3"
+  ],
+  "legacy-colonial-003": [
+   "options-3"
+  ],
+  "legacy-colonial-004": [
+   "options-3"
+  ],
+  "legacy-colonial-005": [
+   "options-3"
+  ],
+  "legacy-colonial-006": [
+   "options-3"
+  ],
+  "legacy-colonial-007": [
+   "options-3"
+  ],
+  "legacy-colonial-008": [
+   "options-3"
+  ],
+  "legacy-colonial-009": [
+   "options-3"
+  ],
+  "legacy-colonial-010": [
+   "options-3"
+  ],
+  "legacy-colonial-011": [
+   "options-3"
+  ],
+  "legacy-colonial-012": [
+   "options-3"
+  ],
+  "legacy-colonial-013": [
+   "options-3"
+  ],
+  "legacy-colonial-014": [
+   "options-3"
+  ],
+  "legacy-colonial-017": [
+   "options-2"
+  ],
+  "legacy-colonial-022": [
+   "options-2"
+  ],
+  "legacy-colonial-026": [
+   "fallback-group"
+  ],
+  "legacy-colonial-070": [
+   "fallback-group"
+  ],
+  "legacy-colonial-071": [
+   "fallback-group"
+  ],
+  "legacy-colonial-072": [
+   "fallback-group"
+  ],
+  "legacy-colonial-074": [
+   "fallback-group"
+  ],
+  "legacy-colonial-075": [
+   "fallback-group"
+  ],
+  "legacy-gojoseon-000": [
+   "options-3"
+  ],
+  "legacy-gojoseon-001": [
+   "fallback-group"
+  ],
+  "legacy-gojoseon-002": [
+   "set-fallback-group"
+  ],
+  "legacy-gojoseon-003": [
+   "options-2"
+  ],
+  "legacy-gojoseon-004": [
+   "fallback-group"
+  ],
+  "legacy-gojoseon-005": [
+   "fallback-group"
+  ],
+  "legacy-gojoseon-006": [
+   "options-3"
+  ],
+  "legacy-gojoseon-007": [
+   "options-2"
+  ],
+  "legacy-gojoseon-008": [
+   "options-3"
+  ],
+  "legacy-gojoseon-009": [
+   "options-2"
+  ],
+  "legacy-gojoseon-010": [
+   "options-3"
+  ],
+  "legacy-gojoseon-012": [
+   "options-3"
+  ],
+  "legacy-gojoseon-016": [
+   "options-3"
+  ],
+  "legacy-gojoseon-017": [
+   "options-3"
+  ],
+  "legacy-gojoseon-018": [
+   "options-2"
+  ],
+  "legacy-gojoseon-019": [
+   "fallback-group",
+   "options-2"
+  ],
+  "legacy-goryeo-000": [
+   "options-3"
+  ],
+  "legacy-goryeo-001": [
+   "options-3"
+  ],
+  "legacy-goryeo-002": [
+   "options-3"
+  ],
+  "legacy-goryeo-003": [
+   "options-3"
+  ],
+  "legacy-goryeo-004": [
+   "options-3"
+  ],
+  "legacy-goryeo-005": [
+   "options-3"
+  ],
+  "legacy-goryeo-006": [
+   "options-3"
+  ],
+  "legacy-goryeo-007": [
+   "options-3"
+  ],
+  "legacy-goryeo-008": [
+   "options-3"
+  ],
+  "legacy-goryeo-009": [
+   "options-3"
+  ],
+  "legacy-goryeo-010": [
+   "options-3"
+  ],
+  "legacy-goryeo-011": [
+   "options-3"
+  ],
+  "legacy-goryeo-024": [
+   "set-fallback-group"
+  ],
+  "legacy-goryeo-027": [
+   "set-fallback-group"
+  ],
+  "legacy-goryeo-028": [
+   "fallback-group"
+  ],
+  "legacy-goryeo-030": [
+   "fallback-group"
+  ],
+  "legacy-goryeo-034": [
+   "set-fallback-group"
+  ],
+  "legacy-goryeo-043": [
+   "fallback-group"
+  ],
+  "legacy-goryeo-046": [
+   "options-3"
+  ],
+  "legacy-goryeo-047": [
+   "options-3"
+  ],
+  "legacy-goryeo-048": [
+   "options-3"
+  ],
+  "legacy-goryeo-049": [
+   "options-3"
+  ],
+  "legacy-goryeo-050": [
+   "options-3"
+  ],
+  "legacy-goryeo-051": [
+   "options-3"
+  ],
+  "legacy-goryeo-052": [
+   "options-3"
+  ],
+  "legacy-goryeo-053": [
+   "options-3"
+  ],
+  "legacy-goryeo-054": [
+   "options-3"
+  ],
+  "legacy-goryeo-055": [
+   "options-3"
+  ],
+  "legacy-goryeo-056": [
+   "options-3"
+  ],
+  "legacy-goryeo-068": [
+   "options-2"
+  ],
+  "legacy-islands-000": [
+   "fallback-group"
+  ],
+  "legacy-islands-001": [
+   "fallback-group"
+  ],
+  "legacy-islands-005": [
+   "fallback-group"
+  ],
+  "legacy-joseon-early-024": [
+   "options-2"
+  ],
+  "legacy-joseon-early-025": [
+   "options-2"
+  ],
+  "legacy-joseon-early-026": [
+   "options-2"
+  ],
+  "legacy-joseon-early-027": [
+   "options-2"
+  ],
+  "legacy-joseon-early-029": [
+   "options-2"
+  ],
+  "legacy-joseon-early-030": [
+   "options-2"
+  ],
+  "legacy-joseon-early-031": [
+   "options-2"
+  ],
+  "legacy-joseon-late-006": [
+   "options-2"
+  ],
+  "legacy-joseon-late-011": [
+   "options-2"
+  ],
+  "legacy-joseon-late-013": [
+   "options-2"
+  ],
+  "legacy-joseon-late-016": [
+   "options-2"
+  ],
+  "legacy-joseon-late-024": [
+   "options-2"
+  ],
+  "legacy-joseon-late-028": [
+   "options-2"
+  ],
+  "legacy-joseon-late-034": [
+   "options-2"
+  ],
+  "legacy-joseon-late-071": [
+   "options-3"
+  ],
+  "legacy-joseon-late-072": [
+   "options-3"
+  ],
+  "legacy-joseon-late-073": [
+   "options-3"
+  ],
+  "legacy-joseon-late-074": [
+   "options-3"
+  ],
+  "legacy-joseon-late-075": [
+   "options-2"
+  ],
+  "legacy-joseon-late-076": [
+   "options-2"
+  ],
+  "legacy-joseon-late-077": [
+   "options-2"
+  ],
+  "legacy-joseon-late-078": [
+   "options-2"
+  ],
+  "legacy-joseon-late-079": [
+   "options-2"
+  ],
+  "legacy-joseon-late-080": [
+   "options-2"
+  ],
+  "legacy-joseon-late-081": [
+   "options-2"
+  ],
+  "legacy-joseon-late-082": [
+   "options-2"
+  ],
+  "legacy-joseon-late-083": [
+   "options-2"
+  ],
+  "legacy-joseon-late-084": [
+   "options-2"
+  ],
+  "legacy-joseon-late-085": [
+   "options-2"
+  ],
+  "legacy-joseon-late-086": [
+   "options-2"
+  ],
+  "legacy-joseon-late-087": [
+   "options-2"
+  ],
+  "legacy-joseon-late-088": [
+   "options-2"
+  ],
+  "legacy-joseon-late-089": [
+   "options-2"
+  ],
+  "legacy-joseon-late-090": [
+   "options-2"
+  ],
+  "legacy-joseon-late-091": [
+   "options-2"
+  ],
+  "legacy-joseon-late-092": [
+   "options-2"
+  ],
+  "legacy-joseon-late-093": [
+   "options-2"
+  ],
+  "legacy-joseon-late-094": [
+   "options-2"
+  ],
+  "legacy-joseon-late-095": [
+   "options-2"
+  ],
+  "legacy-joseon-late-096": [
+   "options-2"
+  ],
+  "legacy-joseon-late-097": [
+   "options-2"
+  ],
+  "legacy-joseon-late-098": [
+   "options-2"
+  ],
+  "legacy-joseon-late-099": [
+   "options-2"
+  ],
+  "legacy-joseon-late-100": [
+   "options-2"
+  ],
+  "legacy-joseon-late-101": [
+   "options-2"
+  ],
+  "legacy-joseon-late-102": [
+   "options-2"
+  ],
+  "legacy-joseon-late-103": [
+   "options-2"
+  ],
+  "legacy-joseon-late-104": [
+   "options-2"
+  ],
+  "legacy-joseon-late-105": [
+   "options-2"
+  ],
+  "legacy-joseon-late-106": [
+   "options-2"
+  ],
+  "legacy-joseon-late-111": [
+   "fallback-group"
+  ],
+  "legacy-joseon-late-114": [
+   "options-2"
+  ],
+  "legacy-joseon-late-123": [
+   "fallback-group"
+  ],
+  "legacy-joseon-late-129": [
+   "options-2"
+  ],
+  "legacy-joseon-late-136": [
+   "fallback-group"
+  ],
+  "legacy-joseon-late-138": [
+   "fallback-group"
+  ],
+  "legacy-nambuk-016": [
+   "options-2"
+  ],
+  "legacy-nambuk-017": [
+   "options-2"
+  ],
+  "legacy-nambuk-018": [
+   "options-2"
+  ],
+  "legacy-nambuk-019": [
+   "options-2"
+  ],
+  "legacy-nambuk-020": [
+   "options-2"
+  ],
+  "legacy-nambuk-021": [
+   "options-2"
+  ],
+  "legacy-nambuk-022": [
+   "options-2"
+  ],
+  "legacy-nambuk-023": [
+   "options-2"
+  ],
+  "legacy-nambuk-024": [
+   "options-2"
+  ],
+  "legacy-nambuk-025": [
+   "options-2"
+  ],
+  "legacy-nambuk-026": [
+   "options-2"
+  ],
+  "legacy-nambuk-027": [
+   "options-2"
+  ],
+  "legacy-nambuk-028": [
+   "options-2"
+  ],
+  "legacy-nambuk-029": [
+   "options-2"
+  ],
+  "legacy-nambuk-030": [
+   "options-2"
+  ],
+  "legacy-nambuk-031": [
+   "options-2"
+  ],
+  "legacy-nambuk-032": [
+   "options-2"
+  ],
+  "legacy-nambuk-033": [
+   "options-2"
+  ],
+  "legacy-nambuk-034": [
+   "options-2"
+  ],
+  "legacy-nambuk-035": [
+   "options-2"
+  ],
+  "legacy-opening-010": [
+   "options-2"
+  ],
+  "legacy-opening-033": [
+   "options-2"
+  ],
+  "legacy-opening-040": [
+   "options-2"
+  ],
+  "legacy-opening-069": [
+   "fallback-group"
+  ],
+  "legacy-opening-071": [
+   "fallback-group"
+  ],
+  "legacy-opening-073": [
+   "options-3"
+  ],
+  "legacy-opening-074": [
+   "fallback-group"
+  ],
+  "legacy-opening-075": [
+   "set-fallback-group"
+  ],
+  "legacy-opening-081": [
+   "fallback-group"
+  ],
+  "legacy-opening-084": [
+   "options-2"
+  ],
+  "legacy-opening-085": [
+   "options-3"
+  ],
+  "legacy-opening-086": [
+   "options-3"
+  ],
+  "legacy-opening-089": [
+   "options-2"
+  ],
+  "legacy-opening-103": [
+   "options-3"
+  ],
+  "legacy-opening-107": [
+   "fallback-group"
+  ],
+  "legacy-opening-108": [
+   "options-3"
+  ],
+  "legacy-opening-110": [
+   "options-3"
+  ],
+  "legacy-prehistory-000": [
+   "options-3"
+  ],
+  "legacy-prehistory-001": [
+   "fallback-group"
+  ],
+  "legacy-prehistory-003": [
+   "options-2"
+  ],
+  "legacy-prehistory-004": [
+   "options-3"
+  ],
+  "legacy-prehistory-005": [
+   "options-3"
+  ],
+  "legacy-prehistory-007": [
+   "set-fallback-group"
+  ],
+  "legacy-prehistory-009": [
+   "options-2"
+  ],
+  "legacy-prehistory-010": [
+   "options-3"
+  ],
+  "legacy-prehistory-011": [
+   "fallback-group",
+   "options-3"
+  ],
+  "legacy-prehistory-012": [
+   "fallback-group",
+   "options-3"
+  ],
+  "legacy-prehistory-016": [
+   "options-3",
+   "set-fallback-group"
+  ],
+  "legacy-prehistory-019": [
+   "fallback-chapter",
+   "fallback-group"
+  ],
+  "legacy-samguk-023": [
+   "set-fallback-group"
+  ]
+ },
+ "kindFromGroup": [
+  "check-01-01",
+  "check-01-02",
+  "check-01-03",
+  "check-01-04",
+  "check-01-05",
+  "check-01-06",
+  "check-01-07",
+  "check-01-08",
+  "check-01-09",
+  "check-01-10",
+  "check-01-11",
+  "check-01-12",
+  "check-02-01",
+  "check-02-02",
+  "check-02-03",
+  "check-02-04",
+  "check-02-05",
+  "check-02-06",
+  "check-02-07",
+  "check-02-08",
+  "check-02-09",
+  "check-02-10",
+  "check-02-11",
+  "check-02-12",
+  "check-02-13",
+  "check-02-14",
+  "check-02-15",
+  "check-02-16",
+  "check-02-17",
+  "check-02-18",
+  "check-02-19",
+  "check-02-20",
+  "check-02-21",
+  "check-02-22",
+  "check-02-23",
+  "check-02-24",
+  "check-12-02",
+  "legacy-colonial-017",
+  "legacy-colonial-022",
+  "legacy-colonial-044",
+  "legacy-colonial-074",
+  "legacy-gojoseon-004",
+  "legacy-gojoseon-019",
+  "legacy-goryeo-030",
+  "legacy-goryeo-031",
+  "legacy-goryeo-032",
+  "legacy-goryeo-033",
+  "legacy-goryeo-034",
+  "legacy-goryeo-035",
+  "legacy-goryeo-043",
+  "legacy-goryeo-058",
+  "legacy-goryeo-059",
+  "legacy-goryeo-060",
+  "legacy-goryeo-061",
+  "legacy-goryeo-062",
+  "legacy-goryeo-063",
+  "legacy-goryeo-065",
+  "legacy-goryeo-066",
+  "legacy-goryeo-067",
+  "legacy-goryeo-068",
+  "legacy-goryeo-069",
+  "legacy-goryeo-070",
+  "legacy-goryeo-071",
+  "legacy-goryeo-072",
+  "legacy-goryeo-073",
+  "legacy-goryeo-074",
+  "legacy-goryeo-075",
+  "legacy-goryeo-076",
+  "legacy-goryeo-077",
+  "legacy-goryeo-078",
+  "legacy-goryeo-079",
+  "legacy-goryeo-080",
+  "legacy-goryeo-081",
+  "legacy-goryeo-082",
+  "legacy-goryeo-083",
+  "legacy-goryeo-084",
+  "legacy-goryeo-085",
+  "legacy-goryeo-086",
+  "legacy-goryeo-087",
+  "legacy-goryeo-088",
+  "legacy-goryeo-089",
+  "legacy-goryeo-090",
+  "legacy-islands-002",
+  "legacy-islands-003",
+  "legacy-islands-004",
+  "legacy-islands-006",
+  "legacy-islands-007",
+  "legacy-joseon-late-064",
+  "legacy-joseon-late-065",
+  "legacy-joseon-late-067",
+  "legacy-joseon-late-068",
+  "legacy-nambuk-036",
+  "legacy-nambuk-037",
+  "legacy-nambuk-038",
+  "legacy-opening-000",
+  "legacy-opening-001",
+  "legacy-opening-002",
+  "legacy-opening-003",
+  "legacy-opening-004",
+  "legacy-opening-005",
+  "legacy-opening-006",
+  "legacy-opening-007",
+  "legacy-opening-008",
+  "legacy-opening-009",
+  "legacy-opening-010",
+  "legacy-opening-011",
+  "legacy-opening-012",
+  "legacy-opening-030",
+  "legacy-opening-031",
+  "legacy-opening-032",
+  "legacy-opening-034",
+  "legacy-opening-035",
+  "legacy-opening-036",
+  "legacy-opening-037",
+  "legacy-opening-038",
+  "legacy-opening-041",
+  "legacy-opening-043",
+  "legacy-opening-044",
+  "legacy-opening-045",
+  "legacy-opening-046",
+  "legacy-opening-064",
+  "legacy-opening-065",
+  "legacy-opening-066",
+  "legacy-opening-067",
+  "legacy-opening-068",
+  "legacy-opening-072",
+  "legacy-opening-080",
+  "legacy-opening-090",
+  "legacy-opening-091",
+  "legacy-opening-093",
+  "legacy-opening-098",
+  "legacy-opening-104",
+  "legacy-opening-106",
+  "legacy-opening-109",
+  "legacy-prehistory-001",
+  "legacy-prehistory-012",
+  "legacy-prehistory-019"
+ ],
+ "pagination": {
+  "method": "pdftotext -layout 출력의 \\f 수로 PDF 쪽을 셈(줄의 첫 글자 앞 \\f 수 + 1), 교재 쪽 = PDF 쪽 - 7(PDF 8–144쪽)",
+  "pdfPages": 144,
+  "formFeeds": 144,
+  "anchorsVerified": [
+   {
+    "text": "[연가7년명 금동여래입상]",
+    "pdfPage": 18,
+    "bookPage": 11,
+    "line": 502
+   },
+   {
+    "text": "[금동대향로]",
+    "pdfPage": 21,
+    "bookPage": 14,
+    "line": 631
+   },
+   {
+    "text": "[기마인물형토기]",
+    "pdfPage": 24,
+    "bookPage": 17,
+    "line": 751
+   },
+   {
+    "text": "[불국사 다보탑]",
+    "pdfPage": 33,
+    "bookPage": 26,
+    "line": 1173
+   },
+   {
+    "text": "[정혜공주 무덤의 돌사자상]",
+    "pdfPage": 36,
+    "bookPage": 29,
+    "line": 1297
+   },
+   {
+    "text": "[청자 어룡모양 주전자]",
+    "pdfPage": 54,
+    "bookPage": 47,
+    "line": 2090
+   },
+   {
+    "text": "[보은 법주사 팔상전]",
+    "pdfPage": 77,
+    "bookPage": 70,
+    "line": 3036
+   },
+   {
+    "text": "[김득신 파적도]",
+    "pdfPage": 79,
+    "bookPage": 72,
+    "line": 3129
+   }
+  ],
+  "partRangesPdf": {
+   "Ⅰ": [
+    8,
+    15
+   ],
+   "Ⅱ": [
+    16,
+    39
+   ],
+   "Ⅲ": [
+    40,
+    56
+   ],
+   "Ⅳ": [
+    57,
+    84
+   ],
+   "Ⅴ": [
+    85,
+    104
+   ],
+   "Ⅵ": [
+    105,
+    122
+   ],
+   "Ⅶ": [
+    123,
+    144
+   ]
+  },
+  "confirmQuestionPages": {
+   "found": 639,
+   "ambiguousNull": [],
+   "notFoundNull": [
+    "check-09-01",
+    "check-09-02",
+    "check-09-03"
+   ]
+  },
+  "correctionAnswerPages": {
+   "check-03-09": 30,
+   "check-03-10": 30,
+   "check-05-09": 30,
+   "check-05-11": 30,
+   "check-06-11": 30,
+   "check-06-12": 30,
+   "check-06-16": 30,
+   "check-06-17": 30,
+   "check-11-09": 50,
+   "check-11-11": 50,
+   "check-15-07": 50,
+   "check-24-02": 84,
+   "check-24-03": 84,
+   "check-24-05": 84,
+   "check-24-06": 84,
+   "check-26-15": 92,
+   "check-31-19": 101,
+   "check-31-23": 101
+  },
+  "clarificationPages": {
+   "check-21-08": 72,
+   "check-21-09": 72,
+   "check-21-10": 72,
+   "check-21-11": 72
+  }
+ },
+ "overviewEvidence": {
+  "withTextbookLine": 595,
+  "withFlowCard": 496,
+  "withTeacherLine": 420,
+  "teacherScript": true,
+  "confirmWithPdfPage": 639
+ },
+ "overviewWeak": [],
+ "overviewContextRangeOnly": []
+}

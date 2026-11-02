@@ -1,0 +1,20 @@
+/* History answer explanations: preserve source image pixels and clear O/X labels. */
+body[data-island=history] .fe-explanation{color:#f3f6f5}
+body[data-island=history] .fe-explanation h4{color:#fff}
+body[data-island=history] :is(.fe-stem-analysis,.fe-option-analysis,.fe-exp-contrast){background:#102722;border-color:#577d6f;color:#f3f6f5}
+body[data-island=history] .fe-exp-answer{background:#16382a;color:#a4ffbd;border-color:#83e6a4}
+body[data-island=history] .fe-exp-keywords>span{background:#233c34;color:#e9fff0}
+body[data-island=history] .fe-explanation .fe-exp-option{background:#142822;color:#f4f6f5;border-color:#648577}
+body[data-island=history] .fe-explanation .fe-exp-option.is-correct{background:#153b29;color:#a4ffbd;border-color:#83e6a4}
+body[data-island=history] .fe-explanation .fe-exp-option.is-incorrect{background:#351d22;color:#ffb4be;border-color:#e28294}
+body[data-island=history] .fe-exp-sources{color:#c2d5ca}
+body[data-island=history] .fe-explanation a{color:#9ee8d0}
+body[data-island=history] .fe-explanation summary{color:inherit;background:transparent;min-height:44px}
+body[data-island=history] .fe-explanation summary:hover{background:#ffffff0b}
+body[data-island=history] .fe-explanation :is(summary,button,a):focus-visible{outline:3px solid #8affb3;outline-offset:3px}
+body[data-island=history] .formal-exams :is(.fe-answer-compare span,.fe-era-row,.fe-star,.fe-starred-review){background:#122c25;color:#f3f6f5;border-color:#648577}
+body[data-island=history] .formal-exams :is(.fe-correct-answer,.qreview-opt.correct,.qverdict.ok){color:#a4ffbd!important;border-color:#83e6a4}
+body[data-island=history] .formal-exams :is(.fe-selected-answer,.qreview-opt.selected-wrong,.qverdict.no){color:#ffb4be;border-color:#e28294}
+body[data-island=history] .formal-exams .fe-era-row:disabled{background:#18261f;color:#b5c5bc}
+body[data-island=history] .formal-exams .fe-star[aria-pressed=true]{background:#33442b;color:#d5f4a4}
+body[data-island=history] .formal-exams .fe-runs-table td:before{color:#c4d7cb}

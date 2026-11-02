@@ -1,0 +1,900 @@
+{
+  "round": 78,
+  "method": "담당자가 원본 WebP 50장과 지문·보기250개를 모두 직접 시각대조하였다. OCR은 검색 보조로만 사용했다. 교재는 form-feed 기준 PDF쪽과 인쇄쪽(PDF-7)을 구별해 읽고, 전문 사료·작품은 아래 기관자료 및 사진으로 추가 확인했다. 기본 해설은 실제단서→대상→정답이유, 각 보기는 원문핵심어→귀속→의미/오류교정으로 작성했다. 코드 검증은 역사검증의 대체가 아니다.",
+  "items": {
+    "01": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "a49096941a8a78982c30e273d4094dc2dfd03ea4c90a94433c806539e68278c7",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 9쪽 / 인쇄 2쪽",
+          "supports": "신석기 농경·토기·가락바퀴·뼈바늘; 청동방울, 구석기 뗀석기, 철기 세형동검·농기구 구분"
+        }
+      ],
+      "corrections": [
+        "여수 안도 조개더미의 실제 단서와 신석기 도구의 기능 연결"
+      ],
+      "blockers": []
+    },
+    "02": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "43945bb235f9cd2b3b74d51bbf9c26f890d6c486afb55242ecc4be4b51c141f5",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 11쪽 / 인쇄 4쪽",
+          "supports": "연 진개 침입 → 위만의 집권·진번임둔 복속 → 우거왕의 한군 항전·멸망; 보기5개 순서 검증"
+        }
+      ],
+      "corrections": [
+        "진번·임둔 복속을 위만의 세력 확장으로 설명; 진개·위만·우거왕의 세대와 선후 연결"
+      ],
+      "blockers": []
+    },
+    "03": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "76f0cf0c3ed69ccfb15abb2dfd1f7777207799df3fd66fa49d6ad81e7dec7443",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 12,31쪽 / 인쇄 5,24쪽",
+          "supports": "천군·5월 제사=삼한, 영고=부여; 소도·민며느리제·신라 위화부/영객부·고구려 관등·동예 책화"
+        }
+      ],
+      "corrections": [
+        "삼한 천군·5월 제사와 부여 영고를 실제 지문에서 식별; 각 보기의 (가)/(나) 및 책화의 동예 귀속 확인"
+      ],
+      "blockers": []
+    },
+    "04": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "819fd342b1808cd631a658a75fdfcd5300aa206cf4a29f13e5d5f0509e34075e",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 20쪽 / 인쇄 13쪽",
+          "supports": "성왕의 관산성 전사·달기 파견 도살성 점령; 문주 웅진·무령 백가·무왕 미륵사·근초고 고흥"
+        }
+      ],
+      "corrections": [
+        "관산성·김무력·성왕 전사를 연결; 달기가 장수 이름임과 도살성이 지명임을 명시"
+      ],
+      "blockers": []
+    },
+    "05": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "550e092148e740afb88c702fae318b67cbda87d6667c19dcd345ddbe15bfe462",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 11,12,17,20,33쪽 / 인쇄 4,5,10,13,26쪽",
+          "supports": "고구려 쌍영총·순도·태학/경당; 백제22담로·동예무천·고조선8조법·통일신라 누각"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "06": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "5c6b1c984e83d24045f733445b0c59c5507b72b3b433c081dba3151f33afd22c",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 12,17,20,23,31쪽 / 인쇄 5,10,13,16,24쪽",
+          "supports": "백제 부여 사비·좌관대식기·6좌평/달솔; 고구려 서옥제/진대법·신라시장/골품"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "07": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "bb1077bdfdc9ca3fac0e7f8d1cdee4863544719d392c187c88dd68d2b8530914",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 17,20,23,31쪽 / 인쇄 10,13,16,24쪽",
+          "supports": "대야성642·김춘추의 고구려교섭, 황산벌660; 대가야562·우산국512·살수612·광개토400 선후"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "08": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "c018163ca05b91b617b7364fa118340d358faea8ad25669cb90dba808e0bbda2",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 23,24,31쪽 / 인쇄 16,17,24쪽",
+          "supports": "신라하대 왕위쟁탈·김헌창; 비담/염종·김흠돌·원광 걸사표·이차돈 각각 왕대 구별"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "09": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "4ccd785cb050d6527efebb8356ec861277a3298bd48a4be278971c856bf66941",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 17,33,36,53,54쪽 / 인쇄 10,26,29,46,47쪽",
+          "supports": "발해 연호·황후 칭호·이불병좌상, 고구려 연가7년명·고려 철불/소조불·통일신라 금제불 구분"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0057953",
+          "supports": "② 하남철조석가여래좌상의 고려10세기·철제좌상 확인"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0024303",
+          "supports": "④ 영주부석사 소조여래좌상의 고려·흙으로 만든 소조불 확인"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0002833",
+          "supports": "⑤ 구황동금제여래좌상: 본문 두광·신광·옷주름·대좌 설명 및 국립중앙박물관 사진을 내려받아 원본과 직접 시각대조. 좌상 명칭 유지; 입상으로 변경하지 않음"
+        }
+      ],
+      "corrections": [
+        "기존 다섯 불상 귀속을 유지하면서 재료·형태·연호 의미 보강",
+        "⑤를 입상으로 의심했으나 공식 좌상 사진을 직접 대조하여 기존 명칭이 정확함을 재확인; 추정 변경 없음"
+      ],
+      "blockers": []
+    },
+    "10": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "0da40fd3b4e68f72c23920121ece5d6f31d9341df051e4a981945cb77e6b5f57",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 31,37,41쪽 / 인쇄 24,30,34쪽",
+          "supports": "공산927·고창930 및 신숭겸/김선평/권행; 대공난·안승·태봉·천문령 사건 선후"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "11": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "c049d311cb84350bd2c399c68f66965502e9cbfd4766defa444740bca6c309c5",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 41,42,43쪽 / 인쇄 34,35,36쪽",
+          "supports": "광종 쌍기 과거·노비안검법; 정종 광군사·성종12목·예종양현고·태조정계/계백료서"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "12": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "15b3a3e1c311e2a1b2a3b450d7e332dd2a4877395dfe9b6bc02f478c735bad84",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 12,31,43,52,73쪽 / 인쇄 5,24,36,45,66쪽",
+          "supports": "고려 사원수공업·해동통보·벽란도; 덕대·상품작물 조선후기, 덩이쇠 변한, 청해진 장보고"
+        }
+      ],
+      "corrections": [
+        "덩이쇠·낙랑 교역의 직접 귀속을 변한으로 명확히 하고 가야로의 계승과 분리"
+      ],
+      "blockers": []
+    },
+    "13": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "0184f2f1eedf14e80817ab65be61dec67fb9905d64dd8f4c64cd0fd9425c2deb",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 42,43,44,45,50쪽 / 인쇄 35,36,37,38,43쪽",
+          "supports": "숙종 여진전·별무반, 예종 동북9성; 몽골 강화천도/송문주·거란양규·왜구박위"
+        }
+      ],
+      "corrections": [
+        "별무반의 편성을 숙종, 동북9성 축조를 예종으로 구분; 교재PDF43 삼수병 오기 미반영"
+      ],
+      "blockers": []
+    },
+    "14": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "22dab8278c768b5c7c5920d76a5332b6cbd9d21dba0def93e7bf75c7b8088137",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 21,24,31,33,36,53,54쪽 / 인쇄 14,17,24,26,29,46,47쪽",
+          "supports": "직지=고려; 정림사지 백제·영광탑 발해·월정사 고려·진전사지 통일신라·분황사 신라, 석탑/전탑/모전석탑 재료"
+        }
+      ],
+      "corrections": [
+        "원본 ①정림사지·④진전사지로 확인하여 OCR의 다보탑/정림사지 오인 미반영",
+        "기존 해설의 탑명은 유지하고 전탑/모전석탑 재료와 팔각구층 형태를 설명; 다섯나라라는 과도한 표현 제거"
+      ],
+      "blockers": []
+    },
+    "15": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "dd033d1f837214f41cdf35fa7baa1a6fa89a763ece74f7b2bb0de9c6d66a2ca9",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 23,31,37,51,52,75,76,78쪽 / 인쇄 16,24,30,44,45,68,69,71쪽",
+          "supports": "고려5도양계·주현속현·향부곡소·제위보; 발해주자감·조선구황촬요/세책가·신라동시전"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "16": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "33b30b40ee818f3f191ba3e08a9008c17e6b1fe313d37bf0c0d8c4a4446a3b6a",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 44,45,46,50쪽 / 인쇄 37,38,39,43쪽",
+          "supports": "공민왕 기철처단·쌍성총관부; 원종삼별초·우왕최영홍산·충렬왕김방경일본원정·최충헌때만적"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "17": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "ee9eb238d11bc7eed8f1445a0823c742a907510ba2ce998f6f8d48e6ce40db27",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 53,54쪽 / 인쇄 46,47쪽",
+          "supports": "의천 대각국사·천태종·교장·교관겸수; 일연삼국유사·요세백련·혜심선문염송/유불일치·균여보현십원가"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "18": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "712906a2d5138fe994d622fb5748d68e35c7a5da37c9cce7478ca7ef0daf817d",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 42,43,44,45,54쪽 / 인쇄 35,36,37,38,47쪽",
+          "supports": "이자겸/묘청/정중부 식별; 최승로시무28조·최무선화통도감·강조목종폐위·묘청칭제건원·최충헌교정별감"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "19": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "8b36e4cecb85fe7451cb14871a7f93fba83b55a6c57f084cf437cbeca69a80be",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 59,60,61,64,65쪽 / 인쇄 52,53,54,57,58쪽",
+          "supports": "단종 재위와 세조 때 복위운동 구분; 이징옥·이괄·경신환국·기묘사화·기축옥사 왕대"
+        }
+      ],
+      "corrections": [
+        "단종 복위운동의 발생시기와 문제에서 묻는 단종 재위시기를 분리"
+      ],
+      "blockers": []
+    },
+    "20": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "9c0196053410a770cccb4d02f0354f2a48c3900532f1f10263c8db06f75d6ea6",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 71,74쪽 / 인쇄 64,67쪽",
+          "supports": "의금부 금오/조옥·국왕직속사법, 한성부수도행정·관상감천문지리·규장각검서관·홍문관경연"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "21": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "83eca48dab0bd90ba2900021d7954f7248867983ddd39ce04deaee77023dea0d",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 59,64,74,76,77,78쪽 / 인쇄 52,57,67,69,70,71쪽",
+          "supports": "신숙주해동제국기와 세종문화; 주세붕서원·송시열기축봉사·이이해주향약·김장생예학"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/mobile/ts/view.do?levelId=ts_b33",
+          "supports": "훈민정음 해례편을 신숙주 등8학자가 편찬했다는 국사편찬위원회 설명"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0033134",
+          "supports": "신숙주의 해동제국기·사대교린 활동"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0000127",
+          "supports": "가례집람의 저자 김장생 및 예학 연구의 성격"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "22": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "f70d9cc30e1102bbeb28d573c893d19118350a618441f5ebd1a7388ade3decc5",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 59,64쪽 / 인쇄 52,57쪽",
+          "supports": "임진왜란 진주김시민·행주권율; 인조 정묘정봉수/병자김준룡·세종김종서6진/이종무대마도"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "23": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "1e381fd854c7d6ad80a1e5cfdb4a0ae171bc7a85ea50c2588c21b3993262c163",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 64,65,67쪽 / 인쇄 57,58,60쪽",
+          "supports": "효종 나선정벌, 인조반정~경신환국; 이후 숙종/영조/정조/순조/고종 연표구간 검증"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_30&levelId=kc_i301900",
+          "supports": "한거원·조총수100명·영고탑 사료와1654년 제1차나선정벌 일치"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0011383",
+          "supports": "1654변급·1658신류 및 청과 연합한 러시아 원정 구별"
+        }
+      ],
+      "corrections": [
+        "조총수100명·한거원 사료를1654 제1차나선정벌로 특정; 북벌의 청과 나선정벌의 러시아를 구별"
+      ],
+      "blockers": []
+    },
+    "24": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "cdc8537bb82fe62a5725df813efcef543676c174e68544fa8fb66b271d3ccd53",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 64,65,67쪽 / 인쇄 57,58,60쪽",
+          "supports": "정조사도세자현륭원·초계문신, 경종왕세제·숙종백두산·선조훈련도감·영조탕평비"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "25": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "58a4984a5c64574da80edf324ebcb67e15e94eb665a8ab05816979a02682af1d",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 43,52,73쪽 / 인쇄 36,45,66쪽",
+          "supports": "상평통보·전황 조선후기, 활구은병 고려숙종; 공인·송상만상·보부상·설점수세제 의미"
+        },
+        {
+          "type": "web",
+          "reference": "https://sillok.history.go.kr/id/kva_11712001_006",
+          "supports": "정조17년12월1일 정동교의 십전통보 주조 건의; 자료의 건의/논의와 실제발행을 혼동하지 않음"
+        },
+        {
+          "type": "web",
+          "reference": "https://dh.aks.ac.kr/sillokwiki/index.php/십전통보(十錢通寶)",
+          "supports": "1793년 주조 논의와 실제 주조 여부를 구별하는 해설"
+        }
+      ],
+      "corrections": [
+        "십전통보 건의 사료의 정조대 근거 확인; 실제발행으로 확대하지 않음",
+        "고려 숙종의 은병과 조선 숙종 이후 상평통보 유통을 구별"
+      ],
+      "blockers": []
+    },
+    "26": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "9c478021a613b2d755169352ef87f89c5d9b7a48c8d640b2e9a610c933661e75",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 79쪽 / 인쇄 72쪽",
+          "supports": "김정희추사체/세한도·신윤복월하정인·김득신파적도; ②③은 별도 박물관/국가유산 자료와 사진 확인"
+        },
+        {
+          "type": "web",
+          "reference": "https://www.museum.go.kr/MUSEUM/contents/M0502000000.do?schM=view&searchId=search&relicId=8338",
+          "supports": "② 전기필매화초옥도·동원3318. 공식사진을 내려받아 눈덮인산·흰매화·초가·녹색/붉은옷 인물 구도 직접 대조"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0073045",
+          "supports": "③ 김홍도필산수인물도(애내일성), 부산박물관 소장. 절벽·폭포·배와 인물·오른쪽시문·단구관서 확인"
+        },
+        {
+          "type": "web",
+          "reference": "https://www.heritage.go.kr/heri/cul/culSelectDetail.do?ccbaCpno=2112101090000",
+          "supports": "③ 김홍도필산수인물도 명칭/부산소장 기록은 검색 색인으로 확인. 직접페이지는403이므로 본문근거는 민족문화대백과와 아래 공개사진을 사용"
+        },
+        {
+          "type": "web",
+          "reference": "https://commons.wikimedia.org/wiki/File:김홍도필_산수인물도.jpg",
+          "supports": "문화재청 저작·공공누리 사진 재게시의 출처 명시 확인. 원사진을 내려받아 시험③과 시각대조 완료"
+        }
+      ],
+      "corrections": [
+        "작가 미확정이던②를 국립중앙박물관 사진으로 전기 매화초옥도로 확인",
+        "③을 국가유산 사진과 민족문화대백과로 김홍도 산수인물도(애내일성)로 확인",
+        "나머지①신윤복·④김득신·⑤김정희를 교재 회화표 및 실제구도로 대조"
+      ],
+      "blockers": []
+    },
+    "27": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "177a17b48510f11c6fc4d196105cc0f4e1b41a5b718c5a01cd18323c85e8e565",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 44,45,46,53,54,75쪽 / 인쇄 37,38,39,46,47,68쪽",
+          "supports": "조선후기 향전·서얼통청; 고려 최충9재·원간섭변발호복·명학소봉기·향약구급방"
+        },
+        {
+          "type": "web",
+          "reference": "https://waks.aks.ac.kr/rsh/dir/rview.aspx?dataID=AKS-2013-CKD-1240001_DIC@00014953&rshID=AKS-2013-CKD-1240001",
+          "supports": "구향·신향의 뜻을 문장 안에서 직접 대응"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리",
+        "독립 교차 검수 반영: 구향·신향의 뜻을 문장 안에서 직접 대응"
+      ],
+      "blockers": []
+    },
+    "28": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "96acd5e908ea5277c59ad2c1697e2b129c6cb43b1c725b95722668888c871fa4",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 88,89,90쪽 / 인쇄 81,82,83쪽",
+          "supports": "강화도조약 해안측량권, 조불포교·조미최혜국·제물포공사관병력·조청내지통상 구별"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "29": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "b124a213ed65d328c018ae34a435c7cf968a1942cb35e5dc0b61541f2021a1f9",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 88,89,90,94쪽 / 인쇄 81,82,83,87쪽",
+          "supports": "갑신정변우정총국·한성/톈진조약; 병인양요·신미양요·임오군란·제2차갑오 홍범14조"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "30": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "34e0f5b9088dd0bd681045c300e55f7316bf7940cbd584a6af0eaf90eb8e54b6",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 97,102쪽 / 인쇄 90,95쪽",
+          "supports": "원산학사관민1883·동문학통역·이화1886선교사여성·오산이승훈·한성사범1895교원"
+        }
+      ],
+      "corrections": [
+        "보기의 틀린 설립주체·교육목적을 명시적으로 바로잡음",
+        "독립 교차 검수 반영: 독립 검수: 원문은 지도 아닌 모둠 과제 게시판이므로 자료 형식 교정"
+      ],
+      "blockers": []
+    },
+    "31": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "fe196dbba11b652c10da40128574a6d206a10811d2e1577191d3a9aade7e52cf",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 67,88,89,94,96,97쪽 / 인쇄 60,81,82,87,89,90쪽",
+          "supports": "광무9년백동화=메가타화폐정리; 삼국간섭·삼정이정청·황국중앙총상회·조미조약 목적"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0064926",
+          "supports": "교환 방식과 상공업자 자금난의 인과를 보강"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리",
+        "독립 교차 검수 반영: 교환 방식과 상공업자 자금난의 인과를 보강"
+      ],
+      "blockers": []
+    },
+    "32": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "52640bc27b088bd7a6d4a8ea3d3b72c14ef9a775195b53eebc0c2fe46d0f3204",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 94쪽 / 인쇄 87쪽",
+          "supports": "동학 고부/황토현/전주/교정청/경복궁점령/청일전쟁/논산2차봉기 선후 및 삼례교조신원"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "33": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "a7513356d62173596bb1501f7c6f0e11c9cbf023407a6eb4bb4fc11a9f1e2341",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 90,96,97,114쪽 / 인쇄 83,89,90,107쪽",
+          "supports": "1907군대해산·정미의병·13도창의군서울진공; 미쓰야1925·거문도1885·데라우치1910·기유1909"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "34": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "363ee49f6fe53d8dc3b5e9640f8bf0c431a9eb9bbfb30d00007b715028f696fa",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 97,102,108,120쪽 / 인쇄 90,95,101,113쪽",
+          "supports": "대한매일신보베델양기탁·국채보상; 동아브나로드·천도교만세보·한성주보광고·독립신문한글"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0014992",
+          "supports": "영국인 발행인과 항일 보도의 연결 이유 보강"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리",
+        "독립 교차 검수 반영: 영국인 발행인과 항일 보도의 연결 이유 보강"
+      ],
+      "blockers": []
+    },
+    "35": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "3aa5862e240a6d86c8219119a39bb6b3e71e2e4f7240ff66a9f171e85e5c9cd1",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 97,107,113,114쪽 / 인쇄 90,100,106,107쪽",
+          "supports": "안창호공립/흥사/국민회·임정내무; 박상진대한광복회·박은식한국통사·신채호선언·헤이그3특사"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "36": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "bdfdc3b059abbd392915ed109a82faf898e9ba612dc5ade146b1d990e91d79c5",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 96,106,107,108,109쪽 / 인쇄 89,99,100,101,102쪽",
+          "supports": "1910토지조사헌병·1925치안유지·1895친위진위·1924여성동우·1941예방구금"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "37": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "facbfb27652d13d33154f3ee9496c64b27e99b7d43f7e177996e90264dfd9ef9",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 94,96,106,108,109쪽 / 인쇄 87,89,99,101,102쪽",
+          "supports": "암태도1923~24·농민총동맹1927; 광무지계·회사령1910·농광1904·공진회1915"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "38": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "638ae50068c4009245826ffd6137755eb9662bbbd454d2d79617b049d206b896",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 94,97,106,107쪽 / 인쇄 87,90,99,100쪽",
+          "supports": "6·10순종국장1926·신간1927; 국채1907·동학1894·제암1919·광주1929"
+        }
+      ],
+      "corrections": [
+        "⑤의 실제 단서인 한일 학생 충돌을 광주학생항일운동의 발단으로 설명"
+      ],
+      "blockers": []
+    },
+    "39": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "5f1efd05f93fab32cc8a1bbe76f0290a0e843b8dbeacd11baf976d0cc83ecac2",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 94,96,97,106쪽 / 인쇄 87,89,90,99쪽",
+          "supports": "백정차별·형평1923진주·조선형평사 목적; 보안회/군국기무처/전주화약/대한자강회 구별"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "40": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "84242089f58f7ae5894714d6b9a1eee977decc9b8f9c8ee8bcf0da98d7c2cdbc",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 97,106,107,108쪽 / 인쇄 90,99,100,101쪽",
+          "supports": "국가총동원1938·황국서사; 원산파업1929·105인1911·근우1927·태화관1919"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "41": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "d88dea42aca097cef96a88d7b31a56b35d8aee6e9b8aef84109b5303e1074498",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 97,120,121쪽 / 인쇄 90,113,114쪽",
+          "supports": "조선어연구회가갸날1926→학회1931; 진단학회학보·신민회태극·국문연구소주시경지석영·독립협회독립문"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "42": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "87698eb6f64eba5dddf004ed6d511d4d4e26108fe3ccad3caafe0d3b0dfbcc0e",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 114,115,117,118쪽 / 인쇄 107,108,110,111쪽",
+          "supports": "조선의용대김원봉우한·일부광복합류; 청산리·동북항일연군·지청천대전자령·양세봉조선혁명군"
+        }
+      ],
+      "corrections": [
+        "조선의용대 일부의 광복군 합류와 화북이동 분리; 한국독립군/조선혁명군 구분"
+      ],
+      "blockers": []
+    },
+    "43": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "7bd159c45470b3a9fc68347a6b7227c4b8341fbfb918e714921a0859a873bdf0",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 122쪽 / 인쇄 115쪽",
+          "supports": "일제도시생활 화학조미료·문화주택·단성사임자없는나룻배·모던걸보이; TV1956광복이후"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "44": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "5b5f8626fdafc3a28ec866a5c700eec33ffd53c866b76a082a90534e92fb9213",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 125,126,127,128,129,130쪽 / 인쇄 118,119,120,121,122,123쪽",
+          "supports": "5·10선거김구김규식불참,6·3시위1964·발췌1952·신한민주1985·유신통일주체국민회의"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "45": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "8cfc22fb55084d96b3919ae402b7168544d2ccb9318ddd795cd2e5634e357f48",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 125,126,127쪽 / 인쇄 118,119,120쪽",
+          "supports": "6·25 전쟁중 흥남철수, 애치슨1950.1/여순1948/모스크바1945 전쟁이전·한미조약1953.10정전이후"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "46": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "e642e91823815274c7a4468eb2b94146b57c2e2c5c81508661c4400c9cbf2e97",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 127,128,129,130쪽 / 인쇄 120,121,122,123쪽",
+          "supports": "4·19→장면; 긴급조치유신·계엄확대5·18·김영삼제명부마·직선6월항쟁"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "47": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "cf22526562af97640c1289b750ec0bf9378e06f4dcc6826751a803bee31a779b",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 128,129,132쪽 / 인쇄 121,122,125쪽",
+          "supports": "박정희경부1970·포항/마산/베트남/2차계획; 김대중국민기초생활보장법"
+        }
+      ],
+      "corrections": [
+        "국민기초생활보장법 제정을 김대중정부로 명확히 귀속"
+      ],
+      "blockers": []
+    },
+    "48": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "96e491d39ce75ae4af9a441cd3d0a417fdc7f6cefcb58469bbaf721b22f0451b",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 126,127,128,129,130쪽 / 인쇄 119,120,121,122,123쪽",
+          "supports": "4·13호헌의 현행헌법1980제8차 간선7년단임; 사사오입1954·3선1969·유신/3·1구국·1960양원"
+        }
+      ],
+      "corrections": [
+        "현행헌법을 오늘의 헌법이 아닌1980년 제8차헌법으로 해석"
+      ],
+      "blockers": []
+    },
+    "49": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "d5bcebb12d77991fd81e3eaf5d3e047e86c93d1686fde0c8a8009371887acce9",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 128,130,131,132,133쪽 / 인쇄 121,123,124,125,126쪽",
+          "supports": "2002김대중·햇볕·2000평양정상; 박정희7·4·노태우UN·전두환1985고향방문·문재인평창"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    },
+    "50": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "fe7534bc42e6523b3f2d86881c4d722380d19b203f90e57e5af90a81d0644603",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt, PDF 44,45,64,114,127,129,139,140쪽 / 인쇄 37,38,57,107,120,122,132,133쪽",
+          "supports": "부산 동래/초량/백산·박재혁; 충주신립·대구2·28·청도운문김사미·서울YH"
+        }
+      ],
+      "corrections": [
+        "원본 지문 단서의 의미와 정답 연결을 보강하고, 다섯 보기 모두 시대·왕·인물·사건 및 구분 이유를 한 줄 해설로 정리"
+      ],
+      "blockers": []
+    }
+  }
+}

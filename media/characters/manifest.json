@@ -1,0 +1,151 @@
+{
+  "generated_on": "2026-10-08",
+  "provenance": "AI-generated fan depictions of Digimon characters using built-in image_gen; not official or officially licensed artwork.",
+  "format_notice": "PNG sprite sheets plus CSS animation. No GIF file is claimed or included.",
+  "files": [
+    {
+      "file": "agumon-idle-sprite.png",
+      "format": "PNG",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "bytes": 992644,
+      "sha256": "a7e7e460ea10be3cfce2cba2c76c5082a75f83358932b0053909fbf9cd615f60",
+      "fully_transparent_percent": 66.27,
+      "frame_count": 4,
+      "source_viewport_width": 627,
+      "source_viewport_height": 627,
+      "frame_rects_xywh": [
+        [
+          0,
+          0,
+          627,
+          627
+        ],
+        [
+          627,
+          0,
+          627,
+          627
+        ],
+        [
+          0,
+          627,
+          627,
+          627
+        ],
+        [
+          627,
+          627,
+          627,
+          627
+        ]
+      ],
+      "loop_ms": 4000,
+      "frame_rgba_sha256": [
+        "8d6a041a09b929a95a4411a415d434d71d771b058eeb25ac8a34eea330f81fcb",
+        "b4c5a08e6b841f2e4aa1dc201e584845b7e1f99a605fea365d996084d9e98fe6",
+        "460f121dbf0deea6154f6ddd1473603f9d49c2337f9c58337fc0d2753c3ce87e",
+        "d3c5ed4f6f3d4703f0615284ad6ee5d4f9108c8b8a39a3337774ccae3dfb443c"
+      ]
+    },
+    {
+      "file": "patamon-idle-sprite.png",
+      "format": "PNG",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "bytes": 885441,
+      "sha256": "70e825f9d67287361145e8c28b350ba83f01a77036142d83eb6fe60f9852cda7",
+      "fully_transparent_percent": 69.68,
+      "frame_count": 4,
+      "source_viewport_width": 627,
+      "source_viewport_height": 627,
+      "frame_rects_xywh": [
+        [
+          0,
+          0,
+          627,
+          627
+        ],
+        [
+          627,
+          0,
+          627,
+          627
+        ],
+        [
+          0,
+          585,
+          627,
+          627
+        ],
+        [
+          627,
+          585,
+          627,
+          627
+        ]
+      ],
+      "loop_ms": 3600,
+      "frame_rgba_sha256": [
+        "db352cc847f3960b63f8fec6db4734929d5f04bf9c7326301df6150f12141fe8",
+        "b27b2d0c42eb1679f3f1535696c39e1d94fa580aeb69f5014541bac479502652",
+        "578da921e9edb1ff9b6c42220ea46318be09145d1241c29f7f7ec9c5563bb292",
+        "3fb58785d19fe0876c7888913592c20a2b21ccbdc28e83499e75d957d970176c"
+      ]
+    },
+    {
+      "file": "koromon.png",
+      "format": "PNG",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "bytes": 702485,
+      "sha256": "69ddd568e97031e678d3147959f5392600e41c17ea89e82aafd68eb2a359f523",
+      "fully_transparent_percent": 69.16,
+      "frame_count": 1
+    },
+    {
+      "file": "greymon.png",
+      "format": "PNG",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "bytes": 1130375,
+      "sha256": "e4003ae595080850db7198d4ddb32562278bdace821b84bb30ca1d9981b5bb7d",
+      "fully_transparent_percent": 60.08,
+      "frame_count": 1
+    },
+    {
+      "file": "metalgreymon.png",
+      "format": "PNG",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "bytes": 1732868,
+      "sha256": "9a26714af6d600e0a9fbb3a5332bb0ddf790bec0abc0bab6764577495ae4c02c",
+      "fully_transparent_percent": 45.9,
+      "frame_count": 1
+    },
+    {
+      "file": "wargreymon.png",
+      "format": "PNG",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "bytes": 1698287,
+      "sha256": "95a6df60e6860f4f1ee568ad69c5eaaea53b7dc1ea206f91d3f7603bc127a68e",
+      "fully_transparent_percent": 46.57,
+      "frame_count": 1
+    }
+  ],
+  "validation": {
+    "png_decode": "passed all six",
+    "alpha_channel": "passed all six",
+    "visual_artwork_inspection": "passed all six via generated-image output",
+    "four_distinct_frames": "passed both atlases",
+    "css_browser_render": "not verified: Chromium startup blocked by environment socket restriction, including escalated launch",
+    "requested_phrase_text": "Not part of image files; render parent-supplied three phrases in accessible HTML."
+  }
+}

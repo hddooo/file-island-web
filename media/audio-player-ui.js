@@ -1,0 +1,31 @@
+/* Visual controls over one existing audio element. No playlist, cache or grading ownership. */
+(function(root){'use strict';
+function mount(audio,o){var doc=audio.ownerDocument,host=o.host,dead=false,events=[],observers=[];
+ function node(tag,cls,text,parent){var n=doc.createElement(tag);n.className=cls;if(text!=null)n.textContent=text;(parent||stage).appendChild(n);return n;}
+ var stage=doc.createElement('section');stage.className='ha-player'+(o.compact?' is-compact':'');stage.setAttribute('aria-label',o.compact?'듣기 음원 플레이어':'현재 음원 플레이어');if(o.before&&o.before.parentNode===host)host.insertBefore(stage,o.before);else host.appendChild(stage);
+ if(o.title){o.title.classList.add('ha-title');stage.appendChild(o.title);}else node('p','ha-title',o.label||'LC 듣기');
+ var timeline=node('div','ha-timeline'),seek=o.seek||doc.createElement('input');seek.type='range';seek.classList.add('ha-seek');seek.min='0';seek.max='1000';seek.step='1';seek.setAttribute('aria-label','음원 재생 위치');timeline.appendChild(seek);
+ var times=node('div','ha-times',null,timeline),elapsed=node('span','ha-elapsed','0:00',times),duration=node('span','ha-duration','--:--',times),controls=node('div','ha-controls');
+ function button(kind,label){var b=doc.createElement('button');b.type='button';b.textContent=label;b.dataset.haControl=kind;b.className='ha-button ha-'+kind;return b;}
+ var loop=o.loop||button('repeat','반복 꺼짐'),prev=o.prev||button('prev','이전 음원'),play=o.play||button('play','재생'),next=o.next||button('next','다음 음원');
+ [loop,prev,play,next].forEach(function(b,i){b.classList.add('ha-button','ha-'+['repeat','prev','play','next'][i]);controls.appendChild(b);});
+ prev.setAttribute('aria-label','이전 음원');next.setAttribute('aria-label','다음 음원');if(o.lockNavigation!==false){prev.disabled=true;next.disabled=true;prev.title=next.title='시험·문제 풀이 중에는 음원을 건너뛸 수 없어요.';}
+ var speed=o.speed||doc.createElement('select');speed.classList.add('ha-speed');speed.setAttribute('aria-label','재생 속도');if(!o.speed)[.75,1,1.1,1.2,1.25,1.5,1.75,2].forEach(function(r){var option=doc.createElement('option');option.value=String(r);option.textContent=r+'×';option.selected=r===1;speed.appendChild(option);});controls.appendChild(speed);var speedButton=null;if(o.cycleSpeed){speed.classList.remove('ha-speed');speed.hidden=true;speed.setAttribute('aria-hidden','true');speedButton=button('speed-cycle','');speedButton.classList.add('ha-speed');controls.appendChild(speedButton);function syncSpeed(){var values=Array.from(speed.options).map(function(x){return Number(x.value);}),n=Number(speed.value);if(!values.includes(n)){speed.value='1';speed.dispatchEvent(new Event('change',{bubbles:true}));}speedButton.textContent=speed.value+'×';speedButton.setAttribute('aria-label','재생 속도 '+speed.value+'배 · 눌러 변경');speedButton.disabled=speed.disabled;}listen(speedButton,'click',function(){if(speed.disabled)return;var values=Array.from(speed.options).map(function(x){return x.value;}),i=values.indexOf(speed.value);speed.value=values[(i+1)%values.length];speed.dispatchEvent(new Event('change',{bubbles:true}));});listen(speed,'change',syncSpeed);var speedObserver=new root.MutationObserver(syncSpeed);speedObserver.observe(speed,{attributes:true,attributeFilter:['disabled']});observers.push(speedObserver);syncSpeed();}
+ function listen(n,type,fn){n.addEventListener(type,fn);events.push([n,type,fn]);}
+ function observe(n,fn){var ob=new root.MutationObserver(fn);ob.observe(n,{childList:true,subtree:true});observers.push(ob);}
+ function labelPlay(){var pause=/일시정지|정지/.test(play.textContent);play.dataset.playing=String(pause);play.setAttribute('aria-label',pause?'일시정지':'재생');play.title=pause?'일시정지':'재생';}
+ function labelLoop(){var text=loop.textContent||'반복 꺼짐',mode=/꺼짐/.test(text)?'off':/전체/.test(text)?'all':'one';loop.dataset.repeat=mode;loop.dataset.enabled=String(mode!=='off');loop.setAttribute('aria-pressed',String(mode!=='off'));loop.setAttribute('aria-label','반복 설정: '+text);loop.title=text;}
+ observe(play,labelPlay);observe(loop,labelLoop);labelPlay();labelLoop();
+ function bounds(){if(o.bounds)return o.bounds();var start=o.clip&&Number.isFinite(o.clip.start)?Math.max(0,o.clip.start):0,end=o.clip&&Number.isFinite(o.clip.end)?o.clip.end:audio.duration;if(Number.isFinite(audio.duration))end=Math.min(end,audio.duration);return{start:start,duration:end-start};}
+ function fmt(v){if(!Number.isFinite(v)||v<0)return '--:--';v=Math.floor(v);return Math.floor(v/60)+':'+String(v%60).padStart(2,'0');}
+ function update(){if(dead)return;var b=bounds(),known=Number.isFinite(b.duration)&&b.duration>0,p=Math.max(0,Math.min(known?b.duration:Infinity,audio.currentTime-b.start));elapsed.textContent=fmt(p);duration.textContent=fmt(b.duration);if(!o.seek){seek.disabled=!known;seek.value=known?String(Math.round(p/b.duration*1000)):'0';seek.setAttribute('aria-valuetext',fmt(p)+' / '+fmt(b.duration));}if(!o.play){play.textContent=audio.paused?'재생':'일시정지';labelPlay();}}
+ if(!o.seek)listen(seek,'input',function(){var b=bounds();if(Number.isFinite(b.duration)&&b.duration>0)audio.currentTime=b.start+b.duration*Number(seek.value)/1000;update();});
+ if(!o.play)listen(play,'click',function(){if(audio.paused){if(root.HanqLcPlayer)root.HanqLcPlayer.pause();if(root.HanqToeicAudio)root.HanqToeicAudio.stop();Promise.resolve(audio.play()).catch(function(){if(o.onError)o.onError();});}else audio.pause();});
+ if(!o.loop)listen(loop,'click',function(){audio.loop=!audio.loop;loop.textContent=audio.loop?'반복 켜짐':'반복 꺼짐';loop.setAttribute('aria-pressed',String(audio.loop));});
+ if(!o.speed)listen(speed,'change',function(){audio.playbackRate=Number(speed.value);});
+ ['loadedmetadata','durationchange','timeupdate','play','pause','ended'].forEach(function(e){listen(audio,e,update);});
+ if(o.status){o.status.classList.add('ha-status');stage.appendChild(o.status);}update();return{stage:stage,update:update,destroy:function(){dead=true;events.forEach(function(e){e[0].removeEventListener(e[1],e[2]);});observers.forEach(function(ob){ob.disconnect();});}};
+}
+root.HanqAudioPlayerUI={mount:mount};
+})(window);
+

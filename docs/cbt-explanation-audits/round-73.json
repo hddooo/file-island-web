@@ -1,0 +1,1493 @@
+{
+  "round": 73,
+  "method": "원문 이미지를 직접 열어 지문과 보기 5개를 확인하고 교재 및 공신력 자료를 대조. 정확한 핵심 해설은 보존하고 보기마다 핵심어·정확한 귀속·의미를 보강.",
+  "items": {
+    "01": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "6500748cfd4c8c7329479bf29767c89bf3753f666d46362c2d90e10e5f28cf6a",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 9쪽 / 교재 2쪽",
+          "supports": "선사시대 생활"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 10쪽 / 교재 3쪽",
+          "supports": "반달돌칼·가락바퀴·뼈바늘"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 51쪽 / 교재 44쪽",
+          "supports": "고려 소 깊이갈이"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    },
+    "02": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "58862e4cde5d4fa051c6d023d85c1f45a7721b61c62e670c133e0ad9fa2a1916",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 17쪽 / 교재 10쪽",
+          "supports": "동천왕·살수·연개소문·검모잠"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 23쪽 / 교재 16쪽",
+          "supports": "나당동맹·기벌포"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 35쪽 / 교재 28쪽",
+          "supports": "발해 무왕 등주 공격"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    },
+    "03": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "843f1769a54fa68095894dfb461aba57039c9d41ae8e6a55200e159899d08c6d",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 12쪽 / 교재 5쪽",
+          "supports": "부여 사출도"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 17쪽 / 교재 10쪽",
+          "supports": "고구려 지방관"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 20쪽 / 교재 13쪽",
+          "supports": "백제 지배층"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 26쪽 / 교재 19쪽",
+          "supports": "대가야 고령·진흥왕 복속"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 31쪽 / 교재 24쪽",
+          "supports": "통일신라 중앙관제"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    },
+    "04": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "a2c0fb0740a5c1503bbafa2b8ad4bebeac1a62cc58326cd035af9b4c8a12bc3f",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 11쪽 / 교재 4쪽",
+          "supports": "고조선8조"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 12쪽 / 교재 5쪽",
+          "supports": "옥저·삼한·부여·고구려"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    },
+    "05": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "c5113f67d6c1ea31efdcc8014b223d099886c98db36ec17c6a915a9c087f74c2",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 20쪽 / 교재 13쪽",
+          "supports": "백제 왕별 정책"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 21쪽 / 교재 14쪽",
+          "supports": "미륵사"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    },
+    "06": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "f7a6e98b6705c49bd5e1c937fd1c4caa7ef92025ec8fdbf1ef13b67aa0abaf3b",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 18쪽 / 교재 11쪽",
+          "supports": "광개토대왕릉비·호우명 그릇"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 21쪽 / 교재 14쪽",
+          "supports": "백제 무령왕릉"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 26쪽 / 교재 19쪽",
+          "supports": "가야 철제 갑옷"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0072976",
+          "supports": "포항 중성리 신라비의 분쟁 판결 내용과 공식 사진: 원문 ①의 비석 윤곽을 다운로드 사진과 직접 대조; 충주 고구려비로 쓴 기존 오류 수정"
+        },
+        {
+          "type": "web",
+          "reference": "https://buyeo.museum.go.kr/baekjeplatform/baekjeCrlts/view.do?crltsSn=PS0100100400700000100000&key=2105250004",
+          "supports": "국립부여박물관: 무령왕릉 석수의 철제 뿔·무덤 수호 기능"
+        },
+        {
+          "type": "web",
+          "reference": "https://www.gimhae.go.kr/07058/07079/07087.web?amode=view&cpage=2&idx=1077",
+          "supports": "가야 판갑옷의 철판 구조·방어 기능 대조. 원문 ③의 개별 출토지는 특정하지 않음"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0013076",
+          "supports": "농경문 청동기의 시대·농경 문양·의례 기능, 상단 여섯 구멍·하단 결손·고리 형태"
+        },
+        {
+          "type": "web",
+          "reference": "https://www.museum.go.kr/relic_image/PS01001001/ssu000/2019/0925104118978/ssu001794-000-90001.jpg",
+          "supports": "국립중앙박물관 농경문 청동기 공식 사진을 내려받아 원문 ④의 전체 윤곽·구멍·고리·결손부와 직접 대조"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강",
+        "① 충주 고구려비 오인을 포항 중성리 신라비로 정정; ②③④의 빈 이름 해설을 석수·가야 갑옷·농경문 청동기의 식별 근거와 의미로 대체"
+      ],
+      "blockers": []
+    },
+    "07": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "fd07dd64fe23c4732eea0fc9868c5a2f99f4166296aed16278e8158669d43ad4",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 20쪽 / 교재 13쪽",
+          "supports": "백제 부흥"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 24쪽 / 교재 17쪽",
+          "supports": "거칠부·황룡사"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 31쪽 / 교재 24쪽",
+          "supports": "신문왕·하대 김헌창"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    },
+    "08": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "28b2dd51875d287771437f8452f09788445f00895f513dd27b45fb9142594161",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 20쪽 / 교재 13쪽",
+          "supports": "백제6좌평"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 35쪽 / 교재 28쪽",
+          "supports": "발해관제·연호·교역"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 36쪽 / 교재 29쪽",
+          "supports": "영광탑·이불병좌상"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    },
+    "09": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "0b5881e5e424329319b42a68487c582c38e14c0c3670a7dae3765acd02818ecd",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 17쪽 / 교재 10쪽",
+          "supports": "태학·경당"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 20쪽 / 교재 13쪽",
+          "supports": "정사암"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 23쪽 / 교재 16쪽",
+          "supports": "화랑·골품"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 51쪽 / 교재 44쪽",
+          "supports": "도병마사"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 72쪽 / 교재 65쪽",
+          "supports": "활인서"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    },
+    "10": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "ac62d02d362693dbecef8d98e153d418562de2b780a3bea3db69265506855e15",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 31쪽 / 교재 24쪽",
+          "supports": "경순왕"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 32쪽 / 교재 25쪽",
+          "supports": "궁예·견훤"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 34쪽 / 교재 27쪽",
+          "supports": "견훤 오월"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 42쪽 / 교재 35쪽",
+          "supports": "성종12목"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 46쪽 / 교재 39쪽",
+          "supports": "정치도감"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 시대·인물·사건 및 의미와 연결하여 설명 보강"
+      ],
+      "blockers": []
+    },
+    "11": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "aa4634a9f5ebc3ce2f0aadefef634580cd29c91fc5f39d664bd6e5b78884257c",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 32쪽 / 교재 25쪽",
+          "supports": "고창전투"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 42쪽 / 교재 35쪽",
+          "supports": "태조·광종"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 43쪽 / 교재 36쪽",
+          "supports": "문종·숙종·예종"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 시대·인물·사건 및 의미와 연결하여 설명 보강"
+      ],
+      "blockers": []
+    },
+    "12": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "f794de1dc0beeae97fae530dca707328a1965794edf42a1bb6752d0b986db8b9",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 23쪽 / 교재 16쪽",
+          "supports": "동시전"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 51쪽 / 교재 44쪽",
+          "supports": "고려 삼사·안찰사·벽란도"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 73쪽 / 교재 66쪽",
+          "supports": "상품작물·덕대"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 76쪽 / 교재 69쪽",
+          "supports": "농사직설"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 시대·인물·사건 및 의미와 연결하여 설명 보강"
+      ],
+      "blockers": []
+    },
+    "13": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "528d46ca90909e36a9b542feefe2056500dfb07c0bb4a241644c38d79a372b8e",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 42쪽 / 교재 35쪽",
+          "supports": "광종"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 43쪽 / 교재 36쪽",
+          "supports": "예종·인종"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 44쪽 / 교재 37쪽",
+          "supports": "최충헌"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 46쪽 / 교재 39쪽",
+          "supports": "성균관 개칭"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0006422",
+          "supports": "국자감: 1298년 충선왕 성균감, 1308년 충선왕 성균관 개편"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 시대·인물·사건 및 의미와 연결하여 설명 보강",
+        "성균관 개칭을 충렬왕으로 적은 오류를 충선왕(1308)으로 수정; 1298년 성균감과도 구별"
+      ],
+      "blockers": []
+    },
+    "14": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "39bbfbc18806817731c09237845d73667c08c7ed42dc73f834abb5619c2bb105",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 23쪽 / 교재 16쪽",
+          "supports": "당 안동도호부"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 31쪽 / 교재 24쪽",
+          "supports": "호족"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 44쪽 / 교재 37쪽",
+          "supports": "망이망소이"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 47쪽 / 교재 40쪽",
+          "supports": "과전법"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 73쪽 / 교재 66쪽",
+          "supports": "서얼 통청"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 시대·인물·사건 및 의미와 연결하여 설명 보강"
+      ],
+      "blockers": []
+    },
+    "15": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "230e692cb2092f245f11df568af030bee4af21b77bca79092ded25a69bc957bb",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 42쪽 / 교재 35쪽",
+          "supports": "광군"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 43쪽 / 교재 36쪽",
+          "supports": "별무반"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 44쪽 / 교재 37쪽",
+          "supports": "삼별초"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 46쪽 / 교재 39쪽",
+          "supports": "일본 원정"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 47쪽 / 교재 40쪽",
+          "supports": "홍산"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 시대·인물·사건 및 의미와 연결하여 설명 보강",
+        "교재 PDF43의 별무반=삼수병 오기를 채택하지 않고 신기군·신보군·항마군으로 구분"
+      ],
+      "blockers": []
+    },
+    "16": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "8583e61b3e643b6e5846a199a93349a00a391ba526296aa686d74aedae57a96d",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 53쪽 / 교재 46쪽",
+          "supports": "고려 역사서"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 78쪽 / 교재 71쪽",
+          "supports": "유득공 발해고"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 시대·인물·사건 및 의미와 연결하여 설명 보강"
+      ],
+      "blockers": []
+    },
+    "17": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "db2ad0341250a8b201401c06df1d2638adf8b7a19fab7d1cf236cc949abed161",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 43쪽 / 교재 36쪽",
+          "supports": "최충"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 44쪽 / 교재 37쪽",
+          "supports": "만적"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 46쪽 / 교재 39쪽",
+          "supports": "공민왕·신돈"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 53쪽 / 교재 46쪽",
+          "supports": "의천·동명왕편"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 시대·인물·사건 및 의미와 연결하여 설명 보강"
+      ],
+      "blockers": []
+    },
+    "18": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "84ae89e5015e07e632bc76a3bf62d1900dacca9c73da46d933d113d2b70de314",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 42쪽 / 교재 35쪽",
+          "supports": "광군"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 44쪽 / 교재 37쪽",
+          "supports": "대장도감"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 47쪽 / 교재 40쪽",
+          "supports": "진포·박위"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 64쪽 / 교재 57쪽",
+          "supports": "효종북벌"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 72쪽 / 교재 65쪽",
+          "supports": "여진무역소"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 시대·인물·사건 및 의미와 연결하여 설명 보강"
+      ],
+      "blockers": []
+    },
+    "19": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "fa1c38ed5d0bfb11b9e2b99658ee0ac18667b4fdbfac623733e23f16215a1940",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 53쪽 / 교재 46쪽",
+          "supports": "직지"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 76쪽 / 교재 69쪽",
+          "supports": "실록·의궤·동의보감"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0051818",
+          "supports": "조보는 승정원에서 발행한 관보. 교재 PDF76의 승정원일기=관보 표기를 채택하지 않음"
+        },
+        {
+          "type": "web",
+          "reference": "https://kyudb.snu.ac.kr/series/main.do?item_cd=ILS",
+          "supports": "일성록은 국왕의 동정과 국정을 기록한 일지"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0047238",
+          "supports": "정조의 개인 일기에서 규장각이 편찬하는 국정 기록으로 발전"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 시대·인물·사건 및 의미와 연결하여 설명 보강"
+      ],
+      "blockers": []
+    },
+    "20": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "74729ed78bf286f8f5da5b887d9aaed4f583fafd92329a51051ff3d59c269299",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 59쪽 / 교재 52쪽",
+          "supports": "계유정난"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 76쪽 / 교재 69쪽",
+          "supports": "정도전"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 77쪽 / 교재 70쪽",
+          "supports": "주세붕·이황"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_30&levelId=kc_r300861",
+          "supports": "신숙주의 일본 사행 경험과 일본·류큐 등을 정리한 해동제국기"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 시대·인물·사건 및 의미와 연결하여 설명 보강"
+      ],
+      "blockers": []
+    },
+    "21": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "a9c60a47618a3de5024e272dc281b94626ce7553291cc6f5445b6d9ab0bd3de4",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 59쪽 / 교재 52쪽",
+          "supports": "세종·세조"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 65쪽 / 교재 58쪽",
+          "supports": "숙종금위영"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 76쪽 / 교재 69쪽",
+          "supports": "역법·음악·문물서"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 시대·인물·사건 및 의미와 연결하여 설명 보강"
+      ],
+      "blockers": []
+    },
+    "22": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "ea10df30eb7daf07405e723a7ac963fa1e7e647712314465034976b47521b10a",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 46쪽 / 교재 39쪽",
+          "supports": "결혼도감"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 64쪽 / 교재 57쪽",
+          "supports": "나선정벌"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 65쪽 / 교재 58쪽",
+          "supports": "백두산정계비"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 72쪽 / 교재 65쪽",
+          "supports": "명사행·동평관"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/mobile/km/view.do?levelId=km_012_0030_0010_0020_0020",
+          "supports": "하정사=신년, 천추사=명 황태자 생일의 정기 사행"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_30&levelId=kc_n306200",
+          "supports": "숙종이 임진왜란 원군을 보낸 명 신종을 기려 대보단 건립"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 시대·인물·사건 및 의미와 연결하여 설명 보강"
+      ],
+      "blockers": []
+    },
+    "23": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "2a2bf909259f59dbc02b71c65eb9197cc489d27cada32e2920c3dd7525736bc7",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 59쪽 / 교재 52쪽",
+          "supports": "세조·연산군·중종"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 64쪽 / 교재 57쪽",
+          "supports": "광해군·인조"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 시대·인물·사건 및 의미와 연결하여 설명 보강"
+      ],
+      "blockers": []
+    },
+    "24": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "748e6d5dde4dd611aead1a70baeb6e0f899489641879ab5a5145540eb66c072f",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 64쪽 / 교재 57쪽",
+          "supports": "임진왜란·양호란"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 76쪽 / 교재 69쪽",
+          "supports": "수원화성"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 139쪽 / 교재 132쪽",
+          "supports": "광교산·탄금대·남한산성"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 140쪽 / 교재 133쪽",
+          "supports": "용골산성"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 시대·인물·사건 및 의미와 연결하여 설명 보강"
+      ],
+      "blockers": []
+    },
+    "25": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "5b1453b7ac518b035fed6bf5b85d1b4c55b759f40fcd7bf5f2e99f8f15867330",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 65쪽 / 교재 58쪽",
+          "supports": "규장각"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 71쪽 / 교재 64쪽",
+          "supports": "중앙기관·경재소"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 시대·인물·사건 및 의미와 연결하여 설명 보강"
+      ],
+      "blockers": []
+    },
+    "26": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "8f96710cb73a8b14516a15b6789d2cdfce695d54a3892d0eb10ba0b122237e76",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 79쪽 / 교재 72쪽",
+          "supports": "정선·신윤복·강세황·안견 도판"
+        },
+        {
+          "type": "web",
+          "reference": "https://www.heritage.go.kr/heri/cul/culSelectDetail.do?ccbaCpno=2112101090000",
+          "supports": "국가유산포털 김홍도 필 산수인물도: 바위 절벽 아래 선상 어부라는 주제·작가, 78회 담당자의 공식사진 직접대조 교차 확인"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 시대·인물·사건 및 의미와 연결하여 설명 보강"
+      ],
+      "blockers": []
+    },
+    "27": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "eec24745246a772ab723ca8fee3325afc8acf18f2e079a4ed53ac9c7bab18fe9",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 65쪽 / 교재 58쪽",
+          "supports": "숙종·정조·철종"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 87쪽 / 교재 80쪽",
+          "supports": "오페르트"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 시대·인물·사건 및 의미와 연결하여 설명 보강"
+      ],
+      "blockers": []
+    },
+    "28": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "848d7bc6ad8e7fcdc5963f9d035ae83686d981e90ba32ff784ab2d9338206fdb",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 59쪽 / 교재 52쪽",
+          "supports": "연분9등"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 64쪽 / 교재 57쪽",
+          "supports": "대동법"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 65쪽 / 교재 58쪽",
+          "supports": "균역법·신해통공"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 73쪽 / 교재 66쪽",
+          "supports": "광산"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 시대·인물·사건 및 의미와 연결하여 설명 보강"
+      ],
+      "blockers": []
+    },
+    "29": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "3b1b989c0c263e17f0d6d998e41bbbdaa9cbb8638eb4c964902c87180b18ff25",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 89쪽 / 교재 82쪽",
+          "supports": "통리기무아문·별기군·임오군란"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 88쪽 / 교재 81쪽",
+          "supports": "조일 통상 장정"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 90쪽 / 교재 83쪽",
+          "supports": "갑신정변·한성조약"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 93쪽 / 교재 86쪽",
+          "supports": "갑오개혁·홍범14조"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    },
+    "30": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "33fccf6784861af4c63aebd2a594b2bd71a699cecaaffbc128d837eb94419002",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 51쪽 / 교재 44쪽",
+          "supports": "광종 제위보"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 73쪽 / 교재 66쪽",
+          "supports": "후기 신분 변동·중인 시사·보부상·상평통보·소설·산대놀이"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0080114",
+          "supports": "조선 후기 세책업: 돈을 받고 책을 빌려 주던 상업적 서적 유통과 국문소설 독자 확대"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    },
+    "31": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "802408b0bf64120ac362c87b2c3e8343ec0fe7c9516a7b261848a3f54c283aa1",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 93쪽 / 교재 86쪽",
+          "supports": "동학 농민 운동 순서"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 94쪽 / 교재 87쪽",
+          "supports": "황룡촌·경복궁 점령·우금치"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강",
+        "경복궁 점령의 월 표기는 음력·양력 혼동을 피하고 1894년 및 사건 순서로 설명"
+      ],
+      "blockers": []
+    },
+    "32": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "a6614caad312075bae24cd0c0fdf20581ea81fe02f314d784c8551553020cb0b",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 88쪽 / 교재 81쪽",
+          "supports": "조청 상민 수륙 무역 장정"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 96쪽 / 교재 89쪽",
+          "supports": "보안회·화폐정리·동양척식"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 106쪽 / 교재 99쪽",
+          "supports": "회사령"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    },
+    "33": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "dcd7f40d9e27c19e3021a9e63e81d4a027d7c204bbf7decfacfb316d1cc30b20",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 96쪽 / 교재 89쪽",
+          "supports": "국채보상·대한매일신보·통감부"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 106쪽 / 교재 99쪽",
+          "supports": "형평운동·민립대학"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 107쪽 / 교재 100쪽",
+          "supports": "원산총파업"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    },
+    "34": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "13722f41b71d1a4236eb2d50240fbd1ff484f6de6bc132b3c4af460820fbde00",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 88쪽 / 교재 81쪽",
+          "supports": "조미·조불 조약"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 96쪽 / 교재 89쪽",
+          "supports": "러일전쟁·한일협약·을사늑약"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    },
+    "35": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "8710223fd9acf0b6a6a462375e981c9e7575f76225dadbd2f0770b45536046df",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 87쪽 / 교재 80쪽",
+          "supports": "척화비"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 88쪽 / 교재 81쪽",
+          "supports": "강화도 조약"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 89쪽 / 교재 82쪽",
+          "supports": "보빙사"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 90쪽 / 교재 83쪽",
+          "supports": "거문도"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 102쪽 / 교재 95쪽",
+          "supports": "전차1899·경부선1905"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    },
+    "36": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "21744e6600efe241e0a43979b61bbcb3002dd33fd1b0b8155368cf4969c1c5c6",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 113쪽 / 교재 106쪽",
+          "supports": "서간도 경학사·신흥강습소·연해주·하와이·윌로스"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 107쪽 / 교재 100쪽",
+          "supports": "2·8독립선언"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0074093",
+          "supports": "미국 윌로스 한인비행사양성소의 위치·독립전쟁을 위한 비행사 훈련"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    },
+    "37": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "d74054d0c3ddc2c97c8198201c7dd983f17c3955d521832100b8d11384efb40d",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 106쪽 / 교재 99쪽",
+          "supports": "1910년대 무단통치·토지조사사업"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 107쪽 / 교재 100쪽",
+          "supports": "산미증식·전시동원·황국신민화·1941년 예방구금"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/id/hm_125_0080",
+          "supports": "1937년 황국신민서사 제정·천황 충성 맹세 강요"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_40&levelId=kc_i401150",
+          "supports": "1938년 국가총동원법 공포·시행과 인력·물자 동원"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    },
+    "38": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "b07685c8704bc6c372327117bc3f5ffb913e18db9f268f56baa5d3311301b3db",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 96쪽 / 교재 89쪽",
+          "supports": "신민회·오산학교"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 120쪽 / 교재 113쪽",
+          "supports": "조선어학회·진단학회·천도교소년회"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/id/hm_136_0070",
+          "supports": "천도교 소년회·김기전·방정환·5월1일 어린이날 자료와 의미"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0079698",
+          "supports": "여권통문의 1898년 발표·교육권·직업권·참정권; 발표 뒤 찬양회 조직"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강",
+        "여권통문 발표 주체를 1898년 북촌 여성들로 명시하여, 발표 뒤 결성된 찬양회를 선행 주체로 오인하지 않도록 보완"
+      ],
+      "blockers": []
+    },
+    "39": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "f615134cc532414dd173084868d838d64630c734339c6d631cce64dc2755be8d",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 96쪽 / 교재 89쪽",
+          "supports": "13도창의군·서울진공"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 102쪽 / 교재 95쪽",
+          "supports": "원각사 은세계"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 106쪽 / 교재 99쪽",
+          "supports": "경성제국대학 설립1924"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 107쪽 / 교재 100쪽",
+          "supports": "신간회·근우회·남면북양"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/mobile/nh/view.do?levelId=nh_050_0030_0010_0020_0010",
+          "supports": "1930년대 혁명적 농민조합운동의 사회주의적 성격과 소작·항일 투쟁"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    },
+    "40": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "c4b9e2038b397d344cc274f59695bbe39d918a7f4d3c865a71d9a413ce9d5c53",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 106쪽 / 교재 99쪽",
+          "supports": "3·1 뒤 문화통치"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 107쪽 / 교재 100쪽",
+          "supports": "6·10·정우회·신간회·광주학생"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 120쪽 / 교재 113쪽",
+          "supports": "조선어학회 사건"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    },
+    "41": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "6586336feeca0a21b20a54c4d9a561690baf8cb254213792dd1219d827ccb78c",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 120쪽 / 교재 113쪽",
+          "supports": "일제 강점기 신여성 등 잡지·문화 활동"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 128쪽 / 교재 121쪽",
+          "supports": "박정희 정부 유신 체제"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0072209",
+          "supports": "아침이슬의 1971년 발표·1975년 금지곡 지정"
+        },
+        {
+          "type": "web",
+          "reference": "https://www.koreafilm.or.kr/kofa/publication/dvds/PB_0000000083",
+          "supports": "한국영상자료원: 병정님(1944)의 군국주의 선전과 지원병 훈련 묘사"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0002558",
+          "supports": "경성방송국의 1927년 개국·우리말/일본어 방송·사전 검열"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/front/km/view.do?levelId=km_016_0060_0030_0030",
+          "supports": "경성 미쓰코시 백화점과 일제 강점기 도시 소비문화"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    },
+    "42": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "ab8efaa023de27aa0b0566162f7ddaec25d2a8c643074da54887950dec7d3405",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 96쪽 / 교재 89쪽",
+          "supports": "신민회·105인사건"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 107쪽 / 교재 100쪽",
+          "supports": "임시정부 외교"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 114쪽 / 교재 107쪽",
+          "supports": "의열단·조선혁명선언·조선혁명간부학교"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 115쪽 / 교재 108쪽",
+          "supports": "한인애국단·윤봉길"
+        },
+        {
+          "type": "web",
+          "reference": "https://www.nmkpg.go.kr/webzine/story/cn.do?rid=386",
+          "supports": "국립대한민국임시정부기념관: 김규식의 임시정부 대표 임명과 파리에서 독립을 호소한 외교"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강",
+        "파리강화회의 독립 청원을 대한민국 임시정부의 외교 활동으로 명확화"
+      ],
+      "blockers": []
+    },
+    "43": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "eb5ba5bfbfb46970acd5965d01a42b8779e9c3d413a4adad6b5c9f1cae56400f",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 114쪽 / 교재 107쪽",
+          "supports": "대한독립군단·자유시·청산리"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 115쪽 / 교재 108쪽",
+          "supports": "한국독립군·조선의용대·광복군"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0073387",
+          "supports": "동북인민혁명군에서 동북항일연군으로 개편"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0052178",
+          "supports": "조선의용대 일부의 1942년 한국광복군 제1지대 편입과 주력의 화북 이동 구별"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강",
+        "조선의용대 전체가 광복군에 편입된 것으로 읽히지 않도록 김원봉과 잔류 대원의 1942년 편입으로 한정"
+      ],
+      "blockers": []
+    },
+    "44": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "4d69106f84e426d14366024facb631e392281dae0a284d1c196825a2b59d3b9d",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 93쪽 / 교재 86쪽",
+          "supports": "동학 보국안민·제폭구민"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 96쪽 / 교재 89쪽",
+          "supports": "화폐정리·제일은행권"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 106쪽 / 교재 99쪽",
+          "supports": "물산장려운동·관세령폐지"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/id/hm_129_0030",
+          "supports": "1898년 황국중앙총상회의 시전 상권 수호 목적과 외국 상인 대응"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    },
+    "45": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "8705332420fed621d91118d3d560d01fb52515a4b97eda9e0bb59b8cfce0d7b8",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 113쪽 / 교재 106쪽",
+          "supports": "독립의군부·대동단결선언"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 114쪽 / 교재 107쪽",
+          "supports": "미쓰야협정"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 107쪽 / 교재 100쪽",
+          "supports": "국민대표회의·여자정신근로령"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    },
+    "46": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "cb61033c0a57ff3cd512ff7758029244a2412d34ac2f23d03ff961d8d997c5b7",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 124쪽 / 교재 117쪽",
+          "supports": "광복·모스크바·좌우합작·정부수립"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 126쪽 / 교재 119쪽",
+          "supports": "전쟁·한미상호방위"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    },
+    "47": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "ba6574d37c949e4030290f31b1779c79fc4b222d416c2abbdb28bb8d3ddb4ee1",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 124쪽 / 교재 117쪽",
+          "supports": "제헌헌법·반민특위"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 126쪽 / 교재 119쪽",
+          "supports": "사사오입·내각제"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 128쪽 / 교재 121쪽",
+          "supports": "유신긴급조치"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 130쪽 / 교재 123쪽",
+          "supports": "직선5년단임"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    },
+    "48": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "35081286eedd943b71321ca14161cdee8b15261994b7a1f6c01610208bd37999",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 126쪽 / 교재 119쪽",
+          "supports": "4·19·김주열·이승만하야"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 130쪽 / 교재 123쪽",
+          "supports": "5·18·4·13·6월항쟁·6·29"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    },
+    "49": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "d2aa7d2b157ec259e5232cd3cf4f6565781c231eb0f0a54170fb8a69406815dd",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 128쪽 / 교재 121쪽",
+          "supports": "박정희 유신·생활통제"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 130쪽 / 교재 123쪽",
+          "supports": "교복자율화"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 131쪽 / 교재 124쪽",
+          "supports": "금융실명·민주노총"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 132쪽 / 교재 125쪽",
+          "supports": "한칠레FTA"
+        },
+        {
+          "type": "web",
+          "reference": "https://fta.motir.go.kr/ftamain/kfta/lov5/cl/1/2/",
+          "supports": "정부 FTA 일지: 한·칠레 FTA 2004년2월16일 국회 통과·4월1일 발효"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    },
+    "50": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "68066dce81843db99d2d181ee4a8d7807859a331f3edf17cec316225e0a92961",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 128쪽 / 교재 121쪽",
+          "supports": "7·4공동성명"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 130쪽 / 교재 123쪽",
+          "supports": "1985이산가족"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 131쪽 / 교재 124쪽",
+          "supports": "유엔동시가입"
+        },
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 132쪽 / 교재 125쪽",
+          "supports": "개성공단·10·4·평창·판문점"
+        }
+      ],
+      "corrections": [
+        "보기의 핵심어를 정확한 시대·인물·사건과 연결하고 뜻·구분 근거 보강"
+      ],
+      "blockers": []
+    }
+  }
+}

@@ -1,0 +1,2242 @@
+{
+  "id": "focus-ly-v2-50",
+  "title": "-ly 의미 대비 50제 · 개선판",
+  "version": 1,
+  "notice": "TOEIC형 자체제작 · 제공 원문 재확인은 해설에 출처 표시 · 이전 기록 별도 보존",
+  "questions": [
+    {
+      "id": "focus-ly-v2-50-001",
+      "number": 1,
+      "version": 1,
+      "stem": "The catering staff trained ________ for weeks to prepare for the hotel's largest banquet of the year.",
+      "choices": [
+        "hardly",
+        "hardness",
+        "harden",
+        "hard"
+      ],
+      "answer": 3,
+      "translation": "급식 직원들은 호텔의 연중 최대 연회를 준비하려고 여러 주 동안 열심히 훈련했다.",
+      "tags": [
+        "hard-hardly",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "거의 ~않다",
+          "reason": "hardly trained는 거의 훈련하지 않았다는 뜻이므로 준비에 매진한 내용과 다르다."
+        },
+        {
+          "form": "명사",
+          "meaning": "단단함",
+          "reason": "trained의 노력 정도를 꾸미는 자리다. for weeks와 prepare for the banquet가 단서다 hardness는 ‘단단함’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "동사",
+          "meaning": "굳어지다·굳히다",
+          "reason": "trained의 노력 정도를 꾸미는 자리다. for weeks와 prepare for the banquet가 단서다 harden는 ‘굳어지다·굳히다’라는 동사다. 이미 있는 동사 구조에 이 원형을 덧붙일 수 없다."
+        },
+        {
+          "form": "부사",
+          "meaning": "열심히·세게",
+          "reason": "trained와 for weeks는 준비를 위한 지속적인 노력을 말한다. 따라서 hard가 맞다."
+        }
+      ],
+      "originalReference": "focus-ly-50-007",
+      "clues": [
+        "trained",
+        "for weeks"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-002",
+      "number": 2,
+      "version": 1,
+      "stem": "Delivery costs vary ________ between urban centers and remote islands, so please request a quotation.",
+      "choices": [
+        "wide",
+        "width",
+        "widen",
+        "widely"
+      ],
+      "answer": 3,
+      "translation": "도심과 외딴 섬 사이 배송비 차이가 크므로 견적을 요청해 주세요.",
+      "tags": [
+        "wide-widely",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사·부사",
+          "meaning": "넓은·활짝",
+          "reason": "wide는 이 문장에서 vary를 큰 폭으로 수식하는 표준 부사형이 아니다."
+        },
+        {
+          "form": "명사",
+          "meaning": "폭",
+          "reason": "vary를 꾸며 배송비 차이의 큰 폭을 나타내는 자리다 width는 ‘폭’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "동사",
+          "meaning": "넓히다",
+          "reason": "vary를 꾸며 배송비 차이의 큰 폭을 나타내는 자리다 widen는 ‘넓히다’라는 동사다. 이미 있는 동사 구조에 이 원형을 덧붙일 수 없다."
+        },
+        {
+          "form": "부사",
+          "meaning": "널리·큰 폭으로",
+          "reason": "vary between은 차이의 폭이 큼을 말한다. 따라서 widely가 맞다."
+        }
+      ],
+      "originalReference": "focus-ly-50-046",
+      "clues": [
+        "vary",
+        "between urban centers and remote islands"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-003",
+      "number": 3,
+      "version": 1,
+      "stem": "Replacement parts will be supplied ________ of charge during the first year of the warranty.",
+      "choices": [
+        "freely",
+        "freedom",
+        "freed",
+        "free"
+      ],
+      "answer": 3,
+      "translation": "보증 첫해에는 교체 부품이 무료로 제공된다.",
+      "tags": [
+        "free-freely",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "자유롭게·막힘없이",
+          "reason": "freely of charge라는 표현은 쓰지 않으며 free of charge가 무료라는 뜻이다."
+        },
+        {
+          "form": "명사",
+          "meaning": "자유",
+          "reason": "free of charge가 교체 부품을 무료로 제공한다는 뜻이다 freedom는 ‘자유’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "과거형·과거분사",
+          "meaning": "풀어 주었다·풀려난",
+          "reason": "free of charge가 교체 부품을 무료로 제공한다는 뜻이다 freed는 free의 과거형·과거분사로 ‘풀어 준/풀려난’이라는 뜻이어서 이 문장의 무료·무제약 의미와 맞지 않는다."
+        },
+        {
+          "form": "형용사·부사",
+          "meaning": "무료인·무료로",
+          "reason": "of charge와 결합하는 가격 표현이다. 따라서 free가 맞다."
+        }
+      ],
+      "originalReference": "focus-ly-50-040",
+      "clues": [
+        "of charge"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-004",
+      "number": 4,
+      "version": 1,
+      "stem": "The finance team stayed ________ at the office last Friday to finish the year-end accounts.",
+      "choices": [
+        "late",
+        "lately",
+        "lateness",
+        "latest"
+      ],
+      "answer": 0,
+      "translation": "재무팀은 연말 결산을 끝내려고 지난 금요일 사무실에 늦게까지 남았다.",
+      "tags": [
+        "late-lately",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사·부사",
+          "meaning": "늦은·늦게",
+          "reason": "stayed와 last Friday는 특정 날 늦은 시각까지 남은 일이다. 따라서 late가 맞다."
+        },
+        {
+          "form": "부사",
+          "meaning": "최근에",
+          "reason": "lately는 최근에이며 지난 금요일 늦게까지 남았다는 시간을 나타내지 못한다."
+        },
+        {
+          "form": "명사",
+          "meaning": "지각·지연",
+          "reason": "stayed 뒤에서 사무실에 늦게까지 남았음을 나타내는 자리다. last Friday는 특정한 날이다 lateness는 ‘지각·지연’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "가장 최근의",
+          "reason": "stayed 뒤에서 사무실에 늦게까지 남았음을 나타내는 자리다. last Friday는 특정한 날이다 latest는 ‘가장 최근의’라는 형용사로, 이 자리의 시간 부사 late/lately를 대신하지 못한다."
+        }
+      ],
+      "originalReference": "focus-ly-50-021",
+      "clues": [
+        "stayed",
+        "last Friday"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-005",
+      "number": 5,
+      "version": 1,
+      "stem": "Several clients spoke ________ of the consultant after she resolved their tax concerns.",
+      "choices": [
+        "highly",
+        "high",
+        "height",
+        "heighten"
+      ],
+      "answer": 0,
+      "translation": "상담사가 세금 문제를 해결한 뒤 여러 고객이 그녀를 높이 평가했다.",
+      "tags": [
+        "high-highly",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "매우·높이 평가하여",
+          "reason": "spoke ... of는 사람을 좋게 평가한다는 문맥이다. 따라서 highly가 맞다."
+        },
+        {
+          "form": "부사",
+          "meaning": "높이",
+          "reason": "high는 이 문장에서 긍정적으로 평가한다는 speak highly of의 뜻을 만들지 못한다."
+        },
+        {
+          "form": "명사",
+          "meaning": "높이",
+          "reason": "spoke highly of가 consultant를 높이 평가한다는 뜻이다 height는 ‘높이’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "동사",
+          "meaning": "높이다",
+          "reason": "spoke highly of가 consultant를 높이 평가한다는 뜻이다 heighten는 ‘높이다’라는 동사다. 이미 있는 동사 구조에 이 원형을 덧붙일 수 없다."
+        }
+      ],
+      "originalReference": "focus-ly-50-012",
+      "clues": [
+        "spoke",
+        "of the consultant"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-006",
+      "number": 6,
+      "version": 1,
+      "stem": "The speaker's microphone failed, so the audience could ________ hear the announcement.",
+      "choices": [
+        "hard",
+        "hardness",
+        "hardly",
+        "harden"
+      ],
+      "answer": 2,
+      "translation": "발표자의 마이크가 고장 나 청중은 안내 방송을 거의 들을 수 없었다.",
+      "tags": [
+        "hard-hardly",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "열심히·세게",
+          "reason": "hard는 세게·열심히이며 could hear의 거의 불가능함을 표현하지 못한다."
+        },
+        {
+          "form": "명사",
+          "meaning": "단단함",
+          "reason": "could와 hear 사이에서 고장 난 microphone 때문에 거의 들리지 않음을 나타내는 자리다 hardness는 ‘단단함’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "부사",
+          "meaning": "거의 ~않다",
+          "reason": "microphone failed가 청취가 거의 불가능한 이유다. 따라서 hardly가 맞다."
+        },
+        {
+          "form": "동사",
+          "meaning": "굳어지다·굳히다",
+          "reason": "could와 hear 사이에서 고장 난 microphone 때문에 거의 들리지 않음을 나타내는 자리다 harden는 ‘굳어지다·굳히다’라는 동사다. 이미 있는 동사 구조에 이 원형을 덧붙일 수 없다."
+        }
+      ],
+      "originalReference": "focus-ly-50-004",
+      "clues": [
+        "microphone failed",
+        "hear the announcement"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-007",
+      "number": 7,
+      "version": 1,
+      "stem": "The new analyst is ________ skilled in detecting inconsistencies in large financial data sets.",
+      "choices": [
+        "high",
+        "height",
+        "heighten",
+        "highly"
+      ],
+      "answer": 3,
+      "translation": "새 분석가는 대규모 재무 자료의 불일치를 찾아내는 데 매우 능숙하다.",
+      "tags": [
+        "high-highly",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "높이",
+          "reason": "high는 skilled를 매우 능숙한이라는 뜻으로 수식하지 못한다."
+        },
+        {
+          "form": "명사",
+          "meaning": "높이",
+          "reason": "skilled를 ‘매우 능숙한’으로 꾸미는 자리다 height는 ‘높이’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "동사",
+          "meaning": "높이다",
+          "reason": "skilled를 ‘매우 능숙한’으로 꾸미는 자리다 heighten는 ‘높이다’라는 동사다. 이미 있는 동사 구조에 이 원형을 덧붙일 수 없다."
+        },
+        {
+          "form": "부사",
+          "meaning": "매우·높이 평가하여",
+          "reason": "skilled의 능숙한 정도를 나타낸다. 따라서 highly가 맞다."
+        }
+      ],
+      "originalReference": "focus-ly-50-011",
+      "clues": [
+        "skilled"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-008",
+      "number": 8,
+      "version": 1,
+      "stem": "Have you noticed any changes in customer spending patterns ________?",
+      "choices": [
+        "lately",
+        "late",
+        "lateness",
+        "latest"
+      ],
+      "answer": 0,
+      "translation": "최근 고객 지출 양상의 변화를 알아챈 것이 있습니까?",
+      "tags": [
+        "late-lately",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "최근에",
+          "reason": "Have you noticed는 최근까지 관찰한 변화가 있는지 묻는다. 따라서 lately가 맞다."
+        },
+        {
+          "form": "형용사·부사",
+          "meaning": "늦은·늦게",
+          "reason": "late는 늦게라는 뜻으로 최근의 관찰 기간을 묻는 문맥과 다르다."
+        },
+        {
+          "form": "명사",
+          "meaning": "지각·지연",
+          "reason": "Have you noticed가 묻는 관찰의 최근 기간을 나타내는 자리다 lateness는 ‘지각·지연’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "가장 최근의",
+          "reason": "Have you noticed가 묻는 관찰의 최근 기간을 나타내는 자리다 latest는 ‘가장 최근의’라는 형용사로, 이 자리의 시간 부사 late/lately를 대신하지 못한다."
+        }
+      ],
+      "originalReference": "focus-ly-50-020",
+      "clues": [
+        "Have you noticed"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-009",
+      "number": 9,
+      "version": 1,
+      "stem": "The two departments are ________ connected, as a delay in purchasing immediately affects production.",
+      "choices": [
+        "close",
+        "closeness",
+        "closely",
+        "closing"
+      ],
+      "answer": 2,
+      "translation": "구매 지연이 즉시 생산에 영향을 미치므로 두 부서는 긴밀히 연결되어 있다.",
+      "tags": [
+        "close-closely",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사·부사",
+          "meaning": "가까운·가까이",
+          "reason": "close는 connected 앞에서 관계의 긴밀함을 나타내는 표준 부사형이 아니다."
+        },
+        {
+          "form": "명사",
+          "meaning": "가까움·친밀함",
+          "reason": "connected의 관계를 꾸미는 자리다. 구매 지연이 생산에 즉시 영향을 준다는 긴밀한 연결이다 closeness는 ‘가까움·친밀함’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "부사",
+          "meaning": "면밀히·긴밀히",
+          "reason": "immediately affects production은 관계가 강하게 연결된다는 단서다. 따라서 closely가 맞다."
+        },
+        {
+          "form": "형용사·분사",
+          "meaning": "마지막의·닫는",
+          "reason": "connected의 관계를 꾸미는 자리다. 구매 지연이 생산에 즉시 영향을 준다는 긴밀한 연결이다 closing은 ‘닫는/마지막의’라는 분사·형용사여서 이 문장의 거리·관찰 방식을 나타내지 못한다."
+        }
+      ],
+      "originalReference": "focus-ly-50-037",
+      "clues": [
+        "connected",
+        "immediately affects production"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-010",
+      "number": 10,
+      "version": 1,
+      "stem": "The sales director negotiated ________ to obtain a lower price without reducing the order quantity.",
+      "choices": [
+        "hardly",
+        "hardness",
+        "harden",
+        "hard"
+      ],
+      "answer": 3,
+      "translation": "영업 이사는 주문량을 줄이지 않고 더 낮은 가격을 얻으려고 강하게 협상했다.",
+      "tags": [
+        "hard-hardly",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "거의 ~않다",
+          "reason": "hardly negotiated는 협상을 거의 하지 않았다는 뜻이라 적극적으로 가격을 얻으려는 내용과 다르다."
+        },
+        {
+          "form": "명사",
+          "meaning": "단단함",
+          "reason": "negotiated의 강도를 꾸미는 자리다. obtain a lower price가 협상의 목적이다 hardness는 ‘단단함’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "동사",
+          "meaning": "굳어지다·굳히다",
+          "reason": "negotiated의 강도를 꾸미는 자리다. obtain a lower price가 협상의 목적이다 harden는 ‘굳어지다·굳히다’라는 동사다. 이미 있는 동사 구조에 이 원형을 덧붙일 수 없다."
+        },
+        {
+          "form": "부사",
+          "meaning": "열심히·세게",
+          "reason": "obtain a lower price는 협상에 힘을 쏟은 목적이다. 따라서 hard가 맞다."
+        }
+      ],
+      "originalReference": "focus-ly-50-005",
+      "clues": [
+        "negotiated",
+        "to obtain a lower price"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-011",
+      "number": 11,
+      "version": 1,
+      "stem": "The employee stared at the unexpected bonus figure with his eyes ________ open.",
+      "choices": [
+        "widely",
+        "wide",
+        "width",
+        "widen"
+      ],
+      "answer": 1,
+      "translation": "직원은 눈을 크게 뜨고 예상치 못한 보너스 액수를 바라보았다.",
+      "tags": [
+        "wide-widely",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "널리·큰 폭으로",
+          "reason": "widely는 널리이며 eyes wide open의 물리적인 열림을 나타내지 않는다."
+        },
+        {
+          "form": "형용사·부사",
+          "meaning": "넓은·활짝",
+          "reason": "eyes ... open은 눈이 크게 열린 상태다. 따라서 wide가 맞다."
+        },
+        {
+          "form": "명사",
+          "meaning": "폭",
+          "reason": "eyes wide open이 눈을 크게 뜬 상태를 나타낸다 width는 ‘폭’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "동사",
+          "meaning": "넓히다",
+          "reason": "eyes wide open이 눈을 크게 뜬 상태를 나타낸다 widen는 ‘넓히다’라는 동사다. 이미 있는 동사 구조에 이 원형을 덧붙일 수 없다."
+        }
+      ],
+      "originalReference": "focus-ly-50-048",
+      "clues": [
+        "eyes",
+        "open"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-012",
+      "number": 12,
+      "version": 1,
+      "stem": "Visitors are asked not to park ________ the loading bay, where delivery trucks need room to turn.",
+      "choices": [
+        "nearly",
+        "near",
+        "nearness",
+        "nearby"
+      ],
+      "answer": 1,
+      "translation": "배송 트럭의 회전 공간이 필요한 하역장 근처에는 주차하지 말아 주세요.",
+      "tags": [
+        "near-nearly",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "거의",
+          "reason": "nearly는 거의라는 부사로 장소 명사구 앞의 근처에가 될 수 없다."
+        },
+        {
+          "form": "전치사·형용사·부사",
+          "meaning": "가까이에·가까운·가까이",
+          "reason": "the loading bay는 피해야 할 실제 장소다. 따라서 near가 맞다."
+        },
+        {
+          "form": "명사",
+          "meaning": "가까움",
+          "reason": "the loading bay 앞에서 주차를 피해야 할 장소와의 거리 관계를 나타내는 자리다 nearness는 ‘가까움’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "부사·형용사",
+          "meaning": "가까이에; 인근의",
+          "reason": "뒤 명사구를 직접 받는 전치사 near가 필요하다. nearby는 이 자리에서 the airport나 the loading bay를 목적어로 받지 않는다."
+        }
+      ],
+      "originalReference": "focus-ly-50-027",
+      "clues": [
+        "the loading bay",
+        "delivery trucks need room to turn"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-013",
+      "number": 13,
+      "version": 1,
+      "stem": "Admission to the museum is ________ for children under twelve; all other visitors must buy a ticket.",
+      "choices": [
+        "freely",
+        "free",
+        "freedom",
+        "freed"
+      ],
+      "answer": 1,
+      "translation": "12세 미만 어린이는 박물관에 무료 입장할 수 있으며 다른 방문객은 표를 사야 한다.",
+      "tags": [
+        "free-freely",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "자유롭게·막힘없이",
+          "reason": "is 뒤 입장료가 무료인 상태는 형용사 free이다. 부사 freely는 이 상태 보어 자리에 맞지 않는다."
+        },
+        {
+          "form": "형용사·부사",
+          "meaning": "무료인·무료로",
+          "reason": "must buy a ticket와의 대비는 입장 비용이다. 따라서 free가 맞다."
+        },
+        {
+          "form": "명사",
+          "meaning": "자유",
+          "reason": "is 뒤에서 Admission의 무료 상태를 설명하는 자리다. 다른 방문객의 must buy a ticket와 대비된다 freedom는 ‘자유’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "과거형·과거분사",
+          "meaning": "풀어 주었다·풀려난",
+          "reason": "is 뒤에서 Admission의 무료 상태를 설명하는 자리다. 다른 방문객의 must buy a ticket와 대비된다 freed는 free의 과거형·과거분사로 ‘풀어 준/풀려난’이라는 뜻이어서 이 문장의 무료·무제약 의미와 맞지 않는다."
+        }
+      ],
+      "originalReference": "focus-ly-50-038",
+      "clues": [
+        "all other visitors must buy a ticket"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-014",
+      "number": 14,
+      "version": 1,
+      "stem": "The inspector examined the damaged seal ________ to determine how the leak had occurred.",
+      "choices": [
+        "close",
+        "closeness",
+        "closely",
+        "closing"
+      ],
+      "answer": 2,
+      "translation": "검사관은 누출 발생 경위를 알아내려고 손상된 밀봉 부분을 면밀히 조사했다.",
+      "tags": [
+        "close-closely",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사·부사",
+          "meaning": "가까운·가까이",
+          "reason": "close는 물리적 거리이며 이 격식 문장에서 examined의 면밀한 방식을 나타내지 않는다."
+        },
+        {
+          "form": "명사",
+          "meaning": "가까움·친밀함",
+          "reason": "examined의 방식을 꾸미는 자리다. determine how the leak had occurred가 자세히 조사하는 목적이다 closeness는 ‘가까움·친밀함’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "부사",
+          "meaning": "면밀히·긴밀히",
+          "reason": "examined와 determine how가 자세히 조사하는 목적을 드러낸다. 따라서 closely가 맞다."
+        },
+        {
+          "form": "형용사·분사",
+          "meaning": "마지막의·닫는",
+          "reason": "examined의 방식을 꾸미는 자리다. determine how the leak had occurred가 자세히 조사하는 목적이다 closing은 ‘닫는/마지막의’라는 분사·형용사여서 이 문장의 거리·관찰 방식을 나타내지 못한다."
+        }
+      ],
+      "originalReference": "focus-ly-50-036",
+      "clues": [
+        "examined",
+        "to determine how the leak had occurred"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-015",
+      "number": 15,
+      "version": 1,
+      "stem": "The factory employs ________ trained technicians who can repair the specialized equipment.",
+      "choices": [
+        "high",
+        "highly",
+        "height",
+        "heighten"
+      ],
+      "answer": 1,
+      "translation": "공장은 전문 장비를 수리할 수 있는 고도로 훈련된 기술자들을 고용한다.",
+      "tags": [
+        "high-highly",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "높이",
+          "reason": "high는 trained 앞에서 고도로라는 훈련 정도를 나타내는 표현이 아니다."
+        },
+        {
+          "form": "부사",
+          "meaning": "매우·높이 평가하여",
+          "reason": "trained의 훈련 수준이 높음을 나타낸다. 따라서 highly가 맞다."
+        },
+        {
+          "form": "명사",
+          "meaning": "높이",
+          "reason": "trained를 ‘고도로 훈련된’으로 꾸미며 trained technicians 전체는 기술자들을 설명한다 height는 ‘높이’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "동사",
+          "meaning": "높이다",
+          "reason": "trained를 ‘고도로 훈련된’으로 꾸미며 trained technicians 전체는 기술자들을 설명한다 heighten는 ‘높이다’라는 동사다. 이미 있는 동사 구조에 이 원형을 덧붙일 수 없다."
+        }
+      ],
+      "originalReference": "focus-ly-50-014",
+      "clues": [
+        "trained technicians"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-016",
+      "number": 16,
+      "version": 1,
+      "stem": "The hotel will deliver breakfast to your room ________ of charge if your booking includes the premium package.",
+      "choices": [
+        "freely",
+        "freedom",
+        "free",
+        "freed"
+      ],
+      "answer": 2,
+      "translation": "예약에 프리미엄 패키지가 포함되면 호텔은 객실에 아침 식사를 무료로 배달한다.",
+      "tags": [
+        "free-freely",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "자유롭게·막힘없이",
+          "reason": "freely는 자유롭게이며 freely of charge는 무료라는 표현이 아니다."
+        },
+        {
+          "form": "명사",
+          "meaning": "자유",
+          "reason": "free of charge가 아침 식사를 추가 요금 없이 배달한다는 뜻이다 freedom는 ‘자유’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "형용사·부사",
+          "meaning": "무료인·무료로",
+          "reason": "of charge는 추가 비용이 없다는 고정 결합이다. 따라서 free가 맞다."
+        },
+        {
+          "form": "과거형·과거분사",
+          "meaning": "풀어 주었다·풀려난",
+          "reason": "free of charge가 아침 식사를 추가 요금 없이 배달한다는 뜻이다 freed는 free의 과거형·과거분사로 ‘풀어 준/풀려난’이라는 뜻이어서 이 문장의 무료·무제약 의미와 맞지 않는다."
+        }
+      ],
+      "originalReference": "focus-ly-50-043",
+      "clues": [
+        "of charge"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-017",
+      "number": 17,
+      "version": 1,
+      "stem": "The technicians have ________ completed the installation, with only the final safety check remaining.",
+      "choices": [
+        "near",
+        "nearly",
+        "nearness",
+        "nearest"
+      ],
+      "answer": 1,
+      "translation": "기술자들은 마지막 안전 점검만 남겨 설치를 거의 완료했다.",
+      "tags": [
+        "near-nearly",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사·형용사·부사",
+          "meaning": "가까이에·가까운·가까이",
+          "reason": "near는 completed 앞에서 거의 완료라는 정도를 나타내는 표준 결합이 아니다."
+        },
+        {
+          "form": "부사",
+          "meaning": "거의",
+          "reason": "only the final safety check remaining은 완료 직전이라는 단서다. 따라서 nearly가 맞다."
+        },
+        {
+          "form": "명사",
+          "meaning": "가까움",
+          "reason": "have와 completed 사이에서 완료에 거의 도달했음을 나타낸다. only the final safety check remaining이 단서다 nearness는 ‘가까움’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "형용사·부사 최상급",
+          "meaning": "가장 가까운·가장 가까이",
+          "reason": "have와 completed 사이에서 완료에 거의 도달했음을 나타낸다. only the final safety check remaining이 단서다 nearest는 ‘가장 가까운/가까이’라는 최상급이므로 비교 범위를 전제한다. 여기서 의도한 일반적인 근접 위치·정도 표현과 구별한다."
+        }
+      ],
+      "originalReference": "focus-ly-50-026",
+      "clues": [
+        "completed",
+        "only the final safety check remaining"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-018",
+      "number": 18,
+      "version": 1,
+      "stem": "The delivery truck arrived two hours ________ because heavy snow had closed the main road.",
+      "choices": [
+        "lately",
+        "lateness",
+        "latest",
+        "late"
+      ],
+      "answer": 3,
+      "translation": "폭설로 주요 도로가 막혀 배송 트럭이 두 시간 늦게 도착했다.",
+      "tags": [
+        "late-lately",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "최근에",
+          "reason": "lately는 최근에라는 뜻이라 two hours lately로 지연 시간을 표시할 수 없다."
+        },
+        {
+          "form": "명사",
+          "meaning": "지각·지연",
+          "reason": "arrived 뒤에서 two hours가 나타내는 지연 정도와 결합하는 자리다 lateness는 ‘지각·지연’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "가장 최근의",
+          "reason": "arrived 뒤에서 two hours가 나타내는 지연 정도와 결합하는 자리다 latest는 ‘가장 최근의’라는 형용사로, 이 자리의 시간 부사 late/lately를 대신하지 못한다."
+        },
+        {
+          "form": "형용사·부사",
+          "meaning": "늦은·늦게",
+          "reason": "two hours는 예정 시각보다 늦은 차이를 나타낸다. 따라서 late가 맞다."
+        }
+      ],
+      "originalReference": "focus-ly-50-017",
+      "clues": [
+        "arrived two hours",
+        "heavy snow had closed the main road"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-019",
+      "number": 19,
+      "version": 1,
+      "stem": "The quality-control team will ________ monitor temperature changes during the trial production run.",
+      "choices": [
+        "closely",
+        "close",
+        "closeness",
+        "closing"
+      ],
+      "answer": 0,
+      "translation": "품질관리팀은 시험 생산 중 온도 변화를 면밀히 감시할 것이다.",
+      "tags": [
+        "close-closely",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "면밀히·긴밀히",
+          "reason": "monitor temperature changes는 세심한 관찰 동작이다. 따라서 closely가 맞다."
+        },
+        {
+          "form": "형용사·부사",
+          "meaning": "가까운·가까이",
+          "reason": "close는 이 격식 문장에서 monitor 앞의 면밀히라는 방식 부사가 아니다."
+        },
+        {
+          "form": "명사",
+          "meaning": "가까움·친밀함",
+          "reason": "will과 monitor 사이에서 temperature changes를 면밀히 관찰하는 방식을 나타낸다 closeness는 ‘가까움·친밀함’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "형용사·분사",
+          "meaning": "마지막의·닫는",
+          "reason": "will과 monitor 사이에서 temperature changes를 면밀히 관찰하는 방식을 나타낸다 closing은 ‘닫는/마지막의’라는 분사·형용사여서 이 문장의 거리·관찰 방식을 나타내지 못한다."
+        }
+      ],
+      "originalReference": "focus-ly-50-033",
+      "clues": [
+        "monitor temperature changes"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-020",
+      "number": 20,
+      "version": 1,
+      "stem": "The director has traveled ________ across Europe to compare different approaches to sustainable manufacturing.",
+      "choices": [
+        "widely",
+        "wide",
+        "width",
+        "widen"
+      ],
+      "answer": 0,
+      "translation": "이사는 지속 가능한 제조 방식들을 비교하려고 유럽 여러 곳을 폭넓게 여행했다.",
+      "tags": [
+        "wide-widely",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "널리·큰 폭으로",
+          "reason": "across Europe와 different approaches는 여러 지역을 둘러본 범위다. 따라서 widely가 맞다."
+        },
+        {
+          "form": "형용사·부사",
+          "meaning": "넓은·활짝",
+          "reason": "wide는 이 문장에서 traveled를 여러 곳으로 널리 수식하는 표준 부사 widely를 대신하지 않는다."
+        },
+        {
+          "form": "명사",
+          "meaning": "폭",
+          "reason": "has traveled를 꾸며 여행한 지역의 넓은 범위를 나타낸다. across Europe가 단서다 width는 ‘폭’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "동사",
+          "meaning": "넓히다",
+          "reason": "has traveled를 꾸며 여행한 지역의 넓은 범위를 나타낸다. across Europe가 단서다 widen는 ‘넓히다’라는 동사다. 이미 있는 동사 구조에 이 원형을 덧붙일 수 없다."
+        }
+      ],
+      "originalReference": "focus-ly-50-050",
+      "clues": [
+        "has traveled",
+        "across Europe"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-021",
+      "number": 21,
+      "version": 1,
+      "stem": "Please stack the empty crates only this ________; a taller pile could block the emergency exit.",
+      "choices": [
+        "highly",
+        "height",
+        "high",
+        "heighten"
+      ],
+      "answer": 2,
+      "translation": "빈 상자는 이 높이까지만 쌓아 주세요. 더 높은 더미는 비상구를 막을 수 있다.",
+      "tags": [
+        "high-highly",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "매우·높이 평가하여",
+          "reason": "highly는 정도·평가의 부사로 this highly만으로 물리적 높이를 표시하지 못한다."
+        },
+        {
+          "form": "명사",
+          "meaning": "높이",
+          "reason": "this high가 상자를 쌓는 실제 높이의 한도를 나타낸다. a taller pile과 대비된다 height는 ‘높이’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "부사",
+          "meaning": "높이",
+          "reason": "this와 a taller pile이 실제 쌓는 높이를 가리킨다. 따라서 high가 맞다."
+        },
+        {
+          "form": "동사",
+          "meaning": "높이다",
+          "reason": "this high가 상자를 쌓는 실제 높이의 한도를 나타낸다. a taller pile과 대비된다 heighten는 ‘높이다’라는 동사다. 이미 있는 동사 구조에 이 원형을 덧붙일 수 없다."
+        }
+      ],
+      "originalReference": "focus-ly-50-016",
+      "clues": [
+        "only this",
+        "a taller pile"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-022",
+      "number": 22,
+      "version": 1,
+      "stem": "The logistics team worked ________ throughout the holiday weekend to clear the backlog of urgent orders.",
+      "choices": [
+        "hardly",
+        "hardness",
+        "harden",
+        "hard"
+      ],
+      "answer": 3,
+      "translation": "물류팀은 긴급 주문 적체를 해소하려고 연휴 내내 열심히 일했다.",
+      "tags": [
+        "hard-hardly",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "거의 ~않다",
+          "reason": "hardly는 거의 일하지 않았다는 뜻이라 적체를 해소하려고 애쓴 상황과 반대다."
+        },
+        {
+          "form": "명사",
+          "meaning": "단단함",
+          "reason": "worked를 ‘열심히’로 꾸미는 자리다. throughout the holiday weekend와 clear the backlog가 노력의 근거다 hardness는 ‘단단함’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "동사",
+          "meaning": "굳어지다·굳히다",
+          "reason": "worked를 ‘열심히’로 꾸미는 자리다. throughout the holiday weekend와 clear the backlog가 노력의 근거다 harden는 ‘굳어지다·굳히다’라는 동사다. 이미 있는 동사 구조에 이 원형을 덧붙일 수 없다."
+        },
+        {
+          "form": "부사",
+          "meaning": "열심히·세게",
+          "reason": "clear the backlog와 throughout the holiday weekend는 많은 노력을 기울인 상황이다. 따라서 hard가 맞다."
+        }
+      ],
+      "originalReference": "focus-ly-50-001",
+      "clues": [
+        "worked",
+        "to clear the backlog of urgent orders"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-023",
+      "number": 23,
+      "version": 1,
+      "stem": "The trade fair attracted ________ three thousand visitors, just short of the organizer's target.",
+      "choices": [
+        "nearly",
+        "near",
+        "nearness",
+        "nearest"
+      ],
+      "answer": 0,
+      "translation": "박람회에는 거의 3천 명이 방문했지만 주최 측 목표에는 조금 못 미쳤다.",
+      "tags": [
+        "near-nearly",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "거의",
+          "reason": "just short of가 수량에 거의 도달했다는 뜻이다. 따라서 nearly가 맞다."
+        },
+        {
+          "form": "전치사·형용사·부사",
+          "meaning": "가까이에·가까운·가까이",
+          "reason": "near는 이 격식 문장에서 three thousand 앞의 거의라는 정도 부사 대신 쓰지 않는다."
+        },
+        {
+          "form": "명사",
+          "meaning": "가까움",
+          "reason": "three thousand visitors 앞에서 수량이 목표에 거의 도달했음을 나타낸다. just short of가 단서다 nearness는 ‘가까움’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "형용사·부사 최상급",
+          "meaning": "가장 가까운·가장 가까이",
+          "reason": "three thousand visitors 앞에서 수량이 목표에 거의 도달했음을 나타낸다. just short of가 단서다 nearest는 ‘가장 가까운/가까이’라는 최상급이므로 비교 범위를 전제한다. 여기서 의도한 일반적인 근접 위치·정도 표현과 구별한다."
+        }
+      ],
+      "originalReference": "focus-ly-50-024",
+      "clues": [
+        "three thousand visitors",
+        "just short of"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-024",
+      "number": 24,
+      "version": 1,
+      "stem": "The revised floor plan is ________ different from the original; only one desk has been moved.",
+      "choices": [
+        "hard",
+        "hardly",
+        "hardness",
+        "harden"
+      ],
+      "answer": 1,
+      "translation": "수정된 배치도는 책상 하나만 옮겨 원래 도면과 거의 다르지 않다.",
+      "tags": [
+        "hard-hardly",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "열심히·세게",
+          "reason": "hard는 different를 거의 아니라는 의미로 제한하지 못한다."
+        },
+        {
+          "form": "부사",
+          "meaning": "거의 ~않다",
+          "reason": "only one desk가 차이가 거의 없다는 단서다. 따라서 hardly가 맞다."
+        },
+        {
+          "form": "명사",
+          "meaning": "단단함",
+          "reason": "different를 ‘거의 ~않게’로 제한하는 자리다. only one desk has been moved가 작은 차이의 근거다 hardness는 ‘단단함’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "동사",
+          "meaning": "굳어지다·굳히다",
+          "reason": "different를 ‘거의 ~않게’로 제한하는 자리다. only one desk has been moved가 작은 차이의 근거다 harden는 ‘굳어지다·굳히다’라는 동사다. 이미 있는 동사 구조에 이 원형을 덧붙일 수 없다."
+        }
+      ],
+      "originalReference": "focus-ly-50-008",
+      "clues": [
+        "different",
+        "only one desk has been moved"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-025",
+      "number": 25,
+      "version": 1,
+      "stem": "As the registration deadline draws ________, the number of inquiries is increasing rapidly.",
+      "choices": [
+        "near",
+        "nearly",
+        "nearness",
+        "nearing"
+      ],
+      "answer": 0,
+      "translation": "등록 마감이 가까워짐에 따라 문의가 빠르게 늘고 있다.",
+      "tags": [
+        "near-nearly",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사·형용사·부사",
+          "meaning": "가까이에·가까운·가까이",
+          "reason": "deadline draws는 마감 시점이 가까워지는 결합이다. 따라서 near가 맞다."
+        },
+        {
+          "form": "부사",
+          "meaning": "거의",
+          "reason": "nearly는 거의이므로 draws nearly만으로 마감이 다가온다는 뜻을 만들지 못한다."
+        },
+        {
+          "form": "명사",
+          "meaning": "가까움",
+          "reason": "draws near가 등록 마감이 다가온다는 뜻이다 nearness는 ‘가까움’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "현재분사",
+          "meaning": "~에 가까워지는",
+          "reason": "draws near가 마감이 다가온다는 결합이다. draws 뒤에 또 다른 동사형 nearing을 그대로 이어 쓸 수 없다."
+        }
+      ],
+      "originalReference": "focus-ly-50-029",
+      "clues": [
+        "registration deadline draws"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-026",
+      "number": 26,
+      "version": 1,
+      "stem": "The company flag was raised ________ above the entrance so visitors could see it from the road.",
+      "choices": [
+        "highly",
+        "high",
+        "height",
+        "heighten"
+      ],
+      "answer": 1,
+      "translation": "방문객이 도로에서 볼 수 있도록 회사 깃발이 입구 위 높이 올려졌다.",
+      "tags": [
+        "high-highly",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "매우·높이 평가하여",
+          "reason": "highly는 평가·정도이며 깃발의 물리적 위치를 나타내지 않는다."
+        },
+        {
+          "form": "부사",
+          "meaning": "높이",
+          "reason": "above the entrance와 see it from the road는 실제 높은 위치를 말한다. 따라서 high가 맞다."
+        },
+        {
+          "form": "명사",
+          "meaning": "높이",
+          "reason": "was raised 뒤에서 깃발의 실제 높이를 나타내는 자리다. above the entrance가 단서다 height는 ‘높이’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "동사",
+          "meaning": "높이다",
+          "reason": "was raised 뒤에서 깃발의 실제 높이를 나타내는 자리다. above the entrance가 단서다 heighten는 ‘높이다’라는 동사다. 이미 있는 동사 구조에 이 원형을 덧붙일 수 없다."
+        }
+      ],
+      "originalReference": "focus-ly-50-013",
+      "clues": [
+        "above the entrance"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-027",
+      "number": 27,
+      "version": 1,
+      "stem": "Because the survey is anonymous, respondents can comment ________ on the proposed policy.",
+      "choices": [
+        "free",
+        "freedom",
+        "freely",
+        "freed"
+      ],
+      "answer": 2,
+      "translation": "설문이 익명이므로 응답자들은 제안된 정책에 자유롭게 의견을 낼 수 있다.",
+      "tags": [
+        "free-freely",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사·부사",
+          "meaning": "무료인·무료로",
+          "reason": "comment의 방식을 꾸미는 자리다. anonymous이므로 거리낌 없이 의견을 낼 수 있다는 뜻이다 이 문장의 표준 결합은 speak freely/comment freely이며, free의 다른 용법을 모두 부정하는 규칙으로 외우지 않는다."
+        },
+        {
+          "form": "명사",
+          "meaning": "자유",
+          "reason": "comment의 방식을 꾸미는 자리다. anonymous이므로 거리낌 없이 의견을 낼 수 있다는 뜻이다 freedom는 ‘자유’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "부사",
+          "meaning": "자유롭게·막힘없이",
+          "reason": "anonymous는 신원을 드러내지 않고 제약 없이 말하는 조건이다. 따라서 freely가 맞다."
+        },
+        {
+          "form": "과거형·과거분사",
+          "meaning": "풀어 주었다·풀려난",
+          "reason": "comment의 방식을 꾸미는 자리다. anonymous이므로 거리낌 없이 의견을 낼 수 있다는 뜻이다 freed는 free의 과거형·과거분사로 ‘풀어 준/풀려난’이라는 뜻이어서 이 문장의 무료·무제약 의미와 맞지 않는다."
+        }
+      ],
+      "originalReference": "focus-ly-50-041",
+      "clues": [
+        "anonymous",
+        "comment"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-028",
+      "number": 28,
+      "version": 1,
+      "stem": "With only five minutes between appointments, the consultant ________ had time to eat lunch.",
+      "choices": [
+        "hard",
+        "hardness",
+        "harden",
+        "hardly"
+      ],
+      "answer": 3,
+      "translation": "약속 사이에 겨우 5분밖에 없어 상담사는 점심 먹을 시간이 거의 없었다.",
+      "tags": [
+        "hard-hardly",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "열심히·세게",
+          "reason": "hard는 열심히라는 뜻이며 had time의 부족한 양을 나타내지 못한다."
+        },
+        {
+          "form": "명사",
+          "meaning": "단단함",
+          "reason": "had time 앞에서 only five minutes 때문에 시간이 거의 없음을 나타내는 자리다 hardness는 ‘단단함’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "동사",
+          "meaning": "굳어지다·굳히다",
+          "reason": "had time 앞에서 only five minutes 때문에 시간이 거의 없음을 나타내는 자리다 harden는 ‘굳어지다·굳히다’라는 동사다. 이미 있는 동사 구조에 이 원형을 덧붙일 수 없다."
+        },
+        {
+          "form": "부사",
+          "meaning": "거의 ~않다",
+          "reason": "only five minutes가 시간이 거의 없다는 단서다. 따라서 hardly가 맞다."
+        }
+      ],
+      "originalReference": "focus-ly-50-002",
+      "clues": [
+        "only five minutes",
+        "had time to eat lunch"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-029",
+      "number": 29,
+      "version": 1,
+      "stem": "During the evacuation drill, employees should stay ________ to their assigned group leaders.",
+      "choices": [
+        "closely",
+        "close",
+        "closeness",
+        "closing"
+      ],
+      "answer": 1,
+      "translation": "대피 훈련 중 직원들은 지정된 조장 가까이에 있어야 한다.",
+      "tags": [
+        "close-closely",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "면밀히·긴밀히",
+          "reason": "closely는 면밀히·긴밀히이며 stay closely to로 가까이 머무는 상태를 나타내지 않는다."
+        },
+        {
+          "form": "형용사·부사",
+          "meaning": "가까운·가까이",
+          "reason": "to their assigned group leaders는 유지해야 할 물리적 거리를 나타낸다. 따라서 close가 맞다."
+        },
+        {
+          "form": "명사",
+          "meaning": "가까움·친밀함",
+          "reason": "stay 뒤에서 직원들과 group leaders 사이의 가까운 상태를 나타내는 자리다 closeness는 ‘가까움·친밀함’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "형용사·분사",
+          "meaning": "마지막의·닫는",
+          "reason": "stay 뒤에서 직원들과 group leaders 사이의 가까운 상태를 나타내는 자리다 closing은 ‘닫는/마지막의’라는 분사·형용사여서 이 문장의 거리·관찰 방식을 나타내지 못한다."
+        }
+      ],
+      "originalReference": "focus-ly-50-032",
+      "clues": [
+        "stay",
+        "to their assigned group leaders"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-030",
+      "number": 30,
+      "version": 1,
+      "stem": "________, our support team has received unusually many password-reset requests.",
+      "choices": [
+        "lately",
+        "late",
+        "lateness",
+        "latest"
+      ],
+      "answer": 0,
+      "translation": "우리 지원팀은 최근 비밀번호 재설정 요청을 유난히 많이 받았다.",
+      "tags": [
+        "late-lately",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "최근에",
+          "reason": "문장 앞에서 최근의 요청 증가 기간을 나타내는 lately가 필요하다. 따라서 lately가 맞다."
+        },
+        {
+          "form": "형용사·부사",
+          "meaning": "늦은·늦게",
+          "reason": "late는 늦게라는 뜻이며 요청이 최근 늘었다는 기간을 나타내지 않는다."
+        },
+        {
+          "form": "명사",
+          "meaning": "지각·지연",
+          "reason": "문장 앞에서 has received의 최근 기간을 나타내는 자리다 lateness는 ‘지각·지연’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "가장 최근의",
+          "reason": "문장 앞에서 has received의 최근 기간을 나타내는 자리다 latest는 ‘가장 최근의’라는 형용사로, 이 자리의 시간 부사 late/lately를 대신하지 못한다."
+        }
+      ],
+      "originalReference": "focus-ly-50-018",
+      "clues": [
+        "has received"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-031",
+      "number": 31,
+      "version": 1,
+      "stem": "Because the safety procedure is ________ effective, management has adopted it at every branch.",
+      "choices": [
+        "high",
+        "height",
+        "heighten",
+        "highly"
+      ],
+      "answer": 3,
+      "translation": "그 안전 절차가 매우 효과적이어서 경영진은 모든 지점에 도입했다.",
+      "tags": [
+        "high-highly",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "높이",
+          "reason": "high는 물리적 높이를 나타내는 부사이며 effective 앞의 매우라는 정도에 맞지 않는다."
+        },
+        {
+          "form": "명사",
+          "meaning": "높이",
+          "reason": "effective의 정도를 꾸미는 자리다. 모든 지점에 도입할 만큼 효과가 크다는 뜻이다 height는 ‘높이’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "동사",
+          "meaning": "높이다",
+          "reason": "effective의 정도를 꾸미는 자리다. 모든 지점에 도입할 만큼 효과가 크다는 뜻이다 heighten는 ‘높이다’라는 동사다. 이미 있는 동사 구조에 이 원형을 덧붙일 수 없다."
+        },
+        {
+          "form": "부사",
+          "meaning": "매우·높이 평가하여",
+          "reason": "effective의 효과가 큰 정도를 꾸민다. 따라서 highly가 맞다."
+        }
+      ],
+      "originalReference": "focus-ly-50-009",
+      "clues": [
+        "effective"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-032",
+      "number": 32,
+      "version": 1,
+      "stem": "Check that air can circulate ________ around the cooling unit before placing it against the wall.",
+      "choices": [
+        "free",
+        "freedom",
+        "freely",
+        "freed"
+      ],
+      "answer": 2,
+      "translation": "냉각 장치를 벽 쪽에 놓기 전에 주변 공기가 막힘없이 순환할 수 있는지 확인하세요.",
+      "tags": [
+        "free-freely",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사·부사",
+          "meaning": "무료인·무료로",
+          "reason": "free는 이 문장의 circulate를 막힘없이 수식하는 표준 부사 freely와 다르다."
+        },
+        {
+          "form": "명사",
+          "meaning": "자유",
+          "reason": "circulate의 방식을 꾸미는 자리다. 냉각 장치 주변에서 공기가 막힘없이 돌아야 한다는 뜻이다 freedom는 ‘자유’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "부사",
+          "meaning": "자유롭게·막힘없이",
+          "reason": "air circulate와 around the cooling unit은 흐름이 방해받지 않는 상황이다. 따라서 freely가 맞다."
+        },
+        {
+          "form": "과거형·과거분사",
+          "meaning": "풀어 주었다·풀려난",
+          "reason": "circulate의 방식을 꾸미는 자리다. 냉각 장치 주변에서 공기가 막힘없이 돌아야 한다는 뜻이다 freed는 free의 과거형·과거분사로 ‘풀어 준/풀려난’이라는 뜻이어서 이 문장의 무료·무제약 의미와 맞지 않는다."
+        }
+      ],
+      "originalReference": "focus-ly-50-042",
+      "clues": [
+        "circulate",
+        "around the cooling unit"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-033",
+      "number": 33,
+      "version": 1,
+      "stem": "Please read the revised warranty terms ________ before signing the service agreement.",
+      "choices": [
+        "closely",
+        "close",
+        "closeness",
+        "closing"
+      ],
+      "answer": 0,
+      "translation": "서비스 계약에 서명하기 전에 수정된 보증 조건을 면밀히 읽어 주세요.",
+      "tags": [
+        "close-closely",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "면밀히·긴밀히",
+          "reason": "read와 before signing은 내용을 주의 깊게 살피라는 요청이다. 따라서 closely가 맞다."
+        },
+        {
+          "form": "형용사·부사",
+          "meaning": "가까운·가까이",
+          "reason": "close는 가까이이며 약관을 주의 깊게 읽는 방식을 나타내는 표준 부사와 다르다."
+        },
+        {
+          "form": "명사",
+          "meaning": "가까움·친밀함",
+          "reason": "read의 방식을 꾸미는 자리다. signing 전에 warranty terms를 면밀히 읽으라는 뜻이다 closeness는 ‘가까움·친밀함’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "형용사·분사",
+          "meaning": "마지막의·닫는",
+          "reason": "read의 방식을 꾸미는 자리다. signing 전에 warranty terms를 면밀히 읽으라는 뜻이다 closing은 ‘닫는/마지막의’라는 분사·형용사여서 이 문장의 거리·관찰 방식을 나타내지 못한다."
+        }
+      ],
+      "originalReference": "focus-ly-50-031",
+      "clues": [
+        "read the revised warranty terms"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-034",
+      "number": 34,
+      "version": 1,
+      "stem": "Our designers worked ________ with the manufacturer to resolve the packaging problem.",
+      "choices": [
+        "close",
+        "closeness",
+        "closely",
+        "closing"
+      ],
+      "answer": 2,
+      "translation": "디자이너들은 포장 문제를 해결하려고 제조업체와 긴밀히 협력했다.",
+      "tags": [
+        "close-closely",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사·부사",
+          "meaning": "가까운·가까이",
+          "reason": "close는 이 문맥에서 협업의 긴밀함을 나타내는 표준 worked closely with와 다르다."
+        },
+        {
+          "form": "명사",
+          "meaning": "가까움·친밀함",
+          "reason": "worked closely with가 manufacturer와 긴밀히 협업한다는 뜻이다 closeness는 ‘가까움·친밀함’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "부사",
+          "meaning": "면밀히·긴밀히",
+          "reason": "worked with와 resolve the problem은 긴밀한 협력 관계다. 따라서 closely가 맞다."
+        },
+        {
+          "form": "형용사·분사",
+          "meaning": "마지막의·닫는",
+          "reason": "worked closely with가 manufacturer와 긴밀히 협업한다는 뜻이다 closing은 ‘닫는/마지막의’라는 분사·형용사여서 이 문장의 거리·관찰 방식을 나타내지 못한다."
+        }
+      ],
+      "originalReference": "focus-ly-50-034",
+      "clues": [
+        "worked",
+        "with the manufacturer"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-035",
+      "number": 35,
+      "version": 1,
+      "stem": "Orders have ________ doubled since the product was featured in a national magazine.",
+      "choices": [
+        "near",
+        "nearness",
+        "nearest",
+        "nearly"
+      ],
+      "answer": 3,
+      "translation": "제품이 전국 잡지에 소개된 뒤 주문량이 거의 두 배가 되었다.",
+      "tags": [
+        "near-nearly",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사·형용사·부사",
+          "meaning": "가까이에·가까운·가까이",
+          "reason": "near는 doubled를 거의라는 정도로 수식하는 표준 형태가 아니다."
+        },
+        {
+          "form": "명사",
+          "meaning": "가까움",
+          "reason": "have와 doubled 사이에서 두 배라는 수량에 거의 도달했음을 나타내는 자리다 nearness는 ‘가까움’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "형용사·부사 최상급",
+          "meaning": "가장 가까운·가장 가까이",
+          "reason": "have와 doubled 사이에서 두 배라는 수량에 거의 도달했음을 나타내는 자리다 nearest는 ‘가장 가까운/가까이’라는 최상급이므로 비교 범위를 전제한다. 여기서 의도한 일반적인 근접 위치·정도 표현과 구별한다."
+        },
+        {
+          "form": "부사",
+          "meaning": "거의",
+          "reason": "doubled는 수량 변화이며 그 수준에 거의 도달했음을 나타낸다. 따라서 nearly가 맞다."
+        }
+      ],
+      "originalReference": "focus-ly-50-028",
+      "clues": [
+        "doubled"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-036",
+      "number": 36,
+      "version": 1,
+      "stem": "Please keep your identification card ________ at hand while entering the secure laboratory.",
+      "choices": [
+        "close",
+        "closely",
+        "closeness",
+        "closing"
+      ],
+      "answer": 0,
+      "translation": "보안 실험실에 들어갈 때 신분증을 바로 꺼낼 수 있게 가까이 두세요.",
+      "tags": [
+        "close-closely",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사·부사",
+          "meaning": "가까운·가까이",
+          "reason": "at hand는 손이 닿는 가까운 위치를 뜻한다. 따라서 close가 맞다."
+        },
+        {
+          "form": "부사",
+          "meaning": "면밀히·긴밀히",
+          "reason": "closely는 면밀히·긴밀히이며 close at hand라는 위치 표현을 만들지 못한다."
+        },
+        {
+          "form": "명사",
+          "meaning": "가까움·친밀함",
+          "reason": "keep your identification card 뒤에서 신분증을 가까이 두는 상태를 나타낸다. close at hand가 결합한다 closeness는 ‘가까움·친밀함’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "형용사·분사",
+          "meaning": "마지막의·닫는",
+          "reason": "keep your identification card 뒤에서 신분증을 가까이 두는 상태를 나타낸다. close at hand가 결합한다 closing은 ‘닫는/마지막의’라는 분사·형용사여서 이 문장의 거리·관찰 방식을 나타내지 못한다."
+        }
+      ],
+      "originalReference": "focus-ly-50-035",
+      "clues": [
+        "at hand"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-037",
+      "number": 37,
+      "version": 1,
+      "stem": "________, the café has been attracting more office workers since introducing a faster lunch service.",
+      "choices": [
+        "late",
+        "lateness",
+        "lately",
+        "latest"
+      ],
+      "answer": 2,
+      "translation": "카페는 더 빠른 점심 서비스를 도입한 후 최근 직장인 고객을 더 많이 모으고 있다.",
+      "tags": [
+        "late-lately",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사·부사",
+          "meaning": "늦은·늦게",
+          "reason": "late는 늦게라는 뜻이라 최근 늘어나는 추세와 다르다."
+        },
+        {
+          "form": "명사",
+          "meaning": "지각·지연",
+          "reason": "문장 앞에서 has been attracting의 최근 추세를 소개하는 자리다 lateness는 ‘지각·지연’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "부사",
+          "meaning": "최근에",
+          "reason": "문장 앞에서 has been attracting의 최근 추세를 소개하는 lately이다. 따라서 lately가 맞다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "가장 최근의",
+          "reason": "문장 앞에서 has been attracting의 최근 추세를 소개하는 자리다 latest는 ‘가장 최근의’라는 형용사로, 이 자리의 시간 부사 late/lately를 대신하지 못한다."
+        }
+      ],
+      "originalReference": "focus-ly-50-022",
+      "clues": [
+        "has been attracting",
+        "since introducing a faster lunch service"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-038",
+      "number": 38,
+      "version": 1,
+      "stem": "The supplier's revised price is not ________ as low as we had expected, so further negotiation is necessary.",
+      "choices": [
+        "near",
+        "nearness",
+        "nearest",
+        "nearly"
+      ],
+      "answer": 3,
+      "translation": "공급업체의 수정 가격은 기대만큼 낮기는커녕 한참 높아서 추가 협상이 필요하다.",
+      "tags": [
+        "near-nearly",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사·형용사·부사",
+          "meaning": "가까이에·가까운·가까이",
+          "reason": "near는 이 격식 비교 표현에서 not nearly as low as의 정도 부사를 대신하지 않는다."
+        },
+        {
+          "form": "명사",
+          "meaning": "가까움",
+          "reason": "not nearly as low as가 기대만큼 낮기는커녕 훨씬 높다는 뜻이다 nearness는 ‘가까움’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "형용사·부사 최상급",
+          "meaning": "가장 가까운·가장 가까이",
+          "reason": "not nearly as low as가 기대만큼 낮기는커녕 훨씬 높다는 뜻이다 nearest는 ‘가장 가까운/가까이’라는 최상급이므로 비교 범위를 전제한다. 여기서 의도한 일반적인 근접 위치·정도 표현과 구별한다."
+        },
+        {
+          "form": "부사",
+          "meaning": "거의",
+          "reason": "not ... as low as는 기대한 낮은 정도에 훨씬 못 미친다는 뜻이다. 따라서 nearly가 맞다."
+        }
+      ],
+      "originalReference": "focus-ly-50-030",
+      "clues": [
+        "not",
+        "as low as"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-039",
+      "number": 39,
+      "version": 1,
+      "stem": "The auditor's recommendations are ________ regarded for their accuracy and practical value.",
+      "choices": [
+        "high",
+        "height",
+        "highly",
+        "heighten"
+      ],
+      "answer": 2,
+      "translation": "감사인의 권고는 정확성과 실용성으로 높이 평가받는다.",
+      "tags": [
+        "high-highly",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "높이",
+          "reason": "high는 이 문장에서 평가받는 정도를 나타내는 highly regarded를 대신하지 못한다."
+        },
+        {
+          "form": "명사",
+          "meaning": "높이",
+          "reason": "regarded의 평가 정도를 꾸미는 자리다. accuracy and practical value가 좋은 평가의 근거다 height는 ‘높이’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "부사",
+          "meaning": "매우·높이 평가하여",
+          "reason": "regarded와 accuracy/practical value가 좋은 평가의 단서다. 따라서 highly가 맞다."
+        },
+        {
+          "form": "동사",
+          "meaning": "높이다",
+          "reason": "regarded의 평가 정도를 꾸미는 자리다. accuracy and practical value가 좋은 평가의 근거다 heighten는 ‘높이다’라는 동사다. 이미 있는 동사 구조에 이 원형을 덧붙일 수 없다."
+        }
+      ],
+      "originalReference": "focus-ly-50-015",
+      "clues": [
+        "regarded",
+        "accuracy and practical value"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-040",
+      "number": 40,
+      "version": 1,
+      "stem": "Keep the loading doors ________ open until the delivery crew has moved the large display inside.",
+      "choices": [
+        "widely",
+        "width",
+        "wide",
+        "widen"
+      ],
+      "answer": 2,
+      "translation": "배송팀이 대형 전시물을 안으로 옮길 때까지 하역장 문을 활짝 열어 두세요.",
+      "tags": [
+        "wide-widely",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "널리·큰 폭으로",
+          "reason": "widely는 널리·큰 폭으로이며 wide open의 활짝 열린 물리적 상태와 다르다."
+        },
+        {
+          "form": "명사",
+          "meaning": "폭",
+          "reason": "open 앞에서 문이 활짝 열린 정도를 나타내는 자리다. large display가 통과해야 한다는 단서다 width는 ‘폭’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "형용사·부사",
+          "meaning": "넓은·활짝",
+          "reason": "large display를 통과시키려면 문이 완전히 열려 있어야 한다. 따라서 wide가 맞다."
+        },
+        {
+          "form": "동사",
+          "meaning": "넓히다",
+          "reason": "open 앞에서 문이 활짝 열린 정도를 나타내는 자리다. large display가 통과해야 한다는 단서다 widen는 ‘넓히다’라는 동사다. 이미 있는 동사 구조에 이 원형을 덧붙일 수 없다."
+        }
+      ],
+      "originalReference": "focus-ly-50-044",
+      "clues": [
+        "open",
+        "large display"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-041",
+      "number": 41,
+      "version": 1,
+      "stem": "Payment received after the stated deadline will be considered ________ and may incur a fee.",
+      "choices": [
+        "lately",
+        "late",
+        "lateness",
+        "latest"
+      ],
+      "answer": 1,
+      "translation": "명시된 기한 후 접수된 결제는 지연된 것으로 간주되어 수수료가 부과될 수 있다.",
+      "tags": [
+        "late-lately",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "최근에",
+          "reason": "lately는 최근에라는 부사라 결제의 지연 상태를 설명하지 못한다."
+        },
+        {
+          "form": "형용사·부사",
+          "meaning": "늦은·늦게",
+          "reason": "after the stated deadline이 기한을 넘긴 상태를 뜻한다. 따라서 late가 맞다."
+        },
+        {
+          "form": "명사",
+          "meaning": "지각·지연",
+          "reason": "will be considered 뒤에서 Payment의 기한 초과 상태를 설명하는 자리다 lateness는 ‘지각·지연’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "가장 최근의",
+          "reason": "will be considered 뒤에서 Payment의 기한 초과 상태를 설명하는 자리다 latest는 ‘가장 최근의’라는 형용사로, 이 자리의 시간 부사 late/lately를 대신하지 못한다."
+        }
+      ],
+      "originalReference": "focus-ly-50-023",
+      "clues": [
+        "after the stated deadline",
+        "will be considered"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-042",
+      "number": 42,
+      "version": 1,
+      "stem": "The inspection drone flew ________ above the factory roof to photograph the entire site.",
+      "choices": [
+        "high",
+        "highly",
+        "height",
+        "heighten"
+      ],
+      "answer": 0,
+      "translation": "점검 드론은 전체 부지를 촬영하려고 공장 지붕 위 높이 날았다.",
+      "tags": [
+        "high-highly",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "높이",
+          "reason": "above the factory roof가 실제 공간 높이의 단서다. 따라서 high가 맞다."
+        },
+        {
+          "form": "부사",
+          "meaning": "매우·높이 평가하여",
+          "reason": "highly는 매우·높이 평가하여이며 드론이 난 물리적 고도를 나타내지 않는다."
+        },
+        {
+          "form": "명사",
+          "meaning": "높이",
+          "reason": "flew의 실제 고도를 나타내는 자리다. above the factory roof가 공간 단서다 height는 ‘높이’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "동사",
+          "meaning": "높이다",
+          "reason": "flew의 실제 고도를 나타내는 자리다. above the factory roof가 공간 단서다 heighten는 ‘높이다’라는 동사다. 이미 있는 동사 구조에 이 원형을 덧붙일 수 없다."
+        }
+      ],
+      "originalReference": "focus-ly-50-010",
+      "clues": [
+        "above the factory roof"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-043",
+      "number": 43,
+      "version": 1,
+      "stem": "To avoid disturbing the presentation, anyone who arrives ________ should use the rear entrance.",
+      "choices": [
+        "lately",
+        "lateness",
+        "latter",
+        "late"
+      ],
+      "answer": 3,
+      "translation": "발표를 방해하지 않도록 늦게 도착하는 사람은 뒤쪽 출입구를 이용해야 한다.",
+      "tags": [
+        "late-lately",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "최근에",
+          "reason": "lately는 최근에이므로 발표 시작에 늦는다는 뜻이 아니다."
+        },
+        {
+          "form": "명사",
+          "meaning": "지각·지연",
+          "reason": "arrives를 꾸미며 발표 시작에 늦게 도착하는 경우를 뜻한다 lateness는 ‘지각·지연’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "후자의",
+          "reason": "arrives의 도착 시점을 설명하는 자리다. latter는 앞서 언급한 둘 중 후자를 가리키는 형용사여서 이 시간 부사 자리에 맞지 않는다."
+        },
+        {
+          "form": "형용사·부사",
+          "meaning": "늦은·늦게",
+          "reason": "avoid disturbing the presentation은 시작 후 도착하는 상황이다. 따라서 late가 맞다."
+        }
+      ],
+      "originalReference": "focus-ly-50-019",
+      "clues": [
+        "To avoid disturbing the presentation",
+        "arrives",
+        "rear entrance"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-044",
+      "number": 44,
+      "version": 1,
+      "stem": "The retailer's products are now ________ available through stores in more than forty countries.",
+      "choices": [
+        "widely",
+        "wide",
+        "width",
+        "widen"
+      ],
+      "answer": 0,
+      "translation": "그 소매업체의 제품은 이제 40개국이 넘는 매장에서 널리 구할 수 있다.",
+      "tags": [
+        "wide-widely",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "널리·큰 폭으로",
+          "reason": "stores in more than forty countries는 공급 범위가 넓다는 뜻이다. 따라서 widely가 맞다."
+        },
+        {
+          "form": "형용사·부사",
+          "meaning": "넓은·활짝",
+          "reason": "wide는 available 앞에서 널리 구할 수 있다는 분포를 나타내지 않는다."
+        },
+        {
+          "form": "명사",
+          "meaning": "폭",
+          "reason": "available을 꾸며 제품을 구할 수 있는 넓은 범위를 나타낸다. more than forty countries가 근거다 width는 ‘폭’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "동사",
+          "meaning": "넓히다",
+          "reason": "available을 꾸며 제품을 구할 수 있는 넓은 범위를 나타낸다. more than forty countries가 근거다 widen는 ‘넓히다’라는 동사다. 이미 있는 동사 구조에 이 원형을 덧붙일 수 없다."
+        }
+      ],
+      "originalReference": "focus-ly-50-045",
+      "clues": [
+        "available",
+        "more than forty countries"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-045",
+      "number": 45,
+      "version": 1,
+      "stem": "This accounting method is ________ used by small businesses throughout the region.",
+      "choices": [
+        "wide",
+        "widely",
+        "width",
+        "widen"
+      ],
+      "answer": 1,
+      "translation": "이 회계 방식은 지역 전역의 소기업에서 널리 사용된다.",
+      "tags": [
+        "wide-widely",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사·부사",
+          "meaning": "넓은·활짝",
+          "reason": "wide는 used 앞에서 여러 곳에서 사용된다는 뜻의 부사가 아니다."
+        },
+        {
+          "form": "부사",
+          "meaning": "널리·큰 폭으로",
+          "reason": "throughout the region은 사용 범위가 넓다는 단서다. 따라서 widely가 맞다."
+        },
+        {
+          "form": "명사",
+          "meaning": "폭",
+          "reason": "used를 꾸며 이 회계 방식의 넓은 사용 범위를 나타낸다. throughout the region이 단서다 width는 ‘폭’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "동사",
+          "meaning": "넓히다",
+          "reason": "used를 꾸며 이 회계 방식의 넓은 사용 범위를 나타낸다. throughout the region이 단서다 widen는 ‘넓히다’라는 동사다. 이미 있는 동사 구조에 이 원형을 덧붙일 수 없다."
+        }
+      ],
+      "originalReference": "focus-ly-50-049",
+      "clues": [
+        "used",
+        "throughout the region"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-046",
+      "number": 46,
+      "version": 1,
+      "stem": "At the workshop, employees were encouraged to speak ________ without fear of criticism.",
+      "choices": [
+        "free",
+        "freely",
+        "freedom",
+        "freed"
+      ],
+      "answer": 1,
+      "translation": "워크숍에서 직원들은 비판을 두려워하지 말고 자유롭게 말하도록 권장받았다.",
+      "tags": [
+        "free-freely",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사·부사",
+          "meaning": "무료인·무료로",
+          "reason": "speak의 방식을 꾸미는 자리다. without fear of criticism은 거리낌 없이 발언한다는 뜻이다 이 문장의 표준 결합은 speak freely/comment freely이며, free의 다른 용법을 모두 부정하는 규칙으로 외우지 않는다."
+        },
+        {
+          "form": "부사",
+          "meaning": "자유롭게·막힘없이",
+          "reason": "without fear of criticism은 발언의 제약이 없다는 뜻이다. 따라서 freely가 맞다."
+        },
+        {
+          "form": "명사",
+          "meaning": "자유",
+          "reason": "speak의 방식을 꾸미는 자리다. without fear of criticism은 거리낌 없이 발언한다는 뜻이다 freedom는 ‘자유’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "과거형·과거분사",
+          "meaning": "풀어 주었다·풀려난",
+          "reason": "speak의 방식을 꾸미는 자리다. without fear of criticism은 거리낌 없이 발언한다는 뜻이다 freed는 free의 과거형·과거분사로 ‘풀어 준/풀려난’이라는 뜻이어서 이 문장의 무료·무제약 의미와 맞지 않는다."
+        }
+      ],
+      "originalReference": "focus-ly-50-039",
+      "clues": [
+        "speak",
+        "without fear of criticism"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-047",
+      "number": 47,
+      "version": 1,
+      "stem": "The proposed distribution center will be located ________ the airport to reduce transportation time.",
+      "choices": [
+        "nearly",
+        "near",
+        "nearness",
+        "nearby"
+      ],
+      "answer": 1,
+      "translation": "제안된 물류센터는 운송 시간을 줄이기 위해 공항 근처에 위치할 예정이다.",
+      "tags": [
+        "near-nearly",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "거의",
+          "reason": "nearly는 거의이며 the airport라는 장소 명사구를 전치사처럼 이끌지 않는다."
+        },
+        {
+          "form": "전치사·형용사·부사",
+          "meaning": "가까이에·가까운·가까이",
+          "reason": "the airport는 가까운 장소를 나타낸다. 따라서 near가 맞다."
+        },
+        {
+          "form": "명사",
+          "meaning": "가까움",
+          "reason": "the airport 앞에서 물류센터와 공항 사이의 위치 관계를 나타내는 자리다 nearness는 ‘가까움’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "부사·형용사",
+          "meaning": "가까이에; 인근의",
+          "reason": "뒤 명사구를 직접 받는 전치사 near가 필요하다. nearby는 이 자리에서 the airport나 the loading bay를 목적어로 받지 않는다."
+        }
+      ],
+      "originalReference": "focus-ly-50-025",
+      "clues": [
+        "located",
+        "the airport"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-048",
+      "number": 48,
+      "version": 1,
+      "stem": "Since the archive moved online, employees have ________ ever requested paper copies of old reports.",
+      "choices": [
+        "hard",
+        "hardness",
+        "hardly",
+        "harden"
+      ],
+      "answer": 2,
+      "translation": "자료실이 온라인으로 옮겨간 뒤 직원들은 과거 보고서 종이 사본을 거의 요청하지 않았다.",
+      "tags": [
+        "hard-hardly",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "열심히·세게",
+          "reason": "hard ever라는 빈도 표현은 쓰지 않으며 hard는 노력·강도를 뜻한다."
+        },
+        {
+          "form": "명사",
+          "meaning": "단단함",
+          "reason": "have와 requested 사이의 hardly ever가 ‘거의 한 번도 ~않다’라는 빈도를 나타낸다 hardness는 ‘단단함’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "부사",
+          "meaning": "거의 ~않다",
+          "reason": "ever와 결합해 빈도가 거의 없음을 나타낸다. 따라서 hardly가 맞다."
+        },
+        {
+          "form": "동사",
+          "meaning": "굳어지다·굳히다",
+          "reason": "have와 requested 사이의 hardly ever가 ‘거의 한 번도 ~않다’라는 빈도를 나타낸다 harden는 ‘굳어지다·굳히다’라는 동사다. 이미 있는 동사 구조에 이 원형을 덧붙일 수 없다."
+        }
+      ],
+      "originalReference": "focus-ly-50-006",
+      "clues": [
+        "ever requested paper copies"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-049",
+      "number": 49,
+      "version": 1,
+      "stem": "The committee thought long and ________ before approving the costly expansion proposal.",
+      "choices": [
+        "hardly",
+        "hard",
+        "hardness",
+        "harden"
+      ],
+      "answer": 1,
+      "translation": "위원회는 비용이 많이 드는 확장안을 승인하기 전에 오랫동안 신중히 고민했다.",
+      "tags": [
+        "hard-hardly",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "거의 ~않다",
+          "reason": "hardly thought는 거의 생각하지 않았다는 뜻이라 long and와 맞지 않는다."
+        },
+        {
+          "form": "부사",
+          "meaning": "열심히·세게",
+          "reason": "thought long and는 오래 깊이 고민한 정도를 연결한다. 따라서 hard가 맞다."
+        },
+        {
+          "form": "명사",
+          "meaning": "단단함",
+          "reason": "thought long and 뒤에서 고민한 강도를 병렬로 나타내는 자리다 hardness는 ‘단단함’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "동사",
+          "meaning": "굳어지다·굳히다",
+          "reason": "thought long and 뒤에서 고민한 강도를 병렬로 나타내는 자리다 harden는 ‘굳어지다·굳히다’라는 동사다. 이미 있는 동사 구조에 이 원형을 덧붙일 수 없다."
+        }
+      ],
+      "originalReference": "focus-ly-50-003",
+      "clues": [
+        "thought long and"
+      ]
+    },
+    {
+      "id": "focus-ly-v2-50-050",
+      "number": 50,
+      "version": 1,
+      "stem": "The findings were ________ reported in the business press after the research team released its study.",
+      "choices": [
+        "widely",
+        "wide",
+        "width",
+        "widen"
+      ],
+      "answer": 0,
+      "translation": "연구팀이 보고서를 발표한 뒤 그 결과가 경제 언론에 널리 보도되었다.",
+      "tags": [
+        "wide-widely",
+        "ly-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "널리·큰 폭으로",
+          "reason": "in the business press는 많은 매체에 걸친 보도 범위를 가리킨다. 따라서 widely가 맞다."
+        },
+        {
+          "form": "형용사·부사",
+          "meaning": "넓은·활짝",
+          "reason": "wide는 reported 앞에서 널리 보도되었다는 분포를 나타내지 않는다."
+        },
+        {
+          "form": "명사",
+          "meaning": "폭",
+          "reason": "reported를 꾸며 연구 결과가 널리 보도된 범위를 나타내는 자리다 width는 ‘폭’라는 명사여서 이 자리의 수식·상태 표현을 대신하지 못한다."
+        },
+        {
+          "form": "동사",
+          "meaning": "넓히다",
+          "reason": "reported를 꾸며 연구 결과가 널리 보도된 범위를 나타내는 자리다 widen는 ‘넓히다’라는 동사다. 이미 있는 동사 구조에 이 원형을 덧붙일 수 없다."
+        }
+      ],
+      "originalReference": "focus-ly-50-047",
+      "clues": [
+        "reported",
+        "in the business press"
+      ]
+    }
+  ]
+}

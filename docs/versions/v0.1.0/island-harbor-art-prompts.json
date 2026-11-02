@@ -1,0 +1,15 @@
+{
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "kind": "history",
+      "prompt": "Use case: stylized-concept. Asset type: portrait mobile game exploration environment, 3:4 aspect ratio, polished high-detail hand-painted fantasy RPG island scene. Use the provided history island artwork as the visual style reference: bright green ancient forest, mossy cream stone, blue turquoise ocean, luminous cyan portal, rounded foliage, cheerful polished File Island game aesthetic. Recompose as an elevated three-quarter view vertical navigable island with EXACTLY THREE distinct landmark clearings, all fully inside the frame: a ruined stone portal and ancient stairway in upper center (around x50%, y23%); a giant training tree with a circular stone platform in middle left (x24%, y48%); a small ivy covered stone archive with shelves and scrolls visible in lower right (x72%, y72%). Connect them by believable broad winding stone stairs/paths embedded in the land, no superimposed route lines. Bottom has arrival wooden dock, left and right foreground leafy branches, surrounding turquoise sea and small waterfalls. Keep clear ground below each landmark for later small HTML nameplates. Composition must read at 320px width, three well-separated interactive destinations, natural world geography, substantial land, not a website or interface. No text, letters, numbers, labels, icons, badges, buttons, UI cards, border frames, people, watermark. Output image only.",
+      "ref": "history"
+    },
+    {
+      "kind": "toeic",
+      "prompt": "Use case: stylized-concept. Asset type: portrait mobile game exploration environment, 3:4 aspect ratio, polished high-detail hand-painted fantasy RPG tropical learning island. Use provided coastal island artwork as the visual style reference: bright turquoise lagoon, warm cream sand and stone, blue-roof buildings, palms, cyan glowing stone portal, wooden piers, colorful tiny flowers, cheerful polished File Island game aesthetic. Recompose as an elevated three-quarter view vertical navigable lagoon village with EXACTLY FOUR distinct landmarks distributed clearly in a staggered arrangement: small open-air beach library pavilion with books in upper left at x26%, y24%; ancient glowing stone arch in upper right at x73%, y40%; a wooden review dock with moored small sailboat and navigation table in lower left at x25%, y60%; a sea listening pavilion with little brass wind chimes in lower right at x74%, y78%. Connect locations by believable sandy coastal footpaths and wooden boardwalks following shore, NEVER a single symmetrical snake line. Show enough clear ground immediately below each landmark for later compact HTML nameplates. Surrounding water, coral and palms, foreground leaves at corners. All four buildings/landmarks fully visible and separated; entire scene reads at 320px wide. This is a playable game environment, not a website or interface mockup. No text, letters, numbers, labels, badges, icons, buttons, UI cards, border frame, people, watermark. Output image only.",
+      "ref": "toeic"
+    }
+  ]
+}

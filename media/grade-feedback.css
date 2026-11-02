@@ -1,0 +1,29 @@
+/* Pen strokes only: no backdrop, panel fill, frame, flash, scale or shadow. */
+.hanq-grade-burst{position:fixed;z-index:10010;inset:0;pointer-events:none!important;display:flex;align-items:flex-start;justify-content:center;padding:calc(env(safe-area-inset-top,0px) + clamp(68px,16vh,150px)) max(16px,env(safe-area-inset-right,0px)) env(safe-area-inset-bottom,0px) max(16px,env(safe-area-inset-left,0px));isolation:isolate;animation:hgf-away 1.1s ease-out both}
+html .hanq-grade-burst,html .hanq-grade-burst .hgf-panel{background:none!important;background-color:transparent!important;border:0!important;box-shadow:none!important;color:#c32624!important}
+html[data-hanq-theme=terminal] .hanq-grade-burst,html[data-hanq-theme=terminal] .hanq-grade-burst .hgf-panel{background:none!important;background-color:transparent!important;border:0!important;box-shadow:none!important;color:#ff736a!important}
+.hanq-grade-burst .hgf-panel{position:relative;display:block;padding:0!important;max-width:100%;animation:none!important;transform:none!important}
+.hanq-grade-burst svg{display:block;width:clamp(150px,27vw,220px);height:auto;overflow:visible;filter:none!important}
+html .hanq-grade-burst :is(circle,path){fill:none!important;stroke:currentColor;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:100;stroke-dashoffset:100;animation:hgf-pen .5s ease-in-out both}
+html .hanq-grade-burst circle{transform:rotate(-90deg);transform-origin:60px 60px}
+html .hanq-grade-burst path{animation-duration:.25s}
+html .hanq-grade-burst .hgf-second{animation-delay:.23s}
+html[data-hanq-theme=terminal] .hanq-grade-burst{animation:hgf-away 1.1s ease-out both!important}
+html[data-hanq-theme=terminal] .hanq-grade-burst :is(circle,path){animation:hgf-pen .5s ease-in-out both!important}
+html[data-hanq-theme=terminal] .hanq-grade-burst path{animation-duration:.25s!important}
+html[data-hanq-theme=terminal] .hanq-grade-burst .hgf-second{animation-delay:.23s!important}
+.hanq-grade-burst .hgf-label{position:absolute!important;display:block!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+@keyframes hgf-pen{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}
+@keyframes hgf-away{0%,80%{opacity:1}100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){html .hanq-grade-burst,html .hanq-grade-burst .hgf-panel,html .hanq-grade-burst :is(circle,path),html[data-hanq-theme=terminal] .hanq-grade-burst,html[data-hanq-theme=terminal] .hanq-grade-burst .hgf-panel,html[data-hanq-theme=terminal] .hanq-grade-burst :is(circle,path){animation:none!important;stroke-dashoffset:0!important}}
+
+/* Provisional comparisons stay visibly distinct from officially verified grading. */
+html .hanq-grade-burst.is-reference .hgf-label{position:static!important;display:block!important;width:auto!important;height:auto!important;margin:10px 0 0!important;overflow:visible!important;clip-path:none!important;white-space:normal!important;text-align:center;font-size:14px;font-weight:600;line-height:1.5}
+/* Correctness uses semantic colour; only the symbol moves, never answer text. */
+html .hanq-grade-burst.is-right,html .hanq-grade-burst.is-right .hgf-panel,html[data-hanq-theme=terminal] .hanq-grade-burst.is-right,html[data-hanq-theme=terminal] .hanq-grade-burst.is-right .hgf-panel{color:#72ef9d!important}
+html .hanq-grade-burst.is-wrong,html .hanq-grade-burst.is-wrong .hgf-panel{color:#ff827a!important}
+html .hanq-grade-burst .hgf-panel svg{animation:hgf-settle .55s cubic-bezier(.2,.8,.25,1) both!important}
+.hanq-grade-burst .hgf-panel::before{content:'';position:absolute;left:50%;top:45%;width:72%;aspect-ratio:1;border:2px solid currentColor;border-radius:50%;pointer-events:none;animation:hgf-wave .65s ease-out both!important}
+@keyframes hgf-settle{0%{transform:translateY(8px) scale(.94);opacity:.3}60%{transform:translateY(-2px) scale(1.015);opacity:1}100%{transform:none;opacity:1}}
+@keyframes hgf-wave{from{transform:translate(-50%,-50%) scale(.6);opacity:.35}to{transform:translate(-50%,-50%) scale(1.45);opacity:0}}
+@media(prefers-reduced-motion:reduce){html .hanq-grade-burst .hgf-panel svg{animation:none!important}.hanq-grade-burst .hgf-panel::before{display:none}}

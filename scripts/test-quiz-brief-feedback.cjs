@@ -1,0 +1,10 @@
+'use strict';
+const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'..'),w={};let checks=0;function ok(x,label){assert(x,label);checks++;}
+for(const file of ['quiz-catalog.js','era-recall-quiz.js','era-recall-integration.js','reviewed-quiz.js','reviewed-quiz-integration.js','exam-pool.js','lecture-notes.js','textbook-notes.js','quiz-review.js','era-study-review.js','unified-quiz-selection.js','exam-brief-core.js','quiz-brief-feedback.js'])vm.runInNewContext(fs.readFileSync(path.join(root,'media',file),'utf8'),{window:w});
+const before=JSON.stringify([w.HANQ_QUIZ_CATALOG,w.HANQ_EXAM_POOL]);
+for(const [id,text,contains,excludes]of [['legacy-joseon-late-000','숙종','백두산정계비','광해군'],['legacy-joseon-late-001','숙종','백두산정계비','인조'],['legacy-joseon-early-002','명종','을사사화','세종'],['exam-70-03','②','백제','장수왕']]){const q=(w.HANQ_QUIZ_CATALOG.questions[id]||w.HANQ_EXAM_POOL.questions[id]),o=q.options.find(o=>o.text===text),line=w.HanqQuizBriefFeedback.brief(q,o);ok(line&&line.includes(contains)&&!line.includes(excludes),'option attribution '+id+' '+text);}
+const unresolved=[];for(const q of [...Object.values(w.HANQ_QUIZ_CATALOG.questions),...Object.values(w.HANQ_EXAM_POOL.questions)]){const out=w.HanqQuizBriefFeedback.render(q,q.options[0].id);ok((out.match(/class="qb-option/g)||[]).length===q.options.length,'every option displayed '+q.id);ok(w.HanqQuizBriefFeedback.core(q).length<=5,'core max5 '+q.id);for(const o of q.options)if(!w.HanqQuizBriefFeedback.brief(q,o))unresolved.push(o.id);}
+const hostile={chapter:'goryeo',q:'<script>alert(1)</script>',options:[{id:'a',text:'<img src=x>',review:['<img src=x> — <script>alert(1)</script>'],correct:true}],overview:{reason:['<svg onload=bad()>']}};ok(!/<script>|<img\s|<svg\s/.test(w.HanqQuizBriefFeedback.render(hostile,'a')),'source escaped');
+ok(JSON.stringify([w.HANQ_QUIZ_CATALOG,w.HANQ_EXAM_POOL])===before,'question ids/options/versions immutable');
+console.log(JSON.stringify({checks,failures:0,unresolved:unresolved.length}));

@@ -1,0 +1,601 @@
+[
+  {
+    "name": "빗살무늬 토기",
+    "image": "media/review-focus/comb-pottery.webp",
+    "sha256": "c2d8e13ccdf680e58debbc76d3bdf57b64eaedd8b960aaef8370bf4371706556",
+    "officialQuestion": "media/exam-book/69-01.webp",
+    "generatedArt": false
+  },
+  {
+    "name": "분황사 모전석탑",
+    "image": "media/review-focus/bunhwang.webp",
+    "sha256": "65d3193d70d52e3cf3f2c4f6d5059c3111ea7828b7327671130d80da92778bff",
+    "officialQuestion": "media/exam-expanded/72-10.webp",
+    "generatedArt": false
+  },
+  {
+    "name": "호우명 그릇",
+    "image": "media/review-focus/hou.webp",
+    "sha256": "a56f4448e2a7addaeb86445b21361dea7a70de7565c50dc47b585a9a4bb4697c",
+    "officialQuestion": "media/exam-book/65-04.webp",
+    "generatedArt": false
+  },
+  {
+    "name": "연가 7년명 금동 여래 입상",
+    "image": "media/review-focus/yeonga.webp",
+    "sha256": "580e14aa929f314a04065b29878516860a5e0e59114b45918cc8f63ec36e5b8c",
+    "officialQuestion": "media/exam-book/69-06.webp",
+    "generatedArt": false
+  },
+  {
+    "name": "사신도·산수무늬 벽돌 자료",
+    "image": "media/review-focus/dao-cues.webp",
+    "sha256": "b656cc0979d6f7426ac1b9774283ee9dcc7eeb91133748c8eeb7059e5c9517d8",
+    "officialQuestion": "media/exam-expanded/70-05.webp",
+    "generatedArt": false
+  },
+  {
+    "name": "감은사지 동 삼층석탑",
+    "image": "media/review-focus/gameunsa.webp",
+    "sha256": "460029b60a5f3354b2f58c0fad8b84da6eb5a35f94a81c762bda145beda08c20",
+    "officialQuestion": "media/exam-expanded/72-10.webp",
+    "generatedArt": false
+  },
+  {
+    "name": "쌍봉사 철감선사탑",
+    "image": "media/review-focus/cheolgam.webp",
+    "sha256": "f290b0c467cdd264b101f41aaff7a0bd1f9de1d202dd9062d611c89c7e52cfe5",
+    "officialQuestion": "media/exam-expanded/72-10.webp",
+    "generatedArt": false
+  },
+  {
+    "name": "연꽃무늬 수막새·온돌 시설",
+    "image": "media/review-focus/balhae-cues.webp",
+    "sha256": "7c1e146b4e965d61c10479f6fff8b6bc328117c9568605cba435a525c7ac65bb",
+    "officialQuestion": "media/exam-book/66-08.webp",
+    "generatedArt": false
+  },
+  {
+    "name": "정혜 공주 묘",
+    "image": "media/review-focus/jeonghye.webp",
+    "sha256": "ad2ac049a77dbc02796cfffa41d09ea765277b1da560028d5c7c5fede64ea3bf",
+    "officialQuestion": "media/exam-expanded/72-07.webp",
+    "generatedArt": false
+  },
+  {
+    "name": "청자 투각 칠보무늬 향로",
+    "image": "media/review-focus/goryeo-chilbo.png",
+    "sha256": "438ff7d6016fdd4c4a10fb52c86ed12bb66e6d875cf36f1668a6145e9ab25e4a",
+    "officialQuestion": "media/exam-expanded/74-13.webp",
+    "generatedArt": false
+  },
+  {
+    "name": "나전칠기",
+    "image": "media/review-focus/goryeo-najeon.png",
+    "sha256": "3fa612c3fadf0975968d4b18a5fb1bc040261e37d2a8195c523155489f1ab2fd",
+    "officialQuestion": "media/exam-expanded/77-13.webp",
+    "generatedArt": false
+  },
+  {
+    "name": "경천사지 십층석탑",
+    "image": "media/review-focus/goryeo-gyeongcheon.png",
+    "sha256": "77d20d8fdb378c59a46c47aff22b37237ab83f19ba678df8bee0a3f0aff77b31",
+    "officialQuestion": "media/exam-expanded/74-13.webp",
+    "generatedArt": false
+  },
+  {
+    "name": "청자 어룡형 주전자",
+    "image": "media/review-focus/goryeo-figure.png",
+    "sha256": "b99f08c7417fd2dc118c8d1145bd7daa74e6b6c0bd01e67fdb5b3d877127a7ac",
+    "officialQuestion": "media/exam-expanded/76-17.webp",
+    "generatedArt": false
+  },
+  {
+    "name": "관촉사 석조 미륵보살 입상",
+    "image": "media/review-focus/goryeo-gwanchok.png",
+    "sha256": "f6a50f9a07aec10e6ae9e1c1d7f31a4b75218f18456c436f344653cf3e149e00",
+    "officialQuestion": "media/exam-expanded/77-13.webp",
+    "generatedArt": false
+  },
+  {
+    "name": "상평통보",
+    "image": "media/review-focus/goryeo-sangpyeong.png",
+    "sha256": "b5c246b79e58c925b557d5edb3cba82d65b526fc83d991ba10a0dd749790847f",
+    "officialQuestion": "media/exam-expanded/77-13.webp",
+    "generatedArt": false
+  },
+  {
+    "name": "월정사 팔각구층석탑",
+    "image": "media/culture-photos/woljeong.png",
+    "sha256": "94782fa38753c648de00dd7d9d6ca29109a8b1291561dfcd126320d3862e33f7",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 54,
+    "bookPage": 47,
+    "sourceCreditsPdfPage": 142,
+    "creditedInstitution": "문화재청",
+    "cropAt2600Height": [
+      614,
+      312,
+      270,
+      368
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  },
+  {
+    "name": "직지심체요절",
+    "image": "media/culture-photos/jikji.png",
+    "sha256": "8be1fcaa9242e2f194e3305f8b064cf529e804772cd71bf456859bbbd92eaffb",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 54,
+    "bookPage": 47,
+    "sourceCreditsPdfPage": 142,
+    "creditedInstitution": "프랑스 국립도서관",
+    "cropAt2600Height": [
+      1254,
+      316,
+      288,
+      358
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  },
+  {
+    "name": "하남 하사창동 철조 석가여래 좌상",
+    "image": "media/culture-photos/iron-buddha.png",
+    "sha256": "9dbcf93a45cb9ad49e00f6cd37e3abb69cc7c04d0e5d30fa9677c13c191430bd",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 54,
+    "bookPage": 47,
+    "sourceCreditsPdfPage": 142,
+    "creditedInstitution": "국가유산포털",
+    "cropAt2600Height": [
+      584,
+      840,
+      290,
+      336
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  },
+  {
+    "name": "부석사 소조 여래 좌상",
+    "image": "media/culture-photos/buseok.png",
+    "sha256": "1e2409a8c85d7b3f8cfc0c13c519562a407f248190ebaebf8c5c01e35ab3c26f",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 54,
+    "bookPage": 47,
+    "sourceCreditsPdfPage": 142,
+    "creditedInstitution": "한국민족문화대백과사전",
+    "cropAt2600Height": [
+      890,
+      780,
+      290,
+      456
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  },
+  {
+    "name": "수덕사 대웅전",
+    "image": "media/culture-photos/sudeok.png",
+    "sha256": "81ba933d642e67697156657c1bc8aa528f15f060eff3e31ad700a2d4a0ed4403",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 54,
+    "bookPage": 47,
+    "sourceCreditsPdfPage": 142,
+    "creditedInstitution": "수덕사",
+    "cropAt2600Height": [
+      1194,
+      744,
+      360,
+      242
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  },
+  {
+    "name": "봉정사 극락전",
+    "image": "media/culture-photos/bongjeong.png",
+    "sha256": "2f9ccc8f728fd734f211c16b78aa69ace2b845c7ed6371b7c68f4a100b6744dc",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 54,
+    "bookPage": 47,
+    "sourceCreditsPdfPage": 142,
+    "creditedInstitution": "봉정사",
+    "cropAt2600Height": [
+      1194,
+      1050,
+      338,
+      240
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  },
+  {
+    "name": "청동 은입사 정병",
+    "image": "media/culture-photos/kundika.png",
+    "sha256": "60ae5076dfca9f77044ba4861c73aa72f61cfa373cb0a26d035077ee58e36a40",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 54,
+    "bookPage": 47,
+    "sourceCreditsPdfPage": 142,
+    "creditedInstitution": "문화재청",
+    "cropAt2600Height": [
+      324,
+      1390,
+      206,
+      400
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  },
+  {
+    "name": "비색 순청자",
+    "image": "media/culture-photos/bisaek.png",
+    "sha256": "c222ee6c70f8c147f345d78d2407b08e235253cfdea8912b761bba1411da61a5",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 54,
+    "bookPage": 47,
+    "sourceCreditsPdfPage": 142,
+    "creditedInstitution": "문화재청",
+    "cropAt2600Height": [
+      672,
+      1396,
+      188,
+      386
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  },
+  {
+    "name": "상감청자",
+    "image": "media/culture-photos/sanggam.png",
+    "sha256": "bff5712aa41b9d4158f409a9d0141adc68a3df5249eb3f51b5674074625c6c7e",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 54,
+    "bookPage": 47,
+    "sourceCreditsPdfPage": 142,
+    "creditedInstitution": "문화재청",
+    "cropAt2600Height": [
+      962,
+      1404,
+      226,
+      390
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  },
+  {
+    "name": "수월관음도",
+    "image": "media/culture-photos/suwol.png",
+    "sha256": "1738a2dfbd30e0946008ec6ee275b251de7273e8742c95ca02948ed24edb2940",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 54,
+    "bookPage": 47,
+    "sourceCreditsPdfPage": 142,
+    "creditedInstitution": "문화재청",
+    "cropAt2600Height": [
+      726,
+      1860,
+      180,
+      422
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  },
+  {
+    "name": "천산대렵도",
+    "image": "media/culture-photos/hunting.png",
+    "sha256": "628ed71a4c310a9c7608892fbebac20f41bbf20ad63ae256c5e50855ea6b045e",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 54,
+    "bookPage": 47,
+    "sourceCreditsPdfPage": 142,
+    "creditedInstitution": "국립중앙박물관",
+    "cropAt2600Height": [
+      1222,
+      1868,
+      294,
+      404
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  },
+  {
+    "name": "소수서원",
+    "image": "media/culture-photos/sosu.png",
+    "sha256": "ee23b6fe3b08ce78517c8c9a02afb379a4674659c45949a6b00b774226d5925e",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 77,
+    "bookPage": 70,
+    "sourceCreditsPdfPage": 143,
+    "creditedInstitution": "한국학중앙연구원",
+    "cropAt2600Height": [
+      280,
+      1170,
+      396,
+      174
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  },
+  {
+    "name": "해인사 장경판전",
+    "image": "media/culture-photos/janggyeong.png",
+    "sha256": "15a0bbf5c6d3708b8d733a5c001243565c9f502b464d455cb260f713aeabbf42",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 77,
+    "bookPage": 70,
+    "sourceCreditsPdfPage": 143,
+    "creditedInstitution": "문화재청",
+    "cropAt2600Height": [
+      728,
+      1112,
+      366,
+      292
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  },
+  {
+    "name": "종묘",
+    "image": "media/culture-photos/jongmyo.png",
+    "sha256": "d253d25d95b6061e4a898778a8d6c72b15a786957cff5699fc3b71b2391b63ac",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 77,
+    "bookPage": 70,
+    "sourceCreditsPdfPage": 143,
+    "creditedInstitution": "문화재청",
+    "cropAt2600Height": [
+      1142,
+      1114,
+      418,
+      290
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  },
+  {
+    "name": "법주사 팔상전",
+    "image": "media/culture-photos/palsang.png",
+    "sha256": "6e3b2e58421f5ec816b68c58eb2039ed17bd5035686bb358c1817da80a3279b4",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 77,
+    "bookPage": 70,
+    "sourceCreditsPdfPage": 143,
+    "creditedInstitution": "국가유산청",
+    "cropAt2600Height": [
+      306,
+      1468,
+      346,
+      362
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  },
+  {
+    "name": "대동여지도",
+    "image": "media/culture-photos/daedong.png",
+    "sha256": "8c0bc900dca2656121f23a10d9f6bdacf15eae5272ed8d9d944300f18f1b110d",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 77,
+    "bookPage": 70,
+    "sourceCreditsPdfPage": 143,
+    "creditedInstitution": "문화재청",
+    "cropAt2600Height": [
+      776,
+      1474,
+      270,
+      348
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  },
+  {
+    "name": "분청사기",
+    "image": "media/culture-photos/buncheong.png",
+    "sha256": "0ea1a73742686182253d9c650369cec4e92d2c7c5f6ca5890a1989bcd3dfda44",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 77,
+    "bookPage": 70,
+    "sourceCreditsPdfPage": 143,
+    "creditedInstitution": "한국학중앙연구원",
+    "cropAt2600Height": [
+      372,
+      1916,
+      216,
+      358
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  },
+  {
+    "name": "순백자",
+    "image": "media/culture-photos/white.png",
+    "sha256": "41685ffcf4f4c45319b31549621f0eb2b2712399a08d52367c289772bfea461a",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 77,
+    "bookPage": 70,
+    "sourceCreditsPdfPage": 143,
+    "creditedInstitution": "국립중앙박물관",
+    "cropAt2600Height": [
+      796,
+      1916,
+      226,
+      342
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  },
+  {
+    "name": "청화백자",
+    "image": "media/culture-photos/blue-white.png",
+    "sha256": "676ed1c5aa883ce5802fedf028f09a644da395dd9d340b5c5f91c08cd4f4947d",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 77,
+    "bookPage": 70,
+    "sourceCreditsPdfPage": 143,
+    "creditedInstitution": "국립중앙박물관",
+    "cropAt2600Height": [
+      1222,
+      1898,
+      256,
+      364
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  },
+  {
+    "name": "몽유도원도",
+    "image": "media/culture-photos/mongyu.png",
+    "sha256": "88531bc0e6677b0ab902ca4c5d0c9a98773538462c32e28d487f7139f95aadb7",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 79,
+    "bookPage": 72,
+    "sourceCreditsPdfPage": 143,
+    "creditedInstitution": "한국학중앙연구원",
+    "cropAt2600Height": [
+      710,
+      712,
+      408,
+      134
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  },
+  {
+    "name": "세한도",
+    "image": "media/culture-photos/sehan.png",
+    "sha256": "6cd3f4ae6091bf2e0643c77e443cf1ab9634d09cee7cfb6e9289147fb843a5f3",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 79,
+    "bookPage": 72,
+    "sourceCreditsPdfPage": 143,
+    "creditedInstitution": "국립중앙박물관",
+    "cropAt2600Height": [
+      710,
+      996,
+      416,
+      174
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  },
+  {
+    "name": "금강전도",
+    "image": "media/culture-photos/geumgang.png",
+    "sha256": "c2e69998352323eb7d0cfbbcb1040a808897febc4761c1dc0f5ff8582f745cad",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 79,
+    "bookPage": 72,
+    "sourceCreditsPdfPage": 143,
+    "creditedInstitution": "한국학중앙연구원",
+    "cropAt2600Height": [
+      738,
+      1298,
+      352,
+      482
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  },
+  {
+    "name": "씨름",
+    "image": "media/culture-photos/ssireum.png",
+    "sha256": "4bfc459283e4af019593f6bad6fdb88824f7593f74ecfb5b0fdafc4a7017fc0d",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 79,
+    "bookPage": 72,
+    "sourceCreditsPdfPage": 143,
+    "creditedInstitution": "Wikimedia Commons(교재 출처표)",
+    "cropAt2600Height": [
+      750,
+      1860,
+      350,
+      446
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  },
+  {
+    "name": "전보 송신 장치",
+    "image": "media/culture-photos/telegraph.png",
+    "sha256": "7aa0e995a0fe77f5f00c2e8ffbf0e91141cb9b9efc492056352318a7dc2df421",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 103,
+    "bookPage": 96,
+    "sourceCreditsPdfPage": 143,
+    "creditedInstitution": "국가유산포털",
+    "cropAt2600Height": [
+      710,
+      468,
+      406,
+      290
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  },
+  {
+    "name": "명동성당",
+    "image": "media/culture-photos/cathedral.png",
+    "sha256": "daa55c99b1babc20a3a940f54c1bcc41ec90321f61f86252c7cd4e5cc93ad48f",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 103,
+    "bookPage": 96,
+    "sourceCreditsPdfPage": 143,
+    "creditedInstitution": "서울연구데이터베이스",
+    "cropAt2600Height": [
+      1142,
+      310,
+      404,
+      606
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  },
+  {
+    "name": "덕수궁 석조전",
+    "image": "media/culture-photos/seokjo.png",
+    "sha256": "c0a38dce640d5d3f3f00a02947d421c8ae4a2a132b71d0e6641848203fc640de",
+    "sourceFile": "벼락치기한능검_요약서.pdf",
+    "sourceSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "pdfPage": 103,
+    "bookPage": 96,
+    "sourceCreditsPdfPage": 143,
+    "creditedInstitution": "Wikimedia Commons(교재 출처표)",
+    "cropAt2600Height": [
+      710,
+      1042,
+      400,
+      274
+    ],
+    "visuallyInspected": true,
+    "generatedArt": false
+  }
+]

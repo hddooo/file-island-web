@@ -1,0 +1,51 @@
+/* Edited poses, not whole-image imitation: 4 columns x 2 rows. Rest occupies >80%.
+   Frame offsets register the generated neutral silhouette to the existing PNG.
+   These files belong only to idle presentation, never battle rules or attack frames. */
+@keyframes hanq-idle-actions{
+  0%,19.99%,26%,44.99%,48%,69.99%,74%,100%{background-position:0 0;translate:0 0}
+  20%,25%{background-position:33.333333% 0;translate:0 0}
+  21%,23%{background-position:66.666667% 0;translate:0 0}
+  22%,24%{background-position:100% 0;translate:0 0}
+  45%,47%{background-position:0 100%;translate:0 var(--idle-row-y,0%)}
+  46%{background-position:0 0;translate:0 0}
+  70%,73%{background-position:33.333333% 100%;translate:0 var(--idle-row-y,0%)}
+  71%{background-position:66.666667% 100%;translate:0 var(--idle-row-y,0%)}
+}
+/* Koromon's existing antennae touch its cheek; no extra motion-line frame. */
+@keyframes hanq-koromon-actions{
+  0%,19.99%,26%,69.99%,74%,100%{background-position:0 0;translate:0 0}
+  20%,25%{background-position:33.333333% 0;translate:0 0}
+  21%,23%{background-position:66.666667% 0;translate:0 0}
+  22%,24%{background-position:100% 0;translate:0 0}
+  70%,73%{background-position:33.333333% 100%;translate:0 var(--idle-row-y,0%)}
+  71%{background-position:66.666667% 100%;translate:0 var(--idle-row-y,0%)}
+}
+:is(.pet-life[data-stage=botamon],.hanq-idle--botamon){--idle-sheet:url('characters/botamon-idle-actions-v1.png');--idle-static:url('characters/botamon.png');--idle-size:82.0622%;--idle-left:7.4241%;--idle-top:3.6229%;--idle-row-y:3.2%;--idle-period:31s}
+:is(.pet-life[data-stage=koromon],.hanq-idle--koromon){--idle-sheet:url('characters/koromon-idle-actions-v1.png');--idle-static:url('characters/koromon.png');--idle-size:89.3267%;--idle-left:1.8216%;--idle-top:4.2082%;--idle-row-y:3.8%;--idle-period:37s;--idle-frames:hanq-koromon-actions}
+:is(.pet-life[data-stage=metalgreymon],.hanq-idle--metalgreymon){--idle-sheet:url('characters/metalgreymon-idle-actions-v1.png');--idle-static:url('characters/metalgreymon.png');--idle-size:99.0016%;--idle-left:.1231%;--idle-top:.5839%;--idle-period:53s}
+:is(.pet-life[data-stage=wargreymon],.hanq-idle--wargreymon){--idle-sheet:url('characters/wargreymon-idle-actions-v1.png');--idle-static:url('characters/wargreymon.png');--idle-size:96.532%;--idle-left:-1.3964%;--idle-top:2.9098%;--idle-period:47s}
+.hanq-idle-portrait{position:relative;display:inline-block;flex:none;background:transparent!important}
+.hanq-idle-portrait::before{content:"";position:absolute;inset:0;background:var(--idle-static) center/contain no-repeat;pointer-events:none}
+@media(prefers-reduced-motion:no-preference){
+ html body .ac-pet .pet-life:is([data-stage=botamon],[data-stage=koromon],[data-stage=metalgreymon],[data-stage=wargreymon]) .pet-ink,
+ html body .hanq-idle-portrait::before{inset:auto;left:var(--idle-left);top:var(--idle-top);width:var(--idle-size);height:var(--idle-size);background-image:var(--idle-sheet)!important;background-size:400% 200%!important;background-position:0 0;background-repeat:no-repeat;animation:var(--idle-frames,hanq-idle-actions) var(--idle-period) steps(1,end) infinite!important;animation-delay:var(--idle-delay,0s)!important}
+ html body .ac-pet .pet-life:is([data-stage=botamon],[data-stage=koromon],[data-stage=metalgreymon],[data-stage=wargreymon]) .pet-ink{animation-play-state:paused!important}
+ html body .ac-pet.is-alive .pet-life:is([data-stage=botamon],[data-stage=koromon],[data-stage=metalgreymon],[data-stage=wargreymon]) .pet-ink{animation-play-state:running!important}
+ html body .ac-pet .pet-life:is([data-stage=botamon],[data-stage=koromon],[data-stage=metalgreymon],[data-stage=wargreymon]) .pet-effect{display:none!important}
+ .hall-person:nth-child(2n) .hanq-idle-portrait{--idle-delay:-7s}.hall-person:nth-child(3n) .hanq-idle-portrait{--idle-delay:-13s}.hall-podium-place--2 .hanq-idle-portrait{--idle-delay:-5s}.hall-podium-place--3 .hanq-idle-portrait{--idle-delay:-11s}
+}
+@media(prefers-reduced-motion:reduce){html body .hanq-idle-portrait::before{animation:none!important;translate:none!important;transform:none!important}}
+/* Keep breathing's blend below faces/eyes: the rounded stages have no torso seam. */
+html body .ac-pet .pet-life:is([data-stage=botamon],[data-stage=koromon],[data-stage=metalgreymon],[data-stage=wargreymon]) .pet-feet{mask-image:linear-gradient(transparent 84%,#000 91%);-webkit-mask-image:linear-gradient(transparent 84%,#000 91%)}
+html body .ac-pet .pet-life:is([data-stage=botamon],[data-stage=koromon],[data-stage=metalgreymon],[data-stage=wargreymon]) .pet-face{mask-image:linear-gradient(#000 84%,transparent 91%);-webkit-mask-image:linear-gradient(#000 84%,transparent 91%)}
+/* Koromon's mouth reaches the bottom of its limbless body; blend only the base. */
+html body .ac-pet .pet-life[data-stage=koromon] .pet-feet{mask-image:linear-gradient(transparent 96%,#000 99.5%);-webkit-mask-image:linear-gradient(transparent 96%,#000 99.5%)}
+html body .ac-pet .pet-life[data-stage=koromon] .pet-face{mask-image:linear-gradient(#000 96%,transparent 99.5%);-webkit-mask-image:linear-gradient(#000 96%,transparent 99.5%)}
+
+/* Never expose a partly downloaded sprite: the original stays until decode succeeds. */
+@media(prefers-reduced-motion:no-preference){
+html:not(.hanq-idle-ready-botamon) body .ac-pet .pet-life[data-stage=botamon] .pet-ink,html:not(.hanq-idle-ready-botamon) body .hanq-idle--botamon::before{inset:0;left:0;top:0;width:100%;height:100%;background-image:var(--idle-static)!important;background-size:contain!important;background-position:center!important;animation:none!important;translate:none!important}
+html:not(.hanq-idle-ready-koromon) body .ac-pet .pet-life[data-stage=koromon] .pet-ink,html:not(.hanq-idle-ready-koromon) body .hanq-idle--koromon::before{inset:0;left:0;top:0;width:100%;height:100%;background-image:var(--idle-static)!important;background-size:contain!important;background-position:center!important;animation:none!important;translate:none!important}
+html:not(.hanq-idle-ready-metalgreymon) body .ac-pet .pet-life[data-stage=metalgreymon] .pet-ink,html:not(.hanq-idle-ready-metalgreymon) body .hanq-idle--metalgreymon::before{inset:0;left:0;top:0;width:100%;height:100%;background-image:var(--idle-static)!important;background-size:contain!important;background-position:center!important;animation:none!important;translate:none!important}
+html:not(.hanq-idle-ready-wargreymon) body .ac-pet .pet-life[data-stage=wargreymon] .pet-ink,html:not(.hanq-idle-ready-wargreymon) body .hanq-idle--wargreymon::before{inset:0;left:0;top:0;width:100%;height:100%;background-image:var(--idle-static)!important;background-size:contain!important;background-position:center!important;animation:none!important;translate:none!important}
+}

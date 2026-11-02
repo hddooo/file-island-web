@@ -1,0 +1,32 @@
+/* Material layers move inside the projectile; server combat state is untouched. */
+html body .bi-material,html body .bi-corona{position:absolute;inset:0;pointer-events:none;display:block;border-radius:inherit;background-color:transparent!important}
+html body :is(.bi-projectile-orb,.bi-charge-orb){border:0!important;border-radius:50%!important;overflow:visible!important;background:radial-gradient(circle at 38% 32%,#fff5a9 0 7%,#ffbf42 24%,#f7771a 53%,#ab3612 72%,#e6571470 76%,transparent 80%)!important;box-shadow:0 0 17px #ff9226ab,0 0 35px #ed581c55!important}
+html body .bi-material-orb{inset:5%;border-radius:50%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cg fill='none' stroke='%23532513' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke-width='6' d='M28 14l19 28-8 23 24 14-7 30 22 22-10 37 20 25M47 42l32-5 15 15 30-10 24 18 33-5M63 79l35-7 20 24 33-4 26 21M78 131l30-15 23 20 36-5M118 96l-10 20 8 38-20 22M124 42l8-27M151 92l-3-32M39 65L13 78M56 109l-35 23M131 136l6 43'/%3E%3C/g%3E%3Cg fill='%236b2914' opacity='.65'%3E%3Cpath d='M83 58l17-5 12 13-16-2zM137 105l23-4-6 14zM42 137l15-8 8 14-19 7zM118 160l9 9-15 12z'/%3E%3C/g%3E%3C/svg%3E")!important;background-size:100% 100%!important;box-shadow:inset 7px 5px 17px #fff28955,inset -8px -7px 16px #69231588!important;animation:bi-sun-surface 1.3s ease-in-out infinite alternate!important}
+html body .bi-corona-orb{inset:-10%;border-radius:44% 56% 48% 52%;border:5px solid #ffb52b80;background:conic-gradient(from 17deg,transparent,#ff8b1966,transparent 20%,#ffb92b77,transparent 43%,#ee551a88,transparent 70%,#ffb62a77,transparent)!important;filter:blur(2px);animation:bi-corona-flow 1.1s ease-in-out infinite alternate!important;z-index:-1}
+html body :is(.bi-projectile-flame,.bi-projectile-spark){overflow:visible!important;border:0!important;background:radial-gradient(ellipse at 65% 50%,#fff8b8 0 16%,#ffc148 33%,#f87519 57%,#b52f0a 78%,transparent 83%)!important;clip-path:polygon(0 46%,17% 28%,7% 10%,39% 23%,51% 2%,63% 20%,84% 12%,96% 34%,100% 54%,88% 78%,63% 94%,48% 80%,22% 99%,29% 73%,4% 80%,16% 59%)!important}
+html body .bi-projectile-spark{width:30px!important;height:25px!important}
+html body .bi-projectile-flame{width:112px!important;height:86px!important}
+html body :is(.bi-material-flame,.bi-material-spark){inset:7%;background:repeating-conic-gradient(from 35deg at 67% 50%,#fff7b599 0 9deg,transparent 10deg 26deg,#e1431366 27deg 34deg,transparent 35deg 49deg)!important;filter:blur(.5px);animation:bi-fire-flow .19s ease-in-out infinite alternate!important}
+html body :is(.bi-corona-flame,.bi-corona-spark){inset:22% 35% 20% -35%;background:linear-gradient(90deg,transparent,#e94e1388,#ffcf5899)!important;clip-path:polygon(0 0,100% 30%,82% 55%,100% 75%,0 100%,37% 65%,12% 52%,46% 33%);animation:bi-fire-flow .23s ease-in-out infinite alternate!important}
+html body :is(.bi-projectile-flame,.bi-projectile-spark)[data-direction=right] .bi-material{rotate:180deg}
+html body .bi-projectile-missile{width:34px!important;height:13px!important;border:1px solid #303f43!important;border-radius:4px 65% 65% 4px!important;background:linear-gradient(#e3e9df 0 20%,#788d91 22% 35%,#b3c5c4 38% 65%,#475960 68% 88%,#25333a 90%)!important;box-shadow:0 0 4px #d3e5dd77!important}
+html body .bi-material-missile{inset:0;border-radius:inherit;background:repeating-linear-gradient(90deg,transparent 0 8px,#273c43 9px 10px,transparent 11px 17px),linear-gradient(0deg,transparent 40%,#e6b254 42% 50%,transparent 52%)!important;clip-path:polygon(0 0,65% 0,65% 100%,0 100%)}
+html body .bi-corona-missile{inset:20% 90% 20% -110%;border-radius:60% 0 0 60%;background:linear-gradient(90deg,transparent,#b3b7ad66 20%,#d65c2199 45%,#ffc94d 78%,#fff6b2)!important;filter:blur(1px);animation:bi-exhaust .13s linear infinite alternate!important}
+html body .bi-projectile-missile[data-direction=right]{rotate:180deg}
+html body .bi-projectile-missile::after{display:none!important}
+html body .bi-ground-impact{position:absolute;bottom:25px;height:30px;z-index:3;pointer-events:none;transform:translateX(-50%)}
+html body .bi-ground-ring,html body .bi-ground-dust{position:absolute;left:50%;top:50%;width:100%;height:100%;border-radius:50%;pointer-events:none}
+html body .bi-ground-ring{border:3px solid #ffc27eaa!important;box-shadow:0 0 0 7px #ef793b33,inset 0 0 12px #e77a3944!important;background:radial-gradient(ellipse,transparent 30%,#f89a4544 65%,transparent 75%)!important}
+html body .bi-ground-dust{height:70px;background:radial-gradient(ellipse,#b8906866 10%,#69574666 42%,transparent 70%)!important;filter:blur(5px)}
+html body .bi-ground-bit{position:absolute;bottom:10px;width:7px;height:5px;clip-path:polygon(0 25%,70% 0,100% 65%,25% 100%);background:linear-gradient(140deg,#a19475,#3a3530)!important;pointer-events:none}
+html body .bi-ground-fire{position:absolute;bottom:5px;width:12px;transform-origin:50% 100%;background:linear-gradient(0deg,#d74b13,#ff9c28 60%,#ffeaa0)!important;clip-path:polygon(0 100%,8% 60%,25% 75%,40% 0,57% 43%,80% 17%,100% 100%);filter:drop-shadow(0 0 4px #e8652788)}
+html body .bi-ground-orb .bi-ground-ring{height:45px;border-width:5px!important;box-shadow:0 0 0 12px #ff934544!important}
+html body .bi-ground-missile .bi-ground-dust{height:100px}
+html body .bi-impact-orb{background:radial-gradient(circle,#fff0a5 2%,#ffb34bcb 16%,#e7652488 39%,#642a2455 56%,transparent 71%)!important}
+html body .bi-impact-flame{background:radial-gradient(circle,#fff1a8 3%,#ffad45cc 27%,#df511c99 47%,transparent 71%)!important}
+@keyframes bi-sun-surface{from{rotate:-5deg;scale:.98}to{rotate:5deg;scale:1.02}}
+@keyframes bi-corona-flow{from{rotate:-12deg;scale:.97}to{rotate:15deg;scale:1.05}}
+@keyframes bi-fire-flow{from{translate:-2px -1px;scale:.95 1.04}to{translate:2px 1px;scale:1.04 .96}}
+@keyframes bi-exhaust{from{scale:1 .8}to{scale:1.3 1.1}}
+@media(prefers-reduced-motion:reduce){html body :is(.bi-material,.bi-corona){animation:none!important}html body .bi-ground-impact{display:none!important}}
+html body .bi-corona-missile::before{content:'';position:absolute;right:45%;top:-70%;width:135%;height:240%;background:radial-gradient(ellipse at 80% 55%,#bbb7ab88 0 16%,transparent 32%),radial-gradient(ellipse at 51% 35%,#85898766 0 21%,transparent 39%),radial-gradient(ellipse at 20% 64%,#646d6b44 0 24%,transparent 44%)!important;filter:blur(1px);pointer-events:none}

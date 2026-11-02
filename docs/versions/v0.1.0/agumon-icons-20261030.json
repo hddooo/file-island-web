@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "created": "2026-10-30",
+  "tool": "built-in image_gen",
+  "transparent_background": true,
+  "source": "media/characters/agumon-idle-sprite.png",
+  "generatedMaster": "generated_images/exec-4bf32e15-0d89-4e5b-8a2a-8a9006976e9a.png",
+  "prompt": "Use case: identity-preserve. Asset type: transparent PNG app icon master. Reference/edit target: the provided approved Agumon sprite sheet. Create one centered close-up of ONLY the friendly Agumon head/face and a small upper neck, on a genuinely transparent alpha background. Match the first pose's approved design exactly: golden orange small dinosaur, large vivid green eyes, rounded muzzle with two nostrils, warm open smile, small white pointed teeth, dark brown clean outline and soft cel shading. Preserve the character identity, palette and drawing style. Make the face readable as a favicon at 16/32px and app icon at 180/192/512px. One head only, no sprite sheet, no text, no badge, no circle, no colored tile, no shadow behind it, no green background, no decorative elements, no full body. Entire head including all contours comfortably inside a square canvas with approximately 8% transparent margin. Keep white teeth opaque. True transparent background, never a checkerboard baked into the pixels.",
+  "resampling": "macOS sips, PNG alpha retained; no background fill",
+  "assets": [
+    "media/agumon-icon-transparent-16-20261030.png",
+    "media/agumon-icon-transparent-32-20261030.png",
+    "media/agumon-icon-transparent-180-20261030.png",
+    "media/agumon-icon-transparent-192-20261030.png",
+    "media/agumon-icon-transparent-512-20261030.png"
+  ],
+  "installedDeviceVerified": false,
+  "sources": [
+    "https://web.dev/articles/maskable-icon",
+    "https://webkit.org/blog/12445/new-webkit-features-in-safari-15-4/",
+    "https://webkit.org/blog/14787/webkit-features-in-safari-17-2/",
+    "https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html"
+  ]
+}

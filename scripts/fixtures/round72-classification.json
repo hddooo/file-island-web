@@ -1,0 +1,508 @@
+{
+  "schema": 1,
+  "round": 72,
+  "basis": "원본 문제·공식 정답의 주된 학습 대상을 기준으로 수동 분류. 부정형은 질문 대상 시대, 복합 시대는 정답 핵심을 기준으로 하며 동등한 복합 대상은 미확정으로 남긴다.",
+  "sourcePDFSHA256": "87307e726a2605000a087b3c97ec2bae8e4c079ca2a2ef2b567cc9a4a415b9b5",
+  "items": [
+    {
+      "number": 1,
+      "questionId": "exam-72-01",
+      "version": "de12892c9d5401a8",
+      "era": "ancient",
+      "part": "사회",
+      "topic": "청동기 고인돌",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 2,
+      "questionId": "exam-72-02",
+      "version": "17a5764a8a02fcf1",
+      "era": "ancient",
+      "part": "정치",
+      "topic": "위만 조선 왕검성",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 3,
+      "questionId": "exam-72-03",
+      "version": "ac192fcf9220479b",
+      "era": "ancient",
+      "part": "정치",
+      "topic": "고구려 평양 천도",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 4,
+      "questionId": "exam-72-04",
+      "version": "7d5f2880745dedad",
+      "era": "ancient",
+      "part": "문화",
+      "topic": "백제 도읍지 유적",
+      "note": "부정형 문항은 틀린 선지의 시대가 아니라 자료의 질문 대상을 기준으로 분류한다.",
+      "verified": true
+    },
+    {
+      "number": 5,
+      "questionId": "exam-72-05",
+      "version": "9ebca494652c5905",
+      "era": "ancient",
+      "part": "문화",
+      "topic": "고구려 태학 경당",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 6,
+      "questionId": "exam-72-06",
+      "version": "f8c6f21d3aae16b7",
+      "era": "ancient",
+      "part": "경제",
+      "topic": "통일 신라 울산항 무역",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 7,
+      "questionId": "exam-72-07",
+      "version": "d18393e4bc528cc3",
+      "era": "ancient",
+      "part": "정치",
+      "topic": "발해 정당성",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 8,
+      "questionId": "exam-72-08",
+      "version": "754610c887689869",
+      "era": "ancient",
+      "part": "사회",
+      "topic": "원종 애노의 난",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 9,
+      "questionId": "exam-72-09",
+      "version": "fb1b403b7e5f66f3",
+      "era": "ancient",
+      "part": "정치",
+      "topic": "견훤 후백제",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 10,
+      "questionId": "exam-72-10",
+      "version": "51f95e23b092471b",
+      "era": "ancient",
+      "part": "문화",
+      "topic": "신라 탑과 승탑",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 11,
+      "questionId": "exam-72-11",
+      "version": "9e59eba276fa2683",
+      "era": "goryeo",
+      "part": "정치",
+      "topic": "성종 통치 체제",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 12,
+      "questionId": "exam-72-12",
+      "version": "739bccad94e987b7",
+      "era": "goryeo",
+      "part": "대외관계",
+      "topic": "거란과 광군",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 13,
+      "questionId": "exam-72-13",
+      "version": "79e2fb3f1a65e128",
+      "era": "goryeo",
+      "part": "정치",
+      "topic": "김부식 묘청의 난",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 14,
+      "questionId": "exam-72-14",
+      "version": "06b8a266ff50abb2",
+      "era": "goryeo",
+      "part": "정치",
+      "topic": "무신 정권 연대",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 15,
+      "questionId": "exam-72-15",
+      "version": "415fe0e12fed7923",
+      "era": "goryeo",
+      "part": "정치",
+      "topic": "원 간섭기 권문세족",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 16,
+      "questionId": "exam-72-16",
+      "version": "5fda47c31cc9f11f",
+      "era": "goryeo",
+      "part": "경제",
+      "topic": "고려 관영 상점",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 17,
+      "questionId": "exam-72-17",
+      "version": "c369b6ab308bfe5f",
+      "era": "goryeo",
+      "part": "문화",
+      "topic": "고려 탑",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 18,
+      "questionId": "exam-72-18",
+      "version": "5bb7e12ea5f146de",
+      "era": "joseon",
+      "part": "정치",
+      "topic": "태종 주자소",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 19,
+      "questionId": "exam-72-19",
+      "version": "e84adc0ae93d66bc",
+      "era": "joseon",
+      "part": "정치",
+      "topic": "집현전",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 20,
+      "questionId": "exam-72-20",
+      "version": "fe31116a2c73694c",
+      "era": "joseon",
+      "part": "정치",
+      "topic": "성종 경국대전",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 21,
+      "questionId": "exam-72-21",
+      "version": "2ef07f4c250a4253",
+      "era": "joseon",
+      "part": "정치",
+      "topic": "을사사화",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 22,
+      "questionId": "exam-72-22",
+      "version": "39b6a6d54832f61d",
+      "era": "joseon",
+      "part": "대외관계",
+      "topic": "통신사",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 23,
+      "questionId": "exam-72-23",
+      "version": "72410b21ab200034",
+      "era": "joseon",
+      "part": "문화",
+      "topic": "강희안 고사관수도",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 24,
+      "questionId": "exam-72-24",
+      "version": "be099b77fb22dcf5",
+      "era": "joseon",
+      "part": "대외관계",
+      "topic": "병자호란 광교산",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 25,
+      "questionId": "exam-72-25",
+      "version": "d84fb82fa6103207",
+      "era": "joseon",
+      "part": "경제",
+      "topic": "대동법 공인",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 26,
+      "questionId": "exam-72-26",
+      "version": "36f25cb12340aff5",
+      "era": "joseon",
+      "part": "정치",
+      "topic": "송시열 예송",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 27,
+      "questionId": "exam-72-27",
+      "version": "45cb8f80935bc933",
+      "era": "joseon",
+      "part": "경제",
+      "topic": "조선 후기 상업",
+      "note": "부정형 문항은 틀린 선지의 시대가 아니라 자료의 질문 대상을 기준으로 분류한다.",
+      "verified": true
+    },
+    {
+      "number": 28,
+      "questionId": "exam-72-28",
+      "version": "c68f0ff2dd7b3ad2",
+      "era": "joseon",
+      "part": "정치",
+      "topic": "정조 검서관",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 29,
+      "questionId": "exam-72-29",
+      "version": "4addf89e5928a0b5",
+      "era": "opening",
+      "part": "문화",
+      "topic": "개항기 신문",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 30,
+      "questionId": "exam-72-30",
+      "version": "e7ef71989a98f4fc",
+      "era": "opening",
+      "part": "대외관계",
+      "topic": "개항기 통상 조약",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 31,
+      "questionId": "exam-72-31",
+      "version": "3a06fa42a14dcb50",
+      "era": "opening",
+      "part": "대외관계",
+      "topic": "신미양요",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 32,
+      "questionId": "exam-72-32",
+      "version": "632070f56eb1bcda",
+      "era": "opening",
+      "part": "정치",
+      "topic": "갑오개혁 교육 입국 조서",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 33,
+      "questionId": "exam-72-33",
+      "version": "8684b891fd2d69f7",
+      "era": "opening",
+      "part": "정치",
+      "topic": "동학 농민 운동",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 34,
+      "questionId": "exam-72-34",
+      "version": "a19ee081253267b1",
+      "era": "opening",
+      "part": "항일운동",
+      "topic": "정미의병",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 35,
+      "questionId": "exam-72-35",
+      "version": "447a19650e8ed47c",
+      "era": "opening",
+      "part": "정치",
+      "topic": "광무개혁 지계",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 36,
+      "questionId": "exam-72-36",
+      "version": "0f0c6b1ba0632f23",
+      "era": "colonial",
+      "part": "항일운동",
+      "topic": "3·1 운동",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 37,
+      "questionId": "exam-72-37",
+      "version": "c784d4d4a3fde361",
+      "era": "colonial",
+      "part": "항일운동",
+      "topic": "북로 군정서",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 38,
+      "questionId": "exam-72-38",
+      "version": "f45c96ef85b19436",
+      "era": "colonial",
+      "part": "사회",
+      "topic": "연해주 한인 강제 이주",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 39,
+      "questionId": "exam-72-39",
+      "version": "e93349051ebb1cdb",
+      "era": "colonial",
+      "part": "문화",
+      "topic": "심훈 상록수",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 40,
+      "questionId": "exam-72-40",
+      "version": "2e11d1a7221dac35",
+      "era": "colonial",
+      "part": "사회",
+      "topic": "식민지 근대 도시",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 41,
+      "questionId": "exam-72-41",
+      "version": "0a983112fffd04c6",
+      "era": "colonial",
+      "part": "식민통치",
+      "topic": "전시 동원",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 42,
+      "questionId": "exam-72-42",
+      "version": "13f9265770060088",
+      "era": "colonial",
+      "part": "항일운동",
+      "topic": "신채호와 독립운동 단체",
+      "note": "부정형 문항은 틀린 선지의 시대가 아니라 자료의 질문 대상을 기준으로 분류한다.",
+      "verified": true
+    },
+    {
+      "number": 43,
+      "questionId": "exam-72-43",
+      "version": "e2ded27558f53d9c",
+      "era": "modern",
+      "part": "정치",
+      "topic": "제주 4·3 사건",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 44,
+      "questionId": "exam-72-44",
+      "version": "50aeffbf8f9c8645",
+      "era": "modern",
+      "part": "정치",
+      "topic": "이승만 정부",
+      "note": "부정형 문항은 틀린 선지의 시대가 아니라 자료의 질문 대상을 기준으로 분류한다.",
+      "verified": true
+    },
+    {
+      "number": 45,
+      "questionId": "exam-72-45",
+      "version": "caa56a02f6a774ac",
+      "era": "modern",
+      "part": "정치",
+      "topic": "유신 헌법",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 46,
+      "questionId": "exam-72-46",
+      "version": "58a1f7a610d1194a",
+      "era": "modern",
+      "part": "민주화",
+      "topic": "6월 민주 항쟁",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 47,
+      "questionId": "exam-72-47",
+      "version": "c37aabe163a2bede",
+      "era": "unknown",
+      "part": "경제",
+      "topic": "수취 제도 연대",
+      "note": "공통 자료는 신문왕 녹읍 폐지·경종 시정전시과·과전법·세조 직전법이다. 여러 시대를 동등하게 묻는 문항이므로 단일 시대를 임의 확정하지 않는다.",
+      "verified": false
+    },
+    {
+      "number": 48,
+      "questionId": "exam-72-48",
+      "version": "f2013ab3f0b2b180",
+      "era": "unknown",
+      "part": "정치",
+      "topic": "신문왕과 세조",
+      "note": "공통 자료는 신문왕 녹읍 폐지·경종 시정전시과·과전법·세조 직전법이다. 여러 시대를 동등하게 묻는 문항이므로 단일 시대를 임의 확정하지 않는다.",
+      "verified": false
+    },
+    {
+      "number": 49,
+      "questionId": "exam-72-49",
+      "version": "829e3354c70bbbf0",
+      "era": "modern",
+      "part": "정치",
+      "topic": "전두환 정부",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 50,
+      "questionId": "exam-72-50",
+      "version": "4b09637e24938c96",
+      "era": "ancient",
+      "part": "문화",
+      "topic": "창녕 문화유산",
+      "note": "창녕의 삼국·통일 신라 문화유산을 기준으로 분류한다.",
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+/* Keep Joseon compact-card controls readable without changing other era players. */
+.hanq-rm[data-review-group=joseon]{box-sizing:border-box;padding:0 12px 20px}
+.hanq-rm[data-review-group=joseon] .memory-controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;align-items:stretch}
+.hanq-rm[data-review-group=joseon] .memory-controls button{box-sizing:border-box;width:100%;min-height:48px;padding:12px 8px;font-size:15px;line-height:1.5;white-space:normal;word-break:keep-all;overflow-wrap:normal;border-radius:14px}
+.hanq-rm[data-review-group=joseon] .review-rate{grid-column:1/-1;display:flex;justify-content:center;align-items:center;gap:12px;margin:0;font-size:15px;white-space:nowrap}
+.hanq-rm[data-review-group=joseon] .review-rate select{min-height:44px;max-width:100%;font-size:15px}
+.hanq-rm[data-review-group=joseon] .review-duration{line-height:1.6;overflow-wrap:anywhere}
+@media(max-width:600px){.hanq-rm[data-review-group=joseon] .memory-controls{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}}

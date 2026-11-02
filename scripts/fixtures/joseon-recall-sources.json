@@ -1,0 +1,226 @@
+[
+  {
+    "file": "lecture-notes.js",
+    "era": "joseon-early",
+    "index": 0,
+    "q": "중종과 명종 사이에 재위한 왕은?",
+    "a": "12대 인종 (재위가 1년이 안 됨)"
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "joseon-early",
+    "index": 1,
+    "q": "대동법을 처음 시행한 왕과 지역은?",
+    "a": "15대 광해군 · 경기 (1608)"
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "joseon-early",
+    "index": 2,
+    "q": "전세를 1결당 4두로 고정한 법과 왕은?",
+    "a": "영정법 · 16대 인조"
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "joseon-early",
+    "index": 3,
+    "q": "사화 순서와 그때의 왕을 함께 외우는 말은?",
+    "a": "무갑기을 → 연연중명 (무오·갑자=연산군, 기묘=중종, 을사=명종). 사화 순서일 뿐 왕위 계승 순서가 아니에요. 실제 계승은 중종 → 인종 → 명종."
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "joseon-early",
+    "index": 4,
+    "q": "이징옥의 난이 일어난 때의 왕은?",
+    "a": "단종 (1453)"
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "joseon-early",
+    "index": 5,
+    "q": "직전법은 누구에게 수조권을 주었나?",
+    "a": "현직 관리"
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "joseon-early",
+    "index": 6,
+    "q": "훈련도감을 설치한 왕은?",
+    "a": "선조"
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "joseon-early",
+    "index": 7,
+    "q": "대동법 시행 뒤 관청 물품을 댄 상인은?",
+    "a": "공인"
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "joseon-early",
+    "index": 8,
+    "q": "병자호란 때 광교산에서 이긴 장수는?",
+    "a": "김준룡"
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "joseon-early",
+    "index": 0,
+    "q": "사화 순서와 그때의 왕을 함께 외우는 말은?",
+    "a": "무갑기을 → 연연중명 (무오·갑자=연산군, 기묘=중종, 을사=명종). 사화 순서일 뿐 왕위 계승 순서가 아니에요. 실제 계승은 중종 → 인종 → 명종."
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "joseon-early",
+    "index": 1,
+    "q": "포수·사수·살수로 이룬 군대는?",
+    "a": "훈련도감"
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "joseon-early",
+    "index": 2,
+    "q": "대동법 시행 뒤 관청 물품을 댄 상인은?",
+    "a": "공인"
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "joseon-early",
+    "index": 3,
+    "q": "‘옥당’이라 불린 기관은?",
+    "a": "홍문관"
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "joseon-early",
+    "index": 4,
+    "q": "직전법을 실시한 왕은?",
+    "a": "세조"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "joseon-early",
+    "index": 0,
+    "q": "조의제문이 빌미가 된 사화는?",
+    "a": "무오사화(연산군)"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "joseon-early",
+    "index": 1,
+    "q": "소학·현량과·위훈 삭제를 주장한 인물은?",
+    "a": "조광조"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "joseon-early",
+    "index": 2,
+    "q": "4군과 6진을 개척한 인물은?",
+    "a": "최윤덕(4군), 김종서(6진)"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "joseon-early",
+    "index": 3,
+    "q": "과전법 → 직전법 → ? → 직전법 폐지",
+    "a": "관수관급제(성종)"
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "joseon-late",
+    "index": 0,
+    "q": "나선 정벌에 보낸 부대는?",
+    "a": "조총 부대 (효종)"
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "joseon-late",
+    "index": 1,
+    "q": "육의전을 뺀 시전의 금난전권을 없앤 정책은?",
+    "a": "신해통공 (정조)"
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "joseon-late",
+    "index": 2,
+    "q": "균역법으로 줄어든 군포를 토지에서 메운 것은?",
+    "a": "결작"
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "joseon-late",
+    "index": 3,
+    "q": "임술농민봉기 뒤 설치한 기구는?",
+    "a": "삼정이정청 (철종)"
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "joseon-late",
+    "index": 4,
+    "q": "송상의 근거지는?",
+    "a": "개성"
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "joseon-late",
+    "index": 5,
+    "q": "숙종과 영조 사이에 재위한 왕은?",
+    "a": "20대 경종 (신임사화)"
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "joseon-late",
+    "index": 6,
+    "q": "영정법과 균역법은 각각 어느 왕 때, 어떤 세금인가?",
+    "a": "영정법 = 16대 인조 · 전세 / 균역법 = 21대 영조 · 군포"
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "joseon-late",
+    "index": 0,
+    "q": "균역법으로 줄어든 수입을 토지에서 메운 부담은?",
+    "a": "결작"
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "joseon-late",
+    "index": 1,
+    "q": "100리 척을 쓴 지도와 만든 사람은?",
+    "a": "동국지도, 정상기"
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "joseon-late",
+    "index": 2,
+    "q": "‘지전설’을 주장한 실학자는?",
+    "a": "홍대용"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "joseon-late",
+    "index": 0,
+    "q": "서얼 출신을 규장각 검서관으로 쓴 왕은?",
+    "a": "정조"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "joseon-late",
+    "index": 1,
+    "q": "청과 국경을 정한 비석과 그 왕은?",
+    "a": "백두산정계비, 숙종"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "joseon-late",
+    "index": 2,
+    "q": "시전 상인의 금난전권을 없앤 정책은?",
+    "a": "신해통공(정조)"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "joseon-late",
+    "index": 3,
+    "q": "임술농민봉기 뒤 설치한 기구는?",
+    "a": "삼정이정청(철종)"
+  }
+]

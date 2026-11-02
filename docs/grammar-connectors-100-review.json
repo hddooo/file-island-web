@@ -1,0 +1,1225 @@
+{
+  "sourceDistribution": {
+    "접속사": 38,
+    "관계사": 15,
+    "명사절 연결어": 8,
+    "전치사": 63
+  },
+  "selectedDistribution": {
+    "접속사": 32,
+    "관계사": 15,
+    "명사절 연결어": 8,
+    "전치사": 45
+  },
+  "selectedBands": {
+    "상": 35,
+    "중": 37,
+    "하": 28
+  },
+  "conjunctiveAdverbs": "정답이 접속부사인 문항은 0개. therefore/however/indeed/likewise 등 오답 보기의 문장 연결 기능은 개별 해설에서 구분.",
+  "excluded": [
+    {
+      "sourceIndex": 2,
+      "sourceNumber": "457",
+      "reason": "Until/Before 모두 별도 시간 관계로 해석 가능"
+    },
+    {
+      "sourceIndex": 6,
+      "sourceNumber": "435",
+      "reason": "so that 목적절은 15·58번과 중복되며 while 등 다른 관계의 해석 여지가 있음"
+    },
+    {
+      "sourceIndex": 17,
+      "sourceNumber": "342",
+      "reason": "as well as help와 as a result of help가 각각 추가·원인으로 해석될 여지가 있어 제외"
+    },
+    {
+      "sourceIndex": 23,
+      "sourceNumber": "312",
+      "reason": "and 명사 병렬은 4번의 동사 병렬과 함께 연습할 수 있어 중복 축소"
+    },
+    {
+      "sourceIndex": 33,
+      "sourceNumber": "217",
+      "reason": "When/Though가 서로 다른 문맥에서 모두 가능"
+    },
+    {
+      "sourceIndex": 57,
+      "sourceNumber": "63",
+      "reason": "when/while가 서로 다른 시간 관계로 가능"
+    },
+    {
+      "sourceIndex": 16,
+      "sourceNumber": "353",
+      "reason": "than 비교구문 중심으로 이번 연결어 100제 핵심 범위에서 제외"
+    },
+    {
+      "sourceIndex": 69,
+      "sourceNumber": "437",
+      "reason": "within 기간 범위가 66·117·124와 중복"
+    },
+    {
+      "sourceIndex": 74,
+      "sourceNumber": "409",
+      "reason": "throughout/over의 위치·범위 해석 여지가 겹침"
+    },
+    {
+      "sourceIndex": 81,
+      "sourceNumber": "330",
+      "reason": "within 기한 문항 반복 축소"
+    },
+    {
+      "sourceIndex": 83,
+      "sourceNumber": "317",
+      "reason": "throughout/down의 장소 해석이 문맥상 모호할 수 있음"
+    },
+    {
+      "sourceIndex": 87,
+      "sourceNumber": "285",
+      "reason": "from 소속 문항은 다른 출처·출발점 문항과 중복 축소"
+    },
+    {
+      "sourceIndex": 89,
+      "sourceNumber": "273",
+      "reason": "responded with raising/by raising 모두 가능"
+    },
+    {
+      "sourceIndex": 94,
+      "sourceNumber": "223",
+      "reason": "despite 양보 문항 반복 축소"
+    },
+    {
+      "sourceIndex": 99,
+      "sourceNumber": "178",
+      "reason": "with enough care의 수단 해석이 얇아 더 구체적인 문항 우선"
+    },
+    {
+      "sourceIndex": 100,
+      "sourceNumber": "175",
+      "reason": "throughout 장소 범위 문항 반복 축소"
+    },
+    {
+      "sourceIndex": 104,
+      "sourceNumber": "137",
+      "reason": "with 동반 의미는 다른 문항의 수단·대상 결합보다 판별 범위가 좁음"
+    },
+    {
+      "sourceIndex": 109,
+      "sourceNumber": "84",
+      "reason": "before 구체 시각은 다른 before 절/동명사 문항으로 함께 연습 가능"
+    },
+    {
+      "sourceIndex": 111,
+      "sourceNumber": "79",
+      "reason": "in 기본 위치는 다른 시간·장소·결합 문항보다 단순하여 분포 조정"
+    },
+    {
+      "sourceIndex": 112,
+      "sourceNumber": "67",
+      "reason": "over 기간 문항은 93번과 중복"
+    },
+    {
+      "sourceIndex": 113,
+      "sourceNumber": "61",
+      "reason": "before 시간 문항 반복 축소"
+    },
+    {
+      "sourceIndex": 118,
+      "sourceNumber": "38",
+      "reason": "on 표면 위치는 다른 날짜·공간 문항과 중복 축소"
+    },
+    {
+      "sourceIndex": 121,
+      "sourceNumber": "24",
+      "reason": "throughout/considering이 서로 다른 문맥에서 가능"
+    },
+    {
+      "sourceIndex": 122,
+      "sourceNumber": "3",
+      "reason": "after/apart from이 각각 만료와 해당 날짜 한정으로 해석 가능"
+    }
+  ],
+  "source": {
+    "file": "02.접속사_관계사_전치사.md",
+    "sha256": "315e42437360b9b7ab5ae0ee2034532f4fd81f333f515e3be12bdad4e376e9f2",
+    "total": 124
+  },
+  "shuffleSeed": "hanq-connectors-02-2026-10-22",
+  "fixedPermutation": [
+    {
+      "learningNumber": 1,
+      "sourceIndex": 86,
+      "sourceNumber": "296",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 2,
+      "sourceIndex": 101,
+      "sourceNumber": "170",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 3,
+      "sourceIndex": 82,
+      "sourceNumber": "322",
+      "category": "전치사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 4,
+      "sourceIndex": 84,
+      "sourceNumber": "315",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 5,
+      "sourceIndex": 61,
+      "sourceNumber": "40",
+      "category": "접속사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 6,
+      "sourceIndex": 35,
+      "sourceNumber": "212",
+      "category": "관계사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 7,
+      "sourceIndex": 79,
+      "sourceNumber": "357",
+      "category": "전치사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 8,
+      "sourceIndex": 108,
+      "sourceNumber": "109",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 9,
+      "sourceIndex": 5,
+      "sourceNumber": "445",
+      "category": "관계사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 10,
+      "sourceIndex": 34,
+      "sourceNumber": "214",
+      "category": "접속사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 11,
+      "sourceIndex": 105,
+      "sourceNumber": "unnumbered-105",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 12,
+      "sourceIndex": 49,
+      "sourceNumber": "131",
+      "category": "접속사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 13,
+      "sourceIndex": 12,
+      "sourceNumber": "396",
+      "category": "명사절 연결어",
+      "band": "상"
+    },
+    {
+      "learningNumber": 14,
+      "sourceIndex": 21,
+      "sourceNumber": "unnumbered-21",
+      "category": "관계사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 15,
+      "sourceIndex": 123,
+      "sourceNumber": "17",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 16,
+      "sourceIndex": 44,
+      "sourceNumber": "158",
+      "category": "관계사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 17,
+      "sourceIndex": 106,
+      "sourceNumber": "118",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 18,
+      "sourceIndex": 53,
+      "sourceNumber": "92",
+      "category": "관계사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 19,
+      "sourceIndex": 45,
+      "sourceNumber": "146",
+      "category": "접속사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 20,
+      "sourceIndex": 76,
+      "sourceNumber": "388",
+      "category": "전치사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 21,
+      "sourceIndex": 80,
+      "sourceNumber": "338",
+      "category": "전치사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 22,
+      "sourceIndex": 60,
+      "sourceNumber": "44",
+      "category": "접속사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 23,
+      "sourceIndex": 29,
+      "sourceNumber": "248",
+      "category": "접속사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 24,
+      "sourceIndex": 3,
+      "sourceNumber": "453",
+      "category": "관계사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 25,
+      "sourceIndex": 64,
+      "sourceNumber": "4",
+      "category": "관계사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 26,
+      "sourceIndex": 54,
+      "sourceNumber": "87",
+      "category": "명사절 연결어",
+      "band": "중"
+    },
+    {
+      "learningNumber": 27,
+      "sourceIndex": 71,
+      "sourceNumber": "421",
+      "category": "전치사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 28,
+      "sourceIndex": 52,
+      "sourceNumber": "93",
+      "category": "관계사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 29,
+      "sourceIndex": 110,
+      "sourceNumber": "71",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 30,
+      "sourceIndex": 11,
+      "sourceNumber": "401",
+      "category": "명사절 연결어",
+      "band": "상"
+    },
+    {
+      "learningNumber": 31,
+      "sourceIndex": 85,
+      "sourceNumber": "unnumbered-85",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 32,
+      "sourceIndex": 1,
+      "sourceNumber": "465",
+      "category": "접속사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 33,
+      "sourceIndex": 50,
+      "sourceNumber": "103",
+      "category": "명사절 연결어",
+      "band": "중"
+    },
+    {
+      "learningNumber": 34,
+      "sourceIndex": 36,
+      "sourceNumber": "208",
+      "category": "접속사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 35,
+      "sourceIndex": 117,
+      "sourceNumber": "46",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 36,
+      "sourceIndex": 42,
+      "sourceNumber": "164",
+      "category": "접속사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 37,
+      "sourceIndex": 22,
+      "sourceNumber": "314",
+      "category": "접속사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 38,
+      "sourceIndex": 95,
+      "sourceNumber": "218",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 39,
+      "sourceIndex": 124,
+      "sourceNumber": "11",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 40,
+      "sourceIndex": 24,
+      "sourceNumber": "309",
+      "category": "접속사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 41,
+      "sourceIndex": 58,
+      "sourceNumber": "53",
+      "category": "접속사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 42,
+      "sourceIndex": 115,
+      "sourceNumber": "50",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 43,
+      "sourceIndex": 32,
+      "sourceNumber": "234",
+      "category": "접속사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 44,
+      "sourceIndex": 63,
+      "sourceNumber": "21",
+      "category": "접속사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 45,
+      "sourceIndex": 102,
+      "sourceNumber": "155",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 46,
+      "sourceIndex": 93,
+      "sourceNumber": "230",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 47,
+      "sourceIndex": 97,
+      "sourceNumber": "186",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 48,
+      "sourceIndex": 120,
+      "sourceNumber": "32",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 49,
+      "sourceIndex": 38,
+      "sourceNumber": "189",
+      "category": "관계사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 50,
+      "sourceIndex": 9,
+      "sourceNumber": "410",
+      "category": "접속사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 51,
+      "sourceIndex": 55,
+      "sourceNumber": "76",
+      "category": "접속사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 52,
+      "sourceIndex": 67,
+      "sourceNumber": "447",
+      "category": "전치사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 53,
+      "sourceIndex": 20,
+      "sourceNumber": "334",
+      "category": "접속사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 54,
+      "sourceIndex": 26,
+      "sourceNumber": "290",
+      "category": "명사절 연결어",
+      "band": "상"
+    },
+    {
+      "learningNumber": 55,
+      "sourceIndex": 72,
+      "sourceNumber": "418",
+      "category": "전치사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 56,
+      "sourceIndex": 73,
+      "sourceNumber": "412",
+      "category": "전치사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 57,
+      "sourceIndex": 96,
+      "sourceNumber": "193",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 58,
+      "sourceIndex": 37,
+      "sourceNumber": "195",
+      "category": "명사절 연결어",
+      "band": "상"
+    },
+    {
+      "learningNumber": 59,
+      "sourceIndex": 10,
+      "sourceNumber": "419",
+      "category": "접속사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 60,
+      "sourceIndex": 116,
+      "sourceNumber": "48",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 61,
+      "sourceIndex": 13,
+      "sourceNumber": "395",
+      "category": "관계사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 62,
+      "sourceIndex": 48,
+      "sourceNumber": "123",
+      "category": "접속사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 63,
+      "sourceIndex": 18,
+      "sourceNumber": "345",
+      "category": "전치사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 64,
+      "sourceIndex": 62,
+      "sourceNumber": "14",
+      "category": "접속사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 65,
+      "sourceIndex": 28,
+      "sourceNumber": "252",
+      "category": "접속사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 66,
+      "sourceIndex": 7,
+      "sourceNumber": "429",
+      "category": "접속사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 67,
+      "sourceIndex": 77,
+      "sourceNumber": "378",
+      "category": "전치사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 68,
+      "sourceIndex": 46,
+      "sourceNumber": "117",
+      "category": "관계사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 69,
+      "sourceIndex": 25,
+      "sourceNumber": "298",
+      "category": "관계사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 70,
+      "sourceIndex": 59,
+      "sourceNumber": "51",
+      "category": "관계사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 71,
+      "sourceIndex": 4,
+      "sourceNumber": "452",
+      "category": "접속사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 72,
+      "sourceIndex": 119,
+      "sourceNumber": "34",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 73,
+      "sourceIndex": 15,
+      "sourceNumber": "360",
+      "category": "접속사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 74,
+      "sourceIndex": 43,
+      "sourceNumber": "159",
+      "category": "접속사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 75,
+      "sourceIndex": 70,
+      "sourceNumber": "423",
+      "category": "전치사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 76,
+      "sourceIndex": 91,
+      "sourceNumber": "254",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 77,
+      "sourceIndex": 92,
+      "sourceNumber": "250",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 78,
+      "sourceIndex": 75,
+      "sourceNumber": "unnumbered-75",
+      "category": "전치사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 79,
+      "sourceIndex": 41,
+      "sourceNumber": "unnumbered-41",
+      "category": "접속사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 80,
+      "sourceIndex": 19,
+      "sourceNumber": "351",
+      "category": "접속사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 81,
+      "sourceIndex": 68,
+      "sourceNumber": "439",
+      "category": "전치사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 82,
+      "sourceIndex": 8,
+      "sourceNumber": "415",
+      "category": "명사절 연결어",
+      "band": "상"
+    },
+    {
+      "learningNumber": 83,
+      "sourceIndex": 114,
+      "sourceNumber": "57",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 84,
+      "sourceIndex": 51,
+      "sourceNumber": "100",
+      "category": "접속사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 85,
+      "sourceIndex": 107,
+      "sourceNumber": "110",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 86,
+      "sourceIndex": 90,
+      "sourceNumber": "266",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 87,
+      "sourceIndex": 56,
+      "sourceNumber": "70",
+      "category": "접속사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 88,
+      "sourceIndex": 66,
+      "sourceNumber": "454",
+      "category": "전치사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 89,
+      "sourceIndex": 39,
+      "sourceNumber": "184",
+      "category": "전치사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 90,
+      "sourceIndex": 40,
+      "sourceNumber": "180",
+      "category": "접속사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 91,
+      "sourceIndex": 30,
+      "sourceNumber": "226",
+      "category": "관계사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 92,
+      "sourceIndex": 47,
+      "sourceNumber": "114",
+      "category": "접속사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 93,
+      "sourceIndex": 14,
+      "sourceNumber": "380",
+      "category": "접속사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 94,
+      "sourceIndex": 88,
+      "sourceNumber": "275",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 95,
+      "sourceIndex": 103,
+      "sourceNumber": "145",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 96,
+      "sourceIndex": 31,
+      "sourceNumber": "unnumbered-31",
+      "category": "명사절 연결어",
+      "band": "상"
+    },
+    {
+      "learningNumber": 97,
+      "sourceIndex": 65,
+      "sourceNumber": "unnumbered-65",
+      "category": "전치사",
+      "band": "중"
+    },
+    {
+      "learningNumber": 98,
+      "sourceIndex": 98,
+      "sourceNumber": "182",
+      "category": "전치사",
+      "band": "하"
+    },
+    {
+      "learningNumber": 99,
+      "sourceIndex": 27,
+      "sourceNumber": "270",
+      "category": "관계사",
+      "band": "상"
+    },
+    {
+      "learningNumber": 100,
+      "sourceIndex": 78,
+      "sourceNumber": "368",
+      "category": "전치사",
+      "band": "중"
+    }
+  ],
+  "revised": [
+    {
+      "sourceIndex": 101,
+      "sourceNumber": "170",
+      "originalStem": "If you are interested ________ the school health program, contact Mr. Smith.",
+      "revisedStem": "If you are interested ________ the school health program, contact Mr. Smith.",
+      "originalTranslation": "만약 당신이 학교 건강 프로그램에 관심이 있다면, Mr. Smith에게 연락하세요.",
+      "revisedTranslation": "학교 건강 프로그램에 관심이 있다면 Smith 씨에게 연락하세요.",
+      "reason": "영어의 판단 기준은 유지하고 한국어 번역의 어순·말투·용어를 자연스럽게 다듬음"
+    },
+    {
+      "sourceIndex": 79,
+      "sourceNumber": "357",
+      "originalStem": "Tourists in Oakville can see the sunrise ________ Cherry Avenue Park.",
+      "revisedStem": "Tourists in Oakville can see the sunrise ________ Cherry Avenue Park.",
+      "originalTranslation": "Oakville에 있는 관광객들은 Cherry Avenue Park에서 일출을 볼 수 있다.",
+      "revisedTranslation": "Oakville의 관광객들은 Cherry Avenue Park에서 일출을 볼 수 있습니다.",
+      "reason": "영어의 판단 기준은 유지하고 한국어 번역의 어순·말투·용어를 자연스럽게 다듬음"
+    },
+    {
+      "sourceIndex": 34,
+      "sourceNumber": "214",
+      "originalStem": "Apple Inc. will open stores in _______ France and Germany soon.",
+      "revisedStem": "Apple Inc. will open stores in ________ France and Germany soon.",
+      "originalTranslation": "Apple Inc.는 곧 프랑스와 독일에 매장을 오픈할 것입니다.",
+      "revisedTranslation": "애플은 곧 프랑스와 독일 양쪽에 매장을 열 예정입니다.",
+      "reason": "영어의 판단 기준은 유지하고 한국어 번역의 어순·말투·용어를 자연스럽게 다듬음"
+    },
+    {
+      "sourceIndex": 49,
+      "sourceNumber": "131",
+      "originalStem": "Microsoft managers will join the Boston event, ________ not the Chicago one.",
+      "revisedStem": "Microsoft managers will join only the Boston event, ________ not the Chicago one.",
+      "originalTranslation": "Microsoft 관리자들은 보스턴 행사에는 참석하지만 시카고 행사에는 참석하지 않을 것입니다.",
+      "revisedTranslation": "마이크로소프트 관리자들은 Boston 행사에만 참석하고 Chicago 행사에는 참석하지 않을 것입니다.",
+      "reason": "only를 추가하여 확정된 참석 대상과 배제 대상의 대조를 분명히 함"
+    },
+    {
+      "sourceIndex": 44,
+      "sourceNumber": "158",
+      "originalStem": "Mr. Johnson from our company, _______ will retire soon, will be honored at the event.",
+      "revisedStem": "Mr. Johnson from our company, ________ will retire soon, will be honored at the event.",
+      "originalTranslation": "우리 회사의 Johnson 씨는 곧 은퇴할 예정이며, 이번 행사에서 기림을 받을 것입니다.",
+      "revisedTranslation": "곧 은퇴할 예정인 우리 회사의 Johnson 씨는 이번 행사에서 공로를 인정받을 것입니다.",
+      "reason": "영어의 판단 기준은 유지하고 한국어 번역의 어순·말투·용어를 자연스럽게 다듬음"
+    },
+    {
+      "sourceIndex": 45,
+      "sourceNumber": "146",
+      "originalStem": "According to new reports, fewer students go to charter schools, ________ state schools are improving.",
+      "revisedStem": "According to new reports, fewer students go to charter schools, ________ state schools are improving.",
+      "originalTranslation": "새 보고서에 따르면 차터 스쿨에 가는 학생은 줄어드는 반면, 주립 학교는 개선되고 있습니다.",
+      "revisedTranslation": "새 보고서에 따르면 차터스쿨에 진학하는 학생들은 줄어드는 반면 공립학교들은 개선되고 있습니다.",
+      "reason": "영어의 판단 기준은 유지하고 한국어 번역의 어순·말투·용어를 자연스럽게 다듬음"
+    },
+    {
+      "sourceIndex": 76,
+      "sourceNumber": "388",
+      "originalStem": "The new lift near the Park won't be installed ________ next week.",
+      "revisedStem": "The new lift near the park will not be installed ________ next week, when the equipment arrives.",
+      "originalTranslation": "Park 근처의 새 리프트는 다음 주까지 설치되지 않을 것입니다.",
+      "revisedTranslation": "공원 근처의 새 승강기는 장비가 도착하는 다음 주가 되어서야 설치될 것입니다.",
+      "reason": "장비 도착 시점을 덧붙이고 not until의 시점 제한을 정확히 번역함"
+    },
+    {
+      "sourceIndex": 64,
+      "sourceNumber": "4",
+      "originalStem": "Students ________ want to join the club, apply by September 30.",
+      "revisedStem": "Students ________ want to join the club must apply by September 30.",
+      "originalTranslation": "동아리에 가입하고 싶은 학생들은 9월 30일까지 신청하세요.",
+      "revisedTranslation": "동아리에 가입하려는 학생들은 9월 30일까지 신청해야 합니다.",
+      "reason": "관계절 주어 뒤의 쉼표·명령형을 제거하고 must apply로 문장 구조를 명확하게 함"
+    },
+    {
+      "sourceIndex": 54,
+      "sourceNumber": "87",
+      "originalStem": "Mr. Johnson asked ________ Ms. Davis could cook for the charity dinner in February.",
+      "revisedStem": "Mr. Johnson asked ________ Ms. Davis could cook for the charity dinner in February.",
+      "originalTranslation": "Mr. Johnson은 Ms. Davis가 2월 자선 만찬을 위해 요리할 수 있는지 물었습니다.",
+      "revisedTranslation": "Johnson 씨는 Davis 씨가 2월 자선 만찬에서 요리할 수 있는지 물었습니다.",
+      "reason": "영어의 판단 기준은 유지하고 한국어 번역의 어순·말투·용어를 자연스럽게 다듬음"
+    },
+    {
+      "sourceIndex": 71,
+      "sourceNumber": "421",
+      "originalStem": "If your phone won't charge, check page 45 in the manual ________ calling for help.",
+      "revisedStem": "If your phone will not charge, first check page 45 in the manual ________ calling for help.",
+      "originalTranslation": "만약 너의 휴대폰이 충전되지 않으면, 도움을 요청하기 전에 메뉴얼의 45페이지를 확인해보세요.",
+      "revisedTranslation": "휴대전화가 충전되지 않으면 도움을 요청하기 전에 먼저 설명서의 45쪽을 확인하세요.",
+      "reason": "first를 추가하여 도움 요청 이전의 설명서 점검 순서를 명시하고 번역을 다듬음"
+    },
+    {
+      "sourceIndex": 22,
+      "sourceNumber": "314",
+      "originalStem": "Amazon may move its office to _______ San Francisco or Seattle.",
+      "revisedStem": "Amazon may move its office to ________ San Francisco or Seattle.",
+      "originalTranslation": "Amazon이 그들의 사무실을 San Francisco 혹은 Seattle로 옮길 수 있다.",
+      "revisedTranslation": "Amazon은 사무실을 San Francisco 또는 Seattle 중 한 곳으로 옮길 수도 있습니다.",
+      "reason": "영어의 판단 기준은 유지하고 한국어 번역의 어순·말투·용어를 자연스럽게 다듬음"
+    },
+    {
+      "sourceIndex": 58,
+      "sourceNumber": "53",
+      "originalStem": "Tell the teacher about any days off ________ replacements can be set.",
+      "revisedStem": "Tell the teacher about any planned absences ________ substitute teachers can be assigned.",
+      "originalTranslation": "대체 인력을 마련할 수 있도록 쉬는 날이 있으면 선생님께 알려 주세요.",
+      "revisedTranslation": "대체 교사를 배정할 수 있도록 예정된 결석을 선생님에게 알리세요.",
+      "reason": "replacements can be set을 substitute teachers can be assigned로 자연스럽게 다듬음"
+    },
+    {
+      "sourceIndex": 115,
+      "sourceNumber": "50",
+      "originalStem": "Mr. Rogers' main task as the liaison is to promote work _______ the directors of Johnson Co.",
+      "revisedStem": "Mr. Rogers' main task as the liaison is to promote cooperation ________ the directors of Johnson Co.",
+      "originalTranslation": "연락 담당자로서 Rogers 씨의 주요 업무는 Johnson Co.의 이사들 사이에서 업무 협력을 촉진하는 것입니다.",
+      "revisedTranslation": "연락 담당자로서 Rogers 씨의 주요 업무는 Johnson사의 이사들 사이에 협력을 촉진하는 것입니다.",
+      "reason": "promote work를 자연스러운 promote cooperation으로 다듬음"
+    },
+    {
+      "sourceIndex": 97,
+      "sourceNumber": "186",
+      "originalStem": "Maxwell makes apps _______ different clients.",
+      "revisedStem": "Maxwell makes apps ________ different clients.",
+      "originalTranslation": "Maxwell은 다른 고객들을 위해 앱을 만듭니다.",
+      "revisedTranslation": "Maxwell은 여러 고객을 위해 앱을 만듭니다.",
+      "reason": "영어의 판단 기준은 유지하고 한국어 번역의 어순·말투·용어를 자연스럽게 다듬음"
+    },
+    {
+      "sourceIndex": 67,
+      "sourceNumber": "447",
+      "originalStem": "All Microsoft's financial documents are kept ________ a different place.",
+      "revisedStem": "All of Microsoft's financial documents are kept ________ a secure off-site location.",
+      "originalTranslation": "Microsoft의 모든 재무 문서들은 다른 장소에 보관되어 있습니다.",
+      "revisedTranslation": "마이크로소프트의 모든 재무 서류는 보안이 유지되는 외부 장소에 보관됩니다.",
+      "reason": "보관 장소를 secure off-site location으로 자연스럽게 표현함"
+    },
+    {
+      "sourceIndex": 20,
+      "sourceNumber": "334",
+      "originalStem": "Mr. Johnson didn't get our email ________ his details are wrong.",
+      "revisedStem": "Mr. Johnson did not receive our email ________ we had the wrong address for him.",
+      "originalTranslation": "Mr. Johnson은 세부 정보가 잘못되어 우리의 이메일을 받지 못했습니다.",
+      "revisedTranslation": "우리가 Johnson 씨의 이메일 주소를 잘못 알고 있었기 때문에 그가 이메일을 받지 못했습니다.",
+      "reason": "details가 무엇인지 모호하여 이메일 주소 오류라는 인과를 명시함"
+    },
+    {
+      "sourceIndex": 73,
+      "sourceNumber": "412",
+      "originalStem": "This year, Omega's profits have increased ________ the new CEO's best forecasts.",
+      "revisedStem": "This year, Omega's profits have increased ________ even the new CEO's most optimistic forecasts.",
+      "originalTranslation": "올해, Omega의 이익은 새로운 CEO의 최고 예상을 넘어서 증가했습니다.",
+      "revisedTranslation": "올해 Omega의 이익은 새 최고경영자의 가장 낙관적인 예측조차 넘어 증가했습니다.",
+      "reason": "가장 낙관적인 전망조차 초과했다는 범위를 명확히 함"
+    },
+    {
+      "sourceIndex": 96,
+      "sourceNumber": "193",
+      "originalStem": "Microsoft will give the money from its yearly campaign _______ a new school.",
+      "revisedStem": "Microsoft will contribute the proceeds from its annual campaign ________ building a new school.",
+      "originalTranslation": "Microsoft는 연간 캠페인에서 모은 돈을 새 학교를 위해 기부할 예정입니다.",
+      "revisedTranslation": "마이크로소프트는 연례 캠페인의 수익금을 새 학교 건립에 보탤 것입니다.",
+      "reason": "기부금의 용도를 toward building으로 명확하게 연결함"
+    },
+    {
+      "sourceIndex": 37,
+      "sourceNumber": "195",
+      "originalStem": "________ the company starts a new store in Australia depends on profit estimates.",
+      "revisedStem": "________ the company opens a new store in Australia depends on profit estimates.",
+      "originalTranslation": "그 회사가 호주에서 새 매장을 시작할지 여부는 이익 예상치에 달려 있습니다.",
+      "revisedTranslation": "그 회사가 호주에 새 매장을 여는지는 이익 추정치에 달려 있습니다.",
+      "reason": "starts a new store를 opens a new store로 자연스럽게 다듬음"
+    },
+    {
+      "sourceIndex": 10,
+      "sourceNumber": "419",
+      "originalStem": "At school, the project planning usually takes two ________ three weeks.",
+      "revisedStem": "At school, the project planning usually takes two ________ three weeks.",
+      "originalTranslation": "학교에서, 프로젝트 계획 수립은 보통 두 주 또는 세 주가 걸립니다.",
+      "revisedTranslation": "학교에서 프로젝트를 계획하는 데 보통 2주 또는 3주가 걸립니다.",
+      "reason": "영어의 판단 기준은 유지하고 한국어 번역의 어순·말투·용어를 자연스럽게 다듬음"
+    },
+    {
+      "sourceIndex": 18,
+      "sourceNumber": "345",
+      "originalStem": "Microsoft's new safety updates will not work ________ next month.",
+      "revisedStem": "Microsoft's new safety updates will not work ________ next month.",
+      "originalTranslation": "Microsoft의 새로운 안전 업데이트는 다음 달까지는 작동하지 않을 것입니다.",
+      "revisedTranslation": "Microsoft의 새 안전 업데이트는 다음 달이 되어서야 작동할 것입니다.",
+      "reason": "영어의 판단 기준은 유지하고 한국어 번역의 어순·말투·용어를 자연스럽게 다듬음"
+    },
+    {
+      "sourceIndex": 28,
+      "sourceNumber": "252",
+      "originalStem": "For the last manager job, we'll post the ad on ________ Amazon and local business websites.",
+      "revisedStem": "For the remaining manager position, we will post the ad on ________ Amazon and local business websites.",
+      "originalTranslation": "마지막 관리자 직책에 대해, 우리는 광고를 Amazon과 지역 비즈니스 웹사이트 양쪽에 게시할 것입니다.",
+      "revisedTranslation": "남아 있는 관리자 직책의 채용 공고를 Amazon과 지역 비즈니스 웹사이트 양쪽에 게시할 것입니다.",
+      "reason": "last manager job을 remaining manager position으로 자연스럽게 다듬음"
+    },
+    {
+      "sourceIndex": 59,
+      "sourceNumber": "51",
+      "originalStem": "People at the meeting can pick Sheraton or Hyatt, ________ is easier.",
+      "revisedStem": "Participants can choose the Sheraton or the Hyatt, ________ is more convenient.",
+      "originalTranslation": "회의 참석자들은 Sheraton이나 Hyatt 중 더 편한 곳을 선택할 수 있습니다.",
+      "revisedTranslation": "참가자들은 Sheraton과 Hyatt 중 더 편리한 호텔을 선택할 수 있습니다.",
+      "reason": "회의 참석자가 호텔을 선택하는 상황과 편의성을 자연스럽게 표현함"
+    },
+    {
+      "sourceIndex": 119,
+      "sourceNumber": "34",
+      "originalStem": "Most people liked Pringles plain chips ________ its other flavors.",
+      "revisedStem": "Most people preferred Pringles plain chips ________ the brand's other flavors.",
+      "originalTranslation": "대부분의 사람들은 Pringles의 다른 맛보다 기본 맛 칩을 더 좋아했습니다.",
+      "revisedTranslation": "대부분의 사람들은 Pringles의 다른 맛보다 기본 맛 칩을 더 선호했습니다.",
+      "reason": "liked A over B를 자연스러운 preferred A over B로 다듬음"
+    },
+    {
+      "sourceIndex": 70,
+      "sourceNumber": "423",
+      "originalStem": "Workers should get new aprons from Mrs. Johnson's office ________ 3:00 on Monday.",
+      "revisedStem": "Workers should get new aprons from Mrs. Johnson's office ________ 3:00 on Monday.",
+      "originalTranslation": "노동자들은 월요일에 3시까지 Mrs. Johnson의 사무실에서 새 앞치마를 가져와야합니다.",
+      "revisedTranslation": "직원들은 월요일 오후 3시까지 Johnson 씨의 사무실에서 새 앞치마를 받아야 합니다.",
+      "reason": "영어의 판단 기준은 유지하고 한국어 번역의 어순·말투·용어를 자연스럽게 다듬음"
+    },
+    {
+      "sourceIndex": 91,
+      "sourceNumber": "254",
+      "originalStem": "Thompson's contract renewal was made faster ________ Mr. Johnson.",
+      "revisedStem": "Thompson's contract renewal was expedited ________ Mr. Johnson.",
+      "originalTranslation": "Thompson의 계약 갱신은 Mr. Johnson에 의해 더 빨리 이루어졌다.",
+      "revisedTranslation": "Thompson의 계약 갱신은 Johnson 씨에 의해 신속히 처리되었습니다.",
+      "reason": "was made faster를 자연스러운 수동태 was expedited로 다듬음"
+    },
+    {
+      "sourceIndex": 8,
+      "sourceNumber": "415",
+      "originalStem": "_______ Microsoft is getting higher profits shows the good leadership of its CEO, Satya Nadella.",
+      "revisedStem": "________ Microsoft is earning higher profits shows the effective leadership of its chief executive.",
+      "originalTranslation": "Microsoft가 더 높은 이익을 얻고 있다는 것은 그 회사의 CEO, Satya Nadella의 훌륭한 리더십을 보여준다.",
+      "revisedTranslation": "Microsoft의 이익이 더 높아지고 있다는 것은 최고경영자가 효과적으로 이끌고 있음을 보여 줍니다.",
+      "reason": "현재 인물·직책에 관한 사실 주장 없이 명사절 주어 구조를 연습하도록 CEO 실명을 제거하고 표현을 다듬음"
+    },
+    {
+      "sourceIndex": 51,
+      "sourceNumber": "100",
+      "originalStem": "From the station, people can use buses ________ taxis to get home.",
+      "revisedStem": "From the station, people can use buses ________ taxis to get home.",
+      "originalTranslation": "역에서 사람들은 집에 가기 위해 택시뿐만 아니라 버스도 이용할 수 있습니다.",
+      "revisedTranslation": "사람들은 역에서 버스와 택시를 모두 이용하여 집으로 갈 수 있습니다.",
+      "reason": "영어의 판단 기준은 유지하고 한국어 번역의 어순·말투·용어를 자연스럽게 다듬음"
+    },
+    {
+      "sourceIndex": 90,
+      "sourceNumber": "266",
+      "originalStem": "At the hotel, the boss's speech is set ________ Monday at 10am.",
+      "revisedStem": "At the hotel, the boss's speech is set ________ Monday at 10am.",
+      "originalTranslation": "호텔에서, 보스의 연설은 월요일 오전 10시로 설정되어 있습니다.",
+      "revisedTranslation": "호텔 책임자의 연설은 월요일 오전 10시로 예정되어 있습니다.",
+      "reason": "영어의 판단 기준은 유지하고 한국어 번역의 어순·말투·용어를 자연스럽게 다듬음"
+    },
+    {
+      "sourceIndex": 66,
+      "sourceNumber": "454",
+      "originalStem": "DreamWorks will pay for all business trips ________ four weeks after submission.",
+      "revisedStem": "DreamWorks will reimburse all business travel expenses ________ four weeks after the claims are submitted.",
+      "originalTranslation": "DreamWorks는 제출 후 4주 이내에 모든 출장비를 지불할 것입니다.",
+      "revisedTranslation": "DreamWorks는 비용 청구서가 제출된 뒤 4주 이내에 모든 출장 경비를 환급할 것입니다.",
+      "reason": "business trips의 비용 환급 대상을 travel expenses와 청구서 제출로 구체화함"
+    },
+    {
+      "sourceIndex": 39,
+      "sourceNumber": "184",
+      "originalStem": "The work by Mr. Brown is delayed ________ his return from Paris.",
+      "revisedStem": "The work by Mr. Brown is delayed ________ his return from Paris.",
+      "originalTranslation": "Brown 씨의 작업은 그가 파리에서 돌아올 때까지 지연될 것입니다.",
+      "revisedTranslation": "Brown 씨의 작업은 그가 Paris에서 돌아올 때까지 미뤄져 있습니다.",
+      "reason": "영어의 판단 기준은 유지하고 한국어 번역의 어순·말투·용어를 자연스럽게 다듬음"
+    },
+    {
+      "sourceIndex": 40,
+      "sourceNumber": "180",
+      "originalStem": "______ Ms. Taylor is on a trip next week, Mr. Lee will handle her students' problems.",
+      "revisedStem": "________ Ms. Taylor is on a trip next week, Mr. Lee will handle her students' problems.",
+      "originalTranslation": "다음 주에 Ms. Taylor가 여행을 가는 동안, Mr. Lee가 그녀의 학생들의 문제를 처리할 것입니다.",
+      "revisedTranslation": "다음 주 Taylor 씨가 여행 중인 동안 Lee 씨가 그 학생들의 문제를 처리할 예정입니다.",
+      "reason": "영어의 판단 기준은 유지하고 한국어 번역의 어순·말투·용어를 자연스럽게 다듬음"
+    },
+    {
+      "sourceIndex": 30,
+      "sourceNumber": "226",
+      "originalStem": "Sydney city has 30 parks, 15 of ________ have playgrounds.",
+      "revisedStem": "Sydney has 30 parks, 15 of ________ have playgrounds.",
+      "originalTranslation": "시드니 도시에는 30개의 공원이 있고, 그 중 15개에는 놀이터가 있다.",
+      "revisedTranslation": "Sydney에는 공원이 30개 있고, 그중 15개에는 놀이터가 있습니다.",
+      "reason": "Sydney city라는 표현을 Sydney로 간결하게 다듬음"
+    },
+    {
+      "sourceIndex": 31,
+      "sourceNumber": "unnumbered-31",
+      "originalStem": "The Anderson group is meeting on Monday to decide ________ green projects to support.",
+      "revisedStem": "The Anderson group is meeting on Monday to decide ________ green projects to support.",
+      "originalTranslation": "Anderson 그룹은 월요일에 만나서 어떤 그린 프로젝트를 지원할지 결정하려고 합니다.",
+      "revisedTranslation": "Anderson 그룹은 월요일에 만나 어떤 친환경 프로젝트를 지원할지 결정할 예정입니다.",
+      "reason": "영어의 판단 기준은 유지하고 한국어 번역의 어순·말투·용어를 자연스럽게 다듬음"
+    },
+    {
+      "sourceIndex": 27,
+      "sourceNumber": "270",
+      "originalStem": "All staff in the plan will report to Mrs. Smith, ________ will be in charge.",
+      "revisedStem": "All staff assigned to the project will report to Mrs. Smith, ________ will be in charge.",
+      "originalTranslation": "계획의 모든 직원들은 Smith 여사에게 보고할 것이며, 그녀는 담당할 것이다.",
+      "revisedTranslation": "그 프로젝트에 배정된 모든 직원은 책임자인 Smith 씨에게 보고할 것입니다.",
+      "reason": "in the plan을 assigned to the project로 자연스럽게 다듬음"
+    }
+  ],
+  "counts": {
+    "questions": 100,
+    "translations": 100,
+    "optionReasons": 400
+  },
+  "specificWeaknessCoverage": {
+    "byDeadline": {
+      "count": 1,
+      "sourceNumbers": [
+        "423"
+      ],
+      "learningNumbers": [
+        75
+      ]
+    },
+    "sinceTimeStart": {
+      "count": 0,
+      "note": "since 정답 No.44는 이유 용법이며 시간 시작점이 아님",
+      "learningNumbers": []
+    },
+    "despiteNounPhrase": {
+      "count": 3,
+      "sourceNumbers": [
+        "378",
+        "322",
+        "275"
+      ],
+      "learningNumbers": [
+        3,
+        67,
+        94
+      ]
+    },
+    "inSpiteOfNounPhrase": {
+      "count": 1,
+      "sourceNumbers": [
+        "155"
+      ],
+      "learningNumbers": [
+        45
+      ]
+    },
+    "whoseNoun": {
+      "count": 1,
+      "sourceNumbers": [
+        "unnumbered-21"
+      ],
+      "learningNumbers": [
+        14
+      ]
+    },
+    "orOtherwise": {
+      "count": 0,
+      "note": "either/or 선택과 but not 대조는 그렇지 않으면 or 용법으로 세지 않음",
+      "learningNumbers": []
+    }
+  },
+  "answerAudit": "선정한 100개 정답은 제공답과 같음. 모든 보기의 구조·의미·구두점을 직접 검토하여 개별 이유 작성. 모호성이 큰 24문항은 제외. 원본 파일 수정 없음."
+}

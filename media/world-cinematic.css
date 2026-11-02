@@ -1,0 +1,71 @@
+/* Dedicated, reference-matched environments; the exploration map is untouched. */
+html body .world-scenery .world-panorama{inset:0;left:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;filter:none;transform:none}
+html body .world-scenery[data-terrain=ice] .world-panorama{inset:0;left:0;width:100%;height:100%;object-fit:cover;filter:none}
+html body .world-scenery[data-terrain=ice] .world-ice-landscape{display:none}
+html body .world-scenery[data-terrain=ice]{background:#245477!important}
+html body .world-scenery .world-panorama{opacity:1;transition:none}
+html body .world-region-banner{position:relative;isolation:isolate;flex:none;height:clamp(170px,25vw,290px);margin:8px 0 20px;overflow:hidden;border:1px solid #90b5a0!important;border-radius:12px;background:#17382c!important;box-shadow:inset 0 0 0 3px #19372e,0 8px 22px #00180c44!important}
+html body .world-region-banner>.world-scenery{inset:0}
+html body .world-region-banner>span{position:absolute;left:14px;bottom:12px;padding:5px 12px;border:1px solid #b6d5bb66;border-radius:5px;background:#071c16d9!important;color:#f1fff3!important;font-size:13px;text-shadow:0 1px 2px #000}
+html body .world-region-banner .world-panorama{object-position:center 54%}
+html body .world-region-banner[data-region=hall] .world-panorama{object-position:center top}
+html body .world-region-banner[data-region=account] .world-panorama{object-position:center 57%}
+html[data-hanq-theme] body[data-world-destination]:not([data-world-destination=world])::before{background:linear-gradient(#061a1c33,#061a1c99),var(--region-art) center/cover no-repeat!important}
+body[data-world-destination=history]{--region-art:url('world-art/history-v1.webp')}
+body[data-world-destination=toeic]{--region-art:url('world-art/toeic-v1.webp')}
+body[data-world-destination=ice]{--region-art:url('world-art/ice-v1.webp')}
+body[data-world-destination=hall]{--region-art:url('world-art/hall-v1.webp')}
+body[data-world-destination=account]{--region-art:url('world-art/account-v1.webp')}
+body[data-world-destination=inquiry]{--region-art:url('world-art/inquiry-v1.webp')}
+html[data-hanq-theme] body .history-travel-map{background:linear-gradient(#061a120d,#061a1230),url('world-art/history-v1.webp') center/cover!important}
+html[data-hanq-theme] body .toeic-menu .toeic-travel-map,html[data-hanq-theme] body .world-flight-regional .toeic-travel-map{background:linear-gradient(#061a120d,#061a1222),url('world-art/toeic-v1.webp') center/cover!important}
+html body .world-island-banner{height:clamp(170px,24vw,260px)}
+html body .world-island-banner .world-panorama{object-position:center 58%}
+/* A five-second camera passage, with independently moving atmospheric layers. */
+html body .adventure-entry.world-cinematic{position:fixed;inset:0;z-index:10040;padding:0;display:block;animation:none!important;transform:none!important;background:#082b3d!important;overflow:hidden;touch-action:manipulation}
+html body .world-cinematic .world-destination{position:absolute;inset:0;opacity:1;filter:none!important;cursor:pointer}
+html body .world-cinematic .world-destination .world-scenery{inset:0;pointer-events:none}
+html body .world-cinematic::before{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(#07172b55,transparent 24%,transparent 67%,#031a27cc),radial-gradient(ellipse at center,transparent 45%,#001b3455);animation:cinematicLight 5s ease both}
+html body .world-cinematic .world-mist{inset:20% -25% -15%;background:radial-gradient(ellipse at 45% 70%,#ecf8f766,transparent 57%)!important;animation:cinematicMist 5s ease-in-out both;pointer-events:none}
+html body .world-cinematic .world-data-motes{display:block!important;opacity:.5;animation:cinematicRays 5s ease-in-out both;background:conic-gradient(from -55deg at 65% -20%,transparent,#fff2 4deg,transparent 12deg,transparent 23deg,#fff2 28deg,transparent 35deg);mix-blend-mode:screen}
+html body .cinematic-caption{position:absolute;z-index:3;left:clamp(20px,6vw,100px);right:20px;bottom:max(42px,7vh);pointer-events:auto;background:transparent!important;color:#fff!important;cursor:pointer}
+html body .cinematic-caption>span{display:block;color:#d8f4ef!important;font-size:11px;letter-spacing:.22em;text-shadow:0 2px 7px #061326}
+html body .cinematic-caption>strong{display:block;margin:9px 0 17px;color:#fff!important;font-size:clamp(27px,5.3vw,58px);line-height:1.2;text-shadow:0 3px 14px #031b2b,0 1px #031b2b}
+html body .cinematic-track{width:min(280px,70vw);height:3px;overflow:hidden;background:#ffffff44!important}
+html body .cinematic-track>i{display:block;height:100%;width:100%;transform-origin:left;background:#d2ffff!important;animation:cinematicProgress 4.5s linear both}
+html body .cinematic-controls{position:absolute;inset:max(18px,env(safe-area-inset-top)) max(18px,env(safe-area-inset-right)) auto auto;z-index:5;display:flex;gap:8px;background:transparent!important}
+html body .world-cinematic .cinematic-controls button{position:static;min-height:44px;padding:8px 13px;border:1px solid #c6e6eb99!important;border-radius:6px;background:#052330d9!important;color:#f5ffff!important;font:inherit;font-size:13px;cursor:pointer;box-shadow:0 3px 10px #00122133!important}
+html body .world-cinematic .cinematic-controls button:focus-visible{outline:3px solid #e1ffff!important;outline-offset:3px}
+html body .cinematic-atmosphere{position:absolute;inset:0;z-index:2;overflow:hidden;background:transparent!important;cursor:pointer}
+html body .cinematic-atmosphere i{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff4bd;box-shadow:0 0 10px #fff9bc;animation:cinematicMote 5s linear both;animation-delay:calc(var(--seed)*-200ms)}
+html body .world-cinematic[data-destination=ice] .cinematic-atmosphere i{width:5px;height:5px;background:#fff;box-shadow:0 0 5px #e5fcff;animation-name:cinematicSnow}
+html body .world-cinematic[data-destination=toeic] .cinematic-atmosphere i,html body .world-cinematic[data-destination=inquiry] .cinematic-atmosphere i{background:#d5fcff;box-shadow:0 0 9px #a7f7ff}
+@keyframes cinematicProgress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes cinematicMist{from{transform:translate3d(-8%,6%,0);opacity:.2}50%{opacity:.55}to{transform:translate3d(10%,-3%,0);opacity:.12}}
+@keyframes cinematicRays{from{transform:rotate(-3deg) scale(1.05);opacity:.05}55%{opacity:.35}to{transform:rotate(4deg) scale(1.18);opacity:.12}}
+@keyframes cinematicLight{from{opacity:1}40%{opacity:.45}to{opacity:.85}}
+@keyframes cinematicMote{from{transform:translate3d(-10px,40px,0);opacity:0}30%,70%{opacity:.75}to{transform:translate3d(35px,-60px,0);opacity:0}}
+@keyframes cinematicSnow{from{transform:translate3d(-25px,-70px,0);opacity:0}20%,80%{opacity:.8}to{transform:translate3d(30px,90px,0);opacity:0}}
+@media(max-width:520px){html body .cinematic-controls{left:14px;right:14px;justify-content:flex-end}html body .world-region-banner{height:180px;margin-bottom:14px}html body .cinematic-caption{bottom:60px}html body .world-cinematic .world-panorama{object-position:46% center}}
+@media(prefers-reduced-motion:reduce){html body .world-cinematic{display:none!important}html body .world-cinematic *,html body .world-region-banner *{animation:none!important;transition:none!important;transform:none!important}}
+html body .world-cinematic .world-foreground{position:absolute;inset:0;z-index:1;display:block;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;pointer-events:auto;cursor:pointer;filter:none;will-change:transform;mask-image:linear-gradient(90deg,#000, #000b 24%,#000b 76%,#000)}
+html body .world-cinematic[data-destination=hall] .world-foreground{opacity:.6}
+html body .world-scenery .world-art-fallback{position:absolute;inset:0;background:linear-gradient(#295d70,#0f3448)!important}
+html body .world-scenery .world-art-fallback .world-landscape{display:block!important;opacity:1!important}
+/* Portrait camera follows each landmark rather than cropping every scene centrally. */
+@media(max-width:520px){
+ html body .world-cinematic[data-destination=toeic] .world-panorama{object-position:61% center}
+ html body .world-cinematic[data-destination=inquiry] .world-panorama{object-position:60% center}
+ html body .world-cinematic[data-destination=hall] .world-panorama{object-position:51% center}
+ html body .world-cinematic[data-destination=account] .world-panorama{object-position:48% center}
+}
+
+/* The hall and ice artwork are the scene around content, not a detached banner. */
+html[data-hanq-theme] body #hallHost,html[data-hanq-theme] body #battleHost.battle-island{box-sizing:border-box;min-height:720px;border-radius:16px;padding:22px 16px 60px;background-color:#102b35!important;background-repeat:no-repeat!important;background-size:100% 100%,auto 850px!important;background-position:center top!important}
+html[data-hanq-theme] body #hallHost{background-image:linear-gradient(180deg,#061b26a8,#071b25da 620px,#071b25f5 850px),url('world-art/hall-v1.webp')!important}
+html[data-hanq-theme] body #battleHost.battle-island{background-image:linear-gradient(180deg,#071d30a0,#071d30d9 620px,#071d30f5 850px),url('world-art/ice-v1.webp')!important}
+html[data-hanq-theme] body #hallHost .hall-page{background:transparent!important;border:0;box-shadow:none;color:#fff!important;text-shadow:0 1px 3px #061820}
+html[data-hanq-theme] body #battleHost .bi-heading{background:transparent!important;color:#fff!important;text-shadow:0 2px 4px #061820}
+@media(max-width:520px){html[data-hanq-theme] body :is(#hallHost,#battleHost.battle-island){padding:14px 10px 42px;background-size:100% 100%,auto 700px!important}}
+html[data-hanq-theme] body #hallHost .hall-page :is(.hall-podium,.hall-podium-person,section[aria-label="탐험가 순위"]){background:transparent!important}
+html[data-hanq-theme] body #battleHost .bi-lobby{background:rgba(7,28,40,.88)!important;color:#effff4!important}

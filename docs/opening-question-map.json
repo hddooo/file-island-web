@@ -1,0 +1,1506 @@
+{
+ "generated_by": "scripts/build_opening_question_map.cjs",
+ "note": "앱에 실제로 들어 있는 개화기 문항과 웹툰·강의 요약 글의 글자 대조. 출제 비중·대표성 추정이 아님. modules는 강조어 포함 여부로 어림 연결한 것. comic_visible = 세 부분 상세 만화를 펼친 상태의 장면 본문·덩어리 목록, comic_folded = 장면 안 접힌 보충(scene-more)에만 있음.",
+ "counts": {
+  "total": 111,
+  "comic_folded": 2,
+  "comic_visible": 96,
+  "not_found": 9,
+  "ordering": 4
+ },
+ "inline": [
+  {
+   "id": "opening#001",
+   "q": "OOO를 실시하여 양반에게도 군포를 거두었다",
+   "a": [
+    "호포제"
+   ],
+   "section": "개항기 · 흥선대원군",
+   "modules": [
+    "O01"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#002",
+   "q": "세도정치기에 농민을 수탈하는 수단으로 변질된 문제를 해결하기 위해 OOO를 시행하였다",
+   "a": [
+    "사창제"
+   ],
+   "section": "개항기 · 흥선대원군",
+   "modules": [
+    "O01"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#003",
+   "q": "경복궁 중건 비용 마련을 위해 OOO이 발행되었다",
+   "a": [
+    "당백전"
+   ],
+   "section": "개항기 · 흥선대원군",
+   "modules": [
+    "O01"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#004",
+   "q": "OOO를 혁파하였다",
+   "a": [
+    "비변사"
+   ],
+   "section": "개항기 · 흥선대원군",
+   "modules": [
+    "O01"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#005",
+   "q": "종로를 비롯한 전국 각지에 OOO가 건립되었다",
+   "a": [
+    "척화비"
+   ],
+   "section": "개항기 · 흥선대원군",
+   "modules": [
+    "O02"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#006",
+   "q": "OOO를 부활시켜 군사 업무를 담당하게 하였다",
+   "a": [
+    "삼군부"
+   ],
+   "section": "개항기 · 흥선대원군",
+   "modules": [
+    "O01"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#007",
+   "q": "통치 체제를 정비하기 위해 OOOO이 편찬되었다",
+   "a": [
+    "대전회통"
+   ],
+   "section": "개항기 · 흥선대원군",
+   "modules": [
+    "O01"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#008",
+   "q": "미국 상선 이것이 대동강 유역에서 통상을 요구하다 좌초당하였다",
+   "a": [
+    "제너럴셔먼호"
+   ],
+   "section": "개항기 · 흥선대원군",
+   "modules": [
+    "O02"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#009",
+   "q": "병인양요 때 의궤를 비롯한 OOOO 도서가 약탈당하였다",
+   "a": [
+    "외규장각"
+   ],
+   "section": "개항기 · 흥선대원군",
+   "modules": [
+    "O02"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#010",
+   "q": "신미양요 때 OOO이 광성보 전투에서 전사하였다",
+   "a": [
+    "어재연"
+   ],
+   "section": "개항기 · 흥선대원군",
+   "modules": [
+    "O02"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#011",
+   "q": "병인양요 때 정족산성에서 OOO, 문수산성에서 OOO이 ( , ) 항전하였다",
+   "a": [
+    "양헌수, 한성근",
+    "한성근, 양헌수"
+   ],
+   "section": "개항기 · 흥선대원군",
+   "modules": [
+    "O02"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#012",
+   "q": "OOOO가 남연군 묘의 도굴을 시도하였다",
+   "a": [
+    "오페르트"
+   ],
+   "section": "개항기 · 흥선대원군",
+   "modules": [
+    "O02"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#013",
+   "q": "발생 순서대로 번호를 적어보세요\n① 제너럴 셔먼호 사건 ② 오페르트 도굴 사건 ③ 병인양요\n④ 병인박해 ⑤ 척화비 건립 ⑥ 신미양요",
+   "a": [
+    "④→①→③→②→⑥→⑤",
+    "④-①-③-②-⑥-⑤",
+    "④ ① ③ ② ⑥ ⑤",
+    "④①③②⑥⑤"
+   ],
+   "section": "개항기 · 흥선대원군",
+   "modules": [
+    "O02"
+   ],
+   "status": "ordering",
+   "in_summary": null
+  },
+  {
+   "id": "opening#014",
+   "q": "최혜국 대우를 최초로 규정하였다",
+   "a": [
+    "조미수호통상조약"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O05"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#015",
+   "q": "운요호가 강화도와 영종도를 공격하였다",
+   "a": [
+    "강화도조약"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O03"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#016",
+   "q": "외국 상인의 내지 통상권을 최초로 규정하였다",
+   "a": [
+    "조청상민수륙무역장정"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O07"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#017",
+   "q": "부산, 원산, 인천이 개항되는 결과를 가져왔다",
+   "a": [
+    "강화도조약"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O03"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#018",
+   "q": "양미와 잡곡을 무제한 수출, 수입할 수 있다",
+   "a": [
+    "조일무역규칙"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O04"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#019",
+   "q": "민영익, 홍영식 등으로 구성된 보빙사가 답례로 파견되었다",
+   "a": [
+    "조미수호통상조약"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O05"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#020",
+   "q": "연무당에서 일본과 조약을 체결하였다",
+   "a": [
+    "강화도조약"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O03"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#021",
+   "q": "조선의 관세 자주권을 최초로 인정하였다",
+   "a": [
+    "조미수호통상조약"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O05"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#022",
+   "q": "국내에 양식이 결핍할 것을 우려하여 일시 쌀 수출을 금지할 수 있다",
+   "a": [
+    "개정된 통상장정"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [],
+   "status": "not_found",
+   "in_summary": false
+  },
+  {
+   "id": "opening#023",
+   "q": "외국 상인의 한성 침투로 인해 피해가 컸다",
+   "a": [
+    "조청상민수륙무역장정"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O07"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#024",
+   "q": "수신사가 파견되는데 영향을 주었다",
+   "a": [
+    "강화도조약"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O03"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#025",
+   "q": "김홍집이 조선책략을 들여와 국내에 소개하였다",
+   "a": [
+    "조미수호통상조약"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O05"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#026",
+   "q": "청의 알선으로 체결이 추진되었다",
+   "a": [
+    "조미수호통상조약"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O05"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#027",
+   "q": "천주교 포교 허용의 근거가 되었다",
+   "a": [
+    "조프통상조약"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [],
+   "status": "not_found",
+   "in_summary": false
+  },
+  {
+   "id": "opening#028",
+   "q": "통상 지역에서 100리 이내 영국인은 마음대로 돌아다닐 수 있다",
+   "a": [
+    "조영통상조약"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [],
+   "status": "not_found",
+   "in_summary": false
+  },
+  {
+   "id": "opening#029",
+   "q": "일본 측의 해안 측량권이 인정되었다",
+   "a": [
+    "강화도조약"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O03"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#030",
+   "q": "거중 조정의 조항을 포함하였다",
+   "a": [
+    "조미수호통상조약"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O05"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#031",
+   "q": "구식 군인에 대한 차별 대우가 발단이 되어 일어났다",
+   "a": [
+    "임오군란"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O07"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#032",
+   "q": "우정총국 개국 축하연에서 일부 급진 개화파가 일으켰다",
+   "a": [
+    "갑신정변"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O07"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#033",
+   "q": "개화 정책으로 신식 군대인 OOO을 창설하였다",
+   "a": [
+    "별기군"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O06"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#034",
+   "q": "강화도 조약 체결 이후 개화 정책을 총괄한 이 기구는?",
+   "a": [
+    "통리기무아문"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O03",
+    "O06"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#035",
+   "q": "영국이 러시아를 견제하기 위해 OOO를 불법적으로 점령하였다",
+   "a": [
+    "거문도"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#036",
+   "q": "전개 과정에서 흥선대원군이 청에 납치되었다",
+   "a": [
+    "임오군란"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O01",
+    "O07"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#037",
+   "q": "OOO 등이 영남 만인소를 올렸다",
+   "a": [
+    "이만손"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O06"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#038",
+   "q": "일본 공사관 경비 명목으로 일본군이 주둔하였다.",
+   "a": [
+    "제물포조약 (임오군란)",
+    "제물포조약",
+    "임오군란"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O07"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#039",
+   "q": "OOOOO이 암행어사 형태로 비밀리에 파견되었다",
+   "a": [
+    "조사시찰단"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O06"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#040",
+   "q": "갑신정변 이후 청과 일본이 체결한 이 조약은?",
+   "a": [
+    "톈진조약"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O07"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#041",
+   "q": "이 사건 이후 마젠창과 묄렌도르프가 고문으로 파견되었다",
+   "a": [
+    "임오군란"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O07"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#042",
+   "q": "청에 OOO가 파견되어 기기국에서 무기 제조 기술을 습득하였다",
+   "a": [
+    "영선사"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O06"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#043",
+   "q": "갑신정변 이후 조선이 일본에 배상하는 내용을 담고 있는 이 조약은?",
+   "a": [
+    "한성조약"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O07"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#044",
+   "q": "김옥균 등이 개화당 정부를 수립하였으나 3일 만에 실패하였다",
+   "a": [
+    "갑신정변"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O07"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#045",
+   "q": "OOO이 왜양일체론을 주장하였다",
+   "a": [
+    "최익현"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O06"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#046",
+   "q": "조미수호통상조약 이후 민영익, 홍영식, 서광범 등으로 구성된 OOO가 답례로 파견되었다",
+   "a": [
+    "보빙사"
+   ],
+   "section": "개항기 · 개항과 개화",
+   "modules": [
+    "O05"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#047",
+   "q": "발생 순서대로 번호를 적어보세요\n① 전주성 함락 ② 최제우 처형 ③ 남접과 북접, 논산에서 연합 ④ 일본이 경복궁 점령\n⑤ 안핵사 이용태 파견 ⑥ 황룡촌, 황토현 전투 승리 ⑦ 교조 신원 운동(보은집회)\n⑧ 조병갑의 탐학 ⑨ 우금치 전투 ⑩ 농민군-정부 화약",
+   "a": [
+    "②→⑦→⑧→⑤→⑥→①→⑩→④→③→⑨",
+    "②-⑦-⑧-⑤-⑥-①-⑩-④-③-⑨",
+    "② ⑦ ⑧ ⑤ ⑥ ① ⑩ ④ ③ ⑨",
+    "②⑦⑧⑤⑥①⑩④③⑨"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O09"
+   ],
+   "status": "ordering",
+   "in_summary": null
+  },
+  {
+   "id": "opening#048",
+   "q": "교육입국조서가 반포되었다",
+   "a": [
+    "2차 갑오"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O10"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#049",
+   "q": "군국기무처의 활동을 조사한다",
+   "a": [
+    "1차 갑오"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O10"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#050",
+   "q": "고종이 황제로 즉위한 후 구본신참을 바탕으로 개혁을 추진하였다",
+   "a": [
+    "광무개혁"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O13"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#051",
+   "q": "공사 노비법을 혁파하였다",
+   "a": [
+    "1차 갑오"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#052",
+   "q": "태양력을 시행하였다",
+   "a": [
+    "을미개혁"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O11"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#053",
+   "q": "홍범 14조가 반포되었다",
+   "a": [
+    "2차 갑오"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O10"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#054",
+   "q": "군제를 개편하여 친위대와 진위대를 설치하였다",
+   "a": [
+    "을미개혁"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O11"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#055",
+   "q": "지계아문을 설치하여 토지 소유자에게 지계를 발급하였다",
+   "a": [
+    "광무개혁"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O13"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#056",
+   "q": "과거제가 폐지되었다",
+   "a": [
+    "1차 갑오"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O10"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#057",
+   "q": "원수부를 창설하고 황제의 군 통수권을 강화하였다",
+   "a": [
+    "광무개혁"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O13"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#058",
+   "q": "지방 행정 구역을 8도에서 23부로 개편하였다",
+   "a": [
+    "2차 갑오"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O10"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#059",
+   "q": "김홍집과 박영효의 연립 내각이 개혁을 주도하였다",
+   "a": [
+    "2차 갑오"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O05"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#060",
+   "q": "건양이라는 연호를 제정하였다",
+   "a": [
+    "을미개혁"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O11"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#061",
+   "q": "한성사범학교 관제를 반포하였다",
+   "a": [
+    "2차 갑오"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#062",
+   "q": "과부의 재가를 허용하였다",
+   "a": [
+    "1차 갑오"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#063",
+   "q": "단발령을 시행하였다",
+   "a": [
+    "을미개혁"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O11"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#064",
+   "q": "행정 기구를 6조에서 8아문으로 개편하였다",
+   "a": [
+    "1차 갑오"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#065",
+   "q": "관민 공동회가 개최되어 OOOO를 결의하였다",
+   "a": [
+    "헌의 6조"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O12"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#066",
+   "q": "OOO의 절영도 조차 요구에 반대하였다",
+   "a": [
+    "러시아"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#067",
+   "q": "OOO 개편을 통한 의회 설립을 추진하였다",
+   "a": [
+    "중추원"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O12"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#068",
+   "q": "OOO이 백정 출신으로 관민 공동회에서 연설하였다",
+   "a": [
+    "박성춘"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O12"
+   ],
+   "status": "not_found",
+   "in_summary": false
+  },
+  {
+   "id": "opening#069",
+   "q": "영은문이 있던 자리 부근에 OOO을 세웠다",
+   "a": [
+    "독립문"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O12"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#070",
+   "q": "재정 고문 메가타의 주도로 이 사업이 시행되었다",
+   "a": [
+    "화폐정리사업"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O15"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#071",
+   "q": "일제의 황무지 개간권 요구를 저지시킨 이 단체는?",
+   "a": [
+    "보안회"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O19"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#072",
+   "q": "군대 강제 해산으로 13도 창의군을 결성하고 이 작전을 전개하였다",
+   "a": [
+    "서울진공작전"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O17"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#073",
+   "q": "을사늑약의 부당함을 알리기 위해 이것을 파견하였다",
+   "a": [
+    "헤이그 특사"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O16",
+    "O17"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#074",
+   "q": "동양 평화론을 집필한 이 사람은?",
+   "a": [
+    "안중근"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O18"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#075",
+   "q": "서상돈, 양기탁 등이 나라빚을 갚기 위해 시작한 이 운동은?",
+   "a": [
+    "국채보상운동"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O19"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#076",
+   "q": "샌프란시스코에서 외교 고문 스티븐스를 처단한 사람은? (2명)",
+   "a": [
+    "장인환, 전명운",
+    "전명운, 장인환"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O15",
+    "O18"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#077",
+   "q": "태극 서관을 운영하여 계몽 서적 등을 보급한 이 단체는?",
+   "a": [
+    "신민회"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O19"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#078",
+   "q": "러일전쟁 중에 체결되었고, 고문 정치가 이루어지게 된 이 조약은?",
+   "a": [
+    "제1차 한일협약"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O15"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#079",
+   "q": "고종 강제 퇴위 반대 운동을 전개한 이 단체는?",
+   "a": [
+    "대한자강회"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O19"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#080",
+   "q": "군대 강제해산 이후 이인영, 허위를 중심으로 결성된 이 부대는?",
+   "a": [
+    "13도 창의군"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O17"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#081",
+   "q": "을사늑약으로 인해 외교권을 박탈하고, 이것이 설치되었다",
+   "a": [
+    "통감부"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O16"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#082",
+   "q": "대구에서 시작했고 대한매일신보 등의 지원을 받아 확산된 이 운동은?",
+   "a": [
+    "국채보상운동"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O19"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#083",
+   "q": "대성학교, 오산학교과 신흥 강습소를 설립한 이 단체는?",
+   "a": [
+    "신민회"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O19"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#084",
+   "q": "사법권을 박탈한 이 각서는?",
+   "a": [
+    "기유각서"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O18"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#085",
+   "q": "한국의 토지와 자원을 수탈할 목적으로 설치한 이 기관은?",
+   "a": [
+    "동양척식주식회사"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [],
+   "status": "comic_folded",
+   "in_summary": false
+  },
+  {
+   "id": "opening#086",
+   "q": "을사늑약이 체결되자 태인에서 의병을 일으킨 이 사람은?",
+   "a": [
+    "최익현"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O06",
+    "O16"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#087",
+   "q": "초대 통감으로 안중근에게 사살된 이 사람은?",
+   "a": [
+    "이토 히로부미"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O16",
+    "O18"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#088",
+   "q": "보안회가 활동하던 시기 일본의 토지 침탈에 맞서 설립된 이 회사는?",
+   "a": [
+    "농광회사"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O19"
+   ],
+   "status": "not_found",
+   "in_summary": false
+  },
+  {
+   "id": "opening#089",
+   "q": "나철이 을사오적 처단을 위해 조직한 이 단체는?",
+   "a": [
+    "자신회"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O22"
+   ],
+   "status": "not_found",
+   "in_summary": false
+  },
+  {
+   "id": "opening#090",
+   "q": "신민회는 일제가 조작한 이 사건으로 와해되었다",
+   "a": [
+    "105인 사건"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O19"
+   ],
+   "status": "comic_folded",
+   "in_summary": true
+  },
+  {
+   "id": "opening#091",
+   "q": "발생 순서대로 번호를 적어보세요\n① 거문도 사건 ② 통리기무아문 & 별기군 신설 ③ 대한제국 선포 ④ 헌의 6조 결의\n⑤ 임오군란 ⑥ 강화도 조약 ⑦ 2차 갑오개혁 시작 ⑧ 신미양요 ⑨ 갑신정변\n⑩ 동학농민운동 전주 화약 ⑪ 독립신문 창간 ⑫ 삼국간섭 ⑬ 병인양요",
+   "a": [
+    "⑬→⑧→⑥→②→⑤→⑨→①→⑩→⑦→⑫→⑪→③→④",
+    "⑬-⑧-⑥-②-⑤-⑨-①-⑩-⑦-⑫-⑪-③-④",
+    "⑬ ⑧ ⑥ ② ⑤ ⑨ ① ⑩ ⑦ ⑫ ⑪ ③ ④",
+    "⑬⑧⑥②⑤⑨①⑩⑦⑫⑪③④"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O02",
+    "O03",
+    "O06",
+    "O07",
+    "O08",
+    "O09",
+    "O11",
+    "O12",
+    "O13"
+   ],
+   "status": "ordering",
+   "in_summary": null
+  },
+  {
+   "id": "opening#092",
+   "q": "발생 순서대로 번호를 적어보세요\n① 제1차 한일협약 체결 ② 용암포 사건 ③ 동양척식주식회사 설립\n④ 을사늑약 ⑤ 기유각서 ⑥ 대한자강회 설립\n⑦ 국채보상운동 ⑧ 105인 사건 ⑨ 러일전쟁 발발",
+   "a": [
+    "②→⑨→①→④→⑥→⑦→③→⑤→⑧",
+    "②-⑨-①-④-⑥-⑦-③-⑤-⑧",
+    "② ⑨ ① ④ ⑥ ⑦ ③ ⑤ ⑧",
+    "②⑨①④⑥⑦③⑤⑧"
+   ],
+   "section": "개항기 · 국권 수호",
+   "modules": [
+    "O14",
+    "O15",
+    "O16",
+    "O18",
+    "O19"
+   ],
+   "status": "ordering",
+   "in_summary": null
+  },
+  {
+   "id": "opening#093",
+   "q": "1883년 함경도 덕원 지방의 관민들이 세운 이 학교는?",
+   "a": [
+    "원산학사"
+   ],
+   "section": "개항기 · 문화",
+   "modules": [
+    "O20"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#094",
+   "q": "영선사가 돌아와서 세운 근대식 무기 제조 공장인 이것은?",
+   "a": [
+    "기기창"
+   ],
+   "section": "개항기 · 문화",
+   "modules": [
+    "O06"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#095",
+   "q": "1886년 설립된 관립 교육기관이며 헐버트, 길모어 등이 교사로 초빙된 이 학교는?",
+   "a": [
+    "육영공원"
+   ],
+   "section": "개항기 · 문화",
+   "modules": [
+    "O20"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#096",
+   "q": "한성사범학교는 2차 갑오개혁 때 이것에 근거하여 설립되었다",
+   "a": [
+    "교육입국조서"
+   ],
+   "section": "개항기 · 문화",
+   "modules": [
+    "O10"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#097",
+   "q": "신민회의 이승훈이 인재 양성을 위해 세운 이 학교는?",
+   "a": [
+    "오산학교"
+   ],
+   "section": "개항기 · 문화",
+   "modules": [
+    "O19"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#098",
+   "q": "서재필의 주도로 창간되었으며 영문으로도 발행된 이 신문은?",
+   "a": [
+    "독립신문"
+   ],
+   "section": "개항기 · 문화",
+   "modules": [
+    "O12"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#099",
+   "q": "1899년 우리나라 최초로 서대문과 청량리를 오가는 이것이 개통되었다.",
+   "a": [
+    "전차"
+   ],
+   "section": "개항기 · 문화",
+   "modules": [
+    "O20"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#100",
+   "q": "우리나라 최초의 신문으로 박문국에서 발행된 이 신문은?",
+   "a": [
+    "한성순보"
+   ],
+   "section": "개항기 · 문화",
+   "modules": [
+    "O20"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#101",
+   "q": "최초의 여성 권리 선언문인 여권통문을 발표한 이 단체는?",
+   "a": [
+    "찬양회"
+   ],
+   "section": "개항기 · 문화",
+   "modules": [],
+   "status": "not_found",
+   "in_summary": false
+  },
+  {
+   "id": "opening#102",
+   "q": "을사늑약을 비판한 장지연의 시일야방성대곡이라는 논설이 게재된 이 신문은?",
+   "a": [
+    "황성신문"
+   ],
+   "section": "개항기 · 문화",
+   "modules": [
+    "O16",
+    "O20"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#103",
+   "q": "최초로 상업 광고를 게재한 이 신문은?",
+   "a": [
+    "한성주보"
+   ],
+   "section": "개항기 · 문화",
+   "modules": [
+    "O20"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#104",
+   "q": "제1차 미소 공동 위원회가 개최된 이 궁궐은?",
+   "a": [
+    "덕수궁"
+   ],
+   "section": "개항기 · 문화",
+   "modules": [],
+   "status": "comic_visible",
+   "in_summary": false
+  },
+  {
+   "id": "opening#105",
+   "q": "신소설 은세계가 공연된 최초의 서양식 극장인 이것은?",
+   "a": [
+    "원각사"
+   ],
+   "section": "개항기 · 문화",
+   "modules": [],
+   "status": "comic_visible",
+   "in_summary": false
+  },
+  {
+   "id": "opening#106",
+   "q": "영국인 베델과 양기탁이 창간하여 국채보상운동을 지원한 이 신문은?",
+   "a": [
+    "대한매일신보"
+   ],
+   "section": "개항기 · 문화",
+   "modules": [
+    "O19"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#107",
+   "q": "갑신정변 이후 알렌의 건의로 세워진 최초의 서양식 병원은?",
+   "a": [
+    "광혜원(제중원)",
+    "광혜원",
+    "제중원"
+   ],
+   "section": "개항기 · 문화",
+   "modules": [
+    "O07",
+    "O20"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#108",
+   "q": "서울에서 부산을 잇는 우리나라 철도가 개통된 연도는?",
+   "a": [
+    "1905년"
+   ],
+   "section": "개항기 · 문화",
+   "modules": [],
+   "status": "comic_visible",
+   "in_summary": true
+  },
+  {
+   "id": "opening#109",
+   "q": "백동화 등 근대 화폐를 주조하였던 이 곳은?",
+   "a": [
+    "전환국"
+   ],
+   "section": "개항기 · 문화",
+   "modules": [],
+   "status": "not_found",
+   "in_summary": false
+  },
+  {
+   "id": "opening#110",
+   "q": "일제는 언론을 통제하기 위해 1907년 이 법을 제정하였다",
+   "a": [
+    "신문지법"
+   ],
+   "section": "개항기 · 문화",
+   "modules": [],
+   "status": "not_found",
+   "in_summary": false
+  },
+  {
+   "id": "opening#111",
+   "q": "근대적 우편 제도의 시작이며 이 곳 축하연 때 갑신정변이 일어났다",
+   "a": [
+    "우정총국"
+   ],
+   "section": "개항기 · 문화",
+   "modules": [
+    "O07"
+   ],
+   "status": "comic_visible",
+   "in_summary": true
+  }
+ ],
+ "past_exam": [
+  {
+   "id": "75-28",
+   "topic": "갑신정변 이후",
+   "remember": "갑신정변 → 한성 조약·톈진 조약",
+   "modules": [
+    "O07"
+   ]
+  },
+  {
+   "id": "76-29",
+   "topic": "경복궁 중건과 병인양요",
+   "remember": "원납전·경복궁 중건 = 흥선 대원군 / 문수산성 = 병인양요",
+   "modules": [
+    "O01",
+    "O02"
+   ]
+  },
+  {
+   "id": "76-31",
+   "topic": "동학 농민 운동",
+   "remember": "동학 농민 운동 = 사발통문 → 전주 화약 → 집강소",
+   "modules": [
+    "O09"
+   ]
+  },
+  {
+   "id": "77-30",
+   "topic": "을미개혁",
+   "remember": "을미개혁 = 단발령 + 태양력·건양 + 친위대·진위대",
+   "modules": [
+    "O11"
+   ]
+  },
+  {
+   "id": "77-33",
+   "topic": "을사늑약",
+   "remember": "을사늑약 → 외교권 박탈·통감부 / 정미 7조약 → 군대 해산",
+   "modules": [
+    "O16",
+    "O17"
+   ]
+  }
+ ]
+}

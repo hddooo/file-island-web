@@ -1,0 +1,17 @@
+scripts/*
+!scripts/build-app-version.cjs
+docs/
+evidence/
+.test-tools/
+private-textbook.patch
+private-data/
+hanq-private-data/
+*.pdf
+!media/connector-summary.pdf
+**/enhanced/
+**/renders/
+
+
+.ci-tools/
+
+.github/

@@ -1,0 +1,37 @@
+/* 짧은 문제 전환과 정오답 피드백. 이동·채점 로직과 별개이며 동작을 기다리게 하지 않는다. */
+#quiz > .question,
+#mock > .mock-question,
+.wn-q {
+  animation: hanq-question-in 180ms ease-out both;
+}
+.feedback.show .verdict,
+.mock-feedback .verdict,
+.wn-verdict {
+  animation: hanq-verdict-in 220ms cubic-bezier(.2,.8,.2,1) both;
+  transform-origin: center;
+}
+@keyframes hanq-question-in {
+  from { opacity: .4; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes hanq-verdict-in {
+  from { opacity: 0; transform: scale(.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #quiz > .question,
+  #mock > .mock-question,
+  .wn-q,
+  .feedback.show .verdict,
+  .mock-feedback .verdict,
+  .wn-verdict { animation: none; }
+}
+
+.qc-keypoints { margin: 0; padding-left: 1.15em; display: grid; gap: 5px; line-height: 1.5; }
+.qc-keypoints li, .qc-option { overflow-wrap: anywhere; }
+.qc-options h4 { margin: 4px 0; font-size: 13px; color: #5b6475; }
+.qc-option-brief { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+.qc-option { display: grid; gap: 2px; padding: 6px 0; border-top: 1px solid #e2e5e9; font-size: 13px; line-height: 1.5; }
+.qc-option b { color: #334155; }
+.qc-option.is-selected b { color: #8f1f1f; }
+.qcompact > .qsrc { margin-top: 3px; }

@@ -1,0 +1,4 @@
+'use strict';
+const fs=require('fs'),path=require('path'),crypto=require('crypto'),root=path.resolve(__dirname,'..'),data=JSON.parse(fs.readFileSync(path.join(root,'docs/era-full-summary-sources.json'),'utf8')).eras;
+for(const d of Object.values(data))for(const key of ['comic','guide']){const s=d.sources[key],actual=crypto.createHash('sha256').update(fs.readFileSync(path.join(root,s.file))).digest('hex');if(actual!==s.sha256)throw Error('Summary source changed: '+s.file);}
+const output='window.HANQ_ERA_FULL_SUMMARIES='+JSON.stringify(data)+';\n',target=path.join(root,'media/era-full-summary-data.js');if(process.argv.includes('--check')){if(fs.readFileSync(target,'utf8')!==output)throw Error('Regenerate era summary data');console.log('Era summary data/source hashes match');}else fs.writeFileSync(target,output);

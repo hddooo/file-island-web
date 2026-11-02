@@ -1,0 +1,899 @@
+{
+  "basis": "사용자 제공 120문항에서 문법적·의미적 단일 정답과 품사 자리 판단을 우선하여 100문항 선정. 외부 시험 빈출 통계 주장 없음.",
+  "selected100": [
+    "448",
+    "450",
+    "455",
+    "458",
+    "466",
+    "467",
+    "468",
+    "426",
+    "427",
+    "431",
+    "432",
+    "433",
+    "438",
+    "440",
+    "446",
+    "405",
+    "408",
+    "411",
+    "417",
+    "420",
+    "422",
+    "424",
+    "382",
+    "384",
+    "385",
+    "387",
+    "389",
+    "399",
+    "403",
+    "364",
+    "366",
+    "369",
+    "375",
+    "379",
+    "381",
+    "339",
+    "341",
+    "343",
+    "349",
+    "350",
+    "352",
+    "354",
+    "356",
+    "358",
+    "316",
+    "unnumbered",
+    "321",
+    "324",
+    "325",
+    "326",
+    "327",
+    "335",
+    "337",
+    "301",
+    "302",
+    "305",
+    "308",
+    "310",
+    "272",
+    "276",
+    "279",
+    "280",
+    "287",
+    "262",
+    "263",
+    "267",
+    "225",
+    "233",
+    "238",
+    "239",
+    "202",
+    "207",
+    "209",
+    "216",
+    "219",
+    "181",
+    "191",
+    "192",
+    "196",
+    "197",
+    "199",
+    "200",
+    "201",
+    "161",
+    "163",
+    "171",
+    "174",
+    "179",
+    "135",
+    "140",
+    "150",
+    "154",
+    "156",
+    "157",
+    "113",
+    "120",
+    "121",
+    "122",
+    "126",
+    "128"
+  ],
+  "excluded20": {
+    "461": "한정사와 불가산명사 수량 표현 중심",
+    "393": "about/only/every가 서로 다른 뜻으로 가능",
+    "376": "시간 부사 later의 의미 중심",
+    "346": "여러 부사가 문맥에 따라 가능",
+    "332": "부사 사이 의미 선택 중심",
+    "286": "each 등 한정사 중심",
+    "247": "any 등 한정사 중심",
+    "269": "more 등 수량 표현 중심",
+    "229": "once 등 시간 부사 의미 중심",
+    "231": "passionate/passionless가 둘 다 형용사로 가능",
+    "240": "rental/rented/rentable 의미·수식 가능성이 겹침",
+    "221": "contracts/contractors를 판별할 문맥이 부족함",
+    "222": "another 등 한정사 중심",
+    "224": "every 등 주기 표현 중심",
+    "160": "forecast 명사 수·의미 판단 중심",
+    "168": "no later than 고정 기한 표현 중심",
+    "141": "no later than 고정 기한 표현 중심",
+    "436": "collaborating 분사구문 대안 가능",
+    "268": "식료품 provisions의 어휘·수량 결합 중심",
+    "293": "403과 commendation 명사형 판단이 중복됨"
+  },
+  "revised": [
+    {
+      "sourceNumber": "450",
+      "originalStem": "Please mark your drink _______ on the list.",
+      "revisedStem": "Please mark your drink ________ on the list so that we can serve your preferred beverages.",
+      "originalChoices": [
+        "favourable",
+        "preferential",
+        "preferences",
+        "favours"
+      ],
+      "revisedChoices": [
+        "favourable",
+        "preferential",
+        "preferences",
+        "favours"
+      ],
+      "reason": "음료를 실제 제공한다는 목적을 덧붙여 preferences와 favours의 문맥을 구별함"
+    },
+    {
+      "sourceNumber": "455",
+      "originalStem": "The lab staff must use the tools ________ because they are sensitive.",
+      "revisedStem": "The lab staff must use the delicate tools ________ to avoid damaging them.",
+      "originalChoices": [
+        "cautiously",
+        "caution",
+        "cautious",
+        "cautionary"
+      ],
+      "revisedChoices": [
+        "cautiously",
+        "caution",
+        "cautious",
+        "cautionary"
+      ],
+      "reason": "they의 지시 대상 모호성을 없애고 delicate tools와 손상 방지 목적을 명시함"
+    },
+    {
+      "sourceNumber": "466",
+      "originalStem": "Since they advertised the new play, sales increased _______.",
+      "revisedStem": "Since the theater advertised the new play, ticket sales have increased ________.",
+      "originalChoices": [
+        "considering",
+        "considered",
+        "considerable",
+        "considerably"
+      ],
+      "revisedChoices": [
+        "considering",
+        "considered",
+        "considerable",
+        "considerably"
+      ],
+      "reason": "매출을 표 판매량으로 특정하고 since 이후의 현재완료 시제를 자연스럽게 맞춤"
+    },
+    {
+      "sourceNumber": "467",
+      "originalStem": "Messages here do not ________ show the views of the TV station.",
+      "revisedStem": "Messages posted here do not ________ reflect the views of the TV station.",
+      "originalChoices": [
+        "necessary",
+        "necessarily",
+        "necessitate",
+        "necessity"
+      ],
+      "revisedChoices": [
+        "necessary",
+        "necessarily",
+        "necessitate",
+        "necessity"
+      ],
+      "reason": "방송국 견해에는 show보다 reflect가 자연스러우므로 결합을 보완함"
+    },
+    {
+      "sourceNumber": "433",
+      "originalStem": "After they arrived, the team was ________ given breakfast.",
+      "revisedStem": "After they arrived, the team members were ________ given breakfast.",
+      "originalChoices": [
+        "prompts",
+        "prompting",
+        "prompted",
+        "promptly"
+      ],
+      "revisedChoices": [
+        "prompts",
+        "prompting",
+        "prompted",
+        "promptly"
+      ],
+      "reason": "팀원들을 복수 주어로 표현하여 아침 식사를 제공받는 대상을 명확히 함"
+    },
+    {
+      "sourceNumber": "440",
+      "originalStem": "As planned, Thompson Company did well, ________ beating last year's income.",
+      "revisedStem": "As planned, Thompson Company performed well, ________ exceeding last year's revenue.",
+      "originalChoices": [
+        "easy",
+        "easing",
+        "ease",
+        "easily"
+      ],
+      "revisedChoices": [
+        "easy",
+        "easing",
+        "ease",
+        "easily"
+      ],
+      "reason": "기업 실적·매출에는 perform well/exceed revenue가 자연스러워 동사와 목적어 결합을 보완함"
+    },
+    {
+      "sourceNumber": "405",
+      "originalStem": "The new painting at the museum is proven to be ________ by experts.",
+      "revisedStem": "Experts have confirmed that the new painting at the museum is ________.",
+      "originalChoices": [
+        "authenticity",
+        "authenticate",
+        "authentically",
+        "authentic"
+      ],
+      "revisedChoices": [
+        "authenticity",
+        "authenticate",
+        "authentically",
+        "authentic"
+      ],
+      "reason": "by experts가 빈칸 뒤에서 모호하게 걸리지 않도록 전문가 확인과 그림의 성질을 분리함"
+    },
+    {
+      "sourceNumber": "408",
+      "originalStem": "The money to fix the city library came _______ from companies.",
+      "revisedStem": "Funding for the city library repairs came ________ from local companies.",
+      "originalChoices": [
+        "overwhelmed",
+        "overwhelm",
+        "overwhelming",
+        "overwhelmingly"
+      ],
+      "revisedChoices": [
+        "overwhelmed",
+        "overwhelm",
+        "overwhelming",
+        "overwhelmingly"
+      ],
+      "reason": "수리 자금과 출처 비중을 funding/came from으로 명확히 표현함"
+    },
+    {
+      "sourceNumber": "411",
+      "originalStem": "The museum owner made a special exhibit by _______ showing old art in a new place.",
+      "revisedStem": "The museum curator created a special exhibit by ________ displaying old artwork in a new setting.",
+      "originalChoices": [
+        "innovative",
+        "innovatively",
+        "innovational",
+        "innovated"
+      ],
+      "revisedChoices": [
+        "innovative",
+        "innovatively",
+        "innovational",
+        "innovated"
+      ],
+      "reason": "전시 기획 주체를 curator로, 미술품 전시를 display artwork로 자연스럽게 보완함"
+    },
+    {
+      "sourceNumber": "420",
+      "originalStem": "The show at the city museum explores the _______ of local winemakers.",
+      "revisedStem": "The exhibition at the city museum explores the ________ of the local wine industry.",
+      "originalChoices": [
+        "developed",
+        "develops",
+        "developmental",
+        "development"
+      ],
+      "revisedChoices": [
+        "developed",
+        "develops",
+        "developmental",
+        "development"
+      ],
+      "reason": "전시가 탐구하는 대상을 와인 산업의 발전으로 명확히 함"
+    },
+    {
+      "sourceNumber": "384",
+      "originalStem": "The new show in town is already ________ sold out.",
+      "revisedStem": "The tickets for the new show in town are already ________ sold out.",
+      "originalChoices": [
+        "completely",
+        "completion",
+        "completed",
+        "complete"
+      ],
+      "revisedChoices": [
+        "completely",
+        "completion",
+        "completed",
+        "complete"
+      ],
+      "reason": "매진되는 대상을 공연 자체보다 tickets로 명시함"
+    },
+    {
+      "sourceNumber": "385",
+      "originalStem": "Robinson & Carter is looking for an ________ to manage house plans.",
+      "revisedStem": "Robinson & Carter is looking for an ________ to design houses.",
+      "originalChoices": [
+        "architectural",
+        "architecturally",
+        "architect",
+        "architecture"
+      ],
+      "revisedChoices": [
+        "architectural",
+        "architecturally",
+        "architect",
+        "architecture"
+      ],
+      "reason": "건축가가 할 일을 design houses로 명확히 하여 사람 명사 판단을 도움"
+    },
+    {
+      "sourceNumber": "387",
+      "originalStem": "In the library, both smoking and drinking are ________ not allowed.",
+      "revisedStem": "In the library, both smoking and drinking are ________ prohibited.",
+      "originalChoices": [
+        "strictest",
+        "strictly",
+        "stricter",
+        "strict"
+      ],
+      "revisedChoices": [
+        "strictest",
+        "strictly",
+        "stricter",
+        "strict"
+      ],
+      "reason": "strictly not allowed를 자연스러운 strictly prohibited로 보완함"
+    },
+    {
+      "sourceNumber": "389",
+      "originalStem": "Linda from our team is looking after _______ with fabric makers in team B.",
+      "revisedStem": "Linda from our team is handling ________ with fabric suppliers.",
+      "originalChoices": [
+        "negotiations",
+        "negotiated",
+        "negotiates",
+        "negotiate"
+      ],
+      "revisedChoices": [
+        "negotiations",
+        "negotiated",
+        "negotiates",
+        "negotiate"
+      ],
+      "reason": "협상 담당에는 looking after보다 handling negotiations가 자연스러워 결합을 보완함"
+    },
+    {
+      "sourceNumber": "364",
+      "originalStem": "Bosses at the company are watching workers _______ than they did last month.",
+      "revisedStem": "Managers at the company are monitoring employees ________ than they did last month.",
+      "originalChoices": [
+        "most carefully",
+        "more carefully",
+        "more careful",
+        "most careful"
+      ],
+      "revisedChoices": [
+        "most carefully",
+        "more carefully",
+        "more careful",
+        "most careful"
+      ],
+      "reason": "직원 관찰이라는 업무 맥락을 monitoring employees로 명확히 함"
+    },
+    {
+      "sourceNumber": "375",
+      "originalStem": "Because Tom was ________ good at ideas and execution, he became an icon.",
+      "revisedStem": "Because Tom was ________ good at both developing ideas and putting them into practice, he became a role model.",
+      "originalChoices": [
+        "equaled",
+        "equals",
+        "equally",
+        "equal"
+      ],
+      "revisedChoices": [
+        "equaled",
+        "equals",
+        "equally",
+        "equal"
+      ],
+      "reason": "두 능력의 동일한 정도를 both developing ideas and putting them into practice로 명시함"
+    },
+    {
+      "sourceNumber": "381",
+      "originalStem": "Mark, our real estate _______, can be contacted at 123-456 by those interested in real estate.",
+      "revisedStem": "Mark, our real estate ________, can be contacted by anyone interested in property advice.",
+      "originalChoices": [
+        "consulting",
+        "consulted",
+        "consultation",
+        "consultant"
+      ],
+      "revisedChoices": [
+        "consulting",
+        "consulted",
+        "consultation",
+        "consultant"
+      ],
+      "reason": "불완전한 연락처를 제거하고 real estate consultant가 제공하는 자문 맥락을 보완함"
+    },
+    {
+      "sourceNumber": "349",
+      "originalStem": "Today, workers who want to work ________ shifts next week will give forms to Mr. Kim.",
+      "revisedStem": "Today, employees who want to work ________ shifts next week will submit forms to Mr. Kim.",
+      "originalChoices": [
+        "additionally",
+        "additional",
+        "additions",
+        "addition"
+      ],
+      "revisedChoices": [
+        "additionally",
+        "additional",
+        "additions",
+        "addition"
+      ],
+      "reason": "근무 신청에는 give forms보다 submit forms가 자연스러워 표현을 보완함"
+    },
+    {
+      "sourceNumber": "352",
+      "originalStem": "The school council plays a _______ role in boosting local clubs.",
+      "revisedStem": "The school council plays a ________ role in boosting local clubs.",
+      "originalChoices": [
+        "critically",
+        "criticism",
+        "criticals",
+        "critical"
+      ],
+      "revisedChoices": [
+        "critically",
+        "criticism",
+        "criticize",
+        "critical"
+      ],
+      "reason": "비표준적 criticals를 실제 동사 criticize로 교체함"
+    },
+    {
+      "sourceNumber": "356",
+      "originalStem": "The new Adidas shoes have been advertised _______ everywhere.",
+      "revisedStem": "The new Adidas shoes have been ________ advertised worldwide.",
+      "originalChoices": [
+        "effective",
+        "effectively",
+        "effect",
+        "effectuate"
+      ],
+      "revisedChoices": [
+        "effective",
+        "effectively",
+        "effect",
+        "effectuate"
+      ],
+      "reason": "광고 수단의 효과를 묻도록 부사 위치를 수동태 내부로 옮기고 everywhere를 worldwide로 다듬음"
+    },
+    {
+      "sourceNumber": "358",
+      "originalStem": "You can email ________ to editors about the articles.",
+      "revisedStem": "You can email ________ to the editors to fix errors in the articles.",
+      "originalChoices": [
+        "Correct",
+        "Corrected",
+        "corrections",
+        "Correcting"
+      ],
+      "revisedChoices": [
+        "Correct",
+        "Corrected",
+        "corrections",
+        "Correcting"
+      ],
+      "reason": "기사 오류를 바로잡는다는 목적을 명시하여 이메일로 보내는 정정 사항을 특정함"
+    },
+    {
+      "sourceNumber": "326",
+      "originalStem": "Due to sudden _______ limits, we had to cut the product development.",
+      "revisedStem": "Due to unexpected ________ limits, we had to reduce the product development budget.",
+      "originalChoices": [
+        "financial",
+        "finances",
+        "to finance",
+        "financed"
+      ],
+      "revisedChoices": [
+        "financial",
+        "finances",
+        "to finance",
+        "financed"
+      ],
+      "reason": "개발 자체를 cut한다는 표현 대신 제품 개발 예산을 줄이는 재정 상황으로 보완함"
+    },
+    {
+      "sourceNumber": "335",
+      "originalStem": "Please confirm if the applicant fits all the ________ in the project draft.",
+      "revisedStem": "Please confirm whether the applicant meets all the ________ listed in the job description.",
+      "originalChoices": [
+        "qualifying",
+        "qualifications",
+        "qualifies",
+        "qualification"
+      ],
+      "revisedChoices": [
+        "qualifying",
+        "qualifications",
+        "qualifies",
+        "qualification"
+      ],
+      "reason": "지원 자격 충족의 자연스러운 결합인 meets qualifications와 직무 기술서 문맥으로 보완함"
+    },
+    {
+      "sourceNumber": "301",
+      "originalStem": "Jessica's idea for the library was ________ liked by everyone.",
+      "revisedStem": "Jessica's idea for the library was ________ praised by the review committee.",
+      "originalChoices": [
+        "highest",
+        "higher",
+        "highly",
+        "high"
+      ],
+      "revisedChoices": [
+        "highest",
+        "higher",
+        "highly",
+        "high"
+      ],
+      "reason": "highly liked를 자연스러운 highly praised로 변경하고 평가 주체를 명시함"
+    },
+    {
+      "sourceNumber": "302",
+      "originalStem": "Gold value is expected to rise ________ over the next five years.",
+      "revisedStem": "The price of gold is expected to rise ________ over the next five years.",
+      "originalChoices": [
+        "steadiness",
+        "steadied",
+        "steadily",
+        "steady"
+      ],
+      "revisedChoices": [
+        "steadiness",
+        "steadied",
+        "steadily",
+        "steady"
+      ],
+      "reason": "금의 가치는 price of gold로 명확하게 표현함"
+    },
+    {
+      "sourceNumber": "305",
+      "originalStem": "For this small project, it is _______ to review more before sharing any results.",
+      "revisedStem": "For this small project, it is ________ to review the data further before sharing any results.",
+      "originalChoices": [
+        "advisably",
+        "advising",
+        "advisability",
+        "advisable"
+      ],
+      "revisedChoices": [
+        "advisably",
+        "advising",
+        "advisability",
+        "advisable"
+      ],
+      "reason": "무엇을 더 검토하는지 review the data further로 목적어를 보완함"
+    },
+    {
+      "sourceNumber": "310",
+      "originalStem": "The paper lists all ________ needed to change a tall building's design.",
+      "revisedStem": "The document lists all the ________ that must be met before a tall building's design can be changed.",
+      "originalChoices": [
+        "conditionally",
+        "condition",
+        "conditional",
+        "conditions"
+      ],
+      "revisedChoices": [
+        "conditionally",
+        "condition",
+        "conditional",
+        "conditions"
+      ],
+      "reason": "설계 변경 전에 충족할 조건임을 명시하여 conditions의 의미와 복수형을 확인하게 함"
+    },
+    {
+      "sourceNumber": "272",
+      "originalStem": "Apple's ________ yearly costs may be $7 million less because of library changes.",
+      "revisedStem": "Apple's ________ yearly costs may decrease by $7 million after changes to its library system.",
+      "originalChoices": [
+        "totals",
+        "totaled",
+        "totaling",
+        "total"
+      ],
+      "revisedChoices": [
+        "totals",
+        "totality",
+        "totaling",
+        "total"
+      ],
+      "reason": "totaled도 형용사적 수식이 가능하므로 해당 보기를 명사 totality로 교체하여 단일 정답을 확보함"
+    },
+    {
+      "sourceNumber": "280",
+      "originalStem": "Even though the town was once ________ for its stunning views, its fast growth changed that.",
+      "revisedStem": "Although the town was once ________ for its stunning views, rapid development has obscured much of the scenery.",
+      "originalChoices": [
+        "famously",
+        "more famously",
+        "famous",
+        "fame"
+      ],
+      "revisedChoices": [
+        "famously",
+        "more famously",
+        "famous",
+        "fame"
+      ],
+      "reason": "막연한 changed that 대신 개발로 경치가 가려졌다는 구체 문맥을 명시함"
+    },
+    {
+      "sourceNumber": "262",
+      "originalStem": "Ms. Johnson in our team is the _______ about this new software.",
+      "revisedStem": "Of all our team members, Ms. Johnson is the ________ about this new software.",
+      "originalChoices": [
+        "more knowledge",
+        "most knowledgeable",
+        "knowledge",
+        "knowledgeable"
+      ],
+      "revisedChoices": [
+        "more knowledge",
+        "most knowledgeable",
+        "knowledge",
+        "knowledgeable"
+      ],
+      "reason": "Of all our team members로 최상급 비교 범위를 명시함"
+    },
+    {
+      "sourceNumber": "263",
+      "originalStem": "The new Y20 phone from GLT has ________ that are better than those of other models.",
+      "revisedStem": "The new Y20 phone from GLT has several ________ that are better than those of other models.",
+      "originalChoices": [
+        "capabilities",
+        "capably",
+        "capability",
+        "capable"
+      ],
+      "revisedChoices": [
+        "capabilities",
+        "capably",
+        "capability",
+        "capable"
+      ],
+      "reason": "several을 추가하여 capabilities의 복수형 및 뒤 are와의 호응을 명확히 함"
+    },
+    {
+      "sourceNumber": "238",
+      "originalStem": "Please check the ________ guide closely to see if Adobe Photoshop suits your PC.",
+      "revisedStem": "Please check the software's ________ specifications closely to see if Adobe Photoshop suits your PC.",
+      "originalChoices": [
+        "technically",
+        "technician",
+        "technicality",
+        "technical"
+      ],
+      "revisedChoices": [
+        "technically",
+        "technician",
+        "technicality",
+        "technical"
+      ],
+      "reason": "technician guide라는 명사 결합의 여지를 피하도록 software's technical specifications로 문맥을 명확히 함"
+    },
+    {
+      "sourceNumber": "239",
+      "originalStem": "After the client's ______, we will add green choices to the plan.",
+      "revisedStem": "After reviewing the client's ________, we will add environmentally friendly options to the plan.",
+      "originalChoices": [
+        "recommended",
+        "recommendations",
+        "recommends",
+        "recommend"
+      ],
+      "revisedChoices": [
+        "recommended",
+        "recommendations",
+        "recommends",
+        "recommend"
+      ],
+      "reason": "고객의 권고를 검토한 뒤 친환경 선택을 반영하는 순서를 명확히 함"
+    },
+    {
+      "sourceNumber": "202",
+      "originalStem": "If you are visiting the piano shop, groups of more than 10 should ________ register first.",
+      "revisedStem": "Groups of more than ten visiting the piano shop should ________ register in advance.",
+      "originalChoices": [
+        "normal",
+        "normality",
+        "normally",
+        "norm"
+      ],
+      "revisedChoices": [
+        "normal",
+        "normality",
+        "normally",
+        "norm"
+      ],
+      "reason": "방문 단체와 사전 등록 대상을 한 문장으로 간결하게 다듬음"
+    },
+    {
+      "sourceNumber": "207",
+      "originalStem": "The dance fair will display nine choreographers of ________ styles.",
+      "revisedStem": "The dance festival will feature nine choreographers with ________ styles.",
+      "originalChoices": [
+        "difference",
+        "differences",
+        "differently",
+        "different"
+      ],
+      "revisedChoices": [
+        "difference",
+        "differences",
+        "differently",
+        "different"
+      ],
+      "reason": "안무가 참여에는 display보다 feature가 자연스러워 동사 결합을 보완함"
+    },
+    {
+      "sourceNumber": "216",
+      "originalStem": "On the ________ price of new books, my school got a 15 percent discount.",
+      "revisedStem": "My school received a 15 percent discount on the ________ price of the new books.",
+      "originalChoices": [
+        "totaling",
+        "totals",
+        "totally",
+        "total"
+      ],
+      "revisedChoices": [
+        "totaling",
+        "totals",
+        "totally",
+        "total"
+      ],
+      "reason": "학교가 할인받는 관계를 received a discount on the total price로 자연스럽게 다듬음"
+    },
+    {
+      "sourceNumber": "191",
+      "originalStem": "Leo's acting is ________ by his great role interpretation.",
+      "revisedStem": "Leo's acting style is readily ________ by its distinctive interpretation of each role.",
+      "originalChoices": [
+        "identifying",
+        "identifiably",
+        "identifiable",
+        "identify"
+      ],
+      "revisedChoices": [
+        "identifying",
+        "identifiably",
+        "identifiable",
+        "identify"
+      ],
+      "reason": "role interpretation으로 스타일이 식별된다는 원문의 취지를 살려 acting style/identifiable 결합을 명확히 함"
+    },
+    {
+      "sourceNumber": "192",
+      "originalStem": "The mall's improvements will _______ affect LA shop hours and reduce waiting.",
+      "revisedStem": "The mall's new layout will ________ affect the shopping experience and reduce waiting times.",
+      "originalChoices": [
+        "beneficial",
+        "benefited",
+        "beneficially",
+        "benefiting"
+      ],
+      "revisedChoices": [
+        "beneficial",
+        "benefited",
+        "beneficially",
+        "benefiting"
+      ],
+      "reason": "영업시간에 유익한 영향을 준다는 모호함을 줄이고 쇼핑 경험과 대기 시간으로 구체화함"
+    },
+    {
+      "sourceNumber": "199",
+      "originalStem": "The local shop offers the biggest ________ of gloves for men and women.",
+      "revisedStem": "The local shop offers a wide ________ of gloves for men and women.",
+      "originalChoices": [
+        "choosing",
+        "chooses",
+        "choice",
+        "chooser"
+      ],
+      "revisedChoices": [
+        "choosing",
+        "chooses",
+        "choice",
+        "chooser"
+      ],
+      "reason": "biggest choice를 자연스러운 a wide choice of라는 구색 표현으로 보완함"
+    },
+    {
+      "sourceNumber": "201",
+      "originalStem": "The deadline for ________ of homework is tomorrow, 10:00 a.m.",
+      "revisedStem": "The deadline for ________ of the homework is 10:00 a.m. tomorrow.",
+      "originalChoices": [
+        "submit",
+        "submission",
+        "submits",
+        "submitted"
+      ],
+      "revisedChoices": [
+        "submit",
+        "submission",
+        "submits",
+        "submitted"
+      ],
+      "reason": "마감 시각 표기와 homework의 한정사를 자연스럽게 다듬음"
+    },
+    {
+      "sourceNumber": "179",
+      "originalStem": "Workers' yearly bonus won't be added _______ to their pay.",
+      "revisedStem": "The employees' annual bonus will not be added ________ to their regular pay.",
+      "originalChoices": [
+        "directed",
+        "directly",
+        "direction",
+        "directing"
+      ],
+      "revisedChoices": [
+        "directed",
+        "directly",
+        "direction",
+        "directing"
+      ],
+      "reason": "상여금과 정기 급여의 구분 및 직원들의 소유격을 명확히 함"
+    },
+    {
+      "sourceNumber": "128",
+      "originalStem": "Violinist Tom, with a long career, gives performances that remain ________ as always.",
+      "revisedStem": "Violinist Tom, with his long career, gives performances that remain technically ________.",
+      "originalChoices": [
+        "accurateness",
+        "accuracy",
+        "accurately",
+        "accurate"
+      ],
+      "revisedChoices": [
+        "accurateness",
+        "accuracy",
+        "accurately",
+        "accurate"
+      ],
+      "reason": "remain accurate라는 주격보어 판단은 유지하고 technically로 연주의 기교적 정확성을 명시함"
+    }
+  ],
+  "counts": {
+    "questions": 100,
+    "optionReasons": 400,
+    "translations": 100,
+    "topics": {
+      "noun": 30,
+      "adverb": 35,
+      "complement": 16,
+      "adjective": 19
+    }
+  },
+  "answerAudit": "제공답 100개 유지. 각 문항의 네 보기와 완성문장 검토. 272의 totaled와 total 중복 가능성은 보기를 totality로 수정. 262 최상급 문맥 명시. 미선정 문항과 챕터 원래 80연습문제 데이터는 삭제하지 않음.",
+  "rareFormsNote": "suggestable/superiorly/assertor/capableness/accurateness를 일반적인 암기 어휘로 안내하지 않음.",
+  "legacyDataSha256": "aacbf113cc7f841ab090f0c928b3293526ac5c3e745d4e0f9a0f686c26305b66"
+}

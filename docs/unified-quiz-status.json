@@ -1,0 +1,81 @@
+{
+  "status": "complete_with_limits",
+  "scope": "Nine existing chronological menus,476 unique selected questions from482 source-backed rows;21 islands-source contexts integrated; duplicate contexts use display-only representatives, two unsupported paired variants not exported and one sourced military variant used, no separate islands quiz. All selected five-choice with sourced3-5core facts. Original990quiz/500exam retained. Three unidentified exam images remain. No push/deployment.",
+  "target": 50,
+  "eras": {
+    "goryeo": {
+      "questions": 52,
+      "fiveChoices": 52,
+      "needsFiveChoices": []
+    },
+    "joseon": {
+      "questions": 58,
+      "fiveChoices": 58,
+      "needsFiveChoices": []
+    },
+    "opening": {
+      "questions": 51,
+      "fiveChoices": 51,
+      "needsFiveChoices": []
+    },
+    "colonial": {
+      "questions": 60,
+      "fiveChoices": 60,
+      "needsFiveChoices": []
+    },
+    "prehistory": {
+      "questions": 50,
+      "fiveChoices": 50,
+      "needsFiveChoices": []
+    },
+    "gojoseon": {
+      "questions": 50,
+      "fiveChoices": 50,
+      "needsFiveChoices": []
+    },
+    "samguk": {
+      "questions": 51,
+      "fiveChoices": 51,
+      "needsFiveChoices": []
+    },
+    "nambuk": {
+      "questions": 51,
+      "fiveChoices": 51,
+      "needsFiveChoices": []
+    },
+    "modern": {
+      "questions": 53,
+      "fiveChoices": 53,
+      "needsFiveChoices": []
+    }
+  },
+  "selectedUnresolved": [],
+  "examUnresolved": [
+    {
+      "question": "exam-72-23",
+      "option": "exam-72-23-option-3",
+      "source": [
+        "**산과 물을 그린 다른 산수화** — 인물이 물을 바라보는 고사관수도가 아니에요. 이 그림의 화가 이름은 교재·문제지에서 확인되지 않아 적지 않아요."
+      ]
+    },
+    {
+      "question": "exam-76-27",
+      "option": "exam-76-27-option-2",
+      "source": [
+        "**여러 사람이 상 둘레에 모인 풍속화** — 교재에 혜원 작품으로 실린 그림이 아니에요. 이 그림의 화가 이름은 교재·문제지에서 확인되지 않아 적지 않아요."
+      ]
+    },
+    {
+      "question": "exam-78-26",
+      "option": "exam-78-26-option-3",
+      "source": [
+        "**절벽 소나무와 나룻배 그림** — 교재에 김정희 작품으로 실린 그림이 아니에요. 화가 이름은 교재·문제지에서 확인되지 않아 적지 않아요."
+      ]
+    }
+  ],
+  "sourceHashes": {
+    "quiz-catalog.js": "c26c3fa6d934073bcb9195249c483e7522d6ccc1f7b600a30c14df6fc4afcbb8",
+    "era-recall-quiz.js": "d4cc9459472b07c0f536fbc69cdddb9f52aae2a26dfadb439a7ee83d34eea8bd",
+    "exam-pool.js": "59ccc8e7448feba7a975a677d610264b2f6c15e05436237480eb63ecd0bedcb2"
+  }
+}

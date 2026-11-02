@@ -1,0 +1,27 @@
+# Private textbook bytes and generated previews must never be committed.
+evidence/
+.test-tools/
+private-data/
+hanq-private-data/
+*.pdf
+*.patch
+__pycache__/
+node_modules/
+
+# Emitted alongside index.html by the deployment build.
+app-version.json
+
+# File Island migration: local credentials and private learning inputs stay outside Git.
+.env
+.env.*
+!.env.example
+private-data/
+hanq-private-data/
+private-textbook-semantic-data/
+assets/home-server/
+*.pem
+*.key
+*.p12
+*.pfx
+*.dump
+*.sql.gz

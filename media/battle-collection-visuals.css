@@ -1,0 +1,20 @@
+/* Separate family effects: no Agumon selectors, timing or damage changes. */
+.bi-collection-pose{background:none!important;transform:none!important;overflow:visible;image-rendering:auto}
+.bi-collection-crop{position:absolute;left:50%;bottom:0;transform:translateX(-50%);background-repeat:no-repeat;image-rendering:auto}
+.bi-collection-fx{--fx:#8ce7ff;overflow:visible;background:none!important;border:0!important;box-shadow:none!important;filter:drop-shadow(0 0 9px var(--fx));isolation:isolate}
+.bi-projectile.bi-collection-fx,.bi-charge.bi-collection-fx{width:52px;height:52px}
+.bi-collection-particle{position:absolute;inset:0;display:block;background:radial-gradient(ellipse,#fff 0 12%,var(--fx) 36%,transparent 72%);border-radius:50%}
+[data-collection-fx="bluefire"]{--fx:#70bdff}[data-collection-fx="bluefire"] .bi-collection-particle{border-radius:70% 30% 60% 40%;transform:rotate(-25deg);background:radial-gradient(ellipse at 70% 50%,#fff 5%,#b9f8ff 25%,#56b3ff 52%,transparent 72%)}
+.bi-projectile[data-collection-fx="foxfire"],.bi-charge[data-collection-fx="foxfire"]{width:100px;height:62px;--fx:#3f8fff}
+[data-collection-fx="foxfire"] .bi-collection-particle{border-radius:80% 15% 60% 20%;background:radial-gradient(ellipse at 65% 50%,#fff 5%,#a4ecff 25%,#427cff 50%,transparent 72%)}
+[data-collection-fx="claw"]{--fx:#bedcff}[data-collection-fx="claw"] .bi-collection-particle{inset:0 auto 0 calc(15% + var(--part)*25%);width:13%;border-radius:100% 0 100% 0;transform:rotate(28deg);background:linear-gradient(#fff,#b4dfff 65%,transparent)}
+[data-collection-fx="frost"]{--fx:#78ffff}[data-collection-fx="frost"] .bi-collection-particle{width:28%;height:65%;inset:calc(var(--part)*7%) auto auto calc(var(--part)*16%);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);background:linear-gradient(135deg,#fff,#b6ffff 50%,#498ac7);transform:rotate(-25deg)}
+[data-collection-fx="air"]{--fx:#c5f2ff}[data-collection-fx="air"] .bi-collection-particle{inset:calc(var(--part)*14%);border:2px solid #efffff;background:radial-gradient(ellipse,transparent 45%,#b5f5ff77);box-shadow:0 0 5px #b4f0ff;border-radius:50%}
+[data-collection-fx="holyfist"]{--fx:#ffdc7d}[data-collection-fx="holyfist"] .bi-collection-particle{inset:10%;background:linear-gradient(110deg,#eab955,#fffce3 60%,#fff);clip-path:polygon(0 30%,35% 28%,40% 7%,55% 12%,68% 0,80% 12%,94% 10%,100% 55%,75% 90%,30% 82%,0 65%)}
+[data-collection-fx="gate"]{--fx:#d6baff}[data-collection-fx="gate"] .bi-collection-particle{inset:0 18%;border:4px double #fff5c0;border-radius:48% 48% 12% 12%;background:radial-gradient(ellipse,#211d5d 20%,#9681ff 63%,#fff1ba 75%);box-shadow:0 0 12px #bea9ff}
+.bi-projectile[data-collection-fx="seven"],.bi-charge[data-collection-fx="seven"]{width:100px;height:100px;--fx:#ffe19b}
+[data-collection-fx="seven"] .bi-collection-particle{inset:38%;transform:rotate(calc(var(--part)*51.4286deg)) translateY(-35px);background:radial-gradient(circle,#fff 0 20%,#fff2a5 38%,#ffba4188 58%,transparent 75%)}
+.bi-projectile[data-direction="right"][data-collection-fx="bluefire"] .bi-collection-particle,.bi-projectile[data-direction="right"][data-collection-fx="foxfire"] .bi-collection-particle,.bi-projectile[data-direction="right"][data-collection-fx="holyfist"] .bi-collection-particle{scale:-1 1}
+.bi-ground-frost .bi-ground-fire,.bi-ground-air .bi-ground-fire,.bi-ground-holyfist .bi-ground-fire,.bi-ground-gate .bi-ground-fire,.bi-ground-seven .bi-ground-fire,.bi-ground-claw .bi-ground-fire{display:none}
+.bi-ground-bluefire .bi-ground-fire,.bi-ground-foxfire .bi-ground-fire{background:linear-gradient(transparent,#6bdcff,#e1ffff);filter:drop-shadow(0 0 4px #468dff)}
+@media(prefers-reduced-motion:reduce){.bi-collection-fx{display:none!important}}

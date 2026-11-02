@@ -1,0 +1,780 @@
+{
+  "schema": 1,
+  "profiles": {
+    "z-connection-e6d15f9e03e6": {
+      "category": "군주",
+      "correctLines": [
+        "대조영 건국 → 무왕 등주 공격 → 문왕 상경 천도 → 선왕 해동성국",
+        "무왕은 당과 대립. 문왕은 당과 친선. 등주 공격을 문왕 이후에 놓지 않는다."
+      ],
+      "correctSources": [
+        {
+          "file": "study-supplements.json",
+          "id": "study-cue-ancient-4",
+          "row": null,
+          "index": null
+        }
+      ],
+      "wrongPeers": [
+        {
+          "text": "조선 세종",
+          "era": "joseon",
+          "lines": [
+            "박연이 편경을 제작하고 아악을 정비한 왕이다.",
+            "칠정산·삼강행실도는 세종 때의 사업으로 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-sejong",
+              "questionIds": [
+                "exam-73-21",
+                "exam-76-19"
+              ]
+            }
+          ]
+        },
+        {
+          "text": "조선 성종",
+          "era": "joseon",
+          "lines": [
+            "경국대전·국조오례의가 완성된 왕이다.",
+            "홍문관과 악학궤범을 성종의 제도·문화 정비로 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-seongjong",
+              "questionIds": [
+                "exam-70-19",
+                "exam-72-20"
+              ]
+            }
+          ]
+        },
+        {
+          "text": "조선 영조",
+          "era": "joseon",
+          "lines": [
+            "준천사·청계천 준설과 신문고 복구의 왕이다.",
+            "속대전과 균역법은 영조의 제도 정비로 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-yeongjo",
+              "questionIds": [
+                "exam-76-25"
+              ]
+            }
+          ]
+        },
+        {
+          "text": "조선 정조",
+          "era": "joseon",
+          "lines": [
+            "서얼 이덕무·박제가를 규장각 검서관으로 등용한 왕이다.",
+            "장용영·수원 화성과 거중기를 정조 때와 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-jeongjo",
+              "questionIds": [
+                "exam-70-24",
+                "exam-75-25"
+              ]
+            }
+          ]
+        }
+      ],
+      "correctEra": "nambuk"
+    },
+    "z-connection-ce71f2d1a500": {
+      "category": "군주",
+      "correctLines": [
+        "교재: ‘문무왕 · 삼국 통일의 위업을 달성하였다’",
+        "교재: ‘문무왕 · 지방관을 감찰하기 위해 외사정을 파견하였다’"
+      ],
+      "correctSources": [
+        "media/quiz-catalog.js#legacy-nambuk-005",
+        "media/quiz-catalog.js#legacy-nambuk-012"
+      ],
+      "wrongPeers": [
+        {
+          "text": "조선 세종",
+          "era": "joseon",
+          "lines": [
+            "박연이 편경을 제작하고 아악을 정비한 왕이다.",
+            "칠정산·삼강행실도는 세종 때의 사업으로 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-sejong",
+              "questionIds": [
+                "exam-73-21",
+                "exam-76-19"
+              ]
+            }
+          ]
+        },
+        {
+          "text": "조선 성종",
+          "era": "joseon",
+          "lines": [
+            "경국대전·국조오례의가 완성된 왕이다.",
+            "홍문관과 악학궤범을 성종의 제도·문화 정비로 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-seongjong",
+              "questionIds": [
+                "exam-70-19",
+                "exam-72-20"
+              ]
+            }
+          ]
+        },
+        {
+          "text": "조선 영조",
+          "era": "joseon",
+          "lines": [
+            "준천사·청계천 준설과 신문고 복구의 왕이다.",
+            "속대전과 균역법은 영조의 제도 정비로 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-yeongjo",
+              "questionIds": [
+                "exam-76-25"
+              ]
+            }
+          ]
+        },
+        {
+          "text": "조선 정조",
+          "era": "joseon",
+          "lines": [
+            "서얼 이덕무·박제가를 규장각 검서관으로 등용한 왕이다.",
+            "장용영·수원 화성과 거중기를 정조 때와 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-jeongjo",
+              "questionIds": [
+                "exam-70-24",
+                "exam-75-25"
+              ]
+            }
+          ]
+        }
+      ],
+      "correctEra": "nambuk"
+    },
+    "z-connection-ab0a97cbce3b": {
+      "category": "교육 기관",
+      "correctLines": [
+        "주자감은 발해에서 인재를 양성한 교육 기관이다.",
+        "고구려 태학·신라 국학·고려 국자감·조선 성균관과 국가를 구별한다."
+      ],
+      "correctSources": [
+        "media/study-supplements.json#study-cue-ancient-6"
+      ],
+      "wrongPeers": [
+        {
+          "text": "고구려 태학",
+          "era": "samguk",
+          "lines": [
+            "소수림왕 때 세운 고구려의 유교 교육 기관이다.",
+            "귀족 자제가 오경 같은 유교 경전을 배워 관리가 되도록 길렀다."
+          ],
+          "sources": [
+            "media/glossary-data.js#taehak"
+          ]
+        },
+        {
+          "text": "고려 국자감",
+          "era": "goryeo",
+          "lines": [
+            "성종 때 정비한 고려의 국립 교육 기관이다.",
+            "문헌공도 등 사학의 발달에 대응해 예종이 관학 진흥을 추진한 대상이다."
+          ],
+          "sources": [
+            "media/lecture-notes.js#HANQ_LECTURE.goryeo.groups[0].rows[6]",
+            "media/study-supplements.json#study-cue-goryeo-17"
+          ]
+        },
+        {
+          "text": "조선 성균관",
+          "era": "joseon",
+          "lines": [
+            "조선의 최고 교육 기관으로 수장은 대사성이었다.",
+            "대성전·명륜당을 갖추었으며 좨주·직강 등 관직을 두었다."
+          ],
+          "sources": [
+            "media/quiz-catalog.js#legacy-joseon-late-054"
+          ]
+        },
+        {
+          "text": "조선 향교",
+          "era": "joseon",
+          "lines": [
+            "조선의 지방 교육 기관으로 전국 군현에 설치되었다.",
+            "중앙에서 교수나 훈도가 파견되어 교육을 맡았다."
+          ],
+          "sources": [
+            "media/quiz-catalog.js#legacy-joseon-late-068"
+          ]
+        }
+      ],
+      "correctEra": "nambuk"
+    },
+    "z-connection-5b774acae66b": {
+      "category": "교육 기관",
+      "correctLines": [
+        "5경 15부를 둔 발해의 교육 기관은 주자감이다.",
+        "발해의 지방 체제와 교육 기관을 한 국가로 연결한다."
+      ],
+      "correctSources": [
+        "media/study-supplements.json#study-cue-ancient-8"
+      ],
+      "wrongPeers": [
+        {
+          "text": "고구려 태학",
+          "era": "samguk",
+          "lines": [
+            "소수림왕 때 세운 고구려의 유교 교육 기관이다.",
+            "귀족 자제가 오경 같은 유교 경전을 배워 관리가 되도록 길렀다."
+          ],
+          "sources": [
+            "media/glossary-data.js#taehak"
+          ]
+        },
+        {
+          "text": "고려 국자감",
+          "era": "goryeo",
+          "lines": [
+            "성종 때 정비한 고려의 국립 교육 기관이다.",
+            "문헌공도 등 사학의 발달에 대응해 예종이 관학 진흥을 추진한 대상이다."
+          ],
+          "sources": [
+            "media/lecture-notes.js#HANQ_LECTURE.goryeo.groups[0].rows[6]",
+            "media/study-supplements.json#study-cue-goryeo-17"
+          ]
+        },
+        {
+          "text": "조선 성균관",
+          "era": "joseon",
+          "lines": [
+            "조선의 최고 교육 기관으로 수장은 대사성이었다.",
+            "대성전·명륜당을 갖추었으며 좨주·직강 등 관직을 두었다."
+          ],
+          "sources": [
+            "media/quiz-catalog.js#legacy-joseon-late-054"
+          ]
+        },
+        {
+          "text": "조선 향교",
+          "era": "joseon",
+          "lines": [
+            "조선의 지방 교육 기관으로 전국 군현에 설치되었다.",
+            "중앙에서 교수나 훈도가 파견되어 교육을 맡았다."
+          ],
+          "sources": [
+            "media/quiz-catalog.js#legacy-joseon-late-068"
+          ]
+        }
+      ],
+      "correctEra": "nambuk"
+    },
+    "z-connection-018aef58c25e": {
+      "category": "화폐",
+      "correctLines": [
+        "상평통보는 조선 후기의 화폐로 법화로 사용되었다.",
+        "고려의 건원중보·해동통보 및 철기 시대 중국 화폐와 국가·시기를 구별한다."
+      ],
+      "correctSources": [
+        "media/quiz-catalog.js#legacy-joseon-late-100"
+      ],
+      "wrongPeers": [
+        {
+          "text": "오수전 · 철기 시대",
+          "era": "iron",
+          "lines": [
+            "철기 시대에 중국과 교류한 흔적을 보여 주는 화폐이다.",
+            "조선 후기의 법화인 상평통보와 사용 시기를 구별한다."
+          ],
+          "sources": [
+            "media/exam-pool.js#exam-70-01-option-2"
+          ]
+        },
+        {
+          "text": "화천 · 철기 시대",
+          "era": "iron",
+          "lines": [
+            "철기 시대에 중국과 교류한 흔적을 보여 주는 화폐이다.",
+            "조선 후기의 상평통보보다 이른 중국 화폐 교류의 단서이다."
+          ],
+          "sources": [
+            "media/exam-pool.js#exam-70-01-option-2"
+          ]
+        },
+        {
+          "text": "건원중보 · 고려",
+          "era": "goryeo",
+          "lines": [
+            "고려 초의 화폐와 연결하는 이름이다.",
+            "같은 고려 화폐인 은병과 묶어 조선 후기 상평통보와 구별한다."
+          ],
+          "sources": [
+            "media/era-recall-quiz.js#z-connection-5264f760dde5",
+            "media/study-supplements.json#study-goryeo-11-1"
+          ]
+        },
+        {
+          "text": "해동통보 · 고려",
+          "era": "goryeo",
+          "lines": [
+            "고려 숙종과 연결되는 화폐이다.",
+            "고려의 화폐이며, 조선 후기의 법화인 상평통보와 국가·시기를 구별한다."
+          ],
+          "sources": [
+            "media/era-recall-quiz.js#z-connection-cf47c14e9863",
+            "media/study-supplements.json#study-goryeo-5-1"
+          ]
+        }
+      ],
+      "correctEra": "joseon"
+    },
+    "z-connection-a10da021fe03": {
+      "category": "군주",
+      "correctEra": "goryeo",
+      "correctLines": [
+        "교재: ‘숙종 ·  주전도감에서 해동통보 발행, 은병(=활구) 발행’",
+        "교재: ‘숙종 ② 여진 정벌을 위해 삼수병으로 구성된 별무반을 창설하였다’"
+      ],
+      "correctSources": [
+        "media/quiz-catalog.js#legacy-goryeo-013",
+        "media/quiz-catalog.js#legacy-goryeo-017"
+      ],
+      "wrongPeers": [
+        {
+          "text": "조선 세종",
+          "era": "joseon",
+          "lines": [
+            "박연이 편경을 제작하고 아악을 정비한 왕이다.",
+            "칠정산·삼강행실도는 세종 때의 사업으로 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-sejong",
+              "questionIds": [
+                "exam-73-21",
+                "exam-76-19"
+              ]
+            }
+          ]
+        },
+        {
+          "text": "조선 성종",
+          "era": "joseon",
+          "lines": [
+            "경국대전·국조오례의가 완성된 왕이다.",
+            "홍문관과 악학궤범을 성종의 제도·문화 정비로 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-seongjong",
+              "questionIds": [
+                "exam-70-19",
+                "exam-72-20"
+              ]
+            }
+          ]
+        },
+        {
+          "text": "조선 영조",
+          "era": "joseon",
+          "lines": [
+            "준천사·청계천 준설과 신문고 복구의 왕이다.",
+            "속대전과 균역법은 영조의 제도 정비로 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-yeongjo",
+              "questionIds": [
+                "exam-76-25"
+              ]
+            }
+          ]
+        },
+        {
+          "text": "조선 정조",
+          "era": "joseon",
+          "lines": [
+            "서얼 이덕무·박제가를 규장각 검서관으로 등용한 왕이다.",
+            "장용영·수원 화성과 거중기를 정조 때와 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-jeongjo",
+              "questionIds": [
+                "exam-70-24",
+                "exam-75-25"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "z-connection-1f9f1c8ac3d5": {
+      "category": "군주",
+      "correctEra": "samguk",
+      "correctLines": [
+        "교재: ‘무령왕 · 지방에 22담로를 두어 왕족을 파견하였다’",
+        "교재: ‘무령왕 · 백가의 난을 평정하였다’"
+      ],
+      "correctSources": [
+        "media/quiz-catalog.js#legacy-samguk-010",
+        "media/quiz-catalog.js#legacy-samguk-017"
+      ],
+      "wrongPeers": [
+        {
+          "text": "조선 세종",
+          "era": "joseon",
+          "lines": [
+            "박연이 편경을 제작하고 아악을 정비한 왕이다.",
+            "칠정산·삼강행실도는 세종 때의 사업으로 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-sejong",
+              "questionIds": [
+                "exam-73-21",
+                "exam-76-19"
+              ]
+            }
+          ]
+        },
+        {
+          "text": "조선 성종",
+          "era": "joseon",
+          "lines": [
+            "경국대전·국조오례의가 완성된 왕이다.",
+            "홍문관과 악학궤범을 성종의 제도·문화 정비로 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-seongjong",
+              "questionIds": [
+                "exam-70-19",
+                "exam-72-20"
+              ]
+            }
+          ]
+        },
+        {
+          "text": "조선 영조",
+          "era": "joseon",
+          "lines": [
+            "준천사·청계천 준설과 신문고 복구의 왕이다.",
+            "속대전과 균역법은 영조의 제도 정비로 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-yeongjo",
+              "questionIds": [
+                "exam-76-25"
+              ]
+            }
+          ]
+        },
+        {
+          "text": "조선 정조",
+          "era": "joseon",
+          "lines": [
+            "서얼 이덕무·박제가를 규장각 검서관으로 등용한 왕이다.",
+            "장용영·수원 화성과 거중기를 정조 때와 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-jeongjo",
+              "questionIds": [
+                "exam-70-24",
+                "exam-75-25"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "z-connection-6a31903b1e7f": {
+      "category": "군주",
+      "correctEra": "samguk",
+      "correctLines": [
+        "교재: ‘성왕  장군 달기가 고구려 도살성 점령’",
+        "교재: ‘ 백제 성왕과 함께 한강 하류 차지 + 신주 설치 → 관산성 전투 → 대가야 정복 (순서 알기)’"
+      ],
+      "correctSources": [
+        "media/quiz-catalog.js#legacy-samguk-014",
+        "media/quiz-catalog.js#legacy-samguk-019"
+      ],
+      "wrongPeers": [
+        {
+          "text": "조선 세종",
+          "era": "joseon",
+          "lines": [
+            "박연이 편경을 제작하고 아악을 정비한 왕이다.",
+            "칠정산·삼강행실도는 세종 때의 사업으로 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-sejong",
+              "questionIds": [
+                "exam-73-21",
+                "exam-76-19"
+              ]
+            }
+          ]
+        },
+        {
+          "text": "조선 성종",
+          "era": "joseon",
+          "lines": [
+            "경국대전·국조오례의가 완성된 왕이다.",
+            "홍문관과 악학궤범을 성종의 제도·문화 정비로 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-seongjong",
+              "questionIds": [
+                "exam-70-19",
+                "exam-72-20"
+              ]
+            }
+          ]
+        },
+        {
+          "text": "조선 영조",
+          "era": "joseon",
+          "lines": [
+            "준천사·청계천 준설과 신문고 복구의 왕이다.",
+            "속대전과 균역법은 영조의 제도 정비로 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-yeongjo",
+              "questionIds": [
+                "exam-76-25"
+              ]
+            }
+          ]
+        },
+        {
+          "text": "조선 정조",
+          "era": "joseon",
+          "lines": [
+            "서얼 이덕무·박제가를 규장각 검서관으로 등용한 왕이다.",
+            "장용영·수원 화성과 거중기를 정조 때와 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-jeongjo",
+              "questionIds": [
+                "exam-70-24",
+                "exam-75-25"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "z-connection-2c04f21fe87b": {
+      "category": "군주",
+      "correctEra": "nambuk",
+      "correctLines": [
+        "교재: ‘신문왕 국학을 설치하여 유학을 보급하였다’",
+        "교재: ‘신문왕 ·  관료전 지급, 녹읍 폐지 (왕권 강화!)’"
+      ],
+      "correctSources": [
+        "media/quiz-catalog.js#legacy-nambuk-001",
+        "media/quiz-catalog.js#legacy-nambuk-003"
+      ],
+      "wrongPeers": [
+        {
+          "text": "조선 세종",
+          "era": "joseon",
+          "lines": [
+            "박연이 편경을 제작하고 아악을 정비한 왕이다.",
+            "칠정산·삼강행실도는 세종 때의 사업으로 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-sejong",
+              "questionIds": [
+                "exam-73-21",
+                "exam-76-19"
+              ]
+            }
+          ]
+        },
+        {
+          "text": "조선 성종",
+          "era": "joseon",
+          "lines": [
+            "경국대전·국조오례의가 완성된 왕이다.",
+            "홍문관과 악학궤범을 성종의 제도·문화 정비로 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-seongjong",
+              "questionIds": [
+                "exam-70-19",
+                "exam-72-20"
+              ]
+            }
+          ]
+        },
+        {
+          "text": "조선 영조",
+          "era": "joseon",
+          "lines": [
+            "준천사·청계천 준설과 신문고 복구의 왕이다.",
+            "속대전과 균역법은 영조의 제도 정비로 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-yeongjo",
+              "questionIds": [
+                "exam-76-25"
+              ]
+            }
+          ]
+        },
+        {
+          "text": "조선 정조",
+          "era": "joseon",
+          "lines": [
+            "서얼 이덕무·박제가를 규장각 검서관으로 등용한 왕이다.",
+            "장용영·수원 화성과 거중기를 정조 때와 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-jeongjo",
+              "questionIds": [
+                "exam-70-24",
+                "exam-75-25"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "z-connection-3f1ae86358e5": {
+      "category": "군주",
+      "correctEra": "samguk",
+      "correctLines": [
+        "교재: ‘지증왕 · 국호를 “신라”라고 하였다’",
+        "교재: ‘지증왕 · 시장을 감독하기 위해 동시전을 설치하였다’"
+      ],
+      "correctSources": [
+        "media/quiz-catalog.js#legacy-samguk-026",
+        "media/quiz-catalog.js#legacy-samguk-029"
+      ],
+      "wrongPeers": [
+        {
+          "text": "조선 세종",
+          "era": "joseon",
+          "lines": [
+            "박연이 편경을 제작하고 아악을 정비한 왕이다.",
+            "칠정산·삼강행실도는 세종 때의 사업으로 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-sejong",
+              "questionIds": [
+                "exam-73-21",
+                "exam-76-19"
+              ]
+            }
+          ]
+        },
+        {
+          "text": "조선 성종",
+          "era": "joseon",
+          "lines": [
+            "경국대전·국조오례의가 완성된 왕이다.",
+            "홍문관과 악학궤범을 성종의 제도·문화 정비로 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-seongjong",
+              "questionIds": [
+                "exam-70-19",
+                "exam-72-20"
+              ]
+            }
+          ]
+        },
+        {
+          "text": "조선 영조",
+          "era": "joseon",
+          "lines": [
+            "준천사·청계천 준설과 신문고 복구의 왕이다.",
+            "속대전과 균역법은 영조의 제도 정비로 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-yeongjo",
+              "questionIds": [
+                "exam-76-25"
+              ]
+            }
+          ]
+        },
+        {
+          "text": "조선 정조",
+          "era": "joseon",
+          "lines": [
+            "서얼 이덕무·박제가를 규장각 검서관으로 등용한 왕이다.",
+            "장용영·수원 화성과 거중기를 정조 때와 연결한다."
+          ],
+          "sources": [
+            {
+              "file": "scripts/joseon-core-content.cjs",
+              "id": "jc-jeongjo",
+              "questionIds": [
+                "exam-70-24",
+                "exam-75-25"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "coverage": "239 source groups reviewed; only independently grounded, same-kind profiles applied here. Remaining proposals require source/structure review."
+}

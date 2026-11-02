@@ -1,0 +1,54 @@
+/* HanQ AI-generated fan character assets. PNG sources remain unmodified.
+   Keep this file beside the PNGs. Atlas viewport: 627 source pixels. */
+.hanq-mascot {
+  --mascot-size: 96px;
+  display: inline-block;
+  flex: 0 0 auto;
+  width: var(--mascot-size);
+  height: var(--mascot-size);
+  background-repeat: no-repeat;
+  background-size: 200% 200%;
+  background-position: 0 0;
+  vertical-align: middle;
+}
+.hanq-mascot--agumon {
+  background-image: url("./agumon-idle-sprite.png");
+  animation: hanq-agumon-idle 4s steps(1, end) infinite;
+}
+.hanq-mascot--patamon {
+  background-image: url("./patamon-idle-sprite.png");
+  animation: hanq-patamon-idle 3.6s steps(1, end) infinite;
+}
+@keyframes hanq-agumon-idle {
+  0%, 55% { background-position: 0% 0%; }
+  60%, 75% { background-position: 100% 0%; }
+  76%, 81% { background-position: 0% 100%; }
+  82%, 100% { background-position: 100% 100%; }
+}
+@keyframes hanq-patamon-idle {
+  0%, 35% { background-position: 0% 0%; }
+  36%, 64% { background-position: 100% 0%; }
+  /* The generated lower row sits 42 px higher. This registration correction
+     gives all frames the same baseline without changing the PNG. */
+  65%, 70% { background-position: 0% 93.3014354%; }
+  71%, 100% { background-position: 100% 93.3014354%; }
+}
+.hanq-mascot--static { animation: none; background-position: 0 0; }
+.hanq-growth-portrait {
+  width: var(--mascot-size, 96px);
+  height: var(--mascot-size, 96px);
+  object-fit: contain;
+  /* Static evolution portraits share a gentle idle; sprites retain their own frames. */
+  animation: hanq-portrait-idle 4s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+@keyframes hanq-portrait-idle {
+  0%, 45%, 85%, 100% { transform: translateY(0); }
+  60% { transform: translateY(-7%); }
+  70% { transform: translateY(-2%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hanq-mascot { animation: none; background-position: 0 0; }
+  .hanq-growth-portrait { animation: none; transform: none; }
+}
+

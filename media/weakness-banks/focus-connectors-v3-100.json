@@ -1,0 +1,4529 @@
+{
+  "id": "focus-connectors-v3-100",
+  "title": "전치사·접속사·접속부사 적용 100제 · 개정판",
+  "version": 1,
+  "notice": "TOEIC형 자체제작 · 제공 원문은 해설에서 출처 표시. 기존판의 문제·기록은 이전 문항 메뉴에 보존됩니다.",
+  "questions": [
+    {
+      "id": "focus-connectors-v3-100-001",
+      "number": 1,
+      "version": 1,
+      "stem": "An automated message explains the refund procedure ________ callers are waiting for an operator, reducing the time representatives spend answering the same preliminary questions.",
+      "choices": [
+        "upon",
+        "during",
+        "despite",
+        "while"
+      ],
+      "answer": 3,
+      "translation": "전화 이용자가 상담원을 기다리는 동안 자동 안내가 환불 절차를 설명해 담당자가 동일한 기초 질문에 답하는 시간을 줄인다.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사",
+          "meaning": "~하자마자/~시에",
+          "reason": "뒤의 callers가 주어, are waiting이 동사다. 앞의 An automated message explains와 연결할 절이다. [구조] upon는 ‘사건 직후·발생 시’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~ 동안",
+          "reason": "뒤의 callers가 주어, are waiting이 동사다. 앞의 An automated message explains와 연결할 절이다. [구조] during는 ‘어떤 기간 동안’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 callers가 주어, are waiting이 동사다. 앞의 An automated message explains와 연결할 절이다. [구조] despite는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~하는 동안",
+          "reason": "뒤의 callers가 주어, are waiting이 동사다. 앞의 An automated message explains와 연결할 절이다. 접속사 while가 이 절을 주절에 연결한다. 안내 메시지가 나오는 동안 통화자가 기다린다는 동시 진행이므로 while이 맞다."
+        }
+      ],
+      "clues": [
+        "callers are waiting",
+        "explains the refund procedure"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-001"
+    },
+    {
+      "id": "focus-connectors-v3-100-002",
+      "number": 2,
+      "version": 1,
+      "stem": "Please renew your employee parking permit through the online portal today; ________, your parking privileges will expire tonight and security will deny access to the garage.",
+      "choices": [
+        "otherwise",
+        "despite",
+        "unless",
+        "during"
+      ],
+      "answer": 0,
+      "translation": "오늘 온라인 포털에서 직원 주차 허가증을 갱신하세요. 그렇지 않으면 오늘 밤 권한이 만료되어 보안실이 주차장 출입을 거부합니다.",
+      "tags": [
+        "conjunctive-adverb",
+        "punctuation"
+      ],
+      "optionDetails": [
+        {
+          "form": "접속부사",
+          "meaning": "그렇지 않으면",
+          "reason": "앞은 Renew로 시작하는 명령문(생략된 주어 you)이고 세미콜론 뒤는 your parking privileges가 주어, will expire가 동사다. 접속부사 otherwise가 문장 사이의 의미 관계를 표시한다. 오늘 갱신하지 않으면 만료된다는 결과이므로 otherwise(그렇지 않으면)가 맞다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "앞은 Renew로 시작하는 명령문(생략된 주어 you)이고 세미콜론 뒤는 your parking privileges가 주어, will expire가 동사다. despite는 명사구를 직접 받아야 하지만 이 자리는 완결된 문장 안에서 앞 내용과의 관계를 덧붙이는 부사 자리다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~하지 않는 한",
+          "reason": "앞은 Renew로 시작하는 명령문(생략된 주어 you)이고 세미콜론 뒤는 your parking privileges가 주어, will expire가 동사다. unless는 종속절을 만드는 접속사다. 이 문장 경계·삽입 위치에서 뒤 절을 다시 종속절로 바꾸면 연결할 주절이 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~ 동안",
+          "reason": "앞은 Renew로 시작하는 명령문(생략된 주어 you)이고 세미콜론 뒤는 your parking privileges가 주어, will expire가 동사다. during는 명사구를 직접 받아야 하지만 이 자리는 완결된 문장 안에서 앞 내용과의 관계를 덧붙이는 부사 자리다."
+        }
+      ],
+      "clues": [
+        "Please renew",
+        "your parking privileges will expire"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-002"
+    },
+    {
+      "stem": "Under the warranty, customers cannot obtain a replacement ________ they return the defective item with its original receipt.",
+      "choices": [
+        "otherwise",
+        "or",
+        "despite",
+        "unless"
+      ],
+      "answer": 3,
+      "translation": "보증에 따르면 고객은 결함 상품과 원래 영수증을 반환하지 않으면 교체품을 받을 수 없다.",
+      "tags": [
+        "condition-unless",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "접속부사",
+          "meaning": "그렇지 않으면",
+          "reason": "customers cannot obtain a replacement 뒤에 they(주어)+return(동사) 절이 이어진다. otherwise는 부사여서 이 자리에서 앞뒤 절을 문법적으로 잇는 접속사가 될 수 없다."
+        },
+        {
+          "form": "등위접속사",
+          "meaning": "또는; 그렇지 않으면",
+          "reason": "customers cannot obtain a replacement 뒤에 they(주어)+return(동사) 절이 이어진다. or는 대등한 요소를 잇는 표현이지만 이 문장이 요구하는 조건절의 뜻을 만들지 못한다. 교환품을 받지 못하는 조건의 예외가 반품이므로 unless they return(반품하지 않는 한)이 맞다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "customers cannot obtain a replacement 뒤에 they(주어)+return(동사) 절이 이어진다. [구조] despite는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~하지 않는 한; ~하지 않으면",
+          "reason": "customers cannot obtain a replacement 뒤에 they(주어)+return(동사) 절이 이어진다. 접속사 unless가 이 절을 주절에 연결한다. 교환품을 받지 못하는 조건의 예외가 반품이므로 unless they return(반품하지 않는 한)이 맞다."
+        }
+      ],
+      "draftNumber": 19,
+      "id": "focus-connectors-v3-100-003",
+      "number": 3,
+      "version": 1,
+      "clues": [
+        "cannot obtain a replacement",
+        "they return the defective item"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-003"
+    },
+    {
+      "id": "focus-connectors-v3-100-004",
+      "number": 4,
+      "version": 1,
+      "stem": "The bridge remained accessible to pedestrians ________ the road resurfacing project, with temporary barriers separating the protected walkway from machinery operating on the vehicle lanes.",
+      "choices": [
+        "during",
+        "because",
+        "while",
+        "although"
+      ],
+      "answer": 0,
+      "translation": "도로 재포장 공사 중에도 임시 장벽이 보호된 보행로와 차로에서 작업하는 장비를 분리해 보행자는 다리를 이용할 수 있었다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사",
+          "meaning": "~ 동안",
+          "reason": "빈칸 뒤 the road resurfacing project는 사업을 가리키는 명사구다. 전치사 during 뒤에 이 명사구를 놓는다. 다리가 개방되어 있던 기간을 나타내므로 during the road resurfacing project가 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "빈칸 뒤 the road resurfacing project는 사업을 가리키는 명사구다. [구조] because는 ‘~하기 때문에’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~하는 동안",
+          "reason": "빈칸 뒤 the road resurfacing project는 사업을 가리키는 명사구다. [구조] while는 ‘~하는 동안’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "빈칸 뒤 the road resurfacing project는 사업을 가리키는 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "the road resurfacing project"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-004"
+    },
+    {
+      "id": "focus-connectors-v3-100-005",
+      "number": 5,
+      "version": 1,
+      "stem": "________ an accounting discrepancy between the invoice and the purchase order, the payment remains on hold until both departments agree on the amount owed.",
+      "choices": [
+        "as though",
+        "because of",
+        "although",
+        "because"
+      ],
+      "answer": 1,
+      "translation": "청구서와 발주서의 회계상 불일치로 두 부서가 지급액에 합의할 때까지 대금 지급이 보류되어 있다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "마치 ~인 것처럼",
+          "reason": "뒤의 an accounting discrepancy between the invoice and the purchase order는 명사구다. [구조] as though는 ‘마치 ~인 것처럼’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "뒤의 an accounting discrepancy between the invoice and the purchase order는 명사구다. 전치사 because of 뒤에 이 명사구를 놓는다. 회계 불일치가 지급 보류의 원인이므로 because of가 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 an accounting discrepancy between the invoice and the purchase order는 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 an accounting discrepancy between the invoice and the purchase order는 명사구다. [구조] because는 ‘~하기 때문에’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "an accounting discrepancy",
+        "the payment remains on hold"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-005"
+    },
+    {
+      "id": "focus-connectors-v3-100-006",
+      "number": 6,
+      "version": 1,
+      "stem": "________ numerous scheduling conflicts during the annual budget review, all department heads attended the planning session after the organizer arranged secure remote access.",
+      "choices": [
+        "as though",
+        "even though",
+        "in spite of",
+        "although"
+      ],
+      "answer": 2,
+      "translation": "연례 예산 검토 기간의 수많은 일정 충돌에도 주최자가 안전한 원격 접속을 마련하자 모든 부서장이 기획 회의에 참석했다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "마치 ~인 것처럼",
+          "reason": "뒤의 numerous scheduling conflicts during the annual budget review는 명사구이며, during 이하도 conflicts에 딸린 설명이다. [구조] as though는 ‘마치 ~인 것처럼’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~인데도",
+          "reason": "뒤의 numerous scheduling conflicts during the annual budget review는 명사구이며, during 이하도 conflicts에 딸린 설명이다. [구조] even though는 ‘~임에도’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 numerous scheduling conflicts during the annual budget review는 명사구이며, during 이하도 conflicts에 딸린 설명이다. 전치사 in spite of 뒤에 이 명사구를 놓는다. 일정 충돌에도 모든 부서장이 참석했다는 양보이므로 in spite of가 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 numerous scheduling conflicts during the annual budget review는 명사구이며, during 이하도 conflicts에 딸린 설명이다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "numerous scheduling conflicts",
+        "all department heads attended"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-006"
+    },
+    {
+      "id": "focus-connectors-v3-100-007",
+      "number": 7,
+      "version": 1,
+      "stem": "________ accidental damage to rented equipment, notify the service desk immediately so an authorized technician can assess whether continued operation would create additional safety risks.",
+      "choices": [
+        "in the event that",
+        "in the event of",
+        "although",
+        "while"
+      ],
+      "answer": 1,
+      "translation": "대여 장비가 우발적으로 손상되면 계속 운전할 경우 추가 안전 위험이 생기는지 공인 기술자가 평가하도록 즉시 서비스 데스크에 알리세요.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사구",
+          "meaning": "~하는 경우에",
+          "reason": "뒤의 accidental damage to rented equipment는 손상을 가리키는 명사구다. [구조] in the event that는 ‘~이 발생하는 경우’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~의 경우에",
+          "reason": "뒤의 accidental damage to rented equipment는 손상을 가리키는 명사구다. 전치사 in the event of 뒤에 이 명사구를 놓는다. 대여 장비에 우발적 손상이 생길 경우 취할 조치이므로 in the event of가 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 accidental damage to rented equipment는 손상을 가리키는 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~하는 동안",
+          "reason": "뒤의 accidental damage to rented equipment는 손상을 가리키는 명사구다. [구조] while는 ‘~하는 동안’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "accidental damage to rented equipment",
+        "notify the service desk"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-007"
+    },
+    {
+      "stem": "Several positions require specialized certification. ________, applicants for the laboratory supervisor role must hold a current chemical-safety license.",
+      "choices": [
+        "On the contrary",
+        "Instead",
+        "For example",
+        "However"
+      ],
+      "answer": 2,
+      "translation": "여러 직책에는 전문 자격이 필요하다. 예를 들어 실험실 감독자 지원자는 유효한 화학 안전 자격증을 보유해야 한다.",
+      "tags": [
+        "adverb-example",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "접속부사구",
+          "meaning": "그와 반대로; 오히려",
+          "reason": "Several positions require specialized certification을 laboratory supervisor의 면허로 구체화한다. 면허 요건은 전문 자격 요건을 반박하거나 정정하지 않으므로 On the contrary는 맞지 않는다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "대신에",
+          "reason": "Several positions require specialized certification은 마침표로 끝난다. 다음은 applicants가 주어, must hold가 동사인 별도 문장이다. [의미] Instead도 부사로 이 자리에 올 수 있지만 뜻은 ‘그 대신’이다. 면허 요건은 앞 내용을 대체하지 않고 구체화한다."
+        },
+        {
+          "form": "접속부사구",
+          "meaning": "예를 들어",
+          "reason": "Several positions require specialized certification은 마침표로 끝난다. 다음은 applicants가 주어, must hold가 동사인 별도 문장이다. 접속부사 For example가 문장 사이의 의미 관계를 표시한다. 여러 직책의 자격 요건 중 실험실 책임자의 면허를 구체적 사례로 드므로 For example이 맞다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "그러나",
+          "reason": "Several positions require specialized certification은 마침표로 끝난다. 다음은 applicants가 주어, must hold가 동사인 별도 문장이다. [의미] However도 부사로 이 자리에 올 수 있지만 뜻은 ‘그러나’이다. 면허 보유는 전문 자격 요건에 반대되는 내용이 아니다."
+        }
+      ],
+      "draftNumber": 8,
+      "id": "focus-connectors-v3-100-008",
+      "number": 8,
+      "version": 1,
+      "clues": [
+        "Several positions require specialized certification",
+        "laboratory supervisor role"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-008"
+    },
+    {
+      "stem": "The revised membership includes unlimited printing. ________, subscribers receive free access to monthly workshops and the online training archive.",
+      "choices": [
+        "Instead",
+        "Previously",
+        "Moreover",
+        "Nevertheless"
+      ],
+      "answer": 2,
+      "translation": "변경된 회원권에는 무제한 인쇄가 포함된다. 게다가 가입자는 매달 워크숍과 온라인 교육 자료실을 무료로 이용한다.",
+      "tags": [
+        "adverb-addition",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "접속부사",
+          "meaning": "대신에",
+          "reason": "첫 문장은 membership includes unlimited printing으로 완결되고, 다음 문장의 주어는 subscribers, 동사는 receive다. [의미] Instead도 부사로 이 자리에 올 수 있지만 뜻은 ‘그 대신’이다. 워크숍 혜택은 무제한 인쇄를 대체하지 않는다."
+        },
+        {
+          "form": "부사",
+          "meaning": "이전에",
+          "reason": "첫 문장은 membership includes unlimited printing으로 완결되고, 다음 문장의 주어는 subscribers, 동사는 receive다. [의미] Previously도 부사로 이 자리에 올 수 있지만 뜻은 ‘이전에’이다. 현재의 혜택 두 개를 나열하며 이전 시기를 비교하지 않는다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "게다가",
+          "reason": "첫 문장은 membership includes unlimited printing으로 완결되고, 다음 문장의 주어는 subscribers, 동사는 receive다. 접속부사 Moreover가 문장 사이의 의미 관계를 표시한다. 무제한 인쇄에 무료 워크숍 혜택을 더하므로 Moreover(게다가)가 맞다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "그럼에도 불구하고",
+          "reason": "첫 문장은 membership includes unlimited printing으로 완결되고, 다음 문장의 주어는 subscribers, 동사는 receive다. [의미] Nevertheless도 부사로 이 자리에 올 수 있지만 뜻은 ‘그럼에도’이다. 무제한 인쇄와 무료 교육은 반대 결과가 아니라 추가 혜택이다."
+        }
+      ],
+      "draftNumber": 3,
+      "id": "focus-connectors-v3-100-009",
+      "number": 9,
+      "version": 1,
+      "clues": [
+        "includes unlimited printing",
+        "subscribers receive free access"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-009"
+    },
+    {
+      "id": "focus-connectors-v3-100-010",
+      "number": 10,
+      "version": 1,
+      "stem": "Our warehouse stayed open ________ the heavy snowfall that blocked the main highway, allowing local hospitals to collect urgently needed medical supplies.",
+      "choices": [
+        "even though",
+        "as though",
+        "despite",
+        "although"
+      ],
+      "answer": 2,
+      "translation": "주요 고속도로를 막은 폭설에도 창고는 계속 운영되어 지역 병원들이 긴급 의료 물자를 수령할 수 있었다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "~인데도",
+          "reason": "뒤의 the heavy snowfall that blocked the main highway는 명사구다. that절은 snowfall을 꾸민다. [구조] even though는 ‘~임에도’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "마치 ~인 것처럼",
+          "reason": "뒤의 the heavy snowfall that blocked the main highway는 명사구다. that절은 snowfall을 꾸민다. [구조] as though는 ‘마치 ~인 것처럼’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 the heavy snowfall that blocked the main highway는 명사구다. that절은 snowfall을 꾸민다. 전치사 despite 뒤에 이 명사구를 놓는다. 폭설에도 창고가 열려 있었다는 양보이므로 despite가 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 the heavy snowfall that blocked the main highway는 명사구다. that절은 snowfall을 꾸민다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "the heavy snowfall",
+        "Our warehouse stayed open"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-010"
+    },
+    {
+      "stem": "The revised policy prohibits unattended access. ________ a supervisor is present, contractors must wait outside the equipment room.",
+      "choices": [
+        "Despite",
+        "Otherwise",
+        "Or",
+        "Unless"
+      ],
+      "answer": 3,
+      "translation": "변경된 정책은 감독 없는 출입을 금지한다. 감독자가 있지 않으면 외부 작업자는 장비실 밖에서 기다려야 한다.",
+      "tags": [
+        "condition-unless",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "빈칸 뒤 a supervisor가 주어, is가 동사다. 주절은 contractors must wait다. [구조] Despite는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "그렇지 않으면",
+          "reason": "빈칸 뒤 a supervisor가 주어, is가 동사다. 주절은 contractors must wait다. Otherwise는 부사여서 이 자리에서 앞뒤 절을 문법적으로 잇는 접속사가 될 수 없다."
+        },
+        {
+          "form": "등위접속사",
+          "meaning": "또는; 그렇지 않으면",
+          "reason": "빈칸 뒤 a supervisor가 주어, is가 동사다. 주절은 contractors must wait다. Or는 대등한 요소를 잇는 표현이지만 이 문장이 요구하는 조건절의 뜻을 만들지 못한다. 감독자가 없으면 밖에서 기다리라는 조건이므로 Unless a supervisor is present가 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~하지 않는 한; ~하지 않으면",
+          "reason": "빈칸 뒤 a supervisor가 주어, is가 동사다. 주절은 contractors must wait다. 접속사 Unless가 이 절을 주절에 연결한다. 감독자가 없으면 밖에서 기다리라는 조건이므로 Unless a supervisor is present가 맞다."
+        }
+      ],
+      "draftNumber": 20,
+      "id": "focus-connectors-v3-100-011",
+      "number": 11,
+      "version": 1,
+      "clues": [
+        "prohibits unattended access",
+        "a supervisor is present"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-011"
+    },
+    {
+      "id": "focus-connectors-v3-100-012",
+      "number": 12,
+      "version": 1,
+      "stem": "A substitute trainer is available ________ the scheduled instructor becomes ill, ensuring that employees can complete the mandatory certification course before their current permits expire.",
+      "choices": [
+        "despite",
+        "in the event of",
+        "in the event that",
+        "because of"
+      ],
+      "answer": 2,
+      "translation": "예정된 강사가 아픈 경우 대체 강사가 대기해 직원들이 현 허가 만료 전에 필수 인증 과정을 마칠 수 있도록 한다.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "빈칸 뒤 the scheduled instructor가 주어, becomes가 동사다. [구조] despite는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~의 경우에",
+          "reason": "빈칸 뒤 the scheduled instructor가 주어, becomes가 동사다. [구조] in the event of는 ‘~이 발생한 경우’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "종속접속사구",
+          "meaning": "~하는 경우에",
+          "reason": "빈칸 뒤 the scheduled instructor가 주어, becomes가 동사다. 접속사 in the event that가 이 절을 주절에 연결한다. 예정 강사가 아플 경우를 대비한 대체 강사이므로 in the event that이 맞다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "빈칸 뒤 the scheduled instructor가 주어, becomes가 동사다. [구조] because of는 ‘~때문에’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        }
+      ],
+      "clues": [
+        "the scheduled instructor becomes ill"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-012"
+    },
+    {
+      "id": "focus-connectors-v3-100-013",
+      "number": 13,
+      "version": 1,
+      "stem": "The travel policy provides overnight accommodation ________ a covered flight is canceled after check-in, provided that the airline cannot offer a suitable departure that evening.",
+      "choices": [
+        "in the event of",
+        "in the event that",
+        "despite",
+        "because of"
+      ],
+      "answer": 1,
+      "translation": "체크인 후 보장 대상 항공편이 취소되고 항공사가 당일 저녁 적절한 출발편을 제공하지 못하면 여행 보험은 숙박을 제공한다.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사구",
+          "meaning": "~의 경우에",
+          "reason": "빈칸 뒤 a covered flight가 주어, is canceled가 동사다. [구조] in the event of는 ‘~이 발생한 경우’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "종속접속사구",
+          "meaning": "~하는 경우에",
+          "reason": "빈칸 뒤 a covered flight가 주어, is canceled가 동사다. 접속사 in the event that가 이 절을 주절에 연결한다. 적용 대상 항공편이 취소될 경우의 숙박 제공을 말하므로 in the event that이 맞다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "빈칸 뒤 a covered flight가 주어, is canceled가 동사다. [구조] despite는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "빈칸 뒤 a covered flight가 주어, is canceled가 동사다. [구조] because of는 ‘~때문에’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        }
+      ],
+      "clues": [
+        "a covered flight is canceled"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-013"
+    },
+    {
+      "id": "focus-connectors-v3-100-014",
+      "number": 14,
+      "version": 1,
+      "stem": "________ the software trial period had already ended, support staff answered our configuration questions and helped us prepare a realistic implementation budget for the board.",
+      "choices": [
+        "although",
+        "because of",
+        "despite",
+        "in spite of"
+      ],
+      "answer": 0,
+      "translation": "소프트웨어 체험 기간이 이미 끝났는데도 지원 직원들은 설정 질문에 답하고 이사회 제출용의 현실적인 도입 예산 작성을 도왔다.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "the software trial period가 주어, had ended가 동사인 절 뒤에 support staff answered라는 주절이 이어진다. 접속사 although가 이 절을 주절에 연결한다. 체험 기간이 끝났는데도 도움을 주었다는 양보이므로 although가 맞다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "the software trial period가 주어, had ended가 동사인 절 뒤에 support staff answered라는 주절이 이어진다. [구조] because of는 ‘~때문에’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "the software trial period가 주어, had ended가 동사인 절 뒤에 support staff answered라는 주절이 이어진다. [구조] despite는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~에도 불구하고",
+          "reason": "the software trial period가 주어, had ended가 동사인 절 뒤에 support staff answered라는 주절이 이어진다. [구조] in spite of는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        }
+      ],
+      "clues": [
+        "the software trial period had already ended",
+        "support staff answered"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-014"
+    },
+    {
+      "stem": "The exercise has two simultaneous stages: security staff inspect the empty building; ________, reception staff practice guiding visitors to the outdoor assembly area.",
+      "choices": [
+        "Therefore",
+        "On the contrary",
+        "For example",
+        "Meanwhile"
+      ],
+      "answer": 3,
+      "translation": "훈련은 동시에 진행되는 두 단계로 구성된다. 보안 직원은 빈 건물을 점검하고, 그동안 접수 직원은 방문객을 야외 집결지로 안내하는 연습을 한다.",
+      "tags": [
+        "adverb-simultaneous",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "접속부사",
+          "meaning": "그러므로; 따라서",
+          "reason": "앞 절 security staff inspect는 세미콜론으로 끝나며, 뒤 절은 reception staff(주어)+practice(동사)다. [의미] Therefore도 부사로 이 자리에 올 수 있지만 뜻은 ‘그러므로’이다. 접수 훈련은 건물 점검의 결과가 아니라 동시에 하는 두 번째 단계다."
+        },
+        {
+          "form": "접속부사구",
+          "meaning": "그와는 반대로",
+          "reason": "앞 절 security staff inspect는 세미콜론으로 끝나며, 뒤 절은 reception staff(주어)+practice(동사)다. [의미] On the contrary도 부사로 이 자리에 올 수 있지만 뜻은 ‘그와 반대로·오히려’이다. 안내 훈련은 건물 점검을 반박하지 않는다."
+        },
+        {
+          "form": "접속부사구",
+          "meaning": "예를 들어",
+          "reason": "앞 절 security staff inspect는 세미콜론으로 끝나며, 뒤 절은 reception staff(주어)+practice(동사)다. [의미] For example도 부사로 이 자리에 올 수 있지만 뜻은 ‘예를 들어’이다. two simultaneous stages 뒤의 두 번째 활동이지 점검의 사례가 아니다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "그동안; 한편",
+          "reason": "앞 절 security staff inspect는 세미콜론으로 끝나며, 뒤 절은 reception staff(주어)+practice(동사)다. 접속부사 Meanwhile가 문장 사이의 의미 관계를 표시한다. two simultaneous stages가 두 활동의 동시 진행을 명시하므로 Meanwhile이 맞다."
+        }
+      ],
+      "draftNumber": 4,
+      "id": "focus-connectors-v3-100-015",
+      "number": 15,
+      "version": 1,
+      "clues": [
+        "two simultaneous stages",
+        "reception staff practice"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-015"
+    },
+    {
+      "id": "focus-connectors-v3-100-016",
+      "number": 16,
+      "version": 1,
+      "stem": "We received fourteen technical inquiries ________ yesterday's product demonstration, indicating that prospective clients need more detailed information about connecting the device to existing systems.",
+      "choices": [
+        "during",
+        "because",
+        "although",
+        "while"
+      ],
+      "answer": 0,
+      "translation": "어제 제품 시연 중 기술 문의 열네 건을 받아 잠재 고객에게 기존 시스템과 기기 연결에 관한 상세 정보가 필요함을 알 수 있었다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사",
+          "meaning": "~ 동안",
+          "reason": "뒤의 yesterday's product demonstration은 행사 명사구다. 전치사 during 뒤에 이 명사구를 놓는다. 기술 문의를 받은 때가 제품 시연 중이므로 during이 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 yesterday's product demonstration은 행사 명사구다. [구조] because는 ‘~하기 때문에’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 yesterday's product demonstration은 행사 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~하는 동안",
+          "reason": "뒤의 yesterday's product demonstration은 행사 명사구다. [구조] while는 ‘~하는 동안’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "yesterday's product demonstration"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-016"
+    },
+    {
+      "id": "focus-connectors-v3-100-017",
+      "number": 17,
+      "version": 1,
+      "stem": "No photographs or audio recordings are permitted ________ the confidential briefing, because the financial projections will not be released to shareholders until the following morning.",
+      "choices": [
+        "while",
+        "because",
+        "although",
+        "during"
+      ],
+      "answer": 3,
+      "translation": "재무 전망이 다음 날 아침까지 주주들에게 공개되지 않으므로 기밀 브리핑 중 사진 촬영이나 녹음은 허용되지 않는다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "~하는 동안",
+          "reason": "뒤의 the confidential briefing은 브리핑을 나타내는 명사구다. [구조] while는 ‘~하는 동안’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 the confidential briefing은 브리핑을 나타내는 명사구다. [구조] because는 ‘~하기 때문에’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 the confidential briefing은 브리핑을 나타내는 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~ 동안",
+          "reason": "뒤의 the confidential briefing은 브리핑을 나타내는 명사구다. 전치사 during 뒤에 이 명사구를 놓는다. 사진·녹음 금지 기간이 브리핑 동안이므로 during이 맞다."
+        }
+      ],
+      "clues": [
+        "the confidential briefing"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-017"
+    },
+    {
+      "id": "focus-connectors-v3-100-018",
+      "number": 18,
+      "version": 1,
+      "stem": "The visiting economist will discuss exchange rate risks ________ the afternoon seminar, focusing on practical measures that small exporters can use to protect their earnings.",
+      "choices": [
+        "during",
+        "while",
+        "although",
+        "because"
+      ],
+      "answer": 0,
+      "translation": "초청 경제학자는 오후 세미나에서 소규모 수출업체의 수익 보호를 위한 실질적 조치를 중심으로 환율 위험을 논할 예정이다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사",
+          "meaning": "~ 동안",
+          "reason": "뒤의 the afternoon seminar는 세미나를 가리키는 명사구다. 전치사 during 뒤에 이 명사구를 놓는다. 환율 위험을 논의하는 때가 세미나 중이므로 during이 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~하는 동안",
+          "reason": "뒤의 the afternoon seminar는 세미나를 가리키는 명사구다. [구조] while는 ‘~하는 동안’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 the afternoon seminar는 세미나를 가리키는 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 the afternoon seminar는 세미나를 가리키는 명사구다. [구조] because는 ‘~하기 때문에’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "the afternoon seminar"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-018"
+    },
+    {
+      "id": "focus-connectors-v3-100-019",
+      "number": 19,
+      "version": 1,
+      "stem": "We retained the original company logo ________ the advertising agency recommended a complete redesign, as customer interviews showed strong recognition of the existing symbol.",
+      "choices": [
+        "despite",
+        "in spite of",
+        "although",
+        "because of"
+      ],
+      "answer": 2,
+      "translation": "광고 대행사는 전면 재설계를 권했으나 고객 인터뷰에서 기존 상징의 높은 인지도가 확인되어 우리는 원래 로고를 유지했다.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 the advertising agency가 주어, recommended가 동사다. 앞 주절은 We retained다. [구조] despite는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 the advertising agency가 주어, recommended가 동사다. 앞 주절은 We retained다. [구조] in spite of는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 the advertising agency가 주어, recommended가 동사다. 앞 주절은 We retained다. 접속사 although가 이 절을 주절에 연결한다. 전면 재설계 권고에도 기존 로고를 유지한 양보 관계이므로 although가 맞다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "뒤의 the advertising agency가 주어, recommended가 동사다. 앞 주절은 We retained다. [구조] because of는 ‘~때문에’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        }
+      ],
+      "clues": [
+        "We retained the original company logo",
+        "the advertising agency recommended a complete redesign"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-019"
+    },
+    {
+      "id": "focus-connectors-v3-100-020",
+      "number": 20,
+      "version": 1,
+      "stem": "________ the conference venue was smaller than expected, guests found it comfortable because the organizer had limited registration and provided a separate lounge for networking.",
+      "choices": [
+        "although",
+        "despite",
+        "because of",
+        "in spite of"
+      ],
+      "answer": 0,
+      "translation": "회의장이 예상보다 작았는데도 주최자가 등록 인원을 제한하고 별도 교류 라운지를 제공해 참석자들은 편안하다고 느꼈다.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "the conference venue가 주어, was가 동사이며, 뒤 주절은 guests found다. 접속사 although가 이 절을 주절에 연결한다. 장소가 작았지만 편안했다고 평가한 반대 결과이므로 although가 맞다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "the conference venue가 주어, was가 동사이며, 뒤 주절은 guests found다. [구조] despite는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "the conference venue가 주어, was가 동사이며, 뒤 주절은 guests found다. [구조] because of는 ‘~때문에’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~에도 불구하고",
+          "reason": "the conference venue가 주어, was가 동사이며, 뒤 주절은 guests found다. [구조] in spite of는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        }
+      ],
+      "clues": [
+        "the conference venue was smaller than expected",
+        "guests found it comfortable"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-020"
+    },
+    {
+      "stem": "The shipment arrived with several cracked panels. ________, the warehouse refused to sign the delivery receipt until replacements were arranged.",
+      "choices": [
+        "Instead",
+        "Moreover",
+        "Consequently",
+        "Meanwhile"
+      ],
+      "answer": 2,
+      "translation": "배송품에 금이 간 패널 여러 장이 포함되어 있었다. 그 결과 창고 측은 교체품이 마련될 때까지 인수증에 서명하지 않았다.",
+      "tags": [
+        "adverb-result",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "접속부사",
+          "meaning": "대신에",
+          "reason": "The shipment arrived는 마침표로 끝나고, 다음은 the warehouse(주어)+refused(동사)인 별도 문장이다. [의미] Instead도 부사로 이 자리에 올 수 있지만 뜻은 ‘그 대신’이다. 서명 거부는 다른 배송을 대체한 조치가 아니라 파손의 결과다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "게다가",
+          "reason": "The shipment arrived는 마침표로 끝나고, 다음은 the warehouse(주어)+refused(동사)인 별도 문장이다. [의미] Moreover도 부사로 이 자리에 올 수 있지만 뜻은 ‘게다가’이다. 파손과 서명 거부는 단순 추가 사실보다 원인·결과 관계다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "그 결과",
+          "reason": "The shipment arrived는 마침표로 끝나고, 다음은 the warehouse(주어)+refused(동사)인 별도 문장이다. 접속부사 Consequently가 문장 사이의 의미 관계를 표시한다. 깨진 패널이 도착했기 때문에 인수 서명을 거부한 결과이므로 Consequently가 맞다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "그동안; 한편",
+          "reason": "The shipment arrived는 마침표로 끝나고, 다음은 the warehouse(주어)+refused(동사)인 별도 문장이다. [의미] Meanwhile도 부사로 이 자리에 올 수 있지만 뜻은 ‘그동안·동시에’이다. 파손품 도착과 거부를 동시 진행으로 묶기보다 그 때문에 거부한 결과다."
+        }
+      ],
+      "draftNumber": 1,
+      "id": "focus-connectors-v3-100-021",
+      "number": 21,
+      "version": 1,
+      "clues": [
+        "arrived with several cracked panels",
+        "the warehouse refused to sign"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-021"
+    },
+    {
+      "id": "focus-connectors-v3-100-022",
+      "number": 22,
+      "version": 1,
+      "stem": "Our customer hotline operates continuously ________ the holiday shopping season, helping online buyers resolve payment problems before limited promotional offers expire at midnight.",
+      "choices": [
+        "because",
+        "during",
+        "although",
+        "while"
+      ],
+      "answer": 1,
+      "translation": "연말 쇼핑 기간 동안 고객 상담 전화는 계속 운영되어 온라인 구매자들이 자정에 한정 판촉이 끝나기 전에 결제 문제를 해결하도록 돕는다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 the holiday shopping season은 기간을 나타내는 명사구다. [구조] because는 ‘~하기 때문에’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~ 동안",
+          "reason": "뒤의 the holiday shopping season은 기간을 나타내는 명사구다. 전치사 during 뒤에 이 명사구를 놓는다. 상담 전화 운영 기간을 나타내므로 during이 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 the holiday shopping season은 기간을 나타내는 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~하는 동안",
+          "reason": "뒤의 the holiday shopping season은 기간을 나타내는 명사구다. [구조] while는 ‘~하는 동안’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "the holiday shopping season"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-022"
+    },
+    {
+      "id": "focus-connectors-v3-100-023",
+      "number": 23,
+      "version": 1,
+      "stem": "The charity exceeded its fundraising target ________ a limited advertising budget, with volunteers securing substantial donations through personal visits to neighborhood businesses.",
+      "choices": [
+        "even though",
+        "as though",
+        "despite",
+        "although"
+      ],
+      "answer": 2,
+      "translation": "광고 예산이 제한적이었는데도 자선단체는 자원봉사자들의 지역 업체 방문으로 상당한 기부를 확보해 모금 목표를 초과했다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "~인데도",
+          "reason": "뒤의 a limited advertising budget는 예산을 나타내는 명사구다. [구조] even though는 ‘~임에도’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "마치 ~인 것처럼",
+          "reason": "뒤의 a limited advertising budget는 예산을 나타내는 명사구다. [구조] as though는 ‘마치 ~인 것처럼’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 a limited advertising budget는 예산을 나타내는 명사구다. 전치사 despite 뒤에 이 명사구를 놓는다. 제한된 광고 예산에도 모금 목표를 넘긴 양보이므로 despite가 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 a limited advertising budget는 예산을 나타내는 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "exceeded its fundraising target",
+        "a limited advertising budget"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-023"
+    },
+    {
+      "stem": "------- the initial setbacks, Pontus Apparel successfully launched its tracksuit line within the planned time frame.",
+      "choices": [
+        "Because of",
+        "Along",
+        "As though",
+        "Despite"
+      ],
+      "answer": 3,
+      "translation": "초기의 차질에도 불구하고 Pontus Apparel은 예정된 기간 안에 운동복 제품군을 성공적으로 출시했다.",
+      "tags": [
+        "source-recheck",
+        "structure-then-meaning"
+      ],
+      "source": {
+        "set": "흰둥이 RC Test 1",
+        "number": 113,
+        "originalReference": "whitedog-rc-test1-113",
+        "kind": "provided-wrong-question"
+      },
+      "optionDetails": [
+        {
+          "form": "전치사구",
+          "meaning": "~때문에",
+          "reason": "뒤의 the initial setbacks는 명사구다. 주절의 주어는 Pontus Apparel, 동사는 launched다. [의미] Because of를 쓰면 초기 차질 덕분에 출시했다는 원인이 된다. successfully launched와 within the planned time frame은 차질을 이겨 낸 양보를 뒷받침한다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~을 따라",
+          "reason": "뒤의 the initial setbacks는 명사구다. 주절의 주어는 Pontus Apparel, 동사는 launched다. [의미] Along은 길·선 등을 따른다는 뜻이다. 초기 차질이라는 장애를 이겨 낸 관계를 연결하지 못한다."
+        },
+        {
+          "form": "부사절 접속사",
+          "meaning": "마치 ~처럼",
+          "reason": "뒤의 the initial setbacks는 명사구다. 주절의 주어는 Pontus Apparel, 동사는 launched다. [의미] As though는 마치 ~인 것처럼이라는 가정적 유사이고, 여기의 the initial setbacks 명사구도 직접 이끌지 못한다. 실제 문장은 차질에도 성공한 양보 관계다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 the initial setbacks는 명사구다. 주절의 주어는 Pontus Apparel, 동사는 launched다. 전치사 Despite 뒤에 이 명사구를 놓는다. 초기 차질에도 예정 기한 내 출시한 양보이므로 Despite가 맞다."
+        }
+      ],
+      "id": "focus-connectors-v3-100-024",
+      "number": 24,
+      "version": 1,
+      "clues": [
+        "the initial setbacks",
+        "successfully launched"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-024"
+    },
+    {
+      "stem": "The first demonstration attracted only a few buyers. ________, the organizers continued the remaining sessions and eventually secured several substantial orders.",
+      "choices": [
+        "Otherwise",
+        "Therefore",
+        "Previously",
+        "Nevertheless"
+      ],
+      "answer": 3,
+      "translation": "첫 시연에는 구매자가 몇 명밖에 오지 않았다. 그럼에도 주최 측은 나머지 회차를 계속하여 결국 상당한 주문 여러 건을 확보했다.",
+      "tags": [
+        "adverb-concession",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "접속부사",
+          "meaning": "그렇지 않으면",
+          "reason": "첫 문장은 demonstration attracted로 끝나고, 다음 문장은 the organizers continued로 시작한다. [의미] Otherwise도 부사로 이 자리에 올 수 있지만 뜻은 ‘그렇지 않으면’이다. 시연을 하지 않을 때의 가상 결과가 아니라, 구매자가 적어도 실제 계속한 행동이다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "그러므로; 따라서",
+          "reason": "첫 문장은 demonstration attracted로 끝나고, 다음 문장은 the organizers continued로 시작한다. [의미] Therefore도 부사로 이 자리에 올 수 있지만 뜻은 ‘그러므로’이다. 구매자가 적은 것이 시연 계속의 자연스러운 원인이라는 뜻이 아니라 장애를 이긴 결과다."
+        },
+        {
+          "form": "부사",
+          "meaning": "이전에",
+          "reason": "첫 문장은 demonstration attracted로 끝나고, 다음 문장은 the organizers continued로 시작한다. [의미] Previously도 부사로 이 자리에 올 수 있지만 뜻은 ‘이전에’이다. continued와 eventually secured는 이후 일을 말하며, 더 이전 시점을 소개하지 않는다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "그럼에도 불구하고",
+          "reason": "첫 문장은 demonstration attracted로 끝나고, 다음 문장은 the organizers continued로 시작한다. 접속부사 Nevertheless가 문장 사이의 의미 관계를 표시한다. 구매자가 적었지만 시연을 계속했다는 양보이므로 Nevertheless가 맞다."
+        }
+      ],
+      "draftNumber": 11,
+      "id": "focus-connectors-v3-100-025",
+      "number": 25,
+      "version": 1,
+      "clues": [
+        "attracted only a few buyers",
+        "the organizers continued"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-025"
+    },
+    {
+      "stem": "The manufacturer promised delivery within a week; ________, its written quotation specifies a lead time of at least twenty days.",
+      "choices": [
+        "Therefore",
+        "Similarly",
+        "However",
+        "For example"
+      ],
+      "answer": 2,
+      "translation": "제조업체는 일주일 안에 배송하겠다고 약속했지만 서면 견적에는 최소 20일의 소요 기간이 명시되어 있다.",
+      "tags": [
+        "adverb-contrast",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "접속부사",
+          "meaning": "그러므로; 따라서",
+          "reason": "manufacturer promised 절 뒤 세미콜론으로 경계를 두고, its written quotation specifies라는 절이 이어진다. [의미] Therefore도 부사로 이 자리에 올 수 있지만 뜻은 ‘그러므로’이다. 최소 20일이라는 견적은 일주일 약속의 결과가 아니라 서로 모순되는 내용이다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "마찬가지로",
+          "reason": "manufacturer promised 절 뒤 세미콜론으로 경계를 두고, its written quotation specifies라는 절이 이어진다. [의미] Similarly도 부사로 이 자리에 올 수 있지만 뜻은 ‘마찬가지로’이다. 일주일과 최소 20일은 유사 조건이 아니다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "그러나",
+          "reason": "manufacturer promised 절 뒤 세미콜론으로 경계를 두고, its written quotation specifies라는 절이 이어진다. 접속부사 However가 문장 사이의 의미 관계를 표시한다. 일주일 내 배송 약속과 최소 20일이라는 견적 내용이 대조되므로 However가 맞다."
+        },
+        {
+          "form": "접속부사구",
+          "meaning": "예를 들어",
+          "reason": "manufacturer promised 절 뒤 세미콜론으로 경계를 두고, its written quotation specifies라는 절이 이어진다. [의미] For example도 부사로 이 자리에 올 수 있지만 뜻은 ‘예를 들어’이다. 20일은 일주일 약속을 구체화하는 예가 아니라 대조다."
+        }
+      ],
+      "draftNumber": 2,
+      "id": "focus-connectors-v3-100-026",
+      "number": 26,
+      "version": 1,
+      "clues": [
+        "promised delivery within a week",
+        "at least twenty days"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-026"
+    },
+    {
+      "stem": "The store used handwritten stock cards for decades ________ the new inventory system went live in April; every transaction has been recorded digitally since then.",
+      "choices": [
+        "since",
+        "because",
+        "as though",
+        "until"
+      ],
+      "answer": 3,
+      "translation": "그 매장은 새 재고 시스템이 4월에 가동될 때까지 수십 년 동안 수기 재고 카드를 사용했다. 그 후 모든 거래는 전산으로 기록되어 왔다.",
+      "tags": [
+        "until-end",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사·접속사",
+          "meaning": "~이후로; ~이므로",
+          "reason": "빈칸 뒤 the new inventory system이 주어, went live가 동사다. [의미] since는 새 시스템 가동을 수기 기록의 시작점으로 삼는다. 뒤의 every transaction has been recorded digitally since then과 반대로, 수기 기록은 그때 끝난다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "빈칸 뒤 the new inventory system이 주어, went live가 동사다. [의미] because는 새 시스템 가동 때문에 수기 기록을 썼다는 원인이 된다. digitally since then과 맞는 관계는 수기 사용의 종료 시점이다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "마치 ~처럼",
+          "reason": "빈칸 뒤 the new inventory system이 주어, went live가 동사다. [의미] as though는 시스템이 가동된 것처럼 수기 기록을 썼다는 가정적 유사 관계다. 실제 전산화 전후를 나누는 시간 관계와 맞지 않는다."
+        },
+        {
+          "form": "전치사·접속사",
+          "meaning": "~까지 계속",
+          "reason": "빈칸 뒤 the new inventory system이 주어, went live가 동사다. 접속사 until가 이 절을 주절에 연결한다. 수기 재고 카드 사용이 4월 새 시스템 가동 때 끝났고 이후 전산화되었으므로 until이 맞다."
+        }
+      ],
+      "draftNumber": 25,
+      "id": "focus-connectors-v3-100-027",
+      "number": 27,
+      "version": 1,
+      "clues": [
+        "used handwritten stock cards",
+        "the new inventory system went live"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-027"
+    },
+    {
+      "id": "focus-connectors-v3-100-028",
+      "number": 28,
+      "version": 1,
+      "stem": "All passenger elevators will be unavailable ________ the annual safety inspection, so employees carrying heavy materials should schedule deliveries after technicians restore normal service.",
+      "choices": [
+        "because",
+        "although",
+        "while",
+        "during"
+      ],
+      "answer": 3,
+      "translation": "연례 안전 점검 중 모든 승객용 승강기를 사용할 수 없으므로 무거운 물품을 운반하는 직원은 정상 운행 재개 후로 배송을 잡아야 한다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 the annual safety inspection은 점검을 나타내는 명사구다. [구조] because는 ‘~하기 때문에’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 the annual safety inspection은 점검을 나타내는 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~하는 동안",
+          "reason": "뒤의 the annual safety inspection은 점검을 나타내는 명사구다. [구조] while는 ‘~하는 동안’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~ 동안",
+          "reason": "뒤의 the annual safety inspection은 점검을 나타내는 명사구다. 전치사 during 뒤에 이 명사구를 놓는다. 엘리베이터 이용 불가 기간이 점검 동안이므로 during이 맞다."
+        }
+      ],
+      "clues": [
+        "the annual safety inspection"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-028"
+    },
+    {
+      "id": "focus-connectors-v3-100-029",
+      "number": 29,
+      "version": 1,
+      "stem": "The banking app displays a guided welcome screen ________ detection of a new user, explaining the identity checks required before funds can be transferred.",
+      "choices": [
+        "because",
+        "although",
+        "upon",
+        "as though"
+      ],
+      "answer": 2,
+      "translation": "은행 앱은 새 사용자를 감지하면 자금을 이체하기 전에 필요한 신원 확인 절차를 설명하는 안내 시작 화면을 표시한다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 detection of a new user는 탐지라는 사건 명사구다. [구조] because는 ‘~하기 때문에’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 detection of a new user는 탐지라는 사건 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~하자마자/~시에",
+          "reason": "뒤의 detection of a new user는 탐지라는 사건 명사구다. 전치사 upon 뒤에 이 명사구를 놓는다. 새 사용자를 감지하면 바로 안내 화면을 띄우므로 upon detection이 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "마치 ~인 것처럼",
+          "reason": "뒤의 detection of a new user는 탐지라는 사건 명사구다. [구조] as though는 ‘마치 ~인 것처럼’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "detection of a new user"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-029"
+    },
+    {
+      "id": "focus-connectors-v3-100-030",
+      "number": 30,
+      "version": 1,
+      "stem": "________ completion of the safety course, participants receive a digital certificate that must be shown to the supervisor before they operate equipment without direct assistance.",
+      "choices": [
+        "although",
+        "upon",
+        "because",
+        "as though"
+      ],
+      "answer": 1,
+      "translation": "안전 과정을 마치면 참가자는 직접적인 도움 없이 장비를 운전하기 전에 감독자에게 제시해야 하는 전자 수료증을 받는다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 completion of the safety course는 수료라는 사건 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~하자마자/~시에",
+          "reason": "뒤의 completion of the safety course는 수료라는 사건 명사구다. 전치사 upon 뒤에 이 명사구를 놓는다. 안전 교육을 마치면 인증서를 받으므로 Upon completion이 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 completion of the safety course는 수료라는 사건 명사구다. [구조] because는 ‘~하기 때문에’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "마치 ~인 것처럼",
+          "reason": "뒤의 completion of the safety course는 수료라는 사건 명사구다. [구조] as though는 ‘마치 ~인 것처럼’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "completion of the safety course"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-030"
+    },
+    {
+      "id": "focus-connectors-v3-100-031",
+      "number": 31,
+      "version": 1,
+      "stem": "Several plants intended for the hotel lobby wilted ________ insufficient ventilation in the greenhouse, requiring the landscaping contractor to supply replacements before the opening ceremony.",
+      "choices": [
+        "because of",
+        "as though",
+        "because",
+        "although"
+      ],
+      "answer": 0,
+      "translation": "온실 환기 부족으로 호텔 로비용 식물 몇 그루가 시들어 조경업체는 개장식 전에 대체 식물을 공급해야 했다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "뒤의 insufficient ventilation in the greenhouse는 환기를 나타내는 명사구다. 전치사 because of 뒤에 이 명사구를 놓는다. 부족한 환기가 식물 시듦의 원인이므로 because of가 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "마치 ~인 것처럼",
+          "reason": "뒤의 insufficient ventilation in the greenhouse는 환기를 나타내는 명사구다. [구조] as though는 ‘마치 ~인 것처럼’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 insufficient ventilation in the greenhouse는 환기를 나타내는 명사구다. [구조] because는 ‘~하기 때문에’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 insufficient ventilation in the greenhouse는 환기를 나타내는 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "wilted",
+        "insufficient ventilation"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-031"
+    },
+    {
+      "id": "focus-connectors-v3-100-032",
+      "number": 32,
+      "version": 1,
+      "stem": "The scheduled safety inspection revealed a gas leak near the heating system; ________, the facility was evacuated immediately while specialists isolated the damaged supply pipe.",
+      "choices": [
+        "although",
+        "however",
+        "moreover",
+        "therefore"
+      ],
+      "answer": 3,
+      "translation": "예정된 안전 점검에서 난방 시설 근처 가스 누출이 발견되어 전문가들이 손상된 공급관을 차단하는 동안 시설에서 즉시 대피가 이루어졌다.",
+      "tags": [
+        "conjunctive-adverb",
+        "reason-result"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사절 접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "inspection revealed 절 뒤 세미콜론이 있고, 뒤는 the facility(주어)+was evacuated(동사)다. although는 종속절을 만드는 접속사다. 이 문장 경계·삽입 위치에서 뒤 절을 다시 종속절로 바꾸면 연결할 주절이 없다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "그러나",
+          "reason": "inspection revealed 절 뒤 세미콜론이 있고, 뒤는 the facility(주어)+was evacuated(동사)다. [의미] however도 부사로 이 자리에 올 수 있지만 뜻은 ‘그러나’이다. 가스 누출 뒤 대피는 반대 결과가 아니라 안전상의 결과다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "게다가",
+          "reason": "inspection revealed 절 뒤 세미콜론이 있고, 뒤는 the facility(주어)+was evacuated(동사)다. [의미] moreover도 부사로 이 자리에 올 수 있지만 뜻은 ‘게다가’이다. 누출 발견과 즉시 대피의 인과를 단순 추가로 약화시킨다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "그러므로",
+          "reason": "inspection revealed 절 뒤 세미콜론이 있고, 뒤는 the facility(주어)+was evacuated(동사)다. 접속부사 therefore가 문장 사이의 의미 관계를 표시한다. 가스 누출 발견 때문에 시설을 대피시킨 결과이므로 therefore가 맞다."
+        }
+      ],
+      "clues": [
+        "revealed a gas leak",
+        "the facility was evacuated immediately"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-032"
+    },
+    {
+      "id": "focus-connectors-v3-100-033",
+      "number": 33,
+      "version": 1,
+      "stem": "Customers continued to subscribe ________ the higher monthly fee introduced in January, citing the expanded archive and access to specialist advice as valuable benefits.",
+      "choices": [
+        "although",
+        "as though",
+        "in spite of",
+        "even though"
+      ],
+      "answer": 2,
+      "translation": "1월의 월 이용료 인상에도 고객들은 확대된 자료실과 전문가 상담을 유용한 혜택으로 꼽으며 구독을 유지했다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 the higher monthly fee introduced in January는 요금 명사구다. introduced 이하는 fee를 꾸민다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "마치 ~인 것처럼",
+          "reason": "뒤의 the higher monthly fee introduced in January는 요금 명사구다. introduced 이하는 fee를 꾸민다. [구조] as though는 ‘마치 ~인 것처럼’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 the higher monthly fee introduced in January는 요금 명사구다. introduced 이하는 fee를 꾸민다. 전치사 in spite of 뒤에 이 명사구를 놓는다. 요금 인상에도 구독을 계속한 양보이므로 in spite of가 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~인데도",
+          "reason": "뒤의 the higher monthly fee introduced in January는 요금 명사구다. introduced 이하는 fee를 꾸민다. [구조] even though는 ‘~임에도’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "Customers continued to subscribe",
+        "the higher monthly fee"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-033"
+    },
+    {
+      "id": "focus-connectors-v3-100-034",
+      "number": 34,
+      "version": 1,
+      "stem": "Keep a printed itinerary with your passport ________ your phone battery runs out, especially when traveling between offices where charging facilities may not be available.",
+      "choices": [
+        "because of",
+        "despite",
+        "in the event that",
+        "in the event of"
+      ],
+      "answer": 2,
+      "translation": "특히 충전 시설이 없는 사무실 사이를 이동할 때 휴대전화 배터리 방전에 대비해 인쇄된 일정을 여권과 함께 보관하세요.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "뒤의 your phone battery가 주어, runs out이 동사다. [구조] because of는 ‘~때문에’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 your phone battery가 주어, runs out이 동사다. [구조] despite는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "종속접속사구",
+          "meaning": "~하는 경우에",
+          "reason": "뒤의 your phone battery가 주어, runs out이 동사다. 접속사 in the event that가 이 절을 주절에 연결한다. 휴대전화 배터리가 다할 경우를 대비해 종이 일정을 준비하므로 in the event that이 맞다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~의 경우에",
+          "reason": "뒤의 your phone battery가 주어, runs out이 동사다. [구조] in the event of는 ‘~이 발생한 경우’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        }
+      ],
+      "clues": [
+        "Keep a printed itinerary",
+        "your phone battery runs out"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-034"
+    },
+    {
+      "id": "focus-connectors-v3-100-035",
+      "number": 35,
+      "version": 1,
+      "stem": "The finance director took detailed notes ________ the external auditor presented her findings, identifying several reporting procedures that needed revision before the next quarterly review.",
+      "choices": [
+        "during",
+        "despite",
+        "while",
+        "upon"
+      ],
+      "answer": 2,
+      "translation": "외부 감사인이 결과를 발표하는 동안 재무 이사는 상세히 메모하며 다음 분기 검토 전에 수정해야 할 보고 절차들을 확인했다.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사",
+          "meaning": "~ 동안",
+          "reason": "뒤의 the external auditor가 주어, presented가 동사다. [구조] during는 ‘어떤 기간 동안’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 the external auditor가 주어, presented가 동사다. [구조] despite는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~하는 동안",
+          "reason": "뒤의 the external auditor가 주어, presented가 동사다. 접속사 while가 이 절을 주절에 연결한다. 감사인이 결과를 발표하는 동안 메모한 동시 진행이므로 while이 맞다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~하자마자/~시에",
+          "reason": "뒤의 the external auditor가 주어, presented가 동사다. [구조] upon는 ‘사건 직후·발생 시’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        }
+      ],
+      "clues": [
+        "the external auditor presented her findings"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-035"
+    },
+    {
+      "id": "focus-connectors-v3-100-036",
+      "number": 36,
+      "version": 1,
+      "stem": "The contractor honored the original quotation ________ material prices had doubled since the agreement was signed, absorbing the additional expense rather than delaying the client's opening.",
+      "choices": [
+        "although",
+        "in spite of",
+        "despite",
+        "because of"
+      ],
+      "answer": 0,
+      "translation": "계약 후 자재 가격이 두 배가 되었는데도 업체는 고객의 개장을 늦추는 대신 추가 비용을 부담하며 최초 견적을 지켰다.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 material prices가 주어, had doubled가 동사다. 접속사 although가 이 절을 주절에 연결한다. 재료비가 두 배가 되었는데도 원래 견적을 지킨 양보이므로 although가 맞다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 material prices가 주어, had doubled가 동사다. [구조] in spite of는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 material prices가 주어, had doubled가 동사다. [구조] despite는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "뒤의 material prices가 주어, had doubled가 동사다. [구조] because of는 ‘~때문에’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        }
+      ],
+      "clues": [
+        "honored the original quotation",
+        "material prices had doubled"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-036"
+    },
+    {
+      "id": "focus-connectors-v3-100-037",
+      "number": 37,
+      "version": 1,
+      "stem": "The panel approved the redevelopment proposal ________ two members raised objections about traffic, concluding that the revised access plan adequately protected nearby residential streets.",
+      "choices": [
+        "because of",
+        "even though",
+        "in spite of",
+        "despite"
+      ],
+      "answer": 1,
+      "translation": "두 위원이 교통 문제로 반대했는데도 위원회는 수정된 진입 계획이 인근 주택가 도로를 충분히 보호한다고 판단해 재개발안을 승인했다.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "뒤의 two members가 주어, raised가 동사다. [구조] because of는 ‘~때문에’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~인데도",
+          "reason": "뒤의 two members가 주어, raised가 동사다. 접속사 even though가 이 절을 주절에 연결한다. 일부 반대에도 재개발안을 승인한 양보이므로 even though가 맞다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 two members가 주어, raised가 동사다. [구조] in spite of는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 two members가 주어, raised가 동사다. [구조] despite는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        }
+      ],
+      "clues": [
+        "approved the redevelopment proposal",
+        "two members raised objections"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-037"
+    },
+    {
+      "id": "focus-connectors-v3-100-038",
+      "number": 38,
+      "version": 1,
+      "stem": "The software license was considerably more expensive than the licenses for competing products; ________, the board approved the purchase after reviewing its superior compatibility with the existing accounting system.",
+      "choices": [
+        "because of",
+        "despite",
+        "although",
+        "nevertheless"
+      ],
+      "answer": 3,
+      "translation": "이 소프트웨어의 사용권은 경쟁 제품들의 사용권보다 훨씬 비쌌지만 이사회는 기존 회계 시스템과의 우수한 호환성을 검토한 후 구매를 승인했다.",
+      "tags": [
+        "conjunctive-adverb",
+        "punctuation"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "software license was 절 뒤 세미콜론이 있고, 다음은 the board(주어)+approved(동사)인 완결절이다. because of는 명사구를 직접 받아야 하지만 이 자리는 완결된 문장 안에서 앞 내용과의 관계를 덧붙이는 부사 자리다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "software license was 절 뒤 세미콜론이 있고, 다음은 the board(주어)+approved(동사)인 완결절이다. despite는 명사구를 직접 받아야 하지만 이 자리는 완결된 문장 안에서 앞 내용과의 관계를 덧붙이는 부사 자리다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "software license was 절 뒤 세미콜론이 있고, 다음은 the board(주어)+approved(동사)인 완결절이다. although는 종속절을 만드는 접속사다. 이 문장 경계·삽입 위치에서 뒤 절을 다시 종속절로 바꾸면 연결할 주절이 없다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "그럼에도 불구하고",
+          "reason": "software license was 절 뒤 세미콜론이 있고, 다음은 the board(주어)+approved(동사)인 완결절이다. 접속부사 nevertheless가 문장 사이의 의미 관계를 표시한다. 더 비쌌지만 호환성을 보고 구매를 승인한 양보이므로 nevertheless가 맞다."
+        }
+      ],
+      "clues": [
+        "considerably more expensive",
+        "the board approved the purchase"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-038"
+    },
+    {
+      "id": "focus-connectors-v3-100-039",
+      "number": 39,
+      "version": 1,
+      "stem": "The caterer needs the final guest count ________ the end of this week to order sufficient ingredients without incurring charges for urgent weekend deliveries.",
+      "choices": [
+        "by",
+        "because",
+        "by the time",
+        "although"
+      ],
+      "answer": 0,
+      "translation": "출장 연회 업체는 긴급 주말 배송 요금 없이 충분한 식재료를 주문하도록 이번 주 말까지 최종 참석 인원수가 필요하다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사",
+          "meaning": "~까지",
+          "reason": "뒤의 the end of this week는 완료 기한을 나타내는 명사구다. 전치사 by 뒤에 이 명사구를 놓는다. 재료 주문을 위해 이번 주 말까지 인원수를 받아야 하므로 by가 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 the end of this week는 완료 기한을 나타내는 명사구다. [구조] because는 ‘~하기 때문에’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사구",
+          "meaning": "~할 때까지는",
+          "reason": "뒤의 the end of this week는 완료 기한을 나타내는 명사구다. [구조] by the time는 ‘~할 때까지의 완료 시점’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 the end of this week는 완료 기한을 나타내는 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "needs the final guest count",
+        "the end of this week"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-039"
+    },
+    {
+      "id": "focus-connectors-v3-100-040",
+      "number": 40,
+      "version": 1,
+      "stem": "The restaurant retained its national service award ________ fierce local competition, largely through staff training that emphasized accurate orders and prompt complaint resolution.",
+      "choices": [
+        "even though",
+        "in spite of",
+        "although",
+        "as though"
+      ],
+      "answer": 1,
+      "translation": "치열한 지역 경쟁에도 식당은 정확한 주문 처리와 신속한 불만 해결을 강조한 직원 교육으로 전국 서비스상을 유지했다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "~인데도",
+          "reason": "뒤의 fierce local competition은 경쟁을 나타내는 명사구다. [구조] even though는 ‘~임에도’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 fierce local competition은 경쟁을 나타내는 명사구다. 전치사 in spite of 뒤에 이 명사구를 놓는다. 치열한 경쟁에도 상을 유지했다는 양보이므로 in spite of가 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 fierce local competition은 경쟁을 나타내는 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "마치 ~인 것처럼",
+          "reason": "뒤의 fierce local competition은 경쟁을 나타내는 명사구다. [구조] as though는 ‘마치 ~인 것처럼’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "retained its national service award",
+        "fierce local competition"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-040"
+    },
+    {
+      "id": "focus-connectors-v3-100-041",
+      "number": 41,
+      "version": 1,
+      "stem": "The backup generator starts automatically ________ a power failure, maintaining refrigeration temperatures until the utility company restores electricity or technicians connect a replacement supply.",
+      "choices": [
+        "although",
+        "while",
+        "in the event that",
+        "in the event of"
+      ],
+      "answer": 3,
+      "translation": "정전 시 예비 발전기는 자동으로 가동해 전력회사가 전기를 복구하거나 기술자가 대체 전원을 연결할 때까지 냉장 온도를 유지한다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 a power failure는 정전이라는 사건 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~하는 동안",
+          "reason": "뒤의 a power failure는 정전이라는 사건 명사구다. [구조] while는 ‘~하는 동안’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사구",
+          "meaning": "~하는 경우에",
+          "reason": "뒤의 a power failure는 정전이라는 사건 명사구다. [구조] in the event that는 ‘~이 발생하는 경우’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~의 경우에",
+          "reason": "뒤의 a power failure는 정전이라는 사건 명사구다. 전치사 in the event of 뒤에 이 명사구를 놓는다. 정전 발생 시 발전기가 작동한다는 조건이므로 in the event of가 맞다."
+        }
+      ],
+      "clues": [
+        "a power failure"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-041"
+    },
+    {
+      "stem": "The newly renovated meeting room is not cramped. ________, it comfortably accommodates sixty delegates and leaves ample space for presentation equipment.",
+      "choices": [
+        "Previously",
+        "On the contrary",
+        "Otherwise",
+        "Therefore"
+      ],
+      "answer": 1,
+      "translation": "새로 개보수한 회의실은 비좁지 않다. 오히려 대표단 60명을 편안하게 수용하고 발표 장비를 위한 공간도 충분하다.",
+      "tags": [
+        "adverb-correction",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "이전에",
+          "reason": "앞뒤 모두 새 회의실의 현재 공간을 설명한다. 이전 시점으로 바꾸는 내용이 아니다."
+        },
+        {
+          "form": "접속부사구",
+          "meaning": "그와는 반대로",
+          "reason": "not cramped라는 비좁다는 생각의 부정을, 넉넉한 수용 공간이라는 반대 속성으로 강화한다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "그렇지 않으면",
+          "reason": "어떤 지시를 따르지 않았을 때의 결과가 아니다. not cramped를 반대 속성으로 설명한다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "그러므로; 따라서",
+          "reason": "수용 인원은 비좁지 않다는 진술의 결과가 아니라 공간이 넓음을 구체화한 반대 속성이다."
+        }
+      ],
+      "draftNumber": 7,
+      "id": "focus-connectors-v3-100-042",
+      "number": 42,
+      "version": 1,
+      "clues": [
+        "is not cramped",
+        "comfortably accommodates sixty delegates"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-042"
+    },
+    {
+      "id": "focus-connectors-v3-100-043",
+      "number": 43,
+      "version": 1,
+      "stem": "________ a broken water main beneath the service entrance, the hotel temporarily suspended laundry operations and arranged for guests' clothing to be cleaned off site.",
+      "choices": [
+        "because of",
+        "as though",
+        "although",
+        "because"
+      ],
+      "answer": 0,
+      "translation": "직원 출입구 아래 수도 본관 파손으로 호텔은 세탁 작업을 일시 중단하고 투숙객 의류를 외부에서 세탁하도록 마련했다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "뒤의 a broken water main beneath the service entrance는 수도관을 나타내는 명사구다. 전치사 because of 뒤에 이 명사구를 놓는다. 수도관 파손이 세탁 중단의 원인이므로 because of가 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "마치 ~인 것처럼",
+          "reason": "뒤의 a broken water main beneath the service entrance는 수도관을 나타내는 명사구다. [구조] as though는 ‘마치 ~인 것처럼’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 a broken water main beneath the service entrance는 수도관을 나타내는 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 a broken water main beneath the service entrance는 수도관을 나타내는 명사구다. [구조] because는 ‘~하기 때문에’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "a broken water main",
+        "temporarily suspended laundry operations"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-043"
+    },
+    {
+      "id": "focus-connectors-v3-100-044",
+      "number": 44,
+      "version": 1,
+      "stem": "The printer had completed and packed the revised brochures ________ the delivery van returned, allowing the driver to depart for the trade fair without further delay.",
+      "choices": [
+        "during",
+        "upon",
+        "by",
+        "by the time"
+      ],
+      "answer": 3,
+      "translation": "배송 승합차가 돌아왔을 때 인쇄소는 수정 책자의 제작과 포장을 마쳐 운전자는 추가 지체 없이 무역 박람회로 출발할 수 있었다.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사",
+          "meaning": "~ 동안",
+          "reason": "뒤의 the delivery van이 주어, returned가 동사다. 앞에는 had completed and packed라는 과거완료가 있다. [구조] during는 ‘어떤 기간 동안’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~하자마자/~시에",
+          "reason": "뒤의 the delivery van이 주어, returned가 동사다. 앞에는 had completed and packed라는 과거완료가 있다. [구조] upon는 ‘사건 직후·발생 시’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~까지",
+          "reason": "뒤의 the delivery van이 주어, returned가 동사다. 앞에는 had completed and packed라는 과거완료가 있다. [구조] by는 ‘~까지 완료하는 기한’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "종속접속사구",
+          "meaning": "~할 때까지는",
+          "reason": "뒤의 the delivery van이 주어, returned가 동사다. 앞에는 had completed and packed라는 과거완료가 있다. 접속사 by the time가 이 절을 주절에 연결한다. 밴이 돌아올 때까지 인쇄·포장을 완료했다는 완료 시점이므로 by the time이 맞다."
+        }
+      ],
+      "clues": [
+        "had completed and packed",
+        "the delivery van returned"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-044"
+    },
+    {
+      "id": "focus-connectors-v3-100-045",
+      "number": 45,
+      "version": 1,
+      "stem": "________ repeated equipment failures at the remote construction site, the crew completed the land survey before the developer's permit application was due.",
+      "choices": [
+        "even though",
+        "as though",
+        "in spite of",
+        "although"
+      ],
+      "answer": 2,
+      "translation": "외딴 공사 현장의 반복된 장비 고장에도 작업팀은 개발업체의 허가 신청 기한 전에 토지 조사를 마쳤다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "~인데도",
+          "reason": "뒤의 repeated equipment failures at the remote construction site는 고장을 나타내는 명사구다. [구조] even though는 ‘~임에도’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "마치 ~인 것처럼",
+          "reason": "뒤의 repeated equipment failures at the remote construction site는 고장을 나타내는 명사구다. [구조] as though는 ‘마치 ~인 것처럼’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 repeated equipment failures at the remote construction site는 고장을 나타내는 명사구다. 전치사 in spite of 뒤에 이 명사구를 놓는다. 거듭된 장비 고장에도 조사를 완료한 양보이므로 in spite of가 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 repeated equipment failures at the remote construction site는 고장을 나타내는 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "repeated equipment failures",
+        "the crew completed the land survey"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-045"
+    },
+    {
+      "id": "focus-connectors-v3-100-046",
+      "number": 46,
+      "version": 1,
+      "stem": "________ we receive legal approval for the advertising campaign, the design team will have finished the mockups needed for the client's final presentation.",
+      "choices": [
+        "by",
+        "by the time",
+        "during",
+        "upon"
+      ],
+      "answer": 1,
+      "translation": "광고 캠페인의 법무 승인을 받을 때까지 디자인팀은 고객의 최종 설명회에 필요한 시안을 완성해 놓을 것이다.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사",
+          "meaning": "~까지",
+          "reason": "뒤의 we가 주어, receive가 동사다. 주절은 the design team will have finished다. [구조] by는 ‘~까지 완료하는 기한’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "종속접속사구",
+          "meaning": "~할 때까지는",
+          "reason": "뒤의 we가 주어, receive가 동사다. 주절은 the design team will have finished다. 접속사 by the time가 이 절을 주절에 연결한다. 법적 승인을 받을 때까지 시안을 완료할 것이라는 미래 완료 시점이므로 by the time이 맞다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~ 동안",
+          "reason": "뒤의 we가 주어, receive가 동사다. 주절은 the design team will have finished다. [구조] during는 ‘어떤 기간 동안’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~하자마자/~시에",
+          "reason": "뒤의 we가 주어, receive가 동사다. 주절은 the design team will have finished다. [구조] upon는 ‘사건 직후·발생 시’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        }
+      ],
+      "clues": [
+        "we receive legal approval",
+        "will have finished the mockups"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-046"
+    },
+    {
+      "id": "focus-connectors-v3-100-047",
+      "number": 47,
+      "version": 1,
+      "stem": "Visitors praised the exhibition's clear organization ________ the cramped entrance hall, where timed admission prevented long queues from interfering with the displays.",
+      "choices": [
+        "as though",
+        "in spite of",
+        "even though",
+        "although"
+      ],
+      "answer": 1,
+      "translation": "입구 홀이 비좁았는데도 시간대별 입장으로 긴 줄이 전시를 방해하지 않아 방문객들은 전시 구성을 호평했다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "마치 ~인 것처럼",
+          "reason": "뒤의 the cramped entrance hall은 입구를 가리키는 명사구다. [구조] as though는 ‘마치 ~인 것처럼’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 the cramped entrance hall은 입구를 가리키는 명사구다. 전치사 in spite of 뒤에 이 명사구를 놓는다. 입구가 비좁아도 전시 구성을 칭찬한 양보이므로 in spite of가 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~인데도",
+          "reason": "뒤의 the cramped entrance hall은 입구를 가리키는 명사구다. [구조] even though는 ‘~임에도’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 the cramped entrance hall은 입구를 가리키는 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "the exhibition's clear organization",
+        "the cramped entrance hall"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-047"
+    },
+    {
+      "id": "focus-connectors-v3-100-048",
+      "number": 48,
+      "version": 1,
+      "stem": "The editor postponed publication of the industry report ________ two independent sources had not confirmed the export figures cited in its opening section.",
+      "choices": [
+        "in spite of",
+        "during",
+        "because",
+        "because of"
+      ],
+      "answer": 2,
+      "translation": "도입부에 인용된 수출 수치를 독립된 두 출처가 확인하지 않아 편집자는 산업 보고서 발행을 연기했다.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사구",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 two independent sources가 주어, had not confirmed가 동사다. [구조] in spite of는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~ 동안",
+          "reason": "뒤의 two independent sources가 주어, had not confirmed가 동사다. [구조] during는 ‘어떤 기간 동안’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 two independent sources가 주어, had not confirmed가 동사다. 접속사 because가 이 절을 주절에 연결한다. 수치 확인을 받지 못한 것이 발간 연기의 원인이므로 because가 맞다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "뒤의 two independent sources가 주어, had not confirmed가 동사다. [구조] because of는 ‘~때문에’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        }
+      ],
+      "clues": [
+        "postponed publication",
+        "two independent sources had not confirmed"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-048"
+    },
+    {
+      "stem": "The team first checked the wiring, then replaced the damaged fuse. ________, it tested the alarm to confirm that normal operation had resumed.",
+      "choices": [
+        "Finally",
+        "Otherwise",
+        "Previously",
+        "On the contrary"
+      ],
+      "answer": 0,
+      "translation": "팀은 먼저 배선을 점검하고 손상된 퓨즈를 교체했다. 마지막으로 정상 작동이 재개되었는지 확인하려고 경보기를 시험했다.",
+      "tags": [
+        "adverb-sequence",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "마침내; 마지막으로",
+          "reason": "first checked와 then replaced로 두 단계가 제시되고, 다음 문장의 주어는 it, 동사는 tested다. 접속부사 Finally가 문장 사이의 의미 관계를 표시한다. 배선 확인→퓨즈 교체 뒤 마지막으로 경보 시험을 하므로 Finally가 맞다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "그렇지 않으면",
+          "reason": "first checked와 then replaced로 두 단계가 제시되고, 다음 문장의 주어는 it, 동사는 tested다. [의미] Otherwise도 부사로 이 자리에 올 수 있지만 뜻은 ‘그렇지 않으면’이다. 지침 불이행의 결과가 아니라 실제 작업의 마지막 단계다."
+        },
+        {
+          "form": "부사",
+          "meaning": "이전에",
+          "reason": "first checked와 then replaced로 두 단계가 제시되고, 다음 문장의 주어는 it, 동사는 tested다. [의미] Previously도 부사로 이 자리에 올 수 있지만 뜻은 ‘이전에’이다. first와 then 뒤에 이어지는 최종 시험이므로 더 이전 행동이 아니다."
+        },
+        {
+          "form": "접속부사구",
+          "meaning": "그와는 반대로",
+          "reason": "first checked와 then replaced로 두 단계가 제시되고, 다음 문장의 주어는 it, 동사는 tested다. [의미] On the contrary도 부사로 이 자리에 올 수 있지만 뜻은 ‘그와 반대로·오히려’이다. 시험은 배선 확인과 퓨즈 교체를 반박하는 행동이 아니다."
+        }
+      ],
+      "draftNumber": 14,
+      "id": "focus-connectors-v3-100-049",
+      "number": 49,
+      "version": 1,
+      "clues": [
+        "first checked the wiring, then replaced the damaged fuse",
+        "it tested the alarm"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-049"
+    },
+    {
+      "id": "focus-connectors-v3-100-050",
+      "number": 50,
+      "version": 1,
+      "stem": "Please use the temporary entrance beside the loading area ________ workers replace the front doors, and follow the signs directing visitors to the reception desk.",
+      "choices": [
+        "while",
+        "during",
+        "upon",
+        "despite"
+      ],
+      "answer": 0,
+      "translation": "작업자들이 정문을 교체하는 동안 하역장 옆 임시 출입구를 이용하고 접수대로 안내하는 표지판을 따라 주세요.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "~하는 동안",
+          "reason": "뒤의 workers가 주어, replace가 동사다. 접속사 while가 이 절을 주절에 연결한다. 정문 교체 작업이 진행되는 동안 임시 출입구를 사용하므로 while이 맞다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~ 동안",
+          "reason": "뒤의 workers가 주어, replace가 동사다. [구조] during는 ‘어떤 기간 동안’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~하자마자/~시에",
+          "reason": "뒤의 workers가 주어, replace가 동사다. [구조] upon는 ‘사건 직후·발생 시’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 workers가 주어, replace가 동사다. [구조] despite는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        }
+      ],
+      "clues": [
+        "workers replace the front doors"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-050"
+    },
+    {
+      "id": "focus-connectors-v3-100-051",
+      "number": 51,
+      "version": 1,
+      "stem": "All outstanding expense claims must reach accounting ________ March 15 to be included in the current reporting period rather than carried over to the next quarter.",
+      "choices": [
+        "by the time",
+        "by",
+        "although",
+        "because"
+      ],
+      "answer": 1,
+      "translation": "미처리 경비 청구가 다음 분기로 이월되지 않고 현 보고 기간에 포함되려면 3월 15일까지 모두 회계부에 도착해야 한다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사구",
+          "meaning": "~할 때까지는",
+          "reason": "뒤의 March 15는 날짜 명사구다. [구조] by the time는 ‘~할 때까지의 완료 시점’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~까지",
+          "reason": "뒤의 March 15는 날짜 명사구다. 전치사 by 뒤에 이 명사구를 놓는다. 그날까지 청구서가 도착해야 당기에 반영되므로 완료 기한의 by가 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 March 15는 날짜 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 March 15는 날짜 명사구다. [구조] because는 ‘~하기 때문에’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "must reach accounting",
+        "March 15"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-051"
+    },
+    {
+      "id": "focus-connectors-v3-100-052",
+      "number": 52,
+      "version": 1,
+      "stem": "The courier charged an extra handling fee ________ the parcel's unusual dimensions, which required a larger vehicle than the one originally assigned to the collection route.",
+      "choices": [
+        "because",
+        "because of",
+        "as though",
+        "although"
+      ],
+      "answer": 1,
+      "translation": "소포의 특이한 크기로 수거 경로에 처음 배정한 차량보다 큰 차량이 필요해 택배사는 추가 취급 수수료를 부과했다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 the parcel's unusual dimensions는 규격을 나타내는 명사구다. [구조] because는 ‘~하기 때문에’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "뒤의 the parcel's unusual dimensions는 규격을 나타내는 명사구다. 전치사 because of 뒤에 이 명사구를 놓는다. 큰 차량이 필요했던 특이 규격이 추가 수수료의 원인이므로 because of가 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "마치 ~인 것처럼",
+          "reason": "뒤의 the parcel's unusual dimensions는 규격을 나타내는 명사구다. [구조] as though는 ‘마치 ~인 것처럼’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 the parcel's unusual dimensions는 규격을 나타내는 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "charged an extra handling fee",
+        "the parcel's unusual dimensions"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-052"
+    },
+    {
+      "stem": "The label must remain attached: do not remove it, ________ the carrier will be unable to identify the correct delivery address.",
+      "choices": [
+        "unless",
+        "or",
+        "whereas",
+        "despite"
+      ],
+      "answer": 1,
+      "translation": "라벨은 붙어 있어야 합니다. 제거하지 마세요. 그렇지 않으면 운송업체가 정확한 배송지를 식별하지 못합니다.",
+      "tags": [
+        "warning-or",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "~하지 않는 한; ~하지 않으면",
+          "reason": "앞은 do not remove라는 명령문(주어 you 생략), 뒤는 the carrier(주어)+will be unable(동사)인 절이다. [의미] unless도 절을 이끌 수 있지만 붙이면 라벨을 떼지 말라는 명령의 예외 조건이 된다. 여기서는 라벨을 떼면 운송업체가 주소를 확인하지 못한다는 경고 결과다."
+        },
+        {
+          "form": "등위접속사",
+          "meaning": "또는; 그렇지 않으면",
+          "reason": "앞은 do not remove라는 명령문(주어 you 생략), 뒤는 the carrier(주어)+will be unable(동사)인 절이다. 등위접속사 or가 조치와 불이행 시 결과절을 연결한다. 라벨을 떼지 말라, 안 그러면 주소 확인이 불가능하다는 경고 결과이므로 or가 맞다."
+        },
+        {
+          "form": "부사절 접속사",
+          "meaning": "~인 반면에",
+          "reason": "do not remove it은 라벨을 떼지 말라는 명령이고, the carrier will be unable는 제거했을 때 생길 결과다. whereas는 두 사실을 대조하므로 이 조치의 불이행을 경고하는 or와 뜻이 다르다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "앞은 do not remove라는 명령문(주어 you 생략), 뒤는 the carrier(주어)+will be unable(동사)인 절이다. despite는 명사구를 받는 전치사이므로 뒤의 주어·동사 절을 이끌 수 없다."
+        }
+      ],
+      "draftNumber": 16,
+      "id": "focus-connectors-v3-100-053",
+      "number": 53,
+      "version": 1,
+      "clues": [
+        "do not remove it",
+        "the carrier will be unable to identify"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-053"
+    },
+    {
+      "id": "focus-connectors-v3-100-054",
+      "number": 54,
+      "version": 1,
+      "stem": "The florist offers free design consultations ________ the spring wedding fair, enabling couples to compare seasonal arrangements before committing to an expensive floral package.",
+      "choices": [
+        "while",
+        "during",
+        "although",
+        "because"
+      ],
+      "answer": 1,
+      "translation": "꽃집은 봄 결혼 박람회 동안 무료 디자인 상담을 제공해 예비부부가 고가의 꽃 장식 상품을 선택하기 전에 계절별 구성을 비교하도록 한다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "~하는 동안",
+          "reason": "뒤의 the spring wedding fair는 행사 명사구다. [구조] while는 ‘~하는 동안’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~ 동안",
+          "reason": "뒤의 the spring wedding fair는 행사 명사구다. 전치사 during 뒤에 이 명사구를 놓는다. 상담 제공 시기가 봄 웨딩 박람회 중이므로 during이 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 the spring wedding fair는 행사 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 the spring wedding fair는 행사 명사구다. [구조] because는 ‘~하기 때문에’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "the spring wedding fair"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-054"
+    },
+    {
+      "stem": "The receiving office was closed unexpectedly; the driver, ________, left the sealed parcel at the staffed collection desk next door.",
+      "choices": [
+        "because of",
+        "although",
+        "therefore",
+        "despite"
+      ],
+      "answer": 2,
+      "translation": "수령 사무실이 예기치 않게 문을 닫았다. 따라서 운전기사는 봉인된 소포를 옆의 직원이 있는 수령대에 맡겼다.",
+      "tags": [
+        "adverb-medial",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사구",
+          "meaning": "~때문에",
+          "reason": "앞은 office was closed로 끝나며, 뒤 절은 the driver(주어)+left(동사)이고 빈칸은 두 쉼표 사이 삽입 자리다. because of는 명사구를 직접 받아야 하지만 이 자리는 완결된 문장 안에서 앞 내용과의 관계를 덧붙이는 부사 자리다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "앞은 office was closed로 끝나며, 뒤 절은 the driver(주어)+left(동사)이고 빈칸은 두 쉼표 사이 삽입 자리다. although는 종속절을 만드는 접속사다. 이 문장 경계·삽입 위치에서 뒤 절을 다시 종속절로 바꾸면 연결할 주절이 없다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "그러므로; 따라서",
+          "reason": "앞은 office was closed로 끝나며, 뒤 절은 the driver(주어)+left(동사)이고 빈칸은 두 쉼표 사이 삽입 자리다. 접속부사 therefore가 문장 사이의 의미 관계를 표시한다. 사무실이 닫혀 있어서 옆 수령처에 맡긴 결과이므로 therefore가 맞다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "앞은 office was closed로 끝나며, 뒤 절은 the driver(주어)+left(동사)이고 빈칸은 두 쉼표 사이 삽입 자리다. despite는 명사구를 직접 받아야 하지만 이 자리는 완결된 문장 안에서 앞 내용과의 관계를 덧붙이는 부사 자리다."
+        }
+      ],
+      "draftNumber": 13,
+      "id": "focus-connectors-v3-100-055",
+      "number": 55,
+      "version": 1,
+      "clues": [
+        "The receiving office was closed unexpectedly",
+        "left the sealed parcel"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-055"
+    },
+    {
+      "id": "focus-connectors-v3-100-056",
+      "number": 56,
+      "version": 1,
+      "stem": "The research team declined the industry award ________ it included a substantial cash prize, explaining that the sponsor's advertising practices conflicted with the institute's policies.",
+      "choices": [
+        "because of",
+        "despite",
+        "although",
+        "in spite of"
+      ],
+      "answer": 2,
+      "translation": "상당한 상금이 포함되어 있었는데도 연구팀은 후원사의 광고 관행이 연구소 정책과 충돌한다며 업계 상을 거절했다.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "뒤의 it이 주어, included가 동사다. [구조] because of는 ‘~때문에’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 it이 주어, included가 동사다. [구조] despite는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 it이 주어, included가 동사다. 접속사 although가 이 절을 주절에 연결한다. 상금이 상당했지만 수상을 거절한 양보이므로 although가 맞다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 it이 주어, included가 동사다. [구조] in spite of는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        }
+      ],
+      "clues": [
+        "declined the industry award",
+        "it included a substantial cash prize"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-056"
+    },
+    {
+      "stem": "Keep the temporary password active ________ the employee completes the identity check; immediately afterward, the system will replace it with a permanent password.",
+      "choices": [
+        "since",
+        "because",
+        "as though",
+        "until"
+      ],
+      "answer": 3,
+      "translation": "직원이 본인 확인을 마칠 때까지 임시 비밀번호를 활성 상태로 유지하세요. 직후 시스템은 영구 비밀번호로 교체합니다.",
+      "tags": [
+        "until-end",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사·접속사",
+          "meaning": "~이후로; ~이므로",
+          "reason": "뒤의 the employee가 주어, completes가 동사다. [의미] since는 본인 확인 완료 시점을 비밀번호 유지의 시작으로 잡는다. immediately afterward ... replace와 맞는 뜻은 완료 직전까지 유지하는 종료 시점이다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 the employee가 주어, completes가 동사다. [의미] because는 본인 확인이 완료되기 때문에 임시 비밀번호를 계속 유지하라는 원인이 된다. 직후 영구 비밀번호로 바꾼다는 내용과 맞지 않는다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "마치 ~처럼",
+          "reason": "뒤의 the employee가 주어, completes가 동사다. [의미] as though는 본인 확인을 마친 것처럼 유지한다는 뜻이다. 실제 확인 완료 때까지 유지하라는 시간 관계가 아니다."
+        },
+        {
+          "form": "전치사·접속사",
+          "meaning": "~까지 계속",
+          "reason": "뒤의 the employee가 주어, completes가 동사다. 접속사 until가 이 절을 주절에 연결한다. 본인 확인을 마칠 때까지 비밀번호를 유지하고 직후 교체하므로 지속의 끝인 until이 맞다."
+        }
+      ],
+      "draftNumber": 22,
+      "id": "focus-connectors-v3-100-057",
+      "number": 57,
+      "version": 1,
+      "clues": [
+        "Keep the temporary password active",
+        "the employee completes the identity check",
+        "immediately afterward"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-057"
+    },
+    {
+      "stem": "The committee must finalize the budget this week, ------- the marketing campaign for Knox Cosmetics will be postponed.",
+      "choices": [
+        "both",
+        "or",
+        "unless",
+        "soon"
+      ],
+      "answer": 1,
+      "translation": "위원회는 이번 주에 예산을 확정해야 한다. 그렇지 않으면 Knox Cosmetics의 마케팅 캠페인이 연기될 것이다.",
+      "tags": [
+        "source-recheck",
+        "structure-then-meaning"
+      ],
+      "source": {
+        "set": "흰둥이 RC Test 1",
+        "number": 114,
+        "originalReference": "whitedog-rc-test1-114",
+        "kind": "provided-wrong-question"
+      },
+      "optionDetails": [
+        {
+          "form": "한정사·대명사·부사",
+          "meaning": "둘 다",
+          "reason": "앞 절은 The committee(주어)+must finalize(동사), 뒤 절은 the marketing campaign for Knox Cosmetics(주어)+will be postponed(동사)다. both는 여기서 뒤 절을 경고 결과로 연결할 수 없으며, both A and B의 and도 없다."
+        },
+        {
+          "form": "등위접속사",
+          "meaning": "그렇지 않으면",
+          "reason": "앞 절은 The committee(주어)+must finalize(동사), 뒤 절은 the marketing campaign for Knox Cosmetics(주어)+will be postponed(동사)다. 등위접속사 or가 조치와 불이행 시 결과절을 연결한다. 이번 주 예산을 확정해야 하며 안 그러면 캠페인이 연기된다는 경고 결과를 연결하므로 or가 맞다."
+        },
+        {
+          "form": "부사절 접속사",
+          "meaning": "~하지 않는 한",
+          "reason": "앞 절은 The committee(주어)+must finalize(동사), 뒤 절은 the marketing campaign for Knox Cosmetics(주어)+will be postponed(동사)다. [의미] unless도 절을 연결할 수 있다. 그러나 넣으면 캠페인이 연기되지 않으면 예산을 확정해야 한다는 조건이 되어, 예산 미확정 시 연기라는 경고 관계가 뒤집힌다."
+        },
+        {
+          "form": "부사",
+          "meaning": "곧",
+          "reason": "앞 절은 The committee(주어)+must finalize(동사), 뒤 절은 the marketing campaign for Knox Cosmetics(주어)+will be postponed(동사)다. soon는 부사다. 여기서는 쉼표 하나로 이어진 두 절을 연결할 등위접속사 or가 필요하다."
+        }
+      ],
+      "id": "focus-connectors-v3-100-058",
+      "number": 58,
+      "version": 1,
+      "clues": [
+        "must finalize the budget this week",
+        "the marketing campaign for Knox Cosmetics will be postponed"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-058"
+    },
+    {
+      "stem": "We have received no further complaints ________ we replaced the faulty packaging last month, and all recent deliveries have arrived undamaged.",
+      "choices": [
+        "although",
+        "while",
+        "until",
+        "since"
+      ],
+      "answer": 3,
+      "translation": "지난달 결함 포장재를 교체한 이후 추가 불만을 받지 않았으며 최근 배송품은 모두 손상 없이 도착했다.",
+      "tags": [
+        "since-start",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "앞에는 have received no further complaints라는 현재완료, 뒤에는 we(주어)+replaced(동사)가 있다. [의미] although는 포장 교체에도 추가 불만이 없었다는 양보가 된다. 뒤의 recent deliveries가 멀쩡하다는 내용은 교체 이후의 개선을 이어 말한다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~하는 동안; 반면에",
+          "reason": "앞에는 have received no further complaints라는 현재완료, 뒤에는 we(주어)+replaced(동사)가 있다. [의미] while는 교체 작업 중에 불만이 없었다는 동시 진행이다. 현재완료와 last month는 교체 이후 지금까지의 기간을 가리킨다."
+        },
+        {
+          "form": "전치사·접속사",
+          "meaning": "~까지 계속",
+          "reason": "앞에는 have received no further complaints라는 현재완료, 뒤에는 we(주어)+replaced(동사)가 있다. [의미] until은 포장 교체를 불만이 없었던 기간의 끝으로 삼는다. have received no further complaints와 all recent deliveries ... undamaged는 교체 후 지금까지를 말한다."
+        },
+        {
+          "form": "전치사·접속사",
+          "meaning": "~이후로; ~이므로",
+          "reason": "앞에는 have received no further complaints라는 현재완료, 뒤에는 we(주어)+replaced(동사)가 있다. 접속사 since가 이 절을 주절에 연결한다. 포장재를 교체한 지난달을 시작점으로 지금까지 추가 불만이 없으므로 since가 맞다."
+        }
+      ],
+      "draftNumber": 24,
+      "id": "focus-connectors-v3-100-059",
+      "number": 59,
+      "version": 1,
+      "clues": [
+        "have received no further complaints",
+        "we replaced the faulty packaging last month"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-059"
+    },
+    {
+      "id": "focus-connectors-v3-100-060",
+      "number": 60,
+      "version": 1,
+      "stem": "________ the lunch break between conference sessions, volunteers restocked the information desk with maps showing accessible routes to nearby restaurants and public transport stops.",
+      "choices": [
+        "because",
+        "while",
+        "although",
+        "during"
+      ],
+      "answer": 3,
+      "translation": "회의 회차 사이 점심시간에 자원봉사자들은 인근 식당과 대중교통 정류장으로 가는 접근 가능한 경로가 표시된 지도를 안내대에 보충했다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 the lunch break between conference sessions는 휴식 시간을 나타내는 명사구다. [구조] because는 ‘~하기 때문에’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~하는 동안",
+          "reason": "뒤의 the lunch break between conference sessions는 휴식 시간을 나타내는 명사구다. [구조] while는 ‘~하는 동안’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 the lunch break between conference sessions는 휴식 시간을 나타내는 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~ 동안",
+          "reason": "뒤의 the lunch break between conference sessions는 휴식 시간을 나타내는 명사구다. 전치사 during 뒤에 이 명사구를 놓는다. 점심 휴식 중 보급한 때를 나타내므로 during이 맞다."
+        }
+      ],
+      "clues": [
+        "the lunch break between conference sessions"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-060"
+    },
+    {
+      "stem": "Your draft is not saved automatically. Click Save before leaving this screen, ________ all changes made during this session will be lost.",
+      "choices": [
+        "unless",
+        "whereas",
+        "despite",
+        "or"
+      ],
+      "answer": 3,
+      "translation": "초안은 자동으로 저장되지 않는다. 이 화면을 떠나기 전에 저장을 누르세요. 그렇지 않으면 이번 작업 중 바꾼 내용이 모두 사라집니다.",
+      "tags": [
+        "warning-or",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "~하지 않는 한; ~하지 않으면",
+          "reason": "앞은 Click Save라는 명령문(주어 you 생략), 뒤는 all changes made during this session(주어)+will be lost(동사)다. [의미] unless도 절 연결은 가능하다. 하지만 변경 사항이 사라지지 않으면 저장하라는 조건이 되어, 저장하지 않으면 사라진다는 경고와 반대가 된다."
+        },
+        {
+          "form": "부사절 접속사",
+          "meaning": "~인 반면에",
+          "reason": "Click Save는 저장하라는 명령이고, all changes … will be lost는 저장하지 않았을 때 생길 결과다. whereas는 두 사실을 대조하므로 이 조치의 불이행을 경고하는 or와 뜻이 다르다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "앞은 Click Save라는 명령문(주어 you 생략), 뒤는 all changes made during this session(주어)+will be lost(동사)다. despite는 명사구를 받는 전치사이므로 뒤의 주어·동사 절을 이끌 수 없다."
+        },
+        {
+          "form": "등위접속사",
+          "meaning": "또는; 그렇지 않으면",
+          "reason": "앞은 Click Save라는 명령문(주어 you 생략), 뒤는 all changes made during this session(주어)+will be lost(동사)다. 등위접속사 or가 조치와 불이행 시 결과절을 연결한다. 저장하라, 안 그러면 변경 사항이 사라진다는 경고 결과를 연결하므로 or가 맞다."
+        }
+      ],
+      "draftNumber": 18,
+      "id": "focus-connectors-v3-100-061",
+      "number": 61,
+      "version": 1,
+      "clues": [
+        "Click Save",
+        "will be lost"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-061"
+    },
+    {
+      "stem": "The original reservation covered six people. We have ________ added two more seats, bringing the total to eight.",
+      "choices": [
+        "additionally",
+        "because",
+        "despite",
+        "although"
+      ],
+      "answer": 0,
+      "translation": "원래 예약은 여섯 명이었다. 우리는 좌석 두 개를 추가로 더하여 총인원이 여덟 명이 되었다.",
+      "tags": [
+        "adverb-position",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "접속부사",
+          "meaning": "추가로; 게다가",
+          "reason": "We가 주어, have added가 동사구다. 빈칸은 have와 added 사이이며 목적어는 two more seats다. 부사 additionally가 have와 added 사이에서 추가 사실을 나타낸다. 기존 여섯 석에 두 석을 추가했다는 덧붙임이므로 부사 additionally가 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "We가 주어, have added가 동사구다. 빈칸은 have와 added 사이이며 목적어는 two more seats다. because는 절을 이끄는 접속사인데 have와 added 사이에서 하나의 동사구를 갈라 별도 절을 만들 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "We가 주어, have added가 동사구다. 빈칸은 have와 added 사이이며 목적어는 two more seats다. despite는 명사구를 직접 받아야 하지만 이 자리는 완결된 문장 안에서 앞 내용과의 관계를 덧붙이는 부사 자리다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "We가 주어, have added가 동사구다. 빈칸은 have와 added 사이이며 목적어는 two more seats다. although는 절을 이끄는 접속사인데 have와 added 사이에서 하나의 동사구를 갈라 별도 절을 만들 수 없다."
+        }
+      ],
+      "draftNumber": 12,
+      "id": "focus-connectors-v3-100-062",
+      "number": 62,
+      "version": 1,
+      "clues": [
+        "six people",
+        "added two more seats"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-062"
+    },
+    {
+      "id": "focus-connectors-v3-100-063",
+      "number": 63,
+      "version": 1,
+      "stem": "________ the uniform fabric shrinks in hot water, staff should select a cold wash cycle to preserve the fit guaranteed by the clothing supplier.",
+      "choices": [
+        "because of",
+        "in spite of",
+        "during",
+        "because"
+      ],
+      "answer": 3,
+      "translation": "근무복 원단이 뜨거운 물에서 줄어드므로 직원들은 공급업체가 보장한 치수를 유지하도록 찬물 세탁 코스를 선택해야 한다.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "뒤의 the uniform fabric이 주어, shrinks가 동사다. [구조] because of는 ‘~때문에’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 the uniform fabric이 주어, shrinks가 동사다. [구조] in spite of는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~ 동안",
+          "reason": "뒤의 the uniform fabric이 주어, shrinks가 동사다. [구조] during는 ‘어떤 기간 동안’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 the uniform fabric이 주어, shrinks가 동사다. 접속사 because가 이 절을 주절에 연결한다. 뜨거운 물에서 수축하는 것이 찬물 세탁을 권하는 이유이므로 because가 맞다."
+        }
+      ],
+      "clues": [
+        "the uniform fabric shrinks in hot water",
+        "staff should select a cold wash cycle"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-063"
+    },
+    {
+      "id": "focus-connectors-v3-100-064",
+      "number": 64,
+      "version": 1,
+      "stem": "________ your grant application is being reviewed, you can track its status online and upload any supporting documents requested by the assessment committee.",
+      "choices": [
+        "despite",
+        "during",
+        "upon",
+        "while"
+      ],
+      "answer": 3,
+      "translation": "보조금 신청서가 심사되는 동안 온라인으로 상태를 확인하고 심사위원회가 요청하는 추가 증빙을 업로드할 수 있습니다.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 your grant application이 주어, is being reviewed가 동사다. [구조] despite는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~ 동안",
+          "reason": "뒤의 your grant application이 주어, is being reviewed가 동사다. [구조] during는 ‘어떤 기간 동안’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~하자마자/~시에",
+          "reason": "뒤의 your grant application이 주어, is being reviewed가 동사다. [구조] upon는 ‘사건 직후·발생 시’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~하는 동안",
+          "reason": "뒤의 your grant application이 주어, is being reviewed가 동사다. 접속사 while가 이 절을 주절에 연결한다. 신청서 심사 중 상태 확인이 가능하다는 동시 기간이므로 while이 맞다."
+        }
+      ],
+      "clues": [
+        "your grant application is being reviewed"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-064"
+    },
+    {
+      "stem": "Only authorized repairs are reimbursable; the company will not cover the cost ________ the service provider has received written approval in advance.",
+      "choices": [
+        "unless",
+        "or",
+        "despite",
+        "otherwise"
+      ],
+      "answer": 0,
+      "translation": "승인된 수리만 환급 대상이다. 서비스업체가 사전에 서면 승인을 받지 않으면 회사는 비용을 부담하지 않는다.",
+      "tags": [
+        "condition-unless",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "~하지 않는 한; ~하지 않으면",
+          "reason": "뒤의 the service provider가 주어, has received가 동사다. 접속사 unless가 이 절을 주절에 연결한다. 사전 서면 승인을 받지 않으면 비용을 보상하지 않는 조건이므로 unless가 맞다."
+        },
+        {
+          "form": "등위접속사",
+          "meaning": "또는; 그렇지 않으면",
+          "reason": "뒤의 the service provider가 주어, has received가 동사다. or는 대등한 요소를 잇는 표현이지만 이 문장이 요구하는 조건절의 뜻을 만들지 못한다. 사전 서면 승인을 받지 않으면 비용을 보상하지 않는 조건이므로 unless가 맞다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 the service provider가 주어, has received가 동사다. [구조] despite는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "그렇지 않으면",
+          "reason": "뒤의 the service provider가 주어, has received가 동사다. otherwise는 부사여서 이 자리에서 앞뒤 절을 문법적으로 잇는 접속사가 될 수 없다."
+        }
+      ],
+      "draftNumber": 17,
+      "id": "focus-connectors-v3-100-065",
+      "number": 65,
+      "version": 1,
+      "clues": [
+        "will not cover the cost",
+        "the service provider has received written approval"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-065"
+    },
+    {
+      "id": "focus-connectors-v3-100-066",
+      "number": 66,
+      "version": 1,
+      "stem": "The shop installed permanent entrance ramps ________ frequent requests from wheelchair users who had previously needed assistance to cross the step outside the main doors.",
+      "choices": [
+        "because of",
+        "because",
+        "although",
+        "as though"
+      ],
+      "answer": 0,
+      "translation": "이전에 정문 밖 계단을 넘으려면 도움이 필요했던 휠체어 이용자들의 잦은 요청으로 매장은 고정 출입 경사로를 설치했다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "뒤의 frequent requests from wheelchair users는 요청을 나타내는 명사구다. who절은 users를 꾸민다. 전치사 because of 뒤에 이 명사구를 놓는다. 잦은 요청이 경사로 설치의 원인이므로 because of가 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 frequent requests from wheelchair users는 요청을 나타내는 명사구다. who절은 users를 꾸민다. [구조] because는 ‘~하기 때문에’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 frequent requests from wheelchair users는 요청을 나타내는 명사구다. who절은 users를 꾸민다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "마치 ~인 것처럼",
+          "reason": "뒤의 frequent requests from wheelchair users는 요청을 나타내는 명사구다. who절은 users를 꾸민다. [구조] as though는 ‘마치 ~인 것처럼’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "frequent requests from wheelchair users"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-066"
+    },
+    {
+      "id": "focus-connectors-v3-100-067",
+      "number": 67,
+      "version": 1,
+      "stem": "________ a steep rental increase proposed by the property owner, the gallery renewed its lease to retain its established location near the station.",
+      "choices": [
+        "despite",
+        "even though",
+        "as though",
+        "although"
+      ],
+      "answer": 0,
+      "translation": "건물주가 제시한 큰 임대료 인상에도 갤러리는 역 근처의 기존 입지를 지키려고 임대 계약을 갱신했다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 a steep rental increase proposed by the property owner는 임대료 인상을 나타내는 명사구다. 전치사 despite 뒤에 이 명사구를 놓는다. 큰 인상에도 위치를 지키기 위해 계약을 갱신한 양보이므로 despite가 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~인데도",
+          "reason": "뒤의 a steep rental increase proposed by the property owner는 임대료 인상을 나타내는 명사구다. [구조] even though는 ‘~임에도’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "마치 ~인 것처럼",
+          "reason": "뒤의 a steep rental increase proposed by the property owner는 임대료 인상을 나타내는 명사구다. [구조] as though는 ‘마치 ~인 것처럼’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 a steep rental increase proposed by the property owner는 임대료 인상을 나타내는 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "a steep rental increase",
+        "the gallery renewed its lease"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-067"
+    },
+    {
+      "id": "focus-connectors-v3-100-068",
+      "number": 68,
+      "version": 1,
+      "stem": "________ the alarm begins to sound during your visit, leave your belongings behind and follow the evacuation signs to the assembly point outside the building.",
+      "choices": [
+        "because of",
+        "in the event that",
+        "despite",
+        "in the event of"
+      ],
+      "answer": 1,
+      "translation": "방문 중 경보가 울리기 시작하면 소지품을 두고 대피 표지판을 따라 건물 밖 집결지로 이동하세요.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "뒤의 the alarm이 주어, begins가 동사다. [구조] because of는 ‘~때문에’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "종속접속사구",
+          "meaning": "~하는 경우에",
+          "reason": "뒤의 the alarm이 주어, begins가 동사다. 접속사 in the event that가 이 절을 주절에 연결한다. 방문 중 경보가 울릴 경우의 대피 지침이므로 in the event that이 맞다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 the alarm이 주어, begins가 동사다. [구조] despite는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~의 경우에",
+          "reason": "뒤의 the alarm이 주어, begins가 동사다. [구조] in the event of는 ‘~이 발생한 경우’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        }
+      ],
+      "clues": [
+        "the alarm begins to sound",
+        "leave your belongings behind"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-068"
+    },
+    {
+      "stem": "The foundation has funded the scholarship ________ 2011, and it continues to support twenty new students every year.",
+      "choices": [
+        "by",
+        "until",
+        "since",
+        "during"
+      ],
+      "answer": 2,
+      "translation": "그 재단은 2011년부터 장학금을 지원해 왔으며 지금도 해마다 신입생 20명을 지원한다.",
+      "tags": [
+        "since-start",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사",
+          "meaning": "~까지 완료",
+          "reason": "뒤의 2011은 한 시점을 나타내는 연도 명사구이고 앞에는 has funded가 있다. [의미] by 2011은 2011년까지의 완료 기한이다. has funded와 continues to support는 2011년 이후 계속된 지원을 나타낸다."
+        },
+        {
+          "form": "전치사·접속사",
+          "meaning": "~까지 계속",
+          "reason": "뒤의 2011은 한 시점을 나타내는 연도 명사구이고 앞에는 has funded가 있다. [의미] until 2011은 지원의 끝을 2011년으로 정한다. continues to support와 맞는 것은 그해부터 계속된 시작점이다."
+        },
+        {
+          "form": "전치사·접속사",
+          "meaning": "~이후로; ~이므로",
+          "reason": "뒤의 2011은 한 시점을 나타내는 연도 명사구이고 앞에는 has funded가 있다. 전치사 since 뒤에 이 명사구를 놓는다. 2011년부터 지금까지 장학금을 지원해 온 시작점이므로 since가 맞다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~동안",
+          "reason": "뒤의 2011은 한 시점을 나타내는 연도 명사구이고 앞에는 has funded가 있다. [의미] during 2011은 2011년 중이라는 기간이다. has funded와 continues는 그해에만 한정되지 않고 현재까지 이어진다."
+        }
+      ],
+      "draftNumber": 21,
+      "id": "focus-connectors-v3-100-069",
+      "number": 69,
+      "version": 1,
+      "clues": [
+        "has funded the scholarship",
+        "2011"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-069"
+    },
+    {
+      "id": "focus-connectors-v3-100-070",
+      "number": 70,
+      "version": 1,
+      "stem": "________ the management position offered a higher salary, the applicant withdrew after learning that frequent overseas assignments would make her existing family commitments difficult to meet.",
+      "choices": [
+        "in spite of",
+        "despite",
+        "even though",
+        "because of"
+      ],
+      "answer": 2,
+      "translation": "관리직의 급여가 더 높았는데도 잦은 해외 근무로 기존 가족 돌봄 의무를 지키기 어렵다는 사실을 안 지원자는 지원을 철회했다.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사구",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 the management position이 주어, offered가 동사다. [구조] in spite of는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 the management position이 주어, offered가 동사다. [구조] despite는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~인데도",
+          "reason": "뒤의 the management position이 주어, offered가 동사다. 접속사 even though가 이 절을 주절에 연결한다. 높은 연봉에도 가족 사정 때문에 지원을 철회한 양보이므로 even though가 맞다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "뒤의 the management position이 주어, offered가 동사다. [구조] because of는 ‘~때문에’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        }
+      ],
+      "clues": [
+        "the management position offered a higher salary",
+        "the applicant withdrew"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-070"
+    },
+    {
+      "id": "focus-connectors-v3-100-071",
+      "number": 71,
+      "version": 1,
+      "stem": "________ an emergency evacuation from the exhibition hall, assemble beside the fountain so supervisors can check attendance without obstructing vehicles entering the service road.",
+      "choices": [
+        "although",
+        "while",
+        "in the event that",
+        "in the event of"
+      ],
+      "answer": 3,
+      "translation": "전시관에서 비상 대피할 경우 감독자가 서비스 도로 진입 차량을 막지 않고 인원을 확인할 수 있도록 분수 옆에 모이세요.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 an emergency evacuation from the exhibition hall은 대피라는 사건 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~하는 동안",
+          "reason": "뒤의 an emergency evacuation from the exhibition hall은 대피라는 사건 명사구다. [구조] while는 ‘~하는 동안’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사구",
+          "meaning": "~하는 경우에",
+          "reason": "뒤의 an emergency evacuation from the exhibition hall은 대피라는 사건 명사구다. [구조] in the event that는 ‘~이 발생하는 경우’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~의 경우에",
+          "reason": "뒤의 an emergency evacuation from the exhibition hall은 대피라는 사건 명사구다. 전치사 in the event of 뒤에 이 명사구를 놓는다. 비상 대피가 생길 경우 모일 곳을 정하므로 in the event of가 맞다."
+        }
+      ],
+      "clues": [
+        "an emergency evacuation from the exhibition hall"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-071"
+    },
+    {
+      "id": "focus-connectors-v3-100-072",
+      "number": 72,
+      "version": 1,
+      "stem": "The retailer honored its promise to maintain discounted prices ________ the promotion had cost considerably more than planned, protecting its reputation with frequent customers.",
+      "choices": [
+        "because of",
+        "despite",
+        "in spite of",
+        "even though"
+      ],
+      "answer": 3,
+      "translation": "판촉 비용이 계획보다 훨씬 많이 들었는데도 소매업체는 단골 고객 사이의 평판을 지키려고 할인 가격 유지 약속을 이행했다.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "뒤의 the promotion이 주어, had cost가 동사다. [구조] because of는 ‘~때문에’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 the promotion이 주어, had cost가 동사다. [구조] despite는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 the promotion이 주어, had cost가 동사다. [구조] in spite of는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~인데도",
+          "reason": "뒤의 the promotion이 주어, had cost가 동사다. 접속사 even though가 이 절을 주절에 연결한다. 판촉비가 예상보다 많이 들었어도 할인 약속을 지킨 양보이므로 even though가 맞다."
+        }
+      ],
+      "clues": [
+        "honored its promise to maintain discounted prices",
+        "the promotion had cost considerably more"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-072"
+    },
+    {
+      "id": "focus-connectors-v3-100-073",
+      "number": 73,
+      "version": 1,
+      "stem": "________ receipt of your deposit, we will confirm the studio reservation and remove the selected date from the calendar used by other prospective clients.",
+      "choices": [
+        "although",
+        "upon",
+        "as though",
+        "because"
+      ],
+      "answer": 1,
+      "translation": "계약금을 받는 즉시 스튜디오 예약을 확정하고 다른 잠재 고객들이 사용하는 달력에서 선택한 날짜를 제외하겠습니다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 receipt of your deposit는 수령이라는 사건 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~하자마자/~시에",
+          "reason": "뒤의 receipt of your deposit는 수령이라는 사건 명사구다. 전치사 upon 뒤에 이 명사구를 놓는다. 보증금을 받으면 예약을 확정하므로 Upon receipt가 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "마치 ~인 것처럼",
+          "reason": "뒤의 receipt of your deposit는 수령이라는 사건 명사구다. [구조] as though는 ‘마치 ~인 것처럼’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 receipt of your deposit는 수령이라는 사건 명사구다. [구조] because는 ‘~하기 때문에’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "receipt of your deposit"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-073"
+    },
+    {
+      "id": "focus-connectors-v3-100-074",
+      "number": 74,
+      "version": 1,
+      "stem": "________ the executive chef prepared tasting samples for the wedding planners, the host explained the available menu substitutions and the additional charges for special ingredients.",
+      "choices": [
+        "despite",
+        "upon",
+        "while",
+        "during"
+      ],
+      "answer": 2,
+      "translation": "총주방장이 웨딩 플래너용 시식품을 준비하는 동안 진행자는 가능한 메뉴 대체와 특별 재료의 추가 요금을 설명했다.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 the executive chef가 주어, prepared가 동사이고 주절은 the host explained다. [구조] despite는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~하자마자/~시에",
+          "reason": "뒤의 the executive chef가 주어, prepared가 동사이고 주절은 the host explained다. [구조] upon는 ‘사건 직후·발생 시’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~하는 동안",
+          "reason": "뒤의 the executive chef가 주어, prepared가 동사이고 주절은 the host explained다. 접속사 while가 이 절을 주절에 연결한다. 주방장이 시식 견본을 준비하는 동안 진행자가 설명하는 동시 진행이므로 while이 맞다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~ 동안",
+          "reason": "뒤의 the executive chef가 주어, prepared가 동사이고 주절은 the host explained다. [구조] during는 ‘어떤 기간 동안’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        }
+      ],
+      "clues": [
+        "the executive chef prepared tasting samples",
+        "the host explained"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-074"
+    },
+    {
+      "id": "focus-connectors-v3-100-075",
+      "number": 75,
+      "version": 1,
+      "stem": "Please reserve detailed questions about implementation costs for the final discussion period ________ tomorrow's workshop, allowing the trainer to complete the scheduled demonstrations first.",
+      "choices": [
+        "during",
+        "while",
+        "although",
+        "because"
+      ],
+      "answer": 0,
+      "translation": "강사가 예정된 시연을 먼저 마칠 수 있도록 도입 비용에 관한 상세 질문은 내일 워크숍의 마지막 토론 시간에 해 주세요.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사",
+          "meaning": "~ 동안",
+          "reason": "뒤의 tomorrow's workshop은 행사 명사구다. 전치사 during 뒤에 이 명사구를 놓는다. 질문 시간을 워크숍 중 마지막 토론 시간으로 지정하므로 during이 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~하는 동안",
+          "reason": "뒤의 tomorrow's workshop은 행사 명사구다. [구조] while는 ‘~하는 동안’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 tomorrow's workshop은 행사 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 tomorrow's workshop은 행사 명사구다. [구조] because는 ‘~하기 때문에’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "tomorrow's workshop"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-075"
+    },
+    {
+      "id": "focus-connectors-v3-100-076",
+      "number": 76,
+      "version": 1,
+      "stem": "The redesigned packaging uses less plastic than the previous version; ________, it costs less to transport because the smaller cartons occupy less space in delivery vehicles.",
+      "choices": [
+        "although",
+        "moreover",
+        "because of",
+        "during"
+      ],
+      "answer": 1,
+      "translation": "새 포장재는 이전보다 플라스틱을 덜 사용하고 작은 상자가 배송 차량에서 차지하는 공간도 줄여 운송비도 적게 든다.",
+      "tags": [
+        "conjunctive-adverb",
+        "punctuation"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "앞은 packaging uses less plastic이라는 세미콜론으로 끝난 절, 뒤는 it(주어)+costs(동사)인 절이다. although는 종속절을 만드는 접속사다. 이 문장 경계·삽입 위치에서 뒤 절을 다시 종속절로 바꾸면 연결할 주절이 없다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "게다가",
+          "reason": "앞은 packaging uses less plastic이라는 세미콜론으로 끝난 절, 뒤는 it(주어)+costs(동사)인 절이다. 접속부사 moreover가 문장 사이의 의미 관계를 표시한다. 플라스틱 절감에 더해 운송비도 적다는 장점을 덧붙이므로 moreover가 맞다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "앞은 packaging uses less plastic이라는 세미콜론으로 끝난 절, 뒤는 it(주어)+costs(동사)인 절이다. because of는 명사구를 직접 받아야 하지만 이 자리는 완결된 문장 안에서 앞 내용과의 관계를 덧붙이는 부사 자리다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~ 동안",
+          "reason": "앞은 packaging uses less plastic이라는 세미콜론으로 끝난 절, 뒤는 it(주어)+costs(동사)인 절이다. during는 명사구를 직접 받아야 하지만 이 자리는 완결된 문장 안에서 앞 내용과의 관계를 덧붙이는 부사 자리다."
+        }
+      ],
+      "clues": [
+        "uses less plastic",
+        "it costs less to transport"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-076"
+    },
+    {
+      "id": "focus-connectors-v3-100-077",
+      "number": 77,
+      "version": 1,
+      "stem": "________ your access card stops working outside normal office hours, contact building security using the telephone installed beside the entrance rather than attempting to force the door.",
+      "choices": [
+        "in the event of",
+        "in the event that",
+        "because of",
+        "despite"
+      ],
+      "answer": 1,
+      "translation": "정상 근무 시간 외에 출입 카드가 작동하지 않으면 문을 억지로 열지 말고 입구 옆 전화로 건물 보안실에 연락하세요.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사구",
+          "meaning": "~의 경우에",
+          "reason": "뒤의 your access card가 주어, stops가 동사다. [구조] in the event of는 ‘~이 발생한 경우’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "종속접속사구",
+          "meaning": "~하는 경우에",
+          "reason": "뒤의 your access card가 주어, stops가 동사다. 접속사 in the event that가 이 절을 주절에 연결한다. 근무 시간 외 카드가 작동하지 않을 경우의 조치이므로 in the event that이 맞다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "뒤의 your access card가 주어, stops가 동사다. [구조] because of는 ‘~때문에’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 your access card가 주어, stops가 동사다. [구조] despite는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        }
+      ],
+      "clues": [
+        "your access card stops working",
+        "contact building security"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-077"
+    },
+    {
+      "id": "focus-connectors-v3-100-078",
+      "number": 78,
+      "version": 1,
+      "stem": "Please inspect the security seals ________ arrival of the shipment, before signing the delivery receipt that confirms the containers reached our facility without visible damage.",
+      "choices": [
+        "as though",
+        "upon",
+        "although",
+        "because"
+      ],
+      "answer": 1,
+      "translation": "용기가 눈에 띄는 손상 없이 우리 시설에 도착했음을 확인하는 인수증에 서명하기 전에, 배송품 도착 시 보안 봉인을 검사해 주세요.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "마치 ~인 것처럼",
+          "reason": "뒤의 arrival of the shipment은 도착이라는 사건 명사구다. [구조] as though는 ‘마치 ~인 것처럼’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~하자마자/~시에",
+          "reason": "뒤의 arrival of the shipment은 도착이라는 사건 명사구다. 전치사 upon 뒤에 이 명사구를 놓는다. 배송품 도착 시 서명 전에 봉인을 검사하므로 upon arrival이 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 arrival of the shipment은 도착이라는 사건 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 arrival of the shipment은 도착이라는 사건 명사구다. [구조] because는 ‘~하기 때문에’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "arrival of the shipment"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-078"
+    },
+    {
+      "id": "focus-connectors-v3-100-079",
+      "number": 79,
+      "version": 1,
+      "stem": "This invoice was returned to the purchasing department ________ the billing address was incomplete, preventing the supplier from matching it with an authorized customer account.",
+      "choices": [
+        "because of",
+        "during",
+        "in spite of",
+        "because"
+      ],
+      "answer": 3,
+      "translation": "청구지 주소가 불완전해 공급업체가 승인된 고객 계정과 연결할 수 없었으므로 이 청구서는 구매부로 반송되었다.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "뒤의 the billing address가 주어, was가 동사다. [구조] because of는 ‘~때문에’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~ 동안",
+          "reason": "뒤의 the billing address가 주어, was가 동사다. [구조] during는 ‘어떤 기간 동안’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 the billing address가 주어, was가 동사다. [구조] in spite of는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 the billing address가 주어, was가 동사다. 접속사 because가 이 절을 주절에 연결한다. 청구 주소 불완전이 송장 반송의 원인이므로 because가 맞다."
+        }
+      ],
+      "clues": [
+        "This invoice was returned",
+        "the billing address was incomplete"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-079"
+    },
+    {
+      "id": "focus-connectors-v3-100-080",
+      "number": 80,
+      "version": 1,
+      "stem": "The pharmacist contacted the supplier immediately ________ the shipment contained tablets of the wrong strength, which could not be dispensed under the clinic's existing prescriptions.",
+      "choices": [
+        "because",
+        "because of",
+        "in spite of",
+        "during"
+      ],
+      "answer": 0,
+      "translation": "배송품에 함량이 잘못된 정제가 들어 있어 진료소의 기존 처방에 따라 조제할 수 없었으므로 약사는 즉시 공급업체에 연락했다.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 the shipment이 주어, contained가 동사다. 접속사 because가 이 절을 주절에 연결한다. 잘못된 함량의 약이 들어 있어 공급업체에 연락했다는 원인이므로 because가 맞다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "뒤의 the shipment이 주어, contained가 동사다. [구조] because of는 ‘~때문에’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 the shipment이 주어, contained가 동사다. [구조] in spite of는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~ 동안",
+          "reason": "뒤의 the shipment이 주어, contained가 동사다. [구조] during는 ‘어떤 기간 동안’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        }
+      ],
+      "clues": [
+        "contacted the supplier immediately",
+        "the shipment contained tablets of the wrong strength"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-080"
+    },
+    {
+      "id": "focus-connectors-v3-100-081",
+      "number": 81,
+      "version": 1,
+      "stem": "________ the international delegates arrive for the opening session, the interpreters will have tested every headset and replaced any units with unreliable wireless connections.",
+      "choices": [
+        "by the time",
+        "during",
+        "by",
+        "upon"
+      ],
+      "answer": 0,
+      "translation": "국제 대표단이 개회 회차에 도착할 때까지 통역사들은 모든 헤드셋을 검사하고 무선 연결이 불안정한 기기를 교체해 놓을 것이다.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사구",
+          "meaning": "~할 때까지는",
+          "reason": "뒤의 the international delegates가 주어, arrive가 동사다. 주절은 the interpreters will have tested다. 접속사 by the time가 이 절을 주절에 연결한다. 대표단 도착 때까지 점검·교체가 끝날 것이라는 완료 시점이므로 by the time이 맞다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~ 동안",
+          "reason": "뒤의 the international delegates가 주어, arrive가 동사다. 주절은 the interpreters will have tested다. [구조] during는 ‘어떤 기간 동안’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~까지",
+          "reason": "뒤의 the international delegates가 주어, arrive가 동사다. 주절은 the interpreters will have tested다. [구조] by는 ‘~까지 완료하는 기한’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~하자마자/~시에",
+          "reason": "뒤의 the international delegates가 주어, arrive가 동사다. 주절은 the interpreters will have tested다. [구조] upon는 ‘사건 직후·발생 시’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        }
+      ],
+      "clues": [
+        "the international delegates arrive",
+        "will have tested every headset"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-081"
+    },
+    {
+      "id": "focus-connectors-v3-100-082",
+      "number": 82,
+      "version": 1,
+      "stem": "A full registration refund is available ________ cancellation by the organizer, but participants who withdraw voluntarily must follow the separate reimbursement schedule stated in their confirmation email.",
+      "choices": [
+        "in the event of",
+        "while",
+        "although",
+        "in the event that"
+      ],
+      "answer": 0,
+      "translation": "주최자가 취소하는 경우 등록비 전액 환불이 가능하나 자발적으로 철회하는 참가자는 확인 이메일의 별도 환급 일정을 따라야 한다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사구",
+          "meaning": "~의 경우에",
+          "reason": "뒤의 cancellation by the organizer는 취소라는 사건 명사구다. 전치사 in the event of 뒤에 이 명사구를 놓는다. 주최 측 취소가 발생한 경우의 전액 환불이므로 in the event of가 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~하는 동안",
+          "reason": "뒤의 cancellation by the organizer는 취소라는 사건 명사구다. [구조] while는 ‘~하는 동안’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 cancellation by the organizer는 취소라는 사건 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사구",
+          "meaning": "~하는 경우에",
+          "reason": "뒤의 cancellation by the organizer는 취소라는 사건 명사구다. [구조] in the event that는 ‘~이 발생하는 경우’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "cancellation by the organizer"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-082"
+    },
+    {
+      "stem": "Please save your registration code before closing this page; ________, you will need to contact support to recover your application.",
+      "choices": [
+        "Instead",
+        "Otherwise",
+        "Similarly",
+        "Moreover"
+      ],
+      "answer": 1,
+      "translation": "이 페이지를 닫기 전에 등록 코드를 저장하세요. 그렇지 않으면 신청서를 복구하려고 고객지원에 연락해야 합니다.",
+      "tags": [
+        "adverb-warning",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "접속부사",
+          "meaning": "대신에",
+          "reason": "앞은 save라는 명령문(주어 you 생략), 세미콜론 뒤는 you(주어)+will need(동사)인 절이다. [의미] Instead도 부사로 이 자리에 올 수 있지만 뜻은 ‘그 대신’이다. 저장 대신 문의하라는 권고가 아니라, 저장하지 않은 경우의 불리한 결과다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "그렇지 않으면",
+          "reason": "앞은 save라는 명령문(주어 you 생략), 세미콜론 뒤는 you(주어)+will need(동사)인 절이다. 접속부사 Otherwise가 문장 사이의 의미 관계를 표시한다. 등록 코드를 저장하지 않으면 복구 문의가 필요하다는 결과이므로 Otherwise가 맞다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "마찬가지로",
+          "reason": "앞은 save라는 명령문(주어 you 생략), 세미콜론 뒤는 you(주어)+will need(동사)인 절이다. [의미] Similarly도 부사로 이 자리에 올 수 있지만 뜻은 ‘마찬가지로’이다. 저장 지시와 복구 문의를 비슷한 사례로 나열하는 것이 아니다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "게다가",
+          "reason": "앞은 save라는 명령문(주어 you 생략), 세미콜론 뒤는 you(주어)+will need(동사)인 절이다. [의미] Moreover도 부사로 이 자리에 올 수 있지만 뜻은 ‘게다가’이다. 저장과 문의를 모두 하라는 추가 지침이 아니라 저장하지 않았을 때의 결과다."
+        }
+      ],
+      "draftNumber": 5,
+      "id": "focus-connectors-v3-100-083",
+      "number": 83,
+      "version": 1,
+      "clues": [
+        "Please save your registration code",
+        "you will need to contact support"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-083"
+    },
+    {
+      "stem": "We will not replace the entire conveyor this year. ________, we will upgrade its motor and retain the existing frame.",
+      "choices": [
+        "Instead",
+        "Similarly",
+        "Previously",
+        "For example"
+      ],
+      "answer": 0,
+      "translation": "우리는 올해 컨베이어 전체를 교체하지 않을 것이다. 대신 모터를 개선하고 기존 프레임을 유지할 것이다.",
+      "tags": [
+        "adverb-alternative",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "접속부사",
+          "meaning": "대신에",
+          "reason": "앞 문장은 We will not replace로 교체를 부정하고, 다음 문장의 주어는 we, 동사는 will upgrade다. 접속부사 Instead가 문장 사이의 의미 관계를 표시한다. 전체 교체 대신 모터만 개량하는 대안을 제시하므로 Instead가 맞다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "마찬가지로",
+          "reason": "앞 문장은 We will not replace로 교체를 부정하고, 다음 문장의 주어는 we, 동사는 will upgrade다. [의미] Similarly도 부사로 이 자리에 올 수 있지만 뜻은 ‘마찬가지로’이다. 전체 교체와 모터 개량은 유사 사례를 나열한 것이 아니다."
+        },
+        {
+          "form": "부사",
+          "meaning": "이전에",
+          "reason": "앞의 will not replace와 뒤의 will upgrade는 올해의 향후 계획이다. 이전 시점을 말하는 Previously는 맞지 않는다."
+        },
+        {
+          "form": "접속부사구",
+          "meaning": "예를 들어",
+          "reason": "앞의 will not replace the entire conveyor는 전체 교체를 하지 않겠다는 계획이다. 뒤의 will upgrade its motor는 교체하지 않는다는 말의 구체적인 예를 나열하기보다, 전체 교체를 대신할 조치를 제시한다. 예시를 도입하는 For example이 아니라 대안의 Instead가 필요하다."
+        }
+      ],
+      "draftNumber": 6,
+      "id": "focus-connectors-v3-100-084",
+      "number": 84,
+      "version": 1,
+      "clues": [
+        "will not replace the entire conveyor",
+        "will upgrade its motor"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-084"
+    },
+    {
+      "id": "focus-connectors-v3-100-085",
+      "number": 85,
+      "version": 1,
+      "stem": "________ the initial shipment arrived late, the customer renewed the supply contract after the account manager offered a reliable tracking system for future deliveries.",
+      "choices": [
+        "despite",
+        "even though",
+        "because of",
+        "in spite of"
+      ],
+      "answer": 1,
+      "translation": "첫 배송이 늦었는데도 담당 관리자가 이후 배송용의 신뢰할 만한 추적 시스템을 제안하자 고객은 공급 계약을 갱신했다.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 the initial shipment이 주어, arrived가 동사다. [구조] despite는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~인데도",
+          "reason": "뒤의 the initial shipment이 주어, arrived가 동사다. 접속사 even though가 이 절을 주절에 연결한다. 첫 배송이 늦었지만 계약을 갱신한 양보이므로 even though가 맞다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "뒤의 the initial shipment이 주어, arrived가 동사다. [구조] because of는 ‘~때문에’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 the initial shipment이 주어, arrived가 동사다. [구조] in spite of는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        }
+      ],
+      "clues": [
+        "the initial shipment arrived late",
+        "the customer renewed the supply contract"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-085"
+    },
+    {
+      "stem": "The exhibition will remain at the city gallery ________ September 30, after which it will move to the national museum.",
+      "choices": [
+        "by",
+        "until",
+        "during",
+        "since"
+      ],
+      "answer": 1,
+      "translation": "그 전시는 9월 30일까지 시립 미술관에 머무른 뒤 국립 박물관으로 옮겨 갈 예정이다.",
+      "tags": [
+        "until-end",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사",
+          "meaning": "~까지 완료",
+          "reason": "뒤의 September 30은 날짜 명사구이고 주절은 will remain이다. [의미] by는 9월 30일까지 끝내야 하는 완료 기한이다. will remain과 after which ... move는 전시 상태를 그날까지 지속한다는 뜻이다."
+        },
+        {
+          "form": "전치사·접속사",
+          "meaning": "~까지 계속",
+          "reason": "뒤의 September 30은 날짜 명사구이고 주절은 will remain이다. 전치사 until 뒤에 이 명사구를 놓는다. 9월 30일까지 전시를 유지하고 이후 옮긴다는 지속의 끝이므로 until이 맞다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~동안",
+          "reason": "뒤의 September 30은 날짜 명사구이고 주절은 will remain이다. [의미] during은 기간의 길이를 차지하는 행사·기간과 결합한다. September 30을 유지 상태의 끝점으로 삼는 이 문장에는 until이 맞다."
+        },
+        {
+          "form": "전치사·접속사",
+          "meaning": "~이후로; ~이므로",
+          "reason": "뒤의 September 30은 날짜 명사구이고 주절은 will remain이다. [의미] since는 9월 30일을 유지 시작점으로 잡는다. after which it will move는 그날 이후 옮긴다고 하므로 종료 시점이 필요하다."
+        }
+      ],
+      "draftNumber": 23,
+      "id": "focus-connectors-v3-100-086",
+      "number": 86,
+      "version": 1,
+      "clues": [
+        "will remain at the city gallery",
+        "September 30"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-086"
+    },
+    {
+      "id": "focus-connectors-v3-100-087",
+      "number": 87,
+      "version": 1,
+      "stem": "________ the keynote speaker had lost her presentation notes during the journey, she delivered a clear account of the research and answered detailed questions afterward.",
+      "choices": [
+        "even though",
+        "despite",
+        "in spite of",
+        "because of"
+      ],
+      "answer": 0,
+      "translation": "이동 중 발표 메모를 잃어버렸는데도 기조연설자는 연구를 명료하게 설명하고 이후 상세한 질문에도 답했다.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "~인데도",
+          "reason": "뒤의 the keynote speaker가 주어, had lost가 동사다. 접속사 even though가 이 절을 주절에 연결한다. 노트를 잃었는데도 발표를 잘한 양보이므로 even though가 맞다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 the keynote speaker가 주어, had lost가 동사다. [구조] despite는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 the keynote speaker가 주어, had lost가 동사다. [구조] in spite of는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "뒤의 the keynote speaker가 주어, had lost가 동사다. [구조] because of는 ‘~때문에’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        }
+      ],
+      "clues": [
+        "the keynote speaker had lost her presentation notes",
+        "she delivered a clear account"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-087"
+    },
+    {
+      "id": "focus-connectors-v3-100-088",
+      "number": 88,
+      "version": 1,
+      "stem": "Use the alternate component supplier ________ a prolonged factory shutdown, after confirming that its available inventory meets the inspection standards specified in our manufacturing contract.",
+      "choices": [
+        "although",
+        "while",
+        "in the event of",
+        "in the event that"
+      ],
+      "answer": 2,
+      "translation": "공장의 장기 가동 중단 시 가용 재고가 제조 계약에 명시된 검사 기준을 충족하는지 확인한 후 대체 부품 공급업체를 이용하세요.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 a prolonged factory shutdown은 가동 중단을 가리키는 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~하는 동안",
+          "reason": "뒤의 a prolonged factory shutdown은 가동 중단을 가리키는 명사구다. [구조] while는 ‘~하는 동안’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~의 경우에",
+          "reason": "뒤의 a prolonged factory shutdown은 가동 중단을 가리키는 명사구다. 전치사 in the event of 뒤에 이 명사구를 놓는다. 장기 공장 중단 시 대체 공급업체를 이용하므로 in the event of가 맞다."
+        },
+        {
+          "form": "종속접속사구",
+          "meaning": "~하는 경우에",
+          "reason": "뒤의 a prolonged factory shutdown은 가동 중단을 가리키는 명사구다. [구조] in the event that는 ‘~이 발생하는 경우’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "a prolonged factory shutdown"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-088"
+    },
+    {
+      "id": "focus-connectors-v3-100-089",
+      "number": 89,
+      "version": 1,
+      "stem": "________ the signing of the commercial lease, tenants must pay the security deposit before the property manager releases keys or authorizes contractors to enter the premises.",
+      "choices": [
+        "although",
+        "because",
+        "upon",
+        "as though"
+      ],
+      "answer": 2,
+      "translation": "상업용 임대 계약 서명 시 세입자는 관리자가 열쇠를 제공하거나 시공업체의 현장 출입을 승인하기 전에 보증금을 납부해야 한다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 the signing of the commercial lease는 계약 서명이라는 사건 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 the signing of the commercial lease는 계약 서명이라는 사건 명사구다. [구조] because는 ‘~하기 때문에’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~하자마자/~시에",
+          "reason": "뒤의 the signing of the commercial lease는 계약 서명이라는 사건 명사구다. 전치사 upon 뒤에 이 명사구를 놓는다. 계약에 서명하는 시점에 보증금을 내야 하므로 upon이 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "마치 ~인 것처럼",
+          "reason": "뒤의 the signing of the commercial lease는 계약 서명이라는 사건 명사구다. [구조] as though는 ‘마치 ~인 것처럼’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "the signing of the commercial lease"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-089"
+    },
+    {
+      "stem": "Ms. Eve has felt energetic and motivated to participate in more outdoor activities ------- last month’s hiking trip.",
+      "choices": [
+        "until",
+        "past",
+        "since",
+        "in order that"
+      ],
+      "answer": 2,
+      "translation": "Eve 씨는 지난달 하이킹 이후 활력이 있고 더 많은 야외 활동에 참여할 의욕을 느껴 왔다.",
+      "tags": [
+        "source-recheck",
+        "structure-then-meaning"
+      ],
+      "source": {
+        "set": "흰둥이 RC Test 1",
+        "number": 119,
+        "originalReference": "whitedog-rc-test1-119",
+        "kind": "provided-wrong-question"
+      },
+      "optionDetails": [
+        {
+          "form": "전치사·접속사",
+          "meaning": "~까지 계속",
+          "reason": "앞은 Ms. Eve(주어)+has felt(현재완료), 뒤의 last month’s hiking trip은 사건 명사구다. [의미] until last month’s hiking trip은 등산 때까지 느꼈다는 종료점이다. has felt와 participate in more outdoor activities는 등산 이후 지금까지의 변화가 이어지는 맥락이다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~을 지나",
+          "reason": "앞은 Ms. Eve(주어)+has felt(현재완료), 뒤의 last month’s hiking trip은 사건 명사구다. [의미] past는 ~을 지나서라는 뜻이며, has felt와 함께 등산 이후 지금까지라는 출발 시점을 표시하지 못한다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~이후로",
+          "reason": "앞은 Ms. Eve(주어)+has felt(현재완료), 뒤의 last month’s hiking trip은 사건 명사구다. 전치사 since 뒤에 이 명사구를 놓는다. 지난달 등산 이후 지금까지 활기·의욕을 느끼는 시작점을 나타내므로 since가 맞다."
+        },
+        {
+          "form": "목적 접속사",
+          "meaning": "~하기 위해",
+          "reason": "앞은 Ms. Eve(주어)+has felt(현재완료), 뒤의 last month’s hiking trip은 사건 명사구다. [구조] in order that는 ‘~하도록’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "id": "focus-connectors-v3-100-090",
+      "number": 90,
+      "version": 1,
+      "clues": [
+        "has felt energetic and motivated",
+        "last month’s hiking trip"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-090"
+    },
+    {
+      "id": "focus-connectors-v3-100-091",
+      "number": 91,
+      "version": 1,
+      "stem": "________ the overnight maintenance window, card payments may fail at unattended kiosks, so customers purchasing early train tickets should have an alternative payment method available.",
+      "choices": [
+        "while",
+        "although",
+        "during",
+        "because"
+      ],
+      "answer": 2,
+      "translation": "야간 정비 시간 동안 무인 판매기의 카드 결제가 실패할 수 있으므로 이른 기차표를 구매하는 고객은 다른 결제 수단을 준비해야 한다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "~하는 동안",
+          "reason": "뒤의 the overnight maintenance window는 작업 시간대를 나타내는 명사구다. [구조] while는 ‘~하는 동안’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 the overnight maintenance window는 작업 시간대를 나타내는 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~ 동안",
+          "reason": "뒤의 the overnight maintenance window는 작업 시간대를 나타내는 명사구다. 전치사 during 뒤에 이 명사구를 놓는다. 야간 작업 시간대에 카드 결제가 실패할 수 있으므로 during이 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 the overnight maintenance window는 작업 시간대를 나타내는 명사구다. [구조] because는 ‘~하기 때문에’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "the overnight maintenance window"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-091"
+    },
+    {
+      "id": "focus-connectors-v3-100-092",
+      "number": 92,
+      "version": 1,
+      "stem": "Our bid for the station renovation was rejected ________ it exceeded the client's budget, despite offering a shorter construction schedule than the competing proposals.",
+      "choices": [
+        "during",
+        "because",
+        "in spite of",
+        "because of"
+      ],
+      "answer": 1,
+      "translation": "경쟁 제안보다 공사 기간이 짧았는데도 우리 역 보수 공사 입찰액이 고객 예산을 초과해 거절되었다.",
+      "tags": [
+        "subordinator",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사",
+          "meaning": "~ 동안",
+          "reason": "뒤의 it이 주어, exceeded가 동사다. [구조] during는 ‘어떤 기간 동안’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 it이 주어, exceeded가 동사다. 접속사 because가 이 절을 주절에 연결한다. 제안이 예산을 넘은 것이 거절의 원인이므로 because가 맞다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 it이 주어, exceeded가 동사다. [구조] in spite of는 ‘~에도 불구하고’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        },
+        {
+          "form": "전치사구",
+          "meaning": "~ 때문에",
+          "reason": "뒤의 it이 주어, exceeded가 동사다. [구조] because of는 ‘~때문에’의 전치사로 명사구를 받는다. 이 문장처럼 주어·동사가 있는 절을 직접 이끌 수 없다."
+        }
+      ],
+      "clues": [
+        "Our bid for the station renovation was rejected",
+        "it exceeded the client's budget"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-092"
+    },
+    {
+      "stem": "The new machine uses less energy than its predecessor; ________, the initial purchase price is significantly higher, which may discourage smaller firms.",
+      "choices": [
+        "For example",
+        "Similarly",
+        "Consequently",
+        "However"
+      ],
+      "answer": 3,
+      "translation": "새 기계는 이전 모델보다 에너지를 덜 쓰지만 초기 구매 가격이 훨씬 높아 소규모 업체는 구매를 꺼릴 수 있다.",
+      "tags": [
+        "adverb-contrast",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "접속부사구",
+          "meaning": "예를 들어",
+          "reason": "machine uses 절 뒤 세미콜론이 있고, 뒤 절은 the initial purchase price(주어)+is(동사)다. [의미] For example도 부사로 이 자리에 올 수 있지만 뜻은 ‘예를 들어’이다. 높은 구매가는 에너지 절약의 사례가 아니다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "마찬가지로",
+          "reason": "machine uses 절 뒤 세미콜론이 있고, 뒤 절은 the initial purchase price(주어)+is(동사)다. [의미] Similarly도 부사로 이 자리에 올 수 있지만 뜻은 ‘마찬가지로’이다. 에너지 절약과 가격 인상은 같은 방향의 장점이 아니다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "그 결과",
+          "reason": "machine uses 절 뒤 세미콜론이 있고, 뒤 절은 the initial purchase price(주어)+is(동사)다. [의미] Consequently도 부사로 이 자리에 올 수 있지만 뜻은 ‘그 결과’이다. 에너지 절약 때문에 구매가가 높아졌다는 인과는 제시되지 않았다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "그러나",
+          "reason": "machine uses 절 뒤 세미콜론이 있고, 뒤 절은 the initial purchase price(주어)+is(동사)다. 접속부사 However가 문장 사이의 의미 관계를 표시한다. 에너지는 적게 쓰지만 구매 가격은 더 비싸다는 대조이므로 However가 맞다."
+        }
+      ],
+      "draftNumber": 10,
+      "id": "focus-connectors-v3-100-093",
+      "number": 93,
+      "version": 1,
+      "clues": [
+        "uses less energy",
+        "the initial purchase price is significantly higher"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-093"
+    },
+    {
+      "stem": "The northern branch now provides free bicycle parking. ________, the southern branch has introduced secure racks for customers who commute by bike.",
+      "choices": [
+        "Instead",
+        "Consequently",
+        "Similarly",
+        "However"
+      ],
+      "answer": 2,
+      "translation": "북부 지점은 이제 자전거 무료 주차를 제공한다. 마찬가지로 남부 지점도 자전거로 통근하는 고객을 위해 안전한 거치대를 설치했다.",
+      "tags": [
+        "adverb-similarity",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "접속부사",
+          "meaning": "대신에",
+          "reason": "북부 지점의 provides 문장 뒤에 남부 지점의 has introduced라는 별도 문장이 온다. [의미] Instead도 부사로 이 자리에 올 수 있지만 뜻은 ‘그 대신’이다. 남부 시설은 북부 시설을 대신하는 것이 아니다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "그 결과",
+          "reason": "북부 지점의 provides 문장 뒤에 남부 지점의 has introduced라는 별도 문장이 온다. [의미] Consequently도 부사로 이 자리에 올 수 있지만 뜻은 ‘그 결과’이다. 북부의 주차장 때문에 남부가 설치했다는 인과는 제시되지 않았다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "마찬가지로",
+          "reason": "북부 지점의 provides 문장 뒤에 남부 지점의 has introduced라는 별도 문장이 온다. 접속부사 Similarly가 문장 사이의 의미 관계를 표시한다. 두 지점 모두 자전거 주차 시설을 제공한 유사 사례이므로 Similarly가 맞다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "그러나",
+          "reason": "북부 지점의 provides 문장 뒤에 남부 지점의 has introduced라는 별도 문장이 온다. [의미] However도 부사로 이 자리에 올 수 있지만 뜻은 ‘그러나’이다. 두 지점 모두 자전거 시설을 제공하므로 반대되는 내용이 아니다."
+        }
+      ],
+      "draftNumber": 15,
+      "id": "focus-connectors-v3-100-094",
+      "number": 94,
+      "version": 1,
+      "clues": [
+        "free bicycle parking",
+        "secure racks for customers who commute by bike"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-094"
+    },
+    {
+      "id": "focus-connectors-v3-100-095",
+      "number": 95,
+      "version": 1,
+      "stem": "Please return the signed research consent form ________ noon on Monday so the coordinator can finalize participant assignments before the laboratory schedules its equipment.",
+      "choices": [
+        "by",
+        "by the time",
+        "although",
+        "because"
+      ],
+      "answer": 0,
+      "translation": "조정 담당자가 실험실 장비 일정 확정 전에 참가자 배정을 마칠 수 있도록 월요일 정오까지 서명한 연구 동의서를 돌려주세요.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사",
+          "meaning": "~까지",
+          "reason": "뒤의 noon on Monday는 시각을 나타내는 명사구다. 전치사 by 뒤에 이 명사구를 놓는다. 배정을 확정할 수 있도록 월요일 정오까지 동의서를 반환할 완료 기한이므로 by가 맞다."
+        },
+        {
+          "form": "종속접속사구",
+          "meaning": "~할 때까지는",
+          "reason": "뒤의 noon on Monday는 시각을 나타내는 명사구다. [구조] by the time는 ‘~할 때까지의 완료 시점’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 noon on Monday는 시각을 나타내는 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "뒤의 noon on Monday는 시각을 나타내는 명사구다. [구조] because는 ‘~하기 때문에’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "Please return the signed research consent form",
+        "noon on Monday"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-095"
+    },
+    {
+      "id": "focus-connectors-v3-100-096",
+      "number": 96,
+      "version": 1,
+      "stem": "The first supplier quoted a substantially lower price; ________, its delivery schedule was unacceptable because the essential components would arrive after our production deadline.",
+      "choices": [
+        "although",
+        "because",
+        "despite",
+        "however"
+      ],
+      "answer": 3,
+      "translation": "첫 공급업체의 견적은 훨씬 낮았지만 필수 부품이 생산 기한 뒤에 도착할 예정이어서 배송 일정을 받아들일 수 없었다.",
+      "tags": [
+        "conjunctive-adverb",
+        "punctuation"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "supplier quoted 절은 세미콜론으로 끝나고, 뒤 절은 its delivery schedule(주어)+was(동사)다. although는 종속절을 만드는 접속사다. 이 문장 경계·삽입 위치에서 뒤 절을 다시 종속절로 바꾸면 연결할 주절이 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~이기 때문에",
+          "reason": "supplier quoted 절은 세미콜론으로 끝나고, 뒤 절은 its delivery schedule(주어)+was(동사)다. because는 종속절을 만드는 접속사다. 이 문장 경계·삽입 위치에서 뒤 절을 다시 종속절로 바꾸면 연결할 주절이 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "supplier quoted 절은 세미콜론으로 끝나고, 뒤 절은 its delivery schedule(주어)+was(동사)다. despite는 명사구를 직접 받아야 하지만 이 자리는 완결된 문장 안에서 앞 내용과의 관계를 덧붙이는 부사 자리다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "그러나",
+          "reason": "supplier quoted 절은 세미콜론으로 끝나고, 뒤 절은 its delivery schedule(주어)+was(동사)다. 접속부사 however가 문장 사이의 의미 관계를 표시한다. 가격은 낮지만 일정은 받아들일 수 없다는 대조이므로 however가 맞다."
+        }
+      ],
+      "clues": [
+        "a substantially lower price",
+        "its delivery schedule was unacceptable"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-096"
+    },
+    {
+      "id": "focus-connectors-v3-100-097",
+      "number": 97,
+      "version": 1,
+      "stem": "The temporary reception desk will remain in the lobby ________ the renovation is completed; it will then be removed.",
+      "choices": [
+        "since",
+        "until",
+        "as though",
+        "because"
+      ],
+      "answer": 1,
+      "translation": "임시 안내 데스크는 보수가 끝날 때까지 로비에 남아 있다가 그 후 철거된다.",
+      "tags": [
+        "until-end",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사·접속사",
+          "meaning": "~이후로·~이므로",
+          "reason": "뒤의 the renovation이 주어, is completed가 동사다. 주절의 will remain 뒤에 이어진다. [의미] since는 보수 완료를 데스크 유지의 시작으로 삼는다. it will then be removed는 보수가 끝나면 치운다고 하므로 종료 시점이 필요하다."
+        },
+        {
+          "form": "전치사·접속사",
+          "meaning": "~까지 계속",
+          "reason": "뒤의 the renovation이 주어, is completed가 동사다. 주절의 will remain 뒤에 이어진다. 접속사 until가 이 절을 주절에 연결한다. 보수가 끝날 때까지 임시 안내 데스크를 유지한 뒤 치우므로 지속의 끝인 until이 맞다."
+        },
+        {
+          "form": "부사절 접속사",
+          "meaning": "마치 ~처럼",
+          "reason": "뒤의 the renovation이 주어, is completed가 동사다. 주절의 will remain 뒤에 이어진다. [의미] as though는 보수가 끝난 것처럼 유지한다는 가정적 유사다. 실제 보수 완료까지 유지한 뒤 철거하는 시간 관계가 아니다."
+        },
+        {
+          "form": "부사절 접속사",
+          "meaning": "~때문에",
+          "reason": "뒤의 the renovation이 주어, is completed가 동사다. 주절의 will remain 뒤에 이어진다. [의미] because는 보수가 완료되기 때문에 데스크를 유지한다는 원인이 된다. 완료 직후 removed라는 설명과 맞지 않는다."
+        }
+      ],
+      "clues": [
+        "will remain in the lobby",
+        "the renovation is completed",
+        "it will then be removed"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-097"
+    },
+    {
+      "id": "focus-connectors-v3-100-098",
+      "number": 98,
+      "version": 1,
+      "stem": "________ the unexpected power outage that disabled its ovens overnight, the bakery fulfilled every catering order using equipment borrowed from a nearby restaurant.",
+      "choices": [
+        "despite",
+        "although",
+        "even though",
+        "as though"
+      ],
+      "answer": 0,
+      "translation": "밤새 오븐을 멈추게 한 예기치 못한 정전에도 제과점은 인근 식당에서 빌린 장비로 모든 출장 연회 주문을 이행했다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 the unexpected power outage that disabled its ovens overnight는 정전 명사구다. that절은 outage를 꾸민다. 전치사 despite 뒤에 이 명사구를 놓는다. 오븐을 못 쓰게 된 정전에도 주문을 이행한 양보이므로 despite가 맞다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 the unexpected power outage that disabled its ovens overnight는 정전 명사구다. that절은 outage를 꾸민다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~인데도",
+          "reason": "뒤의 the unexpected power outage that disabled its ovens overnight는 정전 명사구다. that절은 outage를 꾸민다. [구조] even though는 ‘~임에도’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "마치 ~인 것처럼",
+          "reason": "뒤의 the unexpected power outage that disabled its ovens overnight는 정전 명사구다. that절은 outage를 꾸민다. [구조] as though는 ‘마치 ~인 것처럼’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        }
+      ],
+      "clues": [
+        "the unexpected power outage",
+        "the bakery fulfilled every catering order"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-098"
+    },
+    {
+      "stem": "The discount applies only to purchases made before noon. ________, orders placed at twelve thirty will be charged at the regular price.",
+      "choices": [
+        "In other words",
+        "Moreover",
+        "Meanwhile",
+        "On the contrary"
+      ],
+      "answer": 0,
+      "translation": "할인은 정오 이전 구매에만 적용된다. 다시 말해 12시 30분에 접수된 주문에는 정상 가격이 청구된다.",
+      "tags": [
+        "adverb-restatement",
+        "structure-then-meaning"
+      ],
+      "optionDetails": [
+        {
+          "form": "접속부사구",
+          "meaning": "다시 말해서",
+          "reason": "첫 문장은 noon 이전 주문만 할인된다고 끝나고, 다음 절은 orders placed at twelve thirty(주어)+will be charged(동사)다. 접속부사 In other words가 문장 사이의 의미 관계를 표시한다. 할인 조건을 12시 30분 주문의 정상가 적용으로 바꾸어 설명하므로 In other words가 맞다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "게다가",
+          "reason": "첫 문장은 noon 이전 주문만 할인된다고 끝나고, 다음 절은 orders placed at twelve thirty(주어)+will be charged(동사)다. [의미] Moreover도 부사로 이 자리에 올 수 있지만 뜻은 ‘게다가’이다. 정상가 부과는 별개 혜택의 추가가 아니라 정오 이전 할인 조건의 풀이다."
+        },
+        {
+          "form": "접속부사",
+          "meaning": "그동안; 한편",
+          "reason": "첫 문장은 noon 이전 주문만 할인된다고 끝나고, 다음 절은 orders placed at twelve thirty(주어)+will be charged(동사)다. [의미] Meanwhile도 부사로 이 자리에 올 수 있지만 뜻은 ‘그동안·동시에’이다. 같은 시간의 두 행동이 아니라 할인 조건을 다른 표현으로 설명한다."
+        },
+        {
+          "form": "접속부사구",
+          "meaning": "그와는 반대로",
+          "reason": "첫 문장은 noon 이전 주문만 할인된다고 끝나고, 다음 절은 orders placed at twelve thirty(주어)+will be charged(동사)다. [의미] On the contrary도 부사로 이 자리에 올 수 있지만 뜻은 ‘그와 반대로·오히려’이다. 정오 이후 정상가는 앞 할인 조건을 반박하지 않고 구체화한다."
+        }
+      ],
+      "draftNumber": 9,
+      "id": "focus-connectors-v3-100-099",
+      "number": 99,
+      "version": 1,
+      "clues": [
+        "only to purchases made before noon",
+        "orders placed at twelve thirty"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-099"
+    },
+    {
+      "id": "focus-connectors-v3-100-100",
+      "number": 100,
+      "version": 1,
+      "stem": "The audit proceeded on schedule ________ several missing receipts, as the finance team obtained duplicate records directly from the vendors involved.",
+      "choices": [
+        "although",
+        "as though",
+        "even though",
+        "despite"
+      ],
+      "answer": 3,
+      "translation": "영수증 몇 장이 없었는데도 재무팀이 해당 거래처에서 사본을 직접 구해 감사는 예정대로 진행되었다.",
+      "tags": [
+        "preposition",
+        "connector-vs-preposition"
+      ],
+      "optionDetails": [
+        {
+          "form": "종속접속사",
+          "meaning": "비록 ~이지만",
+          "reason": "뒤의 several missing receipts는 영수증을 나타내는 명사구다. [구조] although는 ‘~이지만’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "마치 ~인 것처럼",
+          "reason": "뒤의 several missing receipts는 영수증을 나타내는 명사구다. [구조] as though는 ‘마치 ~인 것처럼’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "종속접속사",
+          "meaning": "~인데도",
+          "reason": "뒤의 several missing receipts는 영수증을 나타내는 명사구다. [구조] even though는 ‘~임에도’의 접속사다. 뒤 명사구를 직접 받는 전치사 자리에 들어갈 수 없다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~에도 불구하고",
+          "reason": "뒤의 several missing receipts는 영수증을 나타내는 명사구다. 전치사 despite 뒤에 이 명사구를 놓는다. 영수증이 일부 없어도 감사를 예정대로 진행한 양보이므로 despite가 맞다."
+        }
+      ],
+      "clues": [
+        "proceeded on schedule",
+        "several missing receipts"
+      ],
+      "previousRevisionId": "focus-connectors-v2-100-100"
+    }
+  ],
+  "previousBankId": "focus-connectors-v2-100"
+}

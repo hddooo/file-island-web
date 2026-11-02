@@ -1,0 +1,161 @@
+[
+  {
+    "file": "lecture-notes.js",
+    "era": "goryeo",
+    "index": 0,
+    "q": "청연각·보문각을 두고 관학을 키운 왕은?",
+    "a": "예종",
+    "mod": [
+      "G03"
+    ]
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "goryeo",
+    "index": 1,
+    "q": "교정도감과 봉사 10조의 주인공은?",
+    "a": "최충헌",
+    "mod": [
+      "G04"
+    ]
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "goryeo",
+    "index": 2,
+    "q": "‘교관겸수’를 내세운 스님은?",
+    "a": "의천",
+    "mod": [
+      "G10"
+    ]
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "goryeo",
+    "index": 3,
+    "q": "‘정혜쌍수·돈오점수’를 내세운 스님은?",
+    "a": "지눌",
+    "mod": [
+      "G10"
+    ]
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "goryeo",
+    "index": 4,
+    "q": "소를 이용한 깊이갈이가 널리 퍼진 시대는?",
+    "a": "고려",
+    "mod": [
+      "G09"
+    ]
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "goryeo",
+    "index": 5,
+    "q": "직지심체요절을 찍은 절은?",
+    "a": "청주 흥덕사",
+    "mod": [
+      "G11"
+    ]
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "goryeo",
+    "index": 6,
+    "q": "광종 다음, 전시과를 시작한 왕은?",
+    "a": "5대 경종 (그다음 6대 성종)",
+    "mod": [
+      "G01",
+      "G09"
+    ]
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "goryeo",
+    "index": 7,
+    "q": "이자겸의 난(1126) 다음에 학습 흐름에서 다루는 사건은?",
+    "a": "묘청의 서경 천도 운동 (1126 → 1135, 9년 뒤) → 김부식이 진압",
+    "mod": [
+      "G03"
+    ]
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "goryeo",
+    "index": 8,
+    "q": "김윤후가 몽골군을 막아 낸 두 곳은?",
+    "a": "처인성 · 충주성",
+    "mod": [
+      "G05"
+    ]
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "goryeo",
+    "index": 9,
+    "q": "위화도 회군 뒤 조선 건국까지의 순서는?",
+    "a": "1388 위화도 회군 → 1391 과전법 → 1392 조선 건국",
+    "mod": [
+      "G07"
+    ]
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "goryeo",
+    "index": 0,
+    "q": "정방을 둔 무신 집권자는?",
+    "a": "최우",
+    "src": [
+      "goryeo-07"
+    ]
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "goryeo",
+    "index": 1,
+    "q": "교정도감을 둔 무신 집권자는?",
+    "a": "최충헌",
+    "src": [
+      "goryeo-07"
+    ]
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "goryeo",
+    "index": 2,
+    "q": "진포 대첩에서 화포를 쓴 인물은?",
+    "a": "최무선",
+    "src": [
+      "goryeo-12"
+    ]
+  },
+  {
+    "file": "study-notes.js",
+    "era": "goryeo",
+    "index": 0,
+    "q": "서희가 담판으로 얻은 땅은?",
+    "a": "강동 6주"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "goryeo",
+    "index": 1,
+    "q": "귀주 대첩을 이끈 인물은?",
+    "a": "강감찬"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "goryeo",
+    "index": 2,
+    "q": "원래 양인이던 노비를 풀어 준 왕은?",
+    "a": "광종(노비안검법)"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "goryeo",
+    "index": 3,
+    "q": "현존 최고 금속 활자본과 그 간행 장소는?",
+    "a": "『직지심체요절』, 청주 흥덕사"
+  }
+]

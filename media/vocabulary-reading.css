@@ -1,0 +1,116 @@
+/* TOEIC word list reading layout (printed-wordbook style). Scoped to the notebook host only:
+   #toeicNotesHost is set solely for the #toeic/notebook view, so Korean-history notes, grammar notes,
+   the wrong-answer notebook and the in-notebook mini quiz are untouched.
+   Hierarchy: English word → part of speech → core meaning → example + translation → optional tips.
+   Content, order and the hide-meaning ([hidden]) behaviour are owned by toeic-notes.js; nothing here
+   sets display on elements the hide-meaning mode toggles. */
+html body #toeicNotesHost{
+  --vr-panel:#0c1712;--vr-line:#2f4a3c;--vr-rule:#3c6650;--vr-word:#8ef0b0;--vr-text:#f1f6ef;--vr-body:#e2eae1;--vr-muted:#b4c4b8;
+  --vr-ko:"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic","Nanum Gothic",system-ui,sans-serif;
+  --vr-en:Arial,Helvetica,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;
+}
+/* A steady reading panel behind the list; the game world stays outside it. */
+html body #toeicNotesHost.tn .tn-readonly-list{
+  box-sizing:border-box;max-width:1040px;margin-inline:auto;padding:4px 18px;
+  background:var(--vr-panel)!important;border:1px solid var(--vr-line);border-radius:10px;
+}
+html body #toeicNotesHost.tn .tn-readonly-list>p{font-family:var(--vr-ko)!important;font-size:16px;line-height:1.7;color:var(--vr-body)!important;margin:18px 0}
+/* One entry: hairline-separated like a printed page, no boxed cards. */
+html body #toeicNotesHost.tn .tn-readonly-list .tn-word-card{
+  position:relative;box-sizing:border-box;margin:0!important;padding:20px 0 14px!important;
+  border:0!important;border-bottom:1px solid var(--vr-line)!important;border-radius:0!important;background:transparent!important;
+  grid-template-columns:minmax(0,1fr)!important;row-gap:10px!important;column-gap:32px!important;
+}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-word-card:last-child{border-bottom:0!important}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-word-card.tn-is-checked{border-left:0!important;background:linear-gradient(90deg,#173326,transparent 70%)!important}
+/* The theme paints every div/section; inside an entry the panel is the only surface. */
+html body #toeicNotesHost.tn .tn-readonly-list .tn-word-card :is(div,section,details,summary,ul,li,p,small,span:not(.tn-pos-badge)){background:transparent!important;box-shadow:none!important}
+/* Word line: the word is the largest thing in the entry; part of speech sits beside it, quieter. */
+html body #toeicNotesHost.tn .tn-readonly-list .tn-word-header{align-items:baseline;gap:4px 10px;margin:0!important;padding-right:0}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-word-title{padding-right:0!important;min-width:0}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-word-title h3,
+html body #toeicNotesHost.tn .tn-readonly-list .tn-expression-form h3{
+  font-family:var(--vr-en)!important;font-size:24px!important;line-height:1.3!important;font-weight:700!important;letter-spacing:0!important;
+  color:var(--vr-word)!important;margin:0!important;white-space:pre-line;overflow-wrap:anywhere;word-break:normal;
+}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-expression-form+.tn-expression-form{margin-top:12px!important}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-form-meaning{font-family:var(--vr-ko)!important;font-size:17px!important;line-height:1.65!important;color:var(--vr-text)!important;margin:4px 0 0!important}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-card-pos{font-family:var(--vr-ko)!important;color:var(--vr-muted)!important;padding:0!important;min-height:0!important}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-pos-badge{
+  font-family:var(--vr-ko)!important;font-size:13px!important;font-weight:600;width:auto!important;min-width:26px!important;height:26px!important;aspect-ratio:auto!important;
+  padding:0 7px!important;border-radius:6px!important;border:1px solid var(--vr-rule)!important;background:transparent!important;color:var(--vr-muted)!important;
+}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-verb-hint{font-family:var(--vr-ko)!important;font-size:14px;line-height:1.6;color:var(--vr-muted)!important}
+/* Core meaning: a full reading size with strong contrast, in a Korean text face (not the pixel display face). */
+html body #toeicNotesHost.tn .tn-readonly-list .tn-card-meaning{font-family:var(--vr-ko)!important;margin:0!important;font-weight:400!important}
+/* Meaning sits to the right of the word and its forms. Narrow screens: on the same row when the whole meaning fits,
+   otherwise on its own full row (never squeezed into a sliver). Wide screens: a fixed meaning column, see below. */
+html body #toeicNotesHost.tn .tn-readonly-list .tn-lexeme{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;min-width:0}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-lexeme>.tn-word-header{flex:0 1 auto;min-width:0}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-lexeme>.tn-card-meaning{flex:1 1 auto;min-width:0}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-expression-form{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-expression-form .tn-form-meaning{flex:1 1 auto;min-width:0;margin:0!important}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-general-meaning{font-family:var(--vr-ko)!important;font-size:18px!important;line-height:1.65!important;font-weight:600;color:var(--vr-text)!important;overflow-wrap:anywhere}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-context-meaning{font-family:var(--vr-ko)!important;font-size:15px!important;line-height:1.7!important;color:var(--vr-muted)!important}
+/* Example: set off by a thin rule; English first, translation beneath in the reading face. */
+html body #toeicNotesHost.tn .tn-readonly-list .tn-example-main{border-left:2px solid var(--vr-rule);padding:0 0 0 14px!important;margin:4px 0 0}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-example-main .tn-original,
+html body #toeicNotesHost.tn .tn-readonly-list .tn-adverb-pair-card .tn-original{
+  font-family:var(--vr-en)!important;font-size:17px!important;line-height:1.65!important;color:var(--vr-body)!important;margin:0!important;max-width:68ch;overflow-wrap:anywhere;
+}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-example-main .tn-translation,
+html body #toeicNotesHost.tn .tn-readonly-list .tn-adverb-pair-card .tn-translation{
+  font-family:var(--vr-ko)!important;font-size:16px!important;line-height:1.75!important;color:var(--vr-muted)!important;margin:6px 0 0!important;max-width:68ch;overflow-wrap:anywhere;
+}
+/* Optional material stays one tap away, readable when opened. */
+html body #toeicNotesHost.tn .tn-readonly-list .tn-word-card>.tn-extra{margin:2px 0 0!important}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-word-card>.tn-extra>summary{font-family:var(--vr-ko)!important;font-size:14px!important;color:var(--vr-muted)!important;min-height:44px;padding:8px 0!important}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-extra :is(p,li,small,h4,summary){font-family:var(--vr-ko)!important}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-extra :is(p,li){font-size:15.5px!important;line-height:1.75!important;color:var(--vr-body)!important;overflow-wrap:anywhere}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-extra .tn-paraphrases strong{font-family:var(--vr-en)!important}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-extra :is(h4,small){color:var(--vr-muted)!important}
+/* Checks: a fixed left column, the same 44px target in every entry and in both meaning modes. */
+html body #toeicNotesHost.tn .tn-readonly-list .tn-word-card{padding-left:52px!important}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-word-card>.tn-word-check{position:absolute!important;left:0!important;right:auto!important;top:14px!important;width:44px!important;height:44px!important;min-height:44px!important;margin:0!important;padding:0!important;display:flex;align-items:center;justify-content:center;cursor:pointer}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-word-card>.tn-word-check>span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-word-card>.tn-word-check>input{width:22px;height:22px;margin:0;accent-color:var(--vr-word);cursor:pointer}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-word-card>.tn-word-check:focus-within{outline:2px solid #fff0ad;outline-offset:-2px;border-radius:8px}
+/* Toolbar: one filter toggle with its chapter count, and the meaning eye. Never overlapping on 320px. */
+html body #toeicNotesHost.tn .tn-tools{max-width:1040px;margin:8px auto 10px;box-sizing:border-box}
+html body #toeicNotesHost.tn .tn-check-tools{display:flex!important;flex-wrap:wrap;align-items:center;gap:8px 10px}
+html body #toeicNotesHost.tn .tn-check-filter{display:flex!important;align-items:center;gap:6px;min-width:0;flex:1 1 auto}
+html body #toeicNotesHost.tn .tn-check-tools .tn-checked-only{min-height:44px;padding:8px 14px!important;font-family:var(--vr-ko)!important;font-size:15px!important;line-height:1.3;white-space:nowrap}
+html body #toeicNotesHost.tn .tn-check-tools .tn-check-count{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:28px;padding:0 8px;box-sizing:border-box;border-radius:14px;border:1px solid var(--vr-rule);background:#173326!important;color:var(--vr-word)!important;font-family:var(--vr-en)!important;font-size:14px!important;font-weight:700;line-height:1}
+html body #toeicNotesHost.tn .tn-check-tools .tn-test-toggle{display:inline-flex!important;align-items:center;justify-content:center;width:44px!important;min-width:44px!important;height:44px!important;min-height:44px!important;padding:0!important;margin-left:auto}
+html body #toeicNotesHost.tn .tn-check-tools .tn-test-toggle svg{display:block;width:22px;height:22px}
+html body #toeicNotesHost.tn .tn-check-tools .tn-test-toggle[data-meaning=hidden]{color:var(--vr-word)!important;border-color:var(--vr-word)!important}
+html body #toeicNotesHost.tn .tn-check-tools :is(.tn-checked-only,.tn-test-toggle):focus-visible{outline:3px solid #fff0ad!important;outline-offset:2px}
+/* Empty filtered chapter: a short note and the way back. */
+html body #toeicNotesHost.tn .tn-readonly-list .tn-empty-checked{padding:22px 4px}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-empty-checked p{font-family:var(--vr-ko)!important;font-size:16px;line-height:1.7;color:var(--vr-body)!important;margin:0 0 12px}
+html body #toeicNotesHost.tn .tn-readonly-list .tn-empty-checked .tn-show-all{min-height:44px;font-family:var(--vr-ko)!important}
+/* Wide screens: word column and reading column, aligned starts, readable line length. */
+@media(min-width:760px){
+  html body #toeicNotesHost.tn .tn-readonly-list{padding:6px 28px}
+  html body #toeicNotesHost.tn .tn-readonly-list .tn-word-card,
+  html body #toeicNotesHost.tn .tn-readonly-list .tn-word-card:has(.tn-useful-forms){grid-template-columns:minmax(200px,32%) minmax(0,1fr)!important;padding-top:24px!important;padding-bottom:16px!important}
+  /* Row 1: word · forms | meaning. Row 2: verb forms under the word, example under the meaning. */
+  html body #toeicNotesHost.tn .tn-readonly-list .tn-word-card>.tn-lexeme{grid-column:1/-1;display:grid;grid-template-columns:minmax(200px,32%) minmax(0,1fr);column-gap:32px;align-items:baseline}
+  html body #toeicNotesHost.tn .tn-readonly-list .tn-lexeme>.tn-word-header{grid-column:1;grid-row:1}
+  html body #toeicNotesHost.tn .tn-readonly-list .tn-lexeme>.tn-card-meaning{grid-column:2;grid-row:1}
+  html body #toeicNotesHost.tn .tn-readonly-list .tn-expression-card>.tn-lexeme>.tn-word-header{grid-column:1/-1}
+  html body #toeicNotesHost.tn .tn-readonly-list .tn-word-card>.tn-example-main{grid-column:2;grid-row:2;margin-top:2px}
+  html body #toeicNotesHost.tn .tn-readonly-list .tn-word-card>.tn-useful-forms{grid-column:1;grid-row:2}
+  html body #toeicNotesHost.tn .tn-readonly-list .tn-word-card>.tn-extra{grid-column:2!important}
+  html body #toeicNotesHost.tn .tn-readonly-list .tn-word-card .tn-word-header{padding-right:0}
+  html body #toeicNotesHost.tn .tn-readonly-list .tn-word-card .tn-example-main{margin-right:52px}
+  html body #toeicNotesHost.tn .tn-readonly-list .tn-word-title h3,
+  html body #toeicNotesHost.tn .tn-readonly-list .tn-expression-form h3{font-size:26px!important}
+}
+/* Status line reads in the same face. */
+html body #toeicNotesHost.tn .tn-search-status{font-family:var(--vr-ko)!important;font-size:15px!important;line-height:1.6;color:var(--vr-body)!important}
+/* Hide-meaning guard: whatever this sheet sets, a hidden part stays hidden. */
+html body #toeicNotesHost.tn .tn-readonly-list .tn-word-card [hidden],
+html body #toeicNotesHost.tn .tn-readonly-list .tn-word-card[hidden]{display:none!important}
+/* Chapter notes above the toolbar read in the same face as the entries. */
+html body #toeicNotesHost.tn>p{font-family:var(--vr-ko)!important;font-size:15px!important;line-height:1.7!important;color:var(--vr-body)!important}

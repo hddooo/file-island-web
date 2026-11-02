@@ -1,0 +1,59 @@
+@import url('./toeic-design-tokens.css');
+/* Study hosts, all their text/controls, and word dialogs use the existing paper font.
+   Shell branding, island navigation, decorative labels and the page title stay retro. */
+html body :is(#toeicNotesHost.tn,.tg,.tc,.tp,.tn-recent-dialog,.lc-player-host,.lc-script-content),html body :is(#toeicNotesHost.tn,.tg,.tc,.tp,.tn-recent-dialog,.lc-player-host,.lc-script-content) *{font-family:var(--toeic-study-font)!important;letter-spacing:normal}
+html body .toeic-page-header,html body .toeic-page-header *{font-family:var(--toeic-menu-font)!important}
+html body .toeic-learning-page .toeic-page-header{min-height:44px;margin:0 0 7px;padding:5px 0;border-bottom-width:1px}
+html body .toeic-learning-page .toeic-page-header h1{font-size:20px!important}
+html body .toeic-learning-page :is(.tg,.tc){margin:0!important;padding:4px!important;border:0!important;border-radius:0!important}
+html body .toeic-learning-page :is(.tg,.tc)>.tg-contents.toeic-compact-list{margin:0}
+html[data-hanq-theme] body #app .toeic-learning-page .toeic-compact-list{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:var(--toeic-row-gap)!important;padding:0!important;margin:0!important}
+html[data-hanq-theme] body #app .toeic-learning-page .toeic-compact-list .tg-focus-index-row{display:flex!important;align-items:stretch;min-width:0;gap:0!important;padding:0!important;border:1px solid var(--toeic-row-line)!important;border-radius:5px!important;background:transparent!important}
+html[data-hanq-theme] body #app .toeic-learning-page .toeic-compact-list .toeic-list-open{display:flex!important;align-items:center;justify-content:space-between;gap:8px;flex:1;min-width:0;min-height:var(--toeic-row-height)!important;padding:6px 8px!important;margin:0!important;font-size:var(--toeic-row-text)!important;font-weight:600!important;line-height:1.45!important;text-align:left;border:1px solid var(--toeic-row-line)!important;border-radius:5px!important;background:transparent!important;box-shadow:none!important}
+html[data-hanq-theme] body #app .toeic-learning-page .toeic-compact-list .tg-focus-index-row>.toeic-list-open{border:0!important;border-radius:0!important}
+html[data-hanq-theme] body #app .toeic-learning-page .toeic-compact-list .toeic-list-open :is(span,small){margin:0!important;font-size:inherit!important;line-height:1.45!important}
+html[data-hanq-theme] body #app .toeic-learning-page .toeic-compact-list .tc-group-count{flex:none;font-size:var(--toeic-row-muted)!important;white-space:nowrap;font-weight:400!important}
+html[data-hanq-theme] body #app .toeic-learning-page .toeic-compact-list .toeic-list-action{flex:0 0 48px;min-width:44px;min-height:var(--toeic-row-height)!important;margin:0!important;padding:5px!important;border:0!important;border-left:1px solid var(--toeic-row-line)!important;border-radius:0!important;font-size:12px!important;line-height:1.4!important;background:transparent!important;box-shadow:none!important;text-align:center}
+html[data-hanq-theme] body #app .toeic-learning-page .toeic-compact-list :is(.toeic-list-open,.toeic-list-action):focus-visible{outline:1px solid var(--toeic-row-focus)!important;outline-offset:-3px}
+html body .tn .tn-chapter-open{min-height:var(--toeic-row-height)!important;font-size:var(--toeic-row-text)!important}
+html body .tn .tn-chapter-list{gap:var(--toeic-row-gap)!important}
+@media(max-width:360px){:root{--toeic-row-text:13px;--toeic-row-muted:11px}html[data-hanq-theme] body #app .toeic-learning-page .toeic-compact-list .toeic-list-open{padding:5px 6px!important}}
+
+html[data-hanq-theme] body :is(.tg,.tc,.tp,.tn-recent-dialog,.lc-player-host,.lc-script-content):not(.toeic-branding),html[data-hanq-theme] body :is(.tg,.tc,.tp,.tn-recent-dialog,.lc-player-host,.lc-script-content):not(.toeic-branding) *{font-family:var(--toeic-study-font)!important}
+/* Part counts already live in each compact row; no extra visual explanation line. */
+html body .tc:has(.tc-group-list)>.tc-total{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;clip-path:inset(50%);overflow:hidden;white-space:nowrap}
+
+html body #app .toeic-page-header .toeic-page-back{min-width:64px;min-height:44px;height:44px;padding:5px 9px!important;font-size:13px!important;border-radius:5px!important;background:transparent!important;box-shadow:none!important}
+html body #app .toeic-compact-list .toeic-list-action.has-completion-check{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+html body #app .toeic-compact-list .toeic-list-action .hanq-completion-check{margin:0!important;font-size:12px}
+
+/* Keep page/header/list edges together; related labels and counts form one group. */
+html body #app .toeic-learning-page{width:100%;max-width:980px!important;margin-inline:auto!important;box-sizing:border-box}
+html body #app .toeic-learning-page :is(.tc,.tg){width:100%;max-width:none!important;padding:0!important;box-sizing:border-box}
+html[data-hanq-theme] body #app .toeic-learning-page .toeic-compact-list .toeic-list-open{justify-content:flex-start;column-gap:12px;row-gap:3px}
+html[data-hanq-theme] body #app .toeic-learning-page .tc.tc-simple .tc-group-list .tc-group-label{flex:0 1 auto!important;min-width:0}
+html[data-hanq-theme] body #app .toeic-learning-page .tc.tc-simple .tc-group-list .tc-group-count{margin-left:0!important;flex:0 0 auto!important;font-weight:400!important}
+html body #app .toeic-learning-page .tc.tc-simple .tc-group-list>.tc-group.has-completion-check,html body #app .toeic-learning-page .toeic-compact-list .has-completion-check{border-width:1px!important;border-color:var(--toeic-row-line)!important}
+html body #app .toeic-learning-page .toeic-compact-list .hanq-completion-check{font-size:12px!important;margin-left:6px!important;color:var(--toeic-row-focus)!important}
+/* Short phones keep every Part row visible without shrinking touch controls. */
+html body #app .toeic-learning-page .toeic-page-header{box-sizing:border-box;min-height:49px;padding:2px 0!important;margin:0 0 8px!important}
+html body #app>.device-content:has(.toeic-learning-page .toeic-compact-list){padding-top:4px!important;padding-bottom:4px!important}
+html body #app .tn .tn-chapter-contents{padding-inline:0!important}
+html body #app .tn .tn-chapter-open{color:#e8eee9!important}
+html body #toeicNotesHost.tn[data-chapter-view=contents]{padding:0!important}
+html body #toeicNotesHost .tn-chapter-list{gap:var(--toeic-row-gap)!important}
+html body #toeicNotesHost .tn-chapter-open{justify-content:flex-start!important;gap:12px!important}
+html[data-hanq-theme] body #app .toeic-learning-page .tg-focus-index-row>:is(.toeic-list-open,.toeic-list-action){min-height:46px!important}
+
+/* Root pages already have one explicit parent action in the shared header. */
+html body .toeic-learning-page:has(.tg-chapter-cards) .toeic-page-back,html body .toeic-learning-page:has(.tc-group-list) .toeic-page-back,html body .toeic-learning-page:has(.lc-player-host) .toeic-page-back{display:none!important}
+
+/* Completion has a right-hand check and an inset stroke without shifting row text. */
+html body #app .toeic-learning-page .tc.tc-simple .tc-group-list>.tc-group.has-completion-check{border-color:#86cdb0!important;box-shadow:inset 0 0 0 1px #86cdb0!important}
+html body #app .toeic-learning-page .tc.tc-simple .tc-group-list>.tc-group.has-completion-check .hanq-completion-check{margin-left:auto!important;font-size:16px!important;color:#a3e3c7!important}
+
+/* Practice focuses on the current question. Save recovery occupies space only on failure. */
+html body .tg-focus-drill .tg-save-status[hidden]{display:none!important}
+html body .tg-focus-drill .tg-drill-progress{margin:4px 0 8px;font-size:13px}
+html body .tg-focus-drill .tg-drill-source{margin-top:12px;font-size:12px}
+html body .tg-focus-drill .tg-drill-source>summary{min-height:36px;padding:4px 0;cursor:pointer}

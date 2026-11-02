@@ -1,0 +1,508 @@
+{
+  "schema": 1,
+  "round": 76,
+  "basis": "원본 문제·공식 정답의 주된 학습 대상을 기준으로 수동 분류. 부정형은 질문 대상 시대, 복합 시대는 정답 핵심을 기준으로 하며 단일 주시대가 없는 경우 미검증으로 남긴다.",
+  "sourcePDFSHA256": "b25c8617eb817711a54e69c09040298bf1b102f59fe29aebaad3558981e834f3",
+  "items": [
+    {
+      "number": 1,
+      "questionId": "exam-76-01",
+      "version": "729ee3237feb7e40",
+      "era": "ancient",
+      "part": "사회",
+      "topic": "구석기 생활",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 2,
+      "questionId": "exam-76-02",
+      "version": "db098a05b3278c38",
+      "era": "ancient",
+      "part": "사회",
+      "topic": "고구려 동맹",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 3,
+      "questionId": "exam-76-03",
+      "version": "62ff7b62184ca79d",
+      "era": "ancient",
+      "part": "정치",
+      "topic": "삼국 항쟁 연표",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 4,
+      "questionId": "exam-76-04",
+      "version": "b3b0d0a98f7b0f50",
+      "era": "ancient",
+      "part": "문화",
+      "topic": "백제 산수무늬 벽돌",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 5,
+      "questionId": "exam-76-05",
+      "version": "182ee8621a22e12b",
+      "era": "ancient",
+      "part": "경제",
+      "topic": "통일 신라 해상 무역",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 6,
+      "questionId": "exam-76-06",
+      "version": "dc6b23411237cf36",
+      "era": "ancient",
+      "part": "정치",
+      "topic": "신문왕 관료전과 녹읍 폐지",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 7,
+      "questionId": "exam-76-07",
+      "version": "ca21dda5f4edec56",
+      "era": "ancient",
+      "part": "문화",
+      "topic": "의상 화엄일승법계도",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 8,
+      "questionId": "exam-76-08",
+      "version": "8411e72732027aea",
+      "era": "ancient",
+      "part": "정치",
+      "topic": "발해 지방 행정",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 9,
+      "questionId": "exam-76-09",
+      "version": "eae4693ae89cbfa9",
+      "era": "ancient",
+      "part": "정치",
+      "topic": "신라 하대 김헌창의 난",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 10,
+      "questionId": "exam-76-10",
+      "version": "984085988368a528",
+      "era": "goryeo",
+      "part": "정치",
+      "topic": "고려 후삼국 통일 일리천 전투",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 11,
+      "questionId": "exam-76-11",
+      "version": "4796d16aaef0bfca",
+      "era": "goryeo",
+      "part": "문화",
+      "topic": "예종 7재와 양현고",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 12,
+      "questionId": "exam-76-12",
+      "version": "88a2a2068369acc4",
+      "era": "goryeo",
+      "part": "정치",
+      "topic": "최우 정방",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 13,
+      "questionId": "exam-76-13",
+      "version": "56c9533fc05e3bd8",
+      "era": "goryeo",
+      "part": "경제",
+      "topic": "고려 해동통보",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 14,
+      "questionId": "exam-76-14",
+      "version": "e85f7f8f7ca53b36",
+      "era": "goryeo",
+      "part": "정치",
+      "topic": "왕규 강조 이자겸의 정변 순서",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 15,
+      "questionId": "exam-76-15",
+      "version": "e83b25dabf6cb3af",
+      "era": "goryeo",
+      "part": "대외관계",
+      "topic": "개경 나성과 강감찬",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 16,
+      "questionId": "exam-76-16",
+      "version": "7ca957f66afdc47e",
+      "era": "goryeo",
+      "part": "대외관계",
+      "topic": "몽골 침입 강화 천도",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 17,
+      "questionId": "exam-76-17",
+      "version": "840ae67472f77d4c",
+      "era": "goryeo",
+      "part": "문화",
+      "topic": "고려 상형 청자",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 18,
+      "questionId": "exam-76-18",
+      "version": "2f946bf87a79d4b0",
+      "era": "goryeo",
+      "part": "사회",
+      "topic": "원 간섭기 응방",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 19,
+      "questionId": "exam-76-19",
+      "version": "4dcaa02c91d915c7",
+      "era": "joseon",
+      "part": "문화",
+      "topic": "세종 박연과 삼강행실도",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 20,
+      "questionId": "exam-76-20",
+      "version": "fc7c239022adda38",
+      "era": "joseon",
+      "part": "정치",
+      "topic": "연산군 무오사화",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 21,
+      "questionId": "exam-76-21",
+      "version": "97add917da70b03f",
+      "era": "joseon",
+      "part": "대외관계",
+      "topic": "임진왜란 북관대첩",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 22,
+      "questionId": "exam-76-22",
+      "version": "7f40f71316d87936",
+      "era": "joseon",
+      "part": "정치",
+      "topic": "홍문관과 3사",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 23,
+      "questionId": "exam-76-23",
+      "version": "3852b1c34dc2725e",
+      "era": "joseon",
+      "part": "경제",
+      "topic": "대동법 공인",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 24,
+      "questionId": "exam-76-24",
+      "version": "fc78deaf78b4731c",
+      "era": "joseon",
+      "part": "문화",
+      "topic": "이익 성호사설",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 25,
+      "questionId": "exam-76-25",
+      "version": "30ad9891b05ed142",
+      "era": "joseon",
+      "part": "정치",
+      "topic": "영조 속대전",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 26,
+      "questionId": "exam-76-26",
+      "version": "cfc4403ba5d9b44f",
+      "era": "joseon",
+      "part": "문화",
+      "topic": "신유박해 시기와 인쇄 기술",
+      "note": "부정형 문항이다. 정답 계미자의 조선 초기 대신 자료의 신유박해 시기 조선 후기를 기준으로 한다.",
+      "verified": true
+    },
+    {
+      "number": 27,
+      "questionId": "exam-76-27",
+      "version": "57aa22633770e986",
+      "era": "joseon",
+      "part": "문화",
+      "topic": "신윤복 월하정인",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 28,
+      "questionId": "exam-76-28",
+      "version": "8ae1dac86f1ea8d5",
+      "era": "opening",
+      "part": "민족운동",
+      "topic": "최익현 강화도 조약 반대",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 29,
+      "questionId": "exam-76-29",
+      "version": "aaa20ba0b1c6efdf",
+      "era": "opening",
+      "part": "대외관계",
+      "topic": "병인양요 문수산성",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 30,
+      "questionId": "exam-76-30",
+      "version": "8c644efe2010f109",
+      "era": "opening",
+      "part": "대외관계",
+      "topic": "제물포 조약",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 31,
+      "questionId": "exam-76-31",
+      "version": "5c13b636868f2c4d",
+      "era": "opening",
+      "part": "민족운동",
+      "topic": "동학 농민 운동 집강소",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 32,
+      "questionId": "exam-76-32",
+      "version": "e8326ac0222cba78",
+      "era": "opening",
+      "part": "정치",
+      "topic": "독립 협회 관민 공동회",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 33,
+      "questionId": "exam-76-33",
+      "version": "5913e701f967a1de",
+      "era": "opening",
+      "part": "경제",
+      "topic": "광무개혁 지계",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 34,
+      "questionId": "exam-76-34",
+      "version": "ce0ce6b8b64ab0c4",
+      "era": "opening",
+      "part": "문화",
+      "topic": "광혜원과 한성 전기 회사",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 35,
+      "questionId": "exam-76-35",
+      "version": "5ce9b7f17f3a3205",
+      "era": "opening",
+      "part": "민족운동",
+      "topic": "헤이그 특사",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 36,
+      "questionId": "exam-76-36",
+      "version": "93d00b1cf668ab13",
+      "era": "colonial",
+      "part": "통치정책",
+      "topic": "무단 통치",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 37,
+      "questionId": "exam-76-37",
+      "version": "5cf2373c8f917f7b",
+      "era": "colonial",
+      "part": "민족운동",
+      "topic": "민립 대학 설립 운동",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 38,
+      "questionId": "exam-76-38",
+      "version": "66ba55bfe6100bea",
+      "era": "colonial",
+      "part": "민족운동",
+      "topic": "의열단 조선 혁명 선언",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 39,
+      "questionId": "exam-76-39",
+      "version": "1ae258ac0f1d377d",
+      "era": "colonial",
+      "part": "민족운동",
+      "topic": "물산 장려 운동",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 40,
+      "questionId": "exam-76-40",
+      "version": "42674259a2df4e29",
+      "era": "colonial",
+      "part": "민족운동",
+      "topic": "신간회 민족 협동 전선",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 41,
+      "questionId": "exam-76-41",
+      "version": "bb1f112cf0f370ed",
+      "era": "colonial",
+      "part": "민족운동",
+      "topic": "서간도 경학사",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 42,
+      "questionId": "exam-76-42",
+      "version": "cf9e06c888c5d026",
+      "era": "colonial",
+      "part": "통치정책",
+      "topic": "여자 정신 근로령",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 43,
+      "questionId": "exam-76-43",
+      "version": "9c07e5c6328f9c8a",
+      "era": "colonial",
+      "part": "문화",
+      "topic": "일제 강점기 일상과 근대 문화",
+      "note": "부정형 문항이다. 새마을 운동의 현대사 대신 질문 대상 일제 강점기 사회·문화를 기준으로 한다.",
+      "verified": true
+    },
+    {
+      "number": 44,
+      "questionId": "exam-76-44",
+      "version": "62bc1fcbbd7a0cc0",
+      "era": "modern",
+      "part": "정치",
+      "topic": "조선 건국 준비 위원회",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 45,
+      "questionId": "exam-76-45",
+      "version": "e9ee29eaa42bf845",
+      "era": "modern",
+      "part": "사회",
+      "topic": "제주 4·3 사건",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 46,
+      "questionId": "exam-76-46",
+      "version": "db05bad705524b42",
+      "era": "joseon",
+      "part": "문화",
+      "topic": "김정희와 이황 학술 인물 구별",
+      "note": "복합 시대 부정형 답사 문항이다. 정답 대상 추사 김정희와 오연결된 기대승·이황 모두 조선의 학술 인물이므로 조선 문화에 분류한다.",
+      "verified": true
+    },
+    {
+      "number": 47,
+      "questionId": "exam-76-47",
+      "version": "2bd1ff3ebc4f94ee",
+      "era": "modern",
+      "part": "정치",
+      "topic": "사사오입 유신 직선제 개헌 순서",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 48,
+      "questionId": "exam-76-48",
+      "version": "1b4b8978d7335765",
+      "era": "modern",
+      "part": "경제",
+      "topic": "박정희 정부 지하철 개통",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 49,
+      "questionId": "exam-76-49",
+      "version": "be418f017d66f4be",
+      "era": "modern",
+      "part": "통일·외교",
+      "topic": "노태우 남북한 유엔 가입",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 50,
+      "questionId": "exam-76-50",
+      "version": "3d7d57dfc238ab3d",
+      "era": "opening",
+      "part": "정치",
+      "topic": "순종 고종과 대한국 국제",
+      "note": "여러 시대 연호의 부정형 문항이다. 순종에게 고종의 대한국 국제를 연결한 오류가 정답 핵심이므로 개항기에 분류한다.",
+      "verified": true
+    }
+  ]
+}

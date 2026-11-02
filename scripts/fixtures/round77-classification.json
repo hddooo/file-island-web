@@ -1,0 +1,508 @@
+{
+  "schema": 1,
+  "round": 77,
+  "basis": "원본 문제·공식 정답의 주된 학습 대상을 기준으로 수동 분류. 부정형은 질문 대상 시대, 복합 시대는 정답 핵심을 기준으로 하며 단일 주시대가 없는 경우 미검증으로 남긴다.",
+  "sourcePDFSHA256": "c3ff51d9273f7812a2b84d7fac4e8e1cb9aa642e80a4f53ebfc2a8afc5503e88",
+  "items": [
+    {
+      "number": 1,
+      "questionId": "exam-77-01",
+      "version": "a539a367130e67fd",
+      "era": "ancient",
+      "part": "사회",
+      "topic": "청동기 고인돌",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 2,
+      "questionId": "exam-77-02",
+      "version": "9bc619fbab945979",
+      "era": "ancient",
+      "part": "사회",
+      "topic": "고조선 범금 8조",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 3,
+      "questionId": "exam-77-03",
+      "version": "c2ee6ee37ef14435",
+      "era": "ancient",
+      "part": "사회",
+      "topic": "동예 책화",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 4,
+      "questionId": "exam-77-04",
+      "version": "b4110ef441174989",
+      "era": "ancient",
+      "part": "문화",
+      "topic": "신라 천마총 문화유산",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 5,
+      "questionId": "exam-77-05",
+      "version": "91fc10f8974d4f7b",
+      "era": "ancient",
+      "part": "정치",
+      "topic": "백제 무령왕 22담로",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 6,
+      "questionId": "exam-77-06",
+      "version": "e9d6d541ea0a533b",
+      "era": "ancient",
+      "part": "대외관계",
+      "topic": "백제 부흥 운동",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 7,
+      "questionId": "exam-77-07",
+      "version": "e8889f5479b68219",
+      "era": "ancient",
+      "part": "문화",
+      "topic": "발해 주자감",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 8,
+      "questionId": "exam-77-08",
+      "version": "c168b9c7908ce463",
+      "era": "ancient",
+      "part": "경제",
+      "topic": "고구려 부경",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 9,
+      "questionId": "exam-77-09",
+      "version": "87c198a853c59a3b",
+      "era": "ancient",
+      "part": "정치",
+      "topic": "궁예 태봉 광평성",
+      "note": "고려 건국 이전 태봉의 궁예·광평성이 핵심이므로 고대에 분류한다.",
+      "verified": true
+    },
+    {
+      "number": 10,
+      "questionId": "exam-77-10",
+      "version": "79f1f21fa7c3c856",
+      "era": "ancient",
+      "part": "문화",
+      "topic": "신라 하대 선종",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 11,
+      "questionId": "exam-77-11",
+      "version": "d4c7796c6c24d02e",
+      "era": "goryeo",
+      "part": "대외관계",
+      "topic": "거란 침입과 초조대장경",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 12,
+      "questionId": "exam-77-12",
+      "version": "586c81079cb9b26c",
+      "era": "goryeo",
+      "part": "사회",
+      "topic": "원 간섭기 응방과 환경",
+      "note": "여러 시대의 환경사를 묶은 문항이며 빈칸 정답 응방의 원 간섭기를 기준으로 고려에 분류한다.",
+      "verified": true
+    },
+    {
+      "number": 13,
+      "questionId": "exam-77-13",
+      "version": "fc4a61bb50b2074c",
+      "era": "goryeo",
+      "part": "문화",
+      "topic": "고려 문화유산 구별",
+      "note": "부정형 문항이다. 틀린 선지의 시대가 아닌 질문 대상 고려 문화유산을 기준으로 한다.",
+      "verified": true
+    },
+    {
+      "number": 14,
+      "questionId": "exam-77-14",
+      "version": "e87d5fdf0ff12fca",
+      "era": "goryeo",
+      "part": "정치",
+      "topic": "고려 외왕내제",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 15,
+      "questionId": "exam-77-15",
+      "version": "b0f44d4647aca826",
+      "era": "goryeo",
+      "part": "문화",
+      "topic": "안향 성리학과 제왕운기",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 16,
+      "questionId": "exam-77-16",
+      "version": "219067ec8fb47147",
+      "era": "goryeo",
+      "part": "정치",
+      "topic": "최충헌 봉사 10조",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 17,
+      "questionId": "exam-77-17",
+      "version": "a9b7c2e2c466889f",
+      "era": "goryeo",
+      "part": "정치",
+      "topic": "김부식 묘청의 난",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 18,
+      "questionId": "exam-77-18",
+      "version": "fa0848a80965e6b2",
+      "era": "goryeo",
+      "part": "정치",
+      "topic": "위화도 회군",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 19,
+      "questionId": "exam-77-19",
+      "version": "59f4fb532ea84ce3",
+      "era": "joseon",
+      "part": "정치",
+      "topic": "사간원과 3사",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 20,
+      "questionId": "exam-77-20",
+      "version": "c68f8a260c1d9025",
+      "era": "joseon",
+      "part": "경제",
+      "topic": "세조 직전법",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 21,
+      "questionId": "exam-77-21",
+      "version": "3e59349948ee356d",
+      "era": "joseon",
+      "part": "문화",
+      "topic": "류성룡 징비록",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 22,
+      "questionId": "exam-77-22",
+      "version": "feaccc506e58a815",
+      "era": "joseon",
+      "part": "대외관계",
+      "topic": "병자호란 이후 북벌",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 23,
+      "questionId": "exam-77-23",
+      "version": "baca7c6b9a9a7fac",
+      "era": "joseon",
+      "part": "대외관계",
+      "topic": "조선 후기 초량 왜관",
+      "note": "부정형 문항이며 질문 대상은 조선 후기 초량 왜관 시기이다.",
+      "verified": true
+    },
+    {
+      "number": 24,
+      "questionId": "exam-77-24",
+      "version": "3d239e5547fbcce7",
+      "era": "joseon",
+      "part": "정치",
+      "topic": "숙종 금위영",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 25,
+      "questionId": "exam-77-25",
+      "version": "b1a9f6ebebe06a65",
+      "era": "joseon",
+      "part": "경제",
+      "topic": "조선 후기 공인과 도고",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 26,
+      "questionId": "exam-77-26",
+      "version": "0f687cc9b283c8c4",
+      "era": "joseon",
+      "part": "문화",
+      "topic": "박제가 북학의",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 27,
+      "questionId": "exam-77-27",
+      "version": "0c6c288256e08961",
+      "era": "goryeo",
+      "part": "대외관계",
+      "topic": "충주 김윤후 대몽 항쟁",
+      "note": "여러 시대 충주 유적이 제시되지만 정답 핵심은 고려 김윤후의 대몽 항쟁이다.",
+      "verified": true
+    },
+    {
+      "number": 28,
+      "questionId": "exam-77-28",
+      "version": "5735eb9f715ee5c0",
+      "era": "joseon",
+      "part": "사회",
+      "topic": "임술 농민 봉기와 삼정이정청",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 29,
+      "questionId": "exam-77-29",
+      "version": "e6c557dcd20bfb10",
+      "era": "opening",
+      "part": "대외관계",
+      "topic": "병인양요와 병인박해",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 30,
+      "questionId": "exam-77-30",
+      "version": "26f3f6e173ded03b",
+      "era": "opening",
+      "part": "정치",
+      "topic": "을미개혁 군제",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 31,
+      "questionId": "exam-77-31",
+      "version": "204f6313d545f8e7",
+      "era": "opening",
+      "part": "정치",
+      "topic": "임오군란과 제물포 조약",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 32,
+      "questionId": "exam-77-32",
+      "version": "940528d35d566033",
+      "era": "colonial",
+      "part": "민족운동",
+      "topic": "하와이 대조선 국민 군단",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 33,
+      "questionId": "exam-77-33",
+      "version": "0a736a91ef0099f6",
+      "era": "opening",
+      "part": "대외관계",
+      "topic": "을사늑약 통감부",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 34,
+      "questionId": "exam-77-34",
+      "version": "b63481ec67b9b1c7",
+      "era": "opening",
+      "part": "민족운동",
+      "topic": "신민회 대성 학교",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 35,
+      "questionId": "exam-77-35",
+      "version": "0a8e7facca66bf3e",
+      "era": "opening",
+      "part": "문화",
+      "topic": "육영공원",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 36,
+      "questionId": "exam-77-36",
+      "version": "17a3840e5d02da14",
+      "era": "colonial",
+      "part": "민족운동",
+      "topic": "의열단 조선 혁명 선언",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 37,
+      "questionId": "exam-77-37",
+      "version": "8b8d44c420e0ce58",
+      "era": "colonial",
+      "part": "통치정책",
+      "topic": "토지 조사 사업과 무단 통치",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 38,
+      "questionId": "exam-77-38",
+      "version": "4abba905c3aa24c9",
+      "era": "colonial",
+      "part": "민족운동",
+      "topic": "신간회 광주 학생 항일 운동",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 39,
+      "questionId": "exam-77-39",
+      "version": "3b71d6074733c9fe",
+      "era": "colonial",
+      "part": "통치정책",
+      "topic": "남면북양 정책과 농촌 진흥 운동",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 40,
+      "questionId": "exam-77-40",
+      "version": "4eb8db161ae55f0f",
+      "era": "colonial",
+      "part": "문화",
+      "topic": "윤심덕 사의 찬미",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 41,
+      "questionId": "exam-77-41",
+      "version": "bd328fb774a0bfcf",
+      "era": "colonial",
+      "part": "민족운동",
+      "topic": "조선혁명군 흥경성 전투",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 42,
+      "questionId": "exam-77-42",
+      "version": "81c32ccb026b3210",
+      "era": "colonial",
+      "part": "민족운동",
+      "topic": "조소앙 민족 혁명당",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 43,
+      "questionId": "exam-77-43",
+      "version": "a8c297020e88987e",
+      "era": "colonial",
+      "part": "문화",
+      "topic": "가갸날",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 44,
+      "questionId": "exam-77-44",
+      "version": "a3a5ddca71762e94",
+      "era": "colonial",
+      "part": "통치정책",
+      "topic": "전시 동원과 황국 신민 서사",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 45,
+      "questionId": "exam-77-45",
+      "version": "c422a48a5ce327dc",
+      "era": "modern",
+      "part": "경제",
+      "topic": "농지 개혁",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 46,
+      "questionId": "exam-77-46",
+      "version": "755d4c512d29af49",
+      "era": "colonial",
+      "part": "민족운동",
+      "topic": "여운형 조선 건국 동맹",
+      "note": "해방 후 여운형 자료로 인물을 특정하지만 정답에서 묻는 조선 건국 동맹 결성은 1944년이므로 일제 강점기에 분류한다.",
+      "verified": true
+    },
+    {
+      "number": 47,
+      "questionId": "exam-77-47",
+      "version": "77674319c3221f5f",
+      "era": "modern",
+      "part": "경제",
+      "topic": "박정희 정부 포항 제철소",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 48,
+      "questionId": "exam-77-48",
+      "version": "e2ea247b49470e93",
+      "era": "modern",
+      "part": "민주화",
+      "topic": "부마 민주 항쟁",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 49,
+      "questionId": "exam-77-49",
+      "version": "3eb1f8e6bba2fa55",
+      "era": "modern",
+      "part": "민주화",
+      "topic": "전두환 정부 박종철 사건",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 50,
+      "questionId": "exam-77-50",
+      "version": "319cfee154c27184",
+      "era": "ancient",
+      "part": "정치",
+      "topic": "백제 성왕 사비 천도와 남부여",
+      "note": "천도 사례는 여러 시대에 걸치지만 정답 핵심은 백제 성왕의 남부여 국호이다.",
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+.common-islet{position:absolute;z-index:5;bottom:2%;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:100px;min-height:76px;padding:8px 12px;color:white!important;text-decoration:none;text-shadow:0 2px 3px #001827;background:radial-gradient(ellipse at 50% 72%,#376a4c 0 25%,#b3a36d 27% 36%,#24576799 38% 49%,transparent 51%);border-radius:50%;font-size:15px;line-height:1.35}.common-islet b{font-size:28px;color:#e9dc9c}.hall-islet{left:16%}.inquiry-islet{right:12%}.common-islet:focus-visible{outline:3px solid #79ffb6;outline-offset:3px}.common-islet:hover{transform:translateY(-3px)}
+.hall-page{max-width:800px;margin:auto;padding:24px 16px 110px;color:#fff;background:#07151de8;border:1px solid #728b8d;border-radius:28px;line-height:1.6}.hall-page h1{font-size:30px;margin:0 0 12px}.hall-page h2{font-size:19px;margin:20px 0 8px}.hall-page p{font-size:15px}.hall-eyebrow,.hall-note{color:#b3c6ca}.hall-person{display:grid;grid-template-columns:50px 64px minmax(0,1fr) auto;align-items:center;gap:10px;padding:12px 8px;border-bottom:1px solid #647b8055}.hall-person img{object-fit:contain}.hall-person small{display:block;font-size:12px;color:#bdcbd0}.hall-name{overflow-wrap:anywhere}.hall-me{background:#23544270;border-left:3px solid #8affb7}.hall-me .hall-rank{color:#8affb7}.hall-pages{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:22px}.hall-page button{min-height:44px;padding:8px 14px;background:#18343e;color:white;border:1px solid #819ca3;border-radius:12px;font:inherit}.hall-page button:disabled{opacity:.4}.hall-page button:focus-visible{outline:3px solid #8affb7}.hall-page section{min-width:0}@media(max-width:450px){.common-islet{min-width:96px;font-size:13px;bottom:0}.hall-islet{left:6%}.inquiry-islet{right:5%}.hall-page{padding:18px 10px 110px;border-radius:22px}.hall-person{grid-template-columns:36px 46px minmax(0,1fr) auto;gap:6px;padding:10px 2px;font-size:15px}.hall-person img{width:46px;height:58px}.hall-page h1{font-size:26px}}
+
+.common-islets{display:flex;justify-content:space-around;gap:12px;padding:8px 4px 16px;background:radial-gradient(ellipse at center,#32677966,transparent 70%)}.common-islets .common-islet{position:relative;left:auto;right:auto;bottom:auto;min-height:100px;min-width:110px}.common-islets .common-islet span{padding-top:3px}
+.common-islets .common-islet span{color:#fff!important;font-size:15px;text-shadow:0 2px 2px #001720,0 0 4px #001720}
+
+.hall-learning-dialog{box-sizing:border-box;width:min(92vw,650px);max-height:80dvh;padding:20px;background:#0b2028;color:#fff;border:2px solid #8ab4b7;border-radius:20px;font:inherit;line-height:1.6}.hall-learning-dialog::backdrop{background:#001018b8}.hall-learning-dialog li{margin:12px 0;overflow-wrap:anywhere}.hall-learning-dialog ul{padding-left:22px}.hall-learning-dialog button{min-height:44px;padding:8px 16px;background:#244a50;color:white;border:1px solid #a2c4c6;border-radius:10px;font:inherit}.hall-me[role=button]{cursor:pointer}.hall-me:focus-visible{outline:3px solid #90ffc2;outline-offset:2px}
+
+.hall-person .hall-portrait{--mascot-size:64px;width:64px;height:64px}@media(max-width:450px){.hall-person .hall-portrait{--mascot-size:46px;width:46px;height:46px}}
+
+/* Real ranks stay grouped, including ties and absent competition ranks. */
+.hall-podium{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:12px;margin:22px 0 28px;isolation:isolate}
+html body .hall-page .hall-podium-place{min-width:0;text-align:center;border:1px solid #7c8b86!important;border-radius:16px 16px 7px 7px;padding:12px 6px;background:linear-gradient(#192b27,#101c1a)!important}
+html body .hall-page .hall-podium-place--1{margin-top:0;border-color:#e9c66b!important;box-shadow:0 0 20px #e9c66b1f!important}
+.hall-podium-place--2{margin-top:36px}.hall-podium-place--3{margin-top:60px}
+.hall-podium-place h2{margin:0 0 6px;font-size:19px;color:#e8efe9!important}.hall-podium-place--1 h2{color:#ffe299!important;font-size:23px}
+.hall-podium-person{display:flex;flex-direction:column;align-items:center;gap:5px;min-width:0;padding:8px 0 12px;background:transparent!important}.hall-podium-person+.hall-podium-person{border-top:1px solid #7c8b8655;padding-top:14px}
+.hall-podium .hall-portrait{--mascot-size:clamp(66px,16vw,130px);width:var(--mascot-size);height:var(--mascot-size);max-width:100%;object-fit:contain;margin:5px 0 8px}
+.hall-podium-place--1 .hall-portrait{--mascot-size:clamp(74px,19vw,158px)}
+.hall-crown{display:block;width:52px;height:35px;flex:none;overflow:visible;fill:currentColor;stroke:#594b30;stroke-width:2;stroke-linejoin:round;color:#d9a273}
+.hall-podium-place--1 .hall-crown{color:#f7d260;filter:drop-shadow(0 0 3px #f7d26080)}.hall-podium-place--2 .hall-crown{color:#d2dce1;stroke:#67777f}
+.hall-podium-name{max-width:100%;overflow-wrap:anywhere;font-size:16px;line-height:1.4}.hall-podium-stage{font-size:12px;color:#c6d1ca!important;overflow-wrap:anywhere}.hall-podium-person b{font-size:15px;white-space:nowrap}.hall-podium-person small{font-size:11px}
+.hall-podium-empty{font-size:12px!important;color:#a5b4ac!important;overflow-wrap:anywhere}
+@keyframes hall-crown-glow{0%,100%{filter:drop-shadow(0 0 2px #f7d26066)}50%{filter:drop-shadow(0 0 8px #ffe8a8cc)}}
+@media(prefers-reduced-motion:no-preference){html body .hall-podium-place--1 .hall-crown{animation:hall-crown-glow 3.6s ease-in-out 1!important}}
+@media(prefers-reduced-motion:reduce){html body .hall-crown{animation:none!important}}
+@media(max-width:450px){.hall-podium{gap:6px}.hall-podium-place{padding:10px 3px}.hall-podium-name{font-size:13px}.hall-podium-person b{font-size:12px}.hall-crown{width:42px;height:29px}}
+
+/* A single explorer list; the API owns rank, ties and isMe identity. */
+html body .hall-page .hall-person{--hall-metal:#9db7a9;--hall-ribbon:#2b5946;--hall-metal-ink:#10271c;position:relative;isolation:isolate;display:grid;grid-template-columns:52px 72px minmax(0,1fr) auto;grid-template-areas:"rank portrait name points";gap:18px;align-items:center;box-sizing:border-box;min-height:112px;margin:10px 0;padding:16px 18px;border:1px solid #39564b!important;border-radius:14px;background:#10241d!important;overflow:hidden;color:#eef7f1!important}
+html body .hall-page .hall-person>*{position:relative;z-index:1;min-width:0}
+html body .hall-page .hall-rank{grid-area:rank;display:grid;place-items:center;align-self:center;min-width:0;min-height:56px;font-size:17px;color:#bdd5c7!important}
+html body .hall-page .hall-rank-value{display:flex;align-items:baseline;gap:2px;background:transparent!important;color:inherit!important;font-variant-numeric:tabular-nums}
+html body .hall-page .hall-rank-value small{display:inline;color:inherit!important;font-size:11px}
+html body .hall-page .hall-person>.hall-portrait{grid-area:portrait;--mascot-size:72px;width:72px;height:72px;margin:0}
+html body .hall-page .hall-name{grid-area:name;display:grid;gap:6px;min-width:0;background:transparent!important}
+html body .hall-page .hall-name-line{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 8px;background:transparent!important}
+html body .hall-page .hall-nickname{min-width:0;font-size:17px;line-height:1.5;word-break:keep-all;overflow-wrap:anywhere;color:#f5faf6!important}
+html body .hall-page .hall-stage{font-size:12px;line-height:1.5;color:#bdcec4!important;background:transparent!important;word-break:keep-all;overflow-wrap:anywhere}
+html body .hall-page .hall-points{grid-area:points;display:flex;align-items:baseline;justify-content:flex-end;gap:6px;max-width:15em;background:transparent!important;color:#f5faf6!important;font-variant-numeric:tabular-nums;line-height:1.4}
+html body .hall-page .hall-points b{min-width:0;overflow-wrap:anywhere;font-size:20px;color:inherit!important}
+html body .hall-page .hall-points small{font-size:11px;letter-spacing:.08em;color:#bdcec4!important;flex:none}
+/* Satin metal, a restrained rim light, and a readable dark field underneath. */
+html body .hall-page .hall-top--1{--hall-metal:#edc779;--hall-ribbon:#8d652b;--hall-metal-ink:#34230e;--hall-base:#3b2b13;--hall-lift:#574123;--hall-edge:#ab8748;--hall-shine:#ffdb9221}
+html body .hall-page .hall-top--2{--hall-metal:#c6d8e1;--hall-ribbon:#637d8b;--hall-metal-ink:#20303c;--hall-base:#25353e;--hall-lift:#3b505c;--hall-edge:#879fac;--hall-shine:#e2f4ff21}
+html body .hall-page .hall-top--3{--hall-metal:#e3ac8d;--hall-ribbon:#89513d;--hall-metal-ink:#382117;--hall-base:#3d271f;--hall-lift:#5d3e30;--hall-edge:#b17d5d;--hall-shine:#ffc4a321}
+html body .hall-page .hall-person.hall-top{background:linear-gradient(115deg,var(--hall-lift),var(--hall-base) 48%,var(--hall-lift))!important;border-color:var(--hall-edge)!important;box-shadow:inset 0 1px 0 #fff3,inset 0 -1px 0 #0005,0 3px 12px #0003!important}
+html body .hall-page .hall-top::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(130deg,transparent 25%,var(--hall-shine) 26%,transparent 48%),repeating-linear-gradient(0deg,#ffffff04 0 1px,transparent 1px 4px)!important}
+html body .hall-page .hall-top::after{content:"";position:absolute;inset:-70% -30%;z-index:0;pointer-events:none;opacity:0;background:linear-gradient(110deg,transparent 40%,#fff2 50%,transparent 60%)!important;transform:translateX(-65%)}
+html body .hall-page .hall-top .hall-rank{height:66px;color:var(--hall-metal-ink)!important}
+html body .hall-page .hall-top .hall-rank-value{position:absolute;inset:0 0 18px;display:flex;justify-content:center;align-items:center;font-size:19px;text-shadow:0 1px 0 #ffffff60}
+html body .hall-page .hall-top .hall-rank-value small{font-size:10px;margin-top:3px}
+html body .hall-page .hall-medal{width:52px;height:66px;overflow:visible;filter:drop-shadow(0 2px 2px #0006)}
+.hall-medal-ribbon{fill:var(--hall-ribbon);stroke:var(--hall-metal);stroke-width:1.3}.hall-medal-face{fill:var(--hall-metal);stroke:var(--hall-edge);stroke-width:2}.hall-medal-ring{fill:none;stroke:var(--hall-metal-ink);stroke-opacity:.4;stroke-width:1}.hall-medal-glint{fill:none;stroke:#fff;stroke-opacity:.6;stroke-linecap:round;stroke-width:2}
+html body .hall-page .hall-top .hall-stage,html body .hall-page .hall-top .hall-points small{color:#e0ded6!important}
+html body .hall-page .hall-person.hall-me{outline:2px solid #8bd5a9;outline-offset:-4px}
+html body .hall-page .hall-person .hall-you{display:inline-flex;align-items:center;justify-content:center;min-width:22px;padding:1px 6px;border:1px solid #94dbb0!important;border-radius:5px;color:#d8ffe5!important;background:#183c2a!important;font-size:11px;font-weight:700;line-height:1.6}
+html body .hall-page .hall-person.hall-me:focus-visible{outline:3px solid #b4ffd0;outline-offset:3px}
+@keyframes hall-metal-sheen{0%{opacity:0;transform:translateX(-65%)}30%{opacity:.6}100%{opacity:0;transform:translateX(65%)}}
+@media(prefers-reduced-motion:no-preference){html body .hall-page .hall-top::after{animation:hall-metal-sheen 2.4s ease-out .2s 1 both!important}}
+@media(prefers-reduced-motion:reduce){html body .hall-page .hall-top::after{animation:none!important}}
+@media(max-width:600px){html body .hall-page .hall-person{grid-template-columns:44px 56px minmax(0,1fr);grid-template-areas:"rank portrait name" "rank portrait points";column-gap:12px;row-gap:8px;min-height:116px;padding:14px 12px}html body .hall-page .hall-person>.hall-portrait{--mascot-size:56px;width:56px;height:56px}html body .hall-page .hall-nickname{font-size:14px}html body .hall-page .hall-name{gap:4px}html body .hall-page .hall-stage{font-size:11px}html body .hall-page .hall-points{justify-content:flex-start;max-width:100%}html body .hall-page .hall-points b{font-size:17px}html body .hall-page .hall-medal{width:44px;height:60px}html body .hall-page .hall-top .hall-rank-value{font-size:17px;inset:0 0 20px}}
+@media(max-width:360px){html body .hall-page .hall-person{grid-template-columns:36px 44px minmax(0,1fr);column-gap:8px;padding:12px 8px}html body .hall-page .hall-person>.hall-portrait{--mascot-size:44px;width:44px;height:44px}html body .hall-page .hall-medal{width:38px;height:56px}html body .hall-page .hall-top .hall-rank-value{font-size:15px;inset:0 0 22px}html body .hall-page .hall-points b{font-size:15px}}

@@ -1,0 +1,156 @@
+{
+ "generated_by": "scripts/build_islands_comic.py",
+ "note": "독도와 간도 웹툰 장면(화면 순서)·주제·그림판 칸·기존 꼭 기억 단서, 이 부분에서 외울 것 카드 위치. 그림판은 바이트 그대로이고 칸 하나를 통째로 보여 준다.",
+ "sprite": {
+  "file": "media/islands-panels.png",
+  "cols": 2,
+  "rows": 4,
+  "cell_aspect": "4:3"
+ },
+ "scenes": [
+  {
+   "id": "scene-1",
+   "scene": 1,
+   "topic": "topic-dokdo",
+   "orig": 1,
+   "added": false,
+   "cell": [
+    0,
+    0
+   ],
+   "reused": false,
+   "depicts": "섬으로 향하다 장면",
+   "key": "지증왕 때 이사부 = 우산국 복속",
+   "speakers": [
+    "이사부",
+    "신라 군사"
+   ]
+  },
+  {
+   "id": "scene-3",
+   "scene": 2,
+   "topic": "topic-dokdo",
+   "orig": 3,
+   "added": false,
+   "cell": [
+    1,
+    2
+   ],
+   "reused": false,
+   "depicts": "바다의 위기 장면",
+   "key": "러일전쟁 중 일본의 독도 불법 편입",
+   "speakers": [
+    "대한제국 사람",
+    "동료"
+   ]
+  },
+  {
+   "id": "treaties-1904",
+   "scene": 3,
+   "topic": "topic-dokdo",
+   "orig": null,
+   "added": true,
+   "cell": [
+    0,
+    2
+   ],
+   "reused": false,
+   "depicts": "배 위에서 바다 건너 섬을 바라보는 대한제국 관리들",
+   "key": "러일전쟁 무렵 = 독도 불법 편입·한일의정서 → 제1차 한일협약 → 을사늑약",
+   "speakers": [
+    "대한제국 관리",
+    "동료"
+   ]
+  },
+  {
+   "id": "scene-2",
+   "scene": 4,
+   "topic": "topic-gando",
+   "orig": 2,
+   "added": false,
+   "cell": [
+    1,
+    1
+   ],
+   "reused": false,
+   "depicts": "경계를 돌에 새기다 장면",
+   "key": "숙종 = 백두산정계비",
+   "speakers": [
+    "관리",
+    "동료 관리"
+   ]
+  },
+  {
+   "id": "stele-mountain",
+   "scene": 5,
+   "topic": "topic-gando",
+   "orig": null,
+   "added": true,
+   "cell": [
+    0,
+    3
+   ],
+   "reused": false,
+   "depicts": "눈 덮인 백두산에서 경계비를 세우는 사람들",
+   "key": "백두산정계비 = 숙종(조선 후기 국경 문제) / 서간도·북간도 = 뒤에 독립운동 기지 → 시점을 나눠 기억",
+   "speakers": [
+    "관리",
+    "해설 · 뒷날을 미리 짚음"
+   ]
+  },
+  {
+   "id": "scene-4",
+   "scene": 6,
+   "topic": "topic-gando",
+   "orig": 4,
+   "added": false,
+   "cell": [
+    1,
+    3
+   ],
+   "reused": false,
+   "depicts": "국경 너머 독립운동 기지 장면",
+   "key": "서간도=경학사·신흥강습소 / 북간도=명동학교·서전서숙",
+   "speakers": [
+    "독립운동가",
+    "동료"
+   ]
+  },
+  {
+   "id": "independence-battles",
+   "scene": 7,
+   "topic": "topic-gando",
+   "orig": null,
+   "added": true,
+   "cell": [
+    1,
+    3
+   ],
+   "reused": true,
+   "depicts": "지도를 보며 의논하는 사람들(앞 장면 그림 다시 사용)",
+   "key": "봉오동(대한독립군) → 청산리(북로군정서군 등) → 간도 참변 → 자유시 참변 → 미쓰야 협정 / 북간도 중광단 → 북로군정서",
+   "speakers": [
+    "독립군",
+    "동료"
+   ]
+  }
+ ],
+ "memory": [
+  {
+   "after": "treaties-1904",
+   "scene": 3,
+   "chunks": [
+    "우산국 복속",
+    "러일전쟁 무렵의 침탈"
+   ]
+  },
+  {
+   "after": "independence-battles",
+   "scene": 7,
+   "chunks": [
+    "백두산정계비",
+    "간도의 독립운동 기지와 전투"
+   ]
+  }
+ ]
+}

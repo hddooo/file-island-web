@@ -1,0 +1,77 @@
+name: Map and header pixel review (synthetic only)
+on:
+  push:
+    branches: [codex/map-header-visual-release-20261102]
+permissions:
+  contents: read
+concurrency:
+  group: map-header-pixels-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  map-header-pixels:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      NODE_PATH: ${{ github.workspace }}/.ci-tools/node_modules
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: .ci-tools/package-lock.json
+      - run: npm ci --prefix .ci-tools --no-fund
+      - run: node scripts/test-map-header-visuals.cjs
+      - run: .ci-tools/node_modules/.bin/playwright install --with-deps chromium webkit
+      - run: node scripts/qa-map-header-visuals.cjs
+      - name: Validate exact synthetic screenshot boundary
+        id: privacy
+        if: always()
+        run: |
+          node <<'NODE'
+          const fs=require('node:fs'),files=["evidence/map-header-visuals/chromium-320-map.png", "evidence/map-header-visuals/chromium-320-art.png", "evidence/map-header-visuals/chromium-355-map.png", "evidence/map-header-visuals/chromium-355-art.png", "evidence/map-header-visuals/chromium-390-map.png", "evidence/map-header-visuals/chromium-390-art.png", "evidence/map-header-visuals/chromium-591-map.png", "evidence/map-header-visuals/chromium-591-art.png", "evidence/map-header-visuals/chromium-613-map.png", "evidence/map-header-visuals/chromium-613-art.png", "evidence/map-header-visuals/chromium-1024-map.png", "evidence/map-header-visuals/chromium-1024-art.png", "evidence/map-header-visuals/webkit-320-map.png", "evidence/map-header-visuals/webkit-320-art.png", "evidence/map-header-visuals/webkit-355-map.png", "evidence/map-header-visuals/webkit-355-art.png", "evidence/map-header-visuals/webkit-390-map.png", "evidence/map-header-visuals/webkit-390-art.png", "evidence/map-header-visuals/webkit-591-map.png", "evidence/map-header-visuals/webkit-591-art.png", "evidence/map-header-visuals/webkit-613-map.png", "evidence/map-header-visuals/webkit-613-art.png", "evidence/map-header-visuals/webkit-1024-map.png", "evidence/map-header-visuals/webkit-1024-art.png", "evidence/map-header-visuals/chromium-320-long.png", "evidence/map-header-visuals/chromium-390-long.png", "evidence/map-header-visuals/webkit-320-long.png", "evidence/map-header-visuals/webkit-390-long.png", "evidence/map-header-visuals/chromium-613-hover.png", "evidence/map-header-visuals/chromium-613-focus.png", "evidence/map-header-visuals/webkit-613-hover.png", "evidence/map-header-visuals/webkit-613-focus.png"];let count=0;
+          for(const file of files){if(!fs.existsSync(file))continue;const b=fs.readFileSync(file);if(!b.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10]))||b.readUInt32BE(16)>2200||b.readUInt32BE(20)>2200)throw Error('Unexpected synthetic viewport '+file);count++;}
+          console.log('Checked '+count+' exact synthetic-API screenshot names. No real user data, uploaded user images, computer screenshots, environment or broad glob.');
+          NODE
+      - name: Save exact synthetic map and header views
+        if: always() && steps.privacy.outcome == 'success'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: synthetic-map-header-${{ github.run_id }}
+          retention-days: 1
+          if-no-files-found: ignore
+          path: |
+            evidence/map-header-visuals/chromium-320-map.png
+            evidence/map-header-visuals/chromium-320-art.png
+            evidence/map-header-visuals/chromium-355-map.png
+            evidence/map-header-visuals/chromium-355-art.png
+            evidence/map-header-visuals/chromium-390-map.png
+            evidence/map-header-visuals/chromium-390-art.png
+            evidence/map-header-visuals/chromium-591-map.png
+            evidence/map-header-visuals/chromium-591-art.png
+            evidence/map-header-visuals/chromium-613-map.png
+            evidence/map-header-visuals/chromium-613-art.png
+            evidence/map-header-visuals/chromium-1024-map.png
+            evidence/map-header-visuals/chromium-1024-art.png
+            evidence/map-header-visuals/webkit-320-map.png
+            evidence/map-header-visuals/webkit-320-art.png
+            evidence/map-header-visuals/webkit-355-map.png
+            evidence/map-header-visuals/webkit-355-art.png
+            evidence/map-header-visuals/webkit-390-map.png
+            evidence/map-header-visuals/webkit-390-art.png
+            evidence/map-header-visuals/webkit-591-map.png
+            evidence/map-header-visuals/webkit-591-art.png
+            evidence/map-header-visuals/webkit-613-map.png
+            evidence/map-header-visuals/webkit-613-art.png
+            evidence/map-header-visuals/webkit-1024-map.png
+            evidence/map-header-visuals/webkit-1024-art.png
+            evidence/map-header-visuals/chromium-320-long.png
+            evidence/map-header-visuals/chromium-390-long.png
+            evidence/map-header-visuals/webkit-320-long.png
+            evidence/map-header-visuals/webkit-390-long.png
+            evidence/map-header-visuals/chromium-613-hover.png
+            evidence/map-header-visuals/chromium-613-focus.png
+            evidence/map-header-visuals/webkit-613-hover.png
+            evidence/map-header-visuals/webkit-613-focus.png

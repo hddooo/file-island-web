@@ -1,0 +1,2648 @@
+{
+  "schema": 1,
+  "reviewedGroups": 239,
+  "newQuestions": 238,
+  "appliedProfiles": 10,
+  "preservedExistingRecall": 1,
+  "completedAllChoices": false,
+  "notes": "원본703 퀴즈/49 회상/500기출 선지 불변. 제안 category는 분류 참고이며 검증 완료를 뜻하지 않음.",
+  "items": [
+    {
+      "id": "z-connection-1edb6f6917f9",
+      "answer": "신석기 · 가락바퀴와 뼈바늘",
+      "sourceChapter": "prehistory",
+      "categoryProposal": "복합연결·개별유형수동검수",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-cue-ancient-20"
+      ]
+    },
+    {
+      "id": "z-connection-302124b3cd6a",
+      "answer": "신석기 · 농경과 목축",
+      "sourceChapter": "prehistory",
+      "categoryProposal": "복합연결·개별유형수동검수",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-cue-ancient-21"
+      ]
+    },
+    {
+      "id": "z-connection-eaa7e65f8078",
+      "answer": "고조선 · 상·대부·장군",
+      "sourceChapter": "gojoseon",
+      "categoryProposal": "복합연결·개별유형수동검수",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-cue-ancient-19"
+      ]
+    },
+    {
+      "id": "z-connection-31e2ae45e417",
+      "answer": "정림사지 5층 석탑 · 금동대향로",
+      "sourceChapter": "samguk",
+      "categoryProposal": "탑 문화재·양식·왕조",
+      "status": "needs-source-or-structure-review",
+      "reason": "현재 자료의 다른시대 동종 유물4개가 부족하거나 단일유물과2종유물묶음이 섞임. 문화재 도록/공식기출의 각후보와 양식·조성시기 전수근거가 필요함.",
+      "rawSourceIds": [
+        "study-samguk-7-1"
+      ]
+    },
+    {
+      "id": "z-connection-36b19dcf7514",
+      "answer": "골품제 · 화백회의",
+      "sourceChapter": "samguk",
+      "categoryProposal": "복합연결·개별유형수동검수",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-samguk-9-1"
+      ]
+    },
+    {
+      "id": "z-connection-ab6bed51ddd0",
+      "answer": "수로왕 · 금관가야",
+      "sourceChapter": "samguk",
+      "categoryProposal": "복합연결·개별유형수동검수",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-samguk-11-1"
+      ]
+    },
+    {
+      "id": "z-connection-ff010a3c9985",
+      "answer": "대가야 · 지산동 고분",
+      "sourceChapter": "samguk",
+      "categoryProposal": "복합연결·개별유형수동검수",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-samguk-11-1"
+      ]
+    },
+    {
+      "id": "z-connection-213029ea37fe",
+      "answer": "도교",
+      "sourceChapter": "samguk",
+      "categoryProposal": "사상·종교흐름",
+      "status": "needs-source-or-structure-review",
+      "reason": "여러시대에 존재하는 사상이다. 다른시대라고 표시하는 것만으로 오답이 되지 않아 대상인물·유물과 관계를 재검수해야 함.",
+      "rawSourceIds": [
+        "study-cue-ancient-14"
+      ]
+    },
+    {
+      "id": "z-connection-3ad6c2885d3c",
+      "answer": "호우명 그릇",
+      "sourceChapter": "samguk",
+      "categoryProposal": "복합연결·개별유형수동검수",
+      "status": "needs-source-or-structure-review",
+      "reason": "현재 자료의 다른시대 동종 유물4개가 부족하거나 단일유물과2종유물묶음이 섞임. 문화재 도록/공식기출의 각후보와 양식·조성시기 전수근거가 필요함.",
+      "rawSourceIds": [
+        "study-cue-ancient-15"
+      ]
+    },
+    {
+      "id": "z-connection-aa4ef1c6e924",
+      "answer": "분황사 모전석탑 · 신라",
+      "sourceChapter": "samguk",
+      "categoryProposal": "탑 문화재·양식·왕조",
+      "status": "needs-source-or-structure-review",
+      "reason": "현재 자료의 다른시대 동종 유물4개가 부족하거나 단일유물과2종유물묶음이 섞임. 문화재 도록/공식기출의 각후보와 양식·조성시기 전수근거가 필요함.",
+      "rawSourceIds": [
+        "study-cue-ancient-16"
+      ]
+    },
+    {
+      "id": "z-connection-356fb550dc2e",
+      "answer": "안시성 전투 · 645년",
+      "sourceChapter": "samguk",
+      "categoryProposal": "전투·반란/인물-사건묶음",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-cue-ancient-17"
+      ]
+    },
+    {
+      "id": "z-connection-ccd9ffb7033a",
+      "answer": "연가 7년명 금동 여래 입상 · 고구려",
+      "sourceChapter": "samguk",
+      "categoryProposal": "불상 문화재·형태·왕조",
+      "status": "needs-source-or-structure-review",
+      "reason": "현재 자료의 다른시대 동종 유물4개가 부족하거나 단일유물과2종유물묶음이 섞임. 문화재 도록/공식기출의 각후보와 양식·조성시기 전수근거가 필요함.",
+      "rawSourceIds": [
+        "study-cue-ancient-18"
+      ]
+    },
+    {
+      "id": "z-connection-02204a18dc30",
+      "answer": "집사부",
+      "sourceChapter": "nambuk",
+      "categoryProposal": "중앙통치기구·역할",
+      "status": "needs-source-or-structure-review",
+      "reason": "비슷한 일반기관은 있어도 회계/감찰/시전감독/도서관리/재상/행정/개혁/양계지휘의 정확한 기능을 맞춘 다른시대4후보가 부족함. 삼사는고려와조선동명기관의기능차이도검수필요.",
+      "rawSourceIds": [
+        "study-nambuk-2-1"
+      ]
+    },
+    {
+      "id": "z-connection-89e78aba25bf",
+      "answer": "혜공왕 피살 · 헌덕왕 때 김헌창의 난",
+      "sourceChapter": "nambuk",
+      "categoryProposal": "전투·반란/인물-사건묶음",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-nambuk-3-1"
+      ]
+    },
+    {
+      "id": "z-connection-ff56c92296ae",
+      "answer": "삼대목",
+      "sourceChapter": "nambuk",
+      "categoryProposal": "문서·전적·편찬관리(세부유형분리필요)",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-nambuk-5-1",
+        "recall:textbook-notes.js:nambuk:0"
+      ]
+    },
+    {
+      "id": "z-connection-da3c7bbdcc4d",
+      "answer": "중정대 · 주자감 · 문적원",
+      "sourceChapter": "nambuk",
+      "categoryProposal": "감찰기관 또는 서로다른기능기관묶음",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-nambuk-8-1"
+      ]
+    },
+    {
+      "id": "z-connection-f592b366ef68",
+      "answer": "영광탑 · 이불병좌상",
+      "sourceChapter": "nambuk",
+      "categoryProposal": "탑 문화재·양식·왕조",
+      "status": "needs-source-or-structure-review",
+      "reason": "현재 자료의 다른시대 동종 유물4개가 부족하거나 단일유물과2종유물묶음이 섞임. 문화재 도록/공식기출의 각후보와 양식·조성시기 전수근거가 필요함.",
+      "rawSourceIds": [
+        "study-nambuk-8-1"
+      ]
+    },
+    {
+      "id": "z-connection-44aa69f10519",
+      "answer": "고구려",
+      "sourceChapter": "nambuk",
+      "categoryProposal": "국가·문화계승대상",
+      "status": "needs-source-or-structure-review",
+      "reason": "국가 선택지는 확보할 수 있으나 삼국국가들은 모두 고대사이고 후기국가4개의 해당 기능(문화계승관계) 설명 근거가 이 범위에서 부족함.",
+      "rawSourceIds": [
+        "study-cue-ancient-1"
+      ]
+    },
+    {
+      "id": "z-connection-9fd0d7e1ca65",
+      "answer": "적산 법화원",
+      "sourceChapter": "nambuk",
+      "categoryProposal": "지역·시설/인물-거점",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-cue-ancient-2"
+      ]
+    },
+    {
+      "id": "z-connection-b2d4fec3cd33",
+      "answer": "쌍봉사 철감선사탑 · 승탑",
+      "sourceChapter": "nambuk",
+      "categoryProposal": "복합연결·개별유형수동검수",
+      "status": "needs-source-or-structure-review",
+      "reason": "현재 자료의 다른시대 동종 유물4개가 부족하거나 단일유물과2종유물묶음이 섞임. 문화재 도록/공식기출의 각후보와 양식·조성시기 전수근거가 필요함.",
+      "rawSourceIds": [
+        "study-cue-ancient-3"
+      ]
+    },
+    {
+      "id": "z-connection-e6d15f9e03e6",
+      "answer": "무왕",
+      "sourceChapter": "nambuk",
+      "categoryProposal": "군주·왕",
+      "status": "applied-source-profile",
+      "reason": "같은 역할의 왕·교육기관·화폐, 질문 단서 및 실제 시대 근거를 확인한 4오답 적용",
+      "rawSourceIds": [
+        "study-cue-ancient-4"
+      ]
+    },
+    {
+      "id": "z-connection-9b0bb01952fc",
+      "answer": "대내상",
+      "sourceChapter": "nambuk",
+      "categoryProposal": "중앙통치기구·역할",
+      "status": "needs-source-or-structure-review",
+      "reason": "비슷한 일반기관은 있어도 회계/감찰/시전감독/도서관리/재상/행정/개혁/양계지휘의 정확한 기능을 맞춘 다른시대4후보가 부족함. 삼사는고려와조선동명기관의기능차이도검수필요.",
+      "rawSourceIds": [
+        "study-cue-ancient-5"
+      ]
+    },
+    {
+      "id": "z-connection-ab0a97cbce3b",
+      "answer": "주자감",
+      "sourceChapter": "nambuk",
+      "categoryProposal": "교육기관·운영주체",
+      "status": "applied-source-profile",
+      "reason": "같은 역할의 왕·교육기관·화폐, 질문 단서 및 실제 시대 근거를 확인한 4오답 적용",
+      "rawSourceIds": [
+        "study-cue-ancient-6"
+      ]
+    },
+    {
+      "id": "z-connection-b711efc6f1b2",
+      "answer": "문적원",
+      "sourceChapter": "nambuk",
+      "categoryProposal": "문서·전적·편찬관리(세부유형분리필요)",
+      "status": "needs-source-or-structure-review",
+      "reason": "비슷한 일반기관은 있어도 회계/감찰/시전감독/도서관리/재상/행정/개혁/양계지휘의 정확한 기능을 맞춘 다른시대4후보가 부족함. 삼사는고려와조선동명기관의기능차이도검수필요.",
+      "rawSourceIds": [
+        "study-cue-ancient-7"
+      ]
+    },
+    {
+      "id": "z-connection-5b774acae66b",
+      "answer": "발해 · 주자감",
+      "sourceChapter": "nambuk",
+      "categoryProposal": "교육기관·운영주체",
+      "status": "applied-source-profile",
+      "reason": "같은 역할의 왕·교육기관·화폐, 질문 단서 및 실제 시대 근거를 확인한 4오답 적용",
+      "rawSourceIds": [
+        "study-cue-ancient-8"
+      ]
+    },
+    {
+      "id": "z-connection-ca8b4afb8021",
+      "answer": "완산주 · 전주",
+      "sourceChapter": "nambuk",
+      "categoryProposal": "지역·시설/인물-거점",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-cue-ancient-9"
+      ]
+    },
+    {
+      "id": "z-connection-ce71f2d1a500",
+      "answer": "문무왕",
+      "sourceChapter": "nambuk",
+      "categoryProposal": "군주·왕",
+      "status": "applied-source-profile",
+      "reason": "같은 역할의 왕·교육기관·화폐, 질문 단서 및 실제 시대 근거를 확인한 4오답 적용",
+      "rawSourceIds": [
+        "study-cue-ancient-10"
+      ]
+    },
+    {
+      "id": "z-connection-bd5d80585da9",
+      "answer": "김헌창",
+      "sourceChapter": "nambuk",
+      "categoryProposal": "전투·반란/인물-사건묶음",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-cue-ancient-11"
+      ]
+    },
+    {
+      "id": "z-connection-87df4c900684",
+      "answer": "청해진 · 장보고",
+      "sourceChapter": "nambuk",
+      "categoryProposal": "지역·시설/인물-거점",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-cue-ancient-12"
+      ]
+    },
+    {
+      "id": "z-connection-311b6a6b9abf",
+      "answer": "선종",
+      "sourceChapter": "nambuk",
+      "categoryProposal": "사상·종교흐름",
+      "status": "needs-source-or-structure-review",
+      "reason": "여러시대에 존재하는 사상이다. 다른시대라고 표시하는 것만으로 오답이 되지 않아 대상인물·유물과 관계를 재검수해야 함.",
+      "rawSourceIds": [
+        "study-cue-ancient-13"
+      ]
+    },
+    {
+      "id": "z-connection-545b0829a139",
+      "answer": "정계와 계백료서",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "문서·전적·편찬관리(세부유형분리필요)",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-goryeo-1-1"
+      ]
+    },
+    {
+      "id": "z-connection-a177989ac724",
+      "answer": "최충 · 9재 학당 · 문헌공도",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "교육기관·운영주체",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-goryeo-5-1"
+      ]
+    },
+    {
+      "id": "z-connection-cf47c14e9863",
+      "answer": "숙종 · 해동통보",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "화폐 또는 군주-화폐묶음",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-goryeo-5-1"
+      ]
+    },
+    {
+      "id": "z-connection-0a45a23249bb",
+      "answer": "김보당 · 조위총",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "전투·반란/인물-사건묶음",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-goryeo-6-1"
+      ]
+    },
+    {
+      "id": "z-connection-a7c453ac7149",
+      "answer": "김사미 · 효심",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "전투·반란/인물-사건묶음",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-goryeo-6-1"
+      ]
+    },
+    {
+      "id": "z-connection-0ad4e0bde108",
+      "answer": "망이 · 망소이",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "전투·반란/인물-사건묶음",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-goryeo-6-1"
+      ]
+    },
+    {
+      "id": "z-connection-f09478d98845",
+      "answer": "만적",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "전투·반란/인물-사건묶음",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-goryeo-6-2"
+      ]
+    },
+    {
+      "id": "z-connection-ad9ccdc5b73d",
+      "answer": "정치도감",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "중앙통치기구·역할",
+      "status": "needs-source-or-structure-review",
+      "reason": "비슷한 일반기관은 있어도 회계/감찰/시전감독/도서관리/재상/행정/개혁/양계지휘의 정확한 기능을 맞춘 다른시대4후보가 부족함. 삼사는고려와조선동명기관의기능차이도검수필요.",
+      "rawSourceIds": [
+        "study-goryeo-8-1"
+      ]
+    },
+    {
+      "id": "z-connection-c4a10d409717",
+      "answer": "신진사대부 · 만권당 · 이제현",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "복합연결·개별유형수동검수",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-goryeo-8-1"
+      ]
+    },
+    {
+      "id": "z-connection-e50b79941462",
+      "answer": "최영 · 홍산전투",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "전투·반란/인물-사건묶음",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-goryeo-9-1"
+      ]
+    },
+    {
+      "id": "z-connection-6d8293213f66",
+      "answer": "최무선 · 진포대첩",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "전투·반란/인물-사건묶음",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-goryeo-9-1"
+      ]
+    },
+    {
+      "id": "z-connection-b088b28e667c",
+      "answer": "이성계 · 황산 전투",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "전투·반란/인물-사건묶음",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-goryeo-9-1"
+      ]
+    },
+    {
+      "id": "z-connection-e4cfe75eefc5",
+      "answer": "박위",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "복합연결·개별유형수동검수",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-goryeo-9-2"
+      ]
+    },
+    {
+      "id": "z-connection-5264bf97cc9b",
+      "answer": "도병마사 · 도평의사사",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "중앙통치기구·역할",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-goryeo-10-1"
+      ]
+    },
+    {
+      "id": "z-connection-0f9c72f64304",
+      "answer": "어사대",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "감찰기관 또는 서로다른기능기관묶음",
+      "status": "needs-source-or-structure-review",
+      "reason": "비슷한 일반기관은 있어도 회계/감찰/시전감독/도서관리/재상/행정/개혁/양계지휘의 정확한 기능을 맞춘 다른시대4후보가 부족함. 삼사는고려와조선동명기관의기능차이도검수필요.",
+      "rawSourceIds": [
+        "study-goryeo-10-1"
+      ]
+    },
+    {
+      "id": "z-connection-fbc2b73530b1",
+      "answer": "삼사",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "재정·회계기구",
+      "status": "needs-source-or-structure-review",
+      "reason": "비슷한 일반기관은 있어도 회계/감찰/시전감독/도서관리/재상/행정/개혁/양계지휘의 정확한 기능을 맞춘 다른시대4후보가 부족함. 삼사는고려와조선동명기관의기능차이도검수필요.",
+      "rawSourceIds": [
+        "study-goryeo-10-1"
+      ]
+    },
+    {
+      "id": "z-connection-c2f1f98c503d",
+      "answer": "대간",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "감찰기관 또는 서로다른기능기관묶음",
+      "status": "needs-source-or-structure-review",
+      "reason": "비슷한 일반기관은 있어도 회계/감찰/시전감독/도서관리/재상/행정/개혁/양계지휘의 정확한 기능을 맞춘 다른시대4후보가 부족함. 삼사는고려와조선동명기관의기능차이도검수필요.",
+      "rawSourceIds": [
+        "study-goryeo-10-2"
+      ]
+    },
+    {
+      "id": "z-connection-3789005b2677",
+      "answer": "병마사",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "지방행정·군사행정",
+      "status": "needs-source-or-structure-review",
+      "reason": "비슷한 일반기관은 있어도 회계/감찰/시전감독/도서관리/재상/행정/개혁/양계지휘의 정확한 기능을 맞춘 다른시대4후보가 부족함. 삼사는고려와조선동명기관의기능차이도검수필요.",
+      "rawSourceIds": [
+        "study-goryeo-10-2"
+      ]
+    },
+    {
+      "id": "z-connection-f461217d8404",
+      "answer": "향 · 부곡 · 소",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "지방행정·군사행정",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-goryeo-10-2",
+        "study-context-goryeo-1"
+      ]
+    },
+    {
+      "id": "z-connection-38b1291a87c2",
+      "answer": "경시서",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "상업감독기관/관영상점",
+      "status": "needs-source-or-structure-review",
+      "reason": "비슷한 일반기관은 있어도 회계/감찰/시전감독/도서관리/재상/행정/개혁/양계지휘의 정확한 기능을 맞춘 다른시대4후보가 부족함. 삼사는고려와조선동명기관의기능차이도검수필요.",
+      "rawSourceIds": [
+        "study-goryeo-11-1"
+      ]
+    },
+    {
+      "id": "z-connection-60a14d6d4e1f",
+      "answer": "관영상점",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "상업감독기관/관영상점",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-goryeo-11-1"
+      ]
+    },
+    {
+      "id": "z-connection-5264f760dde5",
+      "answer": "건원중보 · 은병",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "화폐 또는 군주-화폐묶음",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-goryeo-11-1"
+      ]
+    },
+    {
+      "id": "z-connection-db068e1f5d50",
+      "answer": "제위보 · 혜민국",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "구휼·의료기구(창고/기금/기관분리)",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-goryeo-11-2"
+      ]
+    },
+    {
+      "id": "z-connection-c665eefd52bf",
+      "answer": "의천 · 천태종 · 교관겸수 · 교장",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "승려·종파·사상/결사",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-goryeo-12-1"
+      ]
+    },
+    {
+      "id": "z-connection-a15c351aab50",
+      "answer": "혜심",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "승려·종파·사상/결사",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-goryeo-12-1"
+      ]
+    },
+    {
+      "id": "z-connection-3e5abc843577",
+      "answer": "요세 · 백련 결사",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "승려·종파·사상/결사",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-goryeo-12-1"
+      ]
+    },
+    {
+      "id": "z-connection-2cf9b516162e",
+      "answer": "월정사 팔각구층석탑",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "탑 문화재·양식·왕조",
+      "status": "needs-source-or-structure-review",
+      "reason": "현재 자료의 다른시대 동종 유물4개가 부족하거나 단일유물과2종유물묶음이 섞임. 문화재 도록/공식기출의 각후보와 양식·조성시기 전수근거가 필요함.",
+      "rawSourceIds": [
+        "study-goryeo-13-1"
+      ]
+    },
+    {
+      "id": "z-connection-a8fd1d43f680",
+      "answer": "관촉사 석조미륵보살입상",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "불상 문화재·형태·왕조",
+      "status": "needs-source-or-structure-review",
+      "reason": "현재 자료의 다른시대 동종 유물4개가 부족하거나 단일유물과2종유물묶음이 섞임. 문화재 도록/공식기출의 각후보와 양식·조성시기 전수근거가 필요함.",
+      "rawSourceIds": [
+        "study-goryeo-13-1"
+      ]
+    },
+    {
+      "id": "z-connection-e03cf7b05bd9",
+      "answer": "이제현 · 만권당",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "복합연결·개별유형수동검수",
+      "status": "needs-source-or-structure-review",
+      "reason": "현 검수 자료에서 정답과 같은 세부 기능·묶음 구조이면서 다른 역사시대인 오답4개를 충분한 근거로 확보하지 못함. 임의의 관련없는 개념으로 채우지 않음.",
+      "rawSourceIds": [
+        "study-cue-goryeo-1"
+      ]
+    },
+    {
+      "id": "z-connection-6cf2d69cca09",
+      "answer": "신라",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "국가·문화계승대상",
+      "status": "needs-source-or-structure-review",
+      "reason": "국가 선택지는 확보할 수 있으나 삼국국가들은 모두 고대사이고 후기국가4개의 해당 기능(문화계승관계) 설명 근거가 이 범위에서 부족함.",
+      "rawSourceIds": [
+        "study-cue-goryeo-2"
+      ]
+    },
+    {
+      "id": "z-connection-ca62deb137ae",
+      "answer": "돈오점수 · 지눌",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "종교 사상·수행자",
+      "status": "needs-source-or-structure-review",
+      "reason": " 후보 요세 · 백련 결사에 대해 기존 자료에서 두 번째 구별 사실을 찾지 못했으므로 보강 전 적용 금지. 후보 혜심에 대해 기존 자료에서 두 번째 구별 사실을 찾지 못했으므로 보강 전 적용 금지. 후보 정제두 · 강화학파에 대해 기존 자료에서 두 번째 구별 사실을 찾지 못했으므로 보강 전 적용 금지.",
+      "rawSourceIds": [
+        "study-cue-goryeo-3"
+      ]
+    },
+    {
+      "id": "z-connection-98465e13aa39",
+      "answer": "고려 · 금속활자",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "인쇄 기술",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-cue-goryeo-4"
+      ]
+    },
+    {
+      "id": "z-connection-a33cd247d353",
+      "answer": "청자 어룡형 주전자 · 고려",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "도자 문화재",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-cue-goryeo-5"
+      ]
+    },
+    {
+      "id": "z-connection-018aef58c25e",
+      "answer": "상평통보 · 조선",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "문화유산 시대 구별(부정형)",
+      "status": "applied-source-profile",
+      "reason": "같은 역할의 왕·교육기관·화폐, 질문 단서 및 실제 시대 근거를 확인한 4오답 적용",
+      "rawSourceIds": [
+        "study-cue-goryeo-6"
+      ]
+    },
+    {
+      "id": "z-connection-2171e731bda1",
+      "answer": "서적점 · 다점",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "관영 상점",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-cue-goryeo-7"
+      ]
+    },
+    {
+      "id": "z-connection-db681775db07",
+      "answer": "삼사 · 어사대 · 도병마사",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "중앙 관청 기능",
+      "status": "needs-source-or-structure-review",
+      "reason": "정답은 세 기능의 기관 묶음이며 다른 후보는 기능·개수의 균형 검토 필요.",
+      "rawSourceIds": [
+        "study-cue-goryeo-8"
+      ]
+    },
+    {
+      "id": "z-connection-72ef082117fe",
+      "answer": "권문세족 · 도평의사사",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "지배층·권력 기구",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-cue-goryeo-9"
+      ]
+    },
+    {
+      "id": "z-connection-26497c7aaa3c",
+      "answer": "농상집요",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "농서",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-cue-goryeo-10"
+      ]
+    },
+    {
+      "id": "z-connection-c3af92d6a90a",
+      "answer": "망이·망소이의 난",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "봉기",
+      "status": "needs-source-or-structure-review",
+      "reason": "기존 후보 망이·망소이는 정답과 동일하므로 제외; 네 번째 다른 봉기 추가 검토 필요. 후보 만적에 대해 기존 자료에서 두 번째 구별 사실을 찾지 못했으므로 보강 전 적용 금지. 후보 김사미 · 효심에 대해 기존 자료에서 두 번째 구별 사실을 찾지 못했으므로 보강 전 적용 금지.",
+      "rawSourceIds": [
+        "study-cue-goryeo-11"
+      ]
+    },
+    {
+      "id": "z-connection-caac26e53d0d",
+      "answer": "조위총 봉기 → 정방 설치 → 임유무 제거",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "사건 연대 묶음",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-cue-goryeo-12"
+      ]
+    },
+    {
+      "id": "z-connection-94b963b0f3b2",
+      "answer": "김보당의 난 → 봉사10조 → 삼별초 항쟁",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "사건 연대 묶음",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침. 질문은 명종 복위, 해설은 의종 복위로 상충한다. 문제 문구부터 검토 필요.",
+      "rawSourceIds": [
+        "study-cue-goryeo-13"
+      ]
+    },
+    {
+      "id": "z-connection-6b384673dac0",
+      "answer": "대장도감 · 팔만대장경",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "불교 경전·간행 기관",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-cue-goryeo-14"
+      ]
+    },
+    {
+      "id": "z-connection-4de2ffc1d1a5",
+      "answer": "김윤후 · 살리타",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "항쟁 인물",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-cue-goryeo-15"
+      ]
+    },
+    {
+      "id": "z-connection-e83861494675",
+      "answer": "정방 · 교정도감",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "무신정권 권력 기관",
+      "status": "needs-source-or-structure-review",
+      "reason": " 후보 집사부에 대해 기존 자료에서 두 번째 구별 사실을 찾지 못했으므로 보강 전 적용 금지.",
+      "rawSourceIds": [
+        "study-cue-goryeo-16"
+      ]
+    },
+    {
+      "id": "z-goryeo-recall-01",
+      "answer": "예종",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "왕",
+      "status": "preserved-existing",
+      "reason": "기존 회상 문제/기록 보존",
+      "rawSourceIds": [
+        "study-cue-goryeo-17"
+      ]
+    },
+    {
+      "id": "z-connection-919a9accec4e",
+      "answer": "별무반 · 동북9성",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "군사 조직·국경 방어",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-cue-goryeo-18"
+      ]
+    },
+    {
+      "id": "z-connection-a10da021fe03",
+      "answer": "숙종",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "왕",
+      "status": "applied-source-profile",
+      "reason": "같은 역할의 왕·교육기관·화폐, 질문 단서 및 실제 시대 근거를 확인한 4오답 적용",
+      "rawSourceIds": [
+        "study-cue-goryeo-19"
+      ]
+    },
+    {
+      "id": "z-connection-5bc96061bb15",
+      "answer": "묘청 · 김부식",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "반란 주도·진압 인물",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-cue-goryeo-20"
+      ]
+    },
+    {
+      "id": "z-connection-b29380bf260d",
+      "answer": "광군",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "군사 조직",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-cue-goryeo-21"
+      ]
+    },
+    {
+      "id": "z-connection-167c70216eca",
+      "answer": "거란 · 초조대장경",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "외침·불교 경전",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-cue-goryeo-22"
+      ]
+    },
+    {
+      "id": "z-connection-5d4063f04650",
+      "answer": "향리와 속현",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "지방 행정",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-context-goryeo-1"
+      ]
+    },
+    {
+      "id": "z-connection-be96d7d7c997",
+      "answer": "남녀 균분 상속·여성 재가",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "가족·상속 제도",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-context-goryeo-1"
+      ]
+    },
+    {
+      "id": "z-connection-2d30f6f4f2e8",
+      "answer": "수조권",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "토지·수취 권리",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-context-goryeo-2"
+      ]
+    },
+    {
+      "id": "z-connection-23c39ddbbafb",
+      "answer": "경종 → 목종 → 문종",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "토지 제도 왕 순서",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-context-goryeo-2"
+      ]
+    },
+    {
+      "id": "z-connection-75209b0996f3",
+      "answer": "음서·공음전",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "관료 특권",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-context-goryeo-2"
+      ]
+    },
+    {
+      "id": "z-connection-e0ef1073e449",
+      "answer": "흑창 → 의창 / 상평창",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "구휼·물가 조절",
+      "status": "needs-source-or-structure-review",
+      "reason": " 후보 혜민서 · 동서활인서에 대해 기존 자료에서 두 번째 구별 사실을 찾지 못했으므로 보강 전 적용 금지.",
+      "rawSourceIds": [
+        "study-context-goryeo-3"
+      ]
+    },
+    {
+      "id": "z-connection-e476da65a964",
+      "answer": "제위보",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "구휼 기관",
+      "status": "needs-source-or-structure-review",
+      "reason": " 후보 혜민서 · 동서활인서에 대해 기존 자료에서 두 번째 구별 사실을 찾지 못했으므로 보강 전 적용 금지.",
+      "rawSourceIds": [
+        "study-context-goryeo-3"
+      ]
+    },
+    {
+      "id": "z-connection-a9c1d34689ea",
+      "answer": "혜민국·동서대비원",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "의료·구호 기관",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-context-goryeo-3"
+      ]
+    },
+    {
+      "id": "z-connection-08b5501a9399",
+      "answer": "최충 → 숙종 → 예종",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "교육 발전 인물 순서",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-context-goryeo-4"
+      ]
+    },
+    {
+      "id": "z-connection-6ec96f81f4eb",
+      "answer": "안향·이제현·이색",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "학술 인물",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-context-goryeo-4"
+      ]
+    },
+    {
+      "id": "z-connection-fb6d10f4d790",
+      "answer": "수시력·농상집요·향약구급방",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "과학·기술 문헌 묶음",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-context-goryeo-4"
+      ]
+    },
+    {
+      "id": "z-connection-70e137cccb5a",
+      "answer": "비색",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "도자 색채 용어",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-context-goryeo-5"
+      ]
+    },
+    {
+      "id": "z-connection-b99b0100d0c6",
+      "answer": "상감",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "도자 기법 용어",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-context-goryeo-5"
+      ]
+    },
+    {
+      "id": "z-connection-b92c887dc7c5",
+      "answer": "상형",
+      "sourceChapter": "goryeo",
+      "categoryProposal": "도자 형태 용어",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-context-goryeo-5"
+      ]
+    },
+    {
+      "id": "z-connection-6ca40d8952bd",
+      "answer": "권업회 · 대한광복군정부",
+      "sourceChapter": "islands",
+      "categoryProposal": "국외 독립운동 단체",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-islands-2-1"
+      ]
+    },
+    {
+      "id": "z-connection-804566a0a4ae",
+      "answer": "흥사단 · 대조선국민군단",
+      "sourceChapter": "islands",
+      "categoryProposal": "국외 독립운동 단체",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-islands-2-1"
+      ]
+    },
+    {
+      "id": "z-connection-51c6837299bf",
+      "answer": "공주",
+      "sourceChapter": "islands",
+      "categoryProposal": "역사 장소",
+      "status": "needs-source-or-structure-review",
+      "reason": "장소는 시대를 초월하므로 후보별 시대는 comprehensive로 표기; 실제 사건 두 가지가 필요한 단일 단서 장소는 추가 보강 필요. 후보 정주에 대해 기존 자료에서 두 번째 구별 사실을 찾지 못했으므로 보강 전 적용 금지.",
+      "rawSourceIds": [
+        "study-islands-3-1"
+      ]
+    },
+    {
+      "id": "z-connection-7a04c222cac3",
+      "answer": "강화",
+      "sourceChapter": "islands",
+      "categoryProposal": "역사 장소",
+      "status": "needs-source-or-structure-review",
+      "reason": "장소는 시대를 초월하므로 후보별 시대는 comprehensive로 표기; 실제 사건 두 가지가 필요한 단일 단서 장소는 추가 보강 필요.",
+      "rawSourceIds": [
+        "study-islands-3-1"
+      ]
+    },
+    {
+      "id": "z-connection-24598db20ec0",
+      "answer": "진주",
+      "sourceChapter": "islands",
+      "categoryProposal": "역사 장소",
+      "status": "needs-source-or-structure-review",
+      "reason": "장소는 시대를 초월하므로 후보별 시대는 comprehensive로 표기; 실제 사건 두 가지가 필요한 단일 단서 장소는 추가 보강 필요.",
+      "rawSourceIds": [
+        "study-islands-3-1"
+      ]
+    },
+    {
+      "id": "z-connection-43c2521b5eb8",
+      "answer": "평양",
+      "sourceChapter": "islands",
+      "categoryProposal": "역사 장소",
+      "status": "needs-source-or-structure-review",
+      "reason": "장소는 시대를 초월하므로 후보별 시대는 comprehensive로 표기; 실제 사건 두 가지가 필요한 단일 단서 장소는 추가 보강 필요.",
+      "rawSourceIds": [
+        "study-islands-3-2"
+      ]
+    },
+    {
+      "id": "z-connection-cef5ad831773",
+      "answer": "개성",
+      "sourceChapter": "islands",
+      "categoryProposal": "역사 장소",
+      "status": "needs-source-or-structure-review",
+      "reason": "장소는 시대를 초월하므로 후보별 시대는 comprehensive로 표기; 실제 사건 두 가지가 필요한 단일 단서 장소는 추가 보강 필요.",
+      "rawSourceIds": [
+        "study-islands-3-2"
+      ]
+    },
+    {
+      "id": "z-connection-cbf8348b580e",
+      "answer": "정주",
+      "sourceChapter": "islands",
+      "categoryProposal": "역사 장소",
+      "status": "needs-source-or-structure-review",
+      "reason": "장소는 시대를 초월하므로 후보별 시대는 comprehensive로 표기; 실제 사건 두 가지가 필요한 단일 단서 장소는 추가 보강 필요.",
+      "rawSourceIds": [
+        "study-islands-3-2"
+      ]
+    },
+    {
+      "id": "z-connection-51038beadda1",
+      "answer": "원산",
+      "sourceChapter": "islands",
+      "categoryProposal": "역사 장소",
+      "status": "needs-source-or-structure-review",
+      "reason": "장소는 시대를 초월하므로 후보별 시대는 comprehensive로 표기; 실제 사건 두 가지가 필요한 단일 단서 장소는 추가 보강 필요.",
+      "rawSourceIds": [
+        "study-islands-3-3"
+      ]
+    },
+    {
+      "id": "z-connection-5f3f1c032f6e",
+      "answer": "방곡령",
+      "sourceChapter": "opening",
+      "categoryProposal": "경제 통제 정책",
+      "status": "needs-source-or-structure-review",
+      "reason": "검증 가능한 같은 종류의 후보가 4개에 못 미침. 정책의 기능 범위가 곡물 유출·시장 통제·수탈·세금으로 다르므로 경제 정책 수준의 비교를 허용할지 검토 필요.",
+      "rawSourceIds": [
+        "study-opening-3-1"
+      ]
+    },
+    {
+      "id": "z-connection-1a975e15a20b",
+      "answer": "교정청",
+      "sourceChapter": "opening",
+      "categoryProposal": "개혁 기구",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-opening-5-1"
+      ]
+    },
+    {
+      "id": "z-connection-9ebb85b2233f",
+      "answer": "만민 공동회 · 관민 공동회 · 박성춘",
+      "sourceChapter": "opening",
+      "categoryProposal": "정치 집회·회의",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-opening-6-1"
+      ]
+    },
+    {
+      "id": "z-connection-c337920392a3",
+      "answer": "동양척식주식회사 · 기유각서",
+      "sourceChapter": "opening",
+      "categoryProposal": "국권 침탈 기구·협약",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-opening-7-1"
+      ]
+    },
+    {
+      "id": "z-connection-9f0d7276af9d",
+      "answer": "신문지법",
+      "sourceChapter": "opening",
+      "categoryProposal": "통제 법령",
+      "status": "needs-source-or-structure-review",
+      "reason": "창씨개명은 법령 이름이 아니라 정책이므로 같은 종류의 법령 후보로 교체 검토 필요.",
+      "rawSourceIds": [
+        "study-opening-8-1"
+      ]
+    },
+    {
+      "id": "z-connection-798c26396a28",
+      "answer": "1907 군대 해산",
+      "sourceChapter": "opening",
+      "categoryProposal": "군사 사건",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-context-opening-1"
+      ]
+    },
+    {
+      "id": "z-connection-dd676f1f7a75",
+      "answer": "13도 창의군",
+      "sourceChapter": "opening",
+      "categoryProposal": "무장 항일 조직",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-context-opening-1"
+      ]
+    },
+    {
+      "id": "z-connection-6b6e707e3089",
+      "answer": "황국 신민 서사 · 조선 사상범 예방 구금령",
+      "sourceChapter": "colonial",
+      "categoryProposal": "통제 정책·법령",
+      "status": "needs-source-or-structure-review",
+      "reason": "강제 통제 정책 비교이나 두 개 묶음 정답과 단일 정책 후보의 형식 균형 검토 필요.",
+      "rawSourceIds": [
+        "study-colonial-1-1"
+      ]
+    },
+    {
+      "id": "z-connection-77dc8b07bffb",
+      "answer": "연통제 · 이륭양행",
+      "sourceChapter": "colonial",
+      "categoryProposal": "임시정부 연락 조직",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-colonial-2-1"
+      ]
+    },
+    {
+      "id": "z-connection-0e7b07e32a72",
+      "answer": "국민대표회의",
+      "sourceChapter": "colonial",
+      "categoryProposal": "정치 회의",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-colonial-2-1"
+      ]
+    },
+    {
+      "id": "z-connection-d27a96e83f38",
+      "answer": "광주 학생 항일운동 · 성진회",
+      "sourceChapter": "colonial",
+      "categoryProposal": "학생·민족 운동",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-colonial-3-1"
+      ]
+    },
+    {
+      "id": "z-connection-221757812e63",
+      "answer": "관동 대지진",
+      "sourceChapter": "colonial",
+      "categoryProposal": "국외 재난·학살 사건",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-colonial-5-1"
+      ]
+    },
+    {
+      "id": "z-connection-a2e378aa65af",
+      "answer": "중앙아시아",
+      "sourceChapter": "colonial",
+      "categoryProposal": "국외 이주 지역",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-colonial-5-1"
+      ]
+    },
+    {
+      "id": "z-connection-3dc74f2a22ca",
+      "answer": "에네켄 농장",
+      "sourceChapter": "colonial",
+      "categoryProposal": "국외 이주 노동 시설",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-colonial-5-1"
+      ]
+    },
+    {
+      "id": "z-connection-e8f2d5b0ebff",
+      "answer": "조선 혁명 간부 학교",
+      "sourceChapter": "colonial",
+      "categoryProposal": "교육 기관",
+      "status": "needs-source-or-structure-review",
+      "reason": " 후보 향교에 대해 기존 자료에서 두 번째 구별 사실을 찾지 못했으므로 보강 전 적용 금지.",
+      "rawSourceIds": [
+        "study-colonial-6-1"
+      ]
+    },
+    {
+      "id": "z-connection-314af4bb80d7",
+      "answer": "조선어 연구회 · 가갸날",
+      "sourceChapter": "colonial",
+      "categoryProposal": "문화 운동 단체·기념일",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-colonial-7-1"
+      ]
+    },
+    {
+      "id": "z-connection-d920f9b9b67f",
+      "answer": "상록수",
+      "sourceChapter": "colonial",
+      "categoryProposal": "문학 작품",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·종류의 후보 4개를 두 가지 짧은 사실로 뒷받침할 기존 자료가 부족하여 임의 후보를 넣지 않음. 검증 가능한 같은 종류의 후보가 4개에 못 미침.",
+      "rawSourceIds": [
+        "study-colonial-7-1"
+      ]
+    },
+    {
+      "id": "z-connection-e45596f17aec",
+      "answer": "임병찬·독립의군부",
+      "sourceChapter": "colonial",
+      "categoryProposal": "독립운동 결사·조직",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-context-colonial-1"
+      ]
+    },
+    {
+      "id": "z-connection-e522c0cc842d",
+      "answer": "박상진·대한광복회",
+      "sourceChapter": "colonial",
+      "categoryProposal": "독립운동 결사·조직",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-context-colonial-1"
+      ]
+    },
+    {
+      "id": "z-connection-b2d19007042a",
+      "answer": "105인 사건",
+      "sourceChapter": "colonial",
+      "categoryProposal": "탄압·정치 사건",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·유형에서 정답 핵심어가 겹치지 않는 근거 후보가 네 개 미만이다. 임의로 다른 분야 보기를 보충하지 않았다.",
+      "rawSourceIds": [
+        "study-context-colonial-1",
+        "recall:lecture-notes.js:opening:7",
+        "recall:textbook-notes.js:opening:1"
+      ]
+    },
+    {
+      "id": "z-connection-5aa63fc02d7e",
+      "answer": "김구·한인애국단",
+      "sourceChapter": "colonial",
+      "categoryProposal": "독립운동 결사·조직",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-context-colonial-2"
+      ]
+    },
+    {
+      "id": "z-connection-a4ded3bd6dc8",
+      "answer": "홍커우 공원",
+      "sourceChapter": "colonial",
+      "categoryProposal": "복합 연결·개별 검토",
+      "status": "needs-source-or-structure-review",
+      "reason": "여러 사건·기관·기술을 묶는 문항이다. 단일 유형의 네 오답이 동일한 질문에 배타적으로 대응하는지 수동 검토가 필요하다.",
+      "rawSourceIds": [
+        "study-context-colonial-2"
+      ]
+    },
+    {
+      "id": "z-connection-d427dc8f598c",
+      "answer": "반민족 행위 특별조사위원회 · 국회 프락치 사건",
+      "sourceChapter": "modern",
+      "categoryProposal": "탄압·정치 사건",
+      "status": "needs-source-or-structure-review",
+      "reason": "여러 사건·기관·기술을 묶는 문항이다. 단일 유형의 네 오답이 동일한 질문에 배타적으로 대응하는지 수동 검토가 필요하다.",
+      "rawSourceIds": [
+        "study-modern-2-1"
+      ]
+    },
+    {
+      "id": "z-connection-361ba438d94a",
+      "answer": "한일기본조약 · 6·3 시위",
+      "sourceChapter": "modern",
+      "categoryProposal": "복합 연결·개별 검토",
+      "status": "needs-source-or-structure-review",
+      "reason": "여러 사건·기관·기술을 묶는 문항이다. 단일 유형의 네 오답이 동일한 질문에 배타적으로 대응하는지 수동 검토가 필요하다.",
+      "rawSourceIds": [
+        "study-modern-3-1"
+      ]
+    },
+    {
+      "id": "z-connection-933f02f69eac",
+      "answer": "경제 개발 5개년 계획 · 베트남 파병",
+      "sourceChapter": "modern",
+      "categoryProposal": "복합 연결·개별 검토",
+      "status": "needs-source-or-structure-review",
+      "reason": "여러 사건·기관·기술을 묶는 문항이다. 단일 유형의 네 오답이 동일한 질문에 배타적으로 대응하는지 수동 검토가 필요하다.",
+      "rawSourceIds": [
+        "study-modern-3-1"
+      ]
+    },
+    {
+      "id": "z-connection-8da5cacf6805",
+      "answer": "함평 고구마 · 향토 예비군",
+      "sourceChapter": "modern",
+      "categoryProposal": "복합 연결·개별 검토",
+      "status": "needs-source-or-structure-review",
+      "reason": "여러 사건·기관·기술을 묶는 문항이다. 단일 유형의 네 오답이 동일한 질문에 배타적으로 대응하는지 수동 검토가 필요하다.",
+      "rawSourceIds": [
+        "study-modern-3-1"
+      ]
+    },
+    {
+      "id": "z-connection-f34a3c895b57",
+      "answer": "김대중",
+      "sourceChapter": "modern",
+      "categoryProposal": "국가 지도자·재위 정책",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-context-modern-1"
+      ]
+    },
+    {
+      "id": "z-connection-54f6d0be3516",
+      "answer": "노무현",
+      "sourceChapter": "modern",
+      "categoryProposal": "국가 지도자·재위 정책",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-context-modern-1"
+      ]
+    },
+    {
+      "id": "z-connection-a1e1200e83b9",
+      "answer": "태종 · 저화",
+      "sourceChapter": "joseon-early",
+      "categoryProposal": "화폐·발행 정책",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-early-1-1"
+      ]
+    },
+    {
+      "id": "z-connection-23ad45bc7d10",
+      "answer": "세종 · 쓰시마섬 · 계해약조",
+      "sourceChapter": "joseon-early",
+      "categoryProposal": "대외 교섭·사절·교역",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-early-2-1"
+      ]
+    },
+    {
+      "id": "z-connection-ed8016b54e82",
+      "answer": "선조 · 동인의 분화",
+      "sourceChapter": "joseon-early",
+      "categoryProposal": "복합 연결·개별 검토",
+      "status": "needs-source-or-structure-review",
+      "reason": "여러 사건·기관·기술을 묶는 문항이다. 단일 유형의 네 오답이 동일한 질문에 배타적으로 대응하는지 수동 검토가 필요하다.",
+      "rawSourceIds": [
+        "study-joseon-early-6-1"
+      ]
+    },
+    {
+      "id": "z-connection-b1d0089d7306",
+      "answer": "신립 · 탄금대",
+      "sourceChapter": "joseon-early",
+      "categoryProposal": "전투·항전 지휘",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-early-8-1"
+      ]
+    },
+    {
+      "id": "z-connection-2f6fe995772f",
+      "answer": "이순신 · 권율 · 김시민",
+      "sourceChapter": "joseon-early",
+      "categoryProposal": "전투·항전 지휘",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-early-8-1"
+      ]
+    },
+    {
+      "id": "z-connection-74a193b00b26",
+      "answer": "조헌 · 정문부",
+      "sourceChapter": "joseon-early",
+      "categoryProposal": "전투·항전 지휘",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-early-8-1"
+      ]
+    },
+    {
+      "id": "z-connection-265383104b46",
+      "answer": "병자호란 · 김상헌 · 최명길",
+      "sourceChapter": "joseon-early",
+      "categoryProposal": "대외 교섭·사절·교역",
+      "status": "needs-source-or-structure-review",
+      "reason": "여러 사건·기관·기술을 묶는 문항이다. 단일 유형의 네 오답이 동일한 질문에 배타적으로 대응하는지 수동 검토가 필요하다.",
+      "rawSourceIds": [
+        "study-joseon-early-11-1"
+      ]
+    },
+    {
+      "id": "z-connection-d9d8224d7f04",
+      "answer": "승정원 · 도승지 · 은대",
+      "sourceChapter": "joseon-early",
+      "categoryProposal": "통치 기관의 역할",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-early-12-1"
+      ]
+    },
+    {
+      "id": "z-connection-490dcce337b1",
+      "answer": "의금부 · 금오 · 조옥",
+      "sourceChapter": "joseon-early",
+      "categoryProposal": "통치 기관의 역할",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-early-12-1"
+      ]
+    },
+    {
+      "id": "z-connection-266ec90600d2",
+      "answer": "사헌부 · 대사헌",
+      "sourceChapter": "joseon-early",
+      "categoryProposal": "통치 기관의 역할",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-early-12-1"
+      ]
+    },
+    {
+      "id": "z-connection-353537293030",
+      "answer": "사헌부 · 사간원 · 홍문관",
+      "sourceChapter": "joseon-early",
+      "categoryProposal": "통치 기관의 역할",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-early-12-2"
+      ]
+    },
+    {
+      "id": "z-connection-19e534d6a852",
+      "answer": "한성부",
+      "sourceChapter": "joseon-early",
+      "categoryProposal": "통치 기관의 역할",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-early-12-2"
+      ]
+    },
+    {
+      "id": "z-connection-4e655a71cf0e",
+      "answer": "성균관 · 대사성",
+      "sourceChapter": "joseon-early",
+      "categoryProposal": "교육 기관·교육 제도",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-early-12-2"
+      ]
+    },
+    {
+      "id": "z-connection-69bc2e396dd9",
+      "answer": "춘추관",
+      "sourceChapter": "joseon-early",
+      "categoryProposal": "통치 기관의 역할",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-early-12-3"
+      ]
+    },
+    {
+      "id": "z-connection-12e2ea6b8265",
+      "answer": "유향소 · 좌수 · 별감",
+      "sourceChapter": "joseon-early",
+      "categoryProposal": "통치 기관의 역할",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-early-13-1"
+      ]
+    },
+    {
+      "id": "z-connection-c1633438a69a",
+      "answer": "경재소",
+      "sourceChapter": "joseon-early",
+      "categoryProposal": "통치 기관의 역할",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-early-13-1"
+      ]
+    },
+    {
+      "id": "z-connection-e77e5018ecfc",
+      "answer": "향교",
+      "sourceChapter": "joseon-early",
+      "categoryProposal": "교육 기관·교육 제도",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-early-13-1"
+      ]
+    },
+    {
+      "id": "z-connection-ab401ac19683",
+      "answer": "직전법 (세조)",
+      "sourceChapter": "joseon-early",
+      "categoryProposal": "토지·수취 제도",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-early-14-1"
+      ]
+    },
+    {
+      "id": "z-connection-aa989b7dd01b",
+      "answer": "관수관급제 (성종)",
+      "sourceChapter": "joseon-early",
+      "categoryProposal": "토지·수취 제도",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-early-14-1"
+      ]
+    },
+    {
+      "id": "z-connection-875327f06f21",
+      "answer": "직전법 폐지 (명종)",
+      "sourceChapter": "joseon-early",
+      "categoryProposal": "토지·수취 제도",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-early-14-1"
+      ]
+    },
+    {
+      "id": "z-connection-af0490c4df4d",
+      "answer": "태종 · 혼일강리역대국도지도",
+      "sourceChapter": "joseon-early",
+      "categoryProposal": "저술·사상·학술 활동",
+      "status": "needs-source-or-structure-review",
+      "reason": "지도 유형의 기존 근거 후보 네 개를 확보하지 못했다. 일반 저술로 대체하지 않았다.",
+      "rawSourceIds": [
+        "study-joseon-early-15-1"
+      ]
+    },
+    {
+      "id": "z-connection-f61bad080458",
+      "answer": "명종 · 구황촬요",
+      "sourceChapter": "joseon-early",
+      "categoryProposal": "저술·사상·학술 활동",
+      "status": "needs-source-or-structure-review",
+      "reason": "해당 저술·기술·학술 기능에 맞는 네 개의 독립적인 기존 근거 후보가 부족하다. 일반 서적 목록을 오답으로 채우지 않았다.",
+      "rawSourceIds": [
+        "study-joseon-early-15-1"
+      ]
+    },
+    {
+      "id": "z-connection-d3abed09a022",
+      "answer": "주세붕 · 백운동 서원 → 소수 서원",
+      "sourceChapter": "joseon-early",
+      "categoryProposal": "교육 기관·교육 제도",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-early-15-1"
+      ]
+    },
+    {
+      "id": "z-connection-f287d799051c",
+      "answer": "이황 · 성학십도 / 이이 · 성학집요",
+      "sourceChapter": "joseon-early",
+      "categoryProposal": "저술·사상·학술 활동",
+      "status": "needs-source-or-structure-review",
+      "reason": "해당 저술·기술·학술 기능에 맞는 네 개의 독립적인 기존 근거 후보가 부족하다. 일반 서적 목록을 오답으로 채우지 않았다.",
+      "rawSourceIds": [
+        "study-joseon-early-15-2"
+      ]
+    },
+    {
+      "id": "z-connection-6c2975ebc3be",
+      "answer": "송시열 · 기축봉사",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "저술·사상·학술 활동",
+      "status": "needs-source-or-structure-review",
+      "reason": "해당 저술·기술·학술 기능에 맞는 네 개의 독립적인 기존 근거 후보가 부족하다. 일반 서적 목록을 오답으로 채우지 않았다.",
+      "rawSourceIds": [
+        "study-joseon-late-1-1"
+      ]
+    },
+    {
+      "id": "z-connection-cdb109fa0adc",
+      "answer": "숙종 · 초량 왜관",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "대외 교섭·사절·교역",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-late-1-1"
+      ]
+    },
+    {
+      "id": "z-connection-04223361517a",
+      "answer": "순조 · 공노비 해방",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "복합 연결·개별 검토",
+      "status": "needs-source-or-structure-review",
+      "reason": "여러 사건·기관·기술을 묶는 문항이다. 단일 유형의 네 오답이 동일한 질문에 배타적으로 대응하는지 수동 검토가 필요하다.",
+      "rawSourceIds": [
+        "study-joseon-late-3-1"
+      ]
+    },
+    {
+      "id": "z-connection-f445e92a6070",
+      "answer": "전세(토지) · 영정법",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "토지·수취 제도",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-late-4-1"
+      ]
+    },
+    {
+      "id": "z-connection-6121b2a1f21c",
+      "answer": "공납(특산물) · 대동법",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "토지·수취 제도",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-late-4-1"
+      ]
+    },
+    {
+      "id": "z-connection-bddc1e98ae6c",
+      "answer": "군역(군포) · 균역법",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "토지·수취 제도",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-late-4-1"
+      ]
+    },
+    {
+      "id": "z-connection-24ee12e29e05",
+      "answer": "연분 9등법 · 전분 6등법",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "토지·수취 제도",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-late-4-2"
+      ]
+    },
+    {
+      "id": "z-connection-d047182b034b",
+      "answer": "혜민서 · 동서활인서",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "구휼·의료 기관",
+      "status": "needs-source-or-structure-review",
+      "reason": "같은 기능·유형에서 정답 핵심어가 겹치지 않는 근거 후보가 네 개 미만이다. 임의로 다른 분야 보기를 보충하지 않았다.",
+      "rawSourceIds": [
+        "study-joseon-late-6-1"
+      ]
+    },
+    {
+      "id": "z-connection-17612f28aa82",
+      "answer": "조선왕조실록",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "국정·역사 기록물",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-late-7-1"
+      ]
+    },
+    {
+      "id": "z-connection-e1a734578992",
+      "answer": "조선왕조의궤",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "국정·역사 기록물",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-late-7-1"
+      ]
+    },
+    {
+      "id": "z-connection-45ab9e65366b",
+      "answer": "승정원일기",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "국정·역사 기록물",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-late-7-1"
+      ]
+    },
+    {
+      "id": "z-connection-dec17a4307a8",
+      "answer": "통신사",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "대외 교섭·사절·교역",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-late-7-2"
+      ]
+    },
+    {
+      "id": "z-connection-f038f08eb5a1",
+      "answer": "정약용 · 경세유표 · 마과회통",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "저술·사상·학술 활동",
+      "status": "needs-source-or-structure-review",
+      "reason": "해당 저술·기술·학술 기능에 맞는 네 개의 독립적인 기존 근거 후보가 부족하다. 일반 서적 목록을 오답으로 채우지 않았다.",
+      "rawSourceIds": [
+        "study-joseon-late-8-1"
+      ]
+    },
+    {
+      "id": "z-connection-afccd5578783",
+      "answer": "정약용 · 기기도설 · 거중기",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "저술·사상·학술 활동",
+      "status": "needs-source-or-structure-review",
+      "reason": "해당 저술·기술·학술 기능에 맞는 네 개의 독립적인 기존 근거 후보가 부족하다. 일반 서적 목록을 오답으로 채우지 않았다.",
+      "rawSourceIds": [
+        "study-joseon-late-8-1"
+      ]
+    },
+    {
+      "id": "z-connection-809d81581890",
+      "answer": "홍대용 · 의산문답 · 지전설",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "저술·사상·학술 활동",
+      "status": "needs-source-or-structure-review",
+      "reason": "해당 저술·기술·학술 기능에 맞는 네 개의 독립적인 기존 근거 후보가 부족하다. 일반 서적 목록을 오답으로 채우지 않았다.",
+      "rawSourceIds": [
+        "study-joseon-late-9-1"
+      ]
+    },
+    {
+      "id": "z-connection-896800733a00",
+      "answer": "박지원 · 열하일기 · 양반전",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "저술·사상·학술 활동",
+      "status": "needs-source-or-structure-review",
+      "reason": "기행·견문 기록과 해당 인물 저술의 배타적인 네 후보를 기존 근거에서 확보하지 못했다.",
+      "rawSourceIds": [
+        "study-joseon-late-9-1"
+      ]
+    },
+    {
+      "id": "z-connection-68bdeb6fd5d3",
+      "answer": "유수원 · 우서",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "저술·사상·학술 활동",
+      "status": "needs-source-or-structure-review",
+      "reason": "해당 저술·기술·학술 기능에 맞는 네 개의 독립적인 기존 근거 후보가 부족하다. 일반 서적 목록을 오답으로 채우지 않았다.",
+      "rawSourceIds": [
+        "study-joseon-late-9-1"
+      ]
+    },
+    {
+      "id": "z-connection-be171547c439",
+      "answer": "이수광 · 지봉유설",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "저술·사상·학술 활동",
+      "status": "needs-source-or-structure-review",
+      "reason": "해당 저술·기술·학술 기능에 맞는 네 개의 독립적인 기존 근거 후보가 부족하다. 일반 서적 목록을 오답으로 채우지 않았다.",
+      "rawSourceIds": [
+        "study-joseon-late-9-2"
+      ]
+    },
+    {
+      "id": "z-connection-b1b330cc3bef",
+      "answer": "서유구 · 임원경제지",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "저술·사상·학술 활동",
+      "status": "needs-source-or-structure-review",
+      "reason": "해당 저술·기술·학술 기능에 맞는 네 개의 독립적인 기존 근거 후보가 부족하다. 일반 서적 목록을 오답으로 채우지 않았다.",
+      "rawSourceIds": [
+        "study-joseon-late-9-2"
+      ]
+    },
+    {
+      "id": "z-connection-ce8c8ebd4d72",
+      "answer": "김육 · 시헌력",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "저술·사상·학술 활동",
+      "status": "needs-source-or-structure-review",
+      "reason": "해당 저술·기술·학술 기능에 맞는 네 개의 독립적인 기존 근거 후보가 부족하다. 일반 서적 목록을 오답으로 채우지 않았다.",
+      "rawSourceIds": [
+        "study-joseon-late-9-2"
+      ]
+    },
+    {
+      "id": "z-connection-4cf2215c316f",
+      "answer": "정인지 · 고려사",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "국정·역사 기록물",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-late-10-1"
+      ]
+    },
+    {
+      "id": "z-connection-d372c818735a",
+      "answer": "서거정 · 동국통감",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "국정·역사 기록물",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-late-10-1"
+      ]
+    },
+    {
+      "id": "z-connection-626f6e55005f",
+      "answer": "신숙주 · 해동제국기",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "대외 교섭·사절·교역",
+      "status": "needs-source-or-structure-review",
+      "reason": "기행·견문 기록과 해당 인물 저술의 배타적인 네 후보를 기존 근거에서 확보하지 못했다.",
+      "rawSourceIds": [
+        "study-joseon-late-10-1"
+      ]
+    },
+    {
+      "id": "z-connection-097166fa00da",
+      "answer": "유득공 · 발해고",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "국정·역사 기록물",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-late-10-2"
+      ]
+    },
+    {
+      "id": "z-connection-2ccc4502a98c",
+      "answer": "정상기 · 동국지도 · 100리 척",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "저술·사상·학술 활동",
+      "status": "needs-source-or-structure-review",
+      "reason": "지도 유형의 기존 근거 후보 네 개를 확보하지 못했다. 일반 저술로 대체하지 않았다.",
+      "rawSourceIds": [
+        "study-joseon-late-10-2"
+      ]
+    },
+    {
+      "id": "z-connection-b918503a6054",
+      "answer": "김정호 · 대동여지도",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "지도·지리 기록",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 2개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "study-joseon-late-10-2"
+      ]
+    },
+    {
+      "id": "z-connection-691f17f185d3",
+      "answer": "종묘",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "국가 제례 공간",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 0개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "study-joseon-late-10-3"
+      ]
+    },
+    {
+      "id": "z-connection-fee6a9a47ec2",
+      "answer": "정제두 · 강화학파",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "사상가·학파",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-late-11-1"
+      ]
+    },
+    {
+      "id": "z-connection-f6f795417a75",
+      "answer": "정선",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "화가·작품",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 2개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "study-joseon-late-11-1"
+      ]
+    },
+    {
+      "id": "z-connection-116a56e2a9c2",
+      "answer": "김정희 · 추사체 · 세한도",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "예술가·작품",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 1개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "study-joseon-late-11-1"
+      ]
+    },
+    {
+      "id": "z-connection-d4a3d98160f6",
+      "answer": "김정희 · 금석과안록",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "학자·저술",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "study-joseon-late-11-2"
+      ]
+    },
+    {
+      "id": "z-connection-8f7c29488f2f",
+      "answer": "신윤복 · 월하정인 / 김득신 · 파적도",
+      "sourceChapter": "joseon-late",
+      "categoryProposal": "화가·작품",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 1개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "study-joseon-late-11-2"
+      ]
+    },
+    {
+      "id": "z-connection-256e9f269bcb",
+      "answer": "양헌수 정족산성 · 한성근 문수산성 (1866)",
+      "sourceChapter": "opening",
+      "categoryProposal": "전쟁 지휘관·전적",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "recall:lecture-notes.js:opening:0"
+      ]
+    },
+    {
+      "id": "z-connection-aea40ff8af28",
+      "answer": "어재연 (1871)",
+      "sourceChapter": "opening",
+      "categoryProposal": "전쟁 지휘관·전적",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "recall:lecture-notes.js:opening:1"
+      ]
+    },
+    {
+      "id": "z-connection-f1a9c11ef8e0",
+      "answer": "조미수호통상조약 (1882)",
+      "sourceChapter": "opening",
+      "categoryProposal": "외교 조약",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 1개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:lecture-notes.js:opening:2"
+      ]
+    },
+    {
+      "id": "z-connection-db8421914840",
+      "answer": "1차 갑오개혁 (1894)",
+      "sourceChapter": "opening",
+      "categoryProposal": "정치 개혁",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "recall:lecture-notes.js:opening:3"
+      ]
+    },
+    {
+      "id": "z-connection-863eb1e578f7",
+      "answer": "광무개혁",
+      "sourceChapter": "opening",
+      "categoryProposal": "정치 개혁",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "recall:lecture-notes.js:opening:4",
+        "recall:textbook-notes.js:opening:2",
+        "recall:study-notes.js:opening:2"
+      ]
+    },
+    {
+      "id": "z-connection-dfa7e5e226d9",
+      "answer": "27대 순종 · 정미 7조약 · 군대 해산 (1907)",
+      "sourceChapter": "opening",
+      "categoryProposal": "왕·재위 사건",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 3개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:lecture-notes.js:opening:5"
+      ]
+    },
+    {
+      "id": "z-connection-4a587c25ed65",
+      "answer": "대한매일신보 (양기탁·베델)",
+      "sourceChapter": "opening",
+      "categoryProposal": "신문",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 2개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:lecture-notes.js:opening:6"
+      ]
+    },
+    {
+      "id": "z-connection-f6baed5e3a44",
+      "answer": "반달 돌칼",
+      "sourceChapter": "prehistory",
+      "categoryProposal": "생활 도구",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 3개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:textbook-notes.js:prehistory:0"
+      ]
+    },
+    {
+      "id": "z-connection-f67389e65811",
+      "answer": "가락바퀴",
+      "sourceChapter": "prehistory",
+      "categoryProposal": "생활 도구",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 3개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:textbook-notes.js:prehistory:1"
+      ]
+    },
+    {
+      "id": "z-connection-19c3d7691d6f",
+      "answer": "진번, 임둔",
+      "sourceChapter": "gojoseon",
+      "categoryProposal": "정복 대상",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 0개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:textbook-notes.js:gojoseon:0"
+      ]
+    },
+    {
+      "id": "z-connection-01c06b3675dd",
+      "answer": "단궁, 과하마, 반어피",
+      "sourceChapter": "gojoseon",
+      "categoryProposal": "교역 특산물 묶음",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 0개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:textbook-notes.js:gojoseon:1"
+      ]
+    },
+    {
+      "id": "z-connection-76b2a4c53a54",
+      "answer": "칠지도",
+      "sourceChapter": "samguk",
+      "categoryProposal": "외교 교류 유물",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 1개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:textbook-notes.js:samguk:0"
+      ]
+    },
+    {
+      "id": "z-connection-7af6dd7c04d2",
+      "answer": "백강",
+      "sourceChapter": "samguk",
+      "categoryProposal": "전투 장소",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "recall:textbook-notes.js:samguk:1"
+      ]
+    },
+    {
+      "id": "z-connection-a2ad09dc1a01",
+      "answer": "임신서기석",
+      "sourceChapter": "samguk",
+      "categoryProposal": "금석문 유물",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 2개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:textbook-notes.js:samguk:2"
+      ]
+    },
+    {
+      "id": "z-connection-01eee56c0d17",
+      "answer": "공산 → 고창 → 일리천",
+      "sourceChapter": "nambuk",
+      "categoryProposal": "전투 순서",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 2개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:textbook-notes.js:nambuk:1"
+      ]
+    },
+    {
+      "id": "z-connection-14b40272c7f0",
+      "answer": "중정대",
+      "sourceChapter": "nambuk",
+      "categoryProposal": "감찰 기관",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 3개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:textbook-notes.js:nambuk:2"
+      ]
+    },
+    {
+      "id": "z-connection-b2cad8576c21",
+      "answer": "임진왜란 진주성, 임술농민봉기, 형평운동",
+      "sourceChapter": "islands",
+      "categoryProposal": "지역 사건 묶음",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 0개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:textbook-notes.js:islands:0"
+      ]
+    },
+    {
+      "id": "z-connection-a061fc3e3a5a",
+      "answer": "당백전",
+      "sourceChapter": "opening",
+      "categoryProposal": "화폐",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 3개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:textbook-notes.js:opening:0"
+      ]
+    },
+    {
+      "id": "z-connection-663c61ef890c",
+      "answer": "강주룡",
+      "sourceChapter": "colonial",
+      "categoryProposal": "사회 운동 인물",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "recall:textbook-notes.js:colonial:0"
+      ]
+    },
+    {
+      "id": "z-connection-765c9bd20a41",
+      "answer": "조선혁명군, 양세봉",
+      "sourceChapter": "colonial",
+      "categoryProposal": "항일 무장 단체·지도자",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "recall:textbook-notes.js:colonial:1"
+      ]
+    },
+    {
+      "id": "z-connection-954365954574",
+      "answer": "연통제",
+      "sourceChapter": "colonial",
+      "categoryProposal": "비밀 연락·자금 조직",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 0개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:textbook-notes.js:colonial:2",
+        "recall:study-notes.js:colonial:3"
+      ]
+    },
+    {
+      "id": "z-connection-e22e57e74659",
+      "answer": "국회 프락치 사건",
+      "sourceChapter": "modern",
+      "categoryProposal": "탄압·정치 사건",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 3개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:textbook-notes.js:modern:0"
+      ]
+    },
+    {
+      "id": "z-connection-7e3a9def4428",
+      "answer": "김영삼 정부",
+      "sourceChapter": "modern",
+      "categoryProposal": "정부",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "recall:textbook-notes.js:modern:1",
+        "recall:study-notes.js:modern:1"
+      ]
+    },
+    {
+      "id": "z-connection-cb99b9644216",
+      "answer": "전두환 정부",
+      "sourceChapter": "modern",
+      "categoryProposal": "정부",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "recall:textbook-notes.js:modern:2"
+      ]
+    },
+    {
+      "id": "z-connection-03513b495052",
+      "answer": "경기 연천 전곡리, 충남 공주 석장리",
+      "sourceChapter": "prehistory",
+      "categoryProposal": "시대별 유적 묶음",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 0개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:study-notes.js:prehistory:0"
+      ]
+    },
+    {
+      "id": "z-connection-cb5a778f282a",
+      "answer": "신석기",
+      "sourceChapter": "prehistory",
+      "categoryProposal": "선사 시대",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 3개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:study-notes.js:prehistory:1"
+      ]
+    },
+    {
+      "id": "z-connection-f1092f9646db",
+      "answer": "청동기",
+      "sourceChapter": "prehistory",
+      "categoryProposal": "선사 시대",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 3개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:study-notes.js:prehistory:2"
+      ]
+    },
+    {
+      "id": "z-connection-94d37393ca05",
+      "answer": "철기 시대 중국과의 교류",
+      "sourceChapter": "prehistory",
+      "categoryProposal": "교역 증거의 해석",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 0개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:study-notes.js:prehistory:3"
+      ]
+    },
+    {
+      "id": "z-connection-01524bbd6e1a",
+      "answer": "사출도",
+      "sourceChapter": "gojoseon",
+      "categoryProposal": "지방 통치 조직",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 0개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:study-notes.js:gojoseon:0"
+      ]
+    },
+    {
+      "id": "z-connection-dd50ba791f58",
+      "answer": "책화",
+      "sourceChapter": "gojoseon",
+      "categoryProposal": "사회 풍습",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 3개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:study-notes.js:gojoseon:1"
+      ]
+    },
+    {
+      "id": "z-connection-4d206a37ad99",
+      "answer": "옥저, 동예",
+      "sourceChapter": "gojoseon",
+      "categoryProposal": "고대 국가",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "recall:study-notes.js:gojoseon:2"
+      ]
+    },
+    {
+      "id": "z-connection-8de83343799a",
+      "answer": "철",
+      "sourceChapter": "gojoseon",
+      "categoryProposal": "교역 생산물",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 0개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:study-notes.js:gojoseon:3"
+      ]
+    },
+    {
+      "id": "z-connection-e097d42555b1",
+      "answer": "백제 → 고구려(장수왕) → 백제·신라 잠깐 → 신라(진흥왕)",
+      "sourceChapter": "samguk",
+      "categoryProposal": "지역 지배 변화 순서",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 0개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:study-notes.js:samguk:0"
+      ]
+    },
+    {
+      "id": "z-connection-1f9f1c8ac3d5",
+      "answer": "무령왕",
+      "sourceChapter": "samguk",
+      "categoryProposal": "국왕",
+      "status": "applied-source-profile",
+      "reason": "같은 역할의 왕·교육기관·화폐, 질문 단서 및 실제 시대 근거를 확인한 4오답 적용",
+      "rawSourceIds": [
+        "recall:study-notes.js:samguk:1"
+      ]
+    },
+    {
+      "id": "z-connection-6a31903b1e7f",
+      "answer": "성왕",
+      "sourceChapter": "samguk",
+      "categoryProposal": "국왕",
+      "status": "applied-source-profile",
+      "reason": "같은 역할의 왕·교육기관·화폐, 질문 단서 및 실제 시대 근거를 확인한 4오답 적용",
+      "rawSourceIds": [
+        "recall:study-notes.js:samguk:2"
+      ]
+    },
+    {
+      "id": "z-connection-1f03c6575da2",
+      "answer": "매소성, 기벌포",
+      "sourceChapter": "samguk",
+      "categoryProposal": "전투·전적",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "recall:study-notes.js:samguk:3"
+      ]
+    },
+    {
+      "id": "z-connection-663d90eb99de",
+      "answer": "선왕",
+      "sourceChapter": "nambuk",
+      "categoryProposal": "국왕",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "recall:study-notes.js:nambuk:0"
+      ]
+    },
+    {
+      "id": "z-connection-301b00adaec2",
+      "answer": "장보고",
+      "sourceChapter": "nambuk",
+      "categoryProposal": "군사·무역 인물",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 3개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:study-notes.js:nambuk:1"
+      ]
+    },
+    {
+      "id": "z-connection-2c04f21fe87b",
+      "answer": "신문왕",
+      "sourceChapter": "nambuk",
+      "categoryProposal": "국왕",
+      "status": "applied-source-profile",
+      "reason": "같은 역할의 왕·교육기관·화폐, 질문 단서 및 실제 시대 근거를 확인한 4오답 적용",
+      "rawSourceIds": [
+        "recall:study-notes.js:nambuk:2"
+      ]
+    },
+    {
+      "id": "z-connection-e77f48aae50c",
+      "answer": "거란",
+      "sourceChapter": "nambuk",
+      "categoryProposal": "대외 세력",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 3개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:study-notes.js:nambuk:3"
+      ]
+    },
+    {
+      "id": "z-connection-3f1ae86358e5",
+      "answer": "지증왕",
+      "sourceChapter": "islands",
+      "categoryProposal": "국왕",
+      "status": "applied-source-profile",
+      "reason": "같은 역할의 왕·교육기관·화폐, 질문 단서 및 실제 시대 근거를 확인한 4오답 적용",
+      "rawSourceIds": [
+        "recall:study-notes.js:islands:0"
+      ]
+    },
+    {
+      "id": "z-connection-92b21dee4653",
+      "answer": "러일전쟁 중",
+      "sourceChapter": "islands",
+      "categoryProposal": "전쟁 시기",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 3개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:study-notes.js:islands:1"
+      ]
+    },
+    {
+      "id": "z-connection-65590c011884",
+      "answer": "간도 참변",
+      "sourceChapter": "islands",
+      "categoryProposal": "민족 탄압 사건",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "recall:study-notes.js:islands:2"
+      ]
+    },
+    {
+      "id": "z-connection-655d45222d08",
+      "answer": "병인양요",
+      "sourceChapter": "opening",
+      "categoryProposal": "대외 충돌",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 3개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:study-notes.js:opening:0"
+      ]
+    },
+    {
+      "id": "z-connection-83f3656660fc",
+      "answer": "독립협회(관민공동회)",
+      "sourceChapter": "opening",
+      "categoryProposal": "사회·정치 운동 단체",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "recall:study-notes.js:opening:1"
+      ]
+    },
+    {
+      "id": "z-connection-cd465764b3d6",
+      "answer": "황성신문(장지연)",
+      "sourceChapter": "opening",
+      "categoryProposal": "신문",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 2개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:study-notes.js:opening:3"
+      ]
+    },
+    {
+      "id": "z-connection-ae82a8e66bce",
+      "answer": "정우회 선언",
+      "sourceChapter": "colonial",
+      "categoryProposal": "정치 선언·건의",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 2개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:study-notes.js:colonial:0"
+      ]
+    },
+    {
+      "id": "z-connection-ea65e26b4673",
+      "answer": "조선 형평사, 진주",
+      "sourceChapter": "colonial",
+      "categoryProposal": "사회·정치 운동 단체",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 3개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:study-notes.js:colonial:1"
+      ]
+    },
+    {
+      "id": "z-connection-a149bc06fc6c",
+      "answer": "조선혁명선언, 신채호",
+      "sourceChapter": "colonial",
+      "categoryProposal": "정치 선언·건의",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 3개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:study-notes.js:colonial:2"
+      ]
+    },
+    {
+      "id": "z-connection-d259b2bbe1cf",
+      "answer": "5·18 민주화운동",
+      "sourceChapter": "modern",
+      "categoryProposal": "민주화 운동",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "recall:study-notes.js:modern:0"
+      ]
+    },
+    {
+      "id": "z-connection-168af886bfe0",
+      "answer": "노태우 정부",
+      "sourceChapter": "modern",
+      "categoryProposal": "정부",
+      "status": "needs-source-or-structure-review",
+      "reason": "제안은 근거와 실제 역할/시대 재검수 전이며 자동 적용하지 않음",
+      "rawSourceIds": [
+        "recall:study-notes.js:modern:2"
+      ]
+    },
+    {
+      "id": "z-connection-2dbbe583c45f",
+      "answer": "유상 매수·유상 분배",
+      "sourceChapter": "modern",
+      "categoryProposal": "토지 분배 원칙",
+      "status": "needs-source-or-structure-review",
+      "reason": "동일 기능의 검증된 비교 후보 0개 확보. 네 개를 충족할 직접 근거가 부족해 관련 없는 후보를 보충하지 않았다.",
+      "rawSourceIds": [
+        "recall:study-notes.js:modern:3"
+      ]
+    }
+  ]
+}

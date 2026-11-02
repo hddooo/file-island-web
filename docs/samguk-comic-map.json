@@ -1,0 +1,872 @@
+{
+ "generated_by": "scripts/build_samguk_comic.py",
+ "note": "삼국 웹툰 장면(화면 순서 = 기존 s1–s32)·흐름·원본 그림판 칸(바이트 그대로, SVG viewBox로 칸 전체)·기존 제목·핵심 줄·강의 강조와 근거 행, 이 부분에서 외울 것 카드 위치.",
+ "panel_source": {
+  "width": 1086,
+  "height": 1448,
+  "sheets": {
+   "0": {
+    "file": "media/samguk-sheets/0.png",
+    "sha256": "6c476e4f1fef1707f1f3172f90e751412db9c1bee8e8c6010a90f083d921a74a",
+    "bytes": 3298422
+   },
+   "1": {
+    "file": "media/samguk-sheets/1.png",
+    "sha256": "bfbed0bb132b14a677e0b811231c8e46308123d6d8fc2ccfc225c20d690e2aca",
+    "bytes": 3301452
+   },
+   "2": {
+    "file": "media/samguk-sheets/2.png",
+    "sha256": "88aeaaede189d24f8f403c0e93cb745b5084c4b4a55c26878856d22d0c9fc11d",
+    "bytes": 3292099
+   },
+   "3": {
+    "file": "media/samguk-sheets/3.png",
+    "sha256": "b7a8596db4e7108e9c742072f0486c5fc210120a88ca62fc9b29f0900aae09b5",
+    "bytes": 3377053
+   }
+  },
+  "extracted_from": "예전 media/samguk-comic.html의 .sheet0–3 base64 PNG(다시 인코딩하지 않음)"
+ },
+ "scenes": [
+  {
+   "id": "s1",
+   "scene": 1,
+   "flow": "flow-1",
+   "orig": 1,
+   "title": "배고프면, 나라부터 흔들린다",
+   "key": "진대법",
+   "panel": {
+    "sheet": "media/samguk-sheets/0.png",
+    "sha256": "6c476e4f1fef1707f1f3172f90e751412db9c1bee8e8c6010a90f083d921a74a",
+    "rect": [
+     0,
+     0,
+     543,
+     358
+    ]
+   },
+   "speakers": [
+    "농민",
+    "을파소"
+   ],
+   "stress": null,
+   "teacher_lines": "106–107 · 147–148",
+   "source": "강의 106–107 · 147–148행"
+  },
+  {
+   "id": "s2",
+   "scene": 2,
+   "flow": "flow-1",
+   "orig": 2,
+   "title": "얻어맞고, 다시 국경을 밀다",
+   "key": "관구검의 침입 → 군현 축출",
+   "panel": {
+    "sheet": "media/samguk-sheets/0.png",
+    "sha256": "6c476e4f1fef1707f1f3172f90e751412db9c1bee8e8c6010a90f083d921a74a",
+    "rect": [
+     543,
+     0,
+     543,
+     358
+    ]
+   },
+   "speakers": [
+    "고구려 장수",
+    "미천왕"
+   ],
+   "stress": "관구검·환도성, 낙랑군 축출·서안평 점령이 나오면 고구려 전성기 이전으로 보면 되고 왕 이름은 몰라도 된다고 짚었어요.",
+   "teacher_lines": "107–115",
+   "source": "강의 107–115행"
+  },
+  {
+   "id": "s3",
+   "scene": 3,
+   "flow": "flow-1",
+   "orig": 3,
+   "title": "4세기, 먼저 치고 나간 백제",
+   "key": "4세기 백제 전성기",
+   "panel": {
+    "sheet": "media/samguk-sheets/0.png",
+    "sha256": "6c476e4f1fef1707f1f3172f90e751412db9c1bee8e8c6010a90f083d921a74a",
+    "rect": [
+     0,
+     358,
+     543,
+     350
+    ]
+   },
+   "speakers": [
+    "백제 장수",
+    "근초고왕"
+   ],
+   "stress": "‘백제가 평양성을 공격했다’, ‘백제가 공격해 고구려 왕이 죽었다’는 표현이 나오면 근초고왕 때라고 짚었어요.",
+   "teacher_lines": "111–113 · 171–184 · 213–216",
+   "source": "강의 111–113 · 171–184 · 213–216행"
+  },
+  {
+   "id": "s4",
+   "scene": 4,
+   "flow": "flow-1",
+   "orig": 4,
+   "title": "소수림왕의 재건 패키지",
+   "key": "율령 · 태학 · 불교",
+   "panel": {
+    "sheet": "media/samguk-sheets/0.png",
+    "sha256": "6c476e4f1fef1707f1f3172f90e751412db9c1bee8e8c6010a90f083d921a74a",
+    "rect": [
+     543,
+     358,
+     543,
+     350
+    ]
+   },
+   "speakers": [
+    "신하",
+    "소수림왕"
+   ],
+   "stress": "율령 · 태학 · 불교가 보이면 고구려 소수림왕이라고 짚었어요.",
+   "teacher_lines": "115–119 · 149",
+   "source": "강의 115–119 · 149행"
+  },
+  {
+   "id": "s5",
+   "scene": 5,
+   "flow": "flow-1",
+   "orig": 5,
+   "title": "광개토왕, 이제 밖으로 달린다",
+   "key": "영락 · 신라 구원",
+   "panel": {
+    "sheet": "media/samguk-sheets/0.png",
+    "sha256": "6c476e4f1fef1707f1f3172f90e751412db9c1bee8e8c6010a90f083d921a74a",
+    "rect": [
+     0,
+     708,
+     543,
+     362
+    ]
+   },
+   "speakers": [
+    "신라 사신",
+    "광개토 대왕"
+   ],
+   "stress": "‘영락이라는 연호를 사용하였다’가 나오면 고구려 광개토왕이라고 짚었어요.",
+   "teacher_lines": "119–125 · 151–154 · 235–236",
+   "source": "강의 119–125 · 151–154 · 235–236행"
+  },
+  {
+   "id": "s6",
+   "scene": 6,
+   "flow": "flow-1",
+   "orig": 6,
+   "title": "철 잘 팔던 가야에 불똥이",
+   "key": "철 · 중개 무역 · 가야 연맹",
+   "panel": {
+    "sheet": "media/samguk-sheets/0.png",
+    "sha256": "6c476e4f1fef1707f1f3172f90e751412db9c1bee8e8c6010a90f083d921a74a",
+    "rect": [
+     543,
+     708,
+     543,
+     362
+    ]
+   },
+   "speakers": [
+    "가야 상인",
+    "상인 동료"
+   ],
+   "stress": "가야는 마지막만 알면 된다며, 금관가야는 법흥왕 때, 대가야는 진흥왕 때 신라에 복속되었다고 짚었어요.",
+   "teacher_lines": "298–303",
+   "source": "강의 298–303행"
+  },
+  {
+   "id": "s7",
+   "scene": 7,
+   "flow": "flow-1",
+   "orig": 7,
+   "title": "장수왕의 시선은 남쪽으로",
+   "key": "평양 천도 · 남진",
+   "panel": {
+    "sheet": "media/samguk-sheets/0.png",
+    "sha256": "6c476e4f1fef1707f1f3172f90e751412db9c1bee8e8c6010a90f083d921a74a",
+    "rect": [
+     0,
+     1070,
+     543,
+     378
+    ]
+   },
+   "speakers": [
+    "신하",
+    "장수왕"
+   ],
+   "stress": null,
+   "teacher_lines": "125–128 · 155–158",
+   "source": "강의 125–128 · 155–158행"
+  },
+  {
+   "id": "s8",
+   "scene": 8,
+   "flow": "flow-2",
+   "orig": 8,
+   "title": "“우리 둘이라도 손잡자!”",
+   "key": "나제 동맹 → 한성 함락",
+   "panel": {
+    "sheet": "media/samguk-sheets/0.png",
+    "sha256": "6c476e4f1fef1707f1f3172f90e751412db9c1bee8e8c6010a90f083d921a74a",
+    "rect": [
+     543,
+     1070,
+     543,
+     378
+    ]
+   },
+   "speakers": [
+    "백제 사신",
+    "신라 사신"
+   ],
+   "stress": null,
+   "teacher_lines": "184–189 · 237 · 325",
+   "source": "강의 184–189 · 237 · 325행"
+  },
+  {
+   "id": "s9",
+   "scene": 9,
+   "flow": "flow-2",
+   "orig": 9,
+   "title": "웅진에서 다시 살림을 세우다",
+   "key": "22담로 · 왕족 파견",
+   "panel": {
+    "sheet": "media/samguk-sheets/1.png",
+    "sha256": "bfbed0bb132b14a677e0b811231c8e46308123d6d8fc2ccfc225c20d690e2aca",
+    "rect": [
+     0,
+     0,
+     543,
+     352
+    ]
+   },
+   "speakers": [
+    "백제 신하",
+    "문주왕"
+   ],
+   "stress": "숫자 22가 나오면 백제 무령왕이라고 짚었어요.",
+   "teacher_lines": "187–193 · 218–220",
+   "source": "강의 187–193 · 218–220행"
+  },
+  {
+   "id": "s10",
+   "scene": 10,
+   "flow": "flow-2",
+   "orig": 10,
+   "title": "신라, 이름과 살림부터 정비",
+   "key": "지증왕의 국가 정비",
+   "panel": {
+    "sheet": "media/samguk-sheets/1.png",
+    "sha256": "bfbed0bb132b14a677e0b811231c8e46308123d6d8fc2ccfc225c20d690e2aca",
+    "rect": [
+     543,
+     0,
+     543,
+     352
+    ]
+   },
+   "speakers": [
+    "신하",
+    "지증왕"
+   ],
+   "stress": "지증왕을 물을 때는 동시전 설치를 제일 자주 묻는다고 짚었어요.",
+   "teacher_lines": "238–245 · 316 · 322–324",
+   "source": "강의 238–245 · 316 · 322–324행"
+  },
+  {
+   "id": "s11",
+   "scene": 11,
+   "flow": "flow-2",
+   "orig": 11,
+   "title": "법흥왕, 나라의 규칙을 갖추다",
+   "key": "법흥왕 · 건원",
+   "panel": {
+    "sheet": "media/samguk-sheets/1.png",
+    "sha256": "bfbed0bb132b14a677e0b811231c8e46308123d6d8fc2ccfc225c20d690e2aca",
+    "rect": [
+     0,
+     352,
+     543,
+     326
+    ]
+   },
+   "speakers": [
+    "신하",
+    "법흥왕"
+   ],
+   "stress": "너무 많으면 병부와 상대등 설치, 불교 공인만이라도 꼭 외우라고 짚었어요.",
+   "teacher_lines": "245–252 · 324",
+   "source": "강의 245–252 · 324행"
+  },
+  {
+   "id": "s12",
+   "scene": 12,
+   "flow": "flow-2",
+   "orig": 12,
+   "title": "한강을 되찾았는데… 동맹이 갈라졌다",
+   "key": "나제 동맹 결렬",
+   "panel": {
+    "sheet": "media/samguk-sheets/1.png",
+    "sha256": "bfbed0bb132b14a677e0b811231c8e46308123d6d8fc2ccfc225c20d690e2aca",
+    "rect": [
+     543,
+     352,
+     543,
+     326
+    ]
+   },
+   "speakers": [
+    "백제 성왕",
+    "신라 진흥왕"
+   ],
+   "stress": "사비(부여) 시대의 대표 왕 성왕은 굉장히 중요하다고 짚었어요.",
+   "teacher_lines": "193–197 · 252–256 · 320",
+   "source": "강의 193–197 · 252–256 · 320행"
+  },
+  {
+   "id": "s13",
+   "scene": 13,
+   "flow": "flow-2",
+   "orig": 13,
+   "title": "관산성의 비극, 신라의 전성기",
+   "key": "관산성 전사 / 신라의 팽창",
+   "panel": {
+    "sheet": "media/samguk-sheets/1.png",
+    "sha256": "bfbed0bb132b14a677e0b811231c8e46308123d6d8fc2ccfc225c20d690e2aca",
+    "rect": [
+     0,
+     678,
+     543,
+     337
+    ]
+   },
+   "speakers": [
+    "백제 장수",
+    "신라 장수"
+   ],
+   "stress": null,
+   "teacher_lines": "197–199 · 256–258 · 286 · 309–310",
+   "source": "강의 197–199 · 256–258 · 286 · 309–310행"
+  },
+  {
+   "id": "s14",
+   "scene": 14,
+   "flow": "flow-3",
+   "orig": 14,
+   "title": "전쟁 뒤편, 백성·귀족·청년의 하루",
+   "key": "경제 · 정치 · 사회를 구분",
+   "panel": {
+    "sheet": "media/samguk-sheets/1.png",
+    "sha256": "bfbed0bb132b14a677e0b811231c8e46308123d6d8fc2ccfc225c20d690e2aca",
+    "rect": [
+     543,
+     678,
+     543,
+     337
+    ]
+   },
+   "speakers": [
+    "청년",
+    "농민"
+   ],
+   "stress": "‘지방의 여러 성에 욕살·처려근지 등을 두었다’, ‘집집마다 부경이라는 창고가 있었다’는 시험에 매번 나오는 고구려 선택지이고, 무슨무슨 좌평·부여씨가 보이면 백제라고 짚었어요.",
+   "teacher_lines": "144–149 · 209–213 · 276–279 · 287–290",
+   "source": "강의 144–149 · 209–213 · 276–279 · 287–290행"
+  },
+  {
+   "id": "s15",
+   "scene": 15,
+   "flow": "flow-3",
+   "orig": 15,
+   "title": "세 나라 학생들은 뭘 배웠을까",
+   "key": "태학 · 경당 · 박사 · 임신서기석",
+   "panel": {
+    "sheet": "media/samguk-sheets/1.png",
+    "sha256": "bfbed0bb132b14a677e0b811231c8e46308123d6d8fc2ccfc225c20d690e2aca",
+    "rect": [
+     0,
+     1015,
+     543,
+     433
+    ]
+   },
+   "speakers": [
+    "학생",
+    "스승"
+   ],
+   "stress": null,
+   "teacher_lines": "148–149 · 295–297",
+   "source": "강의 148–149 · 295–297행"
+  },
+  {
+   "id": "s16",
+   "scene": 16,
+   "flow": "flow-3",
+   "orig": 16,
+   "title": "고구려 무덤의 문을 열면",
+   "key": "고구려의 무덤",
+   "panel": {
+    "sheet": "media/samguk-sheets/1.png",
+    "sha256": "bfbed0bb132b14a677e0b811231c8e46308123d6d8fc2ccfc225c20d690e2aca",
+    "rect": [
+     543,
+     1015,
+     543,
+     433
+    ]
+   },
+   "speakers": [
+    "장인",
+    "고구려 사람"
+   ],
+   "stress": "벽화가 발견되었다고 하면 굴식 돌방무덤이라고 짚었어요.",
+   "teacher_lines": "155–162",
+   "source": "강의 155–162행"
+  },
+  {
+   "id": "s17",
+   "scene": 17,
+   "flow": "flow-3",
+   "orig": 17,
+   "title": "백제 무덤은 수도를 따라 읽자",
+   "key": "한성 → 웅진 → 사비",
+   "panel": {
+    "sheet": "media/samguk-sheets/2.png",
+    "sha256": "88aeaaede189d24f8f403c0e93cb745b5084c4b4a55c26878856d22d0c9fc11d",
+    "rect": [
+     0,
+     0,
+     543,
+     362
+    ]
+   },
+   "speakers": [
+    "백제 사람",
+    "안내자"
+   ],
+   "stress": "송산리 고분군 · 능산리 고분군이 나오면 백제라고 짚었어요.",
+   "teacher_lines": "216–222",
+   "source": "강의 216–222행"
+  },
+  {
+   "id": "s18",
+   "scene": 18,
+   "flow": "flow-3",
+   "orig": 18,
+   "title": "신라의 보물이 남은 까닭",
+   "key": "돌무지 덧널무덤",
+   "panel": {
+    "sheet": "media/samguk-sheets/2.png",
+    "sha256": "88aeaaede189d24f8f403c0e93cb745b5084c4b4a55c26878856d22d0c9fc11d",
+    "rect": [
+     543,
+     0,
+     543,
+     362
+    ]
+   },
+   "speakers": [
+    "신라 사람",
+    "동료"
+   ],
+   "stress": "천마도는 벽화가 아니라 말 안장에 그려진 그림이라고 짚었어요.",
+   "teacher_lines": "280–286",
+   "source": "강의 280–286행"
+  },
+  {
+   "id": "s19",
+   "scene": 19,
+   "flow": "flow-3",
+   "orig": 19,
+   "title": "불교가 건너오고, 탑이 올라가다",
+   "key": "불교 수용과 탑",
+   "panel": {
+    "sheet": "media/samguk-sheets/2.png",
+    "sha256": "88aeaaede189d24f8f403c0e93cb745b5084c4b4a55c26878856d22d0c9fc11d",
+    "rect": [
+     0,
+     362,
+     543,
+     365
+    ]
+   },
+   "speakers": [
+    "사신",
+    "왕실 사람"
+   ],
+   "stress": "‘미륵사를 창건하였다’면 백제 무왕, ‘자장의 건의로 황룡사 9층 목탑이 건립되었다’면 선덕여왕이라고 짚었어요.",
+   "teacher_lines": "117–119 · 163 · 181–184 · 200–202 · 222–232 · 247–250 · 290–295 · 321",
+   "source": "강의 117–119 · 163 · 181–184 · 200–202 · 222–232 · 247–250 · 290–295 · 321행"
+  },
+  {
+   "id": "s20",
+   "scene": 20,
+   "flow": "flow-3",
+   "orig": 20,
+   "title": "향로 속 산, 벽돌 속 풍경",
+   "key": "도교의 흔적",
+   "panel": {
+    "sheet": "media/samguk-sheets/2.png",
+    "sha256": "88aeaaede189d24f8f403c0e93cb745b5084c4b4a55c26878856d22d0c9fc11d",
+    "rect": [
+     543,
+     362,
+     543,
+     365
+    ]
+   },
+   "speakers": [
+    "백제 장인",
+    "동료"
+   ],
+   "stress": "사신도 벽화가 보이면 도교 문화재 정도로 알면 된다고 짚었어요.",
+   "teacher_lines": "167–169 · 225–229",
+   "source": "강의 167–169 · 225–229행"
+  },
+  {
+   "id": "s21",
+   "scene": 21,
+   "flow": "flow-3",
+   "orig": 21,
+   "title": "문화는 바다를 건넌다",
+   "key": "혜자 · 노리사치계",
+   "panel": {
+    "sheet": "media/samguk-sheets/2.png",
+    "sha256": "88aeaaede189d24f8f403c0e93cb745b5084c4b4a55c26878856d22d0c9fc11d",
+    "rect": [
+     0,
+     727,
+     543,
+     362
+    ]
+   },
+   "speakers": [
+    "승려",
+    "동료"
+   ],
+   "stress": null,
+   "teacher_lines": null,
+   "source": "기존 웹툰 설명(강의 100–336행·교재 PDF 16–30쪽에 없음)"
+  },
+  {
+   "id": "s22",
+   "scene": 22,
+   "flow": "flow-4",
+   "orig": 22,
+   "title": "수의 대군, 살수에서 막히다",
+   "key": "을지문덕 · 살수 대첩",
+   "panel": {
+    "sheet": "media/samguk-sheets/2.png",
+    "sha256": "88aeaaede189d24f8f403c0e93cb745b5084c4b4a55c26878856d22d0c9fc11d",
+    "rect": [
+     543,
+     727,
+     543,
+     362
+    ]
+   },
+   "speakers": [
+    "고구려 장수",
+    "을지문덕"
+   ],
+   "stress": null,
+   "teacher_lines": "128–133 · 169–171",
+   "source": "강의 128–133 · 169–171행"
+  },
+  {
+   "id": "s23",
+   "scene": 23,
+   "flow": "flow-4",
+   "orig": 23,
+   "title": "이번에는 당, 안시성은 버틴다",
+   "key": "당 태종 · 안시성 싸움",
+   "panel": {
+    "sheet": "media/samguk-sheets/2.png",
+    "sha256": "88aeaaede189d24f8f403c0e93cb745b5084c4b4a55c26878856d22d0c9fc11d",
+    "rect": [
+     0,
+     1089,
+     543,
+     359
+    ]
+   },
+   "speakers": [
+    "고구려 신하",
+    "장수"
+   ],
+   "stress": null,
+   "teacher_lines": "133–139",
+   "source": "강의 133–139행"
+  },
+  {
+   "id": "s24",
+   "scene": 24,
+   "flow": "flow-4",
+   "orig": 24,
+   "title": "김춘추, 동맹을 구하러 가다",
+   "key": "나당 동맹",
+   "panel": {
+    "sheet": "media/samguk-sheets/2.png",
+    "sha256": "88aeaaede189d24f8f403c0e93cb745b5084c4b4a55c26878856d22d0c9fc11d",
+    "rect": [
+     543,
+     1089,
+     543,
+     359
+    ]
+   },
+   "speakers": [
+    "김춘추",
+    "신하"
+   ],
+   "stress": "선택지에 ‘윤충을 보내 대야성을 함락하였다’가 나오면 백제 의자왕, ‘김유신이 비담과 염종의 난을 진압하였다’면 선덕여왕 때라고 짚었어요.",
+   "teacher_lines": "203–205 · 259–267 · 311–312",
+   "source": "강의 203–205 · 259–267 · 311–312행"
+  },
+  {
+   "id": "s25",
+   "scene": 25,
+   "flow": "flow-4",
+   "orig": 25,
+   "title": "첫 번째 멸망, 백제",
+   "key": "백제 멸망",
+   "panel": {
+    "sheet": "media/samguk-sheets/3.png",
+    "sha256": "b7a8596db4e7108e9c742072f0486c5fc210120a88ca62fc9b29f0900aae09b5",
+    "rect": [
+     0,
+     0,
+     543,
+     336
+    ]
+   },
+   "speakers": [
+    "계백",
+    "신라군"
+   ],
+   "stress": null,
+   "teacher_lines": "205–206 · 267–268",
+   "source": "강의 205–206 · 267–268행"
+  },
+  {
+   "id": "s26",
+   "scene": 26,
+   "flow": "flow-4",
+   "orig": 26,
+   "title": "“백제를 다시 세우자!”",
+   "key": "백제 부흥 운동",
+   "panel": {
+    "sheet": "media/samguk-sheets/3.png",
+    "sha256": "b7a8596db4e7108e9c742072f0486c5fc210120a88ca62fc9b29f0900aae09b5",
+    "rect": [
+     543,
+     0,
+     543,
+     336
+    ]
+   },
+   "speakers": [
+    "부흥군",
+    "동료"
+   ],
+   "stress": null,
+   "teacher_lines": "206–209",
+   "source": "강의 206–209행"
+  },
+  {
+   "id": "s27",
+   "scene": 27,
+   "flow": "flow-4",
+   "orig": 27,
+   "title": "버티던 고구려도 안에서 갈라지다",
+   "key": "고구려 멸망",
+   "panel": {
+    "sheet": "media/samguk-sheets/3.png",
+    "sha256": "b7a8596db4e7108e9c742072f0486c5fc210120a88ca62fc9b29f0900aae09b5",
+    "rect": [
+     0,
+     336,
+     543,
+     348
+    ]
+   },
+   "speakers": [
+    "고구려 신하",
+    "신라군"
+   ],
+   "stress": null,
+   "teacher_lines": "139–140 · 268–269",
+   "source": "강의 139–140 · 268–269행"
+  },
+  {
+   "id": "s28",
+   "scene": 28,
+   "flow": "flow-4",
+   "orig": 28,
+   "title": "고구려를 다시 세우려는 사람들",
+   "key": "고구려 부흥 운동",
+   "panel": {
+    "sheet": "media/samguk-sheets/3.png",
+    "sha256": "b7a8596db4e7108e9c742072f0486c5fc210120a88ca62fc9b29f0900aae09b5",
+    "rect": [
+     543,
+     336,
+     543,
+     348
+    ]
+   },
+   "speakers": [
+    "고구려 유민",
+    "신라 사신"
+   ],
+   "stress": "‘안승을 보덕국왕으로 임명했다’는 표현이 굉장히 잘 나온다고 짚었어요.",
+   "teacher_lines": "140–143",
+   "source": "강의 140–143행"
+  },
+  {
+   "id": "s29",
+   "scene": 29,
+   "flow": "flow-4",
+   "orig": 29,
+   "title": "동맹이었는데, 이제 적이라고?",
+   "key": "나당 전쟁",
+   "panel": {
+    "sheet": "media/samguk-sheets/3.png",
+    "sha256": "b7a8596db4e7108e9c742072f0486c5fc210120a88ca62fc9b29f0900aae09b5",
+    "rect": [
+     0,
+     684,
+     543,
+     329
+    ]
+   },
+   "speakers": [
+    "신라 장수",
+    "신라 왕"
+   ],
+   "stress": null,
+   "teacher_lines": "269–272",
+   "source": "강의 269–272행"
+  },
+  {
+   "id": "s30",
+   "scene": 30,
+   "flow": "flow-4",
+   "orig": 30,
+   "title": "매소성에서, 기벌포에서",
+   "key": "676년 · 문무왕의 통일",
+   "panel": {
+    "sheet": "media/samguk-sheets/3.png",
+    "sha256": "b7a8596db4e7108e9c742072f0486c5fc210120a88ca62fc9b29f0900aae09b5",
+    "rect": [
+     543,
+     684,
+     543,
+     329
+    ]
+   },
+   "speakers": [
+    "신라 장수",
+    "수군"
+   ],
+   "stress": "660 · 668 · 676 같은 연도는 몰라도 되고 보통 순서로만 묻는다고 했어요.",
+   "teacher_lines": "272–276 · 326",
+   "source": "강의 272–276 · 326행"
+  },
+  {
+   "id": "s31",
+   "scene": 31,
+   "flow": "flow-4",
+   "orig": 31,
+   "title": "같은 시대에도, 역할은 달랐다",
+   "key": "근초고 → 광개토·장수 → 진흥",
+   "panel": {
+    "sheet": "media/samguk-sheets/3.png",
+    "sha256": "b7a8596db4e7108e9c742072f0486c5fc210120a88ca62fc9b29f0900aae09b5",
+    "rect": [
+     0,
+     1013,
+     543,
+     435
+    ]
+   },
+   "speakers": [
+    "학생",
+    "스승"
+   ],
+   "stress": "삼국의 전성기는 백제 → 고구려 → 신라 순이고, 전성기는 한강을 누가 차지했는지로 보면 된다고 짚었어요.",
+   "teacher_lines": "101–103 · 304–314 · 331–335",
+   "source": "강의 101–103 · 304–314 · 331–335행"
+  },
+  {
+   "id": "s32",
+   "scene": 32,
+   "flow": "flow-4",
+   "orig": 32,
+   "title": "이제, 이름들이 한 이야기로 남는다",
+   "key": "삼국시대 편 · 끝",
+   "panel": {
+    "sheet": "media/samguk-sheets/3.png",
+    "sha256": "b7a8596db4e7108e9c742072f0486c5fc210120a88ca62fc9b29f0900aae09b5",
+    "rect": [
+     543,
+     1013,
+     543,
+     435
+    ]
+   },
+   "speakers": [
+    "학생",
+    "기록자"
+   ],
+   "stress": null,
+   "teacher_lines": "310–314 · 336",
+   "source": "강의 310–314 · 336행"
+  }
+ ],
+ "memory": [
+  {
+   "after": "s7",
+   "scene": 7,
+   "chunks": [
+    "고구려 전성기 이전",
+    "백제 근초고왕과 고구려 소수림왕",
+    "광개토왕 · 장수왕과 가야"
+   ]
+  },
+  {
+   "after": "s13",
+   "scene": 13,
+   "chunks": [
+    "한성 함락과 웅진 시대",
+    "신라의 체제 정비",
+    "한강을 둘러싼 동맹과 배신"
+   ]
+  },
+  {
+   "after": "s21",
+   "scene": 21,
+   "chunks": [
+    "나라별 사회와 교육",
+    "무덤으로 나라 가르기",
+    "불교 · 도교와 일본 전파"
+   ]
+  },
+  {
+   "after": "s32",
+   "scene": 32,
+   "chunks": [
+    "고구려와 수 · 당",
+    "나당 동맹과 백제 멸망",
+    "고구려 멸망과 나당 전쟁",
+    "같은 시기 세 나라, 한 줄로"
+   ]
+  }
+ ]
+}

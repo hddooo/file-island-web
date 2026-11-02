@@ -1,0 +1,6 @@
+/* One study header; individual study renderers and their state remain untouched. */
+html body .toeic-page-header{display:flex;align-items:center;gap:14px;margin:0 0 20px;padding:16px 0;border-bottom:2px solid #668e80;min-height:76px}
+html body .toeic-page-header h1{flex:1;min-width:0;margin:0!important;font-size:clamp(21px,3vw,27px)!important;line-height:1.4!important;overflow-wrap:anywhere;letter-spacing:.02em}
+html body .toeic-page-header .toeic-page-back{flex:0 0 auto;min-width:80px;min-height:44px;margin:0;padding:10px 14px;font:inherit}
+.toeic-learning-page .tn>.tn-top,.toeic-learning-page .tn>h1,.toeic-learning-page .tc>h1,.toeic-learning-page .tg>p:first-child,.toeic-learning-page .tg:has(>.tg-chapter-cards)>h2,.toeic-learning-page .lc-playlist>h2:first-child,.toeic-learning-page .tc-topnav>button:first-child{display:none!important}
+@media(max-width:600px){html body .toeic-page-header{gap:10px;margin-bottom:16px;padding:12px 0;min-height:70px}html body .toeic-page-header .toeic-page-back{min-width:74px;padding:10px}}

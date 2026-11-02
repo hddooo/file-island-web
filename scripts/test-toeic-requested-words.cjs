@@ -1,0 +1,8 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),{JSDOM}=require('../.test-tools/node_modules/jsdom');
+const d=new JSDOM('<main></main>',{runScripts:'outside-only'}),w=d.window;
+for(const name of ['toeic-research-data','toeic-example-text','toeic-supplement'])w.eval(fs.readFileSync(__dirname+'/../media/'+name+'.js','utf8'));
+const expected=[['wipe down','wiping down','구동사','표면을 닦다'],['kitchen appliance','kitchen appliance','명사구','주방 가전제품'],['potted plant','Potted plants','명사구','화분에 심은 식물'],['purse','purse','명사','핸드백']];
+for(const [term,mark,pos,meaning] of expected){const entries=w.HanqToeicSupplement.vocabularyEntries([]),ids=entries.filter(n=>n.expression===term).map(n=>n.id);assert.equal(ids.length,1,term);const h=w.document.querySelector('main');h.replaceChildren();w.HanqToeicSupplement.renderVocabulary(h,{unifiedPage:true,visibleIds:ids,notes:[]});const card=h.querySelector('[data-term]');assert.equal(card.querySelector('.tn-expression-highlight').textContent,mark);assert(card.textContent.includes(pos));assert(card.textContent.includes(meaning));assert(card.textContent.includes('예문 · 사용자 제공'));assert(!card.textContent.includes('직접 작성'));assert.equal(w.HanqToeicSupplement.vocabularyEntries([{expression:term}]).filter(n=>n.expression===term).length,0,'existing note duplicate '+term);}
+assert.equal(w.HanqToeicExampleText.ranges('wipe down','The wiping cloth is down here.').length,0);
+assert.equal(w.HanqToeicExampleText.ranges('potted plant','The planted garden is green.').length,0);
+d.window.close();console.log('Four requested vocabulary cards: content, morphology highlighting, source labels and existing-note deduplication PASS');

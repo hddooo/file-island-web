@@ -1,0 +1,157 @@
+/* Layered illustration and camera, kept outside the opaque study surface. */
+.world-scenery{position:absolute;inset:0;overflow:hidden;pointer-events:none;isolation:isolate;background:#244e59}
+.world-landscape{width:100%;height:100%;display:block;overflow:hidden}.world-depth{transform-box:fill-box;transform-origin:center;transition:transform 1.65s cubic-bezier(.25,.46,.45,.94)}
+.world-depth-far{transform:translate(var(--look-far-x,0px),var(--look-far-y,0px))}.world-depth-mid{transform:translate(var(--look-x,0px),var(--look-y,0px))}.world-depth-near{transform:translate(var(--look-near-x,0px),var(--look-near-y,0px))}
+.world-clouds{animation:worldCloudPass 36s ease-in-out infinite alternate}.world-water-lines{animation:worldTide 12s ease-in-out infinite alternate}.world-mist{position:absolute;inset:30% -10% 0;background:radial-gradient(ellipse at 40% 60%,#deedcf22,transparent 65%);animation:worldMist 22s ease-in-out infinite alternate}.world-data-motes{position:absolute;inset:0;opacity:.6;background:radial-gradient(circle at 18% 57%,#d3eab8 0 1px,transparent 2px),radial-gradient(circle at 76% 42%,#d3eab8 0 1px,transparent 2px),radial-gradient(circle at 59% 74%,#d3eab8 0 1px,transparent 2px);animation:worldMotes 14s ease-in-out infinite alternate}
+.world-scenery[data-ambient=false] :is(.world-clouds,.world-water-lines,.world-mist,.world-data-motes){animation:none}
+@keyframes worldCloudPass{from{transform:translateX(-12px)}to{transform:translateX(40px)}}@keyframes worldTide{to{transform:translate(15px,3px);opacity:.25}}@keyframes worldMist{to{transform:translateX(5%);opacity:.4}}@keyframes worldMotes{to{transform:translateY(-15px);opacity:.25}}
+.world-atlas{position:relative;isolation:isolate;min-height:430px;height:clamp(430px,64vw,680px);overflow:hidden;border:1px solid #7a9b91;border-radius:18px;background:#2e6473;perspective:1100px;box-shadow:inset 0 0 0 5px #0b292d,0 18px 45px #0004}
+.world-atlas>.world-scenery{inset:0}.world-atlas>.world-scenery .world-landscape{opacity:.65}.world-atlas-camera{position:absolute;inset:5% 2% 5%;display:flex;align-items:center;justify-content:center;transform-style:preserve-3d;transform:translate3d(var(--look-x,0px),var(--look-y,0px),0) rotateX(10deg);transition:transform 1.65s cubic-bezier(.25,.46,.45,.94)}
+html[data-hanq-theme=terminal] body .subject-menu .world-atlas .file-island-map{width:92%;margin:0!important;overflow:visible;border:0!important;box-shadow:none!important;background:transparent!important;border-radius:0!important;transform:translateZ(25px);filter:drop-shadow(0 30px 10px #092c4666)}
+.world-atlas .file-island-map-art{mix-blend-mode:multiply}.world-atlas .island-region{overflow:visible}.world-atlas .island-terrain::before{display:none}
+.world-atlas[data-focus=history] .world-atlas-camera{transform:translate3d(3%,2%,20px) rotateX(5deg) rotateY(3deg) scale(1.04)}.world-atlas[data-focus=toeic] .world-atlas-camera{transform:translate3d(-3%,0,20px) rotateX(5deg) rotateY(-3deg) scale(1.04)}
+.world-atlas .island-region-label{min-width:112px!important;box-shadow:0 6px 0 #0b252a,0 8px 18px #001c2a66!important}.world-compass{position:absolute;left:18px;top:16px;display:flex;align-items:center;gap:8px;color:#e9e6bb;font-size:11px;letter-spacing:.08em;pointer-events:none}.world-compass i{width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:15px solid #e9e6bb;filter:drop-shadow(0 3px #1a3f45)}
+.world-atlas-tools{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:10px 0 0;font-size:13px;line-height:1.5;color:#c5dacd}.world-atlas-tools button{font:inherit;color:#d9eade;background:#102c25;border:1px solid #5b7d6a;border-radius:5px;min-height:44px;padding:6px 10px;cursor:pointer}.world-atlas-tools button:focus-visible{outline:3px solid #91e4b2;outline-offset:3px}
+.world-island-banner{position:relative;isolation:isolate;overflow:hidden;height:148px;margin-bottom:18px;border:1px solid #618f96;border-radius:9px}.world-island-banner .world-scenery{inset:0}.world-island-banner .world-landscape{object-position:60% 50%}.world-island-copy{position:absolute;left:20px;bottom:18px;padding:10px 16px;border-left:3px solid #c0e2c7;background:#071d25dc;min-width:150px}.world-island-copy>span{font-size:12px;color:#c4dedb;letter-spacing:.1em}.world-island-copy h1{padding:0!important;border:0!important;background:none!important;margin:3px 0 0!important;font-size:27px!important;line-height:1.25!important;color:#fff!important}
+html[data-hanq-theme=terminal] body .home-hero.world-history-base{background:#193c2d!important;min-height:300px;padding:28px!important;overflow:hidden}.world-history-base>.world-scenery{inset:0}.world-history-base .hero-copy{position:relative;z-index:1;padding:18px 20px;background:linear-gradient(90deg,#07190ff0,#07190fc9);border-left:3px solid #b5c798;border-radius:0 8px 8px 0;max-width:520px}.world-history-base .hero-copy h1{font-size:clamp(24px,3.2vw,34px)!important}.world-history-base .hero-stamp{color:#d4e2be!important}.world-history-base .hero-art[hidden]{display:none!important}
+.world-era-trail{position:relative;isolation:isolate;padding:16px 16px 16px 38px!important;border:1px solid #456955;border-radius:10px;background:linear-gradient(90deg,#0d2b20e8,#07170ff5)}.world-era-trail::before{content:'';position:absolute;left:20px;top:34px;bottom:34px;width:2px;background:linear-gradient(#a9c997,#54795b);box-shadow:0 0 0 4px #153a29}.world-era-trail .period{position:relative;margin:0!important;overflow:visible!important}.world-era-trail .period::before{content:'';position:absolute;left:-24px;top:50%;width:9px;height:9px;border:2px solid #a9c997;background:#234f36;transform:translateY(-50%) rotate(45deg)}
+/* Source map -> selected region -> coast/forest -> study device. */
+.adventure-entry.world-journey{background:#102c37}.world-journey::after{display:none!important}.world-flight-map{position:fixed;margin:0;transform-origin:center;pointer-events:none;z-index:2;overflow:hidden;border-radius:14px;box-shadow:0 0 0 1px #9eb8ac}.world-flight-map img{display:block;width:100%;height:100%;object-fit:fill}.world-flight-veil{position:absolute;inset:0;background:#09201a;opacity:0}.world-journey .world-destination{position:absolute;inset:0;opacity:0}.world-journey .world-destination .world-scenery{inset:0}.world-journey .world-gate{position:absolute;z-index:3;left:50%;top:50%;width:clamp(160px,35vw,360px);height:clamp(240px,48vh,440px);border:2px solid #cee7ba;border-radius:46% 46% 12px 12px;transform:translate(-50%,-50%);box-shadow:0 0 0 9px #153c3966,inset 0 0 40px #afdbc122;background:linear-gradient(180deg,#193e4188,#91b9ad22);opacity:0}.world-gate::before{content:'';position:absolute;inset:10px;border:1px solid #c6e1b799;border-radius:inherit}.world-gate::after{content:'';position:absolute;inset:25%;background:repeating-linear-gradient(0deg,transparent 0 18px,#c5e1be44 19px 20px);mask-image:linear-gradient(transparent,#000,transparent)}
+.world-journey .adventure-device{z-index:4;inset:auto;left:50%;top:50%;width:min(560px,calc(100vw - 40px));height:210px;box-sizing:border-box;animation:none!important;transform:translate(-50%,-50%);opacity:0;background:#061810f2!important;border-radius:32px;border:9px ridge #96b7a5}.world-journey .adventure-device span{font-size:12px}.world-journey .adventure-device strong{font-size:clamp(22px,4vw,32px)}.world-journey .adventure-device small{color:#c1d4c5;font-size:14px}.world-journey .world-cancel{position:absolute;right:18px;top:max(18px,env(safe-area-inset-top));z-index:5;min-height:44px;padding:8px 16px;border:1px solid #b4d3be;border-radius:6px;color:white;background:#071c18;font:inherit;cursor:pointer}
+html.world-motion-paused .world-scenery *,html.world-motion-paused .world-scenery::before,.world-scenery.world-offscreen *{animation-play-state:paused!important}.world-motion-paused .world-atlas-camera,.world-motion-paused .world-depth{transform:none!important;transition:none!important}
+@media(max-width:700px){.world-atlas{min-height:370px;height:400px;border-radius:12px}.world-atlas-camera{inset:10% -4% 2%;transform:rotateX(6deg)}html[data-hanq-theme=terminal] body .subject-menu .world-atlas .file-island-map{width:100%}.world-atlas .island-region-label{min-width:101px!important;padding:10px 6px!important}.world-atlas .island-region-label strong{font-size:21px!important}.world-atlas .island-region-label>span{font-size:11px!important}.world-atlas-tools{font-size:12px}.world-atlas-tools>span{max-width:13em}.world-compass{top:18px;left:14px}.world-island-banner{height:132px}.world-island-copy{left:14px;bottom:14px;padding:8px 12px}.world-history-base .hero-copy{padding:14px;max-width:100%;margin-top:90px}html[data-hanq-theme=terminal] body .home-hero.world-history-base{padding:14px!important;min-height:350px}.world-history-base .world-landscape{width:145%;max-width:none;margin-left:-22%}.world-era-trail{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:14px!important}.world-journey .adventure-device{height:190px}}
+@media(prefers-reduced-motion:reduce){.world-scenery *, .world-atlas-camera{animation:none!important;transition:none!important;transform:none!important}.world-mist,.world-data-motes{display:none}.world-journey{display:none}}
+
+/* Explicit scenic surfaces override the terminal theme's generic div reset. */
+html[data-hanq-theme=terminal] body :is(.world-atlas-camera,.world-compass,.world-atlas-tools,.world-destination){background:transparent!important}
+html[data-hanq-theme=terminal] body .world-scenery{background:#244e59!important}
+html[data-hanq-theme=terminal] body .world-atlas{background:#2e6473!important}
+html[data-hanq-theme=terminal] body .world-island-copy{background:#071d25dc!important}
+html[data-hanq-theme=terminal] body .world-history-base .hero-copy{background:linear-gradient(90deg,#07190ff0,#07190fc9)!important}
+.world-atlas-artplane{pointer-events:none;mix-blend-mode:multiply;filter:drop-shadow(0 25px 8px #092c4655)}
+.world-atlas-art{display:block;width:92%;height:auto}
+.world-atlas .file-island-map-art{opacity:0}
+.world-atlas .island-region::before{background:#b2ed9c33!important;filter:none!important;transform:none!important}
+.world-flight-map{mix-blend-mode:multiply}
+@media(max-width:700px){.world-atlas-art{width:100%}.world-atlas-tools button{flex:0 0 auto}.world-atlas-tools>span{max-width:12em}}
+
+/* Supplied map: background extracted with imagegen, original retained separately. */
+.world-atlas-artplane{mix-blend-mode:normal;filter:drop-shadow(0 18px 9px #092c4666)}
+.world-atlas-art,.world-flight-map img{clip-path:none}
+.world-flight-map{mix-blend-mode:normal;background:transparent!important;box-shadow:none;border-radius:0}
+body[data-world-scene=map] #homeBrand{display:none!important}
+html[data-hanq-theme=terminal] body::before{background:linear-gradient(150deg,#163e4d,#0a211b 70%,#061a22)!important}
+html[data-hanq-theme=terminal] body[data-island=toeic]::before{background:linear-gradient(150deg,#174359,#0a2635 65%,#061a22)!important}
+html[data-hanq-theme=terminal] body[data-island=history]::before{background:linear-gradient(150deg,#244c36,#102b20 65%,#061a15)!important}
+html[data-hanq-theme=terminal] body .login-landing .file-island-welcome{background:linear-gradient(180deg,#0c2538e8,#163c4c55 55%,#0e302be6),url('file-island-cutout.webp') center 52%/cover no-repeat!important}
+
+/* Override legacy image declarations before route observers decorate new panels. */
+html[data-hanq-theme=terminal] body .home-hero{background:#193c2d!important}
+html[data-hanq-theme=terminal] body .island-region::before,html[data-hanq-theme=terminal] body .island-terrain::before{background-image:none!important}
+
+.world-panorama{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% center;opacity:0;transform:translate(var(--look-far-x,0px),var(--look-far-y,0px)) scale(1.045);transition:opacity .55s ease-out,transform 1.65s cubic-bezier(.25,.46,.45,.94)}
+.world-art-ready .world-panorama{opacity:1}.world-art-ready .world-landscape{opacity:0;transition:opacity .55s ease-out}.world-scenery[data-art=true] .world-mist{background:linear-gradient(180deg,transparent,#102a2422)}
+.world-history-base .hero-copy{margin-top:160px!important;max-width:480px!important;background:#07190fe8!important}
+html[data-hanq-theme=terminal] body .home-hero.world-history-base{min-height:430px!important}
+.world-island-banner .world-panorama{object-position:center 57%}
+@media(min-width:900px){.world-destination .world-panorama{width:150%;left:-60%;max-width:none}}
+@media(prefers-reduced-motion:reduce){.world-panorama{transition:none!important;transform:none!important}}
+
+html[data-hanq-theme=terminal] body .login-landing .file-island-welcome.world-arrival-landscape{background:#102b35!important;isolation:isolate}
+.world-arrival-landscape>.world-scenery{z-index:-1}.world-arrival-landscape .island-friends{position:relative;z-index:1}.world-arrival-landscape .island-sun{display:none}
+.world-arrival-landscape h2{display:inline-block;padding:6px 12px;background:#071d25d9!important;border-radius:6px}
+/* Keep all four map terrains inside the desktop camera frustum. */
+@media(min-width:701px){html[data-hanq-theme=terminal] body .subject-menu .world-atlas .file-island-map,.world-atlas-art{width:74%}}
+
+@media(max-width:700px){
+.world-era-trail .period{display:grid!important;grid-template-columns:36px minmax(0,1fr);gap:6px 10px;padding:14px!important;text-align:left;min-height:110px}
+.world-era-trail .period>.number{grid-column:1;grid-row:1 / span 3;align-self:start}
+.world-era-trail .period>.period-text{grid-column:2;grid-row:1;padding-right:8px}
+.world-era-trail .period>.period-text strong{font-size:17px;line-height:1.5;word-break:keep-all}
+.world-era-trail .period>.state{grid-column:2;grid-row:2;justify-self:start;padding:2px 8px;font-size:12px}
+.world-era-trail .period>.rp-home{grid-column:2;grid-row:3;justify-self:start}
+.world-era-trail .period>.chevron{position:absolute;right:9px;top:15px}
+body[data-island=history] .home-section-title{display:block!important}body[data-island=history] .home-section-title small{display:block;margin-top:6px;font-size:13px}
+}
+
+.world-atlas-tools>span{word-break:keep-all;max-width:none;flex:1}
+@media(min-width:701px){
+body[data-world-scene=map] .subject-menu{padding:12px 0 18px;max-width:1100px}
+body[data-world-scene=map] .subject-menu>.subject-eyebrow{margin:0 0 10px}
+body[data-world-scene=map] .subject-menu>h1{margin:10px 0;font-size:34px!important}
+body[data-world-scene=map] .subject-menu>p:not(.subject-eyebrow){margin:10px 0 18px}
+.world-atlas{height:clamp(430px,calc(100svh - 390px),620px)}
+html[data-hanq-theme=terminal] body .subject-menu .world-atlas .file-island-map,.world-atlas-art{width:auto!important;height:100%;max-width:92%;aspect-ratio:1417 / 1110}
+.world-atlas .file-island-map-art{width:100%;height:100%}
+}
+/* The forest remains a quiet location strip once the learning device is open. */
+html[data-hanq-theme=terminal] body[data-island=history] .lesson-active .world-location{padding:7px 10px;background:linear-gradient(90deg,#07180ff0,#07180fbd),url('world-forest.webp') 65% 45%/cover no-repeat!important;border:1px solid #55765e;border-left:3px solid #aecb9c;border-radius:5px}
+
+html{--world-scene-ready:1}
+/* A translucent gate keeps the destination visible throughout the crossing. */
+.world-journey .world-gate{background:linear-gradient(180deg,#193e4140,#91b9ad0a)!important;border-color:#cee7ba!important}
+.world-journey .world-cancel{right:max(18px,env(safe-area-inset-right,0px))}
+
+/* Never animate the root that contains position:fixed study navigation. */
+.world-device-arrival :is(#toeicSection,.home-hero,.lesson-frame){animation:worldPanelSettle .7s cubic-bezier(.25,.46,.45,.94) both}
+@keyframes worldPanelSettle{from{opacity:.96;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.world-device-arrival :is(#toeicSection,.home-hero,.lesson-frame){animation:none!important}}
+
+.world-journey[data-handoff=true]{background:transparent!important}
+.world-journey[data-handoff=true] .adventure-device{background:transparent!important;box-shadow:0 0 24px #9cbdab22!important}
+/* Short landscape phones: destinations and the first action remain above the dock. */
+@media(max-height:500px) and (orientation:landscape) and (max-width:1000px){
+html[data-hanq-theme=terminal] body.study-global-footer .shell{padding-top:max(8px,env(safe-area-inset-top,0px))!important}
+.topline{margin-bottom:4px!important;padding-bottom:4px!important;gap:4px 10px!important}.topline .world-location{display:none!important}
+body[data-world-scene=map] .subject-menu{display:grid;grid-template-columns:minmax(180px,.42fr) minmax(0,1fr);grid-template-rows:auto 1fr auto;gap:6px 12px;align-items:start;padding:4px 0!important}
+body[data-world-scene=map] .subject-menu>.subject-eyebrow{display:none}
+body[data-world-scene=map] .subject-menu>h1{grid-column:1;grid-row:1;align-self:end;font-size:26px!important;margin:4px 0!important;padding:3px 10px!important}
+body[data-world-scene=map] .subject-menu>p:not(.subject-eyebrow){grid-column:1;grid-row:2;font-size:13px;line-height:1.4;word-break:keep-all;overflow-wrap:normal;margin:4px 0!important}
+.world-atlas{grid-column:2;grid-row:1 / span 3;min-height:140px;height:clamp(140px,calc(100svh - var(--study-footer-height,73px) - 75px),240px);border-radius:10px}
+.world-atlas-tools{grid-column:1;grid-row:3;align-self:end;display:block;margin:0}.world-atlas-tools>span{display:none}.world-atlas-tools button{max-width:100%;font-size:12px;min-height:44px}
+.world-compass{top:10px;left:10px;font-size:10px}.world-atlas .island-region-label{min-width:100px!important;padding:8px 5px!important}.world-atlas .island-region-label strong{font-size:19px!important;line-height:1.5}.world-atlas .island-region-label>span{font-size:12px!important;line-height:1.5}
+html[data-hanq-theme=terminal] body .home-hero.world-history-base{min-height:190px!important;padding:12px!important}
+.world-history-base .hero-copy{margin-top:0!important;max-width:60%!important;padding:10px 12px!important}.world-history-base .hero-copy h1{font-size:22px!important;line-height:1.25!important;margin:6px 0!important}.world-history-base .hero-copy>p{display:none}.world-history-base .hero-start{margin-top:8px;min-height:44px}.world-history-base .hero-stamp{font-size:11px}
+}
+@media(max-height:340px) and (orientation:landscape) and (max-width:1000px){
+body[data-world-scene=map] .subject-menu>p:not(.subject-eyebrow){display:none}
+html[data-hanq-theme=terminal] body .home-hero.world-history-base{min-height:172px!important;padding:8px!important}.world-history-base .hero-copy h1{font-size:20px!important}.world-history-base .hero-copy{padding:8px 10px!important}
+}
+
+/* Let both islands surround the study device instead of taking a hero row. */
+html[data-hanq-theme=terminal] body[data-island=toeic]::before{background:linear-gradient(180deg,#06151d33,#06151d99),url('world-coast.webp') center center/cover no-repeat!important}
+html[data-hanq-theme=terminal] body[data-island=history]::before{background:linear-gradient(180deg,#05170c33,#05170c99),url('world-forest.webp') center center/cover no-repeat!important}
+html[data-hanq-theme=terminal] body:is([data-island=toeic],[data-island=history]) .shell.digivice-v2{background:#050a087a!important}
+html body .world-island-banner{height:auto!important;min-height:0!important;margin:0 0 12px;padding:0;border:0;border-radius:0;background:none!important}
+.world-island-banner>.world-scenery{display:none}
+html body .world-island-banner .world-island-copy{position:static;min-width:0;padding:0;background:none;border:0}
+.world-island-copy>span{display:none}
+html[data-hanq-theme=terminal] body .home-hero.world-history-base{min-height:0!important;padding:0!important;margin:0 0 16px;background:none!important;border:0;border-radius:0;box-shadow:none!important}
+.world-history-base>.world-scenery{display:none}
+html[data-hanq-theme=terminal] body .world-history-base .hero-copy{margin:0!important;padding:0!important;max-width:none!important;background:none!important;border:0;border-radius:0}
+.world-history-base .hero-copy h1{font-size:clamp(22px,3vw,28px)!important;margin:5px 0!important}
+.world-history-base .hero-copy>p{display:none}
+.world-history-base .hero-start{margin-top:8px;min-height:44px}
+/* Subject maps replace subsection tab bars on both touch and desktop. */
+.toeic-sections{display:none!important}
+.subject-travel-map{position:relative!important;display:block!important;min-height:360px;isolation:isolate;border:1px solid #6b9e87;border-radius:12px;overflow:hidden;background:linear-gradient(#061a1220,#061a1240),url('world-coast.webp') center/cover!important;margin:8px 0 12px!important;padding:0!important}
+.subject-travel-map.history-travel-map{background-image:linear-gradient(#061a1220,#061a1240),url('world-forest.webp')!important}
+html body .subject-travel-map>:is(button,a){position:absolute;z-index:1;display:flex!important;flex-direction:column;align-items:center;justify-content:center;width:auto!important;max-width:46%;min-width:82px;min-height:48px!important;padding:8px 12px!important;border:2px solid #90d9b0!important;border-radius:14px!important;background:#071c17ed!important;color:#fff!important;box-shadow:0 4px 0 #092619,0 8px 16px #0008!important;text-decoration:none;line-height:1.4;cursor:pointer;text-align:center}
+.subject-travel-map>:is(button,a):hover,.subject-travel-map>:is(button,a):focus-visible{outline:3px solid #b1ffd0;outline-offset:2px;transform:translateY(-3px)}
+.subject-travel-map [data-map-point="0"]{left:9%;top:14%}.subject-travel-map [data-map-point="1"]{right:8%;top:24%}.subject-travel-map [data-map-point="2"]{left:18%;top:44%}.subject-travel-map [data-map-point="3"]{right:7%;top:64%}.subject-travel-map [data-map-point="4"]{left:8%;top:77%}
+.subject-travel-map .world-map-my{right:7%;top:4%}.subject-travel-map .world-map-player{left:8%;top:80%}
+.subject-travel-map .wn-entry-n{display:none!important}.subject-travel-map .wn-entry-t{font-size:16px!important}
+.world-map-help{font-size:13px!important;line-height:1.6}.world-global-nav a{flex:1!important;min-width:0}.world-global-nav[hidden]{display:none!important}
+@media(min-width:701px){.subject-travel-map{min-height:430px}}
+@media(min-width:701px) and (hover:hover) and (pointer:fine){.world-global-nav{display:none!important}}
+@media(prefers-reduced-motion:reduce){.subject-travel-map>*{transition:none!important;transform:none!important}}
+
+html[data-hanq-theme=terminal] body .toeic-menu .toeic-travel-map{background:linear-gradient(#061a1210,#061a1230),url('world-coast.webp') center/cover!important}
+html[data-hanq-theme=terminal] body .history-travel-map{background:linear-gradient(#061a1210,#061a1230),url('world-forest.webp') center/cover!important}
+body.subject-map-history :is(.home-hero,.study-path,.home-section-title){display:none!important}
+body.subject-map-history .history-map-title{font-size:26px!important;margin:0 0 8px!important}
+@media(max-width:700px){html body .subject-travel-map{min-height:300px}.subject-travel-map>:is(button,a){padding:6px 9px!important;min-width:76px}.subject-travel-map .wn-entry-t{font-size:14px!important}}
+.world-map-trail{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.world-map-trail path{fill:none;stroke:#f1dda6;stroke-width:6;stroke-dasharray:10 13;opacity:.85}.world-map-trail .world-map-path-shadow{stroke:#163b2d;stroke-width:15;stroke-dasharray:none;opacity:.55}.world-map-trail circle{fill:#f2e8be;stroke:#244b37;stroke-width:8}.world-place-name{display:block;font-size:12px;line-height:1.5;color:#cbe9c8!important;white-space:nowrap}.world-map-scale{position:absolute;left:10px;bottom:5px;font-size:10px;color:white;text-shadow:0 1px 3px black;pointer-events:none}.toeic-travel-map [data-map-point="0"]{left:8%;top:12%}.toeic-travel-map [data-map-point="1"]{left:9%;right:auto;top:57%}.toeic-travel-map [data-map-point="2"]{left:auto;right:7%;top:34%}.toeic-travel-map [data-map-point="3"]{right:7%;top:74%}
+.world-flight-regional>.subject-travel-map{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;margin:0!important;border:0!important;border-radius:0!important}
+@media(max-width:700px){html body .subject-travel-map{min-height:320px}.subject-travel-map>:is(button,a){padding:5px 8px!important}}
+html[data-hanq-theme=terminal] body .world-flight-regional .toeic-travel-map{background:linear-gradient(#061a1210,#061a1230),url('world-coast.webp') center/cover!important}

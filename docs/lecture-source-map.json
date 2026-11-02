@@ -1,0 +1,4866 @@
+{
+ "generated_by": "scripts/build_lecture_sourcemap.cjs",
+ "source": {
+  "filename": "hanq_scirpt.md",
+  "lines": 2034,
+  "sha256": "f421b2e4fae8692960a4e6d3f691918a698cdc73b510e33222d6c2617a2e4d15",
+  "timestamps_present": false,
+  "read_ranges": {
+   "고려": [
+    479,
+    745
+   ],
+   "조선": [
+    746,
+    1253
+   ]
+  }
+ },
+ "priority_policy": {
+  "primary_source": "영상 스크립트의 명시적 강조·목표별 범위",
+  "secondary_source": "교재의 사실·표준 용어 확인 및 핵심 누락 보완",
+  "priority_levels": {
+   "core": "강사가 중요·필수·최소 암기로 직접 지정하거나 자주 묻는다고 지목",
+   "target_1급": "강사가 1급 목표에 포함한 구간",
+   "support": "흐름·비교·이해를 위한 설명; 반복만으로 핵심 승격하지 않음",
+   "optional": "강사가 낮춘 상세·100점 목표 범위",
+   "optional_highlight": "선택 범위 내부에서 상대적으로 강조한 항목"
+  },
+  "conflict_resolution": "상위 구간의 선택 범위는 그 안의 빈출 언급보다 우선. 역사 사실 충돌은 표준 용어·교재·권위 자료로 확인하고 수정.",
+  "frequency": "몇 문제·매번·반드시 나온다는 표현은 강사의 주장. 공식 문항 통계로 사용하지 않음. 문제 번호로 시대를 확정하는 규칙도 만들지 않음.",
+  "timestamps": "타임스탬프 없음. 원본 1기준 행 번호를 근거로 사용.",
+  "story_policy": "원인→전개→결과의 자체 구성. 강사의 대사·농담·드라마 표현은 복제하지 않음."
+ },
+ "app_policy": [
+  "강의 우선순위(core·target_1급·support·optional·optional_highlight)를 그대로 묶음 등급으로 씀. optional_highlight는 선택 심화 안에서 먼저 볼 항목일 뿐 선택 범위를 벗어나지 않음.",
+  "굵게 = 그 시대 core·target_1급 모듈의 강사 강조어. 출제 빈도·예측이 아님. 빈도 주장은 강사의 주장으로만 기록하고 화면에 배지로 만들지 않음.",
+  "문장은 모두 새로 씀. 강의 대사·농담·드라마식 일화·문제 번호 요령은 옮기지 않음.",
+  "교재는 사실·표준 용어 확인용 2순위로 쓰고, 기존 교재 강조 노트는 이 세 시대에서 ‘교재 정리 더 보기’로 접어 둠."
+ ],
+ "corrections": [
+  {
+   "id": "C01",
+   "script_lines": [
+    798
+   ],
+   "issue": "이징옥의 난까지 세조 때로 묶음",
+   "safe_formulation": "이징옥의 난은 1453년 단종 때. 이시애의 난은 세조 때.",
+   "status": "corrected_pdf_and_authoritative",
+   "pdf_pages": [
+    59
+   ],
+   "sources": [
+    {
+     "title": "이징옥의 난–한국민족문화대백과",
+     "url": "https://encykorea.aks.ac.kr/Article/E0046156"
+    }
+   ],
+   "app_decision": "이징옥의 난은 1453년 단종 때로 따로 적고, 이시애의 난만 세조에 연결(요약 행·비교·회상·웹툰 세조 장면)."
+  },
+  {
+   "id": "C02",
+   "script_lines": [
+    999
+   ],
+   "issue": "신해통공을 금난전권 전체 폐지처럼 설명",
+   "safe_formulation": "육의전을 제외한 시전의 금난전권을 폐지했다.",
+   "status": "corrected_authoritative_pdf_also_simplified",
+   "pdf_pages": [
+    65
+   ],
+   "sources": [
+    {
+     "title": "신해통공–한국민족문화대백과",
+     "url": "https://encykorea.aks.ac.kr/Article/E0033551"
+    },
+    {
+     "title": "신해통공 사료–우리역사넷",
+     "url": "https://contents.history.go.kr/mobile/mid/hm_106_0080?tabId=e"
+    }
+   ],
+   "app_decision": "신해통공은 “육의전을 뺀 시전의 금난전권 폐지”로만 씀."
+  },
+  {
+   "id": "C03",
+   "script_lines": [
+    1000,
+    1111,
+    1113,
+    1214
+   ],
+   "issue": "서울 출신을 규장각 검서관에 기용했다고 표기",
+   "safe_formulation": "해당 문맥의 서울은 서얼로 정규화.",
+   "status": "corrected_pdf_term",
+   "pdf_pages": [
+    65,
+    73,
+    78
+   ],
+   "sources": [],
+   "app_decision": "규장각 검서관 문맥의 표기를 서얼로 정규화."
+  },
+  {
+   "id": "C04",
+   "script_lines": [
+    1112
+   ],
+   "issue": "통청 운동을 과거 응시 허용 요구와 동일시",
+   "safe_formulation": "서얼의 청요직 진출 요구로 설명. 응시 제한과 관직 진출 제한을 구분.",
+   "status": "corrected_authoritative",
+   "pdf_pages": [
+    73
+   ],
+   "sources": [
+    {
+     "title": "서얼금고법–한국민족문화대백과",
+     "url": "https://encykorea.aks.ac.kr/Article/E0027919"
+    }
+   ],
+   "app_decision": "통청 운동은 청요직 진출 요구로 설명하고 과거 응시 허용 요구와 같게 쓰지 않음."
+  },
+  {
+   "id": "C05",
+   "script_lines": [
+    1120
+   ],
+   "issue": "정약용 형제가 처형되었다고 한 줄로 축약",
+   "safe_formulation": "정약용·정약전은 유배, 정약종은 처형. 스크립트 1010~1011행의 상세 설명과도 대조.",
+   "status": "corrected_pdf_and_internal",
+   "pdf_pages": [
+    65
+   ],
+   "sources": [],
+   "app_decision": "신유박해: 정약용·정약전은 유배, 정약종은 처형으로 나눠 씀."
+  },
+  {
+   "id": "C06",
+   "script_lines": [
+    1224,
+    1225
+   ],
+   "issue": "연려실기술의 저자를 이익으로 표기",
+   "safe_formulation": "이긍익–연려실기술. 이익–성호사설·한전론과 구분.",
+   "status": "corrected_pdf_term",
+   "pdf_pages": [
+    78
+   ],
+   "sources": [],
+   "app_decision": "연려실기술의 저자는 이긍익으로 쓰고 이익과 다른 인물임을 밝힘(선택 심화)."
+  },
+  {
+   "id": "C07",
+   "script_lines": [
+    1011,
+    1012
+   ],
+   "issue": "황사영의 백서를 청나라 군대 요청으로 단순화",
+   "safe_formulation": "북경의 주교에게 박해 상황과 지원 방안을 전하려던 백서. 청 정부·서양 군대 관련 제안은 구분.",
+   "status": "corrected_authoritative",
+   "pdf_pages": [
+    68
+   ],
+   "sources": [
+    {
+     "title": "황사영백서사건–우리역사넷",
+     "url": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_30&levelId=kc_i306400"
+    },
+    {
+     "title": "황사영 백서–한국민족문화대백과",
+     "url": "https://encykorea.aks.ac.kr/Article/E0065170"
+    }
+   ],
+   "app_decision": "황사영 백서는 박해 상황을 북경 주교에게 알리려던 편지로 설명. 청 군대 요청으로 단순화하지 않음."
+  },
+  {
+   "id": "C08",
+   "script_lines": [
+    596,
+    597
+   ],
+   "issue": "김윤후의 항전을 충주 다인철소와 합친 문맥",
+   "safe_formulation": "김윤후–처인성·충주성으로 연결. 다인철소와 하나의 전투로 합치지 않음.",
+   "status": "corrected_pdf_and_authoritative",
+   "pdf_pages": [
+    44
+   ],
+   "sources": [
+    {
+     "title": "김윤후–우리역사넷",
+     "url": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_20&levelId=kc_n201500"
+    }
+   ],
+   "app_decision": "김윤후는 처인성·충주성 항전으로만 연결. 다인철소와 한 전투로 합치지 않음."
+  },
+  {
+   "id": "C09",
+   "script_lines": [
+    1121
+   ],
+   "issue": "최제우 창시와 인내천의 정식 표현을 바로 연결",
+   "safe_formulation": "기본은 최제우의 동학 창시만 설명. 시천주·후대 인내천 표현의 발전은 심화에서 별도 확인.",
+   "status": "hold_detailed_claim_pending",
+   "pdf_pages": [
+    72
+   ],
+   "sources": [
+    {
+     "title": "손병희–한국민족문화대백과",
+     "url": "https://encykorea.aks.ac.kr/Article/E0030507"
+    }
+   ],
+   "app_decision": "동학은 “최제우가 창시한 종교”까지만. 인내천은 쓰지 않음."
+  },
+  {
+   "id": "C10",
+   "script_lines": [
+    790,
+    791
+   ],
+   "issue": "계유정난과 세조 즉위를 한 사건처럼 압축",
+   "safe_formulation": "계유정난으로 실권을 잡은 뒤 세조가 즉위했다고 시점을 분리.",
+   "status": "corrected_chronology_wording",
+   "pdf_pages": [
+    59
+   ],
+   "sources": [],
+   "app_decision": "1453 계유정난(단종 때)과 1455 세조 즉위를 별도 시점으로 표시."
+  },
+  {
+   "id": "C11",
+   "script_lines": [
+    1018,
+    1019
+   ],
+   "issue": "농민 봉기만이 세도정치를 끝낸 원인처럼 설명",
+   "safe_formulation": "농민 봉기와 흥선대원군의 집권·정치 변화를 연결하되 단일 인과로 단정하지 않음.",
+   "status": "remove_overstated_causation",
+   "pdf_pages": [
+    65,
+    86
+   ],
+   "sources": [],
+   "app_decision": "임술농민봉기 뒤 박규수 파견·삼정이정청 설치까지만 연결. 세도정치를 끝낸 단일 원인으로 쓰지 않음."
+  },
+  {
+   "id": "C12",
+   "script_lines": [
+    669
+   ],
+   "issue": "고려 교역을 모두 공무역으로 설명",
+   "safe_formulation": "벽란도에서 여러 국가 상인의 교역이 이루어졌다고만 서술. 교역 전체의 공무역 여부는 미확인이라 제외.",
+   "status": "hold_overgeneralization_pending",
+   "pdf_pages": [
+    51
+   ],
+   "sources": [],
+   "app_decision": "벽란도는 여러 나라 상인이 오간 무역항으로만 씀. 교역 전체를 공무역으로 단정하지 않음."
+  },
+  {
+   "id": "C13",
+   "script_lines": [
+    609,
+    610
+   ],
+   "issue": "권문세족을 원에 붙은 사람 전체와 동일시",
+   "safe_formulation": "원 간섭기에 성장한 유력 지배 세력으로 설명하고 친원 관계·출신을 일률적으로 단정하지 않음.",
+   "status": "remove_overgeneralization",
+   "pdf_pages": [
+    46
+   ],
+   "sources": [],
+   "app_decision": "권문세족은 원 간섭기에 성장한 유력 지배 세력으로 설명. 모두 친원이라 단정하지 않음."
+  },
+  {
+   "id": "C14",
+   "script_lines": [
+    703,
+    704,
+    1150,
+    1151
+   ],
+   "issue": "비슷한 탑의 비교는 절대로 출제되지 않는다고 설명",
+   "safe_formulation": "강사의 시험 전략 주장으로만 보관. 학습 콘텐츠에서는 두 탑의 시대를 구분.",
+   "status": "instructor_strategy_not_fact",
+   "pdf_pages": [
+    53,
+    76
+   ],
+   "sources": [],
+   "app_decision": "탑 비교가 출제되지 않는다는 주장은 쓰지 않고, 경천사지(고려)와 원각사지(조선)를 구분하는 메모만 둠."
+  },
+  {
+   "id": "C15",
+   "script_lines": [
+    1101,
+    1102,
+    1126,
+    1127
+   ],
+   "issue": "20번대 경제 문제를 무조건 조선 후기로 단정",
+   "safe_formulation": "문제 번호 대신 모내기·공인·상평통보 등 내용 단서로 시대를 판별.",
+   "status": "instructor_strategy_not_general_rule",
+   "pdf_pages": [
+    73
+   ],
+   "sources": [],
+   "app_decision": "문제 번호로 시대를 정하는 요령은 쓰지 않음. 모내기·공인·상평통보 같은 내용 단서로 판별."
+  },
+  {
+   "id": "C16",
+   "script_lines": [
+    642
+   ],
+   "issue": "이후 사건 문제는 무조건 가장 마지막 사건을 선택하는 요령",
+   "safe_formulation": "제시 시점과 선택지 사건의 실제 선후 관계를 비교.",
+   "status": "worked_example_not_general_rule",
+   "pdf_pages": [
+    47
+   ],
+   "sources": [],
+   "app_decision": "“가장 마지막 사건 고르기” 요령은 쓰지 않음."
+  },
+  {
+   "id": "C17",
+   "script_lines": [
+    1044,
+    1045
+   ],
+   "issue": "홍문관 수장을 대제학 한 명으로 단순화",
+   "safe_formulation": "기본은 홍문관의 경연·옥당 기능만 강조. 관직 체계 상세는 확인 전 제외.",
+   "status": "hold_detailed_office_structure",
+   "pdf_pages": [
+    71
+   ],
+   "sources": [],
+   "app_decision": "홍문관은 경연·옥당 기능까지만. 수장 관직 단순화는 쓰지 않음."
+  }
+ ],
+ "placement_rule_joseon": {
+  "J01": [
+   "joseon-early"
+  ],
+  "J02": [
+   "joseon-early"
+  ],
+  "J03": [
+   "joseon-early"
+  ],
+  "J04": [
+   "joseon-early"
+  ],
+  "J05": [
+   "joseon-early"
+  ],
+  "J06": [
+   "joseon-early"
+  ],
+  "J07": [
+   "joseon-early",
+   "joseon-late"
+  ],
+  "J08": [
+   "joseon-late"
+  ],
+  "J09": [
+   "joseon-late"
+  ],
+  "J10": [
+   "joseon-late"
+  ],
+  "J11": [
+   "joseon-early"
+  ],
+  "J12": [
+   "joseon-early",
+   "joseon-late"
+  ],
+  "J13": [
+   "joseon-late"
+  ],
+  "J14": [
+   "joseon-late"
+  ],
+  "J15": [
+   "joseon-late"
+  ],
+  "J16": [
+   "joseon-early",
+   "joseon-late"
+  ],
+  "J17": [
+   "joseon-early"
+  ],
+  "J18": [
+   "joseon-late"
+  ],
+  "J19": [
+   "joseon-late"
+  ],
+  "J20": [
+   "joseon-early",
+   "joseon-late"
+  ]
+ },
+ "modules": {
+  "G01": {
+   "era": "고려",
+   "title": "호족과 함께 건국하고 왕권을 정비하다",
+   "priority": "core",
+   "section_scope": null,
+   "app_eras": [
+    "goryeo"
+   ],
+   "summary_groups": [
+    "goryeo · 초기 세 왕 · 태조 · 광종 · 성종"
+   ],
+   "highlight_keywords": [
+    "태조",
+    "흑창",
+    "역분전",
+    "정계",
+    "계백료서",
+    "광종",
+    "과거제",
+    "쌍기",
+    "노비안검법",
+    "성종",
+    "최승로",
+    "시무 28조",
+    "12목",
+    "국자감"
+   ],
+   "content_lines": [
+    [
+     484,
+     513
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      484,
+      485
+     ],
+     "kind": "explicit_minimum",
+     "meaning": "태조·광종·성종을 초기의 대표 세 왕으로 지정"
+    },
+    {
+     "lines": [
+      490,
+      491
+     ],
+     "kind": "claimed_frequent",
+     "meaning": "태조의 정계·계백료서·역분전·흑창을 자주 나오는 단서로 지목"
+    },
+    {
+     "lines": [
+      493,
+      493
+     ],
+     "kind": "explicit_important",
+     "meaning": "광종을 중요한 왕으로 지목"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    41,
+    42
+   ],
+   "book_crosscheck_pages": [
+    34,
+    35
+   ],
+   "correction_ids": [],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "goryeo-comic.html",
+     "id": "early",
+     "art": "goryeo-panels/01.webp",
+     "depicts": "해가 떠오르는 성곽 위에 선 고려의 왕"
+    },
+    {
+     "file": "goryeo-comic.html",
+     "id": null,
+     "art": "goryeo-panels/02.webp",
+     "depicts": "옥좌의 왕이 지켜보는 가운데 신하들이 종이에 답을 쓰는 장면"
+    },
+    {
+     "file": "goryeo-comic.html",
+     "id": null,
+     "art": "goryeo-panels/03.webp",
+     "depicts": "궁궐 마당의 학교에서 책을 펴고 공부하는 학생들(국자감)"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "G02": {
+   "era": "고려",
+   "title": "거란의 세 차례 침입",
+   "priority": "support",
+   "section_scope": null,
+   "app_eras": [
+    "goryeo"
+   ],
+   "summary_groups": [
+    "goryeo · 거란의 세 차례 침입"
+   ],
+   "highlight_keywords": [
+    "서희",
+    "강동 6주",
+    "강조",
+    "양규",
+    "강감찬",
+    "귀주대첩",
+    "초조대장경"
+   ],
+   "content_lines": [
+    [
+     514,
+     538
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      518,
+      530
+     ],
+     "kind": "comparison_explanation",
+     "meaning": "거란의 차수별 대응을 설명"
+    },
+    {
+     "lines": [
+      535,
+      538
+     ],
+     "kind": "worked_example",
+     "meaning": "사건 사이의 순서와 인물로 침입을 판별"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    42
+   ],
+   "book_crosscheck_pages": [
+    35
+   ],
+   "correction_ids": [],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "goryeo-comic.html",
+     "id": "khitan-2-3",
+     "art": "goryeo-panels/04.webp",
+     "depicts": "고려 관리와 북방 장수가 마주 앉아 담판하는 장면(1차 서희의 담판)"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "G03": {
+   "era": "고려",
+   "title": "문벌귀족 시대의 교육·국방과 갈등",
+   "priority": "core",
+   "section_scope": null,
+   "app_eras": [
+    "goryeo"
+   ],
+   "summary_groups": [
+    "goryeo · 숙종 · 예종 · 인종"
+   ],
+   "highlight_keywords": [
+    "숙종",
+    "해동통보",
+    "별무반",
+    "예종",
+    "양현고",
+    "7재",
+    "청연각",
+    "보문각",
+    "윤관",
+    "동북 9성",
+    "이자겸",
+    "묘청",
+    "김부식"
+   ],
+   "content_lines": [
+    [
+     539,
+     573
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      539,
+      540
+     ],
+     "kind": "explicit_minimum",
+     "meaning": "숙종·예종·인종을 대표 왕으로 제한"
+    },
+    {
+     "lines": [
+      549,
+      551
+     ],
+     "kind": "claimed_frequent",
+     "meaning": "청연각·보문각을 최근 자주 나오는 내용으로 지목"
+    },
+    {
+     "lines": [
+      568,
+      573
+     ],
+     "kind": "worked_example",
+     "meaning": "교육 단서와 이자겸·묘청의 난 순서를 예제로 반복"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    43
+   ],
+   "book_crosscheck_pages": [
+    36
+   ],
+   "correction_ids": [],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "goryeo-comic.html",
+     "id": "aristocrat",
+     "art": "goryeo-panels/05.webp",
+     "depicts": "눈 덮인 북방에 성을 쌓는 군사들과 앞을 가리키는 고려 장수"
+    },
+    {
+     "file": "goryeo-comic.html",
+     "id": null,
+     "art": "goryeo-panels/03.webp",
+     "depicts": "책을 펴고 공부하는 국자감 학생들(성종 장면 그림 다시 사용)"
+    },
+    {
+     "file": "goryeo-comic.html",
+     "id": null,
+     "art": "goryeo-panels/06.webp",
+     "depicts": "불타는 궁궐 앞에서 다투는 관리들(이자겸의 난)"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "G04": {
+   "era": "고려",
+   "title": "무신 정권의 권력 이동",
+   "priority": "core",
+   "section_scope": null,
+   "app_eras": [
+    "goryeo"
+   ],
+   "summary_groups": [
+    "goryeo · 무신 정권의 흐름"
+   ],
+   "highlight_keywords": [
+    "이의방",
+    "정중부",
+    "이의민",
+    "최충헌",
+    "교정도감",
+    "봉사 10조",
+    "최우",
+    "정방",
+    "강화 천도"
+   ],
+   "content_lines": [
+    [
+     574,
+     588
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      578,
+      587
+     ],
+     "kind": "explicit_required_and_claimed_frequent",
+     "meaning": "무신 집권기의 전체 흐름을 꼭 기억하고 최충헌 단서를 우선하라고 강조"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    44,
+    45
+   ],
+   "book_crosscheck_pages": [
+    37,
+    38
+   ],
+   "correction_ids": [],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "goryeo-comic.html",
+     "id": "military",
+     "art": "goryeo-panels/07.webp",
+     "depicts": "갑옷 입은 장수들이 궁궐 안으로 들어서는 장면"
+    },
+    {
+     "file": "goryeo-comic.html",
+     "id": null,
+     "art": "goryeo-panels/08.webp",
+     "depicts": "말 위의 관리와 섬으로 향하는 배들"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "G05": {
+   "era": "고려",
+   "title": "몽골 항쟁과 지역민의 저항",
+   "priority": "support",
+   "section_scope": null,
+   "app_eras": [
+    "goryeo"
+   ],
+   "summary_groups": [
+    "goryeo · 몽골 항쟁과 봉기"
+   ],
+   "highlight_keywords": [
+    "김윤후",
+    "처인성",
+    "충주성",
+    "삼별초",
+    "강화",
+    "진도",
+    "제주",
+    "팔만대장경",
+    "망이·망소이",
+    "만적"
+   ],
+   "content_lines": [
+    [
+     589,
+     605
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      589,
+      605
+     ],
+     "kind": "explanation_and_worked_example",
+     "meaning": "봉기·몽골 항쟁·삼별초와 대장경을 흐름 및 예제로 연결"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    44,
+    45
+   ],
+   "book_crosscheck_pages": [
+    37,
+    38
+   ],
+   "correction_ids": [
+    "C08"
+   ],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "goryeo-comic.html",
+     "id": "military",
+     "art": "goryeo-panels/07.webp",
+     "depicts": "갑옷 입은 장수들이 궁궐 안으로 들어서는 장면"
+    },
+    {
+     "file": "goryeo-comic.html",
+     "id": null,
+     "art": "goryeo-panels/09.webp",
+     "depicts": "성벽 위에서 활을 겨누며 공격을 막는 군사들"
+    },
+    {
+     "file": "goryeo-comic.html",
+     "id": null,
+     "art": "goryeo-panels/10.webp",
+     "depicts": "섬을 향해 바다를 건너는 함대"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "G06": {
+   "era": "고려",
+   "title": "원 간섭과 공민왕의 개혁",
+   "priority": "core",
+   "section_scope": null,
+   "app_eras": [
+    "goryeo"
+   ],
+   "summary_groups": [
+    "goryeo · 원 간섭과 공민왕의 개혁"
+   ],
+   "highlight_keywords": [
+    "정동행성",
+    "응방",
+    "공녀",
+    "몽골풍",
+    "공민왕",
+    "기철",
+    "쌍성총관부",
+    "전민변정도감",
+    "신돈"
+   ],
+   "content_lines": [
+    [
+     606,
+     625
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      615,
+      619
+     ],
+     "kind": "explicit_association_and_claimed_frequent",
+     "meaning": "원 간섭기 단서를 정리하고 공민왕을 특히 자주 묻는 왕으로 지목"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    46
+   ],
+   "book_crosscheck_pages": [
+    39
+   ],
+   "correction_ids": [
+    "C13"
+   ],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "goryeo-comic.html",
+     "id": "yuan",
+     "art": "goryeo-panels/11.webp",
+     "depicts": "고려 왕 곁에 선 원의 관리"
+    },
+    {
+     "file": "goryeo-comic.html",
+     "id": null,
+     "art": "goryeo-panels/12.webp",
+     "depicts": "칼을 들고 말 위에서 군사를 이끄는 왕"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "G07": {
+   "era": "고려",
+   "title": "왜구 대응에서 조선 건국으로",
+   "priority": "support",
+   "section_scope": null,
+   "app_eras": [
+    "goryeo"
+   ],
+   "summary_groups": [
+    "goryeo · 왜구 대응과 고려의 끝"
+   ],
+   "highlight_keywords": [
+    "최영",
+    "홍산 전투",
+    "최무선",
+    "진포대첩",
+    "이성계",
+    "황산 전투",
+    "박위",
+    "위화도 회군",
+    "과전법"
+   ],
+   "content_lines": [
+    [
+     626,
+     647
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      629,
+      640
+     ],
+     "kind": "association_explanation",
+     "meaning": "전투 단서와 정권 교체 순서를 설명"
+    },
+    {
+     "lines": [
+      641,
+      646
+     ],
+     "kind": "worked_example_not_general_rule",
+     "meaning": "전후 사건을 비교하는 예제이므로 특정 풀이 요령을 모든 문제로 일반화하지 않음"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    47
+   ],
+   "book_crosscheck_pages": [
+    40
+   ],
+   "correction_ids": [
+    "C16"
+   ],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "goryeo-comic.html",
+     "id": "late",
+     "art": "goryeo-panels/13.webp",
+     "depicts": "배 위에서 화포를 쏘아 적선을 불태우는 장면"
+    },
+    {
+     "file": "goryeo-comic.html",
+     "id": null,
+     "art": "goryeo-panels/14.webp",
+     "depicts": "강가에서 군대를 바라보는 장수"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "G08": {
+   "era": "고려",
+   "title": "기관의 역할과 조선과의 비교",
+   "priority": "optional_highlight",
+   "section_scope": "고려 기관 전체: 낮은 우선도, 내부 우선은 도병마사",
+   "app_eras": [
+    "goryeo"
+   ],
+   "summary_groups": [
+    "goryeo · 고려의 기관"
+   ],
+   "highlight_keywords": [
+    "도병마사",
+    "도평의사사",
+    "삼사",
+    "어사대",
+    "5도 양계",
+    "병마사"
+   ],
+   "content_lines": [
+    [
+     648,
+     664
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      648,
+      660
+     ],
+     "kind": "explicit_lower_priority_and_minimum",
+     "meaning": "기관 전체는 시간이 없으면 생략하되 도병마사를 최소 단서로 남기라고 설명"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    51,
+    52
+   ],
+   "book_crosscheck_pages": [
+    44,
+    45
+   ],
+   "correction_ids": [],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "goryeo-comic.html",
+     "id": null,
+     "art": "goryeo-panels/03.webp",
+     "depicts": "궁궐 마당의 학교에서 책을 펴고 공부하는 학생들(국자감)"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "G09": {
+   "era": "고려",
+   "title": "경제 단서와 토지 지급",
+   "priority": "core",
+   "section_scope": null,
+   "app_eras": [
+    "goryeo"
+   ],
+   "summary_groups": [
+    "goryeo · 경제 · 땅과 시장"
+   ],
+   "highlight_keywords": [
+    "소를 이용한 깊이갈이",
+    "벽란도",
+    "경시서",
+    "관영상점",
+    "전시과",
+    "경종",
+    "건원중보",
+    "해동통보",
+    "제위보"
+   ],
+   "content_lines": [
+    [
+     665,
+     685
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      665,
+      667
+     ],
+     "kind": "claimed_frequent",
+     "meaning": "소를 이용한 깊이갈이 일반화를 매 시험 나오는 표현으로 지목"
+    },
+    {
+     "lines": [
+      505,
+      506
+     ],
+     "kind": "explicit_association",
+     "meaning": "전시과 시작은 경종과 연결"
+    },
+    {
+     "lines": [
+      678,
+      679
+     ],
+     "kind": "explicit_lower_priority",
+     "meaning": "전시과의 개정과 녹과전 상세는 낮춤"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    41,
+    51,
+    52
+   ],
+   "book_crosscheck_pages": [
+    34,
+    44,
+    45
+   ],
+   "correction_ids": [
+    "C12"
+   ],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "goryeo-comic.html",
+     "id": "goryeo-relief",
+     "art": "lecture-panels/goryeo-land-tax.png",
+     "depicts": "토지 지도와 장부를 펴 놓고 의논하는 관리들, 뒤로 소와 함께 수확하는 농민들(개념 그림 · 땅 주인이 바뀌는 장면이 아님)"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "G10": {
+   "era": "고려",
+   "title": "의천과 지눌의 불교",
+   "priority": "core",
+   "section_scope": null,
+   "app_eras": [
+    "goryeo"
+   ],
+   "summary_groups": [
+    "goryeo · 불교 · 의천과 지눌"
+   ],
+   "highlight_keywords": [
+    "의천",
+    "천태종",
+    "교관겸수",
+    "지눌",
+    "정혜쌍수",
+    "돈오점수",
+    "수선사 결사"
+   ],
+   "content_lines": [
+    [
+     686,
+     699
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      687,
+      695
+     ],
+     "kind": "explicit_important_and_association",
+     "meaning": "대표 두 스님과 천태종·수행 키워드를 우선"
+    },
+    {
+     "lines": [
+      696,
+      699
+     ],
+     "kind": "explicit_lower_priority",
+     "meaning": "추가 세 스님은 가볍게 보도록 범위를 낮춤"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    53
+   ],
+   "book_crosscheck_pages": [
+    46
+   ],
+   "correction_ids": [],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "goryeo-comic.html",
+     "id": "culture",
+     "art": "lecture-panels/goryeo-buddhism.png",
+     "depicts": "왼쪽은 경전을 펴 가르치는 스님, 오른쪽은 참선하는 스님을 나란히 그린 개념 그림(실제 두 인물의 만남을 그린 것이 아님)"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "G11": {
+   "era": "고려",
+   "title": "탑·건축·금속활자",
+   "priority": "support",
+   "section_scope": null,
+   "app_eras": [
+    "goryeo"
+   ],
+   "summary_groups": [
+    "goryeo · 탑과 금속활자"
+   ],
+   "highlight_keywords": [
+    "경천사지 10층석탑",
+    "월정사 팔각구층석탑",
+    "직지심체요절",
+    "청주 흥덕사"
+   ],
+   "content_lines": [
+    [
+     700,
+     721
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      717,
+      721
+     ],
+     "kind": "explicit_memory",
+     "meaning": "직지의 시대·지역을 기억하라고 강조"
+    },
+    {
+     "lines": [
+      709,
+      716
+     ],
+     "kind": "explicit_lower_priority",
+     "meaning": "건축은 가볍게 듣는 범위로 낮춤"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    53,
+    54
+   ],
+   "book_crosscheck_pages": [
+    46,
+    47
+   ],
+   "correction_ids": [
+    "C14"
+   ],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "goryeo-comic.html",
+     "id": null,
+     "art": "goryeo-panels/15.webp",
+     "depicts": "절 마당에서 청자에 무늬를 넣는 도공, 뒤로 여러 층의 탑"
+    },
+    {
+     "file": "goryeo-comic.html",
+     "id": null,
+     "art": "goryeo-panels/16.webp",
+     "depicts": "활자를 고르며 책을 찍는 장인"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "G12": {
+   "era": "고려",
+   "title": "유교 교육과 다섯 역사서",
+   "priority": "core",
+   "section_scope": null,
+   "app_eras": [
+    "goryeo"
+   ],
+   "summary_groups": [
+    "goryeo · 유학과 역사서 다섯 권"
+   ],
+   "highlight_keywords": [
+    "이제현",
+    "만권당",
+    "역옹패설",
+    "삼국사기",
+    "김부식",
+    "동명왕편",
+    "이규보",
+    "해동고승전",
+    "각훈",
+    "삼국유사",
+    "일연",
+    "제왕운기",
+    "이승휴"
+   ],
+   "content_lines": [
+    [
+     722,
+     735
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      725,
+      727
+     ],
+     "kind": "claimed_frequent",
+     "meaning": "이제현의 학문 교류를 자주 나오는 항목으로 지목"
+    },
+    {
+     "lines": [
+      728,
+      735
+     ],
+     "kind": "explicit_memory_scope",
+     "meaning": "역사서를 암기 파트의 다섯 책으로 묶음"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    53
+   ],
+   "book_crosscheck_pages": [
+    46
+   ],
+   "correction_ids": [],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "goryeo-comic.html",
+     "id": "goryeo-history",
+     "art": "lecture-panels/goryeo-history.png",
+     "depicts": "책상에서 붓으로 글을 쓰는 고려 학자와 곁에 쌓인 책들(개념 그림 · 특정 저자의 초상이나 다섯 저자가 만난 장면이 아님)"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "G13": {
+   "era": "고려",
+   "title": "공예는 비색과 제작 특징",
+   "priority": "support",
+   "section_scope": null,
+   "app_eras": [
+    "goryeo"
+   ],
+   "summary_groups": [
+    "goryeo · 공예와 그림"
+   ],
+   "highlight_keywords": [
+    "비색",
+    "고려청자",
+    "상감청자",
+    "나전칠기",
+    "수월관음도",
+    "천산대렵도"
+   ],
+   "content_lines": [
+    [
+     736,
+     743
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      736,
+      743
+     ],
+     "kind": "explicit_learning_method",
+     "meaning": "다양한 문화재를 색과 대표 작품으로 압축하는 학습 전략"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    53,
+    54
+   ],
+   "book_crosscheck_pages": [
+    46,
+    47
+   ],
+   "correction_ids": [],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "goryeo-comic.html",
+     "id": null,
+     "art": "goryeo-panels/15.webp",
+     "depicts": "절 마당에서 청자에 무늬를 넣는 도공, 뒤로 여러 층의 탑"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "J01": {
+   "era": "조선",
+   "title": "건국과 새 국가의 설계",
+   "priority": "core",
+   "section_scope": null,
+   "app_eras": [
+    "joseon-early"
+   ],
+   "summary_groups": [
+    "joseon-early · 건국 · 이성계와 정도전"
+   ],
+   "highlight_keywords": [
+    "위화도 회군",
+    "과전법",
+    "정도전",
+    "불씨잡변",
+    "조선경국전"
+   ],
+   "content_lines": [
+    [
+     751,
+     763
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      752,
+      754
+     ],
+     "kind": "explicit_required",
+     "meaning": "전체 흐름을 합격을 위해 반드시 알아야 하는 내용으로 지정"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    58
+   ],
+   "book_crosscheck_pages": [
+    51
+   ],
+   "correction_ids": [],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "joseon-comic.html",
+     "id": "founding",
+     "art": "joseon-panels/early-01.png",
+     "depicts": "지도를 펼쳐 놓고 새 나라를 준비하는 장수와 학자"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "founding",
+     "art": "joseon-panels/early-01.png",
+     "depicts": "지도를 펼쳐 놓고 새 나라를 준비하는 장수와 학자"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "J02": {
+   "era": "조선",
+   "title": "보고 체계와 세종의 정책",
+   "priority": "core",
+   "section_scope": null,
+   "app_eras": [
+    "joseon-early"
+   ],
+   "summary_groups": [
+    "joseon-early · 태종 · 세종"
+   ],
+   "highlight_keywords": [
+    "태종",
+    "사간원",
+    "6조 직계제",
+    "세종",
+    "연분 9등법",
+    "집현전",
+    "4군 6진",
+    "계해약조"
+   ],
+   "content_lines": [
+    [
+     764,
+     788
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      772,
+      772
+     ],
+     "kind": "explicit_important",
+     "meaning": "태종의 사간원·6조 직계제를 중요 항목으로 지목"
+    },
+    {
+     "lines": [
+      777,
+      778
+     ],
+     "kind": "claimed_frequent",
+     "meaning": "풍흉에 따른 9등급 전세를 강사가 자주 나온다고 설명"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    58,
+    59,
+    60
+   ],
+   "book_crosscheck_pages": [
+    51,
+    52,
+    53
+   ],
+   "correction_ids": [],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "joseon-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-02.png",
+     "depicts": "궁궐에서 마주 선 두 왕자"
+    },
+    {
+     "file": "joseon-comic.html",
+     "id": "sejong",
+     "art": "joseon-panels/early-03.png",
+     "depicts": "새 글자를 보여 주며 설명하는 왕과 학자들"
+    },
+    {
+     "file": "joseon-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-04.png",
+     "depicts": "눈 덮인 북방 성을 지키는 장수와 군사"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-02.png",
+     "depicts": "궁궐에서 마주 선 두 왕자"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "sejong",
+     "art": "joseon-panels/early-03.png",
+     "depicts": "새 글자를 보여 주며 설명하는 왕과 학자들"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-04.png",
+     "depicts": "눈 덮인 북방 성을 지키는 장수와 군사"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "J03": {
+   "era": "조선",
+   "title": "토지 부족과 직전법·법전 정비",
+   "priority": "core",
+   "section_scope": null,
+   "app_eras": [
+    "joseon-early"
+   ],
+   "summary_groups": [
+    "joseon-early · 계유정난 · 세조 · 성종"
+   ],
+   "highlight_keywords": [
+    "세조",
+    "직전법",
+    "현직 관리",
+    "수신전",
+    "휼양전",
+    "성종",
+    "경국대전",
+    "홍문관"
+   ],
+   "content_lines": [
+    [
+     789,
+     809
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      792,
+      797
+     ],
+     "kind": "claimed_frequent",
+     "meaning": "세조의 직전법과 현직 관리 지급을 최우선 판별 단서로 강조"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    59,
+    60,
+    72
+   ],
+   "book_crosscheck_pages": [
+    52,
+    53,
+    65
+   ],
+   "correction_ids": [
+    "C01",
+    "C10"
+   ],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "joseon-comic.html",
+     "id": "sejo",
+     "art": "joseon-panels/early-05.png",
+     "depicts": "무장한 군사에 둘러싸인 왕과 엎드린 신하들"
+    },
+    {
+     "file": "joseon-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-06.png",
+     "depicts": "두루마리를 펼쳐 보이는 왕과 신하들"
+    },
+    {
+     "file": "joseon-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-07.png",
+     "depicts": "왕에게 두꺼운 책을 바치는 신하"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "sejo",
+     "art": "joseon-panels/early-05.png",
+     "depicts": "무장한 군사에 둘러싸인 왕과 엎드린 신하들"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-06.png",
+     "depicts": "두루마리를 펼쳐 보이는 왕과 신하들"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-07.png",
+     "depicts": "왕에게 두꺼운 책을 바치는 신하"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "J04": {
+   "era": "조선",
+   "title": "사림의 진출과 네 차례 사화",
+   "priority": "core",
+   "section_scope": null,
+   "app_eras": [
+    "joseon-early"
+   ],
+   "summary_groups": [
+    "joseon-early · 사화 4개 · 연도 · 왕 · 계기",
+    "joseon-early · 중종 · 조광조의 개혁"
+   ],
+   "highlight_keywords": [
+    "무오사화",
+    "김종직",
+    "조의제문",
+    "갑자사화",
+    "폐비 윤씨",
+    "조광조",
+    "현량과",
+    "위훈 삭제",
+    "기묘사화",
+    "을사사화",
+    "윤원형",
+    "윤임"
+   ],
+   "content_lines": [
+    [
+     810,
+     865
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      820,
+      821
+     ],
+     "kind": "claimed_frequent",
+     "meaning": "사화를 단골 출제 내용으로 표현"
+    },
+    {
+     "lines": [
+      853,
+      857
+     ],
+     "kind": "explicit_required",
+     "meaning": "네 사화의 순서와 계기를 반드시 기억하도록 강조"
+    },
+    {
+     "lines": [
+      810,
+      815
+     ],
+     "kind": "explicit_lower_priority",
+     "meaning": "성리학 인물 계보는 알아야 하는 암기 대상이 아니라 배경이라고 설명"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    59,
+    61
+   ],
+   "book_crosscheck_pages": [
+    52,
+    54
+   ],
+   "correction_ids": [],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "joseon-comic.html",
+     "id": "purges",
+     "art": "joseon-panels/early-08.png",
+     "depicts": "궁궐을 떠나는 흰 옷의 선비들"
+    },
+    {
+     "file": "joseon-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-10.png",
+     "depicts": "왕 앞에서 개혁을 건의하는 흰 옷의 선비"
+    },
+    {
+     "file": "joseon-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-08.png",
+     "depicts": "궁궐을 떠나는 흰 옷의 선비들(연산군 장면 그림 다시 사용)"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "purges",
+     "art": "joseon-panels/early-08.png",
+     "depicts": "궁궐을 떠나는 흰 옷의 선비들"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-10.png",
+     "depicts": "왕 앞에서 개혁을 건의하는 흰 옷의 선비"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-08.png",
+     "depicts": "궁궐을 떠나는 흰 옷의 선비들(연산군 장면 그림 다시 사용)"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "J05": {
+   "era": "조선",
+   "title": "붕당의 출발과 임진왜란",
+   "priority": "core",
+   "section_scope": null,
+   "app_eras": [
+    "joseon-early"
+   ],
+   "summary_groups": [
+    "joseon-early · 선조 · 붕당과 임진왜란"
+   ],
+   "highlight_keywords": [
+    "선조",
+    "이조전랑",
+    "정여립 모반 사건",
+    "훈련도감",
+    "임진왜란"
+   ],
+   "content_lines": [
+    [
+     868,
+     898
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      887,
+      888
+     ],
+     "kind": "explicit_minimum",
+     "meaning": "이조전랑과 정여립 모반 사건 정도를 알면 충분하다고 범위를 좁힘"
+    },
+    {
+     "lines": [
+      897,
+      898
+     ],
+     "kind": "claimed_frequent",
+     "meaning": "훈련도감 설치를 자주 나오는 내용으로 강조"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    63,
+    64,
+    66,
+    72
+   ],
+   "book_crosscheck_pages": [
+    56,
+    57,
+    59,
+    65
+   ],
+   "correction_ids": [],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "joseon-comic.html",
+     "id": "bungdang-origin",
+     "art": "joseon-panels/late-01.png",
+     "depicts": "조정에서 편을 나눠 다투는 신하들"
+    },
+    {
+     "file": "joseon-comic.html",
+     "id": "wars",
+     "art": "joseon-panels/early-11.png",
+     "depicts": "거북선을 앞세워 싸우는 조선 수군"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "bungdang-origin",
+     "art": "joseon-panels/late-01.png",
+     "depicts": "조정에서 편을 나눠 다투는 신하들"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "wars",
+     "art": "joseon-panels/early-11.png",
+     "depicts": "거북선을 앞세워 싸우는 조선 수군"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "J06": {
+   "era": "조선",
+   "title": "공납 부담에서 대동법과 공인으로",
+   "priority": "core",
+   "section_scope": null,
+   "app_eras": [
+    "joseon-early"
+   ],
+   "summary_groups": [
+    "joseon-early · 광해군 · 대동법"
+   ],
+   "highlight_keywords": [
+    "대동법",
+    "광해군",
+    "이원익",
+    "김육",
+    "방납의 폐단",
+    "공인",
+    "선혜청"
+   ],
+   "content_lines": [
+    [
+     899,
+     920
+    ],
+    [
+     1093,
+     1098
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      919,
+      920
+     ],
+     "kind": "explicit_important",
+     "meaning": "방납 폐단 해결과 공인 등장을 특히 중요하다고 지정"
+    },
+    {
+     "lines": [
+      1093,
+      1098
+     ],
+     "kind": "explicit_required",
+     "meaning": "대동법·균역법과 표시된 핵심 키워드를 꼭 외우도록 강조"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    64,
+    73
+   ],
+   "book_crosscheck_pages": [
+    57,
+    66
+   ],
+   "correction_ids": [],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "joseon-comic.html",
+     "id": "gwanghaegun",
+     "art": "joseon-panels/late-04.png",
+     "depicts": "책을 펼쳐 보이며 농민들에게 설명하는 관리"
+    },
+    {
+     "file": "joseon-comic.html",
+     "id": null,
+     "art": "joseon-panels/late-02.png",
+     "depicts": "고민에 잠긴 왕"
+    },
+    {
+     "file": "joseon-late-comic.html",
+     "id": "scene-9",
+     "art": "joseon-panels/late-09.png",
+     "depicts": "물건을 사고파는 장터의 사람들"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "gwanghaegun",
+     "art": "joseon-panels/late-04.png",
+     "depicts": "책을 펼쳐 보이며 농민들에게 설명하는 관리"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": null,
+     "art": "joseon-panels/late-02.png",
+     "depicts": "고민에 잠긴 왕"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "scene-9",
+     "art": "joseon-panels/late-09.png",
+     "depicts": "물건을 사고파는 장터의 사람들"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "J07": {
+   "era": "조선",
+   "title": "호란의 대응과 북벌·나선 정벌",
+   "priority": "core",
+   "section_scope": null,
+   "app_eras": [
+    "joseon-early",
+    "joseon-late"
+   ],
+   "summary_groups": [
+    "joseon-early · 인조 · 반정과 두 호란",
+    "joseon-early · 두 호란의 장면",
+    "joseon-late · 효종 · 북벌과 나선 정벌"
+   ],
+   "highlight_keywords": [
+    "인조",
+    "병자호란",
+    "남한산성",
+    "김준룡",
+    "광교산 전투",
+    "효종",
+    "나선 정벌",
+    "조총 부대"
+   ],
+   "content_lines": [
+    [
+     921,
+     953
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      937,
+      938
+     ],
+     "kind": "claimed_frequent",
+     "meaning": "김준룡의 광교산 전투를 최근 자주 나온다고 설명"
+    },
+    {
+     "lines": [
+      952,
+      953
+     ],
+     "kind": "claimed_frequent",
+     "meaning": "나선 정벌에 파견한 조총 부대를 자주 묻는 단서로 강조"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    64,
+    66,
+    67
+   ],
+   "book_crosscheck_pages": [
+    57,
+    59,
+    60
+   ],
+   "correction_ids": [],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "joseon-comic.html",
+     "id": "injo",
+     "art": "joseon-panels/early-09.png",
+     "depicts": "군사를 거느리고 궁궐로 들어서는 젊은 왕"
+    },
+    {
+     "file": "joseon-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-12.png",
+     "depicts": "눈 덮인 산성에서 지친 군사들과 흰 깃발"
+    },
+    {
+     "file": "joseon-late-comic.html",
+     "id": "hyojong",
+     "art": "joseon-panels/late-03.png",
+     "depicts": "옥좌의 왕 앞에 엎드린 신하들"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "injo",
+     "art": "joseon-panels/early-09.png",
+     "depicts": "군사를 거느리고 궁궐로 들어서는 젊은 왕"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-12.png",
+     "depicts": "눈 덮인 산성에서 지친 군사들과 흰 깃발"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "hyojong",
+     "art": "joseon-panels/late-03.png",
+     "depicts": "옥좌의 왕 앞에 엎드린 신하들"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "J08": {
+   "era": "조선",
+   "title": "예송에서 환국으로",
+   "priority": "core",
+   "section_scope": null,
+   "app_eras": [
+    "joseon-late"
+   ],
+   "summary_groups": [
+    "joseon-late · 현종 · 숙종"
+   ],
+   "highlight_keywords": [
+    "현종",
+    "예송",
+    "숙종",
+    "환국",
+    "금위영",
+    "백두산 정계비"
+   ],
+   "content_lines": [
+    [
+     953,
+     979
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      953,
+      964
+     ],
+     "kind": "explicit_minimum",
+     "meaning": "현종은 예송을 알면 되고 복상 기간·명칭은 상세 암기를 낮춤"
+    },
+    {
+     "lines": [
+      968,
+      975
+     ],
+     "kind": "claimed_frequent_and_lower_detail",
+     "meaning": "금위영은 자주 나옴, 환국은 사건 단서를 알고 세부 명칭은 낮춤"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    65,
+    67
+   ],
+   "book_crosscheck_pages": [
+    58,
+    60
+   ],
+   "correction_ids": [],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "joseon-late-comic.html",
+     "id": "scene-2",
+     "art": "joseon-panels/late-01.png",
+     "depicts": "조정에서 편을 나눠 다투는 신하들"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "scene-2",
+     "art": "joseon-panels/late-01.png",
+     "depicts": "조정에서 편을 나눠 다투는 신하들"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "J09": {
+   "era": "조선",
+   "title": "군포 부담과 영조·정조의 개혁",
+   "priority": "core",
+   "section_scope": null,
+   "app_eras": [
+    "joseon-late"
+   ],
+   "summary_groups": [
+    "joseon-late · 영조 · 정조"
+   ],
+   "highlight_keywords": [
+    "영조",
+    "균역법",
+    "결작",
+    "선무군관포",
+    "정조",
+    "신해통공",
+    "규장각",
+    "장용영",
+    "초계문신제",
+    "윤지충"
+   ],
+   "content_lines": [
+    [
+     980,
+     1006
+    ],
+    [
+     1099,
+     1100
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      1004,
+      1006
+     ],
+     "kind": "explicit_required",
+     "meaning": "정조의 대표 정책과 윤지충 처형을 꼭 외우라고 강조"
+    },
+    {
+     "lines": [
+      1032,
+      1034
+     ],
+     "kind": "explicit_required_repeated",
+     "meaning": "문제 풀이에서도 정조 키워드 암기를 다시 명시"
+    },
+    {
+     "lines": [
+      1093,
+      1100
+     ],
+     "kind": "explicit_important",
+     "meaning": "두 수취 개혁을 핵심으로 지정"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    65,
+    67,
+    73
+   ],
+   "book_crosscheck_pages": [
+    58,
+    60,
+    66
+   ],
+   "correction_ids": [
+    "C02",
+    "C03"
+   ],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "joseon-late-comic.html",
+     "id": "scene-3",
+     "art": "joseon-panels/late-04.png",
+     "depicts": "책을 펼쳐 보이며 농민들에게 설명하는 관리(광해군 장면 그림 다시 사용)"
+    },
+    {
+     "file": "joseon-late-comic.html",
+     "id": "scene-5",
+     "art": "joseon-panels/late-05.png",
+     "depicts": "서고에서 책을 읽는 왕과 신하들"
+    },
+    {
+     "file": "joseon-late-comic.html",
+     "id": "scene-6",
+     "art": "joseon-panels/late-06.png",
+     "depicts": "기중 장치로 돌을 올리며 성을 쌓는 장면"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "scene-3",
+     "art": "joseon-panels/late-04.png",
+     "depicts": "책을 펼쳐 보이며 농민들에게 설명하는 관리(광해군 장면 그림 다시 사용)"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "scene-5",
+     "art": "joseon-panels/late-05.png",
+     "depicts": "서고에서 책을 읽는 왕과 신하들"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "scene-6",
+     "art": "joseon-panels/late-06.png",
+     "depicts": "기중 장치로 돌을 올리며 성을 쌓는 장면"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "J10": {
+   "era": "조선",
+   "title": "세도정치와 농민의 저항",
+   "priority": "core",
+   "section_scope": null,
+   "app_eras": [
+    "joseon-late"
+   ],
+   "summary_groups": [
+    "joseon-late · 세도정치와 농민의 저항"
+   ],
+   "highlight_keywords": [
+    "순조",
+    "신유박해",
+    "황사영 백서 사건",
+    "홍경래의 난",
+    "철종",
+    "임술농민봉기",
+    "유계춘",
+    "박규수",
+    "삼정이정청"
+   ],
+   "content_lines": [
+    [
+     1007,
+     1034
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      1011,
+      1013
+     ],
+     "kind": "claimed_frequent",
+     "meaning": "황사영 백서 사건을 자주 나오는 내용으로 강조"
+    },
+    {
+     "lines": [
+      1020,
+      1023
+     ],
+     "kind": "explicit_association",
+     "meaning": "임술농민봉기·삼정이정청을 철종으로 묶어 설명"
+    },
+    {
+     "lines": [
+      1030,
+      1034
+     ],
+     "kind": "worked_example",
+     "meaning": "관련 사건의 왕을 판별하는 예제"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    65,
+    68
+   ],
+   "book_crosscheck_pages": [
+    58,
+    61
+   ],
+   "correction_ids": [
+    "C07",
+    "C11"
+   ],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "joseon-late-comic.html",
+     "id": "scene-7",
+     "art": "joseon-panels/late-07.png",
+     "depicts": "궁중의 여인들과 신하들"
+    },
+    {
+     "file": "joseon-late-comic.html",
+     "id": "scene-8",
+     "art": "joseon-panels/late-08.png",
+     "depicts": "주먹을 들고 외치는 농민과 사람들"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "scene-7",
+     "art": "joseon-panels/late-07.png",
+     "depicts": "궁중의 여인들과 신하들"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "scene-8",
+     "art": "joseon-panels/late-08.png",
+     "depicts": "주먹을 들고 외치는 농민과 사람들"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "J11": {
+   "era": "조선",
+   "title": "기관은 역할과 별칭으로",
+   "priority": "target_1급",
+   "section_scope": "사회경제: 1급 목표 범위",
+   "app_eras": [
+    "joseon-early"
+   ],
+   "summary_groups": [
+    "joseon-early · 기관 · 역할과 별칭 (조선 전 시기)"
+   ],
+   "highlight_keywords": [
+    "승정원",
+    "도승지",
+    "은대 학사",
+    "사헌부",
+    "대사헌",
+    "홍문관",
+    "옥당",
+    "경연"
+   ],
+   "content_lines": [
+    [
+     1035,
+     1067
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      1035,
+      1036
+     ],
+     "kind": "explicit_goal_scope",
+     "meaning": "사회경제를 1급 목표에 필요한 범위로 설명"
+    },
+    {
+     "lines": [
+      1047,
+      1048
+     ],
+     "kind": "explicit_minimum",
+     "meaning": "승정원·사헌부·홍문관 세 기관을 최소 암기 묶음으로 지정"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    71,
+    74
+   ],
+   "book_crosscheck_pages": [
+    64,
+    67
+   ],
+   "correction_ids": [
+    "C17"
+   ],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "joseon-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-07.png",
+     "depicts": "왕에게 두꺼운 책을 바치는 신하"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-07.png",
+     "depicts": "왕에게 두꺼운 책을 바치는 신하"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "J12": {
+   "era": "조선",
+   "title": "전쟁 뒤 대일 교류가 달라지다",
+   "priority": "support",
+   "section_scope": null,
+   "app_eras": [
+    "joseon-early",
+    "joseon-late"
+   ],
+   "summary_groups": [
+    "joseon-early · 일본과의 교류 (전기~광해군)",
+    "joseon-late · 일본과의 교류 (후기)"
+   ],
+   "highlight_keywords": [
+    "3포",
+    "계해약조",
+    "비변사",
+    "기유약조",
+    "초량 왜관",
+    "회답겸쇄환사",
+    "통신사"
+   ],
+   "content_lines": [
+    [
+     1068,
+     1081
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      1080,
+      1081
+     ],
+     "kind": "explicit_comparison",
+     "meaning": "후기 문제에서 염포가 나오면 시기를 구분하라고 설명"
+    },
+    {
+     "lines": [
+      1129,
+      1130
+     ],
+     "kind": "explicit_minimum_repeated",
+     "meaning": "상세 경위보다 염포–전기 연결을 요구"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    72
+   ],
+   "book_crosscheck_pages": [
+    65
+   ],
+   "correction_ids": [],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "joseon-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-04.png",
+     "depicts": "눈 덮인 북방 성을 지키는 장수와 군사"
+    },
+    {
+     "file": "joseon-comic.html",
+     "id": null,
+     "art": "joseon-panels/late-02.png",
+     "depicts": "고민에 잠긴 왕"
+    },
+    {
+     "file": "joseon-late-comic.html",
+     "id": "scene-2",
+     "art": "joseon-panels/late-01.png",
+     "depicts": "조정에서 편을 나눠 다투는 신하들"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-04.png",
+     "depicts": "눈 덮인 북방 성을 지키는 장수와 군사"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": null,
+     "art": "joseon-panels/late-02.png",
+     "depicts": "고민에 잠긴 왕"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "scene-2",
+     "art": "joseon-panels/late-01.png",
+     "depicts": "조정에서 편을 나눠 다투는 신하들"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "J13": {
+   "era": "조선",
+   "title": "토지와 수취 제도를 구분하다",
+   "priority": "target_1급",
+   "section_scope": "사회경제: 1급 목표 범위",
+   "app_eras": [
+    "joseon-late"
+   ],
+   "summary_groups": [
+    "joseon-late · 토지와 세금 (조선 전 시기 비교)"
+   ],
+   "highlight_keywords": [
+    "과전법",
+    "직전법",
+    "연분 9등법",
+    "영정법",
+    "대동법",
+    "균역법"
+   ],
+   "content_lines": [
+    [
+     1082,
+     1100
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      1088,
+      1089
+     ],
+     "kind": "claimed_frequent_and_lower_detail",
+     "meaning": "성종·명종 상세보다 세조 직전법을 우선"
+    },
+    {
+     "lines": [
+      1091,
+      1098
+     ],
+     "kind": "explicit_important",
+     "meaning": "수취 개혁의 판별 키워드를 강조"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    72,
+    73
+   ],
+   "book_crosscheck_pages": [
+    65,
+    66
+   ],
+   "correction_ids": [],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "joseon-comic.html",
+     "id": "gwanghaegun",
+     "art": "joseon-panels/late-04.png",
+     "depicts": "책을 펼쳐 보이며 농민들에게 설명하는 관리"
+    },
+    {
+     "file": "joseon-comic.html",
+     "id": "injo",
+     "art": "joseon-panels/early-09.png",
+     "depicts": "군사를 거느리고 궁궐로 들어서는 젊은 왕"
+    },
+    {
+     "file": "joseon-late-comic.html",
+     "id": "scene-3",
+     "art": "joseon-panels/late-04.png",
+     "depicts": "책을 펼쳐 보이며 농민들에게 설명하는 관리(광해군 장면 그림 다시 사용)"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "gwanghaegun",
+     "art": "joseon-panels/late-04.png",
+     "depicts": "책을 펼쳐 보이며 농민들에게 설명하는 관리"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "injo",
+     "art": "joseon-panels/early-09.png",
+     "depicts": "군사를 거느리고 궁궐로 들어서는 젊은 왕"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "scene-3",
+     "art": "joseon-panels/late-04.png",
+     "depicts": "책을 펼쳐 보이며 농민들에게 설명하는 관리(광해군 장면 그림 다시 사용)"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "J14": {
+   "era": "조선",
+   "title": "생산과 시장이 커지는 사회",
+   "priority": "target_1급",
+   "section_scope": "사회경제: 1급 목표 범위",
+   "app_eras": [
+    "joseon-late"
+   ],
+   "summary_groups": [
+    "joseon-late · 생산과 시장 (조선 후기 사회)"
+   ],
+   "highlight_keywords": [
+    "모내기법",
+    "구황 작물",
+    "상품 작물",
+    "덕대",
+    "설점수세제",
+    "도고",
+    "상평통보",
+    "보부상",
+    "송상"
+   ],
+   "content_lines": [
+    [
+     1101,
+     1110
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      1101,
+      1102
+     ],
+     "kind": "explicit_required_and_claimed_frequent",
+     "meaning": "후기 경제를 반드시 나오는 영역으로 표현"
+    },
+    {
+     "lines": [
+      1109,
+      1110
+     ],
+     "kind": "claimed_frequent",
+     "meaning": "사상 중 송상을 가장 자주 나온다고 지목"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    73,
+    75
+   ],
+   "book_crosscheck_pages": [
+    66,
+    68
+   ],
+   "correction_ids": [
+    "C15"
+   ],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "joseon-late-comic.html",
+     "id": "scene-10",
+     "art": "joseon-panels/late-10.png",
+     "depicts": "소와 써레로 논을 고르는 농민"
+    },
+    {
+     "file": "joseon-late-comic.html",
+     "id": "scene-9",
+     "art": "joseon-panels/late-09.png",
+     "depicts": "물건을 사고파는 장터의 사람들"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "scene-10",
+     "art": "joseon-panels/late-10.png",
+     "depicts": "소와 써레로 논을 고르는 농민"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "scene-9",
+     "art": "joseon-panels/late-09.png",
+     "depicts": "물건을 사고파는 장터의 사람들"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "J15": {
+   "era": "조선",
+   "title": "신분과 대중 문화의 변화",
+   "priority": "support",
+   "section_scope": null,
+   "app_eras": [
+    "joseon-late"
+   ],
+   "summary_groups": [
+    "joseon-late · 신분과 대중 문화 (조선 후기 사회)"
+   ],
+   "highlight_keywords": [
+    "서얼",
+    "통청 운동",
+    "규장각 검서관",
+    "중인",
+    "시사",
+    "공명첩",
+    "한글소설",
+    "판소리"
+   ],
+   "content_lines": [
+    [
+     1111,
+     1121
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      1111,
+      1117
+     ],
+     "kind": "explanation_not_frequency",
+     "meaning": "신분제 동요와 문화 활동을 설명하며 항목별 빈출 판정은 하지 않음"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    73,
+    75
+   ],
+   "book_crosscheck_pages": [
+    66,
+    68
+   ],
+   "correction_ids": [
+    "C03",
+    "C04",
+    "C05",
+    "C09"
+   ],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "joseon-late-comic.html",
+     "id": "scene-5",
+     "art": "joseon-panels/late-05.png",
+     "depicts": "서고에서 책을 읽는 왕과 신하들"
+    },
+    {
+     "file": "joseon-late-comic.html",
+     "id": "scene-12",
+     "art": "joseon-panels/late-12.png",
+     "depicts": "나무 아래 모인 사람들 앞에서 말하는 사람"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "scene-5",
+     "art": "joseon-panels/late-05.png",
+     "depicts": "서고에서 책을 읽는 왕과 신하들"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "scene-12",
+     "art": "joseon-panels/late-12.png",
+     "depicts": "나무 아래 모인 사람들 앞에서 말하는 사람"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "J16": {
+   "era": "조선",
+   "title": "왕의 정책을 보여 주는 문화",
+   "priority": "core",
+   "section_scope": null,
+   "app_eras": [
+    "joseon-early",
+    "joseon-late"
+   ],
+   "summary_groups": [
+    "joseon-early · 전기 왕들의 문화 사업",
+    "joseon-late · 영조 · 정조"
+   ],
+   "highlight_keywords": [
+    "계미자",
+    "농사직설",
+    "칠정산",
+    "향약집성방",
+    "갑인자",
+    "간경도감",
+    "악학궤범",
+    "동국문헌비고",
+    "속대전"
+   ],
+   "content_lines": [
+    [
+     1131,
+     1164
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      1131,
+      1133
+     ],
+     "kind": "explicit_required",
+     "meaning": "조선 문화를 전부 버리면 선택지 판별이 어려워 필요한 항목을 설명하겠다고 선언"
+    },
+    {
+     "lines": [
+      1136,
+      1137
+     ],
+     "kind": "claimed_frequent",
+     "meaning": "태종의 계미자를 자주 나오는 표현으로 지목"
+    },
+    {
+     "lines": [
+      1151,
+      1151
+     ],
+     "kind": "explicit_relative_priority",
+     "meaning": "세조는 탑보다 간경도감이 중요"
+    },
+    {
+     "lines": [
+      1157,
+      1159
+     ],
+     "kind": "explicit_important",
+     "meaning": "성종의 악학궤범과 영조의 두 저서를 암기 대상으로 강조"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    76
+   ],
+   "book_crosscheck_pages": [
+    69
+   ],
+   "correction_ids": [
+    "C14"
+   ],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "joseon-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-02.png",
+     "depicts": "궁궐에서 마주 선 두 왕자"
+    },
+    {
+     "file": "joseon-comic.html",
+     "id": "sejong",
+     "art": "joseon-panels/early-03.png",
+     "depicts": "새 글자를 보여 주며 설명하는 왕과 학자들"
+    },
+    {
+     "file": "joseon-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-06.png",
+     "depicts": "두루마리를 펼쳐 보이는 왕과 신하들"
+    },
+    {
+     "file": "joseon-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-07.png",
+     "depicts": "왕에게 두꺼운 책을 바치는 신하"
+    },
+    {
+     "file": "joseon-late-comic.html",
+     "id": "scene-3",
+     "art": "joseon-panels/late-04.png",
+     "depicts": "책을 펼쳐 보이며 농민들에게 설명하는 관리(광해군 장면 그림 다시 사용)"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-02.png",
+     "depicts": "궁궐에서 마주 선 두 왕자"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "sejong",
+     "art": "joseon-panels/early-03.png",
+     "depicts": "새 글자를 보여 주며 설명하는 왕과 학자들"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-06.png",
+     "depicts": "두루마리를 펼쳐 보이는 왕과 신하들"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-07.png",
+     "depicts": "왕에게 두꺼운 책을 바치는 신하"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "scene-3",
+     "art": "joseon-panels/late-04.png",
+     "depicts": "책을 펼쳐 보이며 농민들에게 설명하는 관리(광해군 장면 그림 다시 사용)"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "J17": {
+   "era": "조선",
+   "title": "기록과 성리학의 연결",
+   "priority": "target_1급",
+   "section_scope": "문화 확장: 안정적 1급 목표",
+   "app_eras": [
+    "joseon-early"
+   ],
+   "summary_groups": [
+    "joseon-early · 기록과 성리학 (전기~광해군)"
+   ],
+   "highlight_keywords": [
+    "동의보감",
+    "허준",
+    "조선왕조실록",
+    "조선왕조의궤",
+    "이황",
+    "성학십도",
+    "이이",
+    "성학집요",
+    "백운동 서원",
+    "소수 서원"
+   ],
+   "content_lines": [
+    [
+     1164,
+     1193
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      1164,
+      1165
+     ],
+     "kind": "explicit_goal_scope",
+     "meaning": "이후 내용을 안정적 1급을 위한 범위로 지정"
+    },
+    {
+     "lines": [
+      1172,
+      1174
+     ],
+     "kind": "claimed_frequent",
+     "meaning": "세계기록유산 중 동의보감을 가장 자주 나왔다고 설명"
+    },
+    {
+     "lines": [
+      1182,
+      1183
+     ],
+     "kind": "explicit_comparison",
+     "meaning": "이황·이이의 저서를 대비"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    76,
+    77
+   ],
+   "book_crosscheck_pages": [
+    69,
+    70
+   ],
+   "correction_ids": [],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "joseon-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-08.png",
+     "depicts": "궁궐을 떠나는 흰 옷의 선비들(연산군 장면 그림 다시 사용)"
+    },
+    {
+     "file": "joseon-comic.html",
+     "id": null,
+     "art": "joseon-panels/late-02.png",
+     "depicts": "고민에 잠긴 왕"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": null,
+     "art": "joseon-panels/early-08.png",
+     "depicts": "궁궐을 떠나는 흰 옷의 선비들(연산군 장면 그림 다시 사용)"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": null,
+     "art": "joseon-panels/late-02.png",
+     "depicts": "고민에 잠긴 왕"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "J18": {
+   "era": "조선",
+   "title": "실학은 토지와 상공업의 해법",
+   "priority": "optional",
+   "section_scope": "실학 전체: 명시적 선택 범위",
+   "app_eras": [
+    "joseon-late"
+   ],
+   "summary_groups": [
+    "joseon-late · 실학 · 토지와 상공업"
+   ],
+   "highlight_keywords": [
+    "유형원",
+    "균전론",
+    "이익",
+    "한전론",
+    "정약용",
+    "여전론",
+    "홍대용",
+    "박지원",
+    "박제가",
+    "북학의"
+   ],
+   "content_lines": [
+    [
+     1194,
+     1215
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      1194,
+      1196
+     ],
+     "kind": "explicit_lower_priority",
+     "meaning": "실학은 1급 목표라면 외우지 않아도 되고 100점 목표에 권한다고 명시"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    78
+   ],
+   "book_crosscheck_pages": [
+    71
+   ],
+   "correction_ids": [
+    "C03"
+   ],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "joseon-late-comic.html",
+     "id": "scene-11",
+     "art": "joseon-panels/late-11.png",
+     "depicts": "지도를 펼쳐 놓고 토론하는 학자들"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "scene-11",
+     "art": "joseon-panels/late-11.png",
+     "depicts": "지도를 펼쳐 놓고 토론하는 학자들"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "J19": {
+   "era": "조선",
+   "title": "국학·과학은 심화 안의 우선 항목",
+   "priority": "optional_highlight",
+   "section_scope": "실학 전체: 선택; 이 안의 상대 강조만 유지",
+   "app_eras": [
+    "joseon-late"
+   ],
+   "summary_groups": [
+    "joseon-late · 국학과 과학"
+   ],
+   "highlight_keywords": [
+    "신숙주",
+    "해동제국기",
+    "유득공",
+    "발해고",
+    "남북국",
+    "정약용",
+    "거중기"
+   ],
+   "content_lines": [
+    [
+     1216,
+     1240
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      1194,
+      1196
+     ],
+     "kind": "section_scope_lower_priority",
+     "meaning": "실학·국학 묶음의 상위 우선도는 선택"
+    },
+    {
+     "lines": [
+      1218,
+      1222
+     ],
+     "kind": "claimed_frequent_within_optional",
+     "meaning": "해동제국기·발해고를 구간 내부 우선 항목으로 지목"
+    },
+    {
+     "lines": [
+      1234,
+      1235
+     ],
+     "kind": "explicit_lower_priority",
+     "meaning": "후기 농서는 이름만 듣도록 범위를 낮춤"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    78
+   ],
+   "book_crosscheck_pages": [
+    71
+   ],
+   "correction_ids": [
+    "C06"
+   ],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "joseon-late-comic.html",
+     "id": "scene-6",
+     "art": "joseon-panels/late-06.png",
+     "depicts": "기중 장치로 돌을 올리며 성을 쌓는 장면"
+    },
+    {
+     "file": "joseon-late-comic.html",
+     "id": "scene-11",
+     "art": "joseon-panels/late-11.png",
+     "depicts": "지도를 펼쳐 놓고 토론하는 학자들"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "scene-6",
+     "art": "joseon-panels/late-06.png",
+     "depicts": "기중 장치로 돌을 올리며 성을 쌓는 장면"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "scene-11",
+     "art": "joseon-panels/late-11.png",
+     "depicts": "지도를 펼쳐 놓고 토론하는 학자들"
+    }
+   ],
+   "comic_art_needed": []
+  },
+  "J20": {
+   "era": "조선",
+   "title": "그림은 작품의 특징으로",
+   "priority": "support",
+   "section_scope": null,
+   "app_eras": [
+    "joseon-early",
+    "joseon-late"
+   ],
+   "summary_groups": [
+    "joseon-early · 전기의 그림",
+    "joseon-late · 후기의 그림"
+   ],
+   "highlight_keywords": [
+    "강희안",
+    "고사관수도",
+    "안견",
+    "몽유도원도",
+    "김정희",
+    "세한도",
+    "추사체",
+    "정선",
+    "인왕제색도",
+    "금강전도"
+   ],
+   "content_lines": [
+    [
+     1241,
+     1253
+    ]
+   ],
+   "priority_evidence": [
+    {
+     "lines": [
+      1241,
+      1243
+     ],
+     "kind": "explicit_minimum",
+     "meaning": "조선 전기 그림을 두 대표 작품으로 제한"
+    },
+    {
+     "lines": [
+      1251,
+      1253
+     ],
+     "kind": "explicit_learning_method",
+     "meaning": "전체 흐름 뒤 표시된 내용을 반복하며 범위를 확장하도록 설명"
+    }
+   ],
+   "frequency_claim_status": "instructor_assertion_not_exam_statistics",
+   "pdf_crosscheck_pages": [
+    79
+   ],
+   "book_crosscheck_pages": [
+    72
+   ],
+   "correction_ids": [],
+   "verification_level": {
+    "script_passage_read": true,
+    "priority_line_checked": true,
+    "pdf_term_crosscheck": true,
+    "historical_details_exhaustively_verified": false,
+    "audio_verified": false
+   },
+   "comic_scenes": [
+    {
+     "file": "joseon-comic.html",
+     "id": "sejong",
+     "art": "joseon-panels/early-03.png",
+     "depicts": "새 글자를 보여 주며 설명하는 왕과 학자들"
+    },
+    {
+     "file": "joseon-late-comic.html",
+     "id": "scene-12",
+     "art": "joseon-panels/late-12.png",
+     "depicts": "나무 아래 모인 사람들 앞에서 말하는 사람"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "sejong",
+     "art": "joseon-panels/early-03.png",
+     "depicts": "새 글자를 보여 주며 설명하는 왕과 학자들"
+    },
+    {
+     "file": "joseon-all-comic.html",
+     "id": "scene-12",
+     "art": "joseon-panels/late-12.png",
+     "depicts": "나무 아래 모인 사람들 앞에서 말하는 사람"
+    }
+   ],
+   "comic_art_needed": []
+  }
+ },
+ "comic": {
+  "generated_by": "scripts/build_lecture_comics.py",
+  "note": "장면별 강의 모듈·등급·그림. 그림은 기존 그림판(같은 시대)과 media/lecture-panels의 새 개념 그림만 쓴다. art_needed는 알맞은 그림이 없어 글 상자로 대신한 핵심 모듈.",
+  "scenes": [
+   {
+    "file": "goryeo-comic.html",
+    "id": "early",
+    "scene": 1,
+    "modules": [
+     "G01"
+    ],
+    "tier": "core",
+    "art": "goryeo-panels/01.webp",
+    "depicts": "해가 떠오르는 성곽 위에 선 고려의 왕",
+    "reign": "1대 태조 왕건 · 918–943 재위",
+    "when": "918 고려 건국 · 936 후삼국 통일",
+    "next": "2대 혜종 · 3대 정종은 강의에서 건너뛰어요. 다음은 태조의 아들 4대 광종.",
+    "leap": true
+   },
+   {
+    "file": "goryeo-comic.html",
+    "id": null,
+    "scene": 2,
+    "modules": [
+     "G01"
+    ],
+    "tier": "core",
+    "art": "goryeo-panels/02.webp",
+    "depicts": "옥좌의 왕이 지켜보는 가운데 신하들이 종이에 답을 쓰는 장면",
+    "reign": "4대 광종 · 949–975 재위",
+    "when": "956 노비안검법 · 958 과거제",
+    "next": "광종 다음 5대 경종은 976년 전시과를 시작했어요(뒤의 경제 장면). 그다음이 6대 성종.",
+    "leap": false
+   },
+   {
+    "file": "goryeo-comic.html",
+    "id": null,
+    "scene": 3,
+    "modules": [
+     "G01",
+     "G08"
+    ],
+    "tier": "core",
+    "art": "goryeo-panels/03.webp",
+    "depicts": "궁궐 마당의 학교에서 책을 펴고 공부하는 학생들(국자감)",
+    "reign": "6대 성종 · 981–997 재위",
+    "when": "983 12목 설치 · 992 국자감",
+    "next": "같은 성종 때인 993년, 북쪽의 거란이 처음 쳐들어왔다.",
+    "leap": false
+   },
+   {
+    "file": "goryeo-comic.html",
+    "id": "khitan-2-3",
+    "scene": 4,
+    "modules": [
+     "G02"
+    ],
+    "tier": "support",
+    "art": "goryeo-panels/04.webp",
+    "depicts": "고려 관리와 북방 장수가 마주 앉아 담판하는 장면(1차 서희의 담판)",
+    "reign": "6대 성종 → 8대 현종 · 993–1019",
+    "when": "993 1차 · 1010 2차 · 1018–1019 3차",
+    "next": "8대 현종 뒤 여러 왕을 건너뛰어 15대 숙종으로 가요. 그사이 북쪽에서 여진이 커졌다.",
+    "leap": true
+   },
+   {
+    "file": "goryeo-comic.html",
+    "id": "aristocrat",
+    "scene": 5,
+    "modules": [
+     "G03"
+    ],
+    "tier": "core",
+    "art": "goryeo-panels/05.webp",
+    "depicts": "눈 덮인 북방에 성을 쌓는 군사들과 앞을 가리키는 고려 장수",
+    "reign": "15대 숙종 → 16대 예종 · 1095–1122",
+    "when": "1104 별무반 · 1107 동북 9성",
+    "next": "같은 예종은 군사뿐 아니라 힘을 잃은 국립 학교도 다시 일으켰다.",
+    "leap": false
+   },
+   {
+    "file": "goryeo-comic.html",
+    "id": null,
+    "scene": 6,
+    "modules": [
+     "G03"
+    ],
+    "tier": "core",
+    "art": "goryeo-panels/03.webp",
+    "depicts": "책을 펴고 공부하는 국자감 학생들(성종 장면 그림 다시 사용)",
+    "reign": "16대 예종 · 1105–1122 재위",
+    "when": "양현고 · 국자감 7재 · 청연각·보문각",
+    "next": "예종의 아들 17대 인종 때, 외척 이자겸의 권력이 왕을 넘보았다.",
+    "leap": false
+   },
+   {
+    "file": "goryeo-comic.html",
+    "id": null,
+    "scene": 7,
+    "modules": [
+     "G03"
+    ],
+    "tier": "core",
+    "art": "goryeo-panels/06.webp",
+    "depicts": "불타는 궁궐 앞에서 다투는 관리들(이자겸의 난)",
+    "reign": "17대 인종 · 1122–1146 재위",
+    "when": "1126 이자겸의 난 → 1135 묘청의 서경 천도 운동",
+    "next": "인종의 아들 18대 의종 때(1170), 차별에 지친 무신들이 들고일어났다.",
+    "leap": false
+   },
+   {
+    "file": "goryeo-comic.html",
+    "id": "military",
+    "scene": 8,
+    "modules": [
+     "G04",
+     "G05"
+    ],
+    "tier": "core",
+    "art": "goryeo-panels/07.webp",
+    "depicts": "갑옷 입은 장수들이 궁궐 안으로 들어서는 장면",
+    "reign": "18대 의종 때 시작 · 1170–1270 무신 집권",
+    "when": "1170 무신 정변 · 1196 최충헌 집권",
+    "next": "최충헌의 아들 최우가 권력을 이었다(왕은 23대 고종). 1231년, 몽골이 쳐들어왔다.",
+    "leap": true
+   },
+   {
+    "file": "goryeo-comic.html",
+    "id": null,
+    "scene": 9,
+    "modules": [
+     "G04"
+    ],
+    "tier": "core",
+    "art": "goryeo-panels/08.webp",
+    "depicts": "말 위의 관리와 섬으로 향하는 배들",
+    "reign": "23대 고종 · 집권자 최우 · 1213–1259 재위",
+    "when": "1231 몽골 침입 · 1232 강화 천도",
+    "next": "강화도 밖 본토에서는 승려와 백성, 군사가 성을 지켰다.",
+    "leap": false
+   },
+   {
+    "file": "goryeo-comic.html",
+    "id": null,
+    "scene": 10,
+    "modules": [
+     "G05"
+    ],
+    "tier": "support",
+    "art": "goryeo-panels/09.webp",
+    "depicts": "성벽 위에서 활을 겨누며 공격을 막는 군사들",
+    "reign": "23대 고종 · 1213–1259 재위",
+    "when": "1232 처인성 · 1253 충주성 · 팔만대장경",
+    "next": "1270년 24대 원종 때 개경으로 돌아가자(무신 정권도 끝), 삼별초는 따르지 않았다.",
+    "leap": false
+   },
+   {
+    "file": "goryeo-comic.html",
+    "id": null,
+    "scene": 11,
+    "modules": [
+     "G05"
+    ],
+    "tier": "support",
+    "art": "goryeo-panels/10.webp",
+    "depicts": "섬을 향해 바다를 건너는 함대",
+    "reign": "24대 원종 때 · 1270–1273 항쟁",
+    "when": "1270 개경 환도 → 강화 → 진도 → 제주 → 1273 진압",
+    "next": "1274년 즉위한 25대 충렬왕부터 원의 간섭이 깊어졌다.",
+    "leap": false
+   },
+   {
+    "file": "goryeo-comic.html",
+    "id": "yuan",
+    "scene": 12,
+    "modules": [
+     "G06"
+    ],
+    "tier": "core",
+    "art": "goryeo-panels/11.webp",
+    "depicts": "고려 왕 곁에 선 원의 관리",
+    "reign": "24대 원종 → 25대 충렬왕 · 원 간섭기 1270–1351",
+    "when": "1274 충렬왕 즉위 · 정동행성 · 응방 · 공녀 · 몽골풍",
+    "next": "충선왕부터 충정왕까지 여러 왕(복위 포함)을 건너뛰어, 31대 공민왕이 즉위했다(1351). 이 무렵 원은 약해지고 있었다.",
+    "leap": true
+   },
+   {
+    "file": "goryeo-comic.html",
+    "id": null,
+    "scene": 13,
+    "modules": [
+     "G06"
+    ],
+    "tier": "core",
+    "art": "goryeo-panels/12.webp",
+    "depicts": "칼을 들고 말 위에서 군사를 이끄는 왕",
+    "reign": "31대 공민왕 · 1351–1374 재위",
+    "when": "1356 기철 숙청·쌍성총관부 수복 · 1366 전민변정도감",
+    "next": "공민왕이 죽은 뒤 32대 우왕 때, 남쪽 바다의 왜구 침입이 거세졌다.",
+    "leap": false
+   },
+   {
+    "file": "goryeo-comic.html",
+    "id": "late",
+    "scene": 14,
+    "modules": [
+     "G07"
+    ],
+    "tier": "support",
+    "art": "goryeo-panels/13.webp",
+    "depicts": "배 위에서 화포를 쏘아 적선을 불태우는 장면",
+    "reign": "32대 우왕 · 1374–1388 재위",
+    "when": "1376 홍산 · 1380 진포 · 1380 황산",
+    "next": "1388년, 명이 철령 이북 땅을 요구하자 최영은 요동 정벌을 밀어붙였다(우왕 때).",
+    "leap": false
+   },
+   {
+    "file": "goryeo-comic.html",
+    "id": null,
+    "scene": 15,
+    "modules": [
+     "G07"
+    ],
+    "tier": "support",
+    "art": "goryeo-panels/14.webp",
+    "depicts": "강가에서 군대를 바라보는 장수",
+    "reign": "32대 우왕 → 34대 공양왕 · 1388–1392",
+    "when": "1388 위화도 회군 · 1391 과전법 · 1392 조선 건국",
+    "next": "여기까지가 고려의 정치 흐름이에요. 이제 고려 전 시기에 걸친 경제와 문화를 봐요.",
+    "leap": false
+   },
+   {
+    "file": "goryeo-comic.html",
+    "id": "goryeo-relief",
+    "scene": 16,
+    "modules": [
+     "G09"
+    ],
+    "tier": "core",
+    "art": "lecture-panels/goryeo-land-tax.png",
+    "depicts": "토지 지도와 장부를 펴 놓고 의논하는 관리들, 뒤로 소와 함께 수확하는 농민들(개념 그림 · 땅 주인이 바뀌는 장면이 아님)",
+    "reign": "태조 → 경종 → 공양왕 · 940 · 976 · 1391",
+    "when": "역분전(태조) → 전시과(976 경종) → 과전법(1391)",
+    "next": "고려는 불교의 나라. 대표 스님 두 사람을 견주어 보자.",
+    "leap": false
+   },
+   {
+    "file": "goryeo-comic.html",
+    "id": "culture",
+    "scene": 17,
+    "modules": [
+     "G10"
+    ],
+    "tier": "core",
+    "art": "lecture-panels/goryeo-buddhism.png",
+    "depicts": "왼쪽은 경전을 펴 가르치는 스님, 오른쪽은 참선하는 스님을 나란히 그린 개념 그림(실제 두 인물의 만남을 그린 것이 아님)",
+    "reign": "의천 → 약 100년 뒤 지눌 · 문벌귀족 시기 → 무신 집권기",
+    "when": "의천 = 숙종의 동생 · 지눌 = 그보다 약 100년 뒤",
+    "next": "불교와 함께 공예와 탑에도 고려의 솜씨가 남았다.",
+    "leap": false
+   },
+   {
+    "file": "goryeo-comic.html",
+    "id": null,
+    "scene": 18,
+    "modules": [
+     "G13",
+     "G11"
+    ],
+    "tier": "support",
+    "art": "goryeo-panels/15.webp",
+    "depicts": "절 마당에서 청자에 무늬를 넣는 도공, 뒤로 여러 층의 탑",
+    "reign": null,
+    "when": "청자 = 비색 → 상감청자 · 탑 = 경천사지 10층 석탑",
+    "next": "기록을 남기는 기술도 앞서 나갔다.",
+    "leap": false
+   },
+   {
+    "file": "goryeo-comic.html",
+    "id": null,
+    "scene": 19,
+    "modules": [
+     "G11"
+    ],
+    "tier": "support",
+    "art": "goryeo-panels/16.webp",
+    "depicts": "활자를 고르며 책을 찍는 장인",
+    "reign": "32대 우왕 때 · 1377",
+    "when": "1377 청주 흥덕사 · 직지심체요절",
+    "next": "학자들은 유학을 들여오고, 지난 역사를 책으로 정리했다.",
+    "leap": false
+   },
+   {
+    "file": "goryeo-comic.html",
+    "id": "goryeo-history",
+    "scene": 20,
+    "modules": [
+     "G12"
+    ],
+    "tier": "core",
+    "art": "lecture-panels/goryeo-history.png",
+    "depicts": "책상에서 붓으로 글을 쓰는 고려 학자와 곁에 쌓인 책들(개념 그림 · 특정 저자의 초상이나 다섯 저자가 만난 장면이 아님)",
+    "reign": "김부식 → 이규보·각훈 → 일연·이승휴 · 인종 때 → 무신 집권기 → 원 간섭기",
+    "when": "1145 삼국사기 → 동명왕편 · 해동고승전 → 삼국유사 · 제왕운기",
+    "next": null,
+    "leap": false
+   },
+   {
+    "file": "joseon-comic.html",
+    "id": "founding",
+    "scene": 1,
+    "modules": [
+     "J01"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-01.png",
+    "depicts": "지도를 펼쳐 놓고 새 나라를 준비하는 장수와 학자",
+    "reign": "1대 태조 이성계 · 1392–1398 재위",
+    "when": "1388 위화도 회군 · 1391 과전법 · 1392 조선 건국",
+    "scope": null,
+    "next": "태조가 막내 방석을 세자로 세우자 왕자들이 맞섰다(1398·1400 왕자의 난). 2대 정종을 거쳐 3대 태종이 즉위했다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-comic.html",
+    "id": null,
+    "scene": 2,
+    "modules": [
+     "J02",
+     "J16"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-02.png",
+    "depicts": "궁궐에서 마주 선 두 왕자",
+    "reign": "3대 태종 이방원 · 1400–1418 재위",
+    "when": "1400 즉위 · 사간원 독립 · 6조 직계제",
+    "scope": null,
+    "next": "태종의 아들 4대 세종이 즉위했다(1418).",
+    "leap": false
+   },
+   {
+    "file": "joseon-comic.html",
+    "id": "sejong",
+    "scene": 3,
+    "modules": [
+     "J02",
+     "J16",
+     "J20"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-03.png",
+    "depicts": "새 글자를 보여 주며 설명하는 왕과 학자들",
+    "reign": "4대 세종 · 1418–1450 재위",
+    "when": "1418 즉위 · 의정부 서사제 · 연분 9등법",
+    "scope": "주제별 정리 ① · 4대 세종 재위(1418–1450)를 주제별로 나눠 봐요. 이 장면은 정치·세금·문화예요.",
+    "next": "같은 세종 재위 안에서, 이번에는 국경과 바다를 주제로 봐요.",
+    "leap": false
+   },
+   {
+    "file": "joseon-comic.html",
+    "id": null,
+    "scene": 4,
+    "modules": [
+     "J02",
+     "J12"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-04.png",
+    "depicts": "눈 덮인 북방 성을 지키는 장수와 군사",
+    "reign": "4대 세종 · 1418–1450 재위",
+    "when": "1419 쓰시마 정벌 · 4군 6진 · 1443 계해약조",
+    "scope": "주제별 정리 ② · 같은 세종 재위의 국경과 바다 이야기예요. 앞 장면(1443 훈민정음)보다 이른 재위 초(1419)로 시간이 다시 돌아가요.",
+    "next": "세종 뒤 5대 문종이 짧게 재위했고, 그 아들 6대 단종이 어린 나이에 즉위했다(1452).",
+    "leap": false
+   },
+   {
+    "file": "joseon-comic.html",
+    "id": "sejo",
+    "scene": 5,
+    "modules": [
+     "J03"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-05.png",
+    "depicts": "무장한 군사에 둘러싸인 왕과 엎드린 신하들",
+    "reign": "6대 단종 · 1452–1455 재위",
+    "when": "1453 계유정난 · 1453 이징옥의 난 → 1455 세조 즉위",
+    "scope": null,
+    "next": "즉위한 세조 때, 관리에게 줄 땅이 모자라는 문제가 커졌다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-comic.html",
+    "id": null,
+    "scene": 6,
+    "modules": [
+     "J03",
+     "J16"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-06.png",
+    "depicts": "두루마리를 펼쳐 보이는 왕과 신하들",
+    "reign": "7대 세조 · 1455–1468 재위",
+    "when": "1466 직전법 · 1467 이시애의 난",
+    "scope": null,
+    "next": "8대 예종(재위 1468–1469)을 거쳐 9대 성종이 즉위했다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-comic.html",
+    "id": null,
+    "scene": 7,
+    "modules": [
+     "J03",
+     "J16",
+     "J11"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-07.png",
+    "depicts": "왕에게 두꺼운 책을 바치는 신하",
+    "reign": "9대 성종 · 1469–1494 재위",
+    "when": "1469 즉위 · 경국대전 완성 · 홍문관",
+    "scope": null,
+    "next": "성종의 아들 10대 연산군 때, 사림이 화를 입는 사화가 시작되었다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-comic.html",
+    "id": "purges",
+    "scene": 8,
+    "modules": [
+     "J04"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-08.png",
+    "depicts": "궁궐을 떠나는 흰 옷의 선비들",
+    "reign": "10대 연산군 · 1494–1506 재위",
+    "when": "1498 무오사화 · 1504 갑자사화 → 1506 중종반정",
+    "scope": null,
+    "next": "반정으로 연산군의 이복동생 11대 중종이 즉위했다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-comic.html",
+    "id": null,
+    "scene": 9,
+    "modules": [
+     "J04"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-10.png",
+    "depicts": "왕 앞에서 개혁을 건의하는 흰 옷의 선비",
+    "reign": "11대 중종 · 1506–1544 재위",
+    "when": "1506 즉위 · 1519 기묘사화",
+    "scope": null,
+    "next": "중종 뒤 12대 인종이 1년이 안 되어 세상을 떠났고, 이복동생 13대 명종이 어린 나이에 즉위했다(1545).",
+    "leap": false
+   },
+   {
+    "file": "joseon-comic.html",
+    "id": null,
+    "scene": 10,
+    "modules": [
+     "J04",
+     "J17"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-08.png",
+    "depicts": "궁궐을 떠나는 흰 옷의 선비들(연산군 장면 그림 다시 사용)",
+    "reign": "13대 명종 · 1545–1567 재위",
+    "when": "1545 을사사화 · 1555 을묘왜변",
+    "scope": null,
+    "next": "명종 뒤 14대 선조가 즉위했다(1567). 네 차례 사화를 거친 사림이 정권을 잡았다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-comic.html",
+    "id": "bungdang-origin",
+    "scene": 11,
+    "modules": [
+     "J05"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/late-01.png",
+    "depicts": "조정에서 편을 나눠 다투는 신하들",
+    "reign": "14대 선조 · 1567–1608 재위",
+    "when": "1575 동인·서인으로 나뉨 · 1589 기축옥사",
+    "scope": null,
+    "next": "같은 선조 때인 1592년, 일본이 쳐들어왔다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-comic.html",
+    "id": "wars",
+    "scene": 12,
+    "modules": [
+     "J05"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-11.png",
+    "depicts": "거북선을 앞세워 싸우는 조선 수군",
+    "reign": "14대 선조 · 1567–1608 재위",
+    "when": "1592 임진왜란 · 1593 훈련도감",
+    "scope": null,
+    "next": "전쟁 뒤 1608년, 선조의 아들 15대 광해군이 즉위했다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-comic.html",
+    "id": "gwanghaegun",
+    "scene": 13,
+    "modules": [
+     "J06",
+     "J13"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/late-04.png",
+    "depicts": "책을 펼쳐 보이며 농민들에게 설명하는 관리",
+    "reign": "15대 광해군 · 1608–1623 재위",
+    "when": "1608 경기에서 대동법 시작 · 선혜청",
+    "scope": null,
+    "next": "같은 광해군 때, 명과 후금 사이에서 외교의 길을 골라야 했다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-comic.html",
+    "id": null,
+    "scene": 14,
+    "modules": [
+     "J06",
+     "J12",
+     "J17"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/late-02.png",
+    "depicts": "고민에 잠긴 왕",
+    "reign": "15대 광해군 · 1608–1623 재위",
+    "when": "1609 기유약조 · 1619 사르후 전투",
+    "scope": null,
+    "next": "1623년, 서인 세력이 광해군을 몰아내고 16대 인조를 세웠다(인조반정).",
+    "leap": false
+   },
+   {
+    "file": "joseon-comic.html",
+    "id": "injo",
+    "scene": 15,
+    "modules": [
+     "J07",
+     "J13"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-09.png",
+    "depicts": "군사를 거느리고 궁궐로 들어서는 젊은 왕",
+    "reign": "16대 인조 · 1623–1649 재위",
+    "when": "1623 인조반정 · 1624 이괄의 난 · 1627 정묘호란",
+    "scope": null,
+    "next": "9년 뒤 1636년, 후금은 나라 이름을 청으로 바꾸고 군신 관계를 요구하며 다시 쳐들어왔다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-comic.html",
+    "id": null,
+    "scene": 16,
+    "modules": [
+     "J07"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-12.png",
+    "depicts": "눈 덮인 산성에서 지친 군사들과 흰 깃발",
+    "reign": "16대 인조 · 1623–1649 재위",
+    "when": "1636 병자호란 · 1637 삼전도 항복",
+    "scope": null,
+    "next": null,
+    "leap": false
+   },
+   {
+    "file": "joseon-late-comic.html",
+    "id": "hyojong",
+    "scene": 1,
+    "modules": [
+     "J07"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/late-03.png",
+    "depicts": "옥좌의 왕 앞에 엎드린 신하들",
+    "reign": "17대 효종 · 1649–1659 재위",
+    "when": "1649 즉위 · 북벌 준비 · 1654·1658 나선 정벌",
+    "scope": null,
+    "next": "1659년 효종이 세상을 떠나고 아들 18대 현종이 즉위하자, 왕실 상복을 두고 논쟁이 일었다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-late-comic.html",
+    "id": "scene-2",
+    "scene": 2,
+    "modules": [
+     "J08",
+     "J12"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/late-01.png",
+    "depicts": "조정에서 편을 나눠 다투는 신하들",
+    "reign": "18대 현종 → 19대 숙종 · 1659–1720",
+    "when": "1659·1674 예송 · 1680·1689·1694 환국",
+    "scope": null,
+    "next": "숙종 뒤 20대 경종(신임사화)을 지나, 이복동생 21대 영조가 즉위했다(1724).",
+    "leap": false
+   },
+   {
+    "file": "joseon-late-comic.html",
+    "id": "scene-3",
+    "scene": 3,
+    "modules": [
+     "J09",
+     "J16",
+     "J13"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/late-04.png",
+    "depicts": "책을 펼쳐 보이며 농민들에게 설명하는 관리(광해군 장면 그림 다시 사용)",
+    "reign": "21대 영조 · 1724–1776 재위",
+    "when": "1728 이인좌의 난 · 1742 탕평비 · 1750 균역법",
+    "scope": null,
+    "next": "1776년, 영조의 손자 22대 정조가 즉위했다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-late-comic.html",
+    "id": "scene-5",
+    "scene": 4,
+    "modules": [
+     "J09",
+     "J15"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/late-05.png",
+    "depicts": "서고에서 책을 읽는 왕과 신하들",
+    "reign": "22대 정조 · 1776–1800 재위",
+    "when": "1776 규장각 · 1791 신해통공 · 1791 신해박해",
+    "scope": null,
+    "next": "같은 정조는 친위 부대 장용영을 두고 수원 화성을 쌓았다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-late-comic.html",
+    "id": "scene-6",
+    "scene": 5,
+    "modules": [
+     "J09",
+     "J19"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/late-06.png",
+    "depicts": "기중 장치로 돌을 올리며 성을 쌓는 장면",
+    "reign": "22대 정조 · 1776–1800 재위",
+    "when": "1793 장용영 · 1796 수원 화성 완공",
+    "scope": null,
+    "next": "1800년, 11살의 23대 순조가 즉위하자 외척 가문이 정치를 쥐었다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-late-comic.html",
+    "id": "scene-7",
+    "scene": 6,
+    "modules": [
+     "J10"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/late-07.png",
+    "depicts": "궁중의 여인들과 신하들",
+    "reign": "23대 순조 · 1800–1834 재위",
+    "when": "1801 신유박해 · 황사영 백서 사건",
+    "scope": null,
+    "next": "세도정치 아래 수취가 어지러워지고 지역 차별에 대한 불만도 쌓였다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-late-comic.html",
+    "id": "scene-8",
+    "scene": 7,
+    "modules": [
+     "J10"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/late-08.png",
+    "depicts": "주먹을 들고 외치는 농민과 사람들",
+    "reign": "23대 순조 → 25대 철종 · 1811 · 1862",
+    "when": "1811 홍경래의 난 · 1862 임술농민봉기 · 삼정이정청",
+    "scope": null,
+    "next": "여기까지가 조선 후기 정치 흐름이에요. 이제 17~19세기 조선 후기 전체에 걸친 경제와 사회를 봐요.",
+    "leap": false
+   },
+   {
+    "file": "joseon-late-comic.html",
+    "id": "scene-10",
+    "scene": 8,
+    "modules": [
+     "J14"
+    ],
+    "tier": "target",
+    "art": "joseon-panels/late-10.png",
+    "depicts": "소와 써레로 논을 고르는 농민",
+    "reign": null,
+    "when": "여러 왕 대에 걸친 변화 · 모내기법 · 상품 작물 · 광산",
+    "scope": null,
+    "next": "팔 물건이 늘자 장터와 상인도 커졌다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-late-comic.html",
+    "id": "scene-9",
+    "scene": 9,
+    "modules": [
+     "J14",
+     "J06"
+    ],
+    "tier": "target",
+    "art": "joseon-panels/late-09.png",
+    "depicts": "물건을 사고파는 장터의 사람들",
+    "reign": null,
+    "when": "여러 왕 대에 걸친 변화 · 공인 · 사상 · 상평통보",
+    "scope": null,
+    "next": "경제가 바뀌자 신분 질서도 흔들렸다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-late-comic.html",
+    "id": "scene-12",
+    "scene": 10,
+    "modules": [
+     "J15",
+     "J20"
+    ],
+    "tier": "support",
+    "art": "joseon-panels/late-12.png",
+    "depicts": "나무 아래 모인 사람들 앞에서 말하는 사람",
+    "reign": null,
+    "when": "여러 왕 대에 걸친 변화 · 서얼 · 중인 · 서민 문화 · 동학",
+    "scope": null,
+    "next": "여유가 있다면 학자들의 개혁 생각도 살펴보자(선택 심화).",
+    "leap": false
+   },
+   {
+    "file": "joseon-late-comic.html",
+    "id": "scene-11",
+    "scene": 11,
+    "modules": [
+     "J18",
+     "J19"
+    ],
+    "tier": "optional",
+    "art": "joseon-panels/late-11.png",
+    "depicts": "지도를 펼쳐 놓고 토론하는 학자들",
+    "reign": null,
+    "when": "여러 왕 대에 걸친 학문 · 중농 실학 · 북학",
+    "scope": null,
+    "next": null,
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": "founding",
+    "scene": 1,
+    "modules": [
+     "J01"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-01.png",
+    "depicts": "지도를 펼쳐 놓고 새 나라를 준비하는 장수와 학자",
+    "reign": "1대 태조 이성계 · 1392–1398 재위",
+    "when": "1388 위화도 회군 · 1391 과전법 · 1392 조선 건국",
+    "scope": null,
+    "next": "태조가 막내 방석을 세자로 세우자 왕자들이 맞섰다(1398·1400 왕자의 난). 2대 정종을 거쳐 3대 태종이 즉위했다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": null,
+    "scene": 2,
+    "modules": [
+     "J02",
+     "J16"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-02.png",
+    "depicts": "궁궐에서 마주 선 두 왕자",
+    "reign": "3대 태종 이방원 · 1400–1418 재위",
+    "when": "1400 즉위 · 사간원 독립 · 6조 직계제",
+    "scope": null,
+    "next": "태종의 아들 4대 세종이 즉위했다(1418).",
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": "sejong",
+    "scene": 3,
+    "modules": [
+     "J02",
+     "J16",
+     "J20"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-03.png",
+    "depicts": "새 글자를 보여 주며 설명하는 왕과 학자들",
+    "reign": "4대 세종 · 1418–1450 재위",
+    "when": "1418 즉위 · 의정부 서사제 · 연분 9등법",
+    "scope": "주제별 정리 ① · 4대 세종 재위(1418–1450)를 주제별로 나눠 봐요. 이 장면은 정치·세금·문화예요.",
+    "next": "같은 세종 재위 안에서, 이번에는 국경과 바다를 주제로 봐요.",
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": null,
+    "scene": 4,
+    "modules": [
+     "J02",
+     "J12"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-04.png",
+    "depicts": "눈 덮인 북방 성을 지키는 장수와 군사",
+    "reign": "4대 세종 · 1418–1450 재위",
+    "when": "1419 쓰시마 정벌 · 4군 6진 · 1443 계해약조",
+    "scope": "주제별 정리 ② · 같은 세종 재위의 국경과 바다 이야기예요. 앞 장면(1443 훈민정음)보다 이른 재위 초(1419)로 시간이 다시 돌아가요.",
+    "next": "세종 뒤 5대 문종이 짧게 재위했고, 그 아들 6대 단종이 어린 나이에 즉위했다(1452).",
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": "sejo",
+    "scene": 5,
+    "modules": [
+     "J03"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-05.png",
+    "depicts": "무장한 군사에 둘러싸인 왕과 엎드린 신하들",
+    "reign": "6대 단종 · 1452–1455 재위",
+    "when": "1453 계유정난 · 1453 이징옥의 난 → 1455 세조 즉위",
+    "scope": null,
+    "next": "즉위한 세조 때, 관리에게 줄 땅이 모자라는 문제가 커졌다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": null,
+    "scene": 6,
+    "modules": [
+     "J03",
+     "J16"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-06.png",
+    "depicts": "두루마리를 펼쳐 보이는 왕과 신하들",
+    "reign": "7대 세조 · 1455–1468 재위",
+    "when": "1466 직전법 · 1467 이시애의 난",
+    "scope": null,
+    "next": "8대 예종(재위 1468–1469)을 거쳐 9대 성종이 즉위했다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": null,
+    "scene": 7,
+    "modules": [
+     "J03",
+     "J16",
+     "J11"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-07.png",
+    "depicts": "왕에게 두꺼운 책을 바치는 신하",
+    "reign": "9대 성종 · 1469–1494 재위",
+    "when": "1469 즉위 · 경국대전 완성 · 홍문관",
+    "scope": null,
+    "next": "성종의 아들 10대 연산군 때, 사림이 화를 입는 사화가 시작되었다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": "purges",
+    "scene": 8,
+    "modules": [
+     "J04"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-08.png",
+    "depicts": "궁궐을 떠나는 흰 옷의 선비들",
+    "reign": "10대 연산군 · 1494–1506 재위",
+    "when": "1498 무오사화 · 1504 갑자사화 → 1506 중종반정",
+    "scope": null,
+    "next": "반정으로 연산군의 이복동생 11대 중종이 즉위했다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": null,
+    "scene": 9,
+    "modules": [
+     "J04"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-10.png",
+    "depicts": "왕 앞에서 개혁을 건의하는 흰 옷의 선비",
+    "reign": "11대 중종 · 1506–1544 재위",
+    "when": "1506 즉위 · 1519 기묘사화",
+    "scope": null,
+    "next": "중종 뒤 12대 인종이 1년이 안 되어 세상을 떠났고, 이복동생 13대 명종이 어린 나이에 즉위했다(1545).",
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": null,
+    "scene": 10,
+    "modules": [
+     "J04",
+     "J17"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-08.png",
+    "depicts": "궁궐을 떠나는 흰 옷의 선비들(연산군 장면 그림 다시 사용)",
+    "reign": "13대 명종 · 1545–1567 재위",
+    "when": "1545 을사사화 · 1555 을묘왜변",
+    "scope": null,
+    "next": "명종 뒤 14대 선조가 즉위했다(1567). 네 차례 사화를 거친 사림이 정권을 잡았다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": "bungdang-origin",
+    "scene": 11,
+    "modules": [
+     "J05"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/late-01.png",
+    "depicts": "조정에서 편을 나눠 다투는 신하들",
+    "reign": "14대 선조 · 1567–1608 재위",
+    "when": "1575 동인·서인으로 나뉨 · 1589 기축옥사",
+    "scope": null,
+    "next": "같은 선조 때인 1592년, 일본이 쳐들어왔다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": "wars",
+    "scene": 12,
+    "modules": [
+     "J05"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-11.png",
+    "depicts": "거북선을 앞세워 싸우는 조선 수군",
+    "reign": "14대 선조 · 1567–1608 재위",
+    "when": "1592 임진왜란 · 1593 훈련도감",
+    "scope": null,
+    "next": "전쟁 뒤 1608년, 선조의 아들 15대 광해군이 즉위했다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": "gwanghaegun",
+    "scene": 13,
+    "modules": [
+     "J06",
+     "J13"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/late-04.png",
+    "depicts": "책을 펼쳐 보이며 농민들에게 설명하는 관리",
+    "reign": "15대 광해군 · 1608–1623 재위",
+    "when": "1608 경기에서 대동법 시작 · 선혜청",
+    "scope": null,
+    "next": "같은 광해군 때, 명과 후금 사이에서 외교의 길을 골라야 했다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": null,
+    "scene": 14,
+    "modules": [
+     "J06",
+     "J12",
+     "J17"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/late-02.png",
+    "depicts": "고민에 잠긴 왕",
+    "reign": "15대 광해군 · 1608–1623 재위",
+    "when": "1609 기유약조 · 1619 사르후 전투",
+    "scope": null,
+    "next": "1623년, 서인 세력이 광해군을 몰아내고 16대 인조를 세웠다(인조반정).",
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": "injo",
+    "scene": 15,
+    "modules": [
+     "J07",
+     "J13"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-09.png",
+    "depicts": "군사를 거느리고 궁궐로 들어서는 젊은 왕",
+    "reign": "16대 인조 · 1623–1649 재위",
+    "when": "1623 인조반정 · 1624 이괄의 난 · 1627 정묘호란",
+    "scope": null,
+    "next": "9년 뒤 1636년, 후금은 나라 이름을 청으로 바꾸고 군신 관계를 요구하며 다시 쳐들어왔다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": null,
+    "scene": 16,
+    "modules": [
+     "J07"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/early-12.png",
+    "depicts": "눈 덮인 산성에서 지친 군사들과 흰 깃발",
+    "reign": "16대 인조 · 1623–1649 재위",
+    "when": "1636 병자호란 · 1637 삼전도 항복",
+    "scope": null,
+    "next": null,
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": "hyojong",
+    "scene": 17,
+    "modules": [
+     "J07"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/late-03.png",
+    "depicts": "옥좌의 왕 앞에 엎드린 신하들",
+    "reign": "17대 효종 · 1649–1659 재위",
+    "when": "1649 즉위 · 북벌 준비 · 1654·1658 나선 정벌",
+    "scope": null,
+    "next": "1659년 효종이 세상을 떠나고 아들 18대 현종이 즉위하자, 왕실 상복을 두고 논쟁이 일었다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": "scene-2",
+    "scene": 18,
+    "modules": [
+     "J08",
+     "J12"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/late-01.png",
+    "depicts": "조정에서 편을 나눠 다투는 신하들",
+    "reign": "18대 현종 → 19대 숙종 · 1659–1720",
+    "when": "1659·1674 예송 · 1680·1689·1694 환국",
+    "scope": null,
+    "next": "숙종 뒤 20대 경종(신임사화)을 지나, 이복동생 21대 영조가 즉위했다(1724).",
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": "scene-3",
+    "scene": 19,
+    "modules": [
+     "J09",
+     "J16",
+     "J13"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/late-04.png",
+    "depicts": "책을 펼쳐 보이며 농민들에게 설명하는 관리(광해군 장면 그림 다시 사용)",
+    "reign": "21대 영조 · 1724–1776 재위",
+    "when": "1728 이인좌의 난 · 1742 탕평비 · 1750 균역법",
+    "scope": null,
+    "next": "1776년, 영조의 손자 22대 정조가 즉위했다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": "scene-5",
+    "scene": 20,
+    "modules": [
+     "J09",
+     "J15"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/late-05.png",
+    "depicts": "서고에서 책을 읽는 왕과 신하들",
+    "reign": "22대 정조 · 1776–1800 재위",
+    "when": "1776 규장각 · 1791 신해통공 · 1791 신해박해",
+    "scope": null,
+    "next": "같은 정조는 친위 부대 장용영을 두고 수원 화성을 쌓았다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": "scene-6",
+    "scene": 21,
+    "modules": [
+     "J09",
+     "J19"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/late-06.png",
+    "depicts": "기중 장치로 돌을 올리며 성을 쌓는 장면",
+    "reign": "22대 정조 · 1776–1800 재위",
+    "when": "1793 장용영 · 1796 수원 화성 완공",
+    "scope": null,
+    "next": "1800년, 11살의 23대 순조가 즉위하자 외척 가문이 정치를 쥐었다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": "scene-7",
+    "scene": 22,
+    "modules": [
+     "J10"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/late-07.png",
+    "depicts": "궁중의 여인들과 신하들",
+    "reign": "23대 순조 · 1800–1834 재위",
+    "when": "1801 신유박해 · 황사영 백서 사건",
+    "scope": null,
+    "next": "세도정치 아래 수취가 어지러워지고 지역 차별에 대한 불만도 쌓였다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": "scene-8",
+    "scene": 23,
+    "modules": [
+     "J10"
+    ],
+    "tier": "core",
+    "art": "joseon-panels/late-08.png",
+    "depicts": "주먹을 들고 외치는 농민과 사람들",
+    "reign": "23대 순조 → 25대 철종 · 1811 · 1862",
+    "when": "1811 홍경래의 난 · 1862 임술농민봉기 · 삼정이정청",
+    "scope": null,
+    "next": "여기까지가 조선 후기 정치 흐름이에요. 이제 17~19세기 조선 후기 전체에 걸친 경제와 사회를 봐요.",
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": "scene-10",
+    "scene": 24,
+    "modules": [
+     "J14"
+    ],
+    "tier": "target",
+    "art": "joseon-panels/late-10.png",
+    "depicts": "소와 써레로 논을 고르는 농민",
+    "reign": null,
+    "when": "여러 왕 대에 걸친 변화 · 모내기법 · 상품 작물 · 광산",
+    "scope": null,
+    "next": "팔 물건이 늘자 장터와 상인도 커졌다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": "scene-9",
+    "scene": 25,
+    "modules": [
+     "J14",
+     "J06"
+    ],
+    "tier": "target",
+    "art": "joseon-panels/late-09.png",
+    "depicts": "물건을 사고파는 장터의 사람들",
+    "reign": null,
+    "when": "여러 왕 대에 걸친 변화 · 공인 · 사상 · 상평통보",
+    "scope": null,
+    "next": "경제가 바뀌자 신분 질서도 흔들렸다.",
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": "scene-12",
+    "scene": 26,
+    "modules": [
+     "J15",
+     "J20"
+    ],
+    "tier": "support",
+    "art": "joseon-panels/late-12.png",
+    "depicts": "나무 아래 모인 사람들 앞에서 말하는 사람",
+    "reign": null,
+    "when": "여러 왕 대에 걸친 변화 · 서얼 · 중인 · 서민 문화 · 동학",
+    "scope": null,
+    "next": "여유가 있다면 학자들의 개혁 생각도 살펴보자(선택 심화).",
+    "leap": false
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "id": "scene-11",
+    "scene": 27,
+    "modules": [
+     "J18",
+     "J19"
+    ],
+    "tier": "optional",
+    "art": "joseon-panels/late-11.png",
+    "depicts": "지도를 펼쳐 놓고 토론하는 학자들",
+    "reign": null,
+    "when": "여러 왕 대에 걸친 학문 · 중농 실학 · 북학",
+    "scope": null,
+    "next": null,
+    "leap": false
+   }
+  ],
+  "goryeo_memory": [
+   {
+    "file": "goryeo-comic.html",
+    "after": "S03",
+    "anchor": "mem-s03",
+    "scene": 3,
+    "chunks": [
+     "태조 · 광종 · 성종, 세 왕의 기틀"
+    ]
+   },
+   {
+    "file": "goryeo-comic.html",
+    "after": "S04",
+    "anchor": "mem-s04",
+    "scene": 4,
+    "chunks": [
+     "거란의 세 차례 침입"
+    ]
+   },
+   {
+    "file": "goryeo-comic.html",
+    "after": "S07",
+    "anchor": "mem-s07",
+    "scene": 7,
+    "chunks": [
+     "숙종 · 예종 · 인종"
+    ]
+   },
+   {
+    "file": "goryeo-comic.html",
+    "after": "S09",
+    "anchor": "mem-s09",
+    "scene": 9,
+    "chunks": [
+     "무신 정권의 흐름"
+    ]
+   },
+   {
+    "file": "goryeo-comic.html",
+    "after": "S11",
+    "anchor": "mem-s11",
+    "scene": 11,
+    "chunks": [
+     "몽골 항쟁과 팔만대장경"
+    ]
+   },
+   {
+    "file": "goryeo-comic.html",
+    "after": "S13",
+    "anchor": "mem-s13",
+    "scene": 13,
+    "chunks": [
+     "원 간섭과 공민왕의 개혁"
+    ]
+   },
+   {
+    "file": "goryeo-comic.html",
+    "after": "S15",
+    "anchor": "mem-s15",
+    "scene": 15,
+    "chunks": [
+     "왜구와 위화도 회군"
+    ]
+   },
+   {
+    "file": "goryeo-comic.html",
+    "after": "S16",
+    "anchor": "mem-s16",
+    "scene": 16,
+    "chunks": [
+     "토지 제도와 경제 (주제별)"
+    ]
+   },
+   {
+    "file": "goryeo-comic.html",
+    "after": "S19",
+    "anchor": "mem-s19",
+    "scene": 19,
+    "chunks": [
+     "불교 · 공예 · 인쇄 (주제별)"
+    ]
+   },
+   {
+    "file": "goryeo-comic.html",
+    "after": "S20",
+    "anchor": "mem-s20",
+    "scene": 20,
+    "chunks": [
+     "역사서 다섯 권 (주제별)"
+    ]
+   }
+  ],
+  "joseon_memory": [
+   {
+    "file": "joseon-comic.html",
+    "after": "E02",
+    "scene": 2,
+    "chunks": [
+     "건국과 태종의 왕권 강화"
+    ]
+   },
+   {
+    "file": "joseon-comic.html",
+    "after": "E04",
+    "scene": 4,
+    "chunks": [
+     "세종의 정치와 국경"
+    ]
+   },
+   {
+    "file": "joseon-comic.html",
+    "after": "E07",
+    "scene": 7,
+    "chunks": [
+     "계유정난에서 경국대전까지"
+    ]
+   },
+   {
+    "file": "joseon-comic.html",
+    "after": "E10",
+    "scene": 10,
+    "chunks": [
+     "네 번의 사화"
+    ]
+   },
+   {
+    "file": "joseon-comic.html",
+    "after": "E11",
+    "scene": 11,
+    "chunks": [
+     "붕당의 시작"
+    ]
+   },
+   {
+    "file": "joseon-comic.html",
+    "after": "E14",
+    "scene": 14,
+    "chunks": [
+     "임진왜란과 광해군"
+    ]
+   },
+   {
+    "file": "joseon-comic.html",
+    "after": "E16",
+    "scene": 16,
+    "chunks": [
+     "인조반정과 두 호란"
+    ]
+   },
+   {
+    "file": "joseon-late-comic.html",
+    "after": "L01",
+    "scene": 1,
+    "chunks": [
+     "효종의 북벌과 나선 정벌"
+    ]
+   },
+   {
+    "file": "joseon-late-comic.html",
+    "after": "L02",
+    "scene": 2,
+    "chunks": [
+     "예송과 환국"
+    ]
+   },
+   {
+    "file": "joseon-late-comic.html",
+    "after": "L03",
+    "scene": 3,
+    "chunks": [
+     "영조의 탕평과 균역법"
+    ]
+   },
+   {
+    "file": "joseon-late-comic.html",
+    "after": "L05",
+    "scene": 5,
+    "chunks": [
+     "정조의 개혁"
+    ]
+   },
+   {
+    "file": "joseon-late-comic.html",
+    "after": "L07",
+    "scene": 7,
+    "chunks": [
+     "세도정치와 농민의 저항"
+    ]
+   },
+   {
+    "file": "joseon-late-comic.html",
+    "after": "L11",
+    "scene": 11,
+    "chunks": [
+     "조선 후기 경제와 사회 (주제별 · 17~19세기)"
+    ]
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "after": "E02",
+    "scene": 2,
+    "chunks": [
+     "건국과 태종의 왕권 강화"
+    ]
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "after": "E04",
+    "scene": 4,
+    "chunks": [
+     "세종의 정치와 국경"
+    ]
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "after": "E07",
+    "scene": 7,
+    "chunks": [
+     "계유정난에서 경국대전까지"
+    ]
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "after": "E10",
+    "scene": 10,
+    "chunks": [
+     "네 번의 사화"
+    ]
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "after": "E11",
+    "scene": 11,
+    "chunks": [
+     "붕당의 시작"
+    ]
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "after": "E14",
+    "scene": 14,
+    "chunks": [
+     "임진왜란과 광해군"
+    ]
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "after": "E16",
+    "scene": 16,
+    "chunks": [
+     "인조반정과 두 호란"
+    ]
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "after": "L01",
+    "scene": 17,
+    "chunks": [
+     "효종의 북벌과 나선 정벌"
+    ]
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "after": "L02",
+    "scene": 18,
+    "chunks": [
+     "예송과 환국"
+    ]
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "after": "L03",
+    "scene": 19,
+    "chunks": [
+     "영조의 탕평과 균역법"
+    ]
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "after": "L05",
+    "scene": 21,
+    "chunks": [
+     "정조의 개혁"
+    ]
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "after": "L07",
+    "scene": 23,
+    "chunks": [
+     "세도정치와 농민의 저항"
+    ]
+   },
+   {
+    "file": "joseon-all-comic.html",
+    "after": "L11",
+    "scene": 27,
+    "chunks": [
+     "조선 후기 경제와 사회 (주제별 · 17~19세기)"
+    ]
+   }
+  ],
+  "art_needed": []
+ }
+}

@@ -1,0 +1,21 @@
+{
+  "generator": "built-in imagegen",
+  "assets": [
+    {
+      "path": "media/world-art/rainbow-wardrobe-stall-v1.webp",
+      "original": "generated_images/exec-1dff3eef-8e4c-4885-bfce-edb57260d4f9.png",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Asset type: transparent-background wardrobe market stall sprite for a bright whimsical fantasy island game. Primary request: one beautifully crafted small wooden clothing stall with a lilac and cream striped scalloped fabric canopy, warm honey-colored wood grain and brass joints, tiny flower boxes with daisies and trailing vines, a little open clothing rail with one miniature cream cape and one pastel blue scarf on rounded wooden hangers. A small empty wooden signboard hangs from the canopy, leave completely blank for HTML text overlay. No bear or character, no eggs, no ground, no landscape, no interface, no words, no lettering, no logos, no watermark. Style: high-detail storybook toy-world 3D illustration, soft tactile plush-friendly materials, warm sun from upper left, charming polished game prop matching a lush flowering village and teddy-bear nursery. Composition: single centered isolated complete stall, front view slightly from above with subtle perspective, full silhouette visible and generous transparent margin, floor contact at bottom. Keep silhouette clean at small mobile sizes, uncluttered and readable. Actual transparent alpha background, not white or checkerboard.",
+      "sha256": "4e129003f5695002ab54ad3f8df17d2bf7b8a63a5331c59016ed3e011434c528"
+    },
+    {
+      "path": "media/world-art/rainbow-guardian-walk-v1.webp",
+      "original": "generated_images/exec-482805e6-ef3a-4dee-bcce-b8f85630d60e.png",
+      "reference": "media/world-art/rainbow-park-sprites-v2.webp",
+      "transparent": true,
+      "prompt": "Use case: precise-object-edit. Asset type: transparent sprite sheet, 3 horizontal equal-width animation cells in one single row. Edit target: supplied existing fantasy game sprite atlas. Preserve the exact identity, plush texture, warm golden yellow fur, round ears with cream centers, cream oval belly and muzzle, black oval eyes and small black nose of the LARGE YELLOW BEAR at upper left. Derive ONLY that bear into three full-body UPRIGHT STANDING WALK CYCLE poses; discard all other atlas objects from output. No clothing, no accessory, no text, no lines, no background, no floor, no cast shadow. Frame1 leftfoot gently forward/rightarm forward; frame2 neutral upright bothfeet on sameground; frame3 rightfoot gently forward/leftarm forward. All three are the SAME character at identical scale, same head dimensions and head position, same foot baseline, same lighting, facing 3/4 toward viewer and slightly toward right. Cute short broad legs and rounded feet naturally supporting standing weight. Avoid seated pose, spread forward soles, crawling, rotation, changed facial identity or extra limbs. High-detail soft polished storybook toy-world 3D illustration exactly matching the reference yellow guardian. Composition: landscape sheet with exactly3equal cells across, each complete bear centered in its own cell with10% clearance from cell boundaries; consistent camera and anchor for CSS frame animation. Actual transparent alpha background.",
+      "sha256": "5ae51e4adefa643d92439bda934bb2e724e7bf9206fb733bc59b76496c0c85a5"
+    }
+  ],
+  "existingAssetsOverwritten": false
+}

@@ -1,0 +1,295 @@
+{
+ "generated_by": "scripts/build_gojoseon_comic.py",
+ "note": "고조선과 여러 나라 웹툰 장면(화면 순서)·흐름·그림(바이트 그대로, 508×380 전체)·기존 꼭 기억 단서·강의 강조와 근거 행, 이 부분에서 외울 것 카드 위치.",
+ "scenes": [
+  {
+   "id": "scene-1",
+   "scene": 1,
+   "flow": "flow-1",
+   "orig": 1,
+   "added": false,
+   "panel": "gojoseon-panels/01.webp",
+   "size": [
+    508,
+    380
+   ],
+   "reused": false,
+   "depicts": "첫 나라의 이야기 장면",
+   "key": "고조선 = 단군왕검 건국 전승·왕검성",
+   "speakers": [
+    "상인",
+    "동료"
+   ],
+   "stress": null,
+   "teacher_lines": "47–52"
+  },
+  {
+   "id": "gojoseon-law",
+   "scene": 2,
+   "flow": "flow-1",
+   "orig": null,
+   "added": true,
+   "panel": "gojoseon-panels/01.webp",
+   "size": [
+    508,
+    380
+   ],
+   "reused": true,
+   "depicts": "왕검성 앞 장터의 고조선 사람들(앞 장면과 같은 그림 · 그림 전체 다시 사용)",
+   "key": "단군 건국 이야기 = 홍익인간·제정일치 / 범금 8조 = 생명·노동력·사유 재산 중시",
+   "speakers": [
+    "마을 어른",
+    "해설 · 오늘날의 풀이"
+   ],
+   "stress": "고조선에서 제일 시험에 잘 나오고 제일 중요한 것은 “사회 질서를 유지하기 위해 범금 8조를 두었다”라고 짚었어요.",
+   "teacher_lines": "54–58"
+  },
+  {
+   "id": "scene-2",
+   "scene": 3,
+   "flow": "flow-1",
+   "orig": 2,
+   "added": false,
+   "panel": "gojoseon-panels/02.webp",
+   "size": [
+    508,
+    380
+   ],
+   "reused": false,
+   "depicts": "국경에 닥친 전쟁 장면",
+   "key": "고조선 = 연 장수 진개의 침략",
+   "speakers": [
+    "전령",
+    "주민"
+   ],
+   "stress": null,
+   "teacher_lines": "52–53"
+  },
+  {
+   "id": "scene-3",
+   "scene": 4,
+   "flow": "flow-1",
+   "orig": 3,
+   "added": false,
+   "panel": "gojoseon-panels/03.webp",
+   "size": [
+    508,
+    380
+   ],
+   "reused": false,
+   "depicts": "왕위가 바뀌다 장면",
+   "key": "위만이 준왕을 몰아냄 → 진번·임둔 복속 → 우거왕 때 한 무제 침략·왕검성 함락",
+   "speakers": [
+    "준왕",
+    "위만"
+   ],
+   "stress": null,
+   "teacher_lines": "49–51"
+  },
+  {
+   "id": "wiman-trade",
+   "scene": 5,
+   "flow": "flow-1",
+   "orig": null,
+   "added": true,
+   "panel": "gojoseon-panels/03.webp",
+   "size": [
+    508,
+    380
+   ],
+   "reused": true,
+   "depicts": "궁궐에서 위만과 신하가 이야기하는 장면(앞 장면과 같은 그림 · 그림 전체 다시 사용)",
+   "key": "위만 조선 = 철기 문화 수용·진번·임둔 복속·중국과 진 사이 중계 무역 → 우거왕 때 한 무제 공격·왕검성 함락",
+   "speakers": [
+    "신하",
+    "위만"
+   ],
+   "stress": "진번과 임둔을 복속시켰다는 표현이 나와도 고조선이라고 짚었어요.",
+   "teacher_lines": "53–59"
+  },
+  {
+   "id": "scene-4",
+   "scene": 6,
+   "flow": "flow-2",
+   "orig": 4,
+   "added": false,
+   "panel": "gojoseon-panels/04.webp",
+   "size": [
+    508,
+    380
+   ],
+   "reused": false,
+   "depicts": "북쪽 넓은 들판의 부여 장면",
+   "key": "부여 = 사출도·영고(12월)·1책 12법·우제점법",
+   "speakers": [
+    "부여 사람",
+    "동료"
+   ],
+   "stress": "부여에서 제일 시험에 잘 나오는 것은 사출도라고 짚었어요.",
+   "teacher_lines": "59–65"
+  },
+  {
+   "id": "scene-5",
+   "scene": 7,
+   "flow": "flow-2",
+   "orig": 5,
+   "added": false,
+   "panel": "gojoseon-panels/05.webp",
+   "size": [
+    508,
+    380
+   ],
+   "reused": false,
+   "depicts": "산성 아래의 고구려 장면",
+   "key": "고구려 = 계루부·제가회의·서옥제·동맹(10월)",
+   "speakers": [
+    "청년",
+    "동료"
+   ],
+   "stress": "고구려는 동맹 · 제가회의 · 서옥제 세 가지를 기억하라고 짚었어요.",
+   "teacher_lines": "65–72 · 95–97"
+  },
+  {
+   "id": "scene-6",
+   "scene": 8,
+   "flow": "flow-2",
+   "orig": 6,
+   "added": false,
+   "panel": "gojoseon-panels/06.webp",
+   "size": [
+    508,
+    380
+   ],
+   "reused": false,
+   "depicts": "바닷가의 옥저 장면",
+   "key": "옥저 = 소금·해산물·민며느리제·골장제",
+   "speakers": [
+    "옥저 사람",
+    "동료"
+   ],
+   "stress": "옥저는 민며느리제와 골장제가 중요하다고 짚었어요.",
+   "teacher_lines": "72–78"
+  },
+  {
+   "id": "eupgun-samno",
+   "scene": 9,
+   "flow": "flow-2",
+   "orig": null,
+   "added": true,
+   "panel": "gojoseon-panels/06.webp",
+   "size": [
+    508,
+    380
+   ],
+   "reused": true,
+   "depicts": "바닷가 마을에서 이야기를 나누는 사람들(앞 장면과 같은 그림 · 그림 전체 다시 사용)",
+   "key": "옥저·동예 공통 = 왕 없이 읍군·삼로가 지배 / 풍습은 서로 다름",
+   "speakers": [
+    "바닷가 사람",
+    "여행자"
+   ],
+   "stress": null,
+   "teacher_lines": "77–81"
+  },
+  {
+   "id": "scene-7",
+   "scene": 10,
+   "flow": "flow-2",
+   "orig": 7,
+   "added": false,
+   "panel": "gojoseon-panels/07.webp",
+   "size": [
+    508,
+    380
+   ],
+   "reused": false,
+   "depicts": "경계를 지키는 동예 장면",
+   "key": "동예 = 책화·무천(10월)·단궁·과하마·반어피",
+   "speakers": [
+    "동예 사람",
+    "여행자"
+   ],
+   "stress": "동예에서는 책화가 제일 중요하다고 짚었어요.",
+   "teacher_lines": "79–82 · 98–99"
+  },
+  {
+   "id": "scene-8",
+   "scene": 11,
+   "flow": "flow-2",
+   "orig": 8,
+   "added": false,
+   "panel": "gojoseon-panels/08.webp",
+   "size": [
+    508,
+    380
+   ],
+   "reused": false,
+   "depicts": "철과 벼가 자라는 삼한 장면",
+   "key": "삼한 = 벼농사·변한 철·천군·소도·신지·읍차",
+   "speakers": [
+    "상인",
+    "제사장"
+   ],
+   "stress": "시험 선택지에 소도가 보이면 삼한이라고 짚었어요.",
+   "teacher_lines": "82–87 · 98"
+  },
+  {
+   "id": "samhan-rites",
+   "scene": 12,
+   "flow": "flow-2",
+   "orig": null,
+   "added": true,
+   "panel": "gojoseon-panels/08.webp",
+   "size": [
+    508,
+    380
+   ],
+   "reused": true,
+   "depicts": "들판에서 제사장과 사람들이 모인 장면(앞 장면과 같은 그림 · 그림 전체 다시 사용)",
+   "key": "삼한 = 정치(신지·읍차)와 제사(천군·소도) 분리 / 5월·10월 계절 제사",
+   "speakers": [
+    "천군",
+    "신지"
+   ],
+   "stress": null,
+   "teacher_lines": "83–86"
+  }
+ ],
+ "memory": [
+  {
+   "after": "gojoseon-law",
+   "scene": 2,
+   "chunks": [
+    "고조선의 건국과 범금 8조"
+   ]
+  },
+  {
+   "after": "wiman-trade",
+   "scene": 5,
+   "chunks": [
+    "연의 공격에서 한의 공격까지"
+   ]
+  },
+  {
+   "after": "scene-5",
+   "scene": 7,
+   "chunks": [
+    "부여와 고구려: 여러 가(加)가 함께 다스린 나라"
+   ]
+  },
+  {
+   "after": "scene-7",
+   "scene": 10,
+   "chunks": [
+    "옥저와 동예: 왕 없이 읍군·삼로"
+   ]
+  },
+  {
+   "after": "samhan-rites",
+   "scene": 12,
+   "chunks": [
+    "삼한: 정치와 제사를 나눈 나라"
+   ]
+  }
+ ]
+}

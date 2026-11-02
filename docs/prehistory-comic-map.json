@@ -1,0 +1,288 @@
+{
+ "generated_by": "scripts/build_prehistory_comic.py",
+ "note": "선사시대 웹툰 장면(화면 순서)·흐름·그림(바이트 그대로, 539×358 전체)·기존 꼭 기억 단서·강의 강조와 근거 행, 이 부분에서 외울 것 카드 위치.",
+ "scenes": [
+  {
+   "id": "scene-1",
+   "scene": 1,
+   "flow": "flow-1",
+   "orig": 1,
+   "added": false,
+   "panel": "prehistory-panels/01.webp",
+   "size": [
+    539,
+    358
+   ],
+   "reused": false,
+   "depicts": "먹을 것이 떨어졌다 장면",
+   "key": "구석기 = 이동 생활·동굴·뗀석기",
+   "speakers": [
+    "아버지",
+    "아이"
+   ],
+   "stress": "선사시대는 각 시대의 생활 모습과 사용한 도구만 알면 된다고 짚었어요.",
+   "teacher_lines": "18–21"
+  },
+  {
+   "id": "scene-2",
+   "scene": 2,
+   "flow": "flow-1",
+   "orig": 2,
+   "added": false,
+   "panel": "prehistory-panels/02.webp",
+   "size": [
+    539,
+    358
+   ],
+   "reused": false,
+   "depicts": "오늘의 집은 강가 장면",
+   "key": "구석기 = 막집·주먹도끼·슴베찌르개",
+   "speakers": [
+    "아버지",
+    "아이"
+   ],
+   "stress": null,
+   "teacher_lines": "20–22"
+  },
+  {
+   "id": "paleo-sites",
+   "scene": 3,
+   "flow": "flow-1",
+   "orig": null,
+   "added": true,
+   "panel": "prehistory-panels/02.webp",
+   "size": [
+    539,
+    358
+   ],
+   "reused": true,
+   "depicts": "강가에서 돌도구를 다듬는 구석기 사람들(앞 장면과 같은 그림 · 그림 전체 다시 사용)",
+   "key": "구석기 유적 = 연천 전곡리·공주 석장리 / 움집·빗살무늬 토기·농경은 구석기 아님",
+   "speakers": [
+    "아버지",
+    "해설 · 오늘의 유적 안내"
+   ],
+   "stress": "유적지를 몰라도 문제를 풀 수 있고, 생활 모습과 도구만 알면 된다고 짚었어요.",
+   "teacher_lines": "22–25"
+  },
+  {
+   "id": "scene-3",
+   "scene": 4,
+   "flow": "flow-2",
+   "orig": 3,
+   "added": false,
+   "panel": "prehistory-panels/03.webp",
+   "size": [
+    539,
+    358
+   ],
+   "reused": false,
+   "depicts": "씨앗을 심고 머물다 장면",
+   "key": "신석기 = 농경·목축 시작·움집·빗살무늬 토기",
+   "speakers": [
+    "농부",
+    "동료"
+   ],
+   "stress": "신석기에서 제일 중요한 특징은 농사(농경·목축)를 시작했다는 것이라고 짚었어요.",
+   "teacher_lines": "25–26 · 34"
+  },
+  {
+   "id": "scene-4",
+   "scene": 5,
+   "flow": "flow-2",
+   "orig": 4,
+   "added": false,
+   "panel": "prehistory-panels/04.webp",
+   "size": [
+    539,
+    358
+   ],
+   "reused": false,
+   "depicts": "실과 옷이 생기다 장면",
+   "key": "신석기 = 가락바퀴·뼈바늘·갈돌·갈판",
+   "speakers": [
+    "직조인",
+    "동료"
+   ],
+   "stress": "옷을 만들기 시작한 것도 신석기의 중요한 특징이고, 신석기는 빗살무늬 토기와 가락바퀴 두 가지만 알면 된다고 짚었어요.",
+   "teacher_lines": "27–31"
+  },
+  {
+   "id": "neo-village",
+   "scene": 6,
+   "flow": "flow-2",
+   "orig": null,
+   "added": true,
+   "panel": "prehistory-panels/03.webp",
+   "size": [
+    539,
+    358
+   ],
+   "reused": true,
+   "depicts": "씨앗을 심고 머무는 신석기 마을(앞 장면과 같은 그림 · 그림 전체 다시 사용)",
+   "key": "신석기 = 원형 움집·중앙 화덕·갈돌·갈판 / 대표 유적 서울 암사동",
+   "speakers": [
+    "어머니",
+    "해설 · 오늘의 유적 안내"
+   ],
+   "stress": "신석기 유적지도 몰라도 된다고 짚었어요.",
+   "teacher_lines": "27 · 30–33"
+  },
+  {
+   "id": "scene-5",
+   "scene": 7,
+   "flow": "flow-3",
+   "orig": 5,
+   "added": false,
+   "panel": "prehistory-panels/05.webp",
+   "size": [
+    539,
+    358
+   ],
+   "reused": false,
+   "depicts": "남는 곡식, 다른 자리 장면",
+   "key": "청동기 = 벼농사·사유 재산·계급·반달 돌칼",
+   "speakers": [
+    "농부",
+    "동료"
+   ],
+   "stress": null,
+   "teacher_lines": "33–36 · 37–38"
+  },
+  {
+   "id": "scene-6",
+   "scene": 8,
+   "flow": "flow-3",
+   "orig": 6,
+   "added": false,
+   "panel": "prehistory-panels/06.webp",
+   "size": [
+    539,
+    358
+   ],
+   "reused": false,
+   "depicts": "마을에 울타리를 두르다 장면",
+   "key": "청동기 = 환호·목책·비파형 동검·민무늬 토기",
+   "speakers": [
+    "지도자",
+    "전사"
+   ],
+   "stress": "환호와 목책이 나오면 청동기라고 짚었어요.",
+   "teacher_lines": "36–37 · 39–41"
+  },
+  {
+   "id": "bronze-village",
+   "scene": 9,
+   "flow": "flow-3",
+   "orig": null,
+   "added": true,
+   "panel": "prehistory-panels/06.webp",
+   "size": [
+    539,
+    358
+   ],
+   "reused": true,
+   "depicts": "마을에 울타리를 두르는 청동기 마을(앞 장면과 같은 그림 · 그림 전체 다시 사용)",
+   "key": "청동기 = 비파형 동검·거친무늬 거울(지배층) / 민무늬 토기 / 대표 유적 부여 송국리",
+   "speakers": [
+    "족장",
+    "해설 · 오늘의 유적 안내"
+   ],
+   "stress": null,
+   "teacher_lines": "36–41"
+  },
+  {
+   "id": "scene-7",
+   "scene": 10,
+   "flow": "flow-3",
+   "orig": 7,
+   "added": false,
+   "panel": "prehistory-panels/07.webp",
+   "size": [
+    539,
+    358
+   ],
+   "reused": false,
+   "depicts": "큰 돌 아래 남은 권력 장면",
+   "key": "청동기 = 고인돌·지배층의 등장",
+   "speakers": [
+    "마을 사람",
+    "동료"
+   ],
+   "stress": null,
+   "teacher_lines": "35–37"
+  },
+  {
+   "id": "scene-8",
+   "scene": 11,
+   "flow": "flow-4",
+   "orig": 8,
+   "added": false,
+   "panel": "prehistory-panels/08.webp",
+   "size": [
+    539,
+    358
+   ],
+   "reused": false,
+   "depicts": "쇠가 밭에 들어오다 장면",
+   "key": "철기 = 철제 농기구·세형 동검·중국 화폐 교역",
+   "speakers": [
+    "대장장이",
+    "농부"
+   ],
+   "stress": "철기는 주로 오답 선택지로 나오니, 구석기·신석기·청동기 위주로 보라고 짚었어요.",
+   "teacher_lines": "42–47"
+  },
+  {
+   "id": "iron-trade",
+   "scene": 12,
+   "flow": "flow-4",
+   "orig": null,
+   "added": true,
+   "panel": "prehistory-panels/08.webp",
+   "size": [
+    539,
+    358
+   ],
+   "reused": true,
+   "depicts": "대장간이 있는 철기 마을(앞 장면과 같은 그림 · 그림 전체 다시 사용)",
+   "key": "철기 = 철제 농기구(생산) / 세형 동검·잔무늬 거울(철기 시대의 청동기) / 명도전 = 중국과 교류",
+   "speakers": [
+    "상인",
+    "대장장이"
+   ],
+   "stress": null,
+   "teacher_lines": "43–47"
+  }
+ ],
+ "memory": [
+  {
+   "after": "paleo-sites",
+   "scene": 3,
+   "chunks": [
+    "구석기: 옮겨 다니며 뗀석기"
+   ]
+  },
+  {
+   "after": "neo-village",
+   "scene": 6,
+   "chunks": [
+    "신석기: 농사를 시작하고 머물다"
+   ]
+  },
+  {
+   "after": "scene-7",
+   "scene": 10,
+   "chunks": [
+    "청동기: 남는 곡식에서 계급까지"
+   ]
+  },
+  {
+   "after": "iron-trade",
+   "scene": 12,
+   "chunks": [
+    "철기: 오답을 가르는 단서"
+   ]
+  }
+ ]
+}

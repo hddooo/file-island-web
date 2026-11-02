@@ -1,0 +1,1371 @@
+{
+ "generated_by": "scripts/build_lecture_comics.py",
+ "note": "장면별 강의 모듈·등급·그림. 그림은 기존 그림판(같은 시대)과 media/lecture-panels의 새 개념 그림만 쓴다. art_needed는 알맞은 그림이 없어 글 상자로 대신한 핵심 모듈.",
+ "scenes": [
+  {
+   "file": "goryeo-comic.html",
+   "id": "early",
+   "scene": 1,
+   "modules": [
+    "G01"
+   ],
+   "tier": "core",
+   "art": "goryeo-panels/01.webp",
+   "depicts": "해가 떠오르는 성곽 위에 선 고려의 왕",
+   "reign": "1대 태조 왕건 · 918–943 재위",
+   "when": "918 고려 건국 · 936 후삼국 통일",
+   "next": "2대 혜종 · 3대 정종은 강의에서 건너뛰어요. 다음은 태조의 아들 4대 광종.",
+   "leap": true
+  },
+  {
+   "file": "goryeo-comic.html",
+   "id": null,
+   "scene": 2,
+   "modules": [
+    "G01"
+   ],
+   "tier": "core",
+   "art": "goryeo-panels/02.webp",
+   "depicts": "옥좌의 왕이 지켜보는 가운데 신하들이 종이에 답을 쓰는 장면",
+   "reign": "4대 광종 · 949–975 재위",
+   "when": "956 노비안검법 · 958 과거제",
+   "next": "광종 다음 5대 경종은 976년 전시과를 시작했어요(뒤의 경제 장면). 그다음이 6대 성종.",
+   "leap": false
+  },
+  {
+   "file": "goryeo-comic.html",
+   "id": null,
+   "scene": 3,
+   "modules": [
+    "G01",
+    "G08"
+   ],
+   "tier": "core",
+   "art": "goryeo-panels/03.webp",
+   "depicts": "궁궐 마당의 학교에서 책을 펴고 공부하는 학생들(국자감)",
+   "reign": "6대 성종 · 981–997 재위",
+   "when": "983 12목 설치 · 992 국자감",
+   "next": "같은 성종 때인 993년, 북쪽의 거란이 처음 쳐들어왔다.",
+   "leap": false
+  },
+  {
+   "file": "goryeo-comic.html",
+   "id": "khitan-2-3",
+   "scene": 4,
+   "modules": [
+    "G02"
+   ],
+   "tier": "support",
+   "art": "goryeo-panels/04.webp",
+   "depicts": "고려 관리와 북방 장수가 마주 앉아 담판하는 장면(1차 서희의 담판)",
+   "reign": "6대 성종 → 8대 현종 · 993–1019",
+   "when": "993 1차 · 1010 2차 · 1018–1019 3차",
+   "next": "8대 현종 뒤 여러 왕을 건너뛰어 15대 숙종으로 가요. 그사이 북쪽에서 여진이 커졌다.",
+   "leap": true
+  },
+  {
+   "file": "goryeo-comic.html",
+   "id": "aristocrat",
+   "scene": 5,
+   "modules": [
+    "G03"
+   ],
+   "tier": "core",
+   "art": "goryeo-panels/05.webp",
+   "depicts": "눈 덮인 북방에 성을 쌓는 군사들과 앞을 가리키는 고려 장수",
+   "reign": "15대 숙종 → 16대 예종 · 1095–1122",
+   "when": "1104 별무반 · 1107 동북 9성",
+   "next": "같은 예종은 군사뿐 아니라 힘을 잃은 국립 학교도 다시 일으켰다.",
+   "leap": false
+  },
+  {
+   "file": "goryeo-comic.html",
+   "id": null,
+   "scene": 6,
+   "modules": [
+    "G03"
+   ],
+   "tier": "core",
+   "art": "goryeo-panels/03.webp",
+   "depicts": "책을 펴고 공부하는 국자감 학생들(성종 장면 그림 다시 사용)",
+   "reign": "16대 예종 · 1105–1122 재위",
+   "when": "양현고 · 국자감 7재 · 청연각·보문각",
+   "next": "예종의 아들 17대 인종 때, 외척 이자겸의 권력이 왕을 넘보았다.",
+   "leap": false
+  },
+  {
+   "file": "goryeo-comic.html",
+   "id": null,
+   "scene": 7,
+   "modules": [
+    "G03"
+   ],
+   "tier": "core",
+   "art": "goryeo-panels/06.webp",
+   "depicts": "불타는 궁궐 앞에서 다투는 관리들(이자겸의 난)",
+   "reign": "17대 인종 · 1122–1146 재위",
+   "when": "1126 이자겸의 난 → 1135 묘청의 서경 천도 운동",
+   "next": "인종의 아들 18대 의종 때(1170), 차별에 지친 무신들이 들고일어났다.",
+   "leap": false
+  },
+  {
+   "file": "goryeo-comic.html",
+   "id": "military",
+   "scene": 8,
+   "modules": [
+    "G04",
+    "G05"
+   ],
+   "tier": "core",
+   "art": "goryeo-panels/07.webp",
+   "depicts": "갑옷 입은 장수들이 궁궐 안으로 들어서는 장면",
+   "reign": "18대 의종 때 시작 · 1170–1270 무신 집권",
+   "when": "1170 무신 정변 · 1196 최충헌 집권",
+   "next": "최충헌의 아들 최우가 권력을 이었다(왕은 23대 고종). 1231년, 몽골이 쳐들어왔다.",
+   "leap": true
+  },
+  {
+   "file": "goryeo-comic.html",
+   "id": null,
+   "scene": 9,
+   "modules": [
+    "G04"
+   ],
+   "tier": "core",
+   "art": "goryeo-panels/08.webp",
+   "depicts": "말 위의 관리와 섬으로 향하는 배들",
+   "reign": "23대 고종 · 집권자 최우 · 1213–1259 재위",
+   "when": "1231 몽골 침입 · 1232 강화 천도",
+   "next": "강화도 밖 본토에서는 승려와 백성, 군사가 성을 지켰다.",
+   "leap": false
+  },
+  {
+   "file": "goryeo-comic.html",
+   "id": null,
+   "scene": 10,
+   "modules": [
+    "G05"
+   ],
+   "tier": "support",
+   "art": "goryeo-panels/09.webp",
+   "depicts": "성벽 위에서 활을 겨누며 공격을 막는 군사들",
+   "reign": "23대 고종 · 1213–1259 재위",
+   "when": "1232 처인성 · 1253 충주성 · 팔만대장경",
+   "next": "1270년 24대 원종 때 개경으로 돌아가자(무신 정권도 끝), 삼별초는 따르지 않았다.",
+   "leap": false
+  },
+  {
+   "file": "goryeo-comic.html",
+   "id": null,
+   "scene": 11,
+   "modules": [
+    "G05"
+   ],
+   "tier": "support",
+   "art": "goryeo-panels/10.webp",
+   "depicts": "섬을 향해 바다를 건너는 함대",
+   "reign": "24대 원종 때 · 1270–1273 항쟁",
+   "when": "1270 개경 환도 → 강화 → 진도 → 제주 → 1273 진압",
+   "next": "1274년 즉위한 25대 충렬왕부터 원의 간섭이 깊어졌다.",
+   "leap": false
+  },
+  {
+   "file": "goryeo-comic.html",
+   "id": "yuan",
+   "scene": 12,
+   "modules": [
+    "G06"
+   ],
+   "tier": "core",
+   "art": "goryeo-panels/11.webp",
+   "depicts": "고려 왕 곁에 선 원의 관리",
+   "reign": "24대 원종 → 25대 충렬왕 · 원 간섭기 1270–1351",
+   "when": "1274 충렬왕 즉위 · 정동행성 · 응방 · 공녀 · 몽골풍",
+   "next": "충선왕부터 충정왕까지 여러 왕(복위 포함)을 건너뛰어, 31대 공민왕이 즉위했다(1351). 이 무렵 원은 약해지고 있었다.",
+   "leap": true
+  },
+  {
+   "file": "goryeo-comic.html",
+   "id": null,
+   "scene": 13,
+   "modules": [
+    "G06"
+   ],
+   "tier": "core",
+   "art": "goryeo-panels/12.webp",
+   "depicts": "칼을 들고 말 위에서 군사를 이끄는 왕",
+   "reign": "31대 공민왕 · 1351–1374 재위",
+   "when": "1356 기철 숙청·쌍성총관부 수복 · 1366 전민변정도감",
+   "next": "공민왕이 죽은 뒤 32대 우왕 때, 남쪽 바다의 왜구 침입이 거세졌다.",
+   "leap": false
+  },
+  {
+   "file": "goryeo-comic.html",
+   "id": "late",
+   "scene": 14,
+   "modules": [
+    "G07"
+   ],
+   "tier": "support",
+   "art": "goryeo-panels/13.webp",
+   "depicts": "배 위에서 화포를 쏘아 적선을 불태우는 장면",
+   "reign": "32대 우왕 · 1374–1388 재위",
+   "when": "1376 홍산 · 1380 진포 · 1380 황산",
+   "next": "1388년, 명이 철령 이북 땅을 요구하자 최영은 요동 정벌을 밀어붙였다(우왕 때).",
+   "leap": false
+  },
+  {
+   "file": "goryeo-comic.html",
+   "id": null,
+   "scene": 15,
+   "modules": [
+    "G07"
+   ],
+   "tier": "support",
+   "art": "goryeo-panels/14.webp",
+   "depicts": "강가에서 군대를 바라보는 장수",
+   "reign": "32대 우왕 → 34대 공양왕 · 1388–1392",
+   "when": "1388 위화도 회군 · 1391 과전법 · 1392 조선 건국",
+   "next": "여기까지가 고려의 정치 흐름이에요. 이제 고려 전 시기에 걸친 경제와 문화를 봐요.",
+   "leap": false
+  },
+  {
+   "file": "goryeo-comic.html",
+   "id": "goryeo-relief",
+   "scene": 16,
+   "modules": [
+    "G09"
+   ],
+   "tier": "core",
+   "art": "lecture-panels/goryeo-land-tax.png",
+   "depicts": "토지 지도와 장부를 펴 놓고 의논하는 관리들, 뒤로 소와 함께 수확하는 농민들(개념 그림 · 땅 주인이 바뀌는 장면이 아님)",
+   "reign": "태조 → 경종 → 공양왕 · 940 · 976 · 1391",
+   "when": "역분전(태조) → 전시과(976 경종) → 과전법(1391)",
+   "next": "고려는 불교의 나라. 대표 스님 두 사람을 견주어 보자.",
+   "leap": false
+  },
+  {
+   "file": "goryeo-comic.html",
+   "id": "culture",
+   "scene": 17,
+   "modules": [
+    "G10"
+   ],
+   "tier": "core",
+   "art": "lecture-panels/goryeo-buddhism.png",
+   "depicts": "왼쪽은 경전을 펴 가르치는 스님, 오른쪽은 참선하는 스님을 나란히 그린 개념 그림(실제 두 인물의 만남을 그린 것이 아님)",
+   "reign": "의천 → 약 100년 뒤 지눌 · 문벌귀족 시기 → 무신 집권기",
+   "when": "의천 = 숙종의 동생 · 지눌 = 그보다 약 100년 뒤",
+   "next": "불교와 함께 공예와 탑에도 고려의 솜씨가 남았다.",
+   "leap": false
+  },
+  {
+   "file": "goryeo-comic.html",
+   "id": null,
+   "scene": 18,
+   "modules": [
+    "G13",
+    "G11"
+   ],
+   "tier": "support",
+   "art": "goryeo-panels/15.webp",
+   "depicts": "절 마당에서 청자에 무늬를 넣는 도공, 뒤로 여러 층의 탑",
+   "reign": null,
+   "when": "청자 = 비색 → 상감청자 · 탑 = 경천사지 10층 석탑",
+   "next": "기록을 남기는 기술도 앞서 나갔다.",
+   "leap": false
+  },
+  {
+   "file": "goryeo-comic.html",
+   "id": null,
+   "scene": 19,
+   "modules": [
+    "G11"
+   ],
+   "tier": "support",
+   "art": "goryeo-panels/16.webp",
+   "depicts": "활자를 고르며 책을 찍는 장인",
+   "reign": "32대 우왕 때 · 1377",
+   "when": "1377 청주 흥덕사 · 직지심체요절",
+   "next": "학자들은 유학을 들여오고, 지난 역사를 책으로 정리했다.",
+   "leap": false
+  },
+  {
+   "file": "goryeo-comic.html",
+   "id": "goryeo-history",
+   "scene": 20,
+   "modules": [
+    "G12"
+   ],
+   "tier": "core",
+   "art": "lecture-panels/goryeo-history.png",
+   "depicts": "책상에서 붓으로 글을 쓰는 고려 학자와 곁에 쌓인 책들(개념 그림 · 특정 저자의 초상이나 다섯 저자가 만난 장면이 아님)",
+   "reign": "김부식 → 이규보·각훈 → 일연·이승휴 · 인종 때 → 무신 집권기 → 원 간섭기",
+   "when": "1145 삼국사기 → 동명왕편 · 해동고승전 → 삼국유사 · 제왕운기",
+   "next": null,
+   "leap": false
+  },
+  {
+   "file": "joseon-comic.html",
+   "id": "founding",
+   "scene": 1,
+   "modules": [
+    "J01"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-01.png",
+   "depicts": "지도를 펼쳐 놓고 새 나라를 준비하는 장수와 학자",
+   "reign": "1대 태조 이성계 · 1392–1398 재위",
+   "when": "1388 위화도 회군 · 1391 과전법 · 1392 조선 건국",
+   "scope": null,
+   "next": "태조가 막내 방석을 세자로 세우자 왕자들이 맞섰다(1398·1400 왕자의 난). 2대 정종을 거쳐 3대 태종이 즉위했다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-comic.html",
+   "id": null,
+   "scene": 2,
+   "modules": [
+    "J02",
+    "J16"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-02.png",
+   "depicts": "궁궐에서 마주 선 두 왕자",
+   "reign": "3대 태종 이방원 · 1400–1418 재위",
+   "when": "1400 즉위 · 사간원 독립 · 6조 직계제",
+   "scope": null,
+   "next": "태종의 아들 4대 세종이 즉위했다(1418).",
+   "leap": false
+  },
+  {
+   "file": "joseon-comic.html",
+   "id": "sejong",
+   "scene": 3,
+   "modules": [
+    "J02",
+    "J16",
+    "J20"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-03.png",
+   "depicts": "새 글자를 보여 주며 설명하는 왕과 학자들",
+   "reign": "4대 세종 · 1418–1450 재위",
+   "when": "1418 즉위 · 의정부 서사제 · 연분 9등법",
+   "scope": "주제별 정리 ① · 4대 세종 재위(1418–1450)를 주제별로 나눠 봐요. 이 장면은 정치·세금·문화예요.",
+   "next": "같은 세종 재위 안에서, 이번에는 국경과 바다를 주제로 봐요.",
+   "leap": false
+  },
+  {
+   "file": "joseon-comic.html",
+   "id": null,
+   "scene": 4,
+   "modules": [
+    "J02",
+    "J12"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-04.png",
+   "depicts": "눈 덮인 북방 성을 지키는 장수와 군사",
+   "reign": "4대 세종 · 1418–1450 재위",
+   "when": "1419 쓰시마 정벌 · 4군 6진 · 1443 계해약조",
+   "scope": "주제별 정리 ② · 같은 세종 재위의 국경과 바다 이야기예요. 앞 장면(1443 훈민정음)보다 이른 재위 초(1419)로 시간이 다시 돌아가요.",
+   "next": "세종 뒤 5대 문종이 짧게 재위했고, 그 아들 6대 단종이 어린 나이에 즉위했다(1452).",
+   "leap": false
+  },
+  {
+   "file": "joseon-comic.html",
+   "id": "sejo",
+   "scene": 5,
+   "modules": [
+    "J03"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-05.png",
+   "depicts": "무장한 군사에 둘러싸인 왕과 엎드린 신하들",
+   "reign": "6대 단종 · 1452–1455 재위",
+   "when": "1453 계유정난 · 1453 이징옥의 난 → 1455 세조 즉위",
+   "scope": null,
+   "next": "즉위한 세조 때, 관리에게 줄 땅이 모자라는 문제가 커졌다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-comic.html",
+   "id": null,
+   "scene": 6,
+   "modules": [
+    "J03",
+    "J16"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-06.png",
+   "depicts": "두루마리를 펼쳐 보이는 왕과 신하들",
+   "reign": "7대 세조 · 1455–1468 재위",
+   "when": "1466 직전법 · 1467 이시애의 난",
+   "scope": null,
+   "next": "8대 예종(재위 1468–1469)을 거쳐 9대 성종이 즉위했다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-comic.html",
+   "id": null,
+   "scene": 7,
+   "modules": [
+    "J03",
+    "J16",
+    "J11"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-07.png",
+   "depicts": "왕에게 두꺼운 책을 바치는 신하",
+   "reign": "9대 성종 · 1469–1494 재위",
+   "when": "1469 즉위 · 경국대전 완성 · 홍문관",
+   "scope": null,
+   "next": "성종의 아들 10대 연산군 때, 사림이 화를 입는 사화가 시작되었다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-comic.html",
+   "id": "purges",
+   "scene": 8,
+   "modules": [
+    "J04"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-08.png",
+   "depicts": "궁궐을 떠나는 흰 옷의 선비들",
+   "reign": "10대 연산군 · 1494–1506 재위",
+   "when": "1498 무오사화 · 1504 갑자사화 → 1506 중종반정",
+   "scope": null,
+   "next": "반정으로 연산군의 이복동생 11대 중종이 즉위했다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-comic.html",
+   "id": null,
+   "scene": 9,
+   "modules": [
+    "J04"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-10.png",
+   "depicts": "왕 앞에서 개혁을 건의하는 흰 옷의 선비",
+   "reign": "11대 중종 · 1506–1544 재위",
+   "when": "1506 즉위 · 1519 기묘사화",
+   "scope": null,
+   "next": "중종 뒤 12대 인종이 1년이 안 되어 세상을 떠났고, 이복동생 13대 명종이 어린 나이에 즉위했다(1545).",
+   "leap": false
+  },
+  {
+   "file": "joseon-comic.html",
+   "id": null,
+   "scene": 10,
+   "modules": [
+    "J04",
+    "J17"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-08.png",
+   "depicts": "궁궐을 떠나는 흰 옷의 선비들(연산군 장면 그림 다시 사용)",
+   "reign": "13대 명종 · 1545–1567 재위",
+   "when": "1545 을사사화 · 1555 을묘왜변",
+   "scope": null,
+   "next": "명종 뒤 14대 선조가 즉위했다(1567). 네 차례 사화를 거친 사림이 정권을 잡았다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-comic.html",
+   "id": "bungdang-origin",
+   "scene": 11,
+   "modules": [
+    "J05"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/late-01.png",
+   "depicts": "조정에서 편을 나눠 다투는 신하들",
+   "reign": "14대 선조 · 1567–1608 재위",
+   "when": "1575 동인·서인으로 나뉨 · 1589 기축옥사",
+   "scope": null,
+   "next": "같은 선조 때인 1592년, 일본이 쳐들어왔다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-comic.html",
+   "id": "wars",
+   "scene": 12,
+   "modules": [
+    "J05"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-11.png",
+   "depicts": "거북선을 앞세워 싸우는 조선 수군",
+   "reign": "14대 선조 · 1567–1608 재위",
+   "when": "1592 임진왜란 · 1593 훈련도감",
+   "scope": null,
+   "next": "전쟁 뒤 1608년, 선조의 아들 15대 광해군이 즉위했다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-comic.html",
+   "id": "gwanghaegun",
+   "scene": 13,
+   "modules": [
+    "J06",
+    "J13"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/late-04.png",
+   "depicts": "책을 펼쳐 보이며 농민들에게 설명하는 관리",
+   "reign": "15대 광해군 · 1608–1623 재위",
+   "when": "1608 경기에서 대동법 시작 · 선혜청",
+   "scope": null,
+   "next": "같은 광해군 때, 명과 후금 사이에서 외교의 길을 골라야 했다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-comic.html",
+   "id": null,
+   "scene": 14,
+   "modules": [
+    "J06",
+    "J12",
+    "J17"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/late-02.png",
+   "depicts": "고민에 잠긴 왕",
+   "reign": "15대 광해군 · 1608–1623 재위",
+   "when": "1609 기유약조 · 1619 사르후 전투",
+   "scope": null,
+   "next": "1623년, 서인 세력이 광해군을 몰아내고 16대 인조를 세웠다(인조반정).",
+   "leap": false
+  },
+  {
+   "file": "joseon-comic.html",
+   "id": "injo",
+   "scene": 15,
+   "modules": [
+    "J07",
+    "J13"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-09.png",
+   "depicts": "군사를 거느리고 궁궐로 들어서는 젊은 왕",
+   "reign": "16대 인조 · 1623–1649 재위",
+   "when": "1623 인조반정 · 1624 이괄의 난 · 1627 정묘호란",
+   "scope": null,
+   "next": "9년 뒤 1636년, 후금은 나라 이름을 청으로 바꾸고 군신 관계를 요구하며 다시 쳐들어왔다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-comic.html",
+   "id": null,
+   "scene": 16,
+   "modules": [
+    "J07"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-12.png",
+   "depicts": "눈 덮인 산성에서 지친 군사들과 흰 깃발",
+   "reign": "16대 인조 · 1623–1649 재위",
+   "when": "1636 병자호란 · 1637 삼전도 항복",
+   "scope": null,
+   "next": null,
+   "leap": false
+  },
+  {
+   "file": "joseon-late-comic.html",
+   "id": "hyojong",
+   "scene": 1,
+   "modules": [
+    "J07"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/late-03.png",
+   "depicts": "옥좌의 왕 앞에 엎드린 신하들",
+   "reign": "17대 효종 · 1649–1659 재위",
+   "when": "1649 즉위 · 북벌 준비 · 1654·1658 나선 정벌",
+   "scope": null,
+   "next": "1659년 효종이 세상을 떠나고 아들 18대 현종이 즉위하자, 왕실 상복을 두고 논쟁이 일었다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-late-comic.html",
+   "id": "scene-2",
+   "scene": 2,
+   "modules": [
+    "J08",
+    "J12"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/late-01.png",
+   "depicts": "조정에서 편을 나눠 다투는 신하들",
+   "reign": "18대 현종 → 19대 숙종 · 1659–1720",
+   "when": "1659·1674 예송 · 1680·1689·1694 환국",
+   "scope": null,
+   "next": "숙종 뒤 20대 경종(신임사화)을 지나, 이복동생 21대 영조가 즉위했다(1724).",
+   "leap": false
+  },
+  {
+   "file": "joseon-late-comic.html",
+   "id": "scene-3",
+   "scene": 3,
+   "modules": [
+    "J09",
+    "J16",
+    "J13"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/late-04.png",
+   "depicts": "책을 펼쳐 보이며 농민들에게 설명하는 관리(광해군 장면 그림 다시 사용)",
+   "reign": "21대 영조 · 1724–1776 재위",
+   "when": "1728 이인좌의 난 · 1742 탕평비 · 1750 균역법",
+   "scope": null,
+   "next": "1776년, 영조의 손자 22대 정조가 즉위했다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-late-comic.html",
+   "id": "scene-5",
+   "scene": 4,
+   "modules": [
+    "J09",
+    "J15"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/late-05.png",
+   "depicts": "서고에서 책을 읽는 왕과 신하들",
+   "reign": "22대 정조 · 1776–1800 재위",
+   "when": "1776 규장각 · 1791 신해통공 · 1791 신해박해",
+   "scope": null,
+   "next": "같은 정조는 친위 부대 장용영을 두고 수원 화성을 쌓았다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-late-comic.html",
+   "id": "scene-6",
+   "scene": 5,
+   "modules": [
+    "J09",
+    "J19"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/late-06.png",
+   "depicts": "기중 장치로 돌을 올리며 성을 쌓는 장면",
+   "reign": "22대 정조 · 1776–1800 재위",
+   "when": "1793 장용영 · 1796 수원 화성 완공",
+   "scope": null,
+   "next": "1800년, 11살의 23대 순조가 즉위하자 외척 가문이 정치를 쥐었다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-late-comic.html",
+   "id": "scene-7",
+   "scene": 6,
+   "modules": [
+    "J10"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/late-07.png",
+   "depicts": "궁중의 여인들과 신하들",
+   "reign": "23대 순조 · 1800–1834 재위",
+   "when": "1801 신유박해 · 황사영 백서 사건",
+   "scope": null,
+   "next": "세도정치 아래 수취가 어지러워지고 지역 차별에 대한 불만도 쌓였다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-late-comic.html",
+   "id": "scene-8",
+   "scene": 7,
+   "modules": [
+    "J10"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/late-08.png",
+   "depicts": "주먹을 들고 외치는 농민과 사람들",
+   "reign": "23대 순조 → 25대 철종 · 1811 · 1862",
+   "when": "1811 홍경래의 난 · 1862 임술농민봉기 · 삼정이정청",
+   "scope": null,
+   "next": "여기까지가 조선 후기 정치 흐름이에요. 이제 17~19세기 조선 후기 전체에 걸친 경제와 사회를 봐요.",
+   "leap": false
+  },
+  {
+   "file": "joseon-late-comic.html",
+   "id": "scene-10",
+   "scene": 8,
+   "modules": [
+    "J14"
+   ],
+   "tier": "target",
+   "art": "joseon-panels/late-10.png",
+   "depicts": "소와 써레로 논을 고르는 농민",
+   "reign": null,
+   "when": "여러 왕 대에 걸친 변화 · 모내기법 · 상품 작물 · 광산",
+   "scope": null,
+   "next": "팔 물건이 늘자 장터와 상인도 커졌다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-late-comic.html",
+   "id": "scene-9",
+   "scene": 9,
+   "modules": [
+    "J14",
+    "J06"
+   ],
+   "tier": "target",
+   "art": "joseon-panels/late-09.png",
+   "depicts": "물건을 사고파는 장터의 사람들",
+   "reign": null,
+   "when": "여러 왕 대에 걸친 변화 · 공인 · 사상 · 상평통보",
+   "scope": null,
+   "next": "경제가 바뀌자 신분 질서도 흔들렸다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-late-comic.html",
+   "id": "scene-12",
+   "scene": 10,
+   "modules": [
+    "J15",
+    "J20"
+   ],
+   "tier": "support",
+   "art": "joseon-panels/late-12.png",
+   "depicts": "나무 아래 모인 사람들 앞에서 말하는 사람",
+   "reign": null,
+   "when": "여러 왕 대에 걸친 변화 · 서얼 · 중인 · 서민 문화 · 동학",
+   "scope": null,
+   "next": "여유가 있다면 학자들의 개혁 생각도 살펴보자(선택 심화).",
+   "leap": false
+  },
+  {
+   "file": "joseon-late-comic.html",
+   "id": "scene-11",
+   "scene": 11,
+   "modules": [
+    "J18",
+    "J19"
+   ],
+   "tier": "optional",
+   "art": "joseon-panels/late-11.png",
+   "depicts": "지도를 펼쳐 놓고 토론하는 학자들",
+   "reign": null,
+   "when": "여러 왕 대에 걸친 학문 · 중농 실학 · 북학",
+   "scope": null,
+   "next": null,
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": "founding",
+   "scene": 1,
+   "modules": [
+    "J01"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-01.png",
+   "depicts": "지도를 펼쳐 놓고 새 나라를 준비하는 장수와 학자",
+   "reign": "1대 태조 이성계 · 1392–1398 재위",
+   "when": "1388 위화도 회군 · 1391 과전법 · 1392 조선 건국",
+   "scope": null,
+   "next": "태조가 막내 방석을 세자로 세우자 왕자들이 맞섰다(1398·1400 왕자의 난). 2대 정종을 거쳐 3대 태종이 즉위했다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": null,
+   "scene": 2,
+   "modules": [
+    "J02",
+    "J16"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-02.png",
+   "depicts": "궁궐에서 마주 선 두 왕자",
+   "reign": "3대 태종 이방원 · 1400–1418 재위",
+   "when": "1400 즉위 · 사간원 독립 · 6조 직계제",
+   "scope": null,
+   "next": "태종의 아들 4대 세종이 즉위했다(1418).",
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": "sejong",
+   "scene": 3,
+   "modules": [
+    "J02",
+    "J16",
+    "J20"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-03.png",
+   "depicts": "새 글자를 보여 주며 설명하는 왕과 학자들",
+   "reign": "4대 세종 · 1418–1450 재위",
+   "when": "1418 즉위 · 의정부 서사제 · 연분 9등법",
+   "scope": "주제별 정리 ① · 4대 세종 재위(1418–1450)를 주제별로 나눠 봐요. 이 장면은 정치·세금·문화예요.",
+   "next": "같은 세종 재위 안에서, 이번에는 국경과 바다를 주제로 봐요.",
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": null,
+   "scene": 4,
+   "modules": [
+    "J02",
+    "J12"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-04.png",
+   "depicts": "눈 덮인 북방 성을 지키는 장수와 군사",
+   "reign": "4대 세종 · 1418–1450 재위",
+   "when": "1419 쓰시마 정벌 · 4군 6진 · 1443 계해약조",
+   "scope": "주제별 정리 ② · 같은 세종 재위의 국경과 바다 이야기예요. 앞 장면(1443 훈민정음)보다 이른 재위 초(1419)로 시간이 다시 돌아가요.",
+   "next": "세종 뒤 5대 문종이 짧게 재위했고, 그 아들 6대 단종이 어린 나이에 즉위했다(1452).",
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": "sejo",
+   "scene": 5,
+   "modules": [
+    "J03"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-05.png",
+   "depicts": "무장한 군사에 둘러싸인 왕과 엎드린 신하들",
+   "reign": "6대 단종 · 1452–1455 재위",
+   "when": "1453 계유정난 · 1453 이징옥의 난 → 1455 세조 즉위",
+   "scope": null,
+   "next": "즉위한 세조 때, 관리에게 줄 땅이 모자라는 문제가 커졌다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": null,
+   "scene": 6,
+   "modules": [
+    "J03",
+    "J16"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-06.png",
+   "depicts": "두루마리를 펼쳐 보이는 왕과 신하들",
+   "reign": "7대 세조 · 1455–1468 재위",
+   "when": "1466 직전법 · 1467 이시애의 난",
+   "scope": null,
+   "next": "8대 예종(재위 1468–1469)을 거쳐 9대 성종이 즉위했다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": null,
+   "scene": 7,
+   "modules": [
+    "J03",
+    "J16",
+    "J11"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-07.png",
+   "depicts": "왕에게 두꺼운 책을 바치는 신하",
+   "reign": "9대 성종 · 1469–1494 재위",
+   "when": "1469 즉위 · 경국대전 완성 · 홍문관",
+   "scope": null,
+   "next": "성종의 아들 10대 연산군 때, 사림이 화를 입는 사화가 시작되었다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": "purges",
+   "scene": 8,
+   "modules": [
+    "J04"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-08.png",
+   "depicts": "궁궐을 떠나는 흰 옷의 선비들",
+   "reign": "10대 연산군 · 1494–1506 재위",
+   "when": "1498 무오사화 · 1504 갑자사화 → 1506 중종반정",
+   "scope": null,
+   "next": "반정으로 연산군의 이복동생 11대 중종이 즉위했다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": null,
+   "scene": 9,
+   "modules": [
+    "J04"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-10.png",
+   "depicts": "왕 앞에서 개혁을 건의하는 흰 옷의 선비",
+   "reign": "11대 중종 · 1506–1544 재위",
+   "when": "1506 즉위 · 1519 기묘사화",
+   "scope": null,
+   "next": "중종 뒤 12대 인종이 1년이 안 되어 세상을 떠났고, 이복동생 13대 명종이 어린 나이에 즉위했다(1545).",
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": null,
+   "scene": 10,
+   "modules": [
+    "J04",
+    "J17"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-08.png",
+   "depicts": "궁궐을 떠나는 흰 옷의 선비들(연산군 장면 그림 다시 사용)",
+   "reign": "13대 명종 · 1545–1567 재위",
+   "when": "1545 을사사화 · 1555 을묘왜변",
+   "scope": null,
+   "next": "명종 뒤 14대 선조가 즉위했다(1567). 네 차례 사화를 거친 사림이 정권을 잡았다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": "bungdang-origin",
+   "scene": 11,
+   "modules": [
+    "J05"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/late-01.png",
+   "depicts": "조정에서 편을 나눠 다투는 신하들",
+   "reign": "14대 선조 · 1567–1608 재위",
+   "when": "1575 동인·서인으로 나뉨 · 1589 기축옥사",
+   "scope": null,
+   "next": "같은 선조 때인 1592년, 일본이 쳐들어왔다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": "wars",
+   "scene": 12,
+   "modules": [
+    "J05"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-11.png",
+   "depicts": "거북선을 앞세워 싸우는 조선 수군",
+   "reign": "14대 선조 · 1567–1608 재위",
+   "when": "1592 임진왜란 · 1593 훈련도감",
+   "scope": null,
+   "next": "전쟁 뒤 1608년, 선조의 아들 15대 광해군이 즉위했다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": "gwanghaegun",
+   "scene": 13,
+   "modules": [
+    "J06",
+    "J13"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/late-04.png",
+   "depicts": "책을 펼쳐 보이며 농민들에게 설명하는 관리",
+   "reign": "15대 광해군 · 1608–1623 재위",
+   "when": "1608 경기에서 대동법 시작 · 선혜청",
+   "scope": null,
+   "next": "같은 광해군 때, 명과 후금 사이에서 외교의 길을 골라야 했다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": null,
+   "scene": 14,
+   "modules": [
+    "J06",
+    "J12",
+    "J17"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/late-02.png",
+   "depicts": "고민에 잠긴 왕",
+   "reign": "15대 광해군 · 1608–1623 재위",
+   "when": "1609 기유약조 · 1619 사르후 전투",
+   "scope": null,
+   "next": "1623년, 서인 세력이 광해군을 몰아내고 16대 인조를 세웠다(인조반정).",
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": "injo",
+   "scene": 15,
+   "modules": [
+    "J07",
+    "J13"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-09.png",
+   "depicts": "군사를 거느리고 궁궐로 들어서는 젊은 왕",
+   "reign": "16대 인조 · 1623–1649 재위",
+   "when": "1623 인조반정 · 1624 이괄의 난 · 1627 정묘호란",
+   "scope": null,
+   "next": "9년 뒤 1636년, 후금은 나라 이름을 청으로 바꾸고 군신 관계를 요구하며 다시 쳐들어왔다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": null,
+   "scene": 16,
+   "modules": [
+    "J07"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/early-12.png",
+   "depicts": "눈 덮인 산성에서 지친 군사들과 흰 깃발",
+   "reign": "16대 인조 · 1623–1649 재위",
+   "when": "1636 병자호란 · 1637 삼전도 항복",
+   "scope": null,
+   "next": null,
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": "hyojong",
+   "scene": 17,
+   "modules": [
+    "J07"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/late-03.png",
+   "depicts": "옥좌의 왕 앞에 엎드린 신하들",
+   "reign": "17대 효종 · 1649–1659 재위",
+   "when": "1649 즉위 · 북벌 준비 · 1654·1658 나선 정벌",
+   "scope": null,
+   "next": "1659년 효종이 세상을 떠나고 아들 18대 현종이 즉위하자, 왕실 상복을 두고 논쟁이 일었다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": "scene-2",
+   "scene": 18,
+   "modules": [
+    "J08",
+    "J12"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/late-01.png",
+   "depicts": "조정에서 편을 나눠 다투는 신하들",
+   "reign": "18대 현종 → 19대 숙종 · 1659–1720",
+   "when": "1659·1674 예송 · 1680·1689·1694 환국",
+   "scope": null,
+   "next": "숙종 뒤 20대 경종(신임사화)을 지나, 이복동생 21대 영조가 즉위했다(1724).",
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": "scene-3",
+   "scene": 19,
+   "modules": [
+    "J09",
+    "J16",
+    "J13"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/late-04.png",
+   "depicts": "책을 펼쳐 보이며 농민들에게 설명하는 관리(광해군 장면 그림 다시 사용)",
+   "reign": "21대 영조 · 1724–1776 재위",
+   "when": "1728 이인좌의 난 · 1742 탕평비 · 1750 균역법",
+   "scope": null,
+   "next": "1776년, 영조의 손자 22대 정조가 즉위했다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": "scene-5",
+   "scene": 20,
+   "modules": [
+    "J09",
+    "J15"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/late-05.png",
+   "depicts": "서고에서 책을 읽는 왕과 신하들",
+   "reign": "22대 정조 · 1776–1800 재위",
+   "when": "1776 규장각 · 1791 신해통공 · 1791 신해박해",
+   "scope": null,
+   "next": "같은 정조는 친위 부대 장용영을 두고 수원 화성을 쌓았다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": "scene-6",
+   "scene": 21,
+   "modules": [
+    "J09",
+    "J19"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/late-06.png",
+   "depicts": "기중 장치로 돌을 올리며 성을 쌓는 장면",
+   "reign": "22대 정조 · 1776–1800 재위",
+   "when": "1793 장용영 · 1796 수원 화성 완공",
+   "scope": null,
+   "next": "1800년, 11살의 23대 순조가 즉위하자 외척 가문이 정치를 쥐었다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": "scene-7",
+   "scene": 22,
+   "modules": [
+    "J10"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/late-07.png",
+   "depicts": "궁중의 여인들과 신하들",
+   "reign": "23대 순조 · 1800–1834 재위",
+   "when": "1801 신유박해 · 황사영 백서 사건",
+   "scope": null,
+   "next": "세도정치 아래 수취가 어지러워지고 지역 차별에 대한 불만도 쌓였다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": "scene-8",
+   "scene": 23,
+   "modules": [
+    "J10"
+   ],
+   "tier": "core",
+   "art": "joseon-panels/late-08.png",
+   "depicts": "주먹을 들고 외치는 농민과 사람들",
+   "reign": "23대 순조 → 25대 철종 · 1811 · 1862",
+   "when": "1811 홍경래의 난 · 1862 임술농민봉기 · 삼정이정청",
+   "scope": null,
+   "next": "여기까지가 조선 후기 정치 흐름이에요. 이제 17~19세기 조선 후기 전체에 걸친 경제와 사회를 봐요.",
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": "scene-10",
+   "scene": 24,
+   "modules": [
+    "J14"
+   ],
+   "tier": "target",
+   "art": "joseon-panels/late-10.png",
+   "depicts": "소와 써레로 논을 고르는 농민",
+   "reign": null,
+   "when": "여러 왕 대에 걸친 변화 · 모내기법 · 상품 작물 · 광산",
+   "scope": null,
+   "next": "팔 물건이 늘자 장터와 상인도 커졌다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": "scene-9",
+   "scene": 25,
+   "modules": [
+    "J14",
+    "J06"
+   ],
+   "tier": "target",
+   "art": "joseon-panels/late-09.png",
+   "depicts": "물건을 사고파는 장터의 사람들",
+   "reign": null,
+   "when": "여러 왕 대에 걸친 변화 · 공인 · 사상 · 상평통보",
+   "scope": null,
+   "next": "경제가 바뀌자 신분 질서도 흔들렸다.",
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": "scene-12",
+   "scene": 26,
+   "modules": [
+    "J15",
+    "J20"
+   ],
+   "tier": "support",
+   "art": "joseon-panels/late-12.png",
+   "depicts": "나무 아래 모인 사람들 앞에서 말하는 사람",
+   "reign": null,
+   "when": "여러 왕 대에 걸친 변화 · 서얼 · 중인 · 서민 문화 · 동학",
+   "scope": null,
+   "next": "여유가 있다면 학자들의 개혁 생각도 살펴보자(선택 심화).",
+   "leap": false
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "id": "scene-11",
+   "scene": 27,
+   "modules": [
+    "J18",
+    "J19"
+   ],
+   "tier": "optional",
+   "art": "joseon-panels/late-11.png",
+   "depicts": "지도를 펼쳐 놓고 토론하는 학자들",
+   "reign": null,
+   "when": "여러 왕 대에 걸친 학문 · 중농 실학 · 북학",
+   "scope": null,
+   "next": null,
+   "leap": false
+  }
+ ],
+ "goryeo_memory": [
+  {
+   "file": "goryeo-comic.html",
+   "after": "S04",
+   "anchor": "mem-s04",
+   "scene": 4,
+   "chunks": [
+    "태조 · 광종 · 성종, 세 왕의 기틀",
+    "거란의 세 차례 침입"
+   ]
+  },
+  {
+   "file": "goryeo-comic.html",
+   "after": "S07",
+   "anchor": "mem-s07",
+   "scene": 7,
+   "chunks": [
+    "숙종 · 예종 · 인종"
+   ]
+  },
+  {
+   "file": "goryeo-comic.html",
+   "after": "S11",
+   "anchor": "mem-s11",
+   "scene": 11,
+   "chunks": [
+    "무신 정권의 흐름",
+    "몽골 항쟁과 팔만대장경"
+   ]
+  },
+  {
+   "file": "goryeo-comic.html",
+   "after": "S15",
+   "anchor": "mem-s15",
+   "scene": 15,
+   "chunks": [
+    "원 간섭과 공민왕의 개혁",
+    "왜구와 위화도 회군"
+   ]
+  },
+  {
+   "file": "goryeo-comic.html",
+   "after": "S20",
+   "anchor": "mem-s20",
+   "scene": 20,
+   "chunks": [
+    "토지 제도와 경제 (주제별)",
+    "불교 · 공예 · 인쇄 (주제별)",
+    "역사서 다섯 권 (주제별)"
+   ]
+  }
+ ],
+ "joseon_memory": [
+  {
+   "file": "joseon-comic.html",
+   "after": "E07",
+   "scene": 7,
+   "chunks": [
+    "건국과 태종의 왕권 강화",
+    "세종의 정치와 국경",
+    "계유정난에서 경국대전까지"
+   ]
+  },
+  {
+   "file": "joseon-comic.html",
+   "after": "E11",
+   "scene": 11,
+   "chunks": [
+    "네 번의 사화",
+    "붕당의 시작"
+   ]
+  },
+  {
+   "file": "joseon-comic.html",
+   "after": "E16",
+   "scene": 16,
+   "chunks": [
+    "임진왜란과 광해군",
+    "인조반정과 두 호란"
+   ]
+  },
+  {
+   "file": "joseon-late-comic.html",
+   "after": "L01",
+   "scene": 1,
+   "chunks": [
+    "효종의 북벌과 나선 정벌"
+   ]
+  },
+  {
+   "file": "joseon-late-comic.html",
+   "after": "L05",
+   "scene": 5,
+   "chunks": [
+    "예송과 환국",
+    "영조의 탕평과 균역법",
+    "정조의 개혁"
+   ]
+  },
+  {
+   "file": "joseon-late-comic.html",
+   "after": "L11",
+   "scene": 11,
+   "chunks": [
+    "세도정치와 농민의 저항",
+    "조선 후기 경제와 사회 (주제별 · 17~19세기)"
+   ]
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "after": "E07",
+   "scene": 7,
+   "chunks": [
+    "건국과 태종의 왕권 강화",
+    "세종의 정치와 국경",
+    "계유정난에서 경국대전까지"
+   ]
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "after": "E11",
+   "scene": 11,
+   "chunks": [
+    "네 번의 사화",
+    "붕당의 시작"
+   ]
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "after": "L01",
+   "scene": 17,
+   "chunks": [
+    "임진왜란과 광해군",
+    "인조반정과 두 호란",
+    "효종의 북벌과 나선 정벌"
+   ]
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "after": "L05",
+   "scene": 21,
+   "chunks": [
+    "예송과 환국",
+    "영조의 탕평과 균역법",
+    "정조의 개혁"
+   ]
+  },
+  {
+   "file": "joseon-all-comic.html",
+   "after": "L11",
+   "scene": 27,
+   "chunks": [
+    "세도정치와 농민의 저항",
+    "조선 후기 경제와 사회 (주제별 · 17~19세기)"
+   ]
+  }
+ ],
+ "art_needed": []
+}

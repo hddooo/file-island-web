@@ -1,0 +1,499 @@
+[
+  {
+    "file": "lecture-notes.js",
+    "era": "opening",
+    "index": 0,
+    "q": "병인양요 때 싸운 두 장수와 장소는?",
+    "a": "양헌수 정족산성 · 한성근 문수산성 (1866)",
+    "mod": [
+      "O02"
+    ]
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "opening",
+    "index": 1,
+    "q": "신미양요 때 광성보에서 싸운 장수는?",
+    "a": "어재연 (1871)",
+    "mod": [
+      "O02"
+    ]
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "opening",
+    "index": 2,
+    "q": "최혜국 대우를 처음 규정한 조약은?",
+    "a": "조미수호통상조약 (1882)",
+    "mod": [
+      "O05"
+    ]
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "opening",
+    "index": 3,
+    "q": "군국기무처가 이끈 개혁은?",
+    "a": "1차 갑오개혁 (1894)",
+    "mod": [
+      "O10"
+    ]
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "opening",
+    "index": 4,
+    "q": "원수부 설치와 지계 발급은 어느 개혁?",
+    "a": "광무개혁 (대한제국)",
+    "mod": [
+      "O13"
+    ]
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "opening",
+    "index": 5,
+    "q": "고종 강제 퇴위 뒤 즉위한 왕과 이어진 일은?",
+    "a": "27대 순종 · 정미 7조약 · 군대 해산 (1907)",
+    "mod": [
+      "O17"
+    ]
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "opening",
+    "index": 6,
+    "q": "국채보상운동을 적극 지원한 신문은?",
+    "a": "대한매일신보 (양기탁·베델)",
+    "mod": [
+      "O19"
+    ]
+  },
+  {
+    "file": "lecture-notes.js",
+    "era": "opening",
+    "index": 7,
+    "q": "다음 시대 미리 보기 · 신민회가 와해된 사건은?",
+    "a": "105인 사건 (1911 · 국권 피탈 뒤라 일제 강점기에서 다룸)",
+    "mod": [
+      "O19"
+    ]
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "prehistory",
+    "index": 0,
+    "q": "곡식 이삭을 거두던 청동기 도구는?",
+    "a": "반달 돌칼",
+    "src": [
+      "early-03"
+    ]
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "prehistory",
+    "index": 1,
+    "q": "실을 뽑던 신석기 도구는?",
+    "a": "가락바퀴",
+    "src": [
+      "early-02"
+    ]
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "gojoseon",
+    "index": 0,
+    "q": "위만 조선이 복속한 두 세력은?",
+    "a": "진번, 임둔",
+    "src": [
+      "early-05"
+    ]
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "gojoseon",
+    "index": 1,
+    "q": "동예의 특산물 세 가지는?",
+    "a": "단궁, 과하마, 반어피",
+    "src": [
+      "early-08"
+    ]
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "samguk",
+    "index": 0,
+    "q": "왜에 보낸 백제의 칼은?",
+    "a": "칠지도",
+    "src": [
+      "three-kingdoms-06"
+    ]
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "samguk",
+    "index": 1,
+    "q": "백제 부흥 운동 때 왜의 지원군이 패한 곳은?",
+    "a": "백강",
+    "src": [
+      "three-kingdoms-08"
+    ]
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "samguk",
+    "index": 2,
+    "q": "두 청년의 유교 공부 맹세를 새긴 신라의 돌은?",
+    "a": "임신서기석",
+    "src": [
+      "three-kingdoms-13"
+    ]
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "nambuk",
+    "index": 0,
+    "q": "향가를 모은 책은?",
+    "a": "삼대목",
+    "src": [
+      "north-south-05"
+    ]
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "nambuk",
+    "index": 1,
+    "q": "후삼국 전투의 순서는?",
+    "a": "공산 → 고창 → 일리천",
+    "src": [
+      "north-south-06"
+    ]
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "nambuk",
+    "index": 2,
+    "q": "발해의 감찰 기관은?",
+    "a": "중정대",
+    "src": [
+      "north-south-08"
+    ]
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "islands",
+    "index": 0,
+    "q": "진주와 관련된 세 시대의 사건은?",
+    "a": "임진왜란 진주성, 임술농민봉기, 형평운동",
+    "src": [
+      "appendix-02"
+    ]
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "opening",
+    "index": 0,
+    "q": "흥선대원군이 경복궁 중건을 위해 만든 동전은?",
+    "a": "당백전",
+    "src": [
+      "modern-opening-01"
+    ]
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "opening",
+    "index": 1,
+    "q": "신민회가 와해된 계기는?",
+    "a": "105인 사건",
+    "src": [
+      "modern-opening-13"
+    ]
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "opening",
+    "index": 2,
+    "q": "원수부·지계가 나온 개혁은?",
+    "a": "광무개혁",
+    "src": [
+      "modern-opening-10"
+    ]
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "colonial",
+    "index": 0,
+    "q": "을밀대 지붕에서 농성한 노동자는?",
+    "a": "강주룡",
+    "src": [
+      "colonial-07"
+    ]
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "colonial",
+    "index": 1,
+    "q": "영릉가·흥경성 전투의 부대와 지도자는?",
+    "a": "조선혁명군, 양세봉",
+    "src": [
+      "colonial-13"
+    ]
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "colonial",
+    "index": 2,
+    "q": "임시정부의 국내 비밀 연락망은?",
+    "a": "연통제",
+    "src": [
+      "colonial-06"
+    ]
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "modern",
+    "index": 0,
+    "q": "반민특위 활동이 위축된 사건은?",
+    "a": "국회 프락치 사건",
+    "src": [
+      "republic-03"
+    ]
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "modern",
+    "index": 1,
+    "q": "하나회를 해체한 정부는?",
+    "a": "김영삼 정부",
+    "src": [
+      "republic-13"
+    ]
+  },
+  {
+    "file": "textbook-notes.js",
+    "era": "modern",
+    "index": 2,
+    "q": "3저 호황이 나타난 정부는?",
+    "a": "전두환 정부",
+    "src": [
+      "republic-11"
+    ]
+  },
+  {
+    "file": "study-notes.js",
+    "era": "prehistory",
+    "index": 0,
+    "q": "구석기 대표 유적 두 곳은?",
+    "a": "경기 연천 전곡리, 충남 공주 석장리"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "prehistory",
+    "index": 1,
+    "q": "서울 암사동은 어느 시대 대표 유적?",
+    "a": "신석기"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "prehistory",
+    "index": 2,
+    "q": "부여 송국리는 어느 시대 대표 유적?",
+    "a": "청동기"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "prehistory",
+    "index": 3,
+    "q": "명도전 출토가 알려 주는 것은?",
+    "a": "철기 시대 중국과의 교류"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "gojoseon",
+    "index": 0,
+    "q": "부여에서 마가·우가·저가·구가가 다스린 지역은?",
+    "a": "사출도"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "gojoseon",
+    "index": 1,
+    "q": "동예에서 경계를 침범하면 배상하던 풍습은?",
+    "a": "책화"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "gojoseon",
+    "index": 2,
+    "q": "왕 없이 읍군·삼로가 다스린 두 나라는?",
+    "a": "옥저, 동예"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "gojoseon",
+    "index": 3,
+    "q": "변한이 덩이쇠로 만들어 교역한 것은?",
+    "a": "철"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "samguk",
+    "index": 0,
+    "q": "한강 주인의 순서는?",
+    "a": "백제 → 고구려(장수왕) → 백제·신라 잠깐 → 신라(진흥왕)"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "samguk",
+    "index": 1,
+    "q": "22담로에 왕족을 보낸 백제 왕은?",
+    "a": "무령왕"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "samguk",
+    "index": 2,
+    "q": "사비 천도와 남부여 국호를 쓴 왕은?",
+    "a": "성왕"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "samguk",
+    "index": 3,
+    "q": "당을 몰아낸 나당 전쟁의 두 전투는?",
+    "a": "매소성, 기벌포"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "nambuk",
+    "index": 0,
+    "q": "해동성국이라 불린 때의 발해 왕은?",
+    "a": "선왕"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "nambuk",
+    "index": 1,
+    "q": "완도에 청해진을 둔 인물은?",
+    "a": "장보고"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "nambuk",
+    "index": 2,
+    "q": "관료전을 주고 녹읍을 폐지한 왕은?",
+    "a": "신문왕"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "nambuk",
+    "index": 3,
+    "q": "발해를 멸망시킨 세력은?",
+    "a": "거란"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "islands",
+    "index": 0,
+    "q": "이사부가 우산국을 복속한 왕은?",
+    "a": "지증왕"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "islands",
+    "index": 1,
+    "q": "일본이 독도를 불법 편입한 때는?",
+    "a": "러일전쟁 중"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "islands",
+    "index": 2,
+    "q": "청산리 전투 다음, 일본군의 간도 보복 학살은?",
+    "a": "간도 참변"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "opening",
+    "index": 0,
+    "q": "정족산성에서 싸운 양헌수는 어느 양요?",
+    "a": "병인양요"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "opening",
+    "index": 1,
+    "q": "헌의 6조를 결의한 단체는?",
+    "a": "독립협회(관민공동회)"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "opening",
+    "index": 2,
+    "q": "대한제국이 토지 소유 증서를 발급한 정책은?",
+    "a": "광무개혁(지계아문의 지계)"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "opening",
+    "index": 3,
+    "q": "시일야방성대곡을 실은 신문은?",
+    "a": "황성신문(장지연)"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "colonial",
+    "index": 0,
+    "q": "신간회 결성의 계기가 된 선언은?",
+    "a": "정우회 선언"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "colonial",
+    "index": 1,
+    "q": "백정 차별 철폐를 요구한 단체와 지역은?",
+    "a": "조선 형평사, 진주"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "colonial",
+    "index": 2,
+    "q": "의열단이 지침으로 삼은 글과 지은이는?",
+    "a": "조선혁명선언, 신채호"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "colonial",
+    "index": 3,
+    "q": "임시정부의 국내 비밀 행정 조직은?",
+    "a": "연통제"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "modern",
+    "index": 0,
+    "q": "“시민군”이 단서인 민주화 운동은?",
+    "a": "5·18 민주화운동"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "modern",
+    "index": 1,
+    "q": "금융실명제를 실시한 정부는?",
+    "a": "김영삼 정부"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "modern",
+    "index": 2,
+    "q": "남북기본합의서를 채택한 정부는?",
+    "a": "노태우 정부"
+  },
+  {
+    "file": "study-notes.js",
+    "era": "modern",
+    "index": 3,
+    "q": "농지개혁법의 분배 원칙은?",
+    "a": "유상 매수·유상 분배"
+  }
+]

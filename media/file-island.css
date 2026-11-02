@@ -1,0 +1,63 @@
+.lc-playlist{padding:20px;margin:20px 0;border:1px solid var(--line,#526376);border-radius:18px;background:var(--paper,#fff)}.lc-playlist button,.lc-playlist select{min-height:44px;padding:8px 14px;margin:4px;border:1px solid #84939d;border-radius:10px;background:#fff;color:#18212f;font:inherit}.lc-playlist p{line-height:1.6}.lc-playlist button:disabled{opacity:.45}.login-landing .topline .subject-switch,.login-landing .mobile-nav,.login-landing .module-actions{display:none}.login-landing .brand{font-size:clamp(18px,5vw,26px)}.file-island-welcome{position:relative;overflow:hidden;padding:26px 22px 0;border-radius:24px;background:linear-gradient(#b4e4ef 0%,#e3f3da 66%,#9bc9a3 67%,#4d9c88 100%);color:#173f3a;text-align:center}.file-island-welcome h2{position:relative;margin:8px}.file-island-welcome p{position:relative}.island-sun{position:absolute;width:110px;height:110px;border-radius:50%;right:8%;top:15px;background:#fff1b0}.island-friends{display:flex;align-items:flex-end;justify-content:center;gap:18px;height:160px}.island-friends img{width:130px;height:150px;object-fit:contain;max-width:40%}.login-landing .ac-panel{max-width:520px;margin:18px auto}.login-landing input{font-size:16px}.login-landing .header-menu{display:none}@media(min-width:760px){.file-island-welcome{max-width:660px;margin:auto}.island-friends{height:200px}.island-friends img{height:190px;width:170px}}
+
+/* Auth notices must own both foreground and surface; terminal's p rule sets ink. */
+.ac-panel .ac-notice{background:#eaf5ef;color:#18563c;border:1px solid #abc8b7;line-height:1.7}
+.ac-form input{color:var(--ink,#18212f)}
+html[data-hanq-theme="terminal"] body .hp-notice{background:#30291c!important;color:#f4d9a5!important;border:1px solid #806d44!important}
+html[data-hanq-theme="terminal"] body .ac-panel .ac-notice{background:#18382f!important;color:#c8f3df!important;border-color:#578e78!important}
+html[data-hanq-theme="terminal"] body .hp-notice :is(p,strong,b){color:inherit!important}
+
+/* A quiet auth palette, scoped so study screens retain their existing theme. */
+html[data-hanq-theme="terminal"] body .login-landing{
+ --ink:#edf2fa!important;--muted:#b7c6d9!important;--line:#52657e!important;--green:#a9dfcf!important;
+ background:#101824!important;color:#edf2fa!important;border-color:#52657e!important;
+ font-family:system-ui,-apple-system,"Apple SD Gothic Neo",sans-serif;
+}
+html[data-hanq-theme="terminal"] body .login-landing :is(.topline,.module-head,.ac-panel,.ac-switch,.ac-form){background:transparent!important}
+html[data-hanq-theme="terminal"] body .login-landing .ac-sec{background:#192638!important;border-color:#52657e!important;box-shadow:0 12px 35px #0002!important}
+html[data-hanq-theme="terminal"] body .login-landing .ac-form input{background:#101b2b!important;color:#edf2fa!important;border-color:#7185a2!important;caret-color:#9fc9ff}
+html[data-hanq-theme="terminal"] body .login-landing input::placeholder{color:#b7c6d9!important;opacity:1}
+html[data-hanq-theme="terminal"] body .login-landing :is(.tool-btn,.ac-switch button){background:#24364c!important;color:#e6eef9!important;border-color:#7185a2!important}
+html[data-hanq-theme="terminal"] body .login-landing .ac-switch button[aria-pressed="true"],
+html[data-hanq-theme="terminal"] body .login-landing .ac-form .check-one{background:#a9ceff!important;color:#10213a!important;border-color:#a9ceff!important}
+html[data-hanq-theme="terminal"] body .login-landing :is(button:hover,button:focus-visible){border-color:#c2ddff!important}
+html[data-hanq-theme="terminal"] body .login-landing :is(button,input):focus-visible{outline:3px solid #a9ceff!important;outline-offset:3px}
+html[data-hanq-theme="terminal"] body .login-landing :is(.ac-err,[role="alert"]){color:#ffc1ba!important}
+html[data-hanq-theme="terminal"] body .login-landing :is(.ac-ok,.ac-conn.is-on){color:#b8ead4!important}
+html[data-hanq-theme="terminal"] body .login-landing .brand,
+html[data-hanq-theme="terminal"] body .login-landing .brand span{background:transparent!important;color:#edf2fa!important}
+html[data-hanq-theme="terminal"] body .login-landing .brand .brand-mark{background:#24364c!important;color:#ffda9a!important}
+html[data-hanq-theme="terminal"] body .login-landing .file-island-welcome{background:linear-gradient(#253e55 0%,#284f56 66%,#25483e 67%,#1e3c36 100%)!important;color:#eef6fa!important;border:1px solid #526c7e!important}
+html[data-hanq-theme="terminal"] body .login-landing .file-island-welcome .island-friends{background:transparent!important}
+html[data-hanq-theme="terminal"] body .login-landing .file-island-welcome .island-sun{background:#806b42!important;opacity:.4}
+.file-island-welcome{color:#102b28}
+.login-landing .ac-form{gap:8px}
+.login-landing .ac-form label:not(:first-child){margin-top:8px}
+.login-landing .ac-name-row{display:flex;align-items:stretch;gap:8px;min-width:0}
+.login-landing .ac-name-row input{flex:1 1 0;width:0;min-width:0}
+.login-landing .ac-name-row #acNameCheck{flex:0 0 auto;white-space:nowrap;margin:0;padding:8px 14px;border-radius:12px}
+.login-landing #acNameCheckMsg{min-height:22px;margin:0;font-size:14px;line-height:1.5}
+.login-landing #acAuthSubmit{display:block;width:100%;min-height:50px;margin-top:12px;padding:12px 18px;border:2px solid #294c7a;border-radius:12px;background:#294c7a;color:#fff;font:inherit;font-weight:800;text-align:center;cursor:pointer}
+html[data-hanq-theme="terminal"] body .login-landing .ac-name-row{background:transparent!important}
+html[data-hanq-theme="terminal"] body .login-landing #acAuthSubmit{border:2px solid #a9ceff!important;background:#a9ceff!important;color:#10213a!important}
+.login-landing .ac-email-row{display:flex;align-items:stretch;gap:8px;min-width:0}
+.login-landing .ac-email-row input{flex:1 1 0;width:0;min-width:0}
+.login-landing .ac-email-row #acEmailCheck{flex:0 0 auto;white-space:nowrap;margin:0;padding:8px 14px;border-radius:12px}
+.login-landing #acEmailCheckMsg{min-height:22px;margin:0;font-size:14px;line-height:1.5}
+html[data-hanq-theme="terminal"] body .login-landing .ac-email-row{background:transparent!important}
+.file-island-welcome p{max-width:38ch;margin:12px auto;word-break:keep-all;line-height:1.65}
+.subject-menu .file-island-map{display:block;position:relative;max-width:1000px;margin:24px auto 0;border:1px solid #aac5c2;border-radius:24px;overflow:hidden;background:#fff;isolation:isolate}
+.file-island-map-art{display:block;width:100%;height:auto}
+.subject-menu .file-island-map .island-zone{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;gap:4px;width:auto;min-width:132px;min-height:84px;padding:10px 14px;text-align:center;border:2px solid #fff;border-radius:16px;box-shadow:0 5px 18px #0b241e66;color:#fff;background:#194c41;cursor:pointer}
+.subject-menu .file-island-map .island-zone-history{left:27%;top:52%;background:#164d43}
+.subject-menu .file-island-map .island-zone-toeic{left:76%;top:62%;background:#203f71}
+.subject-menu .file-island-map .island-zone strong{font-size:22px;color:#fff;white-space:nowrap}
+.subject-menu .file-island-map .island-zone span{font-size:13px;color:#fff}
+.subject-menu .file-island-map .island-zone-dot{line-height:1;font-size:10px!important;color:#ffe4a5!important}
+.subject-menu .file-island-map .island-zone:focus-visible{outline:4px solid #102d58;outline-offset:4px}
+.subject-menu .file-island-map .island-zone:hover{filter:brightness(1.15)}
+html[data-hanq-theme="terminal"] body .subject-menu .file-island-map{background:#fff!important;border-color:#7d9c98!important}
+html[data-hanq-theme="terminal"] body .subject-menu .file-island-map .island-zone{background:#164d43!important;color:#fff!important;border-color:#fff!important}
+html[data-hanq-theme="terminal"] body .subject-menu .file-island-map .island-zone-toeic{background:#203f71!important}
+html[data-hanq-theme="terminal"] body .subject-menu .file-island-map .island-zone :is(strong,span){color:#fff!important;background:transparent!important}
+@media(max-width:600px){.subject-menu .file-island-map{border-radius:16px}.subject-menu .file-island-map .island-zone{min-width:106px;min-height:72px;padding:8px;gap:3px;border-radius:12px}.subject-menu .file-island-map .island-zone strong{font-size:17px}.subject-menu .file-island-map .island-zone span{font-size:12px}}

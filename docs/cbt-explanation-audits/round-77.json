@@ -1,0 +1,979 @@
+{
+  "round": 77,
+  "method": "원본 문제 이미지의 지문·5보기 직접 대조. 교재는 form-feed로 구분한 PDF쪽(인쇄쪽=PDF쪽-7)을 실제 열람했고 보완 사실과 미확인 부분을 문항별 기록. 전문 사실은 공신력 웹자료 추가 대조. 원문·정답·배점은 읽기전용 입력과 baseline에서 보존.",
+  "items": {
+    "09": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "d9f61f812b8d2c1882b121b53e269ce2288cbbd1adea24518cc9409291ae2a7a",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 23·31·32·42쪽 / 인쇄 16·24·25·35쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 안승·보덕왕 / 광평성 / 외교 담판·강동 6주 / 김부·경주 사심관 / 신라 공격·경애왕 죽음; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "10": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "c1e3346d648705bfbf04ca4849040ea99ff60173d4c255448a61837c605f3572",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 13·26·31·32·41·44·73쪽 / 인쇄 6·19·24·25·34·37·66쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 계백료서 / 담배 재배 / 조위총의 난 진압 / 진전사·참선·선종 승려 / 낙랑군 교역·덩이쇠; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "청해진 폐지 당시 도의가 직접 참선했다고 읽힐 수 있는 기존 문구를 선종의 시대적 확산으로 수정"
+      ],
+      "blockers": []
+    },
+    "11": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "73d451aa863cbfd8209561447bd4c0646c71a09aa1b8aa85c8f02f132e699211",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 42·43·45·46·47·75쪽 / 인쇄 35·36·38·39·40·68쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 별무반 편성 / 화통도감 설치 / 진관 체제 / 초조대장경 조판 / 동녕부 반환 요청; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "12": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "4b83a9354b0d72ede707c5dbd5bbfb1a8e75e51fa9bafcd38c75356d6ddd3ab0",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 23·31·46·65쪽 / 인쇄 16·24·39·58쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 응방·매 서식지 / 시화호·갯벌 변화 / 수의 침략·요하 감염병 / 독도 강치 멸종 / 을축년 대홍수·경성부; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0042977",
+          "supports": "을축년 대홍수의 1925년 발생"
+        },
+        {
+          "type": "web",
+          "reference": "https://www.mof.go.kr/doc/ko/selectDoc.do?bbsSeq=10&docSeq=45126&menuSeq=971",
+          "supports": "독도 강치의 근현대 남획과 멸종 원인"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "13": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "0495bd8af2009de2db49e0995ae2aac121abb8f7b716383e66bee0be576b370e",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 18·53·54쪽 / 인쇄 11·46·47쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 월정사 팔각 구층 석탑 / 청자 주전자 / 수월관음도 / 호우명 그릇 / 관촉사 석조 미륵보살 입상; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "호우명 그릇의 고구려계 제작 성격과 신라 무덤 출토를 분리 설명"
+      ],
+      "blockers": []
+    },
+    "14": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "da2ee9952023869afdaf9057541e784bf4aba2bf50dec8c366e11f9545a5446a",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 22·31·42·52·65쪽 / 인쇄 15·24·35·45·58쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 신해통공 / 명 멸망·소중화주의 / 골품제·일상생활 제한 / 울산항·아라비아 상인 / 황제국 표방·외왕내제; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0059425",
+          "supports": "통천관의 황제 관복 성격"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/front/tg/view.do?ganada=&levelId=tg_003_1230&pageUnit=10&treeId=0201",
+          "supports": "소중화주의와 명 멸망 후 조선의 중화문화 계승 의식"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "통천관·준풍이 가리키는 고려와 외왕내제의 의미를 연결"
+      ],
+      "blockers": []
+    },
+    "15": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "1158e1ffe653fc9953676763e894f41b9dc2136375ee7701d8619bbdb4cefefc",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 31·46·53·76·86쪽 / 인쇄 24·39·46·69·79쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 제왕운기 / 만동묘 복구 건의 / 동몽선습·서당 학동 / 독서삼품과 / 주자소·계미자; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0017568",
+          "supports": "만동묘의 대원군 철폐 및 1874년 고종대 복구"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0016452",
+          "supports": "동몽선습의 조선 아동 교재 성격과 오륜·중국 및 한국 역사 구성"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "16": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "ba92ce11bfd5597c729aff02a7610d1075c244c57e2182d277bfdc9c7a736ed9",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 23·32·44·46·53쪽 / 인쇄 16·25·37·39·46쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 비담·염종의 반란 진압 / 만권당·원 학자와 교유 / 정방 폐지 / 봉사 10조·시정 개혁 / 오월 사신·검교태보; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "17": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "0c64822866e360ff283cbdfa64eceae60d531071fb8474f95fca581bc8984400",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 41·43·53쪽 / 인쇄 34·36·46쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: (가) 묘청의 난 진압 / (가) 시무 28조 / (나) 백련 결사 / (나) 주전도감 건의 / (가)·(나) 유불 일치설; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "18": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "407e702017950ed872112cdffd3bdd9722d2a15a5d9af98a57063fbcd6053f7d",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 41·42·43·44·45·46·47쪽 / 인쇄 34·35·36·37·38·39·40쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: (가) 강조의 정변~이자겸의 난 / (나) 이자겸의 난~처인성 전투 / (다) 처인성 전투~삼별초 항쟁 진압 / (라) 삼별초 항쟁 진압~공민왕 즉위 / (마) 공민왕 즉위~고려 멸망; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강"
+      ],
+      "blockers": []
+    },
+    "19": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "5aaf67025acb96c690275767f0f52053505eb98c68d9fbb0cadca051a3ab9b24",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 60·71·74쪽 / 인쇄 53·64·67쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 사헌부·홍문관과 3사 / 국왕 직속·반역죄 / 사초·시정기·실록 / 왕명 출납·비서 기관 / 사대교린 문서; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "20": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "100ecc13100aad9af0389564e416afc66393e614fa5eb7a8c9c3332f2886808b",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 59·61·72·76·78쪽 / 인쇄 52·54·65·69·71쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 조의제문·무오사화 / 혼일강리역대국도지도 / 악학궤범 / 동국문헌비고 / 현직 관리 수조권·직전법; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "21": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "9c0fbb9412c5d7ea8ff00d8c8f3f419f7901f3e2b335cd00e4c73b2139a35b01",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 59·64·66·77쪽 / 인쇄 52·57·59·70쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 기대승·사단칠정 논쟁 / 소학·현량과 / 기축봉사·명에 대한 의리 / 임진왜란·징비록 / 100리 척·동국지도; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "22": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "76394e44b03c164ee873dc079459e965bdcbc240bd7a32dec8ff2041345e06a8",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 59·64·66쪽 / 인쇄 52·57·59쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 강홍립·사르후 / 김종서·두만강 6진 / 김시민·진주성 승리 / 이종무·쓰시마섬 / 이완·어영대장·북벌; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "23": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "0bc8612eaa99349a2b69cf1979cf52b3b383a67da6afefe3209a76cbe307f2f4",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 59·65·72·73·75쪽 / 인쇄 52·58·65·66·68쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 계해약조 초안 / 까치·민화 / 세책가·춘향전 / 서리·시사 / 송파장·산대놀이; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/front/nh/print.do?levelId=nh_035_0040_0010_0020&whereStr=",
+          "supports": "조선 후기 세책업의 책 대여와 소설 유통"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0031112",
+          "supports": "조선 후기 송파장의 경제적 기반·산대놀이 성행"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강"
+      ],
+      "blockers": []
+    },
+    "24": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "2b946132cb0ee9c83b7e33193a4d2e224680d53b4e1ceebd043d80d7affea6f9",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 65·72·76쪽 / 인쇄 58·65·69쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 초계문신제 / 공노비 6만여 명 해방 / 금위영·왕 호위·수도 방어 / 농사직설·지역 농법 / 탕평비·붕당 폐해 경계; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "25": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "712feebf9057a2f09a0091102259fb44cde0bfe3638cee0110ee543772fcfae2",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 31·35·43·51·66·73쪽 / 인쇄 24·28·36·44·59·66쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 전지·시지 지급 / 솔빈부의 말 / 공인·관청 물품 조달 / 당항성·영암 / 삼한통보·해동통보; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "26": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "df60c22f6e7a4e3f8d79c0adc11a744b1696794f4fc9dc07ec59da627a20ebd1",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 73·76·77·78·79·88쪽 / 인쇄 66·69·70·71·72·81쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 양명학·강화학파 / 기기도설·거중기 / 역대 명필·추사체 / 규장각 검서관·무예도보통지 / 지부복궐척화의소·왜양일체론; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0019166",
+          "supports": "정조대 무예도보통지 편찬자 이덕무·박제가·백동수"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "27": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "05a896f2495211897684b0d5976a42bae673e60851fdacffe0725f2bbb1f4565",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 44·45·65·79·78·116쪽 / 인쇄 37·38·58·72·71·109쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 이괄 반란의 근거지 / 김정희·세한도 유배지 / 정약전·자산어보 / 강주룡·을밀대 농성 / 김윤후·노비·몽골군 격퇴; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_30&levelId=kc_i305000",
+          "supports": "평안병사 이괄의 난·한양 점령"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0010428",
+          "supports": "김정희의 제주 유배·세한도와 추사체"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0050551",
+          "supports": "정약전 흑산도 유배 및 자산어보 저술"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강"
+      ],
+      "blockers": []
+    },
+    "28": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "debead2aa77852ab27fe5039498b09e070b8d520233f0c748c50c8dd05c8e8c4",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 41·46·65쪽 / 인쇄 34·39·58쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 홍경래·정주성 / 신돈·전민변정 / 삼정이정청 / 기금 이자·제위보 / 황사영·외국 군대 요청 백서; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "01": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "b47698973692d5582199aaa5d7ef3b9298b6ed68a8e573e9db7abfafbb63dd5d",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 9·10·51·52쪽 / 인쇄 2·3·44·45쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 철제 무기·정복 활동 / 소를 이용한 깊이갈이 일반화 / 많은 인력·고인돌 / 주먹도끼·찍개 처음 제작 / 가락바퀴·뼈바늘; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강"
+      ],
+      "blockers": []
+    },
+    "02": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "b78205d17dfc6033b93c6e42ed23e385a509fe997e9422ade1a10f643a3c0c8b",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 11·12·17·20쪽 / 인쇄 4·5·10·13쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 민며느리제 / 정사암·국가 중대사 / 여러 가·사출도 / 욕살·처려근지 / 범금 8조; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강"
+      ],
+      "blockers": []
+    },
+    "03": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "347bb20e21e0f7ba4faf0f00184ebca5228161dca59dd65692e029b353d1457e",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 12·17·23·26쪽 / 인쇄 5·10·16·19쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 진대법 / 책화 / 소도 / 화백 회의 / 포상 8국 전쟁; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강"
+      ],
+      "blockers": []
+    },
+    "04": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "cc4c9517da0f810e1d94f4a0b177cbce9c544042a4a4c1f7fa78e1c08b142e52",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 18·21·24쪽 / 인쇄 11·14·17쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 금동 대향로 / 칠지도 / 농경문 청동기 / 새 날개 모양 금 관 장식 / 연가7년명 금동여래입상; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0013076",
+          "supports": "농경문 청동기의 의례용 성격 및 농경·새 무늬"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0013076",
+          "supports": "③ 농경문 청동기 사진의 형태·농경과 새 문양을 직접 비교, 후기 청동기~초기 철기 제작 의례용품 확인"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0007985",
+          "supports": "④ 사진(b5fac439-0155-4fdf-9fbf-a5317b023dcf)을 직접 열람하여 원본의 새 날개형 천마총 금제 관식과 일치 확인; 본문 신라 귀속과 관모 장식 용도 확인"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "③을 단순 판 모양 유물로 남기지 않고 농경문 청동기로 식별하여 추가 이미지 검증 대상으로 기록"
+      ],
+      "blockers": []
+    },
+    "05": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "73f9ff2809e7ef6eacf866a004aea59b3142bd5a6491d8d9591a818c15f57c2d",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 20·21·22쪽 / 인쇄 13·14·15쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 금마저·미륵사 / 고흥·서기 / 22담로·왕족 파견 / 동진·마라난타·불교 수용 / 달기·도살성 점령; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "06": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "b832972c67d93afe52eaaa526c36969d6bc0ea599256ae908569d0c4115a1315",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 17·20·22·23·39쪽 / 인쇄 10·13·15·16·32쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 을지문덕·살수 대첩 / 복신·도침·부여풍 추대 / 윤충·대야성 함락 / 연개소문·영류왕 시해 / 김춘추·당 군사 연합; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강"
+      ],
+      "blockers": []
+    },
+    "07": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "523cbaa7d3c2c9aa3397e7588591a255a4daf67a98c84dc58cdd8600ee7d9b0d",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 12·20·31·35·41쪽 / 인쇄 5·13·24·28·34쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 12월 영고 / 주자감·인재 양성 / 9서당 10정 / 기인 제도·지방 세력 견제 / 부여씨·8성 귀족; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "08": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "be6a9225cd135cf794cf2fbd955de0f5b1fe2267b58b6f5b9d56dc4dc7c24371",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 17·19·31·43·59쪽 / 인쇄 10·12·24·36·52쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 수도 서시·남시 / 활구·은병 / 부경·집집마다 창고 / 관료전·녹읍 폐지 / 풍흉·9등급 전세; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "29": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "e78b2ded986f32fb32f5d71d074bb3f0a394a8589ac7bcf35645efc52fdc3b63",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 86·88·89·93쪽 / 인쇄 79·81·82·86쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 운요호의 강화도·영종도 공격 / 오페르트의 남연군 묘 도굴 시도 / 교조 신원·보은 집회 / 병인박해·프랑스 신부 처형 / 김홍집·조선책략; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강"
+      ],
+      "blockers": []
+    },
+    "30": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "11244aa76348367ad7ebe93064110aee7d697c454c63bc49970ce8096dbfd455",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 86·89·93·95·102쪽 / 인쇄 79·82·86·88·95쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 박문국·한성순보 / 기기창·근대 무기 / 친위대·진위대 설치 / 공사 노비법 혁파·과부 재가 / 비변사 혁파·삼군부 부활; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강"
+      ],
+      "blockers": []
+    },
+    "31": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "14874ed312f718737d77b50c9ba21367f5687c4bd27757c22e32557fadec3c19",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 86·89·90·93·95쪽 / 인쇄 79·82·83·86·88쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 김옥균 등 개화파 주도 / 제물포 조약 / 홍범 14조 / 통리기무아문 / 외규장각 도서 약탈; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "32": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "82395d3603179198addb60b530cdfdb4126f390e38b459f8da32cb8ef5509dbe",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 113·116쪽 / 인쇄 106·109쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 경학사 / 박달 학원 / 대조선 국민 군단 / 2·8 독립 선언 / 대한 광복군 정부; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "33": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "d1651b396ae7710982a7355be2962c496aafcdcc945e98d5cfef0015f88a21a3",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 88·89·96·97쪽 / 인쇄 81·82·89·90쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 청의 알선 / 통감부 설치 / 천주교 포교 허용 / 스티븐스·외교 고문 / 대한 제국 군대 해산; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/mobile/tg/view.do?ganada=&levelId=tg_004_1380&pageUnit=10&subjectCode=tg_ty_040&tabId=02",
+          "supports": "정미7조약 본문과 군대해산을 명시한 미공포 실행 각서 구별"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강"
+      ],
+      "blockers": []
+    },
+    "34": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "ae15a538169e9d31f7bd63dbdef871b2e0da31854f0454ce193b9012cd1cc8b6",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 93·95·96·115·120쪽 / 인쇄 86·88·89·108·113쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 만세보 발행 / 대성 학교 설립 / 만민 공동회 / 부민관 폭파 의거 / 황무지 개간권 요구 저지; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "35": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "0c253e73abc0aba77e8a0c38c86816f3c2127d7c002214a8375100c5e63a60f3",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 43·71·74·102·104·137쪽 / 인쇄 36·64·67·95·97·130쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 7재·전문 강좌 / 덕원부 관민 설립 / 교육 입국 조서 / 대성전·명륜당 / 좌원·우원; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기존 ctx에서 육영 공원 뒤 배재 학당을 놓은 잘못된 설립 순서 화살표 제거"
+      ],
+      "blockers": []
+    },
+    "36": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "d027c387f592185815e441c1c7e692d5eaf2471fb2b8b71209e2baad1a18f8a7",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 96·107·113·114쪽 / 인쇄 89·100·106·107쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 고종 강제 퇴위 반대 / 국권 반환 요구서 / 독립 공채 / 신채호·조선 혁명 선언 / 신규식·교민 단결; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "37": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "665d8d5c436d3b499a4055f9742bdf29f34e47dab723270ebb94caf10017c92c",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 94·102·106·108·109·120·121쪽 / 인쇄 87·95·99·101·102·113·114쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 태형·헌병 경찰 / 원수부 / 애국반·몸뻬 / 경인선 개통 / 아리랑 첫 상영·단성사; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강"
+      ],
+      "blockers": []
+    },
+    "38": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "c4e39ea96fe2164e39f87549fbaa7618738451393728945c383a0fb6285d55a7",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 93·95·107·109·113·116·120쪽 / 인쇄 86·88·100·102·106·109·113쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 개벽·신여성 / 중추원 개편·의회 설립 / 한인 국방 경위대 / 순종 인산일·만세 운동 / 광주 학생 항일 운동·진상 조사단; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "39": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "db204c9c5dbc7b5ae7645d2073e5a42c1797e4c180fa0f26e5f252cd736ff164",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 96·106·107·108·124쪽 / 인쇄 89·99·100·101·117쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 민립 대학 기성회 / 메가타·화폐 정리 사업 / 신한공사·귀속 재산 / 허가제 회사령 / 농민의 자력갱생·농촌 진흥 운동; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강"
+      ],
+      "blockers": []
+    },
+    "40": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "08428bea02c39c96599d83896db24e80a5c8623adb5ec6a53ddd03787d049ede",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 121쪽 / 인쇄 114쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 김민기·아침 이슬 / 윤심덕·사의 찬미 / 현인·굳세어라 금순아 / 코리아나·손에 손 잡고 / 이해연·단장의 미아리 고개; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        },
+        {
+          "type": "web",
+          "reference": "https://eiec.kdi.re.kr/publish/columnView.do?cidx=5735",
+          "supports": "현인 굳세어라 금순아의 한국전쟁·흥남철수·피란민 이산 맥락"
+        },
+        {
+          "type": "web",
+          "reference": "https://mylovekbs.kbs.co.kr/index.html?contents_id=70000000401800&sname=mylovekbs&source=mylovekbs&stype=blog",
+          "supports": "코리아나의 1988 서울올림픽 공식 주제가"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0072232",
+          "supports": "단장의 미아리 고개는 1956년 발표된 전쟁 후 대중가요"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "단장의 미아리 고개를 모호한 전쟁 무렵 대신 1956년 전후 가요로 명시"
+      ],
+      "blockers": []
+    },
+    "41": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "69d375449085c7b27d0167587bcef8b6c69cfd1df87d0d156a5082efc98fa8d7",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 96·97·114·115쪽 / 인쇄 89·90·107·108쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 흥경성 전투 / 자유시 이동 / 남한 대토벌 작전 피해 / 인도·미얀마 전선 / 조국 광복회; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0048990",
+          "supports": "재만한인조국광복회의 동북항일연군 한인 조직·반일 통일전선 목표"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "42": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "9e82bc1abcda8480ddaac907945847d9faed076bd1efbf942b0f215092a11405",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 96·107·113·115·120쪽 / 인쇄 89·100·106·108·113쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 흥사단 창립 / 이토 히로부미 사살 / 한국독립운동지혈사 / 한국 독립군 총사령관 / 김원봉 등과 민족 혁명당 결성; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_40&levelId=kc_n404750",
+          "supports": "조소앙의 1935년 민족혁명당 창립 참여·삼균주의 및 임시정부 활동"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "43": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "94c316e37741735b7dd65761e860cc91e7592ca5e97d5b84d5113fae091c7af1",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 120·126·128쪽 / 인쇄 113·119·121쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 제헌절 / 가갸날 / 향토 예비군의 날 / 은사의 날 / 이산가족의 날; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        },
+        {
+          "type": "web",
+          "reference": "https://theme.archives.go.kr/next/anniversary/anniversary.do?anniversaryId=9811000000",
+          "supports": "향토예비군의 날의 1968년 창설·1970년 지정 경위"
+        },
+        {
+          "type": "web",
+          "reference": "https://theme.archives.go.kr/next/specialDay/subInfo.do?specialDayId=00000039",
+          "supports": "1963년 은사의 날 행사에서 스승의 날로 이어지는 경위"
+        },
+        {
+          "type": "web",
+          "reference": "https://www.unikorea.go.kr/web/unikorea/bbs/bbs_0000000000000004/59939",
+          "supports": "이산가족의 날의 목적·2023년 국가기념일 지정"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "한글날 개칭을 조선어 학회 시기로 오해하게 한 기존 ctx 표현 수정"
+      ],
+      "blockers": []
+    },
+    "44": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "581259b6d0badd0574f45071db77b9cd23a7574c4940ac3177550251fa49835b",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 96·102·106·107·108·120쪽 / 인쇄 89·95·99·100·101·113쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 원산 총파업 / 국채 보상 운동 / 원각사·은세계 / 황국 신민 서사·국민학교 / 조선 형평사 창립; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "45": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "ad752f02a074c36f5c94a855e737f9edd0e0ad4a29f7fea2f3852f314b738578",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 94·107·126·129쪽 / 인쇄 87·100·119·122쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 농지 개혁 / 광주 대단지 사건 / 개발 제한 구역 / 산미 증식 계획 / 지계아문; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "유상 매수·유상 분배의 뜻을 지가 증권·상환이라는 지문과 연결"
+      ],
+      "blockers": []
+    },
+    "46": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "2a69909b994167c82dac312d0906ac932667ad7cb211c33eecd692c642ea7672",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 96·120·124·125쪽 / 인쇄 89·113·117·118쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 조선 건국 동맹 / 임시 정부 초대 국무총리 / 정읍·남한 단독 정부 주장 / 헤이그 특사 / 독사신론·민족 중심 역사; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0015017",
+          "supports": "1919년4월 상하이 임시정부 국무총리로 선출된 이승만"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "47": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "03a56113213669619b46ae08559006fbb9b331e51fe5747c4b8987b013fdc88d",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 128·129·130·131·132·133쪽 / 인쇄 121·122·123·124·125·126쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 최저 임금 위원회 / 포항 제철소 1기 준공 / 전국 민주 노동조합 총연맹 / 칠레 FTA 체결 / OECD 가입; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0057623",
+          "supports": "최저임금위원회 전신의 1987년 설치 및 임금 심의 기능"
+        },
+        {
+          "type": "web",
+          "reference": "https://library.krihs.re.kr/%24/10110/contents/5935255",
+          "supports": "국토연구원 소장 백지계획 기록의 1976~1979년 박정희대 임시행정수도 건설 추진"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "48": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "5857acc7c9aefc1e05400de45da9ab6c5804a39d45b4d7118b81c05d1eb568a8",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 126·127·128·129쪽 / 인쇄 119·120·121·122쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 애치슨 라인 / 부마 민주 항쟁 / 사사오입 개헌 / 반민특위 해체 / 민의원·참의원 양원제; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "49": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "3b49743eaf293a952c3a60364963a1eb26b6dbd0d12137d2bf6433b621cff0ff",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 126·129·130·131·132·133쪽 / 인쇄 119·122·123·124·125·126쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: 헝가리 상주 대표부 / 박종철 고문 치사 / 조봉암 처형 / 금융 실명제 / 서울 지하철 1호선; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    },
+    "50": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "ca65f25c65759b2fc159d38f9e1049958dc97b2b5196b3bafe3ed36c248de417",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 17·20·22·44·46·59·60쪽 / 인쇄 10·13·15·37·39·52·53쪽",
+          "supports": "열거한 교재 부분을 함께 대조하여 지문·보기의 시대와 주요 사실 확인: (가) 평양 천도·서안평 공격 / (나) 웅진 천도·소지 마립간 혼인 / (다) 사비 천도·남부여 / (라) 강화 천도·쌍성총관부 / (마) 한양 천도·경국대전; 교재 밖 세부 사실은 아래 웹자료로 보완"
+        }
+      ],
+      "corrections": [
+        "5개 보기 모두 원문 핵심어에 귀속·의미·구분 근거를 연결하여 보강",
+        "기본 why에서 정답 명칭에 제도 목적·사건 의미를 연결; 동일 문항의 교재·보기 검증 범위 안에서 압축 보강"
+      ],
+      "blockers": []
+    }
+  }
+}

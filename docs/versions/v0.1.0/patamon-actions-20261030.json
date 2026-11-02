@@ -1,0 +1,12 @@
+{
+  "tool": "built-in image_gen",
+  "transparent_background": true,
+  "prompt": "Use case: identity-preserve. Asset type: production 2 by 2 transparent sprite sheet of FOUR distinct full-body Patamon action poses. Input 1 is the approved character identity reference: orange and cream Patamon with large vivid blue eyes, big bat-wing ears with PURPLE inner membranes and golden orange outer edges, round cream belly, four tiny gray/cream paws. Match that exact cute drawing style, head proportions and palette in ALL four poses. Input2 is ONLY action intent reference, use its Patamon row three as the action types, NOT its gold wing interiors or other characters. Make only Patamon, no other Digimon. Square canvas 1024x1024, four equal 512-square cells with transparent 50px margin in each and zero overlap. Top-left: focused charge anticipation, hovering slightly, looking RIGHT. Top-right: distinct forward air-puff attack-release, mouth round/open, body leaning toward RIGHT, no projectile. Bottom-left: recoil/flinch from hit, eyes squinting, tilted backward, harmless no injuries. Bottom-right: harmless exhausted defeat, lying softly with eyes closed and wing ears folded but purple inner wings still visible. Genuine alpha0 transparent background everywhere outside the four figures; no colored haze, floor, shadow, matte, checkerboard, grid, labels, text or watermark. No circles or frames. Preserve purple wing membrane in every cell. Keep character silhouette, face, ears, belly colors coherent with Input1, no extra limbs, no costume changes. Full body stays inside each cell.",
+  "sourceReferences": [
+    "media/characters/patamon-hover-idle-v1.png",
+    "media/characters/battle-patamon-poses-v1.webp"
+  ],
+  "asset": "media/characters/patamon-actions-v2.png",
+  "generatedMaster": "generated_images/exec-e8577584-b625-4bc4-955e-d4a85b2ce7a6.png",
+  "notes": "Only Patamon charge/release/hurt/defeat, approved purple membrane/blue-eye identity. Existing atlas retained for all other forms and decode fallback. Actual alpha silhouette registration required; never assume perfect grid."
+}

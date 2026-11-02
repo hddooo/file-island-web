@@ -1,0 +1,929 @@
+{
+  "round": 71,
+  "method": "담당자 explanations7071: 각 원본 WEBP를 직접 보고 지문·그림·원래 순서의 5개 보기를 대조. 교재 본문(PDF쪽=인쇄쪽+7)과 명시한 공신력 자료로 해설을 검수. 원문/공식정답/배점은 수정하지 않음.",
+  "items": {
+    "01": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "50ec7ccf3eb59a2e5dcfbb182d836d4c55f30452ea709f5896a21bb82972195e",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 9, 10쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "구석기·신석기·청동기·철기 생활과 도구 구분"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0033063",
+          "supports": "신석기 농경용 따비·괭이"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "02": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "42e112a97fcb34e8207de2204bd7731b292a50f1f0c81663c2ca7a45f8c19041",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 11, 12, 13쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "부여 위치·형벌·우제점법·사출도와 삼한·옥저·동예·고조선 풍습"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "03": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "4e2becc3683dd938d1c714979a55c2a759bf527059bc7886ba1d1d465f09d2d0",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 12, 20, 23, 26쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "금관가야 건국·대외교류·복속 및 고구려 혼인·백제 관제·신라 귀족회의"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "04": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "305e4cbdc5e9403746e56e359b199a2c17932c507552fe90f1b46e0298810a00",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 24, 33, 34쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "원광·자장·원효·혜초의 활동과 신라말 풍수지리"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0030907",
+          "supports": "송악명당기의 도선 귀속과 송악 길지설"
+        }
+      ],
+      "corrections": [
+        "⑤ 송악명당기를 막연한 풍수 서적으로만 설명하던 문구에 도선과 송악 길지설을 명시"
+      ],
+      "blockers": []
+    },
+    "05": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "66be798e60bde32d61a2bab5ab0850e51e23e23f5f2b542a0e76f1ee61d43d8e",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 20, 21쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "백제 근초고왕·침류왕·성왕 업적과 순서"
+        }
+      ],
+      "corrections": [
+        "OCR의 말풍선 배열 대신 원본의 (가) 사비·(나) 마라난타·(다) 평양성 대응을 확인"
+      ],
+      "blockers": []
+    },
+    "06": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "d61fd0d331a02c682369fd558dac7c2d46b1ebff6c43618a55bfd07bd5c64d8e",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 23, 31쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "지증왕·법흥왕·눌지·문무왕·신문왕 업적과 제도 의미"
+        }
+      ],
+      "corrections": [
+        "매소성전투675를 삼국통일완성676 이후로 읽지 않도록 백제·고구려멸망 뒤로 수정"
+      ],
+      "blockers": []
+    },
+    "07": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "d1d48286de62564a260a0226382a04a7d6557b7471f395226cb5747eef10e3a0",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 21, 24, 33, 37쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "각국 탑 사진·재료·형태 및 석가탑과 무구정광대다라니경"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0064794",
+          "supports": "화엄사 사사자 삼층 석탑의 통일신라 귀속과 사자 기단"
+        }
+      ],
+      "corrections": [
+        "② OCR 다보탑을 원본 그림의 정림사지 오층 석탑으로 판독",
+        "다섯 탑이 모두 다른 시대라는 오류 제거: ①과⑤는 모두 통일신라"
+      ],
+      "blockers": []
+    },
+    "08": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "b3f44763b79841994a5459a783690f93324df5362481484b1a42252cc73db7a3",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 17, 20, 23, 31쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "고구려 멸망·나당전쟁 및 살수·대야성·정변·동맹 연대"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0023243",
+          "supports": "670년 고구려왕과674년 보덕국왕 책봉 구분"
+        }
+      ],
+      "corrections": [
+        "고구려 부흥운동과 나당전쟁을 서로 겹치지 않는 순서로 배열한 배경 수정"
+      ],
+      "blockers": []
+    },
+    "09": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "d05839defcdf39fdff37f8f5f2173351662d50011a45ee6c8019323cfbc629d7",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 35, 36, 37쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "발해 무왕 등주공격 원인·문왕과 선왕 업적·연표"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "10": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "c51f553cb37f9873f6c23faec2e53d2609a060465e3b191b0da017e470bc6203",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 23, 43, 51, 73, 75쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "숙종 화폐·벽란도 무역과 조선후기 상업·구황작물·광업"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "11": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "d799d06fb03868a45f9df1bdbe83e1e3fdc42abcf207231ad37c6e328c30ae75",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 42, 44, 47, 51쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "역분전·과거제·전시과·과전법·공민왕과 무신집권기"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0049507",
+          "supports": "목종 개정전시과 1과 전지100결 시지70결, 문종 경정은100결50결"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "12": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "c829e166a1461fa3d8136596d57f42eeb5c8d6e0602ebdefcd95bfb62d096025",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 31, 34, 42쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "궁예·광평성·후삼국 통일·신문왕·태조의 규범"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0000366",
+          "supports": "가지산문은 도의의 법통을 이어 형성된 선종 산문"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "13": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "48cdd2e918f844e5d4ba9348a0d849a62fa87bd8fdaffbb5baefb085740d7db1",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 31, 43, 53, 65, 77쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "최충 사학·숙종 서적포·예종7재·원성왕·정조·사액서원·의천 교장"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "14": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "b1417f28a6f5ab01e6a429358ce34529f08c5801b90a760decaa9f1ddc328743",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 31, 44, 45, 65, 73, 75, 77쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "무신집권기 조위총·정방·하층민 봉기와 조선후기 사회·문화"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "15": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "4abf6a61fa21a08dd185a78476c451e7654851b9f17cc218d0e4b448116a6593",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 42, 43, 44, 45, 47쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "몽골항쟁과 거란광군·여진별무반·왜구화통도감·명철령위"
+        }
+      ],
+      "corrections": [
+        "교재PDF43의 별무반=삼수병 오기는 채택하지 않고 같은 쪽 올바른 편제 신기군·신보군·항마군 사용"
+      ],
+      "blockers": []
+    },
+    "16": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "14186e695388377dea356081aabae1ec052903915439b3bfbb70b406c27d7c2a",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 53, 54, 78쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "고려 상감청자·나전·관촉사·수월관음도·경천사지탑과 조선후기 풍속화"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0059590",
+          "supports": "김득신 파적도 귀속과 병아리를 물어 가는 고양이 장면"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "17": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "bce487601bc3b6ad8348e89afb8c3978a8c7379c897341d7da75c5a209ce9111",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 24, 53, 61쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "정도전·지눌·강수·이규보·이제현 저술과 활동"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0036630",
+          "supports": "역옹패설 이제현 저술과 내용"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0017544",
+          "supports": "충선왕 만권당과 이제현·원 학자 교류"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0001241",
+          "supports": "강수 청방인문표"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "18": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "5af4efdd0d469cd7b3007065be3f162dd926de9284e3163260fc4bec98df5339",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 43, 44, 47, 53, 77쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "안동 봉정사·도산서원과 고려 전쟁·묘청·직지"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0003996",
+          "supports": "고창전투 장소 안동과 왕건 승리"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0023616",
+          "supports": "보현원은 개경 동남쪽, 무신정변"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0065178",
+          "supports": "황산대첩은 남원 운봉"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "19": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "af32a14443c6e4b9bd2c786d0911bd3437d349bd30430dc22cd27a328e8d78db",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 59, 61, 65, 76쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "태조 수도 선정·제1차왕자의난, 세종문자·성종법전·세조사육신·숙종군영"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "20": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "e78aaaf9fb03806d59c69d5166c19bd82fc7435df8d7ff96a7f6cb75e0c18714",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 59, 71, 74, 86쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "비변사 설치·상설·확대·폐지 및 한성부·의금부·양사·승정원 역할"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "21": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "468e1cac806655444c710a0ddc0802a4e4097b9ad0983ae9f259036163875125",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 59, 61쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "4대 사화 계기·왕·중종반정·양재역벽서 사건"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "22": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "eca1605bd5d1cda1a3c9709cca39580d82be0028ef2fbd90253371bc0d1628a7",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 64, 66, 68쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "이괄의난·병자호란·심양인질 및 임진왜란의병·군영·청원사·광해군 폐모살제"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "23": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "ac68ccf70fe73ad8eb1258c6b8f8407c99d84c92723d158435be4ca715d5ab4c",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 59, 65, 67, 72, 73쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "신해통공·계해약조·균역법결작·연분9등법"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0038068",
+          "supports": "오가작통의 호구·조세 관리와 주민 통제"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "24": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "50820735577cd9fbba299079fadece80f4340246e52136c8194452f44784ffba",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 64, 65, 67, 94쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "숙종 정계비와 환국·효종나선정벌·정조장용영·선조기축옥사·최제우처형"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "25": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "366386bde087026fa1016e34bd2c56c0bc5347cb9409d579316c2be427de05d4",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 77, 78, 79쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "김정희 세한도·추사체·북한산비, 이황·정제두·김육·박지원"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "26": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "eb3814baaec92f554290031a751d75f81f62627fda1d4f1e3b9f492679887a80",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 59, 65, 68, 73쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "순조 공노비해방·상품작물·대동법공인·장시놀이"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0037152",
+          "supports": "염포 왜관1512년폐쇄"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0080114",
+          "supports": "조선후기 유료세책과 여성 국문소설 독자"
+        },
+        {
+          "type": "web",
+          "reference": "https://folkency.nfm.go.kr/topic/%EC%82%B0%EB%8C%80%EB%86%80%EC%9D%B4",
+          "supports": "송파산대놀이와 장시의 관계"
+        }
+      ],
+      "corrections": [
+        "공노비해방을 모든노비폐지로 오해하지 않도록 범위 명시",
+        "염포왜관은 조선전기라는 시대라벨에 폐쇄근거 추가"
+      ],
+      "blockers": []
+    },
+    "27": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "9b31a08e4f7291ae2a7e847fd1fd61878bc5e12513853f05bb1ce53faaec282b",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 64, 65, 67, 68, 86, 94쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "세도정치·삼정이정청과 효종북벌·정조박해·고종이필제봉기·당백전"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "28": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "2ebdf3210b9cf7f6d8bf695d3fd2d030e01f7c92f18181615cba094915fce454",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 65, 68, 86, 87쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "신미양요·척화비와 병인양요·셔먼호·홍경래·황사영"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "29": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "81bf6b90314b9935bd9c56f04984f7578aed0158297cae5ee36211c6014d1574",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 86, 88, 89, 90, 95쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "1876부록·1882조청장정·1883조영조약·1868도굴·1885거문도와톈진·절영도"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "30": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "73a72f886af092be8008a4aa774dae5f41f1a4c62f7009e04fd408de2c85615d",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 73, 77쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "종묘제례와 조선후기 판소리·탈춤"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0055716",
+          "supports": "처용무 기원·오방색·궁중벽사·2009등재"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0037432",
+          "supports": "영산재 영취산 설법재현·극락왕생"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0034229",
+          "supports": "아니리의 판소리 서술기능"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "31": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "690fe5d25e706b5f1f1b676077b9719e05937f7b558d26952b9e61e8d820d9ff",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 93, 94, 95, 102쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "갑오1·2차·을미·광무개혁 내용과 태양력·군제"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "32": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "2931bdef2ea635b586b2a635547c6face5402d69b12ac6dbf851c935664e9f83",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 65, 89, 90, 94, 95, 102, 120쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "통리기무아문·영선사·기기창·별기군, 정조법전·대한제국원수부·언론교육통제"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "33": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "e7b8b6fc4b57862f0185ae6602b0c0531346628d4532f8a697ffe8ac3d79500a",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 96, 97, 102, 108, 110, 120쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "대한매일신보·국채보상·한성순보·독립신문·브나로드"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/mobile/mid/hm_140_0050?tabId=e",
+          "supports": "여권통문 황성신문1898.9.8 게재와 독립신문 기고·여성권리 내용"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "34": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "581ce8a7539ebfa7b764521b682006d4302b48a061b7df70b79b3e51600fc896",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 93, 95, 96, 97, 98, 107, 110쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "독립협회 의회운동·대한자강회·보안회·신민회학교·임정독립공채"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "35": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "84ae3f50163da2ba0411dd497b53a8c9d23b506fcba362499f50297b486e5e28",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 93, 95, 96, 97, 102, 113쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "갑오개혁·삼국간섭·한일협약과 화폐정리·대한광복회"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0013912",
+          "supports": "당오전1883발행과 재정난·화폐가치하락"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "36": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "516cad3e66bd055836021fc78e3ce592889e0161cf763d51b52ebcb8accd1319",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 106, 113, 118, 119쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "연해주강제이주·권업회·서간도경학사·도쿄선언·하와이군단·북간도학교"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "37": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "b5b29007f0b1c5bb58982d17bba5322edb6485a85c35ae1e79f5c9e1e064e2ba",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 96, 98쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "안중근 동양평화론과 이재명·장인환전명운 의거"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0051749",
+          "supports": "조명하 타이중 의거·구니노미야·독검"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0001298",
+          "supports": "강우규 남대문역 사이토 대상 폭탄 의거"
+        }
+      ],
+      "corrections": [
+        "원보기의 저격을 총격으로 풀지 않고 조명하의 실제 수단인 독검을 명시"
+      ],
+      "blockers": []
+    },
+    "38": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "37a1921ed8499d2bc8abff4c89499817c4519abb95577dcdd7ee97ca1d4a99d5",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 102, 106, 107, 108, 109, 120, 121쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "1910년대태형·공진회·개항육영공원·1920형평아리랑·전시애국반"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "39": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "c378b7d23f77cfc0ce0676447fbb8bfaca323f285ac42dad1155a458cb8ca16f",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 88, 90, 94, 106, 107, 108, 109, 110, 126쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "회사령폐지·농촌진흥·방곡령·상권수호·농지개혁·총동원"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_40&levelId=kc_i401800",
+          "supports": "평양 물산장려회1920발기·1922.6.20창립 구분"
+        }
+      ],
+      "corrections": [
+        "회사령폐지1920·농촌진흥1932와 평양물산장려회1922정식창립을 구체화"
+      ],
+      "blockers": []
+    },
+    "40": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "c252f58d780dcdac3b44f2750aa277094f80b171d62cf17a4a503f17076e159b",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 102, 106, 109, 120쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "교육연표와 민립대학운동"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/mobile/nh/view.do?levelId=nh_051_0020_0030_0020",
+          "supports": "1922준비회·1923기성회 총회와 모금"
+        }
+      ],
+      "corrections": [
+        "경성제국대학을 오직 민립운동 저지 목적으로만 설명한 단정 완화"
+      ],
+      "blockers": []
+    },
+    "41": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "911387942848cbfbc63367db6167382ed0ca8bc86ca62b209ec0e48d88eaf6ec",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 96, 102, 108, 110쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "원산1929·강주룡1931·암태1923·노농총동맹1924·동척1908"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_40&levelId=kc_o401010",
+          "supports": "대한천일은행1899·황실과 상인 금융지원"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "42": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "b28639ef4becd1f6efcd98dce494c847e521014f5813e9fed3d80a1fb703bf6a",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 90, 102, 107, 109, 121, 128쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "개항의료우편·전시몸뻬·현대새마을운동"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0081018",
+          "supports": "국내컬러텔레비전방송1980년12월시작"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "43": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "7ebe25016ad0d09ee5477c0559967a1b8cd1567b6821291d4906e2722285824b",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 114, 115, 117쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "한국광복군창설·인면전구·OSS와 독립군 전투·자유시참변"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0005134",
+          "supports": "한국광복군의 OSS 국내진공작전 준비와 일본항복에 따른 실행무산"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "44": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "91e92f7578f575be6f2253bfdaf3b203eba8ac24addea7d72827d47a9a5e7580",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 102, 107, 109, 120쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "원각사1908은세계와1930년대후반국방헌금·서사·내선일체·징용"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "45": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "a358c24cfc9a6099f804eb9c6cf5f786100abef73032691241f61a91fc999e30",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 9, 21, 42, 93, 94, 106, 108쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "공주석장리·웅진·무령왕릉·고려12목·고부와우금치·3.1운동"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0019018",
+          "supports": "무령왕릉 남조계벽돌·일본산금송관재"
+        },
+        {
+          "type": "web",
+          "reference": "https://www.heritage.go.kr/heri/cul/culSelectDetail.do?ccbaCpno=1333303980000&pageNo=1_1_1_1",
+          "supports": "수양개유적 단양 소재·석기"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0017697",
+          "supports": "만인의총 남원과 정유재란"
+        },
+        {
+          "type": "web",
+          "reference": "https://community.bu.ac.kr/btc/2750/subview.do",
+          "supports": "천안아우내장터 유관순 만세운동"
+        }
+      ],
+      "corrections": [
+        "무덤의 벽돌양식만으로 왜교류까지 단정하지 않고 일본산금송 목관 근거를 추가"
+      ],
+      "blockers": []
+    },
+    "46": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "e6e6efcf7ef9e46a0f933239ebf70be97e252f13090d62b030793eb915798c5d",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 124, 125, 126, 127, 128, 130쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "전쟁1950~1953과1952개헌·애치슨·1948협상·1965수교·1980국보위"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "47": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "ebc7b1974e2c2daf31e234972aea0454485c2e5eb88684a1a368329e78f247ef",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 124, 125, 126, 128, 130, 131쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "5.10총선의 과정과 제헌국회·유신간선·1960양원제·1985신한민주당"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    },
+    "48": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "90c8c1f5acde653aead8b5de50708ab7fe63b84d76c446ed36889a77cc6103a5",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 128, 130, 131, 132, 133쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "노태우1988올림픽·1990합당과박정희교육헌장·김영삼하나회·신군부삼청"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0080747",
+          "supports": "1990합당3당명"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0080908",
+          "supports": "금모으기1998.1시작·외화확보"
+        }
+      ],
+      "corrections": [
+        "금모으기운동은1998년1월본격화로 기록하여 김대중취임뒤시작으로 오해할 여지 제거"
+      ],
+      "blockers": []
+    },
+    "49": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "f54f9a3fcab06eebdf9137d05febf30b8b0090319f3e5873de19bf97e91d08e7",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 126, 127, 128, 129, 130, 131쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "부마항쟁·유신붕괴·5.18·4.19·6월항쟁"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0078995",
+          "supports": "김주열은1960.3.15마산시위희생"
+        },
+        {
+          "type": "web",
+          "reference": "https://archives.kdemo.or.kr/contents/view/19",
+          "supports": "김주열시신발견과4.19혁명 연계"
+        }
+      ],
+      "corrections": [
+        "김주열사망을4월19일사건으로 읽지 않도록3.15마산시위와4.19혁명의 인과 구분"
+      ],
+      "blockers": []
+    },
+    "50": {
+      "status": "verified",
+      "originalImageViewed": true,
+      "originalImageSha256": "32b0eef6a263f3e3282a9a5afddb26178785a2892957a54f64f5e93bba0b5c67",
+      "sourceChecks": [
+        {
+          "type": "textbook",
+          "reference": "hanq-full-textbook-original.txt PDF 128, 129, 130, 131, 132, 133쪽 (인쇄쪽=PDF쪽−7)",
+          "supports": "김대중정상회담·햇볕·6.15와박정희7.4·노태우기본합의비핵화·전두환1985방문"
+        },
+        {
+          "type": "web",
+          "reference": "https://encykorea.aks.ac.kr/Article/E0011931",
+          "supports": "1985고향방문과2000정상회담후이산가족방문 재개"
+        },
+        {
+          "type": "web",
+          "reference": "https://contents.history.go.kr/front/hm/view.do?levelId=hm_153_0090",
+          "supports": "2000년 6·15 남북공동선언 원문 3항 이산가족방문·4항 경제협력 등 제반분야 교류"
+        }
+      ],
+      "corrections": [],
+      "blockers": []
+    }
+  }
+}

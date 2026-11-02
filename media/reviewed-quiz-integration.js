@@ -1,0 +1,2 @@
+/* Source-reviewed curriculum; existing question IDs, versions and records remain intact. */
+(function(){'use strict';var b=window.HANQ_REVIEWED_QUIZ,c=window.HANQ_QUIZ_CATALOG;if(!b||!c||c.reviewedApplied)return;b.ids.forEach(function(id){if(c.questions[id])throw Error('Reviewed ID collision');var q=b.questions[id];c.questions[id]=q;c.chapters[q.chapter].pool.push(id);});c.reviewedIds=b.ids.slice();c.reviewedApplied=true;})();

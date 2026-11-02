@@ -1,0 +1,179 @@
+.tc{max-width:1050px;margin:24px auto;padding:clamp(16px,3vw,32px);background:#faf8f2;border:1px solid #d3ded3;border-radius:20px;color:#263c36;overflow-wrap:anywhere}.tc h1{font-size:clamp(24px,4vw,36px);line-height:1.4}.tc p{white-space:pre-wrap;line-height:1.7}.tc button{font:inherit;min-height:44px;padding:10px 14px;border:1px solid #9eb4a5;background:#edf1e8;border-radius:10px;color:#263c36;cursor:pointer}.tc button:disabled{opacity:.55;cursor:default}.tc :focus-visible{outline:3px solid #b66b38;outline-offset:3px}.tc-tools,.tc-question-nav{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}.tc-question-nav button{min-width:44px}.tc-question-nav button[aria-current=true]{background:#294b40;color:#fff}.tc-card,.tc-question{padding:20px;border:1px solid #d0dbd1;background:#fff;border-radius:14px;margin:16px 0}.tc audio{display:block;width:100%;margin:16px 0}.tc img{display:block;max-width:100%;max-height:70vh;object-fit:contain;margin:16px auto}.tc fieldset{padding:14px;border:1px solid #cbd6cb;border-radius:12px}.tc fieldset label{display:flex;align-items:center;gap:12px;padding:12px;margin:6px 0;background:#f5f6f0;border-radius:10px;min-height:44px;cursor:pointer}.tc input[type=radio]{width:22px;height:22px;flex-shrink:0;accent-color:#294b40}.tc details{padding:12px;background:#f3f5ee;border-radius:10px;margin-top:12px}.tc summary{min-height:32px;cursor:pointer}.tc-status:empty{display:none}@media(max-width:700px){.tc{margin:16px 0;border-radius:14px}.tc-card,.tc-question{padding:14px}.tc-tools>button{flex:1}.tc-question-nav{gap:7px}.tc fieldset{padding:9px}}
+
+.tc-transcript{white-space:pre-wrap;line-height:1.75}.tc-script-sentence{border-radius:4px}.tc-script-sentence.tc-current{background:#e3f6b8;color:#18341d;box-shadow:0 0 0 2px #a7c96d}.tc audio{max-width:100%}
+
+.tc-passage{white-space:pre-wrap;line-height:1.8;padding:1rem;background:var(--panel,#f4f6fa);border-radius:12px}.tc-question img{max-width:100%;height:auto}
+
+.tc-tutor{margin-top:24px;border-top:2px solid #cbd8ca;padding-top:16px;min-width:0}.tc .tc-tutor-core{font-size:18px;font-weight:600;line-height:1.85!important}.tc .tc-tutor-detail{padding:16px;background:#f7f8f3}.tc-tutor-detail>summary{min-height:44px;padding:10px 0;font-weight:700;line-height:1.6}.tc-tutor h4{margin:26px 0 12px;font-size:19px;line-height:1.5}.tc-tutor h5{font-size:17px;margin:8px 0}.tc-tutor p,.tc-tutor li{font-size:17px;line-height:1.85;overflow-wrap:anywhere}.tc-tutor ol{padding-left:24px}.tc-tutor li+li{margin-top:12px}.tc-reading-pair,.tc-option-reason{padding:12px 14px;border:1px solid #d8e1d4;border-radius:10px;margin:12px 0;background:#fff}.tc-reading-en{font-weight:600}.tc-reading-ko{color:#40574b}@media(max-width:440px){.tc .tc-tutor-detail{padding:12px}.tc-reading-pair,.tc-option-reason{padding:10px}.tc .tc-tutor-core{font-size:18px}}
+
+.tc-repeat-badge{display:inline-block;background:#fff0d8;border:1px solid #c08036;border-radius:8px;padding:7px 12px;font-weight:700}.tc-transfer{margin:18px 0!important;background:white}.tc-transfer button{display:block;width:100%;margin:8px 0;text-align:left}.tc-transfer button[aria-pressed=true]{outline:2px solid #294b40;background:#e2efdf}.tc-transfer legend{font-weight:600;line-height:1.7;max-width:100%}
+
+/* Reuse the history quiz layout with explicit, readable answer text in every theme/state. */
+.tc.tc-simple{color:#1b3026!important;background:#f7f9f3!important}
+.tc-simple .tc-question{color:#1b3026!important;background:#fff!important;min-height:0}
+.tc-simple .qtext,.tc-simple .tc-question p,.tc-simple .tc-question li,.tc-simple .tc-question h3,.tc-simple .tc-question h4,.tc-simple .tc-question h5,.tc-simple .tc-question summary,.tc-simple .tc-question legend{color:#1b3026!important}
+.tc-simple .tc-question details,.tc-simple .tc-reading-pair,.tc-simple .tc-option-reason,.tc-simple .tc-transfer{background:#f5f8f1!important;color:#1b3026!important}
+.tc .tc-answer-option,.tc .tc-transfer button{background:#f6f8f4!important;color:#162c23!important;border:2px solid #677f71!important;opacity:1!important;font-weight:650;white-space:normal;overflow-wrap:anywhere;text-align:left}
+.tc .tc-answer-option:hover,.tc .tc-transfer button:hover{background:#e1ecdf!important;color:#10291d!important;border-color:#335a40!important}
+.tc .tc-answer-option[aria-checked=true],.tc .tc-transfer button[aria-pressed=true]{background:#d9edd8!important;color:#10331b!important;border-color:#1b6333!important;box-shadow:inset 4px 0 #1b6333}
+.tc .tc-answer-option:focus-visible,.tc .tc-transfer button:focus-visible{outline:3px solid #a44914!important;outline-offset:3px}
+.tc .tc-answer-option:disabled,.tc .tc-transfer button:disabled{background:#edf1e9!important;color:#293f31!important;border-color:#819285!important;opacity:1!important}
+.tc .tc-answer-option:disabled[aria-checked=true]{background:#d9edd8!important;color:#10331b!important}
+.tc-simple .qchoice-row.is-correct .tc-answer-option{border-color:#167548!important;background:#e6f5e9!important;color:#143c22!important}
+.tc-simple .qchoice-row.is-wrong .tc-answer-option{border-color:#a93424!important;background:#fff0e9!important;color:#552116!important}
+.tc-group-list{display:grid;gap:12px;margin:18px 0}.tc .tc-group{width:100%;text-align:left;font-size:19px;font-weight:750;padding:18px 20px;min-height:60px;background:#fff;color:#183b2b;border-color:#8ca793}
+.tc-total{font-weight:700}.tc-source{display:block;font-size:14px!important;line-height:1.6;overflow-wrap:anywhere;margin:8px 0 12px;color:#496052!important}.tc-position{font-weight:700;font-size:16px}.tc-part{font-weight:700;color:#294b40!important}
+.tc.tc-simple h1,.tc.tc-simple h2,.tc-simple .tc-total,.tc-simple .tc-position{color:#1b3026!important}
+.tc-simple .tc-source{color:#496052!important}
+.tc-simple .tc-group-list,.tc-simple .quiz-tools,.tc-simple .qtop,.tc-simple .qchoices,.tc-simple .qchoice-row,.tc-simple .quiz-nav,.tc-simple .tc-question-nav,.tc-simple .tc-question summary{background:transparent!important;color:#1b3026!important}
+.tc-simple .tc-tutor{background:transparent!important;color:#1b3026!important}
+.tc-simple .qtop{display:flex;align-items:center;gap:14px;margin-bottom:10px}.tc-simple .qnum{font-size:22px;min-width:65px;font-weight:800;color:#173d2a!important}.tc-simple .qtext{font-size:20px;line-height:1.8;margin:16px 0}
+.tc-answer-choices{display:grid;gap:5px;margin:10px 0}.tc .tc-answer-option{width:100%;font-size:18px;line-height:1.45;padding:4px 12px;min-height:40px}.tc .tc-check-answer{width:100%;margin:10px 0;background:#244e36!important;color:#fff!important;min-height:50px}.tc .tc-check-answer:disabled{background:#e1e6df!important;color:#4b5c4f!important;opacity:1!important;border-color:#99a99b}
+.tc-simple .tc-result{display:block;text-align:left;background:#f2f7ec!important;border:1px solid #a2b79f;border-radius:12px;padding:16px;margin-top:18px;color:#183323!important}.tc-simple .tc-result .tc-tutor{margin-top:18px}.tc-simple .quiz-nav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.tc-simple .quiz-nav button{flex:1}.tc-jump{margin-top:22px!important}
+@media(max-width:600px){.tc .tc-group{font-size:18px}.tc-simple .tc-question{padding:15px 12px}.tc .tc-answer-option{font-size:18px;line-height:1.45;padding:6px 10px;min-height:44px}.tc-simple .tc-result{padding:12px}.tc-simple .tc-source{font-size:13px!important}}
+
+.tc.tc-simple>p{color:#1b3026!important}.tc.tc-simple .tc-group{background:#fff!important;color:#183b2b!important;border-color:#8ca793!important}
+
+.tc-supplement{margin:22px 0;padding:16px;border:1px solid #90aa94;border-radius:12px;background:#f5f8f1;color:#1b3026}.tc-concepts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.tc-concept{padding:12px;border:1px solid #b7c6b7;border-radius:8px;background:#fff}.tc .tc-concept h4{margin:0 0 8px}.tc-pattern{font-weight:600}.tc-supplement small,.tc-supp-sources span{color:#38513e!important}.tc-supp-practice{min-width:0}.tc-supp-feedback p{margin:10px 0}.tc-supp-sources a{color:#174d31!important;text-decoration:underline;overflow-wrap:anywhere}@media(max-width:600px){.tc-concepts{grid-template-columns:minmax(0,1fr)}.tc-supplement{padding:12px}}
+
+/* Shared palette covers the complete practice state machine. Original question images keep their colors. */
+.tc{--tc-page:#f7f9f3;--tc-card:#fff;--tc-soft:#f5f8f1;--tc-text:#1b3026;--tc-muted:#496052;--tc-border:#819285;--tc-hover:#e1ecdf;--tc-selected:#d9edd8;--tc-accent:#1b6333;--tc-good:#e6f5e9;--tc-good-text:#143c22;--tc-bad:#fff0e9;--tc-bad-text:#552116;--tc-bad-border:#a93424;--tc-disabled:#e1e6df;--tc-focus:#a44914;--tc-action:#244e36;--tc-action-text:#fff}
+html[data-hanq-theme=terminal] .tc{--tc-page:#080d0a;--tc-card:#0d1510;--tc-soft:#142019;--tc-text:#edf5ef;--tc-muted:#b8cabe;--tc-border:#6c8975;--tc-hover:#203c2a;--tc-selected:#20472d;--tc-accent:#72ef9d;--tc-good:#123822;--tc-good-text:#b5f5c8;--tc-bad:#3c211e;--tc-bad-text:#ffd1c8;--tc-bad-border:#e59b8e;--tc-disabled:#1b2920;--tc-focus:#e5c375;--tc-action:#20472d;--tc-action-text:#c9fbd9}
+html .tc.tc-simple,html[data-hanq-theme] .tc.tc-simple{background:var(--tc-page)!important;color:var(--tc-text)!important;border-color:var(--tc-border)!important}
+html .tc.tc-simple :is(h1,h2,h3,h4,h5,p,li,legend,summary,.qtext,.qnum,.tc-part,.tc-position,.tc-total){color:var(--tc-text)!important}
+html .tc.tc-simple :is(.tc-question,.tc-card,.tc-group,.tc-concept){background:var(--tc-card)!important;color:var(--tc-text)!important;border-color:var(--tc-border)!important}
+html .tc.tc-simple :is(details,.tc-reading-pair,.tc-option-reason,.tc-transfer,.tc-passage,.tc-supplement,.tc-result){background:var(--tc-soft)!important;color:var(--tc-text)!important;border-color:var(--tc-border)!important}
+html .tc.tc-simple :is(.tc-tutor,.tc-group-list,.quiz-tools,.qtop,.qchoices,.qchoice-row,.quiz-nav,.tc-question-nav){background:transparent!important;color:var(--tc-text)!important}
+html .tc.tc-simple :is(.tc-source,.tc-reading-ko,.tc-supplement small,.tc-supp-sources span){color:var(--tc-muted)!important}
+html .tc.tc-simple button{background:var(--tc-soft)!important;color:var(--tc-text)!important;border-color:var(--tc-border)!important;opacity:1!important}
+html .tc.tc-simple button:hover:not(:disabled){background:var(--tc-hover)!important;color:var(--tc-text)!important;border-color:var(--tc-accent)!important}
+html .tc.tc-simple button:disabled{background:var(--tc-disabled)!important;color:var(--tc-muted)!important;border-color:var(--tc-border)!important;opacity:1!important;cursor:default}
+html .tc.tc-simple :is(button[aria-checked=true],button[aria-pressed=true],button[aria-current=true]){background:var(--tc-selected)!important;color:var(--tc-text)!important;border-color:var(--tc-accent)!important;box-shadow:inset 4px 0 var(--tc-accent)!important}
+html .tc.tc-simple .qchoice-row.is-correct .tc-answer-option{background:var(--tc-good)!important;color:var(--tc-good-text)!important;border-color:var(--tc-accent)!important}
+html .tc.tc-simple .qchoice-row.is-wrong .tc-answer-option{background:var(--tc-bad)!important;color:var(--tc-bad-text)!important;border-color:var(--tc-bad-border)!important}
+html .tc.tc-simple .tc-check-answer:not(:disabled){background:var(--tc-action)!important;color:var(--tc-action-text)!important;border-color:var(--tc-accent)!important}
+html .tc.tc-simple .tc-repeat-badge{background:var(--tc-soft)!important;color:var(--tc-text)!important;border-color:var(--tc-focus)!important}
+html .tc.tc-simple :is(a,strong,b,em){color:var(--tc-accent)!important}
+html .tc.tc-simple :focus-visible{outline:3px solid var(--tc-focus)!important;outline-offset:3px}
+html .tc.tc-simple img{filter:none!important;background:transparent!important;border-radius:8px}
+/* Question graphics: original bytes/colors inside a theme-scoped frame; a white source graphic stays white. */
+html .tc.tc-simple .tc-figure{margin:16px 0;padding:10px;background:var(--tc-soft)!important;border:1px solid var(--tc-border);border-radius:12px;text-align:center}
+html .tc.tc-simple .tc-figure .tc-image{display:block;max-width:100%;height:auto;max-height:70vh;object-fit:contain;margin:0 auto}
+html .tc.tc-simple .tc-figure .tc-image[hidden]{display:none!important}
+html .tc.tc-simple .tc-image-status{margin:4px 0!important}
+
+html .tc.tc-simple .qnum{background:var(--tc-soft)!important;color:var(--tc-text)!important;border:1px solid var(--tc-border)!important;border-radius:8px;padding:4px 9px;display:inline-block;white-space:nowrap;width:auto;min-width:5ch;height:auto;line-height:1.4}
+
+/* Explanation prose and numbered lists keep adjacent markers and a hanging indent. */
+.tc .tc-tutor,.tc .tc-tutor :is(ol,ul,li,p),.tc .tc-reading-pair,.tc .tc-option-reason,.tc .tc-supplement{text-align:left!important}.tc .tc-tutor :is(p,li),.tc .tc-tutor-core,.tc .tc-reading-en{font-weight:400!important}.tc .tc-tutor :is(ol,ul){list-style-position:outside;padding-left:1.6em;margin:12px 0}.tc .tc-tutor li{padding-left:.25em;line-height:1.9}.tc .tc-tutor li+li{margin-top:14px}.tc .tc-tutor :is(strong,b){font-weight:750!important}.tc .tc-option-reason h5{line-height:1.7;overflow-wrap:anywhere}
+
+.tc .tc-explain-section{margin:20px 0;padding-top:14px;border-top:1px solid var(--tc-border)}.tc .tc-explain-section>h3{font-size:21px;margin:0 0 14px}.tc .tc-option-reason h4{font-size:17px;margin:0 0 5px}.tc .tc-option-reason p{margin:0}.tc .tc-core-comparison{padding:12px;border-left:3px solid var(--tc-accent)}.tc .tc-transfer-label{font-size:14px;color:var(--tc-muted)!important}.tc .tc-transfer-feedback:empty{display:none}.tc .tc-transfer-feedback p{font-size:16px;line-height:1.8;font-weight:400}.tc .tc-transfer button[hidden]{display:none!important}
+
+.tc-simple .qtop{flex-wrap:wrap}.tc-simple .tc-recent-results{display:inline-flex;gap:5px;margin-left:auto;flex-shrink:0}.tc-simple .tc-recent-cell{display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border:1px solid var(--tc-border);border-radius:3px;font-size:19px;font-weight:700;color:var(--tc-muted);background:var(--tc-soft)}.tc-simple .tc-recent-cell.is-right{color:var(--tc-good-text);background:var(--tc-good)}.tc-simple .tc-recent-cell.is-wrong{color:var(--tc-bad-text);background:var(--tc-bad)}
+
+.tc .tc-passage-shortcuts{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:14px 0}.tc .tc-passage-shortcuts strong{flex-basis:100%}.tc .tc-passage-shortcuts button{padding:10px;min-height:44px;font-size:15px;overflow-wrap:anywhere}
+/* Account-level quiz toolbar hiding must not hide TOEIC passage navigation. */
+html .tc.tc-simple>.quiz-tools{display:flex!important;flex-wrap:wrap;gap:8px}
+/* TOEIC top navigation: back and question picker stay at opposite ends on every width/theme. */
+html .tc.tc-simple>.quiz-tools.tc-topnav{flex-wrap:nowrap;justify-content:space-between;align-items:center;gap:12px;margin:0 0 12px}
+html .tc.tc-simple>.tc-topnav>button{flex:0 1 auto;min-width:44px;min-height:44px!important;white-space:nowrap}
+html .tc.tc-simple>.tc-topnav+.tc-jump{margin-top:0!important;margin-bottom:12px}
+/* Question picker: search/close sit outside the scroll region; the 4-digit grid scrolls internally so 1000 buttons never stretch the page. */
+html .tc.tc-simple .tc-jump-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0}
+html .tc.tc-simple .tc-jump-label{font-weight:700;color:var(--tc-text)}
+html .tc.tc-simple .tc-jump-search{flex:1 1 8em;min-width:0;max-width:14em;min-height:44px;padding:8px 10px;font:inherit;font-variant-numeric:tabular-nums;border:1px solid var(--tc-border);border-radius:10px;background:var(--tc-card);color:var(--tc-text)}
+html .tc.tc-simple .tc-jump-search:disabled{background:var(--tc-disabled);color:var(--tc-muted)}
+html .tc.tc-simple .tc-jump-close{margin-left:auto}
+html .tc.tc-simple .tc-jump>.tc-question-nav{display:grid;grid-template-columns:repeat(auto-fill,minmax(60px,1fr));align-content:start;gap:6px;margin:0;padding:6px;max-height:min(60vh,420px);overflow-y:auto;overscroll-behavior:contain;position:relative}
+html .tc.tc-simple .tc-jump>.tc-question-nav button{min-width:44px;min-height:44px;padding:0 4px;font-size:15px;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:center}
+html .tc.tc-simple .tc-jump>.tc-question-nav button[aria-current=true]{font-weight:800;text-decoration:underline 2px;text-underline-offset:3px;border-width:2px!important}
+/* 번호 아래 가운데 최근 3회 O/X/–. 버튼은 작은 칸 그대로(44px 이상). */
+html .tc.tc-simple .tc-jump>.tc-question-nav button{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:3px 4px;line-height:1.2}
+html .tc.tc-simple .tc-jump-number{display:block}
+html .tc.tc-simple .tc-jump-history{display:flex;justify-content:center;gap:4px;font-size:14px;line-height:1.2;font-weight:700;text-decoration:none}
+html .tc.tc-simple .tc-jump-h.is-right{color:var(--tc-jump-right,#176c37)!important}
+html .tc.tc-simple .tc-jump-h.is-wrong{color:var(--tc-jump-wrong,#b42318)!important}
+html .tc.tc-simple .tc-jump-h.is-empty{color:var(--tc-muted);font-weight:400}
+html .tc.tc-simple .tc-jump :is(.tc-question-nav,.tc-question-nav button,.tc-jump-empty)[hidden]{display:none!important}
+html .tc.tc-simple .tc-jump-empty{margin:8px 0;font-weight:600}
+/* Part 7 근거 표시(채점 뒤에만): 모든 테마에서 같은 어두운 반투명 패널·밝은 글자. 넓은 테마 !important 규칙보다 구체적인 범위로 덮는다. 움직임 없음. */
+html .tc.tc-simple .tc-passage.tc-ev-passage{background:var(--tc-card)!important;color:var(--tc-text)!important;border:1px solid var(--tc-border)!important;white-space:pre-wrap;line-height:1.95;overflow-wrap:anywhere}
+html .tc.tc-simple .tc-ev-passage .tc-ev-src{color:var(--tc-text)!important}
+html .tc.tc-simple .tc-ev-passage mark.tc-ev-mark{color:var(--tc-text)!important;border-radius:3px;padding:1px 0 4px;-webkit-box-decoration-break:clone;box-decoration-break:clone;background-repeat:no-repeat;background-position:0 0;background-size:100% 100%;cursor:pointer}
+html .tc.tc-simple .tc-ev-passage mark.tc-ev-mark[aria-expanded=true]{outline:2px solid var(--tc-focus);outline-offset:1px}
+html .tc.tc-simple .tc-ev-passage mark.tc-ev-mark.is-multi{padding-bottom:7px}
+html .tc.tc-simple .tc-ev-note{display:block;white-space:normal;margin:4px 0 14px;padding:8px 10px;border-left:3px solid #7d9586;border-radius:6px;background:var(--tc-soft)!important}
+html .tc.tc-simple .tc-ev-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;margin:4px 0}
+html .tc.tc-simple .tc-ev-tags{display:inline-flex;flex-wrap:wrap;gap:4px}
+html .tc.tc-simple .tc-ev-ko{font-size:15px!important;line-height:1.7;color:var(--tc-muted)!important}
+/* 전체 해석: 원문 단위마다 영문 블록 + 회색 해석 한 줄. 단위 앞뒤 공백 조각은 원문 textContent에만 남기고 화면에서는 블록 간격으로 대신한다. */
+html .tc.tc-simple .tc-ev-full .tc-ev-unit{display:block;margin:0 0 12px}
+html .tc.tc-simple .tc-ev-full .tc-ev-gap{display:none}
+html .tc.tc-simple .tc-ev-full .tc-ev-note{margin:4px 0 0;padding:4px 10px}
+html .tc.tc-simple .tc-ev-full .tc-ev-full-ko{display:block;text-align:left}
+html .tc.tc-simple .tc-ev-chip{display:inline-block;padding:1px 7px;border-radius:6px;font-size:15px;line-height:1.5;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;color:#121a16!important}
+/* 근거 팝업: 화면 가장자리 15px 안쪽 고정, 가로 넘침 없음. 색 칩에도 번호-정답 글자를 붙여 색만으로 구분하지 않는다. */
+html .tc.tc-simple .tc-ev-pop{position:fixed;z-index:10005;left:15px;top:15px;box-sizing:border-box;width:min(420px,calc(100vw - 30px));max-height:calc(100vh - 30px);overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;padding:8px 14px 12px;border:1px solid var(--tc-border);border-radius:12px;background:var(--tc-card)!important;color:var(--tc-text)!important;box-shadow:0 8px 24px rgba(0,0,0,.35);text-align:left;white-space:normal;overflow-wrap:anywhere}
+html .tc.tc-simple .tc-ev-pop[hidden]{display:none!important}
+html .tc.tc-simple .tc-ev-pop-head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+html .tc.tc-simple .tc-ev-pop-title{font-size:15px;color:var(--tc-text)!important}
+html .tc.tc-simple .tc-ev-pop-close{min-width:44px;min-height:44px;padding:6px 12px;flex-shrink:0}
+html .tc.tc-simple .tc-ev-pop-item{margin-top:8px;padding-top:8px;border-top:1px solid var(--tc-border)}
+html .tc.tc-simple .tc-ev-pop p{margin:4px 0;white-space:normal}
+html .tc.tc-simple .tc-ev-kind{font-size:15px;font-weight:700;color:var(--tc-text)!important}
+html .tc.tc-simple .tc-ev-why{font-size:16px;line-height:1.65;color:var(--tc-text)!important}
+html .tc.tc-simple .tc-ev-absence{font-size:15px;line-height:1.65;font-weight:700;color:var(--tc-muted)!important}
+html .tc.tc-simple :is(.tc-ev-passage,.tc-ev-passage *,.tc-ev-pop,.tc-ev-pop *){animation:none!important;transition:none!important}
+/* 채점 직후 짧은 대기(스크롤·OX 준비) 동안 칠·밑줄·해석 줄만 감춘다. 영문 글자는 항상 보인다. 기본(클래스 없음)은 정지된 최종 상태. */
+html .tc.tc-simple .tc-ev-passage.is-ev-awaiting mark.tc-ev-mark{background-size:0 100%!important;box-shadow:none!important}
+html .tc.tc-simple .tc-ev-passage.is-ev-awaiting .tc-ev-note{opacity:0;visibility:hidden}
+html .tc.tc-simple .tc-ev-passage.is-ev-reveal mark.tc-ev-mark{animation:tc-ev-fill .45s ease-out both!important}
+html .tc.tc-simple .tc-ev-passage.is-ev-reveal .tc-ev-note{animation:tc-ev-note .45s ease-out both!important}
+@keyframes tc-ev-fill{from{background-size:0 100%;box-shadow:none}to{background-size:100% 100%}}
+@keyframes tc-ev-note{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){html .tc.tc-simple .tc-ev-passage.is-ev-reveal :is(mark.tc-ev-mark,.tc-ev-note){animation:none!important}}
+/* Part menu cards: wrapping name on the left, review/total count kept on one line at the right. */
+html .tc.tc-simple .tc-group-list>.tc-group{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 14px;min-height:60px;line-height:1.4}
+html .tc.tc-simple .tc-group-label{flex:1 1 10em;min-width:0;overflow-wrap:anywhere;word-break:keep-all}
+html .tc.tc-simple .tc-group-count{flex:0 0 auto;margin-left:auto;white-space:nowrap;font-size:16px;font-weight:650;font-variant-numeric:tabular-nums;color:var(--tc-muted)!important}
+html .tc.tc-simple .tc-group:disabled .tc-group-count{color:inherit!important}
+@media(max-width:600px){html .tc.tc-simple .tc-group-list>.tc-group{min-height:56px;padding:12px 14px}html .tc.tc-simple .tc-group-count{font-size:15px}}
+
+/* 문제 카드의 등장 transform이 fixed 팝업 좌표를 바꾸지 않도록 body portal에 둔다. */
+html .tc.tc-simple.tc-ev-portal{position:fixed;inset:0;z-index:10005;pointer-events:none;max-width:none;margin:0!important;padding:0!important;border:0!important;background:transparent!important;transform:none!important;filter:none!important;animation:none!important}
+html .tc.tc-simple.tc-ev-portal .tc-ev-pop{pointer-events:auto}
+/* 전체 해석은 문장 아래 작은 회색 글씨로 이어 읽는다. 개별 해석 카드·구분선은 두지 않는다. */
+html .tc.tc-simple .tc-ev-full .tc-ev-note{margin:3px 0 8px;padding:0;border:0!important;border-radius:0;background:transparent!important;box-shadow:none!important}
+html .tc.tc-simple .tc-ev-full .tc-ev-note .tc-ev-row{background:transparent!important}
+/* LC Script: 개별 카드·테두리 없이 영문과 회색 해석을 이어 읽는다. 단위 사이 간격은 작게, 해석은 15px 이상, 화자 표기·줄바꿈은 원문 그대로. */
+html .tc.tc-simple .tc-script-shared{margin:18px 0}
+html .tc.tc-simple .tc-script-flow{display:block;min-width:0}
+html .tc.tc-simple .tc-script-flow .tc-script-pair{margin:0 0 10px;padding:0;border:0!important;border-radius:0;background:transparent!important;box-shadow:none!important}
+html .tc.tc-simple .tc-script-flow .tc-script-en{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.75}
+html .tc.tc-simple .tc-script-flow .tc-script-ko{margin:2px 0 0;font-size:15px!important;line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--tc-muted)!important}
+html .tc.tc-simple .tc-ev-script .tc-ev-unit{margin:0 0 10px;min-width:0}
+html .tc.tc-simple .tc-ev-script .tc-ev-note{margin:2px 0 0}
+html .tc.tc-simple .tc-ev-script .tc-ev-ko{font-size:15px!important}
+@media(max-width:600px){html .tc.tc-simple .tc-ev-script.tc-passage{padding:12px 10px}html .tc.tc-simple .tc-ev-script .tc-ev-chip{white-space:normal}}
+
+/* 상단 선택 버튼 하나로만 여는 번호창; 닫힌 하단 진입점은 보이지 않는다. */
+.tc .tc-jump[hidden]{display:none!important}
+html .tc.tc-simple .tc-script-shared{padding:0;border:0!important;border-radius:0;background:transparent!important;box-shadow:none!important}
+html .tc.tc-simple .tc-ev-script.tc-passage{padding:0;border:0!important;border-radius:0;background:transparent!important;box-shadow:none!important}
+
+/* 채점 후 설명 안의 전체 해석: 기존 세 구역과 LC/Part7 리뷰 구조 유지 */
+html .tc.tc-simple .tc-complete-translation{font-size:15px!important;line-height:1.7;text-align:left;white-space:pre-line;overflow-wrap:anywhere;color:var(--tc-muted)!important;margin:.5rem 0 .75rem;}
+
+html[data-hanq-theme=terminal] .tc{--tc-jump-right:#72ef9d;--tc-jump-wrong:#ff9b91}
+html .tc.tc-simple .tc-expression-link{margin:10px 0 4px;padding:10px 12px;border-left:3px solid #79bb96;background:var(--tc-soft)!important;border-radius:6px;overflow-wrap:anywhere}html .tc.tc-simple .tc-expression-link h4{font-size:14px;line-height:1.6;margin:0 0 8px;color:var(--tc-text)!important}html .tc.tc-simple .tc-expression-link .tc-expression-en{font-family:system-ui,sans-serif;font-size:16px;font-weight:650;line-height:1.65;white-space:pre-wrap;margin:5px 0;color:var(--tc-text)!important}html .tc.tc-simple .tc-expression-arrow{display:block;font-size:12px;color:var(--tc-accent)!important}html .tc.tc-simple .tc-expression-link :is(.tc-expression-meaning,.tc-expression-reason){font-size:14px;line-height:1.75;margin:6px 0;color:var(--tc-muted)!important}
+
+/* Keep passage membership and recorded mistakes distinct. */
+.tc-group-composition{padding:.65rem .75rem;border-left:3px solid #79d8f4;background:#10212b;color:#eaf8ff;font-size:1rem;line-height:1.65;overflow-wrap:anywhere}
+
+html .tc.tc-simple .tc-transfer-practice legend{font-size:var(--tc-transfer-stem-size,18px)!important;line-height:1.75!important}html .tc.tc-simple .tc-transfer-practice button{font-size:var(--tc-transfer-option-size,16px)!important;line-height:1.7!important;min-height:44px}
+.tc-option-context{padding:10px 12px;border-left:3px solid #79caa1;color:#e4eee8;line-height:1.8}.tc .tc-option-compact{padding:10px 0;margin:8px 0;border-bottom:1px solid #405b4c}.tc .tc-option-compact h4{font-size:16px;line-height:1.7;margin:0 0 5px}.tc .tc-option-compact p{font-size:16px;line-height:1.8;margin:4px 0}.tc-option-example-ko{display:block;color:#bfcfc4}.tc-option-example>span:first-child{color:#a4dfbc}
+
+.tc .tc-option-gloss{display:block;font:inherit;font-size:15px;line-height:1.5;margin-top:4px;color:var(--tc-muted)}.tc .tc-option-gloss-list p{margin:6px 0}.tc .tc-option-comparison{background:var(--tc-soft);color:var(--tc-text);border:1px solid var(--tc-border);border-radius:10px;padding:12px;margin-top:12px}.tc .tc-option-comparison p{margin:8px 0;font-size:16px;line-height:1.7}.tc .tc-option-comparison .is-correct{color:var(--tc-accent)}.tc .tc-option-examples{padding:0!important;border:0!important;border-top:1px solid var(--tc-border)!important;border-radius:0!important}.tc .tc-option-examples summary{min-height:44px;cursor:pointer}.tc .tc-complete-translation{line-height:1.7;margin:8px 0 14px}
+
+html .tc.tc-simple .tc-number-progress{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 16px}
+.tc-progress-part{flex:1 1 12em;min-width:0;overflow-wrap:anywhere}.tc-progress-numbers{margin-left:auto;font-variant-numeric:tabular-nums;overflow-wrap:anywhere;text-align:right;max-width:100%}

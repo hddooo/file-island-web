@@ -1,0 +1,22 @@
+/* A single canvas per active source/projectile. The existing arena/HUD and combat timing stay intact. */
+html body .battle-island [data-material-v2]{background:transparent!important;background-image:none!important;border:0!important;box-shadow:none!important;clip-path:none!important;overflow:visible!important;border-radius:50%!important}
+html body .battle-island .bi-projectile-flame[data-material-v2]{width:108px!important;height:108px!important}
+html body .battle-island .bi-projectile-spark[data-material-v2]{width:30px!important;height:30px!important}
+html body .battle-island .bi-projectile-missile[data-material-v2]{width:104px!important;height:46px!important;border-radius:0!important}
+html body .battle-island [data-material-v2]::before,html body .battle-island [data-material-v2]::after{display:none!important}
+html body .battle-island .bi-procedural-material{position:absolute;left:-25%;top:-25%;width:150%;height:150%;max-width:none!important;display:block;pointer-events:none;image-rendering:auto!important;opacity:1!important;background:transparent!important}
+html body .battle-island .bi-projectile-missile[data-material-v2]>.bi-procedural-material{left:-45%;top:-45%;width:190%;height:190%}
+
+html body .battle-island .bi-projectile-missile[data-material-v2][data-direction=right]{rotate:none!important}
+
+/* FX containers must not inherit the terminal theme's opaque panel paint. */
+html[data-hanq-theme] body .battle-island :is(.bi-ground-impact,.bi-source-fx){background:transparent!important;background-image:none!important;border:0!important;box-shadow:none!important}
+html body .battle-island .bi-scorch{height:10px;opacity:.35;background:radial-gradient(ellipse,#75482955,transparent 70%)!important;box-shadow:none!important}
+
+/* Frame a tall desktop arena so the 52%-of-stage sun can be caught on screen.
+   Short/touch layouts retain their existing full-width arena and timing. */
+@media(min-width:1000px) and (min-height:600px){
+ .bi-in-match .bi-body{width:min(100%,max(600px,calc((100dvh - 420px) / .52)));align-self:center}
+ .bi-in-match .bi-combat-active .bi-fighter{align-self:end}
+ .bi-in-match .bi-combat-active .bi-floor{bottom:25px}
+}

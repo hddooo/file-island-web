@@ -1,0 +1,17 @@
+@import url('./toeic-design-tokens.css');
+@page{size:A4 portrait;margin:8mm}
+*{box-sizing:border-box}html,body{margin:0;background:#fff;color:#15263b;font-family:"Apple SD Gothic Neo","Malgun Gothic",sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.cn-paper{width:194mm;height:280mm;display:flex;flex-direction:column;break-after:page}.cn-paper:last-child{break-after:auto}
+.cn-paper header{height:17mm;flex:none;border-bottom:1pt solid #2c506e;margin-bottom:3mm}.cn-paper header span{font-size:8pt;letter-spacing:1px}.cn-paper h1{display:inline;font-size:17pt;margin-left:4mm}.cn-paper header p{font-size:9pt;margin:2mm 0}
+.cn-paper header{display:grid;grid-template-columns:auto 1fr;grid-template-rows:10mm 5mm;column-gap:4mm;align-items:center;padding-top:1mm}.cn-paper header h1{display:block;margin:0;line-height:1.4}.cn-paper header span{line-height:1.4}.cn-paper header p{grid-column:1/-1;margin:0;line-height:1.4}
+.cn-paper-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6mm;flex:1;min-height:0}.cn-paper-grid>section{min-width:0}
+.cn-paper footer{height:6mm;flex:none;font-size:8pt;padding-top:2mm;border-top:.5pt solid #aaa}
+h3,h5{font-size:11pt;margin:2.5mm 0 1mm}p{font-size:9.5pt;line-height:1.25;margin:1mm 0;word-break:keep-all;overflow-wrap:anywhere}strong{font-size:9.5pt}
+.cn-steps{padding:0;margin:0;list-style:none}.cn-steps li{margin:0 0 1.4mm;padding-left:2mm;border-left:2pt solid #57889a}.cn-steps p{margin:.5mm 0}.cn-example{padding:1mm 0;border-bottom:.4pt solid #c7d4df}.cn-en{font-family:Arial,Helvetica,sans-serif;word-break:normal}.cn-en u{text-underline-offset:2px;text-decoration-thickness:.6pt}.cn-ko{color:#394c60}.cn-why{color:#26394c}.cn-source{font-size:7.5pt;color:#596a7b}.cn-evidence{border-left:1.5pt solid #6c8ba6;padding-left:2mm;margin-top:2mm}.cn-evidence .cn-en{font-size:9pt}
+table{border-collapse:collapse;width:100%;table-layout:fixed;font-size:9.5pt;line-height:1.16}th,td{vertical-align:top;text-align:left;border-bottom:.35pt solid #c7d3de;padding:.9mm 1mm;overflow-wrap:anywhere;word-break:keep-all}thead th{background:#dfeaf3;font-size:8.5pt}tbody th{width:54%;font-family:Arial,Helvetica,"Apple SD Gothic Neo",sans-serif;font-weight:600}thead th:first-child{width:54%}td{font-size:9.5pt}.cn-table-note{font-size:8.5pt;line-height:1.25;margin:1mm 0 2mm}.cn-caution{font-size:9pt;line-height:1.3}.cn-recall{break-inside:avoid}.cn-pairs{margin-top:4mm}.cn-pairs p,.cn-refs p{font-size:9pt;line-height:1.35}.cn-refs{margin-top:3mm}
+@media screen{body{background:#e8edf3}.cn-paper{background:white;margin:10mm auto;box-shadow:0 0 10px #0002}}
+/* Tighten repeated spacing, keeping the teaching text at 9.5pt. */
+p{margin:.5mm 0;line-height:1.2}h3,h5{margin:2mm 0 .8mm}.cn-steps li{margin-bottom:.8mm}.cn-example{padding:.65mm 0}.cn-evidence{margin-top:1.2mm}th,td{padding:.5mm 1mm}.cn-table-note{margin:.7mm 0 1.2mm}.cn-pairs{margin-top:2.5mm}.cn-refs{margin-top:2mm}
+
+/* Same existing paper font as on-screen TOEIC learning content. */
+html body,html body *{font-family:var(--toeic-study-font)!important}

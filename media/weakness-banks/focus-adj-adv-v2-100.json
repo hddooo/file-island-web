@@ -1,0 +1,5162 @@
+{
+  "id": "focus-adj-adv-v2-100",
+  "title": "형용사·부사 적용 100제 · 개선판",
+  "version": 1,
+  "notice": "TOEIC형 자체제작 + 사용자 제공 원문 재확인 · 기출 전체 재현 아님 · 기존 100제 기록 별도 보존",
+  "questions": [
+    {
+      "stem": "Although the revised contract offers a lower rate, the hotel is ________ to sign until the cancellation terms have been clarified.",
+      "choices": [
+        "hesitation",
+        "hesitate",
+        "hesitantly",
+        "hesitant"
+      ],
+      "answer": 3,
+      "translation": "수정된 계약이 더 낮은 요금을 제시하지만 호텔은 취소 조건이 명확해질 때까지 서명하기를 망설이고 있다.",
+      "tags": [
+        "hesitant-hesitate",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "망설임",
+          "reason": "the hotel is hesitation은 호텔을 망설임 자체와 동일시한다. be hesitant to가 이 문장의 구문이다.",
+          "example": "He accepted the offer without hesitation.",
+          "translation": "그는 망설임 없이 제안을 받아들였다."
+        },
+        {
+          "form": "동사",
+          "meaning": "망설이다",
+          "reason": "is 뒤에 동사원형 hesitate를 놓아 is hesitate to로 만들 수 없다. 상태를 나타내는 hesitant가 필요하다.",
+          "example": "Please do not hesitate to contact us.",
+          "translation": "주저하지 말고 저희에게 연락해 주세요."
+        },
+        {
+          "form": "부사",
+          "meaning": "머뭇거리며",
+          "reason": "is 뒤에서 호텔의 주저하는 상태를 설명하는 보어가 필요하다. hesitantly만으로 완성되지 않는다.",
+          "example": "She answered the question hesitantly.",
+          "translation": "그녀는 그 질문에 머뭇거리며 답했다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "망설이는",
+          "reason": "is hesitant to sign은 서명을 망설이는 상태다. 취소 조건이 아직 명확하지 않다는 뒤 내용이 그 이유다.",
+          "example": "The owner is hesitant to raise prices.",
+          "translation": "소유주는 가격 인상을 망설인다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-001",
+      "number": 1,
+      "version": 1,
+      "clues": [
+        "the hotel is",
+        "to sign"
+      ]
+    },
+    {
+      "stem": "Rather than using a ________ sequence of slides, the trainer asked participants to diagnose an equipment fault in small groups.",
+      "choices": [
+        "bored",
+        "boring",
+        "boringly",
+        "boredom"
+      ],
+      "answer": 1,
+      "translation": "교육 담당자는 지루한 슬라이드들을 차례로 보여주는 대신 참가자들에게 소그룹으로 장비 결함을 진단하게 했다.",
+      "tags": [
+        "emotion-meaning",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사·과거분사",
+          "meaning": "지루함을 느끼는",
+          "reason": "sequence는 지루함을 느끼는 대상이 아니라 지루함을 주는 원인이다. bored는 여기 맞지 않는다.",
+          "example": "The trainees looked bored during the lecture.",
+          "translation": "교육생들은 강의 중 지루해 보였다."
+        },
+        {
+          "form": "형용사·현재분사",
+          "meaning": "지루한, 지루하게 하는",
+          "reason": "슬라이드 sequence가 듣는 사람에게 지루함을 일으킬 수 있어 boring이다. 참여형 활동과 대조된다.",
+          "example": "The audience found the presentation boring.",
+          "translation": "청중은 발표가 지루하다고 느꼈다."
+        },
+        {
+          "form": "부사",
+          "meaning": "지루하게",
+          "reason": "a와 sequence 사이에서 sequence를 직접 꾸미므로 boringly가 아니라 형용사 boring이 필요하다.",
+          "example": "The report repeated the same point boringly.",
+          "translation": "보고서는 같은 요점을 지루하게 반복했다."
+        },
+        {
+          "form": "명사",
+          "meaning": "지루함",
+          "reason": "sequence of slides의 지루한 성질을 설명할 형용사가 필요하다. boredom은 감정 자체를 가리키는 명사다.",
+          "example": "The interactive exercise prevented boredom.",
+          "translation": "상호작용 활동은 지루함을 막았다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-002",
+      "number": 2,
+      "version": 1,
+      "clues": [
+        "sequence of slides",
+        "asked participants to diagnose an equipment fault"
+      ]
+    },
+    {
+      "stem": "Customers will find ________ instructions inside each package, including diagrams showing how to connect the device to a wireless network.",
+      "translation": "고객들은 각 포장 안에서 기기를 무선 네트워크에 연결하는 그림을 포함한 상세한 설명서를 볼 수 있다.",
+      "tags": [
+        "adjective-noun"
+      ],
+      "choices": [
+        "detailing",
+        "details",
+        "detailed",
+        "detail"
+      ],
+      "answer": 2,
+      "optionDetails": [
+        {
+          "form": "동명사·분사",
+          "meaning": "상세히 설명하는 것·상세히 설명하는",
+          "reason": "설명서 자체가 자세하다는 뜻이므로 detailing보다 상태를 나타내는 detailed가 맞다.",
+          "example": "A memo detailing the schedule arrived.",
+          "translation": "일정을 자세히 설명하는 메모가 왔다."
+        },
+        {
+          "form": "복수명사",
+          "meaning": "세부 사항들",
+          "reason": "details는 별도 명사로 이 문장에서 instructions를 상세하다고 수식하지 못한다.",
+          "example": "The details are available online.",
+          "translation": "세부 사항은 온라인에서 볼 수 있다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "상세한",
+          "reason": "instructions의 성질을 나타내는 형용사이며 diagrams를 포함한다는 내용과 맞는다.",
+          "example": "Please provide a detailed estimate.",
+          "translation": "상세한 견적서를 제공해 주세요."
+        },
+        {
+          "form": "동사",
+          "meaning": "상세히 설명하다",
+          "reason": "find의 목적어 instructions를 앞에서 수식해야 하므로 동사원형 detail은 이 자리에 맞지 않는다.",
+          "example": "The report details the changes.",
+          "translation": "보고서가 변경 사항을 자세히 설명한다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-003",
+      "number": 3,
+      "version": 1,
+      "clues": [
+        "instructions",
+        "including diagrams"
+      ]
+    },
+    {
+      "stem": "After several trial runs, the revised cleaning solution proved remarkably ________ at removing stains without damaging the fabric.",
+      "choices": [
+        "effectiveness",
+        "effective",
+        "effects",
+        "effectively"
+      ],
+      "answer": 1,
+      "translation": "여러 차례 시험 운전을 거친 뒤, 수정된 세정액은 천을 손상하지 않고 얼룩을 제거하는 데 매우 효과적인 것으로 드러났다.",
+      "tags": [
+        "unfamiliar-complement",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "효과성",
+          "reason": "remarkably가 수식할 형용사 자리에 명사 effectiveness를 넣을 수 없다. 세정액의 효과적인 성질을 설명한다.",
+          "example": "The study measured the effectiveness of the treatment.",
+          "translation": "그 연구는 처리 방법의 효과성을 측정했다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "효과적인",
+          "reason": "proved 뒤에서 the revised cleaning solution의 성질을 설명하고 remarkably의 수식을 받으므로 effective가 맞다.",
+          "example": "The new filter is effective against dust.",
+          "translation": "새 필터는 먼지를 제거하는 데 효과적이다."
+        },
+        {
+          "form": "복수명사",
+          "meaning": "영향; 효과",
+          "reason": "effects는 명사이며 remarkably의 수식을 받아 세정액의 성질을 설명할 수 없다.",
+          "example": "We monitored the effects of the change.",
+          "translation": "우리는 변경의 영향을 관찰했다."
+        },
+        {
+          "form": "부사",
+          "meaning": "효과적으로",
+          "reason": "이 문장의 proved는 세정액의 성질이 드러났다는 뜻이다. 동작 방식을 나타내는 effectively가 아니라 보어 effective가 필요하다.",
+          "example": "The filter removes dust effectively.",
+          "translation": "그 필터는 먼지를 효과적으로 제거한다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-004",
+      "number": 4,
+      "version": 1,
+      "clues": [
+        "proved remarkably",
+        "at removing stains"
+      ]
+    },
+    {
+      "stem": "Only technicians ________ for the weekend shift should be contacted about emergency coverage before the office closes today.",
+      "choices": [
+        "currently",
+        "availability",
+        "are available",
+        "available"
+      ],
+      "answer": 3,
+      "translation": "오늘 사무실이 문을 닫기 전에 주말 교대 근무가 가능한 기술자들에게만 비상 근무에 관해 연락해야 한다.",
+      "tags": [
+        "postpositive-adjective",
+        "quality-rewrite"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "현재",
+          "reason": "주어 technicians를 한정하는 근무 가능 상태가 필요하다. currently for the weekend shift만으로는 그 상태를 나타내지 못한다.",
+          "example": "The office is currently closed.",
+          "translation": "사무실은 현재 문을 닫았다."
+        },
+        {
+          "form": "명사",
+          "meaning": "이용 가능 여부; 근무 가능 시간",
+          "reason": "technicians를 뒤에서 근무 가능한 사람으로 한정하므로 명사 availability 대신 형용사 available이 필요하다.",
+          "example": "Please confirm your availability.",
+          "translation": "근무 가능한 시간을 확인해 주세요."
+        },
+        {
+          "form": "동사구",
+          "meaning": "근무 가능하다",
+          "reason": "주어 technicians와 본동사 should be contacted 사이에서 기술자를 한정해야 한다. are available이라는 별도 서술을 관계사 없이 이을 수 없다.",
+          "example": "The technicians are available on Sunday.",
+          "translation": "그 기술자들은 일요일에 근무할 수 있다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "이용 가능한; 근무 가능한",
+          "reason": "available for the weekend shift가 앞의 technicians를 뒤에서 꾸밉니다. 연락할 기술자의 상태를 나타냅니다.",
+          "example": "Is a technician available this afternoon?",
+          "translation": "오늘 오후에 근무 가능한 기술자가 있나요?"
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-005",
+      "number": 5,
+      "version": 1,
+      "clues": [
+        "Only technicians",
+        "for the weekend shift"
+      ]
+    },
+    {
+      "stem": "The benefits of the new drainage system were ________ demonstrated during a trial in which no water accumulated despite heavy rainfall.",
+      "choices": [
+        "convince",
+        "convincingly",
+        "convinced",
+        "convincing"
+      ],
+      "answer": 1,
+      "translation": "폭우에도 물이 고이지 않은 시험을 통해 새 배수 시스템의 이점이 설득력 있게 입증되었다.",
+      "tags": [
+        "participle-adverb",
+        "quality-rewrite"
+      ],
+      "optionDetails": [
+        {
+          "form": "동사",
+          "meaning": "확신시키다; 납득시키다",
+          "reason": "were convince demonstrated에는 동사원형이 잘못 끼어듭니다. convince는 convince the panel처럼 대상을 받습니다.",
+          "example": "The test results convinced the client.",
+          "translation": "시험 결과가 고객을 납득시켰다."
+        },
+        {
+          "form": "부사",
+          "meaning": "설득력 있게",
+          "reason": "were demonstrated는 수동태 동사구입니다. 그 입증 방식을 수식하는 빈칸에는 convincingly가 필요합니다.",
+          "example": "The speaker explained the benefits convincingly.",
+          "translation": "발표자는 이점을 설득력 있게 설명했다."
+        },
+        {
+          "form": "형용사·과거분사",
+          "meaning": "확신하는; 납득한",
+          "reason": "the benefits는 확신을 느끼는 대상이 아닙니다. were convinced demonstrated처럼 두 분사를 이 관계로 연결할 수도 없습니다.",
+          "example": "The panel was convinced by the evidence.",
+          "translation": "심사단은 그 증거에 납득했다."
+        },
+        {
+          "form": "형용사·현재분사",
+          "meaning": "설득력 있는; 납득시키는",
+          "reason": "convincing evidence처럼 명사를 수식하지만 demonstrated의 방식을 나타내는 자리에는 convincingly가 필요합니다.",
+          "example": "The trial provided convincing evidence.",
+          "translation": "그 시험은 설득력 있는 증거를 제공했다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-006",
+      "number": 6,
+      "version": 1,
+      "clues": [
+        "demonstrated",
+        "no water accumulated despite heavy rainfall"
+      ]
+    },
+    {
+      "stem": "The regional product launch turned out to be ________, with advance orders exceeding the sales department's most optimistic forecast.",
+      "choices": [
+        "success",
+        "successfully",
+        "successful",
+        "successes"
+      ],
+      "answer": 2,
+      "translation": "지역 신제품 출시는 성공적이었던 것으로 드러났으며 사전 주문량은 영업부의 가장 낙관적인 예측을 넘어섰다.",
+      "tags": [
+        "unfamiliar-complement",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "성공",
+          "reason": "명사 success를 성공한 행사라는 뜻으로 쓰려면 a success가 필요하다. 이 문장에는 관사가 없으므로 successful이 맞다.",
+          "example": "The launch was a success.",
+          "translation": "그 출시는 성공이었다."
+        },
+        {
+          "form": "부사",
+          "meaning": "성공적으로",
+          "reason": "turned out to be 뒤에서 the regional product launch의 결과 상태를 설명한다. successfully가 아니라 successful이 필요하다.",
+          "example": "The team successfully launched the new service.",
+          "translation": "그 팀은 새 서비스를 성공적으로 출시했다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "성공적인",
+          "reason": "turned out to be successful은 출시가 성공적이었던 것으로 드러났다는 뜻이며 뒤의 주문량이 이를 뒷받침한다.",
+          "example": "The trial was highly successful.",
+          "translation": "그 시험은 매우 성공적이었다."
+        },
+        {
+          "form": "복수명사",
+          "meaning": "성공 사례들",
+          "reason": "단일 출시 행사를 여러 성공 사례와 동일시하는 문장이 아니다. 성공적이었다는 형용사 보어가 필요하다.",
+          "example": "The annual report highlights several successes.",
+          "translation": "연례 보고서는 몇 가지 성공 사례를 강조한다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-007",
+      "number": 7,
+      "version": 1,
+      "clues": [
+        "turned out to be",
+        "advance orders exceeding"
+      ]
+    },
+    {
+      "stem": "The ________ appointed branch manager will meet the staff on Monday before taking responsibility for the region’s customer accounts.",
+      "choices": [
+        "newness",
+        "renew",
+        "newly",
+        "new"
+      ],
+      "answer": 2,
+      "translation": "새로 임명된 지점장은 지역 고객 계정을 맡기 전에 월요일에 직원들을 만날 것이다.",
+      "tags": [
+        "participle-adverb",
+        "quality-rewrite"
+      ],
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "새로움",
+          "reason": "newness는 appointed를 수식하지 못합니다. The 뒤 전체 명사구의 중심은 manager입니다.",
+          "example": "The newness of the software attracted attention.",
+          "translation": "그 소프트웨어의 새로움이 관심을 끌었다."
+        },
+        {
+          "form": "동사",
+          "meaning": "갱신하다",
+          "reason": "The renew appointed branch manager에는 명사구 안에 동사원형이 끼어들게 됩니다.",
+          "example": "Please renew the license before June.",
+          "translation": "6월 전에 면허를 갱신하세요."
+        },
+        {
+          "form": "부사",
+          "meaning": "새로; 최근에",
+          "reason": "appointed라는 과거분사를 수식합니다. newly appointed가 manager를 함께 꾸밉니다.",
+          "example": "A newly installed sensor detected the leak.",
+          "translation": "새로 설치한 센서가 누출을 감지했다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "새로운",
+          "reason": "빈칸 바로 뒤 appointed를 수식해야 합니다. new manager는 가능하지만 new appointed라는 결합은 맞지 않습니다.",
+          "example": "The new manager starts tomorrow.",
+          "translation": "새 관리자는 내일 출근한다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-008",
+      "number": 8,
+      "version": 1,
+      "clues": [
+        "appointed"
+      ]
+    },
+    {
+      "stem": "The two departments handle ________ related tasks, so their managers have agreed to share one training program rather than develop separate courses.",
+      "translation": "두 부서는 밀접하게 관련된 업무를 처리하므로 관리자들은 별도 과정을 만들기보다 하나의 교육 프로그램을 공유하기로 했다.",
+      "tags": [
+        "adverb-participle"
+      ],
+      "choices": [
+        "closing",
+        "closely",
+        "closeness",
+        "close"
+      ],
+      "answer": 1,
+      "optionDetails": [
+        {
+          "form": "형용사·분사",
+          "meaning": "마지막의·닫는",
+          "reason": "closing은 관련 정도를 나타내지 않으며 related를 직접 수식할 수도 없다.",
+          "example": "The closing session begins at four.",
+          "translation": "마지막 세션은 4시에 시작한다."
+        },
+        {
+          "form": "부사",
+          "meaning": "밀접하게",
+          "reason": "related를 수식해 업무들이 서로 밀접하게 관련됨을 나타낸다.",
+          "example": "The findings are closely related.",
+          "translation": "그 연구 결과들은 밀접하게 관련되어 있다."
+        },
+        {
+          "form": "명사",
+          "meaning": "가까움·친밀함",
+          "reason": "related tasks 앞에서 관련 정도를 명사 closeness로 수식할 수 없다.",
+          "example": "The survey measured the closeness of the teams.",
+          "translation": "설문은 팀들 사이의 친밀도를 측정했다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "가까운",
+          "reason": "tasks를 직접 꾸미는 것이 아니라 related라는 분사형 형용사의 관계 정도를 나타내므로 closely가 필요하다.",
+          "example": "They maintain close contact.",
+          "translation": "그들은 긴밀한 연락을 유지한다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-009",
+      "number": 9,
+      "version": 1,
+      "clues": [
+        "related tasks"
+      ]
+    },
+    {
+      "stem": "To win the supply contract, bidders must submit a ________ proposal that offers dependable service at a lower overall cost.",
+      "choices": [
+        "competitively",
+        "compete",
+        "competitive",
+        "competition"
+      ],
+      "answer": 2,
+      "translation": "공급 계약을 따내려면 입찰업체는 더 낮은 총비용으로 신뢰할 수 있는 서비스를 제공하는 경쟁력 있는 제안서를 제출해야 한다.",
+      "tags": [
+        "noun-adjective",
+        "quality-rewrite"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "경쟁력 있게",
+          "reason": "competitively priced proposal이라면 priced를 수식하지만, 이 문장에는 그 형용사·분사가 없습니다.",
+          "example": "Our products are competitively priced.",
+          "translation": "우리 제품은 가격 경쟁력이 있다."
+        },
+        {
+          "form": "동사",
+          "meaning": "경쟁하다",
+          "reason": "a compete proposal처럼 동사원형을 관사와 명사 사이에 놓아 꾸밀 수 없습니다.",
+          "example": "Three firms will compete for the contract.",
+          "translation": "세 회사가 그 계약을 두고 경쟁할 것이다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "경쟁력 있는",
+          "reason": "명사 proposal을 꾸며 다른 입찰안과 경쟁할 만하다는 뜻을 나타냅니다. lower overall cost가 그 경쟁력을 설명합니다.",
+          "example": "The company offers competitive salaries.",
+          "translation": "회사는 경쟁력 있는 급여를 제공한다."
+        },
+        {
+          "form": "명사",
+          "meaning": "경쟁; 대회",
+          "reason": "competition proposal이라면 경쟁 행사에 관한 제안서로 읽힐 수 있지만, 여기서는 비용과 서비스 측면의 입찰 경쟁력을 나타내야 합니다.",
+          "example": "Competition among suppliers has intensified.",
+          "translation": "공급업체 간 경쟁이 심해졌다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-010",
+      "number": 10,
+      "version": 1,
+      "clues": [
+        "proposal",
+        "dependable service at a lower overall cost"
+      ]
+    },
+    {
+      "stem": "Employees should feel entirely ________ raising concerns with the project manager, even when those concerns involve a decision made by senior staff.",
+      "choices": [
+        "comfort",
+        "comfortable",
+        "comfortably",
+        "comforts"
+      ],
+      "answer": 1,
+      "translation": "직원들은 우려 사항이 고위 직원의 결정과 관련되어 있더라도 프로젝트 관리자에게 편하게 문제를 제기할 수 있어야 한다.",
+      "tags": [
+        "unfamiliar-complement",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "편안함; 위안",
+          "reason": "entirely가 수식하면서 raising concerns를 이어 받는 상태 형용사가 필요하다. 명사 comfort를 쓰는 feel comfort와는 다른 구조다.",
+          "example": "The new chairs provide greater comfort.",
+          "translation": "새 의자는 더 큰 편안함을 제공한다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "편안한; 거리낌 없는",
+          "reason": "feel comfortable raising concerns는 우려를 제기하는 데 거리낌이 없다는 뜻이며 comfortable이 Employees의 상태를 설명한다.",
+          "example": "I feel comfortable asking for help.",
+          "translation": "나는 부담 없이 도움을 요청할 수 있다."
+        },
+        {
+          "form": "부사",
+          "meaning": "편안하게",
+          "reason": "should feel 뒤에는 직원들이 편안함을 느끼는 상태를 설명할 형용사가 필요하다. comfortably는 상태 보어가 아니다.",
+          "example": "The room comfortably accommodates twelve people.",
+          "translation": "그 방은 열두 명을 넉넉히 수용한다."
+        },
+        {
+          "form": "복수명사",
+          "meaning": "안락한 것들; 위안들",
+          "reason": "직원들이 여러 안락한 것들을 느낀다는 뜻이 아니다. raising concerns와 연결되는 편안한 상태가 필요하다.",
+          "example": "The hotel offers the comforts of home.",
+          "translation": "그 호텔은 집과 같은 안락함을 제공한다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-011",
+      "number": 11,
+      "version": 1,
+      "clues": [
+        "should feel entirely",
+        "raising concerns"
+      ]
+    },
+    {
+      "stem": "The revised scanner reads faded barcodes more ________ than the older model, reducing the number of parcels that require manual processing.",
+      "choices": [
+        "accuracy",
+        "accurate",
+        "inaccurate",
+        "accurately"
+      ],
+      "answer": 3,
+      "translation": "개선된 스캐너는 구형 모델보다 흐릿한 바코드를 더 정확하게 읽어 수작업 처리가 필요한 소포 수를 줄인다.",
+      "tags": [
+        "more-most-pos",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "정확성",
+          "reason": "reads의 목적어 faded barcodes가 있으므로 빈칸에는 읽는 방식을 설명하는 accurately가 필요하다.",
+          "example": "Accuracy is essential in data entry.",
+          "translation": "자료 입력에는 정확성이 필수다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "정확한",
+          "reason": "바코드의 상태가 아니라 scanner가 읽는 방식을 비교한다. more accurate는 이 자리에 맞지 않는다.",
+          "example": "The updated figures are accurate.",
+          "translation": "갱신된 수치는 정확하다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "부정확한",
+          "reason": "inaccurate 역시 형용사라 reads를 방식으로 수식할 수 없고 수작업 감소라는 결과와도 맞지 않는다.",
+          "example": "The original estimate was inaccurate.",
+          "translation": "최초 추정치는 부정확했다."
+        },
+        {
+          "form": "부사",
+          "meaning": "정확하게",
+          "reason": "more accurately가 reads faded barcodes를 수식하고 than the older model이 비교 대상을 밝힌다.",
+          "example": "The device reads labels accurately.",
+          "translation": "그 장치는 라벨을 정확하게 읽는다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-012",
+      "number": 12,
+      "version": 1,
+      "clues": [
+        "reads faded barcodes",
+        "more"
+      ]
+    },
+    {
+      "stem": "The annual accounts were ________ audited before the board approved the acquisition, with neither negotiating team involved in the review.",
+      "translation": "연간 회계 자료는 이사회가 인수를 승인하기 전에 독립적으로 감사를 받았으며, 어느 협상팀도 검토에 관여하지 않았다.",
+      "tags": [
+        "manner-adverb"
+      ],
+      "choices": [
+        "dependent",
+        "independence",
+        "independent",
+        "independently"
+      ],
+      "answer": 3,
+      "optionDetails": [
+        {
+          "form": "형용사",
+          "meaning": "의존하는",
+          "reason": "dependent는 상태를 나타내며 were audited의 감사 방식을 수식하지 못한다.",
+          "example": "The schedule is dependent on funding.",
+          "translation": "일정은 자금에 달려 있다."
+        },
+        {
+          "form": "명사",
+          "meaning": "독립",
+          "reason": "were와 audited 사이에서 감사 방식을 설명해야 하므로 명사 independence는 맞지 않는다.",
+          "example": "The committee values its independence.",
+          "translation": "위원회는 독립성을 중요하게 여긴다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "독립적인",
+          "reason": "independent는 감사인의 성질을 설명할 수 있지만 여기서는 audited라는 동작을 수식해야 한다.",
+          "example": "We hired an independent adviser.",
+          "translation": "우리는 독립 자문가를 고용했다."
+        },
+        {
+          "form": "부사",
+          "meaning": "독립적으로",
+          "reason": "were audited에 독립적으로 감사했다는 방식을 더하므로 independently가 맞다.",
+          "example": "The two laboratories worked independently.",
+          "translation": "두 연구소는 독립적으로 일했다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-013",
+      "number": 13,
+      "version": 1,
+      "clues": [
+        "audited",
+        "with neither negotiating team involved in the review"
+      ]
+    },
+    {
+      "stem": "The proposed ferry route will be economically ________ only if enough commuters purchase monthly passes to cover the additional fuel and staffing costs.",
+      "translation": "제안된 여객선 노선은 추가 연료비와 인건비를 충당할 만큼 충분한 통근객이 정기권을 구매해야만 경제성이 있을 것이다.",
+      "tags": [
+        "adjective-complement"
+      ],
+      "choices": [
+        "viability",
+        "viably",
+        "survival",
+        "viable"
+      ],
+      "answer": 3,
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "실행 가능성",
+          "reason": "ferry route 자체를 실행 가능성이라는 추상명사와 동일시하는 구조가 아니다. economically viable이라는 상태가 맞다.",
+          "example": "We assessed the plan’s viability.",
+          "translation": "우리는 계획의 실행 가능성을 평가했다."
+        },
+        {
+          "form": "부사",
+          "meaning": "실행 가능하게",
+          "reason": "be 뒤에서 ferry route의 성질을 나타내며 economically가 이미 그 성질을 수식하므로 형용사 viable이 필요하다.",
+          "example": "The business must operate viably.",
+          "translation": "그 사업은 존속 가능한 방식으로 운영되어야 한다."
+        },
+        {
+          "form": "명사",
+          "meaning": "존속·생존",
+          "reason": "will be economically 뒤에는 노선의 경제성을 설명하는 형용사가 필요하다. survival은 명사여서 경제적으로 존속 가능하다는 상태를 만들지 못한다.",
+          "example": "The subsidy is essential to the company’s survival.",
+          "translation": "그 보조금은 회사의 존속에 필수적이다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "실행 가능한·존속 가능한",
+          "reason": "will be의 보어로 노선의 성질을 설명하고 economically의 수식을 받아 경제성 있음을 나타낸다.",
+          "example": "The proposal is commercially viable.",
+          "translation": "그 제안은 상업적으로 실행 가능하다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-014",
+      "number": 14,
+      "version": 1,
+      "clues": [
+        "will be economically"
+      ]
+    },
+    {
+      "stem": "We are seeking a ________ qualified translator who can review technical manuals and discuss proposed revisions directly with our engineering staff.",
+      "translation": "우리는 기술 설명서를 검토하고 수정안을 엔지니어들과 직접 논의할 수 있는 자격을 충분히 갖춘 번역가를 찾고 있다.",
+      "tags": [
+        "adverb-adjective"
+      ],
+      "choices": [
+        "highly",
+        "height",
+        "high",
+        "heighten"
+      ],
+      "answer": 0,
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "매우·고도로",
+          "reason": "명사 translator를 직접 꾸미는 것이 아니라 qualified의 정도를 수식하므로 highly가 맞다.",
+          "example": "She is highly experienced.",
+          "translation": "그녀는 경험이 매우 풍부하다."
+        },
+        {
+          "form": "명사",
+          "meaning": "높이",
+          "reason": "a와 qualified 사이에서 형용사를 수식해야 하므로 명사 height는 맞지 않는다.",
+          "example": "Check the height of the shelf.",
+          "translation": "선반 높이를 확인하세요."
+        },
+        {
+          "form": "형용사",
+          "meaning": "높은",
+          "reason": "qualified라는 형용사의 정도를 나타낼 자리이므로 high가 아니라 highly가 필요하다.",
+          "example": "The project has a high priority.",
+          "translation": "그 사업의 우선순위가 높다."
+        },
+        {
+          "form": "동사",
+          "meaning": "높이다",
+          "reason": "are seeking a qualified translator라는 구조에 동사원형 heighten을 넣을 자리가 없다.",
+          "example": "The delay may heighten concerns.",
+          "translation": "지연이 우려를 키울 수 있다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-015",
+      "number": 15,
+      "version": 1,
+      "clues": [
+        "qualified translator"
+      ]
+    },
+    {
+      "stem": "The renovated footbridge was declared ________ for pedestrians only after engineers had completed a final inspection of its supporting cables.",
+      "choices": [
+        "safety",
+        "safely",
+        "safe",
+        "safeguard"
+      ],
+      "answer": 2,
+      "translation": "보수된 보행교는 기술자들이 지지 케이블의 최종 점검을 마친 후에야 보행자들이 이용하기에 안전하다고 선언되었다.",
+      "tags": [
+        "unfamiliar-complement",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "안전",
+          "reason": "보행교 자체가 안전이라는 추상명사인 것은 아니다. for pedestrians와 연결되는 상태 형용사 safe가 필요하다.",
+          "example": "Safety is our first priority.",
+          "translation": "안전은 우리의 최우선 사항이다."
+        },
+        {
+          "form": "부사",
+          "meaning": "안전하게",
+          "reason": "was declared 뒤에서 the renovated footbridge의 안전한 상태를 설명한다. 선언하는 방식을 나타내는 safely를 쓰는 자리가 아니다.",
+          "example": "The crew crossed the bridge safely.",
+          "translation": "작업진은 다리를 안전하게 건넜다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "안전한",
+          "reason": "was declared safe는 보행교가 안전하다고 선언되었다는 뜻으로, safe가 다리의 상태를 설명한다.",
+          "example": "The water is safe to drink.",
+          "translation": "그 물은 마셔도 안전하다."
+        },
+        {
+          "form": "명사",
+          "meaning": "보호 장치; 안전장치",
+          "reason": "보행교를 보호 장치라고 분류하는 내용이 아니다. 또한 단수 가산명사 safeguard에는 이 자리에서 관사가 필요하다.",
+          "example": "The backup file provides a safeguard against data loss.",
+          "translation": "백업 파일은 데이터 손실을 막는 안전장치가 된다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-016",
+      "number": 16,
+      "version": 1,
+      "clues": [
+        "was declared",
+        "for pedestrians"
+      ]
+    },
+    {
+      "stem": "The coordinator will notify the employee ________ for arranging airport transfers if the visiting engineers change their arrival time.",
+      "choices": [
+        "responsibility",
+        "responsible",
+        "responds",
+        "responsibly"
+      ],
+      "answer": 1,
+      "translation": "방문 엔지니어들이 도착 시간을 바꾸면 담당자는 공항 이동편을 준비하는 책임이 있는 직원에게 알릴 것이다.",
+      "tags": [
+        "postpositive-adjective",
+        "quality-rewrite"
+      ],
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "책임",
+          "reason": "employee responsibility라면 직원의 책임이라는 명사구지만, 이 문장에서는 for 이하로 직원을 수식할 형용사가 필요합니다.",
+          "example": "She accepted responsibility for the schedule.",
+          "translation": "그녀는 일정에 대한 책임을 맡았다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "책임이 있는",
+          "reason": "responsible for arranging airport transfers가 employee를 뒤에서 수식합니다. 이 직원의 담당 업무를 나타냅니다.",
+          "example": "The person responsible will contact you.",
+          "translation": "담당자가 연락할 것이다."
+        },
+        {
+          "form": "동사",
+          "meaning": "응답한다",
+          "reason": "the employee responds for arranging을 notify의 목적어 뒤에 그대로 연결할 수 없습니다.",
+          "example": "The support team responds within a day.",
+          "translation": "지원팀은 하루 안에 응답한다."
+        },
+        {
+          "form": "부사",
+          "meaning": "책임감 있게",
+          "reason": "notify의 방식이 아니라 employee가 어떤 업무를 맡는지 설명하는 자리입니다. responsibly for arranging은 맞지 않습니다.",
+          "example": "Staff must use company vehicles responsibly.",
+          "translation": "직원들은 회사 차량을 책임감 있게 사용해야 한다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-017",
+      "number": 17,
+      "version": 1,
+      "clues": [
+        "the employee",
+        "for arranging airport transfers"
+      ]
+    },
+    {
+      "stem": "After comparing delivery records from three vendors, the purchasing panel selected the most ________ supplier for the hospital’s emergency equipment.",
+      "choices": [
+        "reliability",
+        "reliably",
+        "reliance",
+        "reliable"
+      ],
+      "answer": 3,
+      "translation": "세 판매업체의 배송 기록을 비교한 뒤 구매 심사단은 병원의 응급 장비를 공급할 가장 믿을 만한 업체를 선정했다.",
+      "tags": [
+        "more-most-pos",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "신뢰성",
+          "reason": "the most reliability supplier는 supplier의 신뢰할 만한 성질을 나타내는 올바른 최상급 구조가 아니다.",
+          "example": "We tested the reliability of the backup system.",
+          "translation": "우리는 예비 시스템의 신뢰성을 시험했다."
+        },
+        {
+          "form": "부사",
+          "meaning": "믿을 만하게, 안정적으로",
+          "reason": "빈칸 뒤 supplier를 직접 꾸미는 것은 형용사다. reliably가 supplier의 성질을 직접 표현하지 않는다.",
+          "example": "The pump operates reliably.",
+          "translation": "그 펌프는 안정적으로 작동한다."
+        },
+        {
+          "form": "명사",
+          "meaning": "의존",
+          "reason": "reliance는 의존이라는 명사이며 supplier를 믿을 만하다고 설명하는 형용사가 아니다.",
+          "example": "The plan reduces reliance on imported materials.",
+          "translation": "그 계획은 수입 자재에 대한 의존을 줄인다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "믿을 만한",
+          "reason": "the most reliable supplier에서 reliable이 supplier를 꾸민다. 납품 기록을 비교해 신뢰할 만한 업체를 고르는 상황이다.",
+          "example": "We need a reliable delivery service.",
+          "translation": "우리는 믿을 만한 배송 서비스가 필요하다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-018",
+      "number": 18,
+      "version": 1,
+      "clues": [
+        "the most",
+        "supplier"
+      ]
+    },
+    {
+      "stem": "Claymore Inc.’s construction crews worked ------- to meet the deadline for the completion of the new stadium.",
+      "choices": [
+        "tire",
+        "tired",
+        "tireless",
+        "tirelessly"
+      ],
+      "answer": 3,
+      "translation": "Claymore사의 건설 인부들은 새 경기장 완공 기한을 맞추기 위해 지치지 않고 일했다.",
+      "tags": [
+        "source-recheck",
+        "manner"
+      ],
+      "source": {
+        "set": "흰둥이 RC Test 1",
+        "number": 102,
+        "originalReference": "whitedog-rc-test1-102",
+        "kind": "provided-wrong-question"
+      },
+      "optionDetails": [
+        {
+          "form": "동사",
+          "meaning": "지치게 하다",
+          "reason": "crews가 주어이고 worked가 이미 동사이므로 동사원형 tire를 바로 이을 수 없다.",
+          "example": "Long delays tire travelers.",
+          "translation": "긴 지연은 여행객들을 지치게 한다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "피곤한",
+          "reason": "tired는 피곤한 상태를 뜻한다. 이 원문의 공식 정답은 기한을 맞추려 지치지 않고 일한 방식을 나타내는 tirelessly다. work tired 같은 별도 상태 표현까지 불가능하다는 뜻은 아니다.",
+          "example": "The crew was tired after the shift.",
+          "translation": "교대 근무 후 인부들은 피곤했다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "지칠 줄 모르는",
+          "reason": "tireless는 사람이나 노력의 성질을 꾸민다. 여기서는 worked를 수식하는 부사가 필요하다.",
+          "example": "We appreciate her tireless efforts.",
+          "translation": "그녀의 끊임없는 노력에 감사한다."
+        },
+        {
+          "form": "부사",
+          "meaning": "지치지 않고",
+          "reason": "worked를 수식해 기한을 맞추려고 지치지 않고 일했음을 설명한다.",
+          "example": "The staff worked tirelessly.",
+          "translation": "직원들은 지치지 않고 일했다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-019",
+      "number": 19,
+      "version": 1,
+      "clues": [
+        "worked",
+        "to meet the deadline"
+      ]
+    },
+    {
+      "stem": "A parking permit will be declared ________ if its identification number does not match the vehicle listed in the registration database.",
+      "choices": [
+        "invalid",
+        "invalidate",
+        "validity",
+        "invalidity"
+      ],
+      "answer": 0,
+      "translation": "주차 허가증의 식별 번호가 등록 데이터베이스에 기재된 차량과 일치하지 않으면 허가증은 무효로 처리된다.",
+      "tags": [
+        "unfamiliar-complement",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사",
+          "meaning": "유효하지 않은",
+          "reason": "will be declared 뒤에서 a parking permit의 무효 상태를 설명하므로 invalid가 맞다.",
+          "example": "An expired ticket is invalid.",
+          "translation": "유효 기간이 지난 표는 무효다."
+        },
+        {
+          "form": "동사원형",
+          "meaning": "무효로 하다",
+          "reason": "will be declared는 이미 동사구다. 그 뒤에서 허가증의 상태를 설명해야 하므로 동사 invalidate를 이어 쓸 수 없다.",
+          "example": "Missing signatures may invalidate the agreement.",
+          "translation": "서명이 빠지면 계약이 무효가 될 수 있다."
+        },
+        {
+          "form": "명사",
+          "meaning": "유효성",
+          "reason": "a parking permit의 무효 상태를 설명하는 자리다. 명사 validity는 허가증 자체와 동일시할 수 없으며 의미도 반대다.",
+          "example": "Please check the validity of your permit.",
+          "translation": "허가증의 유효성을 확인하세요."
+        },
+        {
+          "form": "명사",
+          "meaning": "무효; 유효하지 않음",
+          "reason": "허가증 자체가 무효라는 추상명사인 것은 아니다. 허가증의 상태를 나타내는 invalid가 필요하다.",
+          "example": "The clerk explained the invalidity of the old permit.",
+          "translation": "담당 직원은 옛 허가증이 무효인 이유를 설명했다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-020",
+      "number": 20,
+      "version": 1,
+      "clues": [
+        "will be declared",
+        "does not match"
+      ]
+    },
+    {
+      "stem": "With several suppliers competing for the contract, the final quotation was ________ low, leaving enough funds to train the maintenance staff.",
+      "choices": [
+        "expecting",
+        "unexpected",
+        "unexpectedly",
+        "expectation"
+      ],
+      "answer": 2,
+      "translation": "여러 공급업체가 계약을 두고 경쟁하면서 최종 견적 금액이 예상 밖으로 낮아져 유지보수 직원을 교육할 예산까지 남았다.",
+      "tags": [
+        "adjective-adverb",
+        "quality-rewrite"
+      ],
+      "optionDetails": [
+        {
+          "form": "현재분사",
+          "meaning": "기대하는; 예상하는",
+          "reason": "was expecting이라면 뒤에 기대하는 대상을 받지만 low를 이처럼 바로 연결해 견적 수준을 설명하지 못합니다.",
+          "example": "We are expecting a delivery today.",
+          "translation": "우리는 오늘 배송이 올 것으로 예상한다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "예상치 못한",
+          "reason": "unexpected는 an unexpected reduction처럼 명사를 꾸밉니다. low라는 형용사를 수식하는 이 자리에는 부사가 필요합니다.",
+          "example": "An unexpected reduction saved money.",
+          "translation": "예상치 못한 인하로 돈을 절약했다."
+        },
+        {
+          "form": "부사",
+          "meaning": "예상 밖으로",
+          "reason": "was의 상태 보어는 low입니다. 빈칸은 형용사 low의 정도를 수식하므로 unexpectedly가 맞습니다.",
+          "example": "The final cost was unexpectedly high.",
+          "translation": "최종 비용은 예상 밖으로 높았다."
+        },
+        {
+          "form": "명사",
+          "meaning": "기대; 예상",
+          "reason": "was expectation low는 견적의 낮은 정도를 나타내는 보어 구조가 아닙니다. 이 자리에서는 low를 수식해야 합니다.",
+          "example": "The service exceeded our expectations.",
+          "translation": "그 서비스는 우리의 기대를 뛰어넘었다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-021",
+      "number": 21,
+      "version": 1,
+      "clues": [
+        "low"
+      ]
+    },
+    {
+      "stem": "By the time the showroom opened, the folded towels had been stacked ________ beside the display beds, with every label facing customers.",
+      "translation": "전시장이 문을 열었을 때 접힌 수건들은 모든 라벨이 고객 쪽을 향하도록 전시 침대 옆에 가지런히 쌓여 있었다.",
+      "tags": [
+        "manner-adverb"
+      ],
+      "choices": [
+        "neatness",
+        "neat",
+        "neatly",
+        "neaten"
+      ],
+      "answer": 2,
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "단정함",
+          "reason": "beside the display beds 앞에서 쌓는 방식을 나타내야 하므로 명사 neatness는 맞지 않는다.",
+          "example": "Neatness improves the presentation.",
+          "translation": "단정함이 발표 자료의 인상을 좋게 한다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "단정한",
+          "reason": "stacked는 여기서 수동태 동작이다. 쌓는 방식을 표현하려면 형용사 neat가 아니라 neatly를 쓴다.",
+          "example": "The office is neat.",
+          "translation": "사무실은 단정하다."
+        },
+        {
+          "form": "부사",
+          "meaning": "가지런히",
+          "reason": "had been stacked라는 쌓는 동작의 방식을 설명하므로 neatly가 맞다.",
+          "example": "Arrange the files neatly.",
+          "translation": "파일을 가지런히 정리하세요."
+        },
+        {
+          "form": "동사",
+          "meaning": "정돈하다",
+          "reason": "had been stacked가 이미 동사구이므로 다른 동사 neaten을 바로 이을 수 없다.",
+          "example": "Please neaten the display.",
+          "translation": "진열을 정돈해 주세요."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-022",
+      "number": 22,
+      "version": 1,
+      "clues": [
+        "had been stacked",
+        "with every label facing customers"
+      ]
+    },
+    {
+      "stem": "Because the two subscription plans had nearly identical names, customers found the comparison chart ________ rather than helpful when choosing a service.",
+      "choices": [
+        "confusing",
+        "confusingly",
+        "confusion",
+        "confused"
+      ],
+      "answer": 0,
+      "translation": "두 구독 요금제의 이름이 거의 같아서 고객들은 서비스를 선택할 때 비교표가 도움이 되기보다 혼란스럽다고 느꼈다.",
+      "tags": [
+        "emotion-meaning",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사·현재분사",
+          "meaning": "혼란을 주는",
+          "reason": "차트가 nearly identical names를 구별해 주지 못해 고객에게 혼란을 준다. confusing은 차트의 영향을 설명한다.",
+          "example": "The payment instructions are confusing.",
+          "translation": "결제 안내가 혼란스럽다."
+        },
+        {
+          "form": "부사",
+          "meaning": "혼란스럽게",
+          "reason": "found의 판단 대상 the comparison chart의 성질을 설명해야 하므로 부사 confusingly는 맞지 않는다.",
+          "example": "The two routes are confusingly similar.",
+          "translation": "두 노선은 혼란스러울 정도로 비슷하다."
+        },
+        {
+          "form": "명사",
+          "meaning": "혼란",
+          "reason": "find the chart 뒤에서 그 표의 성질을 설명하는 자리다. chart를 혼란이라는 명사와 동일시하는 뜻이 아니다.",
+          "example": "The duplicate notices caused confusion.",
+          "translation": "중복 안내문들이 혼란을 일으켰다."
+        },
+        {
+          "form": "형용사·과거분사",
+          "meaning": "혼란스러워하는",
+          "reason": "comparison chart가 감정을 느끼는 것이 아니라 비슷한 이름 때문에 고객에게 혼란을 준다. confusing이 맞다.",
+          "example": "Customers were confused by the new labels.",
+          "translation": "고객들은 새 라벨 때문에 혼란스러웠다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-023",
+      "number": 23,
+      "version": 1,
+      "clues": [
+        "found the comparison chart",
+        "nearly identical names"
+      ]
+    },
+    {
+      "stem": "For accounting purposes, please list transportation costs ________ from accommodation expenses when completing the travel reimbursement form.",
+      "choices": [
+        "separate",
+        "separately",
+        "separating",
+        "separation"
+      ],
+      "answer": 1,
+      "translation": "회계 처리를 위해 출장비 환급 양식을 작성할 때 교통비를 숙박비와 별도로 기재하세요.",
+      "tags": [
+        "manner-adverb",
+        "quality-rewrite"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사·동사",
+          "meaning": "별개의; 분리하다",
+          "reason": "이 명령문의 동사는 list입니다. transportation costs 뒤에서 기재 방식을 나타내려면 separately가 필요합니다.",
+          "example": "Please use a separate envelope.",
+          "translation": "별도 봉투를 사용하세요."
+        },
+        {
+          "form": "부사",
+          "meaning": "별도로",
+          "reason": "list transportation costs를 수식합니다. separately from accommodation expenses는 숙박비와 분리해 기재하라는 뜻입니다.",
+          "example": "Invoice replacement parts separately from labor.",
+          "translation": "교체 부품비는 인건비와 별도로 청구하세요."
+        },
+        {
+          "form": "현재분사·동명사",
+          "meaning": "분리하는; 분리하기",
+          "reason": "separating from은 여기서 비용을 어떻게 기재할지 나타내는 부사 역할을 하지 못합니다.",
+          "example": "We are separating damaged items from usable stock.",
+          "translation": "손상된 물품을 사용할 수 있는 재고와 분리하고 있다."
+        },
+        {
+          "form": "명사",
+          "meaning": "분리",
+          "reason": "separation from은 명사구가 되지만 list transportation costs 뒤에 추가 목적어처럼 놓일 수 없습니다.",
+          "example": "The separation of duties reduces risk.",
+          "translation": "업무 분리는 위험을 줄인다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-024",
+      "number": 24,
+      "version": 1,
+      "clues": [
+        "list transportation costs",
+        "from accommodation expenses"
+      ]
+    },
+    {
+      "stem": "Installing the new ventilation system resulted in a ________ reduction in energy use, allowing the facility to recover its investment within two years.",
+      "translation": "새 환기 장치를 설치한 결과 에너지 사용량이 상당히 줄어 시설은 2년 안에 투자비를 회수할 수 있었다.",
+      "tags": [
+        "adjective-noun"
+      ],
+      "choices": [
+        "substantiate",
+        "substantial",
+        "substance",
+        "substantially"
+      ],
+      "answer": 1,
+      "optionDetails": [
+        {
+          "form": "동사",
+          "meaning": "입증하다",
+          "reason": "a와 reduction 사이에서 명사를 수식해야 하므로 동사 substantiate는 들어갈 수 없다.",
+          "example": "The receipts substantiate the claim.",
+          "translation": "영수증이 그 청구를 입증한다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "상당한",
+          "reason": "명사 reduction의 정도를 직접 설명하는 형용사 substantial이 맞다.",
+          "example": "The project requires substantial funding.",
+          "translation": "그 사업에는 상당한 자금이 필요하다."
+        },
+        {
+          "form": "명사",
+          "meaning": "물질·실체",
+          "reason": "이 문장은 물질의 감소가 아니라 에너지 사용의 상당한 감소를 말하므로 substance는 맞지 않는다.",
+          "example": "The substance must be handled carefully.",
+          "translation": "그 물질은 조심스럽게 취급해야 한다."
+        },
+        {
+          "form": "부사",
+          "meaning": "상당히",
+          "reason": "관사 a와 명사 reduction 사이에서 reduction을 직접 수식하므로 부사 substantially는 맞지 않는다.",
+          "example": "Costs fell substantially.",
+          "translation": "비용이 상당히 줄었다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-025",
+      "number": 25,
+      "version": 1,
+      "clues": [
+        "reduction in energy use"
+      ]
+    },
+    {
+      "stem": "Having checked the totals, the analyst reviewed the supporting documents ________ to determine why several expenses had been assigned to the wrong account.",
+      "choices": [
+        "thoroughly",
+        "thorough",
+        "through",
+        "thoroughness"
+      ],
+      "answer": 0,
+      "translation": "합계를 확인한 뒤 분석가는 여러 비용이 잘못된 계정에 배정된 이유를 알아내려고 증빙 서류를 철저히 검토했다.",
+      "tags": [
+        "manner-adverb",
+        "quality-rewrite"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "철저히",
+          "reason": "reviewed the supporting documents를 수식해 검토의 방식을 나타냅니다. 뒤의 원인 조사와도 연결됩니다.",
+          "example": "Inspect the seals thoroughly before shipment.",
+          "translation": "출하 전에 밀봉 상태를 철저히 검사하세요."
+        },
+        {
+          "form": "형용사",
+          "meaning": "철저한",
+          "reason": "thorough는 a thorough review처럼 명사를 꾸밉니다. 여기서는 reviewed의 방식을 설명해야 합니다.",
+          "example": "We conducted a thorough review.",
+          "translation": "우리는 철저한 검토를 했다."
+        },
+        {
+          "form": "전치사·부사",
+          "meaning": "~을 통하여; 통과하여",
+          "reason": "review documents through는 검토의 방식을 나타내는 결합이 아닙니다. 이 자리에는 철저히라는 thoroughly가 필요합니다.",
+          "example": "Send the request through the official channel.",
+          "translation": "공식 경로로 요청을 보내세요."
+        },
+        {
+          "form": "명사",
+          "meaning": "철저함",
+          "reason": "reviewed에는 목적어 the supporting documents가 이미 있습니다. thoroughness는 그 동작을 수식할 수 없습니다.",
+          "example": "Her thoroughness prevented a costly error.",
+          "translation": "그녀의 철저함이 큰 비용이 들 오류를 막았다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-026",
+      "number": 26,
+      "version": 1,
+      "clues": [
+        "reviewed the supporting documents"
+      ]
+    },
+    {
+      "stem": "Although she had supported the project from the beginning, Ms. Costa ________ declined the invitation because her department could not spare another employee.",
+      "translation": "처음부터 그 사업을 지지했지만 Costa 씨는 부서에서 직원을 더 보낼 수 없어 초청을 마지못해 거절했다.",
+      "tags": [
+        "manner-adverb"
+      ],
+      "choices": [
+        "reluctant",
+        "reluctance",
+        "reluctantly",
+        "hesitation"
+      ],
+      "answer": 2,
+      "optionDetails": [
+        {
+          "form": "형용사",
+          "meaning": "꺼리는",
+          "reason": "reluctant는 사람의 상태를 나타내지만 여기서는 declined를 직접 수식해야 한다.",
+          "example": "She was reluctant to leave.",
+          "translation": "그녀는 떠나기를 꺼렸다."
+        },
+        {
+          "form": "명사",
+          "meaning": "꺼림",
+          "reason": "주어 Ms. Costa와 동사 declined가 이미 있어 명사 reluctance가 들어갈 자리가 아니다.",
+          "example": "His reluctance was understandable.",
+          "translation": "그가 꺼리는 것은 이해할 만했다."
+        },
+        {
+          "form": "부사",
+          "meaning": "마지못해",
+          "reason": "Ms. Costa가 declined한 태도를 설명하므로 reluctantly를 쓴다.",
+          "example": "He reluctantly accepted the delay.",
+          "translation": "그는 마지못해 지연을 받아들였다."
+        },
+        {
+          "form": "명사",
+          "meaning": "망설임",
+          "reason": "주어 Ms. Costa와 동사 declined 사이에서 태도를 설명해야 하므로 명사 hesitation은 맞지 않는다.",
+          "example": "She accepted without hesitation.",
+          "translation": "그녀는 망설임 없이 수락했다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-027",
+      "number": 27,
+      "version": 1,
+      "clues": [
+        "declined the invitation",
+        "her department could not spare another employee"
+      ]
+    },
+    {
+      "stem": "The client considers the proposed delivery fee ________ given the distance between our distribution center and the temporary exhibition venue.",
+      "choices": [
+        "reason",
+        "reasonable",
+        "reasoning",
+        "reasonably"
+      ],
+      "answer": 1,
+      "translation": "고객은 우리 물류 센터와 임시 전시장 사이의 거리를 고려하면 제안된 배송비가 합리적이라고 생각한다.",
+      "tags": [
+        "familiar-complement",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "이유",
+          "reason": "제안된 배송비를 이유 그 자체로 판단하는 문장이 아니다. 가격이 합리적이라는 성질을 설명해야 한다.",
+          "example": "Please state the reason for cancellation.",
+          "translation": "취소 이유를 밝혀 주세요."
+        },
+        {
+          "form": "형용사",
+          "meaning": "합리적인; 적당한",
+          "reason": "considers the proposed delivery fee reasonable에서 reasonable이 고객이 판단한 배송비의 성질을 설명한다.",
+          "example": "The quoted price seems reasonable.",
+          "translation": "견적 가격은 합리적인 것 같다."
+        },
+        {
+          "form": "명사",
+          "meaning": "추론; 논리",
+          "reason": "배송비를 추론 그 자체와 동일시하는 내용이 아니다. 그 비용의 적당한 정도를 나타내는 reasonable이 필요하다.",
+          "example": "The report explains the reasoning behind the decision.",
+          "translation": "그 보고서는 결정의 근거가 된 논리를 설명한다."
+        },
+        {
+          "form": "부사",
+          "meaning": "합리적으로; 상당히",
+          "reason": "배송비 자체가 합리적이라는 판단이 필요하다. reasonably는 delivery fee의 상태를 설명할 보어가 아니다.",
+          "example": "The service is reasonably priced.",
+          "translation": "그 서비스는 가격이 합리적으로 책정되어 있다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-028",
+      "number": 28,
+      "version": 1,
+      "clues": [
+        "considers the proposed delivery fee"
+      ]
+    },
+    {
+      "stem": "Before recommending a merger, the advisory firm will prepare a ________ assessment covering legal risks, staffing requirements, and expected operating costs.",
+      "choices": [
+        "comprehensive",
+        "comprehend",
+        "comprehensively",
+        "comprehension"
+      ],
+      "answer": 0,
+      "translation": "합병을 권고하기 전에 자문회사는 법적 위험, 인력 요건, 예상 운영비를 다루는 종합 평가서를 작성할 것이다.",
+      "tags": [
+        "noun-adjective",
+        "quality-rewrite"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사",
+          "meaning": "종합적인; 포괄적인",
+          "reason": "관사 a와 명사 assessment 사이에서 평가서의 범위를 꾸밉니다. 뒤에 여러 검토 분야가 제시됩니다.",
+          "example": "The guide provides comprehensive instructions.",
+          "translation": "그 안내서는 종합적인 지침을 제공한다."
+        },
+        {
+          "form": "동사",
+          "meaning": "이해하다",
+          "reason": "a comprehend assessment처럼 동사원형으로 assessment를 수식할 수 없습니다.",
+          "example": "New staff must comprehend the safety rules.",
+          "translation": "신입 직원은 안전 규칙을 이해해야 한다."
+        },
+        {
+          "form": "부사",
+          "meaning": "종합적으로",
+          "reason": "comprehensively는 assess comprehensively처럼 동사를 수식합니다. assessment를 직접 꾸미는 이 자리에는 형용사가 필요합니다.",
+          "example": "The proposal was comprehensively reviewed.",
+          "translation": "제안서는 종합적으로 검토되었다."
+        },
+        {
+          "form": "명사",
+          "meaning": "이해; 이해력",
+          "reason": "comprehension assessment는 이해력 평가를 뜻할 수 있지만 여기서는 법률·인력·비용을 두루 검토하는 합병 평가서이므로 문맥이 맞지 않습니다.",
+          "example": "The course improves reading comprehension.",
+          "translation": "그 과정은 독해력을 향상시킨다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-029",
+      "number": 29,
+      "version": 1,
+      "clues": [
+        "assessment",
+        "covering legal risks, staffing requirements, and expected operating costs"
+      ]
+    },
+    {
+      "stem": "Asked to estimate a completion date before the inspection was finished, the contractor replied ________ that additional repairs might still be necessary.",
+      "choices": [
+        "hesitantly",
+        "hesitant",
+        "hesitation",
+        "hesitate"
+      ],
+      "answer": 0,
+      "translation": "점검이 끝나기 전에 완료 날짜를 추정해 달라는 요청을 받은 시공업체는 추가 수리가 여전히 필요할 수 있다고 머뭇거리며 답했다.",
+      "tags": [
+        "hesitant-hesitate",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "머뭇거리며",
+          "reason": "hesitantly는 replied의 말하는 방식을 수식한다. 점검 미완료로 확답을 꺼리는 상황에도 맞다.",
+          "example": "She replied hesitantly to the request.",
+          "translation": "그녀는 그 요청에 머뭇거리며 답했다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "망설이는",
+          "reason": "replied 뒤에서 답변 방식을 설명하는 자리다. 상태 보어를 취하는 was hesitant와 달리 부사 hesitantly가 필요하다.",
+          "example": "The contractor was hesitant to promise a date.",
+          "translation": "시공업체는 날짜를 약속하기를 망설였다."
+        },
+        {
+          "form": "명사",
+          "meaning": "망설임",
+          "reason": "replied는 that절을 답변 내용으로 받는다. 빈칸에는 말하는 방식을 수식하는 부사가 필요하며 hesitation은 명사다.",
+          "example": "There was hesitation before the vote.",
+          "translation": "표결 전에 망설임이 있었다."
+        },
+        {
+          "form": "동사",
+          "meaning": "망설이다",
+          "reason": "replied 뒤에 접속 없이 동사원형 hesitate를 붙여 답변 방식을 나타낼 수 없다.",
+          "example": "We hesitate to recommend an untested product.",
+          "translation": "우리는 검증되지 않은 제품을 추천하기를 망설인다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-030",
+      "number": 30,
+      "version": 1,
+      "clues": [
+        "replied",
+        "before the inspection was finished"
+      ]
+    },
+    {
+      "stem": "Independent laboratory tests proved ________ that the packaging could protect fragile glass components during transport on uneven roads.",
+      "choices": [
+        "conclusion",
+        "conclude",
+        "conclusive",
+        "conclusively"
+      ],
+      "answer": 3,
+      "translation": "독립 시험실의 시험은 그 포장재가 울퉁불퉁한 도로 운송 중 깨지기 쉬운 유리 부품을 보호할 수 있음을 결정적으로 입증했다.",
+      "tags": [
+        "same-verb-adverb",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "결론",
+          "reason": "proved 뒤의 that절이 입증한 내용을 담고 있다. conclusion을 그 사이에 관사 없이 넣는 구조가 아니다.",
+          "example": "The report reaches a clear conclusion.",
+          "translation": "그 보고서는 명확한 결론을 내린다."
+        },
+        {
+          "form": "동사원형",
+          "meaning": "결론을 내리다",
+          "reason": "주어 tests의 동사는 이미 proved다. 원형동사 conclude를 접속사 없이 이어 넣을 수 없다.",
+          "example": "We cannot conclude that the device is defective.",
+          "translation": "우리는 그 장치에 결함이 있다고 결론 내릴 수 없다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "결정적인",
+          "reason": "proved의 목적 내용은 that the packaging could protect 이하에 있다. 빈칸은 그 입증 방식을 수식하므로 conclusive가 아니다.",
+          "example": "The evidence is conclusive.",
+          "translation": "그 증거는 결정적이다."
+        },
+        {
+          "form": "부사",
+          "meaning": "결정적으로",
+          "reason": "that절이 입증한 내용이므로 conclusively는 proved라는 동작을 수식한다. prove 뒤라고 항상 형용사를 쓰는 것은 아니다.",
+          "example": "The findings conclusively support the claim.",
+          "translation": "그 조사 결과는 그 주장을 결정적으로 뒷받침한다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-031",
+      "number": 31,
+      "version": 1,
+      "clues": [
+        "proved",
+        "that the packaging could protect"
+      ]
+    },
+    {
+      "stem": "Rather than contacting customers at random, the sales team should ________ review purchase histories before deciding which accounts to approach.",
+      "choices": [
+        "systematic",
+        "system",
+        "systematize",
+        "systematically"
+      ],
+      "answer": 3,
+      "translation": "고객에게 무작위로 연락하기보다 영업팀은 접근할 거래처를 정하기 전에 구매 이력을 체계적으로 검토해야 한다.",
+      "tags": [
+        "manner-adverb",
+        "quality-rewrite"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사",
+          "meaning": "체계적인",
+          "reason": "systematic review에서는 명사를 수식하지만 should 뒤 동사 review 앞에는 부사 systematically가 맞습니다.",
+          "example": "We need a systematic approach.",
+          "translation": "체계적인 접근이 필요하다."
+        },
+        {
+          "form": "명사",
+          "meaning": "체계; 시스템",
+          "reason": "system은 명사여서 should와 review 사이에서 검토 방식을 나타내지 못합니다.",
+          "example": "The new system records every transaction.",
+          "translation": "새 시스템은 모든 거래를 기록한다."
+        },
+        {
+          "form": "동사",
+          "meaning": "체계화하다",
+          "reason": "should systematize review처럼 두 동사를 바로 연결할 수 없습니다. systematize procedures처럼 목적어를 받습니다.",
+          "example": "The coordinator will systematize the filing procedures.",
+          "translation": "담당자가 서류 정리 절차를 체계화할 것이다."
+        },
+        {
+          "form": "부사",
+          "meaning": "체계적으로",
+          "reason": "should review의 방식을 수식합니다. at random과 대비되어 계획적 검토를 뜻합니다.",
+          "example": "The files were systematically organized by date.",
+          "translation": "파일은 날짜별로 체계적으로 정리되었다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-032",
+      "number": 32,
+      "version": 1,
+      "clues": [
+        "review purchase histories",
+        "Rather than contacting customers at random"
+      ]
+    },
+    {
+      "stem": "The procurement manager remained ________ about the supplier’s capacity after its second missed delivery, despite assurances that production had returned to normal.",
+      "choices": [
+        "concerning",
+        "concerned",
+        "concern",
+        "concerns"
+      ],
+      "answer": 1,
+      "translation": "구매 관리자는 생산이 정상으로 돌아왔다는 확언에도 공급업체가 두 번째로 납기를 어기자 그 업체의 생산 능력을 계속 우려했다.",
+      "tags": [
+        "emotion-meaning",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사·전치사",
+          "meaning": "우려를 일으키는; ~에 관하여",
+          "reason": "manager가 공급 능력을 걱정하는 상태이므로 concerned about이다. concerning은 이 자리에서 그 감정을 나타내지 않는다.",
+          "example": "The report revealed a concerning decline in orders.",
+          "translation": "보고서는 우려스러운 주문 감소를 드러냈다."
+        },
+        {
+          "form": "형용사·과거분사",
+          "meaning": "걱정하는, 우려하는",
+          "reason": "두 번의 납기 지연 때문에 manager가 capacity를 걱정한다. remained concerned about이 적합하다.",
+          "example": "We are concerned about the delay.",
+          "translation": "우리는 그 지연을 우려한다."
+        },
+        {
+          "form": "명사·동사",
+          "meaning": "우려; 우려하게 하다",
+          "reason": "remained 뒤에서 manager의 감정 상태를 설명하므로 명사나 동사인 concern을 그대로 쓸 수 없다.",
+          "example": "The delay caused concern among buyers.",
+          "translation": "지연은 구매자들의 우려를 낳았다."
+        },
+        {
+          "form": "복수명사·동사",
+          "meaning": "우려들; 우려하게 하다",
+          "reason": "remained 뒤에는 manager의 감정 상태를 설명할 보어가 필요하다. concerns라는 복수명사나 동사를 이어 쓸 수 없다.",
+          "example": "Please send your concerns to the project manager.",
+          "translation": "우려 사항을 프로젝트 관리자에게 보내 주세요."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-033",
+      "number": 33,
+      "version": 1,
+      "clues": [
+        "remained",
+        "about the supplier’s capacity"
+      ]
+    },
+    {
+      "stem": "Please attach the most ________ inspection report so the insurer can assess the damage using information collected after the repairs.",
+      "choices": [
+        "recently",
+        "recency",
+        "receding",
+        "recent"
+      ],
+      "answer": 3,
+      "translation": "보험사가 수리 후 수집된 정보로 손해를 평가할 수 있도록 가장 최근의 점검 보고서를 첨부해 주세요.",
+      "tags": [
+        "more-most-pos",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "최근에",
+          "reason": "빈칸은 inspection report라는 명사구의 시점을 설명한다. recently가 직접 report를 꾸미는 구조가 아니다.",
+          "example": "The warehouse was recently inspected.",
+          "translation": "그 창고는 최근에 점검받았다."
+        },
+        {
+          "form": "명사",
+          "meaning": "최근성",
+          "reason": "most recency inspection report처럼 명사를 연속해서 붙여 ‘가장 최근의 보고서’를 만들 수 없다.",
+          "example": "The search tool considers the recency of each article.",
+          "translation": "검색 도구는 각 기사의 최근성을 고려한다."
+        },
+        {
+          "form": "현재분사·형용사",
+          "meaning": "물러나는, 점점 줄어드는",
+          "reason": "receding은 최근이라는 뜻이 아니다. 보험사가 원하는 것은 수리 후 작성된 최신 report다.",
+          "example": "Receding floodwater exposed the damaged road.",
+          "translation": "빠지는 홍수 물이 손상된 도로를 드러냈다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "최근의",
+          "reason": "the most recent inspection report에서 recent가 report를 꾸민다. most는 그 형용사의 최상급을 만든다.",
+          "example": "We reviewed the recent findings.",
+          "translation": "우리는 최근 조사 결과를 검토했다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-034",
+      "number": 34,
+      "version": 1,
+      "clues": [
+        "most",
+        "inspection report"
+      ]
+    },
+    {
+      "stem": "The security update rendered several older applications ________, so the IT department restored access through an approved alternative system.",
+      "choices": [
+        "access",
+        "inaccessible",
+        "inaccessibility",
+        "accessibility"
+      ],
+      "answer": 1,
+      "translation": "보안 업데이트로 일부 구형 응용 프로그램에 접근할 수 없게 되어 IT 부서는 승인된 대체 시스템으로 접근을 복구했다.",
+      "tags": [
+        "unfamiliar-complement",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "명사; 동사원형",
+          "meaning": "접근; 접근하다",
+          "reason": "rendered 뒤의 several older applications가 어떤 상태가 되었는지 설명할 자리다. 명사나 동사원형 access는 그 보어로 맞지 않는다.",
+          "example": "Users can access the files remotely.",
+          "translation": "사용자들은 원격으로 파일에 접근할 수 있다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "접근할 수 없는",
+          "reason": "rendered several older applications inaccessible에서 inaccessible이 업데이트로 발생한 응용 프로그램의 상태를 설명한다.",
+          "example": "The archive is inaccessible during maintenance.",
+          "translation": "유지보수 중에는 기록 보관소에 접근할 수 없다."
+        },
+        {
+          "form": "명사",
+          "meaning": "접근 불가능성",
+          "reason": "several older applications가 접근 불가능성이라는 추상명사인 것은 아니다. 업데이트로 바뀐 프로그램의 상태를 설명해야 한다.",
+          "example": "Users complained about the inaccessibility of the records.",
+          "translation": "사용자들은 기록에 접근할 수 없다고 불평했다."
+        },
+        {
+          "form": "명사",
+          "meaning": "접근성",
+          "reason": "여러 응용 프로그램이 접근성이라는 추상명사 자체가 된다는 뜻은 아니다. 접근할 수 없는 상태를 설명해야 한다.",
+          "example": "The update improves accessibility.",
+          "translation": "그 업데이트는 접근성을 향상한다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-035",
+      "number": 35,
+      "version": 1,
+      "clues": [
+        "rendered several older applications",
+        "restored access"
+      ]
+    },
+    {
+      "stem": "Replacement medical supplies are most ________ needed at the temporary clinic, where the existing stock will last only until tomorrow.",
+      "choices": [
+        "urgency",
+        "urge",
+        "urgent",
+        "urgently"
+      ],
+      "answer": 3,
+      "translation": "임시 진료소에는 기존 재고가 내일까지만 버틸 수 있어 교체 의료용품이 가장 긴급하게 필요하다.",
+      "tags": [
+        "more-most-pos",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "긴급성",
+          "reason": "needed를 꾸며 필요한 정도를 나타내는 자리이므로 명사 urgency를 쓸 수 없다.",
+          "example": "The director stressed the urgency of the request.",
+          "translation": "이사는 그 요청의 긴급성을 강조했다."
+        },
+        {
+          "form": "동사·명사",
+          "meaning": "촉구하다; 충동",
+          "reason": "urge는 needed를 수식하는 부사가 아니다.",
+          "example": "We urge clients to confirm their bookings.",
+          "translation": "고객들이 예약을 확인해 주시기를 촉구합니다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "긴급한",
+          "reason": "are와 needed 사이에서는 필요한 긴급한 정도를 설명하므로 형용사 urgent 대신 urgently를 쓴다.",
+          "example": "We received an urgent request.",
+          "translation": "우리는 긴급한 요청을 받았다."
+        },
+        {
+          "form": "부사",
+          "meaning": "긴급히",
+          "reason": "are needed는 수동태 동사구다. most urgently가 needed의 긴급한 정도를 수식한다.",
+          "example": "Replacement parts are urgently needed.",
+          "translation": "교체 부품이 긴급히 필요하다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-036",
+      "number": 36,
+      "version": 1,
+      "clues": [
+        "supplies are",
+        "needed"
+      ]
+    },
+    {
+      "stem": "Expanding the warehouse appears financially ________ now that the bank has offered a loan with substantially lower interest payments.",
+      "choices": [
+        "feasibility",
+        "facilitate",
+        "feasibly",
+        "feasible"
+      ],
+      "answer": 3,
+      "translation": "은행이 이자 부담이 훨씬 적은 대출을 제안했으므로 이제 창고 확장은 재정적으로 실현 가능해 보인다.",
+      "tags": [
+        "unfamiliar-complement",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "실현 가능성",
+          "reason": "financially의 수식을 받을 형용사가 필요하다. 명사 feasibility로 창고 확장의 상태를 설명할 수 없다.",
+          "example": "We will study the feasibility of expansion.",
+          "translation": "우리는 확장의 실현 가능성을 검토할 것이다."
+        },
+        {
+          "form": "동사원형",
+          "meaning": "용이하게 하다",
+          "reason": "appears 뒤에서 확장의 상태를 설명해야 한다. financially 다음에 동사원형 facilitate를 넣을 수 없다.",
+          "example": "The new system will facilitate communication.",
+          "translation": "새 시스템은 의사소통을 용이하게 할 것이다."
+        },
+        {
+          "form": "부사",
+          "meaning": "실현 가능하게",
+          "reason": "financially 뒤에서 창고 확장의 상태를 나타낼 형용사 보어가 필요하므로 feasibly를 쓸 수 없다.",
+          "example": "The work cannot feasibly be finished in one day.",
+          "translation": "그 작업은 현실적으로 하루 안에 끝낼 수 없다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "실현 가능한",
+          "reason": "appears 뒤에서 창고 확장이 어떤지 설명하며 financially가 feasible을 수식해 재정적으로 실현 가능하다는 뜻이 된다.",
+          "example": "A smaller pilot project may be feasible.",
+          "translation": "규모가 더 작은 시범 사업은 실현 가능할 수 있다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-037",
+      "number": 37,
+      "version": 1,
+      "clues": [
+        "appears financially"
+      ]
+    },
+    {
+      "stem": "By consolidating supplier invoices, the accounting team can process payments more ________ without hiring additional staff during the year-end closing period.",
+      "choices": [
+        "efficient",
+        "efficiently",
+        "efficiency",
+        "efficiencies"
+      ],
+      "answer": 1,
+      "translation": "공급업체 청구서를 통합하면 회계팀은 연말 결산 기간에 추가 직원을 고용하지 않고도 대금을 더 효율적으로 처리할 수 있다.",
+      "tags": [
+        "more-most-pos",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사",
+          "meaning": "효율적인",
+          "reason": "빈칸은 payments가 아니라 process payments의 처리 방식을 수식한다. more efficient는 형용사구이므로 이 자리에 맞지 않는다.",
+          "example": "The new system is efficient.",
+          "translation": "새 시스템은 효율적이다."
+        },
+        {
+          "form": "부사",
+          "meaning": "효율적으로",
+          "reason": "more efficiently는 process payments를 수식한다. more가 있어도 동작의 방식이므로 부사를 고른다.",
+          "example": "We schedule deliveries efficiently.",
+          "translation": "우리는 배송 일정을 효율적으로 짠다."
+        },
+        {
+          "form": "명사",
+          "meaning": "효율성",
+          "reason": "process의 목적어 payments가 이미 있다. more efficiency를 추가 목적어로 붙일 수 없다.",
+          "example": "Efficiency improved after the upgrade.",
+          "translation": "업그레이드 후 효율성이 향상되었다."
+        },
+        {
+          "form": "복수 명사",
+          "meaning": "효율 개선 효과",
+          "reason": "efficiencies는 개선 효과를 뜻하는 명사다. process payments의 방식을 나타낼 수 없다.",
+          "example": "The merger created operational efficiencies.",
+          "translation": "합병은 운영상 효율 개선 효과를 냈다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-038",
+      "number": 38,
+      "version": 1,
+      "clues": [
+        "process payments",
+        "more"
+      ]
+    },
+    {
+      "stem": "Only directors may access the ________ report, which contains employee salary data and details of negotiations with potential investors.",
+      "choices": [
+        "confidentially",
+        "confides",
+        "confide",
+        "confidential"
+      ],
+      "answer": 3,
+      "translation": "직원 급여 자료와 잠재 투자자들과의 협상 내용을 담은 기밀 보고서는 이사들만 열람할 수 있다.",
+      "tags": [
+        "noun-adjective",
+        "quality-rewrite"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "비밀리에",
+          "reason": "access the report confidentially라면 열람 방식을 수식합니다. 여기서는 report를 직접 수식해야 합니다.",
+          "example": "The complaint was handled confidentially.",
+          "translation": "그 불만은 비밀리에 처리되었다."
+        },
+        {
+          "form": "동사·3인칭 단수",
+          "meaning": "비밀을 털어놓다",
+          "reason": "the와 report 사이에서는 보고서를 꾸미는 말이 필요하다. 동사 confides를 놓아 report를 수식할 수 없다.",
+          "example": "He confides in his mentor.",
+          "translation": "그는 멘토에게 속내를 털어놓는다."
+        },
+        {
+          "form": "동사",
+          "meaning": "비밀을 털어놓다",
+          "reason": "the confide report처럼 동사원형으로 report를 꾸밀 수 없습니다.",
+          "example": "She confided in a trusted colleague.",
+          "translation": "그녀는 신뢰하는 동료에게 속내를 털어놓았다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "기밀의",
+          "reason": "the와 report 사이에서 보고서의 성격을 나타냅니다. Only directors와 민감한 내용이 기밀 문맥을 만듭니다.",
+          "example": "Please keep this information confidential.",
+          "translation": "이 정보는 기밀로 유지해 주세요."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-039",
+      "number": 39,
+      "version": 1,
+      "clues": [
+        "report",
+        "employee salary data"
+      ]
+    },
+    {
+      "stem": "As more companies enter the market, suppliers are facing an ________ competitive environment and must offer services beyond simple product delivery.",
+      "translation": "더 많은 기업이 시장에 진입하면서 공급업체들은 경쟁이 점점 치열해지는 환경에 직면해 단순 배송 이상의 서비스를 제공해야 한다.",
+      "tags": [
+        "adverb-adjective"
+      ],
+      "choices": [
+        "increased",
+        "increase",
+        "increasing",
+        "increasingly"
+      ],
+      "answer": 3,
+      "optionDetails": [
+        {
+          "form": "형용사·분사",
+          "meaning": "증가한",
+          "reason": "increased는 양이 늘어난 명사를 수식할 수 있지만 여기서는 competitive의 정도를 수식해야 한다.",
+          "example": "We need increased capacity.",
+          "translation": "우리는 늘어난 수용력이 필요하다."
+        },
+        {
+          "form": "명사",
+          "meaning": "증가",
+          "reason": "competitive라는 형용사를 명사 increase로 수식할 수 없다.",
+          "example": "An increase in sales was reported.",
+          "translation": "매출 증가가 보고되었다."
+        },
+        {
+          "form": "형용사·분사",
+          "meaning": "증가하는",
+          "reason": "여기서는 competitive의 정도 변화를 나타내야 하므로 increasing이 아니라 increasingly가 필요하다.",
+          "example": "We face increasing demand.",
+          "translation": "우리는 증가하는 수요에 직면해 있다."
+        },
+        {
+          "form": "부사",
+          "meaning": "점점 더",
+          "reason": "competitive를 수식해 경쟁이 점점 치열해짐을 나타내며 more companies enter와 연결된다.",
+          "example": "The system is increasingly complex.",
+          "translation": "시스템이 점점 복잡해지고 있다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-040",
+      "number": 40,
+      "version": 1,
+      "clues": [
+        "competitive environment"
+      ]
+    },
+    {
+      "stem": "Some clients may ________ to authorize automatic payments unless the service agreement clearly explains how their financial information will be protected.",
+      "choices": [
+        "hesitate",
+        "hesitation",
+        "hesitant",
+        "hesitantly"
+      ],
+      "answer": 0,
+      "translation": "일부 고객은 서비스 계약이 금융 정보를 어떻게 보호하는지 명확히 설명하지 않으면 자동 결제를 승인하기를 망설일 수 있다.",
+      "tags": [
+        "hesitant-hesitate",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "동사",
+          "meaning": "망설이다",
+          "reason": "may + 동사원형 hesitate + to authorize가 맞다. be를 덧붙이지 않고 동사 자체를 쓴다.",
+          "example": "Customers sometimes hesitate to share personal details.",
+          "translation": "고객들은 때때로 개인 정보를 제공하기를 망설인다."
+        },
+        {
+          "form": "명사",
+          "meaning": "망설임",
+          "reason": "may 다음에서 문장의 동사 역할을 할 수 없으므로 hesitation을 쓸 수 없다.",
+          "example": "The proposal met with some hesitation.",
+          "translation": "제안은 다소 망설이는 반응을 얻었다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "망설이는",
+          "reason": "조동사 may 다음에는 동사원형이 필요하다. may hesitant to가 아니라 may hesitate to다.",
+          "example": "The client remained hesitant about the plan.",
+          "translation": "고객은 그 계획을 계속 망설였다."
+        },
+        {
+          "form": "부사",
+          "meaning": "머뭇거리며",
+          "reason": "may hesitantly to authorize에는 may 뒤 본동사가 없다. 부사로 동사 자리를 채울 수 없다.",
+          "example": "The visitor stepped hesitantly into the workshop.",
+          "translation": "방문객은 작업장 안으로 머뭇거리며 들어섰다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-041",
+      "number": 41,
+      "version": 1,
+      "clues": [
+        "clients may",
+        "to authorize"
+      ]
+    },
+    {
+      "stem": "An extra service charge ________ appeared on several invoices after the billing software update, prompting customers to request an explanation.",
+      "choices": [
+        "unexpectedly",
+        "expectation",
+        "unexpectedness",
+        "unexpected"
+      ],
+      "answer": 0,
+      "translation": "청구 소프트웨어를 업데이트한 뒤 여러 청구서에 추가 서비스 요금이 예상치 못하게 표시되어 고객들이 설명을 요구했다.",
+      "tags": [
+        "same-verb-adverb",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "예상치 못하게",
+          "reason": "unexpectedly가 주어 뒤에서 appeared를 수식하여 요금이 뜻밖에 표시되었음을 나타낸다. appeared 앞이라는 실제 위치가 단서다.",
+          "example": "The supplier unexpectedly canceled the order.",
+          "translation": "그 공급업체는 예상치 못하게 주문을 취소했다."
+        },
+        {
+          "form": "명사",
+          "meaning": "예상; 기대",
+          "reason": "An extra service charge가 이미 주어다. 명사 expectation을 바로 이어 appeared의 방식을 나타낼 수 없다.",
+          "example": "The results exceeded our expectations.",
+          "translation": "결과는 우리의 기대를 넘어섰다."
+        },
+        {
+          "form": "명사",
+          "meaning": "예상 밖임",
+          "reason": "An extra service charge 뒤에서 appeared를 수식할 자리다. 명사 unexpectedness를 붙여 문장을 연결할 수 없다.",
+          "example": "The unexpectedness of the announcement surprised the staff.",
+          "translation": "발표가 뜻밖이어서 직원들은 놀랐다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "예상치 못한",
+          "reason": "An extra service charge가 주어이고 appeared가 동사다. 그 사이에서 나타난 방식을 수식해야 하므로 형용사 unexpected는 맞지 않는다.",
+          "example": "The invoice included an unexpected charge.",
+          "translation": "그 청구서에는 예상치 못한 요금이 포함되어 있었다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-042",
+      "number": 42,
+      "version": 1,
+      "clues": [
+        "appeared"
+      ]
+    },
+    {
+      "stem": "The city council has ________ declared the renovated market open, allowing vendors to welcome customers ahead of the summer festival.",
+      "choices": [
+        "officiate",
+        "officially",
+        "officials",
+        "official"
+      ],
+      "answer": 1,
+      "translation": "시의회는 보수된 시장의 개장을 공식 선언하여 상인들이 여름 축제를 앞두고 고객들을 맞이할 수 있게 했다.",
+      "tags": [
+        "same-verb-adverb",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "동사원형",
+          "meaning": "공식적으로 진행하다; 주재하다",
+          "reason": "has와 declared 사이에서 원형동사 officiate를 접속 없이 삽입할 수 없다. declared를 수식하는 부사가 필요하다.",
+          "example": "The director will officiate at the opening ceremony.",
+          "translation": "이사가 개막식을 주재할 것이다."
+        },
+        {
+          "form": "부사",
+          "meaning": "공식적으로",
+          "reason": "has와 declared 사이에서 공식적으로 선언했다는 동작 방식을 설명하므로 officially가 맞다. 시장의 상태는 뒤의 open이 나타낸다.",
+          "example": "The branch will officially open next month.",
+          "translation": "그 지점은 다음 달에 공식적으로 문을 열 것이다."
+        },
+        {
+          "form": "복수명사",
+          "meaning": "공무원들; 관계자들",
+          "reason": "has가 이미 주어 The city council의 조동사다. 그 뒤에 명사 officials를 더해 주어를 늘릴 수 없다.",
+          "example": "City officials inspected the site.",
+          "translation": "시 관계자들이 현장을 점검했다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "공식적인",
+          "reason": "has와 declared 사이에는 선언 행위를 수식하는 부사가 필요하다. 형용사 official은 그 자리에 맞지 않는다.",
+          "example": "We received official confirmation yesterday.",
+          "translation": "우리는 어제 공식 확인을 받았다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-043",
+      "number": 43,
+      "version": 1,
+      "clues": [
+        "declared the renovated market open"
+      ]
+    },
+    {
+      "stem": "The two laboratories will ________ develop a testing method, with each contributing specialists and sharing ownership of the resulting patent.",
+      "choices": [
+        "jointly",
+        "join",
+        "joint",
+        "joining"
+      ],
+      "answer": 0,
+      "translation": "두 연구소는 각각 전문가를 투입하고 최종 특허의 소유권을 공유하며 시험 방법을 공동 개발할 것이다.",
+      "tags": [
+        "manner-adverb",
+        "quality-rewrite"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "공동으로",
+          "reason": "will과 develop 사이에서 개발 동작을 수식합니다. each contributing과 sharing ownership이 공동 작업을 뒷받침합니다.",
+          "example": "The companies jointly funded the research.",
+          "translation": "두 회사는 연구비를 공동으로 댔다."
+        },
+        {
+          "form": "동사",
+          "meaning": "합류하다; 연결하다",
+          "reason": "will join develop처럼 두 동사원형을 연결할 수 없습니다. 여기서는 develop을 수식할 부사가 필요합니다.",
+          "example": "New members may join the discussion.",
+          "translation": "신규 회원은 토론에 참여할 수 있다."
+        },
+        {
+          "form": "형용사·명사",
+          "meaning": "공동의; 관절",
+          "reason": "will joint develop처럼 형용사를 develop 앞에 놓을 수 없습니다. joint는 joint project처럼 씁니다.",
+          "example": "They announced a joint project.",
+          "translation": "그들은 공동 프로젝트를 발표했다."
+        },
+        {
+          "form": "현재분사·동명사",
+          "meaning": "합류하는; 합류하기",
+          "reason": "will 뒤의 develop이 이미 동사원형입니다. joining을 그 앞에 놓아 공동 개발의 방식을 나타낼 수 없습니다.",
+          "example": "Several firms are joining the initiative.",
+          "translation": "여러 회사가 그 사업에 참여하고 있다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-044",
+      "number": 44,
+      "version": 1,
+      "clues": [
+        "develop a testing method",
+        "each contributing specialists and sharing ownership"
+      ]
+    },
+    {
+      "stem": "A more ________ summary would help the board understand the financial risks without requiring members to read every supporting document.",
+      "choices": [
+        "comprehensively",
+        "comprehension",
+        "comprehend",
+        "comprehensive"
+      ],
+      "answer": 3,
+      "translation": "더 포괄적인 요약이 있으면 이사회 구성원들이 모든 증빙 서류를 읽지 않고도 재무 위험을 이해하는 데 도움이 될 것이다.",
+      "tags": [
+        "more-most-pos",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "포괄적으로",
+          "reason": "빈칸 다음 summary를 직접 수식하므로 부사 comprehensively를 쓸 수 없다.",
+          "example": "The proposal addresses the issue comprehensively.",
+          "translation": "그 제안서는 문제를 포괄적으로 다룬다."
+        },
+        {
+          "form": "명사",
+          "meaning": "이해력, 이해",
+          "reason": "comprehension은 summary가 포괄적이라는 성질을 나타내지 않는다.",
+          "example": "The training improved employees’ comprehension of the rules.",
+          "translation": "교육은 직원들의 규정 이해도를 높였다."
+        },
+        {
+          "form": "동사",
+          "meaning": "이해하다",
+          "reason": "관사 A와 명사 summary 사이에서 동사원형 comprehend를 형용사처럼 쓸 수 없다.",
+          "example": "Employees must comprehend the safety instructions.",
+          "translation": "직원들은 안전 지침을 이해해야 한다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "포괄적인",
+          "reason": "A more comprehensive summary에서 summary의 범위와 충실도를 설명하는 형용사 comprehensive가 필요하다.",
+          "example": "The consultant prepared a comprehensive report.",
+          "translation": "컨설턴트는 포괄적인 보고서를 작성했다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-045",
+      "number": 45,
+      "version": 1,
+      "clues": [
+        "summary"
+      ]
+    },
+    {
+      "stem": "Each external auditor must evaluate the bids ________, without consulting the purchasing department until the initial scores have been submitted.",
+      "choices": [
+        "dependent",
+        "independent",
+        "independence",
+        "independently"
+      ],
+      "answer": 3,
+      "translation": "각 외부 감사인은 최초 점수를 제출할 때까지 구매 부서와 협의하지 않고 입찰안을 독립적으로 평가해야 한다.",
+      "tags": [
+        "manner-adverb",
+        "quality-rewrite"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사",
+          "meaning": "의존하는",
+          "reason": "dependent는 형용사이며, 다른 부서와 협의하지 않는 평가의 뜻과도 반대입니다.",
+          "example": "The schedule is dependent on delivery dates.",
+          "translation": "일정은 납품 날짜에 달려 있다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "독립적인",
+          "reason": "independent는 auditor나 evaluation 같은 명사를 수식할 수 있지만 evaluate의 방식을 나타내지 못합니다.",
+          "example": "An independent auditor reviewed the accounts.",
+          "translation": "독립 감사인이 회계를 검토했다."
+        },
+        {
+          "form": "명사",
+          "meaning": "독립성",
+          "reason": "evaluate의 목적어는 the bids입니다. independence를 더 놓아 평가 방식을 나타낼 수 없습니다.",
+          "example": "The committee values its independence.",
+          "translation": "위원회는 자체 독립성을 중요하게 여긴다."
+        },
+        {
+          "form": "부사",
+          "meaning": "독립적으로",
+          "reason": "without consulting the purchasing department가 평가 방식을 구체화합니다. evaluate the bids를 수식하는 independently가 맞습니다.",
+          "example": "The two engineers tested the equipment independently.",
+          "translation": "두 엔지니어는 장비를 독립적으로 시험했다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-046",
+      "number": 46,
+      "version": 1,
+      "clues": [
+        "evaluate the bids",
+        "without consulting the purchasing department"
+      ]
+    },
+    {
+      "stem": "Because tax rules change frequently, employees should consult the ________ updated guidance on the finance department’s website before filing expense claims.",
+      "choices": [
+        "regular",
+        "regularity",
+        "regularly",
+        "regulate"
+      ],
+      "answer": 2,
+      "translation": "세금 규정이 자주 바뀌므로 직원들은 비용을 청구하기 전에 재무 부서 웹사이트에서 정기적으로 갱신되는 안내를 확인해야 한다.",
+      "tags": [
+        "participle-adverb",
+        "quality-rewrite"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사",
+          "meaning": "정기적인; 일반적인",
+          "reason": "regular guidance처럼 명사를 꾸밀 수 있지만 여기서는 updated의 빈도를 나타내는 부사가 필요합니다.",
+          "example": "Regular inspections are required.",
+          "translation": "정기 검사가 필요하다."
+        },
+        {
+          "form": "명사",
+          "meaning": "규칙성; 정기성",
+          "reason": "regularity는 updated를 직접 수식하지 못합니다.",
+          "example": "The regularity of deliveries improved.",
+          "translation": "배송의 정기성이 개선되었다."
+        },
+        {
+          "form": "부사",
+          "meaning": "정기적으로",
+          "reason": "updated를 수식해 안내가 갱신되는 빈도를 나타냅니다.",
+          "example": "The directory is regularly updated.",
+          "translation": "명부는 정기적으로 갱신된다."
+        },
+        {
+          "form": "동사",
+          "meaning": "규제하다; 조절하다",
+          "reason": "the regulate updated guidance에는 명사구 안에 동사원형이 들어가므로 맞지 않습니다.",
+          "example": "The agency regulates commercial flights.",
+          "translation": "그 기관은 상업 항공편을 규제한다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-047",
+      "number": 47,
+      "version": 1,
+      "clues": [
+        "updated guidance"
+      ]
+    },
+    {
+      "stem": "Water damage rendered the printed inventory lists ________, requiring warehouse staff to retrieve the latest figures from the central database.",
+      "choices": [
+        "useless",
+        "uselessly",
+        "use",
+        "uselessness"
+      ],
+      "answer": 0,
+      "translation": "물에 젖어 인쇄된 재고 목록을 쓸 수 없게 되어 창고 직원들은 중앙 데이터베이스에서 최신 수치를 가져와야 했다.",
+      "tags": [
+        "unfamiliar-complement",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사",
+          "meaning": "쓸모없는; 사용할 수 없는",
+          "reason": "rendered the printed inventory lists useless에서 useless가 물 피해 후 목록의 상태를 설명한다.",
+          "example": "The damaged label is useless.",
+          "translation": "손상된 라벨은 쓸 수 없다."
+        },
+        {
+          "form": "부사",
+          "meaning": "쓸모없이",
+          "reason": "물 피해가 작용한 방식이 아니라 the printed inventory lists가 쓸모없어진 상태를 설명하므로 useless가 맞다.",
+          "example": "We searched uselessly for a missing copy.",
+          "translation": "우리는 잃어버린 사본을 찾아보았지만 헛수고였다."
+        },
+        {
+          "form": "명사; 동사원형",
+          "meaning": "사용; 사용하다",
+          "reason": "rendered 뒤의 the printed inventory lists가 어떤 상태인지 설명해야 한다. use는 그 상태를 나타내는 형용사가 아니다.",
+          "example": "Please use the electronic copy.",
+          "translation": "전자 사본을 이용하세요."
+        },
+        {
+          "form": "명사",
+          "meaning": "쓸모없음",
+          "reason": "인쇄된 목록 자체가 쓸모없음이라는 추상명사가 된다는 뜻이 아니다. 목록의 상태를 나타내는 useless가 필요하다.",
+          "example": "The test revealed the uselessness of the old tool.",
+          "translation": "그 시험은 옛 도구가 쓸모없다는 것을 드러냈다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-048",
+      "number": 48,
+      "version": 1,
+      "clues": [
+        "rendered the printed inventory lists"
+      ]
+    },
+    {
+      "stem": "All equipment rented for the exhibition must be ________ insured against accidental damage, including items transported by an outside carrier.",
+      "choices": [
+        "filled",
+        "fully",
+        "fill",
+        "full"
+      ],
+      "answer": 1,
+      "translation": "전시회를 위해 대여한 모든 장비는 외부 운송업체가 운반하는 물품까지 포함해 사고 손해에 대해 전액 보험에 가입되어야 한다.",
+      "tags": [
+        "participle-adverb",
+        "quality-rewrite"
+      ],
+      "optionDetails": [
+        {
+          "form": "과거분사",
+          "meaning": "채워진",
+          "reason": "be filled insured처럼 두 분사를 이 관계로 나열할 수 없습니다. 보험 범위는 fully insured로 나타냅니다.",
+          "example": "All available positions have been filled.",
+          "translation": "채용 가능한 모든 자리가 충원되었다."
+        },
+        {
+          "form": "부사",
+          "meaning": "완전히; 전액",
+          "reason": "be insured의 보장 범위를 수식해 전액 보험이라는 뜻을 만듭니다.",
+          "example": "The replacement cost is fully covered.",
+          "translation": "교체 비용은 전액 보장된다."
+        },
+        {
+          "form": "동사·명사",
+          "meaning": "채우다; 충분한 양",
+          "reason": "must be fill insured에서 fill은 insured를 수식할 수 없습니다.",
+          "example": "Please fill the tank before returning the car.",
+          "translation": "차량을 반납하기 전에 연료 탱크를 채우세요."
+        },
+        {
+          "form": "형용사",
+          "meaning": "가득 찬; 전액의",
+          "reason": "full coverage에서는 형용사지만 insured라는 과거분사를 직접 꾸미는 자리에는 fully가 맞습니다.",
+          "example": "The policy offers full coverage.",
+          "translation": "그 보험은 전액 보장을 제공한다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-049",
+      "number": 49,
+      "version": 1,
+      "clues": [
+        "insured against accidental damage"
+      ]
+    },
+    {
+      "stem": "To attract first-time exhibitors, the organizers have offered ________ priced booths that include lighting, power outlets, and basic display furniture.",
+      "choices": [
+        "reasoning",
+        "reasonably",
+        "reasonable",
+        "reason"
+      ],
+      "answer": 1,
+      "translation": "처음 참가하는 전시업체를 유치하기 위해 주최 측은 조명, 전원 콘센트, 기본 전시 가구를 포함한 합리적인 가격의 부스를 제공했다.",
+      "tags": [
+        "participle-adverb",
+        "quality-rewrite"
+      ],
+      "optionDetails": [
+        {
+          "form": "명사·현재분사",
+          "meaning": "추론; 추론하는",
+          "reason": "reasoning priced booths는 가격이 합리적이라는 뜻의 명사구를 만들지 못합니다.",
+          "example": "Please explain the reasoning behind the decision.",
+          "translation": "그 결정의 근거가 된 추론을 설명해 주세요."
+        },
+        {
+          "form": "부사",
+          "meaning": "합리적으로; 적정하게",
+          "reason": "priced를 수식합니다. reasonably priced booths는 가격이 적정하게 책정된 부스입니다.",
+          "example": "The hotel is reasonably priced.",
+          "translation": "그 호텔은 가격이 합리적이다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "합리적인; 적정한",
+          "reason": "reasonable prices는 가능하지만 priced라는 분사를 꾸미는 이 자리에는 reasonably가 필요합니다.",
+          "example": "The supplier offered a reasonable price.",
+          "translation": "공급업체가 합리적인 가격을 제시했다."
+        },
+        {
+          "form": "명사·동사",
+          "meaning": "이유; 추론하다",
+          "reason": "reason은 priced를 수식해 가격의 정도를 나타내지 못합니다.",
+          "example": "What was the reason for the delay?",
+          "translation": "지연된 이유는 무엇이었나요?"
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-050",
+      "number": 50,
+      "version": 1,
+      "clues": [
+        "priced booths"
+      ]
+    },
+    {
+      "stem": "To receive reimbursement, employees must attach the ________ receipt to the expense form rather than a photograph or a handwritten copy.",
+      "translation": "경비를 환급받으려면 직원들은 사진이나 손으로 쓴 사본 대신 원본 영수증을 경비 양식에 첨부해야 한다.",
+      "tags": [
+        "adjective-noun"
+      ],
+      "choices": [
+        "origin",
+        "originally",
+        "originate",
+        "original"
+      ],
+      "answer": 3,
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "기원·출처",
+          "reason": "기원이라는 명사 origin은 사진·사본과 대비되는 원본 영수증이라는 뜻을 만들지 못한다.",
+          "example": "The product’s origin is clearly marked.",
+          "translation": "제품의 원산지가 명확히 표시되어 있다."
+        },
+        {
+          "form": "부사",
+          "meaning": "원래",
+          "reason": "the와 receipt 사이에서 영수증의 종류를 직접 설명하므로 부사 originally는 맞지 않는다.",
+          "example": "The office was originally a bank.",
+          "translation": "그 사무실은 원래 은행이었다."
+        },
+        {
+          "form": "동사",
+          "meaning": "비롯되다",
+          "reason": "the 뒤에서 receipt를 수식해야 하므로 동사원형 originate는 들어갈 수 없다.",
+          "example": "The idea originated in a workshop.",
+          "translation": "그 아이디어는 워크숍에서 나왔다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "원본의",
+          "reason": "receipt를 직접 수식하며 photograph나 copy가 아닌 원본이라는 대비에 맞는다.",
+          "example": "Please keep the original document.",
+          "translation": "원본 문서를 보관해 주세요."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-051",
+      "number": 51,
+      "version": 1,
+      "clues": [
+        "receipt",
+        "rather than a photograph or a handwritten copy"
+      ]
+    },
+    {
+      "stem": "All complaints submitted through the ethics hotline are handled ________, and the identities of employees who report concerns are not shared with supervisors.",
+      "translation": "윤리 신고 전화로 제출된 모든 불만은 비밀리에 처리되며 문제를 신고한 직원의 신원은 상사에게 공유되지 않는다.",
+      "tags": [
+        "manner-adverb"
+      ],
+      "choices": [
+        "confidentially",
+        "confidentiality",
+        "confidence",
+        "confidential"
+      ],
+      "answer": 0,
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "비밀리에",
+          "reason": "handled의 처리 방식을 설명하며 뒤의 신원 비공개 내용과도 맞는다.",
+          "example": "Please speak to the adviser confidentially.",
+          "translation": "자문가와 비공개로 이야기하세요."
+        },
+        {
+          "form": "명사",
+          "meaning": "기밀 유지",
+          "reason": "are handled는 완성된 수동태이며 빈칸은 처리 방식을 설명하므로 명사 confidentiality는 맞지 않는다.",
+          "example": "The agreement protects confidentiality.",
+          "translation": "그 계약은 기밀을 보호한다."
+        },
+        {
+          "form": "명사",
+          "meaning": "신뢰·자신감",
+          "reason": "confidence는 명사이며 handled의 처리 방식을 나타내지 못한다.",
+          "example": "The results restored investor confidence.",
+          "translation": "결과가 투자자 신뢰를 회복시켰다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "기밀의",
+          "reason": "confidential은 정보의 성질을 나타낸다. 이 빈칸에서는 handled라는 동작을 수식해야 한다.",
+          "example": "The report contains confidential information.",
+          "translation": "그 보고서에는 기밀 정보가 들어 있다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-052",
+      "number": 52,
+      "version": 1,
+      "clues": [
+        "are handled",
+        "the identities of employees who report concerns are not shared"
+      ]
+    },
+    {
+      "stem": "After carrying heavy display panels up three flights of stairs, the installers were too ________ to begin assembling the booth immediately.",
+      "choices": [
+        "exhaustion",
+        "exhausting",
+        "exhausted",
+        "exhaustively"
+      ],
+      "answer": 2,
+      "translation": "무거운 전시 패널을 세 층이나 계단으로 나른 설치 기사들은 너무 지쳐서 즉시 부스 조립을 시작할 수 없었다.",
+      "tags": [
+        "emotion-meaning",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "극심한 피로",
+          "reason": "too exhaustion처럼 too로 명사를 수식해 지친 상태를 표현하지 않는다. too exhausted가 맞다.",
+          "example": "The workers stopped because of exhaustion.",
+          "translation": "작업자들은 극심한 피로 때문에 멈췄다."
+        },
+        {
+          "form": "형용사·현재분사",
+          "meaning": "기진맥진하게 하는",
+          "reason": "계단으로 무거운 패널을 나른 작업이 exhausting이고, 그 작업 때문에 지친 installers는 exhausted다.",
+          "example": "Moving the equipment was exhausting.",
+          "translation": "장비를 옮기는 일은 몹시 힘들었다."
+        },
+        {
+          "form": "형용사·과거분사",
+          "meaning": "기진맥진한",
+          "reason": "패널을 나른 뒤 피로를 느끼는 installers의 상태를 나타내므로 exhausted다.",
+          "example": "The exhausted crew took a break.",
+          "translation": "지친 작업반은 휴식을 취했다."
+        },
+        {
+          "form": "부사",
+          "meaning": "철저히, 빠짐없이",
+          "reason": "exhaustively는 지쳤다는 상태가 아니라 철저히라는 뜻이다. were too 뒤의 사람 상태 보어에 맞지 않는다.",
+          "example": "The committee examined the proposal exhaustively.",
+          "translation": "위원회는 제안서를 철저히 검토했다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-053",
+      "number": 53,
+      "version": 1,
+      "clues": [
+        "the installers were too",
+        "After carrying heavy display panels up three flights of stairs"
+      ]
+    },
+    {
+      "stem": "Mr. Rivera’s trip to Rome was one of the most ------- travel experiences of his life.",
+      "choices": [
+        "disappoint",
+        "disappointed",
+        "disappointing",
+        "disappointment"
+      ],
+      "answer": 2,
+      "translation": "Rivera 씨의 로마 여행은 그의 인생에서 가장 실망스러운 여행 경험 중 하나였다.",
+      "tags": [
+        "source-recheck",
+        "emotion-meaning"
+      ],
+      "source": {
+        "set": "흰둥이 RC Test 1",
+        "number": 109,
+        "originalReference": "whitedog-rc-test1-109",
+        "kind": "provided-wrong-question"
+      },
+      "optionDetails": [
+        {
+          "form": "동사",
+          "meaning": "실망시키다",
+          "reason": "travel experiences의 성질을 설명할 형용사가 필요하며 동사 disappoint를 놓을 수 없다.",
+          "example": "We do not want to disappoint our clients.",
+          "translation": "고객들을 실망시키고 싶지 않다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "실망한",
+          "reason": "experiences는 감정을 느끼는 대상이 아니라 실망을 일으킨 경험이다.",
+          "example": "The guests were disappointed with the service.",
+          "translation": "손님들은 서비스에 실망했다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "실망스러운",
+          "reason": "travel experiences가 실망을 일으켰다는 뜻이므로 disappointing이 맞다.",
+          "example": "The results were disappointing.",
+          "translation": "결과는 실망스러웠다."
+        },
+        {
+          "form": "명사",
+          "meaning": "실망",
+          "reason": "여기서는 experiences를 수식해야 한다. disappointment라는 별도 명사로 실망스러운 경험이라는 뜻을 만들지 않는다.",
+          "example": "She expressed her disappointment.",
+          "translation": "그녀는 실망을 표했다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-054",
+      "number": 54,
+      "version": 1,
+      "clues": [
+        "travel experiences"
+      ]
+    },
+    {
+      "stem": "The unusually short production time was ________ to the visiting buyers, who had expected the customized order to take at least a month.",
+      "choices": [
+        "astonishing",
+        "astonishingly",
+        "astonished",
+        "astonishment"
+      ],
+      "answer": 0,
+      "translation": "맞춤 주문에 적어도 한 달은 걸릴 것이라고 예상했던 방문 구매자들에게 이례적으로 짧은 생산 기간은 놀라운 일이었다.",
+      "tags": [
+        "emotion-meaning",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사·현재분사",
+          "meaning": "놀라운",
+          "reason": "짧은 production time이 buyers를 놀라게 한다. 놀라움을 일으키는 원인이므로 astonishing이다.",
+          "example": "The factory achieved an astonishing reduction in waste.",
+          "translation": "공장은 놀라운 수준의 폐기물 감축을 달성했다."
+        },
+        {
+          "form": "부사",
+          "meaning": "놀랄 만큼",
+          "reason": "was 뒤에서 production time을 설명하는 형용사 보어가 필요하다. astonishingly만으로는 완성되지 않는다.",
+          "example": "The repairs were astonishingly quick.",
+          "translation": "수리는 놀랄 만큼 빨랐다."
+        },
+        {
+          "form": "형용사·과거분사",
+          "meaning": "놀란",
+          "reason": "production time 자체가 놀란 감정을 느끼지 않는다. 놀란 buyers는 astonished buyers라고 한다.",
+          "example": "The buyers were astonished by the speed.",
+          "translation": "구매자들은 그 속도에 놀랐다."
+        },
+        {
+          "form": "명사",
+          "meaning": "놀라움",
+          "reason": "production time을 astonishment라는 감정 자체와 동일시하지 않는다. 시간의 놀라운 성질에는 astonishing이 맞다.",
+          "example": "She expressed astonishment at the result.",
+          "translation": "그녀는 결과에 놀라움을 표했다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-055",
+      "number": 55,
+      "version": 1,
+      "clues": [
+        "production time was",
+        "who had expected the customized order to take at least a month"
+      ]
+    },
+    {
+      "stem": "The refurbished machines had been ________ inspected before they were offered for sale, including tests of every emergency shutoff switch.",
+      "translation": "재정비된 기계들은 판매되기 전에 모든 비상 정지 스위치 시험을 포함해 철저하게 검사를 받았다.",
+      "tags": [
+        "manner-adverb"
+      ],
+      "choices": [
+        "thorough",
+        "inspecting",
+        "thoroughly",
+        "thoroughness"
+      ],
+      "answer": 2,
+      "optionDetails": [
+        {
+          "form": "형용사",
+          "meaning": "철저한",
+          "reason": "thorough는 검사의 성질을 나타낼 수 있지만 inspected라는 동작 자체에는 부사 thoroughly가 필요하다.",
+          "example": "We conducted a thorough inspection.",
+          "translation": "우리는 철저한 검사를 실시했다."
+        },
+        {
+          "form": "현재분사",
+          "meaning": "검사하는",
+          "reason": "had been inspected는 이미 완성된 수동태다. inspecting을 바로 덧붙이면 검사 동사가 중복되며 inspected의 방식도 나타내지 못한다.",
+          "example": "The technician is inspecting the motor.",
+          "translation": "기술자가 모터를 검사하고 있다."
+        },
+        {
+          "form": "부사",
+          "meaning": "철저하게",
+          "reason": "had been과 inspected 사이에서 검사 방식을 설명하며 모든 스위치를 시험했다는 내용과 맞는다.",
+          "example": "The kitchen was thoroughly cleaned.",
+          "translation": "주방은 철저히 청소되었다."
+        },
+        {
+          "form": "명사",
+          "meaning": "철저함",
+          "reason": "had been inspected라는 수동태 동작을 꾸미는 자리라 명사 thoroughness는 맞지 않는다.",
+          "example": "The client praised the review’s thoroughness.",
+          "translation": "고객은 검토의 철저함을 칭찬했다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-056",
+      "number": 56,
+      "version": 1,
+      "clues": [
+        "inspected",
+        "tests of every emergency shutoff switch"
+      ]
+    },
+    {
+      "stem": "Tickets purchased at the standard rate are ________ refundable if the event is canceled, but optional delivery charges cannot be returned.",
+      "translation": "정상가로 구매한 표는 행사가 취소되면 전액 환불되지만 선택 배송비는 환불되지 않는다.",
+      "tags": [
+        "adverb-adjective"
+      ],
+      "choices": [
+        "fullness",
+        "fill",
+        "fully",
+        "full"
+      ],
+      "answer": 2,
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "가득 참",
+          "reason": "refundable은 형용사이므로 그 환불 범위를 명사 fullness로 수식할 수 없다.",
+          "example": "The fullness of the schedule left little free time.",
+          "translation": "빽빽한 일정 때문에 여가가 거의 없었다."
+        },
+        {
+          "form": "동사",
+          "meaning": "채우다",
+          "reason": "are refundable이라는 상태 표현 안에서 fill이라는 동사원형을 추가할 수 없다.",
+          "example": "Please fill the container.",
+          "translation": "용기를 채워 주세요."
+        },
+        {
+          "form": "부사",
+          "meaning": "전적으로·완전히",
+          "reason": "refundable을 수식해 표 가격 전액이 환불된다는 뜻을 만든다.",
+          "example": "The equipment is fully insured.",
+          "translation": "그 장비는 전액 보험에 가입되어 있다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "가득 찬·전체의",
+          "reason": "빈칸은 refundable의 범위를 수식하므로 형용사 full이 아니라 fully가 필요하다.",
+          "example": "The ticket covers the full cost.",
+          "translation": "표가 전체 비용을 포함한다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-057",
+      "number": 57,
+      "version": 1,
+      "clues": [
+        "refundable"
+      ]
+    },
+    {
+      "stem": "The replacement fabric felt ________ under the designer’s fingertips, so she approved it for the hotel’s new pillow covers.",
+      "translation": "교체용 원단이 디자이너의 손끝에 매끄럽게 느껴져 그녀는 새 호텔 베갯잇 소재로 승인했다.",
+      "tags": [
+        "unfamiliar-complement",
+        "feel-state"
+      ],
+      "choices": [
+        "smoothly",
+        "smooth",
+        "smoothing",
+        "smooths"
+      ],
+      "answer": 1,
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "매끄럽게; 순조롭게",
+          "reason": "여기서는 fabric의 촉감이 어떤지를 설명한다. 만지는 동작의 방식을 설명하는 부사 자리가 아니다.",
+          "example": "The registration process went smoothly.",
+          "translation": "등록 절차가 순조롭게 진행되었다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "매끄러운",
+          "reason": "felt 뒤에서 fabric의 촉감을 설명하는 상태 보어다. under the designer’s fingertips가 촉감의 단서다.",
+          "example": "The silk feels smooth.",
+          "translation": "그 비단은 매끄럽게 느껴진다."
+        },
+        {
+          "form": "현재분사·동명사",
+          "meaning": "매끄럽게 하는",
+          "reason": "fabric이 다른 것을 매끄럽게 하는 행위가 아니라 자체의 촉감을 말한다. smoothing은 이 촉감 보어가 아니다.",
+          "example": "The technician is smoothing the surface.",
+          "translation": "기술자가 표면을 매끄럽게 다듬고 있다."
+        },
+        {
+          "form": "동사·3인칭 단수",
+          "meaning": "매끄럽게 한다",
+          "reason": "fabric felt가 이미 주어와 동사다. smooths라는 다른 정동사를 바로 이을 수 없다.",
+          "example": "This tool smooths rough edges.",
+          "translation": "이 도구는 거친 가장자리를 매끄럽게 다듬는다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-058",
+      "number": 58,
+      "version": 1,
+      "clues": [
+        "fabric felt",
+        "under the designer’s fingertips"
+      ]
+    },
+    {
+      "stem": "Skipping the equipment inspection turned out to be ________ when a minor defect forced the factory to suspend production for two days.",
+      "choices": [
+        "cost",
+        "costly",
+        "costs",
+        "costing"
+      ],
+      "answer": 1,
+      "translation": "작은 결함으로 공장이 이틀 동안 생산을 중단하면서 장비 점검을 생략한 것이 큰 비용을 초래한 것으로 드러났다.",
+      "tags": [
+        "unfamiliar-complement",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "명사; 동사원형",
+          "meaning": "비용; 비용이 들다",
+          "reason": "turned out to be 뒤에서 점검 생략의 성질을 설명해야 한다. 관사 없는 cost나 동사원형 cost로 이 뜻을 완성할 수 없다.",
+          "example": "The repair cost is higher than expected.",
+          "translation": "수리 비용이 예상보다 높다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "비용이 많이 드는",
+          "reason": "turned out to be costly는 점검 생략이 큰 비용을 초래한 것으로 드러났다는 뜻이다. -ly로 끝나지만 여기서 costly는 형용사다.",
+          "example": "An unnecessary delay can be costly.",
+          "translation": "불필요한 지연은 큰 비용을 초래할 수 있다."
+        },
+        {
+          "form": "복수명사; 3인칭 단수동사",
+          "meaning": "비용들; 비용이 든다",
+          "reason": "Skipping the equipment inspection의 성질을 설명하는 자리다. 비용들을 뜻하는 명사나 동사 costs를 be 뒤에 넣을 수 없다.",
+          "example": "Operating costs have risen this year.",
+          "translation": "올해 운영 비용이 올랐다."
+        },
+        {
+          "form": "현재분사",
+          "meaning": "비용이 들고 있는",
+          "reason": "costing으로 진행형을 만들려면 costing the company money처럼 비용을 부담하는 대상과 금액 등이 이어져야 한다. when절은 그 목적어가 아니다.",
+          "example": "The delay is costing us money.",
+          "translation": "지연으로 우리에게 비용이 발생하고 있다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-059",
+      "number": 59,
+      "version": 1,
+      "clues": [
+        "turned out to be",
+        "suspend production for two days"
+      ]
+    },
+    {
+      "stem": "Despite a sudden decline in overseas orders, the small manufacturer has remained ________ resilient by serving several different domestic markets.",
+      "choices": [
+        "remarks",
+        "remarking",
+        "remarkably",
+        "remarkable"
+      ],
+      "answer": 2,
+      "translation": "해외 주문이 갑자기 줄었지만 소규모 제조사는 여러 국내 시장에 공급하며 놀랄 만큼 회복력 있는 상태를 유지했다.",
+      "tags": [
+        "adjective-adverb",
+        "quality-rewrite"
+      ],
+      "optionDetails": [
+        {
+          "form": "복수명사·동사",
+          "meaning": "발언; 언급한다",
+          "reason": "resilient 앞에서 정도를 나타내야 하므로 remarks라는 명사나 동사는 맞지 않습니다.",
+          "example": "Her opening remarks were brief.",
+          "translation": "그녀의 개회 발언은 짧았다."
+        },
+        {
+          "form": "현재분사·동명사",
+          "meaning": "언급하는; 언급하기",
+          "reason": "remained remarking resilient은 상태 보어를 만드는 결합이 아닙니다.",
+          "example": "He left after remarking on the improved design.",
+          "translation": "그는 개선된 디자인에 관해 언급한 뒤 떠났다."
+        },
+        {
+          "form": "부사",
+          "meaning": "놀랄 만큼",
+          "reason": "remained의 상태 보어는 resilient입니다. 그 정도를 높이는 빈칸에는 remarkably가 필요합니다.",
+          "example": "Demand stayed remarkably strong.",
+          "translation": "수요는 놀랄 만큼 강세를 유지했다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "주목할 만한; 놀라운",
+          "reason": "remarkable은 a remarkable recovery처럼 명사를 꾸밉니다. 여기서는 resilient을 수식해야 합니다.",
+          "example": "The team achieved a remarkable recovery.",
+          "translation": "그 팀은 놀라운 회복을 이루었다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-060",
+      "number": 60,
+      "version": 1,
+      "clues": [
+        "resilient"
+      ]
+    },
+    {
+      "stem": "Staff described the new reporting procedure as ________ because they had to enter the same sales figures into three separate systems.",
+      "choices": [
+        "frustratingly",
+        "frustrated",
+        "frustration",
+        "frustrating"
+      ],
+      "answer": 3,
+      "translation": "직원들은 같은 매출 수치를 서로 다른 세 시스템에 입력해야 해서 새 보고 절차가 짜증을 유발한다고 말했다.",
+      "tags": [
+        "emotion-meaning",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "짜증 날 정도로",
+          "reason": "described the procedure as 뒤에서 절차의 성질을 설명하는 보어가 필요하다. frustratingly는 부사다.",
+          "example": "The approval process was frustratingly slow.",
+          "translation": "승인 절차는 짜증 날 정도로 느렸다."
+        },
+        {
+          "form": "형용사·과거분사",
+          "meaning": "좌절한, 짜증 난",
+          "reason": "절차를 수행하는 staff는 frustrated일 수 있지만 여기서는 procedure가 짜증을 유발한다는 성질을 설명한다.",
+          "example": "The staff were frustrated by the repeated errors.",
+          "translation": "직원들은 반복되는 오류로 짜증이 났다."
+        },
+        {
+          "form": "명사",
+          "meaning": "좌절, 불만",
+          "reason": "procedure를 frustration 자체와 동일시하는 것이 아니라 반복 입력으로 짜증을 주는 성질을 설명하므로 frustrating이 적절하다.",
+          "example": "The delays caused frustration.",
+          "translation": "지연은 불만을 낳았다."
+        },
+        {
+          "form": "형용사·현재분사",
+          "meaning": "짜증을 유발하는",
+          "reason": "같은 수치를 세 번 입력하게 하는 procedure가 직원에게 짜증을 준다. 그 원인을 설명하는 frustrating이 맞다.",
+          "example": "The repeated interruptions were frustrating.",
+          "translation": "반복되는 방해는 짜증스러웠다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-061",
+      "number": 61,
+      "version": 1,
+      "clues": [
+        "described the new reporting procedure as",
+        "the same sales figures into three separate systems"
+      ]
+    },
+    {
+      "stem": "The supplier appeared ________ during the initial negotiations, but the purchasing team still requested references before signing a long-term contract.",
+      "choices": [
+        "reliable",
+        "reliance",
+        "reliably",
+        "reliability"
+      ],
+      "answer": 0,
+      "translation": "그 공급업체는 초기 협상에서 믿을 만해 보였지만 구매팀은 장기 계약에 서명하기 전에 여전히 거래 실적 확인 자료를 요청했다.",
+      "tags": [
+        "unfamiliar-complement",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사",
+          "meaning": "믿을 만한",
+          "reason": "appeared reliable은 공급업체가 믿을 만해 보였다는 뜻으로, reliable이 the supplier의 인상을 설명한다.",
+          "example": "We need a reliable delivery service.",
+          "translation": "우리는 믿을 만한 배송 서비스가 필요하다."
+        },
+        {
+          "form": "명사",
+          "meaning": "의존",
+          "reason": "공급업체를 의존이라는 추상명사와 동일시할 수 없다. 이 문맥은 공급업체가 믿을 만해 보였다는 의미다.",
+          "example": "Our reliance on one supplier has decreased.",
+          "translation": "한 공급업체에 대한 우리의 의존도가 줄었다."
+        },
+        {
+          "form": "부사",
+          "meaning": "믿을 수 있게; 안정적으로",
+          "reason": "appeared가 공급업체의 인상을 설명하므로 reliable이 필요하다. reliably는 이 상태 보어가 될 수 없다.",
+          "example": "The device operates reliably in cold weather.",
+          "translation": "그 장치는 추운 날씨에도 안정적으로 작동한다."
+        },
+        {
+          "form": "명사",
+          "meaning": "신뢰성",
+          "reason": "the supplier가 신뢰성이라는 추상명사 그 자체로 보였다는 뜻이 아니다. 믿을 만한 성질을 나타내는 reliable이 맞다.",
+          "example": "We assessed the reliability of each supplier.",
+          "translation": "우리는 각 공급업체의 신뢰성을 평가했다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-062",
+      "number": 62,
+      "version": 1,
+      "clues": [
+        "The supplier appeared"
+      ]
+    },
+    {
+      "stem": "Compared with replacing the entire floor, repairing the damaged tiles is ________ inexpensive and can be completed without closing the shop for a full day.",
+      "translation": "바닥 전체 교체에 비하면 손상된 타일 수리는 비교적 저렴하고 매장을 하루 종일 닫지 않고도 마칠 수 있다.",
+      "tags": [
+        "adverb-adjective"
+      ],
+      "choices": [
+        "relatively",
+        "relation",
+        "relative",
+        "relate"
+      ],
+      "answer": 0,
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "비교적",
+          "reason": "inexpensive의 정도를 수식하며 Compared with가 제시한 비교 기준과 맞는다.",
+          "example": "The process is relatively simple.",
+          "translation": "그 절차는 비교적 간단하다."
+        },
+        {
+          "form": "명사",
+          "meaning": "관계",
+          "reason": "is inexpensive라는 상태 표현에 명사 relation을 끼워 넣을 수 없다.",
+          "example": "There is a relation between the two findings.",
+          "translation": "두 연구 결과 사이에는 관계가 있다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "상대적인",
+          "reason": "inexpensive라는 형용사를 직접 수식해야 하므로 relative가 아니라 relatively가 필요하다.",
+          "example": "We compared their relative strengths.",
+          "translation": "우리는 그들의 상대적인 강점을 비교했다."
+        },
+        {
+          "form": "동사",
+          "meaning": "관련짓다",
+          "reason": "is inexpensive의 inexpensive를 수식할 자리에 동사원형 relate를 놓을 수 없다.",
+          "example": "Please relate the results to our targets.",
+          "translation": "결과를 우리 목표와 연결해 주세요."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-063",
+      "number": 63,
+      "version": 1,
+      "clues": [
+        "inexpensive",
+        "Compared with replacing the entire floor"
+      ]
+    },
+    {
+      "stem": "Applicants who submit a portfolio after the stated deadline will not be deemed ________ for the design scholarship this year.",
+      "choices": [
+        "qualify",
+        "eligibility",
+        "eligible",
+        "ineligibility"
+      ],
+      "answer": 2,
+      "translation": "명시된 마감일 후에 작품집을 제출하는 지원자는 올해 디자인 장학금의 자격이 있는 것으로 인정되지 않는다.",
+      "tags": [
+        "unfamiliar-complement",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "동사원형",
+          "meaning": "자격을 얻다",
+          "reason": "will not be deemed는 이미 동사구다. 그 뒤에 동사원형 qualify를 이어 쓸 수 없으며 지원자들의 자격 상태를 설명해야 한다.",
+          "example": "Applicants must qualify before receiving funding.",
+          "translation": "지원자들은 자금을 받기 전에 자격을 갖추어야 한다."
+        },
+        {
+          "form": "명사",
+          "meaning": "자격",
+          "reason": "Applicants가 자격이라는 추상명사 자체인 것은 아니다. 지원자들의 자격 있는 상태를 설명하는 형용사가 필요하다.",
+          "example": "Please confirm your eligibility before applying.",
+          "translation": "신청하기 전에 본인의 자격을 확인하세요."
+        },
+        {
+          "form": "형용사",
+          "meaning": "자격이 있는",
+          "reason": "be deemed eligible for는 Applicants가 장학금 대상 자격이 있다고 판단된다는 뜻이며 not이 이를 부정한다.",
+          "example": "Part-time staff are eligible for the discount.",
+          "translation": "시간제 직원도 그 할인을 받을 자격이 있다."
+        },
+        {
+          "form": "명사",
+          "meaning": "자격 없음",
+          "reason": "Applicants 자체를 자격 없음이라는 추상명사와 동일시할 수 없다. 문장에서는 not be deemed eligible로 자격 인정을 부정한다.",
+          "example": "Late submission may result in ineligibility.",
+          "translation": "늦게 제출하면 자격을 잃을 수 있다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-064",
+      "number": 64,
+      "version": 1,
+      "clues": [
+        "will not be deemed",
+        "for the design scholarship"
+      ]
+    },
+    {
+      "stem": "The review panel ________ deemed the proposal suitable for further funding after discussing its potential benefits for local transport services.",
+      "choices": [
+        "unanimous",
+        "unify",
+        "unanimity",
+        "unanimously"
+      ],
+      "answer": 3,
+      "translation": "심사위원단은 지역 교통 서비스에 대한 잠재적 이점을 논의한 뒤 그 제안이 추가 자금 지원에 적합하다고 만장일치로 판단했다.",
+      "tags": [
+        "same-verb-adverb",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사",
+          "meaning": "만장일치의",
+          "reason": "주어 panel의 상태 보어를 넣는 자리가 아니다. deemed라는 동작이 만장일치로 이뤄졌다는 부사 수식이 필요하다.",
+          "example": "The committee reached a unanimous decision.",
+          "translation": "위원회는 만장일치 결정을 내렸다."
+        },
+        {
+          "form": "동사원형",
+          "meaning": "통합하다",
+          "reason": "deemed가 문장의 동사인데 그 앞에 원형동사 unify를 접속 없이 넣을 수 없다.",
+          "example": "The new platform will unify our booking systems.",
+          "translation": "새 플랫폼은 우리의 예약 시스템들을 통합할 것이다."
+        },
+        {
+          "form": "명사",
+          "meaning": "만장일치",
+          "reason": "The review panel이 주어이고 deemed가 동사다. 그 사이에서 판단 방식을 수식해야 하므로 명사 unanimity는 맞지 않는다.",
+          "example": "The decision required unanimity.",
+          "translation": "그 결정에는 만장일치가 필요했다."
+        },
+        {
+          "form": "부사",
+          "meaning": "만장일치로",
+          "reason": "unanimously가 deemed를 수식한다. the proposal의 보어 suitable은 이미 뒤에 있으므로 빈칸에 또 형용사를 넣지 않는다.",
+          "example": "The members voted unanimously in favor of the plan.",
+          "translation": "위원들은 그 계획에 만장일치로 찬성표를 던졌다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-065",
+      "number": 65,
+      "version": 1,
+      "clues": [
+        "deemed the proposal suitable"
+      ]
+    },
+    {
+      "stem": "Your subscription will renew ________ next month unless you cancel it through the account page at least five days before the billing date.",
+      "translation": "청구일 최소 5일 전에 계정 페이지에서 해지하지 않으면 구독이 다음 달에 자동 갱신된다.",
+      "tags": [
+        "manner-adverb"
+      ],
+      "choices": [
+        "automation",
+        "automatic",
+        "automate",
+        "automatically"
+      ],
+      "answer": 3,
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "자동화",
+          "reason": "renew 뒤에는 갱신 방식을 설명하는 말이 필요하며 자동화라는 명사를 목적어로 받는 문장이 아니다.",
+          "example": "Automation reduced processing time.",
+          "translation": "자동화가 처리 시간을 줄였다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "자동의",
+          "reason": "renew는 여기서 갱신되는 동작이다. 그 방식을 설명할 형용사가 아니라 부사가 필요하다.",
+          "example": "The building has automatic doors.",
+          "translation": "그 건물에는 자동문이 있다."
+        },
+        {
+          "form": "동사",
+          "meaning": "자동화하다",
+          "reason": "will renew가 동사구를 이루므로 automate라는 다른 동사원형을 바로 이을 수 없다.",
+          "example": "We plan to automate billing.",
+          "translation": "우리는 청구 업무를 자동화할 계획이다."
+        },
+        {
+          "form": "부사",
+          "meaning": "자동으로",
+          "reason": "renew라는 동작의 방식을 설명하는 automatically가 맞다.",
+          "example": "The file saves automatically.",
+          "translation": "파일은 자동으로 저장된다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-066",
+      "number": 66,
+      "version": 1,
+      "clues": [
+        "will renew"
+      ]
+    },
+    {
+      "stem": "Please discuss the proposed merger ________ with the legal team before sharing any details with employees or outside investors.",
+      "choices": [
+        "discreetly",
+        "discrete",
+        "discretion",
+        "discreet"
+      ],
+      "answer": 0,
+      "translation": "직원이나 외부 투자자에게 세부 내용을 알리기 전에 법무팀과 예정된 합병을 신중하게 논의하세요.",
+      "tags": [
+        "manner-adverb",
+        "quality-rewrite"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "신중하게; 눈에 띄지 않게",
+          "reason": "discuss the proposed merger라는 논의 동작을 수식합니다. 정보 공개 전의 신중한 논의이므로 discreetly가 맞습니다.",
+          "example": "The director handled the complaint discreetly.",
+          "translation": "이사는 그 불만을 신중하게 처리했다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "별개의; 분리된",
+          "reason": "discrete는 discreet과 뜻도 다릅니다. discuss의 방식을 나타내는 부사로 쓸 수 없습니다.",
+          "example": "The project consists of three discrete stages.",
+          "translation": "그 프로젝트는 별개의 세 단계로 이루어진다."
+        },
+        {
+          "form": "명사",
+          "meaning": "신중함; 재량",
+          "reason": "discuss의 목적어 the proposed merger가 이미 있습니다. discretion은 그 논의 방식을 수식하지 못합니다.",
+          "example": "Refunds are issued at the manager’s discretion.",
+          "translation": "환불은 관리자의 재량으로 처리된다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "신중한",
+          "reason": "discreet은 사람이나 행동의 성질을 나타냅니다. 여기서는 discuss를 수식하는 부사 자리가 필요합니다.",
+          "example": "Please be discreet about the negotiations.",
+          "translation": "협상에 관해서는 신중해 주세요."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-067",
+      "number": 67,
+      "version": 1,
+      "clues": [
+        "discuss the proposed merger",
+        "before sharing any details"
+      ]
+    },
+    {
+      "stem": "The guest speaker’s repeated references to outdated policies were ________, and several participants questioned whether the training materials had been reviewed.",
+      "choices": [
+        "disappointed",
+        "disappointing",
+        "disappointingly",
+        "disappointment"
+      ],
+      "answer": 1,
+      "translation": "초청 강사가 오래된 정책을 반복해서 언급한 것은 실망스러웠으며 몇몇 참가자는 교육 자료가 검토되었는지 의문을 제기했다.",
+      "tags": [
+        "emotion-meaning",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사·과거분사",
+          "meaning": "실망한",
+          "reason": "repeated references가 실망을 느끼는 주체는 아니다. 실망한 참가자는 disappointed participants라고 한다.",
+          "example": "The participants were disappointed with the session.",
+          "translation": "참가자들은 그 세션에 실망했다."
+        },
+        {
+          "form": "형용사·현재분사",
+          "meaning": "실망스러운",
+          "reason": "outdated policies에 대한 repeated references가 참가자에게 실망을 준다. 영향을 주는 원인이므로 disappointing이다.",
+          "example": "The results were disappointing.",
+          "translation": "결과가 실망스러웠다."
+        },
+        {
+          "form": "부사",
+          "meaning": "실망스럽게",
+          "reason": "were 다음에서 references의 성질을 설명하는 보어가 필요하다. disappointingly만으로는 완성되지 않는다.",
+          "example": "Attendance was disappointingly low.",
+          "translation": "참석률은 실망스러울 정도로 낮았다."
+        },
+        {
+          "form": "명사",
+          "meaning": "실망",
+          "reason": "were 뒤에 가산 단수명사 disappointment를 이 뜻으로 쓰려면 a disappointment가 필요하다. 보기에는 관사가 없고 형용사 disappointing이 알맞다.",
+          "example": "The cancellation was a disappointment.",
+          "translation": "취소는 실망스러운 일이었다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-068",
+      "number": 68,
+      "version": 1,
+      "clues": [
+        "repeated references to outdated policies"
+      ]
+    },
+    {
+      "stem": "Providing technicians with remote access has proved ________ to clients whose equipment requires frequent adjustments outside regular service hours.",
+      "choices": [
+        "beneficial",
+        "benefit",
+        "benefiting",
+        "benefits"
+      ],
+      "answer": 0,
+      "translation": "기술자들에게 원격 접속을 제공하는 것은 정규 서비스 시간 외에 장비를 자주 조정해야 하는 고객들에게 유익한 것으로 드러났다.",
+      "tags": [
+        "unfamiliar-complement",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사",
+          "meaning": "유익한",
+          "reason": "has proved 뒤에서 원격 접속 제공의 성질을 나타내며 beneficial to clients로 고객에게 유익하다는 뜻이 된다.",
+          "example": "The training was beneficial to new employees.",
+          "translation": "그 교육은 신입 직원들에게 유익했다."
+        },
+        {
+          "form": "명사",
+          "meaning": "이점",
+          "reason": "has proved 뒤에서 원격 접속 제공의 성질을 설명해야 한다. 단수명사 benefit은 이 문맥에서 관사 없이 보어로 쓸 수 없다.",
+          "example": "Flexible hours are a benefit of this position.",
+          "translation": "유연한 근무 시간은 이 직책의 이점이다."
+        },
+        {
+          "form": "현재분사",
+          "meaning": "이롭게 하는",
+          "reason": "has proved 뒤에서 원격 접속 제공의 성질을 설명해야 한다. benefiting은 이 문장의 to clients와 결합해 그 보어를 완성하지 못한다.",
+          "example": "The change is benefiting local businesses.",
+          "translation": "그 변화는 지역 사업체들에 이익을 주고 있다."
+        },
+        {
+          "form": "복수명사",
+          "meaning": "이점들",
+          "reason": "원격 접속을 제공하는 행위가 여러 이점들 그 자체라는 뜻이 아니다. to clients와 결합해 유익한 성질을 나타내는 beneficial이 필요하다.",
+          "example": "The report lists several benefits of remote access.",
+          "translation": "그 보고서는 원격 접속의 몇 가지 이점을 나열한다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-069",
+      "number": 69,
+      "version": 1,
+      "clues": [
+        "has proved",
+        "to clients"
+      ]
+    },
+    {
+      "stem": "Several distributors expressed interest in the ________ features of the prototype, especially its ability to recharge without a standard electrical outlet.",
+      "choices": [
+        "excitement",
+        "excited",
+        "excitedly",
+        "exciting"
+      ],
+      "answer": 3,
+      "translation": "여러 유통업체가 그 시제품의 흥미진진한 기능, 특히 표준 전기 콘센트 없이 충전하는 기능에 관심을 보였다.",
+      "tags": [
+        "emotion-meaning",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "흥분, 기대감",
+          "reason": "the와 features 사이에서 기능의 성질을 설명해야 한다. excitement는 그 형용사 자리를 채우지 못한다.",
+          "example": "Excitement grew as the opening approached.",
+          "translation": "개장이 다가오자 기대감이 커졌다."
+        },
+        {
+          "form": "형용사·과거분사",
+          "meaning": "신이 난",
+          "reason": "features는 신이 난 감정을 느끼는 대상이 아니다. 충전 기능이 유통업체의 흥미를 일으키므로 exciting이 맞다.",
+          "example": "The team is excited about the launch.",
+          "translation": "팀은 출시를 앞두고 신이 나 있다."
+        },
+        {
+          "form": "부사",
+          "meaning": "신이 나서",
+          "reason": "features를 직접 꾸미는 형용사가 필요하다. excitedly는 동작을 수식한다.",
+          "example": "The director spoke excitedly about the project.",
+          "translation": "이사는 그 사업에 관해 신이 나서 말했다."
+        },
+        {
+          "form": "형용사·현재분사",
+          "meaning": "흥미진진한",
+          "reason": "표준 콘센트 없이 충전하는 features가 관심과 기대를 일으킨다. 감정의 원인을 나타내는 exciting이 맞다.",
+          "example": "The brochure describes an exciting new service.",
+          "translation": "안내 책자는 흥미진진한 새 서비스를 소개한다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-070",
+      "number": 70,
+      "version": 1,
+      "clues": [
+        "features of the prototype",
+        "expressed interest"
+      ]
+    },
+    {
+      "stem": "The most ________ hired technicians will attend a safety briefing before they join the maintenance crew on the factory floor.",
+      "choices": [
+        "recently",
+        "recent",
+        "recency",
+        "previous"
+      ],
+      "answer": 0,
+      "translation": "가장 최근에 채용된 기술자들은 공장 작업장의 유지보수 팀에 합류하기 전에 안전 교육에 참석한다.",
+      "tags": [
+        "more-most-pos",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "최근에",
+          "reason": "빈칸은 technicians를 직접 꾸미는 자리가 아니라 hired의 채용 시점을 설명한다. most recently hired가 한 덩어리다.",
+          "example": "She was recently hired as an analyst.",
+          "translation": "그녀는 최근에 분석가로 채용되었다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "최근의",
+          "reason": "recent는 명사를 꾸미지만 여기서는 hired라는 분사의 시점을 수식해야 한다.",
+          "example": "Recent hires receive a handbook.",
+          "translation": "최근 입사자들은 안내서를 받는다."
+        },
+        {
+          "form": "명사",
+          "meaning": "최근성",
+          "reason": "recency는 hired의 시점을 수식하는 부사가 아니다.",
+          "example": "The analyst checked the recency of the data.",
+          "translation": "분석가는 자료가 얼마나 최근 것인지 확인했다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "이전의",
+          "reason": "previous는 technicians 같은 명사를 꾸미는 형용사다. hired의 시점을 수식하는 most recently 자리에 들어갈 수 없다.",
+          "example": "Please refer to the previous notice.",
+          "translation": "이전 안내문을 참고해 주세요."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-071",
+      "number": 71,
+      "version": 1,
+      "clues": [
+        "most",
+        "hired technicians"
+      ]
+    },
+    {
+      "stem": "After rehearsing the demonstration with her supervisor, Ms. Vega felt increasingly ________ about presenting the unfamiliar equipment to potential buyers.",
+      "choices": [
+        "confidently",
+        "confident",
+        "confidences",
+        "confidence"
+      ],
+      "answer": 1,
+      "translation": "상사와 시연을 연습한 뒤 Vega 씨는 잠재 구매자들에게 낯선 장비를 소개하는 데 자신감을 느꼈다.",
+      "tags": [
+        "unfamiliar-complement",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "자신 있게",
+          "reason": "Ms. Vega가 느낀 자신 있는 상태를 설명하므로 confident가 필요하다. confidently는 그 상태 보어가 아니다.",
+          "example": "She presented the proposal confidently.",
+          "translation": "그녀는 제안서를 자신 있게 발표했다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "자신 있는",
+          "reason": "felt confident about presenting은 발표에 자신감을 느꼈다는 뜻이다. confident가 Ms. Vega의 상태를 설명한다.",
+          "example": "We feel confident about the revised schedule.",
+          "translation": "우리는 수정된 일정에 자신이 있다."
+        },
+        {
+          "form": "복수명사",
+          "meaning": "비밀 이야기들",
+          "reason": "felt confidences about presenting은 이 문맥에서 성립하지 않는다. 발표에 대한 자신 있는 상태를 설명해야 한다.",
+          "example": "The two colleagues exchanged confidences over lunch.",
+          "translation": "두 동료는 점심을 먹으며 속내를 나누었다."
+        },
+        {
+          "form": "명사",
+          "meaning": "자신감",
+          "reason": "increasingly가 수식하는 상태 보어 자리이므로 명사 confidence를 넣을 수 없다. about presenting과 이어지는 confident가 맞다.",
+          "example": "The rehearsal increased her confidence.",
+          "translation": "예행연습은 그녀의 자신감을 높였다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-072",
+      "number": 72,
+      "version": 1,
+      "clues": [
+        "felt increasingly",
+        "about presenting"
+      ]
+    },
+    {
+      "stem": "Before the demonstration begins, please ________ explain how the sensor works so that visitors understand what the indicator lights are designed to show.",
+      "translation": "시연이 시작되기 전에 방문객이 표시등의 기능을 이해하도록 센서 작동 방식을 간단히 설명해 주세요.",
+      "tags": [
+        "manner-adverb"
+      ],
+      "choices": [
+        "briefly",
+        "brief",
+        "brevity",
+        "briefing"
+      ],
+      "answer": 0,
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "간단히",
+          "reason": "please와 explain 사이에서 설명하는 방식을 나타내므로 briefly가 맞다.",
+          "example": "She briefly described the problem.",
+          "translation": "그녀는 문제를 간단히 설명했다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "짧은",
+          "reason": "please explain의 동작을 수식해야 하므로 형용사 brief가 아니라 briefly가 필요하다.",
+          "example": "We held a brief meeting.",
+          "translation": "우리는 짧은 회의를 했다."
+        },
+        {
+          "form": "명사",
+          "meaning": "간결함",
+          "reason": "explain how the sensor works가 이어지므로 간결함이라는 명사를 삽입할 수 없다.",
+          "example": "The editor appreciated the letter’s brevity.",
+          "translation": "편집자는 편지의 간결함을 높이 샀다."
+        },
+        {
+          "form": "명사",
+          "meaning": "설명회",
+          "reason": "please 뒤에서 explain을 수식할 말이 필요하다. briefing이라는 명사는 이 자리를 채우지 못한다.",
+          "example": "The briefing starts at nine.",
+          "translation": "설명회는 9시에 시작한다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-073",
+      "number": 73,
+      "version": 1,
+      "clues": [
+        "explain how the sensor works"
+      ]
+    },
+    {
+      "stem": "Because demand was ________ high during the holiday week, the hotel arranged additional shuttle services between the airport and its downtown properties.",
+      "translation": "연휴 주간 수요가 이례적으로 높아서 호텔은 공항과 도심 호텔들 사이에 추가 셔틀을 마련했다.",
+      "tags": [
+        "adverb-adjective"
+      ],
+      "choices": [
+        "unusualness",
+        "unusually",
+        "unusual",
+        "usual"
+      ],
+      "answer": 1,
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "특이함",
+          "reason": "명사 unusualness는 형용사 high의 정도를 수식하지 못한다.",
+          "example": "The unusualness of the design attracted attention.",
+          "translation": "그 디자인의 특이함이 관심을 끌었다."
+        },
+        {
+          "form": "부사",
+          "meaning": "이례적으로",
+          "reason": "demand가 높은 상태를 나타내는 high를 수식해 이례적으로 높다는 뜻을 만든다.",
+          "example": "The room was unusually quiet.",
+          "translation": "그 방은 이례적으로 조용했다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "특이한",
+          "reason": "빈칸 바로 뒤 high의 정도를 설명하므로 형용사 unusual보다 부사 unusually가 필요하다.",
+          "example": "We received an unusual request.",
+          "translation": "우리는 특이한 요청을 받았다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "통상의",
+          "reason": "high라는 형용사를 직접 수식할 수 없으므로 usual은 맞지 않는다.",
+          "example": "The usual fee applies.",
+          "translation": "통상 요금이 적용된다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-074",
+      "number": 74,
+      "version": 1,
+      "clues": [
+        "high"
+      ]
+    },
+    {
+      "stem": "If the delivery address changes after an order is placed, ________ notify our shipping department to prevent the package from reaching the wrong office.",
+      "translation": "주문 후 배송지가 바뀌면 소포가 다른 사무실에 도착하지 않도록 배송 부서에 즉시 알려 주세요.",
+      "tags": [
+        "manner-adverb"
+      ],
+      "choices": [
+        "promptness",
+        "prompt",
+        "promptly",
+        "prompting"
+      ],
+      "answer": 2,
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "신속함",
+          "reason": "명령문에서 notify 앞에 동작 방식을 더해야 하며 명사 promptness를 놓을 수 없다.",
+          "example": "Customers praised her promptness.",
+          "translation": "고객들은 그녀의 신속함을 칭찬했다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "신속한",
+          "reason": "notify our shipping department의 동작을 수식하는 자리이므로 형용사 prompt는 맞지 않는다.",
+          "example": "Thank you for your prompt reply.",
+          "translation": "신속한 답변에 감사드립니다."
+        },
+        {
+          "form": "부사",
+          "meaning": "즉시",
+          "reason": "명령동사 notify가 얼마나 신속하게 이루어져야 하는지 설명하므로 promptly가 맞다.",
+          "example": "The staff replied promptly.",
+          "translation": "직원들이 신속하게 답했다."
+        },
+        {
+          "form": "명사",
+          "meaning": "촉구·자극",
+          "reason": "prompting은 명사로 notify를 수식하지 못한다.",
+          "example": "The team acted without further prompting.",
+          "translation": "팀은 추가 촉구 없이 행동했다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-075",
+      "number": 75,
+      "version": 1,
+      "clues": [
+        "notify our shipping department"
+      ]
+    },
+    {
+      "stem": "For three consecutive quarters, the maintenance team has ________ met its response-time target despite receiving more service requests than any other regional office.",
+      "translation": "정비팀은 다른 어느 지역 사무소보다 많은 서비스 요청을 받았는데도 세 분기 연속으로 응답 시간 목표를 꾸준히 달성했다.",
+      "tags": [
+        "manner-adverb"
+      ],
+      "choices": [
+        "consistency",
+        "inconsistent",
+        "consistently",
+        "consistent"
+      ],
+      "answer": 2,
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "일관성",
+          "reason": "has와 met 사이에는 달성하는 양상을 설명하는 말이 필요하다. 명사 consistency는 맞지 않는다.",
+          "example": "Consistency is essential in quality control.",
+          "translation": "품질 관리에는 일관성이 필수다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "일관되지 않은",
+          "reason": "inconsistent는 형용사여서 has met를 수식할 수 없다.",
+          "example": "The records were inconsistent.",
+          "translation": "기록들이 일치하지 않았다."
+        },
+        {
+          "form": "부사",
+          "meaning": "꾸준히·일관되게",
+          "reason": "has met에 꾸준히 달성했다는 양상을 더하며 세 분기 연속이라는 단서와 맞는다.",
+          "example": "Sales have consistently increased.",
+          "translation": "매출이 꾸준히 증가했다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "일관된",
+          "reason": "has met의 동작을 설명해야 하므로 형용사 consistent는 이 자리에 맞지 않는다.",
+          "example": "The product delivers consistent results.",
+          "translation": "그 제품은 일관된 결과를 낸다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-076",
+      "number": 76,
+      "version": 1,
+      "clues": [
+        "met its response-time target",
+        "For three consecutive quarters"
+      ]
+    },
+    {
+      "stem": "If no employee responds within five minutes, the system will ________ forward the maintenance alert to the technician on call.",
+      "choices": [
+        "automated",
+        "automatically",
+        "automation",
+        "automatic"
+      ],
+      "answer": 1,
+      "translation": "직원이 5분 안에 응답하지 않으면 시스템은 유지보수 경보를 당직 기술자에게 자동 전달한다.",
+      "tags": [
+        "manner-adverb",
+        "quality-rewrite"
+      ],
+      "optionDetails": [
+        {
+          "form": "과거분사·형용사",
+          "meaning": "자동화된",
+          "reason": "automated는 an automated system처럼 대상의 상태를 나타냅니다. will automated forward는 문장 구조가 맞지 않습니다.",
+          "example": "The warehouse uses automated equipment.",
+          "translation": "창고는 자동화 장비를 사용한다."
+        },
+        {
+          "form": "부사",
+          "meaning": "자동으로",
+          "reason": "will forward라는 전달 동작이 어떻게 이루어지는지를 나타냅니다. 조건 충족 시 시스템이 스스로 전달합니다.",
+          "example": "The door locks automatically at midnight.",
+          "translation": "문은 자정에 자동으로 잠긴다."
+        },
+        {
+          "form": "명사",
+          "meaning": "자동화",
+          "reason": "automation은 명사이므로 will과 forward 사이에서 전달 방식을 수식할 수 없습니다.",
+          "example": "Automation reduced processing time.",
+          "translation": "자동화로 처리 시간이 줄었다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "자동의",
+          "reason": "automatic은 automatic forwarding처럼 명사를 수식합니다. forward라는 동사 앞에서는 automatically가 필요합니다.",
+          "example": "An automatic reminder will be sent.",
+          "translation": "자동 알림이 발송될 것이다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-077",
+      "number": 77,
+      "version": 1,
+      "clues": [
+        "forward the maintenance alert"
+      ]
+    },
+    {
+      "stem": "The export team was ________ to learn that the final shipment had cleared customs in time for the client’s exhibition.",
+      "choices": [
+        "encouragingly",
+        "encouraged",
+        "encouragement",
+        "encouraging"
+      ],
+      "answer": 1,
+      "translation": "수출팀은 마지막 배송품이 고객의 전시회에 맞춰 통관되었다는 사실을 알고 고무되었다.",
+      "tags": [
+        "emotion-meaning",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "고무적으로",
+          "reason": "was 뒤에서 team의 감정 상태를 설명해야 하므로 부사 encouragingly만으로 보어를 완성하지 못한다.",
+          "example": "The supervisor nodded encouragingly.",
+          "translation": "감독자는 격려하듯 고개를 끄덕였다."
+        },
+        {
+          "form": "형용사·과거분사",
+          "meaning": "고무된, 용기를 얻은",
+          "reason": "to learn 이하의 통관 소식이 팀을 고무했다. 그 감정을 느끼는 team의 상태는 encouraged다.",
+          "example": "We were encouraged by the positive feedback.",
+          "translation": "우리는 긍정적인 의견에 고무되었다."
+        },
+        {
+          "form": "명사",
+          "meaning": "격려",
+          "reason": "was encouragement는 팀을 격려 자체와 동일시한다. 소식을 접한 팀의 감정에는 encouraged가 필요하다.",
+          "example": "The trainees appreciated her encouragement.",
+          "translation": "교육생들은 그녀의 격려에 감사했다."
+        },
+        {
+          "form": "형용사·현재분사",
+          "meaning": "고무적인",
+          "reason": "The export team이 소식을 듣고 느끼는 감정을 말한다. 팀이 다른 누군가를 고무한다는 encouraging과 다르다.",
+          "example": "The early sales figures are encouraging.",
+          "translation": "초기 매출 수치는 고무적이다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-078",
+      "number": 78,
+      "version": 1,
+      "clues": [
+        "The export team was",
+        "to learn that the final shipment had cleared customs in time"
+      ]
+    },
+    {
+      "stem": "With several permits still awaiting approval, the developer is proceeding ________ and will not authorize construction until all legal requirements have been met.",
+      "translation": "여러 허가의 승인을 아직 기다리고 있어 개발업체는 신중하게 진행하고 있으며 법적 요건이 모두 충족되기 전에는 공사를 승인하지 않을 것이다.",
+      "tags": [
+        "manner-adverb"
+      ],
+      "choices": [
+        "cautiously",
+        "caution",
+        "cautionary",
+        "cautious"
+      ],
+      "answer": 0,
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "신중하게",
+          "reason": "is proceeding을 수식하며 허가 전에 공사를 승인하지 않겠다는 내용과 맞는다.",
+          "example": "The driver moved cautiously.",
+          "translation": "운전자는 조심스럽게 이동했다."
+        },
+        {
+          "form": "명사",
+          "meaning": "주의·신중함",
+          "reason": "proceeding이라는 동작의 방식을 수식해야 하므로 명사 caution은 맞지 않는다.",
+          "example": "Please exercise caution near the entrance.",
+          "translation": "입구 근처에서 주의해 주세요."
+        },
+        {
+          "form": "형용사",
+          "meaning": "경고의",
+          "reason": "cautionary는 명사를 수식하는 형용사이며 proceeding의 방식을 나타내지 못한다.",
+          "example": "The report offers a cautionary example.",
+          "translation": "그 보고서는 경고가 되는 사례를 제시한다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "신중한",
+          "reason": "is proceeding은 진행형 동사구다. 진행 방식을 설명하는 부사가 필요하므로 cautious는 맞지 않는다.",
+          "example": "Investors remain cautious.",
+          "translation": "투자자들은 여전히 신중하다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-079",
+      "number": 79,
+      "version": 1,
+      "clues": [
+        "is proceeding",
+        "will not authorize construction until all legal requirements have been met"
+      ]
+    },
+    {
+      "stem": "A ________ response from the shipping agent allowed the exporter to correct the paperwork before the vessel left the port.",
+      "choices": [
+        "time",
+        "timing",
+        "timely",
+        "timeliness"
+      ],
+      "answer": 2,
+      "translation": "운송 대리인의 시기적절한 답변 덕분에 수출업체는 선박이 항구를 떠나기 전에 서류를 수정할 수 있었다.",
+      "tags": [
+        "ly-adjective",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "명사·동사",
+          "meaning": "시간; 시간을 재다",
+          "reason": "A time response가 아니라 timely response가 제때 이루어진 답변을 나타낸다.",
+          "example": "Please allow time for customs clearance.",
+          "translation": "통관에 필요한 시간을 확보해 주세요."
+        },
+        {
+          "form": "명사·현재분사",
+          "meaning": "시기 조절; 시간을 재는",
+          "reason": "timing response는 시기적절한 답변이라는 자연스러운 결합이 아니다. 출항 전 수정에 도움이 된 timely가 맞다.",
+          "example": "The timing of the announcement was important.",
+          "translation": "발표 시점은 중요했다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "시기적절한, 제때의",
+          "reason": "A timely response에서 timely가 response를 꾸민다. 출항 전에 서류를 고칠 수 있게 한 제때의 답변이다.",
+          "example": "We appreciate your timely assistance.",
+          "translation": "시기적절한 도움에 감사드립니다."
+        },
+        {
+          "form": "명사",
+          "meaning": "시의적절함",
+          "reason": "response의 성질을 설명하는 형용사 자리에 명사 timeliness를 넣을 수 없다.",
+          "example": "The team values the timeliness of deliveries.",
+          "translation": "팀은 배송이 제때 이루어지는 것을 중시한다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-080",
+      "number": 80,
+      "version": 1,
+      "clues": [
+        "response",
+        "before the vessel left the port"
+      ]
+    },
+    {
+      "stem": "Customers found the revised instructions ________: they said receipts were unnecessary, although the store still required original receipts for every refund.",
+      "choices": [
+        "mislead",
+        "misleadingly",
+        "misleads",
+        "misleading"
+      ],
+      "answer": 3,
+      "translation": "안내에는 영수증이 필요 없다고 되어 있지만 매장은 여전히 모든 환불에 원본 영수증을 요구해, 고객들은 수정된 안내가 오해를 부른다고 느꼈다.",
+      "tags": [
+        "familiar-complement",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "동사원형",
+          "meaning": "오해하게 하다",
+          "reason": "found 뒤의 the revised return instructions를 설명할 보어 자리다. 원형동사 mislead를 그대로 이어 쓸 수 없다.",
+          "example": "The advertisement may mislead customers.",
+          "translation": "그 광고는 고객들을 오해하게 할 수 있다."
+        },
+        {
+          "form": "부사",
+          "meaning": "오해를 일으키게",
+          "reason": "found가 어떻게 이뤄졌는지가 아니라 instructions의 성질을 설명하므로 misleading이 필요하다.",
+          "example": "The item was misleadingly labeled as new.",
+          "translation": "그 물품은 새것이라는 오해를 낳도록 라벨이 붙어 있었다."
+        },
+        {
+          "form": "동사·3인칭 단수",
+          "meaning": "오해하게 한다",
+          "reason": "Customers found가 이미 주어·동사이고 the revised instructions는 목적어다. 다른 정동사 misleads를 그대로 이어 쓸 수 없다.",
+          "example": "This label misleads customers.",
+          "translation": "이 라벨은 고객들을 오해하게 한다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "오해의 소지가 있는",
+          "reason": "found the revised instructions 뒤에서 안내의 성질을 설명하는 형용사 보어가 필요하다. 안내의 receipts were unnecessary와 매장의 required original receipts가 충돌하므로 misleading이 맞다.",
+          "example": "The price comparison is misleading.",
+          "translation": "그 가격 비교는 오해의 소지가 있다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-081",
+      "number": 81,
+      "version": 1,
+      "clues": [
+        "receipts were unnecessary",
+        "required original receipts"
+      ]
+    },
+    {
+      "stem": "The consultant suggested materials ________ for outdoor use, since the signs will remain exposed to rain throughout the winter season.",
+      "choices": [
+        "suitability",
+        "suiting",
+        "suitably",
+        "suitable"
+      ],
+      "answer": 3,
+      "translation": "겨울 내내 안내판이 비에 노출되므로 컨설턴트는 야외 사용에 적합한 재료를 제안했다.",
+      "tags": [
+        "postpositive-adjective",
+        "quality-rewrite"
+      ],
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "적합성",
+          "reason": "materials suitability for는 이 문장에서 재료를 수식하는 구조가 아닙니다. suitability of materials라면 적합성이라는 명사구입니다.",
+          "example": "We assessed the site’s suitability.",
+          "translation": "우리는 부지의 적합성을 평가했다."
+        },
+        {
+          "form": "현재분사·동명사",
+          "meaning": "~에 맞는; 맞추기",
+          "reason": "suit는 suit our needs처럼 목적어를 직접 받습니다. suiting for outdoor use는 suitable for를 대신할 수 없습니다.",
+          "example": "The supplier is tailoring a plan to suit our needs.",
+          "translation": "공급업체는 우리 요구에 맞도록 계획을 조정하고 있다."
+        },
+        {
+          "form": "부사",
+          "meaning": "적절하게",
+          "reason": "materials 뒤에는 재료가 적합하다는 형용사가 필요합니다. suitably는 suitably durable처럼 형용사를 더 필요로 합니다.",
+          "example": "The room was suitably equipped.",
+          "translation": "그 방은 용도에 맞게 설비가 갖춰져 있었다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "적합한",
+          "reason": "suitable for outdoor use가 materials의 성질을 뒤에서 설명합니다. 비에 노출되는 안내판의 재료 조건입니다.",
+          "example": "This fabric is suitable for uniforms.",
+          "translation": "이 직물은 유니폼에 적합하다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-082",
+      "number": 82,
+      "version": 1,
+      "clues": [
+        "materials",
+        "for outdoor use"
+      ]
+    },
+    {
+      "stem": "Orders have increased ________ over the past six months, allowing the furniture maker to hire permanent staff rather than temporary workers.",
+      "choices": [
+        "steadily",
+        "steadied",
+        "steady",
+        "steadiness"
+      ],
+      "answer": 0,
+      "translation": "지난 6개월 동안 주문이 꾸준히 증가해 가구 제조사는 임시직 대신 정규 직원을 고용할 수 있게 되었다.",
+      "tags": [
+        "manner-adverb",
+        "quality-rewrite"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "꾸준히",
+          "reason": "have increased를 수식해 주문 증가의 양상을 나타냅니다. over the past six months는 그 기간입니다.",
+          "example": "Membership has grown steadily since January.",
+          "translation": "회원 수는 1월 이후 꾸준히 늘었다."
+        },
+        {
+          "form": "과거형·과거분사",
+          "meaning": "안정되었다; 안정시킨",
+          "reason": "have increased 다음에 steadied라는 또 다른 동사형을 바로 연결할 수 없습니다.",
+          "example": "Prices steadied after the announcement.",
+          "translation": "발표 후 가격이 안정되었다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "꾸준한; 안정된",
+          "reason": "steady는 steady growth처럼 명사를 꾸밉니다. Orders have increased 뒤에서는 증가 동작을 수식할 부사가 필요합니다.",
+          "example": "We have seen steady growth.",
+          "translation": "우리는 꾸준한 성장을 확인했다."
+        },
+        {
+          "form": "명사",
+          "meaning": "안정성; 꾸준함",
+          "reason": "steadiness는 have increased의 방식을 설명하지 못합니다. 명사 growth와 같은 자리도 아닙니다.",
+          "example": "The instrument’s steadiness impressed the operator.",
+          "translation": "기기의 안정성이 운용자에게 인상적이었다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-083",
+      "number": 83,
+      "version": 1,
+      "clues": [
+        "have increased"
+      ]
+    },
+    {
+      "stem": "Adding a labeled diagram made the assembly instructions ________ to customers with no previous experience of installing office furniture.",
+      "choices": [
+        "understandably",
+        "understandable",
+        "understanding",
+        "understand"
+      ],
+      "answer": 1,
+      "translation": "이름표가 붙은 도해를 추가하자 사무용 가구를 설치해 본 경험이 없는 고객들도 조립 안내를 이해할 수 있게 되었다.",
+      "tags": [
+        "familiar-complement",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "이해할 만하게; 당연히",
+          "reason": "made 뒤에서 the assembly instructions가 어떤 상태가 되었는지 설명해야 한다. understandably는 그 보어가 될 수 없다.",
+          "example": "The customer was understandably concerned about the delay.",
+          "translation": "고객이 지연을 걱정한 것은 당연했다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "이해할 수 있는",
+          "reason": "made the assembly instructions understandable은 안내를 이해할 수 있게 만들었다는 뜻이다. to customers가 이해하는 대상을 밝힌다.",
+          "example": "The explanation is understandable to beginners.",
+          "translation": "그 설명은 초보자도 이해할 수 있다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "이해심 있는",
+          "reason": "understanding은 사람 등이 이해심 있다는 뜻이다. 조립 안내가 이해하기 쉬워졌다는 문맥에는 understandable이 적합하다.",
+          "example": "Our supervisor is very understanding.",
+          "translation": "우리 상사는 매우 이해심이 많다."
+        },
+        {
+          "form": "동사원형",
+          "meaning": "이해하다",
+          "reason": "make가 원형동사를 이끄는 다른 문형도 있지만 the assembly instructions가 이해하는 행위자가 될 수는 없다. 안내의 상태를 설명해야 한다.",
+          "example": "Please make sure you understand the instructions.",
+          "translation": "안내를 이해했는지 확인하세요."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-084",
+      "number": 84,
+      "version": 1,
+      "clues": [
+        "made the assembly instructions",
+        "to customers"
+      ]
+    },
+    {
+      "stem": "The distributor reported a ________ increase in online orders after introducing next-day delivery in several major cities last quarter.",
+      "choices": [
+        "substantiate",
+        "substantial",
+        "substantially",
+        "substance"
+      ],
+      "answer": 1,
+      "translation": "유통업체는 지난 분기에 여러 주요 도시에 익일 배송을 도입한 뒤 온라인 주문이 상당히 증가했다고 보고했다.",
+      "tags": [
+        "noun-adjective",
+        "quality-rewrite"
+      ],
+      "optionDetails": [
+        {
+          "form": "동사",
+          "meaning": "입증하다",
+          "reason": "관사 a 뒤에서 동사원형 substantiate로 명사 increase를 꾸밀 수 없습니다.",
+          "example": "Please substantiate the claim with receipts.",
+          "translation": "영수증으로 그 청구를 입증해 주세요."
+        },
+        {
+          "form": "형용사",
+          "meaning": "상당한",
+          "reason": "a와 명사 increase 사이에서 증가의 규모를 나타냅니다. increase는 reported의 목적어인 명사입니다.",
+          "example": "The upgrade requires substantial investment.",
+          "translation": "그 업그레이드에는 상당한 투자가 필요하다."
+        },
+        {
+          "form": "부사",
+          "meaning": "상당히",
+          "reason": "orders increased substantially라면 동사 increased를 수식합니다. a increase라는 명사구 안에서는 substantial이 필요합니다.",
+          "example": "Sales increased substantially last year.",
+          "translation": "지난해 매출이 상당히 증가했다."
+        },
+        {
+          "form": "명사",
+          "meaning": "물질; 핵심",
+          "reason": "substance increase는 여기서 주문 증가의 규모를 나타내지 못합니다. 주문이라는 수치가 커졌다는 문맥입니다.",
+          "example": "The substance must be stored safely.",
+          "translation": "그 물질은 안전하게 보관해야 한다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-085",
+      "number": 85,
+      "version": 1,
+      "clues": [
+        "increase in online orders"
+      ]
+    },
+    {
+      "stem": "Several employees feel ________ about preserving flexible working hours, so management has scheduled a meeting to hear their concerns.",
+      "choices": [
+        "strong",
+        "strongly",
+        "strengthen",
+        "strength"
+      ],
+      "answer": 1,
+      "translation": "몇몇 직원들은 유연 근무 시간의 유지에 대해 확고한 입장을 가지고 있어 경영진은 그들의 우려를 듣는 회의를 잡았다.",
+      "tags": [
+        "same-verb-adverb",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사",
+          "meaning": "강한",
+          "reason": "직원들이 몸이나 상태가 강하다고 느낀다는 뜻이 아니다. about preserving에 대한 강한 의견을 나타내는 strongly가 맞다.",
+          "example": "I feel strong after a good rest.",
+          "translation": "충분히 쉬고 나니 힘이 난다."
+        },
+        {
+          "form": "부사",
+          "meaning": "강하게; 확고히",
+          "reason": "feel strongly about preserving은 유지에 대해 확고한 의견을 갖는다는 뜻이다. 이 feel 용법에서는 strongly가 적합하다.",
+          "example": "She feels strongly about equal access to training.",
+          "translation": "그녀는 동등한 교육 기회에 대해 확고한 의견을 가지고 있다."
+        },
+        {
+          "form": "동사원형",
+          "meaning": "강화하다",
+          "reason": "feel은 이미 Several employees의 동사다. about preserving 앞에 동사 strengthen을 원형으로 이어 쓸 수 없다.",
+          "example": "The policy will strengthen employee protections.",
+          "translation": "그 정책은 직원 보호를 강화할 것이다."
+        },
+        {
+          "form": "명사",
+          "meaning": "힘; 강점",
+          "reason": "feel 뒤에 명사를 쓰는 다른 문장과 달리, 여기서는 about preserving과 함께 의견의 강도를 나타내는 feel strongly about이 필요하다.",
+          "example": "Teamwork is a major strength of this department.",
+          "translation": "팀워크는 이 부서의 주요 강점이다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-086",
+      "number": 86,
+      "version": 1,
+      "clues": [
+        "feel",
+        "about preserving flexible working hours"
+      ]
+    },
+    {
+      "stem": "Prime Textile uses advanced machinery to replicate colors -------, ensuring consistency across different production batches.",
+      "choices": [
+        "accurate",
+        "accuracy",
+        "accurately",
+        "accurateness"
+      ],
+      "answer": 2,
+      "translation": "Prime Textile은 서로 다른 생산분의 일관성을 보장하기 위해 첨단 기계로 색상을 정확하게 재현한다.",
+      "tags": [
+        "source-recheck",
+        "manner"
+      ],
+      "source": {
+        "set": "흰둥이 RC Test 1",
+        "number": 122,
+        "originalReference": "whitedog-rc-test1-122",
+        "kind": "provided-wrong-question"
+      },
+      "optionDetails": [
+        {
+          "form": "형용사",
+          "meaning": "정확한",
+          "reason": "colors의 상태를 판정하는 보어 구문이 아니다. replicate colors의 재현 방식을 설명하므로 accurate는 맞지 않는다.",
+          "example": "The estimate is accurate.",
+          "translation": "추정치는 정확하다."
+        },
+        {
+          "form": "명사",
+          "meaning": "정확성",
+          "reason": "replicate의 목적어 colors가 이미 있으므로 명사 accuracy를 추가하는 구조가 아니다.",
+          "example": "Check the accuracy of the figures.",
+          "translation": "수치의 정확성을 확인하세요."
+        },
+        {
+          "form": "부사",
+          "meaning": "정확하게",
+          "reason": "replicate colors라는 동작의 방식을 설명하는 accurately가 맞다.",
+          "example": "Please measure the distance accurately.",
+          "translation": "거리를 정확하게 재세요."
+        },
+        {
+          "form": "명사",
+          "meaning": "정확함",
+          "reason": "accurateness도 명사다. 여기서는 색을 재현하는 방식의 부사가 필요하다.",
+          "example": "The accurateness of the description was questioned.",
+          "translation": "그 설명의 정확성이 의문시되었다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-087",
+      "number": 87,
+      "version": 1,
+      "clues": [
+        "to replicate colors"
+      ]
+    },
+    {
+      "stem": "Replacement batteries are ________ available from authorized dealers, so customers do not need to return the entire device when its battery wears out.",
+      "translation": "교체 배터리는 공인 판매점에서 쉽게 구할 수 있어 배터리가 닳아도 기기 전체를 반납할 필요가 없다.",
+      "tags": [
+        "adverb-adjective"
+      ],
+      "choices": [
+        "readiness",
+        "readied",
+        "readily",
+        "ready"
+      ],
+      "answer": 2,
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "준비 상태",
+          "reason": "are available의 available을 명사 readiness로 수식할 수 없다.",
+          "example": "We assessed the team’s readiness.",
+          "translation": "우리는 팀의 준비 상태를 평가했다."
+        },
+        {
+          "form": "동사 과거·과거분사",
+          "meaning": "준비했다·준비된",
+          "reason": "are available 사이에 준비했다는 다른 동사나 분사를 덧붙일 구조가 아니다.",
+          "example": "The crew readied the equipment.",
+          "translation": "승무원들이 장비를 준비했다."
+        },
+        {
+          "form": "부사",
+          "meaning": "쉽게·기꺼이",
+          "reason": "available을 수식해 쉽게 구할 수 있다는 뜻이며 뒤의 고객 편의 내용과 맞는다.",
+          "example": "The parts are readily accessible.",
+          "translation": "그 부품들은 쉽게 접근할 수 있다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "준비된",
+          "reason": "available이라는 형용사를 수식하는 자리이므로 ready가 아니라 readily가 필요하다.",
+          "example": "Your order is ready.",
+          "translation": "주문하신 것이 준비되었습니다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-088",
+      "number": 88,
+      "version": 1,
+      "clues": [
+        "available"
+      ]
+    },
+    {
+      "stem": "The coating proved ________ durable during repeated saltwater tests, and the manufacturer selected it for benches that remain outdoors throughout the year.",
+      "translation": "반복된 염수 시험에서 그 코팅은 내구성이 매우 뛰어난 것으로 확인되어 제조업체는 일 년 내내 야외에 놓이는 벤치에 이를 선택했다.",
+      "tags": [
+        "adverb-adjective"
+      ],
+      "choices": [
+        "exception",
+        "except",
+        "exceptionally",
+        "exceptional"
+      ],
+      "answer": 2,
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "예외",
+          "reason": "durable이라는 형용사의 정도를 나타내야 하므로 명사 exception은 맞지 않는다.",
+          "example": "We made an exception for the client.",
+          "translation": "우리는 그 고객에게 예외를 인정했다."
+        },
+        {
+          "form": "전치사",
+          "meaning": "~을 제외하고",
+          "reason": "proved와 durable 사이에서 내구성의 정도를 설명해야 하므로 전치사 except를 넣을 수 없다.",
+          "example": "Everyone except Sam attended.",
+          "translation": "Sam을 제외한 모두가 참석했다."
+        },
+        {
+          "form": "부사",
+          "meaning": "매우·이례적으로",
+          "reason": "durable을 수식하여 내구성의 정도를 강조하므로 exceptionally가 맞다.",
+          "example": "The exhibition was exceptionally popular.",
+          "translation": "그 전시회는 매우 인기가 높았다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "뛰어난·이례적인",
+          "reason": "proved 뒤에서 durable이 코팅의 성질을 설명한다. 그 정도를 수식하려면 형용사 exceptional이 아니라 부사 exceptionally가 필요하다.",
+          "example": "The team provided exceptional service.",
+          "translation": "팀이 뛰어난 서비스를 제공했다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-089",
+      "number": 89,
+      "version": 1,
+      "clues": [
+        "durable"
+      ]
+    },
+    {
+      "stem": "Please keep the applicant information ________ until the selection committee has contacted everyone who will be invited to an interview.",
+      "choices": [
+        "confidence",
+        "confidentially",
+        "confidential",
+        "confidentiality"
+      ],
+      "answer": 2,
+      "translation": "선발위원회가 면접에 초대할 모든 사람에게 연락할 때까지 지원자 정보를 비밀로 유지해 주세요.",
+      "tags": [
+        "familiar-complement",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "신뢰; 자신감",
+          "reason": "지원자 정보가 신뢰나 자신감이라는 명사 자체인 것은 아니다. 정보의 비밀 상태를 나타내야 한다.",
+          "example": "The director expressed confidence in the team.",
+          "translation": "이사는 그 팀에 대한 신뢰를 표했다."
+        },
+        {
+          "form": "부사",
+          "meaning": "비밀리에",
+          "reason": "keep의 동작 방식이 아니라 the applicant information이 유지될 상태를 설명하므로 confidential이 필요하다.",
+          "example": "The matter will be handled confidentially.",
+          "translation": "그 사안은 비밀리에 처리될 것이다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "기밀의; 비밀로 하는",
+          "reason": "keep the applicant information confidential은 지원자 정보를 비밀 상태로 유지하라는 뜻이다.",
+          "example": "The document is strictly confidential.",
+          "translation": "그 문서는 엄격한 기밀 사항이다."
+        },
+        {
+          "form": "명사",
+          "meaning": "기밀 유지; 비밀성",
+          "reason": "the applicant information의 유지될 상태를 설명하는 형용사 자리에 명사 confidentiality를 쓸 수 없다.",
+          "example": "All reviewers must respect confidentiality.",
+          "translation": "모든 심사자는 기밀을 지켜야 한다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-090",
+      "number": 90,
+      "version": 1,
+      "clues": [
+        "keep the applicant information"
+      ]
+    },
+    {
+      "stem": "The redesigned booking page is more ________ to customers with impaired vision because its labels remain readable when the text is enlarged.",
+      "choices": [
+        "accessibility",
+        "accessibly",
+        "accessible",
+        "access"
+      ],
+      "answer": 2,
+      "translation": "새롭게 디자인한 예약 페이지는 글자를 확대해도 라벨이 읽히므로 시각 장애가 있는 고객이 더 쉽게 이용할 수 있다.",
+      "tags": [
+        "more-most-pos",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "접근성",
+          "reason": "the page is accessibility는 페이지를 ‘접근성’ 자체와 동일시한다. 이 문장은 페이지의 이용 가능한 상태를 말한다.",
+          "example": "Accessibility is a priority for the design team.",
+          "translation": "접근성은 디자인팀의 우선 과제다."
+        },
+        {
+          "form": "부사",
+          "meaning": "접근하기 쉽게, 이해하기 쉽게",
+          "reason": "is more accessibly만으로 page의 상태 보어가 완성되지 않는다. accessible이 필요하다.",
+          "example": "The guide explains the rules accessibly.",
+          "translation": "그 안내서는 규정을 이해하기 쉽게 설명한다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "접근 가능한, 이용하기 쉬운",
+          "reason": "is more accessible에서 accessible은 booking page의 상태를 설명한다. to customers가 이용 대상을 밝힌다.",
+          "example": "The entrance is accessible to wheelchair users.",
+          "translation": "그 입구는 휠체어 이용자가 접근할 수 있다."
+        },
+        {
+          "form": "명사·동사",
+          "meaning": "접근; 접근하다",
+          "reason": "is more 뒤에서 booking page의 상태를 설명해야 한다. access는 그 상태를 나타내는 형용사가 아니다.",
+          "example": "Members have access to the archive.",
+          "translation": "회원은 자료실에 접근할 수 있다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-091",
+      "number": 91,
+      "version": 1,
+      "clues": [
+        "booking page is more"
+      ]
+    },
+    {
+      "stem": "The purchasing team has negotiated ________ with the supplier to remove the storage fee while retaining the original discount on bulk orders.",
+      "translation": "구매팀은 공급업체와 성공적으로 협상하여 대량 주문의 기존 할인은 유지하면서 보관료를 없앴다.",
+      "tags": [
+        "manner-adverb"
+      ],
+      "choices": [
+        "succeed",
+        "successful",
+        "successfully",
+        "success"
+      ],
+      "answer": 2,
+      "optionDetails": [
+        {
+          "form": "동사",
+          "meaning": "성공하다",
+          "reason": "has negotiated가 이미 동사구이므로 또 다른 동사원형 succeed를 바로 이을 수 없다.",
+          "example": "We expect the project to succeed.",
+          "translation": "우리는 사업이 성공할 것으로 예상한다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "성공적인",
+          "reason": "successful은 협상의 성질을 나타낼 수 있지만 여기서는 negotiated를 수식해야 한다.",
+          "example": "The negotiations were successful.",
+          "translation": "협상은 성공적이었다."
+        },
+        {
+          "form": "부사",
+          "meaning": "성공적으로",
+          "reason": "negotiated의 성과를 설명하며 보관료 제거와 할인 유지라는 성과에 부합한다.",
+          "example": "They successfully completed the trial.",
+          "translation": "그들은 시험을 성공적으로 마쳤다."
+        },
+        {
+          "form": "명사",
+          "meaning": "성공",
+          "reason": "negotiated with the supplier라는 동작의 결과 양상을 설명해야 하므로 명사 success는 맞지 않는다.",
+          "example": "The launch was a success.",
+          "translation": "출시는 성공이었다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-092",
+      "number": 92,
+      "version": 1,
+      "clues": [
+        "has negotiated"
+      ]
+    },
+    {
+      "stem": "Of the three online advertisements, the version featuring customer interviews communicated the benefits of the service most ________ to first-time buyers.",
+      "choices": [
+        "effectively",
+        "effective",
+        "effectiveness",
+        "effects"
+      ],
+      "answer": 0,
+      "translation": "세 온라인 광고 중 고객 인터뷰가 들어간 버전이 처음 구매하는 사람들에게 서비스의 장점을 가장 효과적으로 전달했다.",
+      "tags": [
+        "more-most-pos",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "효과적으로",
+          "reason": "most effectively는 communicated the benefits를 수식한다. 세 광고 중 전달 효과가 가장 좋았다는 뜻이다.",
+          "example": "The manager communicated the changes effectively.",
+          "translation": "관리자는 변경 사항을 효과적으로 전달했다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "효과적인",
+          "reason": "빈칸은 service를 꾸미거나 그 상태를 설명하지 않는다. communicated the benefits의 방식을 수식하므로 effective는 맞지 않는다.",
+          "example": "The advertisement was effective.",
+          "translation": "그 광고는 효과적이었다."
+        },
+        {
+          "form": "명사",
+          "meaning": "효과성",
+          "reason": "communicated의 목적어 the benefits가 이미 있다. effectiveness는 전달 방식을 나타내는 부사가 아니다.",
+          "example": "The team measured the campaign’s effectiveness.",
+          "translation": "팀은 캠페인의 효과성을 측정했다."
+        },
+        {
+          "form": "복수 명사",
+          "meaning": "효과들",
+          "reason": "effects는 명사이며 most effects로 communicated의 방식 최상급을 만들 수 없다.",
+          "example": "The report describes the effects of the policy.",
+          "translation": "보고서는 그 정책의 영향을 설명한다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-093",
+      "number": 93,
+      "version": 1,
+      "clues": [
+        "communicated the benefits of the service",
+        "most"
+      ]
+    },
+    {
+      "stem": "The survey praised the reception staff for their ________ manner, noting that even first-time visitors felt comfortable asking for assistance.",
+      "choices": [
+        "friendly",
+        "friendship",
+        "friendliness",
+        "befriend"
+      ],
+      "answer": 0,
+      "translation": "설문조사는 처음 방문한 사람조차 편안하게 도움을 요청할 수 있었다며 접수 직원들의 친절한 태도를 칭찬했다.",
+      "tags": [
+        "ly-adjective",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사",
+          "meaning": "친절한, 다정한",
+          "reason": "their와 manner 사이에서 태도의 성질을 설명하는 형용사가 필요하다. friendly는 -ly로 끝나지만 이 자리에서 형용사다.",
+          "example": "The receptionist gave us a friendly greeting.",
+          "translation": "접수 직원은 우리를 친절하게 맞았다."
+        },
+        {
+          "form": "명사",
+          "meaning": "우정",
+          "reason": "friendship manner는 이 문장에서 칭찬하는 친절한 태도를 나타내는 자연스러운 결합이 아니다.",
+          "example": "Their partnership developed into friendship.",
+          "translation": "그들의 협력 관계는 우정으로 발전했다."
+        },
+        {
+          "form": "명사",
+          "meaning": "친절함",
+          "reason": "명사 friendliness를 manner 앞에 놓는 대신 friendly manner로 태도의 성질을 나타낸다.",
+          "example": "Visitors appreciated the staff’s friendliness.",
+          "translation": "방문객들은 직원들의 친절함에 감사했다."
+        },
+        {
+          "form": "동사",
+          "meaning": "친구가 되다, 친하게 대하다",
+          "reason": "소유격 their와 명사 manner 사이에 동사원형 befriend를 수식어로 쓸 수 없다.",
+          "example": "Experienced volunteers befriend new arrivals.",
+          "translation": "경험 많은 자원봉사자들은 새로 온 사람들과 친하게 지낸다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-094",
+      "number": 94,
+      "version": 1,
+      "clues": [
+        "manner"
+      ]
+    },
+    {
+      "stem": "To keep the new service affordable, the manager asked designers to consider every improvement ________ within the existing production budget.",
+      "choices": [
+        "possibility",
+        "possibilities",
+        "possibly",
+        "possible"
+      ],
+      "answer": 3,
+      "translation": "새 서비스의 가격을 적정하게 유지하려고 관리자는 설계자들에게 기존 생산 예산 안에서 가능한 모든 개선안을 검토하도록 요청했다.",
+      "tags": [
+        "postpositive-adjective",
+        "quality-rewrite"
+      ],
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "가능성",
+          "reason": "improvement 뒤에 possibility를 붙여 가능한 개선안이라는 뜻을 만들 수 없습니다.",
+          "example": "We discussed the possibility of expansion.",
+          "translation": "우리는 확장 가능성을 논의했다."
+        },
+        {
+          "form": "복수명사",
+          "meaning": "가능성들; 선택지들",
+          "reason": "every improvement 뒤에 또 다른 복수명사를 두어 그 개선안을 꾸밀 수 없습니다.",
+          "example": "The new site offers several possibilities.",
+          "translation": "새 부지는 여러 가능성을 제공한다."
+        },
+        {
+          "form": "부사",
+          "meaning": "아마; 가능하게",
+          "reason": "빈칸은 consider의 가능성이 아니라 improvement의 범위를 설명합니다. possibly within만으로 개선안을 수식할 수 없습니다.",
+          "example": "The shipment could possibly arrive early.",
+          "translation": "화물이 일찍 도착할 가능성도 있다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "가능한",
+          "reason": "possible within the existing production budget가 every improvement를 뒤에서 꾸며 가능한 개선안의 범위를 정합니다.",
+          "example": "We explored every option possible.",
+          "translation": "우리는 가능한 모든 선택지를 검토했다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-095",
+      "number": 95,
+      "version": 1,
+      "clues": [
+        "every improvement",
+        "within the existing production budget"
+      ]
+    },
+    {
+      "stem": "The research committee wants evidence that the proposed packaging material is ________ viable before approving funds for a full production trial.",
+      "choices": [
+        "commerce",
+        "commercial",
+        "commercially",
+        "commercialize"
+      ],
+      "answer": 2,
+      "translation": "연구위원회는 본격적인 생산 시험 예산을 승인하기 전에 제안된 포장재에 상업성이 있다는 증거를 원한다.",
+      "tags": [
+        "adjective-adverb",
+        "quality-rewrite"
+      ],
+      "optionDetails": [
+        {
+          "form": "명사",
+          "meaning": "상업; 무역",
+          "reason": "is 뒤에 viable라는 보어가 이미 있습니다. commerce를 그 앞에 놓아 상업적 측면을 설명할 수 없습니다.",
+          "example": "The port supports international commerce.",
+          "translation": "그 항구는 국제 무역을 지원한다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "상업의; 상업적인",
+          "reason": "commercial은 material 같은 명사를 꾸밀 수 있지만 viable라는 형용사를 수식하려면 commercially가 필요합니다.",
+          "example": "Commercial demand is increasing.",
+          "translation": "상업적 수요가 늘고 있다."
+        },
+        {
+          "form": "부사",
+          "meaning": "상업적으로",
+          "reason": "형용사 viable를 수식해 어떤 측면에서 실현 가능한지 설명합니다. 보어의 중심은 viable입니다.",
+          "example": "The product is commercially successful.",
+          "translation": "그 제품은 상업적으로 성공했다."
+        },
+        {
+          "form": "동사",
+          "meaning": "상용화하다",
+          "reason": "is commercialize viable처럼 동사원형을 형용사 앞에 놓을 수 없습니다.",
+          "example": "The company plans to commercialize the technology.",
+          "translation": "회사는 그 기술을 상용화할 계획이다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-096",
+      "number": 96,
+      "version": 1,
+      "clues": [
+        "viable"
+      ]
+    },
+    {
+      "stem": "The temporary collection point proved ________ for residents who could not reach the main recycling center during its renovation.",
+      "choices": [
+        "practical",
+        "practice",
+        "practically",
+        "practicality"
+      ],
+      "answer": 0,
+      "translation": "임시 수거 지점은 보수 공사 중인 주 재활용 센터에 갈 수 없었던 주민들에게 실용적인 것으로 드러났다.",
+      "tags": [
+        "unfamiliar-complement",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "형용사",
+          "meaning": "실용적인",
+          "reason": "proved 뒤에서 the temporary collection point가 어떤 곳인지 설명하므로 practical이 맞다.",
+          "example": "A folding desk is practical in a small office.",
+          "translation": "작은 사무실에서는 접이식 책상이 실용적이다."
+        },
+        {
+          "form": "명사",
+          "meaning": "관행; 연습",
+          "reason": "수거 지점이 관행이나 연습이라는 뜻이 아니다. proved 뒤에는 이 장소가 실용적이라는 상태 설명이 필요하다.",
+          "example": "Regular practice improves accuracy.",
+          "translation": "규칙적인 연습은 정확도를 높인다."
+        },
+        {
+          "form": "부사",
+          "meaning": "사실상; 거의",
+          "reason": "주민들에게 실용적이었다는 수거 지점의 성질이 필요하다. practically는 그 성질을 나타낼 보어가 될 수 없다.",
+          "example": "The repair is practically complete.",
+          "translation": "수리가 거의 끝났다."
+        },
+        {
+          "form": "명사",
+          "meaning": "실용성",
+          "reason": "the collection point 자체를 실용성이라는 추상명사와 동일시할 수 없다. 이곳의 성질을 설명하는 practical이 필요하다.",
+          "example": "We questioned the practicality of the plan.",
+          "translation": "우리는 그 계획의 실용성에 의문을 제기했다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-097",
+      "number": 97,
+      "version": 1,
+      "clues": [
+        "collection point proved"
+      ]
+    },
+    {
+      "stem": "An additional safety inspection was deemed ________ after the contractor reported cracks near the entrance to the underground parking garage.",
+      "choices": [
+        "necessities",
+        "necessarily",
+        "necessity",
+        "necessary"
+      ],
+      "answer": 3,
+      "translation": "시공업체가 지하 주차장 입구 근처의 균열을 보고한 뒤 추가 안전 점검이 필요하다고 판단되었다.",
+      "tags": [
+        "unfamiliar-complement",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "복수명사",
+          "meaning": "필수품들",
+          "reason": "an additional safety inspection 한 건을 여러 필수품과 동일시할 수 없다. 필요하다는 형용사 necessary가 맞다.",
+          "example": "The store stocks everyday necessities.",
+          "translation": "그 가게는 일상 필수품을 비축한다."
+        },
+        {
+          "form": "부사",
+          "meaning": "필연적으로; 반드시",
+          "reason": "was deemed 뒤에는 점검이 필요하다는 판단 내용이 와야 한다. necessarily만으로 그 내용을 완성할 수 없다.",
+          "example": "A higher price does not necessarily mean better quality.",
+          "translation": "더 높은 가격이 반드시 더 좋은 품질을 뜻하지는 않는다."
+        },
+        {
+          "form": "명사",
+          "meaning": "필요성; 필수적인 것",
+          "reason": "필수적인 것이라는 명사 보어라면 a necessity가 필요하다. 관사 없는 necessity는 이 문장의 보어로 맞지 않는다.",
+          "example": "Reliable transport is a necessity for this job.",
+          "translation": "믿을 수 있는 교통수단은 이 일의 필수 조건이다."
+        },
+        {
+          "form": "형용사",
+          "meaning": "필요한",
+          "reason": "was deemed necessary는 an additional safety inspection이 필요하다고 판단되었다는 뜻이다.",
+          "example": "A second signature is necessary for approval.",
+          "translation": "승인을 받으려면 두 번째 서명이 필요하다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-098",
+      "number": 98,
+      "version": 1,
+      "clues": [
+        "was deemed"
+      ]
+    },
+    {
+      "stem": "Do not leave the rear entrance ________ during deliveries, even if warehouse staff expect another truck to arrive within a few minutes.",
+      "choices": [
+        "unlocked",
+        "unlock",
+        "unlocking",
+        "unlocks"
+      ],
+      "answer": 0,
+      "translation": "창고 직원들이 몇 분 안에 다른 트럭이 올 것으로 예상하더라도 배송 중에는 뒷문을 잠그지 않은 채로 두지 마세요.",
+      "tags": [
+        "familiar-complement",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "과거분사형 형용사",
+          "meaning": "잠기지 않은",
+          "reason": "leave the rear entrance unlocked는 뒷문을 잠기지 않은 상태로 두라는 뜻이며 Do not이 이를 금지한다.",
+          "example": "The office door was unlocked.",
+          "translation": "사무실 문이 잠겨 있지 않았다."
+        },
+        {
+          "form": "동사원형",
+          "meaning": "잠금을 풀다",
+          "reason": "leave the rear entrance 다음에 원형동사 unlock을 이어 문을 잠그지 않은 상태로 둔다는 뜻을 만들 수 없다.",
+          "example": "Please unlock the cabinet.",
+          "translation": "캐비닛 잠금을 풀어 주세요."
+        },
+        {
+          "form": "현재분사",
+          "meaning": "잠금을 풀고 있는",
+          "reason": "the rear entrance가 스스로 잠금을 푸는 동작을 하는 것이 아니다. 문이 잠기지 않은 상태를 나타내는 unlocked가 맞다.",
+          "example": "The guard is unlocking the gate.",
+          "translation": "경비원이 문 잠금을 풀고 있다."
+        },
+        {
+          "form": "3인칭 단수동사",
+          "meaning": "잠금을 풀다",
+          "reason": "leave 뒤에서 entrance의 상태를 나타낼 자리다. 또 다른 정형동사 unlocks를 이어 넣을 수 없다.",
+          "example": "This code unlocks the storage room.",
+          "translation": "이 암호로 보관실 잠금을 풀 수 있다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-099",
+      "number": 99,
+      "version": 1,
+      "clues": [
+        "leave the rear entrance"
+      ]
+    },
+    {
+      "stem": "Before renewing the lease, the retailer examined the proposed maintenance charges more ________ than it had during the previous negotiation.",
+      "choices": [
+        "closely",
+        "closing",
+        "close",
+        "closeness"
+      ],
+      "answer": 0,
+      "translation": "임대 계약을 갱신하기 전에 그 소매업체는 지난 협상 때보다 제안된 유지보수 비용을 더 면밀히 검토했다.",
+      "tags": [
+        "more-most-pos",
+        "adjective-adverb-transfer"
+      ],
+      "optionDetails": [
+        {
+          "form": "부사",
+          "meaning": "면밀히, 긴밀히",
+          "reason": "more closely가 examined the proposed maintenance charges를 수식한다. than절은 이전 검토와 비교한다.",
+          "example": "The auditor examined the receipts closely.",
+          "translation": "감사자는 영수증을 면밀히 검토했다."
+        },
+        {
+          "form": "명사·현재분사",
+          "meaning": "마감; 닫는",
+          "reason": "closing은 면밀히라는 뜻이 아니며 examined를 이 문장의 방식으로 수식하지 못한다.",
+          "example": "The store announced its closing date.",
+          "translation": "그 매장은 폐점 날짜를 발표했다."
+        },
+        {
+          "form": "형용사·부사",
+          "meaning": "가까운; 가까이",
+          "reason": "여기서 examined charges는 비용을 면밀히 검토했다는 뜻이다. more close는 이 검토 방식을 나타내지 않는다.",
+          "example": "Please stand close to the microphone.",
+          "translation": "마이크 가까이에 서 주세요."
+        },
+        {
+          "form": "명사",
+          "meaning": "가까움, 친밀함",
+          "reason": "closeness는 명사이므로 examined의 방식 자리에 들어갈 수 없다.",
+          "example": "The closeness of the deadline caused concern.",
+          "translation": "마감이 임박했다는 점이 우려를 낳았다."
+        }
+      ],
+      "id": "focus-adj-adv-v2-100-100",
+      "number": 100,
+      "version": 1,
+      "clues": [
+        "examined the proposed maintenance charges",
+        "more"
+      ]
+    }
+  ]
+}
