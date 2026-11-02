@@ -108,3 +108,18 @@ html body .scene-atmosphere[data-scene=ice] .scene-leaves,html body .scene-atmos
 /* No JS frame loop/timer; paused animations keep their phase on return. */
 html.world-motion-paused body .scene-atmosphere *,html.world-low-power body .scene-atmosphere *,html body .scene-atmosphere.scene-offscreen *{animation-play-state:paused!important}
 @media(prefers-reduced-motion:reduce){html body .scene-atmosphere :is(.scene-cloud,.scene-sunlight,.scene-overcast,.scene-rain,.scene-rain>i,.scene-mist,.scene-water>i,.scene-leaves>i){animation:none!important;transition:none!important}html body .scene-atmosphere :is(.scene-rain,.scene-leaves,.scene-cloud,.scene-mist){display:none!important}html body .scene-atmosphere .scene-overcast{opacity:0}html body .scene-atmosphere .scene-sunlight{opacity:.4}}
+
+html body>.scene-atmosphere.scene-backdrop{position:fixed;inset:0;z-index:-1}
+html body>.scene-backdrop :is(.scene-rain,.scene-water,.scene-leaves){display:none!important}
+@media(max-width:1180px){html body>.scene-atmosphere.scene-backdrop{display:none!important}}
+html body #app .world-inquiry-desk{position:relative;isolation:isolate;min-height:70dvh;background:#0a252d!important;padding:24px!important;border-radius:14px}
+html body #app .world-inquiry-desk>.world-scenery{inset:0 0 auto;z-index:-2;height:480px;opacity:.65}
+html body #app .world-inquiry-desk:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,#06262c70,#082229e8 280px,#082229 480px)!important}
+html body #app .world-inquiry-desk>:not(.world-scenery){position:relative;background:transparent!important}
+html body #app .world-inquiry-desk>h1{margin:24px 0 12px;font-size:clamp(26px,5vw,36px)!important;color:#f2fff5!important;text-shadow:0 2px 8px #062029}
+html body #app .world-inquiry-desk #content{min-width:0;color:#e7f5ed!important}
+html body #app .world-inquiry-desk #content>form{padding:18px!important;border:1px solid #719c8f!important;border-radius:12px;background:#0b292de8!important}
+html body #app .world-inquiry-desk :is(input,textarea){width:100%;min-height:44px;font-size:16px!important;background:#071e25!important;color:#f2fff5!important;border:1px solid #91b5ab!important;border-radius:7px;padding:10px!important}
+html body #app .world-inquiry-desk :is(button,a){min-height:44px;display:inline-flex;align-items:center;padding:8px 12px;border-radius:7px;color:#def8ed!important}
+html body #app .world-inquiry-desk nav{gap:8px}
+@media(max-width:520px){html body #app .world-inquiry-desk{padding:16px 12px!important}html body #app .world-inquiry-desk #content>form{padding:12px!important}}

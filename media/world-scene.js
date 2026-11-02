@@ -68,12 +68,18 @@
     var map=document.querySelector('.file-island-map');if(map)enhanceMap(map);
     var route=location.hash,region=location.pathname.indexOf('/inquiries')===0?'inquiry':/^#battle(?:\/|$)/.test(route)?'ice':/^#rainbow/.test(route)?'rainbow':/^#hall-of-fame/.test(route)?'hall':/^#account/.test(route)?'account':/^#toeic/.test(route)?'toeic':route&&route!=='#subjects'?'history':'world';
     document.body.dataset.worldDestination=region;
+    // Animate only the visible desktop margins around the study device. Mobile
+    // hides this surface and IntersectionObserver pauses its phase.
+    if(root.HanqIslandHarbors){var backdrop=document.querySelector('body > .scene-backdrop');if(!backdrop){backdrop=root.HanqIslandHarbors.atmosphere(document.body,region);backdrop.classList.add('scene-backdrop');}backdrop.dataset.scene=region;}
+
     var artHost=document.querySelector('#battleHost,#hallHost,#acRoot')||(region==='inquiry'?document.querySelector('#content'):null);
-    if(artHost&&region!=='account'&&region!=='ice'&&region!=='hall'&&!document.querySelector('.login-landing')&&!artHost.parentNode.querySelector('.world-region-banner')){
+    if(artHost&&region!=='inquiry'&&region!=='account'&&region!=='ice'&&region!=='hall'&&!document.querySelector('.login-landing')&&!artHost.parentNode.querySelector('.world-region-banner')){
       var banner=document.createElement('div');banner.className='world-region-banner';banner.dataset.region=region;banner.setAttribute('aria-hidden','true');banner.appendChild(scenery(region,false));
       var plaque=document.createElement('span');plaque.textContent={ice:'얼음섬 · 빙하의 성채',hall:'명예의 전당 · 영광의 정원',account:'MyPage · 나의 안식처',inquiry:'건의함 · 바닷가 우체국'}[region]||'파일섬';banner.appendChild(plaque);artHost.before(banner);
     }
 
+    // Standalone inquiry is a scenic writing desk, not a postcard above a form.
+    if(region==='inquiry'){var desk=document.querySelector('#app > .device-content')||document.querySelector('#app');if(desk&&!desk.querySelector(':scope > .world-scenery')){desk.classList.add('world-inquiry-desk');desk.prepend(scenery('inquiry',true));}}
     // Profile identity and the actual partner live inside the same garden scene.
     var profile=document.querySelector('.ac-me .ac-hero');
     if(profile&&!profile.querySelector('.world-scenery')){profile.prepend(scenery('account',true));profile.classList.add('ac-sanctuary');}
