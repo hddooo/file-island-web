@@ -82,6 +82,31 @@ async function domChecks() {
     example.blocks[0].sourceColumnWidths=[61,39];exampleView=reader.render(exampleHost,example);await exampleView.ready;
     same([...exampleHost.querySelectorAll('col')].map(n=>n.style.width),['61%','39%'],'explicit validated source widths override automatic example layout');exampleView.cleanup();exampleHost.remove();
 
+    const styleHost=window.document.createElement('section');window.document.body.appendChild(styleHost);
+    const styled=fixture(),source='a'.repeat(64);styled.sourceSha256=source;
+    styled.blocks=[{id:'verified-style',type:'text',lines:[{spans:[
+      {text:'합성 회색',bold:true,sourceStyle:{ink:'muted',bold:false},sourceStyleAudit:{verified:true,sourceRevision:source}},
+      {text:'합성 밑줄',sourceStyle:{ink:'red',underline:true,bold:true},sourceStyleAudit:{verified:true,sourceRevision:source}},
+      {text:'합성 강조',sourceStyle:{highlight:'green'},sourceStyleAudit:{verified:true,sourceRevision:source}},
+      {text:'미검증',sourceStyle:{ink:'green'},sourceStyleAudit:{verified:false,sourceRevision:source}},
+      {text:'다른 판본',sourceStyle:{ink:'muted'},sourceStyleAudit:{verified:true,sourceRevision:'b'.repeat(64)}}
+    ]}]}];
+    const styleBefore=JSON.stringify(styled),styleView=reader.render(styleHost,styled),styleReady=await styleView.ready;
+    same(styleHost.querySelectorAll('[data-source-style=verified]').length,3,'only verified same-source styles applied');
+    same(styleHost.querySelector('[data-source-ink=muted]').tagName,'SPAN','explicit source bold false restores regular weight');
+    same(styleHost.querySelector('[data-source-underline]').tagName,'STRONG','verified source underline and bold coexist');
+    same(styleHost.querySelector('[data-source-highlight]').textContent,'합성 강조','verified highlight keeps exact text');
+    same(styleHost.querySelectorAll('[data-source-ink=green]').length,0,'unverified style cannot apply');
+    same(styleReady.warnings,['unverified_source_style','unverified_source_style'],'unverified and crossed-source styles reported');
+    same(styleHost.querySelector('.textbook-semantic-content').textContent,'합성 회색합성 밑줄합성 강조미검증다른 판본','all styled source text remains exact');
+    same(JSON.stringify(styled),styleBefore,'style rendering does not mutate source');
+    for(const invalidStyle of [{ink:'url(evil)'},{highlight:'red'},{underline:'true'},{bold:1},{color:'blue'}]){
+      const invalid=clone(styled);invalid.blocks[0].lines[0].spans[0].sourceStyle=invalidStyle;
+      assert.throws(()=>reader.render(styleHost,invalid),/Invalid semantic textbook/);checks++;
+      ok(styleHost.contains(styleView.element),'invalid style preserves current view');
+    }
+    styleView.cleanup();styleHost.remove();
+
     for (const [name, mutate] of [
       ['schema', p => { p.schemaVersion = 'wrong'; }],
       ['page number', p => { p.pdfPage = 0; }],
@@ -251,6 +276,15 @@ async function browserChecks() {
       ok(await page.locator('.textbook-semantic-table-scroll').evaluate(n => n.scrollWidth <= n.clientWidth + 1), 'two-column source table fits viewport at ' + width); count++;
       same(await page.locator('tr').first().locator('td').allTextContents(), ['왼쪽 범주', '오른쪽 내용은 작은 화면에서 자연스럽게 여러 줄로 읽을 수 있도록 그대로 유지합니다.'], 'two-column source order unchanged at ' + width); count++;
       same(await page.locator('tr').first().locator('td').first().evaluate(n => n.rowSpan), 2, 'two-column merged cell unchanged at ' + width); count++;
+      const source='a'.repeat(64),stylePage=fixture();stylePage.sourceSha256=source;
+      stylePage.blocks=[{id:'styles',type:'text',lines:[{spans:[
+        {text:'검증된 회색 글자',bold:true,sourceStyle:{ink:'muted',bold:false},sourceStyleAudit:{verified:true,sourceRevision:source}},
+        {text:' 검증된 빨간 밑줄',sourceStyle:{ink:'red',underline:true},sourceStyleAudit:{verified:true,sourceRevision:source}},
+        {text:' 검증된 녹색 강조',sourceStyle:{highlight:'green'},sourceStyleAudit:{verified:true,sourceRevision:source}}
+      ]}]}];
+      await page.evaluate(data=>{testView.cleanup();window.testView=HanqTextbookSemantic.render(document.querySelector('main'),data);},stylePage);
+      const styles=await page.evaluate(()=>{const gray=document.querySelector('[data-source-ink=muted]'),red=document.querySelector('[data-source-ink=red]'),highlight=document.querySelector('[data-source-highlight]');return{gray:getComputedStyle(gray).color,weight:getComputedStyle(gray).fontWeight,red:getComputedStyle(red).color,underline:getComputedStyle(red).textDecorationLine,highlight:getComputedStyle(highlight).backgroundColor,overflow:document.documentElement.scrollWidth>innerWidth+1};});
+      same(styles,{gray:'rgb(98, 107, 115)',weight:'400',red:'rgb(180, 35, 24)',underline:'underline',highlight:'rgb(213, 242, 184)',overflow:false},'verified source style computed pixels and overflow at '+width);count++;
     }
     same(errors, [], 'no browser runtime exceptions'); count++;
     same(requests, [], 'text-only page makes zero network requests'); count++;

@@ -134,3 +134,10 @@ html body :is(#privateTextbook,.textbook-original-dialog) .textbook-source-quiz-
 /* WebKit's native menulist face otherwise clamps the edition picker to one text line. */
 html body #app #privateTextbook select,html body dialog.textbook-original-dialog .private-textbook select{height:46px!important;min-height:44px!important;appearance:none;-webkit-appearance:none;padding:8px 32px 8px 10px!important;font-size:16px!important;line-height:1.4;background-image:linear-gradient(45deg,transparent 50%,#426475 50%),linear-gradient(135deg,#426475 50%,transparent 50%)!important;background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px;background-repeat:no-repeat}
 html body #app #privateTextbook .textbook-status,html body dialog.textbook-original-dialog .textbook-status{color:#34536a!important}
+/* Only source-verified, same-PDF span metadata can emit these attributes. */
+.textbook-semantic [data-source-ink=default],html body :is(#privateTextbook,.textbook-original-dialog) [data-source-ink=default]{color:#1c2b33!important}
+.textbook-semantic [data-source-ink=muted],html body :is(#privateTextbook,.textbook-original-dialog) [data-source-ink=muted]{color:#626b73!important}
+.textbook-semantic [data-source-ink=red],html body :is(#privateTextbook,.textbook-original-dialog) [data-source-ink=red]{color:#b42318!important}
+.textbook-semantic [data-source-ink=green],html body :is(#privateTextbook,.textbook-original-dialog) [data-source-ink=green]{color:#216e39!important}
+.textbook-semantic [data-source-underline]{text-decoration-line:underline;text-decoration-thickness:.08em;text-underline-offset:.14em}
+.textbook-semantic [data-source-highlight=green],html body :is(#privateTextbook,.textbook-original-dialog) [data-source-highlight=green]{background-color:#d5f2b8!important;color:#1c2b33!important}

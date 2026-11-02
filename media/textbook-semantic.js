@@ -29,6 +29,15 @@
         if (!span) fail('span');
         string(span.text, 'span.text');
         if (span.renderText != null) string(span.renderText, 'span.renderText');
+        if (span.sourceStyle != null) {
+          if (!span.sourceStyle || typeof span.sourceStyle !== 'object' || Array.isArray(span.sourceStyle)) fail('span.sourceStyle');
+          var style=span.sourceStyle;
+          if (Object.keys(style).some(function(key){return ['ink','underline','highlight','bold'].indexOf(key)===-1;}) ||
+              style.ink!=null&&['default','muted','red','green'].indexOf(style.ink)===-1 ||
+              style.highlight!=null&&style.highlight!=='green' ||
+              style.underline!=null&&typeof style.underline!=='boolean' ||
+              style.bold!=null&&typeof style.bold!=='boolean') fail('span.sourceStyle');
+        }
       });
     });
   }
@@ -230,7 +239,16 @@
           // be used only when the extractor provides an explicit verified audit.
           var mapped = span.renderText != null && span.mappingAudit && span.mappingAudit.verified === true;
           var text = mapped ? span.renderText : span.text;
-          var piece = node(span.bold === true ? 'strong' : 'span', text, span.bold === true ? 'textbook-source-bold' : null);
+          var audit=span.sourceStyleAudit,style=span.sourceStyle;
+          var styled=!!(style&&audit&&audit.verified===true&&typeof page.sourceSha256==='string'&&/^[a-f0-9]{64}$/.test(page.sourceSha256)&&audit.sourceRevision===page.sourceSha256);
+          var bold=styled&&typeof style.bold==='boolean'?style.bold:span.bold===true;
+          var piece = node(bold ? 'strong' : 'span', text, bold ? 'textbook-source-bold' : null);
+          if(styled){
+            piece.setAttribute('data-source-style','verified');
+            if(style.ink)piece.setAttribute('data-source-ink',style.ink);
+            if(style.underline===true)piece.setAttribute('data-source-underline','');
+            if(style.highlight==='green')piece.setAttribute('data-source-highlight','green');
+          }else if(style)warnings.push('unverified_source_style');
           if (mapped) { piece.setAttribute('data-source-glyph-mapping', 'verified'); if (span.mappingAudit.sourceGlyphDescription === 'outlined-square section numeral') piece.classList.add('textbook-source-section-number'); }
           if (span.renderText != null && !mapped) warnings.push('unverified_glyph_mapping');
           lineNode.appendChild(piece);
