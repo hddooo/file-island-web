@@ -314,23 +314,30 @@
     var enc = encodeURIComponent;
 
     function refreshGrowthAfterGrade(){var owner=currentOwner(),waiting=profileRequest||Promise.resolve();waiting.catch(function(){}).then(function(){if(owner&&currentOwner()===owner&&state.signedIn)api.me().catch(function(){});});}
+    // PDF revision chooses a fixed server root; workspace version and numeric CAS remain untouched.
+    function textbookCall(method, suffix, opts, sourceRevision) {
+      if (sourceRevision != null && sourceRevision !== '35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442' && sourceRevision !== 'd54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de') return Promise.reject(ApiError(400, 'invalid_source_revision'));
+      var prefix = '/api/v1/textbook' + (sourceRevision == null ? '' : '/revisions/' + sourceRevision);
+      return call(method, prefix + suffix, opts);
+    }
+    function textbookPageAllowed(page, sourceRevision) { return Number.isInteger(page) && page >= 1 && page <= (sourceRevision === 'd54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de' ? 147 : 144); }
     var api = {
       weaknessProgress:function(bank){return call('GET','/api/v1/weakness-practice/'+encodeURIComponent(bank)+'/progress');},
       weaknessFinish:function(bank,questionIds){return call('POST','/api/v1/weakness-practice/'+encodeURIComponent(bank)+'/results',{body:{questionIds:questionIds}});},
       weaknessAnswer:function(bank,body){return call('POST','/api/v1/weakness-practice/'+encodeURIComponent(bank)+'/answers',{body:body}).then(function(d){if(d.attempt&&typeof d.attempt.correct==='boolean')refreshGrowthAfterGrade();return d;});},
       weaknessHistory:function(bank,cursor){return call('GET','/api/v1/weakness-practice/'+encodeURIComponent(bank)+'/attempts'+q({cursor:cursor}));},
-      textbookSemanticManifest: function () { return call('GET', '/api/v1/textbook/semantic/manifest'); },
-      textbookSemanticPage: function (page) { if (!Number.isInteger(page) || page < 1 || page > 144) return Promise.reject(ApiError(400, 'invalid_page')); return call('GET', '/api/v1/textbook/semantic/pages/' + page); },
-      textbookSemanticQuiz: function (id) { if (!/^[a-z0-9-]+$/.test(id || '')) return Promise.reject(ApiError(400, 'invalid_quiz')); return call('GET', '/api/v1/textbook/semantic/quizzes/' + id); },
-      textbookSourceWorkspace: function (id) { if (!/^[a-z0-9-]+$/.test(id || '')) return Promise.reject(ApiError(400,'invalid_quiz')); return call('GET','/api/v1/textbook/semantic/workspaces/'+id); },
-      saveTextbookSourceWorkspace: function (id, body) { if (!/^[a-z0-9-]+$/.test(id || '')) return Promise.reject(ApiError(400,'invalid_quiz')); return call('PUT','/api/v1/textbook/semantic/workspaces/'+id,{body:body}); },
-      textbookSourceProgress: function (id) { if (!/^[a-z0-9-]+$/.test(id || '')) return Promise.reject(ApiError(400,'invalid_quiz')); return call('GET','/api/v1/textbook/semantic/progress/'+id); },
-      saveTextbookSourceProgress: function (id, body) { if (!/^[a-z0-9-]+$/.test(id || '')) return Promise.reject(ApiError(400,'invalid_quiz')); return call('PUT','/api/v1/textbook/semantic/progress/'+id,{body:body}); },
-      textbookSemanticChoices: function (id) { if (!/^[a-z0-9-]+$/.test(id || '')) return Promise.reject(ApiError(400, 'invalid_quiz')); return call('GET', '/api/v1/textbook/semantic/choices/' + id); },
-      textbookSemanticFigure: function (id) { if (!/^p[0-9]{3}-figure-[0-9]+$/.test(id || '')) return Promise.reject(ApiError(400, 'invalid_figure')); return call('GET', '/api/v1/textbook/semantic/figures/' + id, { binary: true, mediaTypes: ['image/jpeg', 'image/png'] }); },
-      textbookManifest: function () { return call('GET', '/api/v1/textbook/manifest'); },
-      textbookPage: function (page) { if (!Number.isInteger(page) || page < 1 || page > 144) return Promise.reject(ApiError(400, 'invalid_page')); return call('GET', '/api/v1/textbook/pages/' + page); },
-      textbookImage: function (page, enhanced) { if (!Number.isInteger(page) || page < 1 || page > 144) return Promise.reject(ApiError(400, 'invalid_page')); return call('GET', '/api/v1/textbook/pages/' + page + (enhanced ? '/enhanced' : '/image'), { binary: true, mediaType: 'image/png' }); },
+      textbookSemanticManifest: function (revision) { return textbookCall('GET', '/semantic/manifest', undefined, revision); },
+      textbookSemanticPage: function (page, revision) { if (!textbookPageAllowed(page, revision)) return Promise.reject(ApiError(400, 'invalid_page')); return textbookCall('GET', '/semantic/pages/' + page, undefined, revision); },
+      textbookSemanticQuiz: function (id, revision) { if (!/^[a-z0-9-]+$/.test(id || '')) return Promise.reject(ApiError(400, 'invalid_quiz')); return textbookCall('GET', '/semantic/quizzes/' + id, undefined, revision); },
+      textbookSourceWorkspace: function (id, revision) { if (!/^[a-z0-9-]+$/.test(id || '')) return Promise.reject(ApiError(400, 'invalid_quiz')); return textbookCall('GET', '/semantic/workspaces/' + id, undefined, revision); },
+      saveTextbookSourceWorkspace: function (id, body, revision) { if (!/^[a-z0-9-]+$/.test(id || '')) return Promise.reject(ApiError(400, 'invalid_quiz')); return textbookCall('PUT', '/semantic/workspaces/' + id, {body:body}, revision); },
+      textbookSourceProgress: function (id, revision) { if (!/^[a-z0-9-]+$/.test(id || '')) return Promise.reject(ApiError(400, 'invalid_quiz')); return textbookCall('GET', '/semantic/progress/' + id, undefined, revision); },
+      saveTextbookSourceProgress: function (id, body, revision) { if (!/^[a-z0-9-]+$/.test(id || '')) return Promise.reject(ApiError(400, 'invalid_quiz')); return textbookCall('PUT', '/semantic/progress/' + id, {body:body}, revision); },
+      textbookSemanticChoices: function (id, revision) { if (!/^[a-z0-9-]+$/.test(id || '')) return Promise.reject(ApiError(400, 'invalid_quiz')); return textbookCall('GET', '/semantic/choices/' + id, undefined, revision); },
+      textbookSemanticFigure: function (id, revision) { if (!/^p[0-9]{3}-figure-[0-9]+$/.test(id || '')) return Promise.reject(ApiError(400, 'invalid_figure')); return textbookCall('GET', '/semantic/figures/' + id, {binary:true,mediaTypes:['image/jpeg','image/png']}, revision); },
+      textbookManifest: function (revision) { return textbookCall('GET', '/manifest', undefined, revision); },
+      textbookPage: function (page, revision) { if (!textbookPageAllowed(page, revision)) return Promise.reject(ApiError(400, 'invalid_page')); return textbookCall('GET', '/pages/' + page, undefined, revision); },
+      textbookImage: function (page, enhanced, revision) { if (!textbookPageAllowed(page, revision)) return Promise.reject(ApiError(400, 'invalid_page')); return textbookCall('GET', '/pages/' + page + (enhanced ? '/enhanced' : '/image'), {binary:true,mediaType:'image/png'}, revision); },
       enabled: function () { return !!base; },
       base: function () { return base; },
       state: snapshot,

@@ -6,7 +6,8 @@ const renderer = require('../media/textbook-four-choice');
 const library = require('../media/textbook-semantic-library');
 let checks=0; function ok(v,m){assert.ok(v,m);checks++;}
 const item = n => ({id:'i'+n,reviewStatus:'verified',sourceQuestion:{sourceText:'('+n+') <script> 그대로 (    )',source:{pdfPage:14,printedPage:7}},options:['a','b','c','d'].map(id=>({id,text:'보기 '+id,whyIncorrect:id==='a'?null:'원문 근거 확인'})),correctOptionId:'a'});
-const data={schemaVersion:'hanq-source-four-choice/1',id:'prehistory-initial-four-choice',eraId:'prehistory',items:[item(1),item(2)]};
+const OLD='35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442',QUIZ_DIGEST='a'.repeat(64);
+const data={sourceSha256:OLD,sourceQuizSha256:QUIZ_DIGEST,schemaVersion:'hanq-source-four-choice/1',id:'prehistory-initial-four-choice',eraId:'prehistory',items:[item(1),item(2)]};
 (async()=>{
 const dom=new JSDOM('<main></main>'),host=dom.window.document.querySelector('main');
 let child=renderer.render(host,data);
@@ -35,7 +36,7 @@ for(const item of d.items){
  byText('다음').click();
 }child.cleanup();}
 let listener, state={signedIn:true,ownerId:'member',epoch:1};const calls=[];
-const api={state:()=>state,onChange:f=>{listener=f;return()=>{};},textbookSemanticManifest:async()=>({schemaVersion:'hanq-semantic-manifest/1',pages:[],quizzes:[],fourChoices:[{id:'prehistory',itemCount:2}]}),textbookSemanticChoices:async id=>{calls.push(id);return data;}};
+const api={state:()=>state,onChange:f=>{listener=f;return()=>{};},textbookSemanticManifest:async()=>({source:{sha256:OLD,totalPdfPages:144},schemaVersion:'hanq-semantic-manifest/1',pages:[],quizzes:[],fourChoices:[{id:'prehistory',itemCount:2,sourceQuizSha256:QUIZ_DIGEST}]}),textbookSemanticChoices:async id=>{calls.push(id);return data;}};
 const coordinator=library.create({api,document:dom.window.document,eraFor:()=>({id:'prehistory',from:8,to:15}),choiceRenderer:renderer});
 await coordinator.mount(host,'prehistory');host.querySelector('[data-mode=choices]').click();await new Promise(r=>setTimeout(r,10));
 ok(calls.length===1,'coordinator uses authenticated choices method');ok(host.querySelectorAll('input').length===4,'coordinator renders choices');

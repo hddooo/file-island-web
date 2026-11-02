@@ -12,10 +12,11 @@ const same = (actual, expected, label) => { assert.deepEqual(actual, expected, l
 const tick = () => new Promise(resolve => setTimeout(resolve, 0));
 async function flush() { await tick(); await tick(); }
 function deferred() { let resolve, reject; const promise = new Promise((yes, no) => { resolve = yes; reject = no; }); return { promise, resolve, reject }; }
-const manifest = () => ({ figures: [{id: 'fixture-map'}], schemaVersion: 'hanq-semantic-manifest/1', pages: [{ pdfPage: 12, printedPage: 5 }, { pdfPage: 13, printedPage: 6 }, { pdfPage: 60 }], quizzes: [{ id: 'prehistory', itemCount: 36 }] });
+const OLD_SOURCE='35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442';
+const manifest = () => ({source:{sha256:OLD_SOURCE,totalPdfPages:144}, figures: [{id: 'fixture-map'}], schemaVersion: 'hanq-semantic-manifest/1', pages: [{ pdfPage: 12, printedPage: 5 }, { pdfPage: 13, printedPage: 6 }, { pdfPage: 60 }], quizzes: [{ id: 'prehistory', itemCount: 36 }] });
 const eraFor = id => id === 'samguk' ? {id:'samguk',from:16,to:30} : id === 'joseon' ? { id: 'joseon', from: 57, to: 84 } : id === 'goryeo' ? { id: 'goryeo', from: 40, to: 56 } : { id: 'prehistory', from: 8, to: 15 };
 function sourcePage(n, text = 'TEXT-' + n, figure = false) {
-  return { schemaVersion: 'hanq-semantic/1', pdfPage: n, printedPage: n - 7, reviewStatus: 'unverified', blocks: [{ id: 'body', type: 'text', lines: [{ spans: [{ text }] }] }].concat(figure ? [{ type: 'figure', assetId: 'fixture-map', alt: '작은 연습 그림' }] : []), sourceBlanks: [], generatedPractice: [] };
+  return {sourceSha256:OLD_SOURCE, schemaVersion: 'hanq-semantic/1', pdfPage: n, printedPage: n - 7, reviewStatus: 'unverified', blocks: [{ id: 'body', type: 'text', lines: [{ spans: [{ text }] }] }].concat(figure ? [{ type: 'figure', assetId: 'fixture-map', alt: '작은 연습 그림' }] : []), sourceBlanks: [], generatedPractice: [] };
 }
 function setup() {
   const dom = new JSDOM('<!doctype html><main><footer>기존 요약 바로가기</footer></main>', { url: 'https://fixture.test/' });
@@ -28,7 +29,7 @@ function setup() {
     onChange: listener => { listeners.add(listener); return () => listeners.delete(listener); },
     textbookSemanticManifest: async () => { calls.push(['manifest', state.ownerId]); return manifest(); },
     textbookSemanticPage: async n => { calls.push(['page', n, state.ownerId]); return sourcePage(n); },
-    textbookSemanticQuiz: async id => { calls.push(['quiz', id, state.ownerId]); return { id, text: 'SOURCE-QUIZ' }; },
+    textbookSemanticQuiz: async id => { calls.push(['quiz', id, state.ownerId]); return {source:{sha256:OLD_SOURCE}, id, text: 'SOURCE-QUIZ' }; },
     textbookSemanticFigure: async id => { calls.push(['figure', id, state.ownerId]); return new Blob(['synthetic raster'], { type: 'image/png' }); },
     textbookImage: () => { throw new Error('No raster-page fallback allowed'); },
     textbookManifest: () => { throw new Error('No legacy manifest allowed'); }
@@ -58,7 +59,7 @@ function setup() {
     t.setState({restoring:false});await flush();
     same([...t.host.querySelectorAll('[data-reader-page]')].map(e=>+e.dataset.readerPage),[12,13],'all era pages in source order');
     ok(t.host.textContent.includes('TEXT-12')&&t.host.textContent.includes('TEXT-13'),'all pages load without selecting or clicking');
-    same(t.host.querySelectorAll('select').length,0,'no page selection gate');
+    same(t.host.querySelectorAll('select:not([data-textbook-revision])').length,0,'no page selection gate; edition control is separate');
     same(t.calls.filter(c=>c[0]==='page').map(c=>c[1]),[12,13],'each era page fetched once');
     same(t.host.querySelector('[data-semantic-coverage]').textContent,'이 범위의 학습 자료 · 빈칸 36문항','coverage counts retained');
     same(t.host.querySelectorAll('.textbook-reader-toc').length,0,'reader TOC area removed entirely');ok(t.host.querySelector('[data-reader-page] .textbook-semantic'),'source body appears directly without a navigation gate');
