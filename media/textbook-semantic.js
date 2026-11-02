@@ -357,7 +357,19 @@
         tableNode.style.tableLayout = 'fixed';
         if (block.columnCount === 2 && block.layoutRole !== 'source-illustration-gallery' && !/^source-(?:diagram|timeline|rank-chart|ruler-sequence)$/.test(block.layoutRole || '')) {
           var columns = node('colgroup'), labelColumn = node('col'), contentColumn = node('col');
-          labelColumn.style.width = '24%'; contentColumn.style.width = '76%';
+          // An example question followed only by an empty printed response is
+          // not a short label / long content pair. Keep every source character,
+          // but give the prompt enough room instead of enlarging empty space.
+          var emptyResponse = block.rows.length > 0 && block.rows.every(function (row) {
+            if (row.cells.length !== 2) return false;
+            var left=row.cells[0],right=row.cells[1];
+            if (left.columnIndex!==0 || right.columnIndex!==1 || (left.colSpan||1)!==1 || (right.colSpan||1)!==1 || (left.rowSpan||1)!==1 || (right.rowSpan||1)!==1) return false;
+            var text=function(cell){return cell.lines.map(function(line){return line.spans.map(function(span){return span.text;}).join('');}).join('\n');};
+            return !!text(left).trim() && /^\(\s+\)$/.test(text(right));
+          });
+          var widths=block.sourceColumnWidths || (emptyResponse ? [76,24] : [24,76]);
+          if(emptyResponse)tableNode.setAttribute('data-source-empty-response','');
+          labelColumn.style.width = widths[0]+'%'; contentColumn.style.width = widths[1]+'%';
           columns.appendChild(labelColumn); columns.appendChild(contentColumn); tableNode.appendChild(columns);
         }
       }

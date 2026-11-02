@@ -21,6 +21,7 @@
 .textbook-semantic-table td,.textbook-semantic-table th{display:table-cell;position:static;min-width:0;padding:14px 16px;border:1px solid #b8c8da;vertical-align:top;white-space:pre-wrap;text-align:left;font-size:17px;line-height:1.8;font-weight:400;background:#fff;color:#18212f;overflow-wrap:anywhere}
 .textbook-semantic-table th{background:#f1f5fb}
 .textbook-semantic-table caption{padding:12px 16px;text-align:left;font-size:17px;font-weight:400;white-space:pre-wrap}
+.textbook-semantic-table[data-source-empty-response] td:nth-child(2){white-space:normal}
 .textbook-source-illustrated-table{table-layout:fixed}
 .textbook-source-illustrated-table .textbook-source-illustration-cell{border-left:0;padding:10px;vertical-align:middle}
 .textbook-source-illustration-cell .textbook-semantic-table-scroll{margin:0;border:0;border-radius:0;overflow:visible}

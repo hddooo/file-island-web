@@ -73,6 +73,15 @@ async function domChecks() {
     ok(host.querySelector('[data-review-status=verified]'), 'explicit verified label');
     ok(!host.querySelector('details'), 'does not invent exercises');
 
+    const exampleHost=window.document.createElement('section');window.document.body.appendChild(exampleHost);
+    const example=fixture();example.blocks=[{id:'empty-example',type:'table',columnCount:2,rows:[{cells:[cell(0,0,'합성 예시의 긴 질문은 빈 응답보다 넓은 공간에서 읽습니다.'),cell(0,1,'(                 )')]}]}];
+    const exampleBefore=JSON.stringify(example);let exampleView=reader.render(exampleHost,example);await exampleView.ready;
+    same([...exampleHost.querySelectorAll('col')].map(n=>n.style.width),['76%','24%'],'empty response example allocates readable prompt width');
+    same([...exampleHost.querySelectorAll('td')].map(n=>n.textContent),['합성 예시의 긴 질문은 빈 응답보다 넓은 공간에서 읽습니다.','(                 )'],'printed prompt and blank whitespace remain exact');
+    same(JSON.stringify(example),exampleBefore,'example source metadata remains immutable');exampleView.cleanup();
+    example.blocks[0].sourceColumnWidths=[61,39];exampleView=reader.render(exampleHost,example);await exampleView.ready;
+    same([...exampleHost.querySelectorAll('col')].map(n=>n.style.width),['61%','39%'],'explicit validated source widths override automatic example layout');exampleView.cleanup();exampleHost.remove();
+
     for (const [name, mutate] of [
       ['schema', p => { p.schemaVersion = 'wrong'; }],
       ['page number', p => { p.pdfPage = 0; }],
