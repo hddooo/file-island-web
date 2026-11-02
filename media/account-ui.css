@@ -268,3 +268,33 @@ html body .ac-me .ac-me-body>.ac-streak-card>#acAttendanceMsg{flex:0 0 auto!impo
 /* Keep internal heading surfaces on their card, without terminal black blocks. */
 html[data-hanq-theme] body .ac-me .ac-streak-card .ac-streak-heading{background:transparent!important}
 .ac-growth-basis{margin:0;font-size:11px;opacity:.78}
+
+/* A single partner sanctuary replaces the detached postcard + tall portrait.
+   Existing #acCharacter children, XP, errors and handlers stay in their DOM. */
+html body #app .ac-me .ac-hero.ac-sanctuary{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(120px,.8fr) minmax(0,1.2fr);align-items:center;gap:12px 20px;min-height:290px;padding:24px!important;text-align:left;border:1px solid #8cae9270;border-radius:14px;overflow:hidden;background:#16332e!important}
+html body #app .ac-sanctuary>.world-scenery{z-index:-2}
+html body #app .ac-sanctuary>.world-scenery .world-panorama{object-position:48% 54%;opacity:.66;transform:none!important}
+html body #app .ac-sanctuary:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,#0a2929a8,#061c21e8 64%),linear-gradient(0deg,#082628ee,transparent 70%)!important}
+html body #app .ac-me .ac-sanctuary>.ac-hero-name{grid-column:1/-1;grid-row:1;order:0;font-size:22px!important;line-height:1.4!important;color:#f4ffec!important;text-shadow:0 2px 8px #061c21}
+html body #app .ac-me .ac-sanctuary .ac-pet{grid-column:1;grid-row:2;align-self:center;max-width:100%;width:100%;min-width:0;grid-template-rows:auto auto;gap:8px;margin:0!important;padding:8px 0!important;border-radius:50%!important}
+html body #app .ac-me .ac-sanctuary .ac-pet:after{display:none}
+html body #app .ac-me .ac-sanctuary .ac-pet :is(.hanq-mascot,.hanq-growth-portrait){--mascot-size:150px!important;max-width:100%;margin-inline:auto}
+html body #app .ac-me .ac-sanctuary .ac-pet .collection-life,html body #app .ac-me .ac-sanctuary .ac-pet .collection-life:has(.cm-blob){width:160px;height:160px;max-width:100%;margin-inline:auto}
+html body #app .ac-me .ac-sanctuary .ac-pet .collection-portrait{width:150px;height:150px;max-width:100%;margin-inline:auto}
+html body #app .ac-me .ac-sanctuary .ac-pet-hint{font-size:11px;line-height:1.6;text-align:center;color:#def4e6!important;max-width:100%;overflow-wrap:anywhere}
+html body #app .ac-me .ac-sanctuary .ac-growth{grid-column:2;grid-row:2;width:100%;max-width:none;min-width:0;text-align:left;margin:0;gap:10px}
+html body #app .ac-me .ac-sanctuary .ac-growth-next{font-size:17px!important;align-self:start;text-align:left;line-height:1.5!important}
+html body #app .ac-me .ac-sanctuary .ac-progress{width:100%;height:23px;min-height:23px;border:1px solid #9cc4b4!important;background:#041c20bd!important}
+html body #app .ac-me .ac-sanctuary .ac-progress-label{font-size:11px!important;color:#fff!important;text-shadow:0 1px 3px #001c16}
+html body #app .ac-me .ac-sanctuary .ac-collection-link{display:inline-flex;align-items:center;min-height:44px;width:fit-content;margin:0;color:#d4efdf!important;text-underline-offset:4px;font-size:12px}
+html body #app .ac-me .ac-sanctuary>.ac-hall-entry{grid-column:1/-1;grid-row:3;justify-self:end;align-self:end;order:4;min-height:44px;padding:8px 12px;margin:0;border-color:#96c3b6!important;background:#0a292acf!important;font-size:13px}
+html body #app .ac-me .ac-sanctuary>.ac-hero-wait{grid-column:1/-1;grid-row:2;color:#effff6!important;min-height:110px;max-width:100%;background:#08272ce8!important;padding:16px;border-radius:8px}
+html body #app .ac-me .ac-sanctuary>.ac-hero-wait p{color:#effff6!important}
+html body #app .ac-me .ac-sanctuary .ac-evolution-needed{color:#d6e9da!important;margin:0}
+html body #app .ac-me .ac-me-body{padding:16px 0}
+html body #app .ac-me .ac-attendance.ac-streak-card{position:static;width:100%;max-width:none;margin:0 0 16px!important;padding:14px!important;border-radius:12px!important;background:#102a2d!important}
+html body .world-integrated-scene{position:relative;isolation:isolate}
+html body .world-integrated-scene>.scene-atmosphere{z-index:0;bottom:auto;height:700px;max-height:100%}
+html body .world-integrated-scene>:not(.scene-atmosphere){position:relative;z-index:1}
+@media(max-width:520px){html body #app .ac-me .ac-hero.ac-sanctuary{grid-template-columns:100px minmax(0,1fr);gap:10px 12px;padding:16px 12px!important;min-height:260px}html body #app .ac-me .ac-sanctuary>.ac-hero-name{font-size:20px!important}html body #app .ac-me .ac-sanctuary .ac-pet :is(.hanq-mascot,.hanq-growth-portrait){--mascot-size:100px!important}html body #app .ac-me .ac-sanctuary .ac-pet .collection-life,html body #app .ac-me .ac-sanctuary .ac-pet .collection-life:has(.cm-blob),html body #app .ac-me .ac-sanctuary .ac-pet .collection-portrait{width:100px;height:100px}html body #app .ac-me .ac-sanctuary .ac-growth-next{font-size:15px!important}html body #app .ac-me .ac-sanctuary .ac-progress-label{font-size:10px!important}html body #app .ac-me .ac-sanctuary .ac-pet-hint{font-size:10px}html body #app .ac-me .ac-sanctuary .ac-collection-link{font-size:11px}}
+@media(prefers-reduced-motion:reduce){html body #app .ac-sanctuary *{transition:none!important}}

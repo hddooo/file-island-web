@@ -37,6 +37,7 @@
     if(variant==='chart'){node.innerHTML=svg(kind);return node;}
     node.dataset.art='true';node.style.setProperty('background-image','url("'+(location.pathname.indexOf('/inquiries')===0?'/':'')+artPath(kind).replace('-v1.webp','-poster-v1.webp')+'")','important');node.style.backgroundSize='cover';node.style.backgroundPosition='center';node.innerHTML='<span class="world-mist"></span><span class="world-data-motes"></span>';
     var picture=document.createElement('img');picture.className='world-panorama';picture.alt='';picture.decoding='async';picture.src=(location.pathname.indexOf('/inquiries')===0?'/':'')+artPath(kind);picture.onload=function(){node.classList.add('world-art-ready');};picture.onerror=function(){picture.hidden=true;if(!node.querySelector('.world-art-fallback')){var fallback=document.createElement('div');fallback.className='world-art-fallback';fallback.innerHTML=svg(kind);node.prepend(fallback);}};node.prepend(picture);
+    if(root.HanqIslandHarbors)root.HanqIslandHarbors.atmosphere(node,kind);
     if(picture.complete&&picture.naturalWidth)node.classList.add('world-art-ready');node.dataset.ambient=ambient?'true':'false';scenes.add(node);if(observer)observer.observe(node);return node;
   }
   function modes() {
@@ -68,10 +69,16 @@
     var route=location.hash,region=location.pathname.indexOf('/inquiries')===0?'inquiry':/^#battle(?:\/|$)/.test(route)?'ice':/^#rainbow/.test(route)?'rainbow':/^#hall-of-fame/.test(route)?'hall':/^#account/.test(route)?'account':/^#toeic/.test(route)?'toeic':route&&route!=='#subjects'?'history':'world';
     document.body.dataset.worldDestination=region;
     var artHost=document.querySelector('#battleHost,#hallHost,#acRoot')||(region==='inquiry'?document.querySelector('#content'):null);
-    if(artHost&&region!=='ice'&&region!=='hall'&&!document.querySelector('.login-landing')&&!artHost.parentNode.querySelector('.world-region-banner')){
+    if(artHost&&region!=='account'&&region!=='ice'&&region!=='hall'&&!document.querySelector('.login-landing')&&!artHost.parentNode.querySelector('.world-region-banner')){
       var banner=document.createElement('div');banner.className='world-region-banner';banner.dataset.region=region;banner.setAttribute('aria-hidden','true');banner.appendChild(scenery(region,false));
       var plaque=document.createElement('span');plaque.textContent={ice:'얼음섬 · 빙하의 성채',hall:'명예의 전당 · 영광의 정원',account:'MyPage · 나의 안식처',inquiry:'건의함 · 바닷가 우체국'}[region]||'파일섬';banner.appendChild(plaque);artHost.before(banner);
     }
+
+    // Profile identity and the actual partner live inside the same garden scene.
+    var profile=document.querySelector('.ac-me .ac-hero');
+    if(profile&&!profile.querySelector('.world-scenery')){profile.prepend(scenery('account',true));profile.classList.add('ac-sanctuary');}
+    // These hosts already use integrated artwork; only add atmosphere above it.
+    if(artHost&&(region==='ice'||region==='hall')&&!artHost.querySelector(':scope > .scene-atmosphere')&&root.HanqIslandHarbors){artHost.classList.add('world-integrated-scene');root.HanqIslandHarbors.atmosphere(artHost,region);}
 
     var toeic=document.querySelector('.toeic-menu');
     if(toeic&&!toeic.querySelector('.world-island-banner')){

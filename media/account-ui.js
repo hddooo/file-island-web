@@ -148,6 +148,7 @@
     if(root.HanqImageViewer)root.HanqImageViewer.close(true);
     if(root.HanqCharacters&&root.HanqCharacters.stop)root.HanqCharacters.stop();
     ui.container.innerHTML=html;ui.container.classList.toggle('ac-profile-root',!!ui.container.querySelector('.ac-me'));
+    if(root.HanqWorldScene)root.HanqWorldScene.sync();
     [].slice.call(ui.container.querySelectorAll('.ac-q .mock-image')).forEach(function(img){
       if(!root.HanqImageViewer)return;
       img.tabIndex=0;img.setAttribute('role','button');img.setAttribute('aria-haspopup','dialog');img.setAttribute('aria-label',img.alt+' · 크게 보기');

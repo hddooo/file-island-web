@@ -58,7 +58,7 @@ function mount(host,st){if(stopLife){stopLife();stopLife=null;}if(expiryTimer!==
   el('span','ac-pet-hint','눌러서 성장기록 보기',pet);
   var g=el('div','ac-growth'+(p.final?' is-final':''));
   /* 막대 안: 이 단계에서 모은 XP / 다음 진화에 필요한 XP. 마지막 단계는 꽉 찬 막대 + 최종 진화 글자(다음 목표·분모 없음) */
-  var next=p.collection?'성장 XP · '+Number(p.points).toLocaleString('ko-KR'):'계정 성장 기준 · '+Number(p.points).toLocaleString('ko-KR')+' XP',label=p.final?'최종 진화 완료':'이번 단계 '+p.earned+' / '+p.required+' XP';el('p','ac-growth-next',next);var bar=el('div','ac-progress',null,g);
+  var next=p.collection?'성장 XP · '+Number(p.points).toLocaleString('ko-KR'):'계정 성장 기준 · '+Number(p.points).toLocaleString('ko-KR')+' XP',label=p.final?'최종 진화 완료':'이번 단계 '+p.earned+' / '+p.required+' XP';el('p','ac-growth-next',next,g);var bar=el('div','ac-progress',null,g);
   bar.setAttribute('role','progressbar');bar.setAttribute('aria-label',p.final?'진화 단계':p.collection?'다음 진화까지 경험치':'계정 성장 기준 진화 진행도');bar.setAttribute('aria-valuemin','0');bar.setAttribute('aria-valuemax',p.final?'100':String(p.required));bar.setAttribute('aria-valuenow',p.final?'100':String(p.earned));bar.setAttribute('aria-valuetext',p.final?p.name+' · '+next:label+' · '+next);
   el('span','ac-progress-fill',null,bar).style.width=(p.ratio*100)+'%';
   el('span','ac-progress-label',label,bar).setAttribute('aria-hidden','true');
