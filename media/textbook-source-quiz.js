@@ -29,7 +29,7 @@
     tokens.forEach(function (token, i) {
       if (!token || token.order !== i + 1 || token.label !== parts[i]) fail('annotated sequence token order');
       text(token.annotation, 'sequence annotation'); text(token.text, 'sequence token text');
-      if (!/^\([^()]+\)$/.test(token.annotation) || token.text !== token.label + token.annotation) fail('annotated sequence token source');
+      if ((token.annotation !== '' && !/^\([^()]+\)$/.test(token.annotation)) || token.text !== token.label + token.annotation) fail('annotated sequence token source');
     });
     if (normalize(item.answer.text) !== normalize(tokens.map(function (t) { return t.text; }).join(separator))) fail('annotated sequence source answer');
     if (item.answer.responseText !== parts.join(separator)) fail('annotated sequence response parts');
@@ -143,8 +143,10 @@
       if (parts.length === 1 && item.answer.text !== parts[0]) fail('single answer text');
       var separator = item.answer.sequenceSeparator == null ? '' : item.answer.sequenceSeparator;
       if (['', '→'].indexOf(separator) < 0) fail('source sequence separator');
+      var sourceAnswerSeparator = item.answer.sourceSeparator;
+      if (sourceAnswerSeparator != null && (sourceAnswerSeparator !== '/' || item.kind !== 'fill-in' || !verified(item) || !hasFeature(item, 'partitioned-source-blank'))) fail('unsupported source answer separator');
       if (item.answer.sequenceTokens != null || hasFeature(item, 'annotated-source-sequence')) validateAnnotatedSequence(item, parts, separator);
-      else if (item.kind !== 'classification' && parts.length > 1 && item.answer.text !== parts.join(item.kind === 'sequence' ? separator : ', ')) fail('answer text parts');
+      else if (item.kind !== 'classification' && parts.length > 1 && normalize(item.answer.text) !== normalize(parts.join(item.kind === 'sequence' ? separator : sourceAnswerSeparator || ', '))) fail('answer text parts');
       var blanks = list(item.blanks, 'blanks'), blankIds = [], referencedAnswerIds = [];
       if (!blanks.length && item.kind !== 'classification') fail('missing explicit blank');
       blanks.forEach(function (blank) {
