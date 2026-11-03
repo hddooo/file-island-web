@@ -34,13 +34,15 @@ function setup() {
     textbookImage: () => { throw new Error('No raster-page fallback allowed'); },
     textbookManifest: () => { throw new Error('No legacy manifest allowed'); }
   };
-  const quizRenderer = { render: (container, data) => {
+  const quizRenderOptions=[];
+  const quizRenderer = { render: (container, data, options) => {
+    quizRenderOptions.push(options);
     const article = dom.window.document.createElement('article'); article.className = 'fixture-quiz'; article.textContent = data.text; container.replaceChildren(article);
     let cleaned = false;
     return { element: article, ready: Promise.resolve(), cleanup: () => { if (!cleaned) { quizCleanups++; cleaned = true; article.remove(); } } };
   } };
   const library = libraryModule.create({ api, document: dom.window.document, eraFor, pageRenderer, quizRenderer });
-  return { dom, host, api, library, calls, revoked, listeners, quizCleanups: () => quizCleanups,
+  return { dom, host, api, library, calls, revoked, listeners, quizRenderOptions, quizCleanups: () => quizCleanups,
     setState: (next, emit = true) => { state = { ...state, ...next }; if (emit) [...listeners].forEach(listener => listener(state)); },
     close: () => { library.stop(); dom.window.close(); },
     tab: name => host.querySelector('[data-mode=' + name + ']'),
@@ -68,6 +70,12 @@ function setup() {
     t.setState({signedIn:false,ownerId:null,epoch:3});ok(!t.host.querySelector('[data-reader-page]')&&!t.host.querySelector('.textbook-semantic'),'logout clears all pages synchronously');
     t.library.stop();same(t.listeners.size,0,'stop unsubscribes');same(t.host.innerHTML,'<footer>기존 요약 바로가기</footer>','unrelated footer preserved');same(t.dom.window.localStorage.length,0,'no new persistent source storage');
   } finally{t.close();}
+  t=setup();try{
+    const profile={schemaVersion:'synthetic-selected-profile'},foreign={schemaVersion:'synthetic-foreign-profile'};
+    t.api.textbookSemanticManifest=async()=>({...manifest(),sourcePromptStylesByQuiz:{prehistory:profile,goryeo:foreign}});
+    await t.library.mount(t.host,'prehistory');t.tab('quiz').click();await flush();same(t.quizRenderOptions.at(-1).sourcePromptStyles,profile,'only selected quiz source styles forwarded');
+    t.api.textbookSemanticManifest=async()=>manifest();await t.library.mount(t.host,'prehistory');t.tab('quiz').click();await flush();same(t.quizRenderOptions.at(-1).sourcePromptStyles,undefined,'legacy manifest adds no prompt styles');
+  }finally{t.close();}
   t=setup();try{
     await t.library.mount(t.host,'goryeo');ok(t.host.textContent.includes('준비 중'),'honest unavailable era');same(t.calls.filter(c=>c[0]==='page').length,0,'no wrong-era fallback');
     await t.library.mount(t.host,'joseon');ok(t.host.textContent.includes('TEXT-60'),'other era loads correctly');same(t.host.querySelectorAll('.textbook-semantic-library').length,1,'one owned shell');

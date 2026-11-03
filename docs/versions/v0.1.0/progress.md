@@ -744,3 +744,8 @@ v0.1.2와 f50a70f 후보 모두 합성 로그인 후 320×568에서 ri-game/host
 ### 2026-11-03 Joseon source diagram and emphasis follow-up
 
 Coordinate59/source-layout22 assertions, reading9/design6 and edition22 browser cases pass on isolated Linux Node24 with matching parsed dependency lock. Actual source reading168 views, quiz8 views and emphasis56 views pass in Chromium/WebKit; no source screenshot or PDF enters Git. The final sparse root serves Joseon29 pages/172 blanks/30 figures while other derived eras return404. A disposable PostgreSQL17 and real JWT/API test passes all29 page reads, five diagrams, four orange markers, eight yellow exam titles, grading, paused recovery, CAS, retry identity, account/source isolation, restart and relogin. Existing79 quiz remains164 items with its old digest. This is isolated integration evidence; the deployed API/root and full human visual review remain pending. Production readiness flags stay absent.
+
+
+### 2026-11-03 Source prompt emphasis preservation
+
+The optional manifest profile and source quiz consumer are prepared independently of summary work. Synthetic prompt48 and library81 checks pass. Existing79-era642 questions pass1491 assertions. Windows/Linux each pass8 native underline views and8 Joseon quiz views, including all172 canonical answers, three original prompt emphases and pause/resume. Each also passes48 study/answer heading views. The isolated real API serves29 pages,14 yellow titles, five diagrams and three prompt styles;172/164 workspace digests, CAS/retry/account/source isolation and restart/relogin remain unchanged. No production data, flags or backend deployment changed. Full human review and operating release remain pending.

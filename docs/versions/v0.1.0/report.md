@@ -607,3 +607,8 @@ GitHub 연결 검색은 저장소 권한 오류422를 반환했고 Chrome은 로
 ### 2026-11-03 Joseon source diagram and emphasis follow-up
 
 Reviewed source60/61 government relations and timeline render with selectable text, bounded shapes/lines, readable source colours and internal scrolling. Source73's office/map relationship remains intact, and source66's map belongs to the original war row. Orange and yellow source styles require exact-source audit metadata. The172-item quiz digest is unchanged. Linux regression and actual-source tests pass, as does real JWT/PostgreSQL storage against the final sparse candidate. No operating member data or running backend service was changed. This unit is not production deployment: full human page review, current CI integration, operating root verification and parent release inspection remain.
+
+
+### 2026-11-03 Source prompt emphasis preservation
+
+Original underlines can now survive both the reading page and functional blank prompt through source-bound display metadata outside the quiz JSON. Every range must match native question IDs and literal text in the selected edition. Markup cannot change source text or answers. Six additional outlined study/answer labels were recovered in the private candidate. Existing642-question and actual172-question regression plus real JWT/PostgreSQL verification pass; all quiz bytes and canonical digests are preserved. This is a prepared local source/frontend unit, not operating deployment.

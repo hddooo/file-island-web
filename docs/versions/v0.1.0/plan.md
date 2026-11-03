@@ -312,3 +312,12 @@
 - [x] Run final Linux Node24 regression and actual-source Chromium/WebKit layout/emphasis checks.
 - [x] Exercise all29 staged pages and real JWT/PostgreSQL member save/recovery on the final private root.
 - [ ] Complete whole-page human source review, integrate exact-SHA CI and verify the deployed source root before activation.
+
+
+### 2026-11-03 Source prompt emphasis preservation
+
+- [x] Restore six source-vector study/answer headings and three visually checked native underlines in the private Joseon candidate.
+- [x] Pass per-quiz optional manifest prompt styles to existing blank renderer without changing quiz bytes or workspace digest.
+- [x] Reject unverified/crossed-source/range/glyph/overlap/unknown style metadata before replacing the current view.
+- [x] Verify actual-source reading and blank emphasis in Windows/Linux and actual JWT/PostgreSQL scope preservation.
+- [ ] Final integrated SHA CI and actual operating root/member/CD verification.

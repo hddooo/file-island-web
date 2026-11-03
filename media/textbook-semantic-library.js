@@ -185,6 +185,7 @@
         child = renderer.render(panel, data, {
           ownerId: api.state().ownerId,
           sourceRevision:sourceSha,
+          sourcePromptStyles:selectedMode==='quiz'&&manifest.sourcePromptStylesByQuiz?manifest.sourcePromptStylesByQuiz[quizId]:undefined,
           loadProgress: function () { if (!valid(g,r)) return Promise.reject(sessionError()); return api.textbookSourceWorkspace(quizId,boundRevision); },
           saveProgress: function (body) { if (!valid(g,r)) return Promise.reject(sessionError()); return api.saveTextbookSourceWorkspace(quizId,body,boundRevision); },
           isFigureAvailable: function (figure) {
