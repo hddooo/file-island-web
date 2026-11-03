@@ -382,7 +382,7 @@
       if(!roots.length||roots.length>4)return null;
       var graph=node('div',null,'textbook-source-branch-graph');graph.setAttribute('role','group');graph.setAttribute('aria-label','원문 분기 관계');
       if(context.length)graph.appendChild(node('p',context[0],'textbook-source-branch-context'));
-      function word(text){var bold=spans.some(function(span){return span.bold===true&&span.text.indexOf(text)!==-1;});return node(bold?'strong':'span',text,'textbook-source-branch-label');}
+      function word(text){var bold=spans.some(function(span){return span.bold===true&&span.text.indexOf(text)!==-1;});return node(bold?'strong':'span',text,'textbook-source-branch-label textbook-semantic-line');}
       function list(items){
         var ul=node('ul',null,'textbook-source-branch-list');ul.style.setProperty('--source-branch-count',String(items.length));
         items.forEach(function(text){var li=node('li');li.setAttribute('data-source-branch-node',text);li.appendChild(word(text));var edge=edges.get(text);if(edge){if(edge.label)li.appendChild(node('p',edge.label,'textbook-source-branch-cause'));li.appendChild(list(edge.toTexts));}ul.appendChild(li);});return ul;
