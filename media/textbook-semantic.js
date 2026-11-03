@@ -351,6 +351,44 @@
       if (!rowAttachments.has(parents[0])) rowAttachments.set(parents[0], []);
       rowAttachments.get(parents[0]).push(entry); attachedRows.add(child);
     });
+    // Render only a source-verified, bounded branch transcription. Unknown or
+    // ambiguous metadata keeps the complete original text representation.
+    function sourceBranches(block, cell) {
+      var audit=block.transcriptionAudit, relations=audit&&audit.relations;
+      if(typeof page.sourceSha256!=='string'||!/^[a-f0-9]{64}$/.test(page.sourceSha256)||cell.sourceTree!==true||block.layoutRole!=='source-diagram'||!audit||audit.sourceVerified!==true||audit.sourceSha256!==page.sourceSha256||audit.sourcePdfPage!==page.pdfPage||!Array.isArray(relations)||relations.length>20)return null;
+      if(!Array.isArray(audit.sourceImageSha256)||!audit.sourceImageSha256.length||audit.sourceImageSha256.some(function(h){return typeof h!=='string'||!/^[a-f0-9]{64}$/.test(h);}))return null;
+      var tokens=[],spans=[];
+      cell.lines.forEach(function(line){
+        line.spans.forEach(function(span){spans.push(span);});
+        line.spans.map(function(span){return span.text;}).join('').replace(/^[\s│├└─┬┼]+/,'').trim().split(/\s{2,}/).filter(Boolean).forEach(function(text){tokens.push(text);});
+      });
+      if(!tokens.length||tokens.length>20||new Set(tokens).size!==tokens.length||spans.some(function(span){return span.sourceRasterText!==true||(span.sourceCharIds&&span.sourceCharIds.length)||span.renderText!=null||span.sourceStyle!=null;}))return null;
+      var branches=relations.filter(function(r){return r&&r.kind==='branch'&&typeof r.fromText==='string'&&Array.isArray(r.toTexts)&&r.toTexts.length>=2&&r.toTexts.length<=4&&tokens.indexOf(r.fromText)!==-1&&r.toTexts.every(function(t){return typeof t==='string'&&tokens.indexOf(t)!==-1;})&&(!r.label||tokens.indexOf(r.label)!==-1);});
+      if(!branches.length)return null;
+      var edges=new Map(),parents=new Map(),names=new Set(),labels=new Set(),bad=false;
+      branches.forEach(function(r){
+        if(edges.has(r.fromText))bad=true;edges.set(r.fromText,r);names.add(r.fromText);
+        if(r.label){if(labels.has(r.label))bad=true;labels.add(r.label);}
+        r.toTexts.forEach(function(t){if(t===r.fromText||parents.has(t))bad=true;parents.set(t,r.fromText);names.add(t);});
+      });
+      if(bad||Array.from(labels).some(function(t){return names.has(t);}))return null;
+      var visiting=new Set(),visited=new Set();
+      function cycle(t){if(visiting.has(t))return true;if(visited.has(t))return false;visiting.add(t);var e=edges.get(t);if(e&&e.toTexts.some(cycle))return true;visiting.delete(t);visited.add(t);return false;}
+      if(Array.from(names).some(cycle))return null;
+      var extras=tokens.filter(function(t){return !names.has(t)&&!labels.has(t);});
+      var context=extras[0]===tokens[0]?[extras.shift()]:[];
+      if(extras.length>1||extras.some(function(t){return !cell.lines.some(function(line){var parts=line.spans.map(function(s){return s.text;}).join('').trim().split(/\s{2,}/);return parts.indexOf(t)!==-1&&parts.some(function(part){return names.has(part)&&!parents.has(part);});});}))return null;
+      var roots=tokens.filter(function(t){return !parents.has(t)&&!labels.has(t)&&context.indexOf(t)===-1;});
+      if(!roots.length||roots.length>4)return null;
+      var graph=node('div',null,'textbook-source-branch-graph');graph.setAttribute('role','group');graph.setAttribute('aria-label','원문 분기 관계');
+      if(context.length)graph.appendChild(node('p',context[0],'textbook-source-branch-context'));
+      function word(text){var bold=spans.some(function(span){return span.bold===true&&span.text.indexOf(text)!==-1;});return node(bold?'strong':'span',text,'textbook-source-branch-label');}
+      function list(items){
+        var ul=node('ul',null,'textbook-source-branch-list');ul.style.setProperty('--source-branch-count',String(items.length));
+        items.forEach(function(text){var li=node('li');li.setAttribute('data-source-branch-node',text);li.appendChild(word(text));var edge=edges.get(text);if(edge){if(edge.label)li.appendChild(node('p',edge.label,'textbook-source-branch-cause'));li.appendChild(list(edge.toTexts));}ul.appendChild(li);});return ul;
+      }
+      graph.appendChild(list(roots));return graph;
+    }
     function table(block) {
       if (block.sourceTimeline) return sourceTimeline(block);
       var group = node('section', null, 'textbook-semantic-table-group');
@@ -368,6 +406,10 @@
         });
       });
       if (labelContent) { tableNode.setAttribute('data-history-label-content', ''); scroll.setAttribute('aria-label', '학습노트 표 · 항목과 해당 본문'); }
+      var branchTable=block.columnCount===2&&block.rows.every(function(row){return row.cells.length===2&&row.cells.every(function(cell){return (cell.rowSpan||1)===1&&(cell.colSpan||1)===1;});})&&block.rows.some(function(row){return row.cells.some(function(cell){return !!sourceBranches(block,cell);});});
+      if(branchTable){
+        tableNode.classList.add('textbook-source-branch-table');var branchColumns=node('colgroup');[24,76].forEach(function(width){var col=node('col');col.style.width=width+'%';branchColumns.appendChild(col);});tableNode.appendChild(branchColumns);
+      }
       if (block.layoutRole === 'source-illustrated-table') tableNode.classList.add('textbook-source-illustrated-table');
       if (block.layoutRole === 'source-illustration-gallery') tableNode.classList.add('textbook-source-gallery');
       if (block.layoutRole === 'source-rank-chart') {
@@ -462,7 +504,14 @@
           if (typeof cell.sourceTranscriptBlockId === 'string') {
             var transcript = node('div'); transcript.setAttribute('data-source-block', cell.sourceTranscriptBlockId);
             appendLines(transcript, cell.lines, cell.lineGroups); td.appendChild(transcript);
-          } else appendLines(td, cell.lines, cell.lineGroups);
+          } else {
+            var branches=sourceBranches(block,cell);
+            if(branches){
+              td.classList.add('textbook-source-tree-graph-cell');td.appendChild(branches);
+              var plain=node('details',null,'textbook-source-branch-transcript');plain.appendChild(node('summary','텍스트로 보기'));
+              var original=node('div');appendLines(original,cell.lines,cell.lineGroups);plain.appendChild(original);td.appendChild(plain);
+            }else appendLines(td, cell.lines, cell.lineGroups);
+          }
           tr.appendChild(td);
         });
         (head && ri < block.headerRowCount ? head : body).appendChild(tr);

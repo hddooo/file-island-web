@@ -37,3 +37,29 @@ properties, manifest, quiz and asset bytes remain identical. Unknown colors,
 yellow backgrounds, false emphasis flags and missing/wrong source audits fail.
 Private style reviews and original pixels remain outside Git. The source worker's
 unchanged renderer smoke does not prove that a later FE applies these styles.
+
+## Recovered review inputs and branch diagrams (2026-11-03)
+
+The four private review inputs are retained under each complete candidate's
+`validation/` directory: `quiz-review-map.json`, `reviewed-diagram-overrides.json`,
+`reviewed-page-overrides.json`, and `reviewed-image-classifications.json`.
+`verify-history-review-inputs.py <revision> <report>` checks their source/count/hash
+binding without printing textbook prose. The complete rebuild still needs all
+seven inputs listed in `rebuild-history-revision.py`; locating an old review does
+not add human-reviewed coverage.
+
+The semantic reader now renders verified raster-transcription branch relations
+as nested lists with connector lines. It requires the matching PDF SHA/page,
+verified image audit, unique source tokens and an acyclic, single-parent graph.
+Ambiguous metadata keeps the complete original text. The full transcription is
+also available in a native keyboard-accessible disclosure. Only eligible two-column
+branch diagrams receive narrower label columns; merged tables and comparison
+matrices retain their topology. The existing verified 79th-edition diagram works
+without changing any of its immutable source files. New 81st-edition activation
+still belongs to the separately verified source/API release.
+
+```sh
+node scripts/test-textbook-source-branches.cjs
+node scripts/qa-history-source-branches.cjs "$QA_OUTPUT" "$PRIVATE_REVISION" 65
+# For the unchanged 79th edition, pass its private revision and PDF page 63.
+```

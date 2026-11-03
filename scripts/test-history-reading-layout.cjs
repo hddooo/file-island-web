@@ -27,6 +27,7 @@ function sourcePage(source){
  ],sourceBlanks:[],generatedPractice:[]};
 }
 async function run(){
+ await require('./test-textbook-source-branches.cjs').run();
  const dom=new JSDOM('<main></main>',{url:'https://synthetic.test'}),w=dom.window,host=w.document.querySelector('main');w.HTMLElement.prototype.scrollIntoView=function(){};
  for(const source of [OLD,NEW]){
   const d=fixture(source),before=JSON.stringify(d),initial=d.items.findIndex(i=>i.subtopicId==='central-offices'&&i.originalNumber===1);let state={version:pins[source],revision:3,workspace:{cursor:initial,status:'active',responses:{}}},writes=[];

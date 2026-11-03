@@ -156,3 +156,23 @@ html body #privateTextbook :is(.textbook-semantic-meta,.textbook-semantic-block-
 #privateTextbook .textbook-semantic-row-annotation .textbook-semantic-table{width:100%;min-width:0!important;table-layout:fixed}
 #privateTextbook .textbook-semantic-row-annotation .textbook-semantic-table :is(td,th){padding:5px 8px;line-height:1.5;min-height:0;height:auto;font-size:16px}
 html[data-hanq-theme] body #app .history-home-hero,html[data-hanq-theme] body #app .history-home-hero .hero-copy{border:0!important;box-shadow:none!important}
+
+/* Source-verified branch diagrams keep real nesting at narrow reading widths. */
+.textbook-semantic .textbook-source-tree > .textbook-semantic-line{display:block;white-space:pre}
+.textbook-semantic .textbook-source-tree-graph-cell{white-space:normal;font-family:inherit;min-width:0}
+.textbook-source-branch-table{table-layout:fixed}.textbook-source-branch-graph{width:min(100%,420px);margin-inline:auto;min-width:0;max-width:100%;font-size:17px;line-height:1.5;text-align:center;color:#243629}
+.textbook-source-branch-graph .textbook-source-branch-list{display:grid;grid-template-columns:repeat(var(--source-branch-count),minmax(0,1fr));list-style:none;margin:0;padding:0;gap:8px;min-width:0}
+.textbook-source-branch-graph li{position:relative;min-width:0;margin:0;padding:0;text-align:center}
+.textbook-source-branch-label{display:inline-block;max-width:100%;padding:5px 4px;border:1px solid #91a48b;border-radius:7px;background:#f4f6ed;color:#243629;white-space:normal;word-break:keep-all;overflow-wrap:normal}
+.textbook-source-branch-graph strong.textbook-source-branch-label{font-weight:750}
+.textbook-source-branch-context{font-size:16px;font-weight:650;margin:0 0 10px}
+.textbook-source-branch-cause{font-size:15px;line-height:1.45;margin:8px 0 0;word-break:keep-all;overflow-wrap:normal}
+.textbook-source-branch-list .textbook-source-branch-list{position:relative;padding-top:20px;margin-top:8px}
+.textbook-source-branch-list .textbook-source-branch-list::before{content:"";position:absolute;left:50%;top:-8px;height:18px;border-left:1px solid #657f61}
+.textbook-source-branch-list .textbook-source-branch-list>li::before{content:"";position:absolute;top:-10px;left:calc(50% - 4px);right:calc(-50% - 4px);border-top:1px solid #657f61}
+.textbook-source-branch-list .textbook-source-branch-list>li:last-child::before{display:none}
+.textbook-source-branch-list .textbook-source-branch-list>li::after{content:"";position:absolute;top:-10px;left:50%;height:10px;border-left:1px solid #657f61}
+.textbook-source-branch-transcript{margin-top:14px;text-align:left;font-family:inherit;white-space:normal}
+.textbook-source-branch-transcript summary{min-height:44px;display:flex;align-items:center;cursor:pointer;font-size:14px;color:#435b42;text-decoration:underline;text-underline-offset:3px}
+.textbook-source-branch-transcript>div{white-space:pre;font-family:ui-monospace,monospace;font-size:15px;overflow-x:auto;max-width:100%}
+@media(max-width:600px){.textbook-source-branch-graph{font-size:16px}.textbook-source-branch-graph .textbook-source-branch-list{gap:6px}.textbook-source-branch-label{padding:5px 2px}.textbook-source-branch-cause{font-size:14px}}
