@@ -342,6 +342,7 @@
       // attach to a spanning cell whose relationship would be ambiguous.
       var target = row.cells.slice().reverse().find(function (cell) { return cell.header !== true && (cell.rowSpan || 1) === 1; });
       if (!target || !target.id) return;
+      if (parents[0].rows.reduce(function (n, sourceRow) { return n + sourceRow.cells.filter(function (cell) { return cell.id === target.id; }).length; }, 0) !== 1) return;
       var entry = {child: child, target: target.id, row: indices[0]};
       if (!rowAttachments.has(parents[0])) rowAttachments.set(parents[0], []);
       rowAttachments.get(parents[0]).push(entry); attachedRows.add(child);

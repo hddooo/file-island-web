@@ -58,7 +58,7 @@ async function run(){
   eq(host.querySelector('[data-source-block="annotation-4"]').closest('[data-source-cell]').dataset.sourceCell,'content-3','source relationship overrides extraction order');
   const graph=host.querySelector('[data-source-block="diagram"]');eq(graph.closest('[data-source-cell]').dataset.sourceCell,'content-2','diagram stays with its source body');ok(graph.textContent.includes('승인 ↓\n↑ 건의')&&graph.textContent.includes('명령 ↓\n↑ 보고'),'all directional labels preserved');
   eq(JSON.stringify(p),before,'semantic source immutable');ok(host.querySelector('.textbook-semantic-meta').hidden,'static provenance hidden, metadata retained');c.cleanup();
-  for(const mutate of [p=>p.blocks[0].sourceRowIndices=[1,3],p=>p.blocks[0].transcriptionAudit.sourceSha256='0'.repeat(64),p=>p.blocks[0].sourceRowIndices=[99]]){
+  for(const mutate of [p=>p.blocks[0].sourceRowIndices=[1,3],p=>p.blocks[0].transcriptionAudit.sourceSha256='0'.repeat(64),p=>p.blocks[0].sourceRowIndices=[99],p=>p.blocks[2].rows[0].cells[1].id='content-3']){
    const bad=sourcePage(source);mutate(bad);c=renderer.render(host,bad);await c.ready;eq(host.querySelector('[data-source-block="annotation-4"]').closest('[data-source-cell]'),null,'ambiguous link is not guessed');eq(host.querySelectorAll('[data-source-block="annotation-4"]').length,1,'ambiguous source remains available once');c.cleanup();
   }
  }

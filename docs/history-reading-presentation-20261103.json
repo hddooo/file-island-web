@@ -35,7 +35,7 @@
     "https://encykorea.aks.ac.kr/Article/E0029682"
   ],
   "validation": {
-    "newDomChecks": 54,
+    "newDomChecks": 58,
     "syntheticBrowserCases": 9,
     "widths": [320,390,1440],
     "textContrast": 12.63,
