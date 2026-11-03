@@ -19,10 +19,10 @@ def validate_styles(x):
   if 'sourceStyleAudit'in x:assert 'sourceStyle'in x
   if 'sourceStyle'in x:
    s=x['sourceStyle'];assert isinstance(s,dict) and s and set(s)<=set(['ink','underline','highlight','bold'])
-   if 'ink'in s:assert s['ink'] in ['default','muted','red','green','blue']
+   if 'ink'in s:assert s['ink'] in ['default','muted','red','green','blue','orange']
    for k in ['underline','bold']:
     if k in s:assert s[k] is True
-   if 'highlight'in s:assert s['highlight']=='green'
+   if 'highlight'in s:assert s['highlight'] in ['green','yellow']
    assert x.get('sourceStyleAudit')==dict(verified=True,sourceRevision=N)
   for v in x.values():validate_styles(v)
  elif isinstance(x,list):

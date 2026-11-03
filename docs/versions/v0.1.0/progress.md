@@ -739,3 +739,8 @@ v0.1.2와 f50a70f 후보 모두 합성 로그인 후 320×568에서 ri-game/host
 - 증거는 `task-6/english-digimon/evidence/english-residents/results.json`과 엔진·크기별 PNG 8개. 기존 메뉴와 별개 커밋으로 검토하며 통합 담당이 순서대로 main에 반영한다.
 
 - 후속 결합 검수: 기존 역사섬 물·배 복구와 메뉴 후보를 포함한 `english-digimon-qa`에서도 Chrome/WebKit 10건 재통과, pageerror 0. 320px을 포함해 디지몬/물·배의 두 정지 버튼이 겹치지 않음을 추가 확인했다. 프로그램으로 포즈를 강제하지 않고 실제 실행을 14초 기록한 모바일·데스크톱 WebM/MP4와 PNG는 `task-6/english-digimon-qa/evidence/english-residents/`에 있다.
+
+
+### 2026-11-03 Joseon source diagram and emphasis follow-up
+
+Coordinate59/source-layout22 assertions, reading9/design6 and edition22 browser cases pass on isolated Linux Node24 with matching parsed dependency lock. Actual source reading168 views, quiz8 views and emphasis56 views pass in Chromium/WebKit; no source screenshot or PDF enters Git. The final sparse root serves Joseon29 pages/172 blanks/30 figures while other derived eras return404. A disposable PostgreSQL17 and real JWT/API test passes all29 page reads, five diagrams, four orange markers, eight yellow exam titles, grading, paused recovery, CAS, retry identity, account/source isolation, restart and relogin. Existing79 quiz remains164 items with its old digest. This is isolated integration evidence; the deployed API/root and full human visual review remain pending. Production readiness flags stay absent.

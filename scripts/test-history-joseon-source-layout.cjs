@@ -22,6 +22,7 @@ async function run(){
  ok(!host.querySelector('.textbook-source-shading-gray'),'crossed-source gray shading is ignored');
  ok(result.warnings.includes('unverified_source_shading')&&result.warnings.includes('unverified_source_style'),'uncertain styling remains visible to callers');
  c.cleanup();
+ const warm=structuredClone(page);warm.blocks[0].rows[0].cells[0].lines[0].spans[0].sourceStyle={ink:'orange',highlight:'yellow'};c=renderer.render(host,warm);await c.ready;const warmRun=host.querySelector('[data-source-ink=orange]');ok(dom.window.getComputedStyle(warmRun).color==='rgb(179, 75, 0)'&&dom.window.getComputedStyle(warmRun).backgroundColor==='rgb(255, 240, 155)','verified orange/yellow source styling outranks generic bold tint');c.cleanup();
  const raw=require('../media/private-textbook'),library=require('../media/textbook-semantic-library'),doc=dom.window.document;
  const flag=doc.createElement('meta');flag.name='hanq-textbook-revisions';flag.content=raw.reviewedRevisionRelease;doc.head.appendChild(flag);
  const partial=doc.createElement('meta');partial.name='hanq-textbook-reviewed-eras';partial.content='joseon';doc.head.appendChild(partial);

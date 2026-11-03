@@ -1,6 +1,8 @@
 /* Scoped to the semantic reader: no global styles and no page-image layout. */
 .textbook-semantic{--textbook-semantic-blue:#0a3c82;box-sizing:border-box;min-width:0;max-width:100%;background:#fff;color:#18212f;font-family:inherit;font-size:17px;line-height:1.8;text-align:left;overflow-wrap:anywhere}
 .textbook-semantic *{box-sizing:border-box}
+.textbook-semantic [data-source-highlight=yellow],html body :is(#privateTextbook,.textbook-original-dialog) [data-source-highlight=yellow]{background-color:#fff09b!important}
+.textbook-semantic-heading [data-source-highlight=yellow]{padding:3px 8px;border:1px solid #b8ae9b;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .textbook-coordinate-diagram{max-width:100%;margin:14px 0;color:#263039;overflow-x:auto;overscroll-behavior-x:contain}
 .textbook-coordinate-diagram-canvas{position:relative;width:100%;min-width:240px;max-width:420px;margin:0 auto;font-size:16px;line-height:1.3}
 .textbook-coordinate-diagram-canvas>svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
@@ -8,6 +10,9 @@
 .textbook-coordinate-diagram-label .textbook-source-bold{color:inherit}
 .textbook-coordinate-diagram-highlight{background:#ffd052;border-radius:3px;padding:3px 6px}
 .textbook-coordinate-diagram-caption{font-size:16px;line-height:1.5;margin:8px 0;text-align:center}
+.textbook-coordinate-diagram-dot{position:absolute;width:7px;height:7px;border-radius:50%;background:#241e1c;transform:translate(-50%,-50%)}
+.textbook-coordinate-diagram-box{width:52%;height:16%;min-width:80px;min-height:32px;padding:5px 12px;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.textbook-coordinate-diagram-circle{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center}
 .textbook-semantic-meta{margin:0 0 22px;padding:0 0 16px;border-bottom:1px solid #d6e0ec}
 .textbook-semantic-reference{font-size:16px;font-weight:600;margin:0 0 4px}
 .textbook-semantic-verification,.textbook-semantic-block-warning{font-size:16px;line-height:1.6;margin:4px 0;color:#6c4c0c}
@@ -125,6 +130,14 @@ html body :is(#privateTextbook,.textbook-original-dialog) .textbook-source-bold{
 html body :is(#privateTextbook,.textbook-original-dialog) .textbook-source-shading-yellow{background-color:#fff09b!important}
 html body :is(#privateTextbook,.textbook-original-dialog) .textbook-coordinate-diagram-label{background-color:var(--hn-paper,#fff)!important}
 html body :is(#privateTextbook,.textbook-original-dialog) .textbook-coordinate-diagram-highlight{background-color:#ffd052!important}
+html body :is(#privateTextbook,.textbook-original-dialog) .textbook-coordinate-diagram-canvas>.textbook-coordinate-diagram-label{background-color:inherit!important}
+html body :is(#privateTextbook,.textbook-original-dialog) .textbook-coordinate-diagram-canvas>.textbook-coordinate-diagram-highlight{background-color:#ffd052!important}
+html body :is(#privateTextbook,.textbook-original-dialog) .textbook-coordinate-diagram-canvas>.textbook-coordinate-diagram-shading-peach{background-color:#f5c4a8!important}
+html body :is(#privateTextbook,.textbook-original-dialog) .textbook-coordinate-diagram-canvas>.textbook-coordinate-diagram-shading-green{background-color:#b3e397!important}
+html body :is(#privateTextbook,.textbook-original-dialog) .textbook-coordinate-diagram-canvas>.textbook-coordinate-diagram-shading-blue{background-color:#83d7f0!important}
+html body :is(#privateTextbook,.textbook-original-dialog) .textbook-coordinate-diagram-surface-gray{background-color:#f4f4f4!important}
+html body :is(#privateTextbook,.textbook-original-dialog) .textbook-coordinate-diagram-canvas>.textbook-coordinate-diagram-circle{background-color:#241e1c!important;color:#fff!important}
+html body :is(#privateTextbook,.textbook-original-dialog) .textbook-coordinate-diagram-circle :is(strong,span){color:#fff!important}
 html body :is(#privateTextbook,.textbook-original-dialog) .textbook-source-shading-green{background-color:#d5f2b8!important}
 html body :is(#privateTextbook,.textbook-original-dialog) .textbook-source-shading-blue{background-color:#c3ecf9!important}
 html body :is(#privateTextbook,.textbook-original-dialog) .textbook-source-shading-peach{background-color:#f5d5bf!important}
@@ -150,6 +163,7 @@ html body #app #privateTextbook .textbook-status,html body dialog.textbook-origi
 .textbook-semantic [data-source-ink=red],html body :is(#privateTextbook,.textbook-original-dialog) [data-source-ink=red]{color:#b42318!important}
 .textbook-semantic [data-source-ink=green],html body :is(#privateTextbook,.textbook-original-dialog) [data-source-ink=green]{color:#216e39!important}
 .textbook-semantic [data-source-ink=blue],html body :is(#privateTextbook,.textbook-original-dialog) [data-source-ink=blue]{color:#0070a3!important}
+.textbook-semantic [data-source-ink=orange],html body :is(#privateTextbook,.textbook-original-dialog) [data-source-ink=orange]{color:#b34b00!important}
 .textbook-semantic [data-source-underline]{text-decoration-line:underline;text-decoration-thickness:.08em;text-underline-offset:.14em}
 .textbook-semantic [data-source-highlight=green],html body :is(#privateTextbook,.textbook-original-dialog) [data-source-highlight=green]{background-color:#d5f2b8!important}
 .textbook-semantic [data-source-highlight=green]:not([data-source-ink]),html body :is(#privateTextbook,.textbook-original-dialog) [data-source-highlight=green]:not([data-source-ink]){color:#1c2b33!important}

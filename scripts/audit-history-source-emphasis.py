@@ -14,7 +14,7 @@ from pathlib import Path
 import fitz
 
 SOURCE = 'd54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de'
-INKS = {'default', 'muted', 'red', 'green', 'blue'}
+INKS = {'default', 'muted', 'red', 'green', 'blue', 'orange'}
 
 
 def digest(data):

@@ -602,3 +602,8 @@ GitHub 연결 검색은 저장소 권한 오류422를 반환했고 Chrome은 로
 별도 `codex/islands-residents-20261103`은 결합 메뉴의 접근성 이름 복구·긴 간판 보정을 보존하고 영어 담당의 `1934d728e8c23784f004106b275d015e340db0a4` 한 커밋만 적용했다. 원래 영어 메뉴 `7d353f1`은 중복 적용하지 않았다. 메뉴 후보 `f6f3095`를 ancestor로 보존하는 merge이며 메뉴 우선 배포 후보는 변경하지 않는다. 실제 아구몬·코로몬·파닥몬의 기존 등록 프레임을 사용하는 장식 레이어/설정만 추가했고 학습·음원·소유·XP·기록을 변경하지 않았다. 새 이미지는 만들지 않았다.
 
 긴 간판/접근성 보정을 포함한 후속 후보에서 `qa-english-residents.cjs` Chrome/WebKit10건(실제 프레임 변화·고정 actor·간판 hit·정지/재개·축소 모션·offscreen·detach·decode 실패/복구·기록 fixture 보존) 및 정적 빌드1642 runtime 파일 검사를 통과했다. 작업 evidence의 `islands-residents-long-label/results.json`과 PNG가 근거이며 아직 검토 후보다. 먼저 메뉴 후보의 필수 CI·main·CD·운영 대조를 끝내고 이 후보의 정확 SHA CI를 확인해 별도로 운영 통합한다. 역사섬 캠핑·비/우산·오로라 구현은 포함하지 않는다.
+
+
+### 2026-11-03 Joseon source diagram and emphasis follow-up
+
+Reviewed source60/61 government relations and timeline render with selectable text, bounded shapes/lines, readable source colours and internal scrolling. Source73's office/map relationship remains intact, and source66's map belongs to the original war row. Orange and yellow source styles require exact-source audit metadata. The172-item quiz digest is unchanged. Linux regression and actual-source tests pass, as does real JWT/PostgreSQL storage against the final sparse candidate. No operating member data or running backend service was changed. This unit is not production deployment: full human page review, current CI integration, operating root verification and parent release inspection remain.

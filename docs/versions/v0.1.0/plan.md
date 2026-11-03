@@ -303,3 +303,12 @@
 - [x] reduced-motion 기본 정지와 명시적 물·배 재생/일시정지, build가 고정된 장면 모듈·이미지 요청.
 - [x] 중앙 궁·왼쪽 정자·오른쪽 서당 자체를 기존 목적지의 native 버튼으로 연결, 목재 간판·44px 터치·키보드·짧은 가로 화면 대응.
 - [ ] 정확 커밋 CI, 승인 범위의 main 통합·자동 배포 및 실제 운영 자산 검증.
+
+
+### 2026-11-03 Joseon source diagram and emphasis follow-up
+
+- [x] Bound timeline dots/date circles/coloured government boxes to reviewed source coordinates, retaining native text and safe table fallback.
+- [x] Preserve reviewed orange markers and black-on-yellow exam titles; keep source66 map in its war-content cell.
+- [x] Run final Linux Node24 regression and actual-source Chromium/WebKit layout/emphasis checks.
+- [x] Exercise all29 staged pages and real JWT/PostgreSQL member save/recovery on the final private root.
+- [ ] Complete whole-page human source review, integrate exact-SHA CI and verify the deployed source root before activation.
