@@ -1,0 +1,49 @@
+{
+  "scope": "Display-only history reading and blank-question layout; no canonical source or workspace mutation",
+  "boundary": "Seonjo and later in late Joseon; actual asked event/work controls culture classification",
+  "layout": ["early above", "small common/comparison band at divider", "late below"],
+  "invariant": "DOM order may change; rows, fields, response IDs, source bytes, version and saved cursor remain in canonical order. Enter maps the next displayed input back to its canonical fields index.",
+  "liveOld": {
+    "pdfSha256": "35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442",
+    "quizVersion": "6892d35b75b9dc6580050bb950242e77ebdb0f2f40d01d13072f0ac5ea1ba3c4",
+    "items": 164,
+    "groups": {"early": 59, "common": 14, "late": 91},
+    "actualCorpusQualification": {"missing": 0, "duplicates": 0, "canonicalAnswers": true, "canonicalCursor": true, "savedResume": true},
+    "earlyCultureNumbers": [1,3,5,8,9,15,16,20,24,27,28,30],
+    "lateDiplomacyNumbers": [3,9]
+  },
+  "revisedPreparedPolicy": {
+    "pdfSha256": "d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de",
+    "pdfPages": 147,
+    "expectedQuizVersion": "042ee684d7e9ae89cc2afd4b3964b1568806432f361dc99b39ad9f88f4d6ca5a",
+    "itemsFromOriginalInventory": 172,
+    "proposedGroups": {"early": 64, "common": 14, "late": 94},
+    "earlyCultureNumbers": [1,3,5,6,9,10,16,17,21,25,26,29,30,32],
+    "lateCentralOfficeNumbers": [11],
+    "lateDiplomacyNumbers": [3,4,10],
+    "canonicalA974BytesVerifiedOnWindows": false,
+    "activation": "Existing readiness gate remains off. Policy is prepared from the matched PDF, not an a974 reproduction claim. Exact source/version, topic sizes, numbering, uniqueness and group totals are required at runtime. Unknown variants keep canonical presentation.",
+    "reconstructionBlocker": "Private reviewed quiz panel/topic map, diagram overrides, page overrides and image classifications are not tracked in a974. Do not invent replacement review evidence."
+  },
+  "commonComparisonNumbers": {"society-comparison": [3,5,8,9,11,14], "economy-comparison": [3,5,6,8,10,13,15,18]},
+  "rowReflow": "Only a single valid sourceRowIndices target with same-PDF, same-page sourceVerified transcriptionAudit may attach to a physically present content cell. Explicit sourceTargetCellId wins. Ambiguous targets remain visible in source order. No raw image or PDF pixels change.",
+  "classificationReferences": [
+    "https://contents.history.go.kr/front/nh/view.do?levelId=nh_023_0030_0010_0020",
+    "https://encykorea.aks.ac.kr/Article/E0029678",
+    "https://encykorea.aks.ac.kr/Article/E0026054",
+    "https://encykorea.aks.ac.kr/Article/E0054208",
+    "https://encykorea.aks.ac.kr/Article/E0029682"
+  ],
+  "validation": {
+    "newDomChecks": 54,
+    "syntheticBrowserCases": 9,
+    "widths": [320,390,1440],
+    "textContrast": 12.63,
+    "inputContrast": 13.30,
+    "sourceDiagramMaxWidth": 340,
+    "syntheticDiagramHeight": 226,
+    "productionWrites": 0,
+    "physicalDevice": false
+  },
+  "ownership": "Scene assets/motion, English, auth, infrastructure, README.md and CHATGPT.md are owned by separate tasks. This branch changes only the history home function in shared index.html."
+}

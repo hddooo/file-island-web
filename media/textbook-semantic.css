@@ -142,3 +142,17 @@ html body #app #privateTextbook .textbook-status,html body dialog.textbook-origi
 .textbook-semantic [data-source-underline]{text-decoration-line:underline;text-decoration-thickness:.08em;text-underline-offset:.14em}
 .textbook-semantic [data-source-highlight=green],html body :is(#privateTextbook,.textbook-original-dialog) [data-source-highlight=green]{background-color:#d5f2b8!important}
 .textbook-semantic [data-source-highlight=green]:not([data-source-ink]),html body :is(#privateTextbook,.textbook-original-dialog) [data-source-highlight=green]:not([data-source-ink]){color:#1c2b33!important}
+
+/* History learning UI uses quiet parchment; source images and audited ink/highlights keep their own colours. */
+html body #privateTextbook{--paper:#eef0e4;--line:#bdc8b4;background-color:#eef0e4!important}
+html body #privateTextbook :where(button,input,textarea,select,option){background-color:#f7f5e9!important}
+html body #privateTextbook :where(button:hover,button[aria-selected=true],a:hover){background-color:#dce6d3!important}
+html body #privateTextbook :where(input,textarea,button,select):focus-visible{outline:3px solid #365c35;outline-offset:3px}
+html body #privateTextbook :is(.textbook-semantic-meta,.textbook-semantic-block-warning,.textbook-semantic-coverage)[hidden]{display:none!important}
+/* Reflow only authenticated, source-linked annotations, never PDF/image pixels. */
+#privateTextbook .textbook-semantic-row-annotation{margin:10px 0 0;padding:8px 10px;border-left:3px solid #718c62;border-radius:4px;white-space:normal}
+#privateTextbook .textbook-semantic-row-annotation[data-source-block]{scroll-margin-top:90px}
+#privateTextbook .textbook-semantic-row-annotation.textbook-semantic-table-group{width:min(100%,340px);max-width:100%;padding:0;border:0}
+#privateTextbook .textbook-semantic-row-annotation .textbook-semantic-table{width:100%;min-width:0!important;table-layout:fixed}
+#privateTextbook .textbook-semantic-row-annotation .textbook-semantic-table :is(td,th){padding:5px 8px;line-height:1.5;min-height:0;height:auto;font-size:16px}
+html[data-hanq-theme] body #app .history-home-hero,html[data-hanq-theme] body #app .history-home-hero .hero-copy{border:0!important;box-shadow:none!important}

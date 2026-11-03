@@ -156,6 +156,7 @@
     article.setAttribute('data-pdf-page', String(page.pdfPage));
     article.setAttribute('lang', 'ko');
     var meta = node('header', null, 'textbook-semantic-meta');
+    meta.hidden = true;
     meta.appendChild(node('p', pageLabel(page), 'textbook-semantic-reference'));
     var audit = node('p', verified(page.reviewStatus) ? '원문 대조 검수 완료' : '원문 대조 검수 전 · 추출 오류가 있을 수 있어요.', 'textbook-semantic-verification');
     audit.setAttribute('data-review-status', verified(page.reviewStatus) ? 'verified' : 'unverified');
@@ -263,6 +264,7 @@
         if (options.compactReviewStatus === true) return;
         var flag = node('p', verified(block.reviewStatus) ? '이 구간은 원문 대조 검수 완료' : '이 구간은 원문 대조 검수 전이에요.', 'textbook-semantic-block-warning');
         flag.setAttribute('data-review-status', verified(block.reviewStatus) ? 'verified' : 'unverified');
+        flag.hidden = true;
         content.appendChild(flag);
       }
     }
@@ -323,6 +325,27 @@
       (layout.boundaries || []).forEach(function (boundary) { var item = node('div', null, 'textbook-source-timeline-boundary'); item.style.left = (boundary.position * 100) + '%'; item.style.top = (95 + height) + 'px'; appendLines(item, boundary.lines); axis.appendChild(item); });
       var hint = node('p', '원문 연표 · 좌우로 이동해 읽기', 'textbook-source-diagram-hint'); region.appendChild(hint); region.appendChild(canvas); return region;
     }
+    // Only a source-verified, single-row association can reflow a detached
+    // annotation. Explicit cell targets retain precedence. Invalid/ambiguous
+    // links stay in source order rather than being guessed or discarded.
+    var rowAttachments = new Map(), attachedRows = new Set();
+    page.blocks.forEach(function (child) {
+      if (child.sourceTargetCellId || !child.sourceParentTableId || ['text','table'].indexOf(child.type) === -1) return;
+      var audit = child.transcriptionAudit, indices = child.sourceRowIndices;
+      if (!audit || audit.sourceVerified !== true || audit.sourceSha256 !== page.sourceSha256 || !/^[a-f0-9]{64}$/.test(page.sourceSha256 || '') || audit.sourcePdfPage !== page.pdfPage) return;
+      if (!Array.isArray(indices) || indices.length !== 1 || !Number.isInteger(indices[0])) return;
+      var parents = page.blocks.filter(function (parent) { return parent.id === child.sourceParentTableId && parent.type === 'table'; });
+      if (parents.length !== 1 || parents[0] === child || parents[0].sourceParentTableId) return;
+      var row = parents[0].rows[indices[0]];
+      if (!row || !row.cells.length || indices[0] < 0 || child.sourceParentTableId === child.id) return;
+      // A content cell must be physically present in this source row; do not
+      // attach to a spanning cell whose relationship would be ambiguous.
+      var target = row.cells.slice().reverse().find(function (cell) { return cell.header !== true && (cell.rowSpan || 1) === 1; });
+      if (!target || !target.id) return;
+      var entry = {child: child, target: target.id, row: indices[0]};
+      if (!rowAttachments.has(parents[0])) rowAttachments.set(parents[0], []);
+      rowAttachments.get(parents[0]).push(entry); attachedRows.add(child);
+    });
     function table(block) {
       if (block.sourceTimeline) return sourceTimeline(block);
       var group = node('section', null, 'textbook-semantic-table-group');
@@ -459,6 +482,16 @@
         group.appendChild(frame);
       });
       }
+      (rowAttachments.get(block) || []).forEach(function (entry) {
+        var target = Array.from(tableNode.querySelectorAll('[data-source-cell]')).find(function (cell) { return cell.getAttribute('data-source-cell') === entry.target; });
+        if (!target) return;
+        var child = entry.child, element = child.type === 'table' ? table(child) : node('div', null, 'textbook-semantic-text');
+        if (child.type !== 'table') appendLines(element, child.lines, child.lineGroups);
+        element.setAttribute('data-source-block', child.id);
+        element.setAttribute('data-source-parent-row', String(entry.row));
+        element.classList.add('textbook-semantic-row-annotation');
+        target.appendChild(element);
+      });
       page.blocks.filter(function (child) { return child.sourceParentTableId === block.id && child.sourceTargetCellId; }).forEach(function (child) {
         var target = Array.from(tableNode.querySelectorAll('[data-source-cell]')).find(function (cell) { return cell.getAttribute('data-source-cell') === child.sourceTargetCellId; });
         if (!target) return;
@@ -522,7 +555,7 @@
       return frame;
     }
     page.blocks.forEach(function (block) {
-      if (consumedTopLevelFigures.has(block) || (block.type === 'figure' && /^(?:decorative-|fragmented-cover-raster|full-page-raster)/.test(block.classification || '')) || block.sourceTargetCellId) return;
+      if (attachedRows.has(block) || consumedTopLevelFigures.has(block) || (block.type === 'figure' && /^(?:decorative-|fragmented-cover-raster|full-page-raster)/.test(block.classification || '')) || block.sourceTargetCellId) return;
       var element;
       if (block.type === 'table') element = table(block);
       else if (block.type === 'figure') element = topLevelGroups.has(block) ? groupedFigure(topLevelGroups.get(block)) : figure(block);

@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   static-build:
-    needs: [auth-contract, compact-ui-regression, practice-readiness-regression, header-parent-readability]
+    needs: [auth-contract, compact-ui-regression, practice-readiness-regression, header-parent-readability, history-reading-regression]
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -30,6 +30,29 @@ jobs:
           path: .artifacts/site/
           if-no-files-found: error
           retention-days: 7
+
+  history-reading-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NODE_PATH: ${{ github.workspace }}/.ci-tools/node_modules
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: .ci-tools/package-lock.json
+      - run: npm ci --prefix .ci-tools --no-fund
+      - run: ln -s .ci-tools .test-tools
+      - run: node scripts/test-history-reading-layout.cjs
+      - run: node scripts/test-textbook-semantic-library.cjs
+      - run: node scripts/test-textbook-revisions.cjs
+      - run: .ci-tools/node_modules/.bin/playwright install --with-deps chromium webkit
+      - run: node scripts/qa-history-reading-layout.cjs
+      - run: node scripts/qa-history-editions.cjs
 
   auth-contract:
     runs-on: ubuntu-latest
