@@ -6,11 +6,13 @@
 
 별도 Linux 비교에서 축소 모션의 WebGL 화면이 검정이지만 같은 task의 drawArrays/readPixels는 정상이고 active 모션·Canvas2D·buffer 보존 비교는 정상이었다. 앱의 정지 GL 재합성 문제로 좁혀 정지/축소 모션 때는 이미 추출한 선명한 plate를 표시하고 GL surface를 숨긴다. 계속 재그리거나 GL drawing-buffer 보존을 강제하지 않는다. 원래 boat를 제거한 plate와 단일 독립 배 레이어, context loss/Canvas2D fallback은 보존한다. screenshot의 실제 장면 RGB 샘플을 추가해 검정 배경을 frame 카운터만으로 통과시키지 않는다.
 
-최종 소스의 Linux WebKit 영어 지도 5건·디지몬 5건, Windows Chrome/WebKit 지도 10건·디지몬 10건, 물/배 9건 및 고궁 회귀 각18건 통과. Linux 비교는 외부 네트워크 차단·읽기 전용 소스와 합성 API만 사용했다. 로컬 증거는 작업 `evidence/linux-english-repro`, `linux-residents`, `linux-gl-diagnostic`과 repo `evidence/palace-static-plate-*`에 있다. 사용자 요청에 따라 같은 Linux 조건의 로컬 검증 후에만 필요한 최종 CI를 실행하며 알림 설정은 바꾸지 않는다. 정확 SHA CI·운영 검증은 아직 별도 단계다.
+후속 CI `6cf8b8a`에서는 지도·실제 배경 픽셀 10건이 모두 통과했고, 디지몬 이탈 직후의 전역 버튼 수 검사가 실패했다. 같은 2코어 조건을 로컬에 주어 동일 `1 !== 0`을 재현했다. 저전력에서 입장 시네마틱을 생략하면 기존 `HanqStudyTransition.scene`이 aria-hidden/inert 사본을 520ms 유지하므로 URL 변경은 사본 제거 완료가 아니다. 실제 #app 버튼은 즉시 0인지 검사하고, 전환 사본이 detached 된 뒤 기존 전역 0 assertion도 유지한다. 각 엔진에 2코어 분기·뒤로 복귀 케이스를 추가했으며 고정 시간 샘플 대신 실제 날개 프레임 변화와 media 상태 전달을 기다린다. 제품 전환 코드나 검사 기대값을 바꾸지 않았다.
+
+최종 소스의 Linux WebKit 영어 지도 5건, Linux Node24 Chromium/WebKit 디지몬 12건(전체 2코어 조건), Windows Chrome/WebKit 지도 10건·디지몬 12건, 물/배 9건 및 고궁 회귀 각18건 통과. Linux 비교는 외부 네트워크 차단·읽기 전용 소스와 합성 API만 사용했다. 로컬 증거는 작업 `evidence/linux-english-repro`, `linux-node24-scene-final`, `linux-gl-diagnostic`과 repo `evidence/palace-static-plate-*`에 있다. 최신 main 문서 `b903fdf`를 정상 병합해 보존했다. 사용자 요청에 따라 같은 Linux/2코어 조건의 로컬 검증 후에만 필요한 최종 CI를 실행하며 알림 설정은 바꾸지 않는다. 정확 SHA CI·운영 검증은 아직 별도 단계다.
 
 기존 운영 d842314의 실제 프레임 디지몬/건물 메뉴를 재사용한 작은 오류 수정 단위다. 연결 실패 후 지도를 다시 들어가야만 캐릭터가 복구되던 흐름을 같은 지도 내 재시도로 보완하고, pagehide/pageshow·축소 모션·정지 선택·화면 이탈 수명을 함께 유지한다. 새 장면 아트와 한국사 교재는 이 단위에 포함하지 않는다.
 
-1차 목표/복구 검수와 2차 기존 메뉴·기록 회귀, 3차 모바일·가로·두 엔진 렌더 검수에서 총 장면 20건·기록 67건 성공, pageerror 0. `evidence/english-residents/results.json`, `evidence/english-island/results.json`과 엔진·크기별 PNG가 Windows 작업 근거다. 숨김 시험에서 드러난 WebKit ResizeObserver 알림 오류는 위치 쓰기를 rAF로 모은 뒤 같은 검사를 다시 통과했다. 정적 빌드는 커밋 전 소스가 dirty이면 의도대로 거절하므로 커밋 후 다시 수행한다. 최종 CI/CD와 실제 운영 SHA/정적 자산 대조는 후속 evidence와 최종 결과에 구분해 보고한다.
+1차 목표/복구 검수와 2차 기존 메뉴·기록 회귀, 3차 모바일·가로·두 엔진 렌더 검수에서 Windows 장면 22건·기록 67건 성공, pageerror 0. `evidence/english-residents/results.json`, `evidence/english-island/results.json`과 엔진·크기별 PNG가 Windows 작업 근거다. 숨김 시험에서 드러난 WebKit ResizeObserver 알림 오류는 위치 쓰기를 rAF로 모은 뒤 같은 검사를 다시 통과했다. 정적 빌드는 커밋 전 소스가 dirty이면 의도대로 거절하므로 커밋 후 다시 수행한다. 최종 CI/CD와 실제 운영 SHA/정적 자산 대조는 후속 evidence와 최종 결과에 구분해 보고한다.
 
 ### 2026-11-03 · 한국사 디자인 통합 검수 후보
 

@@ -4,7 +4,7 @@
 
 기준 main `d84231479e83afc6e1e605304dbe9b1508233367`에서 별도 `codex/english-scene-polish-20261104`를 사용한다. 영어섬 장식 JS/CSS·해당 QA 및 영어섬 전용 CI를 보완하고, Linux에서 실증한 검정 화면 때문에 공유 물 렌더러와 해당 surface 숨김 CSS까지 범위를 확장했다. 이미지 로드/해독 대기는 12초 뒤 실패로 종료하고 online/pageshow에서 준비되지 않은 캐릭터를 재시도한다. 페이지 캐시 전환 이벤트와 문서/화면 숨김 동안 프레임을 멈추며 정지 선택은 해당 탭 sessionStorage에만 보관한다. 지도 자체가 숨겨지면 형제 토글도 숨기고, ResizeObserver 콜백의 위치 쓰기는 rAF에 모아 WebKit 알림 루프를 방지했다.
 
-Chrome/WebKit `qa-english-residents.cjs` 10건과 `qa-english-island.cjs` 10건, 학습 기록 67건 통과. 실제 iPhone이나 물리 브라우저의 BFCache 적중을 주장하지 않는다. 페이지 전환 이벤트는 합성으로 검수했으며 API는 모두 합성이다. 교재·index·라우트·서버/사용자 데이터·인증·권한은 변경하지 않았다. 커밋 후 빌드·정확 SHA CI/CD·운영 대조가 남은 후보이다.
+Chrome/WebKit `qa-english-residents.cjs` 12건과 `qa-english-island.cjs` 10건, 학습 기록 67건 통과. Linux Node24 두 엔진의 전체 2코어 분기 12건도 통과했다. 최신 main 문서 b903fdf를 정상 병합해 보존했다. 실제 iPhone이나 물리 브라우저의 BFCache 적중을 주장하지 않는다. 페이지 전환 이벤트는 합성으로 검수했으며 API는 모두 합성이다. 교재·index·라우트·서버/사용자 데이터·인증·권한은 변경하지 않았다. 커밋 후 빌드·정확 SHA CI/CD·운영 대조가 남은 후보이다.
 
 ### 2026-11-03 · 디자인 우선 운영 요청 반영
 
