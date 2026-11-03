@@ -66,6 +66,7 @@
     (timeline.boundaries || []).forEach(function (boundary) { position(boundary.position); validateLines(boundary.lines); });
   }
   function validateTable(block) {
+    if (block.sourceCaptionLines != null) validateLines(block.sourceCaptionLines);
     if (block.sourceTimeline != null) validateTimeline(block.sourceTimeline);
     integer(block.columnCount, 1, 100, 'table.columnCount');
     if (block.sourceColumnWidths != null && (!Array.isArray(block.sourceColumnWidths) || block.sourceColumnWidths.length !== block.columnCount || block.sourceColumnWidths.some(function (n) { return typeof n !== 'number' || !Number.isFinite(n) || n <= 0 || n > 100; }) || Math.abs(block.sourceColumnWidths.reduce(function (sum,n) { return sum+n; },0)-100) > .01)) fail('table.sourceColumnWidths');
@@ -389,7 +390,34 @@
       }
       graph.appendChild(list(roots));return graph;
     }
+    function coordinateDiagram(block) {
+      var d=block.sourceCoordinateDiagram,a=block.transcriptionAudit;
+      if(!d)return null;
+      var valid=block.layoutRole==='source-diagram'&&a&&a.sourceVerified===true&&a.sourceSha256===page.sourceSha256&&a.sourcePdfPage===page.pdfPage&&/^[a-f0-9]{64}$/.test(page.sourceSha256||'')&&Array.isArray(a.sourceImageSha256)&&a.sourceImageSha256.length>0&&a.sourceImageSha256.every(function(h){return /^[a-f0-9]{64}$/.test(h);});
+      function bounded(n){return typeof n==='number'&&Number.isFinite(n)&&n>=0&&n<=100;}
+      var cells=new Map(),expected=new Set(),seen=new Set();
+      block.rows.forEach(function(row){row.cells.forEach(function(cell){if(cells.has(cell.id))valid=false;cells.set(cell.id,cell);cell.lines.forEach(function(line,i){if(line.spans.some(function(s){return s.text.trim();}))expected.add(cell.id+':'+i);});});});
+      valid=valid&&typeof d.label==='string'&&d.label.length>0&&d.label.length<=80&&typeof d.description==='string'&&d.description.length>0&&d.description.length<=1200&&typeof d.aspectRatio==='number'&&d.aspectRatio>=.4&&d.aspectRatio<=4&&(d.minWidth==null||[200,220,240,280,320].indexOf(d.minWidth)!==-1)&&[160,180,200,240,320,360,400].indexOf(d.minHeight)!==-1&&Array.isArray(d.nodes)&&d.nodes.length>0&&d.nodes.length<=40&&Array.isArray(d.lines)&&d.lines.length<=40;
+      if(valid)d.nodes.forEach(function(n){
+        var cell=n&&cells.get(n.cellId);
+        if(!cell||!bounded(n.x)||!bounded(n.y)||!Array.isArray(n.lineIndices)||!n.lineIndices.length||(cell.sourceShading!=null&&cell.sourceShading!=='yellow')){valid=false;return;}
+        n.lineIndices.forEach(function(i){var key=n.cellId+':'+i;if(!Number.isInteger(i)||!expected.has(key)||seen.has(key))valid=false;seen.add(key);});
+      });
+      if(valid)d.lines.forEach(function(line){if(!line||!Array.isArray(line.points)||line.points.length<2||line.points.length>20||line.points.some(function(p){return !Array.isArray(p)||p.length!==2||!p.every(bounded);})||(line.arrowEnd!=null&&typeof line.arrowEnd!=='boolean'))valid=false;});
+      if(!valid||seen.size!==expected.size){warnings.push('unverified_coordinate_diagram');return null;}
+      var region=node('section',null,'textbook-coordinate-diagram');region.setAttribute('role','group');region.setAttribute('aria-label',d.label);region.setAttribute('aria-description',d.description);region.setAttribute('data-source-diagram','source-coordinate-diagram');region.tabIndex=0;horizontalKeys(region);
+      var canvas=node('div',null,'textbook-coordinate-diagram-canvas');canvas.style.aspectRatio=String(d.aspectRatio);canvas.style.minWidth=(d.minWidth||240)+'px';canvas.style.minHeight=d.minHeight+'px';region.appendChild(canvas);
+      var ns='http://www.w3.org/2000/svg',svg=doc.createElementNS(ns,'svg');svg.setAttribute('viewBox','0 0 100 100');svg.setAttribute('preserveAspectRatio','none');svg.setAttribute('aria-hidden','true');svg.setAttribute('focusable','false');
+      var arrow=associationPrefix+'arrow-'+(++associationSequence),defs=doc.createElementNS(ns,'defs'),marker=doc.createElementNS(ns,'marker');marker.id=arrow;marker.setAttribute('viewBox','0 0 6 6');marker.setAttribute('refX','5');marker.setAttribute('refY','3');marker.setAttribute('markerWidth','4');marker.setAttribute('markerHeight','4');marker.setAttribute('orient','auto');var tip=doc.createElementNS(ns,'path');tip.setAttribute('d','M0 0L6 3L0 6Z');marker.appendChild(tip);defs.appendChild(marker);svg.appendChild(defs);
+      d.lines.forEach(function(line){var path=doc.createElementNS(ns,'polyline');path.setAttribute('points',line.points.map(function(p){return p.join(',');}).join(' '));path.setAttribute('fill','none');path.setAttribute('stroke','currentColor');path.setAttribute('stroke-width','1.2');path.setAttribute('vector-effect','non-scaling-stroke');if(line.arrowEnd)path.setAttribute('marker-end','url(#'+arrow+')');svg.appendChild(path);});canvas.appendChild(svg);
+      d.nodes.forEach(function(n){var cell=cells.get(n.cellId),label=node('div',null,'textbook-coordinate-diagram-label');label.style.left=n.x+'%';label.style.top=n.y+'%';label.setAttribute('data-source-coordinate-cell',n.cellId);label.setAttribute('data-source-coordinate-lines',n.lineIndices.join(','));
+        if(cell.sourceShading==='yellow'&&cell.sourceShadingAudit&&cell.sourceShadingAudit.verified===true&&cell.sourceShadingAudit.sourceRevision===page.sourceSha256)label.classList.add('textbook-coordinate-diagram-highlight');
+        else if(cell.sourceShading==='yellow')warnings.push('unverified_source_shading');
+        appendLines(label,n.lineIndices.map(function(i){return cell.lines[i];}));canvas.appendChild(label);
+      });if(block.sourceCaptionLines){var caption=node('p',null,'textbook-coordinate-diagram-caption');appendLines(caption,block.sourceCaptionLines);region.appendChild(caption);}return region;
+    }
     function table(block) {
+      var diagram=coordinateDiagram(block);if(diagram)return diagram;
       if (block.sourceTimeline) return sourceTimeline(block);
       var group = node('section', null, 'textbook-semantic-table-group');
       var scroll = node('div', null, 'textbook-semantic-table-scroll');
@@ -568,6 +596,7 @@
         element.setAttribute('data-source-block', child.id);
         if (child.sourcePlacement === 'after') target.appendChild(element); else target.insertBefore(element, target.firstChild);
       });
+      if(block.sourceCaptionLines){var fallbackCaption=node('p',null,'textbook-coordinate-diagram-caption');appendLines(fallbackCaption,block.sourceCaptionLines);group.appendChild(fallbackCaption);}
       return group;
     }
     function figure(block) {
