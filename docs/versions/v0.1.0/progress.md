@@ -680,3 +680,14 @@ v0.1.2와 f50a70f 후보 모두 합성 로그인 후 320×568에서 ri-game/host
 ### 2026-11-03 Mac 고궁 통합 검수
 
 `codex/palace-integration-20261103`은 원격 main `3d7f149123ee21b1f106ef5900a85e07057ff03c`에서 별도 worktree로 시작해 `fix/palace-motion-hotspots`의 `05d2ecb`·`d2fd012` 두 커밋만 충돌 없이 통합했다. 기존 체크아웃·main·한국사 교재 렌더러 작업은 보존했다. Mac Chrome/WebKit에서 320×568을 추가한 장면 검사 각18건, 기존 두 섬/두 테마/320·390·1440 메뉴 회귀28건, Chrome 물 픽셀·배·저전력·offscreen 검사9건을 통과했다. macOS WebKit의 기본 버튼 탐색은 Option+Tab으로 검증하며 Windows/Linux의 Tab 검증은 유지한다. static build, CD controller16 tests, 메뉴83 assertions, 지도 정렬 검사를 통과했다. 실제 iPhone 검증은 아니다. 정확 SHA CI·main 갱신·운영 도메인 SHA/자산 대조는 아직 미완료이며 GitHub 연결의 저장소 접근 오류와 브라우저 로그인 부재를 별도 해결해야 한다.
+
+### 2026-11-03 · 영어섬 건물 메뉴 · 구현
+- 기준은 이전된 `hddooo/file-island-web` main `3d7f149` / `0.2.11-beta`. 영어섬 전용 `english-island.js/.css`가 기존 네 native 버튼을 원화의 서고·연습 부두·문법의 문·듣기 정자 영역으로 배치한다. 원본 그림, 데이터, 음원, 라우트, 기록을 보존한다.
+- 공통 연결은 index 자산 2개와 island-harbors의 영어섬 전용 위임 1줄뿐이다. 역사섬 구현과 운영 push는 통합 담당이 조율한다. portrait/landscape 카메라, 44px 목표, keyboard focus, reduced-motion, detach 정리를 포함한다.
+- `qa-english-island.cjs`는 로컬 파일·합성 API로 실제 메뉴/뒤로/원화 선택/좌표 고정/물 모션/역사섬 격리를 검수한다. 초기 main의 물 renderer는 Chrome에서 ready 상태를 만들지 못해, 역사섬 담당의 복구 후보 `7b391f8`과 결합한 별도 검수에서 확인한다. 운영 완료를 뜻하지 않는다.
+
+### 2026-11-03 · 영어섬 건물 메뉴 · 검사 결과
+- 역사섬 후보 `7b391f8`과 결합한 별도 worktree에서 `qa-english-island.cjs` 최종 Chrome/WebKit 10건 성공, pageerror 0. 320×740, 390×844, 700×900, 844×390, 1440×1000에서 네 간판/44px 목표/충돌 없음/키보드 순서와 Enter/모바일 tap/기존 네 라우트/Back/장면 중복 없음/저장 fixture 보존/축소 모션 정지·일반 모션 재개/마우스에 대한 좌표 고정/역사섬 격리를 확인했다. 실제 iPhone/Safari 실기기 검증은 아니다.
+- `test-learning-progress.cjs`: 67/67. `test-static-site-build.cjs`: 재현 가능한 full-SHA manifest, runtime 1640개 및 private/source 제외 성공. 구문·diff 검사 성공. 원본 영어섬 WebP, 음원, 학습 데이터 변경 없음.
+- 기존 `test-islands-integration.cjs`는 수정 전 main `3d7f149`와 후보에서 모두 로그인 화면(`파일섬 스터디`)을 대상으로 오래된 한국사 목차를 찾으며 실패한다. 이 작업에서 assertion을 약화하거나 관련 없는 인증 fixture를 변경하지 않았다.
+- 로컬 증거: `task-6/english-palace-qa/evidence/english-island/results.json` 및 엔진·크기별 PNG 10개. 현재 작업은 검토 후보이며 main push/운영 버전 변경은 통합 담당 책임이다. GitHub 정확 SHA CI와 실제 운영 반영은 별도 확인해야 한다. 구 운영 URL `hanq.vercel.app/app-version.json`, 시험 파일 호스트 `digimon-world.duckdns.org/app-version.json`은 404여서 운영 버전의 증거로 사용하지 않았다.

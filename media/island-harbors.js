@@ -82,6 +82,7 @@
       var pin=document.createElement('span');pin.className='harbor-pin';pin.innerHTML=icon(stop.icon);pin.setAttribute('aria-hidden','true');control.prepend(pin);
       control.addEventListener('pointerdown',function(){map.querySelectorAll('.harbor-selected').forEach(function(n){n.classList.remove('harbor-selected');});control.classList.add('harbor-selected');});
     });
+    if(kind==='toeic'&&root.HanqEnglishIsland){root.HanqEnglishIsland.enhance(map,chart,art,controls);return;}
     // Preserve the source aspect ratio, center the camera on the actual waypoints,
     // and keep text plaques inside the viewport while retaining the larger touch controls.
     function fitScene(){
