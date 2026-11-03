@@ -527,3 +527,60 @@ PNG만으로 모션 완료를 주장하지 않는다. `motion-0/2`는 실제 2�
 ### 2026-11-03 물·배 장면 보정 후보
 
 규칙 `hanq-collaboration-2026-11-01-v5`. Chrome 1440×1000, 390×844, 320×740, 844×390의 두 섬과 저사양 합성 환경에서 물 frame/배 transform 변화, reduced-motion 정지·복귀, offscreen 정지를 실제 렌더링으로 검증했다(9건). 기존 `qa-island-harbors.cjs`는 Chrome/WebKit 28건 통과: 버튼/keyboard/route-back/스크롤/레이아웃 보존. 실제 모바일 기기 성능은 미확인이다. `qa-living-water.cjs`와 작업 evidence의 시간차 PNG/GIF/WebM·pixel-motion.json이 내부 움직임 근거다. 원화·경로·ID·학습 저장 계약을 보존했다. 정확 SHA CI·부모 통합·운영 버전/SHA/자산 검수는 별도다. 운영 브랜치를 독자 통합하거나 배포하지 않았다.
+
+### 2026-11-03 장면 정지 재현과 건물 핫스팟 후보
+
+재현 전: 1440→390 전환 후 frame 9→9, ready=false지만 mode=active가 유지됐다. 이전 canvas의 이벤트 리스너를 제거하고 generation/target을 검사해 새 장면의 중단을 방지한다. GPU 중단·미지원 대체 경로는 실제 물 픽셀 변화와 고정 건물 픽셀을 검사하며, 단순 frame 카운터 증가만 성공 기준으로 쓰지 않는다. `qa-palace-hotspots.cjs`는 실제 로컬 HTTP 캐시, 반복 resize, 1778×1122 DPR2 조건, GPU 중단/미지원, reduced-motion 명시적 재생, 건물 중앙 터치·키보드·모듈 로드 실패 복구를 검증한다. 실사용자 브라우저 설정은 미확인이다. 기존 `qa-island-harbors.cjs`의 route/back/keyboard/스크롤·모바일 검수와 `qa-living-water.cjs`의 실제 시간 진행·픽셀 캡처도 별도 유지한다. 정확 SHA CI·운영 증거는 해당 실행 결과로 대조하며 이 후보 기록만으로 배포 완료를 선언하지 않는다.
+
+중간 후보 05d2ecba의 CI 41590207383은 새 움직임 버튼이 `.toeic-travel-map button`의 학습 목적지 4개에 섞여 단어장 UI 회귀에서 실패했다. 제품의 장면 제어를 map 바깥의 형제 요소로 분리하고 기존 검사 파일은 완화하지 않았다. ResizeObserver 위치 갱신은 rAF로 묶고 버튼은 max-content 폭으로 고정해 순환 알림을 제거했다. 그 후 qa-vocabulary-redesign은 Chromium/WebKit 320/390/1440 전체 통과했다. 확정 건물 배치·실제 HTTP 캐시·이전 host의 늦은 모듈 로드·GPU 중단/미지원·키보드/터치 17건씩을 두 엔진에서 통과했다. 이 단락은 로컬 검수이며 새 정확 SHA CI·운영 결과는 별도다.
+
+### 2026-11-03 Mac 고궁 통합 검수 결과
+
+규칙 `hanq-collaboration-2026-11-01-v5`. 원격 main `3d7f149123ee21b1f106ef5900a85e07057ff03c` 위에 원래 후보 두 커밋만 cherry-pick했고, 제품 차이는 원래 `d2fd012`와 동일한 장면 JS/CSS 세 파일이다. 교재·문항·학습 진행·API·DB·헤더·workflow·버전은 변경하지 않았다. `qa-palace-hotspots.cjs`에 320×568과 macOS WebKit Option+Tab을 추가했다. 후자는 macOS 기본 Tab이 버튼을 건너뛰는 플랫폼 동작을 반영하며 실제 다음 버튼 focus와 Enter 라우트 assertion은 유지한다. Chrome/WebKit 각18건 모두 통과, `qa-island-harbors.cjs`28건과 `qa-living-water.cjs`9건 통과. 320·1440·650×320 가로 PNG를 직접 확인했고 간판·건물 클릭영역·배·정지 버튼의 겹침을 확인했다. static build 및 CD16 tests, 메뉴83 assertions, 지도 정렬도 통과했다. 작업 evidence의 `chromium/results.json`, `webkit/results.json`, `harbor-regression/qa-results.json`, `living-water/results.json`과 PNG가 근거다.
+
+GitHub 연결 검색은 저장소 권한 오류422를 반환했고 Chrome은 로그아웃 상태의404였다. Git clone/push 권한을 CI 조회 성공으로 해석하지 않는다. 필수 exact-SHA CI를 확인하지 못해 production main 갱신·배포는 보류한다. 운영 반영은 성공 CI와 현재 main 재확인 후 통합 담당이 수행하고 실제 도메인의 `/app-version.json`·세 장면 자산을 대조해야 한다.
+
+후속 확인: 검토 후보 `8e7dcb907b380664258f6d2c55206c61ef3e1dae`의 원격 push와 동일 SHA를 확인했다. CI combined status 조회는404이며 연결 앱의 설치 계정 목록에 대상 조직 `hddooo`가 없었다. CI 상태가 실패라는 뜻이 아니라 이 환경에서 읽지 못한 것이다. 첫 push는 자동 승인 검토가 대상·payload의 사용자 승인을 확인하지 못해 실행 전 거절했고, 사용자 이력에서 `hddooo/file-island-web`의 명시적 지정과 이번 전체 적용 요청을 확인한 뒤 동일 행동을 한 번 재시도해 성공했다. 추가 권한·토큰·보안 설정은 변경하지 않았다.
+
+### 2026-11-03 저녁 궁 캠핑장 조사 (미구현)
+
+기존 `#history`의 세 건물·라우트·모바일 메뉴를 보존하려면 궁 지도에 캠핑장을 덮는 것보다 역사섬의 별도 쉬어가기 장면을 추가하는 편이 자연스럽다. 진입 UI와 route 연결 위치는 통합 담당이 결정하며 현재 후보에는 추가하지 않았다. 배경 시안은 메타데이터로 저녁 캠핑장·중앙 불·의자·강·먼 사원 구도를 확인했으나 원본 이미지 내려받기는 두 번 모두 실패했다. 픽셀을 보거나 조선 궁의 형태·구체 좌표를 검수했다고 주장하지 않는다.
+
+실제 구현은 고정된 조선 궁·의자·지형 plate와 독립 불꽃/연기/구름/캐릭터 레이어를 사용한다. 불은 bounded Canvas2D 또는 shader로 매 프레임 불꽃 윤곽·입자·불티를 바꾸고 연기와 주변 조명은 별도 위상으로 움직일 수 있다. 하늘은 독립 구름/별 레이어, 강은 새 원본에서 측정한 물 mask로 갱신한다. 기존 낮 고궁의 물 좌표를 재사용하거나 전체 그림을 흔들지 않는다. 이미 불·연기·캐릭터가 합성된 한 장은 중복이 생기므로 깨끗한 plate와 별도 투명 소품이 필요하다.
+
+캐릭터는 `patamon-hover-idle-v1.png`의 등록된6프레임 날갯짓을 재사용할 수 있다. 유년기는 `collection-life`의 검수된 실루엣·깜빡임·짧은 도약과 마을의 독립 이동/휴식 궤적을 재사용할 수 있지만 전신 달리기 프레임은 아니다. 저장소의 아구몬4프레임은 idle/손짓·깜빡임이므로 달리기로 표현하지 않는다. 자연스러운 발걸음 달리기를 요구하면 캐릭터별 새 run-cycle atlas·발 접점·정면/좌우 등록이 필요하다. 포요몬 머리를 나누는 rig는 금지한다. 장식 캐릭터는 소유·XP·부화·장착 판정과 연결하지 않는다.
+
+새 장면은 숨긴 탭·화면 이탈·offscreen에서 정지하고 저전력 버퍼/프레임 제한·축소 모션·명시적 재생을 유지해야 한다. 다음 검수는 시간차 픽셀로 불꽃/구름 변화와 궁/의자 고정, 캐릭터 발 접점·진입/이탈·중복 실루엣, 320/390/1440·낮은 가로 화면·Chrome/WebKit을 확인한다. 이 조사는 장면 구현·새 아트 승인·운영 적용이 아니다.
+
+추가 요구는 더 어두운 밤과 산 부근의 오로라다. 산의 고정 실루엣 뒤 하늘에만 독립 shader 띠를 배치해 색·윤곽·광량이 느리게 흐르게 할 수 있다. 궁·의자·모닥불·캐릭터를 포함한 화면 전체를 이동시키지 않으며, 새 캠핑장 위치와 아트 분리는 아직 미확정이다.
+
+### 2026-11-03 영어섬·고궁 공동 통합 후보
+
+별도 `codex/islands-combined-20261103` worktree에서 고궁 Mac 최종 후보 `d57da20`에 영어섬 검수 후보 `b140a81`을 merge했다. 두 후보 모두 결과의 ancestor이며 기존 검토 브랜치는 그대로다. `b140a81`은 고궁 `7b391f8` 위에 영어섬 `7d353f1`의 제품 변경을 이미 옮긴 후보이므로 `7d353f1`을 또 적용하지 않는다. 제품 파일 충돌은 없었고 progress 문서 끝의 충돌만 양쪽 기록을 전부 유지해 해결했다. 결합 runtime은 영어섬 검수 후보와 바이트 동일하며 한국사 데이터·교재 렌더러·원화·API·DB·버전·workflow는 이 통합에서 추가 수정하지 않았다.
+
+결합본 검사: `qa-english-island.cjs` Chrome/WebKit10건, `qa-palace-hotspots.cjs` Chrome18·WebKit18건, `qa-island-harbors.cjs`28건 모두 통과하고 pageerror0이다. 학습 진행67·메뉴83 assertions 및 정적 빌드1640 runtime 파일/정확 SHA/private 제외 검사도 통과했다. 영어섬은 기존 핀을 숨기고 건물 자체를 native 버튼으로 쓰므로 공통 회귀 검사의 영어 핀 좌표/클릭을 실제 건물 중앙으로 갱신했다. 역사섬 핀과 모든 기존 레이아웃·목적지·focus·Back·중복 방지·진도 fixture·스크롤 assertion은 보존했다. macOS WebKit만 Option+Tab을 사용한다. 이 테스트 수정 전 결합본의 `pinHit:false` 실패를 기록하며 assertion을 삭제하지 않았다. 증거는 작업 evidence의 `combined-english/results.json`, `combined-palace-chrome/results.json`, `combined-palace-webkit/results.json`, `combined-harbors/qa-results.json`이다.
+
+운영 통합 순서는 이 결합 후보의 정확 SHA CI 성공 확인 → 최신 main과 차이 재확인/필요한 통합·재검수 → 한 통합 담당자의 main 갱신 → CD 성공과 실제 도메인 build SHA/자산 대조다. GitHub 앱의 hddooo 접근 부재는 계속되어 현재 CI·main 배포는 미확인/미실행이다. 캠핑장·오로라는 이 제품 후보에 포함하지 않았고 별도 쉬어가기 장면 조사로만 유지한다.
+
+### 2026-11-03 결합 후보 CI 접근 확인과 영어 메뉴 이름 복구
+
+새 로그인·권한 추가 없이 기존 개인 Chrome `Blockmonkey` 프로필에서 hddooo Actions에 접근했다. 앞선404는 연결 앱/회사 Chrome의 접근 한계이며 개인 Chrome의 기존 권한과 구분한다. 후보 `df493c78effe858f8ed2ab8b7f088105934a0c35`의 [CI49](https://github.com/hddooo/file-island-web/actions/runs/41597827259)는 한국사·인증 job이 통과했으나 compact UI에서 실패했다. 실패 로그는 `qa-vocabulary-redesign.cjs`가 기존 `Practice · 파트별 실전 문제` 접근성 이름을 찾지 못한 것이며, 영어섬 간판 모듈이 native aria-label을 장소 이름으로 덮은 것이 원인이다.
+
+제품의 기존 네 학습 목적지 aria-label을 그대로 두고, 새 장소는 고유 ID의 hint와 aria-describedby에 추가하며 title/시각 간판은 보존한다. 기존 CI assertion은 바꾸지 않았다. 영어섬 QA에는 원래 네 접근성 이름과 장소 설명 연결을 전 화면에서 검증하는 assertion을 추가했다. 영어섬 Chrome/WebKit10건을 통과했으며, 원래 실패한 단어장/PDF/계정 체크/네 메뉴 검사는 변경 없이 동일 명령으로 재검증한다. 최종 정확 SHA CI와 main/CD/운영 검증 상태는 후속 실행 결과를 기준으로 한다.
+
+후속 `f34a1da`의 [CI52](https://github.com/hddooo/file-island-web/actions/runs/41598528039)는 인증·한국사·Practice·헤더4개 job을 통과했으나 compact UI의 `qa-map-shell-polish.cjs`에서 긴 간판 viewport 보존 검사에 실패했다. 영어 건물 좌표는 그대로 두고 간판 중심만 지도 경계 안으로 보정하며, 간판 크기 관찰로 글꼴/텍스트 변경에도 재배치한다. 긴 표제는150px 안에서 줄바꿈한다. 기존 CI 스크립트는 수정하지 않았고 로컬 두 엔진6개 원래 시나리오 및 긴 이름을 추가한 영어섬10건을 통과했다. 앞선 단어장/PDF/계정 체크/네 메뉴도 두 엔진320/390/1440 전체 통과했다. 실패·수정·후속CI를 각각 구분하며 통과하지 않은 CI를 승인 근거로 쓰지 않는다.
+
+### 2026-11-03 역사섬 비·나뭇잎 우산 조사 (미구현)
+
+기존 atmosphere에는 맑음→구름→비→갬의150초 로컬 순환, 독립 빗방울·잎·구름 레이어와 offscreen/문서숨김/저전력/축소 모션 정지가 이미 있다. 실제 기상 API가 아니다. 역사섬에는 아직 비에 반응하는 캐릭터나 나뭇잎 우산 자산이 없다. 승인된 건물 메뉴 후보를 바꾸지 않고 별도 장면 모듈에서 구현한다.
+
+비의 강도·구름·캐릭터 반응은 하나의 pause 가능한 장면 시계를 공유해야 한다. 비가 시작되기 전 작은 초록 잎을 올리고 비가 그치면 잠시 후 내리게 해 별도150초 타이머의 위상 어긋남을 피한다. 등록된 유년기 실루엣과 마을의 이동/휴식·도약 궤적을 재사용하고 잎은 캐릭터의 머리/손 anchor에 붙여 보행과 함께 움직인다. 큰 머리/뿔·더듬이를 자르거나 가리지 않으며 포요몬은 연속된 머리를 보존한다. 잎 위 튀는 작은 방울과 발 아래 물결은 독립 입자이며 메뉴·원화 전체는 움직이지 않는다.
+
+필요 자산은 투명한 초록 잎 앞/측면과 잎자루, 캐릭터별 머리/손·접지·가림 순서 등록이다. 실제 달리기/잎을 손으로 집어 드는 동작은 기존 idle atlas에 없으므로 새 run/hold/lift 프레임 없이는 완전한 전신 동작으로 주장하지 않는다. 유년기의 짧은 도약과 별도 잎 overlay부터는 가능하다. 장식 actor는 pointer-events:none으로 건물 메뉴를 막지 않으며 실제 소유·XP·부화·장착 계약에 연결하지 않는다. reduced-motion에서는 정지된 휴식 pose와 일관된 날씨 상태를 제공하고 명시적 재생·정지는 같은 장면 시계에 적용한다. 우산/비 동기화, 그림자·발 접점, 건물 클릭, 모든 진입/이탈·resize·화면숨김 복귀를 두 엔진과320/390/1440·가로에서 검수해야 한다. 이 조사는 자산 생성·구현·배포 완료가 아니다.
+
+
+### 2026-11-03 영어섬 디지몬 후속 검토 후보
+
+별도 `codex/islands-residents-20261103`은 결합 메뉴의 접근성 이름 복구·긴 간판 보정을 보존하고 영어 담당의 `1934d728e8c23784f004106b275d015e340db0a4` 한 커밋만 적용했다. 원래 영어 메뉴 `7d353f1`은 중복 적용하지 않았다. 메뉴 후보 `f6f3095`를 ancestor로 보존하는 merge이며 메뉴 우선 배포 후보는 변경하지 않는다. 실제 아구몬·코로몬·파닥몬의 기존 등록 프레임을 사용하는 장식 레이어/설정만 추가했고 학습·음원·소유·XP·기록을 변경하지 않았다. 새 이미지는 만들지 않았다.
+
+긴 간판/접근성 보정을 포함한 후속 후보에서 `qa-english-residents.cjs` Chrome/WebKit10건(실제 프레임 변화·고정 actor·간판 hit·정지/재개·축소 모션·offscreen·detach·decode 실패/복구·기록 fixture 보존) 및 정적 빌드1642 runtime 파일 검사를 통과했다. 작업 evidence의 `islands-residents-long-label/results.json`과 PNG가 근거이며 아직 검토 후보다. 먼저 메뉴 후보의 필수 CI·main·CD·운영 대조를 끝내고 이 후보의 정확 SHA CI를 확인해 별도로 운영 통합한다. 역사섬 캠핑·비/우산·오로라 구현은 포함하지 않는다.

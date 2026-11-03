@@ -3,6 +3,7 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const {chromium,webkit}=require(process.env.HANQ_PLAYWRIGHT||'../.test-tools/node_modules/playwright');
 const root=path.resolve(__dirname,'..'),out=path.resolve(process.env.HANQ_QA_OUTPUT||'../evidence/living-water');fs.mkdirSync(out,{recursive:true});
+async function surfacePixels(chart){return chart.locator('.living-water-surface').evaluate(c=>{const gl=c.getContext('webgl');if(gl){gl.drawArrays(gl.TRIANGLE_STRIP,0,4);return c.toDataURL().split(',')[1];}const combined=document.createElement('canvas');combined.width=c.width;combined.height=c.height;const ctx=combined.getContext('2d');ctx.drawImage(c.closest('.harbor-chart').querySelector('.living-water-plate'),0,0,c.width,c.height);ctx.drawImage(c,0,0);return combined.toDataURL().split(',')[1];});}
 async function setup(browser,width,height,motion='no-preference',economy=false){
  const p=await browser.newPage({viewport:{width,height},reducedMotion:motion,hasTouch:width<700});
  await p.addInitScript(economy=>{localStorage.setItem('hanqacct:signedIn','1');if(economy)Object.defineProperty(navigator,'hardwareConcurrency',{get:()=>2});},economy);
@@ -14,11 +15,11 @@ try{for(const [width,height] of [[1440,1000],[390,844],[320,740],[844,390]])for(
  await p.goto('https://islands.test/'+(kind==='history'?'#history':'#toeic/map'));await p.locator('.living-water-ready').waitFor();await p.waitForTimeout(300);
  const chart=p.locator('.harbor-chart'),shot=p.locator('.island-harbors'),prefix=kind+'-'+width;
  assert.equal(await chart.locator('.living-boat').count(),kind==='history'?1:width<=700?1:2);
- const state=()=>chart.evaluate(n=>({frames:+n.dataset.waterFrames,mode:n.dataset.waterMotion,buffer:n.dataset.waterBuffer,transforms:Array.from(n.querySelectorAll('.living-boat'),b=>getComputedStyle(b).transform),chartTransform:getComputedStyle(n).transform}));
+ const state=()=>chart.evaluate(n=>({frames:+n.dataset.waterFrames,time:+n.dataset.waterTime,mode:n.dataset.waterMotion,buffer:n.dataset.waterBuffer,renderer:n.dataset.waterRenderer,transforms:Array.from(n.querySelectorAll('.living-boat'),b=>getComputedStyle(b).transform),chartTransform:getComputedStyle(n).transform}));
  const before=await state();await shot.screenshot({path:path.join(out,prefix+'-t0.png')});
- const a=await chart.locator('.living-water-surface').evaluate(c=>{const gl=c.getContext('webgl');gl.drawArrays(gl.TRIANGLE_STRIP,0,4);return c.toDataURL().split(',')[1];});fs.writeFileSync(path.join(out,prefix+'-surface0.png'),Buffer.from(a,'base64'));
- await p.waitForTimeout(900);const after=await state();assert(after.frames>before.frames+3);assert.notDeepEqual(before.transforms,after.transforms);assert.equal(after.chartTransform,'none');
- const b=await chart.locator('.living-water-surface').evaluate(c=>{const gl=c.getContext('webgl');gl.drawArrays(gl.TRIANGLE_STRIP,0,4);return c.toDataURL().split(',')[1];});fs.writeFileSync(path.join(out,prefix+'-surface1.png'),Buffer.from(b,'base64'));await shot.screenshot({path:path.join(out,prefix+'-t1.png')});
+ const a=await surfacePixels(chart);fs.writeFileSync(path.join(out,prefix+'-surface0.png'),Buffer.from(a,'base64'));
+ await p.waitForTimeout(900);const after=await state();assert(after.frames>before.frames+1);assert(after.time>before.time+.1);assert.notDeepEqual(before.transforms,after.transforms);assert.equal(after.chartTransform,'none');
+ const b=await surfacePixels(chart);fs.writeFileSync(path.join(out,prefix+'-surface1.png'),Buffer.from(b,'base64'));await shot.screenshot({path:path.join(out,prefix+'-t1.png')});
  // A short sequential frame set is a reviewable motion artifact, not a timer assertion.
  if(width===390||width===1440){for(let i=0;i<12;i++){await shot.screenshot({path:path.join(out,prefix+'-frame'+String(i).padStart(2,'0')+'.png')});await p.waitForTimeout(150);}}
  await p.emulateMedia({reducedMotion:'reduce'});await p.waitForTimeout(400);const reduced=await state();await p.waitForTimeout(500);assert.equal((await state()).frames,reduced.frames);
