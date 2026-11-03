@@ -1,5 +1,25 @@
 # FE 실제 진행 상태
 
+### 2026-11-03 · Windows 81회 재개: 강조 점검 도구 · 운영 활성화 미완료
+
+독립 clone/branch에서 main `d842314`를 기준으로 재개했다. 지정 Drive PDF와 Windows
+원본은 35,542,781 bytes / SHA `d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de`로
+일치한다. Windows에는 원문과 검수 입력 3종만 있고, 기존 Mac 정본의 4개 추가 검수 JSON과
+완전한 semantic bundle은 없다. Library에서도 해당 정본 입력을 찾지 못했다.
+정본 부재를 추측한 전사/정답으로 대체하지 않으며 81회 활성화는 아직 진행하지 않았다.
+
+`audit-history-source-emphasis.py`는 원문 147쪽/119,809 native 문자, 강조 후보 6,375 span,
+395,345 vector path와 504 raster 배치를 비공개 inventory로 남긴다. Vector/사진 내부
+강조와 밑줄/배경은 자동 의미 판정하지 않는다. 원문 5/65/92/96쪽을 시각 확인했으나,
+semantic 정본과의 대조 및 147쪽 사람 시각 검수는 완료하지 않았다. Synthetic 누락/잘못된
+source/중복 anchor/문자 변경 거절 검사 4건과 Chromium/WebKit 판본 회귀 20건은 통과했다.
+
+학습 본문과 빈칸 문제는 정본과 같은 source/digest/workspace에 연결한 뒤 함께 검수한다.
+강조 항목 설명은 그 이후 해당 81회 출처와 사실을 검수한 150자 이내 내용으로 연결한다.
+클릭·터치·키보드 열기, Escape/닫기 및 focus 복귀를 검수하고 기존 79회 진도/기록을 보존한다.
+이번 변경은 offline 검사 도구와 문서이며 영어섬/공통 workflow/API/DB/운영 source에는 변경이 없다.
+정본 복구와 실제 API 검증 전까지 운영 활성화·전체 완료로 표시하지 않는다.
+
 ### 2026-11-03 · 디자인 우선 운영 요청 반영
 
 최신 main d706aa7의 고궁·물·배 장면을 보존했다. 후속 사용자 요청으로 표시 디자인을 고정된 79회 SHA에도 적용하되 data-history-edition은79로 구분한다. source SHA/문항/정답/digest/workspace는 그대로이며 신판 게이트는 비활성이다. 실제 구판 조선164문항의 정답·59/14/91 분류·canonical cursor·재개 및 p59 원문 연관 관계를320/390/1440에서 읽기 전용 격리 검사했다. 81회 canonical 자료는 여전히 미확보다.

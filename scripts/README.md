@@ -2,6 +2,25 @@
 
 ## 81회 대비 판본 후보 재생성
 
+강조 누락을 대조하기 전에 `audit-history-source-emphasis.py`로 원문 전체의
+native 굵기/색상/기울기, 모든 vector path, raster 배치와 주석 후보를 수집한다.
+원문 SHA와 PyMuPDF 1.26.6을 고정하며 보고서는 새 `private-data/` 경로에만 쓴다.
+보고서에는 본문/정답/주석 내용이나 원본 pixels를 넣지 않는다. Vector는 원문
+순서 hash와 style별 count/bounds로 보존해 outlined 글자의 대량 path를 중복 출력하지 않는다.
+
+```sh
+python scripts/audit-history-source-emphasis.py "$HISTORY_NEW_PDF" \
+  private-data/emphasis-review/inventory.json --semantic "$HISTORY_NEW_SEMANTIC"
+python scripts/test-history-source-emphasis.py
+```
+
+`--semantic`은 완전한 81회 semantic 디렉터리에만 지정한다. 모든 native 문자와 ID를
+대조하고 굵기 누락 및 source-bound 검수 ink가 없는 유색 문자를 보고한다.
+색상 역할의 존재는 원본 pixels/색상 일치를 증명하지 않는다. Raster 내부 강조,
+vector 밑줄/배경, grey/yellow 셀, 제목과 수동 전사는 원본 렌더 및 실제 화면에서
+별도 검수해야 한다. Inventory 성공은 `releaseReady`나 사람 검수를 true로 바꾸지 않는다.
+설명 연결은 교재/문제 리뉴얼 완료 후 해당 source에 검수된 150자 이내 항목으로 진행한다.
+
 새 원문은 147쪽이며 SHA256은 `d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de`다. 기존 144쪽 원문은 `35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442`로 불변 보존한다. 아래 도구는 비공개 데이터 후보만 생성하며 활성 자료·사용자 답안·XP·DB를 변경하지 않는다. 원문과 검수 입력 JSON은 Git에 포함하지 않는다.
 
 PyMuPDF 1.26.6 환경에서 새 `private-data/.../<새 SHA>` 디렉터리를 출력으로 지정한다. `--reviews`에는 원문을 직접 대조한 문항/정답 패널·도표·페이지 전사·장식 분류 기록 7개가 필요하다. 도구는 출력 디렉터리가 이미 있거나 원문 SHA가 다르면 중단한다.
