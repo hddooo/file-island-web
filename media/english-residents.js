@@ -29,7 +29,7 @@
     // A sibling control keeps decorative settings outside the native map menu.
     var frame=map.parentElement,added=getComputedStyle(frame).position==='static',closed=false,visible=false,suspended=false,positionFrame=0;
     if(added)frame.classList.add('english-residents-host');
-    var toggle=document.createElement('button');toggle.type='button';toggle.className='english-residents-toggle';toggle.setAttribute('aria-label','디지몬 움직임');toggle.setAttribute('aria-controls',map.id||'english-residents-map');if(!map.id)map.id='english-residents-map';frame.appendChild(toggle);
+    var toggle=document.createElement('button');toggle.type='button';toggle.hidden=true;toggle.className='english-residents-toggle';toggle.setAttribute('aria-label','디지몬 움직임');toggle.setAttribute('aria-controls',map.id||'english-residents-map');if(!map.id)map.id='english-residents-map';frame.appendChild(toggle);
     function place(){positionFrame=0;if(closed)return;toggle.hidden=!map.getClientRects().length||getComputedStyle(map).visibility==='hidden';if(toggle.hidden)return;var parent=toggle.offsetParent||frame,a=map.getBoundingClientRect(),b=parent.getBoundingClientRect();toggle.style.left=(a.left-b.left-parent.clientLeft+parent.scrollLeft+8)+'px';toggle.style.top=(a.bottom-b.top-parent.clientTop+parent.scrollTop-toggle.offsetHeight-8)+'px';}
     // Observing the toggle and changing its hidden state inside a ResizeObserver
     // delivery otherwise creates an undelivered-notification loop in WebKit.
