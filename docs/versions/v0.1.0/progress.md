@@ -803,3 +803,8 @@ The optional manifest profile and source quiz consumer are prepared independentl
 - Runtime source is byte-identical to 85dfeee; release remains 0.2.12-beta. New exact-SHA CI and operating deployment are pending at this commit.
 
 - History retains release 0.3.0-beta and its expanded 24-case water regression. Runtime/QA bytes are unchanged since 0660afb; only the browser-job OS labels and records differ.
+
+
+### 2026-11-04 Joseon summary preparation (0.3.1-beta)
+
+Source summary code and index routing are integrated on an isolated branch based on current0.3.0 main, preserving the prior completed Joseon review SHA4df69c4 (all8 CI jobs successful). Synthetic summary28 guards and14 real index routing cases pass. Windows/Linux each pass8 full static app summary-to-blank-to-summary views with three original prompt emphases and no real API requests. The actual JWT/PostgreSQL candidate serves29 Joseon pages, seven summary groups/172 literal rows and saves all172 canonical answers/checks/paused cursor through restart/relogin while preserving79. The persistent private data root is copied byte-for-byte with a recorded tree hash. Production revision configuration and new-edition activation remain separate; no readiness meta is added.

@@ -376,3 +376,12 @@
 - Runtime source is byte-identical to 85dfeee; release remains 0.2.12-beta. New exact-SHA CI and operating deployment are pending at this commit.
 
 - History retains release 0.3.0-beta and its expanded 24-case water regression. Runtime/QA bytes are unchanged since 0660afb; only the browser-job OS labels and records differ.
+
+
+### 2026-11-04 Joseon summary preparation (0.3.1-beta)
+
+- [x] Preserve current0.3.0 background history and integrate the reviewed v2 summary consumer with existing79 redirects.
+- [x] Bind Joseon-only seven-group/172-row metadata to the canonical quiz without changing its bytes or digest.
+- [x] Test literal/digest/auth guards and14 actual index routing cases; verify actual full-app summary/blank round trips in both operating systems.
+- [ ] Confirm exact-SHA CI, deploy the prepared frontend and inspect operating version/assets.
+- [ ] Activate81 only after the actual API revision root and authenticated operating storage are verified.

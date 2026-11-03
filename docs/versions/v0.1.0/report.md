@@ -674,3 +674,8 @@ Original underlines can now survive both the reading page and functional blank p
 - Runtime source is byte-identical to 85dfeee; release remains 0.2.12-beta. New exact-SHA CI and operating deployment are pending at this commit.
 
 - History retains release 0.3.0-beta and its expanded 24-case water regression. Runtime/QA bytes are unchanged since 0660afb; only the browser-job OS labels and records differ.
+
+
+### 2026-11-04 Joseon summary preparation (0.3.1-beta)
+
+The verified new-edition summary can retain its chapter step and load source-bound clues/answers through existing member manifest and quiz reads. Default/explicit79 and unready/unknown selections retain existing behavior. Literal question IDs, text, answers, events and canonical digest are validated; classification summaries also retain their original subitem and choice context. Summary reads never call progress APIs, and account changes discard stale responses. Isolated real API storage and Windows/Linux app navigation pass. The frontend preparation preserves the current production gate; actual81 activation still requires operating API/root/member verification.
