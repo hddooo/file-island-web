@@ -1,8 +1,12 @@
 # FE 실제 진행 상태
 
+### 2026-11-03 · 디자인 우선 운영 요청 반영
+
+최신 main d706aa7의 고궁·물·배 장면을 보존했다. 후속 사용자 요청으로 표시 디자인을 고정된 79회 SHA에도 적용하되 data-history-edition은79로 구분한다. source SHA/문항/정답/digest/workspace는 그대로이며 신판 게이트는 비활성이다. 실제 구판 조선164문항의 정답·59/14/91 분류·canonical cursor·재개 및 p59 원문 연관 관계를320/390/1440에서 읽기 전용 격리 검사했다. 81회 canonical 자료는 여전히 미확보다.
+
 ### 2026-11-03 · 디자인 abe0a88 독립 검수와 통합 · 운영 미반영
 
-기준 main은 d903d0add6104971e018753ff0d8050bbe8be834이고 디자인 커밋은 abe0a88b15649d23cae5f39bf49e0c1d07966acd(기준 fc5e897)다. 별도 codex/history-design-integration-20261103에서 정상 merge했으며 렌더러 3개의 디자인 delta는 그대로다. index.html 마지막 CSS 연결과 history-notes-design.css의 진행 표시·원문 셀 색 보호만 추가 수정했다. 영어·ADMIN 파일은 기준 main과 byte 동일하다.
+기준 main은 d903d0add6104971e018753ff0d8050bbe8be834이고 디자인 커밋은 abe0a88b15649d23cae5f39bf49e0c1d07966acd(기준 fc5e897)다. 별도 codex/history-design-integration-20261103에서 정상 merge했으며 디자이너 delta를 보존한 뒤 표시 opt-in만 두 고정 판본으로 확장했다. index.html 마지막 CSS 연결과 history-notes-design.css의 진행 표시·원문 셀 색 보호만 추가 수정했다. 영어·ADMIN 파일은 기준 main과 byte 동일하다.
 
 Chromium/WebKit 320·390·1440px 합성 디자인 6회와 판본/BackForward/저장/게이트 통합 18회가 통과했다. 제출 CSS의 진행 표시 숨김과 모바일 셀 색 손실은 별도 A/B 관찰 대상으로 기록하고 고쳤다. 실제 구판 원본 버전 6892d35b의 조선 164문항 분류와 canonical cursor 계약은 그대로다. 정확 SHA CI 및 운영 반영은 후속 인계 증거로 구분한다.
 

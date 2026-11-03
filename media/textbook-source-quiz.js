@@ -291,7 +291,8 @@
     function el(tag,cls,value){var n=doc.createElement(tag);if(cls)n.className=cls;if(value!=null)n.textContent=value;return n;}
     function on(n,t,f){n.addEventListener(t,f);listeners.push([n,t,f]);}
     var wrapper=el('section','textbook-source-quiz textbook-source-continuous');wrapper.appendChild(el('h2','textbook-source-quiz-title',data.title));
-    if (data.source.sha256 === 'd54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de') { wrapper.classList.add('history-notes-design'); wrapper.setAttribute('data-history-edition','81'); }
+    var notesEdition = data.source.sha256 === 'd54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de' ? '81' : data.source.sha256 === '35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442' ? '79' : null;
+    if (notesEdition) { wrapper.classList.add('history-notes-design'); wrapper.setAttribute('data-history-edition',notesEdition); }
     wrapper.appendChild(el('p','textbook-source-quiz-help','Tab·Shift+Tab으로 답칸을 이동하세요. 답칸을 떠나거나 Enter를 누르면 바로 채점합니다. 여러 답은 쉼표로, 순서형은 원문 기호로 적으세요.'));
     var controls=el('div','textbook-source-list-controls'),stop=el('button','textbook-source-quiz-stop','그만하기'),retry=el('button','textbook-source-save-retry','저장 다시 시도');stop.type=retry.type='button';retry.hidden=true;controls.appendChild(stop);controls.appendChild(retry);wrapper.appendChild(controls);
     var progress=el('p','textbook-source-progress'),status=el('p','textbook-source-quiz-status','계정에 저장된 응답을 불러오는 중…');status.setAttribute('role','status');status.setAttribute('aria-live','polite');wrapper.appendChild(progress);wrapper.appendChild(status);

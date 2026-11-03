@@ -320,7 +320,8 @@
       if (!element) return Promise.resolve();
       host = element; eraId = selectedEra; callbacks = hooks || null; sourceRevision=hooks&&hooks.sourceRevision!=null?hooks.sourceRevision:null;sourceSha=sourceInfo(sourceRevision)&&sourceInfo(sourceRevision).sha256;captureRoute();mode = hooks && ['quiz','exam','choices'].indexOf(hooks.initialMode)>=0 ? hooks.initialMode : 'text'; session = identity();
       shell = node('section', null, 'private-textbook textbook-semantic-library');
-      if (sourceSha === 'd54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de') { shell.classList.add('history-notes-design'); shell.setAttribute('data-history-edition', '81'); }
+      var notesEdition = sourceSha === 'd54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de' ? '81' : sourceSha === '35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442' ? '79' : null;
+      if (notesEdition) { shell.classList.add('history-notes-design'); shell.setAttribute('data-history-edition', notesEdition); }
       status = node('p', null, 'textbook-status'); status.setAttribute('role', 'status'); status.setAttribute('aria-live', 'polite'); shell.appendChild(status);
       panel = node('div', null, 'textbook-semantic-library-content'); shell.appendChild(panel); host.appendChild(shell);buildEditionControl();
       if (api && typeof api.onChange === 'function') unsubscribe = api.onChange(function () {

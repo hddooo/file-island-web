@@ -155,9 +155,10 @@
     article.setAttribute('data-schema-version', SCHEMA);
     article.setAttribute('data-pdf-page', String(page.pdfPage));
     article.setAttribute('lang', 'ko');
-    // Presentation is opt-in for the exact revised source; this is not a readiness gate.
-    var revisedNotes = page.sourceSha256 === 'd54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de';
-    if (revisedNotes) { article.classList.add('history-notes-design'); article.setAttribute('data-history-edition', '81'); }
+    // Presentation is opt-in for the two fixed source hashes; this is not a readiness gate.
+    var notesEdition = page.sourceSha256 === 'd54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de' ? '81' : page.sourceSha256 === '35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442' ? '79' : null;
+    var designedNotes = !!notesEdition;
+    if (designedNotes) { article.classList.add('history-notes-design'); article.setAttribute('data-history-edition', notesEdition); }
     var meta = node('header', null, 'textbook-semantic-meta');
     meta.hidden = true;
     meta.appendChild(node('p', pageLabel(page), 'textbook-semantic-reference'));
@@ -361,7 +362,7 @@
       var tableNode = node('table', null, 'textbook-semantic-table');
       // Reflow only an unambiguous header/body pair. Merged cells, diagrams,
       // illustrated tables and comparison matrices keep their original topology.
-      var labelContent = revisedNotes && !block.layoutRole && !block.headerRowCount && block.columnCount === 2 && block.rows.every(function (row) {
+      var labelContent = designedNotes && !block.layoutRole && !block.headerRowCount && block.columnCount === 2 && block.rows.every(function (row) {
         return row.cells.length === 2 && row.cells.every(function (cell, index) {
           return cell.columnIndex === index && (cell.rowSpan || 1) === 1 && (cell.colSpan || 1) === 1 && !cell.sourceBypass && !cell.sourceTree && !cell.sourceRangeBar && !cell.sourceIllustrationCell && cell.header === (index === 0);
         });
