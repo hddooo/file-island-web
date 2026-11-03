@@ -426,6 +426,7 @@
       scroll.setAttribute('role', 'region');
       scroll.setAttribute('aria-label', '원문 표 · 열 순서 유지 · 좌우로 이동해 읽기');
       horizontalKeys(scroll);
+      if (block.layoutRole === 'source-answer-panels') group.appendChild(node('p', '↔ 좌우로 밀어 정답표 전체 보기', 'textbook-answer-scroll-hint'));
       var tableNode = node('table', null, 'textbook-semantic-table');
       // Reflow only an unambiguous header/body pair. Merged cells, diagrams,
       // illustrated tables and comparison matrices keep their original topology.
@@ -469,7 +470,7 @@
       if (/^source-(?:diagram|timeline|rank-chart|ruler-sequence)$/.test(block.layoutRole || '')) { tableNode.classList.add('textbook-source-diagram'); tableNode.setAttribute('data-source-diagram', block.layoutRole); }
       // A label/content table reflows in place on mobile. Only genuinely
       // multi-column tables need a wider scrolling surface.
-      tableNode.style.minWidth = block.layoutRole === 'source-illustrated-table' ? '760px' : block.layoutRole === 'source-illustration-gallery' ? block.columnCount * 240 + 'px' : block.layoutRole === 'source-rank-chart' ? '560px' : block.layoutRole === 'source-ruler-sequence' ? block.columnCount * 130 + 'px' : block.columnCount <= 2 ? '0' : block.columnCount * 190 + 'px';
+      tableNode.style.minWidth = block.layoutRole === 'source-answer-panels' ? '900px' : block.layoutRole === 'source-answer-grid' ? Math.max.apply(null, [1].concat(block.rows.map(function(row){return row.cells.filter(function(cell){return !cell.header;}).length;}))) * 150 + 'px' : block.layoutRole === 'source-illustrated-table' ? '760px' : block.layoutRole === 'source-illustration-gallery' ? block.columnCount * 240 + 'px' : block.layoutRole === 'source-rank-chart' ? '560px' : block.layoutRole === 'source-ruler-sequence' ? block.columnCount * 130 + 'px' : block.columnCount <= 2 ? '0' : block.columnCount * 190 + 'px';
       if (block.layoutRole === 'source-illustrated-table') {
         var illustratedColumns = node('colgroup');
         for (var ci = 0; ci < block.columnCount; ci++) {
