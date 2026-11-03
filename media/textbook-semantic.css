@@ -158,7 +158,6 @@ html body #privateTextbook :is(.textbook-semantic-meta,.textbook-semantic-block-
 html[data-hanq-theme] body #app .history-home-hero,html[data-hanq-theme] body #app .history-home-hero .hero-copy{border:0!important;box-shadow:none!important}
 
 /* Source-verified branch diagrams keep real nesting at narrow reading widths. */
-.textbook-semantic .textbook-source-tree > .textbook-semantic-line{display:block;white-space:pre}
 .textbook-semantic .textbook-source-tree-graph-cell{white-space:normal;font-family:inherit;min-width:0}
 .textbook-source-branch-table{table-layout:fixed}.textbook-source-branch-graph{width:min(100%,420px);margin-inline:auto;min-width:0;max-width:100%;font-size:17px;line-height:1.5;text-align:center;color:#243629}
 .textbook-source-branch-graph .textbook-source-branch-list{display:grid;grid-template-columns:repeat(var(--source-branch-count),minmax(0,1fr));list-style:none;margin:0;padding:0;gap:8px;min-width:0}
