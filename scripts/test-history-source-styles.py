@@ -8,6 +8,8 @@ class ReviewedStyleTests(unittest.TestCase):
   b=self.base();a={'spans':[dict(text='A',bold=False,sourceCharIds=['a'],sourceStyle=dict(ink='red'),sourceStyleAudit=dict(verified=True,sourceRevision=m.N)),dict(text='B',bold=False,sourceCharIds=['b'])]};self.assertEqual(m.normalized(a),m.normalized(b));m.validate_styles(a)
  def test_character_and_order_changes_detected(self):
   a=self.base();b=self.base();b['spans'][0]['text']='BA';self.assertNotEqual(m.normalized(a),m.normalized(b))
+ def test_source_bound_blue_ink_accepted_without_text_mutation(self):
+  a=self.base();b=self.base();b['spans'][0].update(sourceStyle=dict(ink='blue'),sourceStyleAudit=dict(verified=True,sourceRevision=m.N));m.validate_styles(b);self.assertEqual(m.normalized(a),m.normalized(b))
  def test_unrelated_existing_style_mutation_detected(self):
   a=self.base();b=self.base();b['spans'][0]['bold']=True;self.assertNotEqual(m.normalized(a),m.normalized(b))
  def test_unknown_yellow_and_missing_source_audit_rejected(self):

@@ -10,15 +10,18 @@ const manifest=JSON.parse(fs.readFileSync(path.join(semantic,'manifest.json')));
 const transport=process.env.HISTORY_QA_ASSET_TRANSPORT||'blob';assert(['url','blob'].includes(transport));
 assert.equal(manifest.source.sha256,'d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de');
 const figures=Object.fromEntries(manifest.figures.map(f=>[f.id,f]));
-const pages=manifest.pages.map(p=>JSON.parse(fs.readFileSync(path.join(semantic,'pages',`page-${String(p.pdfPage).padStart(3,'0')}.json`))));
-const selected=new Set([2,5,6,7,9,17,18,36,60,65,89,124,140,147]);
+const eraFilter=process.env.HISTORY_QA_ERA||null,range=eraFilter&&(manifest.eraRanges||[]).find(e=>e.id===eraFilter);
+assert(!eraFilter||range,'Unknown source era; refusing an unfiltered run');
+const pages=manifest.pages.filter(p=>!range||p.pdfPage>=range.fromPage&&p.pdfPage<=range.toPage).map(p=>JSON.parse(fs.readFileSync(path.join(semantic,'pages',`page-${String(p.pdfPage).padStart(3,'0')}.json`))));assert(pages.length,'No source pages selected');
+const capture=process.env.HISTORY_QA_CAPTURE_PAGES;
+const selected=new Set(capture?capture.split(',').map(n=>{assert(/^\d+$/.test(n)&&+n>=1&&+n<=147,'Invalid source capture page');return +n;}):[2,5,6,7,9,17,18,36,60,65,89,124,140,147]);
 (async()=>{
  const results=[],failures=[];
  for(const [engine,type] of [['Chromium',chromium],['WebKit',webkit]]){
   const browser=await type.launch({headless:true});
   for(const [width,height] of [[320,900],[390,900],[1440,1000],[844,390]]){
    const page=await browser.newPage({viewport:{width,height},reducedMotion:'reduce'});
-   const html='<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{margin:12px;background:#08110d;color:#f1f5f0;font-family:Arial,"Apple SD Gothic Neo",sans-serif}main{max-width:760px;margin:auto}</style><main></main></html>';
+   const html='<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{margin:12px;background:#08110d;color:#f1f5f0;font-family:Arial,"Apple SD Gothic Neo",sans-serif}main{max-width:760px;margin:auto}</style><main id="privateTextbook"></main></html>';
    await page.route('**/*',async route=>{
     const u=new URL(route.request().url());
     // WebKit routes local Blob URLs too. They are not external requests.
@@ -31,6 +34,7 @@ const selected=new Set([2,5,6,7,9,17,18,36,60,65,89,124,140,147]);
    });
    await page.goto('https://history-source.invalid/');
    await page.addStyleTag({path:path.join(front,'media/textbook-semantic.css')});
+   await page.addStyleTag({path:path.join(front,'media/history-notes-design.css')});
    await page.addScriptTag({path:path.join(front,'media/textbook-figure-groups.js')});
    await page.addScriptTag({path:path.join(front,'media/textbook-semantic.js')});
    const views=[];
@@ -49,14 +53,16 @@ const selected=new Set([2,5,6,7,9,17,18,36,60,65,89,124,140,147]);
      return {overflow:document.documentElement.scrollWidth>innerWidth+1,scrollWidth:document.documentElement.scrollWidth,brokenImages:[...document.querySelectorAll('img')].filter(i=>!i.complete||!i.naturalWidth).length,failedFigureStates:document.querySelectorAll('[data-figure-state="figure_load_failed"]').length,images:document.querySelectorAll('img').length,canvases:document.querySelectorAll('canvas').length,unavailable:document.querySelectorAll('[data-figure-unavailable]').length,warnings:ready.warnings,font:font?getComputedStyle(font).fontSize:null,reducedMotion:matchMedia('(prefers-reduced-motion:reduce)').matches,scrollRegions:[...document.querySelectorAll('[tabindex="0"]')].map(e=>({role:e.getAttribute('role'),label:e.getAttribute('aria-label')}))};
     },{data,ids:Object.keys(figures),transport});
     const entry={engine,width,height,pdfPage:data.pdfPage,section,...result};results.push(entry);
-    if(result.overflow||result.brokenImages||result.failedFigureStates||result.warnings.includes('figure_load_failed'))failures.push(entry);
+    const distortedFigureParts=await page.locator('.textbook-figure-group-part').evaluateAll(parts=>parts.filter(part=>{const img=part.querySelector('img');if(!img||getComputedStyle(part).position!=='absolute')return false;const a=part.getBoundingClientRect(),b=img.getBoundingClientRect();return Math.abs(a.width-b.width)>1||Math.abs(a.height-b.height)>1;}).length);
+    entry.distortedFigureParts=distortedFigureParts;
+    if(result.overflow||result.brokenImages||result.failedFigureStates||distortedFigureParts||result.warnings.includes('figure_load_failed'))failures.push(entry);
     if(selected.has(data.pdfPage)&&((engine==='Chromium'&&width===320)||(engine==='WebKit'&&width===390)))await page.screenshot({path:path.join(output,`${engine}-${width}-p${data.pdfPage}-${section}.png`),fullPage:true});
    }
    console.log(`${engine} ${width}x${height}: ${views.length} source views checked`);await page.close();
   }
   await browser.close();
  }
- const report={sourceSha256:manifest.source.sha256,figureTransport:transport,scope:'Isolated unchanged semantic renderer/CSS, local intercepted assets, real candidate pages. Full application, source selector/archive, source-original viewer, authentication and deployment are separate.',views:results.length,failures:failures.length,results};
+ const report={sourceSha256:manifest.source.sha256,eraFilter,figureTransport:transport,scope:'Isolated product semantic renderer and reading design CSS, local intercepted assets, real candidate pages. Full application, source selector/archive, source-original viewer, authentication and deployment are separate.',views:results.length,failures:failures.length,results};
  fs.writeFileSync(path.join(output,'browser-results.json'),JSON.stringify(report,null,2));
  assert.equal(failures.length,0,JSON.stringify(failures.map(f=>({engine:f.engine,width:f.width,page:f.pdfPage,section:f.section,overflow:f.overflow,warnings:f.warnings}))));
 })().catch(e=>{console.error(e);process.exitCode=1;});

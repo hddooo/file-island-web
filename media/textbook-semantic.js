@@ -33,7 +33,7 @@
           if (!span.sourceStyle || typeof span.sourceStyle !== 'object' || Array.isArray(span.sourceStyle)) fail('span.sourceStyle');
           var style=span.sourceStyle;
           if (Object.keys(style).some(function(key){return ['ink','underline','highlight','bold'].indexOf(key)===-1;}) ||
-              style.ink!=null&&['default','muted','red','green'].indexOf(style.ink)===-1 ||
+              style.ink!=null&&['default','muted','red','green','blue'].indexOf(style.ink)===-1 ||
               style.highlight!=null&&style.highlight!=='green' ||
               style.underline!=null&&typeof style.underline!=='boolean' ||
               style.bold!=null&&typeof style.bold!=='boolean') fail('span.sourceStyle');
@@ -412,6 +412,7 @@
       }
       if (block.layoutRole === 'source-illustrated-table') tableNode.classList.add('textbook-source-illustrated-table');
       if (block.layoutRole === 'source-illustration-gallery') tableNode.classList.add('textbook-source-gallery');
+      if (block.layoutRole === 'source-exam-panel') tableNode.classList.add('textbook-source-exam-panel');
       if (block.layoutRole === 'source-rank-chart') {
         tableNode.classList.add('textbook-source-rank-chart');
         if (Array.isArray(block.sourceHeaderGroups)) { var rankCaption=node('caption',block.sourceHeaderGroups.join(' · ')); tableNode.appendChild(rankCaption); }
@@ -484,6 +485,11 @@
           if (typeof cell.id === 'string') td.setAttribute('data-source-cell', cell.id);
           if (cell.sourceIllustrationCell === true) td.classList.add('textbook-source-illustration-cell');
           if (['yellow','green','blue','peach','pink'].indexOf(cell.sourceShading) !== -1) td.classList.add('textbook-source-shading-' + cell.sourceShading);
+          if (cell.sourceShading === 'gray') {
+            var shadeAudit=cell.sourceShadingAudit;
+            if(shadeAudit&&shadeAudit.verified===true&&shadeAudit.sourceRevision===page.sourceSha256&&/^[a-f0-9]{64}$/.test(page.sourceSha256||'')) td.classList.add('textbook-source-shading-gray');
+            else warnings.push('unverified_source_shading');
+          }
           if (cell.sourceTree === true) td.classList.add('textbook-source-tree');
           if (['down','up'].indexOf(cell.sourceBypass) !== -1) td.classList.add('textbook-source-bypass-' + cell.sourceBypass);
           if (cell.sourceRangeBar === true) {

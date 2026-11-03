@@ -51,6 +51,7 @@
 .textbook-semantic .textbook-source-shading-green{background:#d5f2b8}
 .textbook-semantic .textbook-source-shading-blue{background:#c3ecf9}
 .textbook-semantic .textbook-source-shading-peach{background:#f5d5bf}
+.textbook-semantic .textbook-source-shading-gray{background:#e2e6e7;color:#1c2b33}
 .textbook-semantic .textbook-source-range-bar{background:linear-gradient(90deg,#27a9bc,#d4faf7,#27a9bc);min-width:48px}
 .textbook-source-timeline-scroll{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;border:1px solid #b8c8da;border-radius:8px;margin:18px 0}
 .textbook-source-timeline{min-width:1000px;padding:56px 80px 8px}
@@ -139,6 +140,7 @@ html body #app #privateTextbook .textbook-status,html body dialog.textbook-origi
 .textbook-semantic [data-source-ink=muted],html body :is(#privateTextbook,.textbook-original-dialog) [data-source-ink=muted]{color:#586169!important}
 .textbook-semantic [data-source-ink=red],html body :is(#privateTextbook,.textbook-original-dialog) [data-source-ink=red]{color:#b42318!important}
 .textbook-semantic [data-source-ink=green],html body :is(#privateTextbook,.textbook-original-dialog) [data-source-ink=green]{color:#216e39!important}
+.textbook-semantic [data-source-ink=blue],html body :is(#privateTextbook,.textbook-original-dialog) [data-source-ink=blue]{color:#0070a3!important}
 .textbook-semantic [data-source-underline]{text-decoration-line:underline;text-decoration-thickness:.08em;text-underline-offset:.14em}
 .textbook-semantic [data-source-highlight=green],html body :is(#privateTextbook,.textbook-original-dialog) [data-source-highlight=green]{background-color:#d5f2b8!important}
 .textbook-semantic [data-source-highlight=green]:not([data-source-ink]),html body :is(#privateTextbook,.textbook-original-dialog) [data-source-highlight=green]:not([data-source-ink]){color:#1c2b33!important}

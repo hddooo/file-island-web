@@ -92,7 +92,7 @@
       }).catch(function(){if(g===generation){sourceChanging=false;if(editionSelect){editionSelect.disabled=false;editionSelect.value=sourceSha||'';}setStatus('현재 판본의 답안을 저장하지 못했어요. 판본을 바꾸지 않았습니다. 저장을 다시 확인해 주세요.');}});
     }
     function buildEditionControl() {
-      if(!sourceCatalog||!sourceCatalog.revisionRoutesReady||!sourceCatalog.revisionRoutesReady(doc))return;
+      if(!sourceCatalog||!sourceCatalog.revisionRoutesReady||!sourceCatalog.revisionRoutesReady(doc,eraId))return;
       var box=node('div',null,'textbook-edition-controls'),label=node('label','교재 판본'),select=node('select');select.setAttribute('data-textbook-revision','');
       (sourceCatalog&&sourceCatalog.revisions||[]).forEach(function(item){var o=node('option',item.edition+(item.totalPdfPages===147?' · 개정 교재':' · 기존 교재'));o.value=item.sha256;select.appendChild(o);});
       if(!sourceInfo(sourceRevision)){var unknown=node('option','알 수 없는 판본');unknown.value=String(sourceRevision);unknown.disabled=true;select.appendChild(unknown);}
@@ -334,7 +334,7 @@
         return Promise.resolve();
       }
       if(!sourceSha){setStatus('알 수 없는 교재 판본입니다. 기존 교재를 명시적으로 선택해 주세요.');var legacy=button('기존 79회 교재 열기',function(){switchEdition(null);});legacy.setAttribute('data-legacy-textbook','');shell.appendChild(legacy);return Promise.resolve();}
-      if(sourceRevision!=null&&(!sourceCatalog||!sourceCatalog.revisionRoutesReady||!sourceCatalog.revisionRoutesReady(doc))){setStatus('선택한 판본은 서버 연결 검수가 끝난 뒤 열립니다. 기존 교재는 계속 이용할 수 있어요.');var pendingLegacy=button('기존 79회 교재 열기',function(){switchEdition(null);});pendingLegacy.setAttribute('data-legacy-textbook','');shell.appendChild(pendingLegacy);return Promise.resolve();}
+      if(sourceRevision!=null&&(!sourceCatalog||!sourceCatalog.revisionRoutesReady||!sourceCatalog.revisionRoutesReady(doc,eraId))){setStatus('선택한 판본은 서버 연결 검수가 끝난 뒤 열립니다. 기존 교재는 계속 이용할 수 있어요.');var pendingLegacy=button('기존 79회 교재 열기',function(){switchEdition(null);});pendingLegacy.setAttribute('data-legacy-textbook','');shell.appendChild(pendingLegacy);return Promise.resolve();}
       var eraFor = options.eraFor || root.HanqPrivateTextbook && root.HanqPrivateTextbook.eraFor;
       era = eraFor && eraFor(eraId,sourceRevision);
       if (!era || !Number.isInteger(era.from) || !Number.isInteger(era.to) || !api || typeof api.textbookSemanticManifest !== 'function') {

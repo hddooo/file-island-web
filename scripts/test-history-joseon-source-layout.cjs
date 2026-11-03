@@ -1,0 +1,39 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const {JSDOM}=require('../.test-tools/node_modules/jsdom'),renderer=require('../media/textbook-semantic');
+const SOURCE='d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de';
+async function run(){
+ const dom=new JSDOM('<!doctype html><style>'+fs.readFileSync(path.join(__dirname,'../media/textbook-semantic.css'),'utf8')+'</style><div id="privateTextbook"></div>'),host=dom.window.document.querySelector('#privateTextbook');let checks=0;
+ const ok=(v,m)=>{assert(v,m);checks++;};
+ const span={text:'Synthetic blue emphasis',bold:true,sourceStyle:{ink:'blue'},sourceStyleAudit:{verified:true,sourceRevision:SOURCE}};
+ const page={schemaVersion:'hanq-semantic/1',sourceSha256:SOURCE,pdfPage:65,blocks:[{id:'synthetic-table',type:'table',columnCount:2,rows:[{cells:[{id:'label',columnIndex:0,header:true,scope:'row',sourceShading:'gray',sourceShadingAudit:{verified:true,sourceRevision:SOURCE},lines:[{spans:[span]}]},{id:'body',columnIndex:1,lines:[{spans:[{text:'Synthetic body'}]}]}]}]}]};
+ const before=JSON.stringify(page);let c=renderer.render(host,page);await c.ready;
+ ok(host.querySelector('[data-source-ink=blue]'),'verified blue ink is emitted');
+ ok(dom.window.getComputedStyle(host.querySelector('[data-source-ink=blue]')).color==='rgb(0, 112, 163)','source blue retains its exact readable RGB');
+ ok(host.querySelector('[data-source-cell=label]').classList.contains('textbook-source-shading-gray'),'same-source gray shading is emitted');
+ ok(host.querySelector('tr').cells.length===2,'original row/column topology remains intact');
+ ok(JSON.stringify(page)===before,'rendering never rewrites source data');
+ const bad=structuredClone(page);bad.blocks[0].rows[0].cells[0].lines[0].spans[0].sourceStyle.ink='url(unsafe)';
+ assert.throws(()=>renderer.render(host,bad),/span.sourceStyle/);checks++;
+ ok(host.querySelector('[data-source-ink=blue]'),'invalid replacement preserves the current view');c.cleanup();
+ const crossed=structuredClone(page);crossed.blocks[0].rows[0].cells[0].sourceShadingAudit.sourceRevision='0'.repeat(64);crossed.blocks[0].rows[0].cells[0].lines[0].spans[0].sourceStyleAudit.sourceRevision='0'.repeat(64);
+ c=renderer.render(host,crossed);const result=await c.ready;
+ ok(!host.querySelector('[data-source-ink=blue]'),'crossed-source blue ink is ignored');
+ ok(!host.querySelector('.textbook-source-shading-gray'),'crossed-source gray shading is ignored');
+ ok(result.warnings.includes('unverified_source_shading')&&result.warnings.includes('unverified_source_style'),'uncertain styling remains visible to callers');
+ c.cleanup();
+ const raw=require('../media/private-textbook'),library=require('../media/textbook-semantic-library'),doc=dom.window.document;
+ const flag=doc.createElement('meta');flag.name='hanq-textbook-revisions';flag.content=raw.reviewedRevisionRelease;doc.head.appendChild(flag);
+ const partial=doc.createElement('meta');partial.name='hanq-textbook-reviewed-eras';partial.content='joseon';doc.head.appendChild(partial);
+ ok(raw.revisionRoutesReady(doc,'joseon')&&raw.revisionRoutesReady(doc,'joseon-early'),'only the reviewed era and its aliases are available');
+ ok(!raw.revisionRoutesReady(doc)&&!raw.revisionRoutesReady(doc,'goryeo'),'a partial declaration never implies all-era readiness');
+ const calls=[],api={state:()=>({signedIn:true,restoring:false,ownerId:'synthetic',epoch:1}),textbookSemanticManifest:async source=>{calls.push(source);return {schemaVersion:'hanq-semantic-manifest/1',source:{sha256:source,totalPdfPages:147},pages:[],quizzes:[],figures:[]};}};
+ const book=library.create({api,document:doc,eraFor:raw.eraFor});await book.mount(host,'goryeo',{sourceRevision:SOURCE});
+ ok(calls.length===0&&!host.querySelector('[data-textbook-revision]'),'unreviewed era does not request revision data or show its picker');
+ await book.mount(host,'joseon',{sourceRevision:SOURCE});ok(calls.length===1&&host.querySelector('[data-textbook-revision]'),'reviewed Joseon exposes its source picker');book.stop();
+ for(const value of ['', 'joseon,', 'joseon,joseon', 'joseon,unknown']){partial.content=value;ok(!raw.revisionRoutesReady(doc,'joseon'),'invalid partial release fails closed');}
+ partial.content='joseon';flag.content='ready';ok(!raw.revisionRoutesReady(doc,'joseon'),'era list cannot bypass the exact API/source declaration');
+ dom.window.close();console.log(JSON.stringify({checks,failures:0,scope:'synthetic same-source ink/shading, preserved table topology, invalid-replacement recovery and independent era release gates'}));
+}
+if(require.main===module)run().catch(e=>{console.error(e.stack);process.exitCode=1;});
+module.exports={run};

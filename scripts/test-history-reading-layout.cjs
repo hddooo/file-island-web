@@ -65,5 +65,5 @@ async function run(){
  }
  dom.window.close();console.log(JSON.stringify({checks,failures:0,fixtures:'synthetic only; source pins are dispatch fixtures, not evidence of revised corpus reproduction'}));
 }
-if(require.main===module)run().catch(e=>{console.error(e.stack);process.exitCode=1;});
+if(require.main===module)run().then(()=>require('./test-history-joseon-source-layout.cjs').run()).catch(e=>{console.error(e.stack);process.exitCode=1;});
 module.exports={fixture,sourcePage,OLD,NEW,pins};

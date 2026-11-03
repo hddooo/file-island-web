@@ -106,6 +106,10 @@ The corrected renderer uses the untouched original PNG as its base. It renders o
 
 ## Conservative table-context segmentation correction
 
+For staged private revision QA, `HISTORY_QA_ERA=joseon` restricts `qa-history-revision.cjs` and `qa-history-source-quiz.cjs` to the manifest's exact era range/quiz. Unknown era IDs fail instead of running every era. `HISTORY_QA_CAPTURE_PAGES` selects screenshot pages; it does not remove selected-era portrait checks. Both harnesses load the product reading-design CSS. The reading harness also rejects decoded figure rectangles with distorted dimensions; `qa-history-notes-design.cjs` invokes `qa-history-figure-sizing.cjs` with synthetic unequal strips in both engines.
+
+`verify-history-semantic-coverage.py <private-revision> --era joseon` verifies only that era's native glyph coverage and reports `all147NativePagesVerified: false`. Global available asset-byte and held-asset checks remain enabled. Omit `--era` to require all 147 pages; a partial report is never a full-corpus readiness declaration. Original-containing data/screenshots remain private and are not copied into public Git.
+
 Whitespace-only cuts were found to split rows and detach country/king/category labels from their content. The corrected segmentation protects each complete detected table envelope, expanded to include every row and cell bbox. This deliberately preserves merged labels and column headings by refusing all cuts inside the table, even apparently safe row boundaries. Pages with no reliable table geometry use one whole-page region. Original/enhanced PNG bytes are checksum-verified unchanged by region refresh.
 
 `tableRowAndCellBoundaryCheck: passed` means only that cuts do not cross detected geometry. It is never semantic proof. Whole-page fallbacks with unknown/detection-failed structure remain `not-verified`. Run `refresh_regions.py` to regenerate metadata only; full-table viewing with zoom is preferred over smaller fragments that lose context. The previous region count is obsolete; consult the current manifest.
