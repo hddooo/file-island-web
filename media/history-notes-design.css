@@ -75,16 +75,16 @@ html body #privateTextbook .history-notes-design[data-history-edition="81"] .tex
 }
 /* Verified source ink, highlights, diagram shading and source spans retain
    their existing styles. Only ordinary label cells receive the design tint. */
-html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-table th:not([class*="textbook-source-"]) {
+html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-table[data-history-label-content] th:not([class*="textbook-source-"]) {
   background-color: var(--hn-surface) !important;
   font-weight: 600;
 }
 /* Source cell roles outrank both the generic header tint and the mobile reflow. */
-html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-table :is(th,td).textbook-source-shading-yellow { background-color: #fff09b !important; }
-html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-table :is(th,td).textbook-source-shading-green { background-color: #d5f2b8 !important; }
-html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-table :is(th,td).textbook-source-shading-blue { background-color: #c3ecf9 !important; }
-html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-table :is(th,td).textbook-source-shading-peach { background-color: #f5d5bf !important; }
-html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-table :is(th,td).textbook-source-shading-pink { background-color: #f1d4f0 !important; }
+html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-table[data-history-label-content] :is(th,td).textbook-source-shading-yellow { background-color: #fff09b !important; }
+html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-table[data-history-label-content] :is(th,td).textbook-source-shading-green { background-color: #d5f2b8 !important; }
+html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-table[data-history-label-content] :is(th,td).textbook-source-shading-blue { background-color: #c3ecf9 !important; }
+html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-table[data-history-label-content] :is(th,td).textbook-source-shading-peach { background-color: #f5d5bf !important; }
+html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-table[data-history-label-content] :is(th,td).textbook-source-shading-pink { background-color: #f1d4f0 !important; }
 html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-row-annotation {
   margin: 4px 0 0;
   padding: 4px 0;
