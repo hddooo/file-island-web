@@ -11,7 +11,7 @@
   };
   function icon(name){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+icons[name]+'</svg>';}
   // Scene module is loaded here so shared index/header and study modules stay untouched.
-  var waterLoader;
+  var waterLoader,eveningLoader;
   var controlSerial=0,controlHosts=new WeakMap();
   function attachControl(map,button){
     var frame=map.parentElement,record=controlHosts.get(frame),closed=false,layoutFrame=0;
@@ -25,6 +25,18 @@
   }
   var sceneBuild='';try{sceneBuild=new URL(document.currentScript.src).searchParams.get('build')||'';}catch(ignore){}
   function sceneAsset(file){return 'media/'+file+(sceneBuild?'?build='+encodeURIComponent(sceneBuild):'');}
+  function eveningScene(map,chart){
+    if(!eveningLoader)eveningLoader=new Promise(function(resolve){
+      var style=document.createElement('link'),script=document.createElement('script'),settled=false,timer=setTimeout(fail,15000);
+      function fail(){if(settled)return;settled=true;clearTimeout(timer);style.remove();script.remove();eveningLoader=null;resolve(null);}
+      style.rel='stylesheet';style.href=sceneAsset('history-evening.css');style.onerror=fail;
+      script.src=sceneAsset('history-evening.js');script.onerror=fail;
+      style.onload=function(){if(!settled)document.head.appendChild(script);};
+      script.onload=function(){if(settled)return;if(!root.HanqHistoryEvening){fail();return;}settled=true;clearTimeout(timer);resolve(root.HanqHistoryEvening);};
+      document.head.appendChild(style);
+    });
+    eveningLoader.then(function(engine){if(engine&&map.isConnected&&chart.isConnected)engine.mount(map,chart);});
+  }
   function livingWater(chart,art,kind){
     if(!waterLoader)waterLoader=new Promise(function(resolve){var s=document.createElement('script');s.src='media/island-living-water.js?v=palace-motion-2'+(sceneBuild?'&build='+encodeURIComponent(sceneBuild):'');s.onload=function(){resolve(root.HanqLivingWater);};s.onerror=function(){waterLoader=null;resolve(null);};document.head.appendChild(s);});
     waterLoader.then(function(engine){if(!chart.isConnected)return;if(engine){engine.mount(chart,art,kind);return;}var host=chart.parentElement;if(chart.dataset.motionRetry==='true')return;chart.dataset.motionRetry='true';var retry=document.createElement('button');retry.type='button';retry.className='harbor-motion-toggle';retry.textContent='움직임 다시 불러오기';var position=attachControl(host,retry);retry.addEventListener('click',function(){delete chart.dataset.motionRetry;position.dispose();livingWater(chart,art,kind);});});
@@ -69,7 +81,7 @@
     var chart=document.createElement('picture');chart.className='harbor-chart';chart.setAttribute('aria-hidden','true');
     var source=document.createElement('source');source.media=kind==='history'?'(max-width:700px) and (orientation:portrait)':'(max-width:700px)';source.srcset=sceneAsset('world-art/'+(kind==='history'?'history-palace-tall-v1.webp':kind+'-harbors-mobile-v1.webp'));chart.appendChild(source);
     var art=document.createElement('img');art.src=sceneAsset('world-art/'+(kind==='history'?'history-palace-wide-v1.webp':kind+'-v1.webp'));art.alt='';art.width=1672;art.height=941;art.decoding='async';chart.appendChild(art);map.prepend(chart);atmosphere(chart,kind);livingWater(chart,art,kind);
-    if(kind==='history'){var guide=document.createElement('span');guide.className='harbor-chart-caption';guide.textContent='시간의 숲길';guide.setAttribute('aria-hidden','true');map.appendChild(guide);}
+    if(kind==='history'){eveningScene(map,chart);var guide=document.createElement('span');guide.className='harbor-chart-caption';guide.textContent='시간의 숲길';guide.setAttribute('aria-hidden','true');map.appendChild(guide);}
     controls.forEach(function(control,i){
       var key=control.dataset.toeicView||control.id,stop=stops[kind].find(function(s){return s.id===key;});
       if(!stop)return;
