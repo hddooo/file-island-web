@@ -18,9 +18,10 @@
       var place=places[control.dataset.toeicView];if(!place)return false;
       control.classList.add('english-landmark');control.dataset.englishPlace=place.place;
       var sign=control.querySelector('.harbor-sign'),label=control.querySelector('strong');
-      if(sign){var hint=document.createElement('small');hint.className='english-place';hint.textContent=place.place;sign.appendChild(hint);}
-      // Accessible names keep the established destination; scenery stays decorative.
-      if(label){control.setAttribute('aria-label',label.textContent+' · '+place.place);control.title=label.textContent+' · '+place.place;}
+      if(sign){var hint=document.createElement('small');hint.className='english-place';hint.id='english-place-'+control.dataset.toeicView+'-hint';hint.textContent=place.place;sign.appendChild(hint);var description=control.getAttribute('aria-describedby');control.setAttribute('aria-describedby',(description?description+' ':'')+hint.id);}
+      // Preserve native destination names used by assistive navigation; the scenic
+      // place supplements the description rather than replacing the learning task.
+      if(label)control.title=label.textContent+' · '+place.place;
       return true;
     });
     var frame=0,closed=false;

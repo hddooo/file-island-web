@@ -4,6 +4,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
 const {chromium,webkit}=require(process.env.HANQ_PLAYWRIGHT||'../.test-tools/node_modules/playwright');
 const root=path.resolve(__dirname,'..'),out=path.resolve(process.env.HANQ_QA_OUTPUT||'evidence/english-island');fs.mkdirSync(out,{recursive:true});if(fs.existsSync(path.join(out,'results.json')))fs.unlinkSync(path.join(out,'results.json'));
 const routes=['#toeic/notebook','#toeic/wrongnotes','#toeic/grammar','#toeic/player'];
+const nativeNames=['Vocabulary · 단어장','Practice · 파트별 실전 문제','Grammar · 문법','Listening · 듣기'];
 async function setup(browser,width,height){
  const p=await browser.newPage({viewport:{width,height},reducedMotion:'reduce',hasTouch:width<700});
  await p.addInitScript(()=>{localStorage.setItem('hanqacct:signedIn','1');localStorage.setItem('english-qa-progress','retained');});
@@ -17,6 +18,7 @@ for(const [name,type] of [['chrome',chromium],['webkit',webkit]]){
   const p=await setup(browser,width,height);p.on('pageerror',e=>errors.push(e.message));await p.goto('https://islands.test/#toeic/map');await ready(p);
   const boxes=await p.locator('.english-landmark').evaluateAll(ns=>ns.map(n=>{const r=n.getBoundingClientRect(),s=n.querySelector('.harbor-sign').getBoundingClientRect(),m=n.closest('nav').getBoundingClientRect();return{key:n.dataset.toeicView,x:r.x,y:r.y,right:r.right,bottom:r.bottom,w:r.width,h:r.height,inside:r.x>=m.x&&r.right<=m.right+1&&r.y>=m.y&&r.bottom<=m.bottom+1,signInside:s.x>=m.x&&s.right<=m.right+1&&s.y>=m.y&&s.bottom<=m.bottom+1,hit:n.contains(document.elementFromPoint(r.x+r.width/2,r.y+r.height/2))};}));
   assert.equal(boxes.length,4);for(const b of boxes)assert(b.w>=44&&b.h>=44&&b.inside&&b.signInside&&b.hit,JSON.stringify({width,height,b}));
+  for(let i=0;i<4;i++){const button=p.getByRole('button',{name:nativeNames[i],exact:true});assert.equal(await button.count(),1);assert.equal(await button.getAttribute('data-toeic-view'),['notebook','wrongnotes','grammar','player'][i]);const hint=await button.locator('.english-place').getAttribute('id');assert((await button.getAttribute('aria-describedby')).split(/\s+/).includes(hint));}
   for(let i=0;i<4;i++)for(let j=i+1;j<4;j++)assert(!(boxes[i].x<boxes[j].right&&boxes[j].x<boxes[i].right&&boxes[i].y<boxes[j].bottom&&boxes[j].y<boxes[i].bottom),'overlapping menu buildings');
   assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
   assert.equal(await p.locator('.harbor-chart').evaluate(n=>getComputedStyle(n).transform),'none');

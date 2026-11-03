@@ -561,3 +561,17 @@ GitHub 연결 검색은 저장소 권한 오류422를 반환했고 Chrome은 로
 결합본 검사: `qa-english-island.cjs` Chrome/WebKit10건, `qa-palace-hotspots.cjs` Chrome18·WebKit18건, `qa-island-harbors.cjs`28건 모두 통과하고 pageerror0이다. 학습 진행67·메뉴83 assertions 및 정적 빌드1640 runtime 파일/정확 SHA/private 제외 검사도 통과했다. 영어섬은 기존 핀을 숨기고 건물 자체를 native 버튼으로 쓰므로 공통 회귀 검사의 영어 핀 좌표/클릭을 실제 건물 중앙으로 갱신했다. 역사섬 핀과 모든 기존 레이아웃·목적지·focus·Back·중복 방지·진도 fixture·스크롤 assertion은 보존했다. macOS WebKit만 Option+Tab을 사용한다. 이 테스트 수정 전 결합본의 `pinHit:false` 실패를 기록하며 assertion을 삭제하지 않았다. 증거는 작업 evidence의 `combined-english/results.json`, `combined-palace-chrome/results.json`, `combined-palace-webkit/results.json`, `combined-harbors/qa-results.json`이다.
 
 운영 통합 순서는 이 결합 후보의 정확 SHA CI 성공 확인 → 최신 main과 차이 재확인/필요한 통합·재검수 → 한 통합 담당자의 main 갱신 → CD 성공과 실제 도메인 build SHA/자산 대조다. GitHub 앱의 hddooo 접근 부재는 계속되어 현재 CI·main 배포는 미확인/미실행이다. 캠핑장·오로라는 이 제품 후보에 포함하지 않았고 별도 쉬어가기 장면 조사로만 유지한다.
+
+### 2026-11-03 결합 후보 CI 접근 확인과 영어 메뉴 이름 복구
+
+새 로그인·권한 추가 없이 기존 개인 Chrome `Blockmonkey` 프로필에서 hddooo Actions에 접근했다. 앞선404는 연결 앱/회사 Chrome의 접근 한계이며 개인 Chrome의 기존 권한과 구분한다. 후보 `df493c78effe858f8ed2ab8b7f088105934a0c35`의 [CI49](https://github.com/hddooo/file-island-web/actions/runs/41597827259)는 한국사·인증 job이 통과했으나 compact UI에서 실패했다. 실패 로그는 `qa-vocabulary-redesign.cjs`가 기존 `Practice · 파트별 실전 문제` 접근성 이름을 찾지 못한 것이며, 영어섬 간판 모듈이 native aria-label을 장소 이름으로 덮은 것이 원인이다.
+
+제품의 기존 네 학습 목적지 aria-label을 그대로 두고, 새 장소는 고유 ID의 hint와 aria-describedby에 추가하며 title/시각 간판은 보존한다. 기존 CI assertion은 바꾸지 않았다. 영어섬 QA에는 원래 네 접근성 이름과 장소 설명 연결을 전 화면에서 검증하는 assertion을 추가했다. 영어섬 Chrome/WebKit10건을 통과했으며, 원래 실패한 단어장/PDF/계정 체크/네 메뉴 검사는 변경 없이 동일 명령으로 재검증한다. 최종 정확 SHA CI와 main/CD/운영 검증 상태는 후속 실행 결과를 기준으로 한다.
+
+### 2026-11-03 역사섬 비·나뭇잎 우산 조사 (미구현)
+
+기존 atmosphere에는 맑음→구름→비→갬의150초 로컬 순환, 독립 빗방울·잎·구름 레이어와 offscreen/문서숨김/저전력/축소 모션 정지가 이미 있다. 실제 기상 API가 아니다. 역사섬에는 아직 비에 반응하는 캐릭터나 나뭇잎 우산 자산이 없다. 승인된 건물 메뉴 후보를 바꾸지 않고 별도 장면 모듈에서 구현한다.
+
+비의 강도·구름·캐릭터 반응은 하나의 pause 가능한 장면 시계를 공유해야 한다. 비가 시작되기 전 작은 초록 잎을 올리고 비가 그치면 잠시 후 내리게 해 별도150초 타이머의 위상 어긋남을 피한다. 등록된 유년기 실루엣과 마을의 이동/휴식·도약 궤적을 재사용하고 잎은 캐릭터의 머리/손 anchor에 붙여 보행과 함께 움직인다. 큰 머리/뿔·더듬이를 자르거나 가리지 않으며 포요몬은 연속된 머리를 보존한다. 잎 위 튀는 작은 방울과 발 아래 물결은 독립 입자이며 메뉴·원화 전체는 움직이지 않는다.
+
+필요 자산은 투명한 초록 잎 앞/측면과 잎자루, 캐릭터별 머리/손·접지·가림 순서 등록이다. 실제 달리기/잎을 손으로 집어 드는 동작은 기존 idle atlas에 없으므로 새 run/hold/lift 프레임 없이는 완전한 전신 동작으로 주장하지 않는다. 유년기의 짧은 도약과 별도 잎 overlay부터는 가능하다. 장식 actor는 pointer-events:none으로 건물 메뉴를 막지 않으며 실제 소유·XP·부화·장착 계약에 연결하지 않는다. reduced-motion에서는 정지된 휴식 pose와 일관된 날씨 상태를 제공하고 명시적 재생·정지는 같은 장면 시계에 적용한다. 우산/비 동기화, 그림자·발 접점, 건물 클릭, 모든 진입/이탈·resize·화면숨김 복귀를 두 엔진과320/390/1440·가로에서 검수해야 한다. 이 조사는 자산 생성·구현·배포 완료가 아니다.
