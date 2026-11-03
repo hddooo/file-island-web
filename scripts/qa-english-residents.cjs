@@ -12,11 +12,16 @@ async function page(browser,width,height,fail=false,record=false){
 }
 async function ready(p){await p.locator('.english-residents .er-agumon.er-ready').waitFor();await p.locator('.english-residents .er-koromon.er-ready').waitFor();await p.locator('.english-residents .er-patamon .cm-life.cm-ready').waitFor();await p.waitForFunction(()=>document.querySelector('.english-residents').dataset.motion==='active');}
 async function positions(p){return p.locator('.english-residents :is(.er-sprite,.cm-patamon-frames)').evaluateAll(ns=>ns.map(n=>({frame:getComputedStyle(n).backgroundPosition,transform:getComputedStyle(n).transform,animations:n.getAnimations().map(a=>({time:a.currentTime,state:a.playState,name:a.animationName}))})));}
+async function controlInside(p){await p.waitForFunction(()=>{const button=document.querySelector('.english-residents-toggle'),map=document.querySelector('[data-english-harbor]');if(!button||!map)return false;const a=button.getBoundingClientRect(),b=map.getBoundingClientRect();return a.left>=b.left&&a.right<=b.right+1&&a.top>=b.top&&a.bottom<=b.bottom+1&&button.contains(document.elementFromPoint(a.x+a.width/2,a.y+a.height/2));});}
 async function main(){const results=[],errors=[];
 for(const [engine,type] of [['chrome',chromium],['webkit',webkit]]){
  const browser=await type.launch(engine==='chrome'?{channel:'chrome'}:{});
  try{for(const [width,height] of [[320,740],[390,844],[844,390],[1440,1000]]){
   const p=await page(browser,width,height);p.on('pageerror',e=>errors.push(e.message));await p.goto('https://islands.test/#toeic/map');await ready(p);
+  await controlInside(p);
+  // Theme/DeviceShell layout can change the containing block after mount. Keep
+  // the sibling setting inside the same map without assuming its old parent.
+  await p.locator('.english-residents-toggle').evaluate(n=>n.parentElement.style.setProperty('position','static','important'));await p.evaluate(()=>dispatchEvent(new Event('resize')));await controlInside(p);await p.locator('.english-residents-toggle').evaluate(n=>n.parentElement.style.removeProperty('position'));await p.evaluate(()=>dispatchEvent(new Event('resize')));await controlInside(p);
   assert.equal(await p.locator('.english-residents').count(),1);assert.equal(await p.locator('.er-actor').count(),3);
   assert.equal(await p.locator('.english-residents').getAttribute('aria-hidden'),'true');
   const hit=await p.locator('.english-landmark .harbor-sign').evaluateAll(ns=>ns.map(n=>{const r=n.getBoundingClientRect();return n.closest('button').contains(document.elementFromPoint(r.x+r.width/2,r.y+r.height/2));}));assert(hit.every(Boolean));

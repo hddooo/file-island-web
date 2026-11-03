@@ -2,6 +2,8 @@
 
 ### 2026-11-04 · 영어섬 복구·페이지 수명 검수
 
+검토 CI의 Linux WebKit 320px 검사에서 디지몬 정지 버튼이 Vocabulary 건물을 가리는 실제 실패를 확인했다. 진단 커밋 `e265a64`의 가림 요소는 `BUTTON.english-residents-toggle`이며 원래 메뉴 hit assertion은 유지했다. 토글의 현재 offsetParent로 좌표를 측정하고 재배치 후 rAF를 예약하며, 테마의 position 덮어쓰기와 별도 포함 블록 전환에서도 지도 내부·실제 hit를 검사하도록 보완했다. 앞선 실패 CI는 배포하지 않는다.
+
 기존 운영 d842314의 실제 프레임 디지몬/건물 메뉴를 재사용한 작은 오류 수정 단위다. 연결 실패 후 지도를 다시 들어가야만 캐릭터가 복구되던 흐름을 같은 지도 내 재시도로 보완하고, pagehide/pageshow·축소 모션·정지 선택·화면 이탈 수명을 함께 유지한다. 새 장면 아트와 한국사 교재는 이 단위에 포함하지 않는다.
 
 1차 목표/복구 검수와 2차 기존 메뉴·기록 회귀, 3차 모바일·가로·두 엔진 렌더 검수에서 총 장면 20건·기록 67건 성공, pageerror 0. `evidence/english-residents/results.json`, `evidence/english-island/results.json`과 엔진·크기별 PNG가 Windows 작업 근거다. 숨김 시험에서 드러난 WebKit ResizeObserver 알림 오류는 위치 쓰기를 rAF로 모은 뒤 같은 검사를 다시 통과했다. 정적 빌드는 커밋 전 소스가 dirty이면 의도대로 거절하므로 커밋 후 다시 수행한다. 최종 CI/CD와 실제 운영 SHA/정적 자산 대조는 후속 evidence와 최종 결과에 구분해 보고한다.
