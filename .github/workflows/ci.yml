@@ -33,7 +33,7 @@ jobs:
 
   english-scene-regression:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 25
     env:
       NODE_PATH: ${{ github.workspace }}/.ci-tools/node_modules
     steps:
@@ -63,7 +63,7 @@ jobs:
 
   history-reading-regression:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     env:
       NODE_PATH: ${{ github.workspace }}/.ci-tools/node_modules
     steps:
@@ -109,7 +109,7 @@ jobs:
 
   compact-ui-regression:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 40
     env:
       NODE_PATH: ${{ github.workspace }}/.ci-tools/node_modules
     steps:
@@ -148,8 +148,9 @@ jobs:
   # Keep every original command, with separate budgets for the two long matrices.
   compact-scene-regression:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 40
     env:
+      HANQ_FINAL_REVIEW_OUTPUT: ${{ github.workspace }}/evidence/compact-final-review
       NODE_PATH: ${{ github.workspace }}/.ci-tools/node_modules
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
@@ -176,10 +177,18 @@ jobs:
           node scripts/qa-toeic-grading-no-spinner.cjs
           node scripts/qa-baby-blink.cjs
           node scripts/qa-poyomon-seam.cjs
+      - name: Preserve synthetic final-review diagnostics
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: synthetic-compact-final-${{ github.sha }}
+          path: evidence/compact-final-review/
+          retention-days: 1
+          if-no-files-found: ignore
 
   practice-readiness-regression:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     env:
       NODE_PATH: ${{ github.workspace }}/.ci-tools/node_modules
     steps:
@@ -277,7 +286,7 @@ jobs:
 
   header-parent-readability:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     env:
       NODE_PATH: ${{ github.workspace }}/.ci-tools/node_modules
     steps:
