@@ -24,7 +24,7 @@
 | 이름 | 실제 역할과 수정 위치 |
 |---|---|
 | `VERSION` | 두 저장소 루트에 독립적인 `VERSION` 파일은 없다. 이를 새 버전 기준 파일로 만들지 않는다. 코드의 content `version`·rulesVersion·schema·CAS revision은 각각 데이터 계약이며 앱 버전과 별개다. |
-| `RELEASE_VERSION` | 프런트 사용자 릴리스의 단일 입력. 현재 0.2.10-beta. 기능 릴리스 시 이 파일과 [CHANGELOG](CHANGELOG.md)를 통합 담당이 함께 갱신한다. 문서 전용 작업은 번호를 올리지 않는다. |
+| `RELEASE_VERSION` | 프런트 사용자 릴리스의 단일 입력. 값은 checkout의 실제 파일을 읽는다. 위 운영 표의 0.2.10-beta는 인계 시점 기준선이다. 기능 릴리스 시 이 파일과 [CHANGELOG](CHANGELOG.md)를 통합 담당이 함께 갱신한다. 문서 전용 작업은 번호를 올리지 않는다. |
 | build SHA | 빌더가 읽는 전체 40자 Git commit. `app-version.json`의 `buildId`, `hanq-app-version` meta, media JS/CSS의 `build` query를 일치시킨다. `release`와 `hanq-release-version`은 RELEASE_VERSION 값이다. |
 | 헤더 표시 | `media/device-shell.js`가 release meta를 표시하고 build SHA를 title로 사용한다. 직접 숫자를 하드코딩하거나 생성된 meta를 수동 편집하지 않는다. |
 | API package / DB | API `package.json` 및 lock의 0.1.0은 패키지 기준선이고 DB schema54/056이나 프런트 릴리스가 아니다. API 변경은 소스 SHA·image identity·migration checksum·검수 근거로 식별한다. |
@@ -55,7 +55,7 @@
 
 원본: `blockmonkey1992/hanq` / `93190fae4656dad5a2337c9a1173c3a7107d339c`. Git 과거 이력 대신 검증한 소스 스냅샷으로 이관했습니다.
 
-초기 snapshot은 0.2.8-beta였고, 원본 `cfc9892a2a180a33b177a8689bcdfa8f0b5607f7`의 0.2.9-beta delta를 거쳐 현재 `RELEASE_VERSION`은 0.2.10-beta입니다. 이관 당시 상태와 현재 운영 상태를 구분합니다.
+초기 snapshot은 0.2.8-beta였고, 원본 `cfc9892a2a180a33b177a8689bcdfa8f0b5607f7`의 0.2.9-beta delta를 반영했습니다. 이후 버전은 실제 `RELEASE_VERSION`과 CHANGELOG를 읽습니다. 이관 당시 상태와 현재 운영 상태를 구분합니다.
 
 현재 `.github/workflows/ci.yml`은 GitHub-hosted 검사를 실행하고, `.github/workflows/home-frontend-cd.yml`은 성공한 동일 저장소 main push CI의 정확 artifact를 전용 Windows runner로 배포합니다. 보존된 `.github/workflows-held/*.disabled`는 비활성 이력이며 현재 workflow와 혼동하지 않습니다. 이번 인수인계 변경은 문서만 수정합니다.
 
@@ -204,7 +204,7 @@ FILE ISLAND는 로그인한 사용자가 섬을 오가며 한국사와 TOEIC를 
 
 브라우저 UI와 서버의 저장·판정은 별도다. 클라이언트 계약은 `media/api-client.js`, 서버 기준은 [file-island-api](https://github.com/hddooo/file-island-api)다. 현재 홈서버의 `/api/v1` 프록시와 이전 Vercel의 `vercel.json` rewrite를 구분한다. 디자인 목업의 예시 숫자를 실제 회원 기록으로 저장하거나 API 미배포를 성공 상태로 표시하지 않는다.
 
-이전 운영 프런트 v0.1.1의 기능 배포 커밋은 `61dff2b121886d514c97063a7de0ea4b8fd8c291`이다. 이 단락과 아래 후보 목록은 당시의 기능 경계를 보존한 기록이다. 현재 0.2.10-beta의 통합 UI와 기본 OFF 항목은 문서 상단의 운영 표와 CHANGELOG를 우선 대조한다. 실제 실행 중 SHA는 항상 `/app-version.json`과 HTML meta로 확인한다. v0.1.1은 캐릭터 표시·영어 검사 보완이며 새 API/DB 배포를 포함하지 않는다. 기존 owner-confirmed collection capability 가드는 유지된다. 알 구매·부화·장착 등 쓰기는 서버가 확정한 collection 응답이 있을 때만 활성화한다. 옷/스킨의 준비 중 안내를 실제 판매·장착 기능으로 꾸미지 않는다.
+이전 운영 프런트 v0.1.1의 기능 배포 커밋은 `61dff2b121886d514c97063a7de0ea4b8fd8c291`이다. 이 단락과 아래 후보 목록은 당시의 기능 경계를 보존한 기록이다. 현재 통합 UI와 기본 OFF 항목은 CHANGELOG·실제 코드·배포 증거를 대조하며 문서 상단의 운영 표는 인계 기준선으로 사용한다. 실제 실행 중 SHA는 항상 `/app-version.json`과 HTML meta로 확인한다. v0.1.1은 캐릭터 표시·영어 검사 보완이며 새 API/DB 배포를 포함하지 않는다. 기존 owner-confirmed collection capability 가드는 유지된다. 알 구매·부화·장착 등 쓰기는 서버가 확정한 collection 응답이 있을 때만 활성화한다. 옷/스킨의 준비 중 안내를 실제 판매·장착 기능으로 꾸미지 않는다.
 
 다음은 다른 후보 브랜치에서 준비된 기능이며 **이 릴리스가 운영 완료를 뜻하지 않는다**: 관리자 개별 보유 몬스터 XP 조정, 전투당 1건 집계와 10건 페이지 기록, 다른 회원 프로필의 최근 로그인/활동·개별 XP, 제공된 비공개 Test3 자료의 사용자 연결과 저장. 현재 운영 `admin-xp.js`는 기존 총 XP 조정 UI이며 새로운 개별 파트너 선택 화면으로 문서화하지 않는다. 현재 명예의 전당의 내 최근 풀이 팝업을 모든 회원의 공개 프로필로 설명하지 않는다. API migration/운영 검증이 필요한 후보는 부모 작업에서 별도로 조율한다.
 
@@ -256,7 +256,7 @@ Vercel은 `vercel.json`의 `buildCommand: node scripts/build-app-version.cjs`, `
 
 ### 버전과 협업 완료 기준
 
-사용자 표시 버전의 기준은 `RELEASE_VERSION`이다. 이 checkout의 기계용 버전은 `0.2.10-beta` (서비스 표시 `v0.2.10 - Beta`)이며 [변경 이력](CHANGELOG.md)을 함께 갱신한다. 기존 정책에 따라 호환 기능은 minor, 오류 수정은 patch, 비호환 변경은 major를 올리고 실제 배포 커밋에 태그를 연결한다. 문서 기준선 `docs/versions/v0.1.0/`과 현재 사용자 릴리스 번호는 같은 개념이 아니다. 날짜·commit·검사·운영 반영을 구분하며 예정 기능을 완료로 기록하지 않는다.
+사용자 표시 버전의 기준은 `RELEASE_VERSION`이다. checkout의 실제 파일 값과 [변경 이력](CHANGELOG.md)을 함께 확인·갱신하며 문서에 적힌 과거 운영 버전을 현재 값으로 하드코딩하지 않는다. 기존 정책에 따라 호환 기능은 minor, 오류 수정은 patch, 비호환 변경은 major를 올리고 실제 배포 커밋에 태그를 연결한다. 문서 기준선 `docs/versions/v0.1.0/`과 현재 사용자 릴리스 번호는 같은 개념이 아니다. 날짜·commit·검사·운영 반영을 구분하며 예정 기능을 완료로 기록하지 않는다.
 
 디자이너 변경 제안에는 대상 화면/라우트, 사용자 목적, desktop·mobile·축소 모션 모습, 바꿀 JS/CSS/에셋, 유지할 저장·접근 계약을 적는다. 구현자는 작은 범위부터 적용하고 다음을 확인한다.
 
