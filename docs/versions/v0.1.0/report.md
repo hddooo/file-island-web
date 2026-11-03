@@ -18,6 +18,20 @@
 
 구/신판 source·digest·CAS·저장 실패와 복구의 기존 계약은 유지한다. Linux Node24/동일 의존성 회귀 검사에서 판본 전환·저장/복구 20건, 디자인 6건 및 실제 조선 읽기 168화면·빈칸 8화면을 통과했다. 전체 교재 시각 검수와 실제 API root 연결, 통합·배포는 미완료다. 원문과 비공개 추출 자료는 public Git에 포함하지 않는다. 이후 담당은 조선 후보를 먼저 최종 검수·연결하고 운영 확인 후 고려로 진행한다.
 
+### 2026-11-04 · 영어섬 복구·페이지 수명 검수
+
+검토 CI의 Linux WebKit 320px 검사에서 디지몬 정지 버튼이 Vocabulary 건물을 가리는 실패를 확인했다. 원래 hit assertion과 실패 화면을 유지하고 기존 Linux 검수 이미지에서 같은 실패를 로컬 재현했다. 고정 180ms 대기 뒤의 오래된 geometry snapshot과 screenshot 이후의 최신 geometry가 달랐으며, 실제 두 rAF 완료 후에는 같은 5개 화면의 assertion이 모두 통과했다. 토글은 첫 배치 전 hidden으로 두고 현재 offsetParent를 측정하며, 테마·포함 블록 변경에서도 실제 hit/지도 내부를 확인한다. pause 검수는 Animation.ready와 실제 hidden/visible 전환을 기다린 뒤 같은 프레임/시간 불변성 assertion을 유지한다. 앞선 실패 CI는 배포하지 않는다.
+
+별도 Linux 비교에서 축소 모션의 WebGL 화면이 검정이지만 같은 task의 drawArrays/readPixels는 정상이고 active 모션·Canvas2D·buffer 보존 비교는 정상이었다. 앱의 정지 GL 재합성 문제로 좁혀 정지/축소 모션 때는 이미 추출한 선명한 plate를 표시하고 GL surface를 숨긴다. 계속 재그리거나 GL drawing-buffer 보존을 강제하지 않는다. 원래 boat를 제거한 plate와 단일 독립 배 레이어, context loss/Canvas2D fallback은 보존한다. screenshot의 실제 장면 RGB 샘플을 추가해 검정 배경을 frame 카운터만으로 통과시키지 않는다.
+
+후속 CI `6cf8b8a`에서는 지도·실제 배경 픽셀 10건이 모두 통과했고, 디지몬 이탈 직후의 전역 버튼 수 검사가 실패했다. 같은 2코어 조건을 로컬에 주어 동일 `1 !== 0`을 재현했다. 저전력에서 입장 시네마틱을 생략하면 기존 `HanqStudyTransition.scene`이 aria-hidden/inert 사본을 520ms 유지하므로 URL 변경은 사본 제거 완료가 아니다. 실제 #app 버튼은 즉시 0인지 검사하고, 전환 사본이 detached 된 뒤 기존 전역 0 assertion도 유지한다. 각 엔진에 2코어 분기·뒤로 복귀 케이스를 추가했으며 고정 시간 샘플 대신 실제 날개 프레임 변화와 media 상태 전달을 기다린다. 제품 전환 코드나 검사 기대값을 바꾸지 않았다.
+
+최종 소스의 Linux WebKit 영어 지도 5건, Linux Node24 Chromium/WebKit 디지몬 12건(전체 2코어 조건), Windows Chrome/WebKit 지도 10건·디지몬 12건, 물/배 9건 및 고궁 회귀 각18건 통과. Linux 비교는 외부 네트워크 차단·읽기 전용 소스와 합성 API만 사용했다. 로컬 증거는 작업 `evidence/linux-english-repro`, `linux-node24-scene-final`, `linux-gl-diagnostic`과 repo `evidence/palace-static-plate-*`에 있다. 최신 main 문서 `b903fdf`를 정상 병합해 보존했다. 사용자 요청에 따라 같은 Linux/2코어 조건의 로컬 검증 후에만 필요한 최종 CI를 실행하며 알림 설정은 바꾸지 않는다. 정확 SHA CI·운영 검증은 아직 별도 단계다.
+
+기존 운영 d842314의 실제 프레임 디지몬/건물 메뉴를 재사용한 작은 오류 수정 단위다. 연결 실패 후 지도를 다시 들어가야만 캐릭터가 복구되던 흐름을 같은 지도 내 재시도로 보완하고, pagehide/pageshow·축소 모션·정지 선택·화면 이탈 수명을 함께 유지한다. 새 장면 아트와 한국사 교재는 이 단위에 포함하지 않는다.
+
+1차 목표/복구 검수와 2차 기존 메뉴·기록 회귀, 3차 모바일·가로·두 엔진 렌더 검수에서 Windows 장면 22건·기록 67건 성공, pageerror 0. `evidence/english-residents/results.json`, `evidence/english-island/results.json`과 엔진·크기별 PNG가 Windows 작업 근거다. 숨김 시험에서 드러난 WebKit ResizeObserver 알림 오류는 위치 쓰기를 rAF로 모은 뒤 같은 검사를 다시 통과했다. 정적 빌드는 커밋 전 소스가 dirty이면 의도대로 거절하므로 커밋 후 다시 수행한다. 최종 CI/CD와 실제 운영 SHA/정적 자산 대조는 후속 evidence와 최종 결과에 구분해 보고한다.
+
 ### 2026-11-03 · 한국사 디자인 통합 검수 후보
 
 목표는 디자이너의 읽기 면을 기존 기능과 연결하는 것이다. 고정79회/81회 source SHA를 구분해 같은 표시 스타일을 쓰며 구판을81회로 바꾸어 부르지 않는다. 데이터·정답·ID·원본 배열·quiz digest·workspace·인증·API 준비 게이트는 변경하지 않았다. sourceRowIndices 기반 단일 연결과 원문 관계, 59/14/91 구판 분류를 보존하며 원문 PDF/이미지 픽셀은 수정하지 않았다.
@@ -612,3 +626,32 @@ Reviewed source60/61 government relations and timeline render with selectable te
 ### 2026-11-03 Source prompt emphasis preservation
 
 Original underlines can now survive both the reading page and functional blank prompt through source-bound display metadata outside the quiz JSON. Every range must match native question IDs and literal text in the selected edition. Markup cannot change source text or answers. Six additional outlined study/answer labels were recovered in the private candidate. Existing642-question and actual172-question regression plus real JWT/PostgreSQL verification pass; all quiz bytes and canonical digests are preserved. This is a prepared local source/frontend unit, not operating deployment.
+
+### 2026-11-03 compact CI budget correction
+
+- English source a3e7f7b feature CI passed all seven jobs, but main run 41683902917 and history feature run 41684282727 exhausted the existing 25-minute compact job budget. Logs showed passing matrices through the final review, with no assertion error before cancellation. Deployment did not run.
+- Keep every original browser command and source-contract assertion; split the browser sequence at qa-rainbow-viewport into compact-ui-regression and compact-scene-regression. Both remain required by static-build, each with the original 25-minute limit. Node 24, action pins and permissions are unchanged.
+- Validate the new groups locally under Linux Node 24 with CPU quota 2, explicit hardwareConcurrency 2 and synthetic API/network isolation before publishing a new exact-SHA CI run. This is a CI-only correction; release remains 0.2.12-beta.
+
+- Additional local timing witness: WebKit 390px long-label fitting was still pending after the old fixed 60ms wait (x=-6.109375), then settled on the next frame (x=15.990623). Only this QA wait now uses two actual animation frames; the original bounds and overflow assertions remain unchanged. The full six Chromium/WebKit map matrices passed with this correction.
+- Linux two-CPU validation of all nine scene commands passed (measured command time 557.919s; tail-four and front-five were executed as two batches). Original commands/assertions were retained. Local collection used installed Playwright Chromium because Chrome channel is absent in the offline image; the hosted CI still uses its original channel.
+
+- Local compact UI validation is complete: the original first seven scripts, corrected six map-shell matrices, and both original header scripts all passed in separate isolated batches. Header checks took 227.758s. Existing static-build reproducibility (1,642 runtime files) and app-version/deployment-header tests also passed. The exact new-SHA hosted CI and operating deployment remain pending at this commit.
+
+
+### 2026-11-03 reduced-motion handoff and CI diagnostics
+
+- Final artifact preflight found active-to-reduced water frames stopping before the static plate/control state synchronized. Independent cold English/history Chromium fixtures confirmed it; the native event-dispatch cause is unconfirmed. A running frame now calls the existing synchronization path before exiting on reduced motion. No new animation loop or drawing-buffer preservation is added.
+- The added active/reduced/resume and screenshot-pixel regression passed all ten English matrices on Windows Chrome/WebKit and ten on offline Linux Node 24 with two CPUs. Existing water/boat/economy checks passed nine cases per Windows engine. The in-memory candidate override also passed four full history artifact preflight cases, including static plate, resume, menus and English roundtrip.
+- CI a77 compact UI passed; compact scene passed in 24m06s after slow Ubuntu dependency downloads. CI ca2217 compact UI passed in 13m34s, but final review timed out waiting for .world-map. The same history source passed all ten independent Linux final-review matrices (90 route pages, 139.216s); that timeout cause remains unconfirmed. Keep the original 30-second wait and all 44 assertions, adding route progress plus synthetic HTML/PNG/state on failure.
+- Increase browser job total allowances to 25 minutes (40 for the two compact groups) so observed dependency-download time does not consume their test time. All original test commands remain required; runner labels, Node 24, action pins and permissions are unchanged. Reuse the existing pinned artifact action to preserve only synthetic final-review diagnostics on failure.
+- Publish only the new verified source revision. Its hosted CI and operating version/hash/browser verification remain pending at this commit; the English release is still 0.2.12-beta.
+
+
+### 2026-11-03 align browser CI with the validated OS
+
+- English 85dfeee CI diagnostics captured a WebKit page process crash when starting the 768px subjects matrix after the 320px/390px matrices had passed. The failed page could not return DOM/HTML because the target had crashed.
+- The original, unchanged 44 assertions and ten final-review matrices passed again in a controlled single-container Ubuntu 24.04.5 / Node 24 / two-CPU / 7GiB-memory run: 90 route pages, 136.002s, peak cgroup memory 1,836,122,112 bytes, zero OOM/OOM-kill/page-crash counters. Earlier parallel shared-VM experiments are excluded. The crash cause remains unconfirmed; neither OOM nor an OS defect is asserted.
+- Pin only the six browser QA jobs to the Ubuntu 24.04 family used by the validated local environment. Static-build and auth-contract remain on ubuntu-latest. No test command, assertion, wait, matrix or browser reuse lifecycle changes. This removes the observed local Noble / hosted Resolute OS difference before the next required CI run.
+- Official references: [GitHub standard hosted labels](https://docs.github.com/en/actions/reference/runners/github-hosted-runners) include ubuntu-24.04 with the same private-repository two-CPU/eight-GB resources; [Playwright 1.64.1 Docker images](https://playwright.dev/docs/docker) support Noble. Node version, browser lock, action pins and permissions remain unchanged.
+- Runtime source is byte-identical to 85dfeee; release remains 0.2.12-beta. New exact-SHA CI and operating deployment are pending at this commit.

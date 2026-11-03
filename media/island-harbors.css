@@ -128,6 +128,7 @@ html body #app .world-inquiry-desk nav{gap:8px}
    terrain, buildings, controls or full photograph is translated or rotated. */
 html body #app .harbor-chart .living-water-surface{position:absolute;inset:0;display:block;width:100%;height:100%;max-width:none;pointer-events:none;z-index:0}
 html body #app .harbor-chart .living-water-plate{position:absolute;inset:0;display:block;width:100%;height:100%;max-width:none;pointer-events:none;z-index:0}
+html body #app .harbor-chart .living-water-surface[hidden]{display:none!important}
 html body #app .harbor-chart.living-water-ready>img:not(.living-boat){opacity:0}
 html body #app .harbor-chart .living-boat{position:absolute;display:block;max-width:none;pointer-events:none;z-index:1;object-fit:fill;will-change:transform}
 html body #app .harbor-chart .scene-atmosphere .scene-water{display:none!important}

@@ -40,6 +40,12 @@ source/중복 anchor/문자 변경 거절 검사 4건과 Chromium/WebKit 판본 
 이번 변경은 offline 검사 도구와 문서이며 영어섬/공통 workflow/API/DB/운영 source에는 변경이 없다.
 정본 복구와 실제 API 검증 전까지 운영 활성화·전체 완료로 표시하지 않는다.
 
+### 2026-11-04 · 영어섬 복구·페이지 수명 후보
+
+기준 main `d84231479e83afc6e1e605304dbe9b1508233367`에서 별도 `codex/english-scene-polish-20261104`를 사용한다. 영어섬 장식 JS/CSS·해당 QA 및 영어섬 전용 CI를 보완하고, Linux에서 실증한 검정 화면 때문에 공유 물 렌더러와 해당 surface 숨김 CSS까지 범위를 확장했다. 이미지 로드/해독 대기는 12초 뒤 실패로 종료하고 online/pageshow에서 준비되지 않은 캐릭터를 재시도한다. 페이지 캐시 전환 이벤트와 문서/화면 숨김 동안 프레임을 멈추며 정지 선택은 해당 탭 sessionStorage에만 보관한다. 지도 자체가 숨겨지면 형제 토글도 숨기고, ResizeObserver 콜백의 위치 쓰기는 rAF에 모아 WebKit 알림 루프를 방지했다.
+
+Chrome/WebKit `qa-english-residents.cjs` 12건과 `qa-english-island.cjs` 10건, 학습 기록 67건 통과. Linux Node24 두 엔진의 전체 2코어 분기 12건도 통과했다. 최신 main 문서 b903fdf를 정상 병합해 보존했다. 실제 iPhone이나 물리 브라우저의 BFCache 적중을 주장하지 않는다. 페이지 전환 이벤트는 합성으로 검수했으며 API는 모두 합성이다. 교재·index·라우트·서버/사용자 데이터·인증·권한은 변경하지 않았다. 커밋 후 빌드·정확 SHA CI/CD·운영 대조가 남은 후보이다.
+
 ### 2026-11-03 · 디자인 우선 운영 요청 반영
 
 최신 main d706aa7의 고궁·물·배 장면을 보존했다. 후속 사용자 요청으로 표시 디자인을 고정된 79회 SHA에도 적용하되 data-history-edition은79로 구분한다. source SHA/문항/정답/digest/workspace는 그대로이며 신판 게이트는 비활성이다. 실제 구판 조선164문항의 정답·59/14/91 분류·canonical cursor·재개 및 p59 원문 연관 관계를320/390/1440에서 읽기 전용 격리 검사했다. 81회 canonical 자료는 여전히 미확보다.
@@ -749,3 +755,32 @@ Coordinate59/source-layout22 assertions, reading9/design6 and edition22 browser 
 ### 2026-11-03 Source prompt emphasis preservation
 
 The optional manifest profile and source quiz consumer are prepared independently of summary work. Synthetic prompt48 and library81 checks pass. Existing79-era642 questions pass1491 assertions. Windows/Linux each pass8 native underline views and8 Joseon quiz views, including all172 canonical answers, three original prompt emphases and pause/resume. Each also passes48 study/answer heading views. The isolated real API serves29 pages,14 yellow titles, five diagrams and three prompt styles;172/164 workspace digests, CAS/retry/account/source isolation and restart/relogin remain unchanged. No production data, flags or backend deployment changed. Full human review and operating release remain pending.
+
+### 2026-11-03 compact CI budget correction
+
+- English source a3e7f7b feature CI passed all seven jobs, but main run 41683902917 and history feature run 41684282727 exhausted the existing 25-minute compact job budget. Logs showed passing matrices through the final review, with no assertion error before cancellation. Deployment did not run.
+- Keep every original browser command and source-contract assertion; split the browser sequence at qa-rainbow-viewport into compact-ui-regression and compact-scene-regression. Both remain required by static-build, each with the original 25-minute limit. Node 24, action pins and permissions are unchanged.
+- Validate the new groups locally under Linux Node 24 with CPU quota 2, explicit hardwareConcurrency 2 and synthetic API/network isolation before publishing a new exact-SHA CI run. This is a CI-only correction; release remains 0.2.12-beta.
+
+- Additional local timing witness: WebKit 390px long-label fitting was still pending after the old fixed 60ms wait (x=-6.109375), then settled on the next frame (x=15.990623). Only this QA wait now uses two actual animation frames; the original bounds and overflow assertions remain unchanged. The full six Chromium/WebKit map matrices passed with this correction.
+- Linux two-CPU validation of all nine scene commands passed (measured command time 557.919s; tail-four and front-five were executed as two batches). Original commands/assertions were retained. Local collection used installed Playwright Chromium because Chrome channel is absent in the offline image; the hosted CI still uses its original channel.
+
+- Local compact UI validation is complete: the original first seven scripts, corrected six map-shell matrices, and both original header scripts all passed in separate isolated batches. Header checks took 227.758s. Existing static-build reproducibility (1,642 runtime files) and app-version/deployment-header tests also passed. The exact new-SHA hosted CI and operating deployment remain pending at this commit.
+
+
+### 2026-11-03 reduced-motion handoff and CI diagnostics
+
+- Final artifact preflight found active-to-reduced water frames stopping before the static plate/control state synchronized. Independent cold English/history Chromium fixtures confirmed it; the native event-dispatch cause is unconfirmed. A running frame now calls the existing synchronization path before exiting on reduced motion. No new animation loop or drawing-buffer preservation is added.
+- The added active/reduced/resume and screenshot-pixel regression passed all ten English matrices on Windows Chrome/WebKit and ten on offline Linux Node 24 with two CPUs. Existing water/boat/economy checks passed nine cases per Windows engine. The in-memory candidate override also passed four full history artifact preflight cases, including static plate, resume, menus and English roundtrip.
+- CI a77 compact UI passed; compact scene passed in 24m06s after slow Ubuntu dependency downloads. CI ca2217 compact UI passed in 13m34s, but final review timed out waiting for .world-map. The same history source passed all ten independent Linux final-review matrices (90 route pages, 139.216s); that timeout cause remains unconfirmed. Keep the original 30-second wait and all 44 assertions, adding route progress plus synthetic HTML/PNG/state on failure.
+- Increase browser job total allowances to 25 minutes (40 for the two compact groups) so observed dependency-download time does not consume their test time. All original test commands remain required; runner labels, Node 24, action pins and permissions are unchanged. Reuse the existing pinned artifact action to preserve only synthetic final-review diagnostics on failure.
+- Publish only the new verified source revision. Its hosted CI and operating version/hash/browser verification remain pending at this commit; the English release is still 0.2.12-beta.
+
+
+### 2026-11-03 align browser CI with the validated OS
+
+- English 85dfeee CI diagnostics captured a WebKit page process crash when starting the 768px subjects matrix after the 320px/390px matrices had passed. The failed page could not return DOM/HTML because the target had crashed.
+- The original, unchanged 44 assertions and ten final-review matrices passed again in a controlled single-container Ubuntu 24.04.5 / Node 24 / two-CPU / 7GiB-memory run: 90 route pages, 136.002s, peak cgroup memory 1,836,122,112 bytes, zero OOM/OOM-kill/page-crash counters. Earlier parallel shared-VM experiments are excluded. The crash cause remains unconfirmed; neither OOM nor an OS defect is asserted.
+- Pin only the six browser QA jobs to the Ubuntu 24.04 family used by the validated local environment. Static-build and auth-contract remain on ubuntu-latest. No test command, assertion, wait, matrix or browser reuse lifecycle changes. This removes the observed local Noble / hosted Resolute OS difference before the next required CI run.
+- Official references: [GitHub standard hosted labels](https://docs.github.com/en/actions/reference/runners/github-hosted-runners) include ubuntu-24.04 with the same private-repository two-CPU/eight-GB resources; [Playwright 1.64.1 Docker images](https://playwright.dev/docs/docker) support Noble. Node version, browser lock, action pins and permissions remain unchanged.
+- Runtime source is byte-identical to 85dfeee; release remains 0.2.12-beta. New exact-SHA CI and operating deployment are pending at this commit.

@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   static-build:
-    needs: [auth-contract, compact-ui-regression, practice-readiness-regression, header-parent-readability, history-reading-regression]
+    needs: [auth-contract, compact-ui-regression, compact-scene-regression, practice-readiness-regression, header-parent-readability, history-reading-regression, english-scene-regression]
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -31,9 +31,39 @@ jobs:
           if-no-files-found: error
           retention-days: 7
 
+  english-scene-regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      NODE_PATH: ${{ github.workspace }}/.ci-tools/node_modules
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: .ci-tools/package-lock.json
+      - run: npm ci --prefix .ci-tools --no-fund
+      - run: ln -s .ci-tools .test-tools
+      - run: .ci-tools/node_modules/.bin/playwright install --with-deps chromium webkit
+      - run: node scripts/qa-english-island.cjs
+      - run: node scripts/qa-english-residents.cjs
+      - name: Save synthetic English scene failure frames
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: synthetic-english-scene-${{ github.sha }}
+          path: |
+            evidence/english-island/*.png
+            evidence/english-residents/*.png
+          retention-days: 1
+          if-no-files-found: ignore
+
   history-reading-regression:
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
     env:
       NODE_PATH: ${{ github.workspace }}/.ci-tools/node_modules
     steps:
@@ -78,8 +108,8 @@ jobs:
       - run: node scripts/test-vocabulary-paraphrases.cjs
 
   compact-ui-regression:
-    runs-on: ubuntu-latest
-    timeout-minutes: 25
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
     env:
       NODE_PATH: ${{ github.workspace }}/.ci-tools/node_modules
     steps:
@@ -101,7 +131,7 @@ jobs:
             node "scripts/$test.cjs"
           done
       - run: .ci-tools/node_modules/.bin/playwright install --with-deps chromium webkit
-      - name: Verify compact UI, popup, PDF and mobile scene
+      - name: Verify compact UI, popup, PDF and headers
         run: |
           set -euo pipefail
           node scripts/qa-vocabulary-redesign.cjs
@@ -114,6 +144,30 @@ jobs:
           node scripts/qa-map-shell-polish.cjs
           node scripts/qa-map-header-visuals.cjs
           node scripts/qa-header-refinement.cjs
+
+  # Keep every original command, with separate budgets for the two long matrices.
+  compact-scene-regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    env:
+      HANQ_FINAL_REVIEW_OUTPUT: ${{ github.workspace }}/evidence/compact-final-review
+      NODE_PATH: ${{ github.workspace }}/.ci-tools/node_modules
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: .ci-tools/package-lock.json
+      - run: npm ci --prefix .ci-tools --no-fund
+      - run: ln -s .ci-tools .test-tools
+      - run: .ci-tools/node_modules/.bin/playwright install --with-deps chromium webkit
+      - name: Verify mobile scenes, navigation ownership and final review
+        run: |
+          set -euo pipefail
           node scripts/qa-rainbow-viewport.cjs
           SCENE_ENGINE=chromium SCENE_WIDTH=390 node scripts/qa-rainbow-collection.cjs
           SCENE_ENGINE=webkit SCENE_WIDTH=390 node scripts/qa-rainbow-collection.cjs
@@ -123,10 +177,18 @@ jobs:
           node scripts/qa-toeic-grading-no-spinner.cjs
           node scripts/qa-baby-blink.cjs
           node scripts/qa-poyomon-seam.cjs
+      - name: Preserve synthetic final-review diagnostics
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: synthetic-compact-final-${{ github.sha }}
+          path: evidence/compact-final-review/
+          retention-days: 1
+          if-no-files-found: ignore
 
   practice-readiness-regression:
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
     env:
       NODE_PATH: ${{ github.workspace }}/.ci-tools/node_modules
     steps:
@@ -223,8 +285,8 @@ jobs:
             evidence/player-repeat/webkit-390-one-controls.png
 
   header-parent-readability:
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
     env:
       NODE_PATH: ${{ github.workspace }}/.ci-tools/node_modules
     steps:

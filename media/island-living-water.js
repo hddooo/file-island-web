@@ -50,8 +50,10 @@
       chart.dataset.waterFrames=String((Number(chart.dataset.waterFrames)||0)+1);
       chart.dataset.waterTime=phase.toFixed(3);
     }
-    function frame(now){raf=0;if(disposed||!surface||!visible||document.hidden||!wantsMotion())return;var step=1000/(low?12:!gl?18:matchMedia('(max-width:700px)').matches?24:30);if(!last||now-last>=step){if(last)phase+=Math.min((now-last)/1000,.25);last=now;draw();}raf=requestAnimationFrame(frame);}
-    function run(){updateToggle();chart.dataset.waterMotion=!wantsMotion()?(preference==='off'?'paused':'reduced'):low?'economy':'active';stop();if(surface){draw();if(visible&&!document.hidden&&wantsMotion())raf=requestAnimationFrame(frame);}}
+    // Keep the static plate and controls in sync when a running frame observes
+    // reduced motion before the media-change callback has updated the surface.
+    function frame(now){raf=0;if(disposed||!surface||!visible||document.hidden)return;if(!wantsMotion()){run();return;}var step=1000/(low?12:!gl?18:matchMedia('(max-width:700px)').matches?24:30);if(!last||now-last>=step){if(last)phase+=Math.min((now-last)/1000,.25);last=now;draw();}raf=requestAnimationFrame(frame);}
+    function run(){updateToggle();chart.dataset.waterMotion=!wantsMotion()?(preference==='off'?'paused':'reduced'):low?'economy':'active';stop();if(surface){surface.hidden=!wantsMotion();draw();if(visible&&!document.hidden&&wantsMotion())raf=requestAnimationFrame(frame);}}
     function build(){
       if(!img.naturalWidth||disposed)return;var keyNow=img.currentSrc+'|'+img.naturalWidth+'x'+img.naturalHeight;if(keyNow===imageKey&&surface)return;imageKey=keyNow;var gen=++generation;stop();release();
       // Fixed one-device-pixel buffer, capped independently from display size.
@@ -86,6 +88,10 @@
         gl.linkProgram(program);if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw Error('Water program failed');gl.useProgram(program);
         var buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);var loc=gl.getAttribLocation(program,'p');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
         textures=[texture(gl,0,plate),texture(gl,1,mask)];gl.uniform1i(gl.getUniformLocation(program,'plate'),0);gl.uniform1i(gl.getUniformLocation(program,'mask'),1);gl.viewport(0,0,w,h);
+        // A paused WebGL drawing buffer may be discarded on recomposition.
+        // Keep the already-extracted sharp plate visible below it so reduced
+        // motion needs neither repeated GPU draws nor a preserved GL buffer.
+        staticPlate=plate;staticPlate.className='living-water-plate';staticPlate.setAttribute('aria-hidden','true');chart.appendChild(staticPlate);
         chart.appendChild(surface);sprites.forEach(function(s){chart.appendChild(s.node);});chart.classList.add('living-water-ready');chart.dataset.waterRenderer='webgl';chart.dataset.waterBuffer=w+'x'+h;
         contextLostHandler=function(e){e.preventDefault();if(disposed||gen!==generation||e.target!==surface)return;stop();canvasFallback(plate,mask);run();};surface.addEventListener('webglcontextlost',contextLostHandler);
       }catch(error){canvasFallback(plate,mask);}
