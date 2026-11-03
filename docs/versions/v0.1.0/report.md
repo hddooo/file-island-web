@@ -536,6 +536,18 @@ PNG만으로 모션 완료를 주장하지 않는다. `motion-0/2`는 실제 2�
 
 ### 2026-11-03 Mac 고궁 통합 검수 결과
 
-규칙 `hanq-collaboration-2026-11-01-v5`. 원격 main `3d7f149123ee21b1f106ef5900a85e07057ff03c` 위에 원래 후보 두 커밋만 cherry-pick했고, 제품 차이는 원래 `d2fd012`와 동일한 장면 JS/CSS 세 파일이다. 교재·문항·학습 진행·API·DB·헤더·workflow·버전은 변경하지 않았다. `qa-palace-hotspots.cjs`에 320×568과 macOS WebKit Option+Tab을 추가했다. 후자는 macOS 기본 Tab이 버튼을 건너뛰는 플랫폼 동작을 반영하며 실제 다음 버튼 focus와 Enter 라우트 assertion은 유지한다. Chrome/WebKit 각18건 모두 통과, `qa-island-harbors.cjs`28건과 `qa-living-water.cjs`9건 통과. 320·1440·650×320 가로 PNG를 직접 확인했고 간판·건물 클릭영역·배·정지 버튼의 겹침을 확인했다. static build 및 CD16 tests, 메뉴83 assertions, 지도 정렬도 통과했다. 작업 evidence의 `chromium/results.json`, `webkit/results.json`, `harbor-regression/qa-results.json`, `living-water/pixel-motion.json`과 PNG가 근거다.
+규칙 `hanq-collaboration-2026-11-01-v5`. 원격 main `3d7f149123ee21b1f106ef5900a85e07057ff03c` 위에 원래 후보 두 커밋만 cherry-pick했고, 제품 차이는 원래 `d2fd012`와 동일한 장면 JS/CSS 세 파일이다. 교재·문항·학습 진행·API·DB·헤더·workflow·버전은 변경하지 않았다. `qa-palace-hotspots.cjs`에 320×568과 macOS WebKit Option+Tab을 추가했다. 후자는 macOS 기본 Tab이 버튼을 건너뛰는 플랫폼 동작을 반영하며 실제 다음 버튼 focus와 Enter 라우트 assertion은 유지한다. Chrome/WebKit 각18건 모두 통과, `qa-island-harbors.cjs`28건과 `qa-living-water.cjs`9건 통과. 320·1440·650×320 가로 PNG를 직접 확인했고 간판·건물 클릭영역·배·정지 버튼의 겹침을 확인했다. static build 및 CD16 tests, 메뉴83 assertions, 지도 정렬도 통과했다. 작업 evidence의 `chromium/results.json`, `webkit/results.json`, `harbor-regression/qa-results.json`, `living-water/results.json`과 PNG가 근거다.
 
 GitHub 연결 검색은 저장소 권한 오류422를 반환했고 Chrome은 로그아웃 상태의404였다. Git clone/push 권한을 CI 조회 성공으로 해석하지 않는다. 필수 exact-SHA CI를 확인하지 못해 production main 갱신·배포는 보류한다. 운영 반영은 성공 CI와 현재 main 재확인 후 통합 담당이 수행하고 실제 도메인의 `/app-version.json`·세 장면 자산을 대조해야 한다.
+
+후속 확인: 검토 후보 `8e7dcb907b380664258f6d2c55206c61ef3e1dae`의 원격 push와 동일 SHA를 확인했다. CI combined status 조회는404이며 연결 앱의 설치 계정 목록에 대상 조직 `hddooo`가 없었다. CI 상태가 실패라는 뜻이 아니라 이 환경에서 읽지 못한 것이다. 첫 push는 자동 승인 검토가 대상·payload의 사용자 승인을 확인하지 못해 실행 전 거절했고, 사용자 이력에서 `hddooo/file-island-web`의 명시적 지정과 이번 전체 적용 요청을 확인한 뒤 동일 행동을 한 번 재시도해 성공했다. 추가 권한·토큰·보안 설정은 변경하지 않았다.
+
+### 2026-11-03 저녁 궁 캠핑장 조사 (미구현)
+
+기존 `#history`의 세 건물·라우트·모바일 메뉴를 보존하려면 궁 지도에 캠핑장을 덮는 것보다 역사섬의 별도 쉬어가기 장면을 추가하는 편이 자연스럽다. 진입 UI와 route 연결 위치는 통합 담당이 결정하며 현재 후보에는 추가하지 않았다. 배경 시안은 메타데이터로 저녁 캠핑장·중앙 불·의자·강·먼 사원 구도를 확인했으나 원본 이미지 내려받기는 두 번 모두 실패했다. 픽셀을 보거나 조선 궁의 형태·구체 좌표를 검수했다고 주장하지 않는다.
+
+실제 구현은 고정된 조선 궁·의자·지형 plate와 독립 불꽃/연기/구름/캐릭터 레이어를 사용한다. 불은 bounded Canvas2D 또는 shader로 매 프레임 불꽃 윤곽·입자·불티를 바꾸고 연기와 주변 조명은 별도 위상으로 움직일 수 있다. 하늘은 독립 구름/별 레이어, 강은 새 원본에서 측정한 물 mask로 갱신한다. 기존 낮 고궁의 물 좌표를 재사용하거나 전체 그림을 흔들지 않는다. 이미 불·연기·캐릭터가 합성된 한 장은 중복이 생기므로 깨끗한 plate와 별도 투명 소품이 필요하다.
+
+캐릭터는 `patamon-hover-idle-v1.png`의 등록된6프레임 날갯짓을 재사용할 수 있다. 유년기는 `collection-life`의 검수된 실루엣·깜빡임·짧은 도약과 마을의 독립 이동/휴식 궤적을 재사용할 수 있지만 전신 달리기 프레임은 아니다. 저장소의 아구몬4프레임은 idle/손짓·깜빡임이므로 달리기로 표현하지 않는다. 자연스러운 발걸음 달리기를 요구하면 캐릭터별 새 run-cycle atlas·발 접점·정면/좌우 등록이 필요하다. 포요몬 머리를 나누는 rig는 금지한다. 장식 캐릭터는 소유·XP·부화·장착 판정과 연결하지 않는다.
+
+새 장면은 숨긴 탭·화면 이탈·offscreen에서 정지하고 저전력 버퍼/프레임 제한·축소 모션·명시적 재생을 유지해야 한다. 다음 검수는 시간차 픽셀로 불꽃/구름 변화와 궁/의자 고정, 캐릭터 발 접점·진입/이탈·중복 실루엣, 320/390/1440·낮은 가로 화면·Chrome/WebKit을 확인한다. 이 조사는 장면 구현·새 아트 승인·운영 적용이 아니다.
