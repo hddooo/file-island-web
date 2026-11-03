@@ -1,0 +1,33 @@
+'use strict';
+// Isolated static app; every API response and answer below is synthetic.
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const {chromium}=require('playwright'),{setup}=require('./qa-vocabulary-video-bar.cjs');
+const root=path.resolve(__dirname,'..'),out=path.resolve(root,'../evidence/english-renewal');
+fs.mkdirSync(out,{recursive:true});
+const items=Array.from({length:75},(_,i)=>({collectionId:'00000000-0000-4000-8000-000000000003',sourceTitle:'Synthetic practice',number:i+1,displayNumber:String(5001+i),part:5,groupId:'synthetic-'+i,groupQuestionNumbers:[i+1],stem:'The community center has recently ______ its opening hours to welcome more visitors.',options:['A','B','C','D'].map((id,j)=>({id,text:['extended','extension','extensive','extensively'][j]})),available:true,officiallyVerified:true,studyHistory:{practiceReviewed:i<3,recentResults:i===0?[false,true]:[]}}));
+(async()=>{const browser=await chromium.launch(),results=[];try{for(const width of (process.env.QA_WIDTHS||'320,390,1440').split(',').map(Number)){const {p,context,errors,writes}=await setup(browser,width,root,{viewport:{width,height:Number(process.env.QA_HEIGHT)||900}});const calls=[];
+ await p.route('**/api/v1/toeic-cbt/**',r=>{const req=r.request(),u=new URL(req.url());if(u.pathname.endsWith('/practice'))return r.fulfill({json:{items}});if(u.pathname.endsWith('/answer')){const a=req.postDataJSON();calls.push(a);return r.fulfill({json:{number:a.number,selectedOptionId:a.optionId,officiallyVerified:true,correct:a.optionId==='A',studyHistory:{practiceReviewed:true,recentResults:[a.optionId==='A',false,true]},review:{correctOptionId:'A',choices:items[0].options,tutorExplanation:{answerReason:'Synthetic answer explanation.',translation:'합성 해석.',options:items[0].options.map(x=>({id:x.id,explanation:'Synthetic explanation '+x.id}))}}}});}return r.fulfill({json:{items:[]}});});
+ await p.goto('https://hanq.vercel.app/#toeic/wrongnotes');await p.locator('.tc-group-label').first().waitFor();
+ await p.screenshot({path:path.join(out,`${width}-${process.env.CAPTURE_ONLY?'before':'after'}-menu.png`)});
+ const menu=await p.locator('.tc-group').first().evaluate(n=>({height:n.getBoundingClientRect().height,text:n.innerText}));
+ await p.locator('.tc-group').filter({hasText:'Part 5,6'}).click();await p.locator('.tc-answer-option').first().waitFor();
+ await p.waitForFunction(()=>![...document.querySelectorAll('.tc,.tc *')].some(n=>n.getAnimations().some(a=>a.playState==='running'&&a.effect.getTiming().iterations!==Infinity)));
+ assert.equal(await p.locator('.tc-passage-shortcuts').count(),0,'Part 5-only inventory has no empty Part 6 heading');
+ await p.screenshot({path:path.join(out,`${width}-${process.env.CAPTURE_ONLY?'before':'after'}-question.png`)});
+ await p.getByRole('button',{name:'문제 선택하기',exact:true}).click();await p.locator('.tc-jump-search').waitFor();
+ await p.screenshot({path:path.join(out,`${width}-${process.env.CAPTURE_ONLY?'before':'after'}-picker.png`)});
+ const picker=await p.locator('.tc-jump').evaluate(n=>({height:n.getBoundingClientRect().height,searchFont:getComputedStyle(n.querySelector('input')).fontSize,studyFont:getComputedStyle(document.querySelector('.qtext')).fontFamily}));
+ if(!process.env.CAPTURE_ONLY){
+ assert.equal(await p.locator('.tc-jump-search').evaluate(n=>n===document.activeElement),true,'picker search receives keyboard focus');
+ assert.equal(await p.locator('.tc-jump-opener').getAttribute('aria-expanded'),'true');
+ await p.locator('.tc-jump-search').fill('5075');assert.equal(await p.locator('.tc-question-nav button:visible').count(),1);await p.keyboard.press('Escape');
+ assert(await p.locator('.tc-jump').isHidden());assert(await p.locator('.tc-jump-opener').evaluate(n=>n===document.activeElement));
+ assert.equal(await p.locator('.tc-jump-opener').getAttribute('aria-expanded'),'false');
+ await p.getByRole('button',{name:'문제 선택하기',exact:true}).click();assert.equal(await p.locator('.tc-jump-search').inputValue(),'');assert.equal(await p.locator('.tc-question-nav button:visible').count(),75);await p.keyboard.press('Escape');
+ await p.locator('[data-option=B]').click();assert.equal(await p.locator('.tc-result').count(),0);assert.equal(calls.length,0);
+ await p.emulateMedia({reducedMotion:'reduce'});await p.locator('.tc-check-answer').click();await p.locator('.tc-result.bad').waitFor();assert.equal(calls.length,1);assert((await p.locator('.tc-result').innerText()).includes('Synthetic answer explanation.'));
+ await p.getByRole('button',{name:'문제 선택하기',exact:true}).click();await p.locator('.tc-jump-search').fill('5001');await p.keyboard.press('Escape');assert.equal(await p.locator('.tc-result.bad').count(),1);assert.equal(calls.length,1);
+ const geometry=await p.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,controls:[...document.querySelectorAll('.tc-answer-option,.tc-check-answer,.tc-topnav button')].filter(n=>n.getClientRects().length).map(n=>({text:n.textContent,height:n.getBoundingClientRect().height}))}));assert(!geometry.overflow);assert(geometry.controls.every(n=>n.height>=44),JSON.stringify(geometry));
+ await p.emulateMedia({reducedMotion:'reduce'});await p.screenshot({path:path.join(out,`${width}-after-result.png`)});assert.deepEqual(errors,[]);assert.deepEqual(writes,[]);results.push({width,menu,picker,geometry,answerCalls:calls.length,errors,writes});
+ }else results.push({width,menu,picker});await context.close();
+ }}finally{await browser.close();}fs.writeFileSync(path.join(out,process.env.CAPTURE_ONLY?'baseline.json':process.env.QA_HEIGHT?'result-'+process.env.QA_HEIGHT+'.json':'result.json'),JSON.stringify({passed:true,synthetic:true,productionWrites:0,results},null,2));console.log(JSON.stringify(results));})().catch(e=>{console.error(e.stack);process.exitCode=1;});

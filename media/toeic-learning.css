@@ -57,3 +57,13 @@ html body .tg-focus-drill .tg-save-status[hidden]{display:none!important}
 html body .tg-focus-drill .tg-drill-progress{margin:4px 0 8px;font-size:13px}
 html body .tg-focus-drill .tg-drill-source{margin-top:12px;font-size:12px}
 html body .tg-focus-drill .tg-drill-source>summary{min-height:36px;padding:4px 0;cursor:pointer}
+
+/* Practice menus keep the name and progress distinct at narrow widths. */
+html[data-hanq-theme] body #app .toeic-learning-page .tc.tc-simple .tc-group-list>.tc-group{column-gap:16px;row-gap:3px}
+html[data-hanq-theme] body #app .toeic-learning-page .tc.tc-simple .tc-group-list .tc-group-count{margin-left:auto!important}
+@media(max-width:440px){
+ html[data-hanq-theme] body #app .toeic-learning-page .tc.tc-simple .tc-group-list>.tc-group{display:grid!important;grid-template-columns:minmax(0,1fr) auto;align-content:center;min-height:56px!important;padding:6px 10px!important}
+ html[data-hanq-theme] body #app .toeic-learning-page .tc.tc-simple .tc-group-list .tc-group-label{grid-column:1;font-size:14px!important;line-height:1.4!important}
+ html[data-hanq-theme] body #app .toeic-learning-page .tc.tc-simple .tc-group-list .tc-group-count{grid-column:1;margin-left:0!important;font-size:12px!important;line-height:1.4!important}
+ html[data-hanq-theme] body #app .toeic-learning-page .tc.tc-simple .tc-group-list .hanq-completion-check{grid-column:2;grid-row:1/3}
+}
