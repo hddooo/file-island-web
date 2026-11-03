@@ -1,5 +1,9 @@
 # 변경 이력
 
+## 0.3.5-beta
+
+Refine the palace camp with dusk fabric chairs, ground shadows and a separate small animated flame. Furniture stays fixed; decoded cutouts retry after reconnection. Compact the mobile profile without reducing type or touch targets; long names use a centred title above one shared action row. Native island menus, OS reduced motion and 0.3.4 workbook preparation remain intact.
+
 ## 0.3.4-beta — 개화기 준비 검수와 저장 안내 대비 보완
 
 - 개화기20쪽·118문항/119빈칸·요약8주제를 원문과 대조하고 노란 제목8개와 정답표118셀을 비공개 준비본에 보완했습니다. 번호 없는 동학농민운동 문항과 독립협회 한 줄 배치를 보존합니다.

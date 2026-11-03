@@ -1,5 +1,9 @@
 # FE 결과·이슈·다음 업무
 
+### 2026-11-04 - 0.3.5-beta review evidence
+
+New generated artwork and exact prompt set: docs/history-camp-art-v2.json. Camp geometry/decode/motion/menu tests: scripts/qa-iphone-camp.cjs; mobile typography and navigation: scripts/qa-iphone-header-compact.cjs. Existing history readiness now waits for both decoded cutouts. Existing stacked-header assertions enforce the new title/action geometry while retaining touch, type and native navigation requirements. Native API/auth/data and 0.3.4 workbook code are unchanged. Windows/Linux WebKit is browser emulation, not a physical iPhone test. This candidate record does not assert a completed operating deployment or public Internet reachability.
+
 ### 2026-11-04 — 개화기 준비 단위의 결과와 운영 구분
 
 개화기20쪽/118문항/119빈칸/요약8주제와 기존 두 시대를 함께 검증한다. 기존 문항·답안 JSON과79회·조선·고려 진도는 유지하며, 미준비 시대의 derived 경로는 목록과파일에서 제외한다. 원문 사진·캡션 관계는 유지하고 번호 없는 동학 순서 답에는 번호를 추가하지 않았다.

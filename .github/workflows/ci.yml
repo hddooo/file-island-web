@@ -51,6 +51,7 @@ jobs:
       - run: node scripts/qa-english-island.cjs
       - run: node scripts/qa-english-residents.cjs
       - run: node scripts/qa-history-evening.cjs
+      - run: node scripts/qa-iphone-camp.cjs
       - name: Save synthetic island scene failure frames
         if: failure()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
@@ -311,10 +312,12 @@ jobs:
           set +e
           node scripts/qa-header-readability-matrix.cjs
           typography=$?
+            node scripts/qa-iphone-header-compact.cjs
+            compact=$?
           node scripts/qa-header-parent-navigation.cjs
           navigation=$?
-          echo "Typography exit=$typography; parent navigation exit=$navigation"
-          test "$typography" -eq 0 && test "$navigation" -eq 0
+            echo "Typography exit=$typography; compact exit=$compact; parent navigation exit=$navigation"
+            test "$typography" -eq 0 && test "$compact" -eq 0 && test "$navigation" -eq 0
       - name: Validate exact synthetic header frames on final review branch
         id: header_privacy
         if: always() && github.ref == 'refs/heads/codex/header-parent-readability-release-20261102'

@@ -20,18 +20,22 @@ html body #app .history-evening .he-stars{position:absolute;display:block;inset:
 html body #app .history-evening .he-clouds{background:linear-gradient(155deg,#14213e70,#0a14212b 60%,#0b1c3977)!important;opacity:0;animation:he-overcast 150s ease-in-out infinite!important}
 html body #app .history-evening .he-rain{opacity:0;animation:he-shower 150s ease-in-out infinite!important}
 html body #app .history-evening .he-rain>i{position:absolute;display:block;left:var(--x);top:var(--y);width:1px;height:18px;background:linear-gradient(transparent,#c4dce6a1)!important;animation:he-raindrop 1.35s var(--delay) linear infinite!important}
-html body #app .history-evening .he-camp{position:absolute;display:block;left:48%;top:62%;width:25%;aspect-ratio:280/160;transform:translate(-50%,-100%);background:transparent!important}
-html body #app .history-evening .he-chairs{position:absolute;inset:0;display:block;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 3px 2px #03101880)}
-html body #app .history-evening .he-warmth{position:absolute;display:block;left:-20%;top:34%;width:140%;height:90%;border-radius:50%;background:radial-gradient(ellipse,#ffc66b65,#c68e2a22 48%,transparent 72%)!important;animation:he-firelight 2.7s ease-in-out infinite alternate!important}
-html body #app .history-evening .he-fire{position:absolute;display:block;left:43%;top:39%;width:17%;height:47%;background:transparent!important}
-html body #app .history-evening .he-flame{position:absolute;display:block;bottom:0;left:0;width:72%;height:90%;border-radius:15% 75% 45% 70%;transform-origin:50% 100%;background:linear-gradient(20deg,#fff6a3 0%,#ffc24c 28%,#ef681f 65%,#b93d1500 100%)!important;animation:he-flame 1.3s ease-in-out infinite alternate!important;box-shadow:0 0 12px #ffb03d5c}
-html body #app .history-evening .he-flame-b{left:25%;width:64%;height:76%;animation-duration:.97s!important;animation-delay:-.3s!important;background:linear-gradient(25deg,#fffbc5,#ffd14a 46%,#f0873200)!important}
-html body #app .history-evening .he-flame-c{left:15%;width:43%;height:56%;animation-duration:.7s!important;animation-delay:-.6s!important;background:linear-gradient(#fff5ac,#fff8d2)!important}
-html body #app .history-evening .he-ember{position:absolute;display:block;left:45%;bottom:40%;width:2px;height:3px;border-radius:50%;background:#ffd38d!important;animation:he-ember 3.3s linear infinite!important}
+html body #app .history-evening .he-camp{position:absolute;display:block;left:48%;top:62%;width:18%;aspect-ratio:3/2;transform:translate(-50%,-100%);background:transparent!important;opacity:0}
+html body #app .history-evening .he-camp.he-camp-ready{opacity:1}
+html body #app .history-evening .he-chairs{position:absolute;inset:0;display:block;width:100%;height:100%;background:var(--he-camp-art) center/contain no-repeat!important;filter:brightness(.9) saturate(.86)}
+html body #app .history-evening .he-warmth{position:absolute;display:block;left:27%;top:65%;width:46%;height:25%;border-radius:50%;background:radial-gradient(ellipse,#ffb85a25,transparent 72%)!important;animation:he-firelight 2.7s ease-in-out infinite alternate!important}
+html body #app .history-evening .he-fire{position:absolute;display:block;left:41%;top:47%;width:18%;height:31%;background:transparent!important;opacity:0}
+html body #app .history-evening .he-fire.he-fire-ready{opacity:1}
+html body #app .history-evening .he-fire:not(.he-fire-ready) *{animation-play-state:paused!important}
+html body #app .history-evening .he-flame{position:absolute;display:block;bottom:0;left:0;width:100%;height:100%;transform-origin:50% 100%;background:var(--he-flame-art) center bottom/contain no-repeat!important;animation:he-flame 1.3s ease-in-out infinite alternate!important;filter:drop-shadow(0 0 2px #e39a4033)}
+html body #app .history-evening .he-flame-b{left:18%;width:64%;height:80%;opacity:.35;animation-duration:.91s!important;animation-delay:-.3s!important}
+
+html body #app .history-evening .he-ember{position:absolute;display:block;left:45%;bottom:36%;width:1px;height:2px;border-radius:50%;background:#e9b36e!important;animation:he-ember 3.3s linear infinite!important}
 html body #app .history-evening .he-ember-b{left:22%;animation-delay:-1.2s!important;animation-duration:4.1s!important}.history-evening .he-ember-c{left:66%;animation-delay:-2.4s!important}
-html body #app .history-evening .he-friend{position:absolute;display:block;left:85%;top:44%;width:31%;aspect-ratio:1;visibility:hidden;background:transparent!important}
+html body #app .history-evening .he-friend{position:absolute;display:block;left:98%;top:31%;width:40%;aspect-ratio:1;visibility:hidden;background:transparent!important}
+html body #app .history-evening .he-friend::after{content:'';position:absolute;left:25%;right:21%;bottom:10%;height:6%;border-radius:50%;background:radial-gradient(ellipse,#030c1177,transparent 72%);filter:blur(1px);z-index:0}
 html body #app .history-evening .he-friend.he-ready{visibility:visible}
-html body #app .history-evening .he-friend-sprite{position:absolute;display:block;inset:0;background:url('characters/agumon-idle-sprite.png') 0 0/200% 200% no-repeat!important;animation:hanq-agumon-idle 7.9s -2.1s steps(1,end) infinite!important;filter:brightness(.78) saturate(.82)}
+html body #app .history-evening .he-friend-sprite{position:absolute;display:block;inset:0;z-index:1;background:url('characters/agumon-idle-sprite.png') 0 0/200% 200% no-repeat!important;animation:hanq-agumon-idle 7.9s -2.1s steps(1,end) infinite!important;filter:brightness(.78) saturate(.82)}
 html body #app .history-evening .he-leaf{position:absolute;display:block;left:6%;top:-28%;width:95%;height:auto;overflow:visible;opacity:0;transform:rotate(-12deg);animation:he-umbrella 150s ease-in-out infinite!important;filter:drop-shadow(0 2px 2px #04141466)}
 html body #app .history-evening.he-paused :is(.he-aurora,.he-clouds,.he-rain,.he-rain>i,.he-warmth,.he-flame,.he-ember,.he-friend-sprite,.he-leaf){animation-play-state:paused!important}
 @keyframes he-aurora{from{transform:translateX(-3%) skewX(-5deg) scaleY(.8);opacity:.6}to{transform:translateX(4%) skewX(7deg) scaleY(1.1);opacity:.92}}
@@ -39,10 +43,10 @@ html body #app .history-evening.he-paused :is(.he-aurora,.he-clouds,.he-rain,.he
 @keyframes he-shower{0%,39%,86%,100%{opacity:0}51%,67%{opacity:.55}}
 @keyframes he-umbrella{0%,34%,90%,100%{opacity:0}42%,78%{opacity:1}}
 @keyframes he-raindrop{from{transform:translate(0,-100px) rotate(12deg)}to{transform:translate(-38px,180px) rotate(12deg)}}
-@keyframes he-firelight{from{opacity:.65;transform:scale(.98)}to{opacity:.92;transform:scale(1.03)}}
-@keyframes he-flame{from{transform:scale(.82,.9) rotate(-7deg);border-radius:15% 75% 45% 70%}to{transform:scale(1.05,1.08) rotate(6deg);border-radius:60% 20% 65% 40%}}
-@keyframes he-ember{0%{opacity:0;transform:translate(0,0)}12%{opacity:.8}100%{opacity:0;transform:translate(10px,-65px)}}
-@media(max-width:700px) and (orientation:portrait){html body #app .history-evening .he-camp{left:40%;top:74%;width:44%}html body #app .history-evening .he-sky{height:11%}html body #app .history-evening .he-rain>i:nth-child(even){display:none}}
+@keyframes he-firelight{from{opacity:.6}to{opacity:.9}}
+@keyframes he-flame{from{transform:translateX(-.5px) scale(.97,.95) skewX(-2deg);opacity:.88}to{transform:translateX(.5px) scale(1.02,1.04) skewX(2deg);opacity:1}}
+@keyframes he-ember{0%{opacity:0;transform:translate(0,0)}12%{opacity:.55}100%{opacity:0;transform:translate(3px,-18px)}}
+@media(max-width:700px) and (orientation:portrait){html body #app .history-evening .he-camp{left:40%;top:74%;width:31%}html body #app .history-evening .he-sky{height:11%}html body #app .history-evening .he-rain>i:nth-child(even){display:none}}
 html.world-low-power body #app .history-evening .he-aurora{animation:none!important;filter:none;opacity:.35}
 html.world-low-power body #app .history-evening .he-rain>i:nth-child(2n){display:none}
 @media(prefers-reduced-motion:reduce){html body #app .history-evening :is(.he-aurora,.he-clouds,.he-rain,.he-rain>i,.he-warmth,.he-flame,.he-ember,.he-friend-sprite,.he-leaf){animation:none!important;transition:none!important}html body #app .history-evening :is(.he-rain,.he-leaf,.he-ember){display:none!important}html body #app .history-evening .he-aurora{opacity:.45}html body #app .history-evening .he-friend-sprite{background-position:0 0!important}}

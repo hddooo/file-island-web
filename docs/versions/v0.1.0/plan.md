@@ -1,5 +1,9 @@
 # FE 버전 계획
 
+### 2026-11-04 - 0.3.5-beta iPhone scene and header correction
+
+Scope: correct pasted-looking camp furniture/flame and excessive mobile header space from the supplied phone photo. Preserve the palace source, water, aurora, weather, companion and native building menus. Keep 0.3.4 workbook files and access gates unchanged. Validate 320/390/desktop composition and header typography, native flows, lifecycle, reduced motion, decode failure and recovery before exact-SHA CI/CD.
+
 ### 2026-11-04 — 개화기 독립 준비 / 0.3.4-beta
 
 - [x] 배포된 고려0.3.3을 보존한 독립 브랜치에서 개화기20쪽/118문항/119슬롯/요약8주제를 통합한다.

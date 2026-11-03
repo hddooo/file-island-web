@@ -1,5 +1,9 @@
 # FE 실제 진행 상태
 
+### 2026-11-04 - 0.3.5-beta candidate
+
+The photo contained the correct palace asset. Flat camp art and a profile-only second header row were the defects. Two transparent dusk cutouts replace the vector chairs and smooth flame. Furniture is static; only the small flame, ember light, weather, water and companion animate. A compact identity grid keeps ordinary two-character profiles in a 60px header; oversized content receives a title row and one shared action row. Existing geometry checks are strengthened to express that layout, with unrelated assertions retained. Windows camp 8 cases and header typography/native regression suites pass; Linux, exact SHA publication and operating verification are recorded separately when completed.
+
 ### 2026-11-04 — 개화기 원문 및 저장 상태 안내 검수
 
 개화기88–107쪽을 조선·고려 준비본의 사본에 추가했다. 기존 raw147쪽과 두 시대 데이터는 그대로이며, 새20쪽의 원문18,619문자/ID·RGB·굵기를 대조했다. 원래 밑줄52구간/172문자, prompt87구간을 보존하고 원문font.bold에 따라86개prompt굵기를 보완했다. 제목8개는 동일 원문의 black vector program을 비교해 복원했다. 정답111개는 원래4/5/6열에, 나머지7개는 동학의 번호 없는 순서 답과 독립협회 한 줄 제목/답 배치에 맞췄다. 퀴즈 JSON bytes/source/items/digest는 불변이다.

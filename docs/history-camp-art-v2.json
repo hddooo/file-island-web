@@ -1,0 +1,27 @@
+{
+  "mode": "Built-in image generation; two new transparent raster assets",
+  "createdAt": "2026-11-03",
+  "assets": [
+    {
+      "path": "media/world-art/history-camp-dusk-v2.webp",
+      "width": 768,
+      "height": 512,
+      "bytes": 68334,
+      "purpose": "Static chairs, contact shadows, stone pit and ember bed on one ground plane",
+      "sha256": "3223f9aead240c777b5687b80d4cc4818fb120667b8e6a6c4349439b7efc1326"
+    },
+    {
+      "path": "media/world-art/history-camp-flame-v2.webp",
+      "width": 178,
+      "height": 256,
+      "bytes": 16916,
+      "purpose": "Separate small transparent flame overlay",
+      "sha256": "7939c09df75a2bc22b3a6425985df2894407a6bc502fc18b2faea5b6ff007eea"
+    }
+  ],
+  "deliveryOptimization": "Original generated transparent PNGs retained in private evidence. Browser canvas resized the camp and cropped transparent flame margins for WebP delivery. No creative raster editing outside image generation.",
+  "sharedPrompt": "Fine detailed painterly game-environment illustration, semi-realistic materials, like a lush Korean Joseon palace mountain garden painting viewed at blue-hour dusk. Not flat vector, not pixel art, not studio product photography. Genuine transparent alpha background, no checkerboard, no text.",
+  "campPromptSuffix": "Create a small foreground cutout of exactly two modest low folding camping chairs facing inward toward a small circular stone fire pit between them. Muted dark olive fabric, slender dark weathered wood frames, credible construction, camera looking down about 30 degrees. All on one ground plane: left chair angles diagonally right, right chair diagonally left. Pit centred at x50%, lower y78%; charcoal and short logs with subtle orange ember bed but NO open flames, which will be animated separately. Cool dim blue evening light, restrained warm ember reflections on inner fabric/legs. Soft dark contact shadows touch every foot and the pit. Compact landscape 3:2 composition fully inside canvas, transparent margin around all objects. No floor rectangle, no grass, no pond, no scenery, no people, no characters, no lanterns. Believable small quiet camp; firepit lower than seats; delicate antialiased edges.",
+  "flamePromptSuffix": "Create ONLY one small natural campfire-flame cluster as a transparent overlay. Several asymmetric thin irregular orange-gold flame tongues with wispy tapered tips, amber base and restrained pale yellow core; a short modest campfire from elevated 30 degree view, to fit a small stone firepit. Not a light bulb, smooth cone, torch or icon. Painterly translucent flame edges; remains attractive and legible at 25-35px tall. Flame centre canvas, baseline y85%; glow extremely restrained near flame. NO wood, stones, furniture, smoke cloud, ground or shadow.",
+  "privacy": "The supplied iPhone photo was inspected privately. No photograph or personal identity was included in this repository. Public QA uses synthetic identity and API responses."
+}
