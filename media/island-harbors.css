@@ -124,5 +124,15 @@ html body #app .world-inquiry-desk :is(button,a){min-height:44px;display:inline-
 html body #app .world-inquiry-desk nav{gap:8px}
 @media(max-width:520px){html body #app .world-inquiry-desk{padding:16px 12px!important}html body #app .world-inquiry-desk #content>form{padding:12px!important}}
 
+/* The water renderer shares the chart's exact fitted image coordinates. No
+   terrain, buildings, controls or full photograph is translated or rotated. */
+html body #app .harbor-chart .living-water-surface{position:absolute;inset:0;display:block;width:100%;height:100%;max-width:none;pointer-events:none;z-index:0}
+html body #app .harbor-chart.living-water-ready>img:not(.living-boat){opacity:0}
+html body #app .harbor-chart .living-boat{position:absolute;display:block;max-width:none;pointer-events:none;z-index:1;object-fit:fill;will-change:transform}
+html body #app .harbor-chart .scene-atmosphere .scene-water{display:none!important}
+html body #app .harbor-chart .scene-atmosphere{z-index:2}
+html[data-hanq-theme=terminal] body[data-island=history]::before{background:linear-gradient(180deg,#05170c33,#05170c99),url('world-art/history-palace-wide-v1.webp') center/cover no-repeat!important}
+@media(prefers-reduced-motion:reduce){html body #app .harbor-chart .living-boat{will-change:auto;transform:none!important}}
+
 html body #app .world-inquiry-desk>nav>a{background:#082229a8!important;border:1px solid #8cb3a566;text-decoration:underline;text-underline-offset:4px}
 html body #app .world-inquiry-desk #content>p{width:fit-content;padding:8px 10px;border-radius:6px;background:#082229d9!important}

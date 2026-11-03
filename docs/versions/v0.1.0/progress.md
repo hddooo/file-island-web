@@ -662,3 +662,7 @@ v0.1.2와 f50a70f 후보 모두 합성 로그인 후 320×568에서 ri-game/host
 ### 2026-11-03 · FE 장면/프로필 검토 후보
 
 `codex/island-scene-review-20261103`, 원격 기준 `061de840…`. 섬 원화 고정+독립 날씨/수면/숲 모션, MyPage 통합 sanctuary, 문의 통합 배경, Growth 공개 프로필/활동 children/old987 fallback을 구현·로컬 검수했다. selected-partner XP는 운영987에 probe하지 않는 기본 비활성이다. [상세 검토 결과](report.md#2026-11-03--섬-장면통합-프로필growth-ui-검토-후보)의 5개 검토 축과 실제 evidence/검증 한계를 확인한다. 운영 미반영. 최종 exact-SHA CI와 통합 배포는 후속 인계 상태를 따른다. 한국사 source-data/빈칸/revision·독서 renderer/CSS는 수정하지 않았고 별도 역사 작업에 소유를 넘겼다.
+
+### 2026-11-03 물·배 장면 보정 후보
+
+`feat/living-island-water`, base `2f745855e618f790617ecf3b64068afd4315b49d`. `media/island-harbors.js/.css`, 새 `island-living-water.js`, 역사 장면 3개 자산과 scene QA만 소유한다. index/header·학습 UI·인증/API/DB/인프라는 변경하지 않는다. 지정 물 영역의 원래 픽셀을 GPU로 굴절하고 배는 원래 실루엣을 plate에서 제거한 뒤 한 레이어로 상하·회전한다. 역사 입구는 고궁·한국 산수·연못으로 교체했다. 부모 통합 전 후보이며 미배포다.
