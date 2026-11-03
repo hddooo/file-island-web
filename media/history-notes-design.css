@@ -1,0 +1,139 @@
+/* 81st-edition reading presentation only. Load after the existing textbook CSS.
+   No source bytes, answer policy, readiness gate, image pixels or game chrome change. */
+html body #privateTextbook:has(.history-notes-design[data-history-edition="81"]) {
+  --paper: #f3ede0;
+  --ink: #272b27;
+  --muted: #596054;
+  --line: #b8ae9b;
+  background-color: var(--paper) !important;
+  color: var(--ink) !important;
+  border: 0;
+  box-shadow: none;
+}
+html body #privateTextbook .history-notes-design[data-history-edition="81"] {
+  --hn-paper: #f3ede0;
+  --hn-surface: #e8dfce;
+  --hn-ink: #272b27;
+  --hn-muted: #596054;
+  --hn-accent: #315b4e;
+  --hn-rule: #b8ae9b;
+  --textbook-semantic-blue: #315b4e;
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+  background-color: var(--hn-paper) !important;
+  color: var(--hn-ink) !important;
+  font-size: 16px;
+  line-height: 1.625;
+  overflow-wrap: anywhere;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+html body #privateTextbook > .history-notes-design[data-history-edition="81"] {
+  width: 100%;
+  max-width: 1080px;
+  margin-inline: auto;
+  padding: 24px 20px;
+}
+html body #privateTextbook .history-notes-design[data-history-edition="81"] :is(.textbook-semantic-library-content,.textbook-semantic-content,.textbook-source-list,.textbook-source-review) {
+  width: 100%;
+  max-width: 720px;
+  min-width: 0;
+  margin-inline: auto;
+}
+html body #privateTextbook .history-notes-design[data-history-edition="81"] :is(.textbook-reader-page,.textbook-semantic-table-scroll,.textbook-source-quiz-item,.textbook-semantic-exercises) {
+  border-radius: 0;
+  border-color: var(--hn-rule) !important;
+  box-shadow: none;
+}
+html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-reader-page {
+  margin-block: 24px 0;
+  padding-block: 16px 0;
+}
+html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-reader-page:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+html body #privateTextbook .history-notes-design[data-history-edition="81"] :is(.textbook-semantic-heading,.textbook-source-quiz-title,.textbook-joseon-heading) {
+  color: var(--hn-ink);
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 24px 0 8px;
+  break-after: avoid;
+}
+html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-source-quiz-title { margin-top: 0; font-size: 28px; }
+html body #privateTextbook .history-notes-design[data-history-edition="81"] :is(.textbook-semantic-text,.textbook-semantic-table td,.textbook-semantic-table th,.textbook-source-quiz-statement) {
+  font-size: 16px;
+  line-height: 1.625;
+  color: var(--hn-ink);
+}
+html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-text { margin-block: 8px 12px; }
+html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-heading + .textbook-semantic-text { margin-top: 4px; }
+html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-table-scroll { margin-block: 12px; border: 0; }
+html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-table :is(td,th) {
+  padding: 10px 12px;
+  border-color: var(--hn-rule) !important;
+}
+/* Verified source ink, highlights, diagram shading and source spans retain
+   their existing styles. Only ordinary label cells receive the design tint. */
+html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-table th:not([class*="textbook-source-"]) {
+  background-color: var(--hn-surface) !important;
+  font-weight: 600;
+}
+/* Source cell roles outrank both the generic header tint and the mobile reflow. */
+html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-table :is(th,td).textbook-source-shading-yellow { background-color: #fff09b !important; }
+html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-table :is(th,td).textbook-source-shading-green { background-color: #d5f2b8 !important; }
+html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-table :is(th,td).textbook-source-shading-blue { background-color: #c3ecf9 !important; }
+html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-table :is(th,td).textbook-source-shading-peach { background-color: #f5d5bf !important; }
+html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-table :is(th,td).textbook-source-shading-pink { background-color: #f1d4f0 !important; }
+html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-row-annotation {
+  margin: 4px 0 0;
+  padding: 4px 0;
+  border: 0;
+  border-radius: 0;
+}
+html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-row-annotation.textbook-semantic-table-group { width: min(100%,340px); margin-top: 12px; }
+html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-semantic-row-annotation .textbook-semantic-table :is(td,th) { padding: 5px 8px; line-height: 1.5; }
+html body #privateTextbook .history-notes-design[data-history-edition="81"] :is(.textbook-joseon-section,.textbook-joseon-review) { margin: 0; padding: 0; }
+html body #privateTextbook .history-notes-design[data-history-edition="81"] :is(.textbook-joseon-section-common,.textbook-joseon-review-common) {
+  margin-block: 24px;
+  padding-block: 12px;
+  border-block: 1px solid var(--hn-rule) !important;
+}
+html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-joseon-subtopic { font-size: 18px; line-height: 1.5; margin: 20px 0 6px; color: var(--hn-accent); }
+html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-source-quiz-item { padding-block: 12px; margin: 0; border-inline: 0; }
+html body #privateTextbook .history-notes-design[data-history-edition="81"] :is(.textbook-source-quiz-item-source,.textbook-source-quiz-reference,.textbook-status) { font-size: 13px; line-height: 1.54; color: var(--hn-muted) !important; }
+/* Hide repeated generic instructions/counts, never source instructions,
+   validation feedback, save failures, retry controls or actual question text. */
+html body #privateTextbook .history-notes-design[data-history-edition="81"].textbook-source-continuous > .textbook-source-quiz-help { display: none; }
+html body #privateTextbook .history-notes-design[data-history-edition="81"] :is(button,input,textarea,select) {
+  background-color: var(--hn-surface) !important;
+  color: var(--hn-ink) !important;
+  border-color: var(--hn-rule) !important;
+  accent-color: var(--hn-accent);
+  caret-color: var(--hn-accent);
+  font-size: 16px;
+  min-height: 44px;
+}
+html body #privateTextbook .history-notes-design[data-history-edition="81"] :is(button:hover,button[aria-selected="true"]) { background-color: #d6dfce !important; color: var(--hn-ink) !important; }
+html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-source-quiz-input {
+  width: 8em;
+  max-width: 100%;
+  border-radius: 2px;
+  padding: 6px 8px;
+}
+html body #privateTextbook .history-notes-design[data-history-edition="81"] :focus-visible { outline: 3px solid var(--hn-accent); outline-offset: 3px; }
+html body #privateTextbook .history-notes-design[data-history-edition="81"] [hidden] { display: none !important; }
+@media (max-width: 600px) {
+  /* Native source labels remain paired with their own body cell. Never apply
+     this to merged cells or diagrams; their graph topology is unchanged. */
+  html body #privateTextbook .history-notes-design[data-history-edition="81"] table[data-history-label-content],
+  html body #privateTextbook .history-notes-design[data-history-edition="81"] table[data-history-label-content] > tbody { display: block; }
+  html body #privateTextbook .history-notes-design[data-history-edition="81"] table[data-history-label-content] > colgroup { display: none; }
+  html body #privateTextbook .history-notes-design[data-history-edition="81"] table[data-history-label-content] > tbody > tr { display: grid; grid-template-columns: minmax(0,1fr); padding-block: 12px; border-bottom: 1px solid var(--hn-rule); }
+  html body #privateTextbook .history-notes-design[data-history-edition="81"] table[data-history-label-content] > tbody > tr > :is(th,td) { display: block; width: auto; border: 0; padding: 4px 0; }
+  html body #privateTextbook .history-notes-design[data-history-edition="81"] table[data-history-label-content] > tbody > tr > :is(th,td):not([class*="textbook-source-"]) { background-color: transparent !important; }
+  html body #privateTextbook .history-notes-design[data-history-edition="81"] table[data-history-label-content] > tbody > tr > th { font-size: 18px; font-weight: 700; }
+}
+@media (min-width: 900px) {
+  html body #privateTextbook > .history-notes-design[data-history-edition="81"] { padding: 32px; }
+  html body #privateTextbook .history-notes-design[data-history-edition="81"] .textbook-source-quiz-title { font-size: 32px; }
+}

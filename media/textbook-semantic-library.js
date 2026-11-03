@@ -206,7 +206,7 @@
       }).then(function () {
         if (!valid(g, r)) return;
         if(originalAction)originalAction.disabled=false;
-        if(selectedMode!=='text'&&selectedMode!=='exam')setStatus(selectedMode==='choices'?'교재 기반 4지선다 연습 · 검수된 일부 문항':'교재 원문 빈칸 · 원문 정답과 함께 학습');
+        if(selectedMode!=='text'&&selectedMode!=='exam')setStatus('');
       }).catch(function (error) {
         if (!valid(g, r)) return;
         cleanupChild(); setStatus(errorText(error)); retryButton();
@@ -267,7 +267,6 @@
             isFigureAvailable:function (figure) { return entry.figuresAvailable !== false && Array.isArray(manifest.figures) && manifest.figures.some(function (f) { return f.id === figure.assetId; }); },
             resolveFigure:imageResolver(g,r,section)
           });
-          section.insertBefore(button('이 쪽 원문 확대',function(event){openOriginal(entry.pdfPage,event&&event.currentTarget,true);}),section.firstChild);
           children.push(view); loaded++;
           // All text is loaded automatically. Image promises deliberately do not
           // block later source pages; only nearby illustrations fetch Blobs.
@@ -287,12 +286,13 @@
         if (!valid(g,r) || queue >= sections.length) return Promise.resolve();
         return showPage(sections[queue++]).then(worker);
       }
-      return Promise.all([worker(),worker(),worker()]).then(function () { if (valid(g,r) && !failed) setStatus('교재 순서대로 이어 읽기 · 전체 ' + loaded + '개 자료'); });
+      return Promise.all([worker(),worker(),worker()]).then(function () { if (valid(g,r) && !failed) setStatus(''); });
     }
     function buildControls() {
       var declaredCount = quiz && [quiz.itemCount, quiz.questionCount, quiz.count].find(function (count) { return Number.isInteger(count) && count >= 0; });
       quizCount = Number.isInteger(declaredCount) ? declaredCount : null;
       coverage = node('p', null, 'textbook-status textbook-semantic-coverage'); coverage.setAttribute('data-semantic-coverage', '');
+      coverage.hidden = true;
       shell.insertBefore(coverage, status); updateCoverage();
       var controls = node('div', null, 'textbook-controls');modeControls=controls;
       var nav = node('div'); nav.setAttribute('role', 'tablist'); nav.setAttribute('aria-label', '교재 학습 방식');
@@ -305,7 +305,6 @@
         nav.appendChild(tab); return tab;
       });
       controls.appendChild(nav);
-      originalAction=button('문제 원문 전체·확대',function(event){openOriginal(pageNumber||era.from,event&&event.currentTarget,true);});originalAction.className='textbook-original-action';controls.appendChild(originalAction);
       shell.insertBefore(controls, status);
       panel.setAttribute('id', panelId); panel.setAttribute('role', 'tabpanel');
       var supplements = node('nav', null, 'textbook-supplement-links'); supplements.setAttribute('aria-label', '교재 부록');
@@ -321,6 +320,7 @@
       if (!element) return Promise.resolve();
       host = element; eraId = selectedEra; callbacks = hooks || null; sourceRevision=hooks&&hooks.sourceRevision!=null?hooks.sourceRevision:null;sourceSha=sourceInfo(sourceRevision)&&sourceInfo(sourceRevision).sha256;captureRoute();mode = hooks && ['quiz','exam','choices'].indexOf(hooks.initialMode)>=0 ? hooks.initialMode : 'text'; session = identity();
       shell = node('section', null, 'private-textbook textbook-semantic-library');
+      if (sourceSha === 'd54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de') { shell.classList.add('history-notes-design'); shell.setAttribute('data-history-edition', '81'); }
       status = node('p', null, 'textbook-status'); status.setAttribute('role', 'status'); status.setAttribute('aria-live', 'polite'); shell.appendChild(status);
       panel = node('div', null, 'textbook-semantic-library-content'); shell.appendChild(panel); host.appendChild(shell);buildEditionControl();
       if (api && typeof api.onChange === 'function') unsubscribe = api.onChange(function () {
