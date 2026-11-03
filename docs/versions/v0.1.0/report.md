@@ -513,3 +513,7 @@ PNG만으로 모션 완료를 주장하지 않는다. `motion-0/2`는 실제 2�
 최종 장면 후보의 사용자 버전은 루트가 승인한 `0.2.10-beta`다. RELEASE_VERSION·CHANGELOG·README를 함께 갱신하며, source HTML의 development marker는 유지하고 정식 static build가 정확 커밋 SHA·release meta·JS/CSS build query를 생성한다. review branch push와 운영 배포는 별개이며 main FF 및 실제 도메인 확인은 루트 검수/실 API 조율 뒤에 진행한다.
 
 필수 compact CI에서 기존 `qa-ui-final-review.cjs`의 계정 직접 진입 기대(전체 지도→subjects)가 이번 승인된 native Back 위임(뒤로→history)과 충돌했다. 제품 코드를 다시 바꾸지 않고 해당 account 계약을 갱신하며 native callback 위임·같은 버튼 숨김·실제 목적지·Back/Forward 복원을 추가 검증한다. 다른 route/hit/XP/그룹/원화 assertions는 그대로 보존한다. 최초 e165fc2 CI의 compact 실패와 브라우저 설치 지연 뒤 Practice15분 취소는 근거에 남기고 새 test-only 정확 SHA의 전체 필수 CI로 다시 확인한다. 보호 계약의 잘못된69 요약은 원래28파일행+3tree(63leaf), ci-tools중복2를 제외한89개 경로(87불변·승인예외 index/RELEASE_VERSION2개)의 전수 목록으로 정정했다.
+
+### 2026-11-03 물·배 장면 보정 후보
+
+규칙 `hanq-collaboration-2026-11-01-v5`. Chrome 1440×1000, 390×844, 320×740, 844×390의 두 섬과 저사양 합성 환경에서 물 frame/배 transform 변화, reduced-motion 정지·복귀, offscreen 정지를 실제 렌더링으로 검증했다(9건). 기존 `qa-island-harbors.cjs`는 Chrome/WebKit 28건 통과: 버튼/keyboard/route-back/스크롤/레이아웃 보존. 실제 모바일 기기 성능은 미확인이다. `qa-living-water.cjs`와 작업 evidence의 시간차 PNG/GIF/WebM·pixel-motion.json이 내부 움직임 근거다. 원화·경로·ID·학습 저장 계약을 보존했다. 정확 SHA CI·부모 통합·운영 버전/SHA/자산 검수는 별도다. 운영 브랜치를 독자 통합하거나 배포하지 않았다.

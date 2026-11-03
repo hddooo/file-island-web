@@ -10,6 +10,12 @@
     flag:'<path d="M5 22V3m0 1c5-5 9 5 15 0v10c-6 5-10-5-15 0M2 22h6"/>'
   };
   function icon(name){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+icons[name]+'</svg>';}
+  // Scene module is loaded here so shared index/header and study modules stay untouched.
+  var waterLoader;
+  function livingWater(chart,art,kind){
+    if(!waterLoader)waterLoader=new Promise(function(resolve){var s=document.createElement('script');s.src='media/island-living-water.js?v=palace-water-1';s.onload=function(){resolve(root.HanqLivingWater);};s.onerror=function(){resolve(null);};document.head.appendChild(s);});
+    waterLoader.then(function(engine){if(engine&&chart.isConnected)engine.mount(chart,art,kind);});
+  }
   var stops={
     history:[{id:'homePastExams',icon:'gate',x:47,y:28,mx:50,my:18},{id:'homeFormalExams',icon:'flag',x:23,y:45,mx:26,my:42},{id:'homeWrongNotes',icon:'review',x:66,y:59,mx:71,my:66}],
     toeic:[{id:'notebook',icon:'book',x:84,y:21,mx:26,my:17},{id:'wrongnotes',icon:'review',x:27,y:55,mx:26,my:52},{id:'grammar',icon:'notes',x:57,y:33,mx:73,my:34},{id:'player',icon:'audio',x:80,y:55,mx:73,my:70}]
@@ -41,8 +47,8 @@
     // Remove the old shared route, including its unlinked fourth history waypoint.
     map.querySelectorAll('.world-map-trail,.world-map-scale').forEach(function(n){n.remove();});
     var chart=document.createElement('picture');chart.className='harbor-chart';chart.setAttribute('aria-hidden','true');
-    var source=document.createElement('source');source.media='(max-width:700px)';source.srcset='media/world-art/'+kind+'-harbors-mobile-v1.webp';chart.appendChild(source);
-    var art=document.createElement('img');art.src='media/world-art/'+kind+'-v1.webp';art.alt='';art.width=1672;art.height=942;art.decoding='async';chart.appendChild(art);map.prepend(chart);atmosphere(chart,kind);
+    var source=document.createElement('source');source.media='(max-width:700px)';source.srcset='media/world-art/'+(kind==='history'?'history-palace-tall-v1.webp':kind+'-harbors-mobile-v1.webp');chart.appendChild(source);
+    var art=document.createElement('img');art.src='media/world-art/'+(kind==='history'?'history-palace-wide-v1.webp':kind+'-v1.webp');art.alt='';art.width=1672;art.height=941;art.decoding='async';chart.appendChild(art);map.prepend(chart);atmosphere(chart,kind);livingWater(chart,art,kind);
     if(kind==='history'){var guide=document.createElement('span');guide.className='harbor-chart-caption';guide.textContent='시간의 숲길';guide.setAttribute('aria-hidden','true');map.appendChild(guide);}
     controls.forEach(function(control,i){
       var key=control.dataset.toeicView||control.id,stop=stops[kind].find(function(s){return s.id===key;});
