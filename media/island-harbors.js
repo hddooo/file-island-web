@@ -61,6 +61,7 @@
       var pin=document.createElement('span');pin.className='harbor-pin';pin.innerHTML=icon(stop.icon);pin.setAttribute('aria-hidden','true');control.prepend(pin);
       control.addEventListener('pointerdown',function(){map.querySelectorAll('.harbor-selected').forEach(function(n){n.classList.remove('harbor-selected');});control.classList.add('harbor-selected');});
     });
+    if(kind==='toeic'&&root.HanqEnglishIsland){root.HanqEnglishIsland.enhance(map,chart,art,controls);return;}
     // Preserve the source aspect ratio, center the camera on the actual waypoints,
     // and keep text plaques inside the viewport while retaining the larger touch controls.
     function fitScene(){if(!map.isConnected)return;var w=map.clientWidth,h=map.clientHeight,mobile=matchMedia('(max-width:700px)').matches,nativeWidth=mobile?900:kind==='toeic'?1671:1672,nativeHeight=mobile?1200:941,points=stops[kind],xs=points.map(function(p){return mobile?p.mx:p.x;}),ys=points.map(function(p){return mobile?p.my:p.y;}),cx=(Math.min.apply(null,xs)+Math.max.apply(null,xs))/200,cy=(Math.min.apply(null,ys)+Math.max.apply(null,ys))/200,scale=Math.max(w/nativeWidth,h/nativeHeight),iw=nativeWidth*scale,ih=nativeHeight*scale,ox=Math.max(w-iw,Math.min(0,w/2-iw*cx)),oy=Math.max(h-ih,Math.min(0,(h-66)/2-ih*cy));
