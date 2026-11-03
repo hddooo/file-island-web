@@ -17,6 +17,7 @@ html body #privateTextbook .history-notes-design[data-history-edition="81"] {
   --hn-muted: #596054;
   --hn-accent: #315b4e;
   --hn-rule: #b8ae9b;
+  --hn-control-rule: #807762;
   --textbook-semantic-blue: #315b4e;
   box-sizing: border-box;
   min-width: 0;
@@ -107,7 +108,7 @@ html body #privateTextbook .history-notes-design[data-history-edition="81"].text
 html body #privateTextbook .history-notes-design[data-history-edition="81"] :is(button,input,textarea,select) {
   background-color: var(--hn-surface) !important;
   color: var(--hn-ink) !important;
-  border-color: var(--hn-rule) !important;
+  border-color: var(--hn-control-rule) !important;
   accent-color: var(--hn-accent);
   caret-color: var(--hn-accent);
   font-size: 16px;
