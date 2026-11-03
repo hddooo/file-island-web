@@ -238,3 +238,36 @@ html[data-hanq-theme] body #rainbowHost .ri-game .ri-bubble.ri-product-panel{bac
 html[data-hanq-theme] body #rainbowHost .ri-product-stats h3 small{color:#466044!important;opacity:1}
 #rainbowHost .ri-product-copy p,#rainbowHost .ri-product-chain{word-break:keep-all;overflow-wrap:break-word}
 #rainbowHost .ri-product-panel::after{display:none}
+
+/* Village partner viewer: the character and four stage baselines take priority. */
+html[data-hanq-theme] body #rainbowHost .ri-partner-panel :is(.ri-partner,.ri-partner-hero,.ri-partner-stats,.ri-partner-growth,.ri-partner-stats dl){background:transparent!important;color:#284632!important}
+html[data-hanq-theme] body #rainbowHost .ri-partner-panel :is(h3,h4,dt,dd,p,strong,small){color:#284632!important}
+html[data-hanq-theme] body #rainbowHost .ri-partner-panel .ri-close{min-width:44px;min-height:44px}
+#rainbowHost .ri-partner-panel::after{display:none}
+#rainbowHost .ri-partner-panel h2{font-size:14px;letter-spacing:.02em}
+#rainbowHost .ri-partner-hero{display:flex;flex-direction:column;align-items:center;text-align:center}
+#rainbowHost .ri-partner-hero .ri-friend-portrait{width:clamp(112px,24vh,164px);height:clamp(112px,24vh,164px);flex:none;margin:0 auto 5px;filter:drop-shadow(0 7px 5px #27482d25)}
+#rainbowHost .ri-partner-hero .ri-friend-portrait>:is(.cm-life,.collection-portrait,.collection-existing,.hanq-mascot){display:block;width:100%;height:100%;--mascot-size:164px;object-fit:contain}
+#rainbowHost .ri-partner-hero h3{font-size:24px;line-height:1.2;margin:7px 0 14px}
+#rainbowHost .ri-partner-state{font-size:11px;font-weight:700;border:1px solid #a1b49a;border-radius:20px;padding:3px 10px}
+html[data-hanq-theme] body #rainbowHost .ri-partner-state.is-equipped{background:#dfe9ca!important;color:#25452e!important;border-color:#779360}
+#rainbowHost .ri-partner-stats h4{font-size:11px;line-height:1.4;margin:0 0 6px;font-weight:400;text-align:center;color:#526848}
+#rainbowHost .ri-partner-stats dl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:0}
+html[data-hanq-theme] body #rainbowHost .ri-partner-stats dl>div{padding:9px 3px 8px;text-align:center;background:#edf1e2!important;border:1px solid #bccaa8;border-radius:9px;color:#284632!important}
+#rainbowHost .ri-partner-stats dt{font-size:11px;line-height:1.4;letter-spacing:.05em}
+#rainbowHost .ri-partner-stats dd{font-size:22px;line-height:1.35;font-weight:800;margin:2px 0 0;font-variant-numeric:tabular-nums}
+#rainbowHost .ri-partner-stats [data-stat="hp"]{border-top:3px solid #8f5f50}
+#rainbowHost .ri-partner-stats [data-stat="atk"]{border-top:3px solid #a6813b}
+#rainbowHost .ri-partner-stats [data-stat="def"]{border-top:3px solid #597c81}
+#rainbowHost .ri-partner-stats [data-stat="luk"]{border-top:3px solid #887198}
+#rainbowHost .ri-partner-growth{margin-top:12px;border-top:1px solid #c7d0b5;padding-top:7px}
+#rainbowHost .ri-partner-growth>p:first-child{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin:0;font-size:12px}
+#rainbowHost .ri-partner-growth strong{font-size:15px;font-variant-numeric:tabular-nums}
+#rainbowHost .ri-partner-growth small{font-size:10px;font-weight:400}
+#rainbowHost .ri-partner-growth .ri-partner-next{font-size:11px;margin:3px 0 0}
+#rainbowHost .ri-partner-panel .ri-friend-nav{margin-top:10px;gap:18px}
+#rainbowHost .ri-partner-panel .ri-friend-nav>span{font-size:12px;font-variant-numeric:tabular-nums}
+#rainbowHost .ri-partner-panel .ri-partner-total{font-size:10px;text-align:center;margin:8px 0 0}
+@container(max-height:560px){#rainbowHost .ri-overlay:has(.ri-partner-panel){padding-top:8px}#rainbowHost .ri-partner-hero{display:grid;grid-template-columns:104px minmax(0,1fr);grid-template-rows:1fr 1fr;column-gap:10px;text-align:left;margin-bottom:8px}#rainbowHost .ri-partner-hero .ri-friend-portrait{grid-row:1/3;width:104px;height:104px;margin:0}#rainbowHost .ri-partner-state{justify-self:start;align-self:end}#rainbowHost .ri-partner-hero h3{font-size:21px;margin:6px 0 0;align-self:start;overflow-wrap:anywhere}}
+@container(max-height:350px){#rainbowHost .ri-partner-hero{grid-template-columns:76px minmax(0,1fr);margin-bottom:5px}#rainbowHost .ri-partner-hero .ri-friend-portrait{width:76px;height:76px}#rainbowHost .ri-partner-panel{padding-top:14px}#rainbowHost .ri-partner-stats dd{font-size:19px}#rainbowHost .ri-partner-stats dl>div{padding-block:5px}#rainbowHost .ri-partner-growth{margin-top:7px;padding-top:4px}#rainbowHost .ri-partner-panel .ri-friend-nav{margin-top:6px}#rainbowHost .ri-partner-panel .ri-partner-total{margin-top:5px}}
+@container(max-height:560px){html[data-hanq-theme] body #rainbowHost .ri-game .ri-bubble.ri-partner-panel{padding:14px 14px 10px!important}#rainbowHost .ri-partner-panel h2{margin-bottom:6px}#rainbowHost .ri-partner-hero{grid-template-columns:76px minmax(0,1fr);margin-bottom:6px}#rainbowHost .ri-partner-hero .ri-friend-portrait{width:76px;height:76px}#rainbowHost .ri-partner-stats h4{font-size:11px!important;line-height:1.4!important;margin:0 0 5px!important}html[data-hanq-theme] body #rainbowHost .ri-partner-stats dl>div{padding:5px 3px}#rainbowHost .ri-partner-stats dd{font-size:19px}#rainbowHost .ri-partner-growth{margin-top:7px;padding-top:4px}#rainbowHost .ri-partner-panel .ri-friend-nav{margin-top:6px}#rainbowHost .ri-partner-panel .ri-partner-total{margin-top:5px}}
