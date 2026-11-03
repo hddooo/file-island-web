@@ -551,3 +551,13 @@ GitHub 연결 검색은 저장소 권한 오류422를 반환했고 Chrome은 로
 캐릭터는 `patamon-hover-idle-v1.png`의 등록된6프레임 날갯짓을 재사용할 수 있다. 유년기는 `collection-life`의 검수된 실루엣·깜빡임·짧은 도약과 마을의 독립 이동/휴식 궤적을 재사용할 수 있지만 전신 달리기 프레임은 아니다. 저장소의 아구몬4프레임은 idle/손짓·깜빡임이므로 달리기로 표현하지 않는다. 자연스러운 발걸음 달리기를 요구하면 캐릭터별 새 run-cycle atlas·발 접점·정면/좌우 등록이 필요하다. 포요몬 머리를 나누는 rig는 금지한다. 장식 캐릭터는 소유·XP·부화·장착 판정과 연결하지 않는다.
 
 새 장면은 숨긴 탭·화면 이탈·offscreen에서 정지하고 저전력 버퍼/프레임 제한·축소 모션·명시적 재생을 유지해야 한다. 다음 검수는 시간차 픽셀로 불꽃/구름 변화와 궁/의자 고정, 캐릭터 발 접점·진입/이탈·중복 실루엣, 320/390/1440·낮은 가로 화면·Chrome/WebKit을 확인한다. 이 조사는 장면 구현·새 아트 승인·운영 적용이 아니다.
+
+추가 요구는 더 어두운 밤과 산 부근의 오로라다. 산의 고정 실루엣 뒤 하늘에만 독립 shader 띠를 배치해 색·윤곽·광량이 느리게 흐르게 할 수 있다. 궁·의자·모닥불·캐릭터를 포함한 화면 전체를 이동시키지 않으며, 새 캠핑장 위치와 아트 분리는 아직 미확정이다.
+
+### 2026-11-03 영어섬·고궁 공동 통합 후보
+
+별도 `codex/islands-combined-20261103` worktree에서 고궁 Mac 최종 후보 `d57da20`에 영어섬 검수 후보 `b140a81`을 merge했다. 두 후보 모두 결과의 ancestor이며 기존 검토 브랜치는 그대로다. `b140a81`은 고궁 `7b391f8` 위에 영어섬 `7d353f1`의 제품 변경을 이미 옮긴 후보이므로 `7d353f1`을 또 적용하지 않는다. 제품 파일 충돌은 없었고 progress 문서 끝의 충돌만 양쪽 기록을 전부 유지해 해결했다. 결합 runtime은 영어섬 검수 후보와 바이트 동일하며 한국사 데이터·교재 렌더러·원화·API·DB·버전·workflow는 이 통합에서 추가 수정하지 않았다.
+
+결합본 검사: `qa-english-island.cjs` Chrome/WebKit10건, `qa-palace-hotspots.cjs` Chrome18·WebKit18건, `qa-island-harbors.cjs`28건 모두 통과하고 pageerror0이다. 학습 진행67·메뉴83 assertions 및 정적 빌드1640 runtime 파일/정확 SHA/private 제외 검사도 통과했다. 영어섬은 기존 핀을 숨기고 건물 자체를 native 버튼으로 쓰므로 공통 회귀 검사의 영어 핀 좌표/클릭을 실제 건물 중앙으로 갱신했다. 역사섬 핀과 모든 기존 레이아웃·목적지·focus·Back·중복 방지·진도 fixture·스크롤 assertion은 보존했다. macOS WebKit만 Option+Tab을 사용한다. 이 테스트 수정 전 결합본의 `pinHit:false` 실패를 기록하며 assertion을 삭제하지 않았다. 증거는 작업 evidence의 `combined-english/results.json`, `combined-palace-chrome/results.json`, `combined-palace-webkit/results.json`, `combined-harbors/qa-results.json`이다.
+
+운영 통합 순서는 이 결합 후보의 정확 SHA CI 성공 확인 → 최신 main과 차이 재확인/필요한 통합·재검수 → 한 통합 담당자의 main 갱신 → CD 성공과 실제 도메인 build SHA/자산 대조다. GitHub 앱의 hddooo 접근 부재는 계속되어 현재 CI·main 배포는 미확인/미실행이다. 캠핑장·오로라는 이 제품 후보에 포함하지 않았고 별도 쉬어가기 장면 조사로만 유지한다.

@@ -12,10 +12,12 @@ async function setup(browser,width,motion='reduce'){
  await p.route('**/*',r=>{const u=new URL(r.request().url());if(u.pathname.startsWith('/api/v1/')){requests.push({method:r.request().method(),path:u.pathname});const user={id:'island-qa',displayName:'탐험가',email:'fixture@example.test'};return r.fulfill({json:u.pathname.endsWith('/refresh')?{accessToken:'synthetic',user}:u.pathname.endsWith('/me')?{user,growth:{points:1000},access:{total:1,today:true},premium:{active:false}}:{items:[],notes:[],archived:[],days:[],total:0,page:1,pages:1,entries:[]}});}if(u.hostname!=='islands.test')return r.abort();const f=path.join(root,u.pathname==='/'?'index.html':u.pathname);return fs.existsSync(f)&&fs.statSync(f).isFile()?r.fulfill({path:f}):r.fulfill({status:404,body:''});});return p;
 }
 async function map(p,kind,theme){await p.goto('https://islands.test/'+subjects[kind].hash);await p.locator('.island-harbors').waitFor();await p.locator('.harbor-chart img').evaluate(n=>n.decode());await p.evaluate(t=>document.documentElement.dataset.hanqTheme=t,theme);await p.waitForTimeout(80);}
+// English landmarks replace the decorative hidden pin with the native building target.
+// Retain the history pin hit test and every geometry/route/back/storage/scroll assertion.
 async function verify(p,kind){
  const spec=subjects[kind],map=p.locator('.island-harbors'),stops=map.locator('.harbor-stop');assert.equal(await stops.count(),spec.labels.length);
  assert.deepEqual(await stops.locator('strong,.wn-entry-t').allTextContents(),spec.labels);
- const boxes=await stops.evaluateAll(ns=>ns.map(n=>{const r=n.getBoundingClientRect(),s=n.querySelector('.harbor-sign').getBoundingClientRect(),pin=n.querySelector('.harbor-pin').getBoundingClientRect(),m=n.closest('.island-harbors').getBoundingClientRect();return{width:r.width,height:r.height,left:r.left,right:r.right,top:r.top,bottom:r.bottom,labelFits:n.querySelector('strong,.wn-entry-t').scrollWidth<=s.width,pinHit:n.contains(document.elementFromPoint(pin.x+pin.width/2,pin.y+pin.height/2)),inside:r.left>=m.left&&r.right<=m.right&&r.top>=m.top&&r.bottom<=m.bottom};}));
+ const boxes=await stops.evaluateAll(ns=>ns.map(n=>{const r=n.getBoundingClientRect(),s=n.querySelector('.harbor-sign').getBoundingClientRect(),pin=(n.classList.contains('english-landmark')?n:n.querySelector('.harbor-pin')).getBoundingClientRect(),m=n.closest('.island-harbors').getBoundingClientRect();return{width:r.width,height:r.height,left:r.left,right:r.right,top:r.top,bottom:r.bottom,labelFits:n.querySelector('strong,.wn-entry-t').scrollWidth<=s.width,pinHit:n.contains(document.elementFromPoint(pin.x+pin.width/2,pin.y+pin.height/2)),inside:r.left>=m.left&&r.right<=m.right&&r.top>=m.top&&r.bottom<=m.bottom};}));
  boxes.forEach(b=>assert(b.width>=44&&b.height>=44&&b.labelFits&&b.inside&&b.pinHit,JSON.stringify(b)));
  for(let i=0;i<boxes.length;i++)for(let j=i+1;j<boxes.length;j++)assert(!(boxes[i].left<boxes[j].right&&boxes[j].left<boxes[i].right&&boxes[i].top<boxes[j].bottom&&boxes[j].top<boxes[i].bottom),'overlapping stops');
  assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
@@ -29,8 +31,8 @@ for(const [engine,launch] of [['chrome',chromium],['webkit',webkit]]){
   const p=await setup(b,width);await map(p,kind,theme);const boxes=await verify(p,kind);await p.screenshot({path:path.join(out,`${engine}-${kind}-${theme}-${width}.png`)});
   for(let i=0;i<subjects[kind].labels.length;i++){
    const stop=p.locator('.harbor-stop').nth(i);
-   if(i===0){await stop.focus();await p.keyboard.press(engine==='webkit'?'Alt+Tab':'Tab');assert.equal(await p.locator('.harbor-stop').nth(1).evaluate(n=>n===document.activeElement),true);await stop.focus();assert.notEqual(await stop.evaluate(n=>getComputedStyle(n).outlineStyle),'none');await p.keyboard.press('Enter');}
-   else if(i%2)await stop.locator('.harbor-pin').click();else await stop.locator('.harbor-sign').click();
+   if(i===0){await stop.focus();await p.keyboard.press(engine==='webkit'&&process.platform==='darwin'?'Alt+Tab':'Tab');assert.equal(await p.locator('.harbor-stop').nth(1).evaluate(n=>n===document.activeElement),true);await stop.focus();assert.notEqual(await stop.evaluate(n=>getComputedStyle(n).outlineStyle),'none');await p.keyboard.press('Enter');}
+   else if(i%2){if(kind==='toeic')await stop.click();else await stop.locator('.harbor-pin').click();}else await stop.locator('.harbor-sign').click();
    await p.waitForFunction(h=>location.hash===h,subjects[kind].routes[i]);await p.waitForTimeout(80);assert.equal(await p.locator('.world-journey').count(),0);
    await p.goBack();await p.locator('.island-harbors').waitFor();await verify(p,kind);
   }
