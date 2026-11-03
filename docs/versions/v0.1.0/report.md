@@ -630,3 +630,10 @@ GitHub 연결 검색은 저장소 권한 오류422를 반환했고 Chrome은 로
 - Publish only the new verified source revision. Its hosted CI and operating version/hash/browser verification remain pending at this commit; the English release is still 0.2.12-beta.
 
 - The common water handoff fix is merged into this history candidate while retaining release 0.3.0-beta. The expanded history water regression must pass before publication.
+
+
+### 2026-11-03 expanded history water regression complete
+
+- Tested history runtime commit 3f47665a84ad0e07f56ebde4f7a0cdbdf113385d with the expanded QA: Windows Chrome/WebKit 12 cases and offline Linux Node 24 / two CPUs Chromium/WebKit 12 cases all passed, errors zero. Normal eight-core and explicit two-core fixtures, module failure/remount retry and all original menu/lifecycle checks were retained.
+- Every one of the twenty normal scene cases now verifies reduced water state, hidden moving surface, frames stopped for 200ms and frame growth after motion resumes. All 32 original assertion calls remain; four water assertions were added. Forty screenshots and separate result JSONs are retained in the task evidence.
+- Final candidate remains 0.3.0-beta, including English water handoff fix 85dfeee. Build the new exact commit, run all eight hosted jobs, then publish main only after the English unit is deployed and verified. Operating deployment is still pending at this commit.
