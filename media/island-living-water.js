@@ -4,6 +4,8 @@
 (function(root){
   'use strict';
   var motion=matchMedia('(prefers-reduced-motion: reduce)');
+  var preference='auto';try{preference=sessionStorage.getItem('hanq:scene-motion')||'auto';}catch(ignore){}
+  var moduleBuild='';try{moduleBuild=new URL(document.currentScript.src).searchParams.get('build')||'';}catch(ignore){}
   var low=!!((navigator.deviceMemory&&navigator.deviceMemory<=2)||(navigator.hardwareConcurrency&&navigator.hardwareConcurrency<=2)||(navigator.connection&&navigator.connection.saveData));
   var regions={
     wide:[[[.085,.38],[.36,.36],[.43,.48],[.55,.54],[.58,.49],[.63,.51],[.72,.56],[.79,.53],[1,.55],[1,.86],[.8,.92],[.42,.80],[.30,.72],[.08,.57]]],
@@ -21,21 +23,37 @@
   function texture(gl,slot,source){var t=gl.createTexture();gl.activeTexture(gl.TEXTURE0+slot);gl.bindTexture(gl.TEXTURE_2D,t);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,source);return t;}
   function mount(chart,img,kind){
     if(chart.dataset.livingMounted)return;chart.dataset.livingMounted='true';
-    var surface,gl,program,textures=[],sprites=[],raf=0,last=0,phase=0,visible=false,disposed=false,generation=0;
+    var surface,gl,program,textures=[],sprites=[],raf=0,last=0,phase=0,visible=false,disposed=false,generation=0,imageKey='',fallbackPaint=null,contextLostHandler=null,staticPlate=null;
+    var host=chart.parentElement,toggle=document.createElement('button');toggle.type='button';toggle.className='harbor-motion-toggle';host.appendChild(toggle);
+    function wantsMotion(){return preference==='on'||preference!=='off'&&!motion.matches;}
+    function updateToggle(){var moving=wantsMotion();toggle.innerHTML='<span aria-hidden="true">'+(moving?'Ⅱ':'▶')+'</span> 물과 배 움직임';toggle.setAttribute('aria-label','물과 배 움직임');toggle.setAttribute('aria-pressed',String(moving));toggle.title=!moving&&motion.matches&&preference!=='off'?'동작 줄이기 설정에 따라 멈췄습니다. 선택하면 이 장면만 움직입니다.':moving?'물과 배 움직임을 멈춥니다.':'물과 배 움직임을 켭니다.';chart.dataset.motionOverride=preference;}
+    toggle.addEventListener('click',function(){preference=wantsMotion()?'off':'on';try{sessionStorage.setItem('hanq:scene-motion',preference);}catch(ignore){}run();});
     var io=root.IntersectionObserver?new IntersectionObserver(function(entries){visible=entries[0].isIntersecting;run();},{threshold:.01}):null;
     if(io)io.observe(chart);else visible=true;
-    var cleanup=new MutationObserver(function(){if(!chart.isConnected){disposed=true;generation++;stop();release();img.removeEventListener('load',build);document.removeEventListener('visibilitychange',run);motion.removeEventListener('change',run);if(io)io.disconnect();cleanup.disconnect();}});cleanup.observe(document.body,{childList:true,subtree:true});
+    var cleanup=new MutationObserver(function(){if(!chart.isConnected){disposed=true;generation++;stop();release();toggle.remove();img.removeEventListener('load',build);document.removeEventListener('visibilitychange',run);root.removeEventListener('pageshow',run);motion.removeEventListener('change',run);if(io)io.disconnect();cleanup.disconnect();}});cleanup.observe(document.body,{childList:true,subtree:true});
     function stop(){if(raf)cancelAnimationFrame(raf);raf=0;last=0;}
-    function release(){if(gl){textures.forEach(function(t){gl.deleteTexture(t);});textures=[];if(program)gl.deleteProgram(program);var ext=gl.getExtension('WEBGL_lose_context');if(ext)ext.loseContext();}if(surface)surface.remove();sprites.forEach(function(s){s.node.remove();});sprites=[];chart.classList.remove('living-water-ready');gl=null;}
-    function draw(){
-      if(!gl)return;gl.uniform1f(gl.getUniformLocation(program,'time'),phase);gl.drawArrays(gl.TRIANGLE_STRIP,0,4);
-      sprites.forEach(function(s){var p=phase+s.phase;var dy=Math.sin(p*1.65)*2.2+Math.sin(p*.71)*.55,dx=Math.sin(p*.53)*.65,angle=Math.sin(p*1.65+.45)*.65;s.node.style.transform='translate('+dx.toFixed(2)+'px,'+dy.toFixed(2)+'px) rotate('+angle.toFixed(3)+'deg)';});
-      chart.dataset.waterFrames=String((Number(chart.dataset.waterFrames)||0)+1);
+    function release(){if(surface&&contextLostHandler)surface.removeEventListener('webglcontextlost',contextLostHandler);contextLostHandler=null;if(gl){textures.forEach(function(t){gl.deleteTexture(t);});textures=[];if(program)gl.deleteProgram(program);var ext=gl.getExtension('WEBGL_lose_context');if(ext)ext.loseContext();}if(surface)surface.remove();if(staticPlate)staticPlate.remove();staticPlate=null;sprites.forEach(function(s){s.node.remove();});sprites=[];chart.classList.remove('living-water-ready');gl=null;surface=null;fallbackPaint=null;}
+    // A bounded scanline renderer keeps real water pixels moving when WebGL is
+    // disabled or lost. Unmasked land is always copied at fixed coordinates.
+    function canvasFallback(plate,mask){
+      var old=surface;if(old){if(contextLostHandler)old.removeEventListener('webglcontextlost',contextLostHandler);old.remove();}contextLostHandler=null;if(gl&&!gl.isContextLost()){textures.forEach(function(t){gl.deleteTexture(t);});if(program)gl.deleteProgram(program);var previous=gl.getExtension('WEBGL_lose_context');if(previous)previous.loseContext();}gl=null;textures=[];
+      var scale=Math.min(1,(low?512:640)/plate.width),w=Math.round(plate.width*scale),h=Math.round(plate.height*scale),base=canvas(w,h),bc=base.getContext('2d'),alpha=canvas(w,h),ac=alpha.getContext('2d',{willReadFrequently:true}),moving=canvas(w,h),dc=moving.getContext('2d');bc.drawImage(plate,0,0,w,h);ac.drawImage(mask,0,0,w,h);
+      var pixels=ac.getImageData(0,0,w,h).data,bands=[],strip=4;
+      for(var y=0;y<h;y+=strip){var left=w,right=-1;for(var yy=y;yy<Math.min(y+strip,h);yy++)for(var x=0;x<w;x++)if(pixels[(yy*w+x)*4+3]){left=Math.min(left,x);right=Math.max(right,x);}if(right>=left)bands.push({y:y,left:Math.max(0,left-5),right:Math.min(w,right+6)});}
+      surface=canvas(w,h);surface.className='living-water-surface';surface.setAttribute('aria-hidden','true');var output=surface.getContext('2d');
+      fallbackPaint=function(t){dc.clearRect(0,0,w,h);dc.globalCompositeOperation='source-over';bands.forEach(function(b){var shift=(Math.sin(b.y*.19-t*2.8)+.4*Math.sin(b.y*.08+t*1.7))*2.6,sy=Math.max(0,Math.min(h-strip,b.y+Math.sin(b.y*.22-t*3.1)*1.2)),height=Math.min(strip,h-b.y);dc.drawImage(base,b.left,sy,b.right-b.left,height,b.left+shift,b.y,b.right-b.left,height);});dc.globalCompositeOperation='destination-in';dc.drawImage(alpha,0,0);output.clearRect(0,0,w,h);output.drawImage(moving,0,0);};
+      staticPlate=plate;staticPlate.className='living-water-plate';staticPlate.setAttribute('aria-hidden','true');chart.appendChild(staticPlate);chart.appendChild(surface);sprites.forEach(function(s){s.node.hidden=false;if(!s.node.isConnected)chart.appendChild(s.node);});chart.classList.add('living-water-ready');chart.dataset.waterRenderer='canvas2d';chart.dataset.waterBuffer=w+'x'+h;
     }
-    function frame(now){raf=0;if(disposed||!gl||!visible||document.hidden||motion.matches)return;var step=1000/(low?12:matchMedia('(max-width:700px)').matches?24:30);if(!last||now-last>=step){if(last)phase+=Math.min((now-last)/1000,.12);last=now;draw();}raf=requestAnimationFrame(frame);}
-    function run(){chart.dataset.waterMotion=motion.matches?'reduced':low?'economy':'active';stop();if(gl){draw();if(visible&&!document.hidden&&!motion.matches)raf=requestAnimationFrame(frame);}}
+    function draw(){
+      if(!surface)return;if(gl){gl.uniform1f(gl.getUniformLocation(program,'time'),phase);gl.drawArrays(gl.TRIANGLE_STRIP,0,4);}else if(fallbackPaint)fallbackPaint(phase);
+      sprites.forEach(function(s){var p=phase+s.phase;var dy=Math.sin(p*1.65)*3.1+Math.sin(p*.71)*.7,dx=Math.sin(p*.53)*1.1,angle=Math.sin(p*1.65+.45)*.9;s.node.style.transform='translate('+dx.toFixed(2)+'px,'+dy.toFixed(2)+'px) rotate('+angle.toFixed(3)+'deg)';});
+      chart.dataset.waterFrames=String((Number(chart.dataset.waterFrames)||0)+1);
+      chart.dataset.waterTime=phase.toFixed(3);
+    }
+    function frame(now){raf=0;if(disposed||!surface||!visible||document.hidden||!wantsMotion())return;var step=1000/(low?12:!gl?18:matchMedia('(max-width:700px)').matches?24:30);if(!last||now-last>=step){if(last)phase+=Math.min((now-last)/1000,.25);last=now;draw();}raf=requestAnimationFrame(frame);}
+    function run(){updateToggle();chart.dataset.waterMotion=!wantsMotion()?(preference==='off'?'paused':'reduced'):low?'economy':'active';stop();if(surface){draw();if(visible&&!document.hidden&&wantsMotion())raf=requestAnimationFrame(frame);}}
     function build(){
-      if(!img.naturalWidth||disposed)return;var gen=++generation;stop();release();
+      if(!img.naturalWidth||disposed)return;var keyNow=img.currentSrc+'|'+img.naturalWidth+'x'+img.naturalHeight;if(keyNow===imageKey&&surface)return;imageKey=keyNow;var gen=++generation;stop();release();
       // Fixed one-device-pixel buffer, capped independently from display size.
       var tall=img.naturalHeight>img.naturalWidth,key=tall?'tall':'wide',scale=Math.min(1,(low?720:tall?900:1440)/img.naturalWidth),w=Math.round(img.naturalWidth*scale),h=Math.round(img.naturalHeight*scale);
       var plate=canvas(w,h),ctx=plate.getContext('2d',{willReadFrequently:true});ctx.drawImage(img,0,0,w,h);
@@ -68,15 +86,15 @@
         gl.linkProgram(program);if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw Error('Water program failed');gl.useProgram(program);
         var buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);var loc=gl.getAttribLocation(program,'p');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
         textures=[texture(gl,0,plate),texture(gl,1,mask)];gl.uniform1i(gl.getUniformLocation(program,'plate'),0);gl.uniform1i(gl.getUniformLocation(program,'mask'),1);gl.viewport(0,0,w,h);
-        chart.appendChild(surface);sprites.forEach(function(s){chart.appendChild(s.node);});chart.classList.add('living-water-ready');chart.dataset.waterBuffer=w+'x'+h;
-        surface.addEventListener('webglcontextlost',function(e){e.preventDefault();stop();chart.classList.remove('living-water-ready');sprites.forEach(function(s){s.node.hidden=true;});});
-        if(kind==='history'){
-          var boat=new Image();boat.src='media/world-art/history-pond-boat-v1.webp';boat.onload=function(){if(gen!==generation||disposed)return;var sprite=canvas(boat.naturalWidth,boat.naturalHeight),bc=sprite.getContext('2d');bc.fillStyle='rgba(8,60,56,.23)';bc.beginPath();bc.ellipse(sprite.width*.5,sprite.height*.85,sprite.width*.43,sprite.height*.045,0,0,Math.PI*2);bc.fill();bc.drawImage(boat,0,0);sprite.className='living-boat living-pond-boat';sprite.style.cssText='left:'+(tall?'28':'56')+'%;top:'+(tall?'86':'80')+'%;width:'+(tall?'18':'10')+'%;height:auto';chart.appendChild(sprite);sprites.push({node:sprite,phase:.9});draw();};
-        }
-        run();
-      }catch(error){release();chart.dataset.waterMotion='static-fallback';}
+        chart.appendChild(surface);sprites.forEach(function(s){chart.appendChild(s.node);});chart.classList.add('living-water-ready');chart.dataset.waterRenderer='webgl';chart.dataset.waterBuffer=w+'x'+h;
+        contextLostHandler=function(e){e.preventDefault();if(disposed||gen!==generation||e.target!==surface)return;stop();canvasFallback(plate,mask);run();};surface.addEventListener('webglcontextlost',contextLostHandler);
+      }catch(error){canvasFallback(plate,mask);}
+      if(kind==='history'){
+        var boat=new Image();boat.src='media/world-art/history-pond-boat-v1.webp'+(moduleBuild?'?build='+encodeURIComponent(moduleBuild):'');boat.onload=function(){if(gen!==generation||disposed)return;var sprite=canvas(boat.naturalWidth,boat.naturalHeight),bc=sprite.getContext('2d');bc.fillStyle='rgba(8,60,56,.23)';bc.beginPath();bc.ellipse(sprite.width*.5,sprite.height*.85,sprite.width*.43,sprite.height*.045,0,0,Math.PI*2);bc.fill();bc.drawImage(boat,0,0);sprite.className='living-boat living-pond-boat';sprite.style.cssText='left:'+(tall?'28':'56')+'%;top:'+(tall?'86':'80')+'%;width:'+(tall?'18':'10')+'%;height:auto';chart.appendChild(sprite);sprites.push({node:sprite,phase:.9});draw();};
+      }
+      run();
     }
-    img.addEventListener('load',build);document.addEventListener('visibilitychange',run);motion.addEventListener('change',run);if(img.complete)build();
+    img.addEventListener('load',build);document.addEventListener('visibilitychange',run);root.addEventListener('pageshow',run);motion.addEventListener('change',run);updateToggle();if(img.complete)build();
   }
   root.HanqLivingWater={mount:mount};
 })(window);

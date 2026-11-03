@@ -527,3 +527,7 @@ PNG만으로 모션 완료를 주장하지 않는다. `motion-0/2`는 실제 2�
 ### 2026-11-03 물·배 장면 보정 후보
 
 규칙 `hanq-collaboration-2026-11-01-v5`. Chrome 1440×1000, 390×844, 320×740, 844×390의 두 섬과 저사양 합성 환경에서 물 frame/배 transform 변화, reduced-motion 정지·복귀, offscreen 정지를 실제 렌더링으로 검증했다(9건). 기존 `qa-island-harbors.cjs`는 Chrome/WebKit 28건 통과: 버튼/keyboard/route-back/스크롤/레이아웃 보존. 실제 모바일 기기 성능은 미확인이다. `qa-living-water.cjs`와 작업 evidence의 시간차 PNG/GIF/WebM·pixel-motion.json이 내부 움직임 근거다. 원화·경로·ID·학습 저장 계약을 보존했다. 정확 SHA CI·부모 통합·운영 버전/SHA/자산 검수는 별도다. 운영 브랜치를 독자 통합하거나 배포하지 않았다.
+
+### 2026-11-03 장면 정지 재현과 건물 핫스팟 후보
+
+재현 전: 1440→390 전환 후 frame 9→9, ready=false지만 mode=active가 유지됐다. 이전 canvas의 이벤트 리스너를 제거하고 generation/target을 검사해 새 장면의 중단을 방지한다. GPU 중단·미지원 대체 경로는 실제 물 픽셀 변화와 고정 건물 픽셀을 검사하며, 단순 frame 카운터 증가만 성공 기준으로 쓰지 않는다. `qa-palace-hotspots.cjs`는 실제 로컬 HTTP 캐시, 반복 resize, 1778×1122 DPR2 조건, GPU 중단/미지원, reduced-motion 명시적 재생, 건물 중앙 터치·키보드·모듈 로드 실패 복구를 검증한다. 실사용자 브라우저 설정은 미확인이다. 기존 `qa-island-harbors.cjs`의 route/back/keyboard/스크롤·모바일 검수와 `qa-living-water.cjs`의 실제 시간 진행·픽셀 캡처도 별도 유지한다. 정확 SHA CI·운영 증거는 해당 실행 결과로 대조하며 이 후보 기록만으로 배포 완료를 선언하지 않는다.

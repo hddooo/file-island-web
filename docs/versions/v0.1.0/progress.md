@@ -670,3 +670,7 @@ v0.1.2와 f50a70f 후보 모두 합성 로그인 후 320×568에서 ri-game/host
 ### 2026-11-03 물·배 장면 보정 후보
 
 `feat/living-island-water`, base `2f745855e618f790617ecf3b64068afd4315b49d`. `media/island-harbors.js/.css`, 새 `island-living-water.js`, 역사 장면 3개 자산과 scene QA만 소유한다. index/header·학습 UI·인증/API/DB/인프라는 변경하지 않는다. 지정 물 영역의 원래 픽셀을 GPU로 굴절하고 배는 원래 실루엣을 plate에서 제거한 뒤 한 레이어로 상하·회전한다. 역사 입구는 고궁·한국 산수·연못으로 교체했다. 부모 통합 전 후보이며 미배포다.
+
+### 2026-11-03 장면 정지·고궁 간판 후보
+
+`fix/palace-motion-hotspots`, 기준 `3d7f149123ee21b1f106ef5900a85e07057ff03c`. 장면 JS/CSS 세 파일과 scene QA만 변경하며 한국사 읽기·문항·index/header·API/DB/인프라는 변경하지 않는다. 크기 전환 시 release()의 이전 contextlost 콜백이 새 renderer를 정지시키는 오류를 재현해 수정했다. WebGL이 없어도 선명한 고정 plate 위의 물만 512/640px 대체 버퍼에서 갱신한다. 사용자의 실제 기기·OS 설정은 미확인이며, 해당 오류가 그 사용자 세션의 유일 원인이라고 단정하지 않는다. 고궁의 건물별 기존 라우트·ID·진도를 보존하고 간판은 목재·금빛 테두리로 맞췄다. 후보·검수와 운영 반영을 구분한다.
