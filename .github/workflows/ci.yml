@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   static-build:
-    needs: [auth-contract, compact-ui-regression, practice-readiness-regression, header-parent-readability, history-reading-regression, english-scene-regression]
+    needs: [auth-contract, compact-ui-regression, practice-readiness-regression, header-parent-readability, history-reading-regression, island-scene-regression]
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -31,7 +31,7 @@ jobs:
           if-no-files-found: error
           retention-days: 7
 
-  english-scene-regression:
+  island-scene-regression:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
@@ -50,14 +50,16 @@ jobs:
       - run: .ci-tools/node_modules/.bin/playwright install --with-deps chromium webkit
       - run: node scripts/qa-english-island.cjs
       - run: node scripts/qa-english-residents.cjs
-      - name: Save synthetic English scene failure frames
+      - run: node scripts/qa-history-evening.cjs
+      - name: Save synthetic island scene failure frames
         if: failure()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: synthetic-english-scene-${{ github.sha }}
+          name: synthetic-island-scene-${{ github.sha }}
           path: |
             evidence/english-island/*.png
             evidence/english-residents/*.png
+            evidence/history-evening/*.png
           retention-days: 1
           if-no-files-found: ignore
 

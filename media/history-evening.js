@@ -12,7 +12,7 @@
     chart.appendChild(layer);
     var friend=layer.querySelector('.he-friend'),image=new Image();image.onload=function(){Promise.resolve(image.decode?image.decode():null).then(function(){if(friend.isConnected)friend.classList.add('he-ready');},function(){});};image.src='media/characters/agumon-idle-sprite.png';
     var closed=false,visible=false,away=false,layoutFrame=0;
-    var toggle=document.createElement('button');toggle.type='button';toggle.className='history-evening-toggle';toggle.setAttribute('aria-label','모닥불과 날씨 움직임');
+    var toggle=document.createElement('button');toggle.type='button';toggle.hidden=true;toggle.className='history-evening-toggle';toggle.setAttribute('aria-label','모닥불과 날씨 움직임');
     var frame=map.parentElement,added=getComputedStyle(frame).position==='static';if(added)frame.classList.add('history-evening-host');if(!map.id)map.id='history-evening-map';toggle.setAttribute('aria-controls',map.id);frame.appendChild(toggle);
     function place(){if(closed)return;toggle.hidden=!map.getClientRects().length||getComputedStyle(map).visibility==='hidden';if(toggle.hidden)return;var parent=toggle.offsetParent||frame,a=map.getBoundingClientRect(),b=parent.getBoundingClientRect();toggle.style.left=(a.left-b.left-parent.clientLeft+parent.scrollLeft+8)+'px';toggle.style.top=(a.bottom-b.top-parent.clientTop+parent.scrollTop-toggle.offsetHeight-8)+'px';}
     function position(){if(closed||layoutFrame)return;layoutFrame=requestAnimationFrame(function(){layoutFrame=0;place();});}
