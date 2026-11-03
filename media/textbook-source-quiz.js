@@ -16,6 +16,26 @@
       item.verification.textVerified === true && item.verification.answerPairVerified === true);
   }
   function same(a, b) { return JSON.stringify(a) === JSON.stringify(b); }
+  function sourcePromptStyles(data) {
+    var result = new Map(), profile = data.sourcePromptStyles;
+    if (profile == null) return result;
+    if (!profile || profile.schemaVersion !== 'hanq-source-prompt-styles/1' || !/^[a-f0-9]{64}$/.test(profile.sourceRevision || '') || profile.sourceRevision !== data.source.sha256 || Object.keys(profile).some(function(k){return ['schemaVersion','sourceRevision','entries'].indexOf(k)<0;})) fail('prompt style source');
+    var entries = list(profile.entries, 'prompt styles'); if (entries.length > 4096) fail('prompt style count');
+    entries.forEach(function(entry) {
+      if (!entry || Object.keys(entry).some(function(k){return ['itemId','segmentIndex','start','end','text','bold','underline','sourceCharIds','audit'].indexOf(k)<0;})) fail('prompt style keys');
+      var item = data.items.find(function(i){return i.id===entry.itemId;}), audit=entry.audit;
+      if (!item || !verified(item) || !item.source || item.source.sha256 !== profile.sourceRevision || !audit || audit.verified !== true || audit.sourceRevision !== profile.sourceRevision || audit.sourcePdfPage !== item.pdfPage) fail('prompt style verification');
+      var segment = Number.isInteger(entry.segmentIndex) && entry.segmentIndex >= 0 && item.segments[entry.segmentIndex];
+      if (!segment || segment.type !== 'text' || !Number.isInteger(entry.start) || !Number.isInteger(entry.end) || entry.start < 0 || entry.end <= entry.start || entry.end > segment.text.length || segment.text.slice(entry.start,entry.end) !== entry.text) fail('prompt style range');
+      if ((entry.bold != null && typeof entry.bold !== 'boolean') || (entry.underline != null && typeof entry.underline !== 'boolean') || !(entry.bold || entry.underline)) fail('prompt style flags');
+      var ids=list(entry.sourceCharIds,'prompt style glyphs'), original=list(item.source.questionCharacterIds,'prompt original glyphs'), previous=-1;
+      if(ids.length!==Array.from(entry.text).length) fail('prompt style glyph count');
+      ids.forEach(function(id){var index=original.indexOf(id);if(index<=previous || typeof id!=='string' || id.indexOf('p'+String(item.pdfPage).padStart(3,'0')+'-')!==0)fail('prompt style glyph binding');previous=index;});
+      var key=item.id+'\u0000'+entry.segmentIndex, ranges=result.get(key)||[];ranges.push(entry);result.set(key,ranges);
+    });
+    result.forEach(function(ranges){ranges.sort(function(a,b){return a.start-b.start;});ranges.forEach(function(r,i){if(i && ranges[i-1].end>r.start)fail('overlapping prompt styles');});});
+    return result;
+  }
   function requiredFeatures(value) {
     if (value != null) list(value, 'requiredRendererFeatures').forEach(function (feature) {
       if (['classification-response-groups', 'unnumbered-source-item', 'partitioned-source-blank', 'annotated-source-sequence', 'answer-table-notes'].indexOf(feature) < 0) fail('unsupported required renderer feature');
@@ -201,6 +221,7 @@
       });
       unique(noteIds, 'duplicate answer table note ID');
     } else if (hasFeature(data, 'answer-table-notes')) fail('missing answer table notes');
+    sourcePromptStyles(data);
     return data;
   }
   function sequenceNumbersMatch(value, expectedParts) {
@@ -287,6 +308,7 @@
   function render(host, inputData, options) {
     if(!host||host.nodeType!==1||!host.ownerDocument)throw new TypeError('Source quiz requires a DOM host');
     validate(inputData);options=options||{};if(options.sourceRevision!=null&&options.sourceRevision!==inputData.source.sha256)fail('source revision binding');var data=JSON.parse(JSON.stringify(inputData)),doc=host.ownerDocument,prefix='hanq-source-quiz-'+(++serial);
+    var promptStyles=sourcePromptStyles(options.sourcePromptStyles==null?data:Object.assign({},data,{sourcePromptStyles:JSON.parse(JSON.stringify(options.sourcePromptStyles))}));
     var active=true,listeners=[],saved=null,rows=[],fields=[],displayFields=[],presentation=null,dirty=new Map(),version=0,cursor=0,cursorVersion=0,ackCursor=0,lastFocused=0,recoveryOff=null,timer=null,inFlight=null,pending=null,pausing=false;
     function el(tag,cls,value){var n=doc.createElement(tag);if(cls)n.className=cls;if(value!=null)n.textContent=value;return n;}
     function on(n,t,f){n.addEventListener(t,f);listeners.push([n,t,f]);}
@@ -367,8 +389,17 @@
         input.setAttribute('aria-describedby', statement.id + ' ' + label.id);
         input.disabled = !isVerified; return input;
       }
-      item.segments.forEach(function (segment) {
-        if (segment.type === 'text') statement.appendChild(doc.createTextNode(segment.text));
+      item.segments.forEach(function (segment, segmentIndex) {
+        if (segment.type === 'text') {
+          var offset=0;
+          (promptStyles.get(item.id+'\u0000'+segmentIndex)||[]).forEach(function(range){
+            statement.appendChild(doc.createTextNode(segment.text.slice(offset,range.start)));
+            var marked=el(range.bold?'strong':'span','textbook-source-prompt-emphasis');
+            if(range.underline)marked.appendChild(el('u','',range.text));else marked.textContent=range.text;
+            statement.appendChild(marked);offset=range.end;
+          });
+          statement.appendChild(doc.createTextNode(segment.text.slice(offset)));
+        }
         else {
           var blank = item.blanks.find(function (b) { return b.id === segment.id; });
           var group = el('span', 'textbook-source-quiz-blank'), number = item.blanks.indexOf(blank) + 1;

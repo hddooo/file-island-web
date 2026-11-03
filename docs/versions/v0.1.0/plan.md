@@ -1,10 +1,25 @@
 # FE 버전 계획
 
-### 2026-11-04 · 0.3.1-beta 자동 장면 움직임
+### 2026-11-04 · 0.3.2-beta 자동 장면 움직임
 
 - 사용자 요청: 영어/역사섬 자동 움직임과 불필요한 장면 버튼 제거. OS 움직임 줄이기 및 기존 메뉴/기록 보존.
 - 파일 경계: 세 장면 JS, 두 장면 CSS, 장면 QA, 릴리스 기록. 교재·API·권한·공통 workflow는 변경하지 않는다.
 - 기능 → 회귀 → 모바일/시각 검수 후 정확 SHA CI, 교재 담당과 main 순서 조율, 운영 버전·자산 해시·화면을 확인한다.
+
+### 2026-11-03 · 조선 도식 후속 단위
+
+- [x] PDF73 화살표·묶음선·6조/3사 강조를 확대 원문과 대조하고 native 좌표 도식 및 도식/지도 캡션 관계를 복원한다.
+- [x] source/hash/전체 행 참조를 검증하고 불확실한 자료는 표·캡션으로 복구한다. Windows/Linux 두 브라우저에서 모바일·데스크톱을 검증한다.
+- [x] 실제 조선만 포함한 자료 목록으로 회원 JWT·PostgreSQL 저장/CAS/재개·계정 격리를 별도 임시 환경에서 검증한다. 운영 접근·배포 근거와 구분한다.
+- [ ] 검증된 조선 전용 root를 실제 배포 API에 연결하고 운영 회원 흐름을 확인한 뒤 source 공개 선언을 확정한다. 기존79회는 기존 기본 경로를 유지한다.
+
+### 2026-11-03 · 조선 우선 준비 단위
+
+- [x] 기존 79회 source/workspace를 보존하며 별도 브랜치에서 조선 172문항의 canonical digest를 재현한다.
+- [x] 원문 blue ink·검증된 gray 셀·모바일 행/열 및 WebKit 분할 그림 비율을 보정하고, 시대별 공개 제한을 기존 API/source 게이트 안에 추가한다.
+- [x] PDF59–87 native 글자 23,823개와 ID 및 제공되는 그림 원본 바이트를 검증한다. 자동 검사를 전체 원문 시각 대조 완료로 간주하지 않는다.
+- [ ] 조선 전체 시각 대조와 실제 API 자료 root·회원 저장 연결을 마친 뒤 통합 담당이 정확 SHA CI, main 통합 및 배포·운영 검수를 완료한다.
+- [ ] 조선 배포 후 고려, 개화기, 일제강점기를 각각 독립 단위로 진행한다. 강조 설명은 교재 리뉴얼 완료 후 연결한다.
 
 ### 2026-11-04 · 역사섬 저녁 장면 (0.3.0-beta)
 
@@ -311,6 +326,23 @@
 - [ ] 정확 커밋 CI, 승인 범위의 main 통합·자동 배포 및 실제 운영 자산 검증.
 
 
+### 2026-11-03 Joseon source diagram and emphasis follow-up
+
+- [x] Bound timeline dots/date circles/coloured government boxes to reviewed source coordinates, retaining native text and safe table fallback.
+- [x] Preserve reviewed orange markers and black-on-yellow exam titles; keep source66 map in its war-content cell.
+- [x] Run final Linux Node24 regression and actual-source Chromium/WebKit layout/emphasis checks.
+- [x] Exercise all29 staged pages and real JWT/PostgreSQL member save/recovery on the final private root.
+- [ ] Complete whole-page human source review, integrate exact-SHA CI and verify the deployed source root before activation.
+
+
+### 2026-11-03 Source prompt emphasis preservation
+
+- [x] Restore six source-vector study/answer headings and three visually checked native underlines in the private Joseon candidate.
+- [x] Pass per-quiz optional manifest prompt styles to existing blank renderer without changing quiz bytes or workspace digest.
+- [x] Reject unverified/crossed-source/range/glyph/overlap/unknown style metadata before replacing the current view.
+- [x] Verify actual-source reading and blank emphasis in Windows/Linux and actual JWT/PostgreSQL scope preservation.
+- [ ] Final integrated SHA CI and actual operating root/member/CD verification.
+
 ### 2026-11-03 compact CI budget correction
 
 - English source a3e7f7b feature CI passed all seven jobs, but main run 41683902917 and history feature run 41684282727 exhausted the existing 25-minute compact job budget. Logs showed passing matrices through the final review, with no assertion error before cancellation. Deployment did not run.
@@ -350,3 +382,12 @@
 - Runtime source is byte-identical to 85dfeee; release remains 0.2.12-beta. New exact-SHA CI and operating deployment are pending at this commit.
 
 - History retains release 0.3.0-beta and its expanded 24-case water regression. Runtime/QA bytes are unchanged since 0660afb; only the browser-job OS labels and records differ.
+
+
+### 2026-11-04 Joseon summary preparation (0.3.1-beta)
+
+- [x] Preserve current0.3.0 background history and integrate the reviewed v2 summary consumer with existing79 redirects.
+- [x] Bind Joseon-only seven-group/172-row metadata to the canonical quiz without changing its bytes or digest.
+- [x] Test literal/digest/auth guards and14 actual index routing cases; verify actual full-app summary/blank round trips in both operating systems.
+- [ ] Confirm exact-SHA CI, deploy the prepared frontend and inspect operating version/assets.
+- [ ] Activate81 only after the actual API revision root and authenticated operating storage are verified.

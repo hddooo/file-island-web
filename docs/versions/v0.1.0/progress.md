@@ -1,10 +1,50 @@
 # FE 실제 진행 상태
 
-### 2026-11-04 · 0.3.1-beta 자동 장면 움직임 후보
+### 2026-11-04 · 0.3.2-beta 자동 장면 움직임 후보
 
 세 장면의 수동 움직임 버튼을 DOM 생성 단계에서 제거하고 OS 설정을 단일 모션 기준으로 사용하도록 구현했다. 이전 수동 정지 값은 읽거나 쓰지 않으며 기능을 방해하지 않는다. 기존 observer/lifecycle 정지와 water static plate는 유지했다. 삭제된 버튼의 위치/수동 클릭 검사는 버튼 없음·클릭 없는 자동 재생·reduced-motion 정지/재개로 대체하고 기존 cels/날씨/메뉴/수명 검사는 보존했다.
 
 로컬 검수는 Windows 기능·메뉴·복구 70건과 Linux 영어·역사 34건이 통과했다. 역사섬은 두 OS 각각 40개 자동 재생 단계에서 물 프레임과 시간 값 증가를 확인했다. 고정 250ms 대기는 실제 표시·프레임 재개 대기로 교체했으며, 이전 실패의 단일 원인은 확정하지 않는다. feature CI·main 통합·배포는 완료 표시하지 않는다. 최신 배포 순서는 조선 교재 우선이며 교재 운영 확인 후 최신 main에 장면 변경을 통합한다. 외부 HTTPS는 2026-11-03 20:32 UTC 재시도에서도 타임아웃, 웹 도구도 접근 불가였다. 운영 TLS vhost 읽기는 기존 0.3.0-beta/cf693c3 및 자산 10개 일치를 확인했다.
+
+### 2026-11-03 · 조선 전용 API 검증·기존79회 경로 보존
+
+조선29쪽·172문항·30그림만 나열하고 다른 시대의 파생 자료를 제외한 후보로 실제 JWT/PG17 검사를 통과했다. 채점, 중단 cursor/checks, 동일 요청 재시도, CAS 단일 승자, 다른 계정·판본 격리, API 재시작·재로그인 후 복구 및 조선 외 페이지/문제/workspace404를 확인했다. 기존79회164문항 digest와 다른 테이블도 보존됐다. 테스트 대상은 ab5 API 이미지이며44d의 textbook8파일과 LF 정규화 후 동일하다. 운영 DB·계정·구성은 변경하지 않았다.
+
+부분 공개에서는79회 선택을 기존 기본 API 경로로 유지하도록 보강했다. 미확인 구판 revision URL은 요청하거나 자동 치환하지 않고 명시적인 기존 교재 선택을 제공한다. 전체 판본 공개의 기존 동작과 source/digest/CAS 계약은 유지한다. 실제 운영 root/API 연결과 공개 선언은 아직 하지 않았다.
+
+### 2026-11-03 · 조선 PDF73 도식 보정 / 운영 미반영
+
+확대 원본으로 지방 행정 도식의 5개 화살표 방향과 중앙 정치 기구의 묶음선, 6조·3사 강조를 대조했다. 원문에서 검증한 같은 source·page·그림 hash와 전체 글자 행 참조가 갖춰진 경우에만 좌표 도식을 표시한다. 중앙 도식과 지도를 원본의 좌우 관계로 배치하고 native 캡션을 각각 연결했다. 글자는 선택·복사할 수 있으며 잘못된 연결 자료는 기존 표·캡션으로 복구한다.
+
+Windows/Linux Chromium·WebKit에서 320/390/1440 및 가로 화면 각 8건을 검증했다. 글자16px, 겹침·canvas 이탈 없음, 지방 화살표5개·중앙 화살촉0개·노란 강조2개를 확인했다. Linux 조선 읽기168화면·빈칸8화면 및 기존 판본/저장복구20건도 통과했다. 앞 준비 커밋6e193b1의 정확 SHA CI 전체가 성공했다. 새 도식 커밋 CI·전체 교재 시각 대조·실제 회원 API 자료 연결·운영 검증은 구분해 후속 확인한다.
+
+### 2026-11-03 · 조선 준비 코드·자료 후보 / 운영 미반영
+
+조선 172문항의 고정 digest `042ee684…d6ca5a`를 재현했고 PDF59–87의 원문 23,823자·native ID 일치와 원본 그림 바이트를 검증했다. 원문 native bold·색상 대조와 8개 시험예시 표, 79·80·82쪽 캡션 갤러리 관계를 로컬 후보에서 복원했다. 다른 시대와 raster/vector 강조의 전체 사람 검수 완료를 의미하지 않는다.
+
+표의 행·열 관계를 유지하는 모바일 표시, 검증된 blue ink·gray 셀, WebKit 그림 높이 및 시대별 공개 제한 코드는 개발 완료다. Linux Node24와 CI의 동일 npm 잠금 데이터로 기본 회귀·디자인 6건·구/신판 전환과 저장/복구 20건을 검증했다. 최종 조선 후보의 실제 읽기 168화면과 빈칸 8화면을 Linux 두 엔진에서 통과했다. Windows 동시 검사 중 가로 화면 그림 로드 실패가 한 차례 있어 해당 실패도 보존했고, 단독 재현 및 Linux 순차 검사는 통과했다.
+
+이 단위는 81회 전체 및 조선 운영 완료가 아니다. 최종 전체 시각 대조와 API 자료 연결·회원 저장·통합·배포가 남아 있다. index의 공개 선언, 릴리스 버전, 영어/배경/백엔드 구성은 변경하지 않았다.
+
+### 2026-11-03 · Windows 81회 재개: 강조 점검 도구 · 운영 활성화 미완료
+
+독립 clone/branch에서 main `d842314`를 기준으로 재개했다. 지정 Drive PDF와 Windows
+원본은 35,542,781 bytes / SHA `d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de`로
+일치한다. Windows에는 원문과 검수 입력 3종만 있고, 기존 Mac 정본의 4개 추가 검수 JSON과
+완전한 semantic bundle은 없다. Library에서도 해당 정본 입력을 찾지 못했다.
+정본 부재를 추측한 전사/정답으로 대체하지 않으며 81회 활성화는 아직 진행하지 않았다.
+
+`audit-history-source-emphasis.py`는 원문 147쪽/119,809 native 문자, 강조 후보 6,375 span,
+395,345 vector path와 504 raster 배치를 비공개 inventory로 남긴다. Vector/사진 내부
+강조와 밑줄/배경은 자동 의미 판정하지 않는다. 원문 5/65/92/96쪽을 시각 확인했으나,
+semantic 정본과의 대조 및 147쪽 사람 시각 검수는 완료하지 않았다. Synthetic 누락/잘못된
+source/중복 anchor/문자 변경 거절 검사 4건과 Chromium/WebKit 판본 회귀 20건은 통과했다.
+
+학습 본문과 빈칸 문제는 정본과 같은 source/digest/workspace에 연결한 뒤 함께 검수한다.
+강조 항목 설명은 그 이후 해당 81회 출처와 사실을 검수한 150자 이내 내용으로 연결한다.
+클릭·터치·키보드 열기, Escape/닫기 및 focus 복귀를 검수하고 기존 79회 진도/기록을 보존한다.
+이번 변경은 offline 검사 도구와 문서이며 영어섬/공통 workflow/API/DB/운영 source에는 변경이 없다.
+정본 복구와 실제 API 검증 전까지 운영 활성화·전체 완료로 표시하지 않는다.
 
 ### 2026-11-04 · 역사섬 저녁 장면 통합 후보
 
@@ -721,6 +761,15 @@ v0.1.2와 f50a70f 후보 모두 합성 로그인 후 320×568에서 ri-game/host
 - 후속 결합 검수: 기존 역사섬 물·배 복구와 메뉴 후보를 포함한 `english-digimon-qa`에서도 Chrome/WebKit 10건 재통과, pageerror 0. 320px을 포함해 디지몬/물·배의 두 정지 버튼이 겹치지 않음을 추가 확인했다. 프로그램으로 포즈를 강제하지 않고 실제 실행을 14초 기록한 모바일·데스크톱 WebM/MP4와 PNG는 `task-6/english-digimon-qa/evidence/english-residents/`에 있다.
 
 
+### 2026-11-03 Joseon source diagram and emphasis follow-up
+
+Coordinate59/source-layout22 assertions, reading9/design6 and edition22 browser cases pass on isolated Linux Node24 with matching parsed dependency lock. Actual source reading168 views, quiz8 views and emphasis56 views pass in Chromium/WebKit; no source screenshot or PDF enters Git. The final sparse root serves Joseon29 pages/172 blanks/30 figures while other derived eras return404. A disposable PostgreSQL17 and real JWT/API test passes all29 page reads, five diagrams, four orange markers, eight yellow exam titles, grading, paused recovery, CAS, retry identity, account/source isolation, restart and relogin. Existing79 quiz remains164 items with its old digest. This is isolated integration evidence; the deployed API/root and full human visual review remain pending. Production readiness flags stay absent.
+
+
+### 2026-11-03 Source prompt emphasis preservation
+
+The optional manifest profile and source quiz consumer are prepared independently of summary work. Synthetic prompt48 and library81 checks pass. Existing79-era642 questions pass1491 assertions. Windows/Linux each pass8 native underline views and8 Joseon quiz views, including all172 canonical answers, three original prompt emphases and pause/resume. Each also passes48 study/answer heading views. The isolated real API serves29 pages,14 yellow titles, five diagrams and three prompt styles;172/164 workspace digests, CAS/retry/account/source isolation and restart/relogin remain unchanged. No production data, flags or backend deployment changed. Full human review and operating release remain pending.
+
 ### 2026-11-03 compact CI budget correction
 
 - English source a3e7f7b feature CI passed all seven jobs, but main run 41683902917 and history feature run 41684282727 exhausted the existing 25-minute compact job budget. Logs showed passing matrices through the final review, with no assertion error before cancellation. Deployment did not run.
@@ -760,3 +809,8 @@ v0.1.2와 f50a70f 후보 모두 합성 로그인 후 320×568에서 ri-game/host
 - Runtime source is byte-identical to 85dfeee; release remains 0.2.12-beta. New exact-SHA CI and operating deployment are pending at this commit.
 
 - History retains release 0.3.0-beta and its expanded 24-case water regression. Runtime/QA bytes are unchanged since 0660afb; only the browser-job OS labels and records differ.
+
+
+### 2026-11-04 Joseon summary preparation (0.3.1-beta)
+
+Source summary code and index routing are integrated on an isolated branch based on current0.3.0 main, preserving the prior completed Joseon review SHA4df69c4 (all8 CI jobs successful). Synthetic summary28 guards and14 real index routing cases pass. Windows/Linux each pass8 full static app summary-to-blank-to-summary views with three original prompt emphases and no real API requests. The actual JWT/PostgreSQL candidate serves29 Joseon pages, seven summary groups/172 literal rows and saves all172 canonical answers/checks/paused cursor through restart/relogin while preserving79. The persistent private data root is copied byte-for-byte with a recorded tree hash. Production revision configuration and new-edition activation remain separate; no readiness meta is added.

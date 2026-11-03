@@ -80,23 +80,25 @@
       if(Number.isInteger(from)&&Number.isInteger(to)&&delta&&Math.abs(delta)<50){restoringRoute=routeSnapshot.href;win.history.go(delta);}
       else win.history.pushState(routeSnapshot.state,'',routeSnapshot.href);
     }
+    function scopedEditions() { return !!doc.querySelector('meta[name="hanq-textbook-reviewed-eras"]'); }
+    function editionValue() { return scopedEditions()&&sourceRevision==null?'':sourceSha||''; }
     function switchEdition(next) {
-      if(sourceChanging||original){if(editionSelect)editionSelect.value=sourceSha||'';return;}
+      if(sourceChanging||original){if(editionSelect)editionSelect.value=editionValue();return;}
       if(!sourceInfo(next))return;
       var g=generation,element=host,id=eraId,hooks=Object.assign({},callbacks||{},{sourceRevision:next,initialMode:mode});
-      sourceChanging=true;if(editionSelect){editionSelect.value=sourceSha||String(sourceRevision);editionSelect.disabled=true;}
+      sourceChanging=true;if(editionSelect){editionSelect.value=editionValue();editionSelect.disabled=true;}
       Promise.resolve().then(function(){return child&&child.hasUnsaved&&child.hasUnsaved()?child.prepareLeave():null;}).then(function(){
         if(g!==generation||!host||session!==identity())return;
         if(callbacks&&callbacks.onSourceChange)callbacks.onSourceChange(next);
         return mount(element,id,hooks);
-      }).catch(function(){if(g===generation){sourceChanging=false;if(editionSelect){editionSelect.disabled=false;editionSelect.value=sourceSha||'';}setStatus('현재 판본의 답안을 저장하지 못했어요. 판본을 바꾸지 않았습니다. 저장을 다시 확인해 주세요.');}});
+      }).catch(function(){if(g===generation){sourceChanging=false;if(editionSelect){editionSelect.disabled=false;editionSelect.value=editionValue();}setStatus('현재 판본의 답안을 저장하지 못했어요. 판본을 바꾸지 않았습니다. 저장을 다시 확인해 주세요.');}});
     }
     function buildEditionControl() {
-      if(!sourceCatalog||!sourceCatalog.revisionRoutesReady||!sourceCatalog.revisionRoutesReady(doc))return;
+      if(!sourceCatalog||!sourceCatalog.revisionRoutesReady||!sourceCatalog.revisionRoutesReady(doc,eraId))return;
       var box=node('div',null,'textbook-edition-controls'),label=node('label','교재 판본'),select=node('select');select.setAttribute('data-textbook-revision','');
-      (sourceCatalog&&sourceCatalog.revisions||[]).forEach(function(item){var o=node('option',item.edition+(item.totalPdfPages===147?' · 개정 교재':' · 기존 교재'));o.value=item.sha256;select.appendChild(o);});
+      (sourceCatalog&&sourceCatalog.revisions||[]).forEach(function(item){var o=node('option',item.edition+(item.totalPdfPages===147?' · 개정 교재':' · 기존 교재'));o.value=scopedEditions()&&item.sha256===sourceInfo(null).sha256?'':item.sha256;select.appendChild(o);});
       if(!sourceInfo(sourceRevision)){var unknown=node('option','알 수 없는 판본');unknown.value=String(sourceRevision);unknown.disabled=true;select.appendChild(unknown);}
-      select.value=sourceInfo(sourceRevision)?sourceInfo(sourceRevision).sha256:String(sourceRevision);select.addEventListener('change',function(){switchEdition(select.value);});editionSelect=select;label.appendChild(select);box.appendChild(label);shell.insertBefore(box,status);
+      select.value=sourceInfo(sourceRevision)?editionValue():String(sourceRevision);select.addEventListener('change',function(){switchEdition(select.value||null);});editionSelect=select;label.appendChild(select);box.appendChild(label);shell.insertBefore(box,status);
     }
     function validDataSource(data,selectedMode){if(!data)return false;if(selectedMode==='choices')return data.sourceSha256===sourceSha&&!!choices&&data.sourceQuizSha256===choices.sourceQuizSha256;return (selectedMode==='quiz'?data.source&&data.source.sha256:data.sourceSha256)===sourceSha;}
 
@@ -183,6 +185,7 @@
         child = renderer.render(panel, data, {
           ownerId: api.state().ownerId,
           sourceRevision:sourceSha,
+          sourcePromptStyles:selectedMode==='quiz'&&manifest.sourcePromptStylesByQuiz?manifest.sourcePromptStylesByQuiz[quizId]:undefined,
           loadProgress: function () { if (!valid(g,r)) return Promise.reject(sessionError()); return api.textbookSourceWorkspace(quizId,boundRevision); },
           saveProgress: function (body) { if (!valid(g,r)) return Promise.reject(sessionError()); return api.saveTextbookSourceWorkspace(quizId,body,boundRevision); },
           isFigureAvailable: function (figure) {
@@ -334,7 +337,7 @@
         return Promise.resolve();
       }
       if(!sourceSha){setStatus('알 수 없는 교재 판본입니다. 기존 교재를 명시적으로 선택해 주세요.');var legacy=button('기존 79회 교재 열기',function(){switchEdition(null);});legacy.setAttribute('data-legacy-textbook','');shell.appendChild(legacy);return Promise.resolve();}
-      if(sourceRevision!=null&&(!sourceCatalog||!sourceCatalog.revisionRoutesReady||!sourceCatalog.revisionRoutesReady(doc))){setStatus('선택한 판본은 서버 연결 검수가 끝난 뒤 열립니다. 기존 교재는 계속 이용할 수 있어요.');var pendingLegacy=button('기존 79회 교재 열기',function(){switchEdition(null);});pendingLegacy.setAttribute('data-legacy-textbook','');shell.appendChild(pendingLegacy);return Promise.resolve();}
+      if(sourceRevision!=null&&(!sourceCatalog||!sourceCatalog.revisionRoutesReady||!sourceCatalog.revisionRoutesReady(doc,eraId,sourceRevision))){setStatus('선택한 판본은 서버 연결 검수가 끝난 뒤 열립니다. 기존 교재는 계속 이용할 수 있어요.');var pendingLegacy=button('기존 79회 교재 열기',function(){switchEdition(null);});pendingLegacy.setAttribute('data-legacy-textbook','');shell.appendChild(pendingLegacy);return Promise.resolve();}
       var eraFor = options.eraFor || root.HanqPrivateTextbook && root.HanqPrivateTextbook.eraFor;
       era = eraFor && eraFor(eraId,sourceRevision);
       if (!era || !Number.isInteger(era.from) || !Number.isInteger(era.to) || !api || typeof api.textbookSemanticManifest !== 'function') {

@@ -22,7 +22,16 @@
   // Deployment declaration, not a server capability probe. Absent on production
   // until this API and both immutable source roots have been verified there.
   var REVIEWED_REVISION_RELEASE='ab5bffed546f288870f7362627cd18cd4a820f63:a974f63221b7872400adc220d0ee484bec02bc89';
-  function revisionRoutesReady(document) { var flag=document&&document.querySelector('meta[name="hanq-textbook-revisions"]');return !!(flag&&flag.content===REVIEWED_REVISION_RELEASE); }
+  function revisionRoutesReady(document, eraId, sourceRevision) {
+    var flag=document&&document.querySelector('meta[name="hanq-textbook-revisions"]');
+    if(!flag||flag.content!==REVIEWED_REVISION_RELEASE)return false;
+    var partial=document.querySelector('meta[name="hanq-textbook-reviewed-eras"]');
+    if(!partial)return true;
+    if(sourceRevision!=null&&sourceRevision!==NEW_SOURCE)return false;
+    var allowed=partial.content.split(',').map(function(id){return id.trim();});
+    if(!allowed.length||new Set(allowed).size!==allowed.length||allowed.some(function(id){return !eras.some(function(era){return era.id===id;});}))return false;
+    return typeof eraId==='string'&&allowed.indexOf(aliases[eraId]||eraId)!==-1;
+  }
   var revisedRanges = {nambuk:[31,40],goryeo:[41,58],joseon:[59,87],opening:[88,107],colonial:[108,125],modern:[126,139],people:[140,141],regions:[142,144],credits:[145,147]};
   function sourceInfo(revision) {
     if (revision != null && revision !== OLD_SOURCE && revision !== NEW_SOURCE) return null;
@@ -163,7 +172,7 @@
     }
     function mount(el, id, callbacks) {
       stop(); rawHooks=callbacks||{};sourceRevision=rawHooks.sourceRevision==null?null:rawHooks.sourceRevision;var info=sourceInfo(sourceRevision);expectedRevision=info&&info.sha256;navigation=rawHooks.onEraChange||null;if(!el)return Promise.resolve();host=el;session=identity();era=eraFor(id,sourceRevision);if(!era){host.textContent='알 수 없는 교재 판본입니다.';return Promise.resolve();} enhanced=rawHooks.enhanced!==false;mode=rawHooks.initialMode==='page'?'page':'regions';zoom=['fit','large','readable'].indexOf(rawHooks.initialZoom)>=0?rawHooks.initialZoom:'readable';
-      if(sourceRevision!=null&&!revisionRoutesReady(doc)){host.appendChild(node('p','선택한 판본은 서버 연결 검수가 끝난 뒤 열립니다. 기존 교재는 계속 이용할 수 있어요.',{role:'status'}));if(typeof rawHooks.onSourceChange==='function')host.appendChild(button('기존 79회 교재 열기',function(){rawHooks.onSourceChange(null);}));return Promise.resolve();}
+      if(sourceRevision!=null&&!revisionRoutesReady(doc,era.id,sourceRevision)){host.appendChild(node('p','선택한 판본은 서버 연결 검수가 끝난 뒤 열립니다. 기존 교재는 계속 이용할 수 있어요.',{role:'status'}));if(typeof rawHooks.onSourceChange==='function')host.appendChild(button('기존 79회 교재 열기',function(){rawHooks.onSourceChange(null);}));return Promise.resolve();}
       var g = generation, r = ++request;
       status = node('p', '', { role: 'status' }); host.appendChild(status);
       if (!session) { message('회원 교재는 로그인한 뒤 볼 수 있어요.'); host.appendChild(node('a', '로그인 화면으로', { href: '#account' })); }

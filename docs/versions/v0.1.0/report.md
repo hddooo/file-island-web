@@ -1,8 +1,26 @@
 # FE 결과·이슈·다음 업무
 
-### 2026-11-04 · 0.3.1-beta 자동 장면 움직임 변경 범위
+### 2026-11-04 · 0.3.2-beta 자동 장면 움직임 변경 범위
 
 자동 움직임과 OS reduced-motion을 일치시키고 영어 디지몬/물·배/역사 날씨 버튼을 제거하는 작은 수정이다. 원본 에셋·메뉴 라우트·학습 데이터·권한을 보존한다. OS reduce → normal 및 페이지 복귀 시 클릭 없이 재개하는지를 합성 브라우저에서 검증한다. Windows Chromium/WebKit은 실제 iPhone 검수가 아니다. 외부망 접속은 이 실행 환경에서 미확인이다. 정확 SHA CI와 실제 운영 결과는 배포 후 별도 실행 근거로 대조하며 후보 구현을 운영 완료로 해석하지 않는다.
+
+### 2026-11-03 · 조선 단독 후보의 회원 저장 검증
+
+별도 네트워크·임시 PG17에서 실제 회원 JWT와 조선172문항을 사용해 저장·채점·CAS·재시도·계정/판본 격리·중단/재로그인·API 재시작 복구를 검증했다. 기존79회164문항과 다른 테이블은 보존됐고, 후보 목록에서 제외한 시대는 API에서도404였다. ab5 테스트 API의 교재8소스는44d와 LF 정규화 후 같지만, 이 결과는 전체44d 인증/배포 자격 검증이나 운영 회원 DB 검증을 대신하지 않는다.
+
+부분 공개 UI는79회 기존 기본 경로를 계속 사용하며 미검수 구판 revision으로 전환하지 않는다. 명시적 구판 URL에는 기존 교재로 돌아가는 수동 동작만 제공하므로 실패를 다른 source로 감추지 않는다. 실제 root 연결과 공개 선언·운영 검수는 남아 있다.
+
+### 2026-11-03 · PDF73 모바일 도식
+
+중앙 정치 기구가 큰 빈 표와 가로 잘림으로 보이던 문제를 보정했다. 검증된 source 좌표에 HTML 글자와 SVG 선을 표시하고, source hash·page·그림 hash·모든 원문 행의 중복 없는 참조를 검사한다. 불완전하거나 교차한 자료는 도식을 그리지 않고 표와 native 캡션을 유지한다. 원본에서 확인한 지방5개 화살표, 중앙 묶음선과 6조/3사 노란 강조를 보존했고 중앙 도식/지도 및 각 캡션의 좌우 관계도 복원했다.
+
+두 OS·두 브라우저·4개 화면 크기에서 실제73쪽 총16건을 검증했다. Linux 조선 전체 자동 읽기168건·빈칸8건과 판본/저장복구20건은 통과했다. 이는 운영 회원 DB 저장이나 전체 raster/vector 강조의 사람 검수를 뜻하지 않는다. 기존 회원·79회 진도는 수정하지 않았으며 운영 선언은 여전히 추가하지 않았다.
+
+### 2026-11-03 · 조선 준비 단위 인계
+
+조선 자료 후보의 질문 172개가 기존 canonical digest와 일치한다. PDF59–87의 native 글자와 ID를 보존하면서 검증된 원문 색·표와 일부 그림 캡션 배치를 복원했다. 표시 코드에는 blue ink, 같은 source에서 검증한 gray 셀, 모바일 원문 행/열 유지, 시험표 제목 폭 및 WebKit 분할 그림 비율 보정을 추가했다. 시대별 공개 선언은 기존 정확 API/source 게이트를 통과한 범위 안에서만 적용하며, 운영 선언은 추가하지 않았다.
+
+구/신판 source·digest·CAS·저장 실패와 복구의 기존 계약은 유지한다. Linux Node24/동일 의존성 회귀 검사에서 판본 전환·저장/복구 20건, 디자인 6건 및 실제 조선 읽기 168화면·빈칸 8화면을 통과했다. 전체 교재 시각 검수와 실제 API root 연결, 통합·배포는 미완료다. 원문과 비공개 추출 자료는 public Git에 포함하지 않는다. 이후 담당은 조선 후보를 먼저 최종 검수·연결하고 운영 확인 후 고려로 진행한다.
 
 ### 2026-11-04 · 역사섬 저녁 장면 검수 후보
 
@@ -612,6 +630,15 @@ GitHub 연결 검색은 저장소 권한 오류422를 반환했고 Chrome은 로
 긴 간판/접근성 보정을 포함한 후속 후보에서 `qa-english-residents.cjs` Chrome/WebKit10건(실제 프레임 변화·고정 actor·간판 hit·정지/재개·축소 모션·offscreen·detach·decode 실패/복구·기록 fixture 보존) 및 정적 빌드1642 runtime 파일 검사를 통과했다. 작업 evidence의 `islands-residents-long-label/results.json`과 PNG가 근거이며 아직 검토 후보다. 먼저 메뉴 후보의 필수 CI·main·CD·운영 대조를 끝내고 이 후보의 정확 SHA CI를 확인해 별도로 운영 통합한다. 역사섬 캠핑·비/우산·오로라 구현은 포함하지 않는다.
 
 
+### 2026-11-03 Joseon source diagram and emphasis follow-up
+
+Reviewed source60/61 government relations and timeline render with selectable text, bounded shapes/lines, readable source colours and internal scrolling. Source73's office/map relationship remains intact, and source66's map belongs to the original war row. Orange and yellow source styles require exact-source audit metadata. The172-item quiz digest is unchanged. Linux regression and actual-source tests pass, as does real JWT/PostgreSQL storage against the final sparse candidate. No operating member data or running backend service was changed. This unit is not production deployment: full human page review, current CI integration, operating root verification and parent release inspection remain.
+
+
+### 2026-11-03 Source prompt emphasis preservation
+
+Original underlines can now survive both the reading page and functional blank prompt through source-bound display metadata outside the quiz JSON. Every range must match native question IDs and literal text in the selected edition. Markup cannot change source text or answers. Six additional outlined study/answer labels were recovered in the private candidate. Existing642-question and actual172-question regression plus real JWT/PostgreSQL verification pass; all quiz bytes and canonical digests are preserved. This is a prepared local source/frontend unit, not operating deployment.
+
 ### 2026-11-03 compact CI budget correction
 
 - English source a3e7f7b feature CI passed all seven jobs, but main run 41683902917 and history feature run 41684282727 exhausted the existing 25-minute compact job budget. Logs showed passing matrices through the final review, with no assertion error before cancellation. Deployment did not run.
@@ -651,3 +678,8 @@ GitHub 연결 검색은 저장소 권한 오류422를 반환했고 Chrome은 로
 - Runtime source is byte-identical to 85dfeee; release remains 0.2.12-beta. New exact-SHA CI and operating deployment are pending at this commit.
 
 - History retains release 0.3.0-beta and its expanded 24-case water regression. Runtime/QA bytes are unchanged since 0660afb; only the browser-job OS labels and records differ.
+
+
+### 2026-11-04 Joseon summary preparation (0.3.1-beta)
+
+The verified new-edition summary can retain its chapter step and load source-bound clues/answers through existing member manifest and quiz reads. Default/explicit79 and unready/unknown selections retain existing behavior. Literal question IDs, text, answers, events and canonical digest are validated; classification summaries also retain their original subitem and choice context. Summary reads never call progress APIs, and account changes discard stale responses. Isolated real API storage and Windows/Linux app navigation pass. The frontend preparation preserves the current production gate; actual81 activation still requires operating API/root/member verification.

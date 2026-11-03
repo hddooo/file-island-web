@@ -273,6 +273,9 @@
         img.alt = typeof figure.alt === 'string' ? figure.alt : '원문 그림';
         img.setAttribute('loading', atomicGroup ? 'eager' : 'lazy'); img.setAttribute('decoding', 'async'); img.setAttribute('referrerpolicy', 'no-referrer');
         img.style.display = 'block'; img.style.width = '100%'; img.style.height = description.supported ? '100%' : 'auto';
+        // WebKit needs the replaced image positioned against its resolved source
+        // rectangle; otherwise percentage height can fall back to intrinsic pixels.
+        if (description.supported) { img.style.position = 'absolute'; img.style.inset = '0'; }
         img.style.maxWidth = '100%'; img.style.maxHeight = 'none'; img.style.margin = '0'; img.style.padding = '0'; img.style.border = '0'; img.style.borderRadius = '0'; img.style.objectFit = 'fill';
         img.addEventListener('load', function () {
           if (!alive || groupFailed || state.img !== img) return;
