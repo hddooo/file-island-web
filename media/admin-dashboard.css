@@ -7,3 +7,64 @@
 .daily-scroll{max-height:475px;overflow:auto}.daily-table thead th{position:sticky;top:0;z-index:1}.stat-value{overflow-wrap:anywhere}
 .admin-xp select{display:block;width:100%;min-height:44px;max-width:100%;padding:10px 12px;border:1px solid #d4dbe6;border-radius:5px;background:white;color:var(--ink);font:inherit}
 .admin-xp select:focus-visible{outline:3px solid #3f6bdd;outline-offset:3px}
+
+/* Operations reading and touch targets; all additions stay inside ADMIN. */
+body.admin-page{font-size:15px;line-height:1.65}
+.admin-page :is(button,input,textarea,select){min-height:44px}
+.admin-page :is(input,textarea,select){font-size:16px}
+.admin-page :is(.stat-label,.card-subtitle,.chart-legend,.chart-tip,.coverage-note,.member-name,.member-date,.data-status,.stat-note,caption,th,.timezone-label,.profile-role,.profile-status){font-size:12px}
+.admin-page .stat-label{font-weight:600;line-height:1.5}
+.admin-page .stat-value{line-height:1.3;margin:8px 0}
+.admin-page :is(.admin-card,.stat-card,.portal-panel){border-color:#dbe1ea;box-shadow:0 2px 5px #27314205}
+.admin-page .admin-header{height:auto;min-height:72px;flex-wrap:wrap;padding-block:10px}
+.admin-page .admin-header p{margin-block:0}
+.admin-page .admin-header a{display:inline-flex;align-items:center;min-height:44px}
+.admin-page #status:not(:empty){color:#344568;background:#eaf0ff;border:1px solid #cbd8f6;border-left:4px solid #527bf4;border-radius:6px;padding:12px 16px;overflow-wrap:anywhere}
+.admin-page .dashboard-loading{padding:24px;border:1px solid var(--line);border-radius:8px;background:white;color:#475467}
+.admin-page .card-error{border:1px solid #efccd1;border-left:4px solid #bc4b60;color:#813346;font-size:14px}
+.admin-page .coverage-note{color:#6b552b}
+.admin-page .range-controls button{min-width:48px;font-size:13px}
+.admin-page :is(.member-list button,.text-button){font-size:13px;min-height:44px}
+.admin-page .quick-links a{display:flex;align-items:center;min-height:44px}
+.admin-page .portal-panel :is(table,td){font-size:14px}
+.admin-page .portal-panel th{color:#475467}
+.admin-page .portal-panel tbody tr:hover{background:#f7f9fd}
+.admin-page .portal-panel :is(td,th){padding:13px 12px}
+.admin-page .portal-panel td:last-child{width:84px}
+.admin-page .portal-panel > form:has([name=search]){grid-template-columns:minmax(0,1fr) auto;align-items:end;max-width:680px;margin:0 0 24px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.admin-page .portal-panel > form:has([name=search]) label{grid-column:1/-1;font-size:14px;font-weight:600;color:var(--ink)}
+.admin-page .portal-panel > form:has([name=search]) button{background:#365fc5;border-color:#365fc5;color:white}
+.admin-page .portal-panel > form:has([name=search]) button:hover{background:#294fae}
+.admin-page .portal-panel form:not(:has([name=search])){gap:10px}
+.admin-page .portal-panel label{font-size:14px;color:#475467}
+.admin-page .portal-panel h3{margin:28px 0 12px;padding-top:16px;border-top:1px solid var(--line)}
+.admin-page .admin-xp{padding:20px;border-left:4px solid #95abd5}
+.admin-page .admin-xp h3:first-child{margin-top:0;padding-top:0;border-top:0}
+.admin-page .admin-xp-preview{border:2px solid #6885b9;padding:16px}
+.admin-page .portal-panel form [role=status]:empty{display:none}
+.admin-page .portal-panel form [role=status]:not(:empty){margin:4px 0;padding:12px;border:1px solid #cbd8f6;border-radius:5px;background:#edf2fc;color:#344568}
+.admin-page .daily-table{min-width:0}
+.admin-page .daily-table :is(th,td){padding-inline:6px}
+.admin-page .daily-scroll{scrollbar-gutter:stable}
+@media(max-width:760px){
+ .admin-page .admin-header{min-height:64px;gap:6px 12px}
+ .admin-page .admin-header p{flex:1 1 100%}
+ .admin-page .admin-header :is(a,button){font-size:12px}
+ .admin-page .portal-panel .scroll::before{content:'표를 좌우로 밀어 전체 항목을 확인하세요.';display:block;position:sticky;left:0;width:100%;margin-bottom:10px;color:#667085;font-size:12px}
+ .admin-page .portal-panel table :is(th,td):last-child{position:sticky;right:0;background:white;box-shadow:-5px 0 8px #2731420a;min-width:84px}
+ .admin-page .portal-panel table th:last-child{background:#fafbfc}
+ .admin-page .portal-panel{padding:16px}
+ .admin-page .admin-xp{padding:16px}
+ .admin-page .portal-panel > nav{gap:8px}
+ .admin-page .portal-panel > nav span{flex-basis:100%;font-size:13px}
+}
+@media(max-width:540px){
+ .admin-page .dash-summary{grid-template-columns:minmax(0,1fr);gap:10px}
+ .admin-page .stat-card{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;padding:14px 16px;align-items:center}
+ .admin-page .stat-label{font-size:13px}
+ .admin-page .stat-value{grid-column:2;grid-row:1 / 3;font-size:26px;margin:0;text-align:right;max-width:130px}
+ .admin-page .stat-note{grid-column:1;margin-top:4px}
+ .admin-page .card-heading{gap:10px}
+ .admin-page .page-heading{align-items:flex-start}
+ .admin-page .timezone-label{padding-top:6px}
+}
