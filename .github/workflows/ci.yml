@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   static-build:
-    needs: [auth-contract, compact-ui-regression, practice-readiness-regression, header-parent-readability, history-reading-regression, english-scene-regression]
+    needs: [auth-contract, compact-ui-regression, compact-scene-regression, practice-readiness-regression, header-parent-readability, history-reading-regression, english-scene-regression]
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -131,7 +131,7 @@ jobs:
             node "scripts/$test.cjs"
           done
       - run: .ci-tools/node_modules/.bin/playwright install --with-deps chromium webkit
-      - name: Verify compact UI, popup, PDF and mobile scene
+      - name: Verify compact UI, popup, PDF and headers
         run: |
           set -euo pipefail
           node scripts/qa-vocabulary-redesign.cjs
@@ -144,6 +144,29 @@ jobs:
           node scripts/qa-map-shell-polish.cjs
           node scripts/qa-map-header-visuals.cjs
           node scripts/qa-header-refinement.cjs
+
+  # Keep every original command, with separate budgets for the two long matrices.
+  compact-scene-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      NODE_PATH: ${{ github.workspace }}/.ci-tools/node_modules
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: .ci-tools/package-lock.json
+      - run: npm ci --prefix .ci-tools --no-fund
+      - run: ln -s .ci-tools .test-tools
+      - run: .ci-tools/node_modules/.bin/playwright install --with-deps chromium webkit
+      - name: Verify mobile scenes, navigation ownership and final review
+        run: |
+          set -euo pipefail
           node scripts/qa-rainbow-viewport.cjs
           SCENE_ENGINE=chromium SCENE_WIDTH=390 node scripts/qa-rainbow-collection.cjs
           SCENE_ENGINE=webkit SCENE_WIDTH=390 node scripts/qa-rainbow-collection.cjs
