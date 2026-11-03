@@ -1,6 +1,6 @@
 'use strict';
-/* Local static responses + synthetic API only. Candidate CSS/JS are injected
-   into the source HTML here so the shared entrypoint stays integration-owned. */
+/* Actual lazy-loaded product scene. Local static responses and synthetic APIs;
+   no injected scenery wrapper, production account, or real learning writes. */
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const {chromium,webkit}=require(process.env.HANQ_PLAYWRIGHT||'../.test-tools/node_modules/playwright');
 const root=path.resolve(__dirname,'..'),out=path.resolve(process.env.HANQ_QA_OUTPUT||'evidence/history-evening');fs.mkdirSync(out,{recursive:true});if(fs.existsSync(path.join(out,'results.json')))fs.unlinkSync(path.join(out,'results.json'));
