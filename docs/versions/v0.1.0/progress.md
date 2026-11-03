@@ -676,3 +676,13 @@ v0.1.2와 f50a70f 후보 모두 합성 로그인 후 320×568에서 ri-game/host
 `fix/palace-motion-hotspots`, 기준 `3d7f149123ee21b1f106ef5900a85e07057ff03c`. 장면 JS/CSS 세 파일과 scene QA만 변경하며 한국사 읽기·문항·index/header·API/DB/인프라는 변경하지 않는다. 크기 전환 시 release()의 이전 contextlost 콜백이 새 renderer를 정지시키는 오류를 재현해 수정했다. WebGL이 없어도 선명한 고정 plate 위의 물만 512/640px 대체 버퍼에서 갱신한다. 사용자의 실제 기기·OS 설정은 미확인이며, 해당 오류가 그 사용자 세션의 유일 원인이라고 단정하지 않는다. 고궁의 건물별 기존 라우트·ID·진도를 보존하고 간판은 목재·금빛 테두리로 맞췄다. 후보·검수와 운영 반영을 구분한다.
 
 추가 사용자 확정: 왼쪽 작은 정자는 오답노트, 가운데 궁은 시대별 학습, 오른쪽 건물은 모의고사장이다. 기존 control ID와 라우트를 이동한 건물 영역에 그대로 연결하며, 간판의 보이는 기능 이름은 유지하고 접근성 이름을 각각 오답노트 정자·시대별 학습 궁·모의고사장으로 맞춘다.
+### 2026-11-03 · 영어섬 건물 메뉴 · 구현
+- 기준은 이전된 `hddooo/file-island-web` main `3d7f149` / `0.2.11-beta`. 영어섬 전용 `english-island.js/.css`가 기존 네 native 버튼을 원화의 서고·연습 부두·문법의 문·듣기 정자 영역으로 배치한다. 원본 그림, 데이터, 음원, 라우트, 기록을 보존한다.
+- 공통 연결은 index 자산 2개와 island-harbors의 영어섬 전용 위임 1줄뿐이다. 역사섬 구현과 운영 push는 통합 담당이 조율한다. portrait/landscape 카메라, 44px 목표, keyboard focus, reduced-motion, detach 정리를 포함한다.
+- `qa-english-island.cjs`는 로컬 파일·합성 API로 실제 메뉴/뒤로/원화 선택/좌표 고정/물 모션/역사섬 격리를 검수한다. 초기 main의 물 renderer는 Chrome에서 ready 상태를 만들지 못해, 역사섬 담당의 복구 후보 `7b391f8`과 결합한 별도 검수에서 확인한다. 운영 완료를 뜻하지 않는다.
+
+### 2026-11-03 · 영어섬 건물 메뉴 · 검사 결과
+- 역사섬 후보 `7b391f8`과 결합한 별도 worktree에서 `qa-english-island.cjs` 최종 Chrome/WebKit 10건 성공, pageerror 0. 320×740, 390×844, 700×900, 844×390, 1440×1000에서 네 간판/44px 목표/충돌 없음/키보드 순서와 Enter/모바일 tap/기존 네 라우트/Back/장면 중복 없음/저장 fixture 보존/축소 모션 정지·일반 모션 재개/마우스에 대한 좌표 고정/역사섬 격리를 확인했다. 실제 iPhone/Safari 실기기 검증은 아니다.
+- `test-learning-progress.cjs`: 67/67. `test-static-site-build.cjs`: 재현 가능한 full-SHA manifest, runtime 1640개 및 private/source 제외 성공. 구문·diff 검사 성공. 원본 영어섬 WebP, 음원, 학습 데이터 변경 없음.
+- 기존 `test-islands-integration.cjs`는 수정 전 main `3d7f149`와 후보에서 모두 로그인 화면(`파일섬 스터디`)을 대상으로 오래된 한국사 목차를 찾으며 실패한다. 이 작업에서 assertion을 약화하거나 관련 없는 인증 fixture를 변경하지 않았다.
+- 로컬 증거: `task-6/english-palace-qa/evidence/english-island/results.json` 및 엔진·크기별 PNG 10개. 현재 작업은 검토 후보이며 main push/운영 버전 변경은 통합 담당 책임이다. GitHub 정확 SHA CI와 실제 운영 반영은 별도 확인해야 한다. 구 운영 URL `hanq.vercel.app/app-version.json`, 시험 파일 호스트 `digimon-world.duckdns.org/app-version.json`은 404여서 운영 버전의 증거로 사용하지 않았다.
