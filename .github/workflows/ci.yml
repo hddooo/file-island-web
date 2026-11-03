@@ -50,6 +50,16 @@ jobs:
       - run: .ci-tools/node_modules/.bin/playwright install --with-deps chromium webkit
       - run: node scripts/qa-english-island.cjs
       - run: node scripts/qa-english-residents.cjs
+      - name: Save synthetic English scene failure frames
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: synthetic-english-scene-${{ github.sha }}
+          path: |
+            evidence/english-island/*.png
+            evidence/english-residents/*.png
+          retention-days: 1
+          if-no-files-found: ignore
 
   history-reading-regression:
     runs-on: ubuntu-latest
