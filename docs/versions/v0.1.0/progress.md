@@ -676,3 +676,7 @@ v0.1.2와 f50a70f 후보 모두 합성 로그인 후 320×568에서 ri-game/host
 `fix/palace-motion-hotspots`, 기준 `3d7f149123ee21b1f106ef5900a85e07057ff03c`. 장면 JS/CSS 세 파일과 scene QA만 변경하며 한국사 읽기·문항·index/header·API/DB/인프라는 변경하지 않는다. 크기 전환 시 release()의 이전 contextlost 콜백이 새 renderer를 정지시키는 오류를 재현해 수정했다. WebGL이 없어도 선명한 고정 plate 위의 물만 512/640px 대체 버퍼에서 갱신한다. 사용자의 실제 기기·OS 설정은 미확인이며, 해당 오류가 그 사용자 세션의 유일 원인이라고 단정하지 않는다. 고궁의 건물별 기존 라우트·ID·진도를 보존하고 간판은 목재·금빛 테두리로 맞췄다. 후보·검수와 운영 반영을 구분한다.
 
 추가 사용자 확정: 왼쪽 작은 정자는 오답노트, 가운데 궁은 시대별 학습, 오른쪽 건물은 모의고사장이다. 기존 control ID와 라우트를 이동한 건물 영역에 그대로 연결하며, 간판의 보이는 기능 이름은 유지하고 접근성 이름을 각각 오답노트 정자·시대별 학습 궁·모의고사장으로 맞춘다.
+
+### 2026-11-03 Mac 고궁 통합 검수
+
+`codex/palace-integration-20261103`은 원격 main `3d7f149123ee21b1f106ef5900a85e07057ff03c`에서 별도 worktree로 시작해 `fix/palace-motion-hotspots`의 `05d2ecb`·`d2fd012` 두 커밋만 충돌 없이 통합했다. 기존 체크아웃·main·한국사 교재 렌더러 작업은 보존했다. Mac Chrome/WebKit에서 320×568을 추가한 장면 검사 각18건, 기존 두 섬/두 테마/320·390·1440 메뉴 회귀28건, Chrome 물 픽셀·배·저전력·offscreen 검사9건을 통과했다. macOS WebKit의 기본 버튼 탐색은 Option+Tab으로 검증하며 Windows/Linux의 Tab 검증은 유지한다. static build, CD controller16 tests, 메뉴83 assertions, 지도 정렬 검사를 통과했다. 실제 iPhone 검증은 아니다. 정확 SHA CI·main 갱신·운영 도메인 SHA/자산 대조는 아직 미완료이며 GitHub 연결의 저장소 접근 오류와 브라우저 로그인 부재를 별도 해결해야 한다.

@@ -533,3 +533,9 @@ PNG만으로 모션 완료를 주장하지 않는다. `motion-0/2`는 실제 2�
 재현 전: 1440→390 전환 후 frame 9→9, ready=false지만 mode=active가 유지됐다. 이전 canvas의 이벤트 리스너를 제거하고 generation/target을 검사해 새 장면의 중단을 방지한다. GPU 중단·미지원 대체 경로는 실제 물 픽셀 변화와 고정 건물 픽셀을 검사하며, 단순 frame 카운터 증가만 성공 기준으로 쓰지 않는다. `qa-palace-hotspots.cjs`는 실제 로컬 HTTP 캐시, 반복 resize, 1778×1122 DPR2 조건, GPU 중단/미지원, reduced-motion 명시적 재생, 건물 중앙 터치·키보드·모듈 로드 실패 복구를 검증한다. 실사용자 브라우저 설정은 미확인이다. 기존 `qa-island-harbors.cjs`의 route/back/keyboard/스크롤·모바일 검수와 `qa-living-water.cjs`의 실제 시간 진행·픽셀 캡처도 별도 유지한다. 정확 SHA CI·운영 증거는 해당 실행 결과로 대조하며 이 후보 기록만으로 배포 완료를 선언하지 않는다.
 
 중간 후보 05d2ecba의 CI 41590207383은 새 움직임 버튼이 `.toeic-travel-map button`의 학습 목적지 4개에 섞여 단어장 UI 회귀에서 실패했다. 제품의 장면 제어를 map 바깥의 형제 요소로 분리하고 기존 검사 파일은 완화하지 않았다. ResizeObserver 위치 갱신은 rAF로 묶고 버튼은 max-content 폭으로 고정해 순환 알림을 제거했다. 그 후 qa-vocabulary-redesign은 Chromium/WebKit 320/390/1440 전체 통과했다. 확정 건물 배치·실제 HTTP 캐시·이전 host의 늦은 모듈 로드·GPU 중단/미지원·키보드/터치 17건씩을 두 엔진에서 통과했다. 이 단락은 로컬 검수이며 새 정확 SHA CI·운영 결과는 별도다.
+
+### 2026-11-03 Mac 고궁 통합 검수 결과
+
+규칙 `hanq-collaboration-2026-11-01-v5`. 원격 main `3d7f149123ee21b1f106ef5900a85e07057ff03c` 위에 원래 후보 두 커밋만 cherry-pick했고, 제품 차이는 원래 `d2fd012`와 동일한 장면 JS/CSS 세 파일이다. 교재·문항·학습 진행·API·DB·헤더·workflow·버전은 변경하지 않았다. `qa-palace-hotspots.cjs`에 320×568과 macOS WebKit Option+Tab을 추가했다. 후자는 macOS 기본 Tab이 버튼을 건너뛰는 플랫폼 동작을 반영하며 실제 다음 버튼 focus와 Enter 라우트 assertion은 유지한다. Chrome/WebKit 각18건 모두 통과, `qa-island-harbors.cjs`28건과 `qa-living-water.cjs`9건 통과. 320·1440·650×320 가로 PNG를 직접 확인했고 간판·건물 클릭영역·배·정지 버튼의 겹침을 확인했다. static build 및 CD16 tests, 메뉴83 assertions, 지도 정렬도 통과했다. 작업 evidence의 `chromium/results.json`, `webkit/results.json`, `harbor-regression/qa-results.json`, `living-water/pixel-motion.json`과 PNG가 근거다.
+
+GitHub 연결 검색은 저장소 권한 오류422를 반환했고 Chrome은 로그아웃 상태의404였다. Git clone/push 권한을 CI 조회 성공으로 해석하지 않는다. 필수 exact-SHA CI를 확인하지 못해 production main 갱신·배포는 보류한다. 운영 반영은 성공 CI와 현재 main 재확인 후 통합 담당이 수행하고 실제 도메인의 `/app-version.json`·세 장면 자산을 대조해야 한다.
