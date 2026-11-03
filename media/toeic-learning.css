@@ -57,3 +57,12 @@ html body .tg-focus-drill .tg-save-status[hidden]{display:none!important}
 html body .tg-focus-drill .tg-drill-progress{margin:4px 0 8px;font-size:13px}
 html body .tg-focus-drill .tg-drill-source{margin-top:12px;font-size:12px}
 html body .tg-focus-drill .tg-drill-source>summary{min-height:36px;padding:4px 0;cursor:pointer}
+
+/* Adjacent names/counts wrap within their columns without adding height on short phones. */
+html[data-hanq-theme] body #app .toeic-learning-page .tc.tc-simple .tc-group-list>.tc-group{column-gap:8px;row-gap:3px}
+html[data-hanq-theme] body #app .toeic-learning-page .tc.tc-simple .tc-group-list .tc-group-count{font-variant-numeric:tabular-nums}
+@media(max-width:440px){
+ html[data-hanq-theme] body #app .toeic-learning-page .tc.tc-simple .tc-group-list>.tc-group{flex-wrap:nowrap!important;min-height:48px!important;padding:6px 8px!important}
+ html[data-hanq-theme] body #app .toeic-learning-page .tc.tc-simple .tc-group-list .tc-group-label{flex:0 1 auto!important;font-size:14px!important;line-height:1.4!important}
+ html[data-hanq-theme] body #app .toeic-learning-page .tc.tc-simple .tc-group-list .tc-group-count{flex:0 1 auto!important;min-width:0;white-space:normal!important;font-size:12px!important;line-height:1.4!important}
+}

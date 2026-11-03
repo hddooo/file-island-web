@@ -177,3 +177,14 @@ html .tc.tc-simple .tc-transfer-practice legend{font-size:var(--tc-transfer-stem
 
 html .tc.tc-simple .tc-number-progress{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 16px}
 .tc-progress-part{flex:1 1 12em;min-width:0;overflow-wrap:anywhere}.tc-progress-numbers{margin-left:auto;font-variant-numeric:tabular-nums;overflow-wrap:anywhere;text-align:right;max-width:100%}
+
+/* Keep long stems readable on phones without changing the question or answer data. */
+html body #app .tc.tc-simple .tc-question .qtext{font-size:clamp(18px,1.5vw,20px)!important;line-height:1.7!important;font-weight:500!important;margin:16px 0}
+html body #app .tc.tc-simple .tc-answer-option{font-weight:500;min-height:44px!important}
+/* The picker is a compact in-page tool; leave room for its search and close action. */
+html body #app .tc.tc-simple .tc-jump-bar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;margin:0 0 10px}
+html body #app .tc.tc-simple .tc-jump-label{grid-column:1/-1;font-size:14px;line-height:1.4}
+html body #app .tc.tc-simple .tc-jump-search{width:100%;max-width:none;min-height:44px;font-size:16px}
+html body #app .tc.tc-simple .tc-jump-close{margin:0;min-width:56px;min-height:44px}
+html body #app .tc.tc-simple .tc-jump>.tc-question-nav{max-height:min(42dvh,300px);scroll-padding:6px}
+@media(max-height:500px){html body #app .tc.tc-simple .tc-jump>.tc-question-nav{max-height:32dvh}}
