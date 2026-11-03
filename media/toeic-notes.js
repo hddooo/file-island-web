@@ -151,6 +151,10 @@
    if(word.partOfSpeech)el('small',word.partOfSpeech,dialog).className='tn-recent-pos';
    el('p',layout.forms?layout.forms.map(function(f){return f.expression+' — '+f.meaning;}).join('\n'):layout.general||word.meaning||'등록된 뜻이 없어요.',dialog).className='tn-recent-meaning';
    if(layout.context)el('p',layout.context,dialog).className='tn-recent-context';
+   var exampleText=english(word),exampleTranslation=translation(word);
+   if(exampleText){var example=el('p',undefined,dialog);example.className='tn-original tn-recent-example';if(root.HanqToeicExampleText)root.HanqToeicExampleText.render(example,word.expression,exampleText);else example.textContent=exampleText;}
+   if(exampleTranslation)el('p',exampleTranslation,dialog).className='tn-translation tn-recent-context';
+   if(layout.tips.length){var tips=el('section',undefined,dialog);tips.className='tn-recent-tips';el('h3','Tip',tips);var tipList=el('ul',undefined,tips);layout.tips.forEach(function(line){el('li',line,tipList);});}
    if(word.sourceReference)el('small',word.sourceReference,dialog).className='tn-recent-source';
    recentPopup={dialog:dialog,opener:opener,track:track,wordId:word.id};track.classList.add('is-reading');document.body.appendChild(dialog);
    dialog.addEventListener('cancel',function(e){e.preventDefault();closeRecentWord(true);});dialog.addEventListener('close',function(){if(recentPopup&&recentPopup.dialog===dialog)closeRecentWord(true);});

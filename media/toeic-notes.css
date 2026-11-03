@@ -114,6 +114,11 @@ html body .tn-recent-dialog h2{margin:0 0 12px;color:#8ef0b0!important;font-fami
 html body .tn-recent-dialog button{flex:none;min-height:40px;padding:6px 12px;border:1px solid #609c7c!important;border-radius:8px;background:#12251a!important;color:#e2eae1!important}
 html body .tn-recent-dialog .tn-recent-meaning{margin:12px 0;white-space:pre-line;font:17px/1.7 "Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif!important;color:#f1f6ef!important;background:transparent!important}
 html body .tn-recent-dialog :is(.tn-recent-pos,.tn-recent-context,.tn-recent-source){color:#b4c4b8!important;background:transparent!important;line-height:1.6}
+html body .tn-recent-dialog .tn-recent-example{font:17px/1.6 Arial,"Apple SD Gothic Neo",sans-serif;white-space:pre-line;margin:12px 0 4px;color:#f1f6ef}
+html body .tn-recent-dialog .tn-recent-tips{margin:16px 0;padding-top:10px;border-top:1px solid #354c3d;font:15px/1.65 "Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif}
+html body .tn-recent-dialog .tn-recent-tips h3{font-size:15px;margin:0 0 6px;color:#8ef0b0}
+html body .tn-recent-dialog .tn-recent-tips ul{margin:0;padding-left:20px}
+html body .tn-recent-dialog .tn-recent-tips li{margin:4px 0;white-space:pre-line}
 
 .tn .tn-chapter-nav button,.tn .tn-chapter-contents button{min-height:44px;padding:10px 14px;border:1px solid #6083a4;border-radius:10px;background:#18344c;color:#edf7ff;font:inherit;line-height:1.4;cursor:pointer}
 .tn .tn-chapter-nav button:hover,.tn .tn-chapter-learn:hover{background:#24506e}
