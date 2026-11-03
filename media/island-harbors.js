@@ -12,13 +12,22 @@
   function icon(name){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+icons[name]+'</svg>';}
   // Scene module is loaded here so shared index/header and study modules stay untouched.
   var waterLoader;
+  var sceneBuild='';try{sceneBuild=new URL(document.currentScript.src).searchParams.get('build')||'';}catch(ignore){}
+  function sceneAsset(file){return 'media/'+file+(sceneBuild?'?build='+encodeURIComponent(sceneBuild):'');}
   function livingWater(chart,art,kind){
-    if(!waterLoader)waterLoader=new Promise(function(resolve){var s=document.createElement('script');s.src='media/island-living-water.js?v=palace-water-1';s.onload=function(){resolve(root.HanqLivingWater);};s.onerror=function(){resolve(null);};document.head.appendChild(s);});
-    waterLoader.then(function(engine){if(engine&&chart.isConnected)engine.mount(chart,art,kind);});
+    if(!waterLoader)waterLoader=new Promise(function(resolve){var s=document.createElement('script');s.src='media/island-living-water.js?v=palace-motion-2'+(sceneBuild?'&build='+encodeURIComponent(sceneBuild):'');s.onload=function(){resolve(root.HanqLivingWater);};s.onerror=function(){waterLoader=null;resolve(null);};document.head.appendChild(s);});
+    waterLoader.then(function(engine){if(!chart.isConnected)return;if(engine){engine.mount(chart,art,kind);return;}var host=chart.parentElement;if(host.querySelector('.harbor-motion-toggle'))return;var retry=document.createElement('button');retry.type='button';retry.className='harbor-motion-toggle';retry.textContent='움직임 다시 불러오기';retry.addEventListener('click',function(){retry.remove();livingWater(chart,art,kind);});host.appendChild(retry);});
   }
   var stops={
     history:[{id:'homePastExams',icon:'gate',x:47,y:28,mx:50,my:18},{id:'homeFormalExams',icon:'flag',x:23,y:45,mx:26,my:42},{id:'homeWrongNotes',icon:'review',x:66,y:59,mx:71,my:66}],
     toeic:[{id:'notebook',icon:'book',x:84,y:21,mx:26,my:17},{id:'wrongnotes',icon:'review',x:27,y:55,mx:26,my:52},{id:'grammar',icon:'notes',x:57,y:33,mx:73,my:34},{id:'player',icon:'audio',x:80,y:55,mx:73,my:70}]
+  };
+  // Source-coordinate building silhouettes: one existing native destination
+  // control covers each landmark, so route handlers and keyboard semantics stay.
+  var landmarks={
+    homePastExams:{name:'중앙 궁',wide:[.34,.12,.64,.48],tall:[.26,.095,.79,.30]},
+    homeFormalExams:{name:'왼쪽 정자',wide:[.065,.285,.30,.62],tall:[.025,.305,.385,.53]},
+    homeWrongNotes:{name:'오른쪽 서당',wide:[.66,.265,.985,.65],tall:[.52,.43,.99,.70]}
   };
   // One decorative layer tree, driven by CSS time. The art and click targets never move.
   // Share WorldScene's visibility/low-power state and observe only this layer's viewport.
@@ -47,14 +56,15 @@
     // Remove the old shared route, including its unlinked fourth history waypoint.
     map.querySelectorAll('.world-map-trail,.world-map-scale').forEach(function(n){n.remove();});
     var chart=document.createElement('picture');chart.className='harbor-chart';chart.setAttribute('aria-hidden','true');
-    var source=document.createElement('source');source.media='(max-width:700px)';source.srcset='media/world-art/'+(kind==='history'?'history-palace-tall-v1.webp':kind+'-harbors-mobile-v1.webp');chart.appendChild(source);
-    var art=document.createElement('img');art.src='media/world-art/'+(kind==='history'?'history-palace-wide-v1.webp':kind+'-v1.webp');art.alt='';art.width=1672;art.height=941;art.decoding='async';chart.appendChild(art);map.prepend(chart);atmosphere(chart,kind);livingWater(chart,art,kind);
+    var source=document.createElement('source');source.media=kind==='history'?'(max-width:700px) and (orientation:portrait)':'(max-width:700px)';source.srcset=sceneAsset('world-art/'+(kind==='history'?'history-palace-tall-v1.webp':kind+'-harbors-mobile-v1.webp'));chart.appendChild(source);
+    var art=document.createElement('img');art.src=sceneAsset('world-art/'+(kind==='history'?'history-palace-wide-v1.webp':kind+'-v1.webp'));art.alt='';art.width=1672;art.height=941;art.decoding='async';chart.appendChild(art);map.prepend(chart);atmosphere(chart,kind);livingWater(chart,art,kind);
     if(kind==='history'){var guide=document.createElement('span');guide.className='harbor-chart-caption';guide.textContent='시간의 숲길';guide.setAttribute('aria-hidden','true');map.appendChild(guide);}
     controls.forEach(function(control,i){
       var key=control.dataset.toeicView||control.id,stop=stops[kind].find(function(s){return s.id===key;});
       if(!stop)return;
       control.classList.add('harbor-stop');control.style.setProperty('--pin-x',stop.x);control.style.setProperty('--pin-y',stop.y);control.style.setProperty('--mobile-x',stop.mx);control.style.setProperty('--mobile-y',stop.my);
       var label=control.querySelector('strong,.wn-entry-t'),place=control.querySelector('.world-place-name');
+      if(kind==='history'&&landmarks[key]){control.classList.add('history-landmark');control.dataset.landmark=key;control.setAttribute('aria-label',landmarks[key].name+', '+(label?label.textContent:''));control.title=landmarks[key].name+' · '+(label?label.textContent:'');}
       if(label){label.id='harbor-'+kind+'-'+key+'-label';if(!control.hasAttribute('aria-label'))control.setAttribute('aria-labelledby',label.id);}
       if(place){place.id='harbor-'+kind+'-'+key+'-place';control.setAttribute('aria-describedby',place.id);}
       var sign=document.createElement('span');sign.className='harbor-sign';if(label)sign.appendChild(label);if(place)sign.appendChild(place);control.appendChild(sign);
@@ -63,8 +73,26 @@
     });
     // Preserve the source aspect ratio, center the camera on the actual waypoints,
     // and keep text plaques inside the viewport while retaining the larger touch controls.
-    function fitScene(){if(!map.isConnected)return;var w=map.clientWidth,h=map.clientHeight,mobile=matchMedia('(max-width:700px)').matches,nativeWidth=mobile?900:kind==='toeic'?1671:1672,nativeHeight=mobile?1200:941,points=stops[kind],xs=points.map(function(p){return mobile?p.mx:p.x;}),ys=points.map(function(p){return mobile?p.my:p.y;}),cx=(Math.min.apply(null,xs)+Math.max.apply(null,xs))/200,cy=(Math.min.apply(null,ys)+Math.max.apply(null,ys))/200,scale=Math.max(w/nativeWidth,h/nativeHeight),iw=nativeWidth*scale,ih=nativeHeight*scale,ox=Math.max(w-iw,Math.min(0,w/2-iw*cx)),oy=Math.max(h-ih,Math.min(0,(h-66)/2-ih*cy));
-     chart.style.left=ox+'px';chart.style.top=oy+'px';chart.style.width=iw+'px';chart.style.height=ih+'px';controls.forEach(function(control){var key=control.dataset.toeicView||control.id,stop=points.find(function(x){return x.id===key;});if(!stop)return;var halfControl=control.offsetWidth/2,x=Math.max(halfControl+4,Math.min(w-halfControl-4,ox+iw*(mobile?stop.mx:stop.x)/100)),y=Math.max(4,Math.min(h-control.offsetHeight-4,oy+ih*(mobile?stop.my:stop.y)/100));control.style.setProperty('left',x+'px','important');control.style.setProperty('top',y+'px','important');var sign=control.querySelector('.harbor-sign');if(sign){var half=sign.offsetWidth/2,left=x-half,right=x+half,shift=left<4?4-left:right>w-4?w-4-right:0;sign.style.transform='translateX('+shift+'px)';}});}
+    function fitScene(){
+      if(!map.isConnected)return;
+      var w=map.clientWidth,h=map.clientHeight,mobile=matchMedia(kind==='history'?'(max-width:700px) and (orientation:portrait)':'(max-width:700px)').matches,nativeWidth=mobile?900:kind==='toeic'?1671:1672,nativeHeight=mobile?1200:941,points=stops[kind],xs=points.map(function(p){return mobile?p.mx:p.x;}),ys=points.map(function(p){return mobile?p.my:p.y;}),cx=(Math.min.apply(null,xs)+Math.max.apply(null,xs))/200,cy=(Math.min.apply(null,ys)+Math.max.apply(null,ys))/200;
+      // Very short landscape windows retain the pond and boat instead of
+      // cropping every moving part out of the visible camera.
+      var coverScale=Math.max(w/nativeWidth,h/nativeHeight),roofY=mobile ? .095 : .12,boatBottom=mobile ? .928 : .889,contain=kind==='history'&&(h-8)<(boatBottom-roofY)*nativeHeight*coverScale,scale=contain?Math.min(w/nativeWidth,h/nativeHeight):coverScale,iw=nativeWidth*scale,ih=nativeHeight*scale,ox=contain?(w-iw)/2:Math.max(w-iw,Math.min(0,w/2-iw*cx)),oy=contain?(h-ih)/2:Math.max(h-ih,Math.min(0,(h-66)/2-ih*cy));
+      if(kind==='history'&&!contain)oy=Math.max(4-ih*roofY,Math.min(h-4-ih*boatBottom,oy));
+      chart.style.left=ox+'px';chart.style.top=oy+'px';chart.style.width=iw+'px';chart.style.height=ih+'px';map.dataset.sceneFit=contain?'contain':'cover';
+      controls.forEach(function(control){
+        var key=control.dataset.toeicView||control.id,stop=points.find(function(x){return x.id===key;});if(!stop)return;
+        if(kind==='history'&&landmarks[key]){
+          var rect=landmarks[key][mobile?'tall':'wide'],left=Math.max(4,ox+iw*rect[0]),top=Math.max(4,oy+ih*rect[1]),right=Math.min(w-4,ox+iw*rect[2]),bottom=Math.min(h-4,oy+ih*rect[3]);
+          var width=Math.max(44,right-left),height=Math.max(44,bottom-top);left=Math.min(w-width-4,Math.max(4,left));top=Math.min(h-height-4,Math.max(4,top));
+          control.style.setProperty('left',left+'px','important');control.style.setProperty('top',top+'px','important');control.style.setProperty('width',width+'px','important');control.style.setProperty('height',height+'px','important');
+        }else{
+          var halfControl=control.offsetWidth/2,x=Math.max(halfControl+4,Math.min(w-halfControl-4,ox+iw*(mobile?stop.mx:stop.x)/100)),y=Math.max(4,Math.min(h-control.offsetHeight-4,oy+ih*(mobile?stop.my:stop.y)/100));control.style.setProperty('left',x+'px','important');control.style.setProperty('top',y+'px','important');var sign=control.querySelector('.harbor-sign');if(sign){var half=sign.offsetWidth/2,signLeft=x-half,signRight=x+half,shift=signLeft<4?4-signLeft:signRight>w-4?w-4-signRight:0;sign.style.transform='translateX('+shift+'px)';}
+        }
+      });
+      if(kind==='history'&&contain){var ordered=controls.filter(function(n){return n.classList.contains('history-landmark');}).sort(function(a,b){return parseFloat(a.style.left)-parseFloat(b.style.left);}),edge=4;ordered.forEach(function(n){var left=Math.max(edge,parseFloat(n.style.left));n.style.setProperty('left',left+'px','important');edge=left+parseFloat(n.style.width)+5;});var excess=edge-5-(w-4);if(excess>0)ordered.forEach(function(n){n.style.setProperty('left',(parseFloat(n.style.left)-excess)+'px','important');});}
+    }
     art.addEventListener('load',fitScene);var fitObserver=root.ResizeObserver?new ResizeObserver(fitScene):null;if(fitObserver){fitObserver.observe(map);controls.forEach(function(n){var sign=n.querySelector('.harbor-sign');if(sign)fitObserver.observe(sign);});}var detached=new MutationObserver(function(){if(!map.isConnected){if(fitObserver)fitObserver.disconnect();detached.disconnect();art.removeEventListener('load',fitScene);}});detached.observe(document.body,{childList:true,subtree:true});fitScene();
     map.addEventListener('pointerleave',function(){map.querySelectorAll('.harbor-selected').forEach(function(n){n.classList.remove('harbor-selected');});});
   }
