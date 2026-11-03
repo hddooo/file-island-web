@@ -713,3 +713,17 @@ v0.1.2와 f50a70f 후보 모두 합성 로그인 후 320×568에서 ri-game/host
 - 증거는 `task-6/english-digimon/evidence/english-residents/results.json`과 엔진·크기별 PNG 8개. 기존 메뉴와 별개 커밋으로 검토하며 통합 담당이 순서대로 main에 반영한다.
 
 - 후속 결합 검수: 기존 역사섬 물·배 복구와 메뉴 후보를 포함한 `english-digimon-qa`에서도 Chrome/WebKit 10건 재통과, pageerror 0. 320px을 포함해 디지몬/물·배의 두 정지 버튼이 겹치지 않음을 추가 확인했다. 프로그램으로 포즈를 강제하지 않고 실제 실행을 14초 기록한 모바일·데스크톱 WebM/MP4와 PNG는 `task-6/english-digimon-qa/evidence/english-residents/`에 있다.
+
+
+### 2026-11-03 compact CI budget correction
+
+- English source a3e7f7b feature CI passed all seven jobs, but main run 41683902917 and history feature run 41684282727 exhausted the existing 25-minute compact job budget. Logs showed passing matrices through the final review, with no assertion error before cancellation. Deployment did not run.
+- Keep every original browser command and source-contract assertion; split the browser sequence at qa-rainbow-viewport into compact-ui-regression and compact-scene-regression. Both remain required by static-build, each with the original 25-minute limit. Node 24, action pins and permissions are unchanged.
+- Validate the new groups locally under Linux Node 24 with CPU quota 2, explicit hardwareConcurrency 2 and synthetic API/network isolation before publishing a new exact-SHA CI run. This is a CI-only correction; release remains 0.2.12-beta.
+
+- Additional local timing witness: WebKit 390px long-label fitting was still pending after the old fixed 60ms wait (x=-6.109375), then settled on the next frame (x=15.990623). Only this QA wait now uses two actual animation frames; the original bounds and overflow assertions remain unchanged. The full six Chromium/WebKit map matrices passed with this correction.
+- Linux two-CPU validation of all nine scene commands passed (measured command time 557.919s; tail-four and front-five were executed as two batches). Original commands/assertions were retained. Local collection used installed Playwright Chromium because Chrome channel is absent in the offline image; the hosted CI still uses its original channel.
+
+- Local compact UI validation is complete: the original first seven scripts, corrected six map-shell matrices, and both original header scripts all passed in separate isolated batches. Header checks took 227.758s. Existing static-build reproducibility (1,642 runtime files) and app-version/deployment-header tests also passed. The exact new-SHA hosted CI and operating deployment remain pending at this commit.
+
+- This pipeline correction is merged into the history candidate while retaining release 0.3.0-beta and the required history evening regression. No history runtime asset changed in this merge.

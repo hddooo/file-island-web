@@ -12,6 +12,8 @@
 
 정지·축소 모션에서는 추출한 원본 배경을 표시해 Linux WebKit의 정지 WebGL 재합성에서 검정 화면이 되는 문제를 방지합니다. 움직임을 켜면 기존 물 굴절·배 모션을 재개하고 별도의 지속 GPU 재그리기나 drawing-buffer 보존을 추가하지 않습니다.
 
+CI: split the existing compact browser suite into two required jobs to keep the full sequence within its time budget. All test commands and assertions are preserved.
+
 ## 0.2.11-beta
 
 한국사 빈칸의 조선 전기·공통 비교·후기 배치와 원본 진도 보존, 불필요한 안내·원문 확대 버튼 제거를 준비했습니다. 현재 79회 자료와 준비된 81회 후보의 노트 표시 디자인을 기존 CSS 뒤에 연결하고 학습 진행 표시와 검증된 원문 셀 색을 보존합니다. 새 교재의 원본·canonical 문항·백엔드 준비는 별도 검증 대상이며 운영 게이트는 기본 비활성입니다.
