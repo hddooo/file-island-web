@@ -21,6 +21,7 @@ for(const [name,type] of [['chrome',chromium],['webkit',webkit]]){
   for(let i=0;i<4;i++){const button=p.getByRole('button',{name:nativeNames[i],exact:true});assert.equal(await button.count(),1);assert.equal(await button.getAttribute('data-toeic-view'),['notebook','wrongnotes','grammar','player'][i]);const hint=await button.locator('.english-place').getAttribute('id');assert((await button.getAttribute('aria-describedby')).split(/\s+/).includes(hint));}
   for(let i=0;i<4;i++)for(let j=i+1;j<4;j++)assert(!(boxes[i].x<boxes[j].right&&boxes[j].x<boxes[i].right&&boxes[i].y<boxes[j].bottom&&boxes[j].y<boxes[i].bottom),'overlapping menu buildings');
   assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+  const longLabel=p.locator('.english-landmark .harbor-sign>strong').first(),originalLabel=await longLabel.innerText();await longLabel.evaluate(n=>n.textContent='조금 더 긴 학습 지도 이름');await p.waitForFunction(()=>{const sign=document.querySelector('.english-landmark .harbor-sign'),s=sign.getBoundingClientRect(),m=sign.closest('nav').getBoundingClientRect();return s.left>=m.left&&s.right<=m.right+1&&sign.scrollWidth<=sign.clientWidth+1;});await longLabel.evaluate((n,text)=>n.textContent=text,originalLabel);await p.waitForTimeout(60);
   assert.equal(await p.locator('.harbor-chart').evaluate(n=>getComputedStyle(n).transform),'none');
   await p.screenshot({path:path.join(out,`${name}-${width}x${height}.png`),fullPage:true});
   // Each original native button still navigates, and browser Back remounts once.
