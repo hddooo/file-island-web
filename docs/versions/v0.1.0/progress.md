@@ -691,3 +691,11 @@ v0.1.2와 f50a70f 후보 모두 합성 로그인 후 320×568에서 ri-game/host
 - `test-learning-progress.cjs`: 67/67. `test-static-site-build.cjs`: 재현 가능한 full-SHA manifest, runtime 1640개 및 private/source 제외 성공. 구문·diff 검사 성공. 원본 영어섬 WebP, 음원, 학습 데이터 변경 없음.
 - 기존 `test-islands-integration.cjs`는 수정 전 main `3d7f149`와 후보에서 모두 로그인 화면(`파일섬 스터디`)을 대상으로 오래된 한국사 목차를 찾으며 실패한다. 이 작업에서 assertion을 약화하거나 관련 없는 인증 fixture를 변경하지 않았다.
 - 로컬 증거: `task-6/english-palace-qa/evidence/english-island/results.json` 및 엔진·크기별 PNG 10개. 현재 작업은 검토 후보이며 main push/운영 버전 변경은 통합 담당 책임이다. GitHub 정확 SHA CI와 실제 운영 반영은 별도 확인해야 한다. 구 운영 URL `hanq.vercel.app/app-version.json`, 시험 파일 호스트 `digimon-world.duckdns.org/app-version.json`은 404여서 운영 버전의 증거로 사용하지 않았다.
+
+### 2026-11-03 · 영어섬 디지몬 동작 · 별도 후보
+- 기존 메뉴 개선 `7d353f1`을 변경하지 않는 후속 단계로 `english-residents.js/.css`를 분리했다. 기존 아구몬 4프레임의 손 인사/눈 깜빡임, 코로몬 4×2 동작 시트의 귀/표정/방향 변화, 파닥몬의 등록된 6프레임 날갯짓을 원본 수정 없이 재사용한다. 캐릭터 전체를 흔드는 animation을 추가하지 않는다.
+- 부두·해변·공중에 장면 좌표로 배치하고 장식 레이어 전체를 aria-hidden/pointer-events:none으로 둔다. native 메뉴 밖의 44px 디지몬 움직임 정지 버튼, reduced-motion/화면 숨김/화면 이탈 정지, 리스너·observer 정리, decode 전·실패 시 숨김 및 재입장 복구를 포함한다. 개인 장착·성장·XP/학습 기록·음원은 변경하지 않는다.
+- `qa-english-residents.cjs`: Chrome/WebKit 320×740,390×844,844×390,1440×1000의 실제 frame 변화·위치 고정·메뉴 hit·네 라우트/뒤로·pause/reduce/offscreen/detach와 엔진별 decode 실패/재입장 복구 10건 성공, pageerror 0. 학습 기록 67/67, 구문·diff 검사 성공. 실제 iPhone/Safari 검증이나 운영 반영을 뜻하지 않는다.
+- 증거는 `task-6/english-digimon/evidence/english-residents/results.json`과 엔진·크기별 PNG 8개. 기존 메뉴와 별개 커밋으로 검토하며 통합 담당이 순서대로 main에 반영한다.
+
+- 후속 결합 검수: 기존 역사섬 물·배 복구와 메뉴 후보를 포함한 `english-digimon-qa`에서도 Chrome/WebKit 10건 재통과, pageerror 0. 320px을 포함해 디지몬/물·배의 두 정지 버튼이 겹치지 않음을 추가 확인했다. 프로그램으로 포즈를 강제하지 않고 실제 실행을 14초 기록한 모바일·데스크톱 WebM/MP4와 PNG는 `task-6/english-digimon-qa/evidence/english-residents/`에 있다.
