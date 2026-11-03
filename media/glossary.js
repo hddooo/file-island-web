@@ -155,6 +155,7 @@
       '.textbook-semantic [data-textbook-keyword][role=button]:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}' +
       '#'+PANEL_ID+'{position:fixed;inset:auto;margin:0;box-sizing:border-box;width:330px;max-width:calc(100vw - 16px);max-height:calc(100dvh - 16px);overflow:auto;overscroll-behavior:contain;z-index:2147483000;padding:12px 14px;border:1px solid #7c9d87;border-radius:12px;background:#102019;color:#edf7ef;font:15px/1.6 "Apple SD Gothic Neo","Noto Sans KR",Arial,sans-serif;text-align:left;letter-spacing:normal;word-break:keep-all;overflow-wrap:anywhere;box-shadow:0 6px 24px #0006}' +
       '#'+PANEL_ID+'[hidden]{display:none!important}' +
+      '#'+PANEL_ID+'::backdrop{background:transparent!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;pointer-events:none!important}' +
       '#'+PANEL_ID+',#'+PANEL_ID+' *{font-family:"Apple SD Gothic Neo","Noto Sans KR",Arial,sans-serif!important;letter-spacing:normal!important}' +
       '#'+PANEL_ID+' .tbkw-header{display:flex;align-items:center;gap:10px}' +
       '#'+PANEL_ID+' .tbkw-title{flex:1;margin:0;color:#a8f0bc;font:700 16px/1.5 "Apple SD Gothic Neo","Noto Sans KR",Arial,sans-serif}' +

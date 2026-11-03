@@ -76,6 +76,8 @@ async function mount(p) {
         const trigger=p.locator('[data-source-block=split] [data-textbook-keyword="uijeongbu-seosa"][role=button]');
         await trigger.scrollIntoViewIfNeeded();await settle(p);await trigger.focus();await p.locator(pop).waitFor({state:'visible'});const briefBounds=await bounds(p);fits(briefBounds);assert(briefBounds.briefLines<=3.1,'compact explanation stays within three lines');
         assert.equal(await trigger.getAttribute('aria-expanded'),'true');
+        const backdrop=await p.locator(pop).evaluate(n=>{const c=getComputedStyle(n,'::backdrop');return{color:c.backgroundColor,filter:c.backdropFilter||c.webkitBackdropFilter};});
+        assert.equal(backdrop.color,'rgba(0, 0, 0, 0)','nonmodal glossary must leave the reading page visible');assert.equal(backdrop.filter,'none');
         await p.keyboard.press('Enter');assert.equal(await p.locator(pop+' button').evaluate(n=>n===document.activeElement),true,JSON.stringify(await p.evaluate(()=>({focus:document.activeElement.outerHTML,hidden:document.querySelector('#hanq-keyword-popover').hidden}))));
         await p.keyboard.press(tab);assert.equal(await p.locator(pop+' summary').evaluate(n=>n===document.activeElement),true);
         await p.keyboard.press('Enter');await settle(p);fits(await bounds(p));assert.equal(await p.locator(pop+' a').count(),2);
