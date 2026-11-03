@@ -10,6 +10,7 @@ const items=Array.from({length:75},(_,i)=>({collectionId:'00000000-0000-4000-800
  await p.goto('https://hanq.vercel.app/#toeic/wrongnotes');await p.locator('.tc-group-label').first().waitFor();
  await p.screenshot({path:path.join(out,`${width}-${process.env.CAPTURE_ONLY?'before':'after'}-menu.png`)});
  const menu=await p.locator('.tc-group').first().evaluate(n=>({height:n.getBoundingClientRect().height,text:n.innerText}));
+ const menuGeometry=await p.locator('.tc-group-list').evaluate(n=>{const rows=[...n.children].map(b=>{const r=b.getBoundingClientRect(),label=b.querySelector('.tc-group-label').getBoundingClientRect(),count=b.querySelector('.tc-group-count').getBoundingClientRect();return{height:r.height,bottom:r.bottom,gap:count.left-label.right}});return{rows,contentBottom:n.closest('.device-content').getBoundingClientRect().bottom}});assert(menuGeometry.rows.every(r=>r.height>=44&&r.gap>=7&&r.gap<=16));if(width<=440)assert(menuGeometry.rows.at(-1).bottom<=menuGeometry.contentBottom+1,'all Part rows visible on short phones');
  await p.locator('.tc-group').filter({hasText:'Part 5,6'}).click();await p.locator('.tc-answer-option').first().waitFor();
  await p.waitForFunction(()=>![...document.querySelectorAll('.tc,.tc *')].some(n=>n.getAnimations().some(a=>a.playState==='running'&&a.effect.getTiming().iterations!==Infinity)));
  assert.equal(await p.locator('.tc-passage-shortcuts').count(),0,'Part 5-only inventory has no empty Part 6 heading');
