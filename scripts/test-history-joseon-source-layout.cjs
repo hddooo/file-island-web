@@ -27,10 +27,12 @@ async function run(){
  const partial=doc.createElement('meta');partial.name='hanq-textbook-reviewed-eras';partial.content='joseon';doc.head.appendChild(partial);
  ok(raw.revisionRoutesReady(doc,'joseon')&&raw.revisionRoutesReady(doc,'joseon-early'),'only the reviewed era and its aliases are available');
  ok(!raw.revisionRoutesReady(doc)&&!raw.revisionRoutesReady(doc,'goryeo'),'a partial declaration never implies all-era readiness');
+ ok(raw.revisionRoutesReady(doc,'joseon',SOURCE)&&!raw.revisionRoutesReady(doc,'joseon','35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442'),'partial publication declares the new root only; old remains on the existing legacy transport');
  const calls=[],api={state:()=>({signedIn:true,restoring:false,ownerId:'synthetic',epoch:1}),textbookSemanticManifest:async source=>{calls.push(source);return {schemaVersion:'hanq-semantic-manifest/1',source:{sha256:source,totalPdfPages:147},pages:[],quizzes:[],figures:[]};}};
  const book=library.create({api,document:doc,eraFor:raw.eraFor});await book.mount(host,'goryeo',{sourceRevision:SOURCE});
  ok(calls.length===0&&!host.querySelector('[data-textbook-revision]'),'unreviewed era does not request revision data or show its picker');
  await book.mount(host,'joseon',{sourceRevision:SOURCE});ok(calls.length===1&&host.querySelector('[data-textbook-revision]'),'reviewed Joseon exposes its source picker');book.stop();
+ await book.mount(host,'joseon',{sourceRevision:'35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442'});ok(calls.length===1&&host.querySelector('[data-legacy-textbook]'),'explicit unreviewed old root requires a deliberate legacy action without a request');book.stop();
  for(const value of ['', 'joseon,', 'joseon,joseon', 'joseon,unknown']){partial.content=value;ok(!raw.revisionRoutesReady(doc,'joseon'),'invalid partial release fails closed');}
  partial.content='joseon';flag.content='ready';ok(!raw.revisionRoutesReady(doc,'joseon'),'era list cannot bypass the exact API/source declaration');
  dom.window.close();console.log(JSON.stringify({checks,failures:0,scope:'synthetic same-source ink/shading, preserved table topology, invalid-replacement recovery and independent era release gates'}));
