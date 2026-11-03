@@ -2,15 +2,62 @@
 
 파일섬(File Island) 프론트엔드 저장소입니다.
 
-기준 소스 스냅샷을 이 저장소로 이관했습니다. 배포 연결과 Secrets 등록은 아직 진행하지 않았습니다.
+정적 HTML/CSS/JavaScript 프런트입니다. 현재 운영·후보 상태는 아래 표를, 새 개발·디자인 에이전트의 실행 순서와 최신 사용자 작업 방식·주의사항은 [CHATGPT.md](CHATGPT.md)를 먼저 확인하세요.
+
+## 현재 운영과 준비 상태 (2026-11-03 인계 기준)
+
+이 표는 통합 작업에서 확인해 전달한 기준선이다. 작업 착수·릴리스 시 실제 도메인과 정확 SHA를 다시 대조하고 관찰 시각을 남긴다. 저장소 main HEAD와 운영 API의 원본 소스 SHA는 같다고 가정하지 않는다.
+
+축약 `ab5…`는 후보 인계용 표기이며 배포 pin이 아니다. 실제 통합에는 담당자가 검증한 전체 SHA가 필요하다.
+
+| 구분 | 확인된 기준선 | 남은 경계 |
+|---|---|---|
+| 프런트 홈서버 | [실제 서비스](https://file-island.duckdns.org), `2f745855e618f790617ecf3b64068afd4315b49d`, 0.2.10-beta | 이후 배포는 실제 version/HTML/자산으로 재확인 |
+| API 홈서버 | 원본 소스 `987be5798893b0023674a194626704a9d5033a37`, schema54; API 도메인 TLS 완료로 인계됨 | TLS·health 성공은 새 API 기능 또는 전체 CI/CD 통합 완료의 증거가 아님 |
+| 새 한국사 교재 | 81회 대비 147쪽 데이터·판본 API `ab5…` 후보 준비 | 기본 OFF. 실제 API와 구·신판 자료 연결 검수 전 활성화 금지 |
+| 인증 capability | `92429f9f115ab2bb22b58a5a16210996d3cd7655` feature 준비 | 운영 반영으로 표시하지 않음 |
+| 파트너 XP / 인프라 | migration056 미적용; API CI/CD 통합 진행 중 | 선택 파트너 XP는 기존 release gate 유지 |
+| 이전 호스팅 | Vercel·Render는 아직 중지하지 않음 | 홈서버 검증과 별도 전환 조율 없이 연결 해제·중지하지 않음 |
+
+### VERSION / RELEASE_VERSION / SHA의 실제 의미
+
+| 이름 | 실제 역할과 수정 위치 |
+|---|---|
+| `VERSION` | 두 저장소 루트에 독립적인 `VERSION` 파일은 없다. 이를 새 버전 기준 파일로 만들지 않는다. 코드의 content `version`·rulesVersion·schema·CAS revision은 각각 데이터 계약이며 앱 버전과 별개다. |
+| `RELEASE_VERSION` | 프런트 사용자 릴리스의 단일 입력. 값은 checkout의 실제 파일을 읽는다. 위 운영 표의 0.2.10-beta는 인계 시점 기준선이다. 기능 릴리스 시 이 파일과 [CHANGELOG](CHANGELOG.md)를 통합 담당이 함께 갱신한다. 문서 전용 작업은 번호를 올리지 않는다. |
+| build SHA | 빌더가 읽는 전체 40자 Git commit. `app-version.json`의 `buildId`, `hanq-app-version` meta, media JS/CSS의 `build` query를 일치시킨다. `release`와 `hanq-release-version`은 RELEASE_VERSION 값이다. |
+| 헤더 표시 | `media/device-shell.js`가 release meta를 표시하고 build SHA를 title로 사용한다. 직접 숫자를 하드코딩하거나 생성된 meta를 수동 편집하지 않는다. |
+| API package / DB | API `package.json` 및 lock의 0.1.0은 패키지 기준선이고 DB schema54/056이나 프런트 릴리스가 아니다. API 변경은 소스 SHA·image identity·migration checksum·검수 근거로 식별한다. |
+| 릴리스 기록 | [버전 계획](docs/versions/v0.1.0/plan.md), [진행](docs/versions/v0.1.0/progress.md), [결과](docs/versions/v0.1.0/report.md)는 문서 기준선이다. 실제 기능 버전·커밋·검사·배포와 구분하고 검증된 릴리스 태그만 연결한다. |
+
+홈서버 CI의 [정적 빌더](scripts/build-static-site.cjs)는 공개 파일 목록·전체 SHA·release·각 파일 hash를 manifest에 묶는다. [CD workflow](.github/workflows/home-frontend-cd.yml)는 성공한 main push의 CI run과 artifact 이름을 고정하고 배포 전 main HEAD를 다시 확인한다. 버전 문자열만 같거나 이전 SHA CI가 성공한 것으로 현재 배포를 승인하지 않는다. 실제 확인은 [version 응답](https://file-island.duckdns.org/app-version.json), HTML 두 meta, 변경 JS/CSS/이미지의 응답 bytes와 해당 artifact SHA-256을 대조한다. API의 health는 SHA를 반환하지 않으므로 API 소스/image·DB 근거는 API 담당의 배포 증거로 확인한다.
+
+### API·데이터·자산 경로와 콘텐츠 추가
+
+`media/`는 공개 배포 실행 파일·승인된 공개 자산, `/api/v1`은 인증·자료 조회·서버 판정 경계다. 교재 PDF/추출물/정답 번들·개인 음원·개인 답안은 공개 경로에 넣지 않는다. URL 경로, 로컬 자료 루트, source PDF SHA, quiz digest, 숫자 CAS revision은 서로 다른 개념이다. 화면 제목을 바꾸어도 기존 라우트·question/collection ID·owner·읽음/체크·attempt·중단 workspace를 보존한다.
+
+콘텐츠를 추가할 때는 README의 이 절을 진입점으로 사용하고 기존 상세 절차를 따른다. 새 업로드 endpoint나 운영 import 명령을 임의로 만들지 않는다.
+
+| 추가 대상 | 기존 절차·계약 | 반드시 유지할 것 |
+|---|---|---|
+| Practice 문제·정답·오답 | [API 원본/준비 상태](https://github.com/hddooo/file-island-api/blob/main/docs/toeic-wrong-cbt.md#source-and-readiness), [공용 자료/개인 답안](https://github.com/hddooo/file-island-api/blob/main/docs/common-toeic-learning.md) | 원문·보기·공식 정답 근거·지문 묶음 검증, 개인 실제 오답과 맥락 문항 구분, 불확실한 추론 정답은 채점 비활성 |
+| 개인 한국사 수동 오답 | [기존 배포 후 수동 등록 절차](https://github.com/hddooo/file-island-api/blob/main/docs/wrong-note-review-policy.md#배포-후-수동-등록-절차) | 기본 rollback dry-run, 지정 계정/원본/이미지 hash 확인, 별도 허용된 apply와 백업, 기존 답안·XP 보존 |
+| LC/Full Test 음원·대본 | [API LC 중계·대본 계약](https://github.com/hddooo/file-island-api/blob/main/docs/design-development.md#lc-중계대본-계약), [기존 재생 코드](media/lc-playlist.js), [Full Test 검사](scripts/test-full-test-player.cjs) | 승인된 URL·실제 음원/그룹 확인, 공식 정답과 ASR 구분, 기존 한 audio 엔진·반복/속도/이어듣기; 음원 등록만으로 문제/대본/정답을 생성하지 않음 |
+| 자체 작성 데모 | [기존 Practice 엔진 자료 형식](docs/toeic-practice.md#integration) | 공식 교재와 구분, 안정 ID·content version·보기 ID. 이 로컬 데모 엔진 계약을 서버 Practice import로 해석하지 않음 |
+
+### 한국사 81회 대비 147쪽 원문과 재현
+
+새 PDF 기준은 `d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de`(147쪽), 구판은 `35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442`(144쪽)다. 기존 [재생성·검증 명령](scripts/README.md#81회-대비-판본-후보-재생성)과 [판본·읽기 계약](docs/semantic-textbook.md#two-edition-reader-review--2026-11-03--not-deployed)을 따른다. PDF SHA는 원본 식별자이며 workspace version과 다르다.
+
+원문 글자·공백·기호·정답·문항·사진/표 관계를 보존하면서 웹에서는 문단 리플로우, 읽기 글꼴, 내부 표 스크롤과 필요한 원문 대조·복구 경로를 유지한다. 사용자 후속 요청에 따라 상시 원문 확대 버튼·반복 안내는 재도입하지 않으며 상세 요구는 [CHATGPT.md](CHATGPT.md)를 따른다. 원문의 역사적 내용을 추론해 수정하거나 원문 강조·사진명을 임의로 재구성하지 않는다. 동일 입력의 byte 재현·문자/ID/그림/anchor 검사는 모든 147쪽의 사람 원문 대조 또는 역사적 사실 검증 완료를 뜻하지 않는다. 검수한 페이지·관계·미해결 항목은 출처 담당 기록을 따른다. 구판 풀이·오답·중단 이어보기는 실제 구판 자료와 workspace까지 계속 조회되어야 하며 DB row 보존만으로 완료라고 하지 않는다. 현재 새 판본 release gate는 기본 OFF이며 준비된 프런트 코드가 운영 활성화를 뜻하지 않는다.
 
 ## 코드 이관
 
 원본: `blockmonkey1992/hanq` / `93190fae4656dad5a2337c9a1173c3a7107d339c`. Git 과거 이력 대신 검증한 소스 스냅샷으로 이관했습니다.
 
-초기 snapshot은 0.2.8-beta입니다. `prep/windows-fe-029`에서 원본 `cfc9892a2a180a33b177a8689bcdfa8f0b5607f7`의 0.2.9-beta delta를 새 저장소에 동기화합니다. 운영 연결은 아직 변경하지 않았습니다.
+초기 snapshot은 0.2.8-beta였고, 원본 `cfc9892a2a180a33b177a8689bcdfa8f0b5607f7`의 0.2.9-beta delta를 반영했습니다. 이후 버전은 실제 `RELEASE_VERSION`과 CHANGELOG를 읽습니다. 이관 당시 상태와 현재 운영 상태를 구분합니다.
 
-운영 전환·배포 연결·Secrets 등록은 진행하지 않았습니다. 테스트 전용 CI는 `.github/workflows/ci.yml`에서 GitHub-hosted runner와 `contents: read`만 사용합니다. 원본 workflow는 `.github/workflows-held/*.disabled`에 보존하고 나머지 두 시각 검토 workflow는 계속 비활성입니다.
+현재 `.github/workflows/ci.yml`은 GitHub-hosted 검사를 실행하고, `.github/workflows/home-frontend-cd.yml`은 성공한 동일 저장소 main push CI의 정확 artifact를 전용 Windows runner로 배포합니다. 보존된 `.github/workflows-held/*.disabled`는 비활성 이력이며 현재 workflow와 혼동하지 않습니다. 이번 인수인계 변경은 문서만 수정합니다.
 
 검증 범위는 [이관 기록](docs/repository-migration.md), 서버 비밀값과 전환 순서는 [API 설정 계획](https://github.com/hddooo/file-island-api/blob/main/docs/secrets-plan.md)을 확인하세요.
 
@@ -18,11 +65,11 @@
 
 # HanQ · 파일섬 스터디
 
-한국사·TOEIC 학습과 얼음섬 퀴즈 대결을 제공하는 정적 프런트 저장소다. 현재 전체 기획과 화면 흐름은 이 저장소, 서버 판정·저장·접근 계약은 [hanq_api](https://github.com/blockmonkey1992/hanq_api/tree/dev)가 담당한다.
+한국사·TOEIC 학습과 얼음섬 퀴즈 대결을 제공하는 정적 프런트 저장소다. 현재 전체 기획과 화면 흐름은 이 저장소, 서버 판정·저장·접근 계약은 [file-island-api](https://github.com/hddooo/file-island-api)가 담당한다.
 
 ## 문서
 
-- **두 GPT 공동 작업 기준:** [공통 협업 규칙](docs/COLLABORATION.md) · [실행 에이전트 지침](AGENTS.md) · 규칙 버전 `hanq-collaboration-2026-11-01-v2`
+- **두 GPT 공동 작업 기준:** [공통 협업 규칙](docs/COLLABORATION.md) · [실행 에이전트 지침](AGENTS.md) · 규칙 버전 `hanq-collaboration-2026-11-01-v5` · [ChatGPT 작업 인계](CHATGPT.md)
 
 - [전체 기획](docs/design-outline.md)
 - [개발 설계](docs/design-development.md)
@@ -41,7 +88,7 @@
 
 ## 실행과 배포
 
-루트 `index.html`과 `media/`를 Vercel의 Other 프리셋으로 제공한다. 빌드 명령은 `node scripts/build-app-version.cjs`이고 출력은 루트다. RELEASE_VERSION과 전체 Git SHA를 빌드 정보에 연결한다. 기존 `vercel.json`은 `/api/v1`을 API로 전달한다. docs와 로컬 도구는 기존 `.vercelignore` 정책에 따라 배포에서 제외한다. 이번 문서 정리에서 설정은 변경하지 않았다.
+현재 홈서버 배포는 `node scripts/build-static-site.cjs`가 추적 중인 공개 실행 파일만 새 `.artifacts/site/`에 내보내고, 버전 정보와 SHA-256 `build-manifest.json`을 생성한다. 출력 폴더가 이미 있으면 중단하므로 새 경로를 사용한다. 루트 소스는 변경하지 않는다. Vercel의 이전 경로는 `vercel.json`의 `node scripts/build-app-version.cjs`와 루트 출력을 유지한다. 해당 명령은 직접 실행한 checkout의 `index.html`을 수정한다. 현재 홈서버의 API 프록시와 Vercel rewrite는 서로 다른 호스팅 설정이다. 배포 연결 변경은 인프라 담당과 조율한다.
 
 로컬 정적 HTTP 서버에서 화면을 열어 검사한다. 관련 기능 검사는 `scripts/test-*.cjs`와 `scripts/qa-*.cjs`를 선택해 실행하며 API 연계 검사는 격리 계정·DB를 사용한다. [스크립트/비공개 자료 경계](scripts/README.md)를 따른다. 단위 검사나 합성 브라우저 검사를 실제 iPhone 성공으로 표시하지 않는다.
 
@@ -61,7 +108,7 @@
 
 FILE ISLAND는 로그인한 사용자가 섬을 오가며 한국사와 TOEIC를 공부하고, 학습 기록과 XP로 파트너의 성장을 확인하는 HanQ의 화면 이름이다. 디지바이스 모양의 외곽과 지도·캐릭터는 탐험 분위기를 만들고, 실제 읽기·문제풀이 영역은 어두운 배경과 명확한 정보 계층을 사용한다. 이 저장소는 프레임워크 번들 앱이 아니라 `index.html`과 전역 `window.Hanq…` 모듈을 연결한 HTML/CSS/JavaScript 프런트다. 화면 재설계 시 기존 라우트·문항 ID·저장 계약을 먼저 보존한다.
 
-두 GPT는 먼저 [공통 협업 규칙](docs/COLLABORATION.md)을 따른다. 디자이너는 이 README와 [전체 기획](docs/design-outline.md)을 읽은 뒤, 해당 화면의 JS/CSS와 최신 배포 SHA를 확인한다. 오래된 설계 문서의 날짜별 설명은 현재 운영의 증거가 아니다. 조직(Organization) 이전은 예정이며 현재 저장소·운영 URL을 유지한다. 이 설명서는 협업 자료이며 다른 ChatGPT에 코드·개인 자료를 자동 전송하는 기능이나 권한을 포함하지 않는다.
+두 GPT는 먼저 [공통 협업 규칙](docs/COLLABORATION.md)을 따른다. 디자이너는 이 README와 [전체 기획](docs/design-outline.md)을 읽은 뒤, 해당 화면의 JS/CSS와 최신 배포 SHA를 확인한다. 오래된 설계 문서의 날짜별 설명은 현재 운영의 증거가 아니다. 현재 저장소는 `hddooo/file-island-web`과 `hddooo/file-island-api`다. 원본 저장소와 Vercel/Render 언급은 이관·과거 검수 맥락인지 확인한다. 이 설명서는 협업 자료이며 다른 ChatGPT에 코드·개인 자료를 자동 전송하는 기능이나 권한을 포함하지 않는다.
 
 ### 사용자 여정과 라우트
 
@@ -155,9 +202,9 @@ FILE ISLAND는 로그인한 사용자가 섬을 오가며 한국사와 TOEIC를 
 
 ### 백엔드 의존성과 운영/후보 구분
 
-브라우저 UI와 서버의 저장·판정은 별도다. `/api/v1`은 `vercel.json`의 기존 rewrite를 통해 API로 연결되고, 클라이언트 계약은 `media/api-client.js`, 서버 기준은 [hanq_api](https://github.com/blockmonkey1992/hanq_api/tree/dev)다. 디자인 목업의 예시 숫자를 실제 회원 기록으로 저장하거나 API 미배포를 성공 상태로 표시하지 않는다.
+브라우저 UI와 서버의 저장·판정은 별도다. 클라이언트 계약은 `media/api-client.js`, 서버 기준은 [file-island-api](https://github.com/hddooo/file-island-api)다. 현재 홈서버의 `/api/v1` 프록시와 이전 Vercel의 `vercel.json` rewrite를 구분한다. 디자인 목업의 예시 숫자를 실제 회원 기록으로 저장하거나 API 미배포를 성공 상태로 표시하지 않는다.
 
-이전 운영 프런트 v0.1.1의 기능 배포 커밋은 `61dff2b121886d514c97063a7de0ea4b8fd8c291`이다. 실제 실행 중 SHA는 항상 `/app-version.json`과 HTML meta로 확인한다. 이 릴리스는 캐릭터 표시·영어 검사 보완이며 새 API/DB 배포를 포함하지 않는다. 기존 owner-confirmed collection capability 가드는 유지된다. 알 구매·부화·장착 등 쓰기는 서버가 확정한 collection 응답이 있을 때만 활성화한다. 옷/스킨의 준비 중 안내를 실제 판매·장착 기능으로 꾸미지 않는다.
+이전 운영 프런트 v0.1.1의 기능 배포 커밋은 `61dff2b121886d514c97063a7de0ea4b8fd8c291`이다. 이 단락과 아래 후보 목록은 당시의 기능 경계를 보존한 기록이다. 현재 통합 UI와 기본 OFF 항목은 CHANGELOG·실제 코드·배포 증거를 대조하며 문서 상단의 운영 표는 인계 기준선으로 사용한다. 실제 실행 중 SHA는 항상 `/app-version.json`과 HTML meta로 확인한다. v0.1.1은 캐릭터 표시·영어 검사 보완이며 새 API/DB 배포를 포함하지 않는다. 기존 owner-confirmed collection capability 가드는 유지된다. 알 구매·부화·장착 등 쓰기는 서버가 확정한 collection 응답이 있을 때만 활성화한다. 옷/스킨의 준비 중 안내를 실제 판매·장착 기능으로 꾸미지 않는다.
 
 다음은 다른 후보 브랜치에서 준비된 기능이며 **이 릴리스가 운영 완료를 뜻하지 않는다**: 관리자 개별 보유 몬스터 XP 조정, 전투당 1건 집계와 10건 페이지 기록, 다른 회원 프로필의 최근 로그인/활동·개별 XP, 제공된 비공개 Test3 자료의 사용자 연결과 저장. 현재 운영 `admin-xp.js`는 기존 총 XP 조정 UI이며 새로운 개별 파트너 선택 화면으로 문서화하지 않는다. 현재 명예의 전당의 내 최근 풀이 팝업을 모든 회원의 공개 프로필로 설명하지 않는다. API migration/운영 검증이 필요한 후보는 부모 작업에서 별도로 조율한다.
 
@@ -172,9 +219,9 @@ python3 -m http.server 8000
 # 브라우저에서 http://localhost:8000 열기. 서버 종료는 Ctrl-C.
 ```
 
-위 명령은 표준 Python 정적 서버 실행 예시다. 로컬 정적 서버는 Vercel rewrite나 실제 API 권한을 재현하지 않는다. 인증이 필요한 테스트는 기존 합성 harness를 사용한다. 이 저장소에는 해당 브라우저 도구를 설치하는 공통 package.json이 없으므로 의존성 설치 명령을 추정하지 않는다.
+위 명령은 표준 Python 정적 서버 실행 예시다. 로컬 정적 서버는 Vercel rewrite나 실제 API 권한을 재현하지 않는다. 인증이 필요한 테스트는 기존 합성 harness를 사용한다. 루트에는 package.json이 없지만 브라우저 도구의 잠금 파일은 `.ci-tools/package.json`과 `.ci-tools/package-lock.json`에 있다. CI에서 확인한 설치 명령은 `npm ci --prefix .ci-tools --no-fund`이며 Playwright 브라우저 설치와 `.test-tools` 참조는 각 harness 및 CI 설정을 확인한다.
 
-이 릴리스에서 실제 실행한 의존성 없는 검사 예시는 다음과 같다.
+기존 릴리스에서 실행한 의존성 없는 검사 예시는 다음과 같다. 이 목록은 새 작업에서 검사를 실행했다는 증거가 아니다.
 
 ```sh
 node scripts/test-grammar-quick-recall.cjs
@@ -205,11 +252,11 @@ node scripts/qa-vocabulary-redesign.cjs
 
 Vercel은 `vercel.json`의 `buildCommand: node scripts/build-app-version.cjs`, `outputDirectory: .`를 사용한다. 빌드 도구는 `RELEASE_VERSION`과 전체 Git SHA를 읽어 HTML meta, media JS/CSS의 build query, `app-version.json`을 생성한다. 따라서 “빌드 명령 없음”으로 안내하면 안 된다. 이 스크립트를 직접 실행하면 checkout의 index.html을 수정하므로 배포 빌드나 별도 깨끗한 복사본에서 사용하고 생성 결과를 무심코 소스 커밋에 섞지 않는다. `.vercelignore`의 docs/로컬 도구 제외 정책을 유지한다.
 
-배포 순서는 변경 검토 → 관련 단위/합성 브라우저 검사 → 검토 브랜치 push → 정확 SHA의 `.github/workflows/ci.yml` 성공 → 기존 운영 dev에 정상 fast-forward → Vercel 성공 상태 → 운영 `/app-version.json`·HTML meta·실제 자산 SHA-256 일치 확인이다. dev에 다른 작업이 들어왔으면 보존하고 다시 통합·검증한다. force push나 실제 사용자 데이터를 이용한 smoke test는 하지 않는다.
+현재 배포 순서는 변경 검토 → 관련 단위/합성 브라우저 검사 → feature 브랜치 push → 정확 SHA CI 확인 → 통합 담당의 main 조율 → 그 main SHA의 CI 성공 → `Home frontend deploy` 성공 → 실제 홈서버 `/app-version.json`·HTML meta·변경 자산 SHA-256 대조다. feature CI 성공만으로 운영 배포를 선언하지 않는다. main이 바뀌면 상대 작업을 보존해 통합·검증한다. Vercel의 과거 dev 배포 절차를 현재 main 배포 지시로 사용하지 않는다.
 
 ### 버전과 협업 완료 기준
 
-사용자 표시 버전의 기준은 `RELEASE_VERSION`이다. 이 checkout의 기계용 버전은 `0.2.10-beta` (서비스 표시 `v0.2.10 - Beta`)이며 [변경 이력](CHANGELOG.md)을 함께 갱신한다. 기존 정책에 따라 호환 기능은 minor, 오류 수정은 patch, 비호환 변경은 major를 올리고 실제 배포 커밋에 태그를 연결한다. 문서 기준선 `docs/versions/v0.1.0/`과 현재 사용자 릴리스 번호는 같은 개념이 아니다. 날짜·commit·검사·운영 반영을 구분하며 예정 기능을 완료로 기록하지 않는다.
+사용자 표시 버전의 기준은 `RELEASE_VERSION`이다. checkout의 실제 파일 값과 [변경 이력](CHANGELOG.md)을 함께 확인·갱신하며 문서에 적힌 과거 운영 버전을 현재 값으로 하드코딩하지 않는다. 기존 정책에 따라 호환 기능은 minor, 오류 수정은 patch, 비호환 변경은 major를 올리고 실제 배포 커밋에 태그를 연결한다. 문서 기준선 `docs/versions/v0.1.0/`과 현재 사용자 릴리스 번호는 같은 개념이 아니다. 날짜·commit·검사·운영 반영을 구분하며 예정 기능을 완료로 기록하지 않는다.
 
 디자이너 변경 제안에는 대상 화면/라우트, 사용자 목적, desktop·mobile·축소 모션 모습, 바꿀 JS/CSS/에셋, 유지할 저장·접근 계약을 적는다. 구현자는 작은 범위부터 적용하고 다음을 확인한다.
 
