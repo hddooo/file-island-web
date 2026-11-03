@@ -15,6 +15,14 @@
 - [ ] 조선 전체 시각 대조와 실제 API 자료 root·회원 저장 연결을 마친 뒤 통합 담당이 정확 SHA CI, main 통합 및 배포·운영 검수를 완료한다.
 - [ ] 조선 배포 후 고려, 개화기, 일제강점기를 각각 독립 단위로 진행한다. 강조 설명은 교재 리뉴얼 완료 후 연결한다.
 
+### 2026-11-04 · 역사섬 저녁 장면 (0.3.0-beta)
+
+- [x] 원래 고궁·산·연못의 좌표와 세 건물 목적지를 보존한 저녁 조명·외곽 배경을 만든다.
+- [x] 고정 캠핑 의자와 독립 모닥불·불티·오로라·완만한 소나기, 실제 아구몬 프레임과 비에 앞서는 잎 우산을 연결한다.
+- [x] 실제 지연 로드·모듈 실패 fallback·재입장, 프레임 단위 위치 배치·초기 숨김·pause/reduce/offscreen/page 수명·저전력 입자 감소를 검수한다.
+- [x] Windows Chrome/WebKit 12건, Linux Node24 Chromium/WebKit 12건의 정상·2코어 렌더·메뉴·기록 보존을 확인한다.
+- [ ] 정확 SHA CI와 영어섬 첫 단위 이후의 순차 배포·운영 자산 대조를 완료한다.
+
 ### 2026-11-04 · 영어섬 복구·페이지 수명 (0.2.12-beta)
 
 - [x] 최신 main d842314의 기존 영어섬 메뉴·디지몬·물/배 및 배포 상태를 확인하고 전용 브랜치로 분리한다.
@@ -340,6 +348,7 @@
 
 - Local compact UI validation is complete: the original first seven scripts, corrected six map-shell matrices, and both original header scripts all passed in separate isolated batches. Header checks took 227.758s. Existing static-build reproducibility (1,642 runtime files) and app-version/deployment-header tests also passed. The exact new-SHA hosted CI and operating deployment remain pending at this commit.
 
+- This pipeline correction is merged into the history candidate while retaining release 0.3.0-beta and the required history evening regression. No history runtime asset changed in this merge.
 
 ### 2026-11-03 reduced-motion handoff and CI diagnostics
 
@@ -349,6 +358,14 @@
 - Increase browser job total allowances to 25 minutes (40 for the two compact groups) so observed dependency-download time does not consume their test time. All original test commands remain required; runner labels, Node 24, action pins and permissions are unchanged. Reuse the existing pinned artifact action to preserve only synthetic final-review diagnostics on failure.
 - Publish only the new verified source revision. Its hosted CI and operating version/hash/browser verification remain pending at this commit; the English release is still 0.2.12-beta.
 
+- The common water handoff fix is merged into this history candidate while retaining release 0.3.0-beta. The expanded history water regression must pass before publication.
+
+
+### 2026-11-03 expanded history water regression complete
+
+- Tested history runtime commit 3f47665a84ad0e07f56ebde4f7a0cdbdf113385d with the expanded QA: Windows Chrome/WebKit 12 cases and offline Linux Node 24 / two CPUs Chromium/WebKit 12 cases all passed, errors zero. Normal eight-core and explicit two-core fixtures, module failure/remount retry and all original menu/lifecycle checks were retained.
+- Every one of the twenty normal scene cases now verifies reduced water state, hidden moving surface, frames stopped for 200ms and frame growth after motion resumes. All 32 original assertion calls remain; four water assertions were added. Forty screenshots and separate result JSONs are retained in the task evidence.
+- Final candidate remains 0.3.0-beta, including English water handoff fix 85dfeee. Build the new exact commit, run all eight hosted jobs, then publish main only after the English unit is deployed and verified. Operating deployment is still pending at this commit.
 
 ### 2026-11-03 align browser CI with the validated OS
 
@@ -357,3 +374,5 @@
 - Pin only the six browser QA jobs to the Ubuntu 24.04 family used by the validated local environment. Static-build and auth-contract remain on ubuntu-latest. No test command, assertion, wait, matrix or browser reuse lifecycle changes. This removes the observed local Noble / hosted Resolute OS difference before the next required CI run.
 - Official references: [GitHub standard hosted labels](https://docs.github.com/en/actions/reference/runners/github-hosted-runners) include ubuntu-24.04 with the same private-repository two-CPU/eight-GB resources; [Playwright 1.64.1 Docker images](https://playwright.dev/docs/docker) support Noble. Node version, browser lock, action pins and permissions remain unchanged.
 - Runtime source is byte-identical to 85dfeee; release remains 0.2.12-beta. New exact-SHA CI and operating deployment are pending at this commit.
+
+- History retains release 0.3.0-beta and its expanded 24-case water regression. Runtime/QA bytes are unchanged since 0660afb; only the browser-job OS labels and records differ.

@@ -40,6 +40,14 @@ source/중복 anchor/문자 변경 거절 검사 4건과 Chromium/WebKit 판본 
 이번 변경은 offline 검사 도구와 문서이며 영어섬/공통 workflow/API/DB/운영 source에는 변경이 없다.
 정본 복구와 실제 API 검증 전까지 운영 활성화·전체 완료로 표시하지 않는다.
 
+### 2026-11-04 · 역사섬 저녁 장면 통합 후보
+
+별도 `codex/history-evening-release-20261104`에서 독립 후보 `0e653cb`의 새 장면 JS/CSS·QA를 가져오고 기존 `island-harbors.js`에서 역사섬에만 build-pinned 파일을 지연 로드한다. index·한국사 학습/빈칸·원화·API·권한은 변경하지 않는다. 영어섬 첫 단위 `6cf8b8a`의 물 렌더러/정지 배경 보완을 정상 병합해 보존했다. 공통 CI에는 실제 지연 로드 역사 장면 검사만 추가하며 필수 검사와 배포 게이트를 유지한다.
+
+정적 저녁 색조와 벡터 의자, 독립 불꽃·불티·오로라·빗방울을 사용한다. 아구몬은 기존 손 인사/깜빡임 프레임으로 바닥에 서 있고 새 앉기/달리기 동작이라고 주장하지 않는다. 150초 장면 순환에서 잎 우산이 비보다 먼저 나타나고 늦게 사라진다. 실제 기상 정보가 아니다. 새 토글은 첫 배치까지 숨기고 현재 offsetParent·RO→rAF·pagehide/pageshow·이탈 정리를 유지한다.
+
+Windows Chrome/WebKit 12건과 Linux Node24 Chromium/WebKit 12건, clear/rain 화면을 검수했고 pageerror 0이다. 정상 8코어/8GB와 저전력 2코어/8GB fixture를 분리하고 실제 isStatic/world-low-power 상태를 검사했다. 모듈 실패 상태에서도 기존 세 건물·물 렌더러가 동작하고 재입장하면 복구됨을 확인했다. 모든 계정/API는 합성이며 네트워크를 차단한 Linux 컨테이너에서 같은 조건을 먼저 확인했다. 정확 SHA CI·운영 반영은 아직 후속 단계이며 영어섬 첫 배포와 순서를 조율한다.
+
 ### 2026-11-04 · 영어섬 복구·페이지 수명 후보
 
 기준 main `d84231479e83afc6e1e605304dbe9b1508233367`에서 별도 `codex/english-scene-polish-20261104`를 사용한다. 영어섬 장식 JS/CSS·해당 QA 및 영어섬 전용 CI를 보완하고, Linux에서 실증한 검정 화면 때문에 공유 물 렌더러와 해당 surface 숨김 CSS까지 범위를 확장했다. 이미지 로드/해독 대기는 12초 뒤 실패로 종료하고 online/pageshow에서 준비되지 않은 캐릭터를 재시도한다. 페이지 캐시 전환 이벤트와 문서/화면 숨김 동안 프레임을 멈추며 정지 선택은 해당 탭 sessionStorage에만 보관한다. 지도 자체가 숨겨지면 형제 토글도 숨기고, ResizeObserver 콜백의 위치 쓰기는 rAF에 모아 WebKit 알림 루프를 방지했다.
@@ -767,6 +775,7 @@ The optional manifest profile and source quiz consumer are prepared independentl
 
 - Local compact UI validation is complete: the original first seven scripts, corrected six map-shell matrices, and both original header scripts all passed in separate isolated batches. Header checks took 227.758s. Existing static-build reproducibility (1,642 runtime files) and app-version/deployment-header tests also passed. The exact new-SHA hosted CI and operating deployment remain pending at this commit.
 
+- This pipeline correction is merged into the history candidate while retaining release 0.3.0-beta and the required history evening regression. No history runtime asset changed in this merge.
 
 ### 2026-11-03 reduced-motion handoff and CI diagnostics
 
@@ -776,6 +785,14 @@ The optional manifest profile and source quiz consumer are prepared independentl
 - Increase browser job total allowances to 25 minutes (40 for the two compact groups) so observed dependency-download time does not consume their test time. All original test commands remain required; runner labels, Node 24, action pins and permissions are unchanged. Reuse the existing pinned artifact action to preserve only synthetic final-review diagnostics on failure.
 - Publish only the new verified source revision. Its hosted CI and operating version/hash/browser verification remain pending at this commit; the English release is still 0.2.12-beta.
 
+- The common water handoff fix is merged into this history candidate while retaining release 0.3.0-beta. The expanded history water regression must pass before publication.
+
+
+### 2026-11-03 expanded history water regression complete
+
+- Tested history runtime commit 3f47665a84ad0e07f56ebde4f7a0cdbdf113385d with the expanded QA: Windows Chrome/WebKit 12 cases and offline Linux Node 24 / two CPUs Chromium/WebKit 12 cases all passed, errors zero. Normal eight-core and explicit two-core fixtures, module failure/remount retry and all original menu/lifecycle checks were retained.
+- Every one of the twenty normal scene cases now verifies reduced water state, hidden moving surface, frames stopped for 200ms and frame growth after motion resumes. All 32 original assertion calls remain; four water assertions were added. Forty screenshots and separate result JSONs are retained in the task evidence.
+- Final candidate remains 0.3.0-beta, including English water handoff fix 85dfeee. Build the new exact commit, run all eight hosted jobs, then publish main only after the English unit is deployed and verified. Operating deployment is still pending at this commit.
 
 ### 2026-11-03 align browser CI with the validated OS
 
@@ -784,3 +801,5 @@ The optional manifest profile and source quiz consumer are prepared independentl
 - Pin only the six browser QA jobs to the Ubuntu 24.04 family used by the validated local environment. Static-build and auth-contract remain on ubuntu-latest. No test command, assertion, wait, matrix or browser reuse lifecycle changes. This removes the observed local Noble / hosted Resolute OS difference before the next required CI run.
 - Official references: [GitHub standard hosted labels](https://docs.github.com/en/actions/reference/runners/github-hosted-runners) include ubuntu-24.04 with the same private-repository two-CPU/eight-GB resources; [Playwright 1.64.1 Docker images](https://playwright.dev/docs/docker) support Noble. Node version, browser lock, action pins and permissions remain unchanged.
 - Runtime source is byte-identical to 85dfeee; release remains 0.2.12-beta. New exact-SHA CI and operating deployment are pending at this commit.
+
+- History retains release 0.3.0-beta and its expanded 24-case water regression. Runtime/QA bytes are unchanged since 0660afb; only the browser-job OS labels and records differ.
