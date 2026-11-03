@@ -12,22 +12,33 @@
   function icon(name){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+icons[name]+'</svg>';}
   // Scene module is loaded here so shared index/header and study modules stay untouched.
   var waterLoader;
+  var controlSerial=0,controlHosts=new WeakMap();
+  function attachControl(map,button){
+    var frame=map.parentElement,record=controlHosts.get(frame),closed=false,layoutFrame=0;
+    if(!record){record={count:0,added:getComputedStyle(frame).position==='static'};controlHosts.set(frame,record);if(record.added)frame.classList.add('harbor-control-host');}record.count++;
+    if(!map.id)map.id='harbor-map-'+(++controlSerial);button.setAttribute('aria-controls',map.id);frame.appendChild(button);
+    function update(){if(closed)return;button.hidden=!map.isConnected||!map.getClientRects().length||getComputedStyle(map).visibility==='hidden';if(button.hidden)return;var r=map.getBoundingClientRect(),p=frame.getBoundingClientRect();button.style.setProperty('left',(r.right-p.left-frame.clientLeft+frame.scrollLeft-button.offsetWidth-8)+'px','important');button.style.setProperty('top',(r.bottom-p.top-frame.clientTop+frame.scrollTop-button.offsetHeight-8)+'px','important');}
+    function schedule(){if(closed||layoutFrame)return;layoutFrame=requestAnimationFrame(function(){layoutFrame=0;update();});}
+    var ro=root.ResizeObserver?new ResizeObserver(schedule):null;if(ro){ro.observe(map);ro.observe(frame);ro.observe(button);}var appearance=new MutationObserver(schedule);appearance.observe(map,{attributes:true,attributeFilter:['class','style','hidden']});
+    function dispose(){if(closed)return;closed=true;if(layoutFrame)cancelAnimationFrame(layoutFrame);if(ro)ro.disconnect();appearance.disconnect();life.disconnect();root.removeEventListener('resize',schedule);button.remove();record.count--;if(!record.count){if(record.added)frame.classList.remove('harbor-control-host');controlHosts.delete(frame);}}
+    var life=new MutationObserver(function(){if(!map.isConnected)dispose();});life.observe(document.body,{childList:true,subtree:true});root.addEventListener('resize',schedule);schedule();return {update:schedule,dispose:dispose};
+  }
   var sceneBuild='';try{sceneBuild=new URL(document.currentScript.src).searchParams.get('build')||'';}catch(ignore){}
   function sceneAsset(file){return 'media/'+file+(sceneBuild?'?build='+encodeURIComponent(sceneBuild):'');}
   function livingWater(chart,art,kind){
     if(!waterLoader)waterLoader=new Promise(function(resolve){var s=document.createElement('script');s.src='media/island-living-water.js?v=palace-motion-2'+(sceneBuild?'&build='+encodeURIComponent(sceneBuild):'');s.onload=function(){resolve(root.HanqLivingWater);};s.onerror=function(){waterLoader=null;resolve(null);};document.head.appendChild(s);});
-    waterLoader.then(function(engine){if(!chart.isConnected)return;if(engine){engine.mount(chart,art,kind);return;}var host=chart.parentElement;if(host.querySelector('.harbor-motion-toggle'))return;var retry=document.createElement('button');retry.type='button';retry.className='harbor-motion-toggle';retry.textContent='움직임 다시 불러오기';retry.addEventListener('click',function(){retry.remove();livingWater(chart,art,kind);});host.appendChild(retry);});
+    waterLoader.then(function(engine){if(!chart.isConnected)return;if(engine){engine.mount(chart,art,kind);return;}var host=chart.parentElement;if(chart.dataset.motionRetry==='true')return;chart.dataset.motionRetry='true';var retry=document.createElement('button');retry.type='button';retry.className='harbor-motion-toggle';retry.textContent='움직임 다시 불러오기';var position=attachControl(host,retry);retry.addEventListener('click',function(){delete chart.dataset.motionRetry;position.dispose();livingWater(chart,art,kind);});});
   }
   var stops={
-    history:[{id:'homePastExams',icon:'gate',x:47,y:28,mx:50,my:18},{id:'homeFormalExams',icon:'flag',x:23,y:45,mx:26,my:42},{id:'homeWrongNotes',icon:'review',x:66,y:59,mx:71,my:66}],
+    history:[{id:'homePastExams',icon:'gate',x:49,y:30,mx:52.5,my:19.75},{id:'homeFormalExams',icon:'flag',x:82.25,y:45.75,mx:75.5,my:56.5},{id:'homeWrongNotes',icon:'review',x:18.25,y:45.25,mx:20.5,my:41.75}],
     toeic:[{id:'notebook',icon:'book',x:84,y:21,mx:26,my:17},{id:'wrongnotes',icon:'review',x:27,y:55,mx:26,my:52},{id:'grammar',icon:'notes',x:57,y:33,mx:73,my:34},{id:'player',icon:'audio',x:80,y:55,mx:73,my:70}]
   };
   // Source-coordinate building silhouettes: one existing native destination
   // control covers each landmark, so route handlers and keyboard semantics stay.
   var landmarks={
-    homePastExams:{name:'중앙 궁',wide:[.34,.12,.64,.48],tall:[.26,.095,.79,.30]},
-    homeFormalExams:{name:'왼쪽 정자',wide:[.065,.285,.30,.62],tall:[.025,.305,.385,.53]},
-    homeWrongNotes:{name:'오른쪽 서당',wide:[.66,.265,.985,.65],tall:[.52,.43,.99,.70]}
+    homePastExams:{name:'시대별 학습 궁',wide:[.34,.12,.64,.48],tall:[.26,.095,.79,.30]},
+    homeFormalExams:{name:'모의고사장',wide:[.66,.265,.985,.65],tall:[.52,.43,.99,.70]},
+    homeWrongNotes:{name:'오답노트 정자',wide:[.065,.285,.30,.62],tall:[.025,.305,.385,.53]}
   };
   // One decorative layer tree, driven by CSS time. The art and click targets never move.
   // Share WorldScene's visibility/low-power state and observe only this layer's viewport.
@@ -64,7 +75,7 @@
       if(!stop)return;
       control.classList.add('harbor-stop');control.style.setProperty('--pin-x',stop.x);control.style.setProperty('--pin-y',stop.y);control.style.setProperty('--mobile-x',stop.mx);control.style.setProperty('--mobile-y',stop.my);
       var label=control.querySelector('strong,.wn-entry-t'),place=control.querySelector('.world-place-name');
-      if(kind==='history'&&landmarks[key]){control.classList.add('history-landmark');control.dataset.landmark=key;control.setAttribute('aria-label',landmarks[key].name+', '+(label?label.textContent:''));control.title=landmarks[key].name+' · '+(label?label.textContent:'');}
+      if(kind==='history'&&landmarks[key]){control.classList.add('history-landmark');control.dataset.landmark=key;control.setAttribute('aria-label',landmarks[key].name);control.title=landmarks[key].name;}
       if(label){label.id='harbor-'+kind+'-'+key+'-label';if(!control.hasAttribute('aria-label'))control.setAttribute('aria-labelledby',label.id);}
       if(place){place.id='harbor-'+kind+'-'+key+'-place';control.setAttribute('aria-describedby',place.id);}
       var sign=document.createElement('span');sign.className='harbor-sign';if(label)sign.appendChild(label);if(place)sign.appendChild(place);control.appendChild(sign);
@@ -96,5 +107,5 @@
     art.addEventListener('load',fitScene);var fitObserver=root.ResizeObserver?new ResizeObserver(fitScene):null;if(fitObserver){fitObserver.observe(map);controls.forEach(function(n){var sign=n.querySelector('.harbor-sign');if(sign)fitObserver.observe(sign);});}var detached=new MutationObserver(function(){if(!map.isConnected){if(fitObserver)fitObserver.disconnect();detached.disconnect();art.removeEventListener('load',fitScene);}});detached.observe(document.body,{childList:true,subtree:true});fitScene();
     map.addEventListener('pointerleave',function(){map.querySelectorAll('.harbor-selected').forEach(function(n){n.classList.remove('harbor-selected');});});
   }
-  root.HanqIslandHarbors={enhance:enhance,atmosphere:atmosphere};
+  root.HanqIslandHarbors={enhance:enhance,atmosphere:atmosphere,attachControl:attachControl};
 })(window);

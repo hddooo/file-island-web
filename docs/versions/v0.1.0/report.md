@@ -531,3 +531,5 @@ PNG만으로 모션 완료를 주장하지 않는다. `motion-0/2`는 실제 2�
 ### 2026-11-03 장면 정지 재현과 건물 핫스팟 후보
 
 재현 전: 1440→390 전환 후 frame 9→9, ready=false지만 mode=active가 유지됐다. 이전 canvas의 이벤트 리스너를 제거하고 generation/target을 검사해 새 장면의 중단을 방지한다. GPU 중단·미지원 대체 경로는 실제 물 픽셀 변화와 고정 건물 픽셀을 검사하며, 단순 frame 카운터 증가만 성공 기준으로 쓰지 않는다. `qa-palace-hotspots.cjs`는 실제 로컬 HTTP 캐시, 반복 resize, 1778×1122 DPR2 조건, GPU 중단/미지원, reduced-motion 명시적 재생, 건물 중앙 터치·키보드·모듈 로드 실패 복구를 검증한다. 실사용자 브라우저 설정은 미확인이다. 기존 `qa-island-harbors.cjs`의 route/back/keyboard/스크롤·모바일 검수와 `qa-living-water.cjs`의 실제 시간 진행·픽셀 캡처도 별도 유지한다. 정확 SHA CI·운영 증거는 해당 실행 결과로 대조하며 이 후보 기록만으로 배포 완료를 선언하지 않는다.
+
+중간 후보 05d2ecba의 CI 41590207383은 새 움직임 버튼이 `.toeic-travel-map button`의 학습 목적지 4개에 섞여 단어장 UI 회귀에서 실패했다. 제품의 장면 제어를 map 바깥의 형제 요소로 분리하고 기존 검사 파일은 완화하지 않았다. ResizeObserver 위치 갱신은 rAF로 묶고 버튼은 max-content 폭으로 고정해 순환 알림을 제거했다. 그 후 qa-vocabulary-redesign은 Chromium/WebKit 320/390/1440 전체 통과했다. 확정 건물 배치·실제 HTTP 캐시·이전 host의 늦은 모듈 로드·GPU 중단/미지원·키보드/터치 17건씩을 두 엔진에서 통과했다. 이 단락은 로컬 검수이며 새 정확 SHA CI·운영 결과는 별도다.
