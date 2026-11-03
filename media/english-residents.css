@@ -16,6 +16,7 @@ html body #app .english-residents-host{position:relative}
 html body #app .english-residents-toggle{position:absolute;z-index:6;display:inline-flex;align-items:center;justify-content:center;gap:6px;box-sizing:border-box;width:max-content;min-width:44px;min-height:44px;margin:0;padding:6px 10px;border:1px solid #c1d9bd;border-radius:7px;background:#0d302aeb!important;color:#f4fff5!important;font-size:12px;line-height:1.3;white-space:nowrap;box-shadow:0 2px 8px #001b3455;cursor:pointer;touch-action:manipulation}
 html body #app .english-residents-toggle:focus-visible{outline:3px solid #fff2ad;outline-offset:2px}
 html body #app .english-residents-toggle:disabled{cursor:default;opacity:.8}
+html body #app .english-residents-toggle[hidden]{display:none!important}
 @media(max-width:700px) and (orientation:portrait){
  html body #app .english-residents .er-agumon{left:47%;top:45.5%;width:clamp(56px,17%,94px)}
  html body #app .english-residents .er-koromon{left:66%;top:85%;width:clamp(48px,15%,84px)}

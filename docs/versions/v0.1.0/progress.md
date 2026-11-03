@@ -1,5 +1,11 @@
 # FE 실제 진행 상태
 
+### 2026-11-04 · 영어섬 복구·페이지 수명 후보
+
+기준 main `d84231479e83afc6e1e605304dbe9b1508233367`에서 별도 `codex/english-scene-polish-20261104`를 사용한다. 영어섬 장식 JS/CSS·해당 QA 및 영어섬 전용 CI만 보완한다. 이미지 로드/해독 대기는 12초 뒤 실패로 종료하고 online/pageshow에서 준비되지 않은 캐릭터를 재시도한다. 페이지 캐시 전환 이벤트와 문서/화면 숨김 동안 프레임을 멈추며 정지 선택은 해당 탭 sessionStorage에만 보관한다. 지도 자체가 숨겨지면 형제 토글도 숨기고, ResizeObserver 콜백의 위치 쓰기는 rAF에 모아 WebKit 알림 루프를 방지했다.
+
+Chrome/WebKit `qa-english-residents.cjs` 10건과 `qa-english-island.cjs` 10건, 학습 기록 67건 통과. 실제 iPhone이나 물리 브라우저의 BFCache 적중을 주장하지 않는다. 페이지 전환 이벤트는 합성으로 검수했으며 API는 모두 합성이다. 교재·index·라우트·서버/사용자 데이터·인증·권한은 변경하지 않았다. 커밋 후 빌드·정확 SHA CI/CD·운영 대조가 남은 후보이다.
+
 ### 2026-11-03 · 디자인 우선 운영 요청 반영
 
 최신 main d706aa7의 고궁·물·배 장면을 보존했다. 후속 사용자 요청으로 표시 디자인을 고정된 79회 SHA에도 적용하되 data-history-edition은79로 구분한다. source SHA/문항/정답/digest/workspace는 그대로이며 신판 게이트는 비활성이다. 실제 구판 조선164문항의 정답·59/14/91 분류·canonical cursor·재개 및 p59 원문 연관 관계를320/390/1440에서 읽기 전용 격리 검사했다. 81회 canonical 자료는 여전히 미확보다.
