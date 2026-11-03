@@ -34,11 +34,6 @@ html body #app .history-evening .he-friend.he-ready{visibility:visible}
 html body #app .history-evening .he-friend-sprite{position:absolute;display:block;inset:0;background:url('characters/agumon-idle-sprite.png') 0 0/200% 200% no-repeat!important;animation:hanq-agumon-idle 7.9s -2.1s steps(1,end) infinite!important;filter:brightness(.78) saturate(.82)}
 html body #app .history-evening .he-leaf{position:absolute;display:block;left:6%;top:-28%;width:95%;height:auto;overflow:visible;opacity:0;transform:rotate(-12deg);animation:he-umbrella 150s ease-in-out infinite!important;filter:drop-shadow(0 2px 2px #04141466)}
 html body #app .history-evening.he-paused :is(.he-aurora,.he-clouds,.he-rain,.he-rain>i,.he-warmth,.he-flame,.he-ember,.he-friend-sprite,.he-leaf){animation-play-state:paused!important}
-html body #app .history-evening-host{position:relative!important}
-html body #app .history-evening-toggle{position:absolute!important;display:inline-flex!important;z-index:6;align-items:center;justify-content:center;gap:6px;box-sizing:border-box;width:max-content;min-height:44px;min-width:44px;margin:0;padding:6px 10px;border:1px solid #c1d9bd;border-radius:7px;background:#0d302aeb!important;color:#f4fff5!important;font-size:12px;line-height:1.3;white-space:nowrap;touch-action:manipulation;cursor:pointer}
-html body #app .history-evening-toggle[hidden]{display:none!important}
-html body #app .history-evening-toggle:focus-visible{outline:3px solid #fff2ad;outline-offset:2px}
-html body #app .history-evening-toggle:disabled{cursor:default;opacity:.8}
 @keyframes he-aurora{from{transform:translateX(-3%) skewX(-5deg) scaleY(.8);opacity:.6}to{transform:translateX(4%) skewX(7deg) scaleY(1.1);opacity:.92}}
 @keyframes he-overcast{0%,20%,100%{opacity:0}44%,70%{opacity:.75}85%{opacity:.15}}
 @keyframes he-shower{0%,39%,86%,100%{opacity:0}51%,67%{opacity:.55}}
@@ -48,7 +43,6 @@ html body #app .history-evening-toggle:disabled{cursor:default;opacity:.8}
 @keyframes he-flame{from{transform:scale(.82,.9) rotate(-7deg);border-radius:15% 75% 45% 70%}to{transform:scale(1.05,1.08) rotate(6deg);border-radius:60% 20% 65% 40%}}
 @keyframes he-ember{0%{opacity:0;transform:translate(0,0)}12%{opacity:.8}100%{opacity:0;transform:translate(10px,-65px)}}
 @media(max-width:700px) and (orientation:portrait){html body #app .history-evening .he-camp{left:40%;top:74%;width:44%}html body #app .history-evening .he-sky{height:11%}html body #app .history-evening .he-rain>i:nth-child(even){display:none}}
-@media(max-height:500px) and (orientation:landscape){html body #app .history-evening-toggle{font-size:10px;padding:4px 7px}}
 html.world-low-power body #app .history-evening .he-aurora{animation:none!important;filter:none;opacity:.35}
 html.world-low-power body #app .history-evening .he-rain>i:nth-child(2n){display:none}
 @media(prefers-reduced-motion:reduce){html body #app .history-evening :is(.he-aurora,.he-clouds,.he-rain,.he-rain>i,.he-warmth,.he-flame,.he-ember,.he-friend-sprite,.he-leaf){animation:none!important;transition:none!important}html body #app .history-evening :is(.he-rain,.he-leaf,.he-ember){display:none!important}html body #app .history-evening .he-aurora{opacity:.45}html body #app .history-evening .he-friend-sprite{background-position:0 0!important}}

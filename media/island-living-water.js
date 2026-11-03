@@ -4,7 +4,6 @@
 (function(root){
   'use strict';
   var motion=matchMedia('(prefers-reduced-motion: reduce)');
-  var preference='auto';try{preference=sessionStorage.getItem('hanq:scene-motion')||'auto';}catch(ignore){}
   var moduleBuild='';try{moduleBuild=new URL(document.currentScript.src).searchParams.get('build')||'';}catch(ignore){}
   var low=!!((navigator.deviceMemory&&navigator.deviceMemory<=2)||(navigator.hardwareConcurrency&&navigator.hardwareConcurrency<=2)||(navigator.connection&&navigator.connection.saveData));
   var regions={
@@ -24,13 +23,10 @@
   function mount(chart,img,kind){
     if(chart.dataset.livingMounted)return;chart.dataset.livingMounted='true';
     var surface,gl,program,textures=[],sprites=[],raf=0,last=0,phase=0,visible=false,disposed=false,generation=0,imageKey='',fallbackPaint=null,contextLostHandler=null,staticPlate=null;
-    var host=chart.parentElement,toggle=document.createElement('button');toggle.type='button';toggle.className='harbor-motion-toggle';var control=root.HanqIslandHarbors&&root.HanqIslandHarbors.attachControl?root.HanqIslandHarbors.attachControl(host,toggle):{update:function(){},dispose:function(){toggle.remove();}};
-    function wantsMotion(){return preference==='on'||preference!=='off'&&!motion.matches;}
-    function updateToggle(){var moving=wantsMotion();toggle.innerHTML='<span aria-hidden="true">'+(moving?'Ⅱ':'▶')+'</span> 물과 배 움직임';toggle.setAttribute('aria-label','물과 배 움직임');toggle.setAttribute('aria-pressed',String(moving));toggle.title=!moving&&motion.matches&&preference!=='off'?'동작 줄이기 설정에 따라 멈췄습니다. 선택하면 이 장면만 움직입니다.':moving?'물과 배 움직임을 멈춥니다.':'물과 배 움직임을 켭니다.';chart.dataset.motionOverride=preference;control.update();}
-    toggle.addEventListener('click',function(){preference=wantsMotion()?'off':'on';try{sessionStorage.setItem('hanq:scene-motion',preference);}catch(ignore){}run();});
+    function wantsMotion(){return !motion.matches;}
     var io=root.IntersectionObserver?new IntersectionObserver(function(entries){visible=entries[0].isIntersecting;run();},{threshold:.01}):null;
     if(io)io.observe(chart);else visible=true;
-    var cleanup=new MutationObserver(function(){if(!chart.isConnected){disposed=true;generation++;stop();release();control.dispose();img.removeEventListener('load',build);document.removeEventListener('visibilitychange',run);root.removeEventListener('pageshow',run);motion.removeEventListener('change',run);if(io)io.disconnect();cleanup.disconnect();}});cleanup.observe(document.body,{childList:true,subtree:true});
+    var cleanup=new MutationObserver(function(){if(!chart.isConnected){disposed=true;generation++;stop();release();img.removeEventListener('load',build);document.removeEventListener('visibilitychange',run);root.removeEventListener('pageshow',run);motion.removeEventListener('change',run);if(io)io.disconnect();cleanup.disconnect();}});cleanup.observe(document.body,{childList:true,subtree:true});
     function stop(){if(raf)cancelAnimationFrame(raf);raf=0;last=0;}
     function release(){if(surface&&contextLostHandler)surface.removeEventListener('webglcontextlost',contextLostHandler);contextLostHandler=null;if(gl){textures.forEach(function(t){gl.deleteTexture(t);});textures=[];if(program)gl.deleteProgram(program);var ext=gl.getExtension('WEBGL_lose_context');if(ext)ext.loseContext();}if(surface)surface.remove();if(staticPlate)staticPlate.remove();staticPlate=null;sprites.forEach(function(s){s.node.remove();});sprites=[];chart.classList.remove('living-water-ready');gl=null;surface=null;fallbackPaint=null;}
     // A bounded scanline renderer keeps real water pixels moving when WebGL is
@@ -50,10 +46,10 @@
       chart.dataset.waterFrames=String((Number(chart.dataset.waterFrames)||0)+1);
       chart.dataset.waterTime=phase.toFixed(3);
     }
-    // Keep the static plate and controls in sync when a running frame observes
+    // Keep the static plate in sync when a running frame observes
     // reduced motion before the media-change callback has updated the surface.
     function frame(now){raf=0;if(disposed||!surface||!visible||document.hidden)return;if(!wantsMotion()){run();return;}var step=1000/(low?12:!gl?18:matchMedia('(max-width:700px)').matches?24:30);if(!last||now-last>=step){if(last)phase+=Math.min((now-last)/1000,.25);last=now;draw();}raf=requestAnimationFrame(frame);}
-    function run(){updateToggle();chart.dataset.waterMotion=!wantsMotion()?(preference==='off'?'paused':'reduced'):low?'economy':'active';stop();if(surface){surface.hidden=!wantsMotion();draw();if(visible&&!document.hidden&&wantsMotion())raf=requestAnimationFrame(frame);}}
+    function run(){chart.dataset.waterMotion=!wantsMotion()?'reduced':low?'economy':'active';stop();if(surface){surface.hidden=!wantsMotion();draw();if(visible&&!document.hidden&&wantsMotion())raf=requestAnimationFrame(frame);}}
     function build(){
       if(!img.naturalWidth||disposed)return;var keyNow=img.currentSrc+'|'+img.naturalWidth+'x'+img.naturalHeight;if(keyNow===imageKey&&surface)return;imageKey=keyNow;var gen=++generation;stop();release();
       // Fixed one-device-pixel buffer, capped independently from display size.
@@ -100,7 +96,7 @@
       }
       run();
     }
-    img.addEventListener('load',build);document.addEventListener('visibilitychange',run);root.addEventListener('pageshow',run);motion.addEventListener('change',run);updateToggle();if(img.complete)build();
+    img.addEventListener('load',build);document.addEventListener('visibilitychange',run);root.addEventListener('pageshow',run);motion.addEventListener('change',run);if(img.complete)build();
   }
   root.HanqLivingWater={mount:mount};
 })(window);
