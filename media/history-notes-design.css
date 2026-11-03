@@ -138,3 +138,8 @@ html body #privateTextbook .history-notes-design:is([data-history-edition="79"],
   html body #privateTextbook > .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) { padding: 32px; }
   html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-quiz-title { font-size: 32px; }
 }
+
+/* Workbook save feedback stays readable on paper under the world's dark theme. */
+html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-quiz-status { color: var(--hn-muted) !important; }
+html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-quiz-status[data-result="match"] { color: #176037 !important; }
+html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-quiz-status:is([data-result="different"],[data-result="empty"]) { color: #864500 !important; }

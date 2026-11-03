@@ -426,7 +426,7 @@
       scroll.setAttribute('role', 'region');
       scroll.setAttribute('aria-label', '원문 표 · 열 순서 유지 · 좌우로 이동해 읽기');
       horizontalKeys(scroll);
-      if (block.layoutRole === 'source-answer-panels') group.appendChild(node('p', '↔ 좌우로 밀어 정답표 전체 보기', 'textbook-answer-scroll-hint'));
+      if (block.layoutRole === 'source-answer-panels' || (block.layoutRole === 'source-answer-grid' && block.columnCount > 2 && !block.sourceParentTableId)) group.appendChild(node('p', '↔ 좌우로 밀어 정답표 전체 보기', 'textbook-answer-scroll-hint'));
       var tableNode = node('table', null, 'textbook-semantic-table');
       // Reflow only an unambiguous header/body pair. Merged cells, diagrams,
       // illustrated tables and comparison matrices keep their original topology.
