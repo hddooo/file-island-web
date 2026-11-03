@@ -41,12 +41,12 @@
         var left=Math.max(4,Math.min(w-width-4,x1)),top=Math.max(4,Math.min(h-height-4,y1));
         control.style.setProperty('left',left+'px','important');control.style.setProperty('top',top+'px','important');
         control.style.setProperty('width',width+'px','important');control.style.setProperty('height',height+'px','important');
-        var sign=control.querySelector('.harbor-sign');if(sign)sign.style.removeProperty('transform');
+        var sign=control.querySelector('.harbor-sign');if(sign){var half=sign.offsetWidth/2,centre=left+width/2,clamped=Math.max(4+half,Math.min(w-4-half,centre));sign.style.removeProperty('transform');sign.style.setProperty('--english-sign-shift',(clamped-centre)+'px');}
       });
     }
     function schedule(){if(!frame&&!closed)frame=requestAnimationFrame(fit);}
     var observer=root.ResizeObserver?new ResizeObserver(schedule):null;
-    if(observer)observer.observe(map);
+    if(observer){observer.observe(map);controls.forEach(function(control){var sign=control.querySelector('.harbor-sign');if(sign)observer.observe(sign);});}
     art.addEventListener('load',schedule);root.addEventListener('resize',schedule);portrait.addEventListener('change',schedule);
     var detached=new MutationObserver(function(){if(map.isConnected)return;closed=true;if(frame)cancelAnimationFrame(frame);if(observer)observer.disconnect();detached.disconnect();art.removeEventListener('load',schedule);root.removeEventListener('resize',schedule);portrait.removeEventListener('change',schedule);});
     detached.observe(document.body,{childList:true,subtree:true});fit();
