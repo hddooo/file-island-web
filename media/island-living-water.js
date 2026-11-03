@@ -50,7 +50,9 @@
       chart.dataset.waterFrames=String((Number(chart.dataset.waterFrames)||0)+1);
       chart.dataset.waterTime=phase.toFixed(3);
     }
-    function frame(now){raf=0;if(disposed||!surface||!visible||document.hidden||!wantsMotion())return;var step=1000/(low?12:!gl?18:matchMedia('(max-width:700px)').matches?24:30);if(!last||now-last>=step){if(last)phase+=Math.min((now-last)/1000,.25);last=now;draw();}raf=requestAnimationFrame(frame);}
+    // Keep the static plate and controls in sync when a running frame observes
+    // reduced motion before the media-change callback has updated the surface.
+    function frame(now){raf=0;if(disposed||!surface||!visible||document.hidden)return;if(!wantsMotion()){run();return;}var step=1000/(low?12:!gl?18:matchMedia('(max-width:700px)').matches?24:30);if(!last||now-last>=step){if(last)phase+=Math.min((now-last)/1000,.25);last=now;draw();}raf=requestAnimationFrame(frame);}
     function run(){updateToggle();chart.dataset.waterMotion=!wantsMotion()?(preference==='off'?'paused':'reduced'):low?'economy':'active';stop();if(surface){surface.hidden=!wantsMotion();draw();if(visible&&!document.hidden&&wantsMotion())raf=requestAnimationFrame(frame);}}
     function build(){
       if(!img.naturalWidth||disposed)return;var keyNow=img.currentSrc+'|'+img.naturalWidth+'x'+img.naturalHeight;if(keyNow===imageKey&&surface)return;imageKey=keyNow;var gen=++generation;stop();release();
