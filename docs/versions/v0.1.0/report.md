@@ -2,7 +2,11 @@
 
 ### 2026-11-04 · 영어섬 복구·페이지 수명 검수
 
-검토 CI의 Linux WebKit 320px 검사에서 디지몬 정지 버튼이 Vocabulary 건물을 가리는 실제 실패를 확인했다. 진단 커밋 `e265a64`의 가림 요소는 `BUTTON.english-residents-toggle`이며 원래 메뉴 hit assertion은 유지했다. 토글의 현재 offsetParent로 좌표를 측정하고 재배치 후 rAF를 예약하며, 테마의 position 덮어쓰기와 별도 포함 블록 전환에서도 지도 내부·실제 hit를 검사하도록 보완했다. 앞선 실패 CI는 배포하지 않는다.
+검토 CI의 Linux WebKit 320px 검사에서 디지몬 정지 버튼이 Vocabulary 건물을 가리는 실패를 확인했다. 원래 hit assertion과 실패 화면을 유지하고 기존 Linux 검수 이미지에서 같은 실패를 로컬 재현했다. 고정 180ms 대기 뒤의 오래된 geometry snapshot과 screenshot 이후의 최신 geometry가 달랐으며, 실제 두 rAF 완료 후에는 같은 5개 화면의 assertion이 모두 통과했다. 토글은 첫 배치 전 hidden으로 두고 현재 offsetParent를 측정하며, 테마·포함 블록 변경에서도 실제 hit/지도 내부를 확인한다. pause 검수는 Animation.ready와 실제 hidden/visible 전환을 기다린 뒤 같은 프레임/시간 불변성 assertion을 유지한다. 앞선 실패 CI는 배포하지 않는다.
+
+별도 Linux 비교에서 축소 모션의 WebGL 화면이 검정이지만 같은 task의 drawArrays/readPixels는 정상이고 active 모션·Canvas2D·buffer 보존 비교는 정상이었다. 앱의 정지 GL 재합성 문제로 좁혀 정지/축소 모션 때는 이미 추출한 선명한 plate를 표시하고 GL surface를 숨긴다. 계속 재그리거나 GL drawing-buffer 보존을 강제하지 않는다. 원래 boat를 제거한 plate와 단일 독립 배 레이어, context loss/Canvas2D fallback은 보존한다. screenshot의 실제 장면 RGB 샘플을 추가해 검정 배경을 frame 카운터만으로 통과시키지 않는다.
+
+최종 소스의 Linux WebKit 영어 지도 5건·디지몬 5건, Windows Chrome/WebKit 지도 10건·디지몬 10건, 물/배 9건 및 고궁 회귀 각18건 통과. Linux 비교는 외부 네트워크 차단·읽기 전용 소스와 합성 API만 사용했다. 로컬 증거는 작업 `evidence/linux-english-repro`, `linux-residents`, `linux-gl-diagnostic`과 repo `evidence/palace-static-plate-*`에 있다. 사용자 요청에 따라 같은 Linux 조건의 로컬 검증 후에만 필요한 최종 CI를 실행하며 알림 설정은 바꾸지 않는다. 정확 SHA CI·운영 검증은 아직 별도 단계다.
 
 기존 운영 d842314의 실제 프레임 디지몬/건물 메뉴를 재사용한 작은 오류 수정 단위다. 연결 실패 후 지도를 다시 들어가야만 캐릭터가 복구되던 흐름을 같은 지도 내 재시도로 보완하고, pagehide/pageshow·축소 모션·정지 선택·화면 이탈 수명을 함께 유지한다. 새 장면 아트와 한국사 교재는 이 단위에 포함하지 않는다.
 
