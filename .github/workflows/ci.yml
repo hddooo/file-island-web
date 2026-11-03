@@ -32,7 +32,7 @@ jobs:
           retention-days: 7
 
   island-scene-regression:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 25
     env:
       NODE_PATH: ${{ github.workspace }}/.ci-tools/node_modules
@@ -64,7 +64,7 @@ jobs:
           if-no-files-found: ignore
 
   history-reading-regression:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 25
     env:
       NODE_PATH: ${{ github.workspace }}/.ci-tools/node_modules
@@ -110,7 +110,7 @@ jobs:
       - run: node scripts/test-vocabulary-paraphrases.cjs
 
   compact-ui-regression:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 40
     env:
       NODE_PATH: ${{ github.workspace }}/.ci-tools/node_modules
@@ -149,7 +149,7 @@ jobs:
 
   # Keep every original command, with separate budgets for the two long matrices.
   compact-scene-regression:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 40
     env:
       HANQ_FINAL_REVIEW_OUTPUT: ${{ github.workspace }}/evidence/compact-final-review
@@ -189,7 +189,7 @@ jobs:
           if-no-files-found: ignore
 
   practice-readiness-regression:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 25
     env:
       NODE_PATH: ${{ github.workspace }}/.ci-tools/node_modules
@@ -287,7 +287,7 @@ jobs:
             evidence/player-repeat/webkit-390-one-controls.png
 
   header-parent-readability:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 25
     env:
       NODE_PATH: ${{ github.workspace }}/.ci-tools/node_modules
