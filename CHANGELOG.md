@@ -1,5 +1,9 @@
 # 변경 이력
 
+## 2026-11-04 자동 배포 전용 workflow — 사용자 릴리스 번호 유지
+
+사용자 지시에 따라 프론트 CI의 모든 자동 테스트와 브라우저/테스트 의존성 설치를 제거했습니다. main push에서 `Frontend build`의 정적 빌드·artifact 업로드 후 기존 Windows 자동 배포만 실행합니다. 최신 main SHA, 파일 digest/manifest, 공개 파일 경계, 설치 컨트롤러와 원자적 배포·복구는 유지합니다. 로컬 검수 스크립트와 제품 소스는 보존하며 사용자 표시 버전은 0.3.5-beta를 유지합니다.
+
 ## 0.3.5-beta
 
 Refine the palace camp with dusk fabric chairs, ground shadows and a separate small animated flame. Furniture stays fixed; decoded cutouts retry after reconnection. Compact the mobile profile without reducing type or touch targets; long names use a centred title above one shared action row. Native island menus, OS reduced motion and 0.3.4 workbook preparation remain intact.

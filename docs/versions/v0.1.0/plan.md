@@ -424,3 +424,10 @@ The expanded mobile scope includes the shared File Island header, native CSS saf
 - [x] Test literal/digest/auth guards and14 actual index routing cases; verify actual full-app summary/blank round trips in both operating systems.
 - [ ] Confirm exact-SHA CI, deploy the prepared frontend and inspect operating version/assets.
 - [ ] Activate81 only after the actual API revision root and authenticated operating storage are verified.
+
+### 2026-11-04 frontend automatic deployment only
+
+- [x] Follow the user's newer instruction: remove all seven automated test jobs and both test commands inside static-build; do not replace them with other automatic tests.
+- [x] Run only the main-push public build/upload and its existing Windows deployment; preserve exact-main, artifact digest/manifest, installed controller and rollback behavior.
+- [x] Validate YAML and workflow behavior locally, repeat the public build, and run local controller checks (15 passed; one Linux-symlink case skipped on Windows).
+- [ ] Confirm the new exact commit's main build, automatic deployment and operating version/assets. Product source and release0.3.5-beta remain unchanged.

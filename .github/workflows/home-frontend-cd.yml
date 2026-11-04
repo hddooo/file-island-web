@@ -1,8 +1,8 @@
-# Approved dedicated runner and release store are installed. Deploy only successful main CI.
+# Approved dedicated runner and release store are installed. Deploy only successful main builds.
 name: Home frontend deploy
 on:
   workflow_run:
-    workflows: [Frontend contract checks]
+    workflows: [Frontend build]
     types: [completed]
     branches: [main]
 permissions:
@@ -30,13 +30,13 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '24'
-      - name: Verify successful CI is still the current main commit
+      - name: Verify successful build is still the current main commit
         id: gate
         shell: cmd
         env:
           GH_TOKEN: ${{ github.token }}
         run: node "%FE_CD_ROOT%/ci-step.cjs" gate
-      - name: Download only this successful CI artifact
+      - name: Download only this successful build artifact
         if: steps.gate.outputs.ready == 'true'
         uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
         with:

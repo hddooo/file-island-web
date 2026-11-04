@@ -57,7 +57,7 @@
 
 초기 snapshot은 0.2.8-beta였고, 원본 `cfc9892a2a180a33b177a8689bcdfa8f0b5607f7`의 0.2.9-beta delta를 반영했습니다. 이후 버전은 실제 `RELEASE_VERSION`과 CHANGELOG를 읽습니다. 이관 당시 상태와 현재 운영 상태를 구분합니다.
 
-현재 `.github/workflows/ci.yml`은 GitHub-hosted 검사를 실행하고, `.github/workflows/home-frontend-cd.yml`은 성공한 동일 저장소 main push CI의 정확 artifact를 전용 Windows runner로 배포합니다. 보존된 `.github/workflows-held/*.disabled`는 비활성 이력이며 현재 workflow와 혼동하지 않습니다. 이번 인수인계 변경은 문서만 수정합니다.
+현재 `.github/workflows/ci.yml`의 `Frontend build`는 main push에서 정적 빌드와 artifact 업로드만 실행합니다. 사용자 지시에 따라 자동 단위·계약·브라우저·회귀 테스트와 의존성/브라우저 설치를 모두 제거했습니다. `.github/workflows/home-frontend-cd.yml`은 성공한 동일 저장소 main push 빌드의 정확 artifact를 전용 Windows runner로 배포합니다. 현재 main SHA 확인, artifact digest/manifest 검증, 공개 파일 경계와 기존 설치 컨트롤러의 원자적 배포·복구는 유지합니다. 테스트 스크립트는 로컬 수동 검수용으로 보존하며 workflow에서는 호출하지 않습니다. 보존된 `.github/workflows-held/*.disabled`는 비활성 이력이며 현재 workflow와 혼동하지 않습니다.
 
 검증 범위는 [이관 기록](docs/repository-migration.md), 서버 비밀값과 전환 순서는 [API 설정 계획](https://github.com/hddooo/file-island-api/blob/main/docs/secrets-plan.md)을 확인하세요.
 
