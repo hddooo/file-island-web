@@ -22,7 +22,7 @@
       try{
         const bundle=await transport.loadBundle({signal});if(!valid(g))return false;
         if(!bundle||!bundle.source||bundle.source.sha256!==transport.sourceSha256)throw Error('source_changed');
-        reader=(options.renderer||root.HanqJoseonScriptReader).mount(host,bundle,{externalNavigation:true,
+        reader=(options.renderer||root.HanqJoseonScriptReader).mount(host,bundle,{externalNavigation:true,initialTopic:options.initialTopic,
           acquireModalLock:()=>{const locks=options.uiLocks||root.HanqUiLocks;if(!locks||!options.appRoot)throw Error('Missing app modal lock');return locks.acquire(options.appRoot);},
           loadFigure:async name=>{if(!valid(g))throw Error('session_changed');const blob=await transport.loadFigure(name,{signal});if(!valid(g))throw Error('session_changed');return blob;}
         });

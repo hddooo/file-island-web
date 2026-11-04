@@ -6,9 +6,9 @@
     function transport(){const adapter=options.adapter||root.HanqJoseonScriptTransport;return adapter&&adapter.fromDocument?adapter.fromDocument(doc,options.api||root.HanqApi):null;}
     function available(era,step){return step===0&&['joseon','joseon-early','joseon-late'].includes(era)&&!new win.URL(win.location.href).searchParams.has('textbookSource')&&!!transport();}
     function stop(){if(session)session.stop();session=null;}
-    function mount(host,appRoot){
+    function mount(host,appRoot,era){
       stop();const candidate=transport();if(!candidate)return Promise.resolve(false);
-      session=(options.sessionFactory||root.HanqJoseonScriptSession).create({document:doc,api:options.api||root.HanqApi,appRoot,uiLocks:options.uiLocks||root.HanqUiLocks,sourceCatalog:options.sourceCatalog||root.HanqPrivateTextbook,offerLegacyQuiz:true,
+      session=(options.sessionFactory||root.HanqJoseonScriptSession).create({document:doc,api:options.api||root.HanqApi,appRoot,initialTopic:era==='joseon-late'?'late':'early',uiLocks:options.uiLocks||root.HanqUiLocks,sourceCatalog:options.sourceCatalog||root.HanqPrivateTextbook,offerLegacyQuiz:true,
         navigateCanonical(href){win.history.pushState(null,'',href);win.dispatchEvent(new win.PopStateEvent('popstate',{state:null}));}
       });return session.mount(host,candidate);
     }
