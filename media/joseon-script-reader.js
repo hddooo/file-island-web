@@ -10,6 +10,16 @@
     if(sourceSha!==editorialSource||!Number.isInteger(segment.startLine))return segment.markdown;
     return segment.markdown.split('\n').map((line,index)=>{
       const number=segment.startLine+index;
+      if(/^#### 원문 퀴즈(?: · .*|)$/.test(line))return line.replace('원문 퀴즈','빈칸 문제');
+      if(/^#### 원문 인쇄 정답(?: · 〈정답〉|)$/.test(line))return '#### 교재 정답';
+      // These source-bound tables contain two editorial coordinate columns before the content.
+      if(((segment.kind==='answers'&&[64,72].includes(segment.page))||(number>=1620&&number<=1630))&&/^\|/.test(line)){
+        const cells=line.replace(/^\||\|\s*$/g,'').split('|');
+        if(cells.length===3)return '| '+cells[2].trim().replace(/^번호 · 인쇄 정답$/,'번호 · 교재 정답')+' |';
+      }
+      if(segment.kind==='answers'&&segment.page===87&&line==='| 원문 번호 | 인쇄 답안 |')return '| 번호 | 교재 정답 |';
+      if([75,487].includes(number))return line.replace('원문 순서·왕','왕').replace('원문 업적','업적');
+      if(number===181)return line.replace('원문 화살표 글자','관계');
       if(editorialDrop.has(number)||/^\*PDF \d+쪽\(인쇄 \d+쪽\), (?:배치에 따른 설명|원문 캡션)\. 아래 이미지 목록에 원문 배치 좌표를 기록했습니다\.\*$/.test(line)||/^### PDF \d+쪽$/.test(line)||/^원문 (?:머리말:|바닥글:|인쇄 쪽수(?::| ))/.test(line))return '';
       if(editorialTitle.has(number))return line.slice(0,line.indexOf(' · '));
       if([118,119,120].includes(number))return line.replace(/^- [^:]+: /,'- ');
