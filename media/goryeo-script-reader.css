@@ -1,5 +1,5 @@
 .goryeo-script-reader{--gsr-blue:#215b88;--gsr-line:#d5dde2;color:#263745;background:#f7f4ed;padding:clamp(16px,3vw,40px);font:18px/1.85 Arial,"Noto Sans KR","Malgun Gothic",sans-serif;min-width:0;overflow-wrap:anywhere}
-.goryeo-script-reader .gsr-structure-scroll{overflow-x:auto;max-width:100%;margin:24px 0;border:1px solid #8aabbc;border-radius:8px;overscroll-behavior-x:contain}
+.goryeo-script-reader .gsr-structure-scroll{overflow-x:auto;max-width:100%;margin:8px 0 24px;border:1px solid #8aabbc;border-radius:8px;overscroll-behavior-x:contain}
 .goryeo-script-reader .gsr-structure-table{border-collapse:collapse;width:100%;font-size:18px;line-height:1.8;color:#263745;table-layout:fixed}
 .goryeo-script-reader .gsr-structure-table caption{font-size:22px;font-weight:700;text-align:left;padding:16px;background:#fffdf8;color:#163e58}
 .goryeo-script-reader .gsr-structure-table :is(th,td){border:1px solid #8aabbc;padding:14px;vertical-align:top;white-space:normal;overflow-wrap:anywhere}
@@ -137,3 +137,22 @@ html body #goryeoScript .goryeo-script-reader .gsr-silhak-scroll:focus-visible{o
 @media(max-width:700px){.goryeo-script-reader .gsr-silhak-table{width:calc(100% + 410px);min-width:0}.gsr-silhak-table col:nth-child(1){width:80px}.gsr-silhak-table col:nth-child(2){width:130px}.gsr-silhak-table col:nth-child(3){width:200px}.gsr-silhak-table col:nth-child(4){width:auto}}
 
 .goryeo-script-reader .gsr-silhak-hint{display:none;font-size:18px}@media(max-width:700px){.goryeo-script-reader .gsr-silhak-hint{display:block}}
+
+/* Keep source relationships in the table DOM; stack simple content bands on phones. */
+.goryeo-script-reader .gsr-table-title{font-size:22px;line-height:1.5;overflow-wrap:anywhere;margin:24px 0 8px}
+.goryeo-script-reader .gsr-scroll-hint{font-size:18px;margin:0 0 8px}
+.goryeo-script-reader .gsr-visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important}
+@media(max-width:700px){
+ .goryeo-script-reader :is(.gsr-ruler-grid,.gsr-exam-grid){display:block;min-width:0;width:100%;table-layout:auto}
+ .goryeo-script-reader :is(.gsr-ruler-grid,.gsr-exam-grid)>colgroup{display:none}
+ .goryeo-script-reader :is(.gsr-ruler-grid,.gsr-exam-grid)>thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+ .goryeo-script-reader :is(.gsr-ruler-grid,.gsr-exam-grid)>tbody{display:block;width:100%}
+ .goryeo-script-reader :is(.gsr-ruler-grid,.gsr-exam-grid)>tbody>tr{display:contents}
+ .goryeo-script-reader :is(.gsr-ruler-grid,.gsr-exam-grid)>tbody>tr>:is(th,td){display:block;box-sizing:border-box;width:100%;min-width:0;padding:12px;font-size:18px;overflow-wrap:anywhere}
+ .goryeo-script-reader .gsr-ruler-grid>tbody{display:grid;grid-template-columns:minmax(0,1fr)}
+ .goryeo-script-reader .gsr-ruler-grid>tbody>tr>:is(th,td){grid-column:1;grid-row:var(--gsr-mobile-row)}
+ .goryeo-script-reader .gsr-ruler-grid td[data-owner]{width:100%;padding:12px}
+ .goryeo-script-reader .gsr-ruler-grid th:first-child{width:100%}
+ .goryeo-script-reader .gsr-exam-grid>tbody+tbody{border-top:3px solid #7396b0}
+ .goryeo-script-reader :is(.gsr-ruler-grid,.gsr-exam-grid) :is(p,li){overflow-wrap:anywhere;word-break:normal}
+}

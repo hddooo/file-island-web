@@ -28,7 +28,16 @@ const fs=require('fs'),path=require('path'),assert=require('assert/strict'),{chr
   for(const id of ['table15','table16','exam-early','exam-military']){
    const wrap=page.locator('.gsr-structure-scroll[data-structure="'+id+'"]');await wrap.scrollIntoViewIfNeeded();
    const base=await wrap.evaluate(e=>({client:e.clientWidth,scroll:e.scrollWidth,rows:[...e.querySelectorAll('tr')].map(r=>({height:r.getBoundingClientRect().height,cells:[...r.cells].map(c=>({id:c.id,rowspan:c.rowSpan,colspan:c.colSpan,headers:c.getAttribute('headers'),font:getComputedStyle(c).fontSize}))}))}));
-   assert(base.rows.flatMap(r=>r.cells).every(c=>c.font==='18px'));if(width<1000)assert(base.scroll>base.client);
+   assert(base.rows.flatMap(r=>r.cells).every(c=>c.font==='18px'));if(width<700&&id!=='table15')assert(base.scroll<=base.client+1,'simple table must wrap');else if(width<1000)assert(base.scroll>base.client);
+   const title=page.locator('#gs-'+id+'-title');const titleRect=await title.boundingBox();assert(titleRect.x>=0&&titleRect.x+titleRect.width<=width+1,'caption stays in viewport');
+   assert.equal(await page.locator('#gs-'+id+'-hint').isVisible(),base.scroll>base.client+1);
+   if(width<700&&id!=='table15'){
+    const bands=wrap.locator('tbody [data-cell]');const count=await bands.count();
+    for(const [label,n] of [['first',0],['middle',Math.floor(count/2)],['last',count-1]]){
+     const band=bands.nth(n);await band.evaluate(e=>e.scrollIntoView({block:'start'}));const rect=await band.boundingBox();metrics.push({width,id,band:label,rect});await page.screenshot({path:path.join(out,width+'-'+id+'-'+label+'-band.png'),animations:'disabled'});
+    }
+    assert(await wrap.locator('tbody p,tbody li').evaluateAll(es=>es.every(e=>e.scrollWidth<=e.clientWidth+1)),'paragraph reads without horizontal movement');
+   }
    for(const [position,fraction] of [['left',0],['middle',.5],['right',1]]){
     await wrap.evaluate((e,f)=>e.scrollLeft=(e.scrollWidth-e.clientWidth)*f,fraction);
     const location=await wrap.evaluate(e=>({scrollLeft:e.scrollLeft,rect:{left:e.getBoundingClientRect().left,right:e.getBoundingClientRect().right,width:e.getBoundingClientRect().width}}));
@@ -41,6 +50,7 @@ const fs=require('fs'),path=require('path'),assert=require('assert/strict'),{chr
   const wrap=page.locator('.gsr-structure-scroll[data-structure="'+id+'"]');await wrap.evaluate(e=>e.scrollLeft=0);await wrap.locator('tr[data-row="'+row+'"]').evaluate(e=>e.scrollIntoView({block:'start'}));await page.screenshot({path:path.join(out,'390-'+id+'-continuation.png')});
  }
  const map=page.locator('[data-figure="p042-02.png"]');await map.scrollIntoViewIfNeeded();await map.locator('button').first().click();await page.locator('.gsr-image-dialog[open]').waitFor();assert(await page.locator('#app').evaluate(e=>e.inert));await page.getByRole('button',{name:'원래 크기로 확대'}).click();await page.screenshot({path:path.join(out,'390-map-zoom.png')});await page.goBack();await page.locator('.gsr-image-dialog').waitFor({state:'detached'});assert(!await page.locator('#app').evaluate(e=>e.inert));
+ const stageAX=await page.context().newCDPSession(page);fs.writeFileSync(path.join(out,'ax-tables.json'),JSON.stringify(await stageAX.send('Accessibility.getFullAXTree'),null,2));
  await page.click('[data-mode="practice"]');assert.equal(await page.locator('textarea').count(),103);assert(await page.locator('textarea').evaluateAll(a=>a.every(e=>e.value==='')));await page.locator('textarea').first().fill('synthetic draft');
  await page.click('[data-mode="answers"]');assert.equal(await page.locator('[data-kind="answers"]').count(),0);await page.locator('.gsr-reveal button').click();assert.equal(await page.locator('[data-kind="answers"]').count(),2);
  await page.click('[data-mode="study"]');await page.waitForFunction(()=>document.querySelectorAll('.goryeo-script-reader figure img').length===2);
@@ -52,5 +62,6 @@ const fs=require('fs'),path=require('path'),assert=require('assert/strict'),{chr
  await page.evaluate(()=>{history.pushState(null,'','#history');dispatchEvent(new HashChangeEvent('hashchange'));});await page.waitForFunction(()=>!document.querySelector('.goryeo-script-reader'));
  await page.evaluate(async()=>{history.replaceState(null,'','#chapter/goryeo/webtoon');await testSession.mount(document.querySelector('#goryeoScript'),testTransport);});await page.evaluate(()=>HanqApi.logout());await page.waitForFunction(()=>!document.querySelector('.goryeo-script-reader'));assert.equal(await page.locator('.gsr-image-dialog').count(),0);
  assert(maxActive<=2,'bounded queue');assert(!calls.some(c=>c.path.includes('/textbook/')&&c.method!=='GET'));assert.deepEqual(errors,[]);
+ const ax=await page.context().newCDPSession(page);fs.writeFileSync(path.join(out,'ax-final.json'),JSON.stringify(await ax.send('Accessibility.getFullAXTree'),null,2));
  fs.writeFileSync(path.join(out,'metrics.json'),JSON.stringify({maxActive,metrics,errors,calls,scope:'actual shared theme; private synthetic mount; no live hookup'},null,2));await browser.close();console.log('PASS: stage1 real-theme widths/viewport scroll screenshots, headers, retry/decode, zoom/Back/locks, 103 empty fields, reveal, route/logout; no real-user writes');
 })().catch(async e=>{console.error(e);if(browser)await browser.close();process.exitCode=1;});
