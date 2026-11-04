@@ -2,10 +2,10 @@
    learning/account state remain owned by their original modules. */
 (function(root){
   'use strict';
-  var reduced=matchMedia('(prefers-reduced-motion: reduce)'),assetLoads=new Map(),moduleBuild='';
+  var reduced=matchMedia('(prefers-reduced-motion: reduce)'),assetLoads=new Map(),assetAttempts=new Map(),moduleBuild='';
   try{moduleBuild=new URL(document.currentScript.src).searchParams.get('build')||'';}catch(ignore){}
   function campAsset(file){return new URL('media/world-art/'+file+(moduleBuild?'?build='+encodeURIComponent(moduleBuild):''),document.baseURI).href;}
-  function decoded(file){if(assetLoads.has(file))return assetLoads.get(file);var image=new Image(),pending=new Promise(function(resolve){var done=false,timer=setTimeout(function(){finish(false);},12000);function finish(ok){if(done)return;done=true;clearTimeout(timer);image.onload=image.onerror=null;if(!ok)assetLoads.delete(file);resolve(ok);}image.onload=function(){Promise.resolve(image.decode?image.decode():null).then(function(){finish(true);},function(){finish(false);});};image.onerror=function(){finish(false);};});assetLoads.set(file,pending);image.src=campAsset(file);return pending;}
+  function decoded(file){if(assetLoads.has(file))return assetLoads.get(file);var attempt=assetAttempts.get(file)||0,url=campAsset(file);assetAttempts.set(file,attempt+1);if(attempt)url+=(url.indexOf('?')<0?'?':'&')+'retry='+attempt;var image=new Image(),pending=new Promise(function(resolve){var done=false,timer=setTimeout(function(){finish(false);},12000);function finish(ok){if(done)return;done=true;clearTimeout(timer);image.onload=image.onerror=null;if(!ok)assetLoads.delete(file);resolve(ok?url:false);}image.onload=function(){Promise.resolve(image.decode?image.decode():null).then(function(){finish(true);},function(){finish(false);});};image.onerror=function(){finish(false);};});assetLoads.set(file,pending);image.src=url;return pending;}
   function mount(map,chart){
     if(!map||!chart||map.dataset.historyEvening)return;
     map.dataset.historyEvening='true';
@@ -16,7 +16,7 @@
     layer.style.setProperty('--he-flame-art','url("'+campAsset('history-camp-flame-v2.webp')+'")');
     chart.appendChild(layer);
     var camp=layer.querySelector('.he-camp'),fire=layer.querySelector('.he-fire');
-    function warmCamp(){if(closed)return;[['history-camp-dusk-v2.webp',camp,'he-camp-ready'],['history-camp-flame-v2.webp',fire,'he-fire-ready']].forEach(function(entry){if(!entry[1].classList.contains(entry[2]))decoded(entry[0]).then(function(ok){if(ok&&!closed&&entry[1].isConnected)entry[1].classList.add(entry[2]);});});}
+    function warmCamp(){if(closed)return;[['history-camp-dusk-v2.webp',camp,'he-camp-ready','--he-camp-art'],['history-camp-flame-v2.webp',fire,'he-fire-ready','--he-flame-art']].forEach(function(entry){if(!entry[1].classList.contains(entry[2]))decoded(entry[0]).then(function(ok){if(ok&&!closed&&entry[1].isConnected){layer.style.setProperty(entry[3],'url("'+ok+'")');entry[1].classList.add(entry[2]);}});});}
     var friend=layer.querySelector('.he-friend'),image=new Image();image.onload=function(){Promise.resolve(image.decode?image.decode():null).then(function(){if(friend.isConnected)friend.classList.add('he-ready');},function(){});};image.src='media/characters/agumon-idle-sprite.png';
     var closed=false,visible=false,away=false;
     function sync(){if(closed)return;layer.classList.toggle('he-paused',reduced.matches||!visible||document.hidden||away);layer.dataset.motion=reduced.matches?'reduced':!visible||document.hidden||away?'offscreen':'active';}
