@@ -1,23 +1,38 @@
-/* Source-registered character cels. No translation/rotation animation on actors. */
+/* Native cels stay registered. Only each small resident follows its local path;
+   the island art, landmarks and native menu hit areas stay fixed. */
 html body #app .english-residents{position:absolute;inset:0;display:block;z-index:3;pointer-events:none!important;background:transparent!important}
-html body #app .english-residents .er-actor{position:absolute;display:block;aspect-ratio:1;transform:translate(-50%,-100%);pointer-events:none!important;visibility:hidden;background:transparent!important}
+html body #app .english-residents .er-actor{position:absolute;display:block;aspect-ratio:1;transform:translate(-50%,-100%);pointer-events:none!important;visibility:hidden;background:transparent!important;--er-step-state:paused;--er-roam-x:clamp(7px,1.4vw,18px);--er-roam-y:-1px;animation:er-roam var(--er-duration,18s) var(--er-delay,-4.8s) linear infinite!important}
 html body #app .english-residents .er-ready{visibility:visible}
-html body #app .english-residents .er-agumon{left:42%;top:59%;width:clamp(54px,7.5%,112px)}
-html body #app .english-residents .er-koromon{left:27%;top:82%;width:clamp(48px,6.6%,100px)}
-html body #app .english-residents .er-patamon{left:71%;top:23%;width:clamp(62px,8%,124px)}
+html body #app .english-residents .er-agumon{left:42%;top:59%;width:clamp(34px,4.6%,66px)}
+html body #app .english-residents .er-koromon{left:27%;top:82%;width:clamp(30px,4.8%,64px);--er-duration:22s;--er-delay:-14.5s;--er-roam-x:clamp(7px,1.2vw,16px);--er-roam-y:2px}
+html body #app .english-residents .er-patamon{left:71%;top:23%;width:clamp(28px,3.9%,58px);animation:er-flight 24s -6s ease-in-out infinite!important}
+html body #app .english-residents .er-gait{position:absolute;inset:0;display:block;animation:er-step .62s ease-in-out infinite!important;animation-play-state:var(--er-step-state,paused)!important}
 html body #app .english-residents .er-sprite{position:absolute;inset:0;display:block;width:100%;height:100%;background-color:transparent!important;background-repeat:no-repeat}
 html body #app .english-residents .er-agumon .er-sprite{background-image:url('characters/agumon-idle-sprite.png')!important;background-size:200% 200%!important;background-position:0 0;animation:hanq-agumon-idle 6.8s -1.1s steps(1,end) infinite!important}
 /* Reuse measured Koromon registration and the source's real ear/blink/turn cels. */
 html body #app .english-residents .er-koromon .er-sprite{left:1.8216%;top:4.2082%;width:89.3267%;height:89.3267%;background-image:url('characters/koromon-idle-actions-v1.png')!important;background-size:400% 200%!important;background-position:0 0;--idle-row-y:3.8%;animation:hanq-koromon-actions 13s -2.3s steps(1,end) infinite!important}
 html body #app .english-residents .er-shadow{position:absolute;display:block;left:23%;right:20%;bottom:3%;height:7%;border-radius:50%;background:radial-gradient(ellipse,#12333470,transparent 72%)!important;pointer-events:none}
 html body #app .english-residents .er-patamon .cm-life{width:100%;height:100%}
-html body #app .english-residents.er-paused :is(.er-sprite,.cm-part,.cm-rig,.cm-patamon-frames,.cm-shadow,.cm-reveal,.cm-eyelid),html body #app .english-residents.er-paused .er-sprite::before{animation-play-state:paused!important}
+html body #app .english-residents.er-paused :is(.er-actor,.er-gait,.er-sprite,.cm-part,.cm-rig,.cm-patamon-frames,.cm-shadow,.cm-reveal,.cm-eyelid),html body #app .english-residents.er-paused .er-sprite::before{animation-play-state:paused!important}
+@keyframes er-roam{
+ 0%,12%{--er-step-state:paused;transform:translate(-50%,-100%) translate(0,0) scaleX(1)}
+ 14%{--er-step-state:running;transform:translate(-50%,-100%) translate(0,0) scaleX(1)}
+ 37%{--er-step-state:running;transform:translate(-50%,-100%) translate(var(--er-roam-x),var(--er-roam-y)) scaleX(1)}
+ 40%,46%{--er-step-state:paused;transform:translate(-50%,-100%) translate(var(--er-roam-x),var(--er-roam-y)) scaleX(1)}
+ 46.01%,50%{--er-step-state:paused;transform:translate(-50%,-100%) translate(var(--er-roam-x),var(--er-roam-y)) scaleX(-1)}
+ 52%{--er-step-state:running;transform:translate(-50%,-100%) translate(var(--er-roam-x),var(--er-roam-y)) scaleX(-1)}
+ 78%{--er-step-state:running;transform:translate(-50%,-100%) translate(0,0) scaleX(-1)}
+ 80%,88%{--er-step-state:paused;transform:translate(-50%,-100%) translate(0,0) scaleX(-1)}
+ 88.01%,100%{--er-step-state:paused;transform:translate(-50%,-100%) translate(0,0) scaleX(1)}
+}
+@keyframes er-flight{0%,100%{transform:translate(-50%,-100%) translate(-5px,0)}33%{transform:translate(-50%,-100%) translate(7px,-4px)}66%{transform:translate(-50%,-100%) translate(3px,3px)}}
+@keyframes er-step{0%,100%{transform:translateY(0)}50%{transform:translateY(-1px)}}
 @media(max-width:700px) and (orientation:portrait){
- html body #app .english-residents .er-agumon{left:47%;top:45.5%;width:clamp(56px,17%,94px)}
- html body #app .english-residents .er-koromon{left:66%;top:85%;width:clamp(48px,15%,84px)}
- html body #app .english-residents .er-patamon{left:49%;top:18%;width:clamp(60px,19%,106px)}
+ html body #app .english-residents .er-agumon{left:47%;top:45.5%;width:clamp(26px,9%,40px)}
+ html body #app .english-residents .er-koromon{left:68%;top:87%;width:clamp(26px,9.5%,40px)}
+ html body #app .english-residents .er-patamon{left:54%;top:18%;width:clamp(24px,7.8%,34px)}
 }
 @media(max-height:500px) and (orientation:landscape){
- html body #app .english-residents .er-agumon{width:40px}html body #app .english-residents .er-koromon{width:36px}html body #app .english-residents .er-patamon{width:44px}
+ html body #app .english-residents .er-agumon{left:46%;width:28px}html body #app .english-residents .er-koromon{width:26px}html body #app .english-residents .er-patamon{width:28px}
 }
-@media(prefers-reduced-motion:reduce){html body #app .english-residents .er-sprite{animation:none!important;translate:none!important;background-position:0 0}}
+@media(prefers-reduced-motion:reduce){html body #app .english-residents :is(.er-actor,.er-gait,.er-sprite){animation:none!important}html body #app .english-residents .er-actor{transform:translate(-50%,-100%)!important}html body #app .english-residents .er-gait{transform:none!important}html body #app .english-residents .er-sprite{translate:none!important;background-position:0 0}}

@@ -1,5 +1,13 @@
 # FE 실제 진행 상태
 
+### 2026-11-04 — 영어숲 캐릭터 비율과 이동 검수
+
+제공된 모바일 사진에서 캐릭터가 배경 원근보다 크게 보이는 점을 확인했다. 모바일 주민 크기를 최대40px 범위로 줄이고 먼 파닥몬은 더 작게 배치했다. 길/해변의 짧은 이동과 정지·방향 전환, 작은 비행 경로만 각각의 주민에 적용하며 전체 배경·메뉴 좌표는 고정한다. 원본 sprite cell과 Koromon/Patamon 등록·분리 구조를 바꾸지 않았다.
+
+새 검수는 화면별 세 주민의10개 경로 지점(총240지점/플랫폼), 메뉴 글자 가림·화면 이탈·실제 위치 프레임 변화를 확인한다. 가로 모바일의 아구몬 시작점 가림을 발견해 원래 길 범위에서 오른쪽으로 옮겼다. 음수 시작 지연 경로는 실제 두 번째 주기 전체를 검사하며, 정지 검사는 반응형 기준점 이동과 분리한 순찰 오프셋·걸음/날갯짓 시계로 확인한다. 숨김·복원 후에는 실제 지도/물 렌더링과 글꼴을 기다려 레이아웃을 확인한다.
+
+최신 사용자 지시 '프론트 CI 단계에 테스트고 뭐고 다 빼라'를 확인했다. 이미 main에 반영된 빌드·자동배포 전용 구성을 보존하며, 로컬 검사와 CI 빌드/CD 성공을 별도 보고한다. 운영 반영은 별도 검수 이후다.
+
 ### 2026-11-04 - 0.3.5-beta candidate
 
 The photo contained the correct palace asset. Flat camp art and a profile-only second header row were the defects. Two transparent dusk cutouts replace the vector chairs and smooth flame. Furniture is static; only the small flame, ember light, weather, water and companion animate. A compact identity grid keeps ordinary two-character profiles in a 60px header; oversized content receives a title row and one shared action row. Existing geometry checks are strengthened to express that layout, with unrelated assertions retained. Windows camp 8 cases and header typography/native regression suites pass; Linux, exact SHA publication and operating verification are recorded separately when completed.

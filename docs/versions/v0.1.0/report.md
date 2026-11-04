@@ -1,5 +1,13 @@
 # FE 결과·이슈·다음 업무
 
+### 2026-11-04 — 영어숲 원근·순찰 단위의 범위
+
+영어숲의 세 장식 주민만 원근 크기와 짧은 순찰 경로를 조정했다. 이동은 각 주민의 transform과 등록된 원본 셀 안에서 이루어지며 원화·건물·메뉴 hitbox를 흔들지 않는다. Native 메뉴 클릭/키보드/경로·화면 이탈 정리와 저장된 검수 기록 보존, 네 화면폭의 접근성을 확인한다. 게임의 보유 캐릭터·파트너 선택·XP·학습/권한 데이터에는 변경이 없다.
+
+로컬 Windows Google Chrome/WebKit와 Linux Node24/고정 Playwright Chromium/WebKit/2CPU에서 같은 assertion을 확인한다. Linux에는 Google Chrome 배포판이 없어 실행 선택만 설치된 Chromium으로 바꾸며, 브라우저 바이너리까지 동일하다고 주장하지 않는다. CI는 사용자의 최신 지시에 따라 테스트를 실행하지 않고 공개 runtime 빌드와 자동 CD만 수행한다. 따라서 테스트 성공은 로컬 증거, 배포 성공은 정확 SHA 빌드/CD·운영 대조로 구분한다.
+
+역사숲의 나무·하늘·불꽃과 추가 주민, 우산 자세는 별도 worktree의 다음 단위다. 실제 위치가 확인되지 않은 살색 배경을 임의의 화면으로 추정해 수정 완료라고 하지 않는다.
+
 ### 2026-11-04 - 0.3.5-beta review evidence
 
 New generated artwork and exact prompt set: docs/history-camp-art-v2.json. Camp geometry/decode/motion/menu tests: scripts/qa-iphone-camp.cjs; mobile typography and navigation: scripts/qa-iphone-header-compact.cjs. Existing history readiness now waits for both decoded cutouts. Existing stacked-header assertions enforce the new title/action geometry while retaining touch, type and native navigation requirements. Native API/auth/data and 0.3.4 workbook code are unchanged. Windows/Linux WebKit is browser emulation, not a physical iPhone test. This candidate record does not assert a completed operating deployment or public Internet reachability.

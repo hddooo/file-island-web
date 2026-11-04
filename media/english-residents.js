@@ -16,7 +16,7 @@
     if(!map||!chart||map.dataset.englishResidents)return;
     map.dataset.englishResidents='true';
     var layer=document.createElement('span');layer.className='english-residents er-paused';layer.setAttribute('aria-hidden','true');
-    layer.innerHTML='<span class="er-actor er-agumon"><span class="er-shadow"></span><span class="er-sprite"></span></span><span class="er-actor er-koromon"><span class="er-shadow"></span><span class="er-sprite"></span></span><span class="er-actor er-patamon"></span>';
+    layer.innerHTML='<span class="er-actor er-agumon"><span class="er-shadow"></span><span class="er-gait"><span class="er-sprite"></span></span></span><span class="er-actor er-koromon"><span class="er-shadow"></span><span class="er-gait"><span class="er-sprite"></span></span></span><span class="er-actor er-patamon"></span>';
     chart.appendChild(layer);
     var agumon=layer.querySelector('.er-agumon'),koromon=layer.querySelector('.er-koromon'),patamon=layer.querySelector('.er-patamon');
     function warmResidents(){

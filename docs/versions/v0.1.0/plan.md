@@ -1,5 +1,13 @@
 # FE 버전 계획
 
+### 2026-11-04 — 영어숲 크기·순찰 /0.3.6-beta
+
+- [x] 실제 모바일 사진에서 과한 주민 크기와 원근 차이를 확인하고, 원본 캐릭터 셀은 유지한 채 근경/중경/원경 크기와 경로를 조정한다.
+- [x] 기존 메뉴를 고정하고 모든 경로 지점의 메뉴 글자 가림·장면 이탈을 검사한다. 이동 중 실제 프레임 변화, 정지/방향 전환과 OS 움직임 줄이기를 검수한다.
+- [x] Windows 주민12건/메뉴10건을 통과하고, Linux에서도 같은 assertion을 Node24·고정 의존성·2CPU·외부망 차단 조건에서 확인한다. Linux 이미지는 설치된 Playwright Chromium을 사용하며 Windows/CI의 Google Chrome 실행 선택과 구분해 기록한다.
+- [ ] 최신 main의 사용자 승인된 빌드 전용 CI/CD 구성을 보존해 게시하고, 실제 운영 버전·변경 파일·두 화면 크기를 대조한다.
+- [ ] 다음 단위는 역사숲의 지역 바람/불꽃/하늘, 네 주민과 우천 시 손에 든 잎 우산이다. 밝은 살색 부분은 실제 화면 위치 확인 전 완료로 처리하지 않는다.
+
 ### 2026-11-04 - 0.3.5-beta iPhone scene and header correction
 
 Scope: correct pasted-looking camp furniture/flame and excessive mobile header space from the supplied phone photo. Preserve the palace source, water, aurora, weather, companion and native building menus. Keep 0.3.4 workbook files and access gates unchanged. Validate 320/390/desktop composition and header typography, native flows, lifecycle, reduced motion, decode failure and recovery before exact-SHA CI/CD.
