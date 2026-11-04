@@ -48,12 +48,12 @@ assert.equal(expectedAnswers.length,172);assert.equal(expectedQuestions.length,1
 const app=reader.mount(host,bundle);let views=0;
 const banned=/원문 행|원문 열|원문 번호|원문 퀴즈|원문 인쇄 정답|원문 순서|원문 업적|원문 화살표|원문 배치 좌표|별도 패널|패널에 분리|역사적 정오|교정한 채점표|원문 힌트를 유지|어미를 원문 그대로|전사 한계|표 머리:|병합 셀|위 행 \d|도판.*배치|원문 회색 칸|원문 회색 왕명|원문 머리말|원문 바닥글|원문 인쇄 쪽수|아래에서는|범위와 확인 상태/;
 for(const topic of bundle.topics){host.querySelector('[data-topic="'+topic.id+'"]').click();for(const mode of ['study','practice','answers']){
- host.querySelector('[data-mode="'+mode+'"]').click();if(mode==='answers')host.querySelector('.jsr-reveal button').click();
+ host.querySelector('[data-mode="'+mode+'"]').click();if(mode==='answers'){assert.equal(host.querySelector('[data-mode="answers"]').textContent,'교재 정답');assert.equal(host.querySelector('.jsr-reveal p').textContent,'교재 정답입니다. 먼저 문제를 풀어 본 뒤 확인하세요.');host.querySelector('.jsr-reveal button').click();}
  assert(!banned.test(host.querySelector('.jsr-body').textContent),topic.id+'/'+mode+': '+host.querySelector('.jsr-body').textContent.match(banned)?.[0].slice(0,140));assert.equal(host.querySelectorAll('.jsr-provenance').length,0);
  assert([...host.querySelectorAll('figcaption')].every(c=>!/ · PDF \d+쪽$/.test(c.textContent)));assert([...host.querySelectorAll('.jsr-source-card')].every(a=>a.querySelectorAll('.jsr-source-label').length===1));
  if(mode==='practice'){assert.equal(host.querySelectorAll('textarea').length,172);assert.deepEqual([...host.querySelectorAll('.jsr-source-card')].flatMap(a=>questionText(a,a.id)),expectedQuestions);}
  if(mode==='answers'){assert.deepEqual([...host.querySelectorAll('.jsr-source-card')].flatMap(a=>answerText(a,a.id,false)),expectedAnswers);assert([...host.querySelectorAll('th')].every(th=>!/^원문 (행|열)$/.test(th.textContent)));}
- if(mode==='study'&&topic.id==='late'){assert(host.textContent.includes('순조·헌종·철종 · 세도정치'));assert(host.querySelector('[data-source-color="#9b9ba8"]'));}
+ if(mode==='study'&&topic.id==='late'){assert(host.textContent.includes('세도정치: 순조·헌종·철종'));assert(host.querySelector('[data-source-color="#9b9ba8"]'));}
  views++;
 }}
 app.stop();dom.window.close();assert.equal(JSON.stringify(bundle),before);assert.equal(crypto.createHash('sha256').update(fs.readFileSync(process.argv[2])).digest('hex'),sha);

@@ -34,6 +34,7 @@ const candidate=process.argv[5];if(candidate&&!/^http:\/\/127\.0\.0\.1:\d+$/.tes
  const paletteProbe=await p.evaluate(palette=>{const host=document.querySelector('.jsr-body'),probe=document.createElement('div');host.append(probe);const result=Object.entries(palette).map(([source,expected])=>{const span=document.createElement('span'),strong=document.createElement('strong');span.dataset.sourceColor=source;span.style.color=source;strong.textContent='QA';span.append(strong);probe.append(span);return {source,expected,color:getComputedStyle(span).color,bold:getComputedStyle(strong).color};});probe.remove();return result;},palette);assert(paletteProbe.every(e=>e.color===e.expected&&e.bold===e.expected));ink.paletteProbe=paletteProbe;fs.writeFileSync(path.join(out,'contrast-'+width+'-'+topic.id+'.json'),JSON.stringify(ink,null,2));
  if(topic.id==='early')await layoutQA(width);
  if(process.env.JOSEON_TABLES24_25_QA&&['late','society'].includes(topic.id))await laterTableQA(width,topic.id);
+ if(process.env.JOSEON_CULTURE_QA&&['late','culture'].includes(topic.id))await cultureQA(width,topic.id);
  if(width===390)for(const source of [...new Set(ink.entries.map(e=>e.source))]){const sample=p.locator('.jsr-body [data-source-color="'+source+'"]:visible').first();if(await sample.count()){await sample.evaluate(e=>e.scrollIntoView({block:'center'}));await p.screenshot({path:path.join(out,'source-color-'+topic.id+'-'+source.slice(1)+'.png')});}}
 
 }
@@ -65,6 +66,38 @@ const candidate=process.argv[5];if(candidate&&!/^http:\/\/127\.0\.0\.1:\d+$/.tes
   await table.locator('.jsr-row-source').last().evaluate(e=>e.scrollIntoView({block:'center'}));await p.screenshot({path:path.join(out,'table'+number+'-'+width+'-end.png')});
   const hierarchy=table.locator(':scope>tbody').nth(number===24?2:4);await hierarchy.evaluate(e=>e.scrollIntoView({block:'start'}));await p.screenshot({path:path.join(out,'table'+number+'-'+width+'-hierarchy.png')});
   for(const name of number===24?['p066-01.png']:['p073-01.png','p073-02.png','p073-03.png']){const figure=table.locator('[data-figure="'+name+'"]');await figure.evaluate(e=>e.scrollIntoView({block:'start'}));await p.screenshot({path:path.join(out,'table'+number+'-'+width+'-'+name)});await figure.locator('button:not(.jsr-image-retry)').click();await p.waitForSelector('dialog[open]');await p.goBack();await p.waitForSelector('dialog',{state:'detached'});}
+ }
+
+ async function cultureQA(width,topic){
+  if(topic==='late'){
+   const article=p.locator('[data-page="65"]');assert.equal(await article.locator('figure').count(),2);assert.equal(await article.locator('details:not([open])').count(),2);assert.equal(await article.locator('figure').first().evaluate(f=>f.previousElementSibling.textContent),'② 조선 후기');
+   await article.locator('h3').evaluate(e=>e.scrollIntoView({block:'start'}));await p.screenshot({path:path.join(out,'intro65-'+width+'-top.png')});
+   for(let i=0;i<2;i++){const detail=article.locator('details').nth(i);await detail.locator('summary').click();await detail.evaluate(e=>e.scrollIntoView({block:'start'}));await p.screenshot({path:path.join(out,'intro65-'+width+'-description-'+i+'.png')});if(i===0){assert.equal(await detail.locator('tr').count(),13);assert(await detail.locator('.jsr-table').evaluate(e=>e.scrollWidth<=e.clientWidth+1));}else assert.equal(await detail.locator('li').count(),7);await detail.locator('summary').click();}
+   return;
+  }
+  const outside=await p.evaluate(()=>{const probe=document.createElement('strong');probe.textContent='QA';document.body.append(probe);const color=getComputedStyle(probe).color;probe.remove();return color;});assert.equal(outside,'rgb(114, 239, 157)');
+  for(const [number,rows,headers] of [[26,12,12],[28,8,9],[30,2,2]]){
+   const table=p.locator('[data-table="'+number+'"]');assert.equal(await table.count(),1);assert.equal(await table.locator(':scope>tbody>tr').count(),rows);assert(await table.locator('td').evaluateAll(es=>es.every(e=>parseFloat(getComputedStyle(e).fontSize)>=18&&e.scrollWidth<=e.clientWidth+1&&e.getAttribute('headers').split(' ').every(id=>document.getElementById(id)))));
+   const cdp=await p.context().newCDPSession(p),{root}=await cdp.send('DOM.getDocument'),{nodeId}=await cdp.send('DOM.querySelector',{nodeId:root.nodeId,selector:'[data-table="'+number+'"]'}),{node}=await cdp.send('DOM.describeNode',{nodeId}),{nodes}=await cdp.send('Accessibility.getFullAXTree'),byId=new Map(nodes.map(n=>[n.nodeId,n])),tableAX=nodes.find(n=>n.backendDOMNodeId===node.backendNodeId),desc=[];function walk(n){if(!n)return;desc.push(n);(n.childIds||[]).forEach(id=>walk(byId.get(id)));}walk(tableAX);assert.equal(tableAX.role.value,'table');assert.equal(desc.filter(n=>n.role.value==='row').length,rows+1);assert.equal(desc.filter(n=>n.role.value==='rowheader').length,headers);fs.writeFileSync(path.join(out,'table'+number+'-'+width+'-semantics.json'),JSON.stringify({rows:rows+1,rowheaders:headers,headersValid:true,outsideColor:outside}));await cdp.detach();
+   for(const [label,index] of [['top',0],['middle',Math.floor(rows/2)],['bottom',rows-1]]){await table.locator(':scope>tbody>tr').nth(index).evaluate(e=>e.scrollIntoView({block:'start'}));await p.screenshot({path:path.join(out,'table'+number+'-'+width+'-'+label+'.png')});}
+   for(const heading of await table.locator('h4').allTextContents()){const button=p.locator('.jsr-toc').getByRole('button',{name:heading,exact:true,includeHidden:true}).first(),group=button.locator('..');if(!await group.evaluate(e=>e.open))await group.locator('summary').click();await button.click();assert(await p.evaluate(n=>document.activeElement.closest('[data-table]')?.dataset.table===String(n),number));}
+  }
+  for(const [number,count] of [[79,4],[80,9],[82,11]]){
+   const gallery=p.locator('[data-gallery="'+number+'"]');assert.equal(await gallery.locator('figure').count(),count);assert(await gallery.evaluate(e=>!e.closest('table')));assert(await gallery.locator('figcaption').evaluateAll(es=>es.every(e=>getComputedStyle(e).fontSize==='18px')));
+   for(let i=0;i<count;i++){const figure=gallery.locator('figure').nth(i);await figure.evaluate(e=>e.scrollIntoView({block:'start'}));if(width<=390||i===0)await p.screenshot({path:path.join(out,'gallery'+number+'-'+width+'-'+await figure.getAttribute('data-figure'))});}
+   await gallery.locator('figure button:not(.jsr-image-retry)').last().click();await p.waitForSelector('dialog[open]');assert.equal(await p.locator('dialog img').getAttribute('alt'),await gallery.locator('figcaption').last().textContent());await p.goBack();await p.waitForSelector('dialog',{state:'detached'});
+  }
+  await p.locator('.jsr-study-footnote').evaluate(e=>e.scrollIntoView({block:'center'}));await p.screenshot({path:path.join(out,'table28-'+width+'-footnote.png')});
+ }
+ if(process.env.JOSEON_CULTURE_QA){
+  let views=0;for(const topic of bundle.topics){await p.click('[data-topic="'+topic.id+'"]');for(const mode of ['study','practice','answers']){await p.click('[data-mode="'+mode+'"]');if(mode==='answers'){assert.equal(await p.locator('[data-mode="answers"]').textContent(),'교재 정답');assert.equal(await p.locator('.jsr-reveal p').textContent(),'교재 정답입니다. 먼저 문제를 풀어 본 뒤 확인하세요.');await p.locator('.jsr-reveal button').click();}const text=await p.locator('.jsr-body').textContent();for(const phrase of ['점선이 이 분기점을 가리킨다','북인 아래로 이어진 선 끝에','점선 화살표가 X를 가리킨다','도판·설명'])assert(!text.includes(phrase));assert(await p.locator('.jsr-body p,.jsr-body th').evaluateAll(es=>es.every(e=>e.textContent!=='도판')));views++;}}assert.equal(views,12);
+  for(const [topic,names] of [['late',['p065-01.png','p065-02.png']],['culture',['p079-04.png','p080-05.png','p082-04.png','p082-09.png','p082-11.png']]]){
+   names.forEach(n=>laterFailures.add(n));await p.click('[data-topic="'+topic+'"]');
+   for(const name of names)await p.locator('[data-figure="'+name+'"][data-error="http_503"]').waitFor();
+   const requested=()=>calls.filter(c=>names.some(n=>c.path.endsWith('/'+n))).length,count=requested();await p.waitForTimeout(200);assert.equal(requested(),count);laterFailures.clear();
+   for(const name of names){const f=p.locator('[data-figure="'+name+'"]'),caption=await f.locator('figcaption').textContent();if(name.startsWith('p082'))assert.equal((caption.match(/★/g)||[]).length,1);await f.evaluate(e=>e.scrollIntoView({block:'start'}));await p.screenshot({path:path.join(out,'culture-failure-'+name)});await f.locator('.jsr-image-retry').click();await f.locator('img').waitFor();assert.equal(await f.locator('figcaption').textContent(),caption);await f.locator('button:not(.jsr-image-retry)').click();await p.waitForSelector('dialog[open]');assert.equal(await p.locator('dialog img').getAttribute('alt'),caption);await p.goBack();await p.waitForSelector('dialog',{state:'detached'});}
+   assert.equal(requested(),count+names.length);
+  }await p.click('[data-topic="early"]');
  }
  if(process.env.JOSEON_TABLES24_25_QA){
   for(const [topic,names] of [['late',['p066-01.png']],['society',['p073-01.png','p073-02.png','p073-03.png']]]){

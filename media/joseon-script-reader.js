@@ -111,7 +111,7 @@
     const nav=el('nav',null,'jsr-topics');nav.setAttribute('aria-label','조선 학습 주제');
     bundle.topics.forEach(t=>{const b=button(t.title,()=>navigate(t.id,'study'));b.dataset.topic=t.id;nav.append(b);});header.append(nav);
     const modes=el('nav',null,'jsr-modes');modes.setAttribute('aria-label','자료 구분');
-    [['study','본문 읽기'],['practice','빈칸 문제'],['answers','인쇄 정답']].forEach(([id,title])=>{const b=button(title,()=>navigate(topic,id));b.dataset.mode=id;modes.append(b);});header.append(modes);shell.append(header);
+    [['study','본문 읽기'],['practice','빈칸 문제'],['answers','교재 정답']].forEach(([id,title])=>{const b=button(title,()=>navigate(topic,id));b.dataset.mode=id;modes.append(b);});header.append(modes);shell.append(header);
     const layout=el('div',null,'jsr-layout'),toc=el('nav',null,'jsr-toc'),body=el('main',null,'jsr-body');toc.setAttribute('aria-label','현재 주제 목차');layout.append(toc,body);shell.append(layout);
     function dismissImage(){if(!dialog)return;const d=dialog;dialog=null;if(d.node.open)d.node.close();d.node.remove();if(d.release)d.release();if(d.opener.isConnected)d.opener.focus();}
     function closeImage(){if(win.history.state&&win.history.state.joseonImage){win.history.back();}else dismissImage();}
@@ -137,11 +137,11 @@
           // Native Blob validation works across realms; integrity is checked by the transport.
           try{win.Blob.prototype.slice.call(blob,0,0);}catch(_){throw Error('image_blob');}
           if(blob.type!=='image/png')throw Error('image_mime');
-          stage='image_url';url=win.URL.createObjectURL(blob);urls.add(url);stage='image_dom';b=button('',()=>showImage(url,alt,b));const img=el('img');img.alt=alt;
+          stage='image_url';url=win.URL.createObjectURL(blob);urls.add(url);stage='image_dom';b=button('',()=>showImage(url,caption.textContent,b));const img=el('img');img.alt=caption.textContent;
           await new Promise((resolve,reject)=>{img.onload=resolve;img.onerror=()=>reject(Error('image_decode'));img.src=url;});
           if(!current())return;
           if(img.naturalWidth<=240&&img.naturalHeight<=120)f.classList.add('jsr-small-figure');
-          b.setAttribute('aria-label',alt+' 확대');b.append(img);f.prepend(b);status.textContent='';const fallback=f.querySelector('.jsr-badge-fallback');if(fallback)fallback.hidden=true;
+          b.setAttribute('aria-label',caption.textContent+' 확대');b.append(img);f.prepend(b);status.textContent='';const fallback=f.querySelector('.jsr-badge-fallback');if(fallback)fallback.hidden=true;
         }catch(error){
           if(url){win.URL.revokeObjectURL(url);urls.delete(url);}if(!current())return;
           const code=error&& (error.code||error.message),known=['timeout','network','aborted','session_changed','invalid_private_response','script_integrity_unavailable','script_figure_mime','script_figure_size','script_figure_digest','image_blob','image_mime','image_decode'];
@@ -162,7 +162,7 @@
       const t=bundle.topics.find(t=>t.id===topic)||bundle.topics[0];topic=t.id;
       body.append(el('h2',mode==='study'?t.title:mode==='practice'?'조선 빈칸 문제':'조선 인쇄 정답'));
       if(mode==='answers'){
-        const notice=el('section',null,'jsr-reveal');notice.append(el('p','원문에 인쇄된 정답입니다. 먼저 문제를 풀어 본 뒤 확인하세요.'));
+        const notice=el('section',null,'jsr-reveal');notice.append(el('p','교재 정답입니다. 먼저 문제를 풀어 본 뒤 확인하세요.'));
         notice.append(button('인쇄 정답 펼치기',()=>{notice.remove();renderSegments(t);}));body.append(notice);return;
       }
       if(mode==='practice')body.append(el('p','빈칸을 생각한 뒤 임시 답안을 적어 보세요. 화면을 닫으면 답안은 사라지며 기존 학습 기록에는 저장되지 않습니다.','jsr-note'));
@@ -174,7 +174,7 @@
       if(mode==='practice')Array.from(article.querySelectorAll('p')).forEach((p,i)=>{const m=/^\((\d+)\) /.exec(p.textContent);if(!m)return;const key=s.id+'-'+i,label=el('label','나의 임시 답안 · '+m[1]+'번','jsr-draft'),input=el('textarea');input.rows=2;input.value=drafts.get(key)||'';input.setAttribute('aria-label','PDF '+s.page+'쪽 '+m[1]+'번 임시 답안');input.oninput=()=>drafts.set(key,input.value);label.append(input);p.after(label);});
       article.querySelectorAll('figure').forEach(f=>{const p=f.previousElementSibling,c=f.querySelector('figcaption'),suffix=' · PDF '+s.page+'쪽';if(p&&p.tagName==='P'&&p.children.length===1&&p.firstElementChild.tagName==='STRONG'&&c.textContent===p.textContent+suffix)p.remove();if(c.textContent.endsWith(suffix))c.textContent=c.textContent.slice(0,-suffix.length);});
     });
-      if(mode==='study'&&bundle.source.sha256===editorialSource){connectTable23();connectLaterTables();}
+      if(mode==='study'&&bundle.source.sha256===editorialSource){connectTable23();connectLaterTables();connectCulture();}
       body.querySelectorAll('.jsr-source-card').forEach(article=>{
       const group=el('details'),title=article.querySelector('h3,h4'),summary=el('summary',(title?title.textContent:'학습 안내')+' · '+article.dataset.page);group.append(summary);toc.append(group);
       const headings=Array.from(article.querySelectorAll('h3,h4'));
@@ -263,6 +263,70 @@
         // Keep the original era heading as section context without repeating page continuation wrappers.
         const context=el('h3','③ 조선의 사회·경제');context.dataset.layoutLabel='true';article.insertBefore(context,article.querySelector('table'));
       }
+    }
+    function connectCulture(){
+      const page=n=>body.querySelector('.jsr-source-card[data-page="'+n+'"]'),compact=s=>s.replace(/[\[\]\s]/g,'');
+      const description=(figure,nodes)=>{const d=el('details',null,'jsr-transcription');d.append(el('summary','텍스트 설명'),...nodes);figure.after(d);return d;};
+      function table(article,number,title,groups,nested=false){
+        const t=el('table',null,'jsr-outline-table jsr-culture-table'+(nested?' jsr-culture-nested':''));t.dataset.table=number;t.setAttribute('role','table');
+        const cap=el('caption'),heading=el('h3');heading.append(...title.childNodes);cap.append(heading);title.before(t);title.remove();const cols=el('colgroup');for(let i=0;i<(nested?3:2);i++)cols.append(el('col'));
+        const head=el('thead'),hr=el('tr'),category=el('th','구분'),content=el('th','내용');category.scope=nested?'colgroup':'col';category.colSpan=nested?2:1;content.scope='col';content.id=article.id+'-t'+number+'-content';hr.append(category,content);head.append(hr);t.append(cap,cols,head);
+        groups.forEach((g,gi)=>{const section=el('tbody');section.dataset.group=g.name;section.setAttribute('role','rowgroup');const main=el('th',null,'jsr-main-header');main.scope=g.rows.length>1?'rowgroup':'row';main.rowSpan=g.rows.length;main.colSpan=nested&&g.rows.length===1?2:1;main.id=article.id+'-t'+number+'-group-'+gi;main.setAttribute('role','rowheader');
+          const h=g.heading||el('h4',g.name);if(!g.heading)h.dataset.layoutLabel='true';main.append(h);
+          g.rows.forEach((r,ri)=>{const tr=el('tr'),td=el('td');tr.setAttribute('role','row');td.setAttribute('role','cell');tr.dataset.subrow=r.label||'';if(ri===0)tr.append(main);const ids=[main.id,content.id];
+            if(r.heading){const sub=el('th',null,'jsr-sub-header');sub.scope='row';sub.id=main.id+'-'+ri;sub.setAttribute('role','rowheader');sub.append(r.heading);tr.append(sub);ids.push(sub.id);if(ri>0){const context=el('span',g.name,'jsr-parent-context');context.dataset.layoutLabel='true';context.setAttribute('aria-hidden','true');sub.prepend(context);}}
+            td.setAttribute('headers',ids.join(' '));td.append(...r.nodes);tr.append(td);section.append(tr);
+          });t.append(section);
+        });return t;
+      }
+      function gallery(article,number,entries,remove){
+        const figures=entries.map(([name,owner,period])=>({figure:article.querySelector('[data-figure="'+name+'"]'),owner,period}));if(figures.some(f=>!f.figure))return null;
+        const section=el('section',null,'jsr-culture-gallery');section.dataset.gallery=number;section.setAttribute('aria-label','PDF '+number+' 그림');figures[0].figure.before(section);
+        figures.forEach(({figure,owner,period})=>{figure.dataset.owner=owner;if(period)figure.dataset.period=period;section.append(figure);});remove.forEach(n=>n.remove());return section;
+      }
+      const late=page(65);
+      if(late){const nodes=Array.from(late.children),first=late.querySelector('[data-figure="p065-01.png"]'),second=late.querySelector('[data-figure="p065-02.png"]'),heading=nodes.find(n=>n.tagName==='H3'),group=nodes[4],timeline=nodes[5],printed=nodes[6],branches=nodes[7];
+        if(first&&second&&heading&&heading.textContent==='② 조선 후기'&&timeline?.querySelectorAll('tr').length===13&&branches?.children.length===7&&printed?.textContent==='[붕당정치의 흐름]'){
+          first.before(heading);const emphasis=group.querySelectorAll('strong');if(emphasis.length===2){const sedo=emphasis[1];group.replaceChildren(sedo,doc.createTextNode(': 순조·헌종·철종'));}
+          description(first,[group,timeline]);second.querySelector('figcaption').textContent='붕당정치의 흐름';printed.remove();
+          Array.from(branches.children).slice(0,3).forEach(li=>Array.from(li.childNodes).filter(n=>n.nodeType===3).forEach(n=>{n.textContent=n.textContent.replace(' 점선이 이 분기점을 가리킨다.','').replace(' 점선 화살표가 X를 가리킨다.','').replace(': 북인 아래로 이어진 선 끝에 ',': 북인 → ').replace('. ',' · ');}));description(second,[branches]);
+          late.dataset.presentation='late-introduction';
+        }
+      }
+      const p79=page(79);
+      if(p79){const nodes=Array.from(p79.children),title=nodes.find(n=>n.tagName==='P'&&n.textContent.startsWith('〈표 26〉')),end=nodes.find(n=>n.tagName==='P'&&n.textContent.startsWith('〈표 27〉')),start=nodes.indexOf(title)+1,parts=nodes.slice(start,nodes.indexOf(end));
+        const names=['태조','태종','세종 — 우리 것을 반영한 문화유산','세조','성종','명종','선조','광해군','영조','정조','순조','조선 말'];
+        if(title&&end&&parts.length===24&&names.every((name,i)=>parts[i*2].tagName==='P'&&parts[i*2].textContent===name&&parts[i*2+1].tagName==='UL')){
+          const groups=names.map((name,i)=>{const h=el('h4');h.append(...parts[i*2].childNodes);parts[i*2].remove();return {name,heading:h,rows:[{nodes:[parts[i*2+1]]}]};});
+          const sejong=groups[2].heading.firstElementChild;if(sejong){sejong.textContent='세종';sejong.append(el('span',' — 우리 것을 반영한 문화유산','jsr-row-subtitle'));}
+          table(p79,26,title,groups);const native=end.nextElementSibling,summary=native&&native.nextElementSibling;
+          if(summary?.tagName==='P'&&summary.textContent==='[천상열차분야지도], [혼일강리역대국도지도], [수원 화성], [조선왕조의궤]')gallery(p79,79,[['p079-01.png','table26/태조'],['p079-02.png','table26/태종'],['p079-03.png','table26/정조'],['p079-04.png','table27/조선왕조의궤']],[summary]);
+        }
+      }
+      const p80=page(80);
+      if(p80){const nodes=Array.from(p80.children),title=nodes.find(n=>n.tagName==='P'&&n.textContent.startsWith('〈표 28〉')),start=nodes.indexOf(title)+1,parts=nodes.slice(start,start+16),footnote=nodes[start+16],label=nodes[start+17],duplicates=nodes[start+18];
+        const names=['유교 / 서원','유교 / 이황','유교 / 이이','양명학','건축','지도','기타','도기'];
+        if(title&&names.every((name,i)=>parts[i*2]?.tagName==='H4'&&parts[i*2].textContent===name&&parts[i*2+1]?.tagName==='UL')&&footnote?.textContent.startsWith('\\*사액 서원:')){
+          const rows=names.map((name,i)=>({heading:parts[i*2],nodes:[parts[i*2+1]],label:name})),groups=[];
+          rows.slice(0,3).forEach(r=>{r.heading.dataset.originalHeading=r.heading.textContent;r.label=r.label.split(' / ')[1];r.heading.textContent=r.label;});groups.push({name:'유교',rows:rows.slice(0,3)});
+          rows.slice(3).forEach(r=>groups.push({name:r.label,heading:r.heading,rows:[{nodes:r.nodes}]}));
+          // Literal footnote marker in this reviewed line must not consume the following bold term.
+          const note=rows[0].nodes[0].querySelector('li>ul>li');if(note){note.replaceChildren(doc.createTextNode('→ 명종 때 사액*을 받아 '),el('strong','소수 서원'),doc.createTextNode('이 됨'));}
+          table(p80,28,title,groups,true);footnote.firstChild.textContent=footnote.firstChild.textContent.replace(/^\\\*/, '*');footnote.classList.add('jsr-study-footnote');
+          const entries=[['p080-01.png','table28/유교/서원'],['p080-02.png','table28/건축'],['p080-03.png','table28/건축'],['p080-04.png','table28/건축'],['p080-05.png','table28/지도'],['p080-06.png','table28/지도'],['p080-07.png','table28/도기','전기'],['p080-08.png','table28/도기','중기'],['p080-09.png','table28/도기','후기']];
+          if(label?.textContent==='도판'&&duplicates?.querySelectorAll('td').length===9&&entries.every(([name],i)=>compact(duplicates.querySelectorAll('td')[i].textContent)===compact(p80.querySelector('[data-figure="'+name+'"] figcaption')?.textContent||'')))gallery(p80,80,entries,[label,duplicates]);
+        }
+      }
+      const p82=page(82);
+      if(p82){const nodes=Array.from(p82.children),title=nodes.find(n=>n.tagName==='P'&&n.textContent.startsWith('〈표 30〉')),start=nodes.indexOf(title)+1,parts=nodes.slice(start,start+4),label=nodes[start+4],duplicates=nodes[start+5];
+        const order=['p082-01.png','p082-02.png','p082-04.png','p082-03.png','p082-05.png','p082-08.png','p082-06.png','p082-07.png','p082-09.png','p082-10.png','p082-11.png'];
+        if(title&&parts[0]?.textContent==='조선 전기'&&parts[2]?.textContent==='조선 후기'&&parts[1]?.tagName==='UL'&&parts[3]?.tagName==='UL'&&duplicates?.children.length===11&&order.every((name,i)=>compact(duplicates.children[i].textContent)===compact(p82.querySelector('[data-figure="'+name+'"] figcaption')?.textContent||''))){
+          table(p82,30,title,[{name:'조선 전기',heading:parts[0],rows:[{nodes:[parts[1]]}]},{name:'조선 후기',heading:parts[2],rows:[{nodes:[parts[3]]}]}]);
+          for(const name of ['p082-04.png','p082-09.png','p082-11.png']){const star=duplicates.children[order.indexOf(name)].querySelector('[data-source-color="#ff0000"]'),caption=p82.querySelector('[data-figure="'+name+'"] figcaption');if(star){caption.textContent=caption.textContent.replace('★','');caption.append(star);}}
+          gallery(p82,82,order.map(name=>[name,['p082-01.png','p082-02.png'].includes(name)?'gallery82/전기':'gallery82/후기']),[label,duplicates]);
+        }
+      }
+      [p79,p80,p82].filter(Boolean).forEach(article=>{if(article.querySelector('.jsr-culture-table'))Array.from(article.children).filter(n=>n.tagName==='H3'&&n.textContent==='학습 내용').forEach(n=>n.remove());});
     }
     function navigate(nextTopic,nextMode){topic=nextTopic;mode=nextMode;const state={source:bundle.source.sha256,topic,mode};win.history.pushState(Object.assign({},win.history.state,{joseonScript:state}),'');render();}
     function pop(){if(dialog&&!(win.history.state&&win.history.state.joseonImage)){dismissImage();return;}dismissImage();const s=win.history.state&&win.history.state.joseonScript;if(s&&s.source===bundle.source.sha256&&bundle.topics.some(t=>t.id===s.topic)&&['study','practice','answers'].includes(s.mode)){topic=s.topic;mode=s.mode;}else{topic=initialTopic;mode='study';}render();}
