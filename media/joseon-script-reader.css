@@ -62,3 +62,27 @@ html body #joseonScript .joseon-script-reader [data-source-color="#000000"]{colo
 html body #joseonScript .joseon-script-reader [data-source-color="#ffff00"]{color:#796800!important}
 
 html body #joseonScript .joseon-script-reader .jsr-row-source{color:#586875!important}
+
+.joseon-script-reader .jsr-outline-table{border-collapse:collapse;width:100%;table-layout:fixed;font:18px/1.85 Arial,sans-serif}
+.jsr-outline-table col:first-child,.jsr-outline-table col:nth-child(2){width:17%}
+.jsr-outline-table caption{text-align:left}.jsr-outline-table caption p{font-size:23px}
+.jsr-outline-table th,.jsr-outline-table td{border:1px solid #d5dde2;padding:12px;vertical-align:top;text-align:left;min-width:0}
+.jsr-outline-table>tbody+tbody{border-top:3px solid #7396b0}
+.joseon-script-reader .jsr-outline-table h4{font-size:20px;line-height:1.6;margin:0 0 10px;padding:0;border:0;word-break:keep-all}
+.jsr-outline-table .jsr-sub-header{font-weight:400}.jsr-outline-table .jsr-sub-header p{margin:0}
+.jsr-outline-table ul{padding-left:22px;margin:0}.jsr-outline-table .jsr-transcription ul{margin:12px 0}
+.jsr-outline-table .jsr-group-subtitle{display:block;font-size:18px;font-weight:400}.jsr-parent-context{display:none}
+.joseon-script-reader .jsr-outline-table figure{max-width:620px;margin:20px auto}.jsr-outline-table .jsr-transcription{margin:8px 0 24px}
+.jsr-outline-table .jsr-row-source{margin-top:16px}.jsr-outline-table .jsr-table table{font-size:18px}
+.jsr-outline-table .jsr-transcription summary{min-height:44px;padding:6px 0;cursor:pointer}
+html body #joseonScript .joseon-script-reader .jsr-outline-table .jsr-image-status{color:#586875!important}
+@media(max-width:700px){
+ .joseon-script-reader .jsr-outline-table{display:block}.jsr-outline-table>colgroup{display:none}.jsr-outline-table>caption{display:block}
+ .jsr-outline-table>thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+ .jsr-outline-table>tbody{display:block}.jsr-outline-table>tbody>tr{display:grid;grid-template-columns:minmax(0,1fr)}
+ .jsr-outline-table>tbody>tr>th,.jsr-outline-table>tbody>tr>td{display:block;width:auto;padding:12px}
+ .jsr-outline-table .jsr-main-header{border-top:3px solid #7396b0}
+ .jsr-outline-table .jsr-parent-context{display:block;font-size:14px;margin-bottom:6px;color:#586875!important}
+ html body #joseonScript .joseon-script-reader .jsr-outline-table .jsr-sub-header{background:#f4f5f2!important}
+ .joseon-script-reader .jsr-outline-table figure{padding:6px}.joseon-script-reader .jsr-outline-table figure button{padding:4px}
+}

@@ -174,7 +174,7 @@
       if(mode==='practice')Array.from(article.querySelectorAll('p')).forEach((p,i)=>{const m=/^\((\d+)\) /.exec(p.textContent);if(!m)return;const key=s.id+'-'+i,label=el('label','나의 임시 답안 · '+m[1]+'번','jsr-draft'),input=el('textarea');input.rows=2;input.value=drafts.get(key)||'';input.setAttribute('aria-label','PDF '+s.page+'쪽 '+m[1]+'번 임시 답안');input.oninput=()=>drafts.set(key,input.value);label.append(input);p.after(label);});
       article.querySelectorAll('figure').forEach(f=>{const p=f.previousElementSibling,c=f.querySelector('figcaption'),suffix=' · PDF '+s.page+'쪽';if(p&&p.tagName==='P'&&p.children.length===1&&p.firstElementChild.tagName==='STRONG'&&c.textContent===p.textContent+suffix)p.remove();if(c.textContent.endsWith(suffix))c.textContent=c.textContent.slice(0,-suffix.length);});
     });
-      if(mode==='study'&&bundle.source.sha256===editorialSource)connectTable23();
+      if(mode==='study'&&bundle.source.sha256===editorialSource){connectTable23();connectLaterTables();}
       body.querySelectorAll('.jsr-source-card').forEach(article=>{
       const group=el('details'),title=article.querySelector('h3,h4'),summary=el('summary',(title?title.textContent:'학습 안내')+' · '+article.dataset.page);group.append(summary);toc.append(group);
       const headings=Array.from(article.querySelectorAll('h3,h4'));
@@ -210,6 +210,58 @@
         if(blocks[0].map(n=>n.tagName).join() ==='H3,P,P'&&blocks[1].map(n=>n.tagName).join()==='H3,P,DIV'){
           [first,second].forEach((f,i)=>{const detail=el('details',null,'jsr-transcription');detail.append(el('summary','\uD14D\uC2A4\uD2B8 \uC124\uBA85'),...blocks[i]);f.after(detail);});
         }
+      }
+    }
+    function connectLaterTables(){
+      const page=n=>body.querySelector('.jsr-source-card[data-page="'+n+'"]');
+      const sections=article=>{const result=[];let current=null;Array.from(article.children).forEach(node=>{if(node.tagName==='H4'){current={heading:node,nodes:[],page:article.dataset.page};result.push(current);}else if(current)current.nodes.push(node);});return result;};
+      const rename=(node,text)=>{node.dataset.originalHeading=node.textContent;const target=node.children.length===1&&node.firstElementChild.tagName==='STRONG'?node.firstElementChild:node;target.textContent=text;};
+      const description=(figure,nodes)=>{const details=el('details',null,'jsr-transcription');details.append(el('summary','텍스트 설명'),...nodes);figure.after(details);};
+      function build(number,pages,title,groups){
+        const article=el('article',null,'jsr-source-card jsr-connected-source');article.id=pages[0].id+'-table'+number;article.dataset.page=pages.map(p=>p.dataset.page).join('–');article.dataset.kind='study';
+        article.append(el('p','PDF '+pages[0].dataset.page+'–'+pages[pages.length-1].dataset.page+'쪽','jsr-source-label'));
+        const table=el('table',null,'jsr-outline-table');table.dataset.table=number;table.setAttribute('role','table');
+        const caption=el('caption');caption.append(title);const cols=el('colgroup');for(let i=0;i<3;i++)cols.append(el('col'));
+        const head=el('thead'),headRow=el('tr'),category=el('th','구분'),content=el('th','내용');category.scope='col';content.scope='colgroup';content.colSpan=2;content.id=article.id+'-content';headRow.append(category,content);head.append(headRow);table.append(caption,cols,head);
+        groups.forEach((group,gi)=>{const section=el('tbody');section.dataset.group=group.name;section.setAttribute('role','rowgroup');
+          const main=el('th',null,'jsr-main-header');main.scope='rowgroup';main.rowSpan=group.rows.length;main.id=article.id+'-group-'+gi;main.setAttribute('role','rowheader');const heading=group.heading||el('h4',group.name);if(!group.heading)heading.dataset.layoutLabel='true';main.append(heading);
+          if(group.subtitle){const sub=el('small',group.subtitle,'jsr-group-subtitle');sub.dataset.layoutLabel='true';main.append(sub);}
+          group.rows.forEach((item,ri)=>{const row=el('tr');row.setAttribute('role','row');row.dataset.subrow=item.label||'';if(ri===0)row.append(main);
+            const cell=el('td');cell.setAttribute('role','cell');const headerIds=[main.id,content.id];
+            if(item.heading){const sub=el('th',null,'jsr-sub-header');sub.scope='row';sub.id=main.id+'-row-'+ri;sub.setAttribute('role','rowheader');sub.append(item.heading);row.append(sub);headerIds.push(sub.id);}else cell.colSpan=2;
+            if(ri>0){const context=el('span',group.name,'jsr-parent-context');context.dataset.layoutLabel='true';context.setAttribute('aria-hidden','true');(item.heading?row.lastElementChild:cell).prepend(context);}
+            cell.setAttribute('headers',headerIds.join(' '));cell.append(...item.nodes);cell.append(el('small','PDF '+item.page,'jsr-row-source'));row.append(cell);section.append(row);item.cell=cell;
+          });table.append(section);
+        });article.append(table);pages[0].before(article);pages.forEach(p=>p.remove());return article;
+      }
+      if(page(66)&&page(67)){
+        const pages=[page(66),page(67)],parts=pages.flatMap(sections),names=['선조','광해군','인조','효종','현종','숙종','경종','영조','정조','세도정치'];
+        const labels=[['임진왜란'],['대동법'],['정묘호란 / 후금','병자호란 / 청'],[],[],[],[],['균역법'],[],['순조','철종']];
+        const title=Array.from(pages[0].children).find(n=>n.tagName==='H3'&&n.textContent.startsWith('〈표 24〉')),map=pages[0].querySelector('[data-figure="p066-01.png"]');
+        const groups=parts.map((part,i)=>{const rows=[{nodes:[],page:part.page}],expected=labels[i]||[];part.nodes.forEach(n=>{const j=expected.indexOf(n.textContent.replace(names[i]+' → ',''));if(n.tagName==='P'&&j>=0)rows.push({heading:n,label:expected[j],nodes:[],page:part.page});else rows[rows.length-1].nodes.push(n);});return {name:names[i],heading:part.heading,rows};});
+        if(title&&map&&parts.length===10&&parts.every((p,i)=>p.heading.textContent===names[i])&&groups.every((g,i)=>g.rows.length===labels[i].length+1)){
+          groups.forEach(g=>g.rows.forEach(r=>{if(r.heading)rename(r.heading,r.label);}));
+          build(24,pages,title,groups);const imjin=groups[0].rows[1],mapTitle=imjin.nodes.find(n=>n.tagName==='P'&&n.textContent==='임진왜란 지도'),legend=mapTitle&&mapTitle.nextElementSibling;
+          imjin.cell.append(map);if(mapTitle&&legend&&legend.tagName==='UL'){mapTitle.remove();description(map,[legend]);}
+        }
+      }
+      if(page(73)&&page(74)&&page(75)){
+        const pages=[page(73),page(74),page(75)],parts=pages.flatMap(sections);
+        const expected=['통치 체제 — 〈중앙 정치 기구〉','통치 체제 — 〈지방 행정 조직〉','군사제도','교육','마을 자치','외교 — 여진','외교 — 명','외교 — 청','외교 — 일본','토지제도','수취제도','사회제도','신분 계층','종교 — 천주교','종교 — 동학','조선후기 사회 — 평등으로 가는 시기','조선후기 경제 — 대동법','조선후기 경제 — 균역법','조선후기 경제 — 계속'];
+        const title=Array.from(pages[0].children).find(n=>n.tagName==='P'&&n.textContent.startsWith('〈표 25〉')),figures=['p073-01.png','p073-02.png','p073-03.png'].map(name=>pages[0].querySelector('[data-figure="'+name+'"]'));
+        if(!title||parts.length!==expected.length||parts.some((p,i)=>p.heading.textContent!==expected[i])||figures.some(f=>!f))return;
+        const groups=[],single=i=>{const p=parts[i];groups.push({name:p.heading.textContent,heading:p.heading,rows:[{nodes:p.nodes,page:p.page}]});};
+        rename(parts[0].heading,'〈중앙 정치 기구〉');rename(parts[1].heading,'〈지방 행정 조직〉');
+        groups.push({name:'통치 체제',rows:[{nodes:[parts[0].heading,...parts[0].nodes,parts[1].heading,...parts[1].nodes],page:'73'}]});
+        [2,3,4].forEach(single);
+        function children(name,indices){const rows=indices.map(i=>{const p=parts[i],label=p.heading.textContent.split(' — ')[1];if(label==='계속'){p.heading.remove();return {nodes:p.nodes,page:p.page};}rename(p.heading,label);return {heading:p.heading,label,nodes:p.nodes,page:p.page};});groups.push({name,rows});}
+        children('외교',[5,6,7,8]);[9,10,11,12].forEach(single);children('종교',[13,14]);
+        rename(parts[15].heading,'조선후기 사회');single(15);groups[groups.length-1].subtitle='평등으로 가는 시기';children('조선후기 경제',[16,17,18]);
+        const article=build(25,pages,title,groups),cell=groups[0].rows[0].cell;
+        const wrapper=Array.from(cell.children).find(n=>n.tagName==='P'&&n.textContent==='도식의 연결 관계'),list=wrapper&&wrapper.nextElementSibling;
+        if(list&&list.tagName==='UL'&&list.children.length===2){Array.from(list.children).forEach((li,i)=>{const ul=el('ul');ul.append(li);description(figures[i],[ul]);});list.remove();wrapper.remove();}
+        // Keep the original era heading as section context without repeating page continuation wrappers.
+        const context=el('h3','③ 조선의 사회·경제');context.dataset.layoutLabel='true';article.insertBefore(context,article.querySelector('table'));
       }
     }
     function navigate(nextTopic,nextMode){topic=nextTopic;mode=nextMode;const state={source:bundle.source.sha256,topic,mode};win.history.pushState(Object.assign({},win.history.state,{joseonScript:state}),'');render();}
