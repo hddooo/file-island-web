@@ -7,7 +7,7 @@
     function session(){const s=api&&api.state&&api.state();return s&&s.signedIn&&!s.restoring&&s.ownerId?String(s.ownerId)+':'+String(s.epoch):'';}
     function stop(){generation++;if(abort)abort.abort();abort=null;if(unsubscribe)unsubscribe();unsubscribe=null;if(reader)reader.stop();reader=null;if(canonical)canonical.remove();canonical=null;host=null;identity='';win.removeEventListener('hashchange',hashchange);}
     function modeFromLocation(){const slug=win.location.hash.split('/')[2];return slug==='exam-lines'?'exam':slug==='source-quiz'?'practice':'study';}
-    function sameReaderRoute(href){if(!options.modeRouting||!route)return false;const from=new win.URL(route),to=new win.URL(href),a=from.hash.split('/'),b=to.hash.split('/');return from.origin===to.origin&&from.pathname===to.pathname&&from.search===to.search&&a[0]===b[0]&&a[1]===b[1]&&['webtoon','exam-lines','source-quiz'].includes(b[2]);}
+    function sameReaderRoute(href){if(!options.modeRouting||!route)return false;const from=new win.URL(route),to=new win.URL(href),a=from.hash.split('/'),b=to.hash.split('/');return from.origin===to.origin&&from.pathname===to.pathname&&from.search===to.search&&a[0]==='#chapter'&&a[0]===b[0]&&b.length===3&&a[1]===b[1]&&['webtoon','exam-lines','source-quiz'].includes(b[2]);}
     function routeForMode(mode){const u=new win.URL(route),parts=u.hash.split('/');parts[2]=mode==='exam'?'exam-lines':mode==='practice'||mode==='answers'?'source-quiz':'webtoon';u.hash=parts.join('/');route=u.href;return route;}
     function hashchange(){if(host&&win.location.href!==route){if(sameReaderRoute(win.location.href))route=win.location.href;else stop();}}
     function valid(g){return !!host&&g===generation&&identity&&session()===identity&&win.location.href===route;}

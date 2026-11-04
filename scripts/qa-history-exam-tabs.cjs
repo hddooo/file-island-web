@@ -1,0 +1,45 @@
+'use strict';
+const fs=require('fs'),path=require('path'),assert=require('assert/strict'),{chromium}=require('playwright');let browser;
+(async()=>{
+ const [jp,gp,ji,gi,outPath]=process.argv.slice(2),root=path.resolve(__dirname,'..'),out=path.resolve(outPath),data={joseon:[jp,ji],goryeo:[gp,gi]};fs.mkdirSync(out,{recursive:true});
+ browser=await chromium.launch({headless:true});const context=await browser.newContext({viewport:{width:390,height:900},reducedMotion:'reduce'}),page=await context.newPage(),calls=[],errors=[];
+ page.on('pageerror',e=>errors.push(e.message));await context.addInitScript(()=>localStorage.setItem('hanqacct:signedIn','1'));
+ await context.route('**/*',async r=>{const req=r.request(),u=new URL(req.url());if(u.hostname!=='goryeo-integration.test')return r.abort();
+ if(u.pathname.startsWith('/api/v1/')){calls.push({path:u.pathname,method:req.method()});const user={id:'synthetic-tabs',displayName:'Synthetic'};
+ if(u.pathname.endsWith('/auth/refresh'))return r.fulfill({json:{accessToken:'synthetic-tabs-session',user}});
+ if(u.pathname.endsWith('/me'))return r.fulfill({json:{user,growth:{points:0},access:{total:1,today:true},premium:{active:false}}});
+ const match=u.pathname.match(/\/textbook\/scripts\/(joseon|goryeo)\/([a-f0-9]{64})\/(bundle|figures\/(p\d{3}-\d{2}\.png))$/);
+ if(match){assert.equal(req.headers().authorization,'Bearer synthetic-tabs-session');assert.equal(req.method(),'GET');const [bp,dir]=data[match[1]],bundle=JSON.parse(fs.readFileSync(bp));assert.equal(match[2],bundle.source.sha256);const headers={'cache-control':'private, no-store','x-content-type-options':'nosniff','cross-origin-resource-policy':'same-site'};return r.fulfill({headers,contentType:match[4]?'image/png':'application/json',body:fs.readFileSync(match[4]?path.join(dir,match[4]):bp)});}
+ if(u.pathname.includes('/textbook/'))return r.fulfill({status:503,json:{error:{code:'fixture_unavailable'}}});return r.fulfill({json:{items:[],notes:[],days:[],entries:[],total:0,page:1,pages:1}});}
+ const file=path.resolve(root,'.'+(u.pathname==='/'?'/index.html':u.pathname));if(!file.startsWith(root+path.sep)||!fs.existsSync(file)||!fs.statSync(file).isFile())return r.fulfill({status:404,body:''});
+ return r.fulfill({path:file});});
+const results=[];
+ for(const width of [320,390])for(const era of ['joseon','goryeo']){
+ await page.setViewportSize({width,height:900});const prefix=era==='joseon'?'jsr':'gsr',selector='.'+era+'-script-reader',base='https://goryeo-integration.test/#chapter/'+era+'/';
+ await page.goto(base+'webtoon');await page.locator(selector).waitFor();
+ assert.deepEqual(await page.locator('.'+prefix+'-modes button').allTextContents(),['개념 학습','시험에는 이렇게 나온다','빈칸 퀴즈']);assert.equal(await page.locator('.step').count(),0);
+ const topics=await page.locator('[data-topic]').evaluateAll(es=>es.map(e=>e.dataset.topic));
+ for(const topic of topics){await page.click('[data-topic="'+topic+'"]');assert(!/시험에는 이렇게 나온다!/.test(await page.locator('.'+prefix+'-body').innerText()));await page.click('[data-mode="exam"]');assert(page.url().endsWith('/exam-lines'));
+ const names=await page.locator('.'+prefix+'-toc summary').allTextContents();assert.equal(new Set(names).size,names.length);if(await page.locator('.'+prefix+'-toc button').count()){await page.locator('.'+prefix+'-toc details').last().evaluate(e=>e.open=true);await page.locator('.'+prefix+'-toc button').last().click();await page.click('[data-mode="exam"]');}
+const headings=await page.locator('.'+prefix+'-body h4').allTextContents();results.push({width,era,topic,headings});await page.locator('.'+prefix+'-body h2').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(out,era+'-'+topic+'-exam-'+width+'.png')});
+ if(era==='joseon'&&topic==='early'){
+  assert.deepEqual(await page.locator('.jsr-source-card').evaluateAll(es=>es.map(e=>e.dataset.page)),['62','63']);
+  const labels=['성종','연산군','중종','명종'];const positions=[];for(const label of labels){const heading=page.locator('.jsr-body h4').filter({hasText:label});assert.equal(await heading.count(),1);await heading.scrollIntoViewIfNeeded();const data=await heading.evaluate(e=>{const d=e.closest('.device-content'),r=e.getBoundingClientRect();return {top:r.top,bottom:r.bottom,scrollTop:d.scrollTop,client:d.clientHeight,scrollHeight:d.scrollHeight};});positions.push({label,...data});assert(data.top>=100&&data.bottom<800);await page.screenshot({path:path.join(out,'early-'+label+'-'+width+'.png')});}assert(positions.every((p,i)=>!i||p.scrollTop+p.top>positions[i-1].scrollTop+positions[i-1].top));results.push({width,continuity:positions});
+ await page.locator('.jsr-body h4').filter({hasText:'성종'}).scrollIntoViewIfNeeded();const seen=new Set(),trace=[];await page.mouse.move(width/2,500);for(let i=0;i<20;i++){const visible=await page.locator('.jsr-body h4').evaluateAll(es=>es.filter(e=>{const r=e.getBoundingClientRect();return r.top>=105&&r.bottom<=795;}).map(e=>e.textContent));visible.filter(v=>labels.includes(v)).forEach(v=>seen.add(v));trace.push(visible);if(seen.size===4)break;await page.mouse.wheel(0,220);await page.waitForTimeout(80);}assert.deepEqual([...seen],labels);await page.screenshot({path:path.join(out,'early-wheel-bottom-'+width+'.png')});results.push({width,wheelContinuity:trace});
+
+ }
+ await page.click('[data-mode="study"]');assert(page.url().endsWith('/webtoon'));
+ }
+ await page.click('[data-mode="practice"]');assert(page.url().endsWith('/source-quiz'));assert.equal(await page.locator('textarea').count(),era==='goryeo'?103:172);await page.locator('textarea').first().fill('synthetic retained');
+ await page.getByRole('button',{name:'교재 정답 보기',exact:true}).click();assert.equal(await page.locator('.'+prefix+'-reveal').count(),1);await page.locator('.'+prefix+'-reveal button').click();assert.equal(await page.locator('ol.'+prefix+'-answer-list li').count(),era==='goryeo'?100:172);
+ await page.getByRole('button',{name:'빈칸 퀴즈로 돌아가기',exact:true}).click();assert.equal(await page.locator('textarea').first().inputValue(),'synthetic retained');
+ await page.click('[data-mode="exam"]');await page.goBack();assert.equal(await page.locator('textarea').first().inputValue(),'synthetic retained');
+await page.click('[data-mode="study"]');await page.locator('.'+prefix+'-body figure img').first().waitFor();await page.locator('.'+prefix+'-body figure button').first().click();await page.locator('.'+prefix+'-image-dialog[open]').waitFor();await page.goBack();await page.locator('.'+prefix+'-image-dialog').waitFor({state:'detached'});assert(!await page.locator('#app').evaluate(e=>e.inert));await page.click('[data-mode="practice"]');assert.equal(await page.locator('textarea').first().inputValue(),'synthetic retained');
+ for(const [slug,mode] of [['exam-lines','exam'],['source-quiz','practice'],['webtoon','study']]){await page.goto(base+slug);await page.locator(selector).waitFor();assert.equal(await page.locator('[data-mode="'+mode+'"]').getAttribute('aria-current'),'true');await page.reload();await page.locator(selector).waitFor();assert.equal(await page.locator('[data-mode="'+mode+'"]').getAttribute('aria-current'),'true');}
+ assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+ }
+ for(const [era,label] of [['joseon','조선시대'],['goryeo','고려 시대']]){await page.goto('https://goryeo-integration.test/');await page.locator('#subjectHistory').click();await page.locator('#homePastExams').click();await page.locator('.period').filter({hasText:label}).click();await page.locator('.'+era+'-script-reader').waitFor();await page.click('[data-mode="exam"]');assert(page.url().endsWith('/'+era+'/exam-lines'));await page.screenshot({path:path.join(out,era+'-menu-exam.png')});results.push({era,menuRoute:page.url()});}
+await page.goto('https://goryeo-integration.test/#chapter/goryeo/bookquiz');await page.locator('#privateTextbook').waitFor();assert.equal(await page.locator('.goryeo-script-reader').count(),0);
+await page.goto('https://goryeo-integration.test/#chapter/joseon/source-quiz');await page.locator('textarea').first().fill('synthetic private draft');await page.evaluate(()=>HanqApi.logout());await page.waitForFunction(()=>!document.querySelector('.joseon-script-reader'));assert.equal(await page.locator('textarea').count(),0);
++ assert(!calls.some(c=>c.path.includes('/textbook/')&&c.method!=='GET'));assert.deepEqual(errors,[]);fs.writeFileSync(path.join(out,'metrics.json'),JSON.stringify({results,errors,canonicalWrites:0},null,2));await browser.close();console.log('PASS tabs / direct routes / reload / Back / temporary inputs / early continuity');
+})().catch(async e=>{console.error(e);if(browser)await browser.close();process.exitCode=1;});

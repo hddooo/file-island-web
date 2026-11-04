@@ -180,7 +180,8 @@
       if(bundle.source.sha256===editorialSource)cleanDisplayLabels();
       if(mode==='exam'&&!body.querySelector('.jsr-source-card'))body.append(el('p','이 단원에는 별도의 시험 선택지 항목이 없습니다.','jsr-note'));
       body.querySelectorAll('.jsr-source-card').forEach(article=>{
-      const group=el('details'),title=article.querySelector('h3,h4'),summary=el('summary',title?title.textContent:'학습 안내');group.append(summary);toc.append(group);
+      const examHeadings=mode==='exam'?[...article.querySelectorAll('h4')].map(e=>e.textContent):[],examName=examHeadings.length?[examHeadings[0],examHeadings.at(-1)].filter((v,i,a)=>!i||v!==a[0]).join(' ~ '):null;
+     const group=el('details'),title=article.querySelector('h3,h4'),summary=el('summary',examName||(title?title.textContent:'학습 안내'));group.append(summary);toc.append(group);
       const headings=Array.from(article.querySelectorAll('h3,h4'));
       (headings.length?headings:[article]).forEach((heading,index)=>{heading.id=article.id+'-section-'+index;const a=el('button',heading===article?'학습 내용 읽기':heading.textContent);a.type='button';a.onclick=()=>{for(let node=heading.parentElement;node&&node!==body;node=node.parentElement)if(node.tagName==='DETAILS')node.open=true;heading.tabIndex=-1;heading.focus({preventScroll:true});heading.scrollIntoView({block:'start'});};group.append(a);});
     });}

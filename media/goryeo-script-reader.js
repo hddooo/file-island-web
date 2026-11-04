@@ -155,9 +155,10 @@
 
       if(mode==='exam'&&!body.querySelector('.gsr-source-card'))body.append(el('p','이 단원에는 별도의 시험 선택지 항목이 없습니다.','gsr-note'));
       body.querySelectorAll('.gsr-source-card').forEach(article=>{
-      const group=el('details'),title=article.querySelector('h3,h4'),summary=el('summary',(title?title.textContent:'학습 안내'));group.append(summary);toc.append(group);
+      const examNames={'exam-early':'고려 초기','exam-aristocratic':'문벌 귀족','exam-military':'무신 집권','exam-yuan':'원 간섭기','exam-late':'고려 말','exam-society-economy':'사회·경제'},examId=article.querySelector('table[data-structure]')?.dataset.structure,examName=mode==='exam'?examNames[examId]:null;
+     const group=el('details'),title=article.querySelector('h3,h4'),summary=el('summary',examName||(title?title.textContent:'학습 안내'));group.append(summary);toc.append(group);
       const headings=Array.from(article.querySelectorAll('h3,h4'));
-      (headings.length?headings:[article]).forEach((heading,index)=>{if(!heading.id)heading.id=article.id+'-section-'+index;const a=el('button',heading===article?'이 쪽 읽기':heading.textContent);a.type='button';a.onclick=()=>{for(let node=heading.parentElement;node&&node!==body;node=node.parentElement)if(node.tagName==='DETAILS')node.open=true;heading.tabIndex=-1;heading.focus({preventScroll:true});heading.scrollIntoView({block:'start'});};group.append(a);});
+      (headings.length?headings:[article]).forEach((heading,index)=>{if(!heading.id)heading.id=article.id+'-section-'+index;const a=el('button',heading===article?'학습 내용 읽기':examName||heading.textContent);a.type='button';a.onclick=()=>{for(let node=heading.parentElement;node&&node!==body;node=node.parentElement)if(node.tagName==='DETAILS')node.open=true;heading.tabIndex=-1;heading.focus({preventScroll:true});heading.scrollIntoView({block:'start'});};group.append(a);});
     });}
     function renderProjected(article,segment){
       const parts=segment.markdown.split(/(@@(?:table1[5-9]|table2[0-2]|gallery-culture|exam-society-economy|exam-early|exam-military|exam-aristocratic|exam-yuan|exam-late|early-diagram)@@)/);
