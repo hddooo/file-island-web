@@ -21,6 +21,10 @@ host.querySelector('[data-topic="late"]').click();assert(host.textContent.includ
 host.querySelector('[data-mode="answers"]').click();assert(!host.textContent.includes('SECRET_SYNTHETIC_ANSWER'));
 const attack=doc.createElement('div');reader.inline(doc,attack,'<script>alert(1)</script><span style="color:red" onclick="x()">bad</span><img src=x onerror=x()> [x](javascript:alert(1)) <span style="color:#ed7d31">안전</span>');
 assert.equal(attack.querySelectorAll('script,img,a,[onclick]').length,0);assert.equal(attack.querySelector('[data-source-color]').dataset.sourceColor,'#ed7d31');
+const nested=doc.createElement('div');reader.renderMarkdown(doc,nested,'- parent A\n  - **child A**\n    - grandchild\n  + child B\n- parent B\n\n- parent C',()=>{});
+assert.equal(nested.querySelectorAll(':scope > ul').length,2);assert.equal(nested.querySelectorAll('li li').length,3);
+assert.equal(nested.querySelector('li > ul > li > strong').textContent,'child A');assert.equal(nested.querySelector('li > ul > li > ul > li').textContent,'grandchild');
+assert.equal(nested.querySelector('ul').lastChild.textContent,'parent B');
 app.stop();assert.equal(host.children.length,0);app=reader.mount(host,bundle);assert(!host.textContent.includes('SECRET_SYNTHETIC_ANSWER'));app.stop();dom.window.close();
 if(process.argv[2]) {
   const bytes=fs.readFileSync(process.argv[2]),b=convert(bytes);
@@ -29,6 +33,12 @@ if(process.argv[2]) {
   assert(b.segments.filter(s=>s.kind==='practice').some(s=>s.markdown.includes('(제도/왕)')));
   assert(!b.segments.filter(s=>s.kind==='study').some(s=>s.markdown.includes('원문 인쇄 정답')));
   assert.deepEqual(b.segments.filter(s=>s.kind==='answers').map(s=>s.page),[64,72,87]);
+  const sourceDom=new JSDOM('<main></main>'),sourceDoc=sourceDom.window.document,main=sourceDoc.querySelector('main');
+  b.segments.filter(s=>s.kind==='study').forEach(s=>reader.renderMarkdown(sourceDoc,main,s.markdown,()=>{}));
+  const childLines=b.segments.filter(s=>s.kind==='study').flatMap(s=>s.markdown.split('\n').filter(l=>/^ +[-+] /.test(l)));
+  assert.equal(childLines.length,22);const children=[...main.querySelectorAll('li li')];assert.equal(children.length,22);
+  const parentLines=[];let lastParent='';b.segments.filter(s=>s.kind==='study').forEach(s=>s.markdown.split('\n').forEach(line=>{if(/^[-+] /.test(line))lastParent=line.slice(2);else if(/^ +[-+] /.test(line))parentLines.push(lastParent);}));
+  childLines.forEach((line,i)=>{const expected=sourceDoc.createElement('div');reader.inline(sourceDoc,expected,line.replace(/^ +[-+] /,''));assert.equal(children[i].textContent,expected.textContent);const parent=children[i].parentElement.parentElement.cloneNode(true);assert.equal(parent.tagName,'LI');parent.querySelectorAll('ul').forEach(ul=>ul.remove());expected.replaceChildren();reader.inline(sourceDoc,expected,parentLines[i]);assert.equal(parent.textContent,expected.textContent);});sourceDom.window.close();
   console.log('Private source: lossless partition; 29 pages / 172 questions / 38 figures; answers isolated');
 }
 console.log('Joseon reader: rendering, answer concealment, multiline blank, repeat entry and injection guards passed');

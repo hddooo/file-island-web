@@ -5,7 +5,7 @@ const path = require('node:path');
 const crypto = require('node:crypto');
 const topics = [
   ['early', '조선 전기', 59, 64], ['late', '조선 후기', 65, 72],
-  ['society', '정치·사회', 73, 78], ['economy', '경제', 74, 78],
+  ['society', '사회·경제', 73, 78],
   ['culture', '문화', 79, 87]
 ];
 function convert(bytes) {
