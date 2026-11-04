@@ -1,5 +1,9 @@
 # FE 버전 계획
 
+### 2026-11-04 — 0.3.10-beta 원문 요약 테마 수정
+
+요약은 #eraFullSummary에 렌더링되므로 기존 #privateTextbook 읽기 범위를 확장한다. 원문 요약 shell 안에서만 terminal 테마의 표/셀 강제 배경을 해제한다. 기존79회 summary renderer와 진도/API/gate는 보존한다.
+
 ### 2026-11-04 — 0.3.9-beta 조선 글자 크기
 
 - [x] 선사 준비 코드는 별도 branch/로컬 checkpoint efe0225로 보존하고 조선 가독성을 우선한다.

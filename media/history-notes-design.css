@@ -1,6 +1,6 @@
 /* Fixed 79th/81st-edition reading presentation only. Load after the existing textbook CSS.
    No source bytes, answer policy, readiness gate, image pixels or game chrome change. */
-html body #privateTextbook:has(.history-notes-design:is([data-history-edition="79"],[data-history-edition="81"])) {
+html body :is(#privateTextbook,#eraFullSummary):has(.history-notes-design:is([data-history-edition="79"],[data-history-edition="81"])) {
   --paper: #dfe8e2;
   --ink: #24372c;
   --muted: #485e51;
@@ -10,7 +10,7 @@ html body #privateTextbook:has(.history-notes-design:is([data-history-edition="7
   border: 0;
   box-shadow: none;
 }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) {
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) {
   --hn-paper: #dfe8e2;
   --hn-surface: #d0ddd4;
   --hn-ink: #24372c;
@@ -34,101 +34,108 @@ html body #privateTextbook .history-notes-design:is([data-history-edition="79"],
   border-radius: 0;
   box-shadow: none;
 }
-html body #privateTextbook > .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) {
+/* The authenticated source summary uses its own host, but the same reading
+   surface and sans-serif stack as concept and workbook pages. */
+html body #eraFullSummary .textbook-source-summary.history-notes-design,
+html body #eraFullSummary .textbook-source-summary.history-notes-design * {
+  font-family: Arial, "Helvetica Neue", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif !important;
+  letter-spacing: normal;
+}
+html body :is(#privateTextbook,#eraFullSummary) > .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) {
   width: 100%;
   max-width: 1080px;
   margin-inline: auto;
   padding: 24px 20px;
 }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(.textbook-semantic-library-content,.textbook-semantic-content,.textbook-source-list,.textbook-source-review) {
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(.textbook-semantic-library-content,.textbook-semantic-content,.textbook-source-list,.textbook-source-review) {
   width: 100%;
   max-width: 720px;
   min-width: 0;
   margin-inline: auto;
 }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(.textbook-reader-page,.textbook-semantic-table-scroll,.textbook-source-quiz-item,.textbook-semantic-exercises) {
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(.textbook-reader-page,.textbook-semantic-table-scroll,.textbook-source-quiz-item,.textbook-semantic-exercises) {
   border-radius: 0;
   border-color: var(--hn-rule) !important;
   box-shadow: none;
 }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-reader-page {
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-reader-page {
   margin-block: 24px 0;
   padding-block: 16px 0;
 }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-reader-page:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(.textbook-semantic-heading,.textbook-source-quiz-title,.textbook-joseon-heading) {
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-reader-page:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(.textbook-semantic-heading,.textbook-source-quiz-title,.textbook-joseon-heading) {
   color: var(--hn-ink);
   font-weight: 700;
   line-height: 1.4;
   margin: 24px 0 8px;
   break-after: avoid;
 }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-quiz-title { margin-top: 0; font-size: 28px; }
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-quiz-title { margin-top: 0; font-size: 28px; }
 /* Source PDF span sizes are metadata. Reading hierarchy comes from the block
    role; inline emphasis inherits its paragraph, cell or heading size. Keep
    coordinate diagrams' own 16px canvas geometry and source ink untouched. */
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(h1,h2).textbook-semantic-heading {
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(h1,h2).textbook-semantic-heading {
   font-size: var(--hn-section-size);
 }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(h3,h4,h5,h6).textbook-semantic-heading {
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(h3,h4,h5,h6).textbook-semantic-heading {
   font-size: var(--hn-subsection-size);
 }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(.textbook-semantic,.textbook-semantic-table,.textbook-semantic-prompt,.textbook-semantic-answer p) {
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(.textbook-semantic,.textbook-semantic-table,.textbook-semantic-prompt,.textbook-semantic-answer p) {
   font-size: var(--hn-body-size);
 }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-line,
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-line > :is(span,strong) {
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-line,
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-line > :is(span,strong) {
   font-size: inherit;
 }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(.textbook-source-branch-graph,.textbook-source-branch-context,.textbook-source-branch-cause) {
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(.textbook-source-branch-graph,.textbook-source-branch-context,.textbook-source-branch-cause) {
   font-size: 16px;
   line-height: 1.5;
 }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(.textbook-semantic-text,.textbook-semantic-table td,.textbook-semantic-table th,.textbook-source-quiz-statement) {
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(.textbook-semantic-text,.textbook-semantic-table td,.textbook-semantic-table th,.textbook-source-quiz-statement) {
   font-size: var(--hn-body-size);
   line-height: 1.7;
   color: var(--hn-ink);
 }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-text { margin-block: 8px 12px; }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-heading + .textbook-semantic-text { margin-top: 4px; }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-table-scroll { margin-block: 12px; border: 0; }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-table :is(td,th) {
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-text { margin-block: 8px 12px; }
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-heading + .textbook-semantic-text { margin-top: 4px; }
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-table-scroll { margin-block: 12px; border: 0; }
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-table :is(td,th) {
   padding: 10px 12px;
   border-color: var(--hn-rule) !important;
 }
 /* Verified source ink, highlights, diagram shading and source spans retain
    their existing styles. Only ordinary label cells receive the design tint. */
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-table[data-history-label-content] th:not([class*="textbook-source-"]) {
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-table[data-history-label-content] th:not([class*="textbook-source-"]) {
   background-color: var(--hn-surface) !important;
   font-weight: 600;
 }
 /* Source cell roles outrank both the generic header tint and the mobile reflow. */
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-table[data-history-label-content] :is(th,td).textbook-source-shading-yellow { background-color: #fff09b !important; }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-table[data-history-label-content] :is(th,td).textbook-source-shading-green { background-color: #d5f2b8 !important; }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-table[data-history-label-content] :is(th,td).textbook-source-shading-blue { background-color: #c3ecf9 !important; }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-table[data-history-label-content] :is(th,td).textbook-source-shading-peach { background-color: #f5d5bf !important; }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-table[data-history-label-content] :is(th,td).textbook-source-shading-pink { background-color: #f1d4f0 !important; }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-row-annotation {
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-table[data-history-label-content] :is(th,td).textbook-source-shading-yellow { background-color: #fff09b !important; }
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-table[data-history-label-content] :is(th,td).textbook-source-shading-green { background-color: #d5f2b8 !important; }
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-table[data-history-label-content] :is(th,td).textbook-source-shading-blue { background-color: #c3ecf9 !important; }
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-table[data-history-label-content] :is(th,td).textbook-source-shading-peach { background-color: #f5d5bf !important; }
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-table[data-history-label-content] :is(th,td).textbook-source-shading-pink { background-color: #f1d4f0 !important; }
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-row-annotation {
   margin: 4px 0 0;
   padding: 4px 0;
   border: 0;
   border-radius: 0;
 }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-row-annotation.textbook-semantic-table-group { width: min(100%,340px); margin-top: 12px; }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-row-annotation .textbook-semantic-table :is(td,th) { padding: 5px 8px; line-height: 1.5; }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(.textbook-joseon-section,.textbook-joseon-review) { margin: 0; padding: 0; }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(.textbook-joseon-section-common,.textbook-joseon-review-common) {
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-row-annotation.textbook-semantic-table-group { width: min(100%,340px); margin-top: 12px; }
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-row-annotation .textbook-semantic-table :is(td,th) { padding: 5px 8px; line-height: 1.5; }
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(.textbook-joseon-section,.textbook-joseon-review) { margin: 0; padding: 0; }
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(.textbook-joseon-section-common,.textbook-joseon-review-common) {
   margin-block: 24px;
   padding-block: 12px;
   border-block: 1px solid var(--hn-rule) !important;
 }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-joseon-subtopic { font-size: 18px; line-height: 1.5; margin: 20px 0 6px; color: var(--hn-accent); }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-quiz-item { padding-block: 12px; margin: 0; border-inline: 0; }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(.textbook-source-quiz-item-source,.textbook-source-quiz-reference,.textbook-status) { font-size: 13px; line-height: 1.54; color: var(--hn-muted) !important; }
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-joseon-subtopic { font-size: 18px; line-height: 1.5; margin: 20px 0 6px; color: var(--hn-accent); }
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-quiz-item { padding-block: 12px; margin: 0; border-inline: 0; }
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(.textbook-source-quiz-item-source,.textbook-source-quiz-reference,.textbook-status) { font-size: 13px; line-height: 1.54; color: var(--hn-muted) !important; }
 /* Hide repeated generic instructions/counts, never source instructions,
    validation feedback, save failures, retry controls or actual question text. */
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]).textbook-source-continuous > .textbook-source-quiz-help { display: none; }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(button,input,textarea,select) {
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]).textbook-source-continuous > .textbook-source-quiz-help { display: none; }
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(button,input,textarea,select) {
   background-color: var(--hn-surface) !important;
   color: var(--hn-ink) !important;
   border-color: var(--hn-control-rule) !important;
@@ -137,32 +144,48 @@ html body #privateTextbook .history-notes-design:is([data-history-edition="79"],
   font-size: 16px;
   min-height: 44px;
 }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(button:hover,button[aria-selected="true"]) { background-color: #bdcfc3 !important; color: var(--hn-ink) !important; }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-quiz-input {
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(button:hover,button[aria-selected="true"]) { background-color: #bdcfc3 !important; color: var(--hn-ink) !important; }
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-quiz-input {
   width: 8em;
   max-width: 100%;
   border-radius: 2px;
   padding: 6px 8px;
 }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :focus-visible { outline: 3px solid var(--hn-accent); outline-offset: 3px; }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) [hidden] { display: none !important; }
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :focus-visible { outline: 3px solid var(--hn-accent); outline-offset: 3px; }
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) [hidden] { display: none !important; }
 @media (max-width: 600px) {
   /* Keep the source's row/column relationship on phones as well. Only simple
      two-column label/content tables opt in; merged grids and diagrams retain
      their existing internal scrolling and source-defined column widths. */
-  html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) table[data-history-label-content] { table-layout: fixed; }
-  html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) table[data-history-label-content] > tbody > tr > :is(th,td) { padding: 10px 8px; line-height: 1.7; }
-  html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) table[data-history-label-content] > tbody > tr > th { font-size: var(--hn-body-size); font-weight: 700; }
-  html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-exam-panel col:first-child { width: 24% !important; }
-  html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-exam-panel col:last-child { width: 76% !important; }
-  html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-exam-panel th[scope="row"] { padding-inline: 8px; overflow-wrap: normal; word-break: keep-all; }
+  html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) table[data-history-label-content] { table-layout: fixed; }
+  html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) table[data-history-label-content] > tbody > tr > :is(th,td) { padding: 10px 8px; line-height: 1.7; }
+  html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) table[data-history-label-content] > tbody > tr > th { font-size: var(--hn-body-size); font-weight: 700; }
+  html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-exam-panel col:first-child { width: 24% !important; }
+  html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-exam-panel col:last-child { width: 76% !important; }
+  html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-exam-panel th[scope="row"] { padding-inline: 8px; overflow-wrap: normal; word-break: keep-all; }
 }
 @media (min-width: 900px) {
-  html body #privateTextbook > .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) { padding: 32px; }
-  html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-quiz-title { font-size: 32px; }
+  html body :is(#privateTextbook,#eraFullSummary) > .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) { padding: 32px; }
+  html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-quiz-title { font-size: 32px; }
 }
 
 /* Workbook save feedback stays readable on paper under the world's dark theme. */
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-quiz-status { color: var(--hn-muted) !important; }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-quiz-status[data-result="match"] { color: #176037 !important; }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-quiz-status:is([data-result="different"],[data-result="empty"]) { color: #864500 !important; }
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-quiz-status { color: var(--hn-muted) !important; }
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-quiz-status[data-result="match"] { color: #176037 !important; }
+html body :is(#privateTextbook,#eraFullSummary) .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-quiz-status:is([data-result="different"],[data-result="empty"]) { color: #864500 !important; }
+
+/* Source summaries live outside #privateTextbook. Clear the terminal theme's
+   blanket backgrounds only inside this authenticated, generated reading view.
+   Legacy 79th-edition summaries and original source ink remain untouched. */
+html body #eraFullSummary .textbook-source-summary.history-notes-design :is(div,section,article,table,thead,tbody,tr,th,td) {
+  background-color: transparent !important;
+  background-image: none !important;
+  color: var(--hn-ink) !important;
+  border-color: var(--hn-rule) !important;
+}
+html body #eraFullSummary .textbook-source-summary.history-notes-design :is(h2,p,span,strong) {
+  color: var(--hn-ink) !important;
+}
+html body #eraFullSummary .textbook-source-summary.history-notes-design .textbook-status {
+  color: var(--hn-muted) !important;
+}
