@@ -88,6 +88,8 @@ html body #joseonScript .joseon-script-reader .jsr-culture-gallery .jsr-image-st
 .joseon-script-reader [data-presentation="late-introduction"] .jsr-table table{min-width:0;table-layout:fixed}
 .joseon-script-reader [data-presentation="late-introduction"] .jsr-table th,.joseon-script-reader [data-presentation="late-introduction"] .jsr-table td{min-width:0;padding:10px 8px}
 .joseon-script-reader [data-presentation="late-introduction"] .jsr-table th:first-child{width:38%}
+.joseon-script-reader [data-presentation="late-introduction"] .jsr-table td:first-child{word-break:keep-all;overflow-wrap:normal}
+html body #joseonScript .joseon-script-reader [data-presentation="late-introduction"] .jsr-image-status{color:#586875!important}
 @media(max-width:700px){.joseon-script-reader .jsr-culture-gallery{grid-template-columns:minmax(0,1fr)}.joseon-script-reader .jsr-culture-gallery figure{padding:8px}}
 @media(max-width:700px){
  .joseon-script-reader .jsr-outline-table{display:block}.jsr-outline-table>colgroup{display:none}.jsr-outline-table>caption{display:block}
