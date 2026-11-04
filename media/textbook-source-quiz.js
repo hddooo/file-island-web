@@ -373,8 +373,18 @@
       on(filter,'change',paint);paint();(data.answerTableNotes||[]).forEach(function(note){reviewHost.appendChild(el('p','textbook-source-quiz-source-note',note.sourceText));});
     }
     function build(){
-      var groups=presentation?groupedContainers(list,'textbook-joseon-section'):null;
+      var groups=presentation?groupedContainers(list,'textbook-joseon-section'):null, instructions=new WeakMap();
       data.items.forEach(function(item,itemIndex){
+      var target=groups?topicTarget(groups,itemIndex):list, topic=data.subtopics.find(function(t){return t.id===item.subtopicId;}), previous=instructions.get(target), instruction=previous&&previous.topic===item.subtopicId?previous.node:null;
+      if(!previous||previous.topic!==item.subtopicId){
+        instruction=null;
+        if(topic&&topic.title.trim()){
+          instruction=target.dataset.sourceSubtopic===topic.id?Array.from(target.children).find(function(n){return /^H[1-6]$/.test(n.tagName)&&n.textContent===topic.title;}):null;
+          if(!instruction){instruction=el('h3','textbook-source-quiz-instruction',topic.title);target.appendChild(instruction);}
+          instruction.id=prefix+'-instruction-'+itemIndex;
+        }
+        instructions.set(target,{topic:item.subtopicId,node:instruction});
+      }
       var card = el('div', 'textbook-source-quiz-item'); card.dataset.sourceItemId = item.id;
       var localId = prefix + '-item-' + itemIndex, label = el('small', 'textbook-source-quiz-item-source',
         '문제 ' + sourceNumber(item,itemIndex));
@@ -386,7 +396,7 @@
         input.id = id; input.autocomplete = 'off'; input.spellcheck = false;
         input.maxLength = 2000; input.setAttribute('autocapitalize', 'off');
         input.setAttribute('aria-label', description);
-        input.setAttribute('aria-describedby', statement.id + ' ' + label.id);
+        input.setAttribute('aria-describedby', statement.id + ' ' + label.id + (instruction?' '+instruction.id:''));
         input.disabled = !isVerified; return input;
       }
       item.segments.forEach(function (segment, segmentIndex) {
@@ -448,7 +458,7 @@
           on(entry.node,'blur',function(){if(!entry.composing)grade(row,entry);});
           on(entry.node,'keydown',function(e){if(e.key==='Enter'){e.preventDefault();if(e.repeat||e.isComposing||e.keyCode===229||entry.composing||Date.now()-entry.composedAt<100)return;grade(row,entry);var next=displayFields.indexOf(entry)+1;if(next<displayFields.length)focusAt(fields.indexOf(displayFields[next]));}});
         });
-        (groups?topicTarget(groups,itemIndex):list).appendChild(card);
+        target.appendChild(card);
         if(response){inputs.forEach(function(entry,slot){if(!(response.submitted||response.checkedSlots&&response.checkedSlots[slot]))return;var parts=entry.answerIds.map(function(id){return item.answers.find(function(a){return a.id===id;}).text;}),value=entry.node.value;entry.graded=!!normalize(value);entry.match=(item.answer.sequenceTokens&&normalize(value)===normalize(item.answer.text))||compare(value,parts,entry.orderMatters,item.kind,item.answer.sequenceSeparator)==='match';entry.feedback.textContent=answerFeedback(item,entry,value,parts);entry.feedback.dataset.result=entry.match?'match':'different';});row.submitted=inputs.every(function(e){return e.graded;});row.correct=row.submitted?inputs.every(function(e){return e.match;}):null;}
       });
       var byNode=new Map(fields.map(function(entry){return [entry.node,entry];}));

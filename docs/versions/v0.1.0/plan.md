@@ -1,5 +1,9 @@
 # FE 버전 계획
 
+### 2026-11-04 — 0.3.11-beta 공통 지시문
+
+실제 subtopics.title과 item.subtopicId 계약을 사용해 원문 공통 지시문을 구간 시작에 표시한다. 새 문구를 추정하거나 자료를 수정하지 않는다. 빈 제목이면 기존 화면을 유지하고 조선의 기존 하위 구간 제목은 재사용한다. 입력칸 aria-describedby에 지시문을 연결하며 저장/채점 로직은 바꾸지 않는다.
+
 ### 2026-11-04 — 0.3.10-beta 원문 요약 테마 수정
 
 요약은 #eraFullSummary에 렌더링되므로 기존 #privateTextbook 읽기 범위를 확장한다. 원문 요약 shell 안에서만 terminal 테마의 표/셀 강제 배경을 해제한다. 기존79회 summary renderer와 진도/API/gate는 보존한다.

@@ -189,3 +189,5 @@ html body #eraFullSummary .textbook-source-summary.history-notes-design :is(h2,p
 html body #eraFullSummary .textbook-source-summary.history-notes-design .textbook-status {
   color: var(--hn-muted) !important;
 }
+
+html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-quiz-instruction { color:var(--hn-ink) !important; background:transparent; }

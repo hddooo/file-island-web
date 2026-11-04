@@ -60,3 +60,5 @@
 .textbook-source-continuous [data-source-subitem-id]>label{display:block;margin-bottom:6px}
 .textbook-source-continuous .textbook-source-quiz-item{padding:16px 0}
 @media(max-width:480px){.textbook-source-continuous [data-source-subitem-id] .textbook-source-quiz-input{width:100%;max-width:100%;box-sizing:border-box}.textbook-source-continuous .textbook-source-quiz-statement{line-height:1.9}}
+
+.textbook-source-quiz-instruction{font-size:20px;line-height:1.5;font-weight:700;margin:24px 0 12px;white-space:pre-wrap;overflow-wrap:anywhere;break-after:avoid}
