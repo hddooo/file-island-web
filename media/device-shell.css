@@ -200,10 +200,10 @@ html body #app.digivice-v2>.topline.device-crown.device-crown-has-profile>.devic
    Short mobile identities can share the centred brand's single action row. */
 html body #app.digivice-v2>.topline.device-crown{--header-inline-gap:4px}
 @media(max-width:600px){
-html body #app.digivice-v2>.topline.device-crown .header-menu #headerAccount.is-member{display:grid!important;grid-template-columns:minmax(24px,1fr) minmax(0,max-content);grid-template-rows:minmax(24px,auto) auto;column-gap:4px;row-gap:0;padding:1px 4px!important}
+html body #app.digivice-v2>.topline.device-crown .header-menu #headerAccount.is-member{display:grid!important;grid-template-columns:minmax(26px,1fr) minmax(0,max-content);grid-template-rows:minmax(26px,auto) auto;column-gap:4px;row-gap:0;padding:1px 4px!important}
 html body #app.digivice-v2>.topline.device-crown #headerAccount .hm-text{display:contents!important}
-html body #app.digivice-v2>.topline.device-crown #headerAccount .hm-pic{grid-column:1;grid-row:1;justify-self:end;align-self:center;width:24px;height:24px}
-html body #app.digivice-v2>.topline.device-crown #headerAccount .hm-pic :is(.collection-portrait,.hanq-mascot,.hanq-growth-portrait){--mascot-size:24px;width:24px;height:24px}
+html body #app.digivice-v2>.topline.device-crown #headerAccount .hm-pic{grid-column:1;grid-row:1;justify-self:end;align-self:center;width:26px;height:26px}
+html body #app.digivice-v2>.topline.device-crown #headerAccount .hm-pic :is(.collection-portrait,.hanq-mascot,.hanq-growth-portrait){--mascot-size:26px;width:26px;height:26px}
 html body #app.digivice-v2>.topline.device-crown #headerAccount .hm-name{grid-column:2;grid-row:1;align-self:center;text-align:right;min-width:0}
 html body #app.digivice-v2>.topline.device-crown #headerAccount .hm-meta{grid-column:1 / -1;grid-row:2;justify-content:flex-end;min-width:0}
 }
