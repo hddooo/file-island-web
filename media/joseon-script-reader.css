@@ -117,3 +117,5 @@ html body #joseonScript .joseon-script-reader .jsr-silhak-scroll:focus-visible{o
 @media(max-width:700px){.joseon-script-reader .jsr-silhak-table{width:calc(100% + 410px);min-width:0}.jsr-silhak-table col:nth-child(1){width:80px}.jsr-silhak-table col:nth-child(2){width:130px}.jsr-silhak-table col:nth-child(3){width:200px}.jsr-silhak-table col:nth-child(4){width:auto}}
 
 .joseon-script-reader .jsr-silhak-hint{display:none;font-size:18px}@media(max-width:700px){.joseon-script-reader .jsr-silhak-hint{display:block}}
+.joseon-script-reader .jsr-answer-list { list-style:none; padding-left:0; }
+.joseon-script-reader .jsr-answer-item { margin:0 0 .65rem; overflow-wrap:anywhere; }

@@ -74,7 +74,7 @@
       if((m=/^!\[([^\]]*)\]\((p\d{3}-\d{2}\.png)\)$/.exec(line))) {figure(host,m[2],m[1]);i++;continue;}
       if((m=/^(#{1,6}) (.*)$/.exec(line))) {const e=doc.createElement('h'+Math.min(5,Math.max(2,m[1].length-1)));inline(doc,e,m[2]);host.append(e);i++;continue;}
       if(/^\|/.test(line) && /^\|(?:\s*:?-+:?\s*\|)+\s*$/.test(lines[i+1]||'')) {
-        const wrap=doc.createElement('div');wrap.className='jsr-table';wrap.tabIndex=0;wrap.setAttribute('role','region');wrap.setAttribute('aria-label','원문 비교표, 가로 스크롤');
+        const wrap=doc.createElement('div');wrap.className='jsr-table';wrap.tabIndex=0;wrap.setAttribute('role','region');wrap.setAttribute('aria-label','학습 표, 가로 스크롤');
         const table=doc.createElement('table');let first=true;
         while(i<lines.length && /^\|/.test(lines[i])) {
           const row=lines[i++]; if(/^\|(?:\s*:?-+:?\s*\|)+\s*$/.test(row))continue;
@@ -175,11 +175,44 @@
       article.querySelectorAll('figure').forEach(f=>{const p=f.previousElementSibling,c=f.querySelector('figcaption'),suffix=' · PDF '+s.page+'쪽';if(p&&p.tagName==='P'&&p.children.length===1&&p.firstElementChild.tagName==='STRONG'&&c.textContent===p.textContent+suffix)p.remove();if(c.textContent.endsWith(suffix))c.textContent=c.textContent.slice(0,-suffix.length);});
     });
       if(mode==='study'&&bundle.source.sha256===editorialSource){connectTable23();connectLaterTables();connectCulture();connectSilhak();}
+      if(bundle.source.sha256===editorialSource)cleanDisplayLabels();
       body.querySelectorAll('.jsr-source-card').forEach(article=>{
-      const group=el('details'),title=article.querySelector('h3,h4'),summary=el('summary',(title?title.textContent:'학습 안내')+' · '+article.dataset.page);group.append(summary);toc.append(group);
+      const group=el('details'),title=article.querySelector('h3,h4'),summary=el('summary',title?title.textContent:'학습 안내');group.append(summary);toc.append(group);
       const headings=Array.from(article.querySelectorAll('h3,h4'));
-      (headings.length?headings:[article]).forEach((heading,index)=>{heading.id=article.id+'-section-'+index;const a=el('button',heading===article?'이 쪽 읽기':heading.textContent);a.type='button';a.onclick=()=>{for(let node=heading.parentElement;node&&node!==body;node=node.parentElement)if(node.tagName==='DETAILS')node.open=true;heading.tabIndex=-1;heading.focus({preventScroll:true});heading.scrollIntoView({block:'start'});};group.append(a);});
+      (headings.length?headings:[article]).forEach((heading,index)=>{heading.id=article.id+'-section-'+index;const a=el('button',heading===article?'학습 내용 읽기':heading.textContent);a.type='button';a.onclick=()=>{for(let node=heading.parentElement;node&&node!==body;node=node.parentElement)if(node.tagName==='DETAILS')node.open=true;heading.tabIndex=-1;heading.focus({preventScroll:true});heading.scrollIntoView({block:'start'});};group.append(a);});
     });}
+    function cleanDisplayLabels(){
+      // Keep source coordinates in immutable data/DOM identifiers, never in learner-facing labels.
+      // Run after structural transforms and draft-key creation so source ownership and draft keys stay stable.
+      body.querySelectorAll('.jsr-source-label,.jsr-row-source').forEach(e=>e.remove());
+      body.querySelectorAll('.jsr-source-card[data-kind="practice"]').forEach(article=>{
+        let unit='조선 빈칸 문제';
+        Array.from(article.children).forEach(node=>{
+          if(/^H[34]$/.test(node.tagName))unit=node.textContent;
+          if(node.classList.contains('jsr-draft'))node.querySelector('textarea').setAttribute('aria-label',unit+' · '+node.textContent);
+        });
+      });
+      body.querySelectorAll('.jsr-culture-gallery').forEach(gallery=>{
+        const names=Array.from(gallery.querySelectorAll('figcaption'),e=>e.textContent);
+        gallery.setAttribute('aria-label',names.join(' · ')+' 그림 모음');
+      });
+      body.querySelectorAll('.jsr-source-card[data-kind="answers"]').forEach(article=>{
+        const title=article.querySelector('h3');
+        if(title&&['64','72'].includes(article.dataset.page))title.textContent=(article.dataset.page==='64'?'조선 전기':'조선 후기')+' 교재 정답';
+        article.querySelectorAll('.jsr-table').forEach((wrap,index)=>{
+          let heading=wrap.previousElementSibling;
+          while(heading&&!/^H[34]$/.test(heading.tagName))heading=heading.previousElementSibling;
+          const list=el('ol',null,'jsr-answer-list');list.setAttribute('aria-label',(heading?heading.textContent:'교재 정답')+' 번호별 답안');
+          Array.from(wrap.querySelectorAll('tr')).slice(1).forEach(row=>{
+            const cells=Array.from(row.children),number=/^\((\d+)\)/.exec(cells[0].textContent.trim());
+            if(!number)throw Error('Invalid answer number');
+            const item=el('li',null,'jsr-answer-item');item.value=Number(number[1]);item.dataset.answerNumber=number[1];
+            cells.forEach((cell,i)=>{if(i)item.append(doc.createTextNode(' '));item.append(...Array.from(cell.childNodes));});list.append(item);
+          });
+          wrap.replaceWith(list);
+        });
+      });
+    }
     function connectTable23(){
       const pages=[60,61].map(page=>body.querySelector('.jsr-source-card[data-page="'+page+'"]'));
       if(pages.some(p=>!p))return;

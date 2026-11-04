@@ -36,7 +36,7 @@ assert.equal(figures,38);assert.equal(questions,172);assert.equal(answers,172);a
 // Exact snapshot of all 47 audited outputs, without publishing private source excerpts.
 assert.equal(sha256(JSON.stringify(editedOutput)),'0a9f9302690f1533de221b49736d3d4087c8426f66757f0316fdf956429c4273');
 const dom=new JSDOM('<main></main>',{url:'https://synthetic.invalid/'}),host=dom.window.document.querySelector('main');dom.window.URL.revokeObjectURL=()=>{};
-function answerText(container,id,source){return [...container.querySelectorAll('tr')].flatMap(row=>{
+function answerText(container,id,source){if(!source)return [...container.querySelectorAll('.jsr-answer-item')].map(item=>{const match=/^\((\d+)\)\s*([\s\S]*)$/.exec(item.textContent);assert(match);assert.equal(item.value,Number(match[1]));return [id,match[1],match[2]];});return [...container.querySelectorAll('tr')].flatMap(row=>{
  const cells=[...row.querySelectorAll('td')].map(td=>td.textContent.trim());if(!cells.length)return [];
  const text=source&&cells.length===3?cells[2]:cells.join(' '),match=/^\((\d+)\)\s*([\s\S]*)$/.exec(text);
  return match?[[id,match[1],match[2]]]:[];
@@ -50,9 +50,12 @@ const banned=/원문 행|원문 열|원문 번호|원문 퀴즈|원문 인쇄 �
 for(const topic of bundle.topics){host.querySelector('[data-topic="'+topic.id+'"]').click();for(const mode of ['study','practice','answers']){
  host.querySelector('[data-mode="'+mode+'"]').click();if(mode==='answers'){assert.equal(host.querySelector('.jsr-body>h2').textContent,'조선 교재 정답');assert.equal(host.querySelector('.jsr-reveal button').textContent,'교재 정답 펼치기');assert.equal(host.querySelector('[data-mode="answers"]').textContent,'교재 정답');assert.equal(host.querySelector('.jsr-reveal p').textContent,'교재 정답입니다. 먼저 문제를 풀어 본 뒤 확인하세요.');host.querySelector('.jsr-reveal button').click();}
  assert(!banned.test(host.querySelector('.jsr-body').textContent),topic.id+'/'+mode+': '+host.querySelector('.jsr-body').textContent.match(banned)?.[0].slice(0,140));assert.equal(host.querySelectorAll('.jsr-provenance').length,0);
- assert([...host.querySelectorAll('figcaption')].every(c=>!/ · PDF \d+쪽$/.test(c.textContent)));assert([...host.querySelectorAll('.jsr-source-card')].every(a=>a.querySelectorAll('.jsr-source-label').length===1));
+ const display=host.textContent+' '+[...host.querySelectorAll('[aria-label],[aria-description],[title]')].flatMap(e=>['aria-label','aria-description','title'].map(a=>e.getAttribute(a)||'')).join(' ');
+ assert(!/PDF|인쇄 \d+쪽|원문 비교표/.test(display),topic.id+'/'+mode+' generated display metadata');
+ assert.equal(host.querySelectorAll('.jsr-source-label,.jsr-row-source').length,0);
+ assert([...host.querySelectorAll('figcaption')].every(c=>!/ · PDF \d+쪽$/.test(c.textContent)));
  if(mode==='practice'){assert.equal(host.querySelectorAll('textarea').length,172);assert.deepEqual([...host.querySelectorAll('.jsr-source-card')].flatMap(a=>questionText(a,a.id)),expectedQuestions);}
- if(mode==='answers'){assert.deepEqual([...host.querySelectorAll('.jsr-source-card')].flatMap(a=>answerText(a,a.id,false)),expectedAnswers);assert([...host.querySelectorAll('th')].every(th=>!/^원문 (행|열)$/.test(th.textContent)));}
+ if(mode==='answers'){assert.deepEqual([...host.querySelectorAll('.jsr-source-card')].flatMap(a=>answerText(a,a.id,false)),expectedAnswers);assert.equal(host.querySelectorAll('.jsr-answer-list').length,7);assert.equal(host.querySelectorAll('.jsr-body table,.jsr-body [role="region"]').length,0);}
  if(mode==='study'&&topic.id==='late'){assert(host.textContent.includes('세도정치: 순조·헌종·철종'));assert(host.querySelector('[data-source-color="#9b9ba8"]'));}
  views++;
 }}
