@@ -767,3 +767,13 @@ The user's latest request supersedes earlier automatic-test requirements. Fronte
 - 통과: lossless reader, session/계정 경계, transport 전체38 PNG SHA/bytes/MIME 및 header/401/503/abort/10초 body timeout, 235 comparison assertions, 119 joseon tab assertions, 브라우저12 layouts·종횡비·확대/Back·정답분리·logout 및 retry 8종/다른 realm Blob/queue cancellation.
 - 기존 test-period-joseon은 변경하지 않은 quiz-progress.js의 낡은 고정 해시에서 실패한다. main blob SHA256 b846a924ec6f3aa5fbe339d2a8660917928d0e0bee25c9668915be2451e2b80d; 테스트 기대 ac16c4a65575ee2be0224f49f950e6fcddec713eeef2c620d30f110a67346f3c. assertion은 완화하지 않았다. Windows CRLF 해시 영향을 구분한 뒤 main blob에도 불일치함을 확인했다.
 - 남음: 실제 사용자 세션 및 물리 모바일/느린 통신망에서의 운영 재검증, 실제 proxy/CDN 전송, 통합 SHA CI/CD. 합성 delayed loader/timeout은 이동통신망 재현을 대신하지 않는다. 인증 POST 운영 진단/배포/push는 수행하지 않는다. 통합 담당이 최신 main에 적용하고 정확 SHA를 검증한다.
+
+### 2026-11-05 조선 편집 설명 제외 후속 후보
+
+c386232 후속이며 위의 접힌 편집 설명 보존 정책을 대체한다. 조선 reader에서만 표시를 바꾸며 원문 MD/bundle/transport/pin은 변경하지 않는다. 알려진 source SHA와 segment.startLine을 함께 확인한 뒤 식별된 행만 처리한다. 다른 SHA에는 행 번호 규칙을 적용하지 않는다.
+
+분류: (1) 그림 좌표 안내38개는 완전 제외, (2) 전사·표 머리/병합·문제 이어짐·정답 분리/교정·검수 안내 및 빈 위치 제목34행은 제외, (3) 역사 의미와 위치 설명이 섞인47행은 제목·왕명·제도 관계·문화재 캡션·강조를 보존하고 편집 접두/접미만 제거, (4) 반복 머리말/바닥글/인쇄 쪽수/PDF 제목은 제외하고 카드 출처 페이지는 유지, (5) metadata segment는 기존처럼 세 모드에서 제외한다. 임시 답안 비저장 안내와 정답 펼치기는 유지한다. 단독 기울임/‘원문’ 단어에 대한 포괄 삭제는 하지 않는다.
+
+삭제/부분변경 행 목록은 scripts/test-joseon-editorial.cjs에 고정했다. 그림38/문제172/정답172, 세도정치 관계·회색 왕명 색상, 4주제×3모드의 설명 잔존0, 알려지지 않은 SHA 무변경, sourceLossless와 객체/파일 해시 불변을 검증한다. 허용 목록 밖의 각 행은 문자 단위 동일성을 검증하여 역사 내용·표·힌트·강조 손실을 잡는다. 그림 메타와 중복 제목은 접힌 상세에도 남기지 않는다.
+
+고려 이후에는 조선 행 번호를 복사하지 말고 해당 원문 SHA에 결합한 별도 audit 목록을 만든다. 공통적으로 완전 메타/의미가 섞인 문장/학습 내용/기능 안내를 구분하고, 혼합 문장은 학습 부분만 남긴다. 이번 후보는 고려 파일을 변경하지 않는다. 기존 test-period-joseon의 stale quiz-progress 해시 실패는 별도 남아 있다. 운영 원인 미확정 및 물리 모바일/실사용자 검증 한계도 동일하다.

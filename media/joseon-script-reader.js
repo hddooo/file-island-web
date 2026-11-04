@@ -2,6 +2,33 @@
   'use strict';
   // A data-injected reader. No endpoint, credentials, storage, grading or release-gate overrides.
   const colors = new Set(['#0070a3','#ff0000','#808080','#bfbfbf','#9b9ba8','#289b6e','#ed7d31','#000000','#ffff00']);
+  // Display-only audit of this immutable source. Never apply positional rules to another edition.
+  const editorialSource='8d0944e32d86985a4af3dbf28085dba4bb3f65cc0d8379907e2e4693299003a1';
+  const editorialDrop=new Set([93,165,247,394,430,504,514,534,560,609,920,988,1015,1084,1111,1139,1216,1296,1345,1377,1386,1411,1432,1455,1457,1484,1570,1698,1783,1791,1836,1845,1864,2216]);
+  const editorialTitle=new Set([67,73,102,116,556]);
+  function readingMarkdown(segment,sourceSha){
+    if(sourceSha!==editorialSource||!Number.isInteger(segment.startLine))return segment.markdown;
+    return segment.markdown.split('\n').map((line,index)=>{
+      const number=segment.startLine+index;
+      if(editorialDrop.has(number)||/^\*PDF \d+쪽\(인쇄 \d+쪽\), (?:배치에 따른 설명|원문 캡션)\. 아래 이미지 목록에 원문 배치 좌표를 기록했습니다\.\*$/.test(line)||/^### PDF \d+쪽$/.test(line)||/^원문 (?:머리말:|바닥글:|인쇄 쪽수(?::| ))/.test(line))return '';
+      if(editorialTitle.has(number))return line.slice(0,line.indexOf(' · '));
+      if([118,119,120].includes(number))return line.replace(/^- [^:]+: /,'- ');
+      if(number===179)return line.replace('세종 셀 오른쪽, 위에서 ','');
+      if(number===485)return line.replace('위 행 14–19대, 아래 행 20–25대. 원문에서 ','').replace('을 한 테두리로 묶고 ',' · ').replace('라고 표시하였다.','');
+      if([78,81,82,88,495,499].includes(number))return line.replace('원문 회색 왕명, 업적란 없음','—');
+      if(number===1107)return line.replace('배치·','');
+      if(number===1109)return line.replace('위쪽 오른편의 ','');
+      if(number===1110)return line.replace('아래쪽 왼편 ','');
+      if(number===1534)return line.replace('도판은 왼쪽부터 ','').replace(' 순서이다.','');
+      if([1572,1578,1585,1591,1595,1601,1607,1612].includes(number))return line.replace(/(왼쪽|오른쪽) 묶음 — /,'');
+      if(number===1618)return line.replace(' 배치','');
+      if(number===1781)return line.replace(' — 독립 병합 셀','');
+      if(number===1876)return line.replace(' 배치','');
+      if(number>=1878&&number<=1888)return line.replace(/^- [^:]+: /,'- ');
+      if([2218,2238,2256,2275,2298].includes(number))return line.replace(/ — (왼쪽|오른쪽) (위|가운데|아래)$/,'');
+      return line;
+    }).join('\n');
+  }
   function inline(doc, target, text) {
     const tokens = /(<\/?(?:span|strong|u|br)\b[^>]*>|\*\*([^*]+)\*\*|\*([^*]+)\*|\[([^\]]+)\]\(([^)]+)\))/gi;
     let cursor=0, current=target; const stack=[];
@@ -133,13 +160,9 @@
     }
     function renderSegments(t){bundle.segments.filter(s=>selected(s,t)).forEach(s=>{
       const article=el('article',null,'jsr-source-card');article.id=s.id;article.dataset.kind=s.kind;
-      article.append(el('p',s.page?'PDF '+s.page+'쪽 · 인쇄 '+(s.page-7)+'쪽':'원문 안내','jsr-source-label'));renderMarkdown(doc,article,s.markdown,figure);body.append(article);
+      article.append(el('p',s.page?'PDF '+s.page+'쪽 · 인쇄 '+(s.page-7)+'쪽':'원문 안내','jsr-source-label'));renderMarkdown(doc,article,readingMarkdown(s,bundle.source.sha256),figure);body.append(article);
       if(mode==='practice')Array.from(article.querySelectorAll('p')).forEach((p,i)=>{const m=/^\((\d+)\) /.exec(p.textContent);if(!m)return;const key=s.id+'-'+i,label=el('label','나의 임시 답안 · '+m[1]+'번','jsr-draft'),input=el('textarea');input.rows=2;input.value=drafts.get(key)||'';input.setAttribute('aria-label','PDF '+s.page+'쪽 '+m[1]+'번 임시 답안');input.oninput=()=>drafts.set(key,input.value);label.append(input);p.after(label);});
-      const provenance=el('details',null,'jsr-provenance');provenance.append(el('summary','원문 페이지 정보'));
-      Array.from(article.querySelectorAll('p')).filter(e=>/^PDF \d+쪽\(인쇄 \d+쪽\), (?:배치에 따른 설명|원문 캡션)\. 아래 이미지 목록에 원문 배치 좌표를 기록했습니다\.$/.test(e.textContent)).forEach(e=>provenance.append(e));
-      article.querySelectorAll('figure').forEach(f=>{const p=f.previousElementSibling,c=f.querySelector('figcaption');if(p&&p.tagName==='P'&&p.children.length===1&&p.firstElementChild.tagName==='STRONG'&&c.textContent===p.textContent+' · PDF '+s.page+'쪽')provenance.append(p);});
-      Array.from(article.children).filter(e=>e.tagName==='H2'&&/^PDF \d+쪽$/.test(e.textContent)||e.tagName==='P'&&/^원문 (머리말|인쇄 쪽수|바닥글):/.test(e.textContent)).forEach(e=>provenance.append(e));
-      if(provenance.children.length>1)article.append(provenance);
+      article.querySelectorAll('figure').forEach(f=>{const p=f.previousElementSibling,c=f.querySelector('figcaption'),suffix=' · PDF '+s.page+'쪽';if(p&&p.tagName==='P'&&p.children.length===1&&p.firstElementChild.tagName==='STRONG'&&c.textContent===p.textContent+suffix)p.remove();if(c.textContent.endsWith(suffix))c.textContent=c.textContent.slice(0,-suffix.length);});
       const group=el('details'),title=article.querySelector('h3,h4'),summary=el('summary',(title?title.textContent:'학습 안내')+' · '+s.page);group.append(summary);toc.append(group);
       const headings=Array.from(article.querySelectorAll('h3,h4'));
       (headings.length?headings:[article]).forEach((heading,index)=>{heading.id=s.id+'-section-'+index;const a=el('button',heading===article?'이 쪽 읽기':heading.textContent);a.type='button';a.onclick=()=>{heading.tabIndex=-1;heading.focus({preventScroll:true});heading.scrollIntoView({block:'start'});};group.append(a);});
@@ -149,6 +172,6 @@
     if(!options.externalNavigation)win.addEventListener('popstate',pop);pop();
     return {handlePopState(){if(!alive)return false;pop();return true;},stop(){alive=false;epoch++;clearImages();drafts.clear();win.removeEventListener('popstate',pop);shell.remove();}};
   }
-  root.HanqJoseonScriptReader={mount,inline,renderMarkdown};
+  root.HanqJoseonScriptReader={mount,inline,renderMarkdown,readingMarkdown};
   if(typeof module==='object'&&module.exports)module.exports=root.HanqJoseonScriptReader;
 })(typeof window==='object'?window:globalThis);
