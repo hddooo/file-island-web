@@ -1,5 +1,12 @@
 # FE 버전 계획
 
+### 2026-11-04 — 0.3.9-beta 조선 글자 크기
+
+- [x] 선사 준비 코드는 별도 branch/로컬 checkpoint efe0225로 보존하고 조선 가독성을 우선한다.
+- [x] 실제 79회 조선 자료의 computed font를 확인하고 본문·표17px / 큰 제목22px / 소제목20px / 붕당 도식16px로 정리한다.
+- [x] 모바일·데스크톱·가로 화면과 81회 localhost 비교, 판본/원문 강조/분기/좌표 도식 회귀를 검수한다.
+- [ ] 정확 commit 빌드·push·자동 CD·운영 버전/자산을 확인한다.
+
 ### 2026-11-04 — 0.3.8-beta 역사 학습 배경
 
 - [x] 기존 Mac frontend/API checkout의 미커밋 변경 없음을 확인하고 별도 작업 복사본에서 remote를 확인한다. frontend 기준 f332986/0.3.7-beta, API remote 83c51bc.

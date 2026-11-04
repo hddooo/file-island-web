@@ -18,14 +18,17 @@ html body #privateTextbook .history-notes-design:is([data-history-edition="79"],
   --hn-accent: #285d46;
   --hn-rule: #a0b3a7;
   --hn-control-rule: #6b8574;
+  --hn-body-size: 17px;
+  --hn-section-size: 22px;
+  --hn-subsection-size: 20px;
   --textbook-semantic-blue: #285d46;
   box-sizing: border-box;
   min-width: 0;
   max-width: 100%;
   background-color: var(--hn-paper) !important;
   color: var(--hn-ink) !important;
-  font-size: 16px;
-  line-height: 1.625;
+  font-size: var(--hn-body-size);
+  line-height: 1.7;
   overflow-wrap: anywhere;
   border: 0;
   border-radius: 0;
@@ -61,9 +64,29 @@ html body #privateTextbook .history-notes-design:is([data-history-edition="79"],
   break-after: avoid;
 }
 html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-quiz-title { margin-top: 0; font-size: 28px; }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(.textbook-semantic-text,.textbook-semantic-table td,.textbook-semantic-table th,.textbook-source-quiz-statement) {
+/* Source PDF span sizes are metadata. Reading hierarchy comes from the block
+   role; inline emphasis inherits its paragraph, cell or heading size. Keep
+   coordinate diagrams' own 16px canvas geometry and source ink untouched. */
+html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(h1,h2).textbook-semantic-heading {
+  font-size: var(--hn-section-size);
+}
+html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(h3,h4,h5,h6).textbook-semantic-heading {
+  font-size: var(--hn-subsection-size);
+}
+html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(.textbook-semantic,.textbook-semantic-table,.textbook-semantic-prompt,.textbook-semantic-answer p) {
+  font-size: var(--hn-body-size);
+}
+html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-line,
+html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-line > :is(span,strong) {
+  font-size: inherit;
+}
+html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(.textbook-source-branch-graph,.textbook-source-branch-context,.textbook-source-branch-cause) {
   font-size: 16px;
-  line-height: 1.625;
+  line-height: 1.5;
+}
+html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(.textbook-semantic-text,.textbook-semantic-table td,.textbook-semantic-table th,.textbook-source-quiz-statement) {
+  font-size: var(--hn-body-size);
+  line-height: 1.7;
   color: var(--hn-ink);
 }
 html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-semantic-text { margin-block: 8px 12px; }
@@ -129,7 +152,7 @@ html body #privateTextbook .history-notes-design:is([data-history-edition="79"],
      their existing internal scrolling and source-defined column widths. */
   html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) table[data-history-label-content] { table-layout: fixed; }
   html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) table[data-history-label-content] > tbody > tr > :is(th,td) { padding: 10px 8px; line-height: 1.7; }
-  html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) table[data-history-label-content] > tbody > tr > th { font-size: 16px; font-weight: 700; }
+  html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) table[data-history-label-content] > tbody > tr > th { font-size: var(--hn-body-size); font-weight: 700; }
   html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-exam-panel col:first-child { width: 24% !important; }
   html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-exam-panel col:last-child { width: 76% !important; }
   html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-exam-panel th[scope="row"] { padding-inline: 8px; overflow-wrap: normal; word-break: keep-all; }
