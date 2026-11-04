@@ -18,6 +18,8 @@
     if(root.HanqCollectionLife)['gabumon','patamon'].forEach(function(id){layer.querySelector('.he-'+id).insertAdjacentHTML('beforeend',root.HanqCollectionLife.markup(id,false,'history-scenery'));});
     chart.appendChild(layer);
     var camp=layer.querySelector('.he-camp'),fire=layer.querySelector('.he-fire'),friend=layer.querySelector('.he-friend');
+    // All feet use the same source-art coordinate space, independent of camp size.
+    layer.appendChild(friend);
     function warmCamp(){if(closed)return;[['history-camp-dusk-v2.webp',camp,'he-camp-ready','--he-camp-art'],['history-camp-flame-v2.webp',fire,'he-fire-ready','--he-flame-art'],['history-agumon-leaf-held-v1.webp',friend,'he-rain-ready','--he-rain-friend-art']].forEach(function(entry){if(!entry[1].classList.contains(entry[2]))decoded(entry[0]).then(function(ok){if(ok&&!closed&&entry[1].isConnected){layer.style.setProperty(entry[3],'url("'+ok+'")');entry[1].classList.add(entry[2]);}});});}
     function warmPeople(){if(closed)return;[[friend,'agumon-idle-sprite.png','he-ready','--he-agumon-art'],[layer.querySelector('.he-koromon'),'koromon-idle-actions-v1.png','he-resident-ready','--he-koromon-art']].forEach(function(entry){if(!entry[0].classList.contains(entry[2]))decoded(entry[1],true).then(function(url){if(url&&!closed&&entry[0].isConnected){layer.style.setProperty(entry[3],'url("'+url+'")');entry[0].classList.add(entry[2]);}});});if(root.HanqCollectionLife)['gabumon','patamon'].forEach(function(id){var node=layer.querySelector('.he-'+id);if(!node.classList.contains('he-resident-ready'))root.HanqCollectionLife.warm(id).then(function(ok){if(ok&&!closed&&node.isConnected)node.classList.add('he-resident-ready');});});}
     function warmAll(){warmCamp();warmPeople();}
