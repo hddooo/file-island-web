@@ -1,10 +1,12 @@
 # FE 결과·이슈·다음 업무
 
-### 2026-11-04 — 역사숲 후보의 범위와 남은 배포 검수
+### 2026-11-04 — 역사숲 배포 완료와 Mac 코드 인계
 
 아구몬은 캠프 옆, 코로몬은 가까운 길, 가부몬은 중경 길, 파닥몬은 원경 하늘에 배치한다. 건물과 메뉴는 움직이지 않으며 주민·불꽃·하늘·잎·물은 독립적으로 움직인다. 비가 올 때만 기존 몸체 대신 잎줄기를 실제 손으로 잡은 새 자세를 표시하고 정상 자세와 날씨 타임라인을 맞춘다. 실패 시 원래 몸체를 유지하고 온라인 복구 때 새 자세도 재시도한다. 생성 자산은384×420,30,546bytes이며 prompt/alpha/해시는 docs/history-leaf-held-v1.json에 있다.
 
-이 기록은 코드/Windows 검수 후보이며 게시·운영 성공을 대신하지 않는다. Linux 최종·정적 빌드·CI build/CD·운영 버전/해시/화면 결과는 작업 evidence의 release-outcome.json으로 확인한다. CI는 사용자 지시에 따른 빌드 전용이며 로컬 테스트와 구분한다. 외부 공개망과 실물 iPhone은 미확인이고 합성 회원 응답으로 실제 회원 API 쓰기는 하지 않는다. 살색 영역의 위치는 미확정이다. 교재·기록·권한·81 활성화 gate와 영어숲0.3.6을 보존한다.
+운영 배포와 검수는 2026-11-04 05:19 UTC에 완료했다. main·운영 SHA는 f332986ba7de46ad441c3116c98e76c550e4175f /0.3.7-beta다. [정확 SHA 빌드](https://github.com/hddooo/file-island-web/actions/runs/41777894382)와 [자동 배포](https://github.com/hddooo/file-island-web/actions/runs/41777941296)가 성공했다. Windows38·Linux20·운영12건, 운영20파일 해시와 전체 artifact1649 entries를 확인했다. manifest SHA-256은571ce09282ebba9d55408d4061bc8a4ede520316ed5a55a7ef224af305a05cff다. 검사한 건물 영역16회 픽셀 비교는 전부 변화0이고 잎·물은 GL/Canvas2D에서 변했다. 주민 경로640지점에서 실제 표시 영역 이탈·메뉴 글자 가림이 없다. 자세한 근거는 Windows task/history-forest-life/evidence/history-life/release-outcome.json이다.
+
+Mac 코드 작업은 origin/main의 이 전체 SHA를 기준으로 이어간다. codex/history-forest-life-20261104의 후속 완료 문서 커밋은 runtime 변경 없이 검토 브랜치에만 보존한다. 이전 영어숲28fee1ef64402c9ba2e4de808fa97e364ce26928/0.3.6-beta를 포함하고, index·영어숲 JS/CSS·교재·API·CI 설정은 영어숲 배포본과 동일하다. API/DB·교재 원문과 비공개 검수 파일은 Git에 넣지 않는다. 추가 main 쓰기 계획은 없다. CI는 사용자 지시에 따른 빌드 전용이며 로컬 테스트와 구분한다. 외부 공개망과 실물 iPhone은 미확인이고 합성 회원 응답으로 실제 회원 API 쓰기는 하지 않는다. 살색 영역의 위치는 미확정이다. 교재·기록·권한·81 활성화 gate와 영어숲0.3.6을 보존한다.
 
 ### 2026-11-04 — 전환 전 완료와 미완료 경계
 
