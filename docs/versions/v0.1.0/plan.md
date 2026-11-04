@@ -4,6 +4,8 @@
 
 Scope: correct pasted-looking camp furniture/flame and excessive mobile header space from the supplied phone photo. Preserve the palace source, water, aurora, weather, companion and native building menus. Keep 0.3.4 workbook files and access gates unchanged. Validate 320/390/desktop composition and header typography, native flows, lifecycle, reduced motion, decode failure and recovery before exact-SHA CI/CD.
 
+The expanded mobile scope includes the shared File Island header, native CSS safe-area values, footer hit targets and island height. Keep zero-inset geometry identical; add a small Chromium safe-area regression.
+
 ### 2026-11-04 — 일제강점기 독립 준비 검수
 
 - [x] 배포된 개화기0.3.4/0e2412d와 기존 장면 작업을 보존한 별도 브랜치에서 일제강점기18쪽/84문항/84슬롯/요약4묶음을 검증한다.

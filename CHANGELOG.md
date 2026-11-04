@@ -4,6 +4,8 @@
 
 Refine the palace camp with dusk fabric chairs, ground shadows and a separate small animated flame. Furniture stays fixed; decoded cutouts retry after reconnection. Compact the mobile profile without reducing type or touch targets; long names use a centred title above one shared action row. Native island menus, OS reduced motion and 0.3.4 workbook preparation remain intact.
 
+Shared footers now respect horizontal device safe areas, and island height counts top/bottom safe space once. Inventory regression checks wait for the actual visible, settled panel while retaining their original content and action assertions.
+
 ## 81회 일제강점기 준비 검수 — 사용자 릴리스 번호 유지
 
 - 일제강점기18쪽·84문항/84빈칸·요약4묶음/84행을 비공개 준비본에 통합했습니다. 원문16,130문자/ID와 굵기·표시를 대조하고 제목6곳 및 정답표84칸의 원래 번호·행·열 관계를 보존합니다.

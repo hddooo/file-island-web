@@ -4,6 +4,8 @@
 
 The photo contained the correct palace asset. Flat camp art and a profile-only second header row were the defects. Two transparent dusk cutouts replace the vector chairs and smooth flame. Furniture is static; only the small flame, ember light, weather, water and companion animate. A compact identity grid keeps ordinary two-character profiles in a 60px header; oversized content receives a title row and one shared action row. Existing geometry checks are strengthened to express that layout, with unrelated assertions retained. Windows camp 8 cases and header typography/native regression suites pass; Linux, exact SHA publication and operating verification are recorded separately when completed.
 
+Native CSS safe-area checks passed twelve states and six history touch/Back flows. Removing duplicate inset subtraction changes the portrait island/footer gap from97px to16px; horizontal footer gutters now protect the47px landscape safe areas. Six zero-inset scenes retain identical measured geometry. A CI WebKit wardrobe-message read returned empty after a fixed350ms sleep; the unchanged local case passed. The exact CI scheduling cause remains unproven. Both fixed waits now observe real pane visibility, state and settled transition; every original assertion is retained. The full failed nine-command CI stage is being validated locally before publishing a new candidate.
+
 ### 2026-11-04 — 일제강점기 원문·진도 보존 검수
 
 개화기0.3.4/0e2412d의 준비 코드·운영 정적 검수를 완료했다. main CI8개(41737618705)와 CD(41739719081)가 성공했고 운영TLS 버전/17파일hash 및 Chromium/WebKit×390/1440 네 조건을 대조했다. 저장 안내 네 상태의 최소 대비5.58:1을 확인했다. 실회원API는 합성응답으로 격리했고 외부망HTTPS는 timeout으로 미확인이다.

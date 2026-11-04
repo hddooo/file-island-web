@@ -87,7 +87,7 @@ html body .digivice-v2>.topline #homeBrand>span{font:inherit!important;line-heig
 @media(max-width:450px){html body .device-crown{gap:6px;padding-inline:12px}html body .device-model{font-size:10px;letter-spacing:.06em;column-gap:5px}html body .device-model>b{font-size:8px}html body .device-place{font-size:12px;letter-spacing:.04em}html body .device-speaker{gap:3px}html body .device-speaker i{width:3px}html body .digivice-v2>.topline :is(#homeBrand,#headerLogout){font-size:12px!important;padding-inline:8px!important}}
 @media(max-width:600px){html body .device-crown{grid-template-columns:minmax(0,1fr) minmax(0,1fr);row-gap:2px}html body .device-place{grid-column:1 / -1;grid-row:2}html body .device-credit{grid-column:2;font-size:9px;max-width:140px}}
 /* A small consistent gutter separates neighbouring touch targets. */
-html body .world-global-nav,html body .toeic-sections{gap:6px!important;padding-inline:8px!important}
+html body .world-global-nav,html body .toeic-sections{gap:6px!important;padding-inline:max(8px,env(safe-area-inset-left,0px)) max(8px,env(safe-area-inset-right,0px))!important}
 html body .world-global-nav a,html body .toeic-sections button{margin-inline:0!important}
 html body .digivice-v2>.topline .header-menu,html body.study-global-footer .digivice-v2>.topline .header-menu{gap:8px!important}
 

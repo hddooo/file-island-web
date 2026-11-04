@@ -4,6 +4,8 @@
 
 New generated artwork and exact prompt set: docs/history-camp-art-v2.json. Camp geometry/decode/motion/menu tests: scripts/qa-iphone-camp.cjs; mobile typography and navigation: scripts/qa-iphone-header-compact.cjs. Existing history readiness now waits for both decoded cutouts. Existing stacked-header assertions enforce the new title/action geometry while retaining touch, type and native navigation requirements. Native API/auth/data and 0.3.4 workbook code are unchanged. Windows/Linux WebKit is browser emulation, not a physical iPhone test. This candidate record does not assert a completed operating deployment or public Internet reachability.
 
+Additional evidence covers the shared header and footers through native Chromium CSS-env overrides, with physical iOS explicitly unverified. New scripts/qa-header-safe-area.cjs enforces safe, readable44px controls and a compact60px header under two notch profiles. Camp recovery checks compare actual chair and flame pixels after failed requests; a fresh version-pinned retry URL replaces failed CSS image resources. Inventory wait changes preserve all original action, content and idempotency assertions and leave product/API guards untouched. Operating publication is recorded separately after the final exact-SHA CI/CD gates.
+
 ### 2026-11-04 — 일제강점기 준비 결과와 배포 경계
 
 비공개 일제강점기18쪽/84문항/84빈칸/요약4묶음84행을 준비하고, 기존 세 시대 및79회 원문·문항·진도를 격리 검증했다. 합쳐진 준비본은85개 derived 페이지/474문항/96개API그림이며, 전체147쪽 raw 원문은 그대로다. 현재 전체81회 human visual review 완료를 선언하지 않으며 미준비 시대의 derived 경로는 노출하지 않는다.

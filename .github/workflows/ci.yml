@@ -314,10 +314,12 @@ jobs:
           typography=$?
             node scripts/qa-iphone-header-compact.cjs
             compact=$?
+            node scripts/qa-header-safe-area.cjs
+            safe_area=$?
           node scripts/qa-header-parent-navigation.cjs
           navigation=$?
-            echo "Typography exit=$typography; compact exit=$compact; parent navigation exit=$navigation"
-            test "$typography" -eq 0 && test "$compact" -eq 0 && test "$navigation" -eq 0
+            echo "Typography exit=$typography; compact exit=$compact; safe area exit=$safe_area; parent navigation exit=$navigation"
+            test "$typography" -eq 0 && test "$compact" -eq 0 && test "$safe_area" -eq 0 && test "$navigation" -eq 0
       - name: Validate exact synthetic header frames on final review branch
         id: header_privacy
         if: always() && github.ref == 'refs/heads/codex/header-parent-readability-release-20261102'
