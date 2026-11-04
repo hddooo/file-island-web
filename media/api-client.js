@@ -172,6 +172,7 @@
       });
       // 전송·본문 읽기 실패는 거절(→ network/timeout), 서버가 보낸 응답은 { res, … }로 이행(→ 원래 HTTP 오류 코드)
       var work = Promise.resolve().then(function () { if(opts.signal&&opts.signal.aborted)throw ApiError(0,'aborted');return fetchFn(base + path, init); }).then(function (res) {
+        if(res.ok&&opts.privateResponse){var cache=res.headers&&res.headers.get('cache-control')||'',mime=res.headers&&res.headers.get('content-type')||'';if(!/(?:^|,)\s*private\s*(?:,|$)/i.test(cache)||!/(?:^|,)\s*no-store\s*(?:,|$)/i.test(cache)||opts.responseType&&mime.split(';')[0].toLowerCase()!==opts.responseType)return {res:res,error:ApiError(502,'invalid_private_response')};}
         if (res.ok && opts.binary) { var type = res.headers && res.headers.get('content-type'); if (!type || acceptedMediaTypes.indexOf(type.split(';')[0]) === -1) return { res: res, error: ApiError(502, 'invalid_image_response') }; return res.blob().then(function (b) { return { res: res, blob: b }; }); }
         return res.text().then(function (t) { return { res: res, text: t }; });
       });
@@ -181,6 +182,7 @@
         setStatus('online');
         if (out.error) throw out.error;
         if (opts.binary && out.res.ok) return out.blob;
+        if (opts.textResponse && out.res.ok) return out.text;
         var data = null; try { data = out.text ? JSON.parse(out.text) : null; } catch (e) { data = null; }
         if (out.res.ok) return data;
         throw ApiError(out.res.status, data && data.error && data.error.code ? data.error.code : 'http_' + out.res.status, data);
@@ -322,6 +324,8 @@
     }
     function textbookPageAllowed(page, sourceRevision) { return Number.isInteger(page) && page >= 1 && page <= (sourceRevision === 'd54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de' ? 147 : 144); }
     var api = {
+      joseonScriptBundle: function(source,signal){if(!/^[a-f0-9]{64}$/.test(source||''))return Promise.reject(ApiError(400,'invalid_script_source'));return call('GET','/api/v1/textbook/scripts/joseon/'+source+'/bundle',{signal:signal,privateResponse:true,responseType:'application/json',textResponse:true});},
+      joseonScriptFigure: function(source,name,signal){if(!/^[a-f0-9]{64}$/.test(source||'')||!/^p\d{3}-\d{2}\.png$/.test(name||''))return Promise.reject(ApiError(400,'invalid_script_figure'));return call('GET','/api/v1/textbook/scripts/joseon/'+source+'/figures/'+name,{signal:signal,privateResponse:true,responseType:'image/png',binary:true,mediaType:'image/png'});},
       weaknessProgress:function(bank){return call('GET','/api/v1/weakness-practice/'+encodeURIComponent(bank)+'/progress');},
       weaknessFinish:function(bank,questionIds){return call('POST','/api/v1/weakness-practice/'+encodeURIComponent(bank)+'/results',{body:{questionIds:questionIds}});},
       weaknessAnswer:function(bank,body){return call('POST','/api/v1/weakness-practice/'+encodeURIComponent(bank)+'/answers',{body:body}).then(function(d){if(d.attempt&&typeof d.attempt.correct==='boolean')refreshGrowthAfterGrade();return d;});},
