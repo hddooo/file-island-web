@@ -160,10 +160,10 @@
       nav.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.topic===topic)));
       modes.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.mode===mode)));
       const t=bundle.topics.find(t=>t.id===topic)||bundle.topics[0];topic=t.id;
-      body.append(el('h2',mode==='study'?t.title:mode==='practice'?'조선 빈칸 문제':'조선 인쇄 정답'));
+      body.append(el('h2',mode==='study'?t.title:mode==='practice'?'조선 빈칸 문제':'조선 교재 정답'));
       if(mode==='answers'){
         const notice=el('section',null,'jsr-reveal');notice.append(el('p','교재 정답입니다. 먼저 문제를 풀어 본 뒤 확인하세요.'));
-        notice.append(button('인쇄 정답 펼치기',()=>{notice.remove();renderSegments(t);}));body.append(notice);return;
+        notice.append(button('교재 정답 펼치기',()=>{notice.remove();renderSegments(t);}));body.append(notice);return;
       }
       if(mode==='practice')body.append(el('p','빈칸을 생각한 뒤 임시 답안을 적어 보세요. 화면을 닫으면 답안은 사라지며 기존 학습 기록에는 저장되지 않습니다.','jsr-note'));
       renderSegments(t);

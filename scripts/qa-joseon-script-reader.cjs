@@ -62,7 +62,7 @@ let qaBrowser;
   await page.locator('figure button:not(.jsr-image-retry)').first().click();await page.keyboard.press('Escape');await page.waitForSelector('dialog',{state:'detached'});
   await page.click('[data-topic="late"]');await page.goBack();await page.waitForFunction(()=>document.querySelector('[data-topic="early"]').getAttribute('aria-current')==='true');
   await page.click('[data-mode="practice"]');assert.equal(await page.locator('.jsr-source-card[data-kind=answers]').count(),0);
-  await page.click('[data-mode="answers"]');assert.equal(await page.locator('.jsr-source-card').count(),0);await page.getByRole('button',{name:'인쇄 정답 펼치기'}).click();assert.equal(await page.locator('.jsr-source-card').count(),3);
+  await page.click('[data-mode="answers"]');assert.equal(await page.locator('.jsr-source-card').count(),0);await page.getByRole('button',{name:'교재 정답 펼치기'}).click();assert.equal(await page.locator('.jsr-source-card').count(),3);
   await page.click('[data-topic="culture"]');await page.click('[data-mode="answers"]');assert.equal(await page.locator('.jsr-source-card').count(),0);
   await page.evaluate(()=>{reader.stop();window.reader=HanqJoseonScriptReader.mount(document.querySelector('#host'),qaBundle);});assert.equal(await page.locator('.jsr-source-card').count(),0);
   await page.addScriptTag({path:path.resolve(__dirname,'../media/ui-locks.js')});
