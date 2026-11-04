@@ -4,13 +4,23 @@
 
 Scope: correct pasted-looking camp furniture/flame and excessive mobile header space from the supplied phone photo. Preserve the palace source, water, aurora, weather, companion and native building menus. Keep 0.3.4 workbook files and access gates unchanged. Validate 320/390/desktop composition and header typography, native flows, lifecycle, reduced motion, decode failure and recovery before exact-SHA CI/CD.
 
+### 2026-11-04 — 일제강점기 독립 준비 검수
+
+- [x] 배포된 개화기0.3.4/0e2412d와 기존 장면 작업을 보존한 별도 브랜치에서 일제강점기18쪽/84문항/84슬롯/요약4묶음을 검증한다.
+- [x] 기존 raw147쪽·조선·고려·개화기 bytes를 보존하고, 원문16,130문자/ID·굵기·강조 및 제목6곳·정답84칸의 원래 행·열·번호를 대조한다.
+- [x] 원문 밑줄66선/257문자와 문제 표시127구간의 원문 굵기를 보존한다. Windows/Linux 독해150·빈칸8·전체앱8화면씩 검수한다.
+- [x] 실제JWT/임시PG에서84문항 저장/체크/중단커서/CAS/재로그인/API재시작과79회 일제강점기76문항 및 기존 세 시대의 구·신판6개workspace 보존을 확인한다.
+- [x] synthetic 요약41검사와 직접주소/탭80경우를 검사한다. 공개 변경은 검사·기록이므로 사용자 릴리스 번호는 유지한다.
+- [ ] 모바일 역사섬 담당과 최신 main/CI/CD 상태를 대조해 충돌 없이 정확SHA CI·배포·운영 정적 검수를 마친다.
+- [ ] 지원되는 실제 운영API/root와 회원 검증 전81회gate는 계속 끈다. 전체81회 완료 전 키워드 설명은 활성화하지 않는다.
+
 ### 2026-11-04 — 개화기 독립 준비 / 0.3.4-beta
 
 - [x] 배포된 고려0.3.3을 보존한 독립 브랜치에서 개화기20쪽/118문항/119슬롯/요약8주제를 통합한다.
 - [x] 원문18,619문자와ID·강조·그림을 보존하고, outlined 제목8개 및 정답118개를 원문 행·열·번호·문자ID로 묶는다. 번호 없는 원문에 번호를 만들지 않는다.
 - [x] 저장 상태 안내문의 테마 대비 문제를 먼저 재현하고 교재에만 색상을 보완한다. 네 상태의 실제 대비를 회귀 검사에 넣는다.
 - [x] 실제JWT/임시PG에서119슬롯 저장/CAS/재로그인과 기존79회 및 조선·고려 진도 보존을 확인한다.
-- [ ] 정확SHA CI/CD와 운영 정적 검수를 마친다. 지원되는 운영API/root/실제회원 확인 전81회gate는 계속 끈다.
+- [x] 개화기0.3.4/0e2412d의 main CI8개·CD·운영TLS17파일 및 네 브라우저 조건 검수를 마쳤다. 지원되는 운영API/root/실제회원 확인 전81회gate는 계속 끈다.
 - [ ] 다음은 일제강점기이며, 전체81회 완료 전 키워드 설명은 활성화하지 않는다.
 
 ### 2026-11-04 — 고려 독립 준비 단위 / 0.3.3-beta
