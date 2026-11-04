@@ -123,7 +123,7 @@
     function pumpFigures(){while(figureActive<2&&figureQueue.length){const job=figureQueue.shift();if(job.signal.aborted){job.reject(Error('aborted'));continue;}figureActive++;Promise.resolve().then(()=>{if(job.signal.aborted)throw Error('aborted');return options.loadFigure(job.name,{signal:job.signal});}).then(job.resolve,job.reject).finally(()=>{figureActive--;pumpFigures();});}}
     function loadFigure(name,signal){return new Promise((resolve,reject)=>{figureQueue.push({name,signal,resolve,reject});pumpFigures();});}
     function figure(parent,name,alt){
-      const f=el('figure'),caption=el('figcaption',alt);parent.append(f);f.append(caption);
+      const f=el('figure'),caption=el('figcaption',alt);f.dataset.figure=name;parent.append(f);f.append(caption);
       if(!bundle.figures.includes(name) || !options.loadFigure){f.append(el('p','이 그림은 비공개 자료 연결 후 볼 수 있습니다.','jsr-image-status'));return;}
       const generation=epoch,signal=figureAbort.signal;const status=el('p','', 'jsr-image-status');status.setAttribute('role','status');f.append(status);
       const retry=button('그림 다시 불러오기',attempt);retry.className='jsr-image-retry';retry.hidden=true;f.append(retry);
@@ -141,7 +141,7 @@
           await new Promise((resolve,reject)=>{img.onload=resolve;img.onerror=()=>reject(Error('image_decode'));img.src=url;});
           if(!current())return;
           if(img.naturalWidth<=240&&img.naturalHeight<=120)f.classList.add('jsr-small-figure');
-          b.setAttribute('aria-label',alt+' 확대');b.append(img);f.prepend(b);status.textContent='';
+          b.setAttribute('aria-label',alt+' 확대');b.append(img);f.prepend(b);status.textContent='';const fallback=f.querySelector('.jsr-badge-fallback');if(fallback)fallback.hidden=true;
         }catch(error){
           if(url){win.URL.revokeObjectURL(url);urls.delete(url);}if(!current())return;
           const code=error&& (error.code||error.message),known=['timeout','network','aborted','session_changed','invalid_private_response','script_integrity_unavailable','script_figure_mime','script_figure_size','script_figure_digest','image_blob','image_mime','image_decode'];
@@ -169,14 +169,49 @@
       renderSegments(t);
     }
     function renderSegments(t){bundle.segments.filter(s=>selected(s,t)).forEach(s=>{
-      const article=el('article',null,'jsr-source-card');article.id=s.id;article.dataset.kind=s.kind;
+      const article=el('article',null,'jsr-source-card');article.id=s.id;article.dataset.kind=s.kind;article.dataset.page=s.page;
       article.append(el('p',s.page?'PDF '+s.page+'쪽 · 인쇄 '+(s.page-7)+'쪽':'원문 안내','jsr-source-label'));renderMarkdown(doc,article,readingMarkdown(s,bundle.source.sha256),figure);body.append(article);
       if(mode==='practice')Array.from(article.querySelectorAll('p')).forEach((p,i)=>{const m=/^\((\d+)\) /.exec(p.textContent);if(!m)return;const key=s.id+'-'+i,label=el('label','나의 임시 답안 · '+m[1]+'번','jsr-draft'),input=el('textarea');input.rows=2;input.value=drafts.get(key)||'';input.setAttribute('aria-label','PDF '+s.page+'쪽 '+m[1]+'번 임시 답안');input.oninput=()=>drafts.set(key,input.value);label.append(input);p.after(label);});
       article.querySelectorAll('figure').forEach(f=>{const p=f.previousElementSibling,c=f.querySelector('figcaption'),suffix=' · PDF '+s.page+'쪽';if(p&&p.tagName==='P'&&p.children.length===1&&p.firstElementChild.tagName==='STRONG'&&c.textContent===p.textContent+suffix)p.remove();if(c.textContent.endsWith(suffix))c.textContent=c.textContent.slice(0,-suffix.length);});
-      const group=el('details'),title=article.querySelector('h3,h4'),summary=el('summary',(title?title.textContent:'학습 안내')+' · '+s.page);group.append(summary);toc.append(group);
+    });
+      if(mode==='study'&&bundle.source.sha256===editorialSource)connectTable23();
+      body.querySelectorAll('.jsr-source-card').forEach(article=>{
+      const group=el('details'),title=article.querySelector('h3,h4'),summary=el('summary',(title?title.textContent:'학습 안내')+' · '+article.dataset.page);group.append(summary);toc.append(group);
       const headings=Array.from(article.querySelectorAll('h3,h4'));
-      (headings.length?headings:[article]).forEach((heading,index)=>{heading.id=s.id+'-section-'+index;const a=el('button',heading===article?'이 쪽 읽기':heading.textContent);a.type='button';a.onclick=()=>{heading.tabIndex=-1;heading.focus({preventScroll:true});heading.scrollIntoView({block:'start'});};group.append(a);});
+      (headings.length?headings:[article]).forEach((heading,index)=>{heading.id=article.id+'-section-'+index;const a=el('button',heading===article?'이 쪽 읽기':heading.textContent);a.type='button';a.onclick=()=>{for(let node=heading.parentElement;node&&node!==body;node=node.parentElement)if(node.tagName==='DETAILS')node.open=true;heading.tabIndex=-1;heading.focus({preventScroll:true});heading.scrollIntoView({block:'start'});};group.append(a);});
     });}
+    function connectTable23(){
+      const pages=[60,61].map(page=>body.querySelector('.jsr-source-card[data-page="'+page+'"]'));
+      if(pages.some(p=>!p))return;
+      const titles=pages.map(p=>Array.from(p.children).find(e=>e.tagName==='H3'&&/^〈표 23〉/.test(e.textContent)));
+      if(titles.some(t=>!t))return;
+      const groups=[];
+      pages.forEach((p,index)=>{let group=null;const nodes=Array.from(p.children).slice(Array.from(p.children).indexOf(titles[index])+1);nodes.forEach(node=>{if(node.tagName==='H4'){group={heading:node,page:60+index,nodes:[]};groups.push(group);}else if(group)group.nodes.push(node);});});
+      const diagrams=['p060-03.png','p061-01.png'].map(name=>body.querySelector('[data-figure="'+name+'"]'));
+      const badgeNames=['p061-03.png','p061-02.png','p061-04.png','p061-05.png'];
+      const badges=badgeNames.map(name=>{const figure=body.querySelector('[data-figure="'+name+'"]'),label=figure&&figure.querySelector('figcaption').textContent;return {figure,reference:Array.from(pages[1].querySelectorAll('li [data-source-color]')).find(e=>e.textContent===label)};});
+      // Validate the reviewed structure before moving any nodes; never guess at another layout.
+      if(groups.length!==10||groups.filter(g=>g.page===60).length!==2||diagrams.some(f=>!f)||badges.some(b=>!b.figure||!b.reference))return;
+      const article=el('article',null,'jsr-source-card jsr-connected-source');article.id=pages[0].id+'-table23';article.dataset.kind='study';article.dataset.page='60–61';
+      article.append(el('p','PDF 60–61쪽 · 인쇄 53–54쪽','jsr-source-label'));
+      const table=el('table',null,'jsr-king-table'),caption=el('caption'),head=el('thead'),headRow=el('tr'),tbody=el('tbody');
+      caption.append(titles[0]);['구분','내용'].forEach(text=>{const th=el('th',text);th.scope='col';headRow.append(th);});head.append(headRow);table.append(caption,head,tbody);article.append(table);pages[0].after(article);
+      groups.forEach(group=>{const row=el('tr'),th=el('th'),td=el('td');th.scope='row';th.append(group.heading,el('small','PDF '+group.page,'jsr-row-source'));td.append(...group.nodes);row.append(th,td);tbody.append(row);group.cell=td;});
+      const subordinate=groups[0].cell.querySelector('p'),sublist=subordinate&&subordinate.nextElementSibling;
+      if(subordinate&&sublist&&sublist.tagName==='UL'){const nested=el('section',null,'jsr-subperson');subordinate.before(nested);nested.append(subordinate,sublist);}
+      [1,2].forEach((rowIndex,i)=>{const cell=groups[rowIndex].cell,layout=el('div',null,'jsr-diagram-row'),copy=el('div');copy.append(...Array.from(cell.childNodes));diagrams[i].querySelector('figcaption').hidden=true;layout.append(copy,diagrams[i]);cell.append(layout);});
+      badges.forEach(({figure,reference})=>{figure.classList.add('jsr-inline-figure');figure.dataset.studyLabel=reference.textContent;figure.querySelector('figcaption').hidden=true;reference.replaceWith(figure);reference.classList.add('jsr-badge-fallback');figure.prepend(reference);});
+      pages[1].remove();
+      // Only the two reviewed diagram transcriptions; Table 23 content stays expanded.
+      const intro=Array.from(pages[0].children),first=body.querySelector('[data-figure="p060-01.png"]'),second=body.querySelector('[data-figure="p060-02.png"]');
+      const headings=intro.filter(n=>n.tagName==='H3');
+      if(first&&second&&headings.length===2){
+        const blocks=headings.map((h,i)=>intro.slice(intro.indexOf(h),i===0?intro.indexOf(headings[1]):intro.length));
+        if(blocks[0].map(n=>n.tagName).join() ==='H3,P,P'&&blocks[1].map(n=>n.tagName).join()==='H3,P,DIV'){
+          [first,second].forEach((f,i)=>{const detail=el('details',null,'jsr-transcription');detail.append(el('summary','\uD14D\uC2A4\uD2B8 \uC124\uBA85'),...blocks[i]);f.after(detail);});
+        }
+      }
+    }
     function navigate(nextTopic,nextMode){topic=nextTopic;mode=nextMode;const state={source:bundle.source.sha256,topic,mode};win.history.pushState(Object.assign({},win.history.state,{joseonScript:state}),'');render();}
     function pop(){if(dialog&&!(win.history.state&&win.history.state.joseonImage)){dismissImage();return;}dismissImage();const s=win.history.state&&win.history.state.joseonScript;if(s&&s.source===bundle.source.sha256&&bundle.topics.some(t=>t.id===s.topic)&&['study','practice','answers'].includes(s.mode)){topic=s.topic;mode=s.mode;}else{topic=initialTopic;mode='study';}render();}
     if(!options.externalNavigation)win.addEventListener('popstate',pop);pop();

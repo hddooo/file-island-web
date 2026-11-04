@@ -16,3 +16,24 @@ html body #joseonScript .joseon-script-reader textarea{background:white!importan
 html body .jsr-image-dialog{background:#fffdf8!important;color:#263745!important;color-scheme:light}
 .joseon-script-reader figure .jsr-image-retry[hidden]{display:none!important}
 .joseon-script-reader .jsr-image-status:empty{display:none}
+.joseon-script-reader .jsr-king-table{width:100%;min-width:0;border-collapse:collapse;table-layout:fixed;font:inherit}
+.jsr-king-table caption{text-align:left;padding:0 12px}.jsr-king-table caption h3{margin:12px 0 18px}
+.jsr-king-table>thead>tr>th,.jsr-king-table>tbody>tr>th,.jsr-king-table>tbody>tr>td{border:1px solid var(--jsr-line);padding:12px;vertical-align:top;text-align:left}
+.jsr-king-table>thead>tr>th:first-child,.jsr-king-table>tbody>tr>th{width:22%}
+.joseon-script-reader .jsr-king-table h4{font-size:18px;line-height:1.6;border:0;padding:0;margin:0}
+.jsr-king-table ul{padding-left:20px;margin:0}.jsr-king-table li+li{margin-top:8px}
+.jsr-row-source{display:block;margin-top:8px;font-size:11px;line-height:1.5;font-weight:400;color:#586875}
+.jsr-subperson{margin-top:16px;padding:10px 0 0 12px;border-top:1px solid var(--jsr-line)}.jsr-subperson p{margin:0 0 8px}
+.jsr-diagram-row{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;min-width:0}
+.jsr-diagram-row>div{min-width:0}.joseon-script-reader .jsr-diagram-row>figure{align-self:start;justify-self:center;width:min(100%,190px);margin:0;padding:8px}
+.jsr-king-table .jsr-table{margin:12px 0}.jsr-king-table .jsr-table table{min-width:0;table-layout:fixed;font-size:15px}.jsr-king-table .jsr-table th,.jsr-king-table .jsr-table td{min-width:0;padding:6px}
+.joseon-script-reader figure figcaption[hidden],.joseon-script-reader .jsr-badge-fallback[hidden]{display:none!important}
+html body #joseonScript .joseon-script-reader .jsr-inline-figure,.joseon-script-reader .jsr-inline-figure{display:inline;margin:0;padding:0;background:transparent!important;vertical-align:middle}
+html body #joseonScript .joseon-script-reader .jsr-inline-figure>button:not(.jsr-image-retry),.joseon-script-reader .jsr-inline-figure>button:not(.jsr-image-retry){display:inline-flex;align-items:center;vertical-align:middle;width:auto;min-height:44px;padding:0 3px;border:0!important;background:transparent!important}
+.joseon-script-reader .jsr-inline-figure img{display:inline-block;width:auto;height:24px;max-width:100%;margin:0}
+.jsr-inline-figure .jsr-image-status{display:inline;font-size:12px}.joseon-script-reader .jsr-inline-figure .jsr-image-retry{display:inline-block;width:auto;font-size:14px}
+@media(min-width:1100px){.jsr-diagram-row{grid-template-columns:minmax(0,1fr) minmax(110px,27%)}}
+@media(max-width:700px){.joseon-script-reader .jsr-connected-source{padding:8px}.joseon-script-reader .jsr-king-table{font-size:16px;line-height:1.8}.joseon-script-reader .jsr-king-table h4{font-size:16px}.jsr-king-table>thead>tr>th,.jsr-king-table>tbody>tr>th,.jsr-king-table>tbody>tr>td{padding:8px}.jsr-king-table>thead>tr>th:first-child,.jsr-king-table>tbody>tr>th{width:24%}.jsr-king-table ul{padding-left:16px}.jsr-subperson{padding-left:6px}.jsr-king-table .jsr-table table{font-size:14px}}
+
+html body #joseonScript .joseon-script-reader .jsr-badge-fallback,html body #joseonScript .joseon-script-reader .jsr-badge-fallback *{color:#ed7d31!important}
+html body #joseonScript .joseon-script-reader .jsr-inline-figure .jsr-image-status{color:#586875!important;margin:0 4px}
