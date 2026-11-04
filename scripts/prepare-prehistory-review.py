@@ -222,6 +222,7 @@ def main():
     profile = summary_profile(quiz, review['summaryOverviews'])
     scoped = copy.deepcopy(manifest)
     scoped['pages'] = [p for p in scoped['pages'] if p['pdfPage'] in PAGES]
+    scoped['pageCount'] = len(scoped['pages'])
     scoped['quizzes'] = [q for q in scoped['quizzes'] if q['id'] == 'prehistory']
     scoped['quizCount'] = 1
     scoped['eraRanges'] = [e for e in scoped['eraRanges'] if e['id'] == 'prehistory']

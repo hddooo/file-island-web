@@ -1,5 +1,19 @@
 # Private textbook extraction
 
+## Mac 선사 직접 검수 후보
+
+`prepare-prehistory-review.py`는 PDF SHA·PyMuPDF1.26.6·검수 원장 hash·기존37문항 digest를 고정해 PDF8–15쪽만 새 비공개 경로로 준비한다. 기존 출력은 덮어쓰지 않는다. 원장에는 직접 대조한 문항별 core hash와 source ink 검수 기록이 필요하며 자동 생성 결과만으로 검수 완료를 선언하지 않는다.
+
+```sh
+python scripts/prepare-prehistory-review.py --pdf "$HISTORY_NEW_PDF" \
+  --baseline-revision "$HISTORY_BASELINE_REVISION" --review "$HISTORY_PREHISTORY_REVIEW" \
+  --expected-review-sha "$HISTORY_PREHISTORY_REVIEW_SHA" --output "$HISTORY_PREHISTORY_OUTPUT"
+python scripts/test-prepare-prehistory-review.py
+node scripts/test-prehistory-candidate.cjs "$HISTORY_PREHISTORY_OUTPUT"
+```
+
+출력은8개 semantic 페이지/선사37문항과37행 요약의 범위 제한 후보다. raw manifest의 전체147쪽 inventory와 전체 PDF를 보존하지만 raw 페이지 파일은8쪽만 복사하므로 완전한 운영 배포 root가 아니다. 승인보류 그림은 그대로 보류한다. 실제 후보 검사는 로컬 메모리 진도만 쓰며 운영 API·DB에 쓰지 않는다.79회 진도와 문항은 수정하지 않는다.
+
 ## 81회 대비 판본 후보 재생성
 
 강조 누락을 대조하기 전에 `audit-history-source-emphasis.py`로 원문 전체의

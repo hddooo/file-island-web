@@ -13,6 +13,7 @@ const SOURCE='d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de';
   assert.equal(version,'f0c14516b3743764d4608ae58f4be57d14b47562d57b919b384b612fa0dd9339');
   assert.equal(profile.groups.reduce((n,g)=>n+g.rows.length,0),37);
   assert.deepEqual(manifest.pages.map(p=>p.pdfPage),[8,9,10,11,12,13,14,15]);
+  assert.equal(manifest.pageCount,manifest.pages.length);
   assert.deepEqual(manifest.quizzes.map(q=>q.id),['prehistory']);
   const sequence=quiz.items.find(i=>i.kind==='sequence'),page=summary.pageFor(profile,quiz);
   assert.equal(sequence.events.length,4);
@@ -21,7 +22,7 @@ const SOURCE='d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de';
   const dom=new JSDOM('<main></main>',{url:'https://synthetic.invalid'}),w=dom.window,host=w.document.querySelector('main');
   w.HTMLElement.prototype.scrollIntoView=function(){};
   let saved={version,revision:0,workspace:{cursor:0,status:'active',responses:{}}};const writes=[];
-  const options={loadProgress:async()=>structuredClone(saved),saveProgress:async body=>{writes.push(structuredClone(body));for(const update of body.updates)saved.workspace.responses[update.itemId]=structuredClone(update);saved.workspace.cursor=body.cursor;saved.revision++;return structuredClone(saved);}};
+  const options={loadProgress:async()=>structuredClone(saved),saveProgress:async body=>{writes.push(structuredClone(body));for(const update of body.updates)saved.workspace.responses[update.itemId]=structuredClone(update);saved.workspace.cursor=body.cursor;saved.workspace.status=body.status;saved.revision++;return structuredClone(saved);}};
   let controller=global.HanqTextbookSourceQuiz.render(host,quiz,options);await controller.ready;
   assert.equal(host.querySelectorAll('[data-source-item-id]').length,37);
   for(const item of quiz.items){
