@@ -36,8 +36,10 @@
   for(const t of tables)stageMarkers.set(t.anchor,'@@'+t.id+'@@');
   for(const s of [...data.stage2Sections,...data.stage3Sections])stageMarkers.set(s.anchor,'### '+await fragment(s.range));
   stageMarkers.set(data.gallery.anchor,'@@gallery-culture@@');
-  const segments=bundle.segments.map(s=>({...s,markdown:s.kind==='study'?lines.slice(s.startLine-1,s.endLine).map((_,i)=>stageMarkers.get(s.startLine+i)||'').join('\n'):projected.slice(s.startLine-1,s.endLine).join('\n')}));
-  const result={bundle,tables,figures,orientationMarkdown:await fragment(data.orientation),gallery:data.gallery,rootTitle:await fragment(data.rootTitle),earlyTitle:await fragment(data.earlyTitle),diagramText:await fragment(data.diagramText),segments};
+  const segments=bundle.segments.map(s=>({...s,markdown:s.kind==='study'?lines.slice(s.startLine-1,s.endLine).map((_,i)=>stageMarkers.get(s.startLine+i)||'').join('\n'):''}));
+  const review=await Promise.all(data.review.map(async section=>({...section,titleMarkdown:await fragment(section.title),questions:await Promise.all(section.questions.map(async q=>({...q,markdown:await fragment(q.prompt),fields:await Promise.all(q.fields.map(async f=>({...f,markdown:f.prompt?await fragment(f.prompt):''}))),optionsMarkdown:(await Promise.all(q.options.map(fragment))).join('\n')}))),answers:await Promise.all(section.answers.map(async a=>({...a,markdown:await fragment(a.value)})))})));
+  if(review.reduce((n,s)=>n+s.questions.length,0)!==100||review.reduce((n,s)=>n+s.answers.length,0)!==100||review.flatMap(s=>s.questions).reduce((n,q)=>n+q.fields.length,0)!==103)throw Error('goryeo_review_counts');
+  const result={bundle,review,tables,figures,orientationMarkdown:await fragment(data.orientation),gallery:data.gallery,rootTitle:await fragment(data.rootTitle),earlyTitle:await fragment(data.earlyTitle),diagramText:await fragment(data.diagramText),segments};
   const immutable=JSON.parse(JSON.stringify(result));
   function freeze(value){if(value&&typeof value==='object'){Object.values(value).forEach(freeze);Object.freeze(value);}return value;}
   freeze(immutable);prepared.add(immutable);return immutable;

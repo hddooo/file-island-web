@@ -118,7 +118,6 @@
       attempt();
     }
     function selected(s,t){
-      if(mode==='answers'||mode==='practice')return s.kind===mode; // Source groups retained; no invented canonical question mapping.
       if(s.kind!=='study' || s.page<t.from || s.page>t.to)return false;
       return true;
     }
@@ -135,10 +134,21 @@
       if(mode==='practice')body.append(el('p','빈칸을 생각한 뒤 임시 답안을 적어 보세요. 화면을 닫으면 답안은 사라지며 기존 학습 기록에는 저장되지 않습니다.','gsr-note'));
       renderSegments(t);
     }
-    function renderSegments(t){prepared.segments.filter(s=>selected(s,t)&&s.markdown.trim()).forEach(s=>{
+    function renderReview(){
+      for(const section of prepared.review){
+        const article=el('article',null,'gsr-source-card');article.id='review-'+mode+'-'+section.id;article.dataset.kind=mode;
+        const heading=el('h3');inline(doc,heading,section.titleMarkdown.trim());article.append(heading);
+        if(mode==='practice')for(const q of section.questions){
+          const item=el('section',null,'gsr-question');item.dataset.questionId=q.id;renderMarkdown(doc,item,q.markdown,figure);
+          for(const field of q.fields){if(field.markdown)renderMarkdown(doc,item,field.markdown,figure);const label=el('label','나의 임시 답안 '+field.label+'번','gsr-draft'),input=el('textarea');input.rows=2;input.value=drafts.get(field.id)||'';input.setAttribute('aria-label',heading.textContent+' '+field.label+'번 임시 답안');input.oninput=()=>drafts.set(field.id,input.value);label.append(input);item.append(label);}
+          if(q.optionsMarkdown){const options=el('div',null,'gsr-options');renderMarkdown(doc,options,q.optionsMarkdown,figure);item.append(options);}article.append(item);
+        }else{const list=el('ol',null,'gsr-answer-list');for(const a of section.answers){const item=el('li');item.value=a.number;item.dataset.answerId=a.id;renderMarkdown(doc,item,a.markdown,figure);list.append(item);}article.append(list);}
+        body.append(article);const link=button(heading.textContent,()=>{heading.tabIndex=-1;heading.focus({preventScroll:true});heading.scrollIntoView({block:'start'});});toc.append(link);
+      }
+    }
+    function renderSegments(t){if(mode!=='study'){renderReview();return;}prepared.segments.filter(s=>selected(s,t)&&s.markdown.trim()).forEach(s=>{
       const article=el('article',null,'gsr-source-card');article.id=s.id;article.dataset.kind=s.kind;article.dataset.page=s.page;
       renderProjected(article,s);body.append(article);
-      if(mode==='practice')Array.from(article.querySelectorAll('p')).forEach((p,i)=>{const m=/^\((\d+)\)(-\d+)? /.exec(p.textContent);if(!m||/^\(2\) 무신정권기/.test(p.textContent))return;if(m[2])m[1]+=m[2];const key=s.id+'-'+i,label=el('label','나의 임시 답안 · '+m[1]+'번','gsr-draft'),input=el('textarea');input.rows=2;input.value=drafts.get(key)||'';input.setAttribute('aria-label','PDF '+s.page+'쪽 '+m[1]+'번 임시 답안');input.oninput=()=>drafts.set(key,input.value);label.append(input);p.after(label);});
       article.querySelectorAll('figure').forEach(f=>{const p=f.previousElementSibling,c=f.querySelector('figcaption'),suffix=' · PDF '+s.page+'쪽';if(p&&p.tagName==='P'&&p.children.length===1&&p.firstElementChild.tagName==='STRONG'&&c.textContent===p.textContent+suffix)p.remove();if(c.textContent.endsWith(suffix))c.textContent=c.textContent.slice(0,-suffix.length);});
     });
 
