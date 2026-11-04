@@ -5,6 +5,7 @@
  function safeReturnTo(value){
   if(typeof value!=='string'||value.length>220||/[\s%\\?]/.test(value))return null;
   var chapter=/^#chapter\/(prehistory|gojoseon|samguk|nambuk|goryeo|joseon|joseon-early|joseon-late|opening|colonial|modern|islands)\/(webtoon|summary|exam-lines|bookquiz|quiz|mock|review|culture)$/;
+  if(/^#chapter\/(goryeo|joseon|joseon-early|joseon-late)\/source-quiz$/.test(value))return value;
   return /^#toeic-cbt(?:\/[0-9a-f-]{36})?$/.test(value)||chapter.test(value)||/^#formal-exams(?:\/(?:review-)?[0-9a-f-]{36})?$/.test(value)||/^#(?:subjects|wrongnotes|history|past-exams|toeic(?:\/(?:notebook|wrongnotes))?)$/.test(value)||/^#textbook\/(people|regions|front|credits)$/.test(value)||/^#run\/r[0-9a-z]{6,40}$/.test(value)||/^#account\/run\/[0-9a-f-]{36}$/.test(value)?value:null;
  }
  function protectedRoute(value){return !!safeReturnTo(value)&&!/^#(?:subjects|history|past-exams)$/.test(value);}

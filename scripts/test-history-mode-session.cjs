@@ -1,5 +1,8 @@
 'use strict';
 const assert=require('assert/strict'),{JSDOM}=require('jsdom');
+const {safeReturnTo,protectedRoute}=require('../media/auth-session.js');
+for(const era of ['goryeo','joseon','joseon-early','joseon-late']){const route='#chapter/'+era+'/source-quiz';assert.equal(safeReturnTo(route),route);assert(protectedRoute(route));}
+for(const route of ['#chapter/opening/source-quiz','#chapter/joseon/source-quiz/extra','#chapter/joseon/source-quiz?x=1','https://other.invalid/#chapter/joseon/source-quiz','#chapter/%6aoseon/source-quiz'])assert.equal(safeReturnTo(route),null);
 (async()=>{for(const era of ['joseon','goryeo']){const dom=new JSDOM('<main/>',{url:'https://synthetic.invalid/#chapter/'+era+'/webtoon'}),w=dom.window,host=w.document.querySelector('main');let account={signedIn:true,ownerId:'synthetic-a',epoch:1},change,options,stops=0,pops=0;
  const api={state:()=>account,onChange:fn=>{change=fn;return()=>{change=null;};}},source='a'.repeat(64),transport={ready:true,sourceSha256:source,loadBundle:async()=>({source:{sha256:source}}),loadFigure:async()=>null};
  const session=require('../media/'+era+'-script-session.js').create({document:w.document,api,modeRouting:true,renderer:{prepare:async b=>b,mount:(h,b,o)=>{options=o;return{stop(){stops++;},handlePopState(){pops++;return true;}};}}});
