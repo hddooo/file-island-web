@@ -1,0 +1,13 @@
+{
+  "asset": "media/world-art/history-agumon-leaf-held-v1.webp",
+  "sourcePngSha256": "bc20753557ca86e2ea60419363af75018fb8f76e410c11f047da65f113d27549",
+  "deliverySha256": "a366af11ecda1b0bc0b84ab61d412d3f0a6d3c1975e4499c5b83e5db819878a4",
+  "width": 384,
+  "height": 420,
+  "bytes": 30546,
+  "transparentCorners": true,
+  "method": "Built-in image_gen identity-preserving rain pose; alpha-preserving WebP encoding only",
+  "prompt": "Use case: identity-preserve. Project asset: one transparent full-body rain pose for a small palace-forest decorative resident. The provided image is a 2-by-2 reference sheet of the SAME Agumon; output ONE character only, NOT a sheet. Preserve his orange body, green eyes, snout, white claws, friendly face, clean 2D illustrated outlines and proportions. Change the pose so one hand visibly GRIPS a curved green leaf stalk at chest/shoulder height: fingers wrap around the stalk. The stalk extends continuously upward to a broad natural green leaf held ABOVE the head as an umbrella, with a clear air gap between leaf and head. The leaf must NOT sit on or attach to the head. Both feet and the complete leaf are visible, three-quarter view facing right, cute gentle smile. Match a slightly elevated isometric garden camera, subtle cool dusk fill and warm light from lower left. Shape must read clearly at 35-50px tall. Fully transparent background and transparent space around the silhouette; no scenery, ground plane, rain, text, border, watermark, extra characters or accessories. Keep the leaf canopy organic, hand-to-stalk connection anatomically clear, and don't cover the eyes.",
+  "reference": "media/characters/agumon-idle-sprite.png",
+  "originalIdleSpriteChanged": false
+}

@@ -50,3 +50,34 @@ html body #app .history-evening.he-paused :is(.he-aurora,.he-clouds,.he-rain,.he
 html.world-low-power body #app .history-evening .he-aurora{animation:none!important;filter:none;opacity:.35}
 html.world-low-power body #app .history-evening .he-rain>i:nth-child(2n){display:none}
 @media(prefers-reduced-motion:reduce){html body #app .history-evening :is(.he-aurora,.he-clouds,.he-rain,.he-rain>i,.he-warmth,.he-flame,.he-ember,.he-friend-sprite,.he-leaf){animation:none!important;transition:none!important}html body #app .history-evening :is(.he-rain,.he-leaf,.he-ember){display:none!important}html body #app .history-evening .he-aurora{opacity:.45}html body #app .history-evening .he-friend-sprite{background-position:0 0!important}}
+/* Independent sky drift and tiny ground routes. Buildings and the map never move. */
+html body #app .history-evening .he-breeze-cloud{position:absolute;display:block;left:6%;top:3%;width:110%;height:55%;background:radial-gradient(ellipse at 36% 50%,#b5c9d83b,transparent 65%),radial-gradient(ellipse at 77% 28%,#9dbccf22,transparent 62%)!important;animation:he-sky-drift 28s -7s ease-in-out infinite alternate!important;opacity:.8}
+html body #app .history-evening .he-breeze-near{left:-14%;top:26%;width:105%;height:60%;opacity:.6;animation-duration:39s!important;animation-delay:-19s!important}
+html body #app .history-evening .he-stars{animation:he-starlight 9s -3s ease-in-out infinite alternate!important}
+html body #app .history-evening .he-friend{animation:he-camp-roam 22s -5s linear infinite!important}
+html body #app .history-evening .he-friend-sprite{background-image:var(--he-agumon-art,url('characters/agumon-idle-sprite.png'))!important;animation:hanq-agumon-idle 7.9s -2.1s steps(1,end) infinite,he-clear-actor 150s ease-in-out infinite!important}
+html body #app .history-evening .he-friend:not(.he-rain-ready) .he-friend-sprite{opacity:1!important}
+html body #app .history-evening .he-leaf{left:-12%;top:auto;bottom:0;width:124%;height:125%;visibility:hidden;transform:none;background:var(--he-rain-friend-art) center bottom/contain no-repeat!important;filter:brightness(.83) saturate(.84) drop-shadow(0 1px 1px #03121366);z-index:2}
+html body #app .history-evening .he-rain-ready .he-leaf{visibility:visible}
+html body #app .history-evening .he-resident{position:absolute;display:block;aspect-ratio:1;visibility:hidden;transform:translate(-50%,-100%);--he-roam-x:clamp(6px,1vw,14px);--he-roam-y:1px;animation:he-resident-roam var(--he-duration,24s) var(--he-delay,-7s) linear infinite!important}
+html body #app .history-evening .he-resident-ready{visibility:visible}
+html body #app .history-evening .he-resident-shadow{position:absolute;left:22%;right:18%;bottom:1%;height:7%;border-radius:50%;background:radial-gradient(ellipse,#06151e8a,transparent 72%)!important}
+html body #app .history-evening .he-native{position:absolute;display:block;left:1.8216%;top:4.2082%;width:89.3267%;height:89.3267%;background:var(--he-koromon-art) 0 0/400% 200% no-repeat!important;--idle-row-y:3.8%;animation:hanq-koromon-actions 13s -4s steps(1,end) infinite!important;filter:brightness(.78) saturate(.82)}
+html body #app .history-evening .he-resident .cm-life{width:100%;height:100%;filter:brightness(.8) saturate(.84)}
+html body #app .history-evening .he-koromon{left:34%;top:62%;width:clamp(22px,3.7%,42px);--he-delay:-16s;--he-duration:26s}
+html body #app .history-evening .he-gabumon{left:51%;top:54%;width:clamp(23px,3.8%,44px);--he-delay:-6s;--he-duration:23s;--he-roam-y:-1px}
+html body #app .history-evening .he-patamon{left:77%;top:15%;width:clamp(19px,3%,35px);animation:he-air-route 29s -8s ease-in-out infinite!important}
+html body #app .history-evening .he-flame{animation:he-flame-visible 1.16s -.2s ease-in-out infinite alternate!important}
+html body #app .history-evening .he-flame-b{animation-duration:.77s!important;animation-delay:-.5s!important}
+html body #app .history-evening .he-warmth{animation:he-firelight 1.9s -.4s ease-in-out infinite alternate!important}
+html body #app .history-evening.he-paused :is(.he-friend,.he-friend-sprite,.he-resident,.he-native,.he-leaf,.he-breeze-cloud,.he-stars,.cm-part,.cm-rig,.cm-patamon-frames,.cm-shadow,.cm-reveal,.cm-eyelid){animation-play-state:paused!important}
+@keyframes he-sky-drift{from{transform:translateX(-6%);opacity:.48}to{transform:translateX(7%);opacity:.9}}
+@keyframes he-starlight{from{opacity:.45}to{opacity:.85}}
+@keyframes he-flame-visible{from{transform:translateX(-.8px) scale(.86,.84) skewX(-6deg);opacity:.82}to{transform:translateX(.8px) scale(1.09,1.15) skewX(5deg);opacity:1}}
+@keyframes he-clear-actor{0%,34%,90%,100%{opacity:1}42%,78%{opacity:0}}
+@keyframes he-camp-roam{0%,12%,100%{transform:translate(0,0) scaleX(1)}35%,43%{transform:translate(7px,-1px) scaleX(1)}43.01%,48%{transform:translate(7px,-1px) scaleX(-1)}76%,88%{transform:translate(0,0) scaleX(-1)}88.01%{transform:translate(0,0) scaleX(1)}}
+@keyframes he-resident-roam{0%,12%,100%{transform:translate(-50%,-100%) translate(0,0) scaleX(1)}35%,43%{transform:translate(-50%,-100%) translate(var(--he-roam-x),var(--he-roam-y)) scaleX(1)}43.01%,48%{transform:translate(-50%,-100%) translate(var(--he-roam-x),var(--he-roam-y)) scaleX(-1)}76%,88%{transform:translate(-50%,-100%) translate(0,0) scaleX(-1)}88.01%{transform:translate(-50%,-100%) translate(0,0) scaleX(1)}}
+@keyframes he-air-route{0%,100%{transform:translate(-50%,-100%) translate(-5px,0)}35%{transform:translate(-50%,-100%) translate(6px,-3px)}70%{transform:translate(-50%,-100%) translate(2px,2px)}}
+@media(max-width:700px) and (orientation:portrait){html body #app .history-evening .he-koromon{left:36%;top:63%;width:clamp(22px,5.8%,32px)}html body #app .history-evening .he-gabumon{left:53%;top:47%;width:clamp(21px,5.7%,30px)}html body #app .history-evening .he-patamon{left:84%;top:20%;width:clamp(18px,5%,26px)}}
+@media(max-height:500px) and (orientation:landscape){html body #app .history-evening .he-koromon{width:20px}html body #app .history-evening .he-gabumon{width:21px}html body #app .history-evening .he-patamon{width:18px}}
+@media(prefers-reduced-motion:reduce){html body #app .history-evening :is(.he-friend,.he-friend-sprite,.he-resident,.he-native,.he-leaf,.he-breeze-cloud,.he-stars,.cm-part,.cm-rig,.cm-patamon-frames,.cm-shadow,.cm-reveal,.cm-eyelid){animation:none!important;transition:none!important}html body #app .history-evening .he-friend{transform:none!important}html body #app .history-evening .he-resident{transform:translate(-50%,-100%)!important}html body #app .history-evening .he-friend-sprite{opacity:1!important}html body #app .history-evening .he-leaf{display:none!important}}
