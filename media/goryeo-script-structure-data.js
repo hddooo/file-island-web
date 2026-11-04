@@ -2183,6 +2183,1006 @@
           "contentRole": "numbered"
         }
       ]
+    },
+    {
+      "id": "table21",
+      "anchor": 921,
+      "rows": 3,
+      "columns": 2,
+      "headerRow": false,
+      "caption": {
+        "start": 36207,
+        "end": 36261,
+        "sha256": "c1f85c12687b325a201ade90f4dfadf81d6abdc3228b9ac49fbbe81258dd07ca"
+      },
+      "envelopes": [
+        [
+          36207,
+          40181,
+          "fdcfe428fa844595a43a722e0db70c9786bf157fdd0a225c117a0c9e3c4adfbf"
+        ]
+      ],
+      "cells": [
+        {
+          "row": 1,
+          "column": 1,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 36420,
+              "end": 36433,
+              "sha256": "c53dde02319043bd54e482bdac7e349064bafa76b7f3e6ef03bd51c65e4dbe62"
+            }
+          ],
+          "sourceId": "t21-governance-label",
+          "isHeader": true,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 1,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [],
+          "sourceId": "t21-governance-content",
+          "isHeader": false,
+          "notes": [],
+          "bands": [
+            {
+              "id": "central-institutions",
+              "ranges": [
+                {
+                  "start": 36435,
+                  "end": 36891,
+                  "sha256": "7eaad016079350878d6038ef57fe0e8b1611a12ccb0e1545a2a248114908fa83"
+                }
+              ],
+              "panels": [],
+              "figures": []
+            },
+            {
+              "id": "local-and-military",
+              "ranges": [],
+              "panels": [
+                {
+                  "id": "local-administration",
+                  "ranges": [
+                    {
+                      "start": 36891,
+                      "end": 37139,
+                      "sha256": "e644213567381079f2f064192aaefeedc43250bc16dcc84fc7b899165da6a3ac"
+                    }
+                  ],
+                  "panels": [],
+                  "figures": []
+                },
+                {
+                  "id": "military-organization",
+                  "ranges": [
+                    {
+                      "start": 37139,
+                      "end": 37229,
+                      "sha256": "730e6f3ffbb0ce97738245a7270fb0f427d29f6e0358b8d9cca424938e4e5c7d"
+                    }
+                  ],
+                  "panels": [],
+                  "figures": []
+                }
+              ],
+              "figures": []
+            },
+            {
+              "id": "governance-figures",
+              "ranges": [],
+              "panels": [],
+              "figures": [
+                "p053-01",
+                "p053-02"
+              ]
+            }
+          ],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 2,
+          "column": 1,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 38179,
+              "end": 38185,
+              "sha256": "b88882649917c44ee35627efe028345944b37da5479bb36b4e42ca767a0c20c4"
+            }
+          ],
+          "sourceId": "t21-economy-label",
+          "isHeader": true,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 2,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 38187,
+              "end": 38573,
+              "sha256": "849fef037901fa83c8b8d5ffc15a9d60745b8a4a4e6c859b31bf15b07267ae76"
+            },
+            {
+              "start": 38573,
+              "end": 38837,
+              "sha256": "617cc43a74a7fc3c25f31ae4ef13a1e311314bc747985c288992f03464d906ed"
+            }
+          ],
+          "sourceId": "t21-economy-content",
+          "isHeader": false,
+          "notes": [],
+          "bands": [],
+          "figures": [
+            "p053-03"
+          ],
+          "insets": [
+            {
+              "id": "land-system",
+              "range": {
+                "start": 38573,
+                "end": 38837,
+                "sha256": "617cc43a74a7fc3c25f31ae4ef13a1e311314bc747985c288992f03464d906ed"
+              }
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "column": 1,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 39254,
+              "end": 39260,
+              "sha256": "550a40b940e2e59e11c942c35b44aaa93038379f564acc26352724f6837a2929"
+            }
+          ],
+          "sourceId": "t21-society-label",
+          "isHeader": true,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 3,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 39262,
+              "end": 39558,
+              "sha256": "93c146135fbf9a9c22409ff220c4144d1bb969e63922660a2f4928da66762378"
+            }
+          ],
+          "sourceId": "t21-society-content",
+          "isHeader": false,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        }
+      ]
+    },
+    {
+      "id": "table22",
+      "anchor": 1064,
+      "rows": 8,
+      "columns": 4,
+      "headerRow": false,
+      "caption": {
+        "start": 43584,
+        "end": 43618,
+        "sha256": "3ff2fa43e110feca64909dea88c100c469589b9954c52be9c3299dbbf24d3873"
+      },
+      "headers": [
+        "구분",
+        "내용",
+        "구분",
+        ""
+      ],
+      "envelopes": [
+        [
+          43584,
+          47800,
+          "e750bb85442905242c74092ae61a48e46220a4fb28b3d40b2dc0251adc0ce30e"
+        ]
+      ],
+      "cells": [
+        {
+          "row": 1,
+          "column": 1,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 44069,
+              "end": 44110,
+              "sha256": "be4d31ff914041d4f943d7125ca2a0e2d9fbc35200d6fddc1247bc72ca7ea010"
+            }
+          ],
+          "sourceId": "t22-left-1-label",
+          "isHeader": true,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 1,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 44112,
+              "end": 44285,
+              "sha256": "32c0769c95e42beee36ee702b0c61df430394ee68e3f9a9218931a63de9bff64"
+            }
+          ],
+          "sourceId": "t22-left-1-content",
+          "isHeader": false,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 2,
+          "column": 1,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 44292,
+              "end": 44298,
+              "sha256": "4c558b37d78d5161159b09ee03fb8b413a07ef581078ed00e59d54e2928cbb38"
+            }
+          ],
+          "sourceId": "t22-left-2-label",
+          "isHeader": true,
+          "notes": [
+            {
+              "start": 44318,
+              "end": 44342,
+              "sha256": "128d55be9e5851235d8a4473e77dde35dec3255bf3282264a810a269505a4b3d"
+            }
+          ],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 2,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 44344,
+              "end": 44443,
+              "sha256": "cf6671aa07d5995efdd45054e2ac9df97b5ea8de3fdeaec16c3ffa8d0de6ac0c"
+            }
+          ],
+          "sourceId": "t22-left-2-content",
+          "isHeader": false,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 3,
+          "column": 1,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 44450,
+              "end": 44464,
+              "sha256": "08695a53079a85869041c651977f7567a9e18c150f3ed0aeb85ffbc0a9330f8d"
+            }
+          ],
+          "sourceId": "t22-left-3-label",
+          "isHeader": true,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 3,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 44466,
+              "end": 44759,
+              "sha256": "a082e47eb871b8dba2198664bbbb9201714c483aa880712f6e477b894f21f8bc"
+            }
+          ],
+          "sourceId": "t22-left-3-content",
+          "isHeader": false,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 4,
+          "column": 1,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 44766,
+              "end": 44772,
+              "sha256": "eb15171a8bbe401a630aea6d45464755d23fe69ddf574d9417330e4cf87cc9f3"
+            }
+          ],
+          "sourceId": "t22-left-4-label",
+          "isHeader": true,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 4,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 44774,
+              "end": 45483,
+              "sha256": "fe68180322963ca8cd09f732be03d8d24f37ced3aaa7680f499e28951ce60241"
+            }
+          ],
+          "sourceId": "t22-left-4-content",
+          "isHeader": false,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 5,
+          "column": 1,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 45490,
+              "end": 45496,
+              "sha256": "41d4e4349979761bbc8445f2529a37439411a789bfba1825d0688abcafb0aaae"
+            }
+          ],
+          "sourceId": "t22-left-5-label",
+          "isHeader": true,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 5,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 45498,
+              "end": 45537,
+              "sha256": "27e0e724c96437148ca78a82a7f72babf51d7205b97b058054835fa0cbc5c769"
+            }
+          ],
+          "sourceId": "t22-left-5-content",
+          "isHeader": false,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 6,
+          "column": 1,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 45544,
+              "end": 45560,
+              "sha256": "2e1a559e242a1eb99ab321daf759ce275b74b409ecedb08b057d6975dd2a3469"
+            }
+          ],
+          "sourceId": "t22-left-6-label",
+          "isHeader": true,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 6,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 45562,
+              "end": 45629,
+              "sha256": "c0dc4e16a658f7a2f2ab78357c3f629e4d4ea58bfa522dc8a30bb2c4ce8a09cb"
+            }
+          ],
+          "sourceId": "t22-left-6-content",
+          "isHeader": false,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 7,
+          "column": 1,
+          "rowspan": 2,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 45636,
+              "end": 45642,
+              "sha256": "746dc9c0066b8bf1bd5c8cf9711bb7af1c14fe0f5cfc863d392d764125219bce"
+            }
+          ],
+          "sourceId": "t22-left-7-label",
+          "isHeader": true,
+          "notes": [
+            {
+              "start": 45700,
+              "end": 45717,
+              "sha256": "1f25b6ba97616e6a1ba1a37563cca4f2b107c58e5144baf0fa6d9d8f30ba2659"
+            },
+            {
+              "start": 45642,
+              "end": 45680,
+              "sha256": "b3145d8591027e8c2f3ad1fb6fa138f75d07921314a171417a10134f0fef74a4"
+            }
+          ],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 7,
+          "column": 2,
+          "rowspan": 2,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 45719,
+              "end": 45799,
+              "sha256": "347e40f4ff7e24264ad721c0c48d597c0dcca6648e447ddfafa82c6f0d062a5e"
+            }
+          ],
+          "sourceId": "t22-left-7-content",
+          "isHeader": false,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 1,
+          "column": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 45836,
+              "end": 45847,
+              "sha256": "2296bee883b6f958e0fb509d738609ac9b0149733cc3e385250f5fd51baaf640"
+            }
+          ],
+          "sourceId": "t22-right-1-label",
+          "isHeader": true,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 1,
+          "column": 4,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 45849,
+              "end": 46251,
+              "sha256": "bdd28a1608d65cc3b41988ba9b95be71ad732a15fd869e79a6e75984b6adf13e"
+            }
+          ],
+          "sourceId": "t22-right-1-content",
+          "isHeader": false,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 2,
+          "column": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 46258,
+              "end": 46264,
+              "sha256": "8e9cd60504b1a0926c38da56a1490acd5569a7d7c2f4387191910c2820678c80"
+            }
+          ],
+          "sourceId": "t22-right-2-label",
+          "isHeader": true,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 2,
+          "column": 4,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 46266,
+              "end": 46447,
+              "sha256": "7cfa4302d91ce8dae6a09a84f1909ece020d80554bcb93d845eaf23077686f5e"
+            }
+          ],
+          "sourceId": "t22-right-2-content",
+          "isHeader": false,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 3,
+          "column": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 46454,
+              "end": 46467,
+              "sha256": "c0ff0616a426b39ed1d2a92e530fda1d731734b46c98266fc25d1de29f74184c"
+            }
+          ],
+          "sourceId": "t22-right-3-label",
+          "isHeader": true,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 3,
+          "column": 4,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 46469,
+              "end": 46683,
+              "sha256": "0948e68cdc92891dc30a7fb95f0069480fd332b779d8e95543f2fa452f7dab78"
+            }
+          ],
+          "sourceId": "t22-right-3-content",
+          "isHeader": false,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 4,
+          "column": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 46690,
+              "end": 46699,
+              "sha256": "d4b0ccbea2b3dcdeaa37b6bb704f27a28674d39203bc508bfbb6e6726b03ca03"
+            }
+          ],
+          "sourceId": "t22-right-4-label",
+          "isHeader": true,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 4,
+          "column": 4,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 46701,
+              "end": 47409,
+              "sha256": "3fb463c5bf02ae0c4c360cfa218578db0d7d6361eba260ebeb344d8960c2065c"
+            }
+          ],
+          "sourceId": "t22-right-4-content",
+          "isHeader": false,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 5,
+          "column": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 47416,
+              "end": 47422,
+              "sha256": "43f1f91259a20074c7c783e0a23e1105edefce268ec606525b0de0cbf9f88102"
+            }
+          ],
+          "sourceId": "t22-right-5-label",
+          "isHeader": true,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 5,
+          "column": 4,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 47424,
+              "end": 47461,
+              "sha256": "21df7628ad10e79487f0ce3e92567e1b7b65e188673d01afa3a372030b80fbf0"
+            }
+          ],
+          "sourceId": "t22-right-5-content",
+          "isHeader": false,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 6,
+          "column": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 47468,
+              "end": 47474,
+              "sha256": "c143fe9e8e3a2db7a2c30240b4ba1e9b6a0bcd1e4623b4832448cf32454c3861"
+            }
+          ],
+          "sourceId": "t22-right-6-label",
+          "isHeader": true,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 6,
+          "column": 4,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 47476,
+              "end": 47570,
+              "sha256": "a1578f98697b30fa9a1076d4ec1b4c0f51e4a65a4a5c18ea5eb7f267aa850d96"
+            }
+          ],
+          "sourceId": "t22-right-6-content",
+          "isHeader": false,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 7,
+          "column": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 47577,
+              "end": 47583,
+              "sha256": "9821567cd882dc712642365725f90bd3d5f0309cc78c0727dae1383138fe2284"
+            }
+          ],
+          "sourceId": "t22-right-7-label",
+          "isHeader": true,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 7,
+          "column": 4,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 47585,
+              "end": 47682,
+              "sha256": "75ad24d8d174e3009fea861c397b0f167434ea3cc61582f6c914f0d47fd24bc3"
+            }
+          ],
+          "sourceId": "t22-right-7-content",
+          "isHeader": false,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 8,
+          "column": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 47689,
+              "end": 47695,
+              "sha256": "744ce7750122adae60d312d46a36749f4b0a88caa2b582f4a6998d6a8111be61"
+            }
+          ],
+          "sourceId": "t22-right-8-label",
+          "isHeader": true,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 8,
+          "column": 4,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 47697,
+              "end": 47800,
+              "sha256": "d8d684cb90e797f4a51e64739d95d2088a251f1be0804af6ce785637bdae1bfe"
+            }
+          ],
+          "sourceId": "t22-right-8-content",
+          "isHeader": false,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        }
+      ]
+    },
+    {
+      "id": "exam-society-economy",
+      "anchor": 1001,
+      "rows": 6,
+      "columns": 2,
+      "headerRow": false,
+      "captionLiteral": "시험에는 이렇게 나온다!",
+      "envelopes": [
+        [
+          40281,
+          43409,
+          "237e4d00917d5c846b6008f754f885a0b8ddba827568b0ac22dabf071bff04a5"
+        ]
+      ],
+      "cells": [
+        {
+          "row": 1,
+          "column": 1,
+          "rowspan": 2,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 40345,
+              "end": 40357,
+              "sha256": "ccb2cf9381e44c2d7e25ea16003c9cda191b70454275d36aa50acbda6c02592d"
+            }
+          ],
+          "sourceId": "exam-society-economy-정치기구-label",
+          "isHeader": true,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 1,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 40359,
+              "end": 40498,
+              "sha256": "e28e61d7f13cbb2c55cfaab536a7388e4c6f3a803d8dc6a35bfbde1e8dad2000"
+            }
+          ],
+          "sourceId": "exam-society-economy-정치기구-numbered",
+          "isHeader": false,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 2,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 40499,
+              "end": 41294,
+              "sha256": "6055f2fc07f9190894abf92c53d95b6816a41ae7b52a43add543143430da973b"
+            }
+          ],
+          "sourceId": "exam-society-economy-정치기구-supplementary",
+          "isHeader": false,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 3,
+          "column": 1,
+          "rowspan": 2,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 41301,
+              "end": 41307,
+              "sha256": "b88882649917c44ee35627efe028345944b37da5479bb36b4e42ca767a0c20c4"
+            }
+          ],
+          "sourceId": "exam-society-economy-경제-label",
+          "isHeader": true,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 3,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 41309,
+              "end": 42458,
+              "sha256": "31188627addc90d788d800e5700c44d841777cfe8421a8a45f55378d7c298395"
+            }
+          ],
+          "sourceId": "exam-society-economy-경제-numbered",
+          "isHeader": false,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 4,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 42459,
+              "end": 42876,
+              "sha256": "f2695c125a5483adba91e22231c9fac73d65923cfceaa833fb4afb49c2ab8a77"
+            }
+          ],
+          "sourceId": "exam-society-economy-경제-supplementary",
+          "isHeader": false,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 5,
+          "column": 1,
+          "rowspan": 2,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 42883,
+              "end": 42889,
+              "sha256": "550a40b940e2e59e11c942c35b44aaa93038379f564acc26352724f6837a2929"
+            }
+          ],
+          "sourceId": "exam-society-economy-사회-label",
+          "isHeader": true,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 5,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 42891,
+              "end": 43201,
+              "sha256": "868901eba0e4340b2aadbb809366a348429809c631b65241650a8b99b8beccbd"
+            }
+          ],
+          "sourceId": "exam-society-economy-사회-numbered",
+          "isHeader": false,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        },
+        {
+          "row": 6,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 43202,
+              "end": 43409,
+              "sha256": "5c182362cec0105f9ba8d3706a98f09471ec4845d6f4ebf07a46eb1b64cbd135"
+            }
+          ],
+          "sourceId": "exam-society-economy-사회-supplementary",
+          "isHeader": false,
+          "notes": [],
+          "bands": [],
+          "figures": [],
+          "insets": []
+        }
+      ]
     }
   ],
   "diagramText": {
@@ -2232,5 +3232,271 @@
         "sha256": "212d3dabc300a65236c4641f22b64aea2ea45fdc49dfcd6f19b9a9bc48aa20be"
       }
     }
-  ]
+  ],
+  "stage3Sections": [
+    {
+      "id": "society-economy",
+      "anchor": 919,
+      "range": {
+        "start": 36177,
+        "end": 36205,
+        "sha256": "5cd8c84c7ea092c84577636cb4f52576d1ed49702b73ade522f59431874b63b9"
+      }
+    },
+    {
+      "id": "culture",
+      "anchor": 1062,
+      "range": {
+        "start": 43562,
+        "end": 43582,
+        "sha256": "a3c6206b42c81e2fd9d55d1a48063fd0f9cc0f55de82211d26c0903ef0192332"
+      }
+    }
+  ],
+  "rootTitle": {
+    "start": 2345,
+    "end": 2358,
+    "sha256": "20765907a3f6dc793e9ad00bdd5fd33f4b47960763eeb3459e30dcb784352c14"
+  },
+  "stage3Figures": [
+    {
+      "id": "p053-01",
+      "name": "p053-01.png",
+      "sha256": "8da4de0cd0f0ca465c95c4280897985a1e0a045847a5e09a5a35ff64e2236e71",
+      "owner": "t21-governance-content",
+      "caption": {
+        "start": 39561,
+        "end": 39581,
+        "sha256": "a75fa3f0722c53d247cf8f35b1840fb54795620f0943e7e7d67e504dc0e470c0"
+      }
+    },
+    {
+      "id": "p053-02",
+      "name": "p053-02.png",
+      "sha256": "15e35d9305189adcd684fd81b0cfc7a8dde20b2cf70213741f3f149d5ed74fde",
+      "owner": "t21-governance-content",
+      "caption": {
+        "start": 39752,
+        "end": 39772,
+        "sha256": "4f4704562614b4fef9c2a2180dda3be49b1c6b37359323c71ea5cb2c5c9513d5"
+      }
+    },
+    {
+      "id": "p053-03",
+      "name": "p053-03.png",
+      "sha256": "33bdfc1fad2c14251c47283293e859b2f7c39845c2dff720ecbe62e808995fb6",
+      "owner": "t21-economy-content",
+      "caption": null
+    },
+    {
+      "id": "p056-01",
+      "name": "p056-01.png",
+      "sha256": "cf5f7b235d56d84741a9edf58b314e20c06b737e4289fe562b9bfeae0d211363",
+      "owner": "gallery-culture",
+      "caption": {
+        "start": 48898,
+        "end": 48923,
+        "sha256": "b32cdc8ba57aa5234fcb2450aadb1278ae3a9b95f50eedf84073bf5f3b538383"
+      }
+    },
+    {
+      "id": "p056-02",
+      "name": "p056-02.png",
+      "sha256": "50b99bfd1d9134b1a03186861d869da005e7d35b886ef6adaf75ebbb432b47b7",
+      "owner": "gallery-culture",
+      "caption": {
+        "start": 49099,
+        "end": 49127,
+        "sha256": "1d4ac8ba5954f65bda094b45f1334ff24d3383a169cc6e51090dd2bacd430960"
+      }
+    },
+    {
+      "id": "p056-03",
+      "name": "p056-03.png",
+      "sha256": "7a62016d2fda17b4b340b8bdf9c9e5dbdfacd528e5800f64d3154746982dbec9",
+      "owner": "gallery-culture",
+      "caption": {
+        "start": 49306,
+        "end": 49328,
+        "sha256": "e6f9ada084d8c12860a70bfec1383c17c9ca489d487e0a3f6bd83367732dd4b6"
+      }
+    },
+    {
+      "id": "p056-04",
+      "name": "p056-04.png",
+      "sha256": "a16b70ad1d286ccbe92e70ea0aaef258e63006cb4ac241597a6cfc2e49e0867a",
+      "owner": "gallery-culture",
+      "caption": {
+        "start": 49501,
+        "end": 49519,
+        "sha256": "ce01ca887d57438569efda3065b5fdae9ebec59f499b5135007ab890b75a8fc1"
+      }
+    },
+    {
+      "id": "p056-05",
+      "name": "p056-05.png",
+      "sha256": "94828d8805defe9e741666fdb64ca55ad1896de08856c3c226d552a7e896f28c",
+      "owner": "gallery-culture",
+      "caption": {
+        "start": 49688,
+        "end": 49729,
+        "sha256": "d1e2c4c68dc84ead3620c075da109b27f4a34b3912bda9d115b508c68ad57a80"
+      }
+    },
+    {
+      "id": "p056-06",
+      "name": "p056-06.png",
+      "sha256": "e1806b1421bf19bfc4d7027af0969509f143e638e5c8a92d2910e9060dfe09e0",
+      "owner": "gallery-culture",
+      "caption": {
+        "start": 49921,
+        "end": 49965,
+        "sha256": "f31a0c148426bd136e0d02550dd22a999cd8fb0021c23e9cf9f3e80253eb2a31"
+      }
+    },
+    {
+      "id": "p056-07",
+      "name": "p056-07.png",
+      "sha256": "b30e877ef9a9ec6a44d1cbd008f2a9853bd2807af2c6ccd46d7c21ba4959c83d",
+      "owner": "gallery-culture",
+      "caption": {
+        "start": 50160,
+        "end": 50195,
+        "sha256": "49537763c5e07073097f714ea8abe1d55bbedcd64023980d30ca2d13fd31acc9"
+      }
+    },
+    {
+      "id": "p056-08",
+      "name": "p056-08.png",
+      "sha256": "119094a5169aba6a4094435dad158edbdb8014fe25cc69265d7b2b7387da329d",
+      "owner": "gallery-culture",
+      "caption": {
+        "start": 50381,
+        "end": 50407,
+        "sha256": "b7dce40e7cbf01d851b26229f707e4eb6ec13eb187f73f999aa995c8bcc3009e"
+      }
+    },
+    {
+      "id": "p056-09",
+      "name": "p056-09.png",
+      "sha256": "6a41e83b109430dc6af603a64971a5a86bbb0f0b097913094d43277d6591f560",
+      "owner": "gallery-culture",
+      "caption": {
+        "start": 50584,
+        "end": 50610,
+        "sha256": "1d54c3f2b8af28dde860011cf76c3ade3f043f4ef318f474c37dffd556453ab3"
+      }
+    },
+    {
+      "id": "p056-10",
+      "name": "p056-10.png",
+      "sha256": "14f7ffea8f0a3c66fef7e29c1efa036aa5b037effc895c8331f6d062b415cb81",
+      "owner": "gallery-culture",
+      "caption": {
+        "start": 50787,
+        "end": 50810,
+        "sha256": "426765f6b4a01e8996b09d95cc38c8b81207cf5a9a4b447c0c6890b523a99a60"
+      }
+    },
+    {
+      "id": "p056-11",
+      "name": "p056-11.png",
+      "sha256": "25241bcad77c05a7e7c67a79d098cd654e55070490d169d314f12d1d5a5650af",
+      "owner": "gallery-culture",
+      "caption": {
+        "start": 50984,
+        "end": 51014,
+        "sha256": "57e73188ace5bf9add0d5cd859e5c10f16770e0080d245904564a8ef662b7a2f"
+      }
+    },
+    {
+      "id": "p056-12",
+      "name": "p056-12.png",
+      "sha256": "32875e282c0de1f708fec9098cecc5300fa334b5efc9cf0f11b86cd639deba8e",
+      "owner": "gallery-culture",
+      "caption": {
+        "start": 51195,
+        "end": 51207,
+        "sha256": "c1e39306fa266c2a7b26a9c97f07a66214ee49238e12f16645b65d0bb819f171"
+      }
+    },
+    {
+      "id": "p056-13",
+      "name": "p056-13.png",
+      "sha256": "82d8f77b69358d2179994e1d21cb2985cae397e1397e3a437af97b22977fa872",
+      "owner": "gallery-culture",
+      "caption": {
+        "start": 51370,
+        "end": 51399,
+        "sha256": "d169f42317a5bca04ef93be1f1b519caf387236fb3e660579a6d870ed052c79f"
+      }
+    },
+    {
+      "id": "p056-14",
+      "name": "p056-14.png",
+      "sha256": "cb399fa4d6f52da01950aa409fdc47fde6c4c5362d10299febeb34b15f993f15",
+      "owner": "gallery-culture",
+      "caption": {
+        "start": 51579,
+        "end": 51591,
+        "sha256": "00dbfbe77f884d7e7ccab30efe5c5cc381aa9b799bc307d031bb1f37463d5d9d"
+      }
+    },
+    {
+      "id": "p056-15",
+      "name": "p056-15.png",
+      "sha256": "763232e456002b3eb68f2bb8c13507c625018737baf65c5e37bde9d11b3ee5b9",
+      "owner": "gallery-culture",
+      "caption": {
+        "start": 51754,
+        "end": 51772,
+        "sha256": "221d14869506593b5d467060f1076c6999516db77dc26bb255d29ef8f8a9a273"
+      }
+    },
+    {
+      "id": "p056-16",
+      "name": "p056-16.png",
+      "sha256": "f46d93bd48171edb5e61a89c408f3ac915647738f15c9f5a963a310a45ef3883",
+      "owner": "gallery-culture",
+      "caption": {
+        "start": 51941,
+        "end": 51959,
+        "sha256": "913c1daf756f067fa27f4645b543cf4760098d4764456c3d87ec95f6fd397632"
+      }
+    },
+    {
+      "id": "p056-17",
+      "name": "p056-17.png",
+      "sha256": "0508e75a4b397880c5e71c33cc6bf9fc9b5a033aec40b97bff0011e2802986d3",
+      "owner": "gallery-culture",
+      "caption": {
+        "start": 52128,
+        "end": 52143,
+        "sha256": "a712c6a91e2f9377dc5f84fed44f379cbad554dcaf4b460d32b7e24afabf6c73"
+      }
+    }
+  ],
+  "gallery": {
+    "id": "gallery-culture",
+    "anchor": 1184,
+    "figures": [
+      "p056-01",
+      "p056-02",
+      "p056-03",
+      "p056-04",
+      "p056-05",
+      "p056-06",
+      "p056-07",
+      "p056-08",
+      "p056-09",
+      "p056-10",
+      "p056-11",
+      "p056-12",
+      "p056-13",
+      "p056-14",
+      "p056-15",
+      "p056-16",
+      "p056-17"
+    ]
+  }
 };root.HanqGoryeoStructureData=data;})(typeof window==='object'?window:globalThis);

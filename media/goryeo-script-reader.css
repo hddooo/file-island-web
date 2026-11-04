@@ -157,3 +157,12 @@ html body #goryeoScript .goryeo-script-reader .gsr-silhak-scroll:focus-visible{o
  .goryeo-script-reader :is(.gsr-ruler-grid,.gsr-exam-grid) :is(p,li){overflow-wrap:anywhere;word-break:normal}
 }
 @media(max-width:700px){.goryeo-script-reader .gsr-exam-grid .gsr-nested-label{border-left:6px solid #739bb1;padding-left:18px;background:#edf3f6}.goryeo-script-reader .gsr-exam-grid th{width:100%}}
+.goryeo-script-reader .gsr-independent-grid{min-width:1160px;table-layout:fixed}
+.goryeo-script-reader .gsr-independent-grid th:nth-child(3){border-left:3px solid #7396b0}
+.goryeo-script-reader .gsr-independent-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.goryeo-script-reader .gsr-content-band{min-width:0}
+.goryeo-script-reader .gsr-inset{border:2px solid #7396b0;padding:12px;margin:16px 0}
+.goryeo-script-reader .gsr-culture-gallery>div{min-width:0}
+.goryeo-script-reader .gsr-culture-gallery figure{height:auto}
+.goryeo-script-reader figcaption{font-size:18px;line-height:1.7;color:#263745}
+@media(max-width:700px){.goryeo-script-reader .gsr-independent-panels{grid-template-columns:minmax(0,1fr)}}

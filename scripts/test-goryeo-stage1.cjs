@@ -36,7 +36,7 @@ const hash=b=>crypto.createHash('sha256').update(b).digest('hex'),compact=s=>s.r
  assert.deepEqual(bundle.topics.map(t=>t.id),['politics','society','culture']);
  for(const initialTopic of [...bundle.topics.map(t=>t.id),'early']){
   dom.window.history.replaceState({goryeoScript:{source:'0'.repeat(64),topic:initialTopic,mode:'answers'}},'');
-  const instance=reader.mount(host,prepared,{initialTopic});assert.equal(host.querySelector('[data-topic][aria-current="true"]').dataset.topic,'politics');assert.equal(host.querySelectorAll('[data-kind="answers"]').length,0);instance.stop();
+  const instance=reader.mount(host,prepared,{initialTopic});assert.equal(host.querySelector('[data-topic][aria-current="true"]').dataset.topic,bundle.topics.some(t=>t.id===initialTopic)?initialTopic:'politics');assert.equal(host.querySelectorAll('[data-kind="answers"]').length,0);instance.stop();
  }
  dom.window.close();console.log(JSON.stringify({pass:true,independentCells:expected.size,emphasis,imagesPinned:24,stageFigures:2,questions:100,answers:100,inputs:103,sourceUnchanged:true}));
 })().catch(e=>{console.error(e);process.exitCode=1;});

@@ -21,7 +21,7 @@
           if(match && colors.has(match[1].toLowerCase())) {
             const e=doc.createElement('span'); e.dataset.sourceColor=match[1].toLowerCase();
             // Grey ink remains distinct while retaining readable contrast on paper.
-            const sourceColor=match[1].toLowerCase();e.style.setProperty('color',({'#bfbfbf':'#626872','#9b9ba8':'#626872','#808080':'#626872','#ff0000':'#b51f25','#0000ff':'#2546b8','#1d9a78':'#176952','#289b6e':'#176952'})[sourceColor]||sourceColor,'important');
+            const sourceColor=match[1].toLowerCase();e.style.setProperty('color',({'#bfbfbf':'#626872','#9b9ba8':'#626872','#808080':'#626872','#ff0000':'#b51f25','#0000ff':'#2546b8','#1d9a78':'#176952','#289b6e':'#176952','#ffff00':'#765800','#ed7d31':'#995016'})[sourceColor]||sourceColor,'important');
             current.append(e);stack.push({tag,parent:current});current=e;
           } else current.append(doc.createTextNode(m[0]));
         } else current.append(doc.createTextNode(m[0]));
@@ -62,7 +62,7 @@
     }
   }
   function mount(host,prepared,options) {
-    if(!root.HanqGoryeoStructure.isPrepared(prepared))throw Error('goryeo_not_prepared');const bundle=prepared.bundle,viewTopics=bundle.topics.filter(t=>t.id==='politics');
+    if(!root.HanqGoryeoStructure.isPrepared(prepared))throw Error('goryeo_not_prepared');const bundle=prepared.bundle,viewTopics=bundle.topics;
     options=options||{};const doc=host.ownerDocument,win=doc.defaultView;
     if(!bundle || bundle.schema!=='hanq-goryeo-script/1' || !/^[a-f0-9]{64}$/.test(bundle.source.sha256) || !Array.isArray(bundle.segments) || !Array.isArray(bundle.topics))throw Error('Invalid private study bundle');
     if(bundle.segments.some(s=>!['study','practice','answers','metadata'].includes(s.kind)||typeof s.markdown!=='string'))throw Error('Invalid source segments');
@@ -72,7 +72,7 @@
     const shell=doc.createElement('section');shell.className='goryeo-script-reader';host.replaceChildren(shell);
     function el(tag,text,cls){const e=doc.createElement(tag);if(text)e.textContent=text;if(cls)e.className=cls;return e;}
     function button(text,fn){const e=el('button',text);e.type='button';e.onclick=fn;return e;}
-    const header=el('header',null,'gsr-header');header.append(el('p','HISTORY / GORYEO','gsr-eyebrow'),el('h1','고려, 흐름을 따라 읽기'),el('p','왕의 흐름에서 제도와 생활, 문화까지. 주제를 골라 차근차근 읽어 보세요.'));
+    const header=el('header',null,'gsr-header');header.append(el('p','HISTORY / GORYEO','gsr-eyebrow'),el('h1',prepared.rootTitle),el('p','왕의 흐름에서 제도와 생활, 문화까지. 주제를 골라 차근차근 읽어 보세요.'));
     const nav=el('nav',null,'gsr-topics');nav.setAttribute('aria-label','고려 학습 주제');
     viewTopics.forEach(t=>{const b=button(t.title,()=>navigate(t.id,'study'));b.dataset.topic=t.id;nav.append(b);});header.append(nav);
     const modes=el('nav',null,'gsr-modes');modes.setAttribute('aria-label','자료 구분');
@@ -88,7 +88,7 @@
     function pumpFigures(){while(figureActive<2&&figureQueue.length){const job=figureQueue.shift();if(job.signal.aborted){job.reject(Error('aborted'));continue;}figureActive++;Promise.resolve().then(()=>{if(job.signal.aborted)throw Error('aborted');return options.loadFigure(job.name,{signal:job.signal});}).then(job.resolve,job.reject).finally(()=>{figureActive--;pumpFigures();});}}
     function loadFigure(name,signal){return new Promise((resolve,reject)=>{figureQueue.push({name,signal,resolve,reject});pumpFigures();});}
     function figure(parent,name,alt){
-      const f=el('figure'),caption=el('figcaption',alt);f.dataset.figure=name;parent.append(f);f.append(caption);if(['p042-01.png','p042-02.png','p047-01.png','p048-01.png'].includes(name))caption.hidden=true;
+      const f=el('figure'),caption=el('figcaption',alt);f.dataset.figure=name;parent.append(f);f.append(caption);if(['p042-01.png','p042-02.png','p047-01.png','p048-01.png','p053-03.png'].includes(name))caption.hidden=true;
       if(!bundle.figures.includes(name) || !options.loadFigure){f.append(el('p','이 그림은 비공개 자료 연결 후 볼 수 있습니다.','gsr-image-status'));return;}
       const generation=epoch,signal=figureAbort.signal;const status=el('p','', 'gsr-image-status');status.setAttribute('role','status');f.append(status);
       const retry=button('그림 다시 불러오기',attempt);retry.className='gsr-image-retry';retry.hidden=true;f.append(retry);
@@ -146,7 +146,7 @@
       (headings.length?headings:[article]).forEach((heading,index)=>{if(!heading.id)heading.id=article.id+'-section-'+index;const a=el('button',heading===article?'이 쪽 읽기':heading.textContent);a.type='button';a.onclick=()=>{for(let node=heading.parentElement;node&&node!==body;node=node.parentElement)if(node.tagName==='DETAILS')node.open=true;heading.tabIndex=-1;heading.focus({preventScroll:true});heading.scrollIntoView({block:'start'});};group.append(a);});
     });}
     function renderProjected(article,segment){
-      const parts=segment.markdown.split(/(@@(?:table1[5-9]|table20|exam-early|exam-military|exam-aristocratic|exam-yuan|exam-late|early-diagram)@@)/);
+      const parts=segment.markdown.split(/(@@(?:table1[5-9]|table2[0-2]|gallery-culture|exam-society-economy|exam-early|exam-military|exam-aristocratic|exam-yuan|exam-late|early-diagram)@@)/);
       parts.forEach(part=>{
         const token=/^@@(.+)@@$/.exec(part);
         if(!token){renderMarkdown(doc,article,part,figure);return;}
@@ -154,18 +154,22 @@
           const section=el('section',null,'gsr-early-diagram');section.setAttribute('aria-label','고려 초기 왕계');section.dataset.owner='early-kings';section.append(el('h3',prepared.earlyTitle));figure(section,'p042-01.png','고려 초기 왕계');
           const description=el('details');description.append(el('summary','텍스트 설명'));renderMarkdown(doc,description,prepared.diagramText,figure);section.append(description);article.append(section);return;
         }
+        if(token[1]==='gallery-culture'){const gallery=el('section',null,'gsr-culture-gallery');gallery.dataset.owner='gallery-culture';prepared.gallery.figures.forEach(id=>sourceFigure(gallery,id));article.append(gallery);return;}
         renderSourceTable(article,prepared.tables.find(t=>t.id===token[1]));
       });
     }
+    function sourceFigure(parent,id){const f=prepared.figures.find(x=>x.id===id);if(!f)throw Error('goryeo_figure_missing');const holder=el('div');holder.dataset.owner=f.owner;parent.append(holder);figure(holder,f.name,f.captionMarkdown?'['+f.captionMarkdown.trim()+']':'무역 지도');}
+    function renderBands(parent,bands){for(const band of bands||[]){const block=el('div',null,band.panels.length?'gsr-independent-panels':'gsr-content-band');block.dataset.band=band.id;parent.append(block);renderMarkdown(doc,block,band.markdown,figure);renderBands(block,band.panels);band.figures.forEach(id=>sourceFigure(block,id));}}
     function renderSourceTable(parent,t){
       const wrap=el('div',null,'gsr-structure-scroll'),table=el('table',null,'gsr-structure-table');wrap.tabIndex=0;wrap.setAttribute('role','region');wrap.dataset.structure=t.id;table.dataset.structure=t.id;
       const title=el('h4',null,'gsr-table-title');title.id='gs-'+t.id+'-title';inline(doc,title,t.captionMarkdown.replace(/^#+ /,'').trim());parent.append(title);
       const caption=el('caption',null,'gsr-visually-hidden');caption.id='gs-'+t.id+'-caption';caption.textContent=title.textContent;table.append(caption);table.setAttribute('aria-labelledby',title.id);table.setAttribute('role','table');wrap.setAttribute('aria-labelledby',title.id);
       const hint=el('p','좌우로 밀어 표를 읽으세요.','gsr-scroll-hint');hint.id='gs-'+t.id+'-hint';hint.hidden=true;parent.append(hint);wrap.setAttribute('aria-describedby',hint.id);
-      table.classList.add(t.id==='table15'?'gsr-period-grid':t.id==='table16'?'gsr-ruler-grid':'gsr-exam-grid');
-      const cols=el('colgroup');(t.id==='table15'?[140,196,196,196,196,196]:t.id==='table16'?[150,470,280]:t.columns===3?[120,160,480]:[160,600]).forEach(width=>{const col=el('col');col.style.width=width+'px';cols.append(col);});table.append(cols);
+      table.classList.add(t.id==='table15'?'gsr-period-grid':t.id==='table16'?'gsr-ruler-grid':t.id==='table22'?'gsr-independent-grid':'gsr-exam-grid');
+      const cols=el('colgroup');(t.id==='table15'?[140,196,196,196,196,196]:t.id==='table16'?[150,470,280]:t.columns===4?[150,430,150,430]:t.columns===3?[120,160,480]:[160,600]).forEach(width=>{const col=el('col');col.style.width=width+'px';cols.append(col);});table.append(cols);
       const rows=new Map(),head=el('thead');head.setAttribute('role','rowgroup');table.append(head);let body=null;
-      if(!t.headerRow){const tr=el('tr'),a=el('th','구분'),b=el('th','내용');a.id='gs-'+t.id+'-category';b.id='gs-'+t.id+'-content';a.scope='col';b.scope=t.columns>2?'colgroup':'col';b.colSpan=t.columns-1;tr.append(a,b);head.append(tr);}
+      if(t.headers){const tr=el('tr');t.headers.forEach((text,i)=>{const th=el('th',text);th.id='gs-'+t.id+'-column-'+(i+1);th.scope='col';tr.append(th);});head.append(tr);}
+      else if(!t.headerRow){const tr=el('tr'),a=el('th','구분'),b=el('th','내용');a.id='gs-'+t.id+'-category';b.id='gs-'+t.id+'-content';a.scope='col';b.scope=t.columns>2?'colgroup':'col';b.colSpan=t.columns-1;tr.append(a,b);head.append(tr);}
       for(let y=1;y<=t.rows;y++){
         const row=el('tr');row.setAttribute('role','row');row.dataset.row=y;rows.set(y,row);
         if(t.headerRow&&y===1)head.append(row);
@@ -180,14 +184,14 @@
         if(t.id==='table16')cell.style.setProperty('--gsr-mobile-row',c.figure?11:c.row===6?11+c.column:2*c.row-2+c.column);
         if(header)cell.scope=t.headerRow&&c.row===1?'col':c.rowspan>1?'rowgroup':'row';
         else{
-          const rowHeaders=t.cells.filter(h=>(h.column===1||h.isHeader)&&h.column<c.column&&h.row<=c.row+c.rowspan-1&&h.row+h.rowspan>c.row).map(h=>h.id);
-          const colHeaders=t.headerRow?t.cells.filter(h=>h.row===1&&h.column>=c.column&&h.column<c.column+c.colspan).map(h=>h.id):['gs-'+t.id+'-content'];cell.setAttribute('headers',[...rowHeaders,...colHeaders].join(' '));
+          const rowHeaders=t.cells.filter(h=>(t.id!=='table22'||Math.floor((h.column-1)/2)===Math.floor((c.column-1)/2))&&(h.column===1||h.isHeader)&&h.column<c.column&&h.row<=c.row+c.rowspan-1&&h.row+h.rowspan>c.row).map(h=>h.id);
+          const colHeaders=t.headers?['gs-'+t.id+'-column-'+c.column]:t.headerRow?t.cells.filter(h=>h.row===1&&h.column>=c.column&&h.column<c.column+c.colspan).map(h=>h.id):['gs-'+t.id+'-content'];cell.setAttribute('headers',[...rowHeaders,...colHeaders].join(' '));
         }
         if(c.contentRole)cell.dataset.contentRole=c.contentRole;
-        if(c.isHeader&&c.column>1){cell.classList.add('gsr-nested-label');cell.setAttribute('headers',t.cells.filter(h=>h.column<c.column&&h.isHeader&&h.row<=c.row&&h.row+h.rowspan>c.row).map(h=>h.id).join(' '));}
+        if(c.isHeader&&c.column>1&&t.id!=='table22'){cell.classList.add('gsr-nested-label');cell.setAttribute('headers',t.cells.filter(h=>h.column<c.column&&h.isHeader&&h.row<=c.row&&h.row+h.rowspan>c.row).map(h=>h.id).join(' '));}
         if(c.sourceId)cell.dataset.sourceOwner=c.sourceId;
         if(c.figure){cell.dataset.owner='table16';figure(cell,c.figure,'고려 초기 지도');}
-        else{if(c.label)cell.append(doc.createTextNode(c.label));renderMarkdown(doc,cell,c.markdown,figure);if(c.noteMarkdown){const note=el('div',null,'gsr-source-note');renderMarkdown(doc,note,c.noteMarkdown,figure);cell.append(note);}}
+        else{if(c.label)cell.append(doc.createTextNode(c.label));if(c.insets?.length){for(const part of c.parts){const block=el('div',null,part.inset?'gsr-inset':'gsr-content-band');renderMarkdown(doc,block,part.markdown,figure);cell.append(block);}}else renderMarkdown(doc,cell,c.markdown,figure);renderBands(cell,c.bands);(c.figures||[]).forEach(id=>sourceFigure(cell,id));if(c.noteMarkdown){const note=el('div',null,'gsr-source-note');renderMarkdown(doc,note,c.noteMarkdown,figure);cell.append(note);}}
         if(c.contentFigure){cell.dataset.owner=c.sourceId;figure(cell,c.contentFigure,t.cells.filter(h=>h.isHeader&&h.row<=c.row&&h.row+h.rowspan>c.row).map(h=>h.markdown).join(' '));}
         rows.get(c.row).append(cell);
       }
