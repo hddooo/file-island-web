@@ -900,3 +900,10 @@ Source summary code and index routing are integrated on an isolated branch based
 ### 2026-11-04 frontend automatic deployment only
 
 The isolated branch starts at deployed dcfa5bcebcdf2dd47c1181b64511190a10004619. Active workflows now contain one main-only public build job and the existing Windows deploy job, with zero automated test commands or browser/test installs. YAML parsing and semantic preservation checks pass. Local repeatable static builds pass; controller tests pass15/skip1 (Linux symlink on Windows). Runtime files, local test scripts and installed controller are unchanged. New exact-SHA build/deployment verification is pending at this commit.
+
+### 2026-11-04 모닥불 모션 수정 후보
+
+- 기준 main: `e4871571370b3c0daeb08f236958a79674a4f956`. 독립 브랜치 `fix/natural-campfire`에서 역사섬 CSS와 전용 QA만 수정했다.
+- 전체 scale/translate 펌핑을 제거하고 기존 불꽃 원화 하단을 정적으로 유지한다. 위쪽 두 레이어는 2.83초/1.73초 독립 주기로 2도 미만의 기울기와 약한 밝기만 바꾼다. 새 이미지·JS 타이머·API 변경은 없다.
+- `qa-iphone-camp.cjs`: Chromium/WebKit 320×740, 390×844, 844×390, 1440×1000 및 이미지 실패·복구 총 10건 통과. 바닥 정적 상태, scale/translate 없음, 작은 진폭, 반복 양끝 일치, reduced-motion, 메뉴 동작을 확인했다. 로컬 증거: 작업 폴더 상위 `evidence/camp-verified/`.
+- 통합 담당의 후속 지시로 feature push 후 main/운영 배포를 대기한다. 릴리스 버전은 통합 시 조율한다. 현재 workflow는 main push만 실행하므로 feature SHA의 CI는 실행되지 않는다.
