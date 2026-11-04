@@ -755,3 +755,15 @@ The verified new-edition summary can retain its chapter step and load source-bou
 ### 2026-11-04 frontend automatic deployment only
 
 The user's latest request supersedes earlier automatic-test requirements. Frontend build now runs only on main pushes and uploads the public runtime/checksum manifest; Home frontend deploy follows that successful build. Repository/branch/event/path/current-main checks, action pins, read permissions, digest mismatch rejection and installed atomic deployment/rollback are preserved. Local workflow/build/controller verification passes; automatic tests are absent from both active workflows. This commit prepares the change; actual build/deployment and operating SHA must be reported from the resulting Actions runs. Release remains0.3.5-beta and application/learning/account data behavior is unchanged.
+
+## 2026-11-05 조선 그림 복구 후보 (운영 미배포)
+
+기준 main: 0f9f54b8166b765ccec855c7ba749fe10736efa3. 조선 reader/CSS/session/transport와 해당 검사만 변경한다. source/bundle/API release pin과 구판 저장·채점 경로는 보존한다.
+
+- 운영 그림 실패는 아직 재현하지 못했다. 격리 actual index + 기존 API client + 실제 pinned bundle/38 PNG + 합성 세션은 4주제/320·390·1440px에서 통과했다. HTTP 200 후 본문이 끝나지 않는 합성 응답은 기존 10초 deadline에서 timeout이 되며 자동 재전송하지 않는 것을 재현했다. 이 조건이 사용자 운영 장애의 원인이라는 증거는 없다.
+- 최대 2개 그림 GET을 진행하며 대기 요청은 시작 전이므로 API deadline을 소비하지 않는다. 주제/모드 전환은 대기열을 비우고 진행 중 요청에 abort를 전달한다. 계정·route·세션 세대 검사를 유지한다. 실패 그림만 명시적 재시도하며 중복 클릭은 합친다.
+- transport는 PNG MIME/size/digest 오류를 구분한다. reader는 제한된 오류코드만 DOM data-error에 남기며 URL/token/source 내용을 기록하지 않는다. Blob native-brand 검사로 다른 realm의 실제 Blob을 허용한다. 잘못된 Blob과 decode 실패는 retry 상태로 전환한다. production의 instanceof 실패 여부는 미확인이다.
+- 정확한 편집 메타데이터 패턴 38개와 그림 바로 앞의 완전히 같은 제목만 접힌 원문 페이지 정보로 옮긴다. 역사내용·강조·표·문제172개·답안·sourceLossless는 유지한다.
+- 통과: lossless reader, session/계정 경계, transport 전체38 PNG SHA/bytes/MIME 및 header/401/503/abort/10초 body timeout, 235 comparison assertions, 119 joseon tab assertions, 브라우저12 layouts·종횡비·확대/Back·정답분리·logout 및 retry 8종/다른 realm Blob/queue cancellation.
+- 기존 test-period-joseon은 변경하지 않은 quiz-progress.js의 낡은 고정 해시에서 실패한다. main blob SHA256 b846a924ec6f3aa5fbe339d2a8660917928d0e0bee25c9668915be2451e2b80d; 테스트 기대 ac16c4a65575ee2be0224f49f950e6fcddec713eeef2c620d30f110a67346f3c. assertion은 완화하지 않았다. Windows CRLF 해시 영향을 구분한 뒤 main blob에도 불일치함을 확인했다.
+- 남음: 실제 사용자 세션 및 물리 모바일/느린 통신망에서의 운영 재검증, 실제 proxy/CDN 전송, 통합 SHA CI/CD. 합성 delayed loader/timeout은 이동통신망 재현을 대신하지 않는다. 인증 POST 운영 진단/배포/push는 수행하지 않는다. 통합 담당이 최신 main에 적용하고 정확 SHA를 검증한다.

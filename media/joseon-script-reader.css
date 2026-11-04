@@ -14,3 +14,5 @@ html body #joseonScript .joseon-script-reader button[aria-current=true]{backgrou
 html body #joseonScript .joseon-script-reader h3{color:#215b88!important}
 html body #joseonScript .joseon-script-reader textarea{background:white!important;color:#263745!important;font-size:18px!important}
 html body .jsr-image-dialog{background:#fffdf8!important;color:#263745!important;color-scheme:light}
+.joseon-script-reader figure .jsr-image-retry[hidden]{display:none!important}
+.joseon-script-reader .jsr-image-status:empty{display:none}

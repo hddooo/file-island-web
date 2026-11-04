@@ -12,6 +12,7 @@ const {create}=require('../media/joseon-script-session.js');
  assert.equal(await app.mount(host,null),false);assert.equal(loadCount,0);
  assert.equal(await app.mount(host,{...transport,loadBundle:async()=>({source:{sha256:'b'.repeat(64)}})}),false);assert(!host.textContent.includes('PRIVATE_SYNTHETIC'));
  assert.equal(await app.mount(host,transport),true);assert.equal(host.querySelectorAll('a').length,0);assert.equal(app.handlePopState(),true);assert.equal(pops,1);
+ const originalFigure=transport.loadFigure;transport.loadFigure=async(n,{signal})=>{assert(signal.aborted);throw Error('aborted');};const viewAbort=new win.AbortController();viewAbort.abort();await assert.rejects(renderOptions.loadFigure('p060-01.png',{signal:viewAbort.signal}),/aborted/);transport.loadFigure=originalFigure;
  const otherRelease=win.HanqUiLocks.acquire(options.appRoot),release=renderOptions.acquireModalLock();release();assert.equal(options.appRoot.inert,true);otherRelease();assert.equal(options.appRoot.inert,false);
  const staleLoader=renderOptions.loadFigure;state={signedIn:false,epoch:2};listener();assert.equal(host.textContent,'');await assert.rejects(staleLoader('p060-01.png'),/session_changed/);
  state={signedIn:true,ownerId:'synthetic-b',epoch:3};let resolveBundle;const pending=app.mount(host,{...transport,loadBundle:()=>new Promise(r=>resolveBundle=r)});state={...state,epoch:4};listener();resolveBundle({source:{sha256:sha}});assert.equal(await pending,false);assert.equal(host.textContent,'');

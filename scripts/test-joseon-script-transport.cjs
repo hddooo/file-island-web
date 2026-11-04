@@ -11,6 +11,7 @@ const {create}=require('../media/api-client.js'),transport=require('../media/jos
   if(mode==='401')return Response.json({error:{code:'unauthorized'}},{status:401});
   if(mode==='503')return Response.json({error:{code:'script_unavailable'}},{status:503});
   if(mode==='abort')return new Promise((r,j)=>opts.signal.addEventListener('abort',()=>j(new DOMException('aborted','AbortError'))));
+  if(mode==='bodytimeout')return {ok:true,headers:new Headers({'content-type':'image/png','cache-control':'private, no-store'}),blob:()=>new Promise((r,j)=>opts.signal.addEventListener('abort',()=>j(new DOMException('aborted','AbortError'))))};
   const headers={'content-type':url.includes('/figures/')?'image/png':'application/json','cache-control':mode==='public'?'public, max-age=3600':'private, no-store'};
   if(mode==='mime')headers['content-type']='text/html';return new Response(url.includes('/figures/')?new Uint8Array([137,80,78,71]):'{"synthetic":true}',{headers});
  }});
@@ -18,6 +19,7 @@ const {create}=require('../media/api-client.js'),transport=require('../media/jos
  assert.equal(await api.joseonScriptBundle(source),'{"synthetic":true}');await api.joseonScriptFigure(source,'p060-01.png');
  assert(calls.every(c=>c.opts.method==='GET'&&c.opts.cache==='no-store'&&c.opts.headers.Authorization.startsWith('Bearer ')));assert(calls[0].url.endsWith('/scripts/joseon/'+source+'/bundle'));
  for(const invalid of ['../x.png','p060-01.svg','https://external.invalid/x.png'])await assert.rejects(api.joseonScriptFigure(source,invalid),e=>e.code==='invalid_script_figure');
+ mode='bodytimeout';const started=Date.now();await assert.rejects(api.joseonScriptFigure(source,'p060-01.png'),e=>e.code==='timeout');assert(Date.now()-started>=9900);assert.equal(calls.filter(c=>c.url.endsWith('/p060-01.png')).length,2); // initial success plus one timed-out GET; no replay
  mode='public';await assert.rejects(api.joseonScriptBundle(source),e=>e.code==='invalid_private_response');mode='mime';await assert.rejects(api.joseonScriptBundle(source),e=>e.code==='invalid_private_response');
  mode='503';await assert.rejects(api.joseonScriptBundle(source),e=>e.code==='script_unavailable');mode='abort';const ac=new AbortController(),pending=api.joseonScriptBundle(source,ac.signal);await new Promise(r=>setImmediate(r));ac.abort();await assert.rejects(pending,e=>e.code==='aborted');
  mode='late';const late=api.joseonScriptBundle(source);await new Promise(r=>setImmediate(r));void api.logout();resolveLate(new Response('{}',{headers:{'content-type':'application/json','cache-control':'private, no-store'}}));await assert.rejects(late);await api.signin('synthetic@example.invalid','synthetic');mode='401';await assert.rejects(api.joseonScriptBundle(source),e=>e.status===401);assert.equal(api.state().signedIn,false);
@@ -27,7 +29,8 @@ const {create}=require('../media/api-client.js'),transport=require('../media/jos
  if(process.argv[2]){
   const text=fs.readFileSync(process.argv[2],'utf8'),imageRoot=process.argv[3];let bad=false;
   const t=transport.create({joseonScriptBundle:async()=>text,joseonScriptFigure:async(s,n)=>new Blob([bad?'invalid':fs.readFileSync(path.join(imageRoot,n))],{type:'image/png'})});
-  await assert.rejects(t.loadFigure('p060-01.png'),/invalid_script_figure/);const b=await t.loadBundle();assert.equal(b.source.sha256,source);assert.equal((await t.loadFigure(b.figures[0])).size,b.figureManifest[0].bytes);bad=true;await assert.rejects(t.loadFigure(b.figures[0]),/script_figure_mismatch/);
+  await assert.rejects(t.loadFigure('p060-01.png'),/invalid_script_figure/);const b=await t.loadBundle();assert.equal(b.source.sha256,source);for(const f of b.figureManifest)assert.equal((await t.loadFigure(f.name)).size,f.bytes);bad=true;await assert.rejects(t.loadFigure(b.figures[0]),/script_figure_size/);
+  for(const failure of ['mime','digest']){const broken=transport.create({joseonScriptBundle:async()=>text,joseonScriptFigure:async(s,n)=>{const bytes=Buffer.from(fs.readFileSync(path.join(imageRoot,n)));if(failure==='digest')bytes[0]^=1;return new Blob([bytes],{type:failure==='mime'?'image/jpeg':'image/png'});}});await broken.loadBundle();await assert.rejects(broken.loadFigure(b.figures[0]),new RegExp('script_figure_'+failure));}
   const aborted=new AbortController();aborted.abort();await assert.rejects(t.loadBundle({signal:aborted.signal}),/aborted/);
  }
  console.log('Script transport: authenticated GET, source/name validation, private cache/MIME, 401/503, abort, exact deployment gate and byte integrity passed');

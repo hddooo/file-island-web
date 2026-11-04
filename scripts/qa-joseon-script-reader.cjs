@@ -8,7 +8,7 @@ let qaBrowser;
   const input=process.argv[2],images=process.argv[3],out=process.argv[4];
   if(!input||!images||!out)throw Error('Pass private Markdown, image directory and evidence directory');
   fs.mkdirSync(out,{recursive:true});const bundle=convert(fs.readFileSync(input));
-  const browser=await chromium.launch({headless:true,channel:process.env.JOSEON_BROWSER_CHANNEL,timeout:20000});
+  const browser=await chromium.launch({executablePath:process.env.JOSEON_BROWSER_EXECUTABLE,headless:true,channel:process.env.JOSEON_BROWSER_CHANNEL,timeout:20000});
   qaBrowser=browser;const context=await browser.newContext({reducedMotion:'reduce'});
   const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.route('https://joseon-qa.invalid/**',route=>{
@@ -20,6 +20,24 @@ let qaBrowser;
   await page.addStyleTag({path:path.resolve(__dirname,'../media/joseon-script-reader.css')});
   await page.addScriptTag({path:path.resolve(__dirname,'../media/joseon-script-reader.js')});
   await page.evaluate(b=>{window.qaBundle=b;window.reader=HanqJoseonScriptReader.mount(document.querySelector('#host'),b,{loadFigure:n=>fetch('/'+n).then(r=>r.blob())});},bundle);
+  // Real browser Blob realms, bounded queue, decode failure and per-figure recovery.
+  const recovery=await page.evaluate(async()=>{
+    reader.stop();history.replaceState({},'');const host=document.querySelector('#host'),name=qaBundle.figures[0],blob=await fetch('/'+name).then(r=>r.blob());
+    const tiny={...qaBundle,segments:[{id:'synthetic',kind:'study',page:60,markdown:Array(8).fill('!['+'합성 그림'+']('+name+')').join('\n\n')}]};
+    const until=async fn=>{for(let i=0;i<200&&!fn();i++)await new Promise(r=>setTimeout(r,10));if(!fn())throw Error('QA condition timeout');};
+    let active=0,peak=0,starts=0,cancelled=0;
+    reader=HanqJoseonScriptReader.mount(host,tiny,{loadFigure:(n,{signal})=>new Promise((resolve,reject)=>{starts++;active++;peak=Math.max(peak,active);const timer=setTimeout(()=>{active--;resolve(blob);},80);signal.addEventListener('abort',()=>{clearTimeout(timer);active--;cancelled++;reject(Error('aborted'));},{once:true});})});
+    await until(()=>starts===2);reader.stop();await until(()=>active===0);await new Promise(r=>setTimeout(r,30));if(starts!==2||host.children.length)throw Error('stale queue started');
+    const results=[];
+    for(const code of ['timeout','network','script_figure_mime','script_figure_size','script_figure_digest','invalid_private_response','image_decode','image_blob']){
+      let attempts=0;const one={...tiny,segments:[{...tiny.segments[0],markdown:'![합성 그림]('+name+')'}]};
+      reader=HanqJoseonScriptReader.mount(host,one,{loadFigure:async()=>{attempts++;if(attempts>1)return blob;if(code==='image_decode')return new Blob(['bad PNG'],{type:'image/png'});if(code==='image_blob')return {type:'image/png'};throw Error(code);}});
+      await until(()=>host.querySelector('figure')?.dataset.error);if(host.querySelector('figure').dataset.error!==code)throw Error('wrong diagnostic '+code);
+      await new Promise(r=>setTimeout(r,30));if(attempts!==1)throw Error('automatic retry');host.querySelector('.jsr-image-retry').click();host.querySelector('.jsr-image-retry').click();await until(()=>host.querySelector('figure img')?.naturalWidth>0);if(attempts!==2)throw Error('retry not coalesced');results.push(code);reader.stop();
+    }
+    const frame=document.createElement('iframe');document.body.append(frame);const other=new frame.contentWindow.Blob([await blob.arrayBuffer()],{type:'image/png'});reader=HanqJoseonScriptReader.mount(host,{...tiny,segments:[{...tiny.segments[0],markdown:'![합성 그림]('+name+')'}]},{loadFigure:async()=>other});await until(()=>host.querySelector('figure img')?.naturalWidth>0);reader.stop();frame.remove();
+    reader=HanqJoseonScriptReader.mount(host,qaBundle,{loadFigure:(n,{signal})=>fetch('/'+n,{signal}).then(r=>r.blob())});return {peak,starts,cancelled,results,crossRealm:true};
+  });assert.equal(recovery.peak,2);assert.equal(recovery.cancelled,2);fs.writeFileSync(path.join(out,'recovery.json'),JSON.stringify(recovery,null,2));
   let cases=0;
   for(const width of [320,390,1440]){
     await page.setViewportSize({width,height:900});
@@ -39,9 +57,9 @@ let qaBrowser;
     }
   }
   await page.setViewportSize({width:390,height:844});await page.click('[data-topic="early"]');await page.waitForSelector('figure img');
-  await page.locator('figure button').first().click();await page.waitForSelector('dialog[open]');await page.getByRole('button',{name:'원래 크기로 확대'}).click();assert.equal(await page.locator('dialog img').evaluate(i=>getComputedStyle(i).maxWidth),'none');
+  await page.locator('figure button:not(.jsr-image-retry)').first().click();await page.waitForSelector('dialog[open]');await page.getByRole('button',{name:'원래 크기로 확대'}).click();assert.equal(await page.locator('dialog img').evaluate(i=>getComputedStyle(i).maxWidth),'none');
   await page.goBack();await page.waitForSelector('dialog',{state:'detached'});
-  await page.locator('figure button').first().click();await page.keyboard.press('Escape');await page.waitForSelector('dialog',{state:'detached'});
+  await page.locator('figure button:not(.jsr-image-retry)').first().click();await page.keyboard.press('Escape');await page.waitForSelector('dialog',{state:'detached'});
   await page.click('[data-topic="late"]');await page.goBack();await page.waitForFunction(()=>document.querySelector('[data-topic="early"]').getAttribute('aria-current')==='true');
   await page.click('[data-mode="practice"]');assert.equal(await page.locator('.jsr-source-card[data-kind=answers]').count(),0);
   await page.click('[data-mode="answers"]');assert.equal(await page.locator('.jsr-source-card').count(),0);await page.getByRole('button',{name:'인쇄 정답 펼치기'}).click();assert.equal(await page.locator('.jsr-source-card').count(),3);
@@ -55,9 +73,9 @@ let qaBrowser;
     window.routerCalls=0;window.addEventListener('popstate',()=>{if(!coordinator.handlePopState())routerCalls++;});
     await coordinator.mount(host,{ready:true,sourceSha256:qaBundle.source.sha256,loadBundle:async()=>qaBundle,loadFigure:n=>fetch('/'+n).then(r=>r.blob())});
   });
-  await page.waitForSelector('figure img');await page.locator('figure button').first().click();assert(await page.locator('#host').evaluate(e=>e.inert));
+  await page.waitForSelector('figure img');await page.locator('figure button:not(.jsr-image-retry)').first().click();assert(await page.locator('#host').evaluate(e=>e.inert));
   await page.goBack();await page.waitForSelector('dialog',{state:'detached'});assert.equal(await page.evaluate(()=>routerCalls),0);assert.equal(await page.locator('#host').evaluate(e=>e.inert),false);
-  await page.locator('figure button').first().click();await page.evaluate(()=>{window.otherLock=HanqUiLocks.acquire(document.querySelector('#host'));auth={signedIn:false,epoch:2};authChanged();});
+  await page.locator('figure button:not(.jsr-image-retry)').first().click();await page.evaluate(()=>{window.otherLock=HanqUiLocks.acquire(document.querySelector('#host'));auth={signedIn:false,epoch:2};authChanged();});
   assert.equal(await page.locator('dialog').count(),0);assert.equal(await page.locator('#host').textContent(),'');assert(await page.locator('#host').evaluate(e=>e.inert));await page.evaluate(()=>otherLock());assert.equal(await page.locator('#host').evaluate(e=>e.inert),false);
   assert.deepEqual(errors,[]);await browser.close();fs.writeFileSync(path.join(out,'result.json'),JSON.stringify({cases,engine:'isolated headless Chromium',widths:[320,390,1440],reducedMotion:true,images:38,errors},null,2));console.log('Passed '+cases+' private-source layouts, image ratio/zoom/close/back, answer concealment and repeat entry');
 })().catch(async e=>{console.error(e);if(qaBrowser)await qaBrowser.close();process.exitCode=1;});

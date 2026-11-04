@@ -19,7 +19,7 @@
    },
    async loadFigure(name,{signal}={}){
     active(signal);const f=manifest&&manifest.get(name);if(!f)throw Error('invalid_script_figure');const blob=await api.joseonScriptFigure(SOURCE,name,signal);active(signal);
-    if(blob.type!=='image/png'||blob.size!==f.bytes)throw Error('script_figure_mismatch');const bytes=await blob.arrayBuffer();if(await digest(bytes,crypto)!==f.sha256)throw Error('script_figure_mismatch');active(signal);return blob;
+    if(blob.type!=='image/png')throw Error('script_figure_mime');if(blob.size!==f.bytes)throw Error('script_figure_size');const bytes=await blob.arrayBuffer();if(await digest(bytes,crypto)!==f.sha256)throw Error('script_figure_digest');active(signal);return blob;
    }
   };
  }

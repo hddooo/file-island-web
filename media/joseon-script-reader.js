@@ -81,16 +81,38 @@
     function showImage(src,alt,opener){dismissImage();const d=el('dialog',null,'jsr-image-dialog');d.setAttribute('aria-label',alt);const close=button('이미지 닫기',closeImage),img=el('img');let zoomed=false;
       const zoom=button('원래 크기로 확대',()=>{zoomed=!zoomed;img.style.maxWidth=zoomed?'none':'100%';zoom.textContent=zoomed?'화면 너비에 맞추기':'원래 크기로 확대';});
       img.src=src;img.alt=alt;d.append(close,zoom,img);doc.body.append(d);dialog={node:d,opener,release:options.acquireModalLock&&options.acquireModalLock()};win.history.pushState(Object.assign({},win.history.state,{joseonImage:true}),'');d.addEventListener('cancel',e=>{e.preventDefault();closeImage();});d.addEventListener('close',()=>{if(dialog&&dialog.node===d)dismissImage();});d.addEventListener('keydown',e=>{if(e.key==='Tab'){e.preventDefault();(doc.activeElement===close?zoom:close).focus();}});try{d.showModal();close.focus();}catch(e){dismissImage();throw e;}}
-    function clearImages(){dismissImage();urls.forEach(u=>win.URL.revokeObjectURL(u));urls.clear();}
+    let figureAbort=null,figureQueue=[],figureActive=0;
+    function clearImages(){if(figureAbort)figureAbort.abort();figureAbort=new win.AbortController();figureQueue.splice(0).forEach(job=>job.reject(Error('aborted')));dismissImage();urls.forEach(u=>win.URL.revokeObjectURL(u));urls.clear();}
+    function pumpFigures(){while(figureActive<2&&figureQueue.length){const job=figureQueue.shift();if(job.signal.aborted){job.reject(Error('aborted'));continue;}figureActive++;Promise.resolve().then(()=>{if(job.signal.aborted)throw Error('aborted');return options.loadFigure(job.name,{signal:job.signal});}).then(job.resolve,job.reject).finally(()=>{figureActive--;pumpFigures();});}}
+    function loadFigure(name,signal){return new Promise((resolve,reject)=>{figureQueue.push({name,signal,resolve,reject});pumpFigures();});}
     function figure(parent,name,alt){
       const f=el('figure'),caption=el('figcaption',alt);parent.append(f);f.append(caption);
       if(!bundle.figures.includes(name) || !options.loadFigure){f.append(el('p','이 그림은 비공개 자료 연결 후 볼 수 있습니다.','jsr-image-status'));return;}
-      const generation=epoch;const status=el('p','그림 불러오는 중…','jsr-image-status');f.append(status);
-      Promise.resolve().then(()=>options.loadFigure(name)).then(blob=>{
-        if(!alive || generation!==epoch)return;
-        if(!(blob instanceof win.Blob) || !/^image\/(png|jpeg|webp)$/.test(blob.type))throw Error('Expected authenticated image blob');
-        const url=win.URL.createObjectURL(blob);urls.add(url);const b=button('',()=>showImage(url,alt,b)),img=el('img');img.src=url;img.alt=alt;img.loading='lazy';img.onload=()=>{if(img.naturalWidth<=240&&img.naturalHeight<=120)f.classList.add('jsr-small-figure');};b.setAttribute('aria-label',alt+' 확대');b.append(img);status.remove();f.prepend(b);
-      }).catch(()=>{if(alive&&generation===epoch)status.textContent='그림을 불러오지 못했습니다. 다시 들어오면 재시도합니다.';});
+      const generation=epoch,signal=figureAbort.signal;const status=el('p','', 'jsr-image-status');status.setAttribute('role','status');f.append(status);
+      const retry=button('그림 다시 불러오기',attempt);retry.className='jsr-image-retry';retry.hidden=true;f.append(retry);
+      let pending=false;
+      function current(){return alive&&generation===epoch&&!signal.aborted;}
+      async function attempt(){
+        if(pending||!current())return;pending=true;retry.hidden=true;status.textContent='그림 불러오는 중…';delete f.dataset.error;
+        let url=null,b=null,stage='image_unavailable';
+        try{
+          const blob=await loadFigure(name,signal);if(!current())return;
+          // Native Blob validation works across realms; integrity is checked by the transport.
+          try{win.Blob.prototype.slice.call(blob,0,0);}catch(_){throw Error('image_blob');}
+          if(blob.type!=='image/png')throw Error('image_mime');
+          stage='image_url';url=win.URL.createObjectURL(blob);urls.add(url);stage='image_dom';b=button('',()=>showImage(url,alt,b));const img=el('img');img.alt=alt;
+          await new Promise((resolve,reject)=>{img.onload=resolve;img.onerror=()=>reject(Error('image_decode'));img.src=url;});
+          if(!current())return;
+          if(img.naturalWidth<=240&&img.naturalHeight<=120)f.classList.add('jsr-small-figure');
+          b.setAttribute('aria-label',alt+' 확대');b.append(img);f.prepend(b);status.textContent='';
+        }catch(error){
+          if(url){win.URL.revokeObjectURL(url);urls.delete(url);}if(!current())return;
+          const code=error&& (error.code||error.message),known=['timeout','network','aborted','session_changed','invalid_private_response','script_integrity_unavailable','script_figure_mime','script_figure_size','script_figure_digest','image_blob','image_mime','image_decode'];
+          f.dataset.error=known.includes(code)?code:error&&Number.isInteger(error.status)&&error.status>=400&&error.status<=599?'http_'+error.status:stage;
+          status.textContent=code==='timeout'?'그림 전송 시간이 초과되었습니다.':code==='image_decode'?'그림을 표시하지 못했습니다.':'그림을 불러오지 못했습니다.';retry.hidden=false;
+        }finally{pending=false;}
+      }
+      attempt();
     }
     function selected(s,t){
       if(mode==='answers'||mode==='practice')return s.kind===mode; // Source groups retained; no invented canonical question mapping.
@@ -114,6 +136,8 @@
       article.append(el('p',s.page?'PDF '+s.page+'쪽 · 인쇄 '+(s.page-7)+'쪽':'원문 안내','jsr-source-label'));renderMarkdown(doc,article,s.markdown,figure);body.append(article);
       if(mode==='practice')Array.from(article.querySelectorAll('p')).forEach((p,i)=>{const m=/^\((\d+)\) /.exec(p.textContent);if(!m)return;const key=s.id+'-'+i,label=el('label','나의 임시 답안 · '+m[1]+'번','jsr-draft'),input=el('textarea');input.rows=2;input.value=drafts.get(key)||'';input.setAttribute('aria-label','PDF '+s.page+'쪽 '+m[1]+'번 임시 답안');input.oninput=()=>drafts.set(key,input.value);label.append(input);p.after(label);});
       const provenance=el('details',null,'jsr-provenance');provenance.append(el('summary','원문 페이지 정보'));
+      Array.from(article.querySelectorAll('p')).filter(e=>/^PDF \d+쪽\(인쇄 \d+쪽\), (?:배치에 따른 설명|원문 캡션)\. 아래 이미지 목록에 원문 배치 좌표를 기록했습니다\.$/.test(e.textContent)).forEach(e=>provenance.append(e));
+      article.querySelectorAll('figure').forEach(f=>{const p=f.previousElementSibling,c=f.querySelector('figcaption');if(p&&p.tagName==='P'&&p.children.length===1&&p.firstElementChild.tagName==='STRONG'&&c.textContent===p.textContent+' · PDF '+s.page+'쪽')provenance.append(p);});
       Array.from(article.children).filter(e=>e.tagName==='H2'&&/^PDF \d+쪽$/.test(e.textContent)||e.tagName==='P'&&/^원문 (머리말|인쇄 쪽수|바닥글):/.test(e.textContent)).forEach(e=>provenance.append(e));
       if(provenance.children.length>1)article.append(provenance);
       const group=el('details'),title=article.querySelector('h3,h4'),summary=el('summary',(title?title.textContent:'학습 안내')+' · '+s.page);group.append(summary);toc.append(group);

@@ -24,7 +24,7 @@
         if(!bundle||!bundle.source||bundle.source.sha256!==transport.sourceSha256)throw Error('source_changed');
         reader=(options.renderer||root.HanqJoseonScriptReader).mount(host,bundle,{externalNavigation:true,initialTopic:options.initialTopic,
           acquireModalLock:()=>{const locks=options.uiLocks||root.HanqUiLocks;if(!locks||!options.appRoot)throw Error('Missing app modal lock');return locks.acquire(options.appRoot);},
-          loadFigure:async name=>{if(!valid(g))throw Error('session_changed');const blob=await transport.loadFigure(name,{signal});if(!valid(g))throw Error('session_changed');return blob;}
+          loadFigure:async (name,request={})=>{if(!valid(g))throw Error('session_changed');const controller=new win.AbortController(),cancel=()=>controller.abort();signal.addEventListener('abort',cancel,{once:true});if(request.signal)request.signal.addEventListener('abort',cancel,{once:true});if(signal.aborted||request.signal&&request.signal.aborted)cancel();try{const blob=await transport.loadFigure(name,{signal:controller.signal});if(!valid(g))throw Error('session_changed');return blob;}finally{signal.removeEventListener('abort',cancel);if(request.signal)request.signal.removeEventListener('abort',cancel);}}
         });
         const catalog=options.sourceCatalog||root.HanqPrivateTextbook;
         const revised=!!(catalog&&catalog.revisionRoutesReady(doc,'joseon',PDF81));
