@@ -1,0 +1,13 @@
+# Goryeo local router/API candidate
+
+Based on the preserved structure candidate `5e048ce85337c1e6ef3a7855ca08c41c248de983`, this change connects the Goryeo runtime to the actual index. The router's `stepSlugs[0]` is `webtoon`; the source reader is available only at `/#chapter/goryeo/webtoon`, without a `textbookSource` override. The existing `/#chapter/goryeo/bookquiz` remains the legacy79 canonical quiz path. Source-reader drafts remain session-local and never write canonical quiz progress.
+
+The index loads structure-data, presentation-data, structure, reader, session, transport and app in that order. Goryeo owns its session, modal/history handling and teardown independently of Joseon. Shared router changes select the matching app and stop both independently; Joseon runtime files, source gate and canonical paths remain unchanged.
+
+Two API-client methods use the existing authenticated GET/private-response/live-session pipeline. The source is pinned to `245d166b2a252293903f87654028a648772f8c78dbb8ade09c86a21a223bb5a9`; figure names are restricted to the exact 24-file set before requests. The bundle remains pinned to 74046 bytes and SHA256 `ed4fcfab4b25b0e896c93bcfe0240372b70da0fcbb22c1fa81afad14bbc71943`. No public asset URL or admin-cookie route is introduced.
+
+The local index and transport pin the supplied API candidate identifier `83db3a9`. This is intentionally enabled only in this unpublished integration candidate. The API is not yet operationally deployed. Independent final review and actual API transition are required before publication; this commit does not perform either operation.
+
+`qa-goryeo-app-route.cjs` exercises the actual index/router and real API-client/transport with intercepted synthetic sessions and private fixture bytes. It verifies three topics/nine modes, image bearer headers, recovery after image503, a two-request queue, route abort, zoom/Back/modal cleanup, account/logout teardown, empty drafts on re-entry, unauthenticated entry and bundle401/403/503, legacy79 and Joseon route separation, and no textbook write requests. Evidence is outside Git in `private-goryeo/integration-qa`. `test-goryeo-script-transport.cjs` covers source/name restrictions, private cache/MIME, timeout, abort, revocation, digest validation and candidate-pin matching. Existing session, Joseon and auth/progress tests supplement this route QA.
+
+No remote push, main merge, CD, production auth request, real account session, credentials or authorization-policy change is included. Physical devices, VoiceOver, actual API deployment and production sessions remain unverified. The earlier structure evidence stays unchanged.

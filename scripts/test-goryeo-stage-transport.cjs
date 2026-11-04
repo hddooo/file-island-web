@@ -1,7 +1,7 @@
 'use strict';
 const assert=require('assert/strict'),fs=require('fs'),path=require('path'),transport=require('../media/goryeo-script-transport.js');
 (async()=>{const text=fs.readFileSync(process.argv[2],'utf8'),dir=process.argv[3];let mode='valid';const api={goryeoScriptBundle:async()=>mode==='bundle'?'{}':text,goryeoScriptFigure:async(s,n)=>{const bytes=fs.readFileSync(path.join(dir,n));if(mode==='digest')bytes[32]^=1;return new Blob([mode==='size'?'x':bytes],{type:mode==='mime'?'text/html':'image/png'});}};
-assert.equal(transport.reviewedApiRelease,'');assert.equal(transport.fromDocument({querySelector:()=>({content:':'+transport.sourceSha256})},api),null);
+assert.equal(transport.reviewedApiRelease,'83db3a9');assert.equal(transport.fromDocument({querySelector:()=>({content:':'+transport.sourceSha256})},api),null);
 const t=transport.create(api);await assert.rejects(t.loadFigure('p042-01.png'),/invalid_script_figure/);const b=await t.loadBundle();for(const f of b.figureManifest)assert.equal((await t.loadFigure(f.name)).size,f.bytes);
 for(const failure of ['mime','size','digest']){mode=failure;await assert.rejects(t.loadFigure('p042-01.png'),new RegExp('script_figure_'+failure));}
-mode='bundle';await assert.rejects(t.loadBundle(),/bundle_mismatch/);const ac=new AbortController();ac.abort();await assert.rejects(t.loadBundle({signal:ac.signal}),/aborted/);console.log('PASS: closed availability; exact bundle/all24 PNG integrity; MIME/size/digest distinction; abort; no API-client/live hookup');})().catch(e=>{console.error(e);process.exitCode=1;});
+mode='bundle';await assert.rejects(t.loadBundle(),/bundle_mismatch/);const ac=new AbortController();ac.abort();await assert.rejects(t.loadBundle({signal:ac.signal}),/aborted/);console.log('PASS: unmatched pin unavailable; exact bundle/all24 PNG integrity; MIME/size/digest distinction; abort; local candidate pin only');})().catch(e=>{console.error(e);process.exitCode=1;});
