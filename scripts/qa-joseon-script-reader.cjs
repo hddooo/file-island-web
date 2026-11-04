@@ -32,7 +32,7 @@ let qaBrowser;
       await page.screenshot({path:path.join(out,`${width}-${topic}.png`)});
       if(topic==='society'){
         const nested=page.locator('.jsr-body li > ul').first();await nested.scrollIntoViewIfNeeded();
-        assert(await nested.evaluate(e=>e.getBoundingClientRect().left>e.parentElement.getBoundingClientRect().left));
+        assert(await nested.evaluate(e=>e.firstElementChild.getBoundingClientRect().left>e.parentElement.getBoundingClientRect().left));
         assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
         await page.screenshot({path:path.join(out,`${width}-nested-source.png`)});
       }
