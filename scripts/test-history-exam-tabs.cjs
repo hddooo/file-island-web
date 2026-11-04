@@ -1,0 +1,18 @@
+'use strict';
+// Private bundle paths are caller supplied. Compare the exact previously deployed
+// renderer with the union of concept/exam views; do not embed textbook fixtures.
+const fs=require('fs'),path=require('path'),cp=require('child_process'),Module=require('module'),assert=require('assert/strict'),{JSDOM}=require('jsdom');
+const baseline='127e3c530ade6d49f7cd58da2366d6da94755523',root=path.resolve(__dirname,'..');
+function oldReader(era){const file=path.join(root,'media',era+'-script-reader.js'),m=new Module(file,module);m.filename=file;m.paths=Module._nodeModulePaths(path.dirname(file));m._compile(cp.execFileSync('git',['show',baseline+':media/'+era+'-script-reader.js'],{cwd:root,encoding:'utf8'}),file);return m.exports;}
+function snapshot(host,prefix){const cards=[...host.querySelectorAll('.'+prefix+'-source-card')],text=[],ink=[],tables=[];for(const card of cards){const walk=card.ownerDocument.createTreeWalker(card,4);for(let n; n=walk.nextNode();){const t=n.textContent.replace(/\s+/g,' ').trim();if(t)text.push(t);}for(const e of card.querySelectorAll('strong,em,u,[data-source-color]'))ink.push(JSON.stringify([e.tagName,e.dataset.sourceColor||'',e.textContent]));for(const table of card.querySelectorAll('table'))tables.push(JSON.stringify([...table.querySelectorAll('tr')].map(tr=>[...tr.children].map(e=>[e.tagName,e.rowSpan,e.colSpan,e.textContent]))));}return {text:text.sort(),ink:ink.sort(),tables:tables.sort()};}
+async function mount(reader,bundle){const dom=new JSDOM('<main/>',{url:'https://synthetic.invalid/#chapter/test/webtoon'});dom.window.URL.revokeObjectURL=()=>{};const host=dom.window.document.querySelector('main');const app=reader.mount(host,reader.prepare?await reader.prepare(bundle):bundle);return {host,stop(){app.stop();dom.window.close();}};}
+(async()=>{for(const [era,bundlePath] of [['joseon',process.argv[2]],['goryeo',process.argv[3]]]){
+ if(era==='goryeo'){require('../media/goryeo-script-structure-data.js');require('../media/goryeo-script-presentation-data.js');require('../media/goryeo-script-structure.js');}
+ const bundle=JSON.parse(fs.readFileSync(bundlePath)),reader=require('../media/'+era+'-script-reader.js'),old=await mount(oldReader(era),bundle),next=await mount(reader,bundle),prefix=era==='joseon'?'jsr':'gsr';
+ assert.deepEqual([...next.host.querySelectorAll('[data-mode]')].map(e=>e.textContent),['개념 학습','시험에는 이렇게 나온다','빈칸 퀴즈']);
+ const topics=[...next.host.querySelectorAll('[data-topic]')].map(e=>e.dataset.topic);let tables=0;
+ for(const topic of topics){old.host.querySelector('[data-topic="'+topic+'"]').click();next.host.querySelector('[data-topic="'+topic+'"]').click();next.host.querySelector('[data-mode="study"]').click();const expected=snapshot(old.host,prefix),concept=snapshot(next.host,prefix);assert(!next.host.querySelector('.'+prefix+'-body').textContent.includes('시험에는 이렇게 나온다!'));
+ next.host.querySelector('[data-mode="exam"]').click();const exam=snapshot(next.host,prefix);for(const key of ['text','ink','tables'])assert.deepEqual([...concept[key],...exam[key]].sort(),expected[key],era+'/'+topic+'/'+key);tables+=expected.tables.length;
+ }
+ old.stop();next.stop();console.log(JSON.stringify({era,topics:topics.length,tables,conceptExamUnion:'exact text nodes/emphasis/table cells',baseline}));
+}})().catch(e=>{console.error(e);process.exitCode=1;});

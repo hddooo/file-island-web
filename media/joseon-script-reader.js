@@ -103,15 +103,15 @@
     if(!bundle || bundle.schema!=='hanq-joseon-script/1' || !/^[a-f0-9]{64}$/.test(bundle.source.sha256) || !Array.isArray(bundle.segments) || !Array.isArray(bundle.topics))throw Error('Invalid private study bundle');
     if(bundle.segments.some(s=>!['study','practice','answers','metadata'].includes(s.kind)||typeof s.markdown!=='string'))throw Error('Invalid source segments');
     const initialTopic=bundle.topics.some(t=>t.id===options.initialTopic)?options.initialTopic:'early';
-    let alive=true,epoch=0,topic=initialTopic,mode='study',dialog=null;const urls=new Set(),drafts=new Map();
+    let alive=true,epoch=0,topic=initialTopic,mode=options.initialMode||'study',dialog=null;const urls=new Set(),drafts=new Map();
     const shell=doc.createElement('section');shell.className='joseon-script-reader';host.replaceChildren(shell);
     function el(tag,text,cls){const e=doc.createElement(tag);if(text)e.textContent=text;if(cls)e.className=cls;return e;}
     function button(text,fn){const e=el('button',text);e.type='button';e.onclick=fn;return e;}
     const header=el('header',null,'jsr-header');header.append(el('p','HISTORY / JOSEON','jsr-eyebrow'),el('h1','조선, 흐름을 따라 읽기'),el('p','왕의 흐름에서 제도와 생활, 문화까지. 주제를 골라 차근차근 읽어 보세요.'));
     const nav=el('nav',null,'jsr-topics');nav.setAttribute('aria-label','조선 학습 주제');
-    bundle.topics.forEach(t=>{const b=button(t.title,()=>navigate(t.id,'study'));b.dataset.topic=t.id;nav.append(b);});header.append(nav);
+    bundle.topics.forEach(t=>{const b=button(t.title,()=>navigate(t.id,mode==='exam'?'exam':'study'));b.dataset.topic=t.id;nav.append(b);});header.append(nav);
     const modes=el('nav',null,'jsr-modes');modes.setAttribute('aria-label','자료 구분');
-    [['study','본문 읽기'],['practice','빈칸 문제'],['answers','교재 정답']].forEach(([id,title])=>{const b=button(title,()=>navigate(topic,id));b.dataset.mode=id;modes.append(b);});header.append(modes);shell.append(header);
+    [['study','개념 학습'],['exam','시험에는 이렇게 나온다'],['practice','빈칸 퀴즈']].forEach(([id,title])=>{const b=button(title,()=>navigate(topic,id));b.dataset.mode=id;modes.append(b);});header.append(modes);shell.append(header);
     const layout=el('div',null,'jsr-layout'),toc=el('nav',null,'jsr-toc'),body=el('main',null,'jsr-body');toc.setAttribute('aria-label','현재 주제 목차');layout.append(toc,body);shell.append(layout);
     function dismissImage(){if(!dialog)return;const d=dialog;dialog=null;if(d.node.open)d.node.close();d.node.remove();if(d.release)d.release();if(d.opener.isConnected)d.opener.focus();}
     function closeImage(){if(win.history.state&&win.history.state.joseonImage){win.history.back();}else dismissImage();}
@@ -154,13 +154,15 @@
     function selected(s,t){
       if(mode==='answers'||mode==='practice')return s.kind===mode; // Source groups retained; no invented canonical question mapping.
       if(s.kind!=='study' || s.page<t.from || s.page>t.to)return false;
-      return true;
+      const exam=bundle.source.sha256===editorialSource&&[62,63,68,69,70,76,77,78].includes(s.page)&&/시험에는 이렇게 나온다!/.test(s.markdown);
+      return mode==='exam'?exam:!exam;
     }
     function render(){epoch++;clearImages();body.replaceChildren();toc.replaceChildren();
       nav.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.topic===topic)));
-      modes.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.mode===mode)));
+      modes.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.mode===(mode==='answers'?'practice':mode))));
       const t=bundle.topics.find(t=>t.id===topic)||bundle.topics[0];topic=t.id;
-      body.append(el('h2',mode==='study'?t.title:mode==='practice'?'조선 빈칸 문제':'조선 교재 정답'));
+      body.append(el('h2',mode==='study'?t.title:mode==='exam'?t.title+' · 시험에는 이렇게 나온다':mode==='practice'?'조선 빈칸 문제':'조선 교재 정답'));
+      if(mode==='practice'||mode==='answers')body.append(button(mode==='answers'?'빈칸 퀴즈로 돌아가기':'교재 정답 보기',()=>navigate(topic,mode==='answers'?'practice':'answers')));
       if(mode==='answers'){
         const notice=el('section',null,'jsr-reveal');notice.append(el('p','교재 정답입니다. 먼저 문제를 풀어 본 뒤 확인하세요.'));
         notice.append(button('교재 정답 펼치기',()=>{notice.remove();renderSegments(t);}));body.append(notice);return;
@@ -176,6 +178,7 @@
     });
       if(mode==='study'&&bundle.source.sha256===editorialSource){connectTable23();connectLaterTables();connectCulture();connectSilhak();}
       if(bundle.source.sha256===editorialSource)cleanDisplayLabels();
+      if(mode==='exam'&&!body.querySelector('.jsr-source-card'))body.append(el('p','이 단원에는 별도의 시험 선택지 항목이 없습니다.','jsr-note'));
       body.querySelectorAll('.jsr-source-card').forEach(article=>{
       const group=el('details'),title=article.querySelector('h3,h4'),summary=el('summary',title?title.textContent:'학습 안내');group.append(summary);toc.append(group);
       const headings=Array.from(article.querySelectorAll('h3,h4'));
@@ -425,8 +428,8 @@
       groups.forEach(([label,start,count])=>{const tbody=el('tbody');tbody.dataset.group=label;for(let r=start;r<start+count;r++){const tr=el('tr');tr.dataset.row=String(r+1);cells.filter(c=>c.row===r).sort((a,b)=>a.column-b.column).forEach(cell=>{const ids=[headers[cell.column<2?0:cell.column-1]],group=grid[r][0],person=grid[r][1];if(cell.column===1&&cell.colspan===2)ids.push(headers[1]);if(cell!==group)ids.push(group.node.id);if(cell!==person&&person!==group)ids.push(person.node.id);cell.node.setAttribute('headers',ids.join(' '));tr.append(cell.node);});tbody.append(tr);}table.append(tbody);});
       const hint=el('p','표를 좌우로 움직여 저서와 내용을 확인하세요.','jsr-silhak-hint');hint.id=article.id+'-t29-scroll-hint';hint.dataset.layoutLabel='true';wrap.setAttribute('aria-describedby',hint.id);wrap.append(table);article.replaceChildren(sourceLabel,titleBlock,note,hint,wrap);
     }
-    function navigate(nextTopic,nextMode){topic=nextTopic;mode=nextMode;const state={source:bundle.source.sha256,topic,mode};win.history.pushState(Object.assign({},win.history.state,{joseonScript:state}),'');render();}
-    function pop(){if(dialog&&!(win.history.state&&win.history.state.joseonImage)){dismissImage();return;}dismissImage();const s=win.history.state&&win.history.state.joseonScript;if(s&&s.source===bundle.source.sha256&&bundle.topics.some(t=>t.id===s.topic)&&['study','practice','answers'].includes(s.mode)){topic=s.topic;mode=s.mode;}else{topic=initialTopic;mode='study';}render();}
+    function navigate(nextTopic,nextMode){topic=nextTopic;mode=nextMode;const state={source:bundle.source.sha256,topic,mode};win.history.pushState(Object.assign({},win.history.state,{joseonScript:state}),'',options.routeForMode?options.routeForMode(mode):undefined);render();}
+    function pop(){if(dialog&&!(win.history.state&&win.history.state.joseonImage)){dismissImage();return;}dismissImage();const s=win.history.state&&win.history.state.joseonScript;if(s&&s.source===bundle.source.sha256&&bundle.topics.some(t=>t.id===s.topic)&&['study','exam','practice','answers'].includes(s.mode)){topic=s.topic;mode=s.mode;}else{topic=initialTopic;mode=options.modeFromLocation?options.modeFromLocation():options.initialMode||'study';}render();}
     if(!options.externalNavigation)win.addEventListener('popstate',pop);pop();
     return {handlePopState(){if(!alive)return false;pop();return true;},stop(){alive=false;epoch++;clearImages();drafts.clear();win.removeEventListener('popstate',pop);shell.remove();}};
   }
