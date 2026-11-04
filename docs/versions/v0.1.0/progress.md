@@ -1,5 +1,13 @@
 # FE 실제 진행 상태
 
+### 2026-11-04 — 0.3.8-beta Mac 배경 검수 후보
+
+기존 Mac checkout은 수정하지 않고 별도 복사본에서 최신 frontend f332986을 받았다. 운영 `/app-version.json`도 f332986ba7de46ad441c3116c98e76c550e4175f /0.3.7-beta를 반환했다. 실제 라우트 `#chapter/joseon/webtoon`의 준비 중 패널과 `#chapter/prehistory/webtoon`·`bookquiz`를 localhost 합성 API로 렌더링해 `#privateTextbook`의 기존 rgb(243,237,224)를 확인했다. 사용자 원본 스크린샷은 확보하지 못했으므로 이 교재 패널 이외의 살색 영역까지 해결했다고 주장하지 않는다.
+
+색상 변경은 `media/history-notes-design.css`의 고정 79/81 판본 token과 hover 색에 한정한다. 새 배경 rgb(223,232,226), 본문 대비10.12:1, 입력 대비9.03:1, 입력44px·focus3px를 실제 computed style에서 확인했다. 320/390/1440px·844×390 가로 화면의 문서 가로 넘침은 없고 본문 스크롤도 확인했다. 검수는 Mac in-app Chromium과 합성 자료이며 실제 회원 쓰기·비공개 교재 원본·실물 iPhone 검수는 하지 않았다.
+
+`test-history-reading-layout.cjs`, `test-textbook-revisions.cjs`73건, `test-growth-release-gate.cjs`, `test-app-version-build.cjs`, `test-header-parent-navigation.cjs`가 통과했다. `test-history-reading-source.cjs`는 비공개 semantic root가 없어 미실행 상태로 구분한다. 정적 빌드 검사는 미커밋 공개 파일 거절을 확인했으며 commit 후 다시 실행한다. 배포와 최종 운영 대조는 별도 기록한다.
+
 ### 2026-11-04 — 역사숲 검수 후보 고정
 
 새 주민은 장식 레이어에만 추가했다. 건물 영역을 제외한 실제 잎 색과 수관 마스크의 blue 채널만 천천히 굴절시키며 기존 red 물/green 폭포 채널과 구분한다. Canvas2D fallback도 물과 잎을 별도 alpha/band로 렌더링한다. 전체 그림 transform은 none이고 프레임 상한·숨김·저사양·축소 모션 수명은 유지한다.

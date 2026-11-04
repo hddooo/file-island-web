@@ -1,24 +1,24 @@
 /* Fixed 79th/81st-edition reading presentation only. Load after the existing textbook CSS.
    No source bytes, answer policy, readiness gate, image pixels or game chrome change. */
 html body #privateTextbook:has(.history-notes-design:is([data-history-edition="79"],[data-history-edition="81"])) {
-  --paper: #f3ede0;
-  --ink: #272b27;
-  --muted: #596054;
-  --line: #b8ae9b;
+  --paper: #dfe8e2;
+  --ink: #24372c;
+  --muted: #485e51;
+  --line: #a0b3a7;
   background-color: var(--paper) !important;
   color: var(--ink) !important;
   border: 0;
   box-shadow: none;
 }
 html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) {
-  --hn-paper: #f3ede0;
-  --hn-surface: #e8dfce;
-  --hn-ink: #272b27;
-  --hn-muted: #596054;
-  --hn-accent: #315b4e;
-  --hn-rule: #b8ae9b;
-  --hn-control-rule: #807762;
-  --textbook-semantic-blue: #315b4e;
+  --hn-paper: #dfe8e2;
+  --hn-surface: #d0ddd4;
+  --hn-ink: #24372c;
+  --hn-muted: #485e51;
+  --hn-accent: #285d46;
+  --hn-rule: #a0b3a7;
+  --hn-control-rule: #6b8574;
+  --textbook-semantic-blue: #285d46;
   box-sizing: border-box;
   min-width: 0;
   max-width: 100%;
@@ -114,7 +114,7 @@ html body #privateTextbook .history-notes-design:is([data-history-edition="79"],
   font-size: 16px;
   min-height: 44px;
 }
-html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(button:hover,button[aria-selected="true"]) { background-color: #d6dfce !important; color: var(--hn-ink) !important; }
+html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) :is(button:hover,button[aria-selected="true"]) { background-color: #bdcfc3 !important; color: var(--hn-ink) !important; }
 html body #privateTextbook .history-notes-design:is([data-history-edition="79"],[data-history-edition="81"]) .textbook-source-quiz-input {
   width: 8em;
   max-width: 100%;
