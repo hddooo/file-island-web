@@ -1,5 +1,13 @@
 # FE 실제 진행 상태
 
+### 2026-11-04 — 조선 읽기 크기 체계 /0.3.9-beta 후보
+
+기존 CSS에서 문단·표16px, 분기 설명14–15px와 도식16–17px, HTML 제목 태그20–28px 규칙이 겹쳤다. 실제 79회 조선 원문을 localhost 합성 회원 API로 렌더링하여 크기 분포를 확인했다. 본문·표17px, 큰 제목22px, 소제목20px의 읽기 token을 고정하고 inline source span/strong은 자신이 속한 문단·셀·제목의 크기를 상속한다. 붕당 도식16px, 좌표 도식의 기존16px geometry를 유지한다. 원문 text/ID/강조·그림·보기·판본/저장 계약에는 변경이 없다.
+
+320/390/1440px에서 조선 본문·표17px와 큰 제목22px를 computed style로 확인했다. 320/390의 붕당 그래프는 내부 넘침 없이 연결선을 보존했고 844×390에서 스크롤을 확인했다. 81회 조선은 localhost에만 검수 gate를 주입해 본문17px/제목22px를 대조했다. 이 데이터는 이전 Mac 원문 준비본이며 Windows의 최신 네 시대 후보와 동일하다고 주장하지 않는다. 공개 index에는 gate를 추가하지 않았다.
+
+운영 기준7a60f1e/0.3.8-beta의 HTML에는 hanq-textbook-revisions/hanq-textbook-reviewed-eras meta가 없다. 따라서 기본 선택은79회이고81회 활성 시대는0개다. 로그인된 운영 manifest·회원 진도는 읽지 않았고 새 API 배포나81회 실사용 완료로 표현하지 않는다. 현재 기록은 로컬 후보이며 정확 SHA의 빌드/CD/운영 bytes는 별도 최종 근거로 남긴다.
+
 ### 2026-11-04 — 0.3.8-beta Mac 배경 검수 후보
 
 기존 Mac checkout은 수정하지 않고 별도 복사본에서 최신 frontend f332986을 받았다. 운영 `/app-version.json`도 f332986ba7de46ad441c3116c98e76c550e4175f /0.3.7-beta를 반환했다. 실제 라우트 `#chapter/joseon/webtoon`의 준비 중 패널과 `#chapter/prehistory/webtoon`·`bookquiz`를 localhost 합성 API로 렌더링해 `#privateTextbook`의 기존 rgb(243,237,224)를 확인했다. 사용자 원본 스크린샷은 확보하지 못했으므로 이 교재 패널 이외의 살색 영역까지 해결했다고 주장하지 않는다.
