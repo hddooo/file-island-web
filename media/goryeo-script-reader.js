@@ -88,7 +88,7 @@
     function pumpFigures(){while(figureActive<2&&figureQueue.length){const job=figureQueue.shift();if(job.signal.aborted){job.reject(Error('aborted'));continue;}figureActive++;Promise.resolve().then(()=>{if(job.signal.aborted)throw Error('aborted');return options.loadFigure(job.name,{signal:job.signal});}).then(job.resolve,job.reject).finally(()=>{figureActive--;pumpFigures();});}}
     function loadFigure(name,signal){return new Promise((resolve,reject)=>{figureQueue.push({name,signal,resolve,reject});pumpFigures();});}
     function figure(parent,name,alt){
-      const f=el('figure'),caption=el('figcaption',alt);f.dataset.figure=name;parent.append(f);f.append(caption);if(['p042-01.png','p042-02.png'].includes(name))caption.hidden=true;
+      const f=el('figure'),caption=el('figcaption',alt);f.dataset.figure=name;parent.append(f);f.append(caption);if(['p042-01.png','p042-02.png','p047-01.png','p048-01.png'].includes(name))caption.hidden=true;
       if(!bundle.figures.includes(name) || !options.loadFigure){f.append(el('p','이 그림은 비공개 자료 연결 후 볼 수 있습니다.','gsr-image-status'));return;}
       const generation=epoch,signal=figureAbort.signal;const status=el('p','', 'gsr-image-status');status.setAttribute('role','status');f.append(status);
       const retry=button('그림 다시 불러오기',attempt);retry.className='gsr-image-retry';retry.hidden=true;f.append(retry);
@@ -146,7 +146,7 @@
       (headings.length?headings:[article]).forEach((heading,index)=>{if(!heading.id)heading.id=article.id+'-section-'+index;const a=el('button',heading===article?'이 쪽 읽기':heading.textContent);a.type='button';a.onclick=()=>{for(let node=heading.parentElement;node&&node!==body;node=node.parentElement)if(node.tagName==='DETAILS')node.open=true;heading.tabIndex=-1;heading.focus({preventScroll:true});heading.scrollIntoView({block:'start'});};group.append(a);});
     });}
     function renderProjected(article,segment){
-      const parts=segment.markdown.split(/(@@(?:table15|table16|exam-early|exam-military|early-diagram)@@)/);
+      const parts=segment.markdown.split(/(@@(?:table1[5-9]|table20|exam-early|exam-military|exam-aristocratic|exam-yuan|exam-late|early-diagram)@@)/);
       parts.forEach(part=>{
         const token=/^@@(.+)@@$/.exec(part);
         if(!token){renderMarkdown(doc,article,part,figure);return;}
@@ -163,29 +163,32 @@
       const caption=el('caption',null,'gsr-visually-hidden');caption.id='gs-'+t.id+'-caption';caption.textContent=title.textContent;table.append(caption);table.setAttribute('aria-labelledby',title.id);table.setAttribute('role','table');wrap.setAttribute('aria-labelledby',title.id);
       const hint=el('p','좌우로 밀어 표를 읽으세요.','gsr-scroll-hint');hint.id='gs-'+t.id+'-hint';hint.hidden=true;parent.append(hint);wrap.setAttribute('aria-describedby',hint.id);
       table.classList.add(t.id==='table15'?'gsr-period-grid':t.id==='table16'?'gsr-ruler-grid':'gsr-exam-grid');
-      const cols=el('colgroup');(t.id==='table15'?[140,196,196,196,196,196]:t.id==='table16'?[150,470,280]:[160,600]).forEach(width=>{const col=el('col');col.style.width=width+'px';cols.append(col);});table.append(cols);
+      const cols=el('colgroup');(t.id==='table15'?[140,196,196,196,196,196]:t.id==='table16'?[150,470,280]:t.columns===3?[120,160,480]:[160,600]).forEach(width=>{const col=el('col');col.style.width=width+'px';cols.append(col);});table.append(cols);
       const rows=new Map(),head=el('thead');head.setAttribute('role','rowgroup');table.append(head);let body=null;
       if(!t.headerRow){const tr=el('tr'),a=el('th','구분'),b=el('th','내용');a.id='gs-'+t.id+'-category';b.id='gs-'+t.id+'-content';a.scope='col';b.scope=t.columns>2?'colgroup':'col';b.colSpan=t.columns-1;tr.append(a,b);head.append(tr);}
       for(let y=1;y<=t.rows;y++){
         const row=el('tr');row.setAttribute('role','row');row.dataset.row=y;rows.set(y,row);
         if(t.headerRow&&y===1)head.append(row);
         else{
-          if(!body||(t.id.startsWith('exam-')&&t.cells.some(c=>c.column===1&&c.row===y))){body=el('tbody');body.setAttribute('role','rowgroup');table.append(body);}
+          if(!body||((t.id.startsWith('exam-')||t.id==='table17')&&t.cells.some(c=>c.column===1&&c.row===y))){body=el('tbody');body.setAttribute('role','rowgroup');table.append(body);}
           body.append(row);
         }
       }
       for(const c of [...t.cells].sort((a,b)=>a.row-b.row||a.column-b.column)){
-        const header=(t.headerRow&&c.row===1)||c.column===1,cell=el(header?'th':'td');cell.id=c.id;cell.rowSpan=c.rowspan;cell.colSpan=c.colspan;cell.dataset.cell=c.row+':'+c.column;
+        const header=(t.headerRow&&c.row===1)||c.column===1||c.isHeader,cell=el(header?'th':'td');cell.id=c.id;cell.rowSpan=c.rowspan;cell.colSpan=c.colspan;cell.dataset.cell=c.row+':'+c.column;
         cell.setAttribute('role',header?(t.headerRow&&c.row===1?'columnheader':'rowheader'):'cell');
         if(t.id==='table16')cell.style.setProperty('--gsr-mobile-row',c.figure?11:c.row===6?11+c.column:2*c.row-2+c.column);
         if(header)cell.scope=t.headerRow&&c.row===1?'col':c.rowspan>1?'rowgroup':'row';
         else{
-          const rowHeaders=t.cells.filter(h=>h.column===1&&h.row<=c.row+c.rowspan-1&&h.row+h.rowspan>c.row).map(h=>h.id);
+          const rowHeaders=t.cells.filter(h=>(h.column===1||h.isHeader)&&h.column<c.column&&h.row<=c.row+c.rowspan-1&&h.row+h.rowspan>c.row).map(h=>h.id);
           const colHeaders=t.headerRow?t.cells.filter(h=>h.row===1&&h.column>=c.column&&h.column<c.column+c.colspan).map(h=>h.id):['gs-'+t.id+'-content'];cell.setAttribute('headers',[...rowHeaders,...colHeaders].join(' '));
         }
         if(c.contentRole)cell.dataset.contentRole=c.contentRole;
+        if(c.isHeader&&c.column>1){cell.classList.add('gsr-nested-label');cell.setAttribute('headers',t.cells.filter(h=>h.column<c.column&&h.isHeader&&h.row<=c.row&&h.row+h.rowspan>c.row).map(h=>h.id).join(' '));}
+        if(c.sourceId)cell.dataset.sourceOwner=c.sourceId;
         if(c.figure){cell.dataset.owner='table16';figure(cell,c.figure,'고려 초기 지도');}
         else{if(c.label)cell.append(doc.createTextNode(c.label));renderMarkdown(doc,cell,c.markdown,figure);if(c.noteMarkdown){const note=el('div',null,'gsr-source-note');renderMarkdown(doc,note,c.noteMarkdown,figure);cell.append(note);}}
+        if(c.contentFigure){cell.dataset.owner=c.sourceId;figure(cell,c.contentFigure,t.cells.filter(h=>h.isHeader&&h.row<=c.row&&h.row+h.rowspan>c.row).map(h=>h.markdown).join(' '));}
         rows.get(c.row).append(cell);
       }
       wrap.append(table);parent.append(wrap);

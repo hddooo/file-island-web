@@ -156,3 +156,4 @@ html body #goryeoScript .goryeo-script-reader .gsr-silhak-scroll:focus-visible{o
  .goryeo-script-reader .gsr-exam-grid>tbody+tbody{border-top:3px solid #7396b0}
  .goryeo-script-reader :is(.gsr-ruler-grid,.gsr-exam-grid) :is(p,li){overflow-wrap:anywhere;word-break:normal}
 }
+@media(max-width:700px){.goryeo-script-reader .gsr-exam-grid .gsr-nested-label{border-left:6px solid #739bb1;padding-left:18px;background:#edf3f6}.goryeo-script-reader .gsr-exam-grid th{width:100%}}

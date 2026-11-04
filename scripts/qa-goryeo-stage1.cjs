@@ -21,11 +21,11 @@ const fs=require('fs'),path=require('path'),assert=require('assert/strict'),{chr
   const previousPop=HanqJoseonScriptApp.handlePopState;HanqJoseonScriptApp.handlePopState=e=>testSession.handlePopState(e)||previousPop(e);
   if(!await testSession.mount(host,testTransport))throw Error('Synthetic mount failed');
  },bundleText);
- await page.locator('[data-figure="p042-02.png"] .gsr-image-retry:visible').waitFor();await page.locator('[data-figure="p042-02.png"] .gsr-image-retry').click();await page.waitForFunction(()=>document.querySelectorAll('.goryeo-script-reader figure img').length===2);
+ await page.locator('[data-figure="p042-02.png"] .gsr-image-retry:visible').waitFor();await page.locator('[data-figure="p042-02.png"] .gsr-image-retry').click();await page.waitForFunction(()=>document.querySelectorAll('.goryeo-script-reader figure img').length===4);
  for(const width of [320,390,1440]){
   await page.setViewportSize({width,height:900});await page.evaluate(async()=>{await document.fonts.ready;await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));});
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
-  for(const id of ['table15','table16','exam-early','exam-military']){
+  for(const id of ['table15','table16','exam-early','exam-military','table17','table18','table19','table20','exam-aristocratic','exam-yuan','exam-late']){
    const wrap=page.locator('.gsr-structure-scroll[data-structure="'+id+'"]');await wrap.scrollIntoViewIfNeeded();
    const base=await wrap.evaluate(e=>({client:e.clientWidth,scroll:e.scrollWidth,rows:[...e.querySelectorAll('tr')].map(r=>({height:r.getBoundingClientRect().height,cells:[...r.cells].map(c=>({id:c.id,rowspan:c.rowSpan,colspan:c.colSpan,headers:c.getAttribute('headers'),font:getComputedStyle(c).fontSize}))}))}));
    assert(base.rows.flatMap(r=>r.cells).every(c=>c.font==='18px'));if(width<700&&id!=='table15')assert(base.scroll<=base.client+1,'simple table must wrap');else if(width<1000)assert(base.scroll>base.client);
@@ -44,8 +44,16 @@ const fs=require('fs'),path=require('path'),assert=require('assert/strict'),{chr
     metrics.push({width,id,position,...base,...location});await page.screenshot({path:path.join(out,width+'-'+id+'-'+position+'.png'),animations:'disabled'});
    }
   }
+  for(const id of ['table17','exam-aristocratic']){
+   const parent=page.locator('table[data-structure="'+id+'"] th[data-cell="'+(id==='table17'?'5:1':'7:1')+'"]');
+   assert.equal(await parent.evaluate(e=>e.closest('tbody').rows.length),id==='table17'?2:4);
+   await parent.evaluate(e=>e.scrollIntoView({block:'start'}));await page.screenshot({path:path.join(out,width+'-'+id+'-nested-group.png')});
+  }
  }
  await page.setViewportSize({width:390,height:900});
+ for(const name of ['p047-01.png','p048-01.png']){
+  const f=page.locator('[data-figure="'+name+'"]');await f.scrollIntoViewIfNeeded();await f.locator('button').first().click();await page.locator('.gsr-image-dialog[open]').waitFor();await page.screenshot({path:path.join(out,'390-'+name+'-zoom.png')});await page.goBack();await page.locator('.gsr-image-dialog').waitFor({state:'detached'});
+ }
  for(const [id,row] of [['table16',6],['exam-military',5]]){
   const wrap=page.locator('.gsr-structure-scroll[data-structure="'+id+'"]');await wrap.evaluate(e=>e.scrollLeft=0);await wrap.locator('tr[data-row="'+row+'"]').evaluate(e=>e.scrollIntoView({block:'start'}));await page.screenshot({path:path.join(out,'390-'+id+'-continuation.png')});
  }
@@ -53,10 +61,10 @@ const fs=require('fs'),path=require('path'),assert=require('assert/strict'),{chr
  const stageAX=await page.context().newCDPSession(page);fs.writeFileSync(path.join(out,'ax-tables.json'),JSON.stringify(await stageAX.send('Accessibility.getFullAXTree'),null,2));
  await page.click('[data-mode="practice"]');assert.equal(await page.locator('textarea').count(),103);assert(await page.locator('textarea').evaluateAll(a=>a.every(e=>e.value==='')));await page.locator('textarea').first().fill('synthetic draft');
  await page.click('[data-mode="answers"]');assert.equal(await page.locator('[data-kind="answers"]').count(),0);await page.locator('.gsr-reveal button').click();assert.equal(await page.locator('[data-kind="answers"]').count(),2);
- await page.click('[data-mode="study"]');await page.waitForFunction(()=>document.querySelectorAll('.goryeo-script-reader figure img').length===2);
+ await page.click('[data-mode="study"]');await page.waitForFunction(()=>document.querySelectorAll('.goryeo-script-reader figure img').length===4);
  // Decode failure must expose a retry instead of a blank/unhandled image.
  await page.evaluate(async()=>{const host=document.querySelector('#goryeoScript');testSession.stop();let fail=true;const t={...testTransport,loadFigure:async(n,o)=>{if(n==='p042-01.png'&&fail){fail=false;return new Blob(['invalid PNG'],{type:'image/png'});}return testTransport.loadFigure(n,o);}};await testSession.mount(host,t);});
- await page.locator('[data-figure="p042-01.png"][data-error="image_decode"]').waitFor();await page.locator('[data-figure="p042-01.png"] .gsr-image-retry').click();await page.waitForFunction(()=>document.querySelectorAll('.goryeo-script-reader figure img').length===2);
+ await page.locator('[data-figure="p042-01.png"][data-error="image_decode"]').waitFor();await page.locator('[data-figure="p042-01.png"] .gsr-image-retry').click();await page.waitForFunction(()=>document.querySelectorAll('.goryeo-script-reader figure img').length===4);
  // Another overlay keeps its lease after source modal close and logout cleanup.
  await page.evaluate(()=>window.otherRelease=HanqUiLocks.acquire(document.querySelector('#app')));await page.evaluate(()=>document.querySelector('[data-figure="p042-01.png"] button').click());await page.locator('.gsr-image-dialog[open]').waitFor();await page.goBack();assert(await page.locator('#app').evaluate(e=>e.inert));await page.evaluate(()=>otherRelease());
  await page.evaluate(()=>{history.pushState(null,'','#history');dispatchEvent(new HashChangeEvent('hashchange'));});await page.waitForFunction(()=>!document.querySelector('.goryeo-script-reader'));

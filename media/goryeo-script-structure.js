@@ -20,16 +20,19 @@
     cells.push({...c,id:'gs-'+t.id+'-'+c.row+'-'+c.column,markdown:(await Promise.all(c.ranges.map(fragment))).join('\n'),noteMarkdown:c.note?await fragment(c.note):''});
    }
    if(grid.some(row=>row.some(c=>c===null)))throw Error('goryeo_grid_gap');
-   tables.push({...t,captionMarkdown:await fragment(t.caption),cells});
+   for(const c of cells)if(c.contentFigure&&bundle.figureManifest.find(f=>f.name===c.contentFigure)?.sha256!==c.figureSha256)throw Error('goryeo_figure_owner');
+   tables.push({...t,captionMarkdown:t.caption?await fragment(t.caption):t.captionLiteral,cells});
   }
-  if(tables.length!==4||tables[0].cells.find(c=>c.row===5&&c.column===4)?.colspan!==2||tables[1].cells.find(c=>c.figure)?.rowspan!==3)throw Error('goryeo_schema');
+  if(tables.length!==11||tables[0].cells.find(c=>c.row===5&&c.column===4)?.colspan!==2||tables[1].cells.find(c=>c.figure)?.rowspan!==3)throw Error('goryeo_schema');
   for(const [name,sha] of [['p042-01.png','3248959a8ff8fc90f18b6bfbc681d5394468a9ba2e0c5629120c21c8ea87872d'],['p042-02.png','23aaaceb5fc1231c164ec56a1b371e0e803255befa0efdf5e53a94bc00fc7e8a']])if(bundle.figureManifest.find(f=>f.name===name)?.sha256!==sha)throw Error('goryeo_figure_owner');
   const projected=lines.slice(),removed=new Set();
   for(const e of policy.editorial){if(await digest(encode(lines[e.line-1]))!==e.sha256)throw Error('goryeo_editorial_hash');projected[e.line-1]=e.keepPrefixLength?lines[e.line-1].slice(0,e.keepPrefixLength):'';removed.add(e.line);}
   for(const e of policy.labels){if(await digest(encode(lines[e.line-1]))!==e.sha256)throw Error('goryeo_label_hash');projected[e.line-1]=e.replacement;}
-  // Stage1 study is allowlist-only. Unimplemented era structures remain in the
+  // Study is allowlist-only. Unimplemented era structures remain in the
   // immutable bundle, never displayed as flattened fallback or raw disclosures.
   const stageMarkers=new Map([[58,'@@table15@@'],[119,'@@early-diagram@@'],[123,'@@table16@@'],[191,'@@exam-early@@'],[376,'@@exam-military@@']]);
+  for(const t of tables)stageMarkers.set(t.anchor,'@@'+t.id+'@@');
+  for(const s of data.stage2Sections)stageMarkers.set(s.anchor,'### '+await fragment(s.range));
   const segments=bundle.segments.map(s=>({...s,markdown:s.kind==='study'?lines.slice(s.startLine-1,s.endLine).map((_,i)=>stageMarkers.get(s.startLine+i)||'').join('\n'):projected.slice(s.startLine-1,s.endLine).join('\n')}));
   const result={bundle,tables,earlyTitle:await fragment(data.earlyTitle),diagramText:await fragment(data.diagramText),segments};
   const immutable=JSON.parse(JSON.stringify(result));

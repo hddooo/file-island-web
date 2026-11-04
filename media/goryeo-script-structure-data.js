@@ -1048,6 +1048,1141 @@
           "contentRole": "supplementary"
         }
       ]
+    },
+    {
+      "id": "table17",
+      "anchor": 251,
+      "rows": 6,
+      "columns": 3,
+      "headerRow": false,
+      "caption": {
+        "start": 10474,
+        "end": 10533,
+        "sha256": "c4ba63d2d79c1796f5db4721efbd90ddd27b2fc07930ab526124652ed39d1100"
+      },
+      "envelopes": [
+        [
+          10474,
+          11605,
+          "cd793f7b428cafc852f5dda8168c47f74aa3c38f60c3f02d5cdfe080f3b6ee39"
+        ]
+      ],
+      "cells": [
+        {
+          "row": 1,
+          "column": 1,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 10656,
+              "end": 10662,
+              "sha256": "9bad603404f521372d4e29fca18d8cf831785b635f6a1a8e6b86878e93ec92c2"
+            }
+          ],
+          "sourceId": "t17-1-label",
+          "isHeader": true
+        },
+        {
+          "row": 1,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 2,
+          "ranges": [
+            {
+              "start": 10664,
+              "end": 10738,
+              "sha256": "c2d8ec2d2f5f1428ebf78d9a68ce7e87db5bc9c0bfaebdc9e1f53027286409f6"
+            }
+          ],
+          "sourceId": "t17-1-content",
+          "isHeader": false
+        },
+        {
+          "row": 2,
+          "column": 1,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 10745,
+              "end": 10751,
+              "sha256": "5f0db12d8749e784d2375540b1e213a0cc9edf1e0d5e7276b56904ef8e6b6f66"
+            }
+          ],
+          "sourceId": "t17-2-label",
+          "isHeader": true,
+          "note": {
+            "start": 10753,
+            "end": 10771,
+            "sha256": "f1199808ec8c515f633280ba853d68e12cfcd2ed04b26141b6aecc369d3daba7"
+          }
+        },
+        {
+          "row": 2,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 2,
+          "ranges": [
+            {
+              "start": 10772,
+              "end": 10934,
+              "sha256": "59fb8915e130b462ad0d8a3e90926007bf0319c84982189fcba9257eb3d60994"
+            }
+          ],
+          "sourceId": "t17-2-content",
+          "isHeader": false
+        },
+        {
+          "row": 3,
+          "column": 1,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 10941,
+              "end": 10947,
+              "sha256": "dd82540b76d780e2793c93024a46fff0289ee75b43f5f6081498f97501001f7a"
+            }
+          ],
+          "sourceId": "t17-3-label",
+          "isHeader": true,
+          "note": {
+            "start": 10949,
+            "end": 10966,
+            "sha256": "9a247cddb32f6914e6002b0fa239f7d258774b5f8fd4a54ad8d315b789b8b562"
+          }
+        },
+        {
+          "row": 3,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 2,
+          "ranges": [
+            {
+              "start": 10967,
+              "end": 11141,
+              "sha256": "7ad1e4cac131ee1d0f88850798f6306ff4f31951acc2279568f1b641f77e1a89"
+            }
+          ],
+          "sourceId": "t17-3-content",
+          "isHeader": false
+        },
+        {
+          "row": 4,
+          "column": 1,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 11148,
+              "end": 11154,
+              "sha256": "be734ac751500652ad3d767ddc4ada75875800a77d455102016a639a19c7a1ac"
+            }
+          ],
+          "sourceId": "t17-4-label",
+          "isHeader": true
+        },
+        {
+          "row": 4,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 2,
+          "ranges": [
+            {
+              "start": 11156,
+              "end": 11306,
+              "sha256": "9cc7cd464d621df761f70fd09dac055439cf02c0fd43055bd02ea967fd518e1d"
+            }
+          ],
+          "sourceId": "t17-4-content",
+          "isHeader": false
+        },
+        {
+          "row": 5,
+          "column": 1,
+          "rowspan": 2,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 11313,
+              "end": 11319,
+              "sha256": "e8aa1becfe4a9cb221f4361b01a30cabedb99e66c8c561aa7c132feccbe3026d"
+            }
+          ],
+          "sourceId": "t17-injong-parent",
+          "isHeader": true
+        },
+        {
+          "row": 5,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 11324,
+              "end": 11340,
+              "sha256": "48df0b5a8dca1f3d7e46d8568c87c35b0496a3d5c4cf6bf048458cc5c8f982a3"
+            }
+          ],
+          "sourceId": "t17-yijagyeom-label",
+          "isHeader": true
+        },
+        {
+          "row": 5,
+          "column": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 11342,
+              "end": 11428,
+              "sha256": "c5606c0e9716ecd5c11610ea8f4022872b441eaf5f1407e72fb6b46670cda697"
+            }
+          ],
+          "sourceId": "t17-yijagyeom-content",
+          "isHeader": false
+        },
+        {
+          "row": 6,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 11446,
+              "end": 11459,
+              "sha256": "0ec5d345fee751930dbbff4fb1f08f651712f7f198893c511c644bdec4155abb"
+            }
+          ],
+          "sourceId": "t17-myochung-label",
+          "isHeader": true
+        },
+        {
+          "row": 6,
+          "column": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 11461,
+              "end": 11605,
+              "sha256": "b225a30d7860e9342382099ff5657b7d0f0da32a74b69753604ffe59c5ac2498"
+            }
+          ],
+          "sourceId": "t17-myochung-content",
+          "isHeader": false
+        }
+      ]
+    },
+    {
+      "id": "table18",
+      "anchor": 343,
+      "rows": 4,
+      "columns": 2,
+      "headerRow": false,
+      "caption": {
+        "start": 13684,
+        "end": 13746,
+        "sha256": "e5bdc7c1736a5d0002e0c01f6ada7bf2a969a33d2653c420560d50cb7e951aa9"
+      },
+      "envelopes": [
+        [
+          13684,
+          15238,
+          "c7cadd6fc23d88a03c3686580db94e9806c6e56d5055450e185978deab52f2bb"
+        ]
+      ],
+      "cells": [
+        {
+          "row": 1,
+          "column": 1,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 13785,
+              "end": 13798,
+              "sha256": "59166e75325a8206651c2bffd03cc84c4d9efcea5ef368cf277640895c49ae7f"
+            }
+          ],
+          "sourceId": "table18-1-label",
+          "isHeader": true
+        },
+        {
+          "row": 1,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 13800,
+              "end": 14038,
+              "sha256": "409df13950bbc8d4c03b34762efee32ecdeba5614b9f2f6430e532b4b9b90468"
+            }
+          ],
+          "sourceId": "table18-1-content",
+          "isHeader": false
+        },
+        {
+          "row": 2,
+          "column": 1,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 14045,
+              "end": 14058,
+              "sha256": "706d2f6dc644c783d0ab4c135b8025fc88f6e9b646fb244f4f59c2c885f7026f"
+            }
+          ],
+          "sourceId": "table18-2-label",
+          "isHeader": true
+        },
+        {
+          "row": 2,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 14060,
+              "end": 14279,
+              "sha256": "4e500dad77f4681d29d71524bb981bb6c9b07e0d74fb0818bada9160d1604de8"
+            }
+          ],
+          "sourceId": "table18-2-content",
+          "isHeader": false
+        },
+        {
+          "row": 3,
+          "column": 1,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 14286,
+              "end": 14298,
+              "sha256": "606b28a33df7b97c15065b7e81af63ac3110e3f72f00428d8552da401a7cc5e3"
+            }
+          ],
+          "sourceId": "table18-3-label",
+          "isHeader": true,
+          "note": {
+            "start": 14300,
+            "end": 14316,
+            "sha256": "03237539940ed7184d7dde4661bef643d813fa8db0c9dd9aef4e61327ffd1805"
+          }
+        },
+        {
+          "row": 3,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 14317,
+              "end": 14719,
+              "sha256": "c905dc681eed76d3788e24fd34315dd9bc78d20cfb5e6c7cda468bb56f9d55b8"
+            }
+          ],
+          "sourceId": "table18-3-content",
+          "isHeader": false
+        },
+        {
+          "row": 4,
+          "column": 1,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 14726,
+              "end": 14738,
+              "sha256": "5af8493a34f94aa01eef5c9ea7d1f96e133b36b83fad0f446e03fac2221f9470"
+            }
+          ],
+          "sourceId": "table18-4-label",
+          "isHeader": true
+        },
+        {
+          "row": 4,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 14740,
+              "end": 15238,
+              "sha256": "0cccce75d2fffcaae885dbff0d381ce145f33badf694ec37aea3b7513c8267de"
+            }
+          ],
+          "sourceId": "table18-4-content",
+          "isHeader": false
+        }
+      ]
+    },
+    {
+      "id": "table19",
+      "anchor": 449,
+      "rows": 3,
+      "columns": 2,
+      "headerRow": false,
+      "caption": {
+        "start": 18663,
+        "end": 18723,
+        "sha256": "26ce13a1e97aa1f8ad62b40a203d6cb574e63720389958540f75056ffe29cdee"
+      },
+      "envelopes": [
+        [
+          18663,
+          20313,
+          "8657c36a2fc1c8efe75f17fb9e06bfe05d8ff4fdf2c7723366ab0efd0b544ac1"
+        ]
+      ],
+      "cells": [
+        {
+          "row": 1,
+          "column": 1,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 18762,
+              "end": 18781,
+              "sha256": "e8253eca30d3226b3256656e26e95c0d50f37e723fdba4a2731b76f5ca68a2e8"
+            }
+          ],
+          "sourceId": "table19-1-label",
+          "isHeader": true
+        },
+        {
+          "row": 1,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 18783,
+              "end": 19162,
+              "sha256": "7c4823b3f0088f870039b88898d91391b534954fe8016d9431d387558cbfe3be"
+            }
+          ],
+          "sourceId": "table19-1-content",
+          "isHeader": false
+        },
+        {
+          "row": 2,
+          "column": 1,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 19169,
+              "end": 19195,
+              "sha256": "8ec4efeb1ce3ac25c076c894c647d622da9aec2d5e480c6a91acbb48d4a2bb2a"
+            }
+          ],
+          "sourceId": "table19-2-label",
+          "isHeader": true,
+          "note": {
+            "start": 19197,
+            "end": 19219,
+            "sha256": "4351948f6000b678bb6a5b375279f568c7a26cc6b5812c2e8e195128362662e1"
+          }
+        },
+        {
+          "row": 2,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 19220,
+              "end": 19384,
+              "sha256": "b250c7a2ab56af7e7593ea3ab7aac7d0b57b1a02eb853d02b60f30227155ec22"
+            }
+          ],
+          "sourceId": "table19-2-content",
+          "isHeader": false
+        },
+        {
+          "row": 3,
+          "column": 1,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 19391,
+              "end": 19406,
+              "sha256": "3ad5654a7371b14679b3397662984c80b0df3d5e0153e40640b2c650137c2b15"
+            }
+          ],
+          "sourceId": "table19-3-label",
+          "isHeader": true
+        },
+        {
+          "row": 3,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 19408,
+              "end": 19526,
+              "sha256": "c951b7093b787be8a75564443a9c8fb809089d0bec2eff061dcc5b4041966422"
+            }
+          ],
+          "sourceId": "table19-3-content",
+          "isHeader": false,
+          "contentFigure": "p047-01.png",
+          "figureSha256": "1334078672e18ab530806d1192016fbb1abee5df5ed6943d9f1373d25f014b15"
+        }
+      ]
+    },
+    {
+      "id": "table20",
+      "anchor": 538,
+      "rows": 2,
+      "columns": 2,
+      "headerRow": false,
+      "caption": {
+        "start": 22382,
+        "end": 22425,
+        "sha256": "f0a192d7f5b3d54ab7ab675e776fc8b674a73fcd6e30807c5223ba52cbf66610"
+      },
+      "envelopes": [
+        [
+          22382,
+          24193,
+          "8c8f294387a9a80d887c54a2cb047503e6bc496e5ba3ed64c584987b0d4ca01e"
+        ]
+      ],
+      "cells": [
+        {
+          "row": 1,
+          "column": 1,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 22464,
+              "end": 22488,
+              "sha256": "1127f58aeb9f6e70e00558392e6ba21119fa3840c7684031e495cb5fc632b544"
+            }
+          ],
+          "sourceId": "table20-1-label",
+          "isHeader": true
+        },
+        {
+          "row": 1,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 22490,
+              "end": 22782,
+              "sha256": "f3e860f54753cc16277dc046d32ecc93829d20a80f02bbdf5c985300a1ab348d"
+            }
+          ],
+          "sourceId": "table20-1-content",
+          "isHeader": false,
+          "contentFigure": "p048-01.png",
+          "figureSha256": "23d815232da07d37a9df990bf67d40f2a8aadb38919b30010b2537b0d3f4eb19"
+        },
+        {
+          "row": 2,
+          "column": 1,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 24008,
+              "end": 24028,
+              "sha256": "ba9889ff819c270732635c8ba26e229ec17162bf57f783bc3424b42356df1b6d"
+            }
+          ],
+          "sourceId": "table20-2-label",
+          "isHeader": true
+        },
+        {
+          "row": 2,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 24030,
+              "end": 24193,
+              "sha256": "960b60c0bbbc2902f868a0959693f32dccea8770cc5136169f8cc8130e3eb99d"
+            }
+          ],
+          "sourceId": "table20-2-content",
+          "isHeader": false
+        }
+      ]
+    },
+    {
+      "id": "exam-aristocratic",
+      "anchor": 291,
+      "rows": 10,
+      "columns": 3,
+      "headerRow": false,
+      "captionLiteral": "시험에는 이렇게 나온다!",
+      "envelopes": [
+        [
+          11606,
+          13510,
+          "f78b6a5aafe024c58088ed4963fd288021a5437960f777c2517f019b351c54bf"
+        ]
+      ],
+      "cells": [
+        {
+          "row": 1,
+          "column": 1,
+          "rowspan": 2,
+          "colspan": 2,
+          "ranges": [
+            {
+              "start": 11652,
+              "end": 11658,
+              "sha256": "9bad603404f521372d4e29fca18d8cf831785b635f6a1a8e6b86878e93ec92c2"
+            }
+          ],
+          "sourceId": "exam-aristocratic-문종-label",
+          "isHeader": true
+        },
+        {
+          "row": 1,
+          "column": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 11660,
+              "end": 11841,
+              "sha256": "47bc707238d1682aabd7f3c8311886117e46514a6be88444b146c7698e232dc0"
+            }
+          ],
+          "sourceId": "exam-aristocratic-문종-numbered",
+          "isHeader": false,
+          "contentRole": "numbered"
+        },
+        {
+          "row": 2,
+          "column": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 11842,
+              "end": 11883,
+              "sha256": "f3d2c7b07da47f00f8708471988fe52daec22567bd174b5502e3e8dd4b3e0a2c"
+            }
+          ],
+          "sourceId": "exam-aristocratic-문종-supplementary",
+          "isHeader": false,
+          "contentRole": "supplementary"
+        },
+        {
+          "row": 3,
+          "column": 1,
+          "rowspan": 2,
+          "colspan": 2,
+          "ranges": [
+            {
+              "start": 11890,
+              "end": 11896,
+              "sha256": "5f0db12d8749e784d2375540b1e213a0cc9edf1e0d5e7276b56904ef8e6b6f66"
+            }
+          ],
+          "sourceId": "exam-aristocratic-숙종-label",
+          "isHeader": true
+        },
+        {
+          "row": 3,
+          "column": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 11898,
+              "end": 12123,
+              "sha256": "1896b5f4b778269c4c5a65be3a3faeed00507809c2c7ab1fa86c879cbbb500e1"
+            }
+          ],
+          "sourceId": "exam-aristocratic-숙종-numbered",
+          "isHeader": false,
+          "contentRole": "numbered"
+        },
+        {
+          "row": 4,
+          "column": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 12124,
+              "end": 12165,
+              "sha256": "ff86605839a31aadb455b1a989690a274a483c1b8061a9239c01251264ef92c8"
+            }
+          ],
+          "sourceId": "exam-aristocratic-숙종-supplementary",
+          "isHeader": false,
+          "contentRole": "supplementary"
+        },
+        {
+          "row": 5,
+          "column": 1,
+          "rowspan": 1,
+          "colspan": 2,
+          "ranges": [
+            {
+              "start": 12172,
+              "end": 12178,
+              "sha256": "dd82540b76d780e2793c93024a46fff0289ee75b43f5f6081498f97501001f7a"
+            }
+          ],
+          "sourceId": "exam-aristocratic-예종-label",
+          "isHeader": true,
+          "note": {
+            "start": 12182,
+            "end": 12194,
+            "sha256": "0b89be9b9cafe10540f206c41e7a6f0addad3395506507d55492c9fd9baa64e2"
+          }
+        },
+        {
+          "row": 5,
+          "column": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 12196,
+              "end": 12721,
+              "sha256": "6be47825446b6362609dcbf78d67b7a916738d1d6852ce667faa21b21a900a5b"
+            }
+          ],
+          "sourceId": "exam-aristocratic-예종-numbered",
+          "isHeader": false,
+          "contentRole": "numbered"
+        },
+        {
+          "row": 6,
+          "column": 1,
+          "rowspan": 1,
+          "colspan": 2,
+          "ranges": [
+            {
+              "start": 12728,
+              "end": 12734,
+              "sha256": "be734ac751500652ad3d767ddc4ada75875800a77d455102016a639a19c7a1ac"
+            }
+          ],
+          "sourceId": "exam-aristocratic-여진-label",
+          "isHeader": true
+        },
+        {
+          "row": 6,
+          "column": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 12736,
+              "end": 12893,
+              "sha256": "b355dde39579d5ad1044bb8b4d68739b3c51c0c2181e6befcf1065bbb2c0a1b2"
+            }
+          ],
+          "sourceId": "exam-aristocratic-여진-numbered",
+          "isHeader": false,
+          "contentRole": "numbered"
+        },
+        {
+          "row": 7,
+          "column": 1,
+          "rowspan": 4,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 12900,
+              "end": 12906,
+              "sha256": "e8aa1becfe4a9cb221f4361b01a30cabedb99e66c8c561aa7c132feccbe3026d"
+            }
+          ],
+          "sourceId": "ea-injong-parent",
+          "isHeader": true
+        },
+        {
+          "row": 7,
+          "column": 2,
+          "rowspan": 2,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 12911,
+              "end": 12927,
+              "sha256": "48df0b5a8dca1f3d7e46d8568c87c35b0496a3d5c4cf6bf048458cc5c8f982a3"
+            }
+          ],
+          "sourceId": "ea-yijagyeom-label",
+          "isHeader": true
+        },
+        {
+          "row": 7,
+          "column": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 12929,
+              "end": 13087,
+              "sha256": "d1f8f5d2173183740c108b6fc92a9c92151ce7cbc9ffc75785158da900d09ea7"
+            }
+          ],
+          "sourceId": "ea-yijagyeom-numbered",
+          "isHeader": false
+        },
+        {
+          "row": 8,
+          "column": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 13088,
+              "end": 13198,
+              "sha256": "828e420a994467d0b93468c39ced7a2d2065962fa5f1f7566034ea04fd96e468"
+            }
+          ],
+          "sourceId": "ea-yijagyeom-supplementary",
+          "isHeader": false
+        },
+        {
+          "row": 9,
+          "column": 2,
+          "rowspan": 2,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 13216,
+              "end": 13229,
+              "sha256": "0ec5d345fee751930dbbff4fb1f08f651712f7f198893c511c644bdec4155abb"
+            }
+          ],
+          "sourceId": "ea-myochung-label",
+          "isHeader": true
+        },
+        {
+          "row": 9,
+          "column": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 13231,
+              "end": 13439,
+              "sha256": "2de0a7176eddc9131aa35111abcf346e3506958e4c0db438cd1182e62b0e7604"
+            }
+          ],
+          "sourceId": "ea-myochung-numbered",
+          "isHeader": false
+        },
+        {
+          "row": 10,
+          "column": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 13440,
+              "end": 13510,
+              "sha256": "99ef815b0120c1dbbecf79948f9df221fcf559179d08f3f2c4990820d0195e41"
+            }
+          ],
+          "sourceId": "ea-myochung-supplementary",
+          "isHeader": false
+        }
+      ]
+    },
+    {
+      "id": "exam-yuan",
+      "anchor": 491,
+      "rows": 6,
+      "columns": 2,
+      "headerRow": false,
+      "captionLiteral": "시험에는 이렇게 나온다!",
+      "envelopes": [
+        [
+          20314,
+          21997,
+          "e2c7241575c8cc342fd0fdc5d6bd9214adbe493014bd08e27c11dd1dba5abf42"
+        ]
+      ],
+      "cells": [
+        {
+          "row": 1,
+          "column": 1,
+          "rowspan": 2,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 20360,
+              "end": 20379,
+              "sha256": "e8253eca30d3226b3256656e26e95c0d50f37e723fdba4a2731b76f5ca68a2e8"
+            }
+          ],
+          "sourceId": "exam-yuan-원의 내정간섭-label",
+          "isHeader": true,
+          "note": {
+            "start": 20383,
+            "end": 20395,
+            "sha256": "0b89be9b9cafe10540f206c41e7a6f0addad3395506507d55492c9fd9baa64e2"
+          }
+        },
+        {
+          "row": 1,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 20397,
+              "end": 20869,
+              "sha256": "f64acda4ac4ef183d1d78976c65ce76d324d25dadff02dedf2a99b62c2301dff"
+            }
+          ],
+          "sourceId": "exam-yuan-원의 내정간섭-numbered",
+          "isHeader": false,
+          "contentRole": "numbered"
+        },
+        {
+          "row": 2,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 20870,
+              "end": 21322,
+              "sha256": "7ef76c272808b4ea3af2bf83b07183f9fe2a42e6b2fb8010c3cb52815a653b81"
+            }
+          ],
+          "sourceId": "exam-yuan-원의 내정간섭-supplementary",
+          "isHeader": false,
+          "contentRole": "supplementary"
+        },
+        {
+          "row": 3,
+          "column": 1,
+          "rowspan": 2,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 21329,
+              "end": 21355,
+              "sha256": "8ec4efeb1ce3ac25c076c894c647d622da9aec2d5e480c6a91acbb48d4a2bb2a"
+            }
+          ],
+          "sourceId": "exam-yuan-공민왕의 개혁 정책-label",
+          "isHeader": true
+        },
+        {
+          "row": 3,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 21357,
+              "end": 21583,
+              "sha256": "c34caa7b932666986ef593604009821446d301208cefd53cb47817e556982f04"
+            }
+          ],
+          "sourceId": "exam-yuan-공민왕의 개혁 정책-numbered",
+          "isHeader": false,
+          "contentRole": "numbered"
+        },
+        {
+          "row": 4,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 21584,
+              "end": 21774,
+              "sha256": "b948232871aee3dd5733cb59fed85460a5b67906654aae6486504748fbb02214"
+            }
+          ],
+          "sourceId": "exam-yuan-공민왕의 개혁 정책-supplementary",
+          "isHeader": false,
+          "contentRole": "supplementary"
+        },
+        {
+          "row": 5,
+          "column": 1,
+          "rowspan": 2,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 21781,
+              "end": 21796,
+              "sha256": "3ad5654a7371b14679b3397662984c80b0df3d5e0153e40640b2c650137c2b15"
+            }
+          ],
+          "sourceId": "exam-yuan-신진사대부-label",
+          "isHeader": true
+        },
+        {
+          "row": 5,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 21798,
+              "end": 21949,
+              "sha256": "01f5face3a3aa5a491db1cab425bf1e6253be368ae95559e3acf379129d9c6dd"
+            }
+          ],
+          "sourceId": "exam-yuan-신진사대부-numbered",
+          "isHeader": false,
+          "contentRole": "numbered"
+        },
+        {
+          "row": 6,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 21950,
+              "end": 21997,
+              "sha256": "8f3f70daabec5dea319343759f02122be8e112e0a1aed3fe7ac172df44ae8a61"
+            }
+          ],
+          "sourceId": "exam-yuan-신진사대부-supplementary",
+          "isHeader": false,
+          "contentRole": "supplementary"
+        }
+      ]
+    },
+    {
+      "id": "exam-late",
+      "anchor": 571,
+      "rows": 4,
+      "columns": 2,
+      "headerRow": false,
+      "captionLiteral": "시험에는 이렇게 나온다!",
+      "envelopes": [
+        [
+          24194,
+          25658,
+          "e6045a1badb0c248becb1528235c84973ab9da3300c1799a382aa2e0673776bb"
+        ]
+      ],
+      "cells": [
+        {
+          "row": 1,
+          "column": 1,
+          "rowspan": 2,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 24240,
+              "end": 24264,
+              "sha256": "1127f58aeb9f6e70e00558392e6ba21119fa3840c7684031e495cb5fc632b544"
+            }
+          ],
+          "sourceId": "exam-late-홍건적, 왜구 침입-label",
+          "isHeader": true
+        },
+        {
+          "row": 1,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 24266,
+              "end": 24812,
+              "sha256": "98e9e65754f5aef7e0514fa604256736b11145c39c65dd7d435e1cc35d87e86e"
+            }
+          ],
+          "sourceId": "exam-late-홍건적, 왜구 침입-numbered",
+          "isHeader": false,
+          "contentRole": "numbered"
+        },
+        {
+          "row": 2,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 24813,
+              "end": 25023,
+              "sha256": "9add8f7e8f4f0d12f7eb74dfb0ddf53d8ca2e02097483d3f967ecb1be3de8f54"
+            }
+          ],
+          "sourceId": "exam-late-홍건적, 왜구 침입-supplementary",
+          "isHeader": false,
+          "contentRole": "supplementary"
+        },
+        {
+          "row": 3,
+          "column": 1,
+          "rowspan": 2,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 25030,
+              "end": 25050,
+              "sha256": "ba9889ff819c270732635c8ba26e229ec17162bf57f783bc3424b42356df1b6d"
+            }
+          ],
+          "sourceId": "exam-late-조선 건국 과정-label",
+          "isHeader": true,
+          "note": {
+            "start": 25054,
+            "end": 25066,
+            "sha256": "0b89be9b9cafe10540f206c41e7a6f0addad3395506507d55492c9fd9baa64e2"
+          }
+        },
+        {
+          "row": 3,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 25068,
+              "end": 25172,
+              "sha256": "93fcf4aa1e5ac89c5c97a405353d084e700b5c1c82ac02240d3e845108c7115c"
+            }
+          ],
+          "sourceId": "exam-late-조선 건국 과정-chronology",
+          "isHeader": false,
+          "contentRole": "chronology"
+        },
+        {
+          "row": 4,
+          "column": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "ranges": [
+            {
+              "start": 25173,
+              "end": 25658,
+              "sha256": "e4b3ebccdcc24c14d565b4252ef479d22f16d32353671cb9fb277fc333357663"
+            }
+          ],
+          "sourceId": "exam-late-조선 건국 과정-numbered",
+          "isHeader": false,
+          "contentRole": "numbered"
+        }
+      ]
     }
   ],
   "diagramText": {
@@ -1059,5 +2194,43 @@
     "start": 4841,
     "end": 4857,
     "sha256": "ea472e87a280d7a6f1ffd75f4aefd9be0f4de78ae87cdcdbf05fd588fb916e26"
-  }
-};root.HanqGoryeoStructureData=data;if(typeof module==='object'&&module.exports)module.exports=data;})(typeof window==='object'?window:globalThis);
+  },
+  "stage2Sections": [
+    {
+      "id": "aristocratic",
+      "anchor": 249,
+      "range": {
+        "start": 10457,
+        "end": 10472,
+        "sha256": "154c9a3d95200c6323b7a7a49772900724133eb4f745deb61b639fb94688cd1c"
+      }
+    },
+    {
+      "id": "military",
+      "anchor": 341,
+      "range": {
+        "start": 13664,
+        "end": 13682,
+        "sha256": "12579263aef6987d1f177c591564b38dfcd1673799b95a1b7e5eefcdeb19492c"
+      }
+    },
+    {
+      "id": "yuan",
+      "anchor": 447,
+      "range": {
+        "start": 18645,
+        "end": 18661,
+        "sha256": "85cb88bec9bc8166d274d8c5608d70e7a24ab92fdc157fd57ede20de64a053b1"
+      }
+    },
+    {
+      "id": "late",
+      "anchor": 536,
+      "range": {
+        "start": 22367,
+        "end": 22380,
+        "sha256": "212d3dabc300a65236c4641f22b64aea2ea45fdc49dfcd6f19b9a9bc48aa20be"
+      }
+    }
+  ]
+};root.HanqGoryeoStructureData=data;})(typeof window==='object'?window:globalThis);
