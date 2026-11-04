@@ -174,7 +174,7 @@
       if(mode==='practice')Array.from(article.querySelectorAll('p')).forEach((p,i)=>{const m=/^\((\d+)\) /.exec(p.textContent);if(!m)return;const key=s.id+'-'+i,label=el('label','나의 임시 답안 · '+m[1]+'번','jsr-draft'),input=el('textarea');input.rows=2;input.value=drafts.get(key)||'';input.setAttribute('aria-label','PDF '+s.page+'쪽 '+m[1]+'번 임시 답안');input.oninput=()=>drafts.set(key,input.value);label.append(input);p.after(label);});
       article.querySelectorAll('figure').forEach(f=>{const p=f.previousElementSibling,c=f.querySelector('figcaption'),suffix=' · PDF '+s.page+'쪽';if(p&&p.tagName==='P'&&p.children.length===1&&p.firstElementChild.tagName==='STRONG'&&c.textContent===p.textContent+suffix)p.remove();if(c.textContent.endsWith(suffix))c.textContent=c.textContent.slice(0,-suffix.length);});
     });
-      if(mode==='study'&&bundle.source.sha256===editorialSource){connectTable23();connectLaterTables();connectCulture();}
+      if(mode==='study'&&bundle.source.sha256===editorialSource){connectTable23();connectLaterTables();connectCulture();connectSilhak();}
       body.querySelectorAll('.jsr-source-card').forEach(article=>{
       const group=el('details'),title=article.querySelector('h3,h4'),summary=el('summary',(title?title.textContent:'학습 안내')+' · '+article.dataset.page);group.append(summary);toc.append(group);
       const headings=Array.from(article.querySelectorAll('h3,h4'));
@@ -327,6 +327,70 @@
         }
       }
       [p79,p80,p82].filter(Boolean).forEach(article=>{if(article.querySelector('.jsr-culture-table'))Array.from(article.children).filter(n=>n.tagName==='H3'&&n.textContent==='학습 내용').forEach(n=>n.remove());});
+    }
+    function connectSilhak(){
+      const article=body.querySelector('.jsr-source-card[data-page="81"]');if(!article||bundle.source.bytes!==92125)return;
+      // Audited UTF-8 byte endpoints, not UTF-16 string indices. Text remains in the private bundle.
+      const rows=[
+        [[66127,66136],[66148,66171],[66182,66228]],
+        [[66254,66271,2],[66309,66322],[66325,66375]],
+        [null,[66380,66396],[66399,66482]],
+        [[66510,66519],[66531,66540],[66551,66632]],
+        [[66658,66667],[66679,66695],[66706,66830]],
+        [[66856,66953,2],[66991,67004],[67007,67061]],
+        [null,[67066,67082],[67085,67119]],
+        [[67147,67156],[67168,67181],[67192,67353]],
+        [[67379,67388],[67400,67410],[67421,67460]],
+        [[67476,67489],[67501,67514],[67525,67609]],
+        [[67611,67624],[67636,67652],[67663,67735]],
+        [[67737,67750],[67762,67781],[67792,67910]],
+        [[67912,67921],[67933,67945],[67956,68016]],
+        [[68018,68031],[68043,68056],[68067,68101]],
+        [[68103,68112],[68124,68130],[68141,68218]],
+        [[68220,68229],[68241,68253],[68264,68284]],
+        [[68286,68295],[68307,68322],[68333,68396]],
+        [null,[68622,68638],[68641,68678]],
+        [null,[68683,68699],[68702,68732]],
+        [null,[68738,68738],[68740,68793]],
+        [[68877,68886],[68898,68913],[68924,68950]],
+        [[68952,68961],[68973,68982],[68993,69076]],
+        [[69099,69105],[69117,69126],[69137,69163]],
+        [[69165,69174],[69186,69204],[69215,69248]],
+        [[69271,69284],[69296,69312],[69323,69379]],
+        [[69381,69390],[69402,69417],[69428,69488]],
+        [[69490,69500],[69512,69534],[69545,69580]],
+        [[69737,69754,1,2],null,[69757,69799]],
+        [[69804,69821,1,2],null,[69824,69945]],
+        [[70107,70124,1,2],null,[70127,70182]],
+        [[70187,70204,1,2],null,[70207,70257]]
+      ];
+      const groups=[['중농 실학',0,4,1],['중상 실학',4,5,1],['국학',9,8,1],['다산 정약용',17,3,2],['지리지',20,2,1],['언어 연구',22,2,1],['백과 사전',24,3,1],['농서',27,2,1],['천문학',29,2,1]];
+      const source=bundle.segments.map(s=>s.markdown).join('\n'),boundaries=new Map([[0,0]]);let bytes=0,index=0;
+      for(const point of source){const cp=point.codePointAt(0);bytes+=cp<=127?1:cp<=2047?2:cp<=65535?3:4;index+=point.length;boundaries.set(bytes,index);}
+      if(bytes!==92125||source.split('\n').length!==2386)return;
+      const grid=Array.from({length:31},()=>Array(4).fill(null)),cells=[];
+      function place(row,column,rowspan,colspan,fragment,label){
+        if(row<0||column<0||row+rowspan>31||column+colspan>4)return false;
+        const cell={row,column,rowspan,colspan,fragment,label};
+        for(let r=row;r<row+rowspan;r++)for(let c=column;c<column+colspan;c++){if(grid[r][c])return false;grid[r][c]=cell;}
+        cells.push(cell);return true;
+      }
+      for(const [label,row,count,span] of groups)if(!place(row,0,count,span,null,label))return;
+      for(let r=0;r<rows.length;r++)for(let c=0;c<3;c++){const range=rows[r][c];if(!range)continue;const [start,end,rs=1,cs=1]=range;
+        if(!boundaries.has(start)||!boundaries.has(end)||start>end||start<66127||end>70257||start===end&&!(r===19&&c===1))return;
+        const fragment=source.slice(boundaries.get(start),boundaries.get(end));if(fragment.includes('\n')||!place(r,c+1,rs,cs,fragment,null))return;
+      }
+      if(rows.length!==31||cells.length!==93||grid.some(row=>row.some(cell=>!cell)))return;
+      const title=Array.from(article.children).find(n=>n.tagName==='P'&&n.textContent.startsWith('〈표 29〉')),note=title&&title.nextElementSibling,sourceLabel=article.querySelector('.jsr-source-label');
+      if(!title||note?.textContent!=='90점 이상이 목표라면 힘내서 외워보자!'||!sourceLabel||article.querySelector('figure'))return;
+      // Construct and validate the complete detached projection before replacing the old presentation.
+      const wrap=el('div',null,'jsr-silhak-scroll');wrap.tabIndex=0;wrap.setAttribute('role','region');wrap.setAttribute('aria-label','실학자·저서·내용 표, 좌우 방향키로 가로 스크롤');
+      const table=el('table',null,'jsr-silhak-table');table.dataset.table='29';const titleBlock=el('div',null,'jsr-silhak-title'),heading=el('h3');heading.append(...Array.from(title.childNodes,n=>n.cloneNode(true)));titleBlock.append(heading);titleBlock.id=article.id+'-t29-title';table.setAttribute('aria-labelledby',titleBlock.id);wrap.setAttribute('aria-labelledby',titleBlock.id);wrap.setAttribute('aria-description','좌우 방향키로 가로 스크롤');
+      const columns=el('colgroup');for(let i=0;i<4;i++)columns.append(el('col'));table.append(columns);
+      const head=el('thead'),hr=el('tr'),headers=['실학자','저서','내용'].map((label,i)=>{const th=el('th',label);th.scope=i===0?'colgroup':'col';th.colSpan=i===0?2:1;th.id=article.id+'-t29-col-'+i;hr.append(th);return th.id;});head.append(hr);table.append(head);
+      cells.forEach(cell=>{const tag=cell.column<2?'th':'td',node=el(tag);node.id=article.id+'-t29-r'+cell.row+'-c'+cell.column;node.rowSpan=cell.rowspan;node.colSpan=cell.colspan;node.dataset.column=String(cell.column+1);cell.node=node;if(tag==='th')node.scope=cell.column===0?'rowgroup':'row';if(cell.label){const h=el('h4',cell.label);node.append(h);}else if(cell.fragment)inline(doc,node,cell.fragment);});
+      groups.forEach(([label,start,count])=>{const tbody=el('tbody');tbody.dataset.group=label;for(let r=start;r<start+count;r++){const tr=el('tr');tr.dataset.row=String(r+1);cells.filter(c=>c.row===r).sort((a,b)=>a.column-b.column).forEach(cell=>{const ids=[headers[cell.column<2?0:cell.column-1]],group=grid[r][0],person=grid[r][1];if(cell.column===1&&cell.colspan===2)ids.push(headers[1]);if(cell!==group)ids.push(group.node.id);if(cell!==person&&person!==group)ids.push(person.node.id);cell.node.setAttribute('headers',ids.join(' '));tr.append(cell.node);});tbody.append(tr);}table.append(tbody);});
+      const hint=el('p','표를 좌우로 움직여 저서와 내용을 확인하세요.','jsr-silhak-hint');hint.id=article.id+'-t29-scroll-hint';hint.dataset.layoutLabel='true';wrap.setAttribute('aria-describedby',hint.id);wrap.append(table);article.replaceChildren(sourceLabel,titleBlock,note,hint,wrap);
     }
     function navigate(nextTopic,nextMode){topic=nextTopic;mode=nextMode;const state={source:bundle.source.sha256,topic,mode};win.history.pushState(Object.assign({},win.history.state,{joseonScript:state}),'');render();}
     function pop(){if(dialog&&!(win.history.state&&win.history.state.joseonImage)){dismissImage();return;}dismissImage();const s=win.history.state&&win.history.state.joseonScript;if(s&&s.source===bundle.source.sha256&&bundle.topics.some(t=>t.id===s.topic)&&['study','practice','answers'].includes(s.mode)){topic=s.topic;mode=s.mode;}else{topic=initialTopic;mode='study';}render();}

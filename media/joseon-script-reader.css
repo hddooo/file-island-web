@@ -101,3 +101,19 @@ html body #joseonScript .joseon-script-reader [data-presentation="late-introduct
  html body #joseonScript .joseon-script-reader .jsr-outline-table .jsr-sub-header{background:#f4f5f2!important}
  .joseon-script-reader .jsr-outline-table figure{padding:6px}.joseon-script-reader .jsr-outline-table figure button{padding:4px}
 }
+
+/* Table29 retains the four-column merged-cell grid at every viewport. */
+.joseon-script-reader .jsr-silhak-scroll{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;margin:20px 0;border:1px solid #d5dde2;border-radius:8px}
+.joseon-script-reader .jsr-silhak-table{width:100%;min-width:760px;table-layout:fixed;border-collapse:collapse;font:18px/1.85 Arial,sans-serif}
+.jsr-silhak-table col:nth-child(1){width:12%}.jsr-silhak-table col:nth-child(2){width:19%}.jsr-silhak-table col:nth-child(3){width:24%}.jsr-silhak-table col:nth-child(4){width:45%}
+.jsr-silhak-table th,.jsr-silhak-table td{padding:12px;border:1px solid #d5dde2;vertical-align:top;text-align:left;position:static}
+.jsr-silhak-table>tbody+tbody{border-top:3px solid #7396b0}
+.joseon-script-reader .jsr-silhak-table h4{font:inherit;font-weight:750;border:0;padding:0;margin:0;word-break:keep-all}
+
+
+.jsr-silhak-table>tbody>tr>th{font-weight:400}
+
+html body #joseonScript .joseon-script-reader .jsr-silhak-scroll:focus-visible{outline:3px solid #215b88!important;outline-offset:3px}
+@media(max-width:700px){.joseon-script-reader .jsr-silhak-table{width:calc(100% + 410px);min-width:0}.jsr-silhak-table col:nth-child(1){width:80px}.jsr-silhak-table col:nth-child(2){width:130px}.jsr-silhak-table col:nth-child(3){width:200px}.jsr-silhak-table col:nth-child(4){width:auto}}
+
+.joseon-script-reader .jsr-silhak-hint{display:none;font-size:18px}@media(max-width:700px){.joseon-script-reader .jsr-silhak-hint{display:block}}
