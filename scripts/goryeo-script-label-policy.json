@@ -1,0 +1,54 @@
+{
+  "sourceSha256": "245d166b2a252293903f87654028a648772f8c78dbb8ade09c86a21a223bb5a9",
+  "status": "review-list-only-not-wired",
+  "entries": [
+    {
+      "line": 814,
+      "category": "answer-heading",
+      "sha256": "0db4d6828a5c5e26019954992e17e1b4ca6b0aab78ebf63896046c99dbbb6e1c",
+      "replacement": "#### 교재 정답"
+    },
+    {
+      "line": 820,
+      "category": "answer-table-header",
+      "sha256": "242c05cf2d14a3fe304945220b0cd58f1d93a927e3c85b0e038a9e39af4a335b",
+      "replacement": "| 번호 | 교재 정답 |"
+    },
+    {
+      "line": 843,
+      "category": "answer-table-header",
+      "sha256": "242c05cf2d14a3fe304945220b0cd58f1d93a927e3c85b0e038a9e39af4a335b",
+      "replacement": "| 번호 | 교재 정답 |"
+    },
+    {
+      "line": 860,
+      "category": "answer-table-header",
+      "sha256": "242c05cf2d14a3fe304945220b0cd58f1d93a927e3c85b0e038a9e39af4a335b",
+      "replacement": "| 번호 | 교재 정답 |"
+    },
+    {
+      "line": 871,
+      "category": "answer-table-header",
+      "sha256": "242c05cf2d14a3fe304945220b0cd58f1d93a927e3c85b0e038a9e39af4a335b",
+      "replacement": "| 번호 | 교재 정답 |"
+    },
+    {
+      "line": 885,
+      "category": "answer-table-header",
+      "sha256": "242c05cf2d14a3fe304945220b0cd58f1d93a927e3c85b0e038a9e39af4a335b",
+      "replacement": "| 번호 | 교재 정답 |"
+    },
+    {
+      "line": 897,
+      "category": "answer-table-header",
+      "sha256": "242c05cf2d14a3fe304945220b0cd58f1d93a927e3c85b0e038a9e39af4a335b",
+      "replacement": "| 번호 | 교재 정답 |"
+    },
+    {
+      "line": 1404,
+      "category": "answer-heading",
+      "sha256": "33c38608a115bef2beba1c63956df9c625d967db5135c8514dd30af8f29a1832",
+      "replacement": "#### 교재 정답"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs');const {JSDOM}=require('jsdom');
+const {create}=require('../media/goryeo-script-session.js');
+(async()=>{
+ const dom=new JSDOM('<div id="app"><div id="host"></div></div>',{url:'https://synthetic.invalid/#chapter/goryeo/webtoon',runScripts:'outside-only'}),doc=dom.window.document,win=dom.window;
+ win.eval(fs.readFileSync(require.resolve('../media/ui-locks.js'),'utf8'));
+ let state={signedIn:true,ownerId:'synthetic-a',epoch:1},listener=null,stops=0,pops=0,loadCount=0,renderOptions,navigated=null,gate=false;
+ const api={state:()=>state,onChange:cb=>{listener=cb;return()=>{listener=null;};}};
+ const renderer={prepare:async b=>b,mount:(host,b,opts)=>{host.textContent='PRIVATE_SYNTHETIC';renderOptions=opts;return {stop:()=>{stops++;host.replaceChildren();},handlePopState:()=>{pops++;return true;}};}};
+ const options={document:doc,api,renderer,uiLocks:win.HanqUiLocks,appRoot:doc.querySelector('#app'),sourceCatalog:{revisionRoutesReady:()=>gate},navigateCanonical:href=>{navigated=href;}};
+ const app=create(options),host=doc.querySelector('#host'),sha='a'.repeat(64),transport={ready:true,sourceSha256:sha,loadBundle:async()=>{loadCount++;return {source:{sha256:sha}};},loadFigure:async()=>new win.Blob(['synthetic'],{type:'image/png'})};
+ assert.equal(await app.mount(host,null),false);assert.equal(loadCount,0);
+ assert.equal(await app.mount(host,{...transport,loadBundle:async()=>({source:{sha256:'b'.repeat(64)}})}),false);assert(!host.textContent.includes('PRIVATE_SYNTHETIC'));
+ assert.equal(await app.mount(host,transport),true);assert.equal(host.querySelectorAll('a').length,0);assert.equal(app.handlePopState(),true);assert.equal(pops,1);
+ const originalFigure=transport.loadFigure;transport.loadFigure=async(n,{signal})=>{assert(signal.aborted);throw Error('aborted');};const viewAbort=new win.AbortController();viewAbort.abort();await assert.rejects(renderOptions.loadFigure('p060-01.png',{signal:viewAbort.signal}),/aborted/);transport.loadFigure=originalFigure;
+ const otherRelease=win.HanqUiLocks.acquire(options.appRoot),release=renderOptions.acquireModalLock();release();assert.equal(options.appRoot.inert,true);otherRelease();assert.equal(options.appRoot.inert,false);
+ const staleLoader=renderOptions.loadFigure;state={signedIn:false,epoch:2};listener();assert.equal(host.textContent,'');await assert.rejects(staleLoader('p060-01.png'),/session_changed/);
+ state={signedIn:true,ownerId:'synthetic-b',epoch:3};let resolveBundle;const pending=app.mount(host,{...transport,loadBundle:()=>new Promise(r=>resolveBundle=r)});state={...state,epoch:4};listener();resolveBundle({source:{sha256:sha}});assert.equal(await pending,false);assert.equal(host.textContent,'');
+ gate=true;assert.equal(await app.mount(host,transport),true);host.querySelector('a').click();assert(navigated.includes('textbookSource=d54c1aa5'));assert(navigated.endsWith('#chapter/goryeo/bookquiz'));assert(!host.textContent.includes('PRIVATE_SYNTHETIC'));
+ gate=false;options.offerLegacyQuiz=true;assert.equal(await app.mount(host,transport),true);assert(host.querySelector('a').textContent.includes('79회'));assert(host.querySelector('a').textContent.includes('별도 자료'));host.querySelector('a').click();assert.equal(new URL(navigated).searchParams.has('textbookSource'),false);assert(navigated.endsWith('#chapter/goryeo/bookquiz'));
+ assert.equal(await app.mount(host,transport),true);win.history.pushState({},'', '#history');win.dispatchEvent(new win.HashChangeEvent('hashchange'));assert(!host.textContent.includes('PRIVATE_SYNTHETIC'));assert.equal(app.handlePopState(),false);
+ win.history.replaceState({},'','#chapter/goryeo/webtoon');assert.equal(await app.mount(host,transport),true);win.history.pushState({},'','?textbookSource=changed#chapter/goryeo/webtoon');assert.equal(app.handlePopState(),false);assert(!host.textContent.includes('PRIVATE_SYNTHETIC'));
+ app.stop();dom.window.close();assert(stops>=4);console.log('Session wrapper: readiness, source/identity races, route teardown, popstate ownership, lock leases and exact gated canonical navigation passed');
+})().catch(e=>{console.error(e);process.exitCode=1;});
