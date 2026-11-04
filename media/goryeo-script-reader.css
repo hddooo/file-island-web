@@ -166,3 +166,9 @@ html body #goryeoScript .goryeo-script-reader .gsr-silhak-scroll:focus-visible{o
 .goryeo-script-reader .gsr-culture-gallery figure{height:auto}
 .goryeo-script-reader figcaption{font-size:18px;line-height:1.7;color:#263745}
 @media(max-width:700px){.goryeo-script-reader .gsr-independent-panels{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:700px){
+ .goryeo-script-reader .gsr-structure-scroll[data-structure="table22"]{container-type:inline-size}
+ .goryeo-script-reader .gsr-independent-grid{min-width:0;width:calc(200cqw + 196px)}
+ .goryeo-script-reader .gsr-independent-grid col:nth-child(odd){width:100px!important}
+ .goryeo-script-reader .gsr-independent-grid col:nth-child(even){width:calc(100cqw - 2px)!important}
+}
