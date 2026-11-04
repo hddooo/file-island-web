@@ -37,7 +37,7 @@
   for(const s of [...data.stage2Sections,...data.stage3Sections])stageMarkers.set(s.anchor,'### '+await fragment(s.range));
   stageMarkers.set(data.gallery.anchor,'@@gallery-culture@@');
   const segments=bundle.segments.map(s=>({...s,markdown:s.kind==='study'?lines.slice(s.startLine-1,s.endLine).map((_,i)=>stageMarkers.get(s.startLine+i)||'').join('\n'):projected.slice(s.startLine-1,s.endLine).join('\n')}));
-  const result={bundle,tables,figures,gallery:data.gallery,rootTitle:await fragment(data.rootTitle),earlyTitle:await fragment(data.earlyTitle),diagramText:await fragment(data.diagramText),segments};
+  const result={bundle,tables,figures,orientationMarkdown:await fragment(data.orientation),gallery:data.gallery,rootTitle:await fragment(data.rootTitle),earlyTitle:await fragment(data.earlyTitle),diagramText:await fragment(data.diagramText),segments};
   const immutable=JSON.parse(JSON.stringify(result));
   function freeze(value){if(value&&typeof value==='object'){Object.values(value).forEach(freeze);Object.freeze(value);}return value;}
   freeze(immutable);prepared.add(immutable);return immutable;

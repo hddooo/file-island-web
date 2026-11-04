@@ -3476,6 +3476,11 @@
       }
     }
   ],
+  "orientation": {
+    "start": 2374,
+    "end": 2617,
+    "sha256": "61b578738e0f87cd37c13391a79d3873a9e5928d62fca4c34f4a4edb97c177c0"
+  },
   "gallery": {
     "id": "gallery-culture",
     "anchor": 1184,

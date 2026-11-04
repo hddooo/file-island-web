@@ -1,0 +1,9 @@
+# Goryeo reader wording follow-up
+
+Local follow-up to edd3dba. The router labels the Goryeo tab separately from Joseon. Practice and answers identify their shared 100-question scope, clear topic highlighting, and retain the selected study topic on return. The original introduction is rendered once in study from its pinned UTF-8 span (2374–2617), without changing the source or bundle.
+
+Validation: stage1/2/3 structure checks; stage3 exact introduction rendering comparison, 1013 span occurrences, 14 tables, 24 figures, nine views, 100 questions/answers and 103 fields. Actual-index synthetic-session QA passes nine views, both era labels, topic return, image retry/two-request queue, zoom/Back, route/account/logout, 401/403/503, old79 isolation and no canonical writes. Goryeo session and Joseon reader/session/transport regressions pass. Mobile introduction and tab screenshots were inspected at 320 and 390 pixels in private ui-copy-qa (not committed).
+
+The previously reported 235 checks are exactly six scripts: test-auth-session (33), test-auth-restoration (19), test-private-auth (42), test-learning-progress (67), test-quiz-progress (15), test-read-progress (59), all passing again. Command: node scripts/<name>.cjs, Node 24.22.1, NODE_PATH pointing to goryeo-study/.test-tools/node_modules. Its JSDOM proxy resolves to JSDOM 26.1.0 in the existing frontend-cicd tooling. test-progress-recovery is separate: its first delayed-retry check fails and JSDOM crashes reading null _location. This remains unresolved; no assertions, fixtures or unrelated code were changed.
+
+A subsequent independent finding concerns extraction metadata and comparison-table semantics in practice/answers. This wording commit does not claim that finding is fixed. It will be handled separately before publication. No new push, main/CD or production API change.

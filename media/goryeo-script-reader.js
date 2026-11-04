@@ -72,7 +72,8 @@
     const shell=doc.createElement('section');shell.className='goryeo-script-reader';host.replaceChildren(shell);
     function el(tag,text,cls){const e=doc.createElement(tag);if(text)e.textContent=text;if(cls)e.className=cls;return e;}
     function button(text,fn){const e=el('button',text);e.type='button';e.onclick=fn;return e;}
-    const header=el('header',null,'gsr-header');header.append(el('p','HISTORY / GORYEO','gsr-eyebrow'),el('h1',prepared.rootTitle),el('p','왕의 흐름에서 제도와 생활, 문화까지. 주제를 골라 차근차근 읽어 보세요.'));
+    const header=el('header',null,'gsr-header');header.append(el('p','HISTORY / GORYEO','gsr-eyebrow'),el('h1',prepared.rootTitle));
+    const orientation=el('div',null,'gsr-orientation');renderMarkdown(doc,orientation,prepared.orientationMarkdown,figure);header.append(orientation);
     const nav=el('nav',null,'gsr-topics');nav.setAttribute('aria-label','고려 학습 주제');
     viewTopics.forEach(t=>{const b=button(t.title,()=>navigate(t.id,'study'));b.dataset.topic=t.id;nav.append(b);});header.append(nav);
     const modes=el('nav',null,'gsr-modes');modes.setAttribute('aria-label','자료 구분');
@@ -122,10 +123,11 @@
       return true;
     }
     function render(){epoch++;clearImages();body.replaceChildren();toc.replaceChildren();
-      nav.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.topic===topic)));
+      orientation.hidden=mode!=='study';nav.querySelectorAll('button').forEach(b=>{if(mode==='study')b.setAttribute('aria-current',String(b.dataset.topic===topic));else b.removeAttribute('aria-current');});
       modes.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.mode===mode)));
       const t=viewTopics.find(t=>t.id===topic)||viewTopics[0];topic=t.id;
       body.append(el('h2',mode==='study'?t.title:mode==='practice'?'고려 빈칸 문제':'고려 교재 정답'));
+      if(mode!=='study')body.append(el('p','고려 전체 공통 100문항','gsr-review-scope'));
       if(mode==='answers'){
         const notice=el('section',null,'gsr-reveal');notice.append(el('p','교재 정답입니다. 먼저 문제를 풀어 본 뒤 확인하세요.'));
         notice.append(button('교재 정답 펼치기',()=>{notice.remove();renderSegments(t);}));body.append(notice);return;
