@@ -2,8 +2,8 @@
  'use strict';
  const SOURCE='8d0944e32d86985a4af3dbf28085dba4bb3f65cc0d8379907e2e4693299003a1';
  const BUNDLE='32a33b006d1c4b113dcc2e9df23a81e14b7b07ce2afe7400eafdde9f8750386b';
- // Deliberately unset until the exact API commit, guards and mounted data are verified in production.
- const REVIEWED_API_RELEASE=null;
+ // Reviewed deployed API: immutable source mount and existing authentication guards verified.
+ const REVIEWED_API_RELEASE='ee9487e96fe95c441c3091a6f3d45a4c211d51b8';
  async function digest(bytes,crypto){if(!crypto||!crypto.subtle)throw Error('script_integrity_unavailable');return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(n=>n.toString(16).padStart(2,'0')).join('');}
  function create(api,options){
   options=options||{};let manifest=null;const crypto=options.crypto||root.crypto;

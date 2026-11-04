@@ -16,7 +16,7 @@ const candidate=process.argv[5];if(candidate&&!/^http:\/\/127\.0\.0\.1:\d+$/.tes
      return r.fulfill({json:{items:[],notes:[],days:[],entries:[],total:0,page:1,pages:1}});
    }
    if(u.hostname!=='joseon-app.test')return r.abort();
-   if(u.pathname==='/media/joseon-script-transport.js')return r.fulfill({contentType:'text/javascript',body:fs.readFileSync(path.join(root,'media/joseon-script-transport.js'),'utf8')+(candidate?'\nHanqJoseonScriptTransport.fromDocument=()=>HanqJoseonScriptTransport.create(HanqApi);':'\nHanqJoseonScriptTransport.fromDocument=()=>window.qaTransport;')});
+   if(u.pathname==='/media/joseon-script-transport.js')return r.fulfill({contentType:'text/javascript',body:fs.readFileSync(path.join(root,'media/joseon-script-transport.js'),'utf8')+(candidate?'':'\nHanqJoseonScriptTransport.fromDocument=()=>window.qaTransport;')});
    if(u.pathname.startsWith('/_qa/private/')){const name=u.pathname.split('/').pop();if(!bundle.figures.includes(name))return r.fulfill({status:404});return r.fulfill({path:path.join(images,name)});}
    const file=path.resolve(root,'.'+(u.pathname==='/'?'/index.html':u.pathname));if(!file.startsWith(root+path.sep)||!fs.existsSync(file)||!fs.statSync(file).isFile())return r.fulfill({status:404,body:''});return r.fulfill({path:file});
  });

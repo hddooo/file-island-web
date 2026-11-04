@@ -22,6 +22,7 @@ const {create}=require('../media/api-client.js'),transport=require('../media/jos
  mode='503';await assert.rejects(api.joseonScriptBundle(source),e=>e.code==='script_unavailable');mode='abort';const ac=new AbortController(),pending=api.joseonScriptBundle(source,ac.signal);await new Promise(r=>setImmediate(r));ac.abort();await assert.rejects(pending,e=>e.code==='aborted');
  mode='late';const late=api.joseonScriptBundle(source);await new Promise(r=>setImmediate(r));void api.logout();resolveLate(new Response('{}',{headers:{'content-type':'application/json','cache-control':'private, no-store'}}));await assert.rejects(late);await api.signin('synthetic@example.invalid','synthetic');mode='401';await assert.rejects(api.joseonScriptBundle(source),e=>e.status===401);assert.equal(api.state().signedIn,false);
  assert.equal(transport.fromDocument({querySelector:()=>({content:'unverified:'+source})},api),null);
+ assert.equal(transport.fromDocument({querySelector:()=>null},api),null);assert.equal(transport.fromDocument({querySelector:()=>({content:transport.reviewedApiRelease+':'+source})},api).ready,true);
  await assert.rejects(transport.create({joseonScriptBundle:async()=>'{}'}).loadBundle(),/script_bundle_mismatch/);
  if(process.argv[2]){
   const text=fs.readFileSync(process.argv[2],'utf8'),imageRoot=process.argv[3];let bad=false;
@@ -29,5 +30,5 @@ const {create}=require('../media/api-client.js'),transport=require('../media/jos
   await assert.rejects(t.loadFigure('p060-01.png'),/invalid_script_figure/);const b=await t.loadBundle();assert.equal(b.source.sha256,source);assert.equal((await t.loadFigure(b.figures[0])).size,b.figureManifest[0].bytes);bad=true;await assert.rejects(t.loadFigure(b.figures[0]),/script_figure_mismatch/);
   const aborted=new AbortController();aborted.abort();await assert.rejects(t.loadBundle({signal:aborted.signal}),/aborted/);
  }
- console.log('Script transport: authenticated GET, source/name validation, private cache/MIME, 401/503, abort, disabled deployment gate and byte integrity passed');
+ console.log('Script transport: authenticated GET, source/name validation, private cache/MIME, 401/503, abort, exact deployment gate and byte integrity passed');
 })().catch(e=>{console.error(e);process.exitCode=1;});
