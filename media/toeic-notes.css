@@ -166,3 +166,13 @@ html body #toeicNotesHost .tn-chapter-contents button.tn-chapter-pdf,html body #
 html body #toeicNotesHost .tn-chapter-contents .tn-chapter-pdf:focus-visible{outline:1px solid #bdd7cd!important;outline-offset:-3px}
 html body #toeicNotesHost .tn-chapter-pdf svg{display:block;width:21px;height:25px;background:transparent!important;color:inherit!important}
 @media(max-width:360px){html body #toeicNotesHost .tn-chapter-open{padding:4px 6px!important;gap:4px}html body #toeicNotesHost .tn-chapter-open strong{font-size:12px!important}html body #toeicNotesHost .tn-chapter-stats{gap:4px;font-size:10px!important}}
+
+/* Explicit owner-authored additions use the existing notebook API and do not alter study records. */
+.tn .tn-add-note{margin:0 0 12px;min-height:44px}
+.tn .tn-add-editor{width:100%;max-width:720px;min-width:0;margin:0 auto}
+.tn .tn-add-editor h2{margin:8px 0;font-size:20px}
+.tn .tn-add-editor form{display:grid;gap:14px}
+.tn .tn-add-editor :is(input,textarea){font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;min-width:0}
+.tn .tn-add-editor .tn-add-disclosure{font-size:14px;line-height:1.5;margin:8px 0 16px}
+.tn .tn-add-editor .tn-actions{gap:8px;padding-bottom:12px}
+.tn .tn-add-editor .tn-actions button{min-height:44px}
