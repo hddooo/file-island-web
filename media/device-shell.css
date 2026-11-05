@@ -228,3 +228,15 @@ html body.study-global-footer #app.digivice-v2>.device-content[data-auto-scrollb
 }
 /* Do not hide or recolor the user's high-contrast system scrollbars. */
 @media(forced-colors:active){html body.study-global-footer #app.digivice-v2>.device-content[data-auto-scrollbar]{scrollbar-width:auto;scrollbar-color:auto}}
+
+/* Desktop subject maps were paying two 12px side insets. Keep the existing
+   header rectangle and viewport sizing while matching the overview's art inset.
+   Do not add a rounded clip to the scrolling pane: corner controls need it square. */
+@media(min-width:1001px) and (min-height:501px) and (hover:hover) and (pointer:fine){
+html[data-hanq-theme=terminal] body.study-global-footer #app.shell.digivice-v2:not(.archipelago-shell):has(.island-harbors){padding-inline:12px!important}
+html[data-hanq-theme=terminal] body.study-global-footer #app.shell.digivice-v2:not(.archipelago-shell):has(.island-harbors)>.topline.device-crown{margin-inline:0!important}
+/* Outer radius55 minus the unchanged header offset21px/20px gives a shared
+   corner centre. Overflow, hit surfaces and lower header corners stay unchanged. */
+html[data-hanq-theme=terminal] body.study-global-footer #app.shell.digivice-v2.archipelago-shell>.topline.device-crown,
+html[data-hanq-theme=terminal] body.study-global-footer #app.shell.digivice-v2:not(.archipelago-shell):has(.island-harbors)>.topline.device-crown{border-radius:34px 34px 8px 8px / 35px 35px 8px 8px!important}
+}
