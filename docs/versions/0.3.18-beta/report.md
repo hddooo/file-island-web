@@ -1,0 +1,4 @@
+# 0.3.18-beta verification
+Light underline mode navigation now matches topic navigation. Range labels and values are unchanged; selected/unselected contrast is 9.04:1/15.48:1. The only index change is an era data attribute for scoped styling. Existing reader, answers, drafts, progress and direct bookquiz handlers are byte-identical to production.
+
+Targeted actual-index synthetic browser tests passed for both eras and 320/390/1440px. Source-quiz/bookquiz/mock/summary routes were inspected. Static build and exact production verification are release steps. No full-suite claim: known progress-recovery JSDOM failure and period fixed-hash limitations were not rerun for this CSS change. Physical devices, VoiceOver and real-member sessions remain unverified. Opening work remains paused; 81 workspace functionality is a separate pending candidate.
