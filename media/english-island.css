@@ -19,3 +19,8 @@ html body #app [data-english-harbor] .scene-atmosphere[data-scene=toeic] :is(.sc
 /* Continue the cove behind aspect-ratio safe framing, without stretching the art. */
 html body #app .island-harbors[data-english-harbor]::before{content:'';position:absolute;inset:-24px;display:block;background:linear-gradient(#07556933,#07556966),url('world-art/toeic-v1.webp') center/cover;filter:blur(14px);pointer-events:none;z-index:0}
 @media(max-width:700px) and (orientation:portrait){html body #app .island-harbors[data-english-harbor]::before{background-image:linear-gradient(#07556933,#07556966),url('world-art/toeic-harbors-mobile-v1.webp')}}
+
+/* The buildings are the controls. Keep their destination/description nodes
+   available to assistive technology without painting labels or hover tooltips. */
+html body #app .island-harbors[data-english-harbor] .english-landmark .harbor-sign{position:absolute!important;width:1px!important;height:1px!important;min-width:0!important;min-height:0!important;max-width:1px!important;margin:-1px!important;padding:0!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important;box-shadow:none!important;pointer-events:none!important}
+

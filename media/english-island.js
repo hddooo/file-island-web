@@ -21,7 +21,8 @@
       if(sign){var hint=document.createElement('small');hint.className='english-place';hint.id='english-place-'+control.dataset.toeicView+'-hint';hint.textContent=place.place;sign.appendChild(hint);var description=control.getAttribute('aria-describedby');control.setAttribute('aria-describedby',(description?description+' ':'')+hint.id);}
       // Preserve native destination names used by assistive navigation; the scenic
       // place supplements the description rather than replacing the learning task.
-      if(label)control.title=label.textContent+' · '+place.place;
+      if(label)control.setAttribute('aria-label',label.textContent.trim());
+      control.removeAttribute('title');
       return true;
     });
     var frame=0,closed=false;
@@ -53,3 +54,4 @@
   }
   root.HanqEnglishIsland={enhance:enhance};
 })(window);
+
