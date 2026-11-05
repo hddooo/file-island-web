@@ -28,7 +28,7 @@ Object.assign(TRACKS.tall.anchors,{"tokomon":[0.6,0.58],"punimon-garden":[0.33,0
 var BABIES=[{"id":"punimon","phase":1,"group":"ball","size":1},{"id":"tsunomon","phase":8,"group":"ball","size":0.96},{"id":"poyomon","phase":16,"group":"float","size":0.85,"travel":7,"rest":9},{"id":"botamon","phase":3,"group":"explore","size":0.82,"travel":6,"rest":8},{"id":"koromon","phase":13,"group":"explore","size":0.9,"travel":8,"rest":7},{"id":"tokomon","phase":21,"group":"garden","size":0.84,"travel":5,"rest":11},{"id":"punimon-garden","form":"punimon","phase":9,"group":"garden","size":0.76,"travel":6,"rest":10},{"id":"poyomon-drift","form":"poyomon","phase":24,"group":"float","size":0.72,"travel":9,"rest":8},{"id":"koromon-hop","form":"koromon","phase":5,"group":"chase","size":0.9,"travel":8,"rest":4},{"id":"botamon-shade","form":"botamon","phase":17,"group":"shade","size":0.78,"travel":4,"rest":16},{"id":"tsunomon-nest","form":"tsunomon","phase":12,"group":"shade","size":0.8,"travel":5,"rest":14},{"id":"tokomon-tag","form":"tokomon","phase":10,"group":"chase","size":0.86,"travel":8,"rest":4}];
 // Reuse the complete painted consist, preserving the coupled cars and perspective.
 // Registered wheel contacts, relative to the (14,590,644,396) source crop.
-var UNITS=[{w:644,h:396,ax:.32,ay:.775,wheels:[[.09,.66],[.55,.89]]}],LOOP_MS=64000;
+var UNITS=[{w:644,h:396,ax:.32,ay:.775,wheels:[[.09,.66],[.55,.89]]}],LOOP_MS=20000,REDUCED_SCENE_MS=49920;
 // Measured visible near rail on each new painting, not a synthetic oval.
 function trackPath(c){
  if(c.path)return c.path;var pts=[],len=[0];c.rail.forEach(function(a,i){if(!i){pts.push(a);return;}var prev=c.rail[i-1],steps=Math.ceil(Math.hypot(a[0]-prev[0],a[1]-prev[1])/2);for(var j=1;j<=steps;j++)pts.push([prev[0]+(a[0]-prev[0])*j/steps,prev[1]+(a[1]-prev[1])*j/steps]);});
@@ -41,7 +41,10 @@ function trackPose(p,d){var q=trackPoint(p,d),f=trackPoint(p,d+6),r=trackPoint(p
 function trackFrame(c,W,H){var s=Math.max(W/c.w,H/c.h)*1.01,dw=c.w*s,dh=c.h*s;return {s:s,ox:(W-dw)/2,oy:Math.max(H-dh,Math.min(0,H/2-dh*c.focus)),dw:dw,dh:dh};}
 // The train travels forward along the measured near rail, waits and fades out.
 // It resets while invisible, then reappears at the starting stop without reversing.
-function shuttlePhase(progress){var t=((progress%1)+1)%1*64,u=t<8?0:t<48?(t-8)/40:1,opacity=t<4?t/4:t<52?1:t<56?(56-t)/4:0;return {u:u*u*(3-2*u),moving:t>=8&&t<48,direction:1,opacity:opacity};}
+// Short acceleration/deceleration around a steady cruise, instead of spending
+// most of a long trip barely moving. The original source-facing rail stays fixed.
+function trainEase(u){var ramp=.12;if(u<ramp)return u*u/(2*ramp*(1-ramp));if(u>1-ramp)return 1-(1-u)*(1-u)/(2*ramp*(1-ramp));return (u-ramp/2)/(1-ramp);}
+function shuttlePhase(progress){var t=((progress%1)+1)%1*(LOOP_MS/1000),u=t<2?0:t<14?(t-2)/12:1,opacity=t<1?t:t<16?1:t<17?17-t:0;return {u:trainEase(u),moving:t>=2&&t<14,direction:1,opacity:opacity};}
 function trainPoses(c,progress){var p=trackPath(c),phase=shuttlePhase(progress),station=p.shuttle||(p.shuttle={from:p.total*.28,to:p.total*.56}),d=station.from+(station.to-station.from)*phase.u,q=trackPose(p,d),u=UNITS[0],wheelAngle=Math.atan2((u.wheels[1][1]-u.wheels[0][1])*u.h,(u.wheels[1][0]-u.wheels[0][0])*u.w);
  return [{x:q.x,y:q.y,d:d,tilt:Math.atan2(q.dy,q.dx)-wheelAngle,sx:1,depth:1,front:true,w:u.w*c.train,h:u.h*c.train,ax:u.ax,ay:u.ay,moving:phase.moving,direction:phase.direction,opacity:phase.opacity}];}
 
@@ -54,7 +57,7 @@ function guardianPose(seconds){var q=patrolPose(seconds,{travel:32,rest:4});q.op
 function mount(host,api){
  if(stopActive)stopActive();
  var dead=false,busy=false,notice='',purchased=null,request=null,friendIndex=0,unsub=null,observer=null,resize=null,content=null,speechTimer=0,introTimer=0;
- var scene,babyActors=[],width=0,height=0,raf=0,last=0,elapsed=0,lookX=0,lookY=0,drawnX=0,drawnY=0,view=null;
+ var scene,babyActors=[],width=0,height=0,raf=0,last=0,elapsed=0,trainElapsed=0,lookX=0,lookY=0,drawnX=0,drawnY=0,view=null;
  var reduced=root.matchMedia('(prefers-reduced-motion: reduce)'),panel=history.state&&history.state.rainbowPanel||null,lastPanelKey='',returnFocus=null;
  function active(){return !dead&&host.isConnected;}
  function state(){return api&&api.state?api.state():{};}
@@ -123,12 +126,13 @@ function mount(host,api){
  function ballPose(seconds){var t=((seconds%8)+8)%8,back=t>=4;if(back)t-=4;var u=Math.max(0,Math.min(1,(t-1)/1.4));return {u:back?1-u:u,air:u>0&&u<1,arc:4*u*(1-u),catching:t>=2.4&&t<3,throwing:t>=.65&&t<=1.1,receiver:back?'punimon':'tsunomon',sender:back?'tsunomon':'punimon'};}
  function positionBabies(){if(!view)return;var c=TRACKS[view.camera],t=elapsed/1000,game=ballPose(reduced.matches?0:t),spots={};BABIES.forEach(function(b,i){var actor=babyActors[i],el=actor.node,a=c.anchors[b.id],paired=b.id==='punimon'||b.id==='tsunomon',q=patrolPose(t+b.phase,{travel:b.travel||5.5,rest:b.rest||6.5}),react=paired&&((game.throwing&&game.sender===b.id)||(game.catching&&game.receiver===b.id)),moving=(paired?react:q.walking)&&!reduced.matches&&!document.hidden,x=a[0]+(paired?0:q.x*(b.group==='chase'?.016:.010)),y=a[1]+(paired?0:q.y*.003),hop=moving?Math.max(0,Math.sin(paired?((t%4)-(game.sender===b.id?.65:2.4))/(game.sender===b.id?.45:.6)*Math.PI:(t+b.phase)*6))*actor.width*(b.group==='chase'?.10:.08)*(paired?1:q.strength):0;if(b.group==='float'&&!reduced.matches)hop+=(Math.sin(t*.9+b.phase)+1)*actor.width*.035;el.style.left=(view.ox+x*c.w*view.s).toFixed(1)+'px';el.style.bottom=(height-(view.oy+y*c.h*view.s)).toFixed(1)+'px';el.style.zIndex=y>c.anchors.guardian[1]?'3':'1';el.style.setProperty('--ri-hop',(-hop).toFixed(2)+'px');el.dataset.playing=String(moving);el.dataset.game=paired?(react?(game.sender===b.id?'throw':'catch'):'watch'):'explore';spots[b.id]={x:view.ox+x*c.w*view.s,y:view.oy+y*c.h*view.s-actor.width*.45};if(actor.life)actor.life.dataset.motion=moving?'move':'idle';});var a=spots.punimon,b=spots.tsunomon,ball=host.querySelector('.ri-play-ball'),distance=Math.hypot(b.x-a.x,b.y-a.y);ball.style.transform='translate3d('+(a.x+(b.x-a.x)*game.u).toFixed(2)+'px,'+(a.y+(b.y-a.y)*game.u-game.arc*Math.min(45,distance*.5)).toFixed(2)+'px,0) translate(-50%,-50%) rotate('+(game.u*210).toFixed(1)+'deg)';ball.dataset.airborne=String(game.air);ball.dataset.receiver=game.receiver;}
 
- function positionTrain(){if(!view)return;var c=TRACKS[view.camera];trainPoses(c,(elapsed%LOOP_MS)/LOOP_MS).forEach(function(q,i){var el=cars[i];el.style.opacity=q.opacity;var x=view.ox+q.x*view.s+drawnX,y=view.oy+q.y*view.s+drawnY;
+ function positionTrain(){if(!view)return;var c=TRACKS[view.camera];trainPoses(c,(trainElapsed%LOOP_MS)/LOOP_MS).forEach(function(q,i){var el=cars[i];el.style.opacity=q.opacity;var x=view.ox+q.x*view.s+drawnX,y=view.oy+q.y*view.s+drawnY;
   el.style.transformOrigin=(q.ax*100)+'% '+(q.ay*100)+'%';el.dataset.moving=String(q.moving);el.style.transform='translate3d('+x.toFixed(1)+'px,'+y.toFixed(1)+'px,0) translate('+(-q.ax*100)+'%,'+(-q.ay*100)+'%) rotate('+(q.tilt*180/Math.PI).toFixed(2)+'deg) scale('+(q.sx*q.depth).toFixed(3)+','+q.depth.toFixed(3)+')';
   // One fixed near-side layer, with registered wheel contact on the painted rail.
   el.style.zIndex=q.front?'3':'1';el.dataset.front=String(q.front);});}
- function tick(now){raf=0;if(!active()||document.hidden)return;if(reduced.matches){motion();return;}elapsed+=last?Math.max(0,Math.min(80,now-last)):0;last=now;drawnX+=(lookX-drawnX)*.05;drawnY+=(lookY-drawnY)*.05;positionTrain();positionPatrol();positionBabies();world.style.setProperty('--ri-look-x',drawnX.toFixed(2)+'px');world.style.setProperty('--ri-look-y',drawnY.toFixed(2)+'px');raf=root.requestAnimationFrame(tick);}
- function motion(){root.cancelAnimationFrame(raf);raf=0;last=0;scene.dataset.paused=String(document.hidden||reduced.matches);if(reduced.matches){elapsed=LOOP_MS*.78;lookX=lookY=drawnX=drawnY=0;world.style.setProperty('--ri-look-x','0px');world.style.setProperty('--ri-look-y','0px');positionTrain();positionPatrol();positionBabies();}else if(!document.hidden)raf=root.requestAnimationFrame(tick);}
+ function tick(now){raf=0;if(!active()||document.hidden)return;if(reduced.matches){motion();return;}var delta=last?Math.max(0,Math.min(80,now-last)):0;elapsed+=delta;trainElapsed+=delta;last=now;drawnX+=(lookX-drawnX)*.05;drawnY+=(lookY-drawnY)*.05;positionTrain();positionPatrol();positionBabies();world.style.setProperty('--ri-look-x',drawnX.toFixed(2)+'px');world.style.setProperty('--ri-look-y',drawnY.toFixed(2)+'px');raf=root.requestAnimationFrame(tick);}
+ // Keep the other residents at their original reduced-motion scene time.
+ function motion(){root.cancelAnimationFrame(raf);raf=0;last=0;scene.dataset.paused=String(document.hidden||reduced.matches);if(reduced.matches){elapsed=REDUCED_SCENE_MS;trainElapsed=LOOP_MS*.78;lookX=lookY=drawnX=drawnY=0;world.style.setProperty('--ri-look-x','0px');world.style.setProperty('--ri-look-y','0px');positionTrain();positionPatrol();positionBabies();}else if(!document.hidden)raf=root.requestAnimationFrame(tick);}
  function pop(){if(!active())return;panel=history.state&&history.state.rainbowPanel||null;draw();if(!panel)focusKey(history.state&&history.state.rainbowFocus||returnFocus);}
  function handlePopState(event){if(!active()||location.hash!=='#rainbow'||(!panel&&!(event.state&&event.state.rainbowPanel)))return false;pop();return true;}
  function pointer(){lookX=lookY=0;}
@@ -200,3 +204,4 @@ function mountInventory(host,api){return ready(api.state())?mountConnectedInvent
 
 root.HanqCollection={mountInventory:mountInventory,names:NAMES,chains:CHAINS,thresholds:THRESHOLDS,atlas:ATLAS,valid:valid,ready:ready,current:current,portrait:portrait};root.HanqRainbow={patrolPose:patrolPose,guardianPose:guardianPose,guardianLoopMs:72000,babies:BABIES,track:{tracks:TRACKS,units:UNITS,loopMs:LOOP_MS,path:trackPath,frame:trackFrame,poses:trainPoses,phase:shuttlePhase},mount:mount,stop:function(){if(stopActive)stopActive();stopActive=null;}};
 })(window);
+

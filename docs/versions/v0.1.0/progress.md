@@ -1,5 +1,13 @@
 # FE 실제 진행 상태
 
+### 2026-11-06 — 행복의 마을 기차 속도 / 0.4.3-beta
+
+운영 7a76e7a1dc04fbe816c573d5321e19e5a9b095b7의 실제 클라우드 Chrome에서 긴 감속 구간을 확인했다. 기차만 20초 주기/12초 이동으로 줄여 같은 선로 구간을 평균 약3.33배 빠르게 지난다. 1.44초 가속·9.12초 일정 속도·1.44초 감속과 짧은 정차/페이드를 사용한다. 원본의 정방향·선로·차량 크기·바퀴 접점·투명할 때만 시작점 복귀는 보존한다. 다른 캐릭터·풍경·CSS·자산·상점/API 계약은 변경하지 않는다.
+
+축소 모션의 기존 공용 장면 시각49,920ms는 유지하고 기차 시계만 분리해 도착 정차 위치15,600ms에 둔다. 동작을 다시 켜거나 숨긴 화면에서 돌아와도 시계를 따라잡거나 기차가 뒤로 뛰지 않는다. 기존 RAF/80ms 상한을 공유하며 새 타이머는 없다.
+
+합성 phase 경계·속도 연속성·양방향 화면 좌표의 원래 정방향 이동/비가시 복귀, wide/tall 두 루프, 원래 정차 기하 검사와 144초 주민 순회 회귀, 실제 tick/motion 함수의 축소/복귀/숨김 검사를 실행한다. 자연스러운 장면 수동 브라우저 QA는 팝업 검사가 임의 시각의 이동을 가정하지 않게 바꾸되 기존 가시 이동/노드 연속성 검사를 유지한다. 해당 합성 브라우저 harness는 실행 환경 연결 제한으로 미실행이며 구문만 검사한다. 정확 SHA CI/CD·운영 야간 데스크톱 전체 기차 루프·메뉴는 게시 후 확인하고, 모바일·실제 축소 모션 렌더는 미검증으로 구분한다.
+
 ### 2026-11-06 — 역사숲 코로몬 도약·캐릭터 크기 / 0.4.2-beta
 
 운영 1e272b15274a8780c790d00dda3254b021ef3abb의 경로·원근 배율을 유지하고 desktop/portrait 네 캐릭터의 기준 크기만 소폭 키운다. 코로몬의 원래 얼굴/귀 프레임을 통째로 유지한 채, 경로와 같은 28초·−12초 위상으로 각 이동 구간에 12회씩 도약하고 끝 대기 구간에서는 지면에 선다. 그림자는 지면에 남고 높이에 맞춰 작고 옅어진다. 새 타이머·에셋·원본 픽셀 수정, 다른 섬·학습/계정/API 계약 변경은 없다.
@@ -924,5 +932,6 @@ Source summary code and index routing are integrated on an isolated branch based
 ### 2026-11-04 frontend automatic deployment only
 
 The isolated branch starts at deployed dcfa5bcebcdf2dd47c1181b64511190a10004619. Active workflows now contain one main-only public build job and the existing Windows deploy job, with zero automated test commands or browser/test installs. YAML parsing and semantic preservation checks pass. Local repeatable static builds pass; controller tests pass15/skip1 (Linux symlink on Windows). Runtime files, local test scripts and installed controller are unchanged. New exact-SHA build/deployment verification is pending at this commit.
+
 
 
