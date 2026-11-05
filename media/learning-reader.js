@@ -32,7 +32,7 @@
     return parts.map(function (p, i) {
       var rank = (seen[p.type] || 0) + 1; seen[p.type] = rank;
       return {start:p.start, end:i + 1 < parts.length ? parts[i + 1].start : text.length, type:p.type, number:i + 1, rank:rank,
-        label:'지문 ' + (i + 1) + ' · ' + (p.type === '지문' ? '원문' : (ordinals[rank - 1] || rank + '번째') + ' ' + p.type)};
+        label:parts.length === 1 ? (p.type === '지문' ? '원문' : p.type) : '지문 ' + (i + 1) + ' · ' + (p.type === '지문' ? '원문' : (ordinals[rank - 1] || rank + '번째') + ' ' + p.type)};
     });
   }
   function shell(parent, parts) {
@@ -175,3 +175,4 @@
   }
   root.HanqLearningReader = {signature:signature, documents:documents, shell:shell, source:source, passage:passage, navigation:navigation, historyData:historyData, history:history, choices:choices, battleQuestion:battleQuestion, openImage:openImage, closeImage:closeImage};
 })(typeof window !== 'undefined' ? window : globalThis);
+
