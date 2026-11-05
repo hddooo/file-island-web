@@ -3,6 +3,19 @@
   const marker='[data-history-source-emphasis]',blocked='a,button,input,textarea,select,[role="button"],[data-layout-label],.history81-term';
   let serial=0;
   const normalize=text=>text.replace(/\s+/gu,'');
+  function contextAllows(entry,node){
+    const text=node.textContent;
+    if(entry.phrase==='금오')return /의금부|조옥/.test(text);
+    if(entry.era!=='goryeo')return true;
+    if(entry.id==='goryeo-gwajeon-gwajeonbeop-land')return ['48','54'].includes(node.closest('[data-page]')?.dataset.page)&&/경기/.test(text);
+    if(entry.id==='goryeo-accounting-general')return /삼사/.test(text);
+    if(['goryeo-jeonji-land','goryeo-siji-woodland'].includes(entry.id))return /전시과/.test(text);
+    if(entry.id==='goryeo-jewibo')return /빈민|구제|구휼/.test(text);
+    if(entry.id==='goryeo-gangjo')return /정변|거란/.test(text);
+    if(entry.id==='goryeo-byeongmasa')return /양계|국경/.test(text);
+    if(entry.id==='goryeo-gyojang')return /의천|경전|주석|속장경/.test(text);
+    return true;
+  }
   function mount(host,era,source){
     const data=root.HanqHistory81TermData,doc=host.ownerDocument,win=doc.defaultView;
     if(!data||source!==data.sources[era])return {stop(){},count:0};
@@ -23,7 +36,7 @@
         const text=nodes.map(n=>n.textContent).join(''),entry=entries.get(normalize(text)),context=parent.closest('td,th,li,p')||parent;
         // A partially emphasized word is not a certified phrase. Never split a maximal styled run.
         const before=children[i-1],after=children[j],particle=/^(?:으로|에서|이라고|라고|로|이|가|을|를|은|는|의|에|와|과|도|만|까지)(?=$|[^\p{L}\p{N}])/u,partial=(before?.nodeType===3&&/[\p{L}\p{N}]$/u.test(before.textContent))||(after?.nodeType===3&&/^[\p{L}\p{N}]/u.test(after.textContent)&&!particle.test(after.textContent));
-        if(entry&&!partial&&!nodes.some(n=>n.nodeType===1&&(n.matches(blocked)||n.querySelector(blocked)))&&(entry.phrase!=='금오'||/의금부|조옥/.test(context.textContent))){
+        if(entry&&!partial&&!nodes.some(n=>n.nodeType===1&&(n.matches(blocked)||n.querySelector(blocked)))&&contextAllows(entry,context)){
           const trigger=doc.createElement('span');trigger.className='history81-term';trigger.dataset.termId=entry.id;trigger.dataset.termPhrase=entry.phrase;trigger.setAttribute('role','button');trigger.tabIndex=0;trigger.setAttribute('aria-label',text+' 용어 설명');trigger.setAttribute('aria-expanded','false');parent.insertBefore(trigger,first);nodes.forEach(n=>trigger.append(n));triggers.push(trigger);
           listen(trigger,'pointerenter',e=>{if(e.pointerType!=='touch')open(trigger,entry,false);});listen(trigger,'pointerleave',leave);
           listen(trigger,'pointerdown',()=>trigger.focus({preventScroll:true}));
