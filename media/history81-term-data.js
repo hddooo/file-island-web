@@ -1,6 +1,5 @@
 (function(root){
-"use strict";
-root.HanqHistory81TermData={
+  root.HanqHistory81TermData={
   "schemaVersion": "hanq-history81-tooltips/1",
   "sourceRevision": "d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de",
   "sources": {
@@ -509,7 +508,7 @@ root.HanqHistory81TermData={
       "term": "제위보",
       "summary": "963년 광종이 설치한 구호 기관이다. 기금을 빌려주어 얻은 이자로 가난한 백성을 돕고 병자를 치료했다.",
       "sources": [
-        "https://contents.history.go.kr/mobile/tg/view.do?ganada=&amp;levelId=tg_002_0890&amp;pageUnit=10&amp;subjectCode=tg_ty_090&amp;tabId=02"
+        "https://contents.history.go.kr/mobile/tg/view.do?ganada=&levelId=tg_002_0890&pageUnit=10&subjectCode=tg_ty_090&tabId=02"
       ]
     },
     {
@@ -529,7 +528,7 @@ root.HanqHistory81TermData={
       "term": "12목",
       "summary": "983년 성종이 주요 지역 12곳에 설치한 지방 행정 조직이다. 중앙에서 지방관을 보내 지방 통제를 강화했다.",
       "sources": [
-        "https://contents.history.go.kr/front/tg/view.do?ganada=0~9&amp;levelId=tg_002_0400&amp;pageUnit=10&amp;treeId=0200"
+        "https://contents.history.go.kr/front/tg/view.do?ganada=0~9&levelId=tg_002_0400&pageUnit=10&treeId=0200"
       ]
     },
     {
@@ -1130,7 +1129,7 @@ root.HanqHistory81TermData={
       "term": "홍산대첩",
       "summary": "1376년 최영이 홍산에서 왜구를 크게 물리친 전투다. 고려 말 내륙까지 침입하던 왜구를 격퇴한 대표적인 승리다.",
       "sources": [
-        "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_20&amp;levelId=kc_i201600"
+        "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_20&levelId=kc_i201600"
       ]
     },
     {
@@ -1150,7 +1149,7 @@ root.HanqHistory81TermData={
       "term": "화포",
       "summary": "화약이 타면서 생기는 힘으로 탄환 등을 멀리 쏘는 무기다. 대포가 대표적이다.",
       "sources": [
-        "https://waks.aks.ac.kr/rsh/dir/rsearchItem.aspx?curPage=171&amp;pageSize=100&amp;rptID=AKS-2013-KCL-1220001_DES&amp;rshID=AKS-2013-KCL-1220001&amp;sType=&amp;sWord="
+        "https://waks.aks.ac.kr/rsh/dir/rsearchItem.aspx?curPage=171&pageSize=100&rptID=AKS-2013-KCL-1220001_DES&rshID=AKS-2013-KCL-1220001&sType=&sWord="
       ]
     },
     {
@@ -1200,7 +1199,7 @@ root.HanqHistory81TermData={
       "term": "쓰시마섬",
       "summary": "대한해협에 있는 일본의 섬으로, 대마도라고도 한다. 고려와 조선의 대일 교역에서 중요한 길목이었고, 왜구의 근거지가 되기도 했다.",
       "sources": [
-        "https://contents.history.go.kr/front/tg/view.do?ganada=%EB%8B%A4&amp;levelId=tg_003_1500&amp;pageUnit=10&amp;treeId=0105"
+        "https://contents.history.go.kr/front/tg/view.do?ganada=%EB%8B%A4&levelId=tg_003_1500&pageUnit=10&treeId=0105"
       ]
     },
     {
@@ -1210,7 +1209,7 @@ root.HanqHistory81TermData={
       "term": "홍산대첩",
       "summary": "1376년 최영이 홍산에서 왜구를 크게 물리친 전투다. 고려 말 내륙까지 침입하던 왜구를 격퇴한 대표적인 승리다.",
       "sources": [
-        "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_20&amp;levelId=kc_i201600"
+        "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_20&levelId=kc_i201600"
       ]
     },
     {
@@ -1330,8 +1329,8 @@ root.HanqHistory81TermData={
       "term": "5도 양계",
       "summary": "고려의 지방 통치 체제로, 일반 행정 구역인 5도에는 안찰사를 보냈다. 북쪽 국경의 동계·북계에는 병마사를 두어 군사와 행정을 맡겼다.",
       "sources": [
-        "https://contents.history.go.kr/front/tg/view.do?ganada=&amp;levelId=tg_002_0450&amp;pageUnit=10&amp;treeId=0100amp",
-        "https://contents.history.go.kr/mobile/tg/view.do?ganada=&amp;levelId=tg_002_0770&amp;pageUnit=10&amp;subjectCode=tg_age_40&amp;tabId=01"
+        "https://contents.history.go.kr/front/tg/view.do?levelId=tg_002_0450",
+        "https://contents.history.go.kr/mobile/tg/view.do?ganada=&levelId=tg_002_0770&pageUnit=10&subjectCode=tg_age_40&tabId=01"
       ]
     },
     {
@@ -1352,8 +1351,8 @@ root.HanqHistory81TermData={
       "summary": "고려의 특수 행정 구역이다. 향·부곡 주민은 주로 농사를 짓고 소 주민은 특정 물품을 생산했으며, 일반 군현 주민보다 차별받았다.",
       "sources": [
         "https://encykorea.aks.ac.kr/Article/E0029904",
-        "https://contents.history.go.kr/mobile/tg/view.do?ganada=&amp;levelId=tg_002_0940&amp;pageUnit=10&amp;subjectCode=tg_ty_090&amp;tabId=02",
-        "https://contents.history.go.kr/mobile/tg/view.do?ganada=&amp;levelId=tg_002_0650&amp;pageUnit=10&amp;subjectCode=tg_ty_090&amp;tabId=02"
+        "https://contents.history.go.kr/mobile/tg/view.do?ganada=&levelId=tg_002_0940&pageUnit=10&subjectCode=tg_ty_090&tabId=02",
+        "https://contents.history.go.kr/mobile/tg/view.do?ganada=&levelId=tg_002_0650&pageUnit=10&subjectCode=tg_ty_090&tabId=02"
       ]
     },
     {
@@ -1454,8 +1453,8 @@ root.HanqHistory81TermData={
       "term": "5도 양계",
       "summary": "고려의 지방 통치 체제로, 일반 행정 구역인 5도에는 안찰사를 보냈다. 북쪽 국경의 동계·북계에는 병마사를 두어 군사와 행정을 맡겼다.",
       "sources": [
-        "https://contents.history.go.kr/front/tg/view.do?ganada=&amp;levelId=tg_002_0450&amp;pageUnit=10&amp;treeId=0100amp",
-        "https://contents.history.go.kr/mobile/tg/view.do?ganada=&amp;levelId=tg_002_0770&amp;pageUnit=10&amp;subjectCode=tg_age_40&amp;tabId=01"
+        "https://contents.history.go.kr/front/tg/view.do?levelId=tg_002_0450",
+        "https://contents.history.go.kr/mobile/tg/view.do?ganada=&levelId=tg_002_0770&pageUnit=10&subjectCode=tg_age_40&tabId=01"
       ]
     },
     {
@@ -1636,7 +1635,7 @@ root.HanqHistory81TermData={
       "term": "혜심의 유불 일치설",
       "summary": "혜심이 유교와 불교는 이름과 방법이 달라도 근본 뜻은 통한다고 본 견해다. 불교의 입장에서 두 사상의 조화와 융합을 추구하였다.",
       "sources": [
-        "https://contents.history.go.kr/front/nh/print.do?levelId=nh_021_0020_0020_0030&amp;whereStr="
+        "https://contents.history.go.kr/front/nh/print.do?levelId=nh_021_0020_0020_0030&whereStr="
       ]
     },
     {
@@ -1697,7 +1696,7 @@ root.HanqHistory81TermData={
       "term": "경천사지 10층석탑",
       "summary": "1348년 고려에 세워진 대리석 석탑이다. 층마다 불교 내용을 정교하게 새겼으며, 현재 국립중앙박물관에 전시되어 있다.",
       "sources": [
-        "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_20&amp;levelId=kc_r200080"
+        "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_20&levelId=kc_r200080"
       ]
     },
     {
@@ -1708,7 +1707,7 @@ root.HanqHistory81TermData={
       "summary": "서울 용산에 있는 국립박물관이다. 고려의 경천사지 10층석탑을 비롯한 다양한 문화유산을 보존하고 전시한다.",
       "sources": [
         "https://encykorea.aks.ac.kr/Article/E0006249",
-        "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_20&amp;levelId=kc_r200080"
+        "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_20&levelId=kc_r200080"
       ]
     },
     {
@@ -1718,7 +1717,7 @@ root.HanqHistory81TermData={
       "term": "월정사 팔각구층석탑",
       "summary": "고려 시대 월정사에 세운 팔각형 9층 석탑이다. 여러 각과 층을 갖춘 고려 석탑의 특징을 보여 준다.",
       "sources": [
-        "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_20&amp;levelId=kc_r200367",
+        "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_20&levelId=kc_r200367",
         "https://encykorea.aks.ac.kr/Article/E0041063"
       ]
     },
@@ -1739,7 +1738,7 @@ root.HanqHistory81TermData={
       "term": "직지심체요절",
       "summary": "백운 경한이 부처와 고승의 가르침을 추려 엮은 책이다. 1377년 청주 흥덕사에서 찍은 판본은 현존하는 세계에서 가장 오래된 금속 활자본이다.",
       "sources": [
-        "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_20&amp;levelId=kc_r200370"
+        "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_20&levelId=kc_r200370"
       ]
     },
     {
@@ -1840,7 +1839,7 @@ root.HanqHistory81TermData={
       "summary": "과전법에 따라 전·현직 관리에게 등급별로 수조권을 지급한 경기 지역의 토지다. 땅의 소유권이 아니라 그 땅에서 세금을 거둘 권리를 준 것이다.",
       "sources": [
         "https://encykorea.aks.ac.kr/Article/E0004611",
-        "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_30&amp;levelId=kc_i301300"
+        "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_30&levelId=kc_i301300"
       ],
       "context": "고려 말~조선 초 과전법에 따른 과전 지급 문맥에만 연결. 고려 전시과의 과전 설명과 별도 ID를 사용하며, 과전법 자체나 직전법의 동의어로 연결하지 않는다."
     },
@@ -1851,7 +1850,7 @@ root.HanqHistory81TermData={
       "term": "회계",
       "summary": "돈이나 물자의 수입과 지출을 계산하고 정리하는 일이다. 국가 재정에서는 거둔 세금과 쓴 비용 등을 파악하는 업무에 해당한다.",
       "sources": [
-        "https://contents.history.go.kr/front/tg/view.do?ganada=&amp;levelId=tg_002_0680&amp;pageUnit=10&amp;treeId=0209"
+        "https://contents.history.go.kr/front/tg/view.do?ganada=&levelId=tg_002_0680&pageUnit=10&treeId=0209"
       ],
       "context": "고려 삼사의 수입·지출 회계 업무 문맥에만 연결. 회계(回啓)나 다른 동음이의어 및 현대 회계 기준 설명으로 확장하지 않는다."
     },
@@ -1862,7 +1861,7 @@ root.HanqHistory81TermData={
       "term": "회계",
       "summary": "돈이나 물자의 수입과 지출을 계산하고 정리하는 일이다. 국가 재정에서는 거둔 세금과 쓴 비용 등을 파악하는 업무에 해당한다.",
       "sources": [
-        "https://contents.history.go.kr/front/tg/view.do?ganada=&amp;levelId=tg_002_0680&amp;pageUnit=10&amp;treeId=0209"
+        "https://contents.history.go.kr/front/tg/view.do?ganada=&levelId=tg_002_0680&pageUnit=10&treeId=0209"
       ],
       "context": "고려 삼사의 수입·지출 회계 업무 문맥에만 연결. 회계(回啓)나 다른 동음이의어 및 현대 회계 기준 설명으로 확장하지 않는다."
     },
@@ -1887,7 +1886,2512 @@ root.HanqHistory81TermData={
         "https://contents.history.go.kr/mobile/ta/view.do?levelId=ta_h71_0050_0020_0010_0030"
       ],
       "context": "고려 전시과에서 관리에게 지급한 토지 구분 문맥에만 연결. 다른 동음이의어 또는 과전법의 지급 규정과 섞지 않는다."
+    },
+    {
+      "era": "joseon",
+      "phrase": "태조 이성계",
+      "id": "joseon-king-01",
+      "term": "태조",
+      "summary": "조선을 세운 첫 왕 이성계로, 1392~1398년에 재위했다. 위화도 회군으로 실권을 잡은 뒤 새 왕조를 열고 한양으로 수도를 옮겼다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0059033"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "정종",
+      "id": "joseon-king-02",
+      "term": "정종",
+      "summary": "조선의 제2대 왕으로 1398~1400년에 재위했다. 태조의 둘째 아들이며, 제2차 왕자의 난 뒤 이방원에게 왕위를 넘겼다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0050884"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "태종 이방원",
+      "id": "joseon-king-03",
+      "term": "태종",
+      "summary": "조선의 제3대 왕 이방원으로 1400~1418년에 재위했다. 왕자의 난을 거쳐 집권했고, 6조를 직접 지휘하며 왕권을 강화했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0059039"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "세종",
+      "id": "joseon-king-04",
+      "term": "세종",
+      "summary": "조선의 제4대 왕으로 1418~1450년에 재위했다. 훈민정음을 만들고 학문·농업·과학 기술을 진흥하며 국가 제도를 정비했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0029857"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "문종",
+      "id": "joseon-king-05",
+      "term": "문종",
+      "summary": "조선의 제5대 왕으로 1450~1452년에 재위했다. 세종의 맏아들이며, 고려사·고려사절요 편찬과 군사 제도 정비에 힘썼다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0019665"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "단종",
+      "id": "joseon-king-06",
+      "term": "단종",
+      "summary": "조선의 제6대 왕으로 1452~1455년에 재위했다. 어린 나이에 즉위했으나 숙부 수양대군에게 왕위를 빼앗기고 영월에 유배되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0013661"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "세조",
+      "id": "joseon-king-07",
+      "term": "세조",
+      "summary": "조선의 제7대 왕으로 1455~1468년에 재위했다. 계유정난으로 실권을 잡고 단종의 왕위를 빼앗았으며, 직전법 시행과 경국대전 편찬을 추진했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0029849"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "예종",
+      "id": "joseon-king-08",
+      "term": "예종",
+      "summary": "조선의 제8대 왕으로 1468~1469년에 재위했다. 세조의 둘째 아들이며 경국대전 정비를 이어갔으나 재위 약 1년 만에 세상을 떠났다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0038021"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "성종",
+      "id": "joseon-king-09",
+      "term": "성종",
+      "summary": "조선의 제9대 왕으로 1469~1494년에 재위했다. 경국대전을 완성·반포하고 사림을 등용하며 유교 정치와 제도를 정비했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0029554"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "연산군",
+      "id": "joseon-king-10",
+      "term": "연산군",
+      "summary": "조선의 제10대 왕으로 1494~1506년에 재위했다. 무오사화와 갑자사화를 일으켰으며 중종반정으로 왕위에서 쫓겨났다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0036803"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "중종",
+      "id": "joseon-king-11",
+      "term": "중종",
+      "summary": "조선의 제11대 왕으로 1506~1544년에 재위했다. 중종반정으로 즉위한 뒤 조광조를 등용했으나, 기묘사화로 개혁 세력을 제거했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0053932"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "인종",
+      "id": "joseon-king-12",
+      "term": "인종",
+      "summary": "조선의 제12대 왕으로 1544~1545년에 재위했다. 중종의 맏아들이며 기묘사화로 취소된 현량과를 복구하고 조광조 등의 명예를 회복했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0047034"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "명종",
+      "id": "joseon-king-13",
+      "term": "명종",
+      "summary": "조선의 제13대 왕으로 1545~1567년에 재위했다. 어린 나이에 즉위해 문정왕후가 수렴청정했으며, 을사사화와 외척의 권력 다툼이 일어났다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0018366"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "위화도 회군",
+      "id": "joseon-wihwado-retreat",
+      "term": "위화도 회군",
+      "summary": "1388년 고려 우왕 때 요동을 공격하러 간 이성계 등이 위화도에서 군대를 돌린 사건. 최영과 우왕을 몰아내고 권력을 잡아 조선 건국의 기반을 마련했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0041212"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "왕자의 난",
+      "id": "joseon-princes-rebellions",
+      "term": "왕자의 난",
+      "summary": "조선 초 왕위와 권력을 둘러싸고 벌어진 두 차례의 무력 충돌. 1398년과 1400년 이방원이 경쟁 세력을 물리치고 태종으로 즉위할 기반을 다졌다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0051385",
+        "https://encykorea.aks.ac.kr/Article/E0051375"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "저화",
+      "id": "joseon-paper-currency",
+      "term": "저화",
+      "summary": "종이로 만든 화폐. 조선 태종 때 국가가 유통을 추진했으나 신뢰와 사용 기반이 부족해 널리 쓰이지 못했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0049125"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "집현전",
+      "id": "joseon-hall-worthies",
+      "term": "집현전",
+      "summary": "세종 때 학문 연구와 인재 양성을 위해 정비한 기관. 책을 편찬하고 국왕에게 정책과 학문에 관한 자문을 제공했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0055081"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "4군",
+      "id": "joseon-four-counties",
+      "term": "4군",
+      "summary": "세종 때 여진의 침입에 대비해 압록강 상류에 설치한 여연·자성·무창·우예의 네 군. 최윤덕의 여진 정벌을 바탕으로 서북 국경을 넓혔다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0025393"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "6진",
+      "id": "joseon-six-garrisons",
+      "term": "6진",
+      "summary": "세종 때 김종서 등을 통해 두만강 유역에 개척한 여섯 군사 행정 구역. 경원·경흥·온성·종성·회령·부령에 설치하여 북방 방어를 강화했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0042168"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "쓰시마섬",
+      "id": "goryeo-tsushima-island",
+      "term": "쓰시마섬",
+      "summary": "대한해협에 있는 일본의 섬으로, 대마도라고도 한다. 고려와 조선의 대일 교역에서 중요한 길목이었고, 왜구의 근거지가 되기도 했다.",
+      "sources": [
+        "https://contents.history.go.kr/front/tg/view.do?ganada=%EB%8B%A4&levelId=tg_003_1500&pageUnit=10&treeId=0105"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "계유정난",
+      "id": "joseon-gyeyu-coup",
+      "term": "계유정난",
+      "summary": "1453년 수양대군이 김종서·황보인 등 단종을 보좌하던 대신들을 제거하고 권력을 잡은 정변. 이후 세조로 즉위하는 발판이 되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0003220"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "이시애의 난",
+      "id": "joseon-yi-siae-rebellion",
+      "term": "이시애의 난",
+      "summary": "1467년 세조의 중앙 집권 정책에 반발해 이시애가 함길도에서 일으킨 반란. 지역 세력이 가담했으나 관군에 진압되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0044984"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "경국대전",
+      "id": "joseon-gyeongguk-daejeon",
+      "term": "경국대전",
+      "summary": "조선의 통치 제도를 정리한 기본 법전. 세조 때 편찬을 시작해 성종 때 최종 확정되었으며, 이·호·예·병·형·공의 6전으로 구성되었다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/ts/view.do?levelId=ts_b02"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "조광조",
+      "id": "joseon-jo-gwangjo",
+      "term": "조광조",
+      "summary": "중종 때 성리학의 이상에 따라 개혁을 추진한 사림 정치가. 현량과 시행, 소격서 폐지, 위훈 삭제를 추진했으나 기묘사화로 제거되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0051606"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "현량과",
+      "id": "joseon-hyeollyanggwa",
+      "term": "현량과",
+      "summary": "1519년 중종 때 조광조 등의 건의로 시행한 특별 과거. 추천받은 인재를 시험으로 선발했으며, 기묘사화 뒤 폐지되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0063316"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "위훈 삭제",
+      "id": "joseon-false-merit-removal",
+      "term": "위훈 삭제",
+      "summary": "중종반정 때 실제 공이 없는데도 공신으로 책봉된 사람들의 공훈을 취소하려 한 조치. 조광조 등이 추진해 훈구 세력의 반발을 샀다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0051606"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "기묘사화",
+      "id": "joseon-gimyo-purge",
+      "term": "기묘사화",
+      "summary": "1519년 중종 때 조광조 등 개혁을 추진하던 사림이 숙청된 사건. 위훈 삭제 등을 둘러싼 갈등 속에서 중종과 훈구 세력이 이들을 제거했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0008223"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "불씨잡변",
+      "id": "joseon-bulssi-japbyeon",
+      "term": "불씨잡변",
+      "summary": "정도전이 성리학의 관점에서 불교의 교리와 폐단을 비판한 책. 조선 초 유교 중심의 국가 운영과 불교 억제 정책을 뒷받침했다.",
+      "sources": [
+        "https://contents.history.go.kr/front/hm/print.do?levelId=hm_069_0050&tabId=01&treeId=010404&whereStr="
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "조선경국전",
+      "id": "joseon-joseon-gyeonggukjeon",
+      "term": "조선경국전",
+      "summary": "1394년 정도전이 지어 태조에게 바친 국가 운영 지침서. 유교적 통치 원리와 제도를 6전으로 정리하고 재상의 역할을 강조했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0051911"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "이종무",
+      "id": "joseon-yi-jongmu",
+      "term": "이종무",
+      "summary": "고려 말부터 조선 초까지 활동한 무신. 1419년 세종 때 군대를 이끌고 왜구의 근거지인 대마도를 정벌했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0045918"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "김종직의 조의제문",
+      "id": "joseon-jouije-mun",
+      "term": "조의제문",
+      "summary": "김종직이 항우에게 죽은 초나라 의제를 애도하며 지은 글. 세조의 왕위 찬탈을 비판한 것으로 문제 되어 1498년 무오사화의 빌미가 되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0052503"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "폐비 윤씨 사사 사건",
+      "id": "joseon-deposed-queen-yun-execution",
+      "term": "폐비 윤씨 사사 사건",
+      "summary": "1482년 성종이 연산군의 어머니인 폐비 윤씨에게 사약을 내린 사건. 윤씨는 1479년 왕비 자리에서 쫓겨나 사가에서 지내고 있었다.",
+      "sources": [
+        "https://waks.aks.ac.kr/rsh/dir/rview.aspx?dataID=AKS-2013-CKD-1240001_DIC%4000012787&rshID=AKS-2013-CKD-1240001"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "현량과 실시",
+      "id": "joseon-hyeollyanggwa",
+      "term": "현량과",
+      "summary": "1519년 중종 때 조광조 등의 건의로 시행한 특별 과거. 추천받은 인재를 시험으로 선발했으며, 기묘사화 뒤 폐지되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0063316"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "양재역 벽서 사건",
+      "id": "joseon-yangjae-poster-incident",
+      "term": "양재역 벽서 사건",
+      "summary": "1547년 문정왕후와 집권 세력을 비판하는 글이 양재역에서 발견된 사건. 이를 계기로 을사사화 관련 인물과 사림에 대한 처벌이 확대되었다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i304210"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "선조",
+      "id": "joseon-king-14",
+      "term": "선조",
+      "summary": "조선의 제14대 왕으로 1567~1608년에 재위했다. 사림을 등용했으며, 재위 중 붕당이 형성되고 임진왜란·정유재란을 겪었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0028912"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "광해군",
+      "id": "joseon-king-15",
+      "term": "광해군",
+      "summary": "조선의 제15대 왕으로 1608~1623년에 재위했다. 명과 후금 사이에서 외교적 균형을 추구했으나 인조반정으로 폐위되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0005335"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "인조",
+      "id": "joseon-king-16",
+      "term": "인조",
+      "summary": "조선의 제16대 왕으로 1623~1649년에 재위했다. 인조반정으로 즉위했으며, 이괄의 난과 정묘호란·병자호란을 겪었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0047028"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "효종",
+      "id": "joseon-king-17",
+      "term": "효종",
+      "summary": "조선의 제17대 왕으로 1649~1659년에 재위했다. 청을 공격하려는 북벌을 준비하며 군사력을 강화했지만 실제 북벌은 이루어지지 않았다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0065706"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "현종",
+      "id": "joseon-king-18",
+      "term": "현종",
+      "summary": "조선의 제18대 왕으로 1659~1674년에 재위했다. 효종과 인선왕후의 장례 때 자의대비의 상복 기간을 둘러싼 두 차례 예송이 일어났다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0063418"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "숙종",
+      "id": "joseon-king-19",
+      "term": "숙종",
+      "summary": "조선의 제19대 왕으로 1674~1720년에 재위했다. 집권 붕당을 바꾸는 환국을 통해 왕권을 강화했고 대동법 시행 지역을 넓혔다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0031837"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "경종",
+      "id": "joseon-king-20",
+      "term": "경종",
+      "summary": "조선의 제20대 왕으로 1720~1724년에 재위했다. 동생 연잉군의 왕세제 책봉과 대리청정 문제를 둘러싸고 노론·소론의 갈등이 격해졌다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0002808"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "영조",
+      "id": "joseon-king-21",
+      "term": "영조",
+      "summary": "조선의 제21대 왕으로 1724~1776년에 재위했다. 탕평책으로 붕당 대립을 줄이려 했고 균역법으로 군포 부담을 낮췄다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0037669"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "정조",
+      "id": "joseon-king-22",
+      "term": "정조",
+      "summary": "조선의 제22대 왕으로 1776~1800년에 재위했다. 규장각·장용영을 두고 수원 화성을 건설하며 왕권 강화와 문화 진흥을 추진했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0050867"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "순조",
+      "id": "joseon-king-23",
+      "term": "순조",
+      "summary": "조선의 제23대 왕으로 1800~1834년에 재위했다. 정조의 아들이며, 어린 나이에 즉위한 뒤 안동 김씨 등 외척 중심의 정치가 강화되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0031943"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "헌종",
+      "id": "joseon-king-24",
+      "term": "헌종",
+      "summary": "조선의 제24대 왕으로 1834~1849년에 재위했다. 어린 나이에 즉위해 순원왕후가 수렴청정했으며, 외척 중심의 세도 정치가 이어졌다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0063230"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "철종",
+      "id": "joseon-king-25",
+      "term": "철종",
+      "summary": "조선의 제25대 왕으로 1849~1863년에 재위했다. 안동 김씨의 세도 정치가 이어졌고 삼정의 폐단 속에서 임술농민봉기가 일어났다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0056172"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "이조전랑",
+      "id": "joseon-ijo-jeollang",
+      "term": "이조전랑",
+      "summary": "이조의 정랑과 좌랑을 함께 이르는 말. 관리 인사 실무를 맡고 삼사 관원과 자신의 후임자를 추천하는 권한을 행사해 정치적 영향력이 컸다.",
+      "sources": [
+        "https://contents.history.go.kr/front/tg/view.do?ganada=%EC%A0%84%EC%B2%B4&levelId=tg_003_0530&pageUnit=10&treeId=0105"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "정여립 모반사건",
+      "id": "joseon-jeong-yeorip-case",
+      "term": "정여립 모반 사건",
+      "summary": "1589년 정여립이 반역을 꾀한다는 고발에서 시작된 사건. 수사가 기축옥사로 확대되어 많은 동인이 희생되었으며, 실제 역모 여부에는 논란이 있다.",
+      "sources": [
+        "https://contents.history.go.kr/front/hm/view.do?levelId=hm_077_0070"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "인조반정",
+      "id": "joseon-injo-restoration",
+      "term": "인조반정",
+      "summary": "1623년 서인 세력이 광해군과 대북파를 몰아내고 능양군을 인조로 세운 정변. 이후 서인이 정국의 주도권을 잡았다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0047030"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "정여립 모반 사건",
+      "id": "joseon-jeong-yeorip-case",
+      "term": "정여립 모반 사건",
+      "summary": "1589년 정여립이 반역을 꾀한다는 고발에서 시작된 사건. 수사가 기축옥사로 확대되어 많은 동인이 희생되었으며, 실제 역모 여부에는 논란이 있다.",
+      "sources": [
+        "https://contents.history.go.kr/front/hm/view.do?levelId=hm_077_0070"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "삼수병",
+      "id": "joseon-three-troop-types",
+      "term": "삼수병",
+      "summary": "조총을 쏘는 포수, 활을 쏘는 사수, 창과 칼을 쓰는 살수로 구성된 군사. 임진왜란 중 설치된 훈련도감의 핵심 병종이었다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/hm/view.do?levelId=hm_096_0010"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "동래성 전투",
+      "id": "joseon-dongnae-battle",
+      "term": "동래성 전투",
+      "summary": "1592년 임진왜란 초기에 송상현이 동래의 군사와 백성을 이끌고 일본군에 맞선 전투. 성이 함락되고 송상현도 전사했다.",
+      "sources": [
+        "https://www.nl.go.kr/NL/contents/N20103000000.do?schIdSub=CO0000004163&schM=contView"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "기유약조",
+      "id": "joseon-giyu-agreement",
+      "term": "기유약조",
+      "summary": "1609년 광해군 때 일본과의 교류를 위해 대마도주와 맺은 약조. 무역선 수 등을 제한하며 임진왜란 이후 조선과 일본의 통교 질서를 정했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0008372"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "중립외교",
+      "id": "joseon-gwanghaegun-neutrality",
+      "term": "중립외교(광해군)",
+      "summary": "광해군이 명과 후금의 대립 속에서 전쟁에 휘말리지 않고 국익을 지키려 한 외교 정책. 명과의 관계를 유지하면서 후금과도 충돌을 피하려 했다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_30&levelId=kc_i302900"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "이원익",
+      "id": "joseon-yi-wonik",
+      "term": "이원익",
+      "summary": "선조·광해군·인조 때 활동한 문신으로 영의정 등을 지냈다. 광해군 때 경기도에 대동법을 시행하여 백성의 부담을 줄이는 데 힘썼다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0045372"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "김육",
+      "id": "joseon-kim-yuk",
+      "term": "김육",
+      "summary": "조선 후기 문신이자 개혁가. 효종 때 대동법의 확대 시행에 힘썼으며 화폐 유통과 수레·수차 보급에도 관심을 기울였다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0010098"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "선혜청",
+      "id": "joseon-seonhyecheong",
+      "term": "선혜청",
+      "summary": "1608년 광해군 때 경기도에 대동법을 시행하면서 설치한 관청. 대동법으로 거둔 재원을 관리하며 조선 후기의 주요 재정 기관으로 성장했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0028976"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "이괄의 난",
+      "id": "joseon-yi-gwal-rebellion",
+      "term": "이괄의 난",
+      "summary": "1624년 인조 때 이괄이 일으킨 반란. 반란군이 한양을 점령해 인조가 공주로 피란했으나, 관군의 반격으로 진압되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0043666"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "용골산성 전투",
+      "id": "joseon-yonggolsanseong-battle",
+      "term": "용골산성 전투",
+      "summary": "1627년 정묘호란 때 정봉수가 의병을 이끌고 용골산성에서 후금군을 물리친 전투. 성에 모인 백성들을 지키며 항전했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0039397"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "남한산성",
+      "id": "joseon-namhansanseong",
+      "term": "남한산성",
+      "summary": "한양 남쪽을 방어하고 유사시 왕실이 피신하도록 정비한 산성. 병자호란 때 인조가 이곳으로 피란해 청군에 맞서 항전했다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_r300255"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "북벌",
+      "id": "joseon-hyojong-northern-campaign",
+      "term": "북벌(효종)",
+      "summary": "병자호란의 치욕을 씻고 청을 정벌하자는 주장. 효종이 군사력 강화와 함께 추진했지만 실제 청 정벌로 이어지지는 못했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0024667"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "조총 부대 나선 정벌",
+      "id": "joseon-russian-expeditions",
+      "term": "나선 정벌",
+      "summary": "효종 때인 1654년과 1658년, 청의 요청으로 조선 조총 부대가 러시아군과 싸운 원정. 청을 공격하려던 북벌과는 구별된다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i301900"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "기축봉사",
+      "id": "joseon-gichuk-bongsa",
+      "term": "기축봉사",
+      "summary": "1649년 송시열이 효종에게 올린 국정 건의문. 청에 대한 복수와 북벌의 명분을 강조하면서, 정치를 바로잡고 힘을 기르며 때를 기다리자고 주장했다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/hm/view.do?levelId=hm_099_0070"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "예송 논쟁",
+      "id": "yesong",
+      "term": "예송",
+      "summary": "왕실 상복을 얼마나 입을지를 둘러싼 서인·남인의 논쟁",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0037964"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "백두산 정계비",
+      "id": "joseon-baekdusan-boundary-stele",
+      "term": "백두산 정계비",
+      "summary": "1712년 숙종 때 조선과 청의 경계를 표시하려고 백두산 부근에 세운 비석. 서쪽은 압록강, 동쪽은 토문강을 경계로 적어 훗날 해석 논쟁이 생겼다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0022058"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "금위영",
+      "id": "joseon-geumwiyeong",
+      "term": "금위영",
+      "summary": "1682년 숙종 때 정초군과 훈련별대 등을 합쳐 설치한 중앙 군영. 국왕 호위와 수도 방어를 맡았으며, 오군영 가운데 마지막으로 설치되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0007930"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "초량 왜관",
+      "id": "joseon-choryang-waegwan",
+      "term": "초량 왜관",
+      "summary": "1678년 숙종 때 부산에 설치한 일본인 거주·교역 구역. 조선과 일본의 외교·무역 창구였으며, 출입과 활동은 조선의 통제를 받았다.",
+      "sources": [
+        "https://www.busan.go.kr/chosun/",
+        "https://dh.aks.ac.kr/sillokwiki/index.php/%EC%B4%88%EB%9F%89%EC%99%9C%EA%B4%80(%E8%8D%89%E6%A2%81%E5%80%AD%E9%A4%A8)"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "탕평비",
+      "id": "joseon-tangpyeong-stele",
+      "term": "탕평비",
+      "summary": "영조가 1742년 성균관에 세운 비석. 유생들에게 당파에 치우치지 말라는 뜻을 알려 탕평 의지를 드러냈다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0058858"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "이인좌의 난",
+      "id": "joseon-yi-injwa-rebellion",
+      "term": "이인좌의 난",
+      "summary": "1728년 영조 때 이인좌를 중심으로 소론과 남인의 일부 강경파가 정권을 차지하려 일으킨 반란. 청주성을 점령했으나 진압되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0045630"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "선무군관포",
+      "id": "joseon-seonmu-military-cloth",
+      "term": "선무군관포",
+      "summary": "균역법으로 줄어든 재정을 보충하려 부유한 양인에게 선무군관이라는 지위를 주고 거둔 군포. 해마다 면포 1필이나 돈 2냥을 내게 했다.",
+      "sources": [
+        "https://contents.history.go.kr/front/tg/print.do?levelId=tg_003_1900&treeId=&whereStr="
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "윤지충",
+      "id": "joseon-yun-jichung",
+      "term": "윤지충",
+      "summary": "1791년 천주교 신앙에 따라 조상 제사를 지내지 않고 신주를 불태운 인물. 권상연과 함께 처형된 사건이 신해박해로 이어졌다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0042601"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "공노비 해방",
+      "id": "joseon-public-slave-emancipation",
+      "term": "공노비 해방(순조)",
+      "summary": "1801년 순조 때 왕실과 중앙 관청 소속 내시노비 약 6만 6천 명을 양인으로 바꾼 조치. 모든 노비를 해방한 것은 아니다.",
+      "sources": [
+        "https://contents.history.go.kr/front/hm/view.do?levelId=hm_107_0090"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "홍경래의 난",
+      "id": "joseon-hong-gyeongnae-rebellion",
+      "term": "홍경래의 난",
+      "summary": "1811년 순조 때 홍경래 등이 평안도에서 일으킨 봉기. 상인·농민 등이 참여했으나 이듬해 정주성이 함락되며 진압되었다.",
+      "sources": [
+        "https://contents.history.go.kr/front/tg/view.do?levelId=tg_003_2960"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "신유박해",
+      "id": "joseon-sinyu-persecution",
+      "term": "신유박해",
+      "summary": "1801년 순조 때 일어난 대규모 천주교 탄압. 정조 사후 정권을 잡은 벽파가 천주교도와 관련 남인 세력을 공격했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0033249"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "황사영의 백서 사건",
+      "id": "joseon-hwang-sayeong-silk-letter",
+      "term": "황사영 백서 사건",
+      "summary": "1801년 황사영이 신유박해 상황과 서양 군대의 개입 요청 등을 비단에 적어 베이징 주교에게 보내려다 발각된 사건.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0065170"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "삼정이정청",
+      "id": "joseon-samjeong-reform-office",
+      "term": "삼정이정청",
+      "summary": "1862년 철종 때 농민 봉기가 잇따르자 전정·군정·환정의 폐단을 바로잡으려고 설치한 임시 기구.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0026800"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "신립",
+      "id": "joseon-sin-rip",
+      "term": "신립",
+      "summary": "북방에서 여진 세력을 물리친 조선의 무신. 1592년 임진왜란 때 충주 탄금대에서 일본군과 싸웠으나 패배하고 목숨을 잃었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0032901"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "김시민",
+      "id": "joseon-kim-simin",
+      "term": "김시민",
+      "summary": "임진왜란 때 진주목사로서 진주성 방어를 지휘한 무신. 1592년 일본군을 물리쳐 진주대첩을 이끌었으나 전투 중 입은 부상으로 숨졌다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0009658"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "권율",
+      "id": "joseon-gwon-yul",
+      "term": "권율",
+      "summary": "임진왜란 때 이치와 행주산성 등에서 일본군을 물리친 지휘관. 1593년 행주대첩을 이끌었으며 뒤에 도원수가 되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0062859"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "조헌",
+      "id": "joseon-jo-heon",
+      "term": "조헌",
+      "summary": "조선의 문신·학자이자 임진왜란 의병장. 충청도에서 의병을 모아 영규의 승군과 청주성을 되찾았으며 금산 전투에서 전사했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0052754"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "정문부",
+      "id": "joseon-jeong-munbu",
+      "term": "정문부",
+      "summary": "임진왜란 때 함경도에서 의병을 조직한 문신. 일본군을 여러 전투에서 물리쳐 함경도 북부를 되찾는 북관대첩을 이끌었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0050206"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "북관대첩",
+      "id": "joseon-bukgwan-victories",
+      "term": "북관대첩",
+      "summary": "1592~1593년 정문부가 이끈 조선군이 함경도 북부에서 일본군을 물리친 여러 전투의 통칭. 일본군에 빼앗긴 지역을 되찾는 데 기여했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0076551"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "송상현",
+      "id": "joseon-song-sanghyeon",
+      "term": "송상현",
+      "summary": "임진왜란 당시 동래부사였던 문신. 1592년 동래의 군민을 이끌고 일본군에 맞서 싸우다가 성이 함락되면서 전사했다.",
+      "sources": [
+        "https://www.nl.go.kr/NL/contents/N20103000000.do?schIdSub=CO0000004163&schM=contView"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "회답겸쇄환사",
+      "id": "joseon-hoedapgyeom-swaehwansa",
+      "term": "회답겸쇄환사",
+      "summary": "임진왜란 뒤 일본의 교섭 요청에 답하고, 일본으로 끌려간 조선인을 데려오기 위해 보낸 사절. 1607·1617·1624년에 파견되었다.",
+      "sources": [
+        "https://waks.aks.ac.kr/rsh/dir/rview.aspx?dataID=AKS-2013-CKD-1240001_DIC%4000007920&rshID=AKS-2013-CKD-1240001"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "비격진천뢰",
+      "id": "joseon-bigyeokjincheolloe",
+      "term": "비격진천뢰",
+      "summary": "선조 때 이장손이 만든 폭발성 포탄. 화포로 쏘아 보낸 뒤 일정 시간이 지나 폭발하도록 한 조선의 화약 무기이다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0025078"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "강홍립",
+      "id": "joseon-gang-hongrip",
+      "term": "강홍립",
+      "summary": "광해군 때 명을 지원한 조선군의 지휘관. 1619년 후금과의 전투에서 패한 뒤 남은 군사를 이끌고 투항했으며 정묘호란 때 화의를 주선했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0001497"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "영창대군",
+      "id": "joseon-prince-yeongchang",
+      "term": "영창대군",
+      "summary": "선조와 인목왕후 사이에서 태어난 왕자이자 광해군의 이복동생. 계축옥사에 연루되어 강화도로 유배되었고 1614년 살해되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0037736"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "공인이 등장",
+      "id": "gongin",
+      "term": "공인",
+      "summary": "대동법 뒤 관청에 필요한 물품을 사서 대던 상인",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0004416"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "정묘호란",
+      "id": "joseon-jeongmyo-invasion",
+      "term": "정묘호란",
+      "summary": "1627년 인조 때 후금이 조선을 침략한 전쟁. 인조는 강화도로 피란했으며 조선과 후금이 형제 관계를 맺는 화의로 전쟁이 끝났다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0050194"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "조총 부대를 나선 정벌",
+      "id": "joseon-russian-expeditions",
+      "term": "나선 정벌",
+      "summary": "효종 때인 1654년과 1658년, 청의 요청으로 조선 조총 부대가 러시아군과 싸운 원정. 청을 공격하려던 북벌과는 구별된다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i301900"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "어영청",
+      "id": "joseon-eoyeongcheong",
+      "term": "어영청",
+      "summary": "조선 후기 중앙군인 오군영 중 하나로 왕의 호위와 수도 방어를 맡았다. 인조 때 형성되었으며 효종의 북벌 준비 과정에서 크게 강화되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0036035"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "북벌을 추진",
+      "id": "joseon-hyojong-northern-campaign",
+      "term": "북벌(효종)",
+      "summary": "병자호란의 치욕을 씻고 청을 정벌하자는 주장. 효종이 군사력 강화와 함께 추진했지만 실제 청 정벌로 이어지지는 못했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0024667"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "송시열",
+      "id": "joseon-song-siyeol",
+      "term": "송시열",
+      "summary": "조선 후기 성리학자로 호는 우암. 효종 때 북벌 논의에 참여했고, 예송에서 서인의 입장을 이끌었으며 이후 노론의 중심인물이 되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0075655"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "금위영을 설치",
+      "id": "joseon-geumwiyeong",
+      "term": "금위영",
+      "summary": "1682년 숙종 때 정초군과 훈련별대 등을 합쳐 설치한 중앙 군영. 국왕 호위와 수도 방어를 맡았으며, 오군영 가운데 마지막으로 설치되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0007930"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "백두산정계비",
+      "id": "joseon-baekdusan-boundary-stele",
+      "term": "백두산 정계비",
+      "summary": "1712년 숙종 때 조선과 청의 경계를 표시하려고 백두산 부근에 세운 비석. 서쪽은 압록강, 동쪽은 토문강을 경계로 적어 훗날 해석 논쟁이 생겼다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0022058"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "인현 왕후",
+      "id": "joseon-queen-inhyeon",
+      "term": "인현왕후",
+      "summary": "숙종의 왕비인 민씨. 1689년 기사환국 때 왕비 자리에서 쫓겨났다가 1694년 갑술환국을 거쳐 복위되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0047128"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "이인좌",
+      "id": "joseon-yi-injwa-person",
+      "term": "이인좌",
+      "summary": "1728년 영조 때 일부 소론·남인 세력과 함께 반란을 일으킨 인물. 밀풍군 이탄을 왕으로 세우려 했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0045629"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "황사영",
+      "id": "joseon-hwang-sayeong-person",
+      "term": "황사영",
+      "summary": "1801년 신유박해 때 천주교 탄압 상황과 외국의 지원을 요청하는 백서를 쓴 신자. 백서는 전달되기 전에 발각되었다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/tg/view.do?ganada=&levelId=tg_003_2990&pageUnit=10&subjectCode=tg_age_50&tabId=01"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "홍경래",
+      "id": "joseon-hong-gyeongnae-person",
+      "term": "홍경래",
+      "summary": "1811년 평안도에서 우군칙 등과 함께 봉기를 이끈 인물. 서북 지역 차별과 세도 정치 아래의 사회적 모순에 맞섰다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_30&levelId=kc_i306300"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "공노비 6만여 명을 해방",
+      "id": "joseon-public-slave-emancipation",
+      "term": "공노비 해방(순조)",
+      "summary": "1801년 순조 때 왕실과 중앙 관청 소속 내시노비 약 6만 6천 명을 양인으로 바꾼 조치. 모든 노비를 해방한 것은 아니다.",
+      "sources": [
+        "https://contents.history.go.kr/front/hm/view.do?levelId=hm_107_0090"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "유계춘",
+      "id": "joseon-yu-gyechun",
+      "term": "유계춘",
+      "summary": "1862년 진주 농민봉기를 이끈 인물. 백낙신 등 지방관의 수탈에 맞서 농민들을 모아 부당한 세금 부담의 폐지를 요구했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0041256"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "임술농민봉기",
+      "id": "joseon-imsul-peasant-uprisings",
+      "term": "임술농민봉기",
+      "summary": "1862년 철종 때 삼남을 중심으로 전국에 번진 농민 봉기. 삼정의 문란과 관리들의 수탈에 맞서 세금 제도와 지방 행정의 개선을 요구했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0047507"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "“도승지”",
+      "id": "joseon-chief-royal-secretary",
+      "term": "도승지",
+      "summary": "왕의 명령을 전달하고 보고를 올리는 승정원의 우두머리. 조선에서는 정3품 관직이었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0015740"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "“대사헌”",
+      "id": "joseon-chief-inspector",
+      "term": "대사헌",
+      "summary": "관리의 잘못을 감찰하고 탄핵하던 사헌부의 우두머리. 조선에서는 종2품 관직이었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0014470"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "경연",
+      "id": "joseon-royal-lectures",
+      "term": "경연",
+      "summary": "왕과 신하들이 유교 경전과 역사책을 함께 공부하고 토론하던 자리. 학문뿐 아니라 나라의 주요 정책도 논의했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0002681"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "“옥당”",
+      "id": "hongmungwan",
+      "term": "홍문관",
+      "summary": "조선에서 궁중 서적과 문서를 관리하고 왕의 학문·정치를 자문한 기관. 성종 때 집현전의 기능을 이어 삼사 중 하나가 되었어요.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0064081"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "서경권",
+      "id": "joseon-countersignature-right",
+      "term": "서경권",
+      "summary": "사헌부·사간원 관원이 관리 임명이나 법령 제정·개정 등을 심사하고 동의의 서명을 하는 권한. 부당한 인사와 정책을 견제했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0027578"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "한성부",
+      "id": "joseon-hanseong-office",
+      "term": "한성부",
+      "summary": "조선의 수도 한양을 가리키는 행정구역이자 그곳을 관리한 관청. 주민 호적, 도로 관리, 소방 등 수도의 행정을 맡았다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0061730"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "성균관",
+      "id": "joseon-seonggyungwan-joseon",
+      "term": "성균관(조선)",
+      "summary": "한양에 둔 조선의 최고 국립 유학 교육기관. 인재를 가르치고 공자와 유교 성현들에게 제사를 지냈다.",
+      "sources": [
+        "https://contents.history.go.kr/front/tg/view.do?ganada=&levelId=tg_003_0350&pageUnit=10&treeId=0209"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "“대사성”",
+      "id": "joseon-chief-seonggyungwan-official",
+      "term": "대사성",
+      "summary": "성균관의 교육과 행정을 책임진 정3품 당상관. 유생을 지도하고 시험과 문묘 제사 운영에도 참여했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0014464"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "유향소",
+      "id": "joseon-local-gentry-council",
+      "term": "유향소",
+      "summary": "지방의 유력 양반들이 조직한 자치 기구. 향리를 감독하고 고을의 풍속을 바로잡는 일을 맡았으며 뒤에 향청으로 이어졌다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0041984"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "경재소",
+      "id": "joseon-capital-local-supervision-office",
+      "term": "경재소",
+      "summary": "서울에 있는 관료들이 연고지의 유향소를 감독하던 기구. 중앙 정부와 지방 사이의 연락과 업무 조정을 맡았다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0002762"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "향교",
+      "id": "joseon-hyanggyo",
+      "term": "향교",
+      "summary": "국가가 지방에 세운 유학 교육기관. 지방 학생들에게 유교 경전을 가르쳤다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0062880"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "교수·훈도 파견",
+      "id": "joseon-gyosu-hundo",
+      "term": "교수·훈도",
+      "summary": "조선에서 향교 학생을 가르치도록 중앙에서 파견한 교관. 『경국대전』은 도호부 이상에 교수, 군·현에 훈도를 두도록 했다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/km/view.do?levelId=km_002_0040_0020_0020_0010"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "북평관",
+      "id": "joseon-bukpyeonggwan",
+      "term": "북평관",
+      "summary": "조선에서 여진 사람들을 접대하고 머물게 하던 시설.",
+      "sources": [
+        "https://sillok.history.go.kr/id/kja_10912016_002"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "3포 개항",
+      "id": "joseon-three-ports",
+      "term": "삼포(3포 개항)",
+      "summary": "조선이 일본과의 교역을 허용한 부산포·제포·염포의 세 항구. 세종 때 이곳에 왜관을 두고 일본인의 무역을 관리했다.",
+      "sources": [
+        "https://contents.history.go.kr/front/ta/print.do?levelId=ta_h21_0050_0050&whereStr="
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "을묘왜변",
+      "id": "joseon-eulmyo-waebyeon",
+      "term": "을묘왜변",
+      "summary": "1555년 명종 때 왜구가 전라도 남해안 일대를 침입해 약탈한 사건. 조선은 군대를 보내 왜구를 물리쳤다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0042945"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "동평관(=왜관)",
+      "id": "joseon-dongpyeonggwan",
+      "term": "동평관(왜관)",
+      "summary": "조선 전기 한양에서 일본 사신을 접대하고 머물게 하던 숙소. 왜관이라고도 했으며 외교와 무역의 공간으로 쓰였다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0016847"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "혜민서",
+      "id": "joseon-hyeminseo",
+      "term": "혜민서",
+      "summary": "조선에서 일반 백성의 치료와 의약 업무를 맡았던 관청.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0063592"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "역관",
+      "id": "joseon-interpreters",
+      "term": "역관",
+      "summary": "외교 현장에서 외국어 통역을 맡던 전문 관리. 조선에서는 역과 등을 통해 선발했으며 중인층을 이루었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0036568"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "신해박해(윤지충)",
+      "id": "joseon-sinhae-persecution",
+      "term": "신해박해",
+      "summary": "1791년 정조 때 조상 제사 거부 문제로 일어난 천주교 박해. 진산의 윤지충과 권상연이 처형되어 진산 사건이라고도 한다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0033544"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "규장각 검서관",
+      "id": "joseon-gyujanggak-geomseogwan",
+      "term": "규장각 검서관",
+      "summary": "정조 때 서얼 인재를 등용하기 위해 둔 규장각 관직. 규장각 관원을 도와 책을 검토하고 베껴 쓰는 일을 맡았다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0002076"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "중인",
+      "id": "joseon-jungin",
+      "term": "중인",
+      "summary": "조선에서 역관·의관 같은 전문 기술관을 가리키던 신분층. 넓게는 향리·서리 등 행정 실무자도 포함했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0053915"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "시사",
+      "id": "joseon-poetry-society",
+      "term": "시사(詩社)",
+      "summary": "시를 짓고 감상하며 교류하던 모임. 조선 후기에는 다양한 시사가 활발하게 활동했다.",
+      "sources": [
+        "https://contents.history.go.kr/front/tg/view.do?ganada=%EC%82%AC&levelId=tg_003_2930&pageUnit=20&treeId=0100"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "한글소설",
+      "id": "joseon-hangul-fiction",
+      "term": "한글소설",
+      "summary": "한글로 쓰인 소설. 조선 후기에 다양한 계층이 즐겼으며, 책을 빌려주는 세책점과 판매용 방각본을 통해 널리 퍼졌다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/tt/view.do?levelId=tt_b24"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "모내기법",
+      "id": "joseon-rice-transplanting",
+      "term": "모내기법",
+      "summary": "못자리에서 기른 벼의 어린 모를 논에 옮겨 심는 농사법. 이앙법이라고도 한다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0018451"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "구황 작물",
+      "id": "joseon-famine-crops",
+      "term": "구황 작물",
+      "summary": "흉년이나 기근에 부족한 식량을 보충하려고 기르는 작물. 메밀·고구마·감자 등이 활용되었다.",
+      "sources": [
+        "https://contents.history.go.kr/front/tt/view.do?levelId=tt_b26",
+        "https://contents.history.go.kr/front/ta/view.do?levelId=ta_h42_0030_0010_0030"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "상품 작물",
+      "id": "joseon-cash-crops",
+      "term": "상품 작물",
+      "summary": "시장에 팔아 수익을 얻으려고 재배하는 작물. 조선 후기에는 인삼·담배·목화·채소 등의 상품 재배가 활발해졌다.",
+      "sources": [
+        "https://contents.history.go.kr/front/ta/view.do?levelId=ta_h42_0030_0010_0030"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "보부상",
+      "id": "joseon-itinerant-merchants",
+      "term": "보부상",
+      "summary": "봇짐장수인 보상과 등짐장수인 부상을 함께 이르는 말. 여러 장시를 돌아다니며 상품을 팔아 지역 사이의 유통을 이끌었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0023368"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "덕대",
+      "id": "joseon-deokdae",
+      "term": "덕대",
+      "summary": "조선 후기 물주의 자금 지원을 받아 광산의 실제 운영을 맡던 경영자. 광산 기술을 바탕으로 광부와 채굴 작업을 관리했다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/tg/view.do?levelId=tg_003_1720"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "설점수세제",
+      "id": "joseon-mine-tax-system",
+      "term": "설점수세제",
+      "summary": "조선 후기 정부가 광산 개발을 주도하고 민간에 채굴을 맡긴 뒤 세금을 거두던 제도.",
+      "sources": [
+        "https://contents.history.go.kr/front/tg/view.do?levelId=tg_003_1920"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "송상",
+      "id": "joseon-songsang-merchants",
+      "term": "송상",
+      "summary": "개성을 중심으로 활동한 상인들. 조선 후기 전국적인 유통망을 바탕으로 인삼 거래와 청·일본을 잇는 무역 등에 참여했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0001656"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "상평통보",
+      "id": "joseon-sangpyeongtongbo",
+      "term": "상평통보",
+      "summary": "조선 후기 대표적인 구리 화폐. 1678년 숙종 때부터 널리 유통되어 상품 거래에 쓰였다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0027386"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "(승정원)",
+      "id": "seungjeongwon",
+      "term": "승정원",
+      "summary": "조선의 국왕 비서 기관. 관청의 보고를 왕에게 올리고 왕의 명령을 각 관청에 전달하는 왕명 출납을 담당했어요.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0032242"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "도승지",
+      "id": "joseon-chief-royal-secretary",
+      "term": "도승지",
+      "summary": "왕의 명령을 전달하고 보고를 올리는 승정원의 우두머리. 조선에서는 정3품 관직이었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0015740"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "(한성부)",
+      "id": "joseon-hanseong-office",
+      "term": "한성부",
+      "summary": "조선의 수도 한양을 가리키는 행정구역이자 그곳을 관리한 관청. 주민 호적, 도로 관리, 소방 등 수도의 행정을 맡았다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0061730"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "(춘추관)",
+      "id": "joseon-chunchugwan",
+      "term": "춘추관",
+      "summary": "나라의 정치와 주요 사건을 기록하는 일을 맡은 관청. 조선에서는 다른 관직을 가진 관리들이 춘추관직을 겸임했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0058039"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "(의금부) 국왕 직속 사법 기구",
+      "id": "uigeumbu",
+      "term": "의금부",
+      "summary": "조선에서 왕명을 받아 죄인을 심문하던 특별 사법 기관. 반역 사건과 관리의 범죄 등 중요한 사건을 다뤘어요.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0043138"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "(양사) 사헌부+사간원",
+      "id": "joseon-yangsa-joseon",
+      "term": "양사(사헌부·사간원)",
+      "summary": "조선의 사헌부와 사간원을 함께 이르는 말. 관리의 잘못을 비판하고 임금에게 바른 의견을 아뢰는 언론 기능을 맡았다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0035540"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "(홍문관)",
+      "id": "hongmungwan",
+      "term": "홍문관",
+      "summary": "조선에서 궁중 서적과 문서를 관리하고 왕의 학문·정치를 자문한 기관. 성종 때 집현전의 기능을 이어 삼사 중 하나가 되었어요.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0064081"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "대제학",
+      "id": "joseon-daejehak",
+      "term": "대제학",
+      "summary": "홍문관과 예문관에 둔 정2품 관직. 문관이 다른 관직과 겸임했으며, 국가의 학문과 문장에 관한 일을 이끌었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0014770"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "(성균관) 대사성",
+      "id": "joseon-chief-seonggyungwan-official",
+      "term": "대사성",
+      "summary": "성균관의 교육과 행정을 책임진 정3품 당상관. 유생을 지도하고 시험과 문묘 제사 운영에도 참여했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0014464"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "대성전과 명륜당",
+      "id": "joseon-daeseongjeon-myeongnyundang",
+      "term": "대성전과 명륜당",
+      "summary": "성균관과 향교에서 대성전은 공자 등 유교 성현을 모시는 제사 공간이고, 명륜당은 유생들이 공부하던 강학 공간이다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0018255",
+        "https://encykorea.aks.ac.kr/Article/E0062880"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "(사헌부)",
+      "id": "saheonbu",
+      "term": "사헌부",
+      "summary": "조선에서 관리의 잘못을 감찰·탄핵하고 정치에 대한 의견을 내던 기관. 사간원·홍문관과 함께 삼사로 불렸어요.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0026631"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "대사헌",
+      "id": "joseon-chief-inspector",
+      "term": "대사헌",
+      "summary": "관리의 잘못을 감찰하고 탄핵하던 사헌부의 우두머리. 조선에서는 종2품 관직이었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0014470"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "(사간원) 대사간",
+      "id": "joseon-daesagan",
+      "term": "대사간",
+      "summary": "사간원의 우두머리인 정3품 관직. 간관들을 이끌며 임금과 정치의 잘못을 비판하고 바로잡도록 건의했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0014459"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "(비변사) 국방 문제",
+      "id": "bibyeonsa",
+      "term": "비변사",
+      "summary": "국방을 의논하던 임시 기구 → 조선 후기 최고 기구",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0025147"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "검서관",
+      "id": "joseon-gyujanggak-geomseogwan",
+      "term": "규장각 검서관",
+      "summary": "정조 때 서얼 인재를 등용하기 위해 둔 규장각 관직. 규장각 관원을 도와 책을 검토하고 베껴 쓰는 일을 맡았다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0002076"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "경성과 경원에 무역소",
+      "id": "joseon-gyeongseong-gyeongwon-trade",
+      "term": "경성·경원 무역소",
+      "summary": "조선 전기에 여진인과 교역하도록 경성·경원에 둔 무역소. 소금·철 등 생활필수품을 거래하게 한 여진 회유책이었다.",
+      "sources": [
+        "https://contents.history.go.kr/front/nh/view.do?levelId=nh_022_0030_0030_0030"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "동평관",
+      "id": "joseon-dongpyeonggwan",
+      "term": "동평관(왜관)",
+      "summary": "조선 전기 한양에서 일본 사신을 접대하고 머물게 하던 숙소. 왜관이라고도 했으며 외교와 무역의 공간으로 쓰였다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0016847"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "활인서",
+      "id": "joseon-hwalinseo",
+      "term": "활인서",
+      "summary": "도성의 병자와 갈 곳 없는 사람을 돌보던 관청. 환자를 수용해 치료하고 옷과 음식을 제공했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0065037"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "직전법을 실시",
+      "id": "jikjeon",
+      "term": "직전법",
+      "summary": "현직 관리에게만 수조권을 준 세조의 토지 제도",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0054533",
+        "https://encykorea.aks.ac.kr/Article/E0004611"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "통청 운동",
+      "id": "joseon-tongcheong-movement",
+      "term": "통청 운동",
+      "summary": "서얼과 중인 등이 신분에 따른 관직 진출 제한을 없애 달라고 요구한 운동. 청요직 등 주요 관직에 나아갈 기회를 넓히려 했다.",
+      "sources": [
+        "https://contents.history.go.kr/front/nh/print.do?levelId=nh_034_0020_0030_0020&whereStr=",
+        "https://contents.history.go.kr/mobile/nh/view.do?levelId=nh_034_0020_0030_0020_0020"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "전기수",
+      "id": "joseon-jeongisu",
+      "term": "전기수",
+      "summary": "조선 후기에 사람들에게 소설을 실감 나게 읽어 주고 돈을 받던 전문 이야기꾼. 한글소설이 널리 유행하면서 활동했다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/tt/view.do?levelId=tt_b24"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "이모작",
+      "id": "joseon-double-cropping",
+      "term": "이모작",
+      "summary": "같은 땅에서 1년에 두 차례 농사를 짓는 방식. 벼와 보리를 번갈아 재배하는 것이 대표적이다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0044248"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "주자소",
+      "id": "joseon-type-casting-office",
+      "term": "주자소",
+      "summary": "1403년 태종이 금속활자를 만들기 위해 설치한 관청. 책 인쇄에 필요한 활자 주조를 맡았다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0053405"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "계미자",
+      "id": "joseon-gyemija",
+      "term": "계미자",
+      "summary": "1403년 태종 때 주자소에서 만든 조선 최초의 구리 활자. 고려의 금속활자 전통을 이어 책 인쇄에 사용했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0065040"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "혼일강리역대국도지도",
+      "id": "joseon-gangnido",
+      "term": "혼일강리역대국도지도",
+      "summary": "1402년 태종 때 김사형·이무·이회 등이 만든 세계지도. 동아시아뿐 아니라 유럽과 아프리카까지 나타냈다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0063914"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "칠정산",
+      "id": "joseon-chiljeongsan",
+      "term": "칠정산",
+      "summary": "세종 때 천체의 움직임과 달력 계산법을 정리한 책. 중국 역법을 바탕으로 한 내편과 이슬람 역법을 참고한 외편으로 구성된다.",
+      "sources": [
+        "https://contents.history.go.kr/front/tg/view.do?ganada=%EC%95%84&levelId=tg_003_1290&pageUnit=100&treeId=0104"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "갑인자",
+      "id": "joseon-gabinja",
+      "term": "갑인자",
+      "summary": "1434년 세종 때 주자소에서 만든 금속활자. 이전의 경자자보다 글자를 크게 만들고 인쇄 기술을 개선했다.",
+      "sources": [
+        "https://dh.aks.ac.kr/sillokwiki/index.php/%EA%B0%91%EC%9D%B8%EC%9E%90(%E7%94%B2%E5%AF%85%E5%AD%97)"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "농사직설",
+      "id": "joseon-nongsajikseol",
+      "term": "농사직설",
+      "summary": "1429년 세종의 명으로 정초·변효문 등이 편찬한 농서. 우리나라의 자연환경에 맞는 농사법을 정리했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0013114"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "삼강행실도",
+      "id": "joseon-samganghaengsildo",
+      "term": "삼강행실도",
+      "summary": "세종 때 설순 등이 충신·효자·열녀의 행실을 글과 그림으로 엮은 책. 유교 윤리를 백성에게 알리려 편찬했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0026452"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "간경도감",
+      "id": "joseon-gangyeongdogam",
+      "term": "간경도감",
+      "summary": "1461년 세조가 불경을 번역하고 간행하기 위해 설치한 관청. 불경을 한글로 풀어 펴내는 일을 맡았다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0000505"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "악학궤범",
+      "id": "joseon-akhakgwebeom",
+      "term": "악학궤범",
+      "summary": "1493년 성종의 명으로 성현 등이 편찬한 음악서. 궁중 음악의 이론과 연주 방식, 악기 등을 체계적으로 정리했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0034481"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "국조오례의",
+      "id": "joseon-gukjooryeui",
+      "term": "국조오례의",
+      "summary": "1474년 성종 때 완성된 국가 의례서. 제사·경사·외교·군사·상례에 해당하는 다섯 종류의 의례 절차를 정리했다.",
+      "sources": [
+        "https://db.history.go.kr/introduction/law/intro_jlawb_220.html"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "구황촬요",
+      "id": "joseon-guhwangchwaryo",
+      "term": "구황촬요",
+      "summary": "1554년 명종 때 흉년의 굶주림에 대처하도록 펴낸 책. 구황식물을 먹는 방법 등을 한글 풀이와 함께 실었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0006123"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "가례집람",
+      "id": "joseon-garyejipram",
+      "term": "가례집람",
+      "summary": "김장생이 『주자가례』를 바탕으로 여러 예법을 비교하고 정리한 책. 가정에서 행하는 유교 의례를 이해하고 실천하도록 도왔다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0000127"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "동의보감",
+      "id": "joseon-donguibogam",
+      "term": "동의보감",
+      "summary": "허준이 1610년에 완성하고 1613년에 간행한 종합 의학서. 조선과 중국의 의학 지식과 치료법을 체계적으로 정리했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0016731"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "동국문헌비고",
+      "id": "joseon-donggukmunheonbigo",
+      "term": "동국문헌비고",
+      "summary": "1770년 영조 때 홍봉한·김치인 등이 편찬한 책. 우리나라 역대 문물과 제도를 천문·지리·예악·군사 등 분야별로 정리했다.",
+      "sources": [
+        "https://jsg.aks.ac.kr/dir/view?catePath=%EC%9C%A0%ED%98%95%EB%B6%84%EB%A5%98%2F%EA%B3%A0%EC%84%9C&dataId=JSG_K2-2075"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "속대전",
+      "id": "joseon-sokdaejeon",
+      "term": "속대전",
+      "summary": "1746년 영조 때 간행한 법전. 『경국대전』 이후 달라진 법령을 정리하여 기존 법전을 보완했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0030393"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "대전통편",
+      "id": "joseon-daejeontongpyeon",
+      "term": "대전통편",
+      "summary": "1785년 정조 때 완성한 통합 법전. 『경국대전』과 『속대전』, 그 뒤의 법령을 한데 모아 정리했다.",
+      "sources": [
+        "https://db.history.go.kr/introduction/law/intro_jlawa_3.html"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "수원 화성",
+      "id": "joseon-suwon-hwaseong",
+      "term": "수원 화성",
+      "summary": "정조가 1794~1796년에 수원에 쌓은 성곽. 정약용의 설계와 거중기 등 기술을 활용해 건설했다.",
+      "sources": [
+        "https://digital.khs.go.kr/heri/heriDetail.do?ctptNo=1333100030000&ctptUid=13898859673492200651"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "무예도보통지",
+      "id": "joseon-muyedobotongji",
+      "term": "무예도보통지",
+      "summary": "1790년 정조의 명으로 이덕무·박제가·백동수 등이 편찬한 무예서. 24가지 무예를 글과 그림으로 정리했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0019166"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "정감록",
+      "id": "joseon-jeonggamnok",
+      "term": "정감록",
+      "summary": "조선 후기 민간에 퍼진 예언서. 왕조의 운명 등을 예언하는 여러 기록이 모였으며 저자와 성립 시기는 분명하지 않다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0049900"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "조선왕조실록",
+      "id": "joseon-joseon-annals",
+      "term": "조선왕조실록",
+      "summary": "태조부터 철종까지 조선의 역사를 기록한 책. 왕이 바뀐 뒤 전왕 때의 기록을 모아 편찬했다.",
+      "sources": [
+        "https://sillok.history.go.kr/intro/intro.do"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "조선왕조의궤",
+      "id": "joseon-joseon-uigwe",
+      "term": "조선왕조의궤",
+      "summary": "왕실의 주요 행사와 공사의 준비·진행·결과를 글과 그림으로 자세히 남긴 기록. 뒤에 비슷한 일을 할 때 참고하도록 만들었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0076870"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "승정원일기",
+      "id": "joseon-seungjeongwonilgi",
+      "term": "승정원일기",
+      "summary": "왕의 비서 기관인 승정원에서 날마다 작성한 기록. 왕명과 신하들의 보고 등 국정 운영 과정을 상세히 담았다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0032244"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "통신사",
+      "id": "joseon-tongsinsa",
+      "term": "통신사",
+      "summary": "조선 국왕이 일본의 막부에 보낸 공식 외교 사절단. 외교 업무와 함께 학문·예술 등 문화 교류에도 기여했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0059354"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "에도",
+      "id": "joseon-edo",
+      "term": "에도",
+      "summary": "지금의 일본 도쿄를 가리키는 옛 지명. 도쿠가와 막부의 중심지였으며 조선 통신사가 방문해 쇼군을 만났다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/hm/view.do?levelId=hm_100_0030"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "백운동 서원(중종)",
+      "id": "joseon-sosu-seowon",
+      "term": "소수서원",
+      "summary": "1543년 주세붕이 세운 백운동서원이 전신인 서원. 이황의 요청으로 1550년 명종에게 ‘소수서원’ 현판을 받아 최초의 사액서원이 되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0067128"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "소수 서원",
+      "id": "joseon-sosu-seowon",
+      "term": "소수서원",
+      "summary": "1543년 주세붕이 세운 백운동서원이 전신인 서원. 이황의 요청으로 1550년 명종에게 ‘소수서원’ 현판을 받아 최초의 사액서원이 되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0067128"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "성학십도",
+      "id": "joseon-seonghaksipdo",
+      "term": "성학십도",
+      "summary": "1568년 이황이 선조에게 올린 책. 군주가 유교의 가르침을 익히고 자신을 수양하도록 열 개의 그림과 해설로 정리했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0029678"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "기대승과 사단칠정",
+      "id": "joseon-culture-21",
+      "term": "사단칠정",
+      "summary": "도덕의 단서인 네 마음과 인간의 일곱 감정을 함께 이르는 말이다. 이황과 기대승은 이 감정들이 이·기와 어떤 관계인지 논쟁했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0025438"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "성학집요",
+      "id": "joseon-seonghakjipyo",
+      "term": "성학집요",
+      "summary": "1575년 이이가 군주의 배움에 필요한 유교 경전의 핵심 내용을 모아 정리한 책. 수양과 정치의 도리를 설명했다.",
+      "sources": [
+        "https://www.museum.go.kr/MUSEUM/contents/M0502000000.do?relicId=2821&schM=view&searchId=search"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "강화학파",
+      "id": "joseon-ganghwa-school",
+      "term": "강화학파",
+      "summary": "조선 후기 정제두와 그의 후학들이 강화도를 중심으로 양명학을 연구하고 계승한 학파. 마음의 수양과 실천을 중시했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0001537"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "종묘",
+      "id": "joseon-jongmyo",
+      "term": "종묘",
+      "summary": "조선 왕과 왕비의 신주를 모시고 제사를 지내는 왕실 사당. 왕실의 조상을 기리는 국가 의례가 이루어졌다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0052928"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "100리 척 사용",
+      "id": "joseon-culture-19",
+      "term": "백리척",
+      "summary": "지도에서 실제 거리 100리를 일정한 길이로 나타낸 축척이다. 정상기가 동국지도에 사용해 두 지점 사이의 거리를 계산할 수 있게 했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0016300"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "곽우록",
+      "id": "joseon-culture-00",
+      "term": "곽우록",
+      "summary": "이익이 나라의 여러 문제와 개혁 방안을 적은 책이다. 법·교육·과거·토지·재정 등 현실의 제도를 어떻게 고칠지 논했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0004681"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "한전론",
+      "id": "joseon-culture-01",
+      "term": "한전론",
+      "summary": "토지가 소수에게 집중되는 일을 막으려는 개혁론이다. 이익은 농민 생계에 필요한 영업전의 매매 금지, 박지원은 토지 소유 상한을 제안했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0061940"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "성호사설",
+      "id": "joseon-culture-02",
+      "term": "성호사설",
+      "summary": "이익이 평생 쌓은 지식과 견해를 모은 백과사전 성격의 책이다. 자연·사회·역사·문학 등 여러 분야를 폭넓게 다루었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0029698"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "좀론",
+      "id": "joseon-six-social-ills",
+      "term": "좀론",
+      "summary": "이익이 나라와 농민 생활을 해치는 여섯 가지 폐단을 좀에 빗대어 비판한 주장이다. 현실의 사회 제도를 고치려는 실학 사상을 보여 준다.",
+      "sources": [
+        "https://contents.history.go.kr/front/ta/print.do?levelId=ta_h71_0070_0040_0020_0020&whereStr="
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "의산문답",
+      "id": "joseon-culture-03",
+      "term": "의산문답",
+      "summary": "홍대용이 허자와 실옹의 대화 형식으로 쓴 글이다. 지구 자전과 무한한 우주를 논하며 인간·중국 중심의 생각을 비판했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0043246"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "양반전",
+      "id": "joseon-culture-04",
+      "term": "양반전",
+      "summary": "박지원이 쓴 한문 단편소설이다. 가난한 양반과 그 신분을 사려는 부자의 이야기를 통해 양반의 허위와 신분 질서의 모순을 풍자했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0035522"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "열하일기",
+      "id": "joseon-culture-05",
+      "term": "열하일기",
+      "summary": "박지원이 1780년 청나라를 다녀온 경험을 정리한 여행기다. 청의 문물과 제도를 살피고 조선 사회를 비판하며 북학 사상을 드러냈다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0037072"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "북학의",
+      "id": "joseon-culture-06",
+      "term": "북학의",
+      "summary": "박제가가 청나라 견문을 바탕으로 쓴 책이다. 청의 앞선 기술·제도를 배우고 생산과 유통을 발전시켜 백성의 생활을 개선하자고 주장했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0024784"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "우서",
+      "id": "joseon-culture-07",
+      "term": "우서",
+      "summary": "유수원이 나라를 부유하게 하고 백성을 안정시키려는 개혁안을 쓴 책이다. 사농공상을 직업으로 보고 능력에 따른 역할 분담을 강조했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0039961"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "고려사",
+      "id": "joseon-culture-08",
+      "term": "고려사",
+      "summary": "조선 초 김종서·정인지 등이 고려의 역사를 정리한 책이다. 왕의 기록, 제도, 인물 등을 나누어 서술한 기전체 역사서다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0003456"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "동국통감",
+      "id": "joseon-culture-09",
+      "term": "동국통감",
+      "summary": "1485년 성종 때 서거정 등이 완성한 역사서다. 단군조선부터 고려 말까지의 역사를 연대순으로 정리한 편년체 통사다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0016304"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "해동제국기",
+      "id": "joseon-culture-10",
+      "term": "해동제국기",
+      "summary": "신숙주가 일본과의 외교 경험과 자료를 바탕으로 쓴 책이다. 일본·류큐의 사정과 사신 접대 절차 등을 정리했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0062548"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "발해고",
+      "id": "joseon-culture-11",
+      "term": "발해고",
+      "summary": "유득공이 발해의 역사와 문화를 정리한 책이다. 발해를 우리 역사에 포함하고 신라와 발해가 함께 있던 때를 남북국으로 파악했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0021628"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "경세유표",
+      "id": "joseon-culture-12",
+      "term": "경세유표",
+      "summary": "정약용이 국가 제도의 근본적 개혁 방안을 적은 책이다. 관제·토지·조세·교육 등 나라 운영 전반을 고치려는 구상을 담았다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0002596"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "마과회통",
+      "id": "joseon-culture-13",
+      "term": "마과회통",
+      "summary": "정약용이 홍역의 증상과 치료법을 정리하여 1798년에 엮은 의학서다. 여러 의학 문헌과 경험을 모아 홍역에 대처하는 방법을 살폈다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0017293"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "기기도설",
+      "id": "joseon-culture-14",
+      "term": "기기도설",
+      "summary": "서양 역학의 원리와 여러 기계를 그림으로 설명하여 1627년 중국에서 펴낸 책이다. 정약용이 거중기를 고안할 때 참고했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0008132"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "거중기",
+      "id": "joseon-culture-15",
+      "term": "거중기",
+      "summary": "도르래를 이용해 적은 힘으로 무거운 물체를 들어 올리는 기구다. 정약용이 고안했으며 수원 화성 축성에 이용되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0001891"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "지봉유설",
+      "id": "joseon-culture-16",
+      "term": "지봉유설",
+      "summary": "이수광이 1614년에 편찬한 백과사전 성격의 책이다. 여러 분야의 지식과 견문을 모았으며 서양 문물과 천주교도 소개했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0054217"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "임원경제지(서유구)",
+      "id": "joseon-culture-17",
+      "term": "임원경제지",
+      "summary": "서유구가 전원생활에 필요한 지식과 기술을 모은 책이다. 농업·의식주·의학·기예 등 생활 전반을 다룬 백과사전 성격을 지닌다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0047578"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "칠정산(세종)",
+      "id": "joseon-chiljeongsan",
+      "term": "칠정산",
+      "summary": "세종 때 천체의 움직임과 달력 계산법을 정리한 책. 중국 역법을 바탕으로 한 내편과 이슬람 역법을 참고한 외편으로 구성된다.",
+      "sources": [
+        "https://contents.history.go.kr/front/tg/view.do?ganada=%EC%95%84&levelId=tg_003_1290&pageUnit=100&treeId=0104"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "정선",
+      "id": "joseon-culture-20",
+      "term": "정선",
+      "summary": "조선 후기의 화가로 호는 겸재다. 우리 산천을 독창적으로 표현한 진경산수화를 발전시켰고 금강전도·인왕제색도 등을 그렸다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0050379"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "금석과안록",
+      "id": "joseon-culture-18",
+      "term": "금석과안록",
+      "summary": "김정희가 황초령비와 북한산비의 글자를 판독하고 고증한 책이다. 두 비석이 신라 진흥왕의 순수비임을 밝히는 연구를 담았다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0007834"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "북한산비가 진흥왕 순수비",
+      "id": "joseon-culture-18",
+      "term": "금석과안록",
+      "summary": "김정희가 황초령비와 북한산비의 글자를 판독하고 고증한 책이다. 두 비석이 신라 진흥왕의 순수비임을 밝히는 연구를 담았다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0007834"
+      ]
+    },
+    {
+      "id": "joseon-remaining-경성",
+      "term": "경성(여진 교역)",
+      "summary": "조선 전기에 여진과 교역하는 무역소를 두었던 동북 지역의 고을. 조선은 이곳에서 여진인에게 소금·철 등 생활필수품을 거래하게 했다.",
+      "sources": [
+        "https://contents.history.go.kr/front/nh/view.do?levelId=nh_022_0030_0030_0030"
+      ],
+      "era": "joseon",
+      "phrase": "경성",
+      "contextRequired": "태종대 여진 교역 문맥만. 경성은 서울 경성(京城)이 아니라 鏡城. 경원은 후기 청과의 북관개시 문맥과 구분."
+    },
+    {
+      "id": "joseon-remaining-경원",
+      "term": "경원(여진 교역)",
+      "summary": "조선 전기에 여진과 교역하는 무역소를 두었던 동북 지역의 고을. 조선은 이곳에서 여진인에게 소금·철 등 생활필수품을 거래하게 했다.",
+      "sources": [
+        "https://contents.history.go.kr/front/nh/view.do?levelId=nh_022_0030_0030_0030"
+      ],
+      "era": "joseon",
+      "phrase": "경원",
+      "contextRequired": "태종대 여진 교역 문맥만. 경성은 서울 경성(京城)이 아니라 鏡城. 경원은 후기 청과의 북관개시 문맥과 구분."
+    },
+    {
+      "id": "joseon-remaining-yeonbun-13",
+      "term": "연분9등법의 과세 기준",
+      "summary": "해마다 농사의 풍흉을 아홉 등급으로 나누어 전세를 정한 기준. 토지의 비옥도를 여섯 등급으로 나눈 전분6등법과 함께 세종 때 공법을 이루었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0036791"
+      ],
+      "era": "joseon",
+      "phrase": "풍흉에 따라 9등급",
+      "contextRequired": "세종·공법·연분9등법 문맥 필요. 영정법의 새로운 토지 등급과 혼동 금지."
+    },
+    {
+      "id": "joseon-remaining-tsushima-expedition-1419",
+      "term": "대마도 정벌(1419)",
+      "summary": "1419년 세종 때 상왕 태종의 명으로 이종무 등이 왜구의 근거지인 대마도를 공격한 사건. 왜구의 침입을 막으려는 군사 행동이었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0045918"
+      ],
+      "era": "joseon",
+      "phrase": "쓰시마섬(대마도)을 정벌",
+      "contextRequired": "세종·이종무·1419년 문맥만. 고려 박위의 정벌과 구분."
+    },
+    {
+      "id": "joseon-three-ports",
+      "term": "삼포(3포 개항)",
+      "summary": "조선이 일본과의 교역을 허용한 부산포·제포·염포의 세 항구. 세종 때 이곳에 왜관을 두고 일본인의 무역을 관리했다.",
+      "sources": [
+        "https://contents.history.go.kr/front/ta/print.do?levelId=ta_h21_0050_0050&whereStr="
+      ],
+      "era": "joseon",
+      "phrase": "삼포",
+      "contextRequired": "조선 전기 개항장 문맥만. 삼포왜란 사건과 구분."
+    },
+    {
+      "id": "joseon-remaining-yi-jingok-person",
+      "term": "이징옥",
+      "summary": "조선 전기 함길도 도절제사를 지낸 무신. 1453년 계유정난 뒤 파면되자 무장 봉기를 일으켰으나 부하들에게 살해되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0046156"
+      ],
+      "era": "joseon",
+      "phrase": "이징옥",
+      "contextRequired": "인물 설명이며 사건 항목의 부분 문자열 alias로 처리하지 않는다."
+    },
+    {
+      "id": "joseon-remaining-abolish-estates-19",
+      "term": "수신전·휼양전 폐지",
+      "summary": "1466년 세조 때 직전법을 시행하면서 관리의 유족에게 주던 수신전과 휼양전을 폐지했다. 토지 지급 대상을 현직 관리로 제한한 조치였다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0031511",
+        "https://encykorea.aks.ac.kr/Article/E0065865",
+        "https://encykorea.aks.ac.kr/Article/E0054533",
+        "https://encykorea.aks.ac.kr/Article/E0004611"
+      ],
+      "era": "joseon",
+      "phrase": "수신전과 휼양전이 폐지",
+      "contextRequired": "세조·직전법 문맥만. 수신전·휼양전의 정의와 폐지 조치를 구별."
+    },
+    {
+      "id": "joseon-remaining-yeongjo-jeongjo",
+      "term": "영조·정조",
+      "summary": "영조와 정조는 조선 후기 탕평 정치를 추진한 왕들이다. 붕당 간 대립을 줄이고 왕권을 강화하려 여러 개혁을 시행했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0037669",
+        "https://encykorea.aks.ac.kr/Article/E0050867"
+      ],
+      "era": "joseon",
+      "phrase": "영조·정조",
+      "contextRequired": "탕평 정치 시기 비교 문맥. 한 왕의 alias로 합치지 않는다."
+    },
+    {
+      "id": "joseon-remaining-sunjo-heonjong-cheoljong",
+      "term": "순조·헌종·철종",
+      "summary": "조선의 제23·24·25대 왕들. 이 시기에는 안동 김씨와 풍양 조씨 등 유력 외척 가문을 중심으로 세도 정치가 전개되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0031943",
+        "https://encykorea.aks.ac.kr/Article/E0063230",
+        "https://encykorea.aks.ac.kr/Article/E0056172",
+        "https://encykorea.aks.ac.kr/Article/E0029786"
+      ],
+      "era": "joseon",
+      "phrase": "순조·헌종·철종",
+      "contextRequired": "19세기 정치 흐름 문맥. 왕별 업적을 같은 것으로 취급하지 않는다."
+    },
+    {
+      "id": "joseon-remaining-cheonggyecheon",
+      "term": "청계천",
+      "summary": "한양 도성 안을 흐르던 하천으로 조선에서는 개천이라고도 불렀다. 영조 때 쌓인 토사를 파내 물길을 정비하는 준천 사업을 시행했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0056257"
+      ],
+      "era": "joseon",
+      "phrase": "청계천",
+      "contextRequired": "영조 준천 문맥. 하천과 준천 사건을 동일 alias로 묶지 않는다."
+    },
+    {
+      "id": "joseon-sedo-maternal-relatives",
+      "term": "세도 정치의 외척",
+      "summary": "왕비의 친정이나 왕의 외가처럼 왕실과 혼인으로 연결된 친족 세력. 안동 김씨와 풍양 조씨 등이 세도 정치의 중심이 되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0029786"
+      ],
+      "era": "joseon",
+      "phrase": "외척 세력",
+      "contextRequired": "순조·헌종·철종의 세도 정치 문맥만. 명종대 외척 다툼에는 적용 금지."
+    },
+    {
+      "id": "joseon-remaining-sedo-bibyeonsa",
+      "term": "세도 가문의 비변사 장악",
+      "summary": "조선 후기 세도 가문은 국정의 중심 기구인 비변사를 통해 인사와 재정 등 주요 정책에 영향력을 행사했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0029786"
+      ],
+      "era": "joseon",
+      "phrase": "권력(비변사 중심) 장악",
+      "contextRequired": "19세기 세도 정치 문맥만. 비변사의 설립 목적 전체를 설명하는 alias가 아님."
+    },
+    {
+      "id": "joseon-park-gyusu-imsul",
+      "term": "박규수",
+      "summary": "1862년 진주 농민봉기를 수습할 안핵사로 파견된 관리. 현지에서 봉기의 진상을 조사해 조정에 보고했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0020569"
+      ],
+      "era": "joseon",
+      "phrase": "박규수",
+      "contextRequired": "1862년 진주 농민봉기 조사 문맥만."
+    },
+    {
+      "id": "joseon-remaining-gongsanseong",
+      "term": "공주 공산성",
+      "summary": "공주의 금강 남쪽에 있는 성곽으로 백제의 왕성에서 비롯되었다. 조선에서는 이괄의 난 때 인조가 피난한 곳이다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0004450"
+      ],
+      "era": "joseon",
+      "phrase": "공주(공산성)",
+      "contextRequired": "이괄의 난·인조 피난 문맥. 공주시 전체와 성곽은 동의어가 아니다."
+    },
+    {
+      "id": "joseon-remaining-yonggolsanseong",
+      "term": "용골산성",
+      "summary": "정묘호란 때 정봉수가 의병과 백성을 모아 후금군에 맞서 싸운 산성. 이곳의 항전은 후금군에 저항한 대표적 사례다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0039397"
+      ],
+      "era": "joseon",
+      "phrase": "용골산성",
+      "contextRequired": "1627년 정묘호란·정봉수 문맥. 산성과 전투를 같은 항목으로 합치지 않는다."
+    },
+    {
+      "id": "joseon-gwanggyosan-battle-1637",
+      "term": "광교산 전투(김준룡)",
+      "summary": "1637년 병자호란 때 김준룡이 이끈 전라도 군사들이 광교산에서 청군을 물리친 전투. 남한산성에 포위된 인조를 구원하려는 과정에서 벌어졌다.",
+      "sources": [
+        "https://contents.history.go.kr/front/km/print.do?levelId=km_007_0050_0040_0010"
+      ],
+      "era": "joseon",
+      "phrase": "김준룡이 광교산 전투",
+      "contextRequired": "1637년 병자호란의 전투를 설명한 전체 강조 구간일 때만. 김준룡 단독 인물명에는 적용 금지."
+    },
+    {
+      "id": "joseon-remaining-heo-jeok-yun-hyu",
+      "term": "허적과 윤휴",
+      "summary": "숙종 때 활동한 남인 계열 정치인들. 허적은 영의정을 지냈고 윤휴는 학자이자 정치인으로 활동했으며, 둘 다 경신환국 때 사사되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0063136",
+        "https://encykorea.aks.ac.kr/Article/E0042718"
+      ],
+      "era": "joseon",
+      "phrase": "허적과 윤휴",
+      "contextRequired": "1680년 경신환국 문맥. 두 사람의 역할·사건 연루 사유를 동일시하지 않는다."
+    },
+    {
+      "id": "joseon-remaining-hwang-silk-letter",
+      "term": "황사영 백서",
+      "summary": "황사영이 1801년 천주교 박해 상황과 외국의 지원을 요청하는 내용을 비단에 적은 밀서. 베이징의 주교에게 보내려다 발각되었다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/tg/view.do?ganada=&levelId=tg_003_2990&pageUnit=10&subjectCode=tg_age_50&tabId=01"
+      ],
+      "era": "joseon",
+      "phrase": "백서",
+      "contextRequired": "황사영·신유박해 문맥만. 일반 정책 백서에는 적용 금지."
+    },
+    {
+      "id": "joseon-remaining-jinju-imsul",
+      "term": "진주(농민봉기 문맥)",
+      "summary": "1862년 유계춘 등이 지방관의 수탈에 맞서 농민봉기를 일으킨 경상도 고을. 진주 봉기는 임술농민봉기가 확산되는 계기가 되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0041256",
+        "https://encykorea.aks.ac.kr/Article/E0047507"
+      ],
+      "era": "joseon",
+      "phrase": "진주",
+      "contextRequired": "임술농민봉기 문맥에 한정. 임진왜란 진주성 전투 문맥에는 별도 설명 필요."
+    },
+    {
+      "id": "seungjeongwon",
+      "term": "승정원",
+      "summary": "조선의 국왕 비서 기관. 관청의 보고를 왕에게 올리고 왕의 명령을 각 관청에 전달하는 왕명 출납을 담당했어요.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0032242"
+      ],
+      "era": "joseon",
+      "phrase": "비서 기관",
+      "contextRequired": "조선 중앙 관제에서 승정원을 지칭하는 문장일 때만. 일반 비서 기능이나 승지 인물에 적용 금지."
+    },
+    {
+      "id": "joseon-remaining-abolish-estates-20",
+      "term": "수신전·휼양전 폐지",
+      "summary": "1466년 세조 때 직전법을 시행하면서 관리의 유족에게 주던 수신전과 휼양전을 폐지했다. 토지 지급 대상을 현직 관리로 제한한 조치였다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0031511",
+        "https://encykorea.aks.ac.kr/Article/E0065865",
+        "https://encykorea.aks.ac.kr/Article/E0054533",
+        "https://encykorea.aks.ac.kr/Article/E0004611"
+      ],
+      "era": "joseon",
+      "phrase": "수신전 & 휼양전 폐지",
+      "contextRequired": "세조·직전법 문맥만. 수신전·휼양전의 정의와 폐지 조치를 구별."
+    },
+    {
+      "id": "joseon-hwalinseo",
+      "term": "활인서",
+      "summary": "도성의 병자와 갈 곳 없는 사람을 돌보던 관청. 환자를 수용해 치료하고 옷과 음식을 제공했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0065037"
+      ],
+      "era": "joseon",
+      "phrase": "동서활인서",
+      "contextRequired": "조선의 동·서 활인서 의료·구휼 문맥."
+    },
+    {
+      "id": "joseon-remaining-military-cloth-reduction",
+      "term": "균역법의 군포 감면",
+      "summary": "영조 때 균역법으로 양인 장정이 내던 군포를 해마다 2필에서 1필로 줄였다. 줄어든 재정은 결작 등 다른 재원으로 보충했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0002204"
+      ],
+      "era": "joseon",
+      "phrase": "2필에서 1필",
+      "contextRequired": "영조·균역법·군포 문맥만."
+    },
+    {
+      "id": "joseon-remaining-gyeoljak-rate",
+      "term": "결작의 부담액",
+      "summary": "균역법으로 줄어든 군포 수입을 보충하려 토지에 부과한 결작의 기준. 토지 1결에 쌀 2두 또는 그에 해당하는 돈을 거두었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0002204"
+      ],
+      "era": "joseon",
+      "phrase": "토지 1결당 쌀 2두",
+      "contextRequired": "균역법·결작 문맥 확인 필요. 삼수미도 2두이므로 숫자만으로 연결 금지."
+    },
+    {
+      "id": "seungjeongwon",
+      "term": "승정원",
+      "summary": "조선의 국왕 비서 기관. 관청의 보고를 왕에게 올리고 왕의 명령을 각 관청에 전달하는 왕명 출납을 담당했어요.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0032242"
+      ],
+      "era": "joseon",
+      "phrase": "왕의 비서 기관",
+      "contextRequired": "조선 중앙 관제에서 승정원을 지칭하는 문장일 때만. 일반 비서 기능이나 승지 인물에 적용 금지."
+    },
+    {
+      "id": "joseon-remaining-compile-annals",
+      "term": "실록 편찬",
+      "summary": "왕이 바뀐 뒤 전왕 때의 기록을 모아 실록을 엮는 일. 조선에서는 사관이 남긴 기록 등을 바탕으로 왕대별 역사를 정리했다.",
+      "sources": [
+        "https://sillok.history.go.kr/intro/intro.do",
+        "https://encykorea.aks.ac.kr/Article/E0058039"
+      ],
+      "era": "joseon",
+      "phrase": "실록을 편찬",
+      "contextRequired": "춘추관·조선왕조실록의 업무 설명 문맥. 관청명과 행위를 같은 alias로 취급하지 않는다."
+    },
+    {
+      "id": "joseon-remaining-conduct-royal-lectures",
+      "term": "경연 주관",
+      "summary": "왕과 신하들이 경전과 역사책을 읽고 토론하는 경연을 운영하는 일. 왕의 학문을 돕고 정치와 정책에 관해 의견을 나누도록 했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0002681",
+        "https://encykorea.aks.ac.kr/Article/E0064081"
+      ],
+      "era": "joseon",
+      "phrase": "경연을 주관",
+      "contextRequired": "조선의 경연 운영·홍문관 업무 설명 문맥. 경연을 홍문관만의 독점 업무로 단정하지 않는다."
+    },
+    {
+      "id": "joseon-sangdae-saheonbu",
+      "term": "상대(사헌부 별칭)",
+      "summary": "상대(霜臺)는 사헌부의 별칭. 사헌부는 관리의 비리를 감찰하고 정치의 잘못을 비판하는 일을 맡았다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_o300420"
+      ],
+      "era": "joseon",
+      "phrase": "상대",
+      "contextRequired": "사헌부의 별칭 霜臺 문맥에 한정. 일반어 상대 자동 연결 금지."
+    },
+    {
+      "id": "joseon-remaining-gwajeon",
+      "term": "과전",
+      "summary": "과전법에 따라 관료에게 나누어 준 토지의 수조권. 관료가 그 땅의 세금을 받을 권리이며 토지 소유권을 준 것은 아니다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0004610"
+      ],
+      "era": "joseon",
+      "phrase": "과전",
+      "contextRequired": "고려 말·조선 전기 토지제도 문맥. 과전법 전체와는 구별."
+    },
+    {
+      "id": "joseon-remaining-yeonbun-14",
+      "term": "연분9등법의 과세 기준",
+      "summary": "해마다 농사의 풍흉을 아홉 등급으로 나누어 전세를 정한 기준. 토지의 비옥도를 여섯 등급으로 나눈 전분6등법과 함께 세종 때 공법을 이루었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0036791"
+      ],
+      "era": "joseon",
+      "phrase": "9등급으로 전세",
+      "contextRequired": "세종·공법·연분9등법 문맥 필요. 영정법의 새로운 토지 등급과 혼동 금지."
+    },
+    {
+      "id": "joseon-remaining-fixed-land-tax",
+      "term": "영정법의 전세 고정",
+      "summary": "해마다 풍흉에 따라 달라지던 전세를 일정하게 거두도록 한 조치. 실제로는 대체로 토지 1결에 쌀 4~6두를 거두었지만 다른 부가 부담은 남았다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0037662"
+      ],
+      "era": "joseon",
+      "phrase": "전세 부담액을 고정",
+      "contextRequired": "인조·영정법 문맥 확인. 전국 모든 토지의 모든 부담이 똑같아졌다는 의미로 설명 금지."
+    },
+    {
+      "id": "joseon-hyangjeon-conflict",
+      "term": "향전",
+      "summary": "조선 후기 향촌의 주도권을 둘러싸고 구향과 신향이 벌인 다툼. 향임 선발과 지방 운영을 둘러싼 경쟁이 주요 쟁점이었다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/hm/view.do?levelId=hm_107_0030"
+      ],
+      "era": "joseon",
+      "phrase": "향전",
+      "contextRequired": "조선 후기 구향·신향의 향촌 주도권 다툼 鄕戰 문맥만."
+    },
+    {
+      "id": "joseon-remaining-nambukguk-term",
+      "term": "남북국",
+      "summary": "통일신라와 발해가 함께 존재한 시기를 가리키는 역사 용어. 유득공은 『발해고』에서 두 나라의 역사를 남북국의 역사로 파악했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0021628"
+      ],
+      "era": "joseon",
+      "phrase": "남북국 용어",
+      "contextRequired": "유득공·발해고 문맥. 다른 남북 대립이나 근현대 분단과 연결 금지."
+    },
+    {
+      "era": "joseon",
+      "phrase": "이조 전랑 임명",
+      "id": "joseon-ijo-appointment-east-west-split",
+      "term": "이조전랑 임명 갈등과 동서 분당",
+      "summary": "선조 때 이조전랑 임명을 둘러싼 김효원과 심의겸의 대립. 이 갈등은 사림이 동인과 서인으로 나뉘는 계기가 되었다.",
+      "sources": [
+        "https://contents.history.go.kr/front/hm/view.do?levelId=hm_077_0080"
+      ],
+      "contextRequired": "PDF66·68 선조 항목의 김효원·심의겸 대립 문맥에만 연결."
+    },
+    {
+      "era": "joseon",
+      "phrase": "이조전랑 임명으로 다툼",
+      "id": "joseon-ijo-appointment-east-west-split",
+      "term": "이조전랑 임명 갈등과 동서 분당",
+      "summary": "선조 때 이조전랑 임명을 둘러싼 김효원과 심의겸의 대립. 이 갈등은 사림이 동인과 서인으로 나뉘는 계기가 되었다.",
+      "sources": [
+        "https://contents.history.go.kr/front/hm/view.do?levelId=hm_077_0080"
+      ],
+      "contextRequired": "PDF66·68 선조 항목의 김효원·심의겸 대립 문맥에만 연결."
     }
   ]
 };
-})(typeof window==="object"?window:globalThis);
+})(typeof window==='object'?window:globalThis);

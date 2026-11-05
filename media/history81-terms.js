@@ -3,9 +3,42 @@
   const marker='[data-history-source-emphasis]',blocked='a,button,input,textarea,select,[role="button"],[data-layout-label],.history81-term';
   let serial=0;
   const normalize=text=>text.replace(/\s+/gu,'');
+  // Context-qualified phrases use the pinned source page and their local row/list,
+  // never unrelated text elsewhere in the page. Conditions are not popup content.
+  const joseonContexts={
+    '이조 전랑 임명':[['68'],/선조/,/김효원/,/심의겸/], '이조전랑 임명으로 다툼':[['66–67'],/선조/,/김효원/,/심의겸/],
+    '경성':[['62'],/여진/,/무역소/], '경원':[['62'],/여진/,/무역소/],
+    '풍흉에 따라 9등급':[['62'],/세종/], '9등급으로 전세':[['77'],/세종/,/풍흉/],
+    '쓰시마섬(대마도)을 정벌':[['62'],/세종/,/이종무/],
+    '삼포':[['62'],/부산포/,/염포/,/제포/], '이징옥':[['62'],/단종/,/함길도/],
+    '수신전과 휼양전이 폐지':[['62','77'],/세조/], '수신전 & 휼양전 폐지':[['73–74–75'],/직전법|세조/],
+    '영조·정조':[['65'],/탕평/], '순조·헌종·철종':[['65'],/세도정치/],
+    '청계천':[['66–67','69'],/영조/,/공사|정비|준천/],
+    '외척 세력':[['66–67'],/안동 김씨|풍양 조씨/,/순조|헌종|철종/],
+    '권력(비변사 중심) 장악':[['66–67'],/안동 김씨|풍양 조씨/,/순조|헌종|철종/],
+    '박규수':[['66–67','70'],/철종|임술/,/안핵사/],
+    '공주(공산성)':[['68'],/이괄의 난/,/인조/], '용골산성':[['68'],/정묘호란/,/정봉수/],
+    '김준룡이 광교산 전투':[['68'],/병자호란/], '허적과 윤휴':[['69'],/숙종/,/남인/,/축출/],
+    '백서':[['70'],/황사영/], '진주':[['70'],/임술농민봉기/,/유계춘/],
+    '비서 기관':[['73–74–75'],/승정원/], '왕의 비서 기관':[['76'],/승정원/],
+    '동서활인서':[['73–74–75'],/환자|진료|구휼/],
+    '2필에서 1필':[['73–74–75'],/균역법/,/영조/],
+    '토지 1결당 쌀 2두':[['73–74–75'],/결작/,/균역법/],
+    '실록을 편찬':[['76'],/춘추관/], '경연을 주관':[['76'],/홍문관/],
+    '상대':[['76'],/사헌부/], '과전':[['77'],/과전법|경기/],
+    '전세 부담액을 고정':[['77'],/인조/], '향전':[['78'],/구향/,/신향/],
+    '남북국 용어':[['81'],/발해고/,/유득공/]
+  };
   function contextAllows(entry,node){
     const text=node.textContent;
     if(entry.phrase==='금오')return /의금부|조옥/.test(text);
+    if(entry.era==='joseon'&&entry.contextRequired){
+      const rule=joseonContexts[entry.phrase],page=node.closest('[data-page]');
+      if(!rule||!page||!rule[0].includes(page.dataset.page))return false;
+      const heading=[...page.querySelectorAll('h2,h3,h4,h5,h6')].filter(h=>h.compareDocumentPosition(node)&4).at(-1)?.textContent||'';
+      const scope=(node.closest('tr')||node.parentElement.closest('li')||node).textContent+' '+heading;
+      return rule.slice(1).every(pattern=>pattern.test(scope));
+    }
     if(entry.era!=='goryeo')return true;
     if(entry.id==='goryeo-gwajeon-gwajeonbeop-land')return ['48','54'].includes(node.closest('[data-page]')?.dataset.page)&&/경기/.test(text);
     if(entry.id==='goryeo-accounting-general')return /삼사/.test(text);
