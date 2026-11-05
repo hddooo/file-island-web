@@ -101,7 +101,7 @@ html body .device-content:has(.ac-hero-collection) .world-region-banner[data-reg
 /* Preserve atlas transparency over the cards despite the global terminal-theme div background. */
 html[data-hanq-theme] body .ac-inventory :is(.ac-inventory-heading,.ac-inventory-heading>div,.ac-inventory-grid,.ac-partner-art,.ac-partner-art span,.ac-partner-art img){background-color:transparent!important}
 #rainbowHost .ri-helper .ri-sprite{transform:scaleX(var(--ri-facing,1)) rotate(var(--ri-step,0deg));transform-origin:50% 97%}
-#rainbowHost .ri-guardian{aspect-ratio:1}#rainbowHost .ri-guardian .ri-guardian-walk{background-image:url('world-art/rainbow-guardian-walk-v1.webp');background-size:300% 100%;background-position:var(--ri-guardian-frame,50%) center;transform:scaleX(var(--ri-facing,1)) rotate(var(--ri-step,0deg));transform-origin:50% 97%}
+#rainbowHost .ri-guardian{aspect-ratio:1}#rainbowHost .ri-guardian .ri-guardian-walk{background-image:url('world-art/rainbow-guardian-walk-v1.webp');background-size:300% 100%;background-position:var(--ri-guardian-frame,50%) center;transform:scaleX(var(--ri-facing,1)) rotate(var(--ri-step,0deg)) translateX(var(--ri-guardian-offset,0%));transform-origin:50% 97%}
 /* The terminal theme disables generic CSS animation; confirmed hatch effects opt in explicitly. */
 html[data-hanq-theme] body .ac-inventory .ac-shell{animation:ac-shell-left 1.15s ease-in forwards!important}
 html[data-hanq-theme] body .ac-inventory .ac-shell-right{animation-name:ac-shell-right!important}
