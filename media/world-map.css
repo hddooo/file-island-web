@@ -99,3 +99,17 @@ html body #app .world-map.wm-portrait-fill .wm-island-group,html body #app .worl
    Keep native terrain stationary; the existing plaques, focus ring, click
    contours and independently animated Digimon still provide feedback. */
 .world-map:not(.wm-portrait-fill) .wm-island-group{transform:none!important;filter:none!important}
+
+
+/* First ambient-only candidate: original map/characters and target geometry stay
+   unchanged. Art failure and reduced motion leave the original still scene. */
+.world-map .wm-sea-motion,.world-map .wm-sky-motion{position:absolute;inset:0;pointer-events:none;user-select:none;visibility:hidden}
+.world-map.wm-art-ready .wm-sky-motion{visibility:visible}
+@supports (mask-image:url("#wm-mask")) and (mask-mode:luminance){.world-map.wm-art-ready.wm-sea-mask-ready .wm-sea-motion{visibility:visible}}
+.world-map .wm-sea-motion{z-index:1;mask-image:var(--wm-ambient-sea-mask);mask-mode:luminance;mask-repeat:no-repeat}
+.world-map .wm-sky-motion{z-index:3}
+.world-map .wm-water-current,.world-map .wm-sea-breeze,.world-map .wm-drift-cloud{position:absolute;display:block;pointer-events:none;opacity:0}
+.world-map .wm-water-current{border-radius:50%;background:repeating-linear-gradient(174deg,transparent 0 8px,#d3f8ff 9px,transparent 10px 18px);mask-image:radial-gradient(ellipse,#000 10%,transparent 69%)}
+.world-map .wm-sea-breeze{height:5px!important;border-top:1px solid #efffff;border-radius:50%;transform-origin:center;}
+.world-map .wm-drift-cloud{background:radial-gradient(ellipse at 32% 52%,#fff 9%,transparent 44%),radial-gradient(ellipse at 58% 43%,#f4ffff 12%,transparent 48%),radial-gradient(ellipse at 74% 58%,#fff 6%,transparent 40%);}
+@media(prefers-reduced-motion:reduce){.world-map .wm-sea-motion,.world-map .wm-sky-motion{display:none!important}}
