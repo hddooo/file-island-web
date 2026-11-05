@@ -127,6 +127,7 @@
       const t=viewTopics.find(t=>t.id===topic)||viewTopics[0];topic=t.id;
       body.append(el('h2',mode==='study'?t.title:mode==='exam'?t.title+' · 시험에는 이렇게 나온다':mode==='practice'?'고려 빈칸 문제':'고려 교재 정답'));
       if(mode==='practice'||mode==='answers')body.append(el('p','고려 전체 공통 100문항','gsr-review-scope'));
+      if(mode==='practice'&&options.workspace){const heading=body.querySelector('h2');if(heading)heading.remove();options.workspace.show(body);return;}
       if(mode==='practice'||mode==='answers')body.append(button(mode==='answers'?'빈칸 퀴즈로 돌아가기':'교재 정답 보기',()=>navigate(topic,mode==='answers'?'practice':'answers')));
       if(mode==='answers'){
         const notice=el('section',null,'gsr-reveal');notice.append(el('p','교재 정답입니다. 먼저 문제를 풀어 본 뒤 확인하세요.'));
