@@ -141,11 +141,24 @@
         const heading=el('h3');inline(doc,heading,section.titleMarkdown.trim());article.append(heading);
         if(mode==='practice')for(const q of section.questions){
           const item=el('section',null,'gsr-question');item.dataset.questionId=q.id;renderMarkdown(doc,item,q.markdown,figure);
-          for(const field of q.fields){if(field.markdown)renderMarkdown(doc,item,field.markdown,figure);const label=el('label','나의 임시 답안 '+field.label+'번','gsr-draft'),input=el('textarea');input.rows=2;input.value=drafts.get(field.id)||'';input.setAttribute('aria-label',heading.textContent+' '+field.label+'번 임시 답안');input.oninput=()=>drafts.set(field.id,input.value);label.append(input);item.append(label);}
+          for(const field of q.fields){let anchor=item;if(field.markdown){anchor=el('div',null,'gsr-subprompt');renderMarkdown(doc,anchor,field.markdown,figure);item.append(anchor);}inlineDraft(anchor,field.id,heading.textContent+' '+field.label+'번 임시 답안',!!field.markdown);}
           if(q.optionsMarkdown){const options=el('div',null,'gsr-options');renderMarkdown(doc,options,q.optionsMarkdown,figure);item.append(options);}article.append(item);
         }else{const list=el('ol',null,'gsr-answer-list');for(const a of section.answers){const item=el('li');item.value=a.number;item.dataset.answerId=a.id;renderMarkdown(doc,item,a.markdown,figure);list.append(item);}article.append(list);}
         body.append(article);const link=button(heading.textContent,()=>{heading.tabIndex=-1;heading.focus({preventScroll:true});heading.scrollIntoView({block:'start'});});toc.append(link);
       }
+    }
+    function inlineDraft(container,key,label,colonSlot){
+      const nodes=[],walk=doc.createTreeWalker(container,4);while(walk.nextNode())nodes.push(walk.currentNode);
+      const candidates=nodes.flatMap(node=>Array.from(node.textContent.matchAll(/\(([\s\u3000]+(?:,[\s\u3000]+)*)\)|[\u3000]{2,}/g),match=>({node,match})));
+      if(candidates.length>1||(!candidates.length&&(!colonSlot||!/:\s*$/.test(container.textContent))))throw Error('source_blank_anchor');
+      const found=candidates[0],original=found?found.match[0]:'',parts=original.startsWith('(')?original.slice(1,-1).split(',').length:1;
+      const group=el('span',null,'gsr-draft gsr-inline-blank');group.dataset.fieldId=key;group.dataset.sourceBlank=original;group.dataset.parts=String(parts);
+      const values=parts>1?String(drafts.get(key)||'').split(','):[drafts.get(key)||''];const inputs=[];
+      container.id=container.id||'gsr-prompt-'+key;group.setAttribute('role','group');group.setAttribute('aria-label',label);
+      if(original.startsWith('('))group.append(doc.createTextNode('('));
+      for(let index=0;index<parts;index++){if(index)group.append(doc.createTextNode(','));const input=el('input');input.type='text';input.className='gsr-blank-input';input.dataset.part=String(index);input.value=values[index]||'';input.autocomplete='off';input.spellcheck=false;input.setAttribute('autocapitalize','off');input.setAttribute('aria-label',label+(parts>1?' · '+(index+1)+'번째 빈칸':''));input.setAttribute('aria-describedby',container.id);input.oninput=()=>drafts.set(key,inputs.map(i=>i.value).join(parts>1?',':''));inputs.push(input);group.append(input);}
+      if(original.startsWith('('))group.append(doc.createTextNode(')'));
+      if(found){const {node,match}=found,tail=node.splitText(match.index);tail.deleteData(0,original.length);tail.before(group);}else{const paragraph=container.querySelector('p:last-child')||container;paragraph.append(doc.createTextNode(' '),group);}
     }
     function renderSegments(t){if(mode==='practice'||mode==='answers'){renderReview();return;}prepared.segments.filter(s=>selected(s,t)&&s.markdown.trim()).forEach(s=>{
       const article=el('article',null,'gsr-source-card');article.id=s.id;article.dataset.kind=s.kind;article.dataset.page=s.page;

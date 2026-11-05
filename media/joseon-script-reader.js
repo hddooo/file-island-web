@@ -170,10 +170,23 @@
       if(mode==='practice')body.append(el('p','빈칸을 생각한 뒤 임시 답안을 적어 보세요. 화면을 닫으면 답안은 사라지며 기존 학습 기록에는 저장되지 않습니다.','jsr-note'));
       renderSegments(t);
     }
+    function inlineDraft(container,key,label,colonSlot){
+      const nodes=[],walk=doc.createTreeWalker(container,4);while(walk.nextNode())nodes.push(walk.currentNode);
+      const candidates=nodes.flatMap(node=>Array.from(node.textContent.matchAll(/\(([\s\u3000]+(?:,[\s\u3000]+)*)\)|[\u3000]{2,}/g),match=>({node,match})));
+      if(candidates.length>1||(!candidates.length&&(!colonSlot||!/:\s*$/.test(container.textContent))))throw Error('source_blank_anchor');
+      const found=candidates[0],original=found?found.match[0]:'',parts=original.startsWith('(')?original.slice(1,-1).split(',').length:1;
+      const group=el('span',null,'jsr-draft jsr-inline-blank');group.dataset.fieldId=key;group.dataset.sourceBlank=original;group.dataset.parts=String(parts);
+      const values=parts>1?String(drafts.get(key)||'').split(','):[drafts.get(key)||''];const inputs=[];
+      container.id=container.id||'jsr-prompt-'+key;group.setAttribute('role','group');group.setAttribute('aria-label',label);
+      if(original.startsWith('('))group.append(doc.createTextNode('('));
+      for(let index=0;index<parts;index++){if(index)group.append(doc.createTextNode(','));const input=el('input');input.type='text';input.className='jsr-blank-input';input.dataset.part=String(index);input.value=values[index]||'';input.autocomplete='off';input.spellcheck=false;input.setAttribute('autocapitalize','off');input.setAttribute('aria-label',label+(parts>1?' · '+(index+1)+'번째 빈칸':''));input.setAttribute('aria-describedby',container.id);input.oninput=()=>drafts.set(key,inputs.map(i=>i.value).join(parts>1?',':''));inputs.push(input);group.append(input);}
+      if(original.startsWith('('))group.append(doc.createTextNode(')'));
+      if(found){const {node,match}=found,tail=node.splitText(match.index);tail.deleteData(0,original.length);tail.before(group);}else{const paragraph=container.querySelector('p:last-child')||container;paragraph.append(doc.createTextNode(' '),group);}
+    }
     function renderSegments(t){bundle.segments.filter(s=>selected(s,t)).forEach(s=>{
       const article=el('article',null,'jsr-source-card');article.id=s.id;article.dataset.kind=s.kind;article.dataset.page=s.page;
       article.append(el('p',s.page?'PDF '+s.page+'쪽 · 인쇄 '+(s.page-7)+'쪽':'원문 안내','jsr-source-label'));renderMarkdown(doc,article,readingMarkdown(s,bundle.source.sha256),figure);body.append(article);
-      if(mode==='practice')Array.from(article.querySelectorAll('p')).forEach((p,i)=>{const m=/^\((\d+)\) /.exec(p.textContent);if(!m)return;const key=s.id+'-'+i,label=el('label','나의 임시 답안 · '+m[1]+'번','jsr-draft'),input=el('textarea');input.rows=2;input.value=drafts.get(key)||'';input.setAttribute('aria-label','PDF '+s.page+'쪽 '+m[1]+'번 임시 답안');input.oninput=()=>drafts.set(key,input.value);label.append(input);p.after(label);});
+      if(mode==='practice')Array.from(article.querySelectorAll('p')).forEach((p,i)=>{const m=/^\((\d+)\) /.exec(p.textContent);if(!m)return;inlineDraft(p,s.id+'-'+i,m[1]+'번 임시 답안',false);});
       article.querySelectorAll('figure').forEach(f=>{const p=f.previousElementSibling,c=f.querySelector('figcaption'),suffix=' · PDF '+s.page+'쪽';if(p&&p.tagName==='P'&&p.children.length===1&&p.firstElementChild.tagName==='STRONG'&&c.textContent===p.textContent+suffix)p.remove();if(c.textContent.endsWith(suffix))c.textContent=c.textContent.slice(0,-suffix.length);});
     });
       if(mode==='study'&&bundle.source.sha256===editorialSource){connectTable23();connectLaterTables();connectCulture();connectSilhak();}
@@ -193,7 +206,7 @@
         let unit='조선 빈칸 문제';
         Array.from(article.children).forEach(node=>{
           if(/^H[34]$/.test(node.tagName))unit=node.textContent;
-          if(node.classList.contains('jsr-draft'))node.querySelector('textarea').setAttribute('aria-label',unit+' · '+node.textContent);
+          node.querySelectorAll('.jsr-inline-blank').forEach(group=>{group.setAttribute('aria-label',unit+' · '+group.getAttribute('aria-label'));group.querySelectorAll('input').forEach(input=>input.setAttribute('aria-label',unit+' · '+input.getAttribute('aria-label')));});
         });
       });
       body.querySelectorAll('.jsr-culture-gallery').forEach(gallery=>{
