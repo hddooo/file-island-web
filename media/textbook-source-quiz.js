@@ -320,22 +320,17 @@
     var controls=el('div','textbook-source-list-controls'),stop=el('button','textbook-source-quiz-stop','그만하기'),retry=el('button','textbook-source-save-retry','저장 다시 시도');stop.type=retry.type='button';retry.hidden=true;if(!checkedReview)controls.appendChild(stop);controls.appendChild(retry);wrapper.appendChild(controls);
     var progress=el('p','textbook-source-progress'),status=el('p','textbook-source-quiz-status','계정에 저장된 응답을 불러오는 중…');status.setAttribute('role','status');status.setAttribute('aria-live','polite');wrapper.appendChild(progress);wrapper.appendChild(status);
     var list=el('div','textbook-source-list'),reviewHost=el('div','textbook-source-review');wrapper.appendChild(list);wrapper.appendChild(reviewHost);reviewHost.hidden=true;
-    var markedFilter=null,allFilter=null,markedEmpty=null,gradeAction=null,reviewAccess=null;
+    var markedFilter=null,markedEmpty=null,pointerActive=false,deferredStatus=null,statusTimer=null;
     if(checkedReview){
       wrapper.classList.add('textbook-source-checked-review');
-      markedFilter=el('button','textbook-source-marked-filter','체크문제보기');allFilter=el('button','textbook-source-all-filter','전체보기');
-      markedFilter.type=allFilter.type='button';controls.insertBefore(allFilter,retry);controls.insertBefore(markedFilter,retry);
-      function setView(value){onlyMarked=value;applyMarkedFilter();}
-      on(markedFilter,'click',function(){setView(true);});on(allFilter,'click',function(){setView(false);});
-      var keyboardHelp=el('details','textbook-source-keyboard-help'),summary=el('summary','','키보드 안내');keyboardHelp.appendChild(summary);
-      keyboardHelp.appendChild(el('p','','Tab·Shift+Tab: 다음·이전 답칸. 답칸 이탈·Enter: 채점. F2: 해당 문제의 복습 체크로 이동. 체크에서 Escape: 답칸으로 복귀. 마지막 답칸 다음은 정답 확인입니다.'));
-      controls.insertBefore(keyboardHelp,retry);
+      // Do not move a pointer target between pointerdown (blur grades) and click.
+      on(doc,'pointerdown',function(){pointerActive=true;});
+      function releasePointer(){pointerActive=false;clearTimeout(statusTimer);statusTimer=setTimeout(function(){if(active&&!pointerActive&&deferredStatus){var next=deferredStatus;deferredStatus=null;message(next.text,next.error);}},0);}
+      on(doc,'pointerup',releasePointer);on(doc,'pointercancel',releasePointer);on(doc.defaultView,'blur',releasePointer);
+      markedFilter=el('button','textbook-source-marked-filter','체크문제보기');markedFilter.type='button';controls.insertBefore(markedFilter,retry);
+      on(markedFilter,'click',function(){onlyMarked=!onlyMarked;applyMarkedFilter();});
       markedEmpty=el('p','textbook-source-marked-empty','체크한 문제가 없습니다. 전체보기에서 문제 옆 체크를 선택하세요.');markedEmpty.setAttribute('role','status');markedEmpty.hidden=true;wrapper.insertBefore(markedEmpty,list);
-      gradeAction=el('button','textbook-source-grade-visible','정답 확인');gradeAction.type='button';wrapper.insertBefore(gradeAction,reviewHost);
-      on(gradeAction,'click',function(){displayFields.forEach(function(entry){if(normalize(entry.node.value))grade(rows[entry.itemIndex],entry);});});
-      on(gradeAction,'keydown',function(e){if(e.key==='Tab'&&e.shiftKey&&!e.altKey&&!e.ctrlKey&&!e.metaKey&&displayFields.length){e.preventDefault();focusAt(fields.indexOf(displayFields[displayFields.length-1]));}});
-      reviewAccess=el('button','textbook-source-review-access','복습 체크 선택');reviewAccess.type='button';wrapper.insertBefore(reviewAccess,reviewHost);
-      on(reviewAccess,'click',function(){var row=rows.find(function(r){return !r.card.hidden;});if(row)row.reviewCheckbox.focus();});
+
     }
     function selectedIds(){return data.items.filter(function(item){return marked.has(item.id);}).map(function(item){return item.id;});}
     function validateSelection(result){var ids=result&&result.workspace&&result.workspace.selectedReviewQuestionIds;if(result.reviewSelectionAvailable!==true||!Array.isArray(ids)||ids.length>data.items.length||new Set(ids).size!==ids.length||ids.some(function(id){return !data.items.some(function(item){return item.id===id;});}))throw Error('review_selection_unavailable');return ids;}
@@ -353,8 +348,9 @@
       list.querySelectorAll('.textbook-source-quiz-instruction').forEach(function(heading){var node=heading.nextElementSibling,visible=false;while(node&&!node.classList.contains('textbook-source-quiz-instruction')){if(node.matches('[data-source-item-id]')&&!node.hidden)visible=true;node=node.nextElementSibling;}heading.hidden=onlyMarked&&!visible;});
       displayFields=fields.filter(function(entry){return !rows[entry.itemIndex].card.hidden;});
       markedEmpty.hidden=!onlyMarked||rows.some(function(row){return !row.card.hidden;});
-      markedFilter.setAttribute('aria-pressed',String(onlyMarked));allFilter.setAttribute('aria-pressed',String(!onlyMarked));
-      markedFilter.textContent='체크문제보기 ('+marked.size+')';gradeAction.hidden=reviewAccess.hidden=!displayFields.length;
+      markedFilter.setAttribute('aria-pressed',String(onlyMarked));
+      markedFilter.textContent=(onlyMarked?'전체보기':'체크문제보기')+' ('+marked.size+')';
+      markedFilter.setAttribute('aria-label',(onlyMarked?'체크 문제 표시 중. 전체보기':'전체 문제 표시 중. 체크문제보기')+'. 체크 '+marked.size+'개');
     }
     function paintVerdict(row,animate){
       if(!checkedReview)return;
@@ -362,7 +358,7 @@
       row.verdict.dataset.result=value;row.verdict.textContent=value==='wrong'?'X · 오답':value==='correct'?'O · 정답':row.inputs.some(function(e){return e.graded;})?'미완료':'';
       if(before!==value||!animate){row.verdict.classList.remove('is-animating');if(animate&&value!=='pending'){void row.verdict.offsetWidth;row.verdict.classList.add('is-animating');}}
     }
-    function message(text,error){if(!active)return;var result=error?'different':/저장했습니다|불러왔습니다/.test(text)?'match':'pending';if(status.textContent===text&&status.dataset.result===result)return;status.textContent=text;status.dataset.result=result;}
+    function message(text,error){if(!active)return;if(pointerActive){deferredStatus={text:text,error:error};return;}deferredStatus=null;var result=error?'different':/저장했습니다|불러왔습니다/.test(text)?'match':'pending';status.hidden=checkedReview&&text==='응답과 현재 위치를 계정에 저장했습니다.';if(status.textContent===text&&status.dataset.result===result)return;status.textContent=text;status.dataset.result=result;}
     function partialFeedback(row){if(row.item.kind==='sequence')return '';for(var i=0;i<row.inputs.length;i++){var e=row.inputs[i],parts=e.answerIds.map(function(id){return row.item.answers.find(function(a){return a.id===id;}).text;});if(e.graded&&!e.orderMatters&&parts.length>1){var detail=multipleAnswerDetails(e.node.value,parts);if(detail.partial)return answerFeedback(row.item,e,e.node.value,parts);}}return '';}
     function updateProgress(){progress.textContent='풀이 '+rows.filter(function(r){return r.submitted;}).length+' / '+data.items.length+' · 정답 '+rows.filter(function(r){return r.correct===true;}).length+(rows.some(function(r){return !!partialFeedback(r);})?' · 미완성 답 '+rows.filter(function(r){return !!partialFeedback(r);}).length:'');}
     function answerValues(row){return row.inputs.map(function(e){return e.node.value;});}
@@ -508,11 +504,11 @@
           on(entry.node,'compositionstart',function(){entry.composing=true;});on(entry.node,'compositionend',function(){entry.composing=false;entry.composedAt=Date.now();if(doc.activeElement!==entry.node||entry.graded)grade(row,entry);else mark(row);});
           on(entry.node,'input',function(){if(entry.composing){mark(row);return;}if(entry.graded)grade(row,entry);else mark(row);});
           on(entry.node,'blur',function(){if(!entry.composing)grade(row,entry);});
-          if(checkedReview)entry.node.setAttribute('aria-keyshortcuts','F2');
+          if(checkedReview){entry.node.setAttribute('aria-keyshortcuts','F2');entry.node.setAttribute('aria-description','F2로 복습 체크에 이동합니다. 체크에서 Escape를 누르면 답칸으로 돌아옵니다.');}
           on(entry.node,'keydown',function(e){
             if(checkedReview&&!e.isComposing&&e.keyCode!==229&&!entry.composing&&!e.altKey&&!e.ctrlKey&&!e.metaKey){
               if(e.key==='F2'){e.preventDefault();row.reviewReturnEntry=entry;row.reviewCheckbox.focus();return;}
-              if(e.key==='Tab'){var targetIndex=displayFields.indexOf(entry)+(e.shiftKey?-1:1);if(targetIndex>=0&&targetIndex<displayFields.length){e.preventDefault();focusAt(fields.indexOf(displayFields[targetIndex]));return;}if(!e.shiftKey){e.preventDefault();gradeAction.focus();return;}}
+              if(e.key==='Tab'){var targetIndex=displayFields.indexOf(entry)+(e.shiftKey?-1:1);if(targetIndex>=0&&targetIndex<displayFields.length){e.preventDefault();focusAt(fields.indexOf(displayFields[targetIndex]));return;}}
             }
             if(e.key==='Enter'){e.preventDefault();if(e.repeat||e.isComposing||e.keyCode===229||entry.composing||Date.now()-entry.composedAt<100)return;grade(row,entry);var next=displayFields.indexOf(entry)+1;if(next<displayFields.length)focusAt(fields.indexOf(displayFields[next]));}});
         });
@@ -527,7 +523,7 @@
     on(stop,'click',function(){if(pausing||!saved)return;pausing=true;clearTimeout(timer);stop.disabled=true;flush('paused').then(function(){if(active){pausing=false;stop.disabled=false;showReview();message('현재 입력과 위치를 계정에 저장했습니다.');}},function(){pausing=false;stop.disabled=false;});});
     var reviewButton=el('button','textbook-source-quiz-review-button','풀이 목록·오답 보기');reviewButton.type='button';if(!checkedReview)controls.appendChild(reviewButton);on(reviewButton,'click',function(){stop.click();});
     function beforeUnload(e){if(dirty.size||pending||inFlight||ackCursor!==cursorVersion||ackMarkVersion!==markVersion){e.preventDefault();e.returnValue='';}}doc.defaultView.addEventListener('beforeunload',beforeUnload);
-    function cleanup(){if(!active)return;active=false;if(recoveryOff)recoveryOff();recoveryOff=null;clearTimeout(timer);listeners.forEach(function(x){x[0].removeEventListener(x[1],x[2]);});listeners=[];doc.defaultView.removeEventListener('beforeunload',beforeUnload);fields.forEach(function(e){e.node.value='';e.feedback.textContent='';});fields=[];displayFields=[];rows=[];dirty.clear();marked.clear();markIntents.clear();pending=null;saved=null;data=null;wrapper.replaceChildren();wrapper.remove();if(mounted.get(host)===controller)mounted.delete(host);}
+    function cleanup(){if(!active)return;active=false;clearTimeout(statusTimer);deferredStatus=null;if(recoveryOff)recoveryOff();recoveryOff=null;clearTimeout(timer);listeners.forEach(function(x){x[0].removeEventListener(x[1],x[2]);});listeners=[];doc.defaultView.removeEventListener('beforeunload',beforeUnload);fields.forEach(function(e){e.node.value='';e.feedback.textContent='';});fields=[];displayFields=[];rows=[];dirty.clear();marked.clear();markIntents.clear();pending=null;saved=null;data=null;wrapper.replaceChildren();wrapper.remove();if(mounted.get(host)===controller)mounted.delete(host);}
     var old=mounted.get(host);if(old)old.cleanup();host.replaceChildren(wrapper);var controller={element:wrapper,ready:null,cleanup:cleanup,hasUnsaved:function(){return !!(dirty.size||pending||inFlight||ackCursor!==cursorVersion||ackMarkVersion!==markVersion);},prepareLeave:function(){if(!active||!saved)return Promise.resolve();if(!controller.hasUnsaved())return Promise.resolve();pausing=true;clearTimeout(timer);return flush('paused').then(function(){pausing=false;},function(e){pausing=false;throw e;});}};mounted.set(host,controller);
     var recovery=options.recovery||root.HanqAuthSession,sourceRevision=options.sourceRevision||data.source.sha256||null,recoveryKey='source:'+(sourceRevision?sourceRevision+':':'')+data.id,legacyRecoveryKey='source:'+data.id;
     if(recovery&&options.ownerId&&recovery.register)recoveryOff=recovery.register(recoveryKey,{ownerId:options.ownerId,capture:function(){if(!active||!saved||!controller.hasUnsaved())return null;var ids=new Set([...dirty.keys()]);if(pending)pending.captured.forEach(function(u){ids.add(u.itemId);});var entry=fields[lastFocused];return {sourceRevision:sourceRevision,quizId:data.id,version:saved.version,baseRevision:saved.revision,cursor:cursor,focusIndex:lastFocused,...(checkedReview&&markVersion!==ackMarkVersion?{reviewSelectionChanges:[...markIntents].map(function(x){return {itemId:x[0],selected:x[1].selected};})}:{}),selection:entry?[entry.node.selectionStart,entry.node.selectionEnd]:null,updates:rows.filter(function(row){return ids.has(row.item.id);}).map(function(row){return {itemId:row.item.id,values:answerValues(row),submitted:row.submitted,checkedSlots:row.inputs.map(function(e){return e.graded&&!e.composing;})};})};}});
