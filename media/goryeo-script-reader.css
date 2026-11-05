@@ -199,3 +199,11 @@ html body #goryeoScript .goryeo-script-reader .gsr-inline-blank[data-parts="2"] 
 
 html body #goryeoScript .goryeo-script-reader .gsr-modes button{background:transparent!important;color:#315846!important;border:0;border-bottom:2px solid #d3dfd5!important;border-radius:4px 4px 0 0}
 html body #goryeoScript .goryeo-script-reader .gsr-modes button[aria-current=true]{background:#e6eee6!important;color:#214c36!important;border-bottom-color:#2d6b4a!important;font-weight:700}
+
+/* The paper reader keeps quiz controls readable inside either outer theme. */
+html body #goryeoScript .goryeo-script-reader .textbook-source-quiz-input{background:#fff!important;color:#18212f!important;-webkit-text-fill-color:#18212f!important;caret-color:#18212f!important;border-color:#71839b!important}
+html body #goryeoScript .goryeo-script-reader .textbook-source-quiz-input::placeholder{color:#526172!important;-webkit-text-fill-color:#526172!important;opacity:1}
+html body #goryeoScript .goryeo-script-reader .textbook-source-quiz-input:focus-visible{outline:3px solid #215b88!important;outline-offset:2px}
+html body #goryeoScript .goryeo-script-reader :is(.textbook-source-inline-feedback,.textbook-source-quiz-answer,.textbook-source-quiz-status,.textbook-source-quiz-item-source,.textbook-source-progress){color:#425567!important}
+html body #goryeoScript .goryeo-script-reader :is(.textbook-source-inline-feedback,.textbook-source-quiz-status)[data-result="match"]{color:#176037!important}
+html body #goryeoScript .goryeo-script-reader :is(.textbook-source-inline-feedback,.textbook-source-quiz-status):is([data-result="different"],[data-result="empty"]){color:#864500!important}
