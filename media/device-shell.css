@@ -216,3 +216,15 @@ html body #app.digivice-v2>.topline.device-crown.device-crown-stacked .header-me
 html body #app.digivice-v2>.topline.device-crown.device-crown-stacked .header-menu #headerAccount{max-width:100%}
 html body #app.digivice-v2>.topline.device-crown #headerAccount .hm-pts{white-space:normal!important}
 html body #app.digivice-v2>.topline.device-crown #headerAccount :is(.hm-partner,.hm-total){min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+
+/* Native scrollbar rail stays the same width while only its thumb changes color.
+   Gate on a live listener so failed/disabled JS keeps the original scrollbar. */
+@media(forced-colors:none){
+html body.study-global-footer #app.digivice-v2>.device-content[data-auto-scrollbar]{--device-scroll-thumb:transparent;scrollbar-width:thin;scrollbar-color:var(--device-scroll-thumb) transparent}
+html body.study-global-footer #app.digivice-v2>.device-content[data-auto-scrollbar].device-scroll-active{--device-scroll-thumb:rgba(151,196,178,.6)}
+html body.study-global-footer #app.digivice-v2>.device-content[data-auto-scrollbar]::-webkit-scrollbar{background:transparent}
+html body.study-global-footer #app.digivice-v2>.device-content[data-auto-scrollbar]::-webkit-scrollbar-track{background:transparent}
+html body.study-global-footer #app.digivice-v2>.device-content[data-auto-scrollbar]::-webkit-scrollbar-thumb{background:var(--device-scroll-thumb);border:2px solid transparent;border-radius:8px;background-clip:padding-box}
+}
+/* Do not hide or recolor the user's high-contrast system scrollbars. */
+@media(forced-colors:active){html body.study-global-footer #app.digivice-v2>.device-content[data-auto-scrollbar]{scrollbar-width:auto;scrollbar-color:auto}}
