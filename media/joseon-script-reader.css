@@ -172,3 +172,20 @@ html body #joseonScript .joseon-script-reader .textbook-source-verdict[data-resu
 @media(prefers-reduced-motion:reduce){html body :is(#joseonScript,#goryeoScript) .textbook-source-verdict.is-animating{animation:none!important}}
 
 html body #joseonScript .joseon-script-reader .textbook-source-marked-empty{color:#425567!important}
+
+/* Compact 81-edition question header; 79-edition layout is unchanged. */
+html body #joseonScript .joseon-script-reader .textbook-source-checked-review .textbook-source-question-header{display:flex;align-items:center;gap:10px;min-height:44px;margin:0 0 2px}
+html body #joseonScript .joseon-script-reader .textbook-source-checked-review .textbook-source-question-header .textbook-source-quiz-item-source{margin:0;font-size:14px;font-weight:700;line-height:1.4}
+html body #joseonScript .joseon-script-reader .textbook-source-checked-review .textbook-source-question-header .textbook-source-mark{margin:0 0 0 auto;min-width:44px;min-height:44px;justify-content:center;flex-shrink:0}
+html body #joseonScript .joseon-script-reader .textbook-source-checked-review .textbook-source-question-header .textbook-source-verdict{min-width:0;font-size:15px}
+html body #joseonScript .joseon-script-reader .textbook-source-checked-review .textbook-source-quiz-item{padding:10px 0}
+html body #joseonScript .joseon-script-reader .textbook-source-checked-review .textbook-source-quiz-statement{margin:2px 0 8px;line-height:1.8}
+html body #joseonScript .joseon-script-reader .textbook-source-checked-review .textbook-source-list-controls{display:flex;align-items:center;flex-wrap:wrap;gap:6px}
+html body #joseonScript .joseon-script-reader .textbook-source-checked-review :is(.textbook-source-marked-filter,.textbook-source-all-filter,.textbook-source-grade-visible,.textbook-source-review-access){min-height:44px;padding:8px 12px;border:1px solid #71839b;background:#fff!important;color:#263745!important;font-size:15px;line-height:1.4;border-radius:6px;cursor:pointer}
+html body #joseonScript .joseon-script-reader .textbook-source-checked-review [aria-pressed=true]{background:#e0eddf!important;border-color:#376b49;color:#173e2a!important;font-weight:700}
+html body #joseonScript .joseon-script-reader .textbook-source-checked-review :is(button,input,summary):focus-visible{outline:3px solid #215b88!important;outline-offset:2px}
+html body #joseonScript .joseon-script-reader .textbook-source-checked-review .textbook-source-keyboard-help{font-size:13px;color:#425567;margin:0}
+html body #joseonScript .joseon-script-reader .textbook-source-checked-review .textbook-source-keyboard-help summary{min-height:44px;display:flex;align-items:center;cursor:pointer;padding:0 6px}
+html body #joseonScript .joseon-script-reader .textbook-source-checked-review .textbook-source-keyboard-help p{margin:6px 0;font-size:14px}
+html body #joseonScript .joseon-script-reader .textbook-source-checked-review .textbook-source-grade-visible{margin:10px 8px 0 0}
+html body #joseonScript .joseon-script-reader .textbook-source-checked-review .textbook-source-review-access{margin-top:10px}

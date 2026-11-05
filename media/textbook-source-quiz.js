@@ -316,15 +316,26 @@
     var wrapper=el('section','textbook-source-quiz textbook-source-continuous');wrapper.appendChild(el('h2','textbook-source-quiz-title',data.title));
     var notesEdition = data.source.sha256 === 'd54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de' ? '81' : data.source.sha256 === '35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442' ? '79' : null;
     if (notesEdition) { wrapper.classList.add('history-notes-design'); wrapper.setAttribute('data-history-edition',notesEdition); }
-    wrapper.appendChild(el('p','textbook-source-quiz-help','Tab·Shift+Tab으로 답칸을 이동하세요. 답칸을 떠나거나 Enter를 누르면 바로 채점합니다. 여러 답은 쉼표로, 순서형은 원문 기호로 적으세요.'));
+    wrapper.appendChild(el('p','textbook-source-quiz-help',checkedReview?'모르는 문제 / 확실히 틀린 문제만 체크하세요. 다시보기를 통해 모르는 문제만 다시봐요 !':'Tab·Shift+Tab으로 답칸을 이동하세요. 답칸을 떠나거나 Enter를 누르면 바로 채점합니다. 여러 답은 쉼표로, 순서형은 원문 기호로 적으세요.'));
     var controls=el('div','textbook-source-list-controls'),stop=el('button','textbook-source-quiz-stop','그만하기'),retry=el('button','textbook-source-save-retry','저장 다시 시도');stop.type=retry.type='button';retry.hidden=true;if(!checkedReview)controls.appendChild(stop);controls.appendChild(retry);wrapper.appendChild(controls);
     var progress=el('p','textbook-source-progress'),status=el('p','textbook-source-quiz-status','계정에 저장된 응답을 불러오는 중…');status.setAttribute('role','status');status.setAttribute('aria-live','polite');wrapper.appendChild(progress);wrapper.appendChild(status);
     var list=el('div','textbook-source-list'),reviewHost=el('div','textbook-source-review');wrapper.appendChild(list);wrapper.appendChild(reviewHost);reviewHost.hidden=true;
-    var markedFilter=null,markedEmpty=null;
+    var markedFilter=null,allFilter=null,markedEmpty=null,gradeAction=null,reviewAccess=null;
     if(checkedReview){
-      var filterLabel=el('label','textbook-source-marked-filter');markedFilter=el('input','');markedFilter.type='checkbox';filterLabel.appendChild(markedFilter);filterLabel.appendChild(doc.createTextNode(' 체크한 문제만 보기'));controls.insertBefore(filterLabel,retry);
-      markedEmpty=el('p','textbook-source-marked-empty','체크한 문제가 없습니다. 전체 보기로 돌아가 문제 옆 체크를 선택하세요.');markedEmpty.setAttribute('role','status');markedEmpty.hidden=true;wrapper.insertBefore(markedEmpty,list);
-      on(markedFilter,'change',function(){onlyMarked=markedFilter.checked;applyMarkedFilter();});
+      wrapper.classList.add('textbook-source-checked-review');
+      markedFilter=el('button','textbook-source-marked-filter','체크문제보기');allFilter=el('button','textbook-source-all-filter','전체보기');
+      markedFilter.type=allFilter.type='button';controls.insertBefore(allFilter,retry);controls.insertBefore(markedFilter,retry);
+      function setView(value){onlyMarked=value;applyMarkedFilter();}
+      on(markedFilter,'click',function(){setView(true);});on(allFilter,'click',function(){setView(false);});
+      var keyboardHelp=el('details','textbook-source-keyboard-help'),summary=el('summary','','키보드 안내');keyboardHelp.appendChild(summary);
+      keyboardHelp.appendChild(el('p','','Tab·Shift+Tab: 다음·이전 답칸. 답칸 이탈·Enter: 채점. F2: 해당 문제의 복습 체크로 이동. 체크에서 Escape: 답칸으로 복귀. 마지막 답칸 다음은 정답 확인입니다.'));
+      controls.insertBefore(keyboardHelp,retry);
+      markedEmpty=el('p','textbook-source-marked-empty','체크한 문제가 없습니다. 전체보기에서 문제 옆 체크를 선택하세요.');markedEmpty.setAttribute('role','status');markedEmpty.hidden=true;wrapper.insertBefore(markedEmpty,list);
+      gradeAction=el('button','textbook-source-grade-visible','정답 확인');gradeAction.type='button';wrapper.insertBefore(gradeAction,reviewHost);
+      on(gradeAction,'click',function(){displayFields.forEach(function(entry){if(normalize(entry.node.value))grade(rows[entry.itemIndex],entry);});});
+      on(gradeAction,'keydown',function(e){if(e.key==='Tab'&&e.shiftKey&&!e.altKey&&!e.ctrlKey&&!e.metaKey&&displayFields.length){e.preventDefault();focusAt(fields.indexOf(displayFields[displayFields.length-1]));}});
+      reviewAccess=el('button','textbook-source-review-access','복습 체크 선택');reviewAccess.type='button';wrapper.insertBefore(reviewAccess,reviewHost);
+      on(reviewAccess,'click',function(){var row=rows.find(function(r){return !r.card.hidden;});if(row)row.reviewCheckbox.focus();});
     }
     function selectedIds(){return data.items.filter(function(item){return marked.has(item.id);}).map(function(item){return item.id;});}
     function validateSelection(result){var ids=result&&result.workspace&&result.workspace.selectedReviewQuestionIds;if(result.reviewSelectionAvailable!==true||!Array.isArray(ids)||ids.length>data.items.length||new Set(ids).size!==ids.length||ids.some(function(id){return !data.items.some(function(item){return item.id===id;});}))throw Error('review_selection_unavailable');return ids;}
@@ -342,6 +353,8 @@
       list.querySelectorAll('.textbook-source-quiz-instruction').forEach(function(heading){var node=heading.nextElementSibling,visible=false;while(node&&!node.classList.contains('textbook-source-quiz-instruction')){if(node.matches('[data-source-item-id]')&&!node.hidden)visible=true;node=node.nextElementSibling;}heading.hidden=onlyMarked&&!visible;});
       displayFields=fields.filter(function(entry){return !rows[entry.itemIndex].card.hidden;});
       markedEmpty.hidden=!onlyMarked||rows.some(function(row){return !row.card.hidden;});
+      markedFilter.setAttribute('aria-pressed',String(onlyMarked));allFilter.setAttribute('aria-pressed',String(!onlyMarked));
+      markedFilter.textContent='체크문제보기 ('+marked.size+')';gradeAction.hidden=reviewAccess.hidden=!displayFields.length;
     }
     function paintVerdict(row,animate){
       if(!checkedReview)return;
@@ -482,8 +495,10 @@
         var response=saved.workspace.responses[item.id],row={item:item,card:card,inputs:inputs,submitted:false,correct:null,touched:false,hasResponse:!!response};rows.push(row);
         if(checkedReview){
           var markLabel=el('label','textbook-source-mark'),checkbox=el('input','');checkbox.type='checkbox';checkbox.setAttribute('aria-label',(topic?topic.title+' ':'')+'문제 '+sourceNumber(item,itemIndex)+' 복습 체크');
-          checkbox.checked=marked.has(item.id);row.reviewCheckbox=checkbox;markLabel.appendChild(checkbox);markLabel.appendChild(doc.createTextNode(' 다시 보기'));label.insertAdjacentElement('afterend',markLabel);
-          row.verdict=el('span','textbook-source-verdict');row.verdict.setAttribute('role','status');row.verdict.setAttribute('aria-live','polite');markLabel.insertAdjacentElement('afterend',row.verdict);
+          checkbox.checked=marked.has(item.id);row.reviewCheckbox=checkbox;markLabel.appendChild(checkbox);markLabel.title='복습 체크 (답칸에서 F2)';
+          var questionHeader=el('div','textbook-source-question-header');card.insertBefore(questionHeader,label);questionHeader.appendChild(label);questionHeader.appendChild(markLabel);
+          on(checkbox,'keydown',function(e){if(e.key==='Escape'){e.preventDefault();focusAt(row.reviewReturnEntry?fields.indexOf(row.reviewReturnEntry):fields.findIndex(function(f){return f.itemIndex===itemIndex;}));}});
+          row.verdict=el('span','textbook-source-verdict');row.verdict.setAttribute('role','status');row.verdict.setAttribute('aria-live','polite');questionHeader.insertBefore(row.verdict,markLabel);
           on(checkbox,'change',function(){setReviewMark(item.id,checkbox.checked);applyMarkedFilter();if(onlyMarked&&!checkbox.checked)markedFilter.focus();});
         }
         inputs.forEach(function(entry,slot){entry.itemIndex=itemIndex;entry.graded=false;entry.match=false;entry.composing=false;entry.composedAt=0;
@@ -493,7 +508,13 @@
           on(entry.node,'compositionstart',function(){entry.composing=true;});on(entry.node,'compositionend',function(){entry.composing=false;entry.composedAt=Date.now();if(doc.activeElement!==entry.node||entry.graded)grade(row,entry);else mark(row);});
           on(entry.node,'input',function(){if(entry.composing){mark(row);return;}if(entry.graded)grade(row,entry);else mark(row);});
           on(entry.node,'blur',function(){if(!entry.composing)grade(row,entry);});
-          on(entry.node,'keydown',function(e){if(e.key==='Enter'){e.preventDefault();if(e.repeat||e.isComposing||e.keyCode===229||entry.composing||Date.now()-entry.composedAt<100)return;grade(row,entry);var next=displayFields.indexOf(entry)+1;if(next<displayFields.length)focusAt(fields.indexOf(displayFields[next]));}});
+          if(checkedReview)entry.node.setAttribute('aria-keyshortcuts','F2');
+          on(entry.node,'keydown',function(e){
+            if(checkedReview&&!e.isComposing&&e.keyCode!==229&&!entry.composing&&!e.altKey&&!e.ctrlKey&&!e.metaKey){
+              if(e.key==='F2'){e.preventDefault();row.reviewReturnEntry=entry;row.reviewCheckbox.focus();return;}
+              if(e.key==='Tab'){var targetIndex=displayFields.indexOf(entry)+(e.shiftKey?-1:1);if(targetIndex>=0&&targetIndex<displayFields.length){e.preventDefault();focusAt(fields.indexOf(displayFields[targetIndex]));return;}if(!e.shiftKey){e.preventDefault();gradeAction.focus();return;}}
+            }
+            if(e.key==='Enter'){e.preventDefault();if(e.repeat||e.isComposing||e.keyCode===229||entry.composing||Date.now()-entry.composedAt<100)return;grade(row,entry);var next=displayFields.indexOf(entry)+1;if(next<displayFields.length)focusAt(fields.indexOf(displayFields[next]));}});
         });
         target.appendChild(card);
         if(response){inputs.forEach(function(entry,slot){if(!(response.submitted||response.checkedSlots&&response.checkedSlots[slot]))return;var parts=entry.answerIds.map(function(id){return item.answers.find(function(a){return a.id===id;}).text;}),value=entry.node.value;entry.graded=!!normalize(value);entry.match=(item.answer.sequenceTokens&&normalize(value)===normalize(item.answer.text))||compare(value,parts,entry.orderMatters,item.kind,item.answer.sequenceSeparator)==='match';entry.feedback.textContent=answerFeedback(item,entry,value,parts);entry.feedback.dataset.result=entry.match?'match':'different';});row.submitted=inputs.every(function(e){return e.graded;});row.correct=row.submitted?inputs.every(function(e){return e.match;}):null;}paintVerdict(row,false);
