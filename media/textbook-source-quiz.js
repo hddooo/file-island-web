@@ -309,6 +309,7 @@
     if(!host||host.nodeType!==1||!host.ownerDocument)throw new TypeError('Source quiz requires a DOM host');
     validate(inputData);options=options||{};if(options.sourceRevision!=null&&options.sourceRevision!==inputData.source.sha256)fail('source revision binding');var data=JSON.parse(JSON.stringify(inputData)),doc=host.ownerDocument,prefix='hanq-source-quiz-'+(++serial);
     var promptStyles=sourcePromptStyles(options.sourcePromptStyles==null?data:Object.assign({},data,{sourcePromptStyles:JSON.parse(JSON.stringify(options.sourcePromptStyles))}));
+    var checkedReview=!!options.checkedReview,onlyMarked=false,marked=new Set();
     var active=true,listeners=[],saved=null,rows=[],fields=[],displayFields=[],presentation=null,dirty=new Map(),version=0,cursor=0,cursorVersion=0,ackCursor=0,lastFocused=0,recoveryOff=null,timer=null,inFlight=null,pending=null,pausing=false;
     function el(tag,cls,value){var n=doc.createElement(tag);if(cls)n.className=cls;if(value!=null)n.textContent=value;return n;}
     function on(n,t,f){n.addEventListener(t,f);listeners.push([n,t,f]);}
@@ -316,14 +317,33 @@
     var notesEdition = data.source.sha256 === 'd54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de' ? '81' : data.source.sha256 === '35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442' ? '79' : null;
     if (notesEdition) { wrapper.classList.add('history-notes-design'); wrapper.setAttribute('data-history-edition',notesEdition); }
     wrapper.appendChild(el('p','textbook-source-quiz-help','Tab·Shift+Tab으로 답칸을 이동하세요. 답칸을 떠나거나 Enter를 누르면 바로 채점합니다. 여러 답은 쉼표로, 순서형은 원문 기호로 적으세요.'));
-    var controls=el('div','textbook-source-list-controls'),stop=el('button','textbook-source-quiz-stop','그만하기'),retry=el('button','textbook-source-save-retry','저장 다시 시도');stop.type=retry.type='button';retry.hidden=true;controls.appendChild(stop);controls.appendChild(retry);wrapper.appendChild(controls);
+    var controls=el('div','textbook-source-list-controls'),stop=el('button','textbook-source-quiz-stop','그만하기'),retry=el('button','textbook-source-save-retry','저장 다시 시도');stop.type=retry.type='button';retry.hidden=true;if(!checkedReview)controls.appendChild(stop);controls.appendChild(retry);wrapper.appendChild(controls);
     var progress=el('p','textbook-source-progress'),status=el('p','textbook-source-quiz-status','계정에 저장된 응답을 불러오는 중…');status.setAttribute('role','status');status.setAttribute('aria-live','polite');wrapper.appendChild(progress);wrapper.appendChild(status);
     var list=el('div','textbook-source-list'),reviewHost=el('div','textbook-source-review');wrapper.appendChild(list);wrapper.appendChild(reviewHost);reviewHost.hidden=true;
+    var markedFilter=null,markedEmpty=null;
+    if(checkedReview){
+      var filterLabel=el('label','textbook-source-marked-filter');markedFilter=el('input','');markedFilter.type='checkbox';filterLabel.appendChild(markedFilter);filterLabel.appendChild(doc.createTextNode(' 체크한 문제만 보기'));controls.insertBefore(filterLabel,retry);
+      markedEmpty=el('p','textbook-source-marked-empty','체크한 문제가 없습니다. 전체 보기로 돌아가 문제 옆 체크를 선택하세요.');markedEmpty.setAttribute('role','status');markedEmpty.hidden=true;wrapper.insertBefore(markedEmpty,list);
+      on(markedFilter,'change',function(){onlyMarked=markedFilter.checked;applyMarkedFilter();});
+    }
+    function applyMarkedFilter(){
+      if(!checkedReview)return;
+      rows.forEach(function(row){row.card.hidden=onlyMarked&&!marked.has(row.item.id);});
+      list.querySelectorAll('.textbook-source-quiz-instruction').forEach(function(heading){var node=heading.nextElementSibling,visible=false;while(node&&!node.classList.contains('textbook-source-quiz-instruction')){if(node.matches('[data-source-item-id]')&&!node.hidden)visible=true;node=node.nextElementSibling;}heading.hidden=onlyMarked&&!visible;});
+      displayFields=fields.filter(function(entry){return !rows[entry.itemIndex].card.hidden;});
+      markedEmpty.hidden=!onlyMarked||rows.some(function(row){return !row.card.hidden;});
+    }
+    function paintVerdict(row,animate){
+      if(!checkedReview)return;
+      var wrong=row.inputs.some(function(e){return e.graded&&!e.composing&&!e.match;}),complete=row.inputs.every(function(e){return e.graded&&!e.composing;}),value=wrong?'wrong':complete?'correct':'pending',before=row.verdict.dataset.result;
+      row.verdict.dataset.result=value;row.verdict.textContent=value==='wrong'?'X · 오답':value==='correct'?'O · 정답':row.inputs.some(function(e){return e.graded;})?'미완료':'';
+      row.verdict.classList.remove('is-animating');if(animate&&value!=='pending'&&before!==value){void row.verdict.offsetWidth;row.verdict.classList.add('is-animating');}
+    }
     function message(text,error){if(!active)return;var result=error?'different':/저장했습니다|불러왔습니다/.test(text)?'match':'pending';if(status.textContent===text&&status.dataset.result===result)return;status.textContent=text;status.dataset.result=result;}
     function partialFeedback(row){if(row.item.kind==='sequence')return '';for(var i=0;i<row.inputs.length;i++){var e=row.inputs[i],parts=e.answerIds.map(function(id){return row.item.answers.find(function(a){return a.id===id;}).text;});if(e.graded&&!e.orderMatters&&parts.length>1){var detail=multipleAnswerDetails(e.node.value,parts);if(detail.partial)return answerFeedback(row.item,e,e.node.value,parts);}}return '';}
     function updateProgress(){progress.textContent='풀이 '+rows.filter(function(r){return r.submitted;}).length+' / '+data.items.length+' · 정답 '+rows.filter(function(r){return r.correct===true;}).length+(rows.some(function(r){return !!partialFeedback(r);})?' · 미완성 답 '+rows.filter(function(r){return !!partialFeedback(r);}).length:'');}
     function answerValues(row){return row.inputs.map(function(e){return e.node.value;});}
-    function mark(row){row.touched=true;var values=answerValues(row);row.submitted=row.inputs.every(function(e){return e.graded&&!e.composing&&!!normalize(e.node.value);});row.correct=row.submitted?row.inputs.every(function(e){return e.match;}):null;dirty.set(row.item.id,{generation:++version,itemId:row.item.id,values:values,submitted:row.submitted,checkedSlots:row.inputs.map(function(e){return e.graded&&!e.composing;})});updateProgress();message('입력은 유지됩니다 · 계정 저장 대기 중…');schedule();}
+    function mark(row){row.touched=true;var values=answerValues(row);row.submitted=row.inputs.every(function(e){return e.graded&&!e.composing&&!!normalize(e.node.value);});row.correct=row.submitted?row.inputs.every(function(e){return e.match;}):null;dirty.set(row.item.id,{generation:++version,itemId:row.item.id,values:values,submitted:row.submitted,checkedSlots:row.inputs.map(function(e){return e.graded&&!e.composing;})});paintVerdict(row,true);updateProgress();message('입력은 유지됩니다 · 계정 저장 대기 중…');schedule();}
     function schedule(){clearTimeout(timer);if(!pausing)timer=setTimeout(function(){flush('active').catch(function(){});},800);}
     function failure(e){retry.hidden=false;message(e&&(e.status===409||e.code==='source_progress_conflict')?'다른 화면의 저장과 충돌했습니다. 현재 입력은 유지했습니다. 저장된 기록을 확인하려면 새로고침하세요.':'계정에 저장하지 못했습니다. 입력은 이 화면에 유지됩니다. 저장 다시 시도를 눌러주세요.',true);}
     function flush(target){
@@ -448,7 +468,13 @@
         var events = el('ul', 'textbook-source-quiz-events'); events.setAttribute('aria-label', '교재의 원문 보기');
         item.events.forEach(function (event) { events.appendChild(el('li', '', event.sourceText)); }); card.appendChild(events);
       }
-        var response=saved.workspace.responses[item.id],row={item:item,inputs:inputs,submitted:false,correct:null,touched:false,hasResponse:!!response};rows.push(row);
+        var response=saved.workspace.responses[item.id],row={item:item,card:card,inputs:inputs,submitted:false,correct:null,touched:false,hasResponse:!!response};rows.push(row);
+        if(checkedReview){
+          var markLabel=el('label','textbook-source-mark'),checkbox=el('input','');checkbox.type='checkbox';checkbox.setAttribute('aria-label',(topic?topic.title+' ':'')+'문제 '+sourceNumber(item,itemIndex)+' 복습 체크');
+          checkbox.checked=!!(options.reviewMarks&&options.reviewMarks.has(item.id));if(checkbox.checked)marked.add(item.id);markLabel.appendChild(checkbox);markLabel.appendChild(doc.createTextNode(' 다시 보기'));label.insertAdjacentElement('afterend',markLabel);
+          row.verdict=el('span','textbook-source-verdict');row.verdict.setAttribute('role','status');row.verdict.setAttribute('aria-live','polite');markLabel.insertAdjacentElement('afterend',row.verdict);
+          on(checkbox,'change',function(){if(checkbox.checked)marked.add(item.id);else marked.delete(item.id);if(options.reviewMarks)options.reviewMarks.set(item.id,checkbox.checked);applyMarkedFilter();if(onlyMarked&&!checkbox.checked)markedFilter.focus();});
+        }
         inputs.forEach(function(entry,slot){entry.itemIndex=itemIndex;entry.graded=false;entry.match=false;entry.composing=false;entry.composedAt=0;
           entry.feedback=el('span','textbook-source-inline-feedback');entry.feedback.id=prefix+'-feedback-'+itemIndex+'-'+slot;entry.feedback.setAttribute('role','status');entry.feedback.setAttribute('aria-live','polite');entry.node.insertAdjacentElement('afterend',entry.feedback);entry.node.setAttribute('aria-describedby',entry.node.getAttribute('aria-describedby')+' '+entry.feedback.id);entry.node.enterKeyHint='next';
           entry.node.value=response&&response.values[slot]||'';fields.push(entry);
@@ -459,15 +485,15 @@
           on(entry.node,'keydown',function(e){if(e.key==='Enter'){e.preventDefault();if(e.repeat||e.isComposing||e.keyCode===229||entry.composing||Date.now()-entry.composedAt<100)return;grade(row,entry);var next=displayFields.indexOf(entry)+1;if(next<displayFields.length)focusAt(fields.indexOf(displayFields[next]));}});
         });
         target.appendChild(card);
-        if(response){inputs.forEach(function(entry,slot){if(!(response.submitted||response.checkedSlots&&response.checkedSlots[slot]))return;var parts=entry.answerIds.map(function(id){return item.answers.find(function(a){return a.id===id;}).text;}),value=entry.node.value;entry.graded=!!normalize(value);entry.match=(item.answer.sequenceTokens&&normalize(value)===normalize(item.answer.text))||compare(value,parts,entry.orderMatters,item.kind,item.answer.sequenceSeparator)==='match';entry.feedback.textContent=answerFeedback(item,entry,value,parts);entry.feedback.dataset.result=entry.match?'match':'different';});row.submitted=inputs.every(function(e){return e.graded;});row.correct=row.submitted?inputs.every(function(e){return e.match;}):null;}
+        if(response){inputs.forEach(function(entry,slot){if(!(response.submitted||response.checkedSlots&&response.checkedSlots[slot]))return;var parts=entry.answerIds.map(function(id){return item.answers.find(function(a){return a.id===id;}).text;}),value=entry.node.value;entry.graded=!!normalize(value);entry.match=(item.answer.sequenceTokens&&normalize(value)===normalize(item.answer.text))||compare(value,parts,entry.orderMatters,item.kind,item.answer.sequenceSeparator)==='match';entry.feedback.textContent=answerFeedback(item,entry,value,parts);entry.feedback.dataset.result=entry.match?'match':'different';});row.submitted=inputs.every(function(e){return e.graded;});row.correct=row.submitted?inputs.every(function(e){return e.match;}):null;}paintVerdict(row,false);
       });
       var byNode=new Map(fields.map(function(entry){return [entry.node,entry];}));
       displayFields=Array.from(list.querySelectorAll('.textbook-source-quiz-input')).map(function(node){return byNode.get(node);});
-      updateProgress();
+      applyMarkedFilter();updateProgress();
     }
     on(retry,'click',function(){flush('active').catch(function(){});});
     on(stop,'click',function(){if(pausing||!saved)return;pausing=true;clearTimeout(timer);stop.disabled=true;flush('paused').then(function(){if(active){pausing=false;stop.disabled=false;showReview();message('현재 입력과 위치를 계정에 저장했습니다.');}},function(){pausing=false;stop.disabled=false;});});
-    var reviewButton=el('button','textbook-source-quiz-review-button','풀이 목록·오답 보기');reviewButton.type='button';controls.appendChild(reviewButton);on(reviewButton,'click',function(){stop.click();});
+    var reviewButton=el('button','textbook-source-quiz-review-button','풀이 목록·오답 보기');reviewButton.type='button';if(!checkedReview)controls.appendChild(reviewButton);on(reviewButton,'click',function(){stop.click();});
     function beforeUnload(e){if(dirty.size||pending||inFlight||ackCursor!==cursorVersion){e.preventDefault();e.returnValue='';}}doc.defaultView.addEventListener('beforeunload',beforeUnload);
     function cleanup(){if(!active)return;active=false;if(recoveryOff)recoveryOff();recoveryOff=null;clearTimeout(timer);listeners.forEach(function(x){x[0].removeEventListener(x[1],x[2]);});listeners=[];doc.defaultView.removeEventListener('beforeunload',beforeUnload);fields.forEach(function(e){e.node.value='';e.feedback.textContent='';});fields=[];displayFields=[];rows=[];dirty.clear();pending=null;saved=null;data=null;wrapper.replaceChildren();wrapper.remove();if(mounted.get(host)===controller)mounted.delete(host);}
     var old=mounted.get(host);if(old)old.cleanup();host.replaceChildren(wrapper);var controller={element:wrapper,ready:null,cleanup:cleanup,hasUnsaved:function(){return !!(dirty.size||pending||inFlight||ackCursor!==cursorVersion);},prepareLeave:function(){if(!active||!saved)return Promise.resolve();if(!controller.hasUnsaved())return Promise.resolve();pausing=true;clearTimeout(timer);return flush('paused').then(function(){pausing=false;},function(e){pausing=false;throw e;});}};mounted.set(host,controller);
@@ -479,7 +505,7 @@
       if(!accepted.length&&!(Number.isInteger(draft.cursor)&&draft.cursor>=0&&draft.cursor<data.items.length))return null;accepted.forEach(function(u){dirty.set(u.itemId,u);});if(Number.isInteger(draft.cursor)&&draft.cursor>=0&&draft.cursor<data.items.length){cursor=draft.cursor;if(cursor!==saved.workspace.cursor)cursorVersion++;}recovery.takeDraft(draftKey,options.ownerId);return draft;
     }
 
-    controller.ready=Promise.resolve().then(function(){if(typeof options.loadProgress!=='function'||typeof options.saveProgress!=='function')throw Error('progress_unavailable');return options.loadProgress();}).then(function(result){if(!active)return;saved=result;if(!saved.workspace||!saved.workspace.responses)throw Error('workspace_unavailable');cursor=saved.workspace.cursor;presentation=joseonPresentation(data,saved.version);var restored=restoreDraft();build();message('저장한 응답을 불러왔습니다. 채점은 즉시 반영되고 계정 저장은 묶어서 진행됩니다.');if(restored){lastFocused=Number.isInteger(restored.focusIndex)?Math.max(0,Math.min(restored.focusIndex,fields.length-1)):fields.findIndex(function(e){return e.itemIndex===cursor;});focusAt(lastFocused);if(restored.selection&&fields[lastFocused]){var n=fields[lastFocused].node;try{n.setSelectionRange(Math.min(restored.selection[0]||0,n.value.length),Math.min(restored.selection[1]||0,n.value.length));}catch(e){}}clearTimeout(timer);retry.hidden=false;message('같은 계정의 미저장 답안과 위치를 복원했습니다. 계속 풀거나 저장 다시 시도를 눌러주세요.');}else if(saved.workspace.status==='paused')showReview();else focusAt(fields.findIndex(function(e){return e.itemIndex===cursor;}));},function(){message('계정별 풀이를 불러오지 못했습니다. 새로고침해 다시 시도해 주세요.',true);});return controller;
+    controller.ready=Promise.resolve().then(function(){if(typeof options.loadProgress!=='function'||typeof options.saveProgress!=='function')throw Error('progress_unavailable');return options.loadProgress();}).then(function(result){if(!active)return;saved=result;if(!saved.workspace||!saved.workspace.responses)throw Error('workspace_unavailable');cursor=saved.workspace.cursor;presentation=joseonPresentation(data,saved.version);var restored=restoreDraft();build();message('저장한 응답을 불러왔습니다. 채점은 즉시 반영되고 계정 저장은 묶어서 진행됩니다.');if(restored){lastFocused=Number.isInteger(restored.focusIndex)?Math.max(0,Math.min(restored.focusIndex,fields.length-1)):fields.findIndex(function(e){return e.itemIndex===cursor;});focusAt(lastFocused);if(restored.selection&&fields[lastFocused]){var n=fields[lastFocused].node;try{n.setSelectionRange(Math.min(restored.selection[0]||0,n.value.length),Math.min(restored.selection[1]||0,n.value.length));}catch(e){}}clearTimeout(timer);retry.hidden=false;message('같은 계정의 미저장 답안과 위치를 복원했습니다. 계속 풀거나 저장 다시 시도를 눌러주세요.');}else if(saved.workspace.status==='paused'&&!checkedReview)showReview();else focusAt(fields.findIndex(function(e){return e.itemIndex===cursor;}));},function(){message('계정별 풀이를 불러오지 못했습니다. 새로고침해 다시 시도해 주세요.',true);});return controller;
   }
   root.HanqTextbookSourceQuiz=Object.freeze({render:render});
 })(typeof window !== 'undefined' ? window : globalThis);

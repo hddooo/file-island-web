@@ -159,3 +159,16 @@ html body #joseonScript .joseon-script-reader .textbook-source-quiz-input:focus-
 html body #joseonScript .joseon-script-reader :is(.textbook-source-inline-feedback,.textbook-source-quiz-answer,.textbook-source-quiz-status,.textbook-source-quiz-item-source,.textbook-source-progress){color:#425567!important}
 html body #joseonScript .joseon-script-reader :is(.textbook-source-inline-feedback,.textbook-source-quiz-status)[data-result="match"]{color:#176037!important}
 html body #joseonScript .joseon-script-reader :is(.textbook-source-inline-feedback,.textbook-source-quiz-status):is([data-result="different"],[data-result="empty"]){color:#864500!important}
+
+html body #joseonScript .joseon-script-reader :is(.textbook-source-mark,.textbook-source-marked-filter){display:inline-flex;align-items:center;gap:7px;min-height:44px;font-size:15px;color:#263745!important;cursor:pointer}
+html body #joseonScript .joseon-script-reader :is(.textbook-source-mark,.textbook-source-marked-filter) input{width:22px;height:22px;min-height:22px;margin:0;accent-color:#215b88;color-scheme:light}
+html body #joseonScript .joseon-script-reader .textbook-source-mark{margin:0 12px 0 0}
+html body #joseonScript .joseon-script-reader .textbook-source-verdict{display:inline-block;min-width:5em;font-weight:700;font-size:17px;color:#425567!important}
+html body #joseonScript .joseon-script-reader .textbook-source-verdict[data-result="correct"]{color:#176037!important}
+html body #joseonScript .joseon-script-reader .textbook-source-verdict[data-result="wrong"]{color:#864500!important}
+@media(prefers-reduced-motion:no-preference){html body #joseonScript .joseon-script-reader .textbook-source-verdict.is-animating{animation:history81-verdict-pop .32s ease-out!important}}
+
+@keyframes history81-verdict-pop{0%{transform:scale(.8)}60%{transform:scale(1.12)}100%{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){html body :is(#joseonScript,#goryeoScript) .textbook-source-verdict.is-animating{animation:none!important}}
+
+html body #joseonScript .joseon-script-reader .textbook-source-marked-empty{color:#425567!important}
