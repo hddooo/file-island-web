@@ -1,0 +1,24 @@
+.hq-inquiry-dialog{box-sizing:border-box;width:min(560px,calc(100% - 24px));max-height:calc(100dvh - 32px);overflow:auto;border:1px solid #a0b3bd;border-radius:16px;padding:20px;background:#f8faf8;color:#183340;font:16px/1.6 system-ui,sans-serif;overscroll-behavior:contain}
+.hq-inquiry-dialog::backdrop{background:rgba(8,25,37,.65)}
+.hq-inquiry-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.hq-inquiry-heading h2{margin:0;font-size:20px}
+.hq-inquiry-form{display:grid;gap:8px}
+.hq-inquiry-form input,.hq-inquiry-form textarea{box-sizing:border-box;width:100%;min-width:0;padding:10px;border:1px solid #8ba0aa;border-radius:8px;background:#fff;color:#183340;font:16px/1.6 system-ui,sans-serif}
+.hq-inquiry-form textarea{min-height:170px;resize:vertical}
+.hq-inquiry-form input:read-only,.hq-inquiry-form textarea:read-only{background:#edf1f2}
+.hq-inquiry-dialog button,.hq-inquiry-dialog a,.hq-inquiries button{min-height:44px;font:inherit;cursor:pointer}
+.hq-inquiry-dialog a{display:inline-flex;align-items:center;color:#145678}
+.hq-inquiry-dialog button:disabled{cursor:default;opacity:.65}
+.hq-inquiry-dialog :focus-visible,.hq-inquiries :focus-visible{outline:3px solid #126eaa;outline-offset:3px}
+.hq-inquiry-dialog p,.hq-inquiries p{overflow-wrap:anywhere}
+.hq-inquiries{min-width:0;margin-top:16px}
+.hq-inquiries h2{font-size:18px;margin:0 0 10px}
+.hq-inquiry-item{border-top:1px solid currentColor;padding:10px 0}
+.hq-inquiry-item summary{min-height:44px;cursor:pointer;overflow-wrap:anywhere}
+.hq-inquiry-item summary strong{margin-right:10px}
+.hq-inquiry-item time{font-size:12px;font-weight:400;opacity:.8}
+.hq-inquiry-messages{display:grid;gap:10px;padding-top:10px}
+.hq-inquiry-message{min-width:0;padding:10px;border:1px solid currentColor;border-radius:8px}
+.hq-inquiry-message p{white-space:pre-wrap;margin:8px 0}
+.hq-inquiry-pages{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:12px}
+@media(max-width:420px){.hq-inquiry-dialog{padding:14px}.hq-inquiry-item summary time{display:block}.hq-inquiry-dialog h2{font-size:18px}}

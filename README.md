@@ -80,6 +80,8 @@
 
 ### 버전별 한눈에 보기
 
+간단한 문의창과 MY PAGE 문의·답변의 0.3.28-beta [계획](docs/versions/0.3.28-beta/plan.md) · [검사/진행](docs/versions/0.3.28-beta/progress.md) · [결과](docs/versions/0.3.28-beta/report.md).
+
 | 문서 기준선 | 날짜 | 핵심 변경 | 실제 상태·검증/배포 | 남은 일 |
 |---|---|---|---|---|
 | v0.1.0 | 2026-10-08~27 | 한국사/TOEIC 학습 → LC·미니모의 → 얼음섬·6섬 지도 | 10/27 기능 배포 검증 완료; 이번 통합은 문서 전용 | 실기기·과거 콘텐츠 감사 후보·다중 인스턴스 검토 |
@@ -131,7 +133,7 @@ FILE ISLAND는 로그인한 사용자가 섬을 오가며 한국사와 TOEIC를 
 | 얼음섬 | `#battle`, `#battle/history/<id>` | 대기실·대전·서버 판정·복기, `battle-island.js` |
 | MyPage | `#account` / `#account/<sub>` | 로그인/계정·출석·파트너·보관함·내 기록, `account-ui.js`, `characters.js`, `my-records.js` |
 | 명예의 전당 | `#hall-of-fame` | 순위·XP·내 최근 풀이, `hall-of-fame.js` |
-| 문의 | `/inquiries/` | 별도 HTML 진입, `inquiries/index.html`, `portal-ui.js` |
+| 문의 | 지도 `건의·문의` / 기존 `/inquiries/` | 제목·내용 모달, MY PAGE 내 문의·답변, `media/inquiry-ui.js`; 기존 URL은 모달 진입으로 연결 |
 | 관리자 | `/ops/` | 관리자 권한이 필요한 별도 진입. `ops/index.html`, `portal-ui.js`, `admin-dashboard.js`, `admin-xp.js` |
 
 지도에서의 사용자 명칭과 코드의 legacy 이름(`rainbow`, `wrongnotes`)은 다를 수 있다. 표시 이름 변경을 이유로 라우트나 저장 키를 바꾸지 않는다. 로그인 필요 여부와 접근 권한은 기존 가드를 유지한다.
