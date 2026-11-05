@@ -172,3 +172,7 @@ html body #goryeoScript .goryeo-script-reader .gsr-silhak-scroll:focus-visible{o
  .goryeo-script-reader .gsr-independent-grid col:nth-child(odd){width:100px!important}
  .goryeo-script-reader .gsr-independent-grid col:nth-child(even){width:calc(100cqw - 2px)!important}
 }
+
+/* Reading space belongs to the lesson; topic and mode navigation stay above it. */
+.goryeo-script-reader .gsr-layout{grid-template-columns:minmax(0,1fr);gap:0}
+.goryeo-script-reader .gsr-toc{display:none}
