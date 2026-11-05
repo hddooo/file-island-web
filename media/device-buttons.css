@@ -1,31 +1,31 @@
 /* Shared navigation hardware. Layout, handlers and route ownership stay with the app. */
-html body :is(#homeBrand#homeBrand,#headerAccount,#headerLogout,.world-global-nav>a,.toeic-sections>button,.module-actions button,.mobile-nav>button,.steps>button.step,.ac-hall-entry,.hall-pages>button){
+html body :is(#homeBrand#homeBrand,#headerAccount,#headerLogout,.world-global-nav>a,.toeic-sections>button,.module-actions button,.mobile-nav>button,.steps>button.step,#joseonScript .joseon-script-reader .jsr-modes>button,#goryeoScript .goryeo-script-reader .gsr-modes>button,.ac-hall-entry,.hall-pages>button){
   --device-button-edge:#6d9d8c;--device-button-face:#0b211a;
   position:relative;isolation:isolate;box-sizing:border-box;min-height:44px!important;
   border:0!important;border-radius:2px!important;clip-path:polygon(7px 0,100% 0,100% calc(100% - 7px),calc(100% - 7px) 100%,0 100%,0 7px);
   background:var(--device-button-edge)!important;background-image:none!important;color:#edf8f1!important;
   box-shadow:none!important;text-decoration:none;text-shadow:none;cursor:pointer;
 }
-html body :is(#homeBrand#homeBrand,#headerAccount,#headerLogout,.world-global-nav>a,.toeic-sections>button,.module-actions button,.mobile-nav>button,.steps>button.step,.ac-hall-entry,.hall-pages>button)::before{
+html body :is(#homeBrand#homeBrand,#headerAccount,#headerLogout,.world-global-nav>a,.toeic-sections>button,.module-actions button,.mobile-nav>button,.steps>button.step,#joseonScript .joseon-script-reader .jsr-modes>button,#goryeoScript .goryeo-script-reader .gsr-modes>button,.ac-hall-entry,.hall-pages>button)::before{
   content:"";position:absolute;inset:1px;z-index:-1;pointer-events:none;
   clip-path:polygon(6px 0,100% 0,100% calc(100% - 6px),calc(100% - 6px) 100%,0 100%,0 6px);
   background:linear-gradient(155deg,#18382d,var(--device-button-face) 62%)!important;
 }
-html body :is(#homeBrand#homeBrand,#headerAccount,#headerLogout,.world-global-nav>a,.toeic-sections>button,.module-actions button,.mobile-nav>button,.steps>button.step,.ac-hall-entry,.hall-pages>button)::after{
+html body :is(#homeBrand#homeBrand,#headerAccount,#headerLogout,.world-global-nav>a,.toeic-sections>button,.module-actions button,.mobile-nav>button,.steps>button.step,#joseonScript .joseon-script-reader .jsr-modes>button,#goryeoScript .goryeo-script-reader .gsr-modes>button,.ac-hall-entry,.hall-pages>button)::after{
   content:"";position:absolute;right:9px;top:3px;width:12px;height:2px;background:#b0e8c8!important;opacity:.75;pointer-events:none;
 }
-html body :is(#homeBrand#homeBrand,#headerAccount,#headerLogout,.world-global-nav>a,.toeic-sections>button,.module-actions button,.mobile-nav>button,.steps>button.step,.ac-hall-entry,.hall-pages>button):focus-visible{
+html body :is(#homeBrand#homeBrand,#headerAccount,#headerLogout,.world-global-nav>a,.toeic-sections>button,.module-actions button,.mobile-nav>button,.steps>button.step,#joseonScript .joseon-script-reader .jsr-modes>button,#goryeoScript .goryeo-script-reader .gsr-modes>button,.ac-hall-entry,.hall-pages>button):focus-visible{
   outline:2px solid #d1ffe2!important;outline-offset:-4px!important;--device-button-edge:#b1efca;
 }
-html body :is(#homeBrand#homeBrand,#headerAccount,#headerLogout,.world-global-nav>a,.toeic-sections>button,.module-actions button,.mobile-nav>button,.steps>button.step,.ac-hall-entry,.hall-pages>button):is([aria-current],[aria-selected=true],.active){
+html body :is(#homeBrand#homeBrand,#headerAccount,#headerLogout,.world-global-nav>a,.toeic-sections>button,.module-actions button,.mobile-nav>button,.steps>button.step,#joseonScript .joseon-script-reader .jsr-modes>button,#goryeoScript .goryeo-script-reader .gsr-modes>button,.ac-hall-entry,.hall-pages>button):is([aria-current],[aria-selected=true],.active){
   --device-button-edge:#a7e8bd;--device-button-face:#205039;
 }
 @media(hover:hover){
-  html body :is(#homeBrand#homeBrand,#headerAccount,#headerLogout,.world-global-nav>a,.toeic-sections>button,.module-actions button,.mobile-nav>button,.steps>button.step,.ac-hall-entry,.hall-pages>button):hover:not(:disabled):not([aria-disabled=true]){--device-button-edge:#b5e9cd;--device-button-face:#173d2c}
+  html body :is(#homeBrand#homeBrand,#headerAccount,#headerLogout,.world-global-nav>a,.toeic-sections>button,.module-actions button,.mobile-nav>button,.steps>button.step,#joseonScript .joseon-script-reader .jsr-modes>button,#goryeoScript .goryeo-script-reader .gsr-modes>button,.ac-hall-entry,.hall-pages>button):hover:not(:disabled):not([aria-disabled=true]){--device-button-edge:#b5e9cd;--device-button-face:#173d2c}
 }
-html body :is(#homeBrand#homeBrand,#headerAccount,#headerLogout,.world-global-nav>a,.toeic-sections>button,.module-actions button,.mobile-nav>button,.steps>button.step,.ac-hall-entry,.hall-pages>button):is(:disabled,[aria-disabled=true]){opacity:.48!important;cursor:not-allowed;--device-button-edge:#6b7e74;--device-button-face:#16221c}
+html body :is(#homeBrand#homeBrand,#headerAccount,#headerLogout,.world-global-nav>a,.toeic-sections>button,.module-actions button,.mobile-nav>button,.steps>button.step,#joseonScript .joseon-script-reader .jsr-modes>button,#goryeoScript .goryeo-script-reader .gsr-modes>button,.ac-hall-entry,.hall-pages>button):is(:disabled,[aria-disabled=true]){opacity:.48!important;cursor:not-allowed;--device-button-edge:#6b7e74;--device-button-face:#16221c}
 html body :is(#app .toeic-sections>button,.world-global-nav>a){min-height:54px!important}
-@media(prefers-reduced-motion:reduce){html body :is(#homeBrand#homeBrand,#headerAccount,#headerLogout,.world-global-nav>a,.toeic-sections>button,.module-actions button,.mobile-nav>button,.steps>button.step,.ac-hall-entry,.hall-pages>button){transition:none!important}}
+@media(prefers-reduced-motion:reduce){html body :is(#homeBrand#homeBrand,#headerAccount,#headerLogout,.world-global-nav>a,.toeic-sections>button,.module-actions button,.mobile-nav>button,.steps>button.step,#joseonScript .joseon-script-reader .jsr-modes>button,#goryeoScript .goryeo-script-reader .gsr-modes>button,.ac-hall-entry,.hall-pages>button){transition:none!important}}
 
 html body .ac-hall-entry{display:inline-flex;align-items:center;justify-content:center}
 /* Text arrows share the same safe inset as header navigation inside the cut frame. */
@@ -33,3 +33,9 @@ html body :is(#homeBrand#homeBrand,#headerLogout,.module-actions button,.mobile-
   display:inline-flex!important;align-items:center;justify-content:center;gap:6px;
   padding:8px 12px!important;min-width:44px;line-height:1.4!important;
 }
+
+/* Reader navigation uses explicit true/false current states. */
+html body :is(#joseonScript#joseonScript .joseon-script-reader .jsr-modes,#goryeoScript#goryeoScript .goryeo-script-reader .gsr-modes)>button[aria-current="false"]{--device-button-edge:#6d9d8c;--device-button-face:#0b211a}
+
+html body :is(#joseonScript#joseonScript .joseon-script-reader .jsr-modes,#goryeoScript#goryeoScript .goryeo-script-reader .gsr-modes)>button{padding-top:22px;position:relative}
+html body :is(#joseonScript#joseonScript .joseon-script-reader .jsr-modes,#goryeoScript#goryeoScript .goryeo-script-reader .gsr-modes)>button::after{content:attr(data-navigation-number);top:5px;left:0;right:0;width:auto;height:auto;background:transparent!important;color:#b0e8c8!important;font:12px/1 FileIslandMenu,monospace;opacity:1;text-align:center}

@@ -111,7 +111,7 @@
     const nav=el('nav',null,'jsr-topics');nav.setAttribute('aria-label','조선 학습 주제');
     bundle.topics.forEach(t=>{const b=button(t.title,()=>navigate(t.id,mode==='exam'?'exam':'study'));b.dataset.topic=t.id;nav.append(b);});header.append(nav);
     const modes=el('nav',null,'jsr-modes');modes.setAttribute('aria-label','자료 구분');
-    [['study','개념 학습'],['exam','시험에는 이렇게 나온다'],['practice','빈칸 퀴즈']].forEach(([id,title])=>{const b=button(title,()=>navigate(topic,id));b.dataset.mode=id;modes.append(b);});header.append(modes);shell.append(header);
+    [['study','개념 학습'],['exam','시험에는 이렇게 나온다'],['practice','빈칸 퀴즈']].forEach(([id,title])=>{const b=button(title,()=>navigate(topic,id));b.dataset.mode=id;b.dataset.navigationNumber=String(modes.children.length+1).padStart(2,'0');modes.append(b);});header.append(modes);shell.append(header);
     const layout=el('div',null,'jsr-layout'),toc=el('nav',null,'jsr-toc'),body=el('main',null,'jsr-body');toc.setAttribute('aria-label','현재 주제 목차');layout.append(toc,body);shell.append(layout);
     function dismissImage(){if(!dialog)return;const d=dialog;dialog=null;if(d.node.open)d.node.close();d.node.remove();if(d.release)d.release();if(d.opener.isConnected)d.opener.focus();}
     function closeImage(){if(win.history.state&&win.history.state.joseonImage){win.history.back();}else dismissImage();}

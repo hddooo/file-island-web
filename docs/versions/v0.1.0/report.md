@@ -873,3 +873,10 @@ Original PDF SHA was verified and page81 freshly rendered with Poppler and perso
 - 정적 HTML/CSS/JS 저장소이며 별도 package.json lint/typecheck 구성은 없다. 변경 검사 스크립트의 node --check, git diff --check, 관련 테스트와 정적 빌드를 사용한다. 실제 회원·물리 iPhone/VoiceOver는 미검증이다. 개화기·API·인증 설정·S3·개인 데이터는 변경하지 않는다.
 
 - 최종 합성 실제 index 검수 통과: 320/390/1440px × 고려·조선, 모든 주제의 본문 폭=읽기 영역 폭·목차 display:none·문서 가로 넘침 없음. 탭/직접 링크/새로고침/성종 이후 연속 스크롤/확대 Back/임시 답안/로그아웃 검증 통과, canonical 저장 0. 진도 검사 67+15+59 통과. 기존 progress-recovery JSDOM 및 period 고정 해시 제약은 이번 CSS 변경의 통과 결과에 포함하지 않았다.
+
+### 고려·조선 메뉴와 소개 간격 — 0.3.16-beta
+
+- 기준 48e49f2. 기존 device-buttons의 각진 녹색 버튼을 reader 3모드에 재사용하고 01/02/03 및 명확한 현재/키보드 포커스 상태를 표시한다. 시대 메뉴는 44px 이상 터치 영역을 유지한다. 다른 버튼의 기존 규칙은 그대로다.
+- app의 offerLegacyQuiz만 false로 바꿔 별도 79회 링크를 제거한다. 직접 bookquiz 주소와 구판 저장·채점 코드는 보존한다. 조선 59쪽 도입의 내용·순서는 그대로이며 여백/본문16px/제목18px만 조정했다. 학습 본문은 기존 크기를 유지한다.
+- 실제 index 합성 검수: 320/390/1440px, 고려·조선 모든 주제, 동일 너비 모드 탭·번호·선택/포커스·줄바꿈·가로 넘침 없음, 반복 모드 전환/직접 주소/새로고침/확대 Back/임시 답안/로그아웃 및 두 시대 bookquiz 호환 통과. 본문·강조·표의 개념/시험 합집합 보존, 172정답·메타0, 모드 세션, 진도67+15+59, 버전 빌드 검사 통과.
+- 로컬 전용 실제 PNG를 직접 검토했다. 원문/PNG/캡처는 공개 파일에 넣지 않는다. 별도 lint/typecheck 구성은 없고 node --check/git diff --check/정적 빌드를 적용한다. 기존 progress-recovery JSDOM 및 period 고정 해시 한계는 이번 통과에 포함하지 않았다. 실회원·물리 iPhone/VoiceOver 미검증. 개화기 중지, API/보안/진도/S3 불변.

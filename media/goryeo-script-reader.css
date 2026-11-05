@@ -176,3 +176,11 @@ html body #goryeoScript .goryeo-script-reader .gsr-silhak-scroll:focus-visible{o
 /* Reading space belongs to the lesson; topic and mode navigation stay above it. */
 .goryeo-script-reader .gsr-layout{grid-template-columns:minmax(0,1fr);gap:0}
 .goryeo-script-reader .gsr-toc{display:none}
+
+/* Compact topic navigation; mode controls reuse the service's device buttons. */
+.goryeo-script-reader .gsr-header{margin-bottom:16px}
+.goryeo-script-reader .gsr-topics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin:12px 0 8px;max-width:620px}
+.goryeo-script-reader .gsr-topics button{min-width:0;min-height:44px;padding:6px 4px;font-size:14px;line-height:1.35;word-break:keep-all;border-radius:6px}
+.goryeo-script-reader .gsr-modes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:0;max-width:760px}
+.goryeo-script-reader .gsr-modes button{min-width:0;min-height:52px;padding:7px 5px;font:16px/1.35 FileIslandMenu,system-ui,sans-serif;word-break:keep-all;overflow-wrap:normal}
+@media(max-width:700px){.goryeo-script-reader .gsr-modes button{font-size:14px;min-height:64px}}

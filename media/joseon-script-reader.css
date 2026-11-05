@@ -123,3 +123,16 @@ html body #joseonScript .joseon-script-reader .jsr-silhak-scroll:focus-visible{o
 /* Reading space belongs to the lesson; topic and mode navigation stay above it. */
 .joseon-script-reader .jsr-layout{grid-template-columns:minmax(0,1fr);gap:0}
 .joseon-script-reader .jsr-toc{display:none}
+
+/* Compact topic navigation; mode controls reuse the service's device buttons. */
+.joseon-script-reader .jsr-header{margin-bottom:16px}
+.joseon-script-reader .jsr-topics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;margin:12px 0 8px;max-width:620px}
+.joseon-script-reader .jsr-topics button{min-width:0;min-height:44px;padding:6px 4px;font-size:14px;line-height:1.35;word-break:keep-all;border-radius:6px}
+.joseon-script-reader .jsr-modes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:0;max-width:760px}
+.joseon-script-reader .jsr-modes button{min-width:0;min-height:52px;padding:7px 5px;font:16px/1.35 FileIslandMenu,system-ui,sans-serif;word-break:keep-all;overflow-wrap:normal}
+@media(max-width:700px){.joseon-script-reader .jsr-modes button{font-size:14px;min-height:64px}}
+
+/* The source introduction remains complete, with a brief-note rhythm. */
+.joseon-script-reader .jsr-source-card[data-page="59"][data-kind="study"]{padding:12px 16px;margin-bottom:16px;font-size:16px;line-height:1.6}
+.joseon-script-reader .jsr-source-card[data-page="59"][data-kind="study"] h3{font-size:18px;line-height:1.4;margin:0 0 8px}
+.joseon-script-reader .jsr-source-card[data-page="59"][data-kind="study"] p{margin:6px 0}
