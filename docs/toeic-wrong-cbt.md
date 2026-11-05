@@ -94,3 +94,7 @@ Checks for this candidate:
 - The existing `test-toeic-partial-readiness.cjs` (345 assertions), `test-toeic-practice-client.cjs`, and `test-toeic-script-status.cjs` passed against the changed Practice integration. Poppler parsed the generated A4 PDFs, extracted Korean/English text and rendered sample pages. The 100-line passage fixture retains its last line and both questions across three pages.
 
 This section records local candidate implementation and checks only. Exact-commit CI, publication and operating-domain verification are separate integration steps.
+
+### Part 1 pagination refinement (implementation candidate)
+
+Each Part 1 photo question starts on a fresh page. Its full image is proportionally scaled to at most 260 pt high, leaving room for choices and the transcript without cropping. Short paragraphs stay together, and the final two lines of longer paragraphs are kept together to avoid a one-line overflow page. The seven-photo synthetic fixture reproduces eight pages before this change and seven after it; source headings, question numbers and the final bilingual transcript line are checked with PDF.js and Poppler. This change does not expand review API access or alter learner records. Real-account download and operating publication remain separate checks.

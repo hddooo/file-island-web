@@ -205,7 +205,9 @@
     async function paragraph(text, style) {
       style = style || {}; var size = style.size || 11, leading = size * 1.5, x = PAGE.margin + (style.indent || 0);
       var values = wrap(text, size, style.bold, contentWidth - (style.indent || 0));
-      for (var line of values) { await room(leading); if (line) draw(line, x, y + size, size, style.bold, style.color); y += leading; }
+      // Keep short paragraphs together and never strand a final line by itself.
+      if (values.length > 1 && values.length <= 4) await room(values.length * leading);
+      for (var i = 0; i < values.length; i++) { await room((values.length - i === 2 ? 2 : 1) * leading); var line = values[i]; if (line) draw(line, x, y + size, size, style.bold, style.color); y += leading; }
       y += style.after == null ? 5 : style.after;
     }
     async function picture(asset, label) {
@@ -214,7 +216,9 @@
         decoded = await loadImage(asset, options);
         var image = decoded.image, width = Math.min(contentWidth, image.naturalWidth * 0.75), height = width * image.naturalHeight / image.naturalWidth;
         // Scale an exceptionally tall scan to a full page, never crop it.
-        var maxHeight = PAGE.bottom - 100;
+        // A photo question needs room for its choices, review and transcript.
+        // Preserve the full photo; scaling changes neither its crop nor aspect.
+        var maxHeight = asset.part === 1 ? 260 : PAGE.bottom - 100;
         if (height > maxHeight) { width *= maxHeight / height; height = maxHeight; }
         await room(height + 27); current(options);
         ctx.drawImage(image, PAGE.margin + (contentWidth - width) / 2, y, width, height); y += height + 4;
@@ -246,7 +250,11 @@
       await paragraph('문제·지문·보기·그림은 현재 Practice 자료를 그대로 담았습니다. 공통지문 복습 문항은 오답으로 추가한 것이 아닙니다.', { size: 9, color: '#52525b' });
       await paragraph('해설 포함 ' + extra.reviews.size + ' / ' + selected.length + '문항. 조회되지 않은 해설은 표시하며, 새 답안 제출이나 학습 기록 변경은 하지 않습니다.', { size: 9, color: '#52525b', after: 10 });
       for (var warning of extra.warnings) await paragraph(warning, { size: 9, color: '#52525b' });
+      var groupIndex = 0;
       for (var qs of groups) {
+        // Keep each Part 1 photo and its source heading on the same fresh page.
+        if (part === 1 && groupIndex > 0) { await finish(); begin(); }
+        groupIndex++;
         current(options); await room(90);
         var first = qs[0], label = str(first.sourceTitle) + ' · 원문 ' + qs.map(function (q) { return q.sourceIdentity ? q.sourceIdentity.questionNumber : q.number; }).join('·') + '번';
         await paragraph(label, { bold: true, size: 11, after: 7 });
