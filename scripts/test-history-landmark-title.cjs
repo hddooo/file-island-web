@@ -1,0 +1,15 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const {JSDOM}=require(process.env.HANQ_JSDOM||'../.test-tools/node_modules/jsdom');
+const source=fs.readFileSync(path.join(__dirname,'../media/island-harbors.js'),'utf8');
+const ids=['homePastExams','homeFormalExams','homeWrongNotes'],names=['시대별 학습 궁','모의고사장','오답노트 정자'];
+const dom=new JSDOM('<body><main id="app"><nav class="subject-travel-map history-travel-map">'+ids.map((id,i)=>'<button id="'+id+'" title="old title"><strong>Feature '+i+'</strong><small class="world-place-name">Place '+i+'</small></button>').join('')+'</nav></main></body>',{url:'https://fixture.test/',runScripts:'outside-only'}),w=dom.window,d=w.document;
+w.matchMedia=()=>({matches:false});w.requestAnimationFrame=()=>1;w.cancelAnimationFrame=()=>{};
+w.IntersectionObserver=class{observe(){}disconnect(){}};w.ResizeObserver=class{observe(){}disconnect(){}};
+let clicks=0;const originals=ids.map(id=>d.getElementById(id));originals.forEach(el=>el.addEventListener('click',()=>clicks++));
+w.eval(source);const map=d.querySelector('nav');w.HanqIslandHarbors.enhance(map);w.HanqIslandHarbors.enhance(map);
+assert.equal(map.querySelectorAll('.history-landmark').length,3);
+originals.forEach((el,i)=>{assert.equal(d.getElementById(ids[i]),el);assert.equal(el.getAttribute('title'),null);assert.equal(el.getAttribute('aria-label'),names[i]);assert.equal(el.querySelector('.harbor-sign strong').textContent,'Feature '+i);assert.equal(el.getAttribute('aria-describedby'),'harbor-history-'+ids[i]+'-place');el.click();el.dispatchEvent(new w.Event('pointerdown'));assert(el.classList.contains('harbor-selected'));});
+assert.equal(clicks,3);assert.equal(map.querySelectorAll('.harbor-chart').length,1);
+map.dispatchEvent(new w.Event('pointerleave'));assert.equal(map.querySelectorAll('.harbor-selected').length,0);
+dom.window.close();console.log(JSON.stringify({passed:true,landmarks:3,noNativeTitles:true,ariaNamesPreserved:true,originalControlsAndClickHandlersPreserved:true,signsPreserved:true,idempotentMount:true}));

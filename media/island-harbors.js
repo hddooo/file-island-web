@@ -87,7 +87,7 @@
       if(!stop)return;
       control.classList.add('harbor-stop');control.style.setProperty('--pin-x',stop.x);control.style.setProperty('--pin-y',stop.y);control.style.setProperty('--mobile-x',stop.mx);control.style.setProperty('--mobile-y',stop.my);
       var label=control.querySelector('strong,.wn-entry-t'),place=control.querySelector('.world-place-name');
-      if(kind==='history'&&landmarks[key]){control.classList.add('history-landmark');control.dataset.landmark=key;control.setAttribute('aria-label',landmarks[key].name);control.title=landmarks[key].name;}
+      if(kind==='history'&&landmarks[key]){control.classList.add('history-landmark');control.dataset.landmark=key;control.setAttribute('aria-label',landmarks[key].name);control.removeAttribute('title');}
       if(label){label.id='harbor-'+kind+'-'+key+'-label';if(!control.hasAttribute('aria-label'))control.setAttribute('aria-labelledby',label.id);}
       if(place){place.id='harbor-'+kind+'-'+key+'-place';control.setAttribute('aria-describedby',place.id);}
       var sign=document.createElement('span');sign.className='harbor-sign';if(label)sign.appendChild(label);if(place)sign.appendChild(place);control.appendChild(sign);
