@@ -11,13 +11,17 @@ html body #app .world-map .wm-destination:focus-visible{outline:3px solid #bce8f
 html body #app .world-map .wm-ice{--plate:#5a2422;color:#ffdfd9!important}
 html body #app .world-map .wm-rainbow{--plate:#174b30;opacity:1!important;color:#edfff1!important;cursor:pointer}
 html body #app .world-map .wm-hall{--plate:#544016}
-.wm-roamer{position:absolute;z-index:3;left:var(--wide-x);top:var(--wide-y);width:clamp(40px,8%,100px);aspect-ratio:1;transform:translate(-50%,-100%);pointer-events:none;filter:drop-shadow(0 3px 2px #16404b44);contain:layout style}
+.wm-roamer{position:absolute;z-index:3;left:var(--wide-x);top:var(--wide-y);width:var(--wm-roamer-wide,clamp(26px,4.6%,58px));aspect-ratio:1;transform:translate(-50%,-100%);pointer-events:none;filter:drop-shadow(0 3px 2px #16404b44);contain:layout style}
+/* Overview scale is fixed per native island depth; foot anchors and atlas frames stay unchanged. */
+.wm-roamer[data-character="frigimon"]{--wm-roamer-wide:clamp(24px,4.1%,52px);--wm-roamer-small:clamp(18px,7.2%,34px)}
+.wm-roamer[data-character="shellmon"]{--wm-roamer-wide:clamp(28px,5%,64px);--wm-roamer-small:clamp(22px,8.7%,40px)}
+.wm-roamer[data-character="monzaemon"]{--wm-roamer-wide:clamp(30px,5.2%,66px);--wm-roamer-small:clamp(22px,9.1%,42px)}
 .wm-roamer-facing,.wm-roamer-sprite{display:block;width:100%;height:100%}.wm-roamer-sprite{background-image:url('world-map-roamers-v1.png');background-size:400% 400%;background-repeat:no-repeat}
 .wm-water-glint{position:absolute;z-index:1;left:40%;top:40%;width:22%;height:9%;pointer-events:none;background:repeating-linear-gradient(165deg,transparent 0 10px,#b8faff 12px,transparent 14px 24px);opacity:.1;mask-image:radial-gradient(ellipse,#000,transparent 70%);mix-blend-mode:screen}
 .wm-cloud-belt{position:absolute;z-index:1;left:3%;top:4%;width:27%;height:9%;pointer-events:none;opacity:.1;background:radial-gradient(ellipse,#fff 10%,transparent 70%);filter:blur(5px)}
 .wm-asset-status:empty{display:none}.wm-asset-status{font-size:13px}
 @media(hover:hover) and (pointer:fine){html body #app .world-map .wm-destination:not(:disabled):hover{filter:brightness(1.18)}}
-@media(max-width:700px){.world-map{--map-ratio:1;border-radius:9px}.archipelago-home{padding:0 2px}html body #app .archipelago-home .wm-title{font-size:18px!important;margin-bottom:6px!important}html body #app .world-map .wm-destination{left:var(--mobile-x);top:var(--mobile-y);width:clamp(92px,31vw,120px);padding:4px 7px;min-height:44px}html body #app .world-map .wm-destination strong{font-size:14px!important}.wm-roamer{left:var(--mobile-x);top:var(--mobile-y);width:14%;min-width:32px;max-width:64px}.wm-water-glint{left:32%;top:31%;width:35%;height:5%}}
+@media(max-width:700px){.world-map{--map-ratio:1;border-radius:9px}.archipelago-home{padding:0 2px}html body #app .archipelago-home .wm-title{font-size:18px!important;margin-bottom:6px!important}html body #app .world-map .wm-destination{left:var(--mobile-x);top:var(--mobile-y);width:clamp(92px,31vw,120px);padding:4px 7px;min-height:44px}html body #app .world-map .wm-destination strong{font-size:14px!important}.wm-roamer{left:var(--mobile-x);top:var(--mobile-y);width:var(--wm-roamer-small,clamp(20px,8.1%,38px))}.wm-water-glint{left:32%;top:31%;width:35%;height:5%}}
 @media(prefers-reduced-motion:reduce){html body #app .world-map .wm-destination{transition:none!important}}
 .world-map{container-type:inline-size}
 html body #app .world-map .wm-destination{width:clamp(92px,19%,160px)}
