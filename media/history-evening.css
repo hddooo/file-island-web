@@ -81,15 +81,15 @@ html body #app .history-evening.he-paused :is(.he-friend,.he-friend-sprite,.he-r
    follow the chart (including its contain/cover camera), never the viewport.
    Each walker retraces its polyline; no closing chord across grass or water. */
 html body #app .history-evening :is(.he-friend,.he-resident){left:var(--he-x0);top:var(--he-y0);width:var(--he-size);transform-origin:50% 90%;transform:translate(-50%,-90%) scale(var(--he-s0));animation:he-path-walk var(--he-duration) var(--he-delay) linear infinite!important}
-html body #app .history-evening .he-friend{--he-size:3%;--he-duration:34s;--he-delay:-4s;--he-x0:57%;--he-y0:63%;--he-s0:1.000;--he-x1:60%;--he-y1:63.2%;--he-s1:1.005;--he-x2:63%;--he-y2:63.4%;--he-s2:1.010;--he-x3:66%;--he-y3:63.5%;--he-s3:1.012;}
-html body #app .history-evening .he-koromon{--he-size:2.25%;--he-duration:28s;--he-delay:-12s;--he-x0:40%;--he-y0:64%;--he-s0:1.000;--he-x1:42%;--he-y1:64%;--he-s1:1.000;--he-x2:44%;--he-y2:64%;--he-s2:1.000;--he-x3:46%;--he-y3:64%;--he-s3:1.000;}
-html body #app .history-evening .he-gabumon{--he-size:1.8%;--he-duration:32s;--he-delay:-21s;--he-x0:51.2%;--he-y0:50%;--he-s0:1.000;--he-x1:52%;--he-y1:51%;--he-s1:1.025;--he-x2:50.5%;--he-y2:52%;--he-s2:1.050;--he-x3:48%;--he-y3:53%;--he-s3:1.075;}
-html body #app .history-evening .he-patamon{--he-size:2.4%;--he-duration:36s;--he-delay:-8s;--he-x0:44%;--he-y0:61.3%;--he-s0:1.000;--he-x1:46%;--he-y1:62%;--he-s1:1.018;--he-x2:49%;--he-y2:62.5%;--he-s2:1.030;--he-x3:52%;--he-y3:63%;--he-s3:1.042;}
+html body #app .history-evening .he-friend{--he-size:3.8%;--he-duration:34s;--he-delay:-4s;--he-x0:57%;--he-y0:63%;--he-s0:1.000;--he-x1:60%;--he-y1:63.2%;--he-s1:1.005;--he-x2:63%;--he-y2:63.4%;--he-s2:1.010;--he-x3:66%;--he-y3:63.5%;--he-s3:1.012;}
+html body #app .history-evening .he-koromon{--he-size:2.9%;--he-duration:28s;--he-delay:-12s;--he-x0:40%;--he-y0:64%;--he-s0:1.000;--he-x1:42%;--he-y1:64%;--he-s1:1.000;--he-x2:44%;--he-y2:64%;--he-s2:1.000;--he-x3:46%;--he-y3:64%;--he-s3:1.000;}
+html body #app .history-evening .he-gabumon{--he-size:2.6%;--he-duration:32s;--he-delay:-21s;--he-x0:51.2%;--he-y0:50%;--he-s0:1.000;--he-x1:52%;--he-y1:51%;--he-s1:1.025;--he-x2:50.5%;--he-y2:52%;--he-s2:1.050;--he-x3:48%;--he-y3:53%;--he-s3:1.075;}
+html body #app .history-evening .he-patamon{--he-size:3%;--he-duration:36s;--he-delay:-8s;--he-x0:44%;--he-y0:61.3%;--he-s0:1.000;--he-x1:46%;--he-y1:62%;--he-s1:1.018;--he-x2:49%;--he-y2:62.5%;--he-s2:1.030;--he-x3:52%;--he-y3:63%;--he-s3:1.042;}
 @media(max-width:700px) and (orientation:portrait){
-html body #app .history-evening .he-friend{--he-facing:-1;--he-size:4.5%;--he-duration:34s;--he-delay:-4s;--he-x0:49%;--he-y0:56%;--he-s0:1.000;--he-x1:48%;--he-y1:57%;--he-s1:1.025;--he-x2:45%;--he-y2:58%;--he-s2:1.050;--he-x3:42%;--he-y3:59%;--he-s3:1.075;}
-html body #app .history-evening .he-koromon{--he-size:4%;--he-duration:28s;--he-delay:-12s;--he-x0:36%;--he-y0:60.4%;--he-s0:1.000;--he-x1:33%;--he-y1:61.7%;--he-s1:1.033;--he-x2:32%;--he-y2:63%;--he-s2:1.065;--he-x3:35%;--he-y3:64.5%;--he-s3:1.103;}
-html body #app .history-evening .he-gabumon{--he-size:3.5%;--he-duration:32s;--he-delay:-21s;--he-x0:55%;--he-y0:46%;--he-s0:1.000;--he-x1:50%;--he-y1:47.2%;--he-s1:1.030;--he-x2:47%;--he-y2:48.5%;--he-s2:1.063;--he-x3:46.5%;--he-y3:50%;--he-s3:1.100;}
-html body #app .history-evening .he-patamon{--he-size:3.2%;--he-duration:36s;--he-delay:-8s;--he-x0:55%;--he-y0:39.8%;--he-s0:1.000;--he-x1:60%;--he-y1:41.2%;--he-s1:1.025;--he-x2:64%;--he-y2:42.5%;--he-s2:1.050;--he-x3:62%;--he-y3:44%;--he-s3:1.075;}
+html body #app .history-evening .he-friend{--he-facing:-1;--he-size:5.8%;--he-duration:34s;--he-delay:-4s;--he-x0:49%;--he-y0:56%;--he-s0:1.000;--he-x1:48%;--he-y1:57%;--he-s1:1.025;--he-x2:45%;--he-y2:58%;--he-s2:1.050;--he-x3:42%;--he-y3:59%;--he-s3:1.075;}
+html body #app .history-evening .he-koromon{--he-size:5.2%;--he-duration:28s;--he-delay:-12s;--he-x0:36%;--he-y0:60.4%;--he-s0:1.000;--he-x1:33%;--he-y1:61.7%;--he-s1:1.033;--he-x2:32%;--he-y2:63%;--he-s2:1.065;--he-x3:35%;--he-y3:64.5%;--he-s3:1.103;}
+html body #app .history-evening .he-gabumon{--he-size:4.6%;--he-duration:32s;--he-delay:-21s;--he-x0:55%;--he-y0:46%;--he-s0:1.000;--he-x1:50%;--he-y1:47.2%;--he-s1:1.030;--he-x2:47%;--he-y2:48.5%;--he-s2:1.063;--he-x3:46.5%;--he-y3:50%;--he-s3:1.100;}
+html body #app .history-evening .he-patamon{--he-size:4.2%;--he-duration:36s;--he-delay:-8s;--he-x0:55%;--he-y0:39.8%;--he-s0:1.000;--he-x1:60%;--he-y1:41.2%;--he-s1:1.025;--he-x2:64%;--he-y2:42.5%;--he-s2:1.050;--he-x3:62%;--he-y3:44%;--he-s3:1.075;}
 }
 @keyframes he-path-walk{
 0%{left:var(--he-x0);top:var(--he-y0);transform:translate(-50%,-90%) scale(var(--he-s0)) scaleX(var(--he-facing,1))}
@@ -113,3 +113,24 @@ html body #app .history-evening .he-patamon{--he-size:3.2%;--he-duration:36s;--h
 @media(prefers-reduced-motion:reduce){html body #app [data-history-evening] :is(.he-night,.harbor-chart>img,.living-water-surface,.living-water-plate,.living-boat){transition:none!important}}
 html.world-low-power body #app [data-history-evening] :is(.he-night,.harbor-chart>img,.living-water-surface,.living-water-plate,.living-boat){transition:none!important}
 
+
+
+/* Koromon hops during the existing route's travel windows, then rests at each
+   end. Body and grounded shadow share the route duration/delay, so pausing or
+   resuming cannot drift their phases. The original ear/face cels stay intact. */
+html body #app .history-evening .he-koromon .he-native{transform-origin:50% 96%;animation:hanq-koromon-actions 13s -4s steps(1,end) infinite,he-koromon-hop var(--he-duration) var(--he-delay) ease-in-out infinite!important}
+html body #app .history-evening .he-koromon .he-resident-shadow{transform-origin:50% 50%;animation:he-koromon-hop-shadow var(--he-duration) var(--he-delay) ease-in-out infinite!important}
+@keyframes he-koromon-hop{
+0%,8%,11%,14%,17%,20%,23%,26%,29%,32%,35%,38%,41%,44%,56%,59%,62%,65%,68%,71%,74%,77%,80%,83%,86%,89%,92%,100%{transform:translateY(0) scale(1)}
+8.36%,10.64%,11.36%,13.64%,14.36%,16.64%,17.36%,19.64%,20.36%,22.64%,23.36%,25.64%,26.36%,28.64%,29.36%,31.64%,32.36%,34.64%,35.36%,37.64%,38.36%,40.64%,41.36%,43.64%,56.36%,58.64%,59.36%,61.64%,62.36%,64.64%,65.36%,67.64%,68.36%,70.64%,71.36%,73.64%,74.36%,76.64%,77.36%,79.64%,80.36%,82.64%,83.36%,85.64%,86.36%,88.64%,89.36%,91.64%{transform:translateY(0) scale(1.04,.96)}
+9.29%,12.29%,15.29%,18.29%,21.29%,24.29%,27.29%,30.29%,33.29%,36.29%,39.29%,42.29%,57.29%,60.29%,63.29%,66.29%,69.29%,72.29%,75.29%,78.29%,81.29%,84.29%,87.29%,90.29%{transform:translateY(-20%) scale(.98,1.02)}
+9.86%,12.86%,15.86%,18.86%,21.86%,24.86%,27.86%,30.86%,33.86%,36.86%,39.86%,42.86%,57.86%,60.86%,63.86%,66.86%,69.86%,72.86%,75.86%,78.86%,81.86%,84.86%,87.86%,90.86%{transform:translateY(-18%) scale(.99,1.01)}
+}
+@keyframes he-koromon-hop-shadow{
+0%,8%,11%,14%,17%,20%,23%,26%,29%,32%,35%,38%,41%,44%,56%,59%,62%,65%,68%,71%,74%,77%,80%,83%,86%,89%,92%,100%{transform:scaleX(1);opacity:1}
+8.36%,10.64%,11.36%,13.64%,14.36%,16.64%,17.36%,19.64%,20.36%,22.64%,23.36%,25.64%,26.36%,28.64%,29.36%,31.64%,32.36%,34.64%,35.36%,37.64%,38.36%,40.64%,41.36%,43.64%,56.36%,58.64%,59.36%,61.64%,62.36%,64.64%,65.36%,67.64%,68.36%,70.64%,71.36%,73.64%,74.36%,76.64%,77.36%,79.64%,80.36%,82.64%,83.36%,85.64%,86.36%,88.64%,89.36%,91.64%{transform:scaleX(1.04);opacity:1}
+9.29%,12.29%,15.29%,18.29%,21.29%,24.29%,27.29%,30.29%,33.29%,36.29%,39.29%,42.29%,57.29%,60.29%,63.29%,66.29%,69.29%,72.29%,75.29%,78.29%,81.29%,84.29%,87.29%,90.29%{transform:scaleX(.68);opacity:.55}
+9.86%,12.86%,15.86%,18.86%,21.86%,24.86%,27.86%,30.86%,33.86%,36.86%,39.86%,42.86%,57.86%,60.86%,63.86%,66.86%,69.86%,72.86%,75.86%,78.86%,81.86%,84.86%,87.86%,90.86%{transform:scaleX(.72);opacity:.6}
+}
+html body #app .history-evening.he-paused .he-koromon :is(.he-native,.he-resident-shadow){animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){html body #app .history-evening .he-koromon :is(.he-native,.he-resident-shadow){animation:none!important;transform:none!important;opacity:1}}

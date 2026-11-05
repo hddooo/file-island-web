@@ -1,5 +1,13 @@
 # FE 실제 진행 상태
 
+### 2026-11-06 — 역사숲 코로몬 도약·캐릭터 크기 / 0.4.2-beta
+
+운영 1e272b15274a8780c790d00dda3254b021ef3abb의 경로·원근 배율을 유지하고 desktop/portrait 네 캐릭터의 기준 크기만 소폭 키운다. 코로몬의 원래 얼굴/귀 프레임을 통째로 유지한 채, 경로와 같은 28초·−12초 위상으로 각 이동 구간에 12회씩 도약하고 끝 대기 구간에서는 지면에 선다. 그림자는 지면에 남고 높이에 맞춰 작고 옅어진다. 새 타이머·에셋·원본 픽셀 수정, 다른 섬·학습/계정/API 계약 변경은 없다.
+
+코로몬 24회 도약/착지·양끝 대기·그림자·축소 모션·일시정지·원근 크기 계약과 CSS 구문, 기존 규칙(크기 8값 외)/원화 URL 동일성을 검사한다. 기존 낮밤·수명·모닥불 회귀도 별도로 실행한다. 실제 후보 모바일/축소 모션 렌더는 사전 미검증이며 정확 SHA CI/CD·운영 야간 화면과 이동/정지 전체 주기·메뉴를 게시 후 확인한다.
+
+두발 캐릭터 걷기는 미완료다. 아구몬의 네 원본 프레임은 고정된 발의 기본/손 흔들기/눈깜빡임이고, 가부몬 기존 rig는 팔·발 영역이 겹쳐 단순 활성화나 과장 시 이중 발·절단선 위험이 있다. 이 단위에서는 기존 두 캐릭터 경로·idle 표현을 보존하며 걷기 완료로 표시하지 않는다. 제대로 분리한 기존 원화 rig 또는 승인된 보행 프레임과 실제 시각 검수가 후속으로 필요하다. 파타몬 원래 날갯짓은 보존한다.
+
 ### 2026-11-06 — 역사숲 불꽃 팽창 완화 / 0.4.1-beta
 
 운영 d0a48fafa87e2248e59aabc9a4a3d8b977f43977에서 불꽃 폭 .86–1.09·높이 .84–1.15 확대와 보조 불꽃의 불투명도 덮임을 확인했다. 폭 배율은 없애고 높이 .98–1.03, 작은 좌우 이동·기울기의 비대칭 5박자로 바꾼다. 두 불꽃의 서로 다른 주기와 보조 opacity .35를 유지하며 화로·의자 크기나 배경·날씨·캐릭터 경로, API·학습 기록은 변경하지 않는다. 별도 JS 타이머나 에셋을 추가하지 않는다.
@@ -916,4 +924,5 @@ Source summary code and index routing are integrated on an isolated branch based
 ### 2026-11-04 frontend automatic deployment only
 
 The isolated branch starts at deployed dcfa5bcebcdf2dd47c1181b64511190a10004619. Active workflows now contain one main-only public build job and the existing Windows deploy job, with zero automated test commands or browser/test installs. YAML parsing and semantic preservation checks pass. Local repeatable static builds pass; controller tests pass15/skip1 (Linux symlink on Windows). Runtime files, local test scripts and installed controller are unchanged. New exact-SHA build/deployment verification is pending at this commit.
+
 
