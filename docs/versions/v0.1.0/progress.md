@@ -1,5 +1,11 @@
 # FE 실제 진행 상태
 
+### 2026-11-06 — 역사숲 불꽃 팽창 완화 / 0.4.1-beta
+
+운영 d0a48fafa87e2248e59aabc9a4a3d8b977f43977에서 불꽃 폭 .86–1.09·높이 .84–1.15 확대와 보조 불꽃의 불투명도 덮임을 확인했다. 폭 배율은 없애고 높이 .98–1.03, 작은 좌우 이동·기울기의 비대칭 5박자로 바꾼다. 두 불꽃의 서로 다른 주기와 보조 opacity .35를 유지하며 화로·의자 크기나 배경·날씨·캐릭터 경로, API·학습 기록은 변경하지 않는다. 별도 JS 타이머나 에셋을 추가하지 않는다.
+
+의존성 없는 불꽃 계약 검사, CSS 구문·다른 규칙/원화 URL 동일성, 기존 세 시간대 낮밤·장면 수명 검사를 통과했다. 기존 reduced-motion·로드 대기·일시정지 선택자는 보존한다. 기준 화면은 로그인된 클라우드 Chrome 1180×757 야간이며, 후보의 실운영 시각·메뉴와 정확 SHA CI/CD·version/HTML/자산은 게시 후 검증한다. 모바일·실기기 및 실제 reduced-motion 렌더 검수는 미실시이며 정적 계약 검사를 시각 완료로 쓰지 않는다.
+
 ### 2026-11-06 — 역사섬 한국 시간 낮밤 / 0.4.0-beta
 
 문의 배포 fa7387968584caec52a7c0767f3ed731bbbed24f의 CI/CD 성공과 실제 운영 버전을 확인한 뒤, 변경 없는 history-evening 기준 파일에 낮밤 후보만 적용한다. Asia/Seoul 05:30–08:00 새벽, 08:00–17:00 낮, 17:00–20:00 해질녘, 그 외 밤을 완만히 연결한다. 실제 천문 일출 계산은 아니며 원화·날씨 주기·캐릭터 경로·학습/계정/저장 계약은 변경하지 않는다. 원래 야간 지면과 주변 배경 밝기를 보존한다.
@@ -910,3 +916,4 @@ Source summary code and index routing are integrated on an isolated branch based
 ### 2026-11-04 frontend automatic deployment only
 
 The isolated branch starts at deployed dcfa5bcebcdf2dd47c1181b64511190a10004619. Active workflows now contain one main-only public build job and the existing Windows deploy job, with zero automated test commands or browser/test installs. YAML parsing and semantic preservation checks pass. Local repeatable static builds pass; controller tests pass15/skip1 (Linux symlink on Windows). Runtime files, local test scripts and installed controller are unchanged. New exact-SHA build/deployment verification is pending at this commit.
+
