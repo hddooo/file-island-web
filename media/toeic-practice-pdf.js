@@ -150,9 +150,14 @@
     if (!requestOwner) throw Error('signed_out');
     options = Object.assign({}, options, { isCurrent: function () { return requestOwner === identity(supplied.api) && (!supplied.isCurrent || supplied.isCurrent()); } });
     current(options);
-    var groups = bundles(items, part), selected = groups.flat(), title = 'HanQ Practice - Part ' + part + ' 오답노트';
+    var mode = options.mode || 'questions';
+    if (mode !== 'questions' && mode !== 'answers') throw Error('invalid_mode');
+    var answers = mode === 'answers', groups = bundles(items, part), selected = groups.flat();
+    var sheet = answers ? '정답·해설지' : '문제지', title = 'HanQ Practice - Part ' + part + ' ' + sheet;
     if (!selected.length) throw Error('empty');
-    var extra = await supplements(selected, options);
+    // Problem sheets never request or render answers, translations, or LC scripts.
+    var extra = answers ? await supplements(selected, options) : { reviews: new Map(), scripts: new Map(), warnings: [] };
+    if (answers && !extra.reviews.size) throw Error('no_reviews');
     current(options);
     if (root.document.fonts) { var fontTimer; try { await Promise.race([root.document.fonts.ready, new Promise(function (resolve) { fontTimer = setTimeout(resolve, 5000); })]); } finally { clearTimeout(fontTimer); } }
     current(options);
@@ -170,7 +175,7 @@
     function begin() {
       ctx.setTransform(PAGE.scale, 0, 0, PAGE.scale, 0, 0); ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, PAGE.width, PAGE.height); lines = [];
       draw('HanQ  /  TOEIC PRACTICE', PAGE.margin, 31, 8, true, '#52525b');
-      draw('PART ' + part + '  ·  나의 오답노트', PAGE.margin, 54, 17, true);
+      draw('PART ' + part + '  ·  ' + sheet, PAGE.margin, 54, 17, true);
       ctx.strokeStyle = '#18181b'; ctx.lineWidth = 0.8; ctx.beginPath(); ctx.moveTo(PAGE.margin, 66); ctx.lineTo(PAGE.width - PAGE.margin, 66); ctx.stroke(); y = 85;
     }
     async function finish() {
@@ -216,7 +221,7 @@
         decoded = await loadImage(asset, options);
         var image = decoded.image, width = Math.min(contentWidth, image.naturalWidth * 0.75), height = width * image.naturalHeight / image.naturalWidth;
         // Scale an exceptionally tall scan to a full page, never crop it.
-        // A photo question needs room for its choices, review and transcript.
+        // A photo question needs room for its choices without cropping the source.
         // Preserve the full photo; scaling changes neither its crop nor aspect.
         var maxHeight = asset.part === 1 ? 260 : PAGE.bottom - 100;
         if (height > maxHeight) { width *= maxHeight / height; height = maxHeight; }
@@ -247,23 +252,23 @@
     try {
       var wrongCount = selected.filter(wrong).length;
       await paragraph('오답 ' + wrongCount + '문항 · 공통지문 복습 ' + (selected.length - wrongCount) + '문항 · 총 ' + selected.length + '문항', { size: 10 });
-      await paragraph('문제·지문·보기·그림은 현재 Practice 자료를 그대로 담았습니다. 공통지문 복습 문항은 오답으로 추가한 것이 아닙니다.', { size: 9, color: '#52525b' });
-      await paragraph('해설 포함 ' + extra.reviews.size + ' / ' + selected.length + '문항. 조회되지 않은 해설은 표시하며, 새 답안 제출이나 학습 기록 변경은 하지 않습니다.', { size: 9, color: '#52525b', after: 10 });
+      await paragraph(answers ? '문제지와 같은 번호 순서입니다. 풀이를 마친 뒤 확인하세요.' : '정답·해설과 듣기 대본은 별도 해설지에서 확인하세요.', { size: 9, color: '#52525b' });
+      if (answers) await paragraph('정답·해설 조회 ' + extra.reviews.size + ' / ' + selected.length + '문항', { size: 9, color: '#52525b', after: 10 });
       for (var warning of extra.warnings) await paragraph(warning, { size: 9, color: '#52525b' });
       var groupIndex = 0;
       for (var qs of groups) {
         // Keep each Part 1 photo and its source heading on the same fresh page.
-        if (part === 1 && groupIndex > 0) { await finish(); begin(); }
+        if (!answers && part === 1 && groupIndex > 0) { await finish(); begin(); }
         groupIndex++;
         current(options); await room(90);
         var first = qs[0], label = str(first.sourceTitle) + ' · 원문 ' + qs.map(function (q) { return q.sourceIdentity ? q.sourceIdentity.questionNumber : q.number; }).join('·') + '번';
         await paragraph(label, { bold: true, size: 11, after: 7 });
         var passages = new Set();
-        for (var q of qs) if (q.passage && !passages.has(q.passage)) { passages.add(q.passage); await paragraph(q.passage, { size: 11, after: 10 }); }
+        if (!answers) for (var q of qs) if (q.passage && !passages.has(q.passage)) { passages.add(q.passage); await paragraph(q.passage, { size: 11, after: 10 }); }
         var assets = new Set();
-        for (var q of qs) { var assetKey = q.photoPath || q.photoUrl; if (assetKey && !assets.has(assetKey)) { assets.add(assetKey); await picture(q, '원문 ' + q.number + '번' + (grouped(q) ? ' · 공통 그림' : ' · 문제 사진')); } }
-        if (first.part === 1 && !assets.size) await paragraph('사진 미포함: 현재 자료에 문제 사진이 없습니다.', { size: 9, color: '#52525b' });
-        if (first.part >= 6 && !passages.size) await paragraph('지문 미포함: 현재 자료에 공통지문이 없습니다.', { size: 9, color: '#52525b' });
+        if (!answers) for (var q of qs) { var assetKey = q.photoPath || q.photoUrl; if (assetKey && !assets.has(assetKey)) { assets.add(assetKey); await picture(q, '원문 ' + q.number + '번' + (grouped(q) ? ' · 공통 그림' : ' · 문제 사진')); } }
+        if (!answers && first.part === 1 && !assets.size) await paragraph('사진 미포함: 현재 자료에 문제 사진이 없습니다.', { size: 9, color: '#52525b' });
+        if (!answers && first.part >= 6 && !passages.size) await paragraph('지문 미포함: 현재 자료에 공통지문이 없습니다.', { size: 9, color: '#52525b' });
         if (grouped(first)) {
           var membership = first.groupQuestionNumbers || [], absent = membership.filter(function (n) { return !qs.some(function (q) { return q.number === n; }); });
           if (absent.length) await paragraph('공통지문의 ' + absent.join('·') + '번 문항은 현재 자료에 없습니다.', { size: 9 });
@@ -273,11 +278,11 @@
           var source = q.sourceIdentity;
           await paragraph((q.displayNumber || q.number) + '  ·  ' + (source ? (source.unit ? source.unit + ' · ' : '') + source.page + ' · 원문 ' + source.questionNumber + '번' : '원문 ' + q.number + '번') + (wrong(q) ? ' · 오답' : ' · 공통지문 복습'), { bold: true, size: 10 });
           if (q.stem) await paragraph(q.stem, { size: 11 });
-          else if (q.part <= 2) await paragraph('문제와 보기는 음원으로 제시됩니다.', { size: 9, color: '#52525b' });
-          for (var choice of q.options) await paragraph(q.part <= 2 && choice.text === choice.id ? '(' + choice.id + ')' : choice.id + '. ' + choice.text, { size: 11, indent: 12, after: 2 });
-          y += 7; await review(q, extra.reviews.get(id(q))); y += 10;
+          else if (!answers && q.part <= 2) await paragraph('문제와 보기는 음원으로 제시됩니다.', { size: 9, color: '#52525b' });
+          if (!answers) for (var choice of q.options) await paragraph(q.part <= 2 && choice.text === choice.id ? '(' + choice.id + ')' : choice.id + '. ' + choice.text, { size: 11, indent: 12, after: 2 });
+          y += 7; if (answers) await review(q, extra.reviews.get(id(q))); y += 10;
         }
-        if (first.part <= 4) {
+        if (answers && first.part <= 4) {
           var script = extra.scripts.get(JSON.stringify([first.collectionId, first.groupId]));
           if (!script) { var r = qs.map(function (q) { return extra.reviews.get(id(q)); }).find(function (r) { return r && r.script; }); if (r) script = r; }
           if (script && script.script) {
@@ -289,7 +294,7 @@
       }
       await finish(); current(options);
       var result = pdf(pages, title);
-      return { blob: result, pages: pages.length, count: selected.length, wrong: wrongCount, reviews: extra.reviews.size, filename: 'HanQ-Practice-Part-' + part + '.pdf' };
+      return { blob: result, pages: pages.length, count: selected.length, wrong: wrongCount, reviews: extra.reviews.size, mode: mode, filename: 'HanQ-Practice-Part-' + part + (answers ? '-Answers' : '-Questions') + '.pdf' };
     } finally { canvas.width = 1; canvas.height = 1; pages.length = 0; }
   }
   function mount(host, options) {
@@ -301,26 +306,29 @@
     var cancel = doc.createElement('button'); cancel.type = 'button'; cancel.className = 'tool-btn tc-pdf-cancel'; cancel.textContent = 'PDF 준비 취소'; cancel.hidden = true;
     cancel.onclick = function () { serial++; if (activeJob) activeJob.abort(); if (running === activeJob) running = null; activeJob = null; restoreButtons(); cancel.hidden = true; status.hidden = false; status.textContent = 'PDF 준비를 취소했어요.'; };
     Array.from(new Set(options.items.map(function (q) { return q.part; }))).sort().forEach(function (part) {
-      var b = doc.createElement('button'); b.type = 'button'; b.className = 'tool-btn tc-pdf-export'; b.textContent = 'Part ' + part + ' PDF'; b.setAttribute('aria-label', 'Part ' + part + ' 오답노트 PDF 다운로드'); b.disabled = !bundles(options.items, part).length; b.dataset.empty = String(b.disabled); box.appendChild(b); buttons.push(b);
+      ['questions', 'answers'].forEach(function (mode) {
+      var sheet = mode === 'answers' ? '해설지' : '문제지';
+      var b = doc.createElement('button'); b.type = 'button'; b.className = 'tool-btn tc-pdf-export'; b.dataset.mode = mode; b.textContent = 'Part ' + part + ' ' + sheet + ' PDF'; b.setAttribute('aria-label', 'Part ' + part + ' ' + sheet + ' PDF 다운로드'); b.disabled = !bundles(options.items, part).length; b.dataset.empty = String(b.disabled); box.appendChild(b); buttons.push(b);
       b.onclick = async function () {
         if (!valid() || activeJob || b.dataset.empty === 'true') return;
         if (running) { status.hidden = false; status.textContent = '다른 파트의 PDF를 먼저 준비하고 있어요. 완료 후 다시 눌러 주세요.'; return; }
-        var token = ++serial, abort = new AbortController(); activeJob = abort; running = abort; buttons.forEach(function (x) { x.disabled = true; }); cancel.hidden = false; status.hidden = false; status.textContent = 'Part ' + part + ' 자료와 해설을 확인하고 있어요…';
+        var token = ++serial, abort = new AbortController(); activeJob = abort; running = abort; buttons.forEach(function (x) { x.disabled = true; }); cancel.hidden = false; status.hidden = false; status.textContent = 'Part ' + part + ' ' + sheet + '를 준비하고 있어요…';
         function isCurrent() { return valid() && token === serial && !abort.signal.aborted; }
         try {
-          var result = await generate(options.items, part, { api: options.api, signal: abort.signal, isCurrent: isCurrent, onProgress: function (text) { if (isCurrent()) status.textContent = text; } });
+          var result = await generate(options.items, part, { api: options.api, mode: mode, signal: abort.signal, isCurrent: isCurrent, onProgress: function (text) { if (isCurrent()) status.textContent = text; } });
           if (!isCurrent()) return;
           urls.forEach(function (old) { URL.revokeObjectURL(old); }); urls = [];
           var url = URL.createObjectURL(result.blob); urls.push(url);
-          var link = doc.createElement('a'); link.className = 'tc-pdf-download'; link.href = url; link.download = result.filename; link.textContent = 'Part ' + part + ' PDF 저장 (' + result.pages + '쪽)'; link.setAttribute('aria-label', 'Part ' + part + ' PDF ' + result.pages + '쪽 저장');
+          var link = doc.createElement('a'); link.className = 'tc-pdf-download'; link.href = url; link.download = result.filename; link.textContent = 'Part ' + part + ' ' + sheet + ' 저장 (' + result.pages + '쪽)'; link.setAttribute('aria-label', 'Part ' + part + ' ' + sheet + ' PDF ' + result.pages + '쪽 저장');
           link.onclick = function (event) { if (!valid()) event.preventDefault(); };
           box.querySelectorAll('a').forEach(function (a) { a.remove(); }); box.appendChild(link); link.click();
-          status.textContent = result.count + '문항 · 해설 ' + result.reviews + '문항 포함. 다운로드가 시작되지 않으면 PDF 저장을 눌러 주세요.';
+          status.textContent = mode === 'answers' ? '정답·해설 ' + result.reviews + ' / ' + result.count + '문항 조회. 다운로드가 시작되지 않으면 해설지 저장을 눌러 주세요.' : '문제 ' + result.count + '문항. 다운로드가 시작되지 않으면 문제지 저장을 눌러 주세요.';
         } catch (e) {
           if (!isCurrent()) return;
-          status.textContent = e.message === 'required_image' ? '문제 그림을 불러오지 못해 PDF를 만들지 않았어요. 연결을 확인한 뒤 다시 눌러 주세요.' : e.message === 'empty' ? '이 파트에 내보낼 오답이 없어요.' : e.message === 'too_large' ? '자료가 커서 이 기기에서 PDF를 만들지 못했어요. 컴퓨터에서 다시 시도해 주세요.' : 'PDF를 만들지 못했어요. 연결을 확인한 뒤 다시 눌러 주세요.';
+          status.textContent = e.message === 'no_reviews' ? '이 파트에서 읽을 수 있는 정답·해설이 아직 없어 해설지를 만들지 않았어요. 문제지는 따로 받을 수 있어요.' : e.message === 'required_image' ? '문제 그림을 불러오지 못해 PDF를 만들지 않았어요. 연결을 확인한 뒤 다시 눌러 주세요.' : e.message === 'empty' ? '이 파트에 내보낼 오답이 없어요.' : e.message === 'too_large' ? '자료가 커서 이 기기에서 PDF를 만들지 못했어요. 컴퓨터에서 다시 시도해 주세요.' : 'PDF를 만들지 못했어요. 연결을 확인한 뒤 다시 눌러 주세요.';
         } finally { if (running === abort) running = null; if (isCurrent()) { activeJob = null; cancel.hidden = true; restoreButtons(); } }
       };
+      });
     });
     box.appendChild(cancel); box.appendChild(status);
     function release() {
@@ -344,3 +352,4 @@
   }
   root.HanqToeicPracticePdf = { mount: mount, stop: stop, bundles: bundles, generate: generate };
 })(typeof window !== 'undefined' ? window : globalThis);
+
