@@ -8,7 +8,7 @@
     function stop(){if(session)session.stop();session=null;}
     function mount(host,appRoot,era,step){
       stop();const candidate=transport();if(!candidate)return Promise.resolve(false);
-      session=(options.sessionFactory||root.HanqGoryeoScriptSession).create({era:'goryeo',document:doc,api:options.api||root.HanqApi,appRoot,modeRouting:true,initialMode:step===7?'exam':step===8?'practice':'study',initialTopic:'politics',uiLocks:options.uiLocks||root.HanqUiLocks,sourceCatalog:options.sourceCatalog||root.HanqPrivateTextbook,offerLegacyQuiz:false,
+      session=(options.sessionFactory||root.HanqGoryeoScriptSession).create({era:'goryeo',document:doc,api:options.api||root.HanqApi,appRoot,workspaceFactory:root.HanqHistory81Workspace&&root.HanqHistory81Workspace.fromDocument(doc),modeRouting:true,initialMode:step===7?'exam':step===8?'practice':'study',initialTopic:'politics',uiLocks:options.uiLocks||root.HanqUiLocks,sourceCatalog:options.sourceCatalog||root.HanqPrivateTextbook,offerLegacyQuiz:false,
         navigateCanonical(href){win.history.pushState(null,'',href);win.dispatchEvent(new win.PopStateEvent('popstate',{state:null}));}
       });return session.mount(host,candidate);
     }

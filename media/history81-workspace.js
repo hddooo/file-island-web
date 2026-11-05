@@ -23,5 +23,6 @@
     function show(parent){current();parent.append(host);if(!loading){host.textContent='계정별 빈칸 퀴즈를 불러오는 중입니다.';loading=load().catch(e=>{if(alive&&isCurrent()){if(controller)controller.cleanup();controller=null;host.replaceChildren();const note=doc.createElement('p');note.setAttribute('role','status');note.textContent='퀴즈를 불러오지 못했습니다. 다시 시도해 주세요.';const retry=doc.createElement('button');retry.type='button';retry.textContent='다시 시도';retry.onclick=()=>{loading=null;show(parent);};host.append(note,retry);}throw e;});loading.catch(()=>{});}return loading;}
     return {show,prepareLeave(){return controller?controller.prepareLeave():Promise.resolve();},hasUnsaved(){return !!controller&&controller.hasUnsaved();},stop(){alive=false;if(controller)controller.cleanup();controller=null;host.replaceChildren();host.remove();}};
   }
-  root.HanqHistory81Workspace={create};if(typeof module==='object'&&module.exports)module.exports=root.HanqHistory81Workspace;
+  function fromDocument(doc){const meta=doc.querySelector('meta[name="hanq-history81-workspace-api"]');return meta&&meta.content==='2062b84b2c7f86de701cc757a23c113fa11e4c09'?create:null;}
+  root.HanqHistory81Workspace={create,fromDocument};if(typeof module==='object'&&module.exports)module.exports=root.HanqHistory81Workspace;
 })(typeof window==='object'?window:globalThis);

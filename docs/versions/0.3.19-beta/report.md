@@ -1,0 +1,6 @@
+# 0.3.19-beta verification
+Reuses unchanged79 source quiz renderer: inline inputs, blur/Enter grading, feedback, review, batched saves, pause/resume and owner-bound recovery. Server assigns grades and versions; immutable81 keys are separate from79. Existing source text/figures and canonical79 handlers remain unchanged.0.3.18 light menus/range contrast retained.
+
+Local actual API service + network-none PostgreSQL17 passed representative single/classification/ordered-pair server grading, droppedACK idempotent retry, real409 draft retention, account isolation and delayedACK after teardown. Actual-index final gate tests and mode/session regression passed; static build and exact CI/CD/production verification are release steps. This is not real-member production save verification. Full HTTP auth is API-owner evidence, not this service-level FE test.
+
+Known limitations not rerun: test-progress-recovery.cjs JSDOM location failure; test-period-joseon.cjs fixed byte-hash baseline. Full79 private-corpus test previously stopped at missing fixture ENOENT. Focused tests are not a full-suite claim. Physical iPhone/VoiceOver and real-member sessions remain unverified. No production authentication POST or user-data writes were performed.
