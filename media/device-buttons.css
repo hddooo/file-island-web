@@ -37,5 +37,10 @@ html body :is(#homeBrand#homeBrand,#headerLogout,.module-actions button,.mobile-
 /* Reader navigation uses explicit true/false current states. */
 html body :is(#joseonScript#joseonScript .joseon-script-reader .jsr-modes,#goryeoScript#goryeoScript .goryeo-script-reader .gsr-modes)>button[aria-current="false"]{--device-button-edge:#6d9d8c;--device-button-face:#0b211a}
 
-html body :is(#joseonScript#joseonScript .joseon-script-reader .jsr-modes,#goryeoScript#goryeoScript .goryeo-script-reader .gsr-modes)>button{padding-top:22px;position:relative}
-html body :is(#joseonScript#joseonScript .joseon-script-reader .jsr-modes,#goryeoScript#goryeoScript .goryeo-script-reader .gsr-modes)>button::after{content:attr(data-navigation-number);top:5px;left:0;right:0;width:auto;height:auto;background:transparent!important;color:#b0e8c8!important;font:12px/1 FileIslandMenu,monospace;opacity:1;text-align:center}
+html body :is(#joseonScript#joseonScript .joseon-script-reader .jsr-modes,#goryeoScript#goryeoScript .goryeo-script-reader .gsr-modes)>button{display:flex;align-items:center;justify-content:center;gap:7px;padding:10px 8px;position:relative}
+html body :is(#joseonScript#joseonScript .joseon-script-reader .jsr-modes,#goryeoScript#goryeoScript .goryeo-script-reader .gsr-modes)>button::after{content:attr(data-navigation-number);position:static;order:-1;flex:none;top:auto;left:auto;right:auto;width:auto;height:auto;background:transparent!important;color:#b0e8c8!important;font:14px/1 FileIslandMenu,monospace;opacity:1;text-align:center}
+
+@media(max-width:700px){
+html body :is(#joseonScript#joseonScript .joseon-script-reader .jsr-modes,#goryeoScript#goryeoScript .goryeo-script-reader .gsr-modes)>button{padding:22px 5px 8px}
+html body :is(#joseonScript#joseonScript .joseon-script-reader .jsr-modes,#goryeoScript#goryeoScript .goryeo-script-reader .gsr-modes)>button::after{position:absolute;top:7px;left:8px;right:auto;font-size:12px}
+}
