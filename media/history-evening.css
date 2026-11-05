@@ -1,22 +1,22 @@
-/* The original palace and its renderer share a static evening grade. Only the
+/* The original palace and its renderer share a Seoul-time day/night grade. Only the
    separate sky, weather, flames and registered character cels animate. */
 html body #app [data-history-evening] .harbor-chart>img,
 html body #app [data-history-evening] .harbor-chart>.living-water-surface,
 html body #app [data-history-evening] .harbor-chart>.living-water-plate,
-html body #app [data-history-evening] .harbor-chart>.living-boat{filter:brightness(.47) saturate(.65) hue-rotate(8deg)}
+html body #app [data-history-evening] .harbor-chart>.living-boat{filter:brightness(var(--he-brightness,.47)) saturate(var(--he-saturation,.65)) hue-rotate(8deg);transition:filter 30s linear}
 html body #app [data-history-evening] .scene-atmosphere{display:none!important}
 html body #app [data-history-evening]{background:#071a25!important}
-html[data-hanq-theme=terminal] body[data-island=history][data-world-destination=history]::before{background:linear-gradient(180deg,#07132bcc,#061a24d9),url('world-art/history-palace-wide-v1.webp') center/cover no-repeat!important}
+html[data-hanq-theme=terminal] body[data-island=history][data-world-destination=history]::before{background:linear-gradient(180deg,rgba(7,19,43,calc(.8 - .74 * var(--he-daylight,0))),rgba(6,26,36,calc(.85 - .79 * var(--he-daylight,0)))),url('world-art/history-palace-wide-v1.webp') center/cover no-repeat!important}
 /* WorldCinematic loads later and composes the body backdrop from this token. */
-html[data-hanq-theme] body[data-island=history][data-world-destination=history]{--region-art:linear-gradient(#07132b99,#061a24b8),url('world-art/history-palace-wide-v1.webp')}
+html[data-hanq-theme] body[data-island=history][data-world-destination=history]{--region-art:linear-gradient(rgba(7,19,43,calc(.6 - .54 * var(--he-daylight,0))),rgba(6,26,36,calc(.72 - .66 * var(--he-daylight,0)))),url('world-art/history-palace-wide-v1.webp')}
 html body #app .history-evening{position:absolute;display:block;inset:0;z-index:3;pointer-events:none!important;isolation:isolate;overflow:hidden;background:transparent!important}
 html body #app .history-evening *{pointer-events:none!important;box-sizing:border-box}
 html body #app .history-evening :is(.he-night,.he-sky,.he-clouds,.he-rain){position:absolute;display:block;inset:0;background:transparent}
-html body #app .history-evening .he-night{background:linear-gradient(180deg,#0717389c 0%,#10263a44 28%,#10162615 60%,#04132035)!important}
+html body #app .history-evening .he-night{opacity:var(--he-night-strength,1);transition:opacity 30s linear;background:linear-gradient(180deg,#0717389c 0%,#10263a44 28%,#10162615 60%,#04132035)!important}
 html body #app .history-evening .he-sky{height:14%;overflow:hidden;mask-image:linear-gradient(#000 65%,transparent);-webkit-mask-image:linear-gradient(#000 65%,transparent)}
-html body #app .history-evening .he-aurora{position:absolute;display:block;top:12%;left:24%;width:72%;height:105%;border-radius:20% 70% 30% 50%;background:linear-gradient(174deg,transparent 26%,#66d4bb22 33%,#4ce3bbbc 44%,#8d78d0aa 53%,transparent 62%)!important;filter:blur(7px);opacity:.68;transform-origin:60% 0;animation:he-aurora 24s ease-in-out infinite alternate!important}
+html body #app .history-evening .he-aurora{position:absolute;display:block;top:12%;left:24%;width:72%;height:105%;border-radius:20% 70% 30% 50%;background:linear-gradient(174deg,transparent 26%,#66d4bb22 33%,#4ce3bbbc 44%,#8d78d0aa 53%,transparent 62%)!important;filter:blur(7px) opacity(var(--he-night-strength,1));opacity:.68;transform-origin:60% 0;animation:he-aurora 24s ease-in-out infinite alternate!important}
 html body #app .history-evening .he-aurora-b{left:7%;top:-12%;width:83%;animation-duration:33s!important;animation-delay:-11s!important;opacity:.42}
-html body #app .history-evening .he-stars{position:absolute;display:block;inset:0;background:radial-gradient(circle at 44% 14%,#f0f4db 0 1px,transparent 1.5px),radial-gradient(circle at 65% 24%,#e3f3ed 0 1px,transparent 1.5px),radial-gradient(circle at 82% 12%,#b7d8e5 0 1px,transparent 1.5px),radial-gradient(circle at 30% 25%,#dae6ce 0 1px,transparent 1.5px)!important;opacity:.65}
+html body #app .history-evening .he-stars{filter:opacity(var(--he-night-strength,1));position:absolute;display:block;inset:0;background:radial-gradient(circle at 44% 14%,#f0f4db 0 1px,transparent 1.5px),radial-gradient(circle at 65% 24%,#e3f3ed 0 1px,transparent 1.5px),radial-gradient(circle at 82% 12%,#b7d8e5 0 1px,transparent 1.5px),radial-gradient(circle at 30% 25%,#dae6ce 0 1px,transparent 1.5px)!important;opacity:.65}
 html body #app .history-evening .he-clouds{background:linear-gradient(155deg,#14213e70,#0a14212b 60%,#0b1c3977)!important;opacity:0;animation:he-overcast 150s ease-in-out infinite!important}
 html body #app .history-evening .he-rain{opacity:0;animation:he-shower 150s ease-in-out infinite!important}
 html body #app .history-evening .he-rain>i{position:absolute;display:block;left:var(--x);top:var(--y);width:1px;height:18px;background:linear-gradient(transparent,#c4dce6a1)!important;animation:he-raindrop 1.35s var(--delay) linear infinite!important}
@@ -35,7 +35,7 @@ html body #app .history-evening .he-ember-b{left:22%;animation-delay:-1.2s!impor
 html body #app .history-evening .he-friend{position:absolute;display:block;left:var(--he-x0);top:var(--he-y0);width:3%;aspect-ratio:1;visibility:hidden;background:transparent!important}
 html body #app .history-evening .he-friend::after{content:'';position:absolute;left:25%;right:21%;bottom:10%;height:6%;border-radius:50%;background:radial-gradient(ellipse,#030c1177,transparent 72%);filter:blur(1px);z-index:0}
 html body #app .history-evening .he-friend.he-ready{visibility:visible}
-html body #app .history-evening .he-friend-sprite{position:absolute;display:block;inset:0;z-index:1;background:url('characters/agumon-idle-sprite.png') 0 0/200% 200% no-repeat!important;animation:hanq-agumon-idle 7.9s -2.1s steps(1,end) infinite!important;filter:brightness(.78) saturate(.82)}
+html body #app .history-evening .he-friend-sprite{position:absolute;display:block;inset:0;z-index:1;background:url('characters/agumon-idle-sprite.png') 0 0/200% 200% no-repeat!important;animation:hanq-agumon-idle 7.9s -2.1s steps(1,end) infinite!important;filter:brightness(var(--he-actor-light,.78)) saturate(.82)}
 html body #app .history-evening .he-leaf{position:absolute;display:block;left:6%;top:-28%;width:95%;height:auto;overflow:visible;opacity:0;transform:rotate(-12deg);animation:he-umbrella 150s ease-in-out infinite!important;filter:drop-shadow(0 2px 2px #04141466)}
 html body #app .history-evening.he-paused :is(.he-aurora,.he-clouds,.he-rain,.he-rain>i,.he-warmth,.he-flame,.he-ember,.he-friend-sprite,.he-leaf){animation-play-state:paused!important}
 @keyframes he-aurora{from{transform:translateX(-3%) skewX(-5deg) scaleY(.8);opacity:.6}to{transform:translateX(4%) skewX(7deg) scaleY(1.1);opacity:.92}}
@@ -47,7 +47,7 @@ html body #app .history-evening.he-paused :is(.he-aurora,.he-clouds,.he-rain,.he
 @keyframes he-flame{from{transform:translateX(-.5px) scale(.97,.95) skewX(-2deg);opacity:.88}to{transform:translateX(.5px) scale(1.02,1.04) skewX(2deg);opacity:1}}
 @keyframes he-ember{0%{opacity:0;transform:translate(0,0)}12%{opacity:.55}100%{opacity:0;transform:translate(3px,-18px)}}
 @media(max-width:700px) and (orientation:portrait){html body #app .history-evening .he-camp{left:40%;top:74%;width:31%}html body #app .history-evening .he-sky{height:11%}html body #app .history-evening .he-rain>i:nth-child(even){display:none}}
-html.world-low-power body #app .history-evening .he-aurora{animation:none!important;filter:none;opacity:.35}
+html.world-low-power body #app .history-evening .he-aurora{animation:none!important;filter:opacity(var(--he-night-strength,1));opacity:.35}
 html.world-low-power body #app .history-evening .he-rain>i:nth-child(2n){display:none}
 @media(prefers-reduced-motion:reduce){html body #app .history-evening :is(.he-aurora,.he-clouds,.he-rain,.he-rain>i,.he-warmth,.he-flame,.he-ember,.he-friend-sprite,.he-leaf){animation:none!important;transition:none!important}html body #app .history-evening :is(.he-rain,.he-leaf,.he-ember){display:none!important}html body #app .history-evening .he-aurora{opacity:.45}html body #app .history-evening .he-friend-sprite{background-position:0 0!important}}
 /* Independent sky drift and tiny ground routes. Buildings and the map never move. */
@@ -56,13 +56,13 @@ html body #app .history-evening .he-breeze-near{left:-14%;top:26%;width:105%;hei
 html body #app .history-evening .he-stars{animation:he-starlight 9s -3s ease-in-out infinite alternate!important}
 html body #app .history-evening .he-friend-sprite{background-image:var(--he-agumon-art,url('characters/agumon-idle-sprite.png'))!important;animation:hanq-agumon-idle 7.9s -2.1s steps(1,end) infinite,he-clear-actor 150s ease-in-out infinite!important}
 html body #app .history-evening .he-friend:not(.he-rain-ready) .he-friend-sprite{opacity:1!important}
-html body #app .history-evening .he-leaf{left:-12%;top:auto;bottom:0;width:124%;height:125%;visibility:hidden;transform:none;background:var(--he-rain-friend-art) center bottom/contain no-repeat!important;filter:brightness(.83) saturate(.84) drop-shadow(0 1px 1px #03121366);z-index:2}
+html body #app .history-evening .he-leaf{left:-12%;top:auto;bottom:0;width:124%;height:125%;visibility:hidden;transform:none;background:var(--he-rain-friend-art) center bottom/contain no-repeat!important;filter:brightness(calc(.83 + .17 * var(--he-daylight,0))) saturate(.84) drop-shadow(0 1px 1px #03121366);z-index:2}
 html body #app .history-evening .he-rain-ready .he-leaf{visibility:visible}
 html body #app .history-evening .he-resident{position:absolute;display:block;aspect-ratio:1;line-height:0;font-size:0;min-height:0;visibility:hidden;transform:translate(-50%,-100%)}
 html body #app .history-evening .he-resident-ready{visibility:visible}
 html body #app .history-evening .he-resident-shadow{position:absolute;left:22%;right:18%;bottom:1%;height:7%;border-radius:50%;background:radial-gradient(ellipse,#06151e8a,transparent 72%)!important}
-html body #app .history-evening .he-native{position:absolute;display:block;left:1.8216%;top:4.2082%;width:89.3267%;height:89.3267%;background:var(--he-koromon-art) 0 0/400% 200% no-repeat!important;--idle-row-y:3.8%;animation:hanq-koromon-actions 13s -4s steps(1,end) infinite!important;filter:brightness(.78) saturate(.82)}
-html body #app .history-evening .he-resident .cm-life{width:100%;height:100%;filter:brightness(.8) saturate(.84)}
+html body #app .history-evening .he-native{position:absolute;display:block;left:1.8216%;top:4.2082%;width:89.3267%;height:89.3267%;background:var(--he-koromon-art) 0 0/400% 200% no-repeat!important;--idle-row-y:3.8%;animation:hanq-koromon-actions 13s -4s steps(1,end) infinite!important;filter:brightness(var(--he-actor-light,.78)) saturate(.82)}
+html body #app .history-evening .he-resident .cm-life{width:100%;height:100%;filter:brightness(calc(.8 + .2 * var(--he-daylight,0))) saturate(.84)}
 html body #app .history-evening .he-flame{animation:he-flame-visible 1.16s -.2s ease-in-out infinite alternate!important}
 html body #app .history-evening .he-flame-b{animation-duration:.77s!important;animation-delay:-.5s!important}
 html body #app .history-evening .he-warmth{animation:he-firelight 1.9s -.4s ease-in-out infinite alternate!important}
@@ -103,3 +103,8 @@ html body #app .history-evening .he-patamon{--he-size:3.2%;--he-duration:36s;--h
 100%{left:var(--he-x0);top:var(--he-y0);transform:translate(-50%,-90%) scale(var(--he-s0)) scaleX(var(--he-facing,1))}
 }
 @media(prefers-reduced-motion:reduce){html body #app .history-evening :is(.he-friend,.he-resident){animation:none!important;transform:translate(-50%,-90%) scale(var(--he-s0))!important}}
+
+
+/* Time of day still updates in reduced motion, without long color fades. */
+@media(prefers-reduced-motion:reduce){html body #app [data-history-evening] :is(.he-night,.harbor-chart>img,.living-water-surface,.living-water-plate,.living-boat){transition:none!important}}
+html.world-low-power body #app [data-history-evening] :is(.he-night,.harbor-chart>img,.living-water-surface,.living-water-plate,.living-boat){transition:none!important}

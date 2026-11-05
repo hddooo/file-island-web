@@ -1,0 +1,36 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const {JSDOM}=require(process.env.HANQ_JSDOM||'../.test-tools/node_modules/jsdom');
+const source=fs.readFileSync(path.join(__dirname,'../media/history-evening.js'),'utf8');
+async function run(){
+  const dom=new JSDOM('<body><main id="app"><nav id="map"><picture id="chart"></picture></nav></main></body>',{url:'https://islands.test/',runScripts:'outside-only'}),w=dom.window,d=w.document;
+  let now=Date.parse('2026-11-05T23:00:00Z'),hidden=false,reduced=false,next=0,io;
+  const timers=new Map(),listeners=new Set(),RealDate=w.Date;
+  w.Date=class extends RealDate{constructor(...args){super(...(args.length?args:[now]));}static now(){return now;}};
+  Object.defineProperty(d,'hidden',{get:()=>hidden});
+  w.setTimeout=(fn,delay)=>{const id=++next;timers.set(id,{fn,delay});return id;};w.clearTimeout=id=>timers.delete(id);
+  w.matchMedia=()=>({get matches(){return reduced;},addEventListener:(name,fn)=>listeners.add(fn),removeEventListener:(name,fn)=>listeners.delete(fn)});
+  w.IntersectionObserver=class{constructor(fn){this.fn=fn;io=this;}observe(){this.fn([{isIntersecting:true}]);}disconnect(){this.disconnected=true;}};
+  w.Image=class{set src(value){this.value=value;queueMicrotask(()=>this.onload&&this.onload());}decode(){return Promise.resolve();}};
+  w.eval(source);
+  const map=d.querySelector('#map'),chart=d.querySelector('#chart');
+  w.HanqHistoryEvening.mount(map,chart);await new Promise(r=>setImmediate(r));
+  const clockTimers=()=>Array.from(timers.values()).filter(t=>t.delay>12000);
+  assert.equal(map.dataset.historyTime,'day');assert.equal(map.style.getPropertyValue('--he-brightness'),'1.0000');assert.equal(clockTimers().length,1);
+  assert.equal(d.body.style.getPropertyValue('--he-daylight'),'1.0000');
+  hidden=true;d.dispatchEvent(new w.Event('visibilitychange'));assert.equal(clockTimers().length,0);assert.equal(d.querySelector('.history-evening').dataset.motion,'offscreen');
+  now=Date.parse('2026-11-06T12:00:00Z');hidden=false;d.dispatchEvent(new w.Event('visibilitychange'));assert.equal(map.dataset.historyTime,'night');assert.equal(map.style.getPropertyValue('--he-brightness'),'0.4700');assert.equal(clockTimers().length,1);
+  assert.equal(d.body.style.getPropertyValue('--he-daylight'),'0.0000');
+  reduced=true;listeners.forEach(fn=>fn());assert.equal(d.querySelector('.history-evening').dataset.motion,'reduced');assert.equal(clockTimers().length,1,'Civil time still updates while reduced motion is enabled');
+  io.fn([{isIntersecting:false}]);assert.equal(clockTimers().length,0);
+  io.fn([{isIntersecting:true}]);assert.equal(clockTimers().length,1);
+  w.dispatchEvent(new w.Event('pagehide'));assert.equal(clockTimers().length,0);
+  w.dispatchEvent(new w.Event('pageshow'));assert.equal(clockTimers().length,1);
+  const replacement=d.createElement('nav'),replacementChart=d.createElement('picture');replacement.appendChild(replacementChart);d.querySelector('#app').appendChild(replacement);
+  now=Date.parse('2026-11-06T03:00:00Z');w.HanqHistoryEvening.mount(replacement,replacementChart);await new Promise(r=>setImmediate(r));
+  assert.equal(d.body.style.getPropertyValue('--he-brightness'),'1.0000');
+  map.remove();await new Promise(r=>setImmediate(r));assert.equal(clockTimers().length,1);assert.equal(listeners.size,1);assert.equal(d.body.style.getPropertyValue('--he-brightness'),'1.0000','Disposing an old scene must not clear the active scene lighting');
+  replacement.remove();await new Promise(r=>setImmediate(r));assert.equal(clockTimers().length,0);assert(io.disconnected);assert.equal(d.body.style.getPropertyValue('--he-brightness'),'');assert.equal(listeners.size,0);
+  dom.window.close();console.log(JSON.stringify({passed:true,dayToNightResume:true,hiddenTimerStops:true,offscreenTimerStops:true,reducedMotionRetainsClock:true,pageLifecycle:true,detachCleanup:true,network:'none'}));
+}
+run().catch(e=>{console.error(e);process.exitCode=1;});
