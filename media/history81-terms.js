@@ -73,7 +73,7 @@
           const trigger=doc.createElement('span');trigger.className='history81-term';trigger.dataset.termId=entry.id;trigger.dataset.termPhrase=entry.phrase;trigger.setAttribute('role','button');trigger.tabIndex=0;trigger.setAttribute('aria-label',text+' 용어 설명');trigger.setAttribute('aria-expanded','false');parent.insertBefore(trigger,first);nodes.forEach(n=>trigger.append(n));triggers.push(trigger);
           listen(trigger,'pointerenter',e=>{if(e.pointerType!=='touch')open(trigger,entry,false);});listen(trigger,'pointerleave',leave);
           listen(trigger,'pointerdown',()=>trigger.focus({preventScroll:true}));
-          listen(trigger,'focus',()=>open(trigger,entry,false));listen(trigger,'blur',()=>{if(!pinned)leave();});
+          listen(trigger,'focus',()=>open(trigger,entry,false));listen(trigger,'blur',()=>{if(active===trigger){pinned=false;leave();}});
           listen(trigger,'click',()=>{if(active===trigger&&pinned)close();else open(trigger,entry,true);});
           listen(trigger,'keydown',e=>{if(e.isComposing||e.keyCode===229)return;if(e.key==='Enter'||e.key===' '){e.preventDefault();if(!e.repeat){if(active===trigger&&pinned)close();else open(trigger,entry,true);}}});
         }else nodes.forEach(n=>{if(n.nodeType===1)annotate(n);});
