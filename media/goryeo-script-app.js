@@ -13,7 +13,7 @@
       });return session.mount(host,candidate);
     }
     function handlePopState(event){return !!(session&&session.handlePopState(event));}
-    return {available,mount,stop,handlePopState};
+    return {available,mount,stop,handlePopState,hasUnsaved(){return !!session&&session.hasUnsaved();},prepareLeave(){return session?session.prepareLeave():Promise.resolve();},restoreSourceRoute(){if(session)session.restoreSourceRoute();}};
   }
   const exported={create};if(root.document)Object.assign(exported,create());root.HanqGoryeoScriptApp=exported;
   if(typeof module==='object'&&module.exports)module.exports=exported;

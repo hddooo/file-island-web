@@ -9,7 +9,7 @@
     function modeFromLocation(){const slug=win.location.hash.split('/')[2];return slug==='exam-lines'?'exam':slug==='source-quiz'?'practice':'study';}
     function sameReaderRoute(href){if(!options.modeRouting||!route)return false;const from=new win.URL(route),to=new win.URL(href),a=from.hash.split('/'),b=to.hash.split('/');return from.origin===to.origin&&from.pathname===to.pathname&&from.search===to.search&&a[0]==='#chapter'&&a[0]===b[0]&&b.length===3&&a[1]===b[1]&&['webtoon','exam-lines','source-quiz'].includes(b[2]);}
     function routeForMode(mode){const u=new win.URL(route),parts=u.hash.split('/');parts[2]=mode==='exam'?'exam-lines':mode==='practice'||mode==='answers'?'source-quiz':'webtoon';u.hash=parts.join('/');route=u.href;return route;}
-    function hashchange(){if(host&&win.location.href!==route){if(sameReaderRoute(win.location.href))route=win.location.href;else stop();}}
+    function hashchange(){if(host&&win.location.href!==route){if(sameReaderRoute(win.location.href))route=win.location.href;else if(!workspace||!workspace.hasUnsaved())stop();}}
     function valid(g){return !!host&&g===generation&&identity&&session()===identity&&win.location.href===route;}
     function notice(message){if(!host)return;const p=doc.createElement('p');p.setAttribute('role','status');p.textContent=message;host.replaceChildren(p);}
     async function mount(element,transport){
@@ -25,7 +25,7 @@
       try{
         const bundle=await transport.loadBundle({signal});if(!valid(g))return false;
         if(!bundle||!bundle.source||bundle.source.sha256!==transport.sourceSha256)throw Error('source_changed');
-        if(options.workspaceFactory)workspace=options.workspaceFactory({document:doc,api,era:'joseon',ownerId:api.state().ownerId,isCurrent:()=>valid(g)});
+        if(options.workspaceFactory)workspace=options.workspaceFactory({document:doc,api,era:'joseon',ownerId:api.state().ownerId,isCurrent:()=>!!host&&g===generation&&identity&&session()===identity});
         reader=(options.renderer||root.HanqJoseonScriptReader).mount(host,bundle,{workspace,externalNavigation:true,initialTopic:options.initialTopic,initialMode:options.initialMode,routeForMode:options.modeRouting?routeForMode:null,modeFromLocation:options.modeRouting?modeFromLocation:null,
           acquireModalLock:()=>{const locks=options.uiLocks||root.HanqUiLocks;if(!locks||!options.appRoot)throw Error('Missing app modal lock');return locks.acquire(options.appRoot);},
           loadFigure:async (name,request={})=>{if(!valid(g))throw Error('session_changed');const controller=new win.AbortController(),cancel=()=>controller.abort();signal.addEventListener('abort',cancel,{once:true});if(request.signal)request.signal.addEventListener('abort',cancel,{once:true});if(signal.aborted||request.signal&&request.signal.aborted)cancel();try{const blob=await transport.loadFigure(name,{signal:controller.signal});if(!valid(g))throw Error('session_changed');return blob;}finally{signal.removeEventListener('abort',cancel);if(request.signal)request.signal.removeEventListener('abort',cancel);}}
@@ -41,8 +41,8 @@
       }catch(error){if(valid(g)){const target=host;stop();const p=doc.createElement('p');p.setAttribute('role','status');p.textContent='자료를 불러오지 못했습니다. 다시 진입해 주세요.';target.replaceChildren(p);}return false;}
     }
     // Call BEFORE the existing app popstate handler. Return true only for this reader's same-route history.
-    function handlePopState(){if(!host)return false;if(win.location.href!==route&&sameReaderRoute(win.location.href))route=win.location.href;if(win.location.href!==route||session()!==identity){stop();return false;}return !!(reader&&reader.handlePopState());}
-    return {mount,stop,handlePopState,prepareLeave(){return workspace?workspace.prepareLeave():Promise.resolve();}};
+    function handlePopState(){if(!host)return false;if(win.location.href!==route&&sameReaderRoute(win.location.href))route=win.location.href;if(win.location.href!==route||session()!==identity){if(session()!==identity||!workspace||!workspace.hasUnsaved())stop();return false;}return !!(reader&&reader.handlePopState());}
+    return {mount,stop,handlePopState,hasUnsaved(){return !!workspace&&workspace.hasUnsaved();},restoreSourceRoute(){if(host&&identity&&session()===identity)win.history.replaceState(null,'',route);},prepareLeave(){return workspace?workspace.prepareLeave():Promise.resolve();}};
   }
   root.HanqJoseonScriptSession={create};if(typeof module==='object'&&module.exports)module.exports=root.HanqJoseonScriptSession;
 })(typeof window==='object'?window:globalThis);
