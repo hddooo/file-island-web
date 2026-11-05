@@ -15,8 +15,10 @@
     }
     async function load(){
       current();const model=validate(await api.textbookSemanticQuiz(era,revision));current();
-      controller=(options.renderer||root.HanqTextbookSourceQuiz).render(host,model,{ownerId,sourceRevision:revision,recovery:options.recovery||root.HanqAuthSession,
-        loadProgress:async()=>{current();const response=await api.textbookSourceWorkspace(era,revision);current();if(response.version!==model.version)throw Error('workspace_version');return response;},
+      const first=await api.textbookSourceWorkspace(era,revision);current();if(first.version!==model.version)throw Error('workspace_version');let initial=first;
+      const checkedReview=first.reviewSelectionAvailable===true&&Array.isArray(first.workspace?.selectedReviewQuestionIds);
+      controller=(options.renderer||root.HanqTextbookSourceQuiz).render(host,model,{ownerId,checkedReview,sourceRevision:revision,recovery:options.recovery||root.HanqAuthSession,
+        loadProgress:async()=>{current();const response=initial||await api.textbookSourceWorkspace(era,revision);initial=null;current();if(response.version!==model.version)throw Error('workspace_version');return response;},
         saveProgress:async body=>{current();const response=await api.saveTextbookSourceWorkspace(era,body,revision);current();if(response.version!==model.version)throw Error('workspace_version');return response;}
       });await controller.ready;current();
     }
