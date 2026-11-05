@@ -1,0 +1,19 @@
+/* Export controls stay inside the existing Practice part rows. */
+.tc .tc-group-row{display:grid;grid-template-columns:minmax(0,1fr);gap:0;min-width:0}
+.tc .tc-group-row>.tc-group{width:100%;min-width:0;text-align:left}
+.tc .tc-group-exports{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:4px 8px;min-width:0}
+.tc .tc-pdf-tools{display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:4px 8px;max-width:100%;font-family:Arial,Helvetica,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+.tc .tc-pdf-export,.tc .tc-pdf-cancel,.tc .tc-pdf-download{min-height:44px;max-width:100%;display:inline-flex;align-items:center;justify-content:center;padding:6px 10px;font-size:13px;line-height:1.4;border:0;border-radius:4px;background:transparent;color:inherit;white-space:normal;overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.tc .tc-pdf-export:before{content:"";display:inline-block;width:11px;height:14px;border:1.5px solid currentColor;border-radius:1px;margin-right:7px;flex:none}
+.tc .tc-pdf-export:disabled{cursor:default;opacity:.5}
+.tc .tc-pdf-export:focus-visible,.tc .tc-pdf-cancel:focus-visible,.tc .tc-pdf-download:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+.tc .tc-pdf-status{flex:1 0 100%;font-size:12px;line-height:1.5;margin:0 0 8px;text-align:left;overflow-wrap:anywhere;color:inherit}
+.tc .tc-pdf-tools [hidden]{display:none!important}
+/* Keep the existing direct-child Practice row and completion styling after the
+   row gains export siblings. Do not broaden global button or theme selectors. */
+html .tc.tc-simple .tc-group-list>.tc-group-row>.tc-group{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 14px;min-height:60px;line-height:1.4}
+html body #app .toeic-learning-page .tc.tc-simple .tc-group-list>.tc-group-row>.tc-group.has-completion-check{border-width:1px!important;border-color:#86cdb0!important;box-shadow:inset 0 0 0 1px #86cdb0!important}
+html body #app .toeic-learning-page .tc.tc-simple .tc-group-list>.tc-group-row>.tc-group.has-completion-check .hanq-completion-check{margin-left:auto!important;font-size:16px!important;color:#a3e3c7!important}
+html[data-hanq-theme] body #app .toeic-learning-page .tc.tc-simple .tc-group-list>.tc-group-row>.tc-group{column-gap:8px;row-gap:3px}
+@media(max-width:600px){html .tc.tc-simple .tc-group-list>.tc-group-row>.tc-group{min-height:56px;padding:12px 14px}}
+@media(max-width:440px){html[data-hanq-theme] body #app .toeic-learning-page .tc.tc-simple .tc-group-list>.tc-group-row>.tc-group{flex-wrap:nowrap!important;min-height:48px!important;padding:6px 8px!important}}
