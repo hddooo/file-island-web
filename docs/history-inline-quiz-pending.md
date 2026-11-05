@@ -32,3 +32,9 @@
 실제 index 합성 320/390/1440px에서 문장 안 입력, 단일/복합/하위 응답, Tab 이동, 답안 접힘·펼침, 모드/주제/Back 이동 시 임시 입력 보존, logout 제거를 표적 검사한다. 새로고침/화면 종료 후 계정 복원은 아직 구현되지 않은 API 기능이다.
 
 원문 projection 검사로 고려 문답/강조와 조선 정답 보존을 확인했다. 79회 전체 테스트는 기본 private corpus 경로가 없어 ENOENT로 끝났으며 전체 통과로 표시하지 않는다. 해당 파일을 읽기 전의 합성 기능 assertions와 별도 실제 renderer 캡처는 실행했다. 기존 JSDOM progress-recovery와 period 고정 해시 제약은 이전 기록대로이며 이번에 반복하지 않았다. 실회원·물리 기기·VoiceOver 미검증. 개화기는 중지한다.
+
+## Range-selector follow-up (local, pending API integration)
+
+The legacy Joseon range radios inherited terminal white text while retaining white backgrounds. Scoped terminal colors now distinguish selected and unselected states without changing labels or filter values. The fieldset carries the current era to avoid affecting other eras. Verified actual labels: 전체 / 전기·양난 / 후기.
+
+Isolated actual-index checks at 390/1440px passed all three radio selections and keyboard focus. Computed text contrast is 9.04:1 selected and 15.48:1 unselected. Both screenshots were directly inspected. Source-quiz has no obsolete range picker; bookquiz and summary remain unchanged. The mock fixture deliberately has no valid server progress response; this is not a production persistence test. This follow-up remains local until the 81회 workspace API contract is integrated and verified. No API, data, permissions or opening-era changes.

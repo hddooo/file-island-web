@@ -34,3 +34,9 @@ html[data-hanq-theme="terminal"] :where(.progress-fill,.ac-progress>span){backgr
 @media(prefers-reduced-motion:reduce){.request-wait .hanq-mascot,html[data-hanq-theme="terminal"] .request-wait .hanq-mascot{animation:none!important;background-position:0 0!important}html[data-hanq-theme="terminal"] *{scroll-behavior:auto!important}}
 .request-wait :focus-visible,.subject-switch :focus-visible,.toeic-sections :focus-visible{outline:3px solid var(--green);outline-offset:3px}
 html[data-hanq-theme="terminal"] .tn-word-header h3{color:var(--green)!important}
+
+/* History range radios sit on the dark device surface, outside paper readers. */
+html[data-hanq-theme="terminal"] body #app .part-picker:is([data-era="joseon"],[data-era="goryeo"]) legend{color:#b3bfb7!important}
+html[data-hanq-theme="terminal"] body #app .part-picker:is([data-era="joseon"],[data-era="goryeo"]) .part-option span{background:#0b211a!important;color:#edf8f1!important;border-color:#6d9d8c!important}
+html[data-hanq-theme="terminal"] body #app .part-picker:is([data-era="joseon"],[data-era="goryeo"]) .part-option input:checked+span{background:#205039!important;color:#f4fff7!important;border-color:#a7e8bd!important}
+html[data-hanq-theme="terminal"] body #app .part-picker:is([data-era="joseon"],[data-era="goryeo"]) .part-option input:focus-visible+span{outline:3px solid #b1efca!important;outline-offset:2px}
