@@ -24,7 +24,8 @@
   var how=el('section',undefined,box,'tc-explain-section');el('h3','이런 문제는 이렇게 풀어요',how);var plan=transfer?transfer.plan(review,context):{steps:[],concept:''},list=el('ol',undefined,how,'tc-solving-steps');plan.steps.slice(0,3).forEach(function(s){el('li',s,list);});if(plan.concept)el('p',plan.concept,how,'tc-core-comparison');
   }
   if(context&&(context.part===5||context.part===6)&&root.HanqToeicStudyLinks)root.HanqToeicStudyLinks.render(box,review,context);
-  if(!(context&&(context.omitScript||context.part===7))){var practice=el('section',undefined,box,'tc-explain-section');if(context&&context.part<=4){el('h3','Script',practice);renderScript(practice,review);}else{el('h3','활용해보기',practice);if(transfer)transfer.renderPractice(practice,review,context);else el('p','관련 연습 자료를 확인하고 있어요.',practice);}}return box;
+  // Part 5·6은 해설·보완 학습 링크를 유지하고 추가 연습문제는 표시하지 않는다.
+  if(!(context&&(context.omitScript||context.part===5||context.part===6||context.part===7))){var practice=el('section',undefined,box,'tc-explain-section');if(context&&context.part<=4){el('h3','Script',practice);renderScript(practice,review);}else{el('h3','활용해보기',practice);if(transfer)transfer.renderPractice(practice,review,context);else el('p','관련 연습 자료를 확인하고 있어요.',practice);}}return box;
  }
 
  // Part 7 근거 표시: 채점이 끝난 묶음에서 서버가 검증한 위치(start/end)만 쓰고, 원문은 textContent로 순서대로 한 번만 그린다.
@@ -332,4 +333,5 @@
  if(root.HanqApi&&root.HanqApi.onChange)root.HanqApi.onChange(function(s){if(s.authReason==='logout'||s.authReason==='remote'||s.signedIn&&memory&&memory.owner!==s.ownerId)memory=null;});
  root.HanqToeicCbt={expressionLinks:expressionLinks,renderExpressionLinks:renderExpressionLinks,mount:mount,stop:stop,renderExplanation:renderExplanation,renderPart7Evidence:renderPart7Evidence,part7EvidenceEntries:part7EvidenceEntries,part7EvidenceLayout:part7EvidenceLayout,passageDigest:passageDigest,scriptTranslationUnits:scriptTranslationUnits,lcScriptEvidenceEntries:lcScriptEvidenceEntries};
 })(typeof window!=='undefined'?window:globalThis);
+
 
