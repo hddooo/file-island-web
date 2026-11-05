@@ -1,0 +1,9 @@
+# Empty history source cards — local fix
+
+Base candidate40389eb is preserved. Reproduction on production source44e4ecc and candidate40389eb: Joseon / concept / culture has five empty cards after the last gallery.390px and1440px both reproduce. The reported attachment observation described six; exact attachment equivalence is not claimed. Official Library materialization failed on Windows os.setxattr; destination did not exist, no bypass used.
+
+Cause: the source study segments for PDF83–87 contain page/print metadata only. Existing display cleanup removes that metadata but leaves the already-appended article containers. No learner text or image failed to load inside those five containers. Remove a card only after structural transforms and metadata cleanup, and only when it has neither child elements nor non-whitespace text. Content-bearing cards, image loading/error controls, tables and inputs remain. No CSS border suppression or source-data edit.
+
+Validation: before/after32 matched views retain learning text, table counts, figure counts and input counts (only asynchronous image loading/retry UI labels excluded from text comparison). Fixed48 topic/mode/width views have no empty cards. Culture retains four substantive cards and24 decoded gallery images at320/390/1440.16-view editorial test retains172 answers/emphasis, seven answer groups, drafts and hidden-answer reentry. Both mode/session regressions pass. Existing workspace/server grading checks remain applicable: no workspace/quiz/storage code changed. Legacy filters/79/Opening code unchanged.
+
+Local screenshots and scans stay outside Git under task-8/empty-card-evidence. No source files, images, model payloads or captures are published. No push or production deployment. Physical device/VoiceOver/real-member screens unverified; current public source checks use isolated synthetic sessions.

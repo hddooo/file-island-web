@@ -192,6 +192,8 @@
     });
       if(mode==='study'&&bundle.source.sha256===editorialSource){connectTable23();connectLaterTables();connectCulture();connectSilhak();}
       if(bundle.source.sha256===editorialSource)cleanDisplayLabels();
+      // Metadata-only source segments have no learner content after label cleanup.
+      body.querySelectorAll('.jsr-source-card').forEach(article=>{if(!article.firstElementChild&&!article.textContent.trim())article.remove();});
       if(mode==='exam'&&!body.querySelector('.jsr-source-card'))body.append(el('p','이 단원에는 별도의 시험 선택지 항목이 없습니다.','jsr-note'));
       body.querySelectorAll('.jsr-source-card').forEach(article=>{
       const examHeadings=mode==='exam'?[...article.querySelectorAll('h4')].map(e=>e.textContent):[],examName=examHeadings.length?[examHeadings[0],examHeadings.at(-1)].filter((v,i,a)=>!i||v!==a[0]).join(' ~ '):null;
