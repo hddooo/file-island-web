@@ -280,7 +280,7 @@
   // chosen answers, exact source text and server feedback in one place.
   function groupWorkspace(q,items,passage){
    host.classList.add('tc-study-active','tc-study-group');
-   var w=el('section',undefined,null,'tc-workspace');w.setAttribute('aria-label','지문과 문제 풀이');passage.before(w);w.dataset.view=workspaceState?workspaceState.view:q.part<=4?'questions':'source';
+   var w=el('section',undefined,null,'tc-workspace');w.setAttribute('aria-label','지문과 문제 풀이');w.dataset.layout=q.part===6||q.part===7?'split':'stack';passage.before(w);w.dataset.view=workspaceState?workspaceState.view:q.part<=4?'questions':'source';
    var tabs=el('nav',undefined,w,'tc-pane-switch');tabs.setAttribute('aria-label','학습 영역 전환');
    [['source',q.part<=4?'음원·자료':'지문'],['questions','문제 '+items.length+'개']].forEach(function(pair){var b=button(pair[1],function(){showWorkspacePane(pair[0]);},tabs,'tool-btn');b.dataset.paneTarget=pair[0];b.setAttribute('aria-pressed',String(w.dataset.view===pair[0]));});
    var grid=el('div',undefined,w,'tc-workspace-grid'),left=el('section',undefined,grid,'tc-study-column tc-source-column'),right=el('section',undefined,grid,'tc-study-column tc-questions-column');
@@ -360,6 +360,7 @@
  if(root.HanqApi&&root.HanqApi.onChange)root.HanqApi.onChange(function(s){if(s.authReason==='logout'||s.authReason==='remote'||s.signedIn&&memory&&memory.owner!==s.ownerId)memory=null;});
  root.HanqToeicCbt={expressionLinks:expressionLinks,renderExpressionLinks:renderExpressionLinks,mount:mount,stop:stop,renderExplanation:renderExplanation,renderPart7Evidence:renderPart7Evidence,part7EvidenceEntries:part7EvidenceEntries,part7EvidenceLayout:part7EvidenceLayout,passageDigest:passageDigest,scriptTranslationUnits:scriptTranslationUnits,lcScriptEvidenceEntries:lcScriptEvidenceEntries};
 })(typeof window!=='undefined'?window:globalThis);
+
 
 
 

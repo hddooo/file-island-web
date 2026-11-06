@@ -254,10 +254,10 @@ html body #app#app#app .tc-listening-source .tc-image{max-height:clamp(150px,30d
 html body #app#app#app .tc-letter-answers .tc-answer-choices{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
 html body #app#app#app .tc-letter-answers .tc-answer-option{text-align:center!important;font-size:15px!important;font-weight:700!important}
 @container(min-width:740px){
- html body #app#app#app .tc-workspace-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
- html body #app#app#app .tc-workspace .tc-study-column{display:flex!important}
- html body #app#app#app .tc-pane-switch{display:none}
- html body #app#app#app .tc-workspace-audio{max-width:calc(50% - 7px)}
+ html body #app#app#app .tc-workspace[data-layout=split] .tc-workspace-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ html body #app#app#app .tc-workspace[data-layout=split] .tc-study-column{display:flex!important}
+ html body #app#app#app .tc-workspace[data-layout=split] .tc-pane-switch{display:none}
+ html body #app#app#app .tc-workspace[data-layout=split] .tc-workspace-audio{max-width:calc(50% - 7px)}
 }
 @media(min-width:900px){
  html body #app#app#app .tc-listening-question{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:24px;align-items:start}
@@ -279,7 +279,7 @@ html body #app#app#app .tc-study-active :is(h2,h3,h4,h5,h6){font-size:15px!impor
 html:not([data-company-mode=on]) body #app#app#app .tc-study-active .ha-button{font-size:0!important}
 html body #app#app#app .tc-study-active:not(.tc-study-group)>.tc-question:not(.tc-listening-question){max-width:900px;margin-inline:auto!important}
 html body #app#app#app .tc-source-column>.tc-pane-heading:not(:has(button)){display:none}
-@container(min-width:740px){html body #app#app#app .tc-source-column>.tc-pane-heading:not(:has(button)){display:flex}}
+@container(min-width:740px){html body #app#app#app .tc-workspace[data-layout=split] .tc-source-column>.tc-pane-heading:not(:has(button)){display:flex}}
 /* Short letter answers stay together above the fold on phones. */
 html body #app#app#app .tc-letter-answers .tc-answer-choices{grid-template-columns:repeat(4,minmax(0,1fr))}
 html[data-company-mode=on] body #app#app#app .tc-study-active .ha-controls .ha-button{width:auto!important;min-width:68px!important;flex-basis:auto!important;padding:6px 10px!important;white-space:nowrap}
@@ -287,3 +287,4 @@ html[data-company-mode=on] body #app#app#app .tc-study-active .ha-controls .ha-b
  html body #app#app#app .device-content:has(.tc-study-active)>.company-codebar{display:none!important}
  html body #app#app#app .tc-listening-source .tc-image{max-height:clamp(130px,24dvh,220px)!important}
 }
+

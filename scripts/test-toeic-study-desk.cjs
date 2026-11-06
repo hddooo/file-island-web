@@ -13,6 +13,7 @@ let checks=0;function ok(v,m){assert(v,m);checks++;}
  ok(h.classList.contains('tc-study-active'),'question starts desk');ok(h.querySelector('.tc-progress-numbers').textContent==='1'+(grouped?'–3':'')+' / '+qs.length+'문항','position count independent of 5000 stable ID');ok(h.querySelector('.qnum').textContent==='5000','stable number preserved');
  if(part<=2)ok(h.querySelector('[data-option=A]').textContent==='A','letter option not duplicated');else ok(h.querySelector('[data-option=A]').textContent==='A. Original choice A','real choice text preserved');
  if(grouped){
+  ok(h.querySelector('.tc-workspace').dataset.layout===(part===6||part===7?'split':'stack'),'only Parts 6/7 opt into desktop split');
   ok(h.querySelectorAll('.tc-group-item').length===3,'all members retained');ok(h.querySelector('.tc-questions-pane .tc-check-answer'),'existing check moved with questions');
   const audio=h.querySelector('audio'),stops=stopAudio,left=h.querySelector('.tc-source-pane'),right=h.querySelector('.tc-questions-pane'),first=h.querySelector('.tc-group-item [data-option=B]');first.click();left.scrollTop=120;right.scrollTop=180;
   const click=s=>h.querySelector(s).click();for(let i=0;i<4;i++){click('[data-pane-target=source]');click('[data-pane-target=questions]');}
@@ -41,4 +42,8 @@ let checks=0;function ok(v,m){assert(v,m);checks++;}
  ok(h.querySelectorAll('.tc-group-item').length===2,'passage shortcut still opens actual group');ok(writes===0,'shortcut navigation never submits');
  w.HanqToeicCbt.stop();dom.window.close();
 }
+const css=fs.readFileSync(path.resolve(__dirname,'../media/toeic-cbt.css'),'utf8');
+for(const selector of ['.tc-workspace-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}','.tc-study-column{display:flex!important}','.tc-pane-switch{display:none}'])ok(css.includes('.tc-workspace[data-layout=split] '+selector),'desktop expansion is split-scoped: '+selector);
+ok(!css.includes('.tc-workspace .tc-study-column{display:flex!important}'),'LC pane visibility is not forced open on desktop');
 console.log(JSON.stringify({passed:true,checks,scope:'synthetic desk lifecycle, Parts1–7, source fidelity, mobile switches, choice/scroll/audio identity, picker, failed submit, stable IDs',productionWrites:0}));})().catch(e=>{console.error(e);process.exit(1)});
+
