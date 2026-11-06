@@ -1,7 +1,7 @@
 /* Compact inquiries use the existing authenticated portal contract. No private data is persisted. */
 (function (root) {
   'use strict';
-  var doc = root.document, active = null, composer = null, draft = null, watched = null, restoreList = null;
+  var doc = root.document, active = null, composer = null, draft = null, watched = null, restoreList = null, pageHost = null;
   var UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
   function session(api) { var s = api.state(); return s.signedIn && s.ownerId && s.user && s.user.id === s.ownerId ? s.ownerId + ':' + s.epoch : null; }
   function el(tag, text, parent, cls) { var n = doc.createElement(tag); if (text != null) n.textContent = text; if (cls) n.className = cls; if (parent) parent.appendChild(n); return n; }
@@ -14,14 +14,18 @@
     api.onChange(function () {
       var key = session(api);
       if (draft && draft.key !== key) draft = null;
-      if (composer && composer.key && composer.key !== key) close(false);
+      if (composer && composer.key !== key && !composer.loading) {
+        if (composer.isPage) { composer.key = key; paintComposer(composer, api); }
+        else if (composer.key) close(false);
+      }
       if (active && active.key !== key) stop();
     });
   }
   function close(focus) {
     if (!composer) return;
     var old = composer; composer = null;
-    old.release(); old.node.remove();
+    old.release();
+    if (old.isPage) old.node.replaceChildren(); else old.node.remove();
     if (focus) { var target = old.trigger && old.trigger.isConnected ? old.trigger : doc.querySelector('#acInquiriesHost button'); if (target) target.focus(); }
   }
   function paintComposer(c, api) {
@@ -29,16 +33,16 @@
     var box = c.body; box.replaceChildren();
     if (!c.key || c.key !== session(api)) {
       el('p', '로그인한 뒤 건의·문의를 다시 열어 주세요. 보낸 문의와 답변은 MY PAGE에서 확인할 수 있어요.', box);
-      var login = el('a', '로그인하기', box, 'tool-btn'); login.href = '#account/main';
-      login.onclick = function () { close(false); };
+      var login = el('a', '로그인하기', box, 'tool-btn'); login.href = c.isPage ? '/#account/main' : '#account/main';
+      login.onclick = function () { if (!c.isPage) close(false); };
       return;
     }
     if (!draft || draft.key !== c.key) draft = { key: c.key, title: '', body: '', payload: null, sending: false, id: null, message: '' };
     var d = draft;
     if (d.id) {
-      var confirmed = el('p', '문의를 보냈어요. MY PAGE의 내 문의에서 답변을 확인할 수 있어요.', box); confirmed.setAttribute('role', 'status'); confirmed.tabIndex = -1;
-      var link = el('a', '내 문의 보기', box, 'tool-btn'); link.href = '#account/main';
-      link.onclick = function () { close(false); if (active) active.load(); };
+      var confirmed = el('p', '문의를 보냈어요. 7일 이내에 가입한 이메일로 답변드려요. 보낸 문의는 MY PAGE에서도 확인할 수 있어요.', box); confirmed.setAttribute('role', 'status'); confirmed.tabIndex = -1;
+      var link = el('a', '내 문의 보기', box, 'tool-btn'); link.href = c.isPage ? '/#account/main' : '#account/main';
+      link.onclick = function () { if (!c.isPage) close(false); if (active) active.load(); };
       button('새 문의 쓰기', box, function () { draft = null; paintComposer(c, api); });
       confirmed.focus();
       return;
@@ -85,6 +89,27 @@
       });
     };
   }
+  function introduction(parent) {
+    var intro = el('div', null, parent, 'hq-inquiry-intro');
+    el('p', 'HanQ를 이용하며 느낀 불편이나 개선 의견을 남겨 주세요.', intro);
+    el('p', '제목과 내용을 작성해 보내면 접수돼요.', intro);
+    el('p', '접수한 문의는 7일 이내에 가입한 이메일로 답변드려요.', intro);
+  }
+  function mountPage(host, api, force) {
+    if (!host || !api || typeof api.portal !== 'function') return false;
+    close(false); watch(api); pageHost = host;
+    var c = { node: host, body: host, key: null, isPage: true, loading: true, release: function () {} };
+    composer = c; el('p', '로그인 상태를 확인하고 있어요.', host).setAttribute('role', 'status');
+    Promise.resolve().then(function () { return api.ensureSession ? api.ensureSession(!!force) : api.init(); }).then(function () {
+      if (composer !== c) return;
+      c.loading = false; c.key = session(api); paintComposer(c, api);
+    }).catch(function (e) {
+      if (composer !== c) return;
+      c.loading = false; host.replaceChildren(); el('p', errorText(e), host).setAttribute('role', 'status');
+      button('다시 확인', host, function () { mountPage(host, api, true); });
+    });
+    return true;
+  }
   function open(trigger) {
     var api = root.HanqApi;
     if (!api || typeof api.portal !== 'function') return false;
@@ -93,6 +118,7 @@
     var dialog = el('dialog', null, doc.body, 'hq-inquiry-dialog'); dialog.setAttribute('aria-labelledby', 'hq-inquiry-heading-title'); dialog.tabIndex = -1;
     var head = el('header', null, dialog, 'hq-inquiry-heading'); el('h2', '건의·문의', head).id = 'hq-inquiry-heading-title';
     var dismiss = button('닫기', head, function () { close(true); }); dismiss.setAttribute('aria-label', '문의 창 닫기');
+    introduction(dialog);
     var box = el('div', null, dialog), c = { node: dialog, body: box, key: session(api), trigger: trigger || doc.activeElement, release: root.HanqUiLocks ? root.HanqUiLocks.acquire(doc.querySelector('#app')) : function () {} };
     composer = c; el('p', '로그인 상태를 확인하고 있어요.', box).setAttribute('role', 'status');
     dialog.addEventListener('cancel', function (ev) { ev.preventDefault(); close(true); });
@@ -148,13 +174,8 @@
     }
     load();
   }
-  doc.addEventListener('click', function (ev) {
-    if (ev.defaultPrevented || ev.button !== 0 || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
-    var a = ev.target.closest && ev.target.closest('a[href]'); if (!a || a.download || a.target) return;
-    var url; try { url = new URL(a.href, root.location.href); } catch (e) { return; }
-    if (url.origin === root.location.origin && /^\/inquiries\/?$/.test(url.pathname) && open(a)) ev.preventDefault();
-  });
-  root.addEventListener('hashchange', function () { close(false); });
+  // Inquiry links navigate to the standalone page; MY PAGE keeps its compact dialog.
+  root.addEventListener('hashchange', function () { if (!composer || !composer.isPage) close(false); });
   root.addEventListener('pagehide', function (event) {
     restoreList = event.persisted && active ? { host: active.host, api: active.api } : null;
     close(false); stop();
@@ -163,6 +184,7 @@
   });
   root.addEventListener('pageshow', function (event) {
     if (!event.persisted) return;
+    if (pageHost && pageHost.isConnected) { mountPage(pageHost, root.HanqApi, true); return; }
     var saved = restoreList, api = saved ? saved.api : root.HanqApi; restoreList = null;
     if (!api) return;
     Promise.resolve().then(function () { return api.ensureSession ? api.ensureSession(true) : api.init(); }).then(function () {
@@ -174,7 +196,9 @@
       button('다시 확인', saved.host, function () { mount(saved.host, api); });
     });
   });
-  root.HanqInquiries = { open: open, mount: mount, stop: stop };
+  root.HanqInquiries = { open: open, mount: mount, mountPage: mountPage, stop: stop };
+  var inlineHost = doc.querySelector('#hq-inquiry-page-host');
+  if (inlineHost) mountPage(inlineHost, root.HanqApi);
   var initial = new URL(root.location.href);
-  if (initial.searchParams.get('inquiry') === 'compose') { initial.searchParams.delete('inquiry'); root.history.replaceState(root.history.state, '', initial.pathname + initial.search + initial.hash); open(); }
+  if (!inlineHost && initial.searchParams.get('inquiry') === 'compose') { initial.searchParams.delete('inquiry'); root.history.replaceState(root.history.state, '', initial.pathname + initial.search + initial.hash); open(); }
 })(window);

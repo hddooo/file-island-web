@@ -35,16 +35,16 @@ const baseCss = fs.readFileSync(ROOT + '/index.html', 'utf8').match(/<style>([\s
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false);
       await page.locator('#acInquiriesTitle').scrollIntoViewIfNeeded();
       if (width === 390 || width === 1440) await page.screenshot({ path: OUT + '/mypage-' + theme + '-' + width + '.png' });
-      await page.locator('#mapInquiry').click(); await page.locator('dialog [name=title]').waitFor();
+      await page.locator('#acInquiriesHost button').first().click(); await page.locator('dialog [name=title]').waitFor();
       const m = await page.locator('dialog').evaluate(d => { const b = d.getBoundingClientRect(); return { x: b.x, y: b.y, right: b.right, bottom: b.bottom, viewport: innerWidth, height: innerHeight, scrollWidth: d.scrollWidth, clientWidth: d.clientWidth, duplicateIds: [...d.querySelectorAll('[id]')].map(n => n.id).filter((x, i, all) => all.indexOf(x) !== i) }; });
       assert(m.x >= 0 && m.right <= width + 1 && m.y >= 0 && m.bottom <= height + 1); assert(m.scrollWidth <= m.clientWidth + 1); assert.deepEqual(m.duplicateIds, []);
       assert.equal(await page.locator('dialog [name=title]').evaluate(n => getComputedStyle(n).fontSize), '16px');
       assert(await page.locator('dialog button[type=submit]').evaluate(n => n.getBoundingClientRect().height >= 44));
       await page.locator('dialog [name=title]').fill('화면 문의'); await page.locator('dialog [name=body]').fill('테스트 내용입니다.');
       if (width === 390 || width === 1440) await page.screenshot({ path: OUT + '/composer-' + theme + '-' + width + '.png' });
-      await page.locator('dialog button[type=submit]').click(); await page.getByText('문의를 보냈어요. MY PAGE의 내 문의에서 답변을 확인할 수 있어요.', { exact: true }).waitFor();
+      await page.locator('dialog button[type=submit]').click(); await page.getByText('문의를 보냈어요. 7일 이내에 가입한 이메일로 답변드려요. 보낸 문의는 MY PAGE에서도 확인할 수 있어요.', { exact: true }).waitFor();
       assert.equal(await page.evaluate(() => qaCalls.filter(c => c.m === 'POST').length), 1);
-      await page.keyboard.press('Escape'); assert.equal(await page.locator('dialog').count(), 0); assert.equal(await page.locator('#app').evaluate(n => n.inert), false); assert.equal(await page.locator('#mapInquiry').evaluate(n => document.activeElement === n), true);
+      await page.keyboard.press('Escape'); assert.equal(await page.locator('dialog').count(), 0); assert.equal(await page.locator('#app').evaluate(n => n.inert), false); assert.equal(await page.locator('#acInquiriesHost button').first().evaluate(n => document.activeElement === n), true);
       assert.deepEqual(errors, []); results.push({ width, height, theme, modalBounds: m, passed: true }); await page.close();
     }
   } finally { await browser.close(); }

@@ -1,1 +1,31 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HanQ 건의·문의</title><meta http-equiv="refresh" content="0;url=/?inquiry=compose#account/main"></head><body><p>문의 창으로 이동합니다. <a href="/?inquiry=compose#account/main">건의·문의 열기</a></p><script>location.replace('/?inquiry=compose#account/main');</script></body></html>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="hanq-api-base" content="same-origin">
+  <title>HanQ 건의·문의</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/media/agumon-icon-transparent-32-20261030.png">
+  <link rel="stylesheet" href="/media/inquiry-ui.css?v=inquiry-page-20261106">
+</head>
+<body class="hq-inquiry-page">
+  <main class="hq-inquiry-page-main" id="app">
+    <nav class="hq-inquiry-page-nav" aria-label="페이지 이동">
+      <a href="/">← 메인으로</a>
+      <a href="/#account/main">MY PAGE</a>
+    </nav>
+    <section class="hq-inquiry-card" aria-labelledby="hq-inquiry-page-title">
+      <h1 id="hq-inquiry-page-title">건의·문의</h1>
+      <div class="hq-inquiry-intro">
+        <p>HanQ를 이용하며 느낀 불편이나 개선 의견을 남겨 주세요.</p>
+        <p>제목과 내용을 작성해 보내면 접수돼요.</p>
+        <p>접수한 문의는 7일 이내에 가입한 이메일로 답변드려요.</p>
+      </div>
+      <div id="hq-inquiry-page-host"></div>
+      <noscript><p>문의 작성을 위해 JavaScript를 켜 주세요.</p></noscript>
+    </section>
+  </main>
+  <script src="/media/api-client.js?v=inquiry-page-20261106"></script>
+  <script src="/media/inquiry-ui.js?v=inquiry-page-20261106"></script>
+</body>
+</html>

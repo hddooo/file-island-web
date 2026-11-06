@@ -37,7 +37,7 @@ let checks = 0; const eq = (a, b) => { checks++; assert.deepEqual(a, b); }, ok =
   try {
     w.HanqApi = api;
     for (const file of ['ui-locks.js', 'request-status.js', 'inquiry-ui.js']) w.eval(fs.readFileSync(path.join(ROOT, 'media', file), 'utf8'));
-    w.document.querySelector('#open').click(); await tick();
+    w.HanqInquiries.open(w.document.querySelector('#open')); await tick();
     eq(w.document.querySelectorAll('dialog input,dialog textarea').length, 2);
     w.document.querySelector('[name=title]').value = 'Real client synthetic title'; w.document.querySelector('[name=body]').value = 'Real client synthetic body';
     let release; gate = new Promise(r => { release = r; });

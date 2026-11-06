@@ -172,3 +172,7 @@ Vercel 빌드에 필요한 `scripts/build-app-version.cjs`만 `.vercelignore`의
 모든 --cm-image URL은 `/media/characters/...`의 절대 경로다. 외부 CSS에서 상대 custom-property URL이 `/media/media/...`로 해석되는 실제 화면 누락을 수정했으며 검수도 실제 link stylesheet를 로드하고 계산된 모든 배경 URL이200인지 확인한다. 정적 CSS 주입만으로 실제 배포 문맥을 대신하지 않는다. 전역 터미널 테마의 animation:none!important와 원래 img/pose 가림도 실제 computed style과 픽셀로 확인한다.
 
 로컬 합성 검수는 Chrome/WebKit320/390/1440의 부분 모션6조합, 12종/좌우/공격·피격·패배·약공격·축소 모션 및 새 자산 실패44조합, 지연 로딩4조합을 포함한다. 세 배경 접촉표와 전체48포즈도 확인한다. 실제 Nest/격리 PostgreSQL의 구매·장착·60초·두 계열5단계 진화와 실제 전투 검수는 통합 담당의 별도 기록을 따른다. 실물 iPhone/Safari·운영 배포 여부와 로컬 WebKit/합성 검수를 구분한다.
+
+## 건의·문의 독립 페이지 · 0.4.18-beta
+
+`inquiries/index.html`은 리다이렉트 대신 기존 same-origin API 클라이언트와 `HanqInquiries.mountPage`로 간단한 작성 폼을 표시한다. 지도 링크 가로채기는 제거하고 MY PAGE 모달·목록은 보존한다. 페이지는 모달 잠금을 획득하지 않으며, 인증 확인·계정 전환과 BFCache 복귀 때 기존 owner/epoch·불명확한 전송의 requestId 보존 규칙을 재사용한다. 페이지의 로그인·문의 확인 링크는 루트 MY PAGE를 가리킨다. 새 API·DB·메일 전송 경로는 추가하지 않는다.

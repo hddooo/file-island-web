@@ -24,7 +24,11 @@ const list = () => ({ items: [{ id: Q, title: '<img src=x onerror=alert(1)>', cr
 const detail = () => ({ inquiry: { id: Q, user_id: ID }, messages: [{ sender_role: 'member', body: '<script>bad()</script>', created_at: date }, { sender_role: 'admin', body: '답변입니다.\n두 번째 줄', created_at: date }] });
 (async () => {
   let x = env(() => { throw Error('no call'); });
-  x.w.document.querySelector('#map').focus(); x.w.document.querySelector('#map').click(); await tick();
+  x.w.document.querySelector('#map').focus();
+  const mapClick = new x.w.MouseEvent('click', { button: 0, bubbles: true, cancelable: true });
+  x.w.document.querySelector('#map').addEventListener('click', e => { eq(e.defaultPrevented, false); e.preventDefault(); }, { once: true });
+  x.w.document.querySelector('#map').dispatchEvent(mapClick); eq(x.w.document.querySelector('dialog'), null);
+  x.w.HanqInquiries.open(x.w.document.querySelector('#map')); await tick();
   ok(x.w.document.querySelector('dialog[open]')); eq(x.w.location.pathname, '/'); eq(x.w.document.querySelectorAll('dialog input,dialog textarea').length, 2); eq(x.calls.length, 0);
   eq(x.w.document.querySelector('[name=title]').maxLength, 120); eq(x.w.document.querySelector('[name=body]').maxLength, 4000);
   fill(x, '  ', ' '); send(x); await tick(); eq(x.calls.length, 0); ok(x.w.document.querySelector('dialog').textContent.includes('제목과 내용을 입력'));
@@ -67,7 +71,7 @@ const detail = () => ({ inquiry: { id: Q, user_id: ID }, messages: [{ sender_rol
   ok(x.w.document.querySelector('#acInquiriesHost .hq-inquiry-item')); eq(x.w.document.querySelector('#acAdminSlot').textContent, '');
   x.w.document.querySelector('#acInquiriesHost button').click(); await tick(); fill(x); send(x); await tick(); click(x, '닫기'); eq(x.w.document.activeElement, x.w.document.querySelector('#acInquiriesHost button'));
   x.w.HanqAccountUI.stop(); eq(x.w.document.querySelector('#acInquiriesHost').textContent, ''); x.close();
-  const redirect = fs.readFileSync(path.join(ROOT, 'inquiries/index.html'), 'utf8'); ok(redirect.includes("location.replace('/?inquiry=compose#account/main')")); ok(!redirect.includes('portal-ui.js'));
+  const page = fs.readFileSync(path.join(ROOT, 'inquiries/index.html'), 'utf8'); ok(!page.includes('location.replace') && !page.includes('http-equiv="refresh"')); ok(page.includes('hq-inquiry-page-host')); ok(!page.includes('portal-ui.js'));
   x = env((m, p) => { if (m === 'POST') throw { status: 503 }; return list(); });
   x.w.HanqInquiries.mount(x.w.document.querySelector('#host'), x.api); await tick();
   x.w.HanqInquiries.open(); await tick(); fill(x); send(x); await tick(); const pending = x.calls.find(c => c.m === 'POST').b;
