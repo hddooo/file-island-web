@@ -276,3 +276,7 @@ html body #app#app#app .tc-letter-answers .tc-answer-option{text-align:center!im
 /* Keep explanation prose at the same reading scale in the company theme too. */
 html body #app#app#app .tc-study-active :is(.tc-result,.tc-script-shared) :is(p,li,.tc-tutor-core,.tc-script-en,.tc-script-ko){font-size:14px!important;line-height:1.85!important}
 html body #app#app#app .tc-study-active :is(h2,h3,h4,h5,h6){font-size:15px!important;line-height:1.6!important}
+html:not([data-company-mode=on]) body #app#app#app .tc-study-active .ha-button{font-size:0!important}
+html body #app#app#app .tc-study-active:not(.tc-study-group)>.tc-question:not(.tc-listening-question){max-width:900px;margin-inline:auto!important}
+html body #app#app#app .tc-source-column>.tc-pane-heading:not(:has(button)){display:none}
+@container(min-width:740px){html body #app#app#app .tc-source-column>.tc-pane-heading:not(:has(button)){display:flex}}
