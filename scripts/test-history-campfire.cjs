@@ -50,7 +50,7 @@ assert.match(reduced, /:is\([^)]*\.he-warmth,\.he-flame,[^)]*\)\{animation:none!
 assert.ok(css.indexOf('@media(prefers-reduced-motion:reduce)') > css.indexOf('animation:he-flame '));
 assert.match(css, /\.he-paused :is\([^)]*\.he-warmth,\.he-flame,[^)]*\)\{animation-play-state:paused!important\}/);
 assert.match(css, /\.he-fire:not\(\.he-fire-ready\) \*\{animation-play-state:paused!important\}/);
-for (const selector of ['.he-camp', '.he-fire', '.he-chairs']) {
+for (const selector of ['.he-camp', '.he-fire', '.he-firepit']) {
   assert.doesNotMatch(blockAfter(`html body #app .history-evening ${selector}{`), /animation:/, `${selector} remains stationary`);
 }
 assert.match(css, /\.he-camp\{left:40%;top:74%;width:31%\}/, 'Original portrait placement');
@@ -58,3 +58,4 @@ assert.match(css, /\.he-warmth\{[^}]*animation:he-firelight 1\.9s -\.4s ease-in-
 assert.equal(blockAfter('@keyframes he-firelight{'), 'from{opacity:.6}to{opacity:.9}');
 assert.match(css, /html\.world-low-power body #app \.history-evening \.he-aurora\{animation:none!important/);
 console.log('History campfire: fixed footprint, bounded tip flicker, translucent second flame, loop continuity, paused/load/reduced-motion and portrait guards passed.');
+

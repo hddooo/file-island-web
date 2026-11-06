@@ -22,7 +22,7 @@
     sceneOwner=map;
     var layer=document.createElement('span');layer.className='history-evening he-paused';layer.setAttribute('aria-hidden','true');
     var rain='';for(var i=0;i<22;i++)rain+='<i style="--x:'+((i*37+7)%100)+'%;--y:'+((i*29)%100)+'%;--delay:'+(-i*.173)+'s"></i>';
-    layer.innerHTML='<span class="he-night"></span><span class="he-sky"><i class="he-aurora he-aurora-a"></i><i class="he-aurora he-aurora-b"></i><span class="he-stars"></span><i class="he-breeze-cloud he-breeze-far"></i><i class="he-breeze-cloud he-breeze-near"></i></span><span class="he-clouds"></span><span class="he-rain">'+rain+'</span><span class="he-camp"><span class="he-warmth"></span><span class="he-chairs"></span><span class="he-fire"><i class="he-flame he-flame-a"></i><i class="he-flame he-flame-b"></i><i class="he-ember he-ember-a"></i><i class="he-ember he-ember-b"></i><i class="he-ember he-ember-c"></i></span><span class="he-friend"><span class="he-friend-sprite"></span><span class="he-leaf"></span></span></span>';
+    layer.innerHTML='<span class="he-night"></span><span class="he-sky"><i class="he-aurora he-aurora-a"></i><i class="he-aurora he-aurora-b"></i><span class="he-stars"></span><i class="he-breeze-cloud he-breeze-far"></i><i class="he-breeze-cloud he-breeze-near"></i></span><span class="he-clouds"></span><span class="he-rain">'+rain+'</span><span class="he-camp"><span class="he-warmth"></span><span class="he-firepit"></span><span class="he-fire"><i class="he-flame he-flame-a"></i><i class="he-flame he-flame-b"></i><i class="he-ember he-ember-a"></i><i class="he-ember he-ember-b"></i><i class="he-ember he-ember-c"></i></span><span class="he-friend"><span class="he-friend-sprite"></span><span class="he-leaf"></span></span></span>';
     layer.style.setProperty('--he-camp-art','url("'+campAsset('history-camp-dusk-v2.webp')+'")');
     layer.style.setProperty('--he-flame-art','url("'+campAsset('history-camp-flame-v2.webp')+'")');
     layer.insertAdjacentHTML('beforeend','<span class="he-resident he-koromon"><span class="he-resident-shadow"></span><span class="he-native"></span></span><span class="he-resident he-gabumon"><span class="he-resident-shadow"></span></span><span class="he-resident he-patamon"></span>');
@@ -51,4 +51,5 @@
   }
   root.HanqHistoryEvening={mount:mount,daylightAt:daylightAt};
 })(window);
+
 
