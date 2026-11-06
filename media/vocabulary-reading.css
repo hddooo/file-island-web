@@ -114,3 +114,66 @@ html body #toeicNotesHost.tn .tn-readonly-list .tn-word-card [hidden],
 html body #toeicNotesHost.tn .tn-readonly-list .tn-word-card[hidden]{display:none!important}
 /* Chapter notes above the toolbar read in the same face as the entries. */
 html body #toeicNotesHost.tn>p{font-family:var(--vr-ko)!important;font-size:15px!important;line-height:1.7!important;color:var(--vr-body)!important}
+
+/* Vocabulary entry spacing follows the current reading scale in both display modes.
+   Screen only: printed wordbooks, text sizes, content and native controls are unchanged.
+   Match the company theme's ID weight so its generic card padding cannot cover checks. */
+@media screen {
+  html body #app#app#app #toeicNotesHost.tn .tn-readonly-list {
+    padding: 4px 12px;
+  }
+
+  html body #app#app#app #toeicNotesHost.tn .tn-readonly-list > .tn-word-card {
+    min-height: 64px !important;
+    padding: 14px 0 12px 52px !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    row-gap: 8px !important;
+    column-gap: 24px !important;
+  }
+
+  html body #app#app#app #toeicNotesHost.tn .tn-readonly-list > .tn-word-card > .tn-word-check {
+    top: 10px !important;
+  }
+
+  html body #app#app#app #toeicNotesHost.tn .tn-readonly-list > .tn-word-card > .tn-lexeme {
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 4px 12px;
+  }
+
+  html body #app#app#app #toeicNotesHost.tn .tn-readonly-list .tn-word-title h3 {
+    margin: 0 !important;
+  }
+
+  html body #app#app#app #toeicNotesHost.tn .tn-readonly-list > .tn-word-card > .tn-example-main {
+    margin: 0 !important;
+    padding: 0 0 0 12px !important;
+  }
+
+  html body #app#app#app #toeicNotesHost.tn .tn-readonly-list .tn-example-main > .tn-translation {
+    margin: 4px 0 0 !important;
+  }
+
+  html body #app#app#app #toeicNotesHost.tn .tn-readonly-list > .tn-word-card > .tn-extra {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  html body #app#app#app #toeicNotesHost.tn .tn-readonly-list > .tn-word-card > .tn-extra > summary {
+    box-sizing: border-box;
+    min-height: 44px;
+    padding: 8px 0 !important;
+  }
+
+  @media (min-width: 760px) {
+    html body #app#app#app #toeicNotesHost.tn .tn-readonly-list {
+      padding: 6px 24px;
+    }
+
+    html body #app#app#app #toeicNotesHost.tn .tn-readonly-list > .tn-word-card,
+    html body #app#app#app #toeicNotesHost.tn .tn-readonly-list > .tn-word-card > .tn-lexeme {
+      grid-template-columns: minmax(160px, 30%) minmax(0, 1fr) !important;
+      column-gap: 24px !important;
+    }
+  }
+}

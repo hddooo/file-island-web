@@ -39,10 +39,32 @@
     var list=element('div','company-file-list');
     data.rows.forEach(function(r){var a=element('a','company-file-row');a.href=r[1];var name=element('span','company-file-name');name.append(element('span','company-folder','▱'),element('span','',r[0]));var title=element('span','company-file-title',r[2]),desc=element('span','company-file-desc',r[3]);a.append(name,title,desc);list.append(a);});box.append(list);return box;
   }
+  // Decorate native controls, never clone them or take over their routes/state.
+  function nativeFile(node,name){
+    if(!node)return;
+    var label=node.querySelector(':scope > [data-company-added]');
+    if(!label){label=element('span','company-native-file');label.setAttribute('data-company-added','');label.setAttribute('aria-hidden','true');node.insertBefore(label,node.firstChild);}
+    if(label.textContent!==name)label.textContent=name;
+    node.setAttribute('data-company-native-row','');
+  }
+  function nativeDirectory(node,path,count){if(node){var title=path+' / '+count+' files';if(node.getAttribute('data-company-native-directory')!==title)node.setAttribute('data-company-native-directory',title);}}
+  function nativeDirectories(){
+    doc.querySelectorAll('#app .toc').forEach(function(list){var rows=list.querySelectorAll(':scope > .period[data-id]');nativeDirectory(list,'history / chapters',rows.length);rows.forEach(function(b,i){nativeFile(b,String(i+1).padStart(2,'0')+'-'+b.dataset.id+'.md');});});
+    doc.querySelectorAll('#app .tn-chapter-list').forEach(function(list){var rows=list.querySelectorAll(':scope > .tn-chapter-row');nativeDirectory(list,'english / vocabulary',rows.length);var index=0;rows.forEach(function(row){nativeFile(row.querySelector('.tn-chapter-open'),row.classList.contains('tn-selected-chapter')?'checked-words.md':'chapter-'+String(++index).padStart(2,'0')+'.md');nativeFile(row.querySelector('.tn-chapter-pdf'),'PDF');});});
+    doc.querySelectorAll('#app .tn-recent-primary').forEach(function(list){var rows=list.querySelectorAll('.tn-recent-item');nativeDirectory(list,'vocabulary / recent',rows.length);rows.forEach(function(b,i){nativeFile(b,'entry-'+String(i+1).padStart(2,'0')+'.md');});});
+    doc.querySelectorAll('#app .tn-add-note').forEach(function(b){nativeFile(b,'+ new-entry');});
+    doc.querySelectorAll('#app .tg-chapter-cards').forEach(function(list){var rows=list.querySelectorAll(':scope > .tg-focus-index-row');nativeDirectory(list,'english / grammar',rows.length);rows.forEach(function(row,i){nativeFile(row.querySelector('.toeic-list-open'),'note-'+String(i+1).padStart(2,'0')+'.md');});});
+    doc.querySelectorAll('#app .tc-group-list').forEach(function(list){var rows=list.querySelectorAll(':scope > .tc-group-row');nativeDirectory(list,'english / practice',rows.length);rows.forEach(function(row,i){nativeFile(row.querySelector('.tc-group'),'part-'+String(i+1).padStart(2,'0')+'.json');});});
+    // A live player may be parked outside #app while another route is open.
+    doc.querySelectorAll('.lc-track-list').forEach(function(list){var rows=list.querySelectorAll('.lc-track');nativeDirectory(list,'listening / playlist',rows.length);rows.forEach(function(b,i){nativeFile(b,'track-'+String(i+1).padStart(3,'0')+'.mp3');});});
+    doc.querySelectorAll('#hallHost .hall-page > section:not(.hall-podium)').forEach(function(list){nativeDirectory(list,'ranking / members.json',list.querySelectorAll('.hall-person').length);});
+    doc.querySelectorAll('#hallHost .hall-podium').forEach(function(list){nativeDirectory(list,'ranking / leaders.json',list.querySelectorAll('.hall-podium-person').length);});
+  }
+  function clearNativeDirectories(){doc.querySelectorAll('[data-company-added]').forEach(function(n){n.remove();});doc.querySelectorAll('[data-company-native-directory],[data-company-native-row]').forEach(function(n){n.removeAttribute('data-company-native-directory');n.removeAttribute('data-company-native-row');});}
   function sync(){
     queued=false;var app=doc.getElementById('app')||(doc.documentElement.hasAttribute('data-company-document')?doc.body:null);if(!app)return;
     syncControls();
-    if(!enabled()){app.removeAttribute('data-company-history');app.querySelectorAll('.company-image-note').forEach(function(n){n.remove();});app.querySelectorAll('.company-directory,.company-codebar').forEach(function(n){n.remove();});app.querySelectorAll('[data-company-map-original]').forEach(function(n){n.removeAttribute('data-company-map-original');});return;}
+    if(!enabled()){clearNativeDirectories();app.removeAttribute('data-company-history');app.querySelectorAll('.company-image-note').forEach(function(n){n.remove();});app.querySelectorAll('.company-directory,.company-codebar').forEach(function(n){n.remove();});app.querySelectorAll('[data-company-map-original]').forEach(function(n){n.removeAttribute('data-company-map-original');});return;}
     var pane=app.querySelector(':scope > .device-content')||app;
     var historyText=isHistory();
     doc.documentElement.toggleAttribute('data-company-history',historyText);
@@ -64,10 +86,11 @@
     var path=location.pathname.indexOf('/inquiries')===0?'workspace / inquiries.md':location.hash.replace(/^#/, '').replace(/\//g,' / ')||'workspace';
     var barText=key?'Files / '+directories[key].name:'Code / '+path;
     if(bar.textContent!==barText)bar.textContent=barText;
+    nativeDirectories();
     // CSS-only gutters: never replace text, controls, IDs, answers or reader ownership.
     var line=0;
     app.querySelectorAll('p,h2,h3,h4,.bubble,.tn-word,.tg-topic-title,.tc-question-text,.mock-stem,.textbook-source-quiz-item').forEach(function(n){
-      if(n.closest('.company-directory,.company-setting,.company-codebar,.company-image-note,.device-crown,[data-company-map-original],.ac-sr,[hidden]')||!n.textContent.trim()||n.querySelector('p,h2,h3,h4'))return;
+      if(n.closest('.company-directory,[data-company-native-directory],.company-setting,.company-codebar,.company-image-note,.device-crown,[data-company-map-original],.ac-sr,[hidden]')||!n.textContent.trim()||n.querySelector('p,h2,h3,h4'))return;
       var value=String(++line);if(n.getAttribute('data-company-line')!==value)n.setAttribute('data-company-line',value);
     });
   }
