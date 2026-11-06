@@ -135,3 +135,6 @@ html[data-company-mode=on][data-company-history] body :is(img,svg:not(button svg
 /* Generated tooltip roots sit outside the application. */
 html[data-company-mode=on] body :is([role=tooltip],.history81-term-tooltip.history81-term-tooltip){font:13px/1.8 var(--company-font)!important;background:#161b22!important;color:#c9d1d9!important;border:1px solid #484f58!important;border-radius:4px!important;box-shadow:none!important;text-shadow:none!important}
 html[data-company-mode=on] body #app#app#app>.topline.device-crown .device-model>span{font-size:0!important}
+/* Text leaves in legacy standalone readers can carry inline light backgrounds. */
+html[data-company-mode=on] body :is(p,a,span,small,mark,figcaption){background-color:transparent!important;background-image:none!important}
+html[data-company-mode=on] .company-document :is(.comic-home,nav a,.hq-read-status){background:#161b22!important;border-color:#30363d!important;border-radius:4px!important;box-shadow:none!important}
