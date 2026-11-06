@@ -32,3 +32,11 @@
 후속 커밋의 정확 SHA 빌드·배포와 cross-tab 운영 재검수는 별도로 확인해야 한다.
 
 후속 저장소 충돌 회귀9개와 기존 회사/메뉴/역사47개(합계56개), 버전 빌더 및 index inline script 구문 검사가 통과했다. 새 테스트는 실제 index listener를 추출해 실행한다. company ON/OFF, probe, 학습 및 clear 이벤트가 HPS에는 그대로 전달되면서 서버 host는 유지되고, 기존 로컬 refresh/focus·풀이 중 상태·quiz/mock 복원이 계속 동작하는지 검사한다. 전체 저장소 검사라고 주장하지 않는다.
+
+45c910d3의 빌드와 운영 배포가 성공했다. 정확 SHA 운영에서 다른 탭 새로고침, 회사모드 OFF/ON 후에도 서버 CBT 오답 host와 현재 문항 목록이 보존되고 native details 펼치기가 정상임을 확인했다. 일반모드 원래 스타일과 회사모드 파일 행도 각각 복원됐다.
+
+### Practice 목록 폭 보완
+
+독립 검수에서 회사모드 Practice Part 선택 버튼이 약24px로 눌리고 첫 행이 약310px로 늘어나는 문제를 확인했다. 회사 CSS가 원래 행을 flex로 바꾼 상태에서 PDF 도구의 width:100%가 남아 폭을 차지한 것이 원인이다. 회사모드의 `.tc-group-list[data-company-native-directory]>.tc-group-row`만 원래 한 열 grid 구조로 복원한다. Part 버튼과 PDF 도구의 소유권·상태·다운로드 및 일반모드는 변경하지 않는다. 후속 정확 SHA 배포와 1180px/501px 실제 너비 검수는 아직 완료로 표시하지 않는다.
+
+목록 전용 회귀7개가 통과했다. 수정 없는 대조군의 flex 재현, CSS 로딩 순서 전/후 grid 승리, normal-off, 반복 복귀, Part/PDF 독립 핸들러와 disabled/hidden/상태, 비동기 목록 교체를 검사했다. 기존56개 회귀도 재실행해 통과했다. JSDOM 검사는 실제 너비/높이 또는 PDF 생성 성공을 검증하지 않는다.

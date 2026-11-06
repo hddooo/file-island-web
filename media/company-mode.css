@@ -168,6 +168,8 @@ html[data-company-mode=on] #app#app#app .toc .period-text{display:grid!important
 html[data-company-mode=on] #app#app#app .toc .period-text :is(strong,small){font:12px/1.7 var(--company-font)!important;margin:0!important;color:#c9d1d9!important}
 html[data-company-mode=on] #app#app#app .toc .period-text small{color:#8b949e!important}
 html[data-company-mode=on] #app#app#app :is(.tn-chapter-row,.tg-focus-index-row,.tc-group-row){display:flex!important;align-items:stretch!important;gap:0!important;margin:0!important;padding:0!important;border:0!important;border-bottom:1px solid #30363d!important;border-radius:0!important;background:#0d1117!important}
+/* PDF tools own a full-width row; do not let that sibling squeeze the native Part button. */
+html[data-company-mode=on] #app#app#app .tc-group-list[data-company-native-directory]>.tc-group-row{display:grid!important;grid-template-columns:minmax(0,1fr)!important}
 html[data-company-mode=on] #app#app#app :is(.tn-chapter-open,.tg-chapter-cards .toeic-list-open,.tc-group){flex:1!important;min-width:0!important;width:auto!important;border-bottom:0!important;font:12px/1.7 var(--company-font)!important}
 html[data-company-mode=on] #app#app#app :is(.tn-chapter-open strong,.tc-group-label){color:#c9d1d9!important;font:12px/1.7 var(--company-font)!important}
 html[data-company-mode=on] #app#app#app :is(.tn-chapter-stats,.tc-group-count){margin-left:auto!important;display:flex!important;gap:12px!important;color:#8b949e!important;font:12px/1.7 var(--company-font)!important}
