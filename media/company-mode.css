@@ -133,7 +133,7 @@ html[data-company-mode=on] :is(#app#app#app,.company-document) .company-image-no
 html:not([data-company-mode=on]) .company-image-note{display:none!important}
 html[data-company-mode=on][data-company-history] body :is(img,svg:not(button svg):not(a svg),canvas,video){display:none!important}
 /* Generated tooltip roots sit outside the application. */
-html[data-company-mode=on] body :is([role=tooltip],.history81-term-tooltip.history81-term-tooltip){font:13px/1.8 var(--company-font)!important;background:#161b22!important;color:#c9d1d9!important;border:1px solid #484f58!important;border-radius:4px!important;box-shadow:none!important;text-shadow:none!important}
+html[data-company-mode=on] :is(#app#app#app,body) :is([role=tooltip],.history81-term-tooltip){font:13px/1.8 var(--company-font)!important;background:#d1d5db!important;color:#111827!important;-webkit-text-fill-color:currentColor!important;border:1px solid #9ca3af!important;border-radius:4px!important;box-shadow:0 4px 16px #0004!important;text-shadow:none!important}
 html[data-company-mode=on] body #app#app#app>.topline.device-crown .device-model>span{font-size:0!important}
 /* Text leaves in legacy standalone readers can carry inline light backgrounds. */
 html[data-company-mode=on] body :is(p,a,span,small,mark,figcaption){background-color:transparent!important;background-image:none!important}
@@ -141,3 +141,9 @@ html[data-company-mode=on] .company-document :is(.comic-home,nav a,.hq-read-stat
 /* Unhandled legacy labels inherit the readable foreground; explicit semantic states still win. */
 html[data-company-mode=on] :is(#app#app#app,dialog,[role=dialog],.admin-page,.company-document) :where(*){color:inherit!important}
 html[data-company-mode=on] #app#app#app :is(.ri-egg-shop-sign,.ri-wardrobe-shop){gap:8px!important;flex-wrap:wrap!important}
+
+/* WebKit painted ink can override color independently in source readers. */
+html[data-company-mode=on] :is(#app#app#app,body) :is([role=tooltip],.history81-term-tooltip) *{color:inherit!important;-webkit-text-fill-color:currentColor!important}
+html[data-company-mode=on] #app#app#app .textbook-source-quiz-input{-webkit-text-fill-color:currentColor!important;caret-color:currentColor!important}
+html[data-company-mode=on] #app#app#app .textbook-source-quiz-input::placeholder{color:#8b949e!important;-webkit-text-fill-color:currentColor!important}
+html[data-company-mode=on] body :is(.joseon-script-reader,.goryeo-script-reader) .history81-term:focus-visible{outline-color:#58a6ff!important}
