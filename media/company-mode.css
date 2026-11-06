@@ -205,3 +205,13 @@ html[data-company-mode=on] #app#app#app .hall-page>section:not(.hall-podium)>h2{
  html[data-company-mode=on] #app#app#app .hall-podium-person{grid-template-columns:minmax(0,1fr) auto!important}
  html[data-company-mode=on] #app#app#app .hall-podium-stage{grid-column:1!important;grid-row:2!important;color:#8b949e!important}
 }
+
+/* Body-level grading decoration is never part of a company workspace. Inline results remain. */
+html[data-company-mode=on] body>.hanq-grade-burst{display:none!important;animation:none!important}
+
+/* Keep deeper grammar headings and native audio controls at the workspace scale. */
+html[data-company-mode=on] #app#app#app :is(h5,h6){font:600 14px/1.7 var(--company-font)!important;color:#d2a8ff!important;text-shadow:none!important}
+html[data-company-mode=on] #app#app#app .ha-button{width:auto!important;min-width:64px!important;height:44px!important;min-height:44px!important;padding:8px 12px!important;font:12px/1.6 var(--company-font)!important}
+html[data-company-mode=on] #app#app#app .ha-button::before{display:none!important;content:none!important}
+
+@media(max-width:760px){html[data-company-mode=on] #app#app#app .ha-button{min-width:44px!important;padding:8px 6px!important}}
