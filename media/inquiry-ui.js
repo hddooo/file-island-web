@@ -147,7 +147,6 @@
     function load() {
       if (!alive()) return;
       var seq = ++state.seq; host.replaceChildren();
-      var top = el('div', null, host, 'hq-inquiry-heading'); button('문의 보내기', top, function (ev) { open(ev.currentTarget); });
       var status = el('p', '불러오는 중이에요…', host); status.setAttribute('role', 'status');
       Promise.resolve().then(function () { if (!alive(seq)) throw {}; return api.portal('GET', '/api/v1/inquiries?page=' + state.page); }).then(function (r) {
         if (!alive(seq)) return;
@@ -174,7 +173,7 @@
     }
     load();
   }
-  // Inquiry links navigate to the standalone page; MY PAGE keeps its compact dialog.
+  // Inquiry links navigate to the standalone page; My Page only lists past inquiries.
   root.addEventListener('hashchange', function () { if (!composer || !composer.isPage) close(false); });
   root.addEventListener('pagehide', function (event) {
     restoreList = event.persisted && active ? { host: active.host, api: active.api } : null;
@@ -202,3 +201,4 @@
   var initial = new URL(root.location.href);
   if (!inlineHost && initial.searchParams.get('inquiry') === 'compose') { initial.searchParams.delete('inquiry'); root.history.replaceState(root.history.state, '', initial.pathname + initial.search + initial.hash); open(); }
 })(window);
+

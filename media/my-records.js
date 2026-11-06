@@ -1,5 +1,5 @@
 /* Owner-scoped, read-only question attempts. Compact rows open an owner-scoped accessible detail dialog. */
-(function(root){'use strict';var active;
+(function(root){'use strict';var active, PAGE_SIZE=10;
 function recordsPage(d){
  function time(v){return typeof v==='string'&&/^\d{4}-\d{2}-\d{2}T/.test(v)&&Number.isFinite(Date.parse(v));}
  if(!d||!Array.isArray(d.items))return false;var legacy=d.pageSize===undefined||d.pageSize===20,pageSize=legacy?20:d.pageSize;if(legacy&&d.items.some(function(r){return !r||Object.prototype.hasOwnProperty.call(r,'children');}))return false;if(!Number.isSafeInteger(d.total)||d.total<0||![10,20].includes(pageSize)||!Number.isSafeInteger(d.page)||!Number.isSafeInteger(d.pages)||d.page<1||d.pages<1||d.page>d.pages||d.pages!==Math.max(1,Math.ceil(d.total/pageSize))||d.items.length>pageSize||d.items.length>d.total||!time(d.snapshot)||d.timeZone!=='Asia/Seoul')return false;
@@ -7,7 +7,7 @@ function recordsPage(d){
  return d.items.every(function(r){return row(r,false);});
 }
 function mount(host,api,initialSubject){
- if(active)active();var owner=api.state().ownerId,alive=true,ticket=0,off,data=null,error='',busy=false,banks=new Map(),dialog=null,opener=null,modalKey=null,baseUrl=null,scroll=[],imageUrls=new Set();
+ if(active)active();var owner=api.state().ownerId,alive=true,ticket=0,off,data=null,error='',busy=false,serverPageSize=PAGE_SIZE,banks=new Map(),dialog=null,opener=null,modalKey=null,baseUrl=null,scroll=[],imageUrls=new Set();
  var subjects={all:'전체 과목',history:'역사섬 · 한국사',toeic:'영어섬 · 토익'},sources={all:'전체 경로',battle:'얼음섬 전투',review:'전투 오답 복습',unknown:'경로 미확인'};
  function live(){return alive&&host.isConnected&&api.state().signedIn&&api.state().ownerId===owner;}
  function state(){var p=new URL(location.href).searchParams,s=p.get('recordSubject')||initialSubject||'all',r=p.get('recordSource')||'all';return{subject:subjects[s]?s:'all',source:sources[r]?r:'all',page:Math.max(1,Math.floor(Number(p.get('recordPage'))||1)),snapshot:p.get('recordSnapshot')||undefined};}
@@ -45,6 +45,23 @@ function mount(host,api,initialSubject){
  data.items.forEach(function(r){if(!Array.isArray(r.children)){drawQuestion(r,list);return;}var d=r.detail||{},battle=d.battle||{},card=el('li',null,list,'mr-card mr-activity'),row=button('',function(){var expanded=row.getAttribute('aria-expanded')==='true';row.setAttribute('aria-expanded',String(!expanded));children.hidden=expanded;},card);row.className='mr-row mr-activity-row';row.dataset.recordKey=r.key;row.setAttribute('aria-expanded','false');var subject=r.subject==='history'?'한국사':'영어';el('span',subject,row,'mr-kind');el('strong','배틀',row,'mr-number');el('span',r.children.length+'문항',row,'mr-kind');var context=el('span',null,row,'mr-context');el('span',battle.opponent||'상대 미확인',context,'mr-opponent');el('b',outcome(battle.outcome),context,'mr-outcome');var time=el('time',fullTime(r),row);time.dateTime=r.at;el('span','⌄',row,'mr-arrow');row.setAttribute('aria-label',[subject,'배틀','상대 '+(battle.opponent||'상대 미확인'),outcome(battle.outcome),r.children.length+'문항',fullTime(r),'문제 목록 펼치기'].join(' · '));var children=el('ol',null,card,'mr-activity-children');children.hidden=true;if(!r.children.length)el('li','제출한 문제가 없어요.',children);else r.children.forEach(function(child){drawQuestion(child,children);});});var nav=el('nav',null,host,'mr-pages');nav.setAttribute('aria-label','나의 기록 페이지');button('이전',function(){s.page=data.page-1;change(s);},nav).disabled=data.page<=1;el('span',data.page+' / '+data.pages,nav);button('다음',function(){s.page=data.page+1;change(s);},nav).disabled=data.page>=data.pages;if(focus){status.tabIndex=-1;status.focus();}
  }
  async function enrich(items){await Promise.all(items.map(async function(r){if(Array.isArray(r.children))await enrich(r.children);var d=r.detail||{},id=d.bankId;if(!id)return;var path;if(/^focus-[a-z0-9-]{1,70}$/.test(id))path='media/weakness-banks/'+id+'.json';else if(/^vocab-mini-(00[1-3])-v1$/.test(id)){d.contentUnavailable=true;return;}if(!path)return;try{if(!banks.has(id))banks.set(id,fetch(path,{credentials:'same-origin'}).then(function(response){if(!response.ok)throw Error('bank');return response.json();}).catch(function(e){banks.delete(id);throw e;}));var bank=await banks.get(id),q=(bank.questions||[]).find(function(x){return x.id===d.questionId&&(x.version||x.contentVersion)===d.version;});if(q)d.question=q;else d.contentUnavailable=true;}catch(e){d.contentUnavailable=true;}}));}
- async function load(focus){if(!live())return;var seq=++ticket,s=state();busy=true;error='';draw();try{var d=await api.myRecords(s);if(!live()||seq!==ticket)return;if(!recordsPage(d))throw Error('bad records');await enrich(d.items);if(!live()||seq!==ticket)return;data=d;var u=new URL(location.href);u.searchParams.set('recordSnapshot',d.snapshot);u.searchParams.set('recordPage',d.page);history.replaceState(history.state,'',u);}catch(e){if(live()&&seq===ticket)error='기록을 불러오지 못했어요. 다시 확인해 주세요.';}finally{if(live()&&seq===ticket){busy=false;draw(focus);var key=new URL(location.href).searchParams.get('recordDetail');if(key&&!error)restoreModal(key);}}}
+ // Keep a ten-row view even while an older server still returns twenty rows.
+ // Convert page numbers, never discard or rewrite stored records. A fixed
+ // snapshot is reused when the response requires a different server page.
+ async function viewPage(s,seq){
+  var wanted=s.page,request=Object.assign({},s,{page:Math.floor((wanted-1)*PAGE_SIZE/serverPageSize)+1});
+  for(var tries=0;tries<2;tries++){
+   var d=await api.myRecords(request);if(!live()||seq!==ticket)return null;
+   if(!recordsPage(d))throw Error('bad records');
+   serverPageSize=d.pageSize||20;
+   var pages=Math.max(1,Math.ceil(d.total/PAGE_SIZE)),page=Math.min(wanted,pages),serverPage=Math.floor((page-1)*PAGE_SIZE/serverPageSize)+1;
+   if(d.page!==serverPage){request=Object.assign({},s,{page:serverPage,snapshot:d.snapshot});continue;}
+   var offset=((page-1)*PAGE_SIZE)%serverPageSize;
+   return Object.assign({},d,{items:d.items.slice(offset,offset+PAGE_SIZE),page:page,pages:pages,pageSize:PAGE_SIZE});
+  }
+  throw Error('records page changed');
+ }
+ async function load(focus){if(!live())return;var seq=++ticket,s=state();busy=true;error='';draw();try{var d=await viewPage(s,seq);if(!d||!live()||seq!==ticket)return;await enrich(d.items);if(!live()||seq!==ticket)return;data=d;var u=new URL(location.href);u.searchParams.set('recordSnapshot',d.snapshot);u.searchParams.set('recordPage',d.page);history.replaceState(history.state,'',u);}catch(e){if(live()&&seq===ticket)error='기록을 불러오지 못했어요. 다시 확인해 주세요.';}finally{if(live()&&seq===ticket){busy=false;draw(focus);var key=new URL(location.href).searchParams.get('recordDetail');if(key&&!error)restoreModal(key);}}}
  function pop(e){if(!e.recordModalHandled&&!e.inventoryPanelHandled)load();}root.addEventListener('popstate',pop);off=api.onChange(function(){if(!live())stop();});function stop(){dismiss();alive=false;ticket++;root.removeEventListener('popstate',pop);if(off)off();if(host.isConnected)host.replaceChildren();if(active===stop){active=null;root.HanqMyRecords.handlePopState=null;root.HanqMyRecords.refresh=null;}}active=stop;root.HanqMyRecords.handlePopState=modalPop;root.HanqMyRecords.refresh=function(){if(!live())return;var u=new URL(location.href);u.searchParams.delete('recordSnapshot');history.replaceState(history.state,'',u);load();};load();return{stop:stop};
 }root.HanqMyRecords={mount:mount,recordsPage:recordsPage,stop:function(){if(active)active();}};})(window);
+

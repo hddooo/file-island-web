@@ -69,7 +69,9 @@ const detail = () => ({ inquiry: { id: Q, user_id: ID }, messages: [{ sender_rol
   x.w.eval(fs.readFileSync(path.join(ROOT, 'media/account-ui.js'), 'utf8'));
   await x.w.HanqAccountUI.render(x.w.document.querySelector('#host'), { view: 'main', go: () => {}, local: { attempts: () => [] } }); await tick();
   ok(x.w.document.querySelector('#acInquiriesHost .hq-inquiry-item')); eq(x.w.document.querySelector('#acAdminSlot').textContent, '');
-  x.w.document.querySelector('#acInquiriesHost button').click(); await tick(); fill(x); send(x); await tick(); click(x, '닫기'); eq(x.w.document.activeElement, x.w.document.querySelector('#acInquiriesHost button'));
+  eq([...x.w.document.querySelectorAll('#acInquiriesHost button')].some(n => n.textContent === '문의 보내기'), false);
+  x.w.document.querySelector('#acInquiriesHost details').open = true; await tick();
+  eq(x.calls.filter(c => c.m === 'POST').length, 0); // The retained list remains read-only.
   x.w.HanqAccountUI.stop(); eq(x.w.document.querySelector('#acInquiriesHost').textContent, ''); x.close();
   const page = fs.readFileSync(path.join(ROOT, 'inquiries/index.html'), 'utf8'); ok(!page.includes('location.replace') && !page.includes('http-equiv="refresh"')); ok(page.includes('hq-inquiry-page-host')); ok(!page.includes('portal-ui.js'));
   x = env((m, p) => { if (m === 'POST') throw { status: 503 }; return list(); });
@@ -84,3 +86,4 @@ const detail = () => ({ inquiry: { id: Q, user_id: ID }, messages: [{ sender_rol
   x = env(() => ({}), false); x.w.HanqInquiries.open(); await tick(); click(x, '로그인하기'); x.change({ signedIn: true, ownerId: ID, user: { id: ID }, epoch: 2 }); await tick(); eq(x.w.document.querySelector('dialog'), null); eq(x.calls.length, 0); x.w.HanqInquiries.open(); await tick(); ok(x.w.document.querySelector('dialog [name=title]')); x.close();
   console.log('compact inquiry UI: ' + checks + ' checks passed (synthetic transport only)');
 })().catch(e => { console.error(e); process.exitCode = 1; });
+

@@ -323,3 +323,11 @@ html body .ac-me .mr-activity-children .mr-row{background:#0c2118!important}
 /* Retire an empty action row only when every native button is a proven alias. */
 html body #app .module-actions:has(>#acBack[data-header-parent-control]):not(:has(>button:not([data-header-parent-control]))){display:none!important}
 html body #app #acBack[data-header-parent-control],html body #app #acHome[data-header-parent-control]{display:none!important}
+
+
+/* My Page uses one outer card and consistent inner gutters. */
+html body #app .ac-sec.ac-me:has(>.ac-sanctuary){padding:0!important;border-radius:16px!important}
+html body #app .ac-me>.ac-hero.ac-sanctuary{border:0;border-bottom:1px solid #8cae9270;border-radius:0}
+html body #app .ac-me>.ac-me-body{padding:16px clamp(12px,2.5vw,24px) 20px}
+html body #app .ac-me .mr-pages button{min-width:44px;min-height:44px}
+@container mr-records (max-width:280px){html body .ac-me .mr-card{--mr-columns:48px minmax(24px,1fr) 44px minmax(32px,1fr) 12px;--mr-child-indent:6px}}

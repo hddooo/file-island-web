@@ -28,7 +28,7 @@
   }
   function html(){return '<section class="company-setting" aria-labelledby="companyModeTitle"><div><h3 id="companyModeTitle">화면 설정</h3><p>회사 모드 · 지도와 캐릭터 대신 텍스트 목록과 코드 스타일로 표시합니다. 이 브라우저에서 다음 접속에도 유지됩니다.</p></div><button type="button" class="tool-btn" data-company-mode-toggle aria-pressed="'+enabled()+'">'+(enabled()?'회사 모드 끄기':'회사 모드 켜기')+'</button><p data-company-status role="status" aria-live="polite"></p></section>';}
   var directories={
-    workspace:{name:'workspace',rows:[['history','#history','한국사','시대별 자료 및 문제'],['english','#toeic/map','TOEIC','어휘 · 문법 · 듣기 · 문제'],['sessions','#battle','퀴즈 대결','기존 대결 및 기록'],['collection','#rainbow','보관함 · 상점','파트너 및 보유 목록'],['ranking','#hall-of-fame','순위','명예의 전당'],['inquiries','/inquiries/','건의·문의','문의 작성 및 접수'],['settings','#account','MyPage','내 정보 및 화면 설정']]},
+    workspace:{name:'workspace',rows:[['history','#history','한국사','시대별 자료 및 문제'],['english','#toeic/map','TOEIC','어휘 · 문법 · 듣기 · 문제'],['sessions','#battle','퀴즈 대결','기존 대결 및 기록'],['collection','#rainbow','보관함 · 상점','파트너 및 보유 목록'],['ranking','#hall-of-fame','순위','명예의 전당'],['inquiries','/inquiries/','건의·문의','문의 작성 및 접수'],['settings','#account','마이페이지','내 정보 및 화면 설정']]},
     history:{name:'history',rows:[['chapters','#past-exams','시대별 학습','개념 · 핵심 요약 · 빈칸'],['exams','#formal-exams','실전모의고사','회차별 문제와 결과'],['review','#wrongnotes','오답노트','기존 기록 복습']]},
     english:{name:'english',rows:[['vocabulary','#toeic/notebook','Vocabulary','단어장'],['practice','#toeic/wrongnotes','Practice','파트별 실전 문제'],['grammar','#toeic/grammar','Grammar','문법'],['listening','#toeic/player','Listening','듣기 및 대본']]}
   };
@@ -117,3 +117,4 @@
   root.HanqDisplayMode={select:select,current:function(){return mode;},html:html,refresh:schedule};
   apply(mode);
 })(window);
+
