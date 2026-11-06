@@ -1333,7 +1333,7 @@
         answers[e.questionId]={selected:sel?sel.id:null,graded:gr?gr.id:null,correct:right};});
       wnRun={id:r.id,order:r.order==='random'?'random':'fixed',list:r.list==='all'?'all':'unresolved',era:typeof r.era==='string'?r.era:'all',mode:['all','quiz','mock'].indexOf(r.mode)>=0?r.mode:'all',startedAt:Number(r.startedAt)||0,queue:queue,index:r.index,answers:answers};}
     /* 다른 탭에서 기록·풀던 상태가 바뀌면: 오답노트 목록은 다시 그리고, 빈칸·기출은 지금 띄운 문항을 빼고 이 탭보다 나중 것만 반영(자동 넘김은 건드리지 않음) */
-    if(HPS)HPS.onChange(function(ev){if(!ev||!ev.remote)return;try{if(wnOpen){if(!wnRun){var foc=document.activeElement&&document.activeElement.id;renderWrongNotes();if(foc){var f=document.getElementById(foc);if(f)f.focus();}}return;}
+    if(HPS)HPS.onChange(function(ev){if(!ev||!ev.remote)return;try{if(wnOpen){if(!wnRun&&app.querySelector('.wn-panel')){var foc=document.activeElement&&document.activeElement.id;renderWrongNotes();if(foc){var f=document.getElementById(foc);if(f)f.focus();}}return;}
       if(current&&step===2){restoreQuiz(true,currentQuizKey());syncQuizJump(quizEntries());updateQuizProgress();}
       if(current&&step===3){restoreMock(true,currentMockKey());syncMockJump(mockEntries());updateMockProgress();}}catch(err){}});
     /* ===== 오답으로 모의고사 (media/run-controller.js의 HanqRun — 회차 만들기·답 저장·시간·일시정지·최종 채점은 모두 컨트롤러) =====
