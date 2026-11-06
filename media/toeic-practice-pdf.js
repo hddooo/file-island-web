@@ -363,9 +363,9 @@
     } finally { canvas.width = 1; canvas.height = 1; pages.length = 0; }
   }
   function mount(host, options) {
-    var doc = host.ownerDocument, alive = true, suspended = false, serial = 0, activeJob = null, urls = [], owner = identity(options.api), buttons = [];
+    var doc = host.ownerDocument, alive = true, suspended = false, serial = 0, activeJob = null, urls = [], owner = identity(options.api), buttons = [], audioControls = [];
     function valid() { return alive && !suspended && host.isConnected && owner !== null && owner === identity(options.api) && (!options.isCurrent || options.isCurrent()); }
-    var box = doc.createElement('div'); box.className = 'tc-pdf-tools'; box.setAttribute('role', 'group'); box.setAttribute('aria-label', (options.label || 'Practice') + ' PDF 다운로드'); host.appendChild(box);
+    var box = doc.createElement('div'); box.className = 'tc-pdf-tools'; box.setAttribute('role', 'group'); box.setAttribute('aria-label', (options.label || 'Practice') + ' PDF·음원 다운로드'); host.appendChild(box);
     var status = doc.createElement('p'); status.className = 'tc-pdf-status'; status.setAttribute('role', 'status'); status.setAttribute('aria-live', 'polite'); status.hidden = true;
     function restoreButtons() { buttons.forEach(function (b) { b.disabled = b.dataset.empty === 'true'; }); }
     var cancel = doc.createElement('button'); cancel.type = 'button'; cancel.className = 'tool-btn tc-pdf-cancel'; cancel.textContent = 'PDF 준비 취소'; cancel.hidden = true;
@@ -388,7 +388,7 @@
           var url = URL.createObjectURL(result.blob); urls.push(url);
           var link = doc.createElement('a'); link.className = 'tc-pdf-download'; link.href = url; link.download = result.filename; link.textContent = 'Part ' + part + ' ' + sheet + ' 저장 (' + result.pages + '쪽)'; link.setAttribute('aria-label', 'Part ' + part + ' ' + sheet + ' PDF ' + result.pages + '쪽 저장');
           link.onclick = function (event) { if (!valid()) event.preventDefault(); };
-          box.querySelectorAll('a').forEach(function (a) { a.remove(); }); box.appendChild(link); link.click();
+          box.querySelectorAll('a.tc-pdf-download').forEach(function (a) { a.remove(); }); box.appendChild(link); link.click();
           status.textContent = mode === 'answers' ? '정답·해설 ' + result.reviews + ' / ' + result.count + '문항 조회. 다운로드가 시작되지 않으면 해설지 저장을 눌러 주세요.' : '문제 ' + result.count + '문항. 다운로드가 시작되지 않으면 문제지 저장을 눌러 주세요.';
         } catch (e) {
           if (!isCurrent()) return;
@@ -396,17 +396,18 @@
         } finally { if (running === abort) running = null; if (isCurrent()) { activeJob = null; cancel.hidden = true; restoreButtons(); } }
       };
       });
+      if (root.HanqToeicPracticeAudio) audioControls.push(root.HanqToeicPracticeAudio.mount(box, { items: options.items, parts: parts, api: options.api, isCurrent: valid }));
     });
     box.appendChild(cancel); box.appendChild(status);
     function release() {
       serial++; if (activeJob) activeJob.abort(); if (running === activeJob) running = null; activeJob = null;
-      urls.forEach(function (u) { URL.revokeObjectURL(u); }); urls = []; box.querySelectorAll('a').forEach(function (a) { a.remove(); });
+      urls.forEach(function (u) { URL.revokeObjectURL(u); }); urls = []; box.querySelectorAll('a.tc-pdf-download').forEach(function (a) { a.remove(); });
       cancel.hidden = true; status.hidden = true; status.textContent = '';
     }
     var controller = { host: host,
-      suspend: function () { if (!alive) return; suspended = true; release(); buttons.forEach(function (b) { b.disabled = true; }); },
-      resume: function () { if (!alive || !suspended) return; suspended = false; if (!valid()) { controller.stop(); return; } restoreButtons(); },
-      stop: function () { if (!alive) return; alive = false; release(); box.remove(); controllers.delete(controller); }
+      suspend: function () { if (!alive) return; suspended = true; audioControls.forEach(function (c) { c.suspend(); }); release(); buttons.forEach(function (b) { b.disabled = true; }); },
+      resume: function () { if (!alive || !suspended) return; suspended = false; if (!valid()) { controller.stop(); return; } restoreButtons(); audioControls.forEach(function (c) { c.resume(); }); },
+      stop: function () { if (!alive) return; alive = false; audioControls.forEach(function (c) { c.stop(); }); release(); box.remove(); controllers.delete(controller); }
     };
     controllers.add(controller); return controller;
   }
@@ -419,5 +420,6 @@
   }
   root.HanqToeicPracticePdf = { mount: mount, stop: stop, bundles: bundles, generate: generate };
 })(typeof window !== 'undefined' ? window : globalThis);
+
 
 

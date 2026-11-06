@@ -31,3 +31,13 @@ html body #app .toeic-learning-page .tc.tc-simple .tc-pdf-tools>.tc-pdf-export+.
 html body #app .toeic-learning-page .tc.tc-simple .tc-pdf-tools>.tc-pdf-export:hover:not(:disabled){background:rgba(134,205,176,.08)!important}
 html body #app .toeic-learning-page .tc.tc-simple .tc-pdf-tools>:is(.tc-pdf-cancel,.tc-pdf-download,.tc-pdf-status){grid-column:1/-1;margin:0!important;padding:8px!important;border:0!important;border-top:1px solid var(--toeic-row-line,#354c3d)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
 html body #app .toeic-learning-page .tc.tc-simple .tc-pdf-tools>:is(button,a):focus-visible{outline:2px solid var(--toeic-row-focus,#a3e3c7)!important;outline-offset:-4px}
+
+
+/* Audio sits beside the answer PDF, with the same 44px tap target. */
+.tc .tc-audio-export,.tc .tc-audio-export-cancel,.tc .tc-audio-download{min-height:44px;max-width:100%;display:inline-flex;align-items:center;justify-content:center;padding:6px 8px;font-size:12px;line-height:1.4;border:0;border-radius:0;background:transparent;color:inherit;white-space:normal;overflow-wrap:anywhere;cursor:pointer}
+.tc .tc-audio-export:disabled{cursor:default;opacity:.5}
+.tc .tc-audio-export-status{font-size:12px;line-height:1.5;text-align:left;overflow-wrap:anywhere;color:inherit}
+html body #app .toeic-learning-page .tc.tc-simple .tc-group-exports>.tc-pdf-tools.tc-has-audio-export{grid-template-columns:repeat(3,minmax(0,1fr))}
+html body #app .toeic-learning-page .tc.tc-simple .tc-pdf-tools>.tc-audio-export{width:100%;margin:0!important;border:0!important;border-left:1px solid var(--toeic-row-line,#354c3d)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:inherit!important;font-size:12px!important;font-weight:400!important}
+html body #app .toeic-learning-page .tc.tc-simple .tc-pdf-tools>.tc-audio-export:hover:not(:disabled){background:rgba(134,205,176,.08)!important}
+html body #app .toeic-learning-page .tc.tc-simple .tc-pdf-tools>:is(.tc-audio-export-cancel,.tc-audio-download,.tc-audio-export-status){grid-column:1/-1;margin:0!important;padding:8px!important;border:0!important;border-top:1px solid var(--toeic-row-line,#354c3d)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
