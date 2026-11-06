@@ -365,7 +365,7 @@
   function mount(host, options) {
     var doc = host.ownerDocument, alive = true, suspended = false, serial = 0, activeJob = null, urls = [], owner = identity(options.api), buttons = [];
     function valid() { return alive && !suspended && host.isConnected && owner !== null && owner === identity(options.api) && (!options.isCurrent || options.isCurrent()); }
-    var box = doc.createElement('div'); box.className = 'tc-pdf-tools'; host.appendChild(box);
+    var box = doc.createElement('div'); box.className = 'tc-pdf-tools'; box.setAttribute('role', 'group'); box.setAttribute('aria-label', (options.label || 'Practice') + ' PDF 다운로드'); host.appendChild(box);
     var status = doc.createElement('p'); status.className = 'tc-pdf-status'; status.setAttribute('role', 'status'); status.setAttribute('aria-live', 'polite'); status.hidden = true;
     function restoreButtons() { buttons.forEach(function (b) { b.disabled = b.dataset.empty === 'true'; }); }
     var cancel = doc.createElement('button'); cancel.type = 'button'; cancel.className = 'tool-btn tc-pdf-cancel'; cancel.textContent = 'PDF 준비 취소'; cancel.hidden = true;
@@ -375,7 +375,7 @@
       var part = parts.join(',');
       ['questions', 'answers'].forEach(function (mode) {
       var sheet = mode === 'answers' ? '해설지' : '문제지';
-      var b = doc.createElement('button'); b.type = 'button'; b.className = 'tool-btn tc-pdf-export'; b.dataset.mode = mode; b.textContent = 'Part ' + part + ' ' + sheet + ' PDF'; b.setAttribute('aria-label', 'Part ' + part + ' ' + sheet + ' PDF 다운로드'); b.disabled = !bundles(options.items, parts).length; b.dataset.empty = String(b.disabled); box.appendChild(b); buttons.push(b);
+      var b = doc.createElement('button'); b.type = 'button'; b.className = 'tool-btn tc-pdf-export'; b.dataset.mode = mode; b.textContent = sheet + ' PDF'; b.setAttribute('aria-label', 'Part ' + part + ' ' + sheet + ' PDF 다운로드'); b.disabled = !bundles(options.items, parts).length; b.dataset.empty = String(b.disabled); box.appendChild(b); buttons.push(b);
       b.onclick = async function () {
         if (!valid() || activeJob || b.dataset.empty === 'true') return;
         if (running) { status.hidden = false; status.textContent = '다른 파트의 PDF를 먼저 준비하고 있어요. 완료 후 다시 눌러 주세요.'; return; }
