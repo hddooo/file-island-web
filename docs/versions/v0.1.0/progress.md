@@ -978,4 +978,9 @@ Source summary code and index routing are integrated on an isolated branch based
 The isolated branch starts at deployed dcfa5bcebcdf2dd47c1181b64511190a10004619. Active workflows now contain one main-only public build job and the existing Windows deploy job, with zero automated test commands or browser/test installs. YAML parsing and semantic preservation checks pass. Local repeatable static builds pass; controller tests pass15/skip1 (Linux symlink on Windows). Runtime files, local test scripts and installed controller are unchanged. New exact-SHA build/deployment verification is pending at this commit.
 
 
+## 2026-11-06 English island sign correction (0.4.11-beta)
 
+- Request: restore the existing entrance signboards with Vocabulary, Grammar, Practice and Listening only. Korean scenic subtitles and native hover tooltips remain removed.
+- Scoped implementation: English island label composition and the English-only CSS hiding override. The existing camera, building hitboxes, routes, animation renderer, user records and API contracts are unchanged.
+- Local verification: JavaScript syntax and 20 synthetic DOM/CSS/control cases at 320/390/700 portrait and 900/1440 wide geometry. Visible text, accessible names, repeated native clicks/focus, at least 44px controls and detach/re-entry cleanup passed. This does not replace a rendered mobile/Safari check.
+- At this source revision's recording point, exact-SHA CI/CD and live label rendering are pending; report deployment only after separately verifying the actual served build and changed files.

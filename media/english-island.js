@@ -5,10 +5,10 @@
   var portrait=matchMedia('(max-width:700px) and (orientation:portrait)');
   // Surveyed against the unchanged 1671x941 and 900x1200 source paintings.
   var places={
-    notebook:{place:'단어 서고',wide:[.785,.045,.975,.335],tall:[.025,.055,.36,.255]},
-    wrongnotes:{place:'연습 부두',wide:[.16,.475,.44,.725],tall:[.075,.455,.39,.625]},
-    grammar:{place:'문법의 문',wide:[.445,.13,.67,.46],tall:[.565,.165,.925,.40]},
-    player:{place:'듣기 정자',wide:[.715,.345,.845,.50],tall:[.64,.575,.97,.80]}
+    notebook:{label:'Vocabulary',wide:[.785,.045,.975,.335],tall:[.025,.055,.36,.255]},
+    wrongnotes:{label:'Practice',wide:[.16,.475,.44,.725],tall:[.075,.455,.39,.625]},
+    grammar:{label:'Grammar',wide:[.445,.13,.67,.46],tall:[.565,.165,.925,.40]},
+    player:{label:'Listening',wide:[.715,.345,.845,.50],tall:[.64,.575,.97,.80]}
   };
   function enhance(map,chart,art,controls){
     if(map.dataset.englishHarbor)return;
@@ -16,12 +16,18 @@
     var source=chart.querySelector('source');source.media=portrait.media;
     controls=controls.filter(function(control){
       var place=places[control.dataset.toeicView];if(!place)return false;
-      control.classList.add('english-landmark');control.dataset.englishPlace=place.place;
+      control.classList.add('english-landmark');control.dataset.englishPlace=place.label;
       var sign=control.querySelector('.harbor-sign'),label=control.querySelector('strong');
-      if(sign){var hint=document.createElement('small');hint.className='english-place';hint.id='english-place-'+control.dataset.toeicView+'-hint';hint.textContent=place.place;sign.appendChild(hint);var description=control.getAttribute('aria-describedby');control.setAttribute('aria-describedby',(description?description+' ':'')+hint.id);}
-      // Preserve native destination names used by assistive navigation; the scenic
-      // place supplements the description rather than replacing the learning task.
-      if(label)control.setAttribute('aria-label',label.textContent.trim());
+      // One visible English destination per sign. Keep the native controls/routes,
+      // but do not bring back Korean scenic subtitles or native hover tooltips.
+      if(sign){
+        var removed=[];
+        sign.querySelectorAll('.world-place-name,.english-place').forEach(function(node){if(node.id)removed.push(node.id);node.remove();});
+        var descriptions=(control.getAttribute('aria-describedby')||'').split(/\s+/).filter(function(id){return id&&removed.indexOf(id)===-1;});
+        if(descriptions.length)control.setAttribute('aria-describedby',descriptions.join(' '));else control.removeAttribute('aria-describedby');
+      }
+      if(label)label.textContent=place.label;
+      control.setAttribute('aria-label',place.label);
       control.removeAttribute('title');
       return true;
     });
@@ -54,4 +60,5 @@
   }
   root.HanqEnglishIsland={enhance:enhance};
 })(window);
+
 

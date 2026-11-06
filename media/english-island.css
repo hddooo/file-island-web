@@ -6,21 +6,18 @@ html body #app .english-landmark .harbor-pin{display:none!important}
 html body #app .english-landmark .harbor-sign{position:absolute;box-sizing:border-box;left:50%;top:7px;transform:translateX(calc(-50% + var(--english-sign-shift,0px)))!important;width:max-content;max-width:150px!important;padding:5px 10px!important;border:1px solid #ead5a0!important;border-radius:4px;background:linear-gradient(180deg,#216578,#103d50)!important;box-shadow:inset 0 0 0 2px #082d3b,0 3px 7px #042d4899!important}
 html body #app .english-landmark .harbor-sign:before{content:'';display:block!important;position:absolute;left:9px;right:9px;top:-8px;width:auto;height:7px;border-left:2px solid #e6d0a0;border-right:2px solid #e6d0a0;background:transparent!important;border-radius:0;box-shadow:none}
 html body #app .english-landmark .harbor-sign>strong{color:#fff5d0!important;font-size:14px!important;line-height:1.35!important;white-space:normal!important;overflow-wrap:anywhere;letter-spacing:.01em;text-shadow:0 1px 1px #05293d}
-html body #app .english-landmark .english-place{display:block;color:#d0edf0!important;font-family:Arial,'Apple SD Gothic Neo',sans-serif;font-size:10px!important;font-weight:400;line-height:1.4;white-space:nowrap}
 html body #app .island-harbors .english-landmark:focus-visible,html body #app .island-harbors .english-landmark.harbor-selected{outline:3px solid #fff1ad!important;outline-offset:2px;border-color:#fff3bf!important;background:#e9fbff18!important}
 @media(hover:hover){html body #app .island-harbors .english-landmark:hover{border-color:#fff3bfa6!important;background:#e9fbff15!important}html body #app .english-landmark:hover .harbor-sign{background:linear-gradient(180deg,#2a7588,#16495c)!important}}
 /* Keep this sunlit cove calm: water/boats provide motion without full-scene sway
    or rain darkening the study destinations. */
 html body #app [data-english-harbor] .scene-atmosphere[data-scene=toeic] :is(.scene-rain,.scene-overcast,.scene-mist){display:none!important}
 @media(max-width:360px){html body #app .english-landmark .harbor-sign{padding:4px 7px!important}html body #app .english-landmark .harbor-sign>strong{font-size:12px!important}}
-@media(max-height:500px) and (orientation:landscape){html body #app .subject-travel-map.island-harbors[data-english-harbor]{min-height:190px!important;flex:1 0 190px!important}html body #app .english-landmark .harbor-sign{top:1px;padding:3px 6px!important}html body #app .english-landmark .harbor-sign>strong{font-size:12px!important}html body #app .english-landmark .english-place{display:none!important}}
+@media(max-height:500px) and (orientation:landscape){html body #app .subject-travel-map.island-harbors[data-english-harbor]{min-height:190px!important;flex:1 0 190px!important}html body #app .english-landmark .harbor-sign{top:1px;padding:3px 6px!important}html body #app .english-landmark .harbor-sign>strong{font-size:12px!important}}
 @media(prefers-reduced-motion:reduce){html body #app .island-harbors[data-english-harbor] .english-landmark{transition:none!important}}
 
 /* Continue the cove behind aspect-ratio safe framing, without stretching the art. */
 html body #app .island-harbors[data-english-harbor]::before{content:'';position:absolute;inset:-24px;display:block;background:linear-gradient(#07556933,#07556966),url('world-art/toeic-v1.webp') center/cover;filter:blur(14px);pointer-events:none;z-index:0}
 @media(max-width:700px) and (orientation:portrait){html body #app .island-harbors[data-english-harbor]::before{background-image:linear-gradient(#07556933,#07556966),url('world-art/toeic-harbors-mobile-v1.webp')}}
 
-/* The buildings are the controls. Keep their destination/description nodes
-   available to assistive technology without painting labels or hover tooltips. */
-html body #app .island-harbors[data-english-harbor] .english-landmark .harbor-sign{position:absolute!important;width:1px!important;height:1px!important;min-width:0!important;min-height:0!important;max-width:1px!important;margin:-1px!important;padding:0!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important;box-shadow:none!important;pointer-events:none!important}
-
+/* The sign remains visible; each native building control has one English label.
+   Korean scenic subtitles and browser hover tooltips are not recreated. */
