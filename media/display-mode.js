@@ -47,7 +47,7 @@
     var historyText=isHistory();
     doc.documentElement.toggleAttribute('data-company-history',historyText);
     if(historyText)app.setAttribute('data-company-history','');else{app.removeAttribute('data-company-history');app.querySelectorAll('.company-image-note').forEach(function(n){n.remove();});}
-    if(historyText){(doc.body||pane).querySelectorAll('img,svg:not(button svg):not(a svg),canvas,video,iframe').forEach(function(n){
+    if(historyText){(doc.body||pane).querySelectorAll('img,svg:not(button svg):not(a svg),canvas,video').forEach(function(n){
       if(n.closest('.device-crown,[data-company-map-original],.company-image-note')||n.nextElementSibling&&n.nextElementSibling.classList.contains('company-image-note'))return;
       var alt=n.getAttribute('alt')||n.getAttribute('aria-label')||'',note=element('span','company-image-note',alt?'// image: '+alt:'// 이미지 자료 생략 · 일반 모드에서 확인');
       n.insertAdjacentElement('afterend',note);

@@ -128,10 +128,10 @@ html[data-company-mode=on] #app#app#app :is(.tn-lexeme,.tn-example-main,.tn-extr
 html[data-company-mode=on] #app#app#app .textbook-source-quiz-item[data-company-line]{padding-left:3.5em!important}
 html[data-company-mode=on] #app#app#app .textbook-source-quiz-item[data-company-line]::before{top:10px!important}
 /* History is explicitly text-only in company mode; original media stays intact for normal mode. */
-html[data-company-mode=on] :is(#app#app#app,.company-document)[data-company-history] :is(.device-content,main,article,section) :is(img,svg:not(button svg):not(a svg),canvas,video,iframe){display:none!important}
+html[data-company-mode=on] :is(#app#app#app,.company-document)[data-company-history] :is(.device-content,main,article,section) :is(img,svg:not(button svg):not(a svg),canvas,video){display:none!important}
 html[data-company-mode=on] :is(#app#app#app,.company-document) .company-image-note{display:block!important;padding:6px 0!important;color:#8b949e!important;font:12px/1.7 var(--company-font)!important;overflow-wrap:anywhere}
 html:not([data-company-mode=on]) .company-image-note{display:none!important}
-html[data-company-mode=on][data-company-history] body :is(img,svg:not(button svg):not(a svg),canvas,video,iframe){display:none!important}
+html[data-company-mode=on][data-company-history] body :is(img,svg:not(button svg):not(a svg),canvas,video){display:none!important}
 /* Generated tooltip roots sit outside the application. */
 html[data-company-mode=on] body :is([role=tooltip],.history81-term-tooltip.history81-term-tooltip){font:13px/1.8 var(--company-font)!important;background:#161b22!important;color:#c9d1d9!important;border:1px solid #484f58!important;border-radius:4px!important;box-shadow:none!important;text-shadow:none!important}
 html[data-company-mode=on] body #app#app#app>.topline.device-crown .device-model>span{font-size:0!important}
