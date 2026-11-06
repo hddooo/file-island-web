@@ -135,6 +135,8 @@ html:not([data-company-mode=on]) .company-image-note{display:none!important}
 html[data-company-mode=on][data-company-history] body :is(img,svg:not(button svg):not(a svg),canvas,video){display:none!important}
 /* Generated tooltip roots sit outside the application. */
 html[data-company-mode=on] :is(#app#app#app,body) :is([role=tooltip],.history81-term-tooltip){font:13px/1.8 var(--company-font)!important;background:#d1d5db!important;color:#111827!important;-webkit-text-fill-color:currentColor!important;border:1px solid #9ca3af!important;border-radius:4px!important;box-shadow:0 4px 16px #0004!important;text-shadow:none!important}
+/* Only source-history explanations track their surrounding reading size. */
+html[data-company-mode=on] :is(#app#app#app,body) div.history81-term-tooltip{font-size:var(--history81-tooltip-font-size,12px)!important}
 html[data-company-mode=on] body #app#app#app>.topline.device-crown .device-model>span{font-size:0!important}
 /* Text leaves in legacy standalone readers can carry inline light backgrounds. */
 html[data-company-mode=on] body :is(p,a,span,small,mark,figcaption){background-color:transparent!important;background-image:none!important}
@@ -259,5 +261,6 @@ html[data-company-mode=on] #app#app#app #privateTextbook .textbook-figure-group-
 
 /* Native visibility must outrank every file/tab layout, including later source-state changes. */
 html[data-company-mode=on] #app#app#app#app :is([data-company-native-directory],[data-company-native-row])[hidden]{display:none!important}
+
 
 

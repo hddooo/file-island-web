@@ -28,7 +28,7 @@ const fs=require('fs'),path=require('path'),assert=require('assert/strict'),{chr
   for(const id of ['table15','table16','exam-early','exam-military','table17','table18','table19','table20','exam-aristocratic','exam-yuan','exam-late']){
    const wrap=page.locator('.gsr-structure-scroll[data-structure="'+id+'"]');await wrap.scrollIntoViewIfNeeded();
    const base=await wrap.evaluate(e=>({client:e.clientWidth,scroll:e.scrollWidth,rows:[...e.querySelectorAll('tr')].map(r=>({height:r.getBoundingClientRect().height,cells:[...r.cells].map(c=>({id:c.id,rowspan:c.rowSpan,colspan:c.colSpan,headers:c.getAttribute('headers'),font:getComputedStyle(c).fontSize}))}))}));
-   assert(base.rows.flatMap(r=>r.cells).every(c=>c.font==='18px'));if(width<700&&id!=='table15')assert(base.scroll<=base.client+1,'simple table must wrap');else if(width<1000)assert(base.scroll>base.client);
+   assert(base.rows.flatMap(r=>r.cells).every(c=>c.font===(id==='table15'?(width<=700?'13px':'14px'):'18px')));if(id==='table15'||width<700)assert(base.scroll<=base.client+1,'table must fit the reading width');else if(width<1000)assert(base.scroll>base.client);
    const title=page.locator('#gs-'+id+'-title');const titleRect=await title.boundingBox();assert(titleRect.x>=0&&titleRect.x+titleRect.width<=width+1,'caption stays in viewport');
    assert.equal(await page.locator('#gs-'+id+'-hint').isVisible(),base.scroll>base.client+1);
    if(width<700&&id!=='table15'){
@@ -73,3 +73,4 @@ const fs=require('fs'),path=require('path'),assert=require('assert/strict'),{chr
  const ax=await page.context().newCDPSession(page);fs.writeFileSync(path.join(out,'ax-final.json'),JSON.stringify(await ax.send('Accessibility.getFullAXTree'),null,2));
  fs.writeFileSync(path.join(out,'metrics.json'),JSON.stringify({maxActive,metrics,errors,calls,scope:'actual shared theme; private synthetic mount; no live hookup'},null,2));await browser.close();console.log('PASS: stage1 real-theme widths/viewport scroll screenshots, headers, retry/decode, zoom/Back/locks, 103 empty fields, reveal, route/logout; no real-user writes');
 })().catch(async e=>{console.error(e);if(browser)await browser.close();process.exitCode=1;});
+

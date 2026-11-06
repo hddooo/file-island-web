@@ -1023,3 +1023,13 @@ The isolated branch starts at deployed dcfa5bcebcdf2dd47c1181b64511190a10004619.
 - 역사 소개 h1의 margin-top만14px로 변경했다. 일반 화면의5px 대비9px 여유이며, 이미지·폰트 크기·행간·회사모드·다른 hero는 유지한다. 고정 높이·transform·position 변경은 없다.
 - 회귀71개 통과: 기존 역사 라우트/회사모드35, 전역 chrome 상속 차단·역사 본문/팝업 유지·단독 문서·소개 간격36. 새 검사는 실제 CSS 선택자와 모든 조상 상속 경로를 확인하며 렌더된 모바일 검수로 표현하지 않는다.
 - 로그인된 역사 입장 화면과 모바일 실화면은 현재 브라우저에서 인증 필요로 미검수다. 원본 HTML/CSS와 반응형 규칙에 근거해 좁게 변경했으며, 정확 SHA CI/CD·운영 자산 대조 및 접근 가능한 공개 문서 검수를 별도로 수행한다.
+
+
+
+## 2026-11-06 · 한국사 용어 설명·고려 표15 맞춤 (0.6.7-beta)
+
+- 역사 용어 tooltip은 트리거의 computed font-size에서2px를 뺀 값을 사용하며 14→12px, 15→13px처럼 주변 크기를 따른다. 너비는280px 또는 visualViewport 너비-24px 중 작은 값이고 긴 문구를 줄바꿈한다. 낮은/확대 화면에서는 높이도 제한하며 설명 자체 스크롤은 닫힘으로 처리하지 않는다. 잘린 설명에만 방향키·PageUp/Down·Home/End를 연결하고 기존 초점·Escape·IME·modifier 동작을 보존한다.
+- 회사모드의 높은 specificity font shorthand를 역사 tooltip 전용 font-size 한 규칙으로 보정했다. 기존 회사 monospace와 대비 색상은 그대로이며 다른 tooltip에는 매칭하지 않는다. 정상 역사 명조 범위와 전역 헤더 복원을 유지한다.
+- 고려 table15만 min-width1120px 및 픽셀 열 폭을 없애고 12%+17.6%×5로 배치했다. 기본14px/좁은13px, 셀 여백축소와 긴문구 줄바꿈이며, 29셀 text/강조/ID/headers/colspan 및 다른 표 계약을 보존한다. overflow를 숨기거나 축소 transform으로 글자를 찌그러뜨리지 않는다. 좁은 화면에서는 표가 세로로 길어진다.
+- 로컬 검수: tooltip279개 및 기존 상호작용 회귀, 표15 mapping/원문구조 baseline 비교·회사 CSS 규칙209개 통과. 통합 CSS 검사는 jsdom 기반이며 브라우저 실제 치수 검사로 표시하지 않는다. 독립 코드 리뷰에서 발견한 회사모드 우선순위와 clipped tooltip 키보드 접근 문제를 반영했다.
+- 실제 private 고려 bundle은 이 작업에서 확보하지 못했다. 공개 좌표 매핑과 합성 문구를 사용했고 교재 원문은 공개하지 않는다. 로컬 Chromium socket 제한과 운영 보호 라우트 로그인 미복원으로 실제 mobile/원문 시각 검수는 미실행이다. 기존 qa-goryeo-stage1의 표15 기대 font/overflow만 요청에 맞춰 갱신했으며 해당 브라우저 harness를 실행했다고 주장하지 않는다. 정확 SHA 빌드/CD 및 실제 운영 버전·변경 자산 대조는 별도로 확인한다.

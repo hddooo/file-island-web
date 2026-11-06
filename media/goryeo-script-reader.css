@@ -4,8 +4,6 @@
 .goryeo-script-reader .gsr-structure-table caption{font-size:22px;font-weight:700;text-align:left;padding:16px;background:#fffdf8;color:#163e58}
 .goryeo-script-reader .gsr-structure-table :is(th,td){border:1px solid #8aabbc;padding:14px;vertical-align:top;white-space:normal;overflow-wrap:anywhere}
 .goryeo-script-reader .gsr-structure-table th{font-weight:700;background:#e2eff7;text-align:left}
-.goryeo-script-reader .gsr-period-grid{min-width:1120px}
-.goryeo-script-reader .gsr-period-grid th:first-child{width:140px}
 .goryeo-script-reader .gsr-ruler-grid{min-width:900px}
 .goryeo-script-reader .gsr-ruler-grid th:first-child{width:150px}
 .goryeo-script-reader .gsr-ruler-grid td[data-owner]{width:280px;padding:8px}
@@ -15,6 +13,17 @@
 .goryeo-script-reader .gsr-source-note{font-weight:400;margin-top:12px}
 .goryeo-script-reader .gsr-structure-table :is(p,ul){margin:6px 0}
 .goryeo-script-reader .gsr-structure-table ul{padding-left:22px}
+/* Table 15 keeps its six-column comparison and merged cells within the reading width. */
+.goryeo-script-reader .gsr-period-grid{min-width:0;max-width:100%;font-size:14px;line-height:1.65}
+.goryeo-script-reader .gsr-period-grid th:first-child{width:auto}
+.goryeo-script-reader .gsr-period-grid :is(th,td){min-width:0;padding:6px 4px;font-size:inherit;line-height:inherit;word-break:normal;overflow-wrap:anywhere}
+.goryeo-script-reader .gsr-period-grid :is(p,li){font-size:inherit;line-height:inherit;word-break:normal;overflow-wrap:anywhere}
+.goryeo-script-reader .gsr-period-grid ul{padding-left:1em}
+.goryeo-script-reader .gsr-period-grid li+li{margin-top:4px}
+@media(max-width:700px){
+ .goryeo-script-reader .gsr-period-grid{font-size:13px}
+ .goryeo-script-reader .gsr-period-grid :is(th,td){padding:5px 2px}
+}
 html body #goryeoScript .goryeo-script-reader :is(strong,em,u){color:inherit!important}
 html body #goryeoScript .goryeo-script-reader .gsr-structure-table :is(th,td){border-color:#8aabbc!important}
 html body #goryeoScript .goryeo-script-reader .gsr-structure-table th{background:#e2eff7!important}
@@ -233,3 +242,4 @@ html body #goryeoScript .goryeo-script-reader .textbook-source-checked-review [a
 html body #goryeoScript .goryeo-script-reader .textbook-source-checked-review :is(button,input,summary):focus-visible{outline:3px solid #215b88!important;outline-offset:2px}
 
 html body #goryeoScript .goryeo-script-reader .textbook-source-quiz-status[hidden]{display:none!important}
+
