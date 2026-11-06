@@ -25,4 +25,20 @@ let checks=0;function ok(v,m){assert(v,m);checks++;}
   for(const c of h.querySelectorAll('.tc-group-item'))c.querySelector('[data-option=A]').click();left.scrollTop=140;right.scrollTop=220;click('.tc-check-answer');await tick();await tick();ok(h.querySelector('.tc-source-pane').scrollTop===140&&h.querySelector('.tc-questions-pane').scrollTop===220,'failed-save rerender keeps scroll');ok(h.querySelectorAll('[aria-checked=true]').length===3,'pending choices retained after failed save');ok(writes.length===1,'existing group endpoint once');
  }
  h.querySelector('.tc-topnav>button').click();ok(!h.classList.contains('tc-study-active'),'exit leaves no active desk class');w.HanqToeicCbt.stop();ok(!h.classList.contains('tc-study-active')&&h.children.length===0,'stop cleans mode');dom.window.close();
-}console.log(JSON.stringify({passed:true,checks,scope:'synthetic desk lifecycle, Parts1–7, source fidelity, mobile switches, choice/scroll/audio identity, picker, failed submit, stable IDs',productionWrites:0}));})().catch(e=>{console.error(e);process.exit(1)});
+}
+// Mixed Part 5/6: passage shortcuts stay available without pushing a single item down.
+{
+ const dom=new JSDOM('<main id="app"><section id="host"></section></main>',{url:'https://synthetic.invalid',runScripts:'outside-only',pretendToBeVisual:true}),w=dom.window,h=w.document.querySelector('#host');w.HTMLElement.prototype.scrollIntoView=function(){};
+ const qs=[5,6,6].map((part,i)=>({collectionId:'mixed',number:i+1,displayNumber:String(5000+i),sourceTitle:'Synthetic fixture',part,groupId:part===6?'shared':null,groupQuestionNumbers:part===6?[2,3]:[1],passage:part===6?passage:null,stem:'Original question',available:true,officiallyVerified:true,options:['A','B','C','D'].map(id=>({id,text:'Original choice '+id}))}));let writes=0;
+ w.eval(reader);w.eval(source);w.HanqToeicCbt.mount(h,{api:{state:()=>({signedIn:true,ownerId:'synthetic'}),onChange:()=>()=>{},ensureSession:async()=>{},toeicCbt:async m=>{if(m==='GET')return{items:qs};writes++;}},initialPart:5});await tick();await tick();
+ ok(h.querySelector('.qnum').textContent==='5000','mixed group begins with Part 5');
+ ok(!h.querySelector(':scope>.tc-passage-shortcuts'),'single item has no permanent passage directory');
+ ok(h.querySelector('.tc-jump[hidden] .tc-passage-shortcuts'),'Part 6 shortcuts preserved in closed picker');
+ h.querySelector('[data-option=B]').click();h.querySelector('.tc-jump-opener').click();
+ ok(!h.querySelector('.tc-jump').hidden&&h.querySelector('.tc-passage-shortcuts button'),'shortcuts available when picker opens');
+ h.querySelector('.tc-jump-close').click();ok(h.querySelector('[data-option=B]').getAttribute('aria-checked')==='true','picker close keeps single-item choice');
+ h.querySelector('.tc-jump-opener').click();h.querySelector('.tc-passage-shortcuts button').click();
+ ok(h.querySelectorAll('.tc-group-item').length===2,'passage shortcut still opens actual group');ok(writes===0,'shortcut navigation never submits');
+ w.HanqToeicCbt.stop();dom.window.close();
+}
+console.log(JSON.stringify({passed:true,checks,scope:'synthetic desk lifecycle, Parts1–7, source fidelity, mobile switches, choice/scroll/audio identity, picker, failed submit, stable IDs',productionWrites:0}));})().catch(e=>{console.error(e);process.exit(1)});
