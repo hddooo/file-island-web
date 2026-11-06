@@ -36,12 +36,10 @@
     });
   }
   function shell(parent, parts) {
-    var wrap = node('div', undefined, parent, 'lr-documents'), nav = node('nav', undefined, wrap, 'lr-document-nav');
-    nav.setAttribute('aria-label', '지문 바로 가기');
+    var wrap = node('div', undefined, parent, 'lr-documents');
     return parts.map(function (p) {
       var card = node('section', undefined, wrap, 'lr-document'), title = node('h3', p.label, card, 'lr-document-title');
       title.id = 'lr-document-' + (++seq); title.tabIndex = -1; card.setAttribute('aria-labelledby', title.id);
-      var b = node('button', p.label, nav); b.type = 'button'; b.onclick = function () { title.focus({preventScroll:true}); title.scrollIntoView({block:'start'}); };
       return card;
     });
   }
@@ -175,4 +173,5 @@
   }
   root.HanqLearningReader = {signature:signature, documents:documents, shell:shell, source:source, passage:passage, navigation:navigation, historyData:historyData, history:history, choices:choices, battleQuestion:battleQuestion, openImage:openImage, closeImage:closeImage};
 })(typeof window !== 'undefined' ? window : globalThis);
+
 
