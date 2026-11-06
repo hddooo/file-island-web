@@ -1,13 +1,15 @@
-/* Reuse the history entrance signs, including native Korean serif fallbacks.
-   Change only the family: existing 14/15px reading sizes, weights and line heights stay intact.
-   The display-mode route marker also covers standalone history comic documents. */
+/* History typography belongs to learning content, not the shared device chrome.
+   Preserve the entrance signs' family, existing sizes and company-mode code font. */
 html[data-history-typography] {
   --history-font: "Noto Serif KR", "Batang", "AppleMyungjo", "Noto Serif CJK KR", "Nanum Myeongjo", serif;
 }
-html[data-history-typography]:not([data-company-mode="on"]) body,
-html[data-history-typography]:not([data-company-mode="on"]) :is(#app#app, .company-document),
-html[data-history-typography]:not([data-company-mode="on"]) :is(#app#app, .company-document) *,
-html[data-history-typography]:not([data-company-mode="on"]) :is(dialog, [role="dialog"], [role="tooltip"], .mock-zoom, .lr-image-dialog, .gsr-image-dialog, .jsr-image-dialog, .textbook-original-dialog, .history81-term-tooltip),
-html[data-history-typography]:not([data-company-mode="on"]) :is(dialog, [role="dialog"], [role="tooltip"], .mock-zoom, .lr-image-dialog, .gsr-image-dialog, .jsr-image-dialog, .textbook-original-dialog, .history81-term-tooltip) * {
+html[data-history-typography]:not([data-company-mode="on"]) :is(#app#app > .device-content > :not(.world-global-nav,.device-install-tip,.lc-mini-player,.footer), .company-document > main),
+html[data-history-typography]:not([data-company-mode="on"]) :is(#app#app > .device-content > :not(.world-global-nav,.device-install-tip,.lc-mini-player,.footer), .company-document > main) *,
+html[data-history-typography]:not([data-company-mode="on"]) :is(.mock-zoom, .lr-image-dialog, .gsr-image-dialog, .jsr-image-dialog, .textbook-original-dialog, .history81-term-tooltip),
+html[data-history-typography]:not([data-company-mode="on"]) :is(.mock-zoom, .lr-image-dialog, .gsr-image-dialog, .jsr-image-dialog, .textbook-original-dialog, .history81-term-tooltip) * {
   font-family: var(--history-font) !important;
+}
+/* Move only this introduction below its eyebrow; keep the art and text sizes. */
+html:not([data-company-mode="on"]) body #app .history-home-hero .hero-copy > .hero-stamp + h1 {
+  margin-top: 14px !important;
 }
