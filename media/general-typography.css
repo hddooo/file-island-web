@@ -1,0 +1,76 @@
+/* Normal-mode reading scale. Keep the root rem, artwork, hit areas and company mode intact. */
+@media screen {
+  html:not([data-company-mode=on]) body {
+    --hanq-reading-size: 14px;
+    --hanq-emphasis-size: 15px;
+    --tc-transfer-stem-size: var(--hanq-reading-size);
+    --tc-transfer-option-size: var(--hanq-reading-size);
+    font-size: var(--hanq-reading-size) !important;
+  }
+
+  /* Match the ID weight of legacy reader rules without changing their layout. */
+  html:not([data-company-mode=on]) :is(#app#app#app, dialog, [role=dialog], .admin-page, .company-document) :is(
+    p, li, td, th, dt, dd, caption, figcaption, blockquote, summary, legend, label,
+    .qtext, .mock-stem, .opt, .tc-answer-option, .tc-option-gloss,
+    .tc-passage, .tc-document, .tc-script-en, .tc-script-ko, .tc-ev-en, .tc-ev-ko,
+    .tc-ev-why, .tc-ev-absence, .tc-complete-translation, .tc-expression-en,
+    .tc-group-label, .tc-group-count, .tc-group-composition, .tc-tutor-core,
+    .lr-document-body, .lr-history-text, .lr-history-table,
+    .tn-meaning, .tn-card-meaning, .tn-form-meaning, .tn-general-meaning,
+    .tn-context-meaning, .tn-original, .tn-translation, .tn-example-main,
+    .tn-useful-forms, .tn-recent-meaning, .tn-recent-example,
+    .tg-en, .tg-review-en, .tg-translation, .tg-why, .tg-concept, .tg-exam-type,
+    .tg-focus-concept, .tg-focus-remember, .tg-learning-concept, .tg-learning-analysis,
+    .tg-summary-note, .tg-structure-notes, .cn-en,
+    .textbook-semantic-text, .textbook-semantic-prompt, .textbook-source-quiz-statement,
+    .textbook-source-quiz-answer, .textbook-source-quiz-events, .textbook-source-timeline-event,
+    .gsr-transcription, .jsr-transcription, .gsr-parent-context, .jsr-parent-context,
+    .memory-sub, .bubble, .speech, .o-dialogue,
+    .hq-inquiry-intro, .ac-status, .ac-growth-next
+  ) { font-size: var(--hanq-reading-size) !important; }
+
+  html:not([data-company-mode=on]) :is(#app#app#app, dialog, [role=dialog], .admin-page, .company-document) :is(
+    h1, h2, h3, h4, h5, h6, strong, b, mark,
+    .qnum, .tc-position, .lr-document-title, .textbook-semantic-heading,
+    .textbook-source-quiz-title, .textbook-source-quiz-subtopic,
+    .textbook-joseon-heading, .textbook-joseon-subtopic,
+    .gsr-table-title, .gsr-group-subtitle, .jsr-group-subtitle,
+    .memory-era, .memory-topic, .ac-hero-name
+  ) { font-size: var(--hanq-emphasis-size) !important; }
+
+  /* Inline source emphasis must not grow again through nested em sizing. */
+  html:not([data-company-mode=on]) :is(#app#app#app, dialog, [role=dialog], .admin-page, .company-document) :is(
+    p, li, td, th, blockquote, .qtext, .mock-stem, .tc-passage,
+    .tn-original, .tn-translation, .tg-en, .tg-translation,
+    .textbook-semantic-text, .textbook-source-quiz-statement, .gsr-transcription, .jsr-transcription
+  ) :is(span, em, a) { font-size: inherit !important; }
+
+  html:not([data-company-mode=on]) :is(#app#app#app, dialog, [role=dialog], .admin-page, .company-document) :is(
+    .tool-btn, .toeic-list-open, .toeic-list-action, .tn button, .tg button, .tc button,
+    .lr-text-choices button, .lr-question-nav button, .lr-document-nav button,
+    .goryeo-script-reader button, .joseon-script-reader button,
+    .textbook-source-quiz button, .hq-inquiry-card button, .hq-inquiry-dialog button
+  ) { font-size: var(--hanq-reading-size) !important; }
+
+  html:not([data-company-mode=on]) :is(#app#app#app, dialog, [role=dialog], .admin-page, .company-document) :is(
+    .tc-answer-option, .toeic-list-open, .lr-text-choices button
+  ) :is(span, small) { font-size: inherit !important; }
+
+  html:not([data-company-mode=on]) :is(.goryeo-script-reader, .joseon-script-reader,
+    .textbook-semantic, .textbook-source-quiz, .tg-learning, .tn, .tc,
+    .history81-term-tooltip, [role=tooltip]) { font-size: var(--hanq-reading-size) !important; }
+
+  /* Retain 16px form text on touch layouts to avoid iOS focus zoom. */
+  @media (min-width: 701px) {
+    html:not([data-company-mode=on]) :is(#app#app#app, dialog, [role=dialog], .admin-page, .company-document)
+      :is(input:not([type=range]):not([type=checkbox]):not([type=radio]), textarea, select) {
+      font-size: var(--hanq-reading-size) !important;
+    }
+  }
+  @media (max-width: 700px) {
+    html:not([data-company-mode=on]) :is(#app#app#app, dialog, [role=dialog], .admin-page, .company-document)
+      :is(input:not([type=range]):not([type=checkbox]):not([type=radio]), textarea, select) {
+      font-size: 16px !important;
+    }
+  }
+}

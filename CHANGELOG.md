@@ -1,5 +1,11 @@
 # 변경 이력
 
+## 0.5.1-beta · 2026-11-06
+
+- 일반모드 학습 본문·문제·보기를 14px, 제목·강조를 최대 15px로 맞춥니다. 기존 글꼴·줄 간격·버튼 터치 영역·학습 데이터와 원본 그림은 유지합니다.
+- 회사모드와 인쇄에는 새 크기를 적용하지 않습니다. 모바일 입력은 입력 시 화면 확대를 피하도록 기존 16px 접근성 기준을 유지합니다.
+- 메인 앱, 문의·관리 화면, 12개 독립 읽기 문서에 동일한 일반모드 스타일을 연결합니다.
+
 ## 0.5.0-beta · 2026-11-06
 
 - Add MyPage company mode with a browser-local persistent switch and normal-mode return. No learning, account, answer, XP or backend contracts change.
