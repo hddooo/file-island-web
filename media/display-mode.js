@@ -11,6 +11,7 @@
     mode=value==='company'?'company':'default';
     // Keep the original theme attribute untouched, especially standalone readers.
     doc.documentElement.dataset.companyMode=enabled()?'on':'off';
+    doc.documentElement.toggleAttribute('data-history-typography',isHistory());
     doc.documentElement.toggleAttribute('data-company-history',enabled()&&isHistory());
     var meta=doc.querySelector('meta[name="theme-color"]');if(meta)meta.content=enabled()?'#0d1117':'#050706';
     doc.title=enabled()?'Workspace · Files':originalTitle;
@@ -68,13 +69,13 @@
     ['gsr','jsr'].forEach(function(prefix){['topics','modes'].forEach(function(kind){doc.querySelectorAll('#app .'+prefix+'-'+kind).forEach(function(list){if(list.closest('[hidden]'))return;var key=kind==='topics'?'topic':'mode',rows=list.querySelectorAll(':scope > button[data-'+key+']');nativeDirectory(list,'history / '+(prefix==='gsr'?'goryeo':'joseon')+' / '+kind,rows.length);rows.forEach(function(b){nativeFile(b,b.dataset[key]+'.md');});});});});
     doc.querySelectorAll('#app .textbook-controls [role=tablist]').forEach(function(list){if(list.closest('[hidden]'))return;var rows=list.querySelectorAll(':scope > button[data-mode]');if(!rows.length)return;nativeDirectory(list,'history / source',rows.length);rows.forEach(function(b){nativeFile(b,b.dataset.mode+'.md');});});
     doc.querySelectorAll('#app .textbook-supplement-links').forEach(function(list){var rows=list.querySelectorAll('a[href^="#textbook/"]');if(!rows.length||list.closest('[hidden]'))return;nativeDirectory(list,'history / reference',rows.length);rows.forEach(function(a){nativeFile(a,a.getAttribute('href').split('/').pop()+'.md');});});
-    doc.querySelectorAll('#formalExamHost .fe-rounds').forEach(function(list){var rows=list.querySelectorAll('.fe-round > button[data-round]');if(!rows.length)return;nativeDirectory(list,'history / exams',rows.length);rows.forEach(function(b){nativeFile(b,'round-'+b.dataset.round+'.json');});});
+    doc.querySelectorAll('#formalExamHost .fe-rounds').forEach(function(list){var rows=list.querySelectorAll('.fe-round button[data-round]');if(!rows.length)return;nativeDirectory(list,'history / exams',rows.length);rows.forEach(function(b){nativeFile(b,'round-'+b.dataset.round+'.json');});});
     doc.querySelectorAll('#cbtWrongNotebookHost .fe-rounds').forEach(function(list){var rows=list.querySelectorAll(':scope > button[data-notebook-round]');if(!rows.length)return;nativeDirectory(list,'history / review',rows.length);rows.forEach(function(b){nativeFile(b,'round-'+b.dataset.notebookRound+'-wrong.json');});});
     doc.querySelectorAll('#formalExamHost .fe-reviews,#cbtWrongNotebookHost .fe-reviews').forEach(function(list){var rows=list.querySelectorAll(':scope > .fe-review > details > summary');if(!rows.length)return;nativeDirectory(list,'history / questions',rows.length);rows.forEach(function(s,i){var title=Array.from(s.childNodes).filter(function(n){return n.nodeType!==1||!n.hasAttribute('data-company-added');}).map(function(n){return n.textContent;}).join('');var m=title.match(/제(\d+)회\s+(\d+)번/);nativeFile(s,m?'round-'+m[1]+'-q'+m[2].padStart(3,'0')+'.md':'question-'+String(i+1).padStart(3,'0')+'.md');});});
   }
   function clearNativeDirectories(){doc.querySelectorAll('[data-company-added]').forEach(function(n){n.remove();});doc.querySelectorAll('[data-company-native-directory],[data-company-native-row]').forEach(function(n){n.removeAttribute('data-company-native-directory');n.removeAttribute('data-company-native-row');});}
   function sync(){
-    queued=false;var app=doc.getElementById('app')||(doc.documentElement.hasAttribute('data-company-document')?doc.body:null);if(!app)return;
+    queued=false;doc.documentElement.toggleAttribute('data-history-typography',isHistory());var app=doc.getElementById('app')||(doc.documentElement.hasAttribute('data-company-document')?doc.body:null);if(!app)return;
     syncControls();
     if(!enabled()){clearNativeDirectories();app.removeAttribute('data-company-history');doc.querySelectorAll('.company-image-note').forEach(function(n){n.remove();});app.querySelectorAll('.company-directory,.company-codebar').forEach(function(n){n.remove();});app.querySelectorAll('[data-company-map-original]').forEach(function(n){n.removeAttribute('data-company-map-original');});return;}
     var pane=app.querySelector(':scope > .device-content')||app;
@@ -117,4 +118,5 @@
   root.HanqDisplayMode={select:select,current:function(){return mode;},html:html,refresh:schedule};
   apply(mode);
 })(window);
+
 

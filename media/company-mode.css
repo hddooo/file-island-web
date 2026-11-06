@@ -1,3 +1,4 @@
+@import url("history-typography.css?v=20261106");
 /* Opt-in presentation. Every override is scoped; source/answer/route DOM is retained. */
 .company-setting{padding:18px 0;border-top:1px solid #354c3d;margin:18px 0}.company-setting h3{font-size:16px;margin:0 0 8px}.company-setting p{font-size:13px;line-height:1.6}.company-setting [data-company-status]:empty{display:none}.company-setting button{min-height:44px}
 html[data-company-mode=on]{color-scheme:dark;--company-bg:#0d1117;--company-panel:#161b22;--company-border:#30363d;--company-text:#c9d1d9;--company-muted:#8b949e;--company-font:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",Menlo,"Noto Sans KR",monospace;background:#0d1117!important}
@@ -258,3 +259,4 @@ html[data-company-mode=on] #app#app#app #privateTextbook .textbook-figure-group-
 
 /* Native visibility must outrank every file/tab layout, including later source-state changes. */
 html[data-company-mode=on] #app#app#app#app :is([data-company-native-directory],[data-company-native-row])[hidden]{display:none!important}
+
