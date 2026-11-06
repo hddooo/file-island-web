@@ -81,7 +81,7 @@ html body #app .history-evening.he-paused :is(.he-friend,.he-friend-sprite,.he-r
 /* A small gathering around the firepit on the palace path. Each friend keeps
    its existing cels and retracing stroll, within its own side of the fire.
    Coordinates follow the wide/tall source art, never the viewport. */
-html body #app .history-evening :is(.he-friend,.he-resident){left:var(--he-x0);top:var(--he-y0);width:var(--he-size);transform-origin:50% 90%;transform:translate(-50%,-90%) scale(var(--he-s0));animation:he-path-walk var(--he-duration) var(--he-delay) linear infinite!important}
+html body #app .history-evening :is(.he-friend,.he-resident){left:var(--he-x0);top:var(--he-y0);width:var(--he-size);transform-origin:50% 90%;transform:translate(-50%,-90%) scale(var(--he-s0)) scaleX(var(--he-facing,1));animation:he-path-walk var(--he-duration) var(--he-delay) linear infinite!important}
 html body #app .history-evening .he-friend{--he-size:3.8%;--he-duration:34s;--he-delay:-4s;--he-x0:53%;--he-y0:60.5%;--he-s0:1.000;--he-x1:53.4%;--he-y1:60.6%;--he-s1:1.005;--he-x2:53.8%;--he-y2:60.7%;--he-s2:1.010;--he-x3:54.2%;--he-y3:60.8%;--he-s3:1.012;}
 html body #app .history-evening .he-koromon{--he-size:2.9%;--he-duration:28s;--he-delay:-12s;--he-x0:42.5%;--he-y0:61.4%;--he-s0:1.000;--he-x1:42.9%;--he-y1:61.5%;--he-s1:1.000;--he-x2:43.3%;--he-y2:61.6%;--he-s2:1.000;--he-x3:43.7%;--he-y3:61.7%;--he-s3:1.000;}
 html body #app .history-evening .he-gabumon{--he-size:2.6%;--he-duration:32s;--he-delay:-21s;--he-x0:43.7%;--he-y0:55.8%;--he-s0:1.000;--he-x1:44%;--he-y1:56%;--he-s1:1.025;--he-x2:44.3%;--he-y2:56.2%;--he-s2:1.050;--he-x3:44.6%;--he-y3:56.4%;--he-s3:1.075;}
@@ -107,7 +107,7 @@ html body #app .history-evening .he-patamon{--he-size:4.2%;--he-duration:36s;--h
 99.99%{left:var(--he-x0);top:var(--he-y0);transform:translate(-50%,-90%) scale(var(--he-s0)) scaleX(calc(-1 * var(--he-facing,1)))}
 100%{left:var(--he-x0);top:var(--he-y0);transform:translate(-50%,-90%) scale(var(--he-s0)) scaleX(var(--he-facing,1))}
 }
-@media(prefers-reduced-motion:reduce){html body #app .history-evening :is(.he-friend,.he-resident){animation:none!important;transform:translate(-50%,-90%) scale(var(--he-s0))!important}}
+@media(prefers-reduced-motion:reduce){html body #app .history-evening :is(.he-friend,.he-resident){animation:none!important;transform:translate(-50%,-90%) scale(var(--he-s0)) scaleX(var(--he-facing,1))!important}}
 
 
 /* Time of day still updates in reduced motion, without long color fades. */
