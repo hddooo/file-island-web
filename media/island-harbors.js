@@ -48,9 +48,9 @@
   // Source-coordinate building silhouettes: one existing native destination
   // control covers each landmark, so route handlers and keyboard semantics stay.
   var landmarks={
-    homePastExams:{name:'시대별 학습 궁',wide:[.34,.12,.64,.48],tall:[.26,.095,.79,.30]},
-    homeFormalExams:{name:'모의고사장',wide:[.66,.265,.985,.65],tall:[.52,.43,.99,.70]},
-    homeWrongNotes:{name:'오답노트 정자',wide:[.065,.285,.30,.62],tall:[.025,.305,.385,.53]}
+    homePastExams:{name:'성균관',purpose:'시대별 학습',wide:[.34,.12,.64,.48],tall:[.26,.095,.79,.30]},
+    homeFormalExams:{name:'과장',purpose:'모의고사',wide:[.66,.265,.985,.65],tall:[.52,.43,.99,.70]},
+    homeWrongNotes:{name:'홍문관',purpose:'오답노트',wide:[.065,.285,.30,.62],tall:[.025,.305,.385,.53]}
   };
   // One decorative layer tree, driven by CSS time. The art and click targets never move.
   // Share WorldScene's visibility/low-power state and observe only this layer's viewport.
@@ -87,7 +87,7 @@
       if(!stop)return;
       control.classList.add('harbor-stop');control.style.setProperty('--pin-x',stop.x);control.style.setProperty('--pin-y',stop.y);control.style.setProperty('--mobile-x',stop.mx);control.style.setProperty('--mobile-y',stop.my);
       var label=control.querySelector('strong,.wn-entry-t'),place=control.querySelector('.world-place-name');
-      if(kind==='history'&&landmarks[key]){control.classList.add('history-landmark');control.dataset.landmark=key;control.setAttribute('aria-label',landmarks[key].name);control.removeAttribute('title');}
+      if(kind==='history'&&landmarks[key]){var landmark=landmarks[key];control.classList.add('history-landmark');control.dataset.landmark=key;control.setAttribute('aria-label',landmark.name+' · '+landmark.purpose);control.removeAttribute('title');if(!label){label=document.createElement('strong');}label.textContent=landmark.name;if(place)place.textContent=landmark.purpose;}
       if(label){label.id='harbor-'+kind+'-'+key+'-label';if(!control.hasAttribute('aria-label'))control.setAttribute('aria-labelledby',label.id);}
       if(place){place.id='harbor-'+kind+'-'+key+'-place';control.setAttribute('aria-describedby',place.id);}
       var sign=document.createElement('span');sign.className='harbor-sign';if(label)sign.appendChild(label);if(place)sign.appendChild(place);control.appendChild(sign);
@@ -122,3 +122,4 @@
   }
   root.HanqIslandHarbors={enhance:enhance,atmosphere:atmosphere,attachControl:attachControl};
 })(window);
+

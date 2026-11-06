@@ -984,3 +984,12 @@ The isolated branch starts at deployed dcfa5bcebcdf2dd47c1181b64511190a10004619.
 - Scoped implementation: English island label composition and the English-only CSS hiding override. The existing camera, building hitboxes, routes, animation renderer, user records and API contracts are unchanged.
 - Local verification: JavaScript syntax and 20 synthetic DOM/CSS/control cases at 320/390/700 portrait and 900/1440 wide geometry. Visible text, accessible names, repeated native clicks/focus, at least 44px controls and detach/re-entry cleanup passed. This does not replace a rendered mobile/Safari check.
 - At this source revision's recording point, exact-SHA CI/CD and live label rendering are pending; report deployment only after separately verifying the actual served build and changed files.
+
+
+### 2026-11-06 역사섬 간판 이름 정정 (0.4.12-beta)
+
+- 요청: 건물 간판을 없애지 않고 기능에 어울리는 역사적 이름으로 표시한다.
+- 구현: 성균관 → 시대별 학습, 과장 → 모의고사, 홍문관 → 오답노트. 표시 이름만 바꾸고 원래 버튼 ID·경로·44px 터치 영역과 포인터·키보드 기능을 유지한다. 보조기술에는 기능도 함께 읽힌다.
+- 검사: 표준 strong·원래 wn-entry-t·레이블 없는 대체 구조를 가로/세로 6조건에서 검사했다. 기존 모바일 위치 함수 125,751개 조건도 통과했다. 정적·합성 검사는 실물 iPhone 화면 검수가 아니다.
+- 상태: 구현·합성 검사 완료. 정확 SHA의 CI·자동 배포·운영 화면 확인은 push 후 별도 확인한다. 배경과 학습 기록·XP는 변경하지 않는다.
+
