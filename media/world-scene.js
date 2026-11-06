@@ -34,6 +34,7 @@
   function artPath(kind){return 'media/world-art/'+(artwork[kind]||'toeic')+'-v1.webp';}
   function scenery(kind, ambient, variant) {
     var node=document.createElement('div');node.className='world-scenery';node.dataset.terrain=kind;node.setAttribute('aria-hidden','true');
+    if(document.documentElement.dataset.companyMode==='on')return node;
     if(variant==='chart'){node.innerHTML=svg(kind);return node;}
     node.dataset.art='true';node.style.setProperty('background-image','url("'+(location.pathname.indexOf('/inquiries')===0?'/':'')+artPath(kind).replace('-v1.webp','-poster-v1.webp')+'")','important');node.style.backgroundSize='cover';node.style.backgroundPosition='center';node.innerHTML='<span class="world-mist"></span><span class="world-data-motes"></span>';
     var picture=document.createElement('img');picture.className='world-panorama';picture.alt='';picture.decoding='async';picture.src=(location.pathname.indexOf('/inquiries')===0?'/':'')+artPath(kind);picture.onload=function(){node.classList.add('world-art-ready');};picture.onerror=function(){picture.hidden=true;if(!node.querySelector('.world-art-fallback')){var fallback=document.createElement('div');fallback.className='world-art-fallback';fallback.innerHTML=svg(kind);node.prepend(fallback);}};node.prepend(picture);
@@ -41,7 +42,7 @@
     if(picture.complete&&picture.naturalWidth)node.classList.add('world-art-ready');node.dataset.ambient=ambient?'true':'false';scenes.add(node);if(observer)observer.observe(node);return node;
   }
   function modes() {
-    var stop=reduced.matches||modest||document.hidden;
+    var stop=document.documentElement.dataset.companyMode==='on'||reduced.matches||modest||document.hidden;
     document.documentElement.classList.toggle('world-motion-paused',stop);
     document.documentElement.classList.toggle('world-low-power',!!modest);
   }
@@ -62,6 +63,7 @@
   }
   function prune(){scenes.forEach(function(n){if(!n.isConnected){if(observer)observer.unobserve(n);scenes.delete(n);}});}
   function sync() {
+    if(document.documentElement.dataset.companyMode==='on'){if(pending)cancelAnimationFrame(pending);pending=0;modes();return;}
     if(!styled)return;
     scenes.forEach(function(n){if(!n.isConnected){if(observer)observer.unobserve(n);scenes.delete(n);}});
     var welcome=document.querySelector('.file-island-welcome');if(welcome&&!welcome.querySelector('.world-scenery')){welcome.prepend(scenery('toeic',true));welcome.classList.add('world-arrival-landscape');}
@@ -98,6 +100,7 @@
     modes();
   }
   if(root.IntersectionObserver)observer=new IntersectionObserver(function(entries){entries.forEach(function(e){e.target.classList.toggle('world-offscreen',!e.isIntersecting);});},{threshold:.05});
-  document.addEventListener('visibilitychange',modes);if(reduced.addEventListener)reduced.addEventListener('change',modes);else if(reduced.addListener)reduced.addListener(modes);
+  document.addEventListener('hanq:display-mode-change',sync);document.addEventListener('visibilitychange',modes);if(reduced.addEventListener)reduced.addEventListener('change',modes);else if(reduced.addListener)reduced.addListener(modes);
   root.HanqWorldScene={sync:sync,scenery:scenery,artPath:artPath,prune:prune,isStatic:function(){return !styled||reduced.matches||modest;},dispose:function(){if(pending)cancelAnimationFrame(pending);scenes.forEach(function(n){if(observer)observer.unobserve(n);});scenes.clear();}};
 })(window);
+

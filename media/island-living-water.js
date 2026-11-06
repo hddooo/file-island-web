@@ -38,13 +38,13 @@
   }
   function shader(gl,type,code){var s=gl.createShader(type);gl.shaderSource(s,code);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(s));return s;}
   function texture(gl,slot,source){var t=gl.createTexture();gl.activeTexture(gl.TEXTURE0+slot);gl.bindTexture(gl.TEXTURE_2D,t);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,source);return t;}
-  function mount(chart,img,kind){
+  function mount(chart,img,kind){if(document.documentElement.dataset.companyMode==='on')return;
     if(chart.dataset.livingMounted)return;chart.dataset.livingMounted='true';
     var surface,gl,program,textures=[],sprites=[],raf=0,last=0,phase=0,visible=false,disposed=false,generation=0,imageKey='',fallbackPaint=null,contextLostHandler=null,staticPlate=null;
-    function wantsMotion(){return !motion.matches;}
+    function wantsMotion(){return document.documentElement.dataset.companyMode!=='on'&&!motion.matches;}
     var io=root.IntersectionObserver?new IntersectionObserver(function(entries){visible=entries[0].isIntersecting;run();},{threshold:.01}):null;
     if(io)io.observe(chart);else visible=true;
-    var cleanup=new MutationObserver(function(){if(!chart.isConnected){disposed=true;generation++;stop();release();img.removeEventListener('load',build);document.removeEventListener('visibilitychange',run);root.removeEventListener('pageshow',run);motion.removeEventListener('change',run);if(io)io.disconnect();cleanup.disconnect();}});cleanup.observe(document.body,{childList:true,subtree:true});
+    var cleanup=new MutationObserver(function(){if(!chart.isConnected){disposed=true;generation++;stop();release();img.removeEventListener('load',build);document.removeEventListener('hanq:display-mode-change',run);document.removeEventListener('visibilitychange',run);root.removeEventListener('pageshow',run);motion.removeEventListener('change',run);if(io)io.disconnect();cleanup.disconnect();}});cleanup.observe(document.body,{childList:true,subtree:true});
     function stop(){if(raf)cancelAnimationFrame(raf);raf=0;last=0;}
     function release(){if(surface&&contextLostHandler)surface.removeEventListener('webglcontextlost',contextLostHandler);contextLostHandler=null;if(gl){textures.forEach(function(t){gl.deleteTexture(t);});textures=[];if(program)gl.deleteProgram(program);var ext=gl.getExtension('WEBGL_lose_context');if(ext)ext.loseContext();}if(surface)surface.remove();if(staticPlate)staticPlate.remove();staticPlate=null;sprites.forEach(function(s){s.node.remove();});sprites=[];chart.classList.remove('living-water-ready');gl=null;surface=null;fallbackPaint=null;}
     // A bounded scanline renderer keeps real water pixels moving when WebGL is
@@ -128,8 +128,9 @@
       }
       run();
     }
-    img.addEventListener('load',build);document.addEventListener('visibilitychange',run);root.addEventListener('pageshow',run);motion.addEventListener('change',run);if(img.complete)build();
+    img.addEventListener('load',build);document.addEventListener('hanq:display-mode-change',run);document.addEventListener('visibilitychange',run);root.addEventListener('pageshow',run);motion.addEventListener('change',run);if(img.complete)build();
   }
   root.HanqLivingWater={mount:mount};
 })(window);
+
 

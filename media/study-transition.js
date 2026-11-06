@@ -1,6 +1,6 @@
 /* Local question continuity. Mutations stay synchronous; no queue, auth or audio ownership. */
 (function(root){'use strict';var running=new Map(),detailTargets=new WeakMap(),duration=520,sceneChanging=false;
-function reduced(){return root.matchMedia&&root.matchMedia('(prefers-reduced-motion: reduce)').matches;}
+function reduced(){return document.documentElement.dataset.companyMode==='on'||root.matchMedia&&root.matchMedia('(prefers-reduced-motion: reduce)').matches;}
 function cancel(host){var item=running.get(host);if(!item)return;running.delete(host);item.animations.forEach(function(a){a.cancel();});if(item.snapshot)item.snapshot.remove();if(item.finalize)item.finalize();if(item.target&&item.target.isConnected){item.target.style.height=item.height;item.target.style.overflow=item.overflow;item.target.style.boxSizing=item.boxSizing;}host.style.minHeight=item.minHeight;}
 function signature(host){var pos=host.querySelector('.tc-position,.tp-progress,.tg-drill-progress,.quiz-progress'),result=host.querySelector('.tc-result,.tp-feedback,.tg-drill-result,.verdict,.mock-feedback');var stem=host.querySelector('.qtext,.tg-drill-question legend');return(pos?pos.textContent:'')+'|'+(stem?stem.textContent:'')+'|'+(result?result.textContent:'');}
 function position(host){var p=host.querySelector('.tc-position,.tp-progress,.tg-drill-progress,.quiz-progress');return p&&Number((p.textContent.match(/(\d+)\s*\//)||[])[1])||0;}
@@ -21,3 +21,4 @@ function navigate(host,mutate){var pane=host.closest('.device-content');if(pane)
 ['wheel','touchstart'].forEach(function(type){root.addEventListener(type,cancelNavigation,{passive:true});});
 function clear(){cancelNavigation();Array.from(running.keys()).forEach(function(host){var item=running.get(host),s=root.HanqApi&&root.HanqApi.state();if(!(sceneChanging&&item.scene&&(!s||s.signedIn&&s.ownerId===item.owner)))cancel(host);});}if(root.HanqApi&&root.HanqApi.onChange){var account=root.HanqApi.state().ownerId;root.HanqApi.onChange(function(state){if(!state.signedIn||state.ownerId!==account)clear();account=state.ownerId;});}root.addEventListener('popstate',clear);root.addEventListener('pagehide',clear);root.HanqStudyTransition={scene:scene,navigate:navigate,cancelNavigation:cancelNavigation,update:update,cancel:cancel,clear:clear,isRunning:function(host){return running.has(host);}};
 })(window);
+

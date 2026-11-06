@@ -51,7 +51,7 @@
 
   function sync() {
     var shell = document.querySelector('#app');
-    var map = document.querySelector('.file-island-map,.world-map');
+    var map = document.querySelector('.file-island-map,.world-map,#worldMapHost');
     var login = document.querySelector('.login-landing');
     if(login&&activeOverlay)cancel();
     // Display name only; the existing grammar route and stored IDs stay stable.
@@ -77,7 +77,7 @@
     options=options||{};if(options.ready)Promise.resolve(options.ready).catch(function(){});
     if(activeOverlay)cancel();
     var names={toeic:'영어섬',history:'역사숲',ice:'얼음섬',hall:'명예의 전당',rainbow:'행복의 마을',inquiry:'건의함',account:'MyPage'},title=options.eraTitle||names[island]||'파일섬';
-    var origin=location.hash,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches||!root.HanqWorldScene||HanqWorldScene.isStatic();
+    var origin=location.hash,reduce=document.documentElement.dataset.companyMode==='on'||matchMedia('(prefers-reduced-motion: reduce)').matches||!root.HanqWorldScene||HanqWorldScene.isStatic();
     if(reduce||!Element.prototype.animate){go();settleScroll();sync();focusStudy();return;}
     busy=true;trigger=options.origin||document.activeElement;
     var overlay=document.createElement('div');overlay.className='adventure-entry world-journey world-cinematic';overlay.dataset.destination=island;
@@ -163,3 +163,4 @@
   root.HanqAdventure = {enter:enter, enterEra:function(button,go){var title=button.querySelector('strong');enter('history',go,{eraTitle:title?title.textContent:'첫 시대 · 선사시대'});}, sync:sync, cancel:cancel, skip:function(){if(finishActive)finishActive();}};
   sync();
 })(window);
+

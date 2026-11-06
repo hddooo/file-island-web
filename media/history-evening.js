@@ -16,7 +16,7 @@
   try{moduleBuild=new URL(document.currentScript.src).searchParams.get('build')||'';}catch(ignore){}
   function campAsset(file){return new URL('media/world-art/'+file+(moduleBuild?'?build='+encodeURIComponent(moduleBuild):''),document.baseURI).href;}
   function decoded(file,character){var key=(character?'character:':'scene:')+file;if(assetLoads.has(key))return assetLoads.get(key);var attempt=assetAttempts.get(key)||0,url=character?new URL('media/characters/'+file,document.baseURI).href:campAsset(file);assetAttempts.set(key,attempt+1);if(attempt)url+=(url.indexOf('?')<0?'?':'&')+'retry='+attempt;var image=new Image(),pending=new Promise(function(resolve){var done=false,timer=setTimeout(function(){finish(false);},12000);function finish(ok){if(done)return;done=true;clearTimeout(timer);image.onload=image.onerror=null;if(!ok)assetLoads.delete(key);resolve(ok?url:false);}image.onload=function(){Promise.resolve(image.decode?image.decode():null).then(function(){finish(true);},function(){finish(false);});};image.onerror=function(){finish(false);};});assetLoads.set(key,pending);image.src=url;return pending;}
-  function mount(map,chart){
+  function mount(map,chart){if(document.documentElement.dataset.companyMode==='on')return;
     if(!map||!chart||map.dataset.historyEvening)return;
     map.dataset.historyEvening='true';
     sceneOwner=map;
@@ -33,7 +33,7 @@
     layer.appendChild(friend);
     function warmCamp(){if(closed)return;[['history-camp-dusk-v2.webp',camp,'he-camp-ready','--he-camp-art'],['history-camp-flame-v2.webp',fire,'he-fire-ready','--he-flame-art'],['history-agumon-leaf-held-v1.webp',friend,'he-rain-ready','--he-rain-friend-art']].forEach(function(entry){if(!entry[1].classList.contains(entry[2]))decoded(entry[0]).then(function(ok){if(ok&&!closed&&entry[1].isConnected){layer.style.setProperty(entry[3],'url("'+ok+'")');entry[1].classList.add(entry[2]);}});});}
     function warmPeople(){if(closed)return;[[friend,'agumon-idle-sprite.png','he-ready','--he-agumon-art'],[layer.querySelector('.he-koromon'),'koromon-idle-actions-v1.png','he-resident-ready','--he-koromon-art']].forEach(function(entry){if(!entry[0].classList.contains(entry[2]))decoded(entry[1],true).then(function(url){if(url&&!closed&&entry[0].isConnected){layer.style.setProperty(entry[3],'url("'+url+'")');entry[0].classList.add(entry[2]);}});});if(root.HanqCollectionLife)['gabumon','patamon'].forEach(function(id){var node=layer.querySelector('.he-'+id);if(!node.classList.contains('he-resident-ready'))root.HanqCollectionLife.warm(id).then(function(ok){if(ok&&!closed&&node.isConnected)node.classList.add('he-resident-ready');});});}
-    function warmAll(){warmCamp();warmPeople();}
+    function warmAll(){if(document.documentElement.dataset.companyMode==='on')return;warmCamp();warmPeople();}
 
     var closed=false,visible=false,away=false,clockTimer=0;
     var clockProperties=['--he-brightness','--he-saturation','--he-actor-light','--he-night-strength','--he-daylight'];
@@ -42,14 +42,15 @@
       map.dataset.historyTime=state.period;
       [[clockProperties[0],.47+.53*light],[clockProperties[1],.65+.35*light],[clockProperties[2],.78+.22*light],[clockProperties[3],1-light],[clockProperties[4],light]].forEach(function(p){map.style.setProperty(p[0],p[1].toFixed(4));if(sceneOwner===map)document.body.style.setProperty(p[0],p[1].toFixed(4));});
     }
-    function sync(){if(closed)return;clearTimeout(clockTimer);clockTimer=0;updateClock();layer.classList.toggle('he-paused',reduced.matches||!visible||document.hidden||away);layer.dataset.motion=reduced.matches?'reduced':!visible||document.hidden||away?'offscreen':'active';if(visible&&!document.hidden&&!away)clockTimer=setTimeout(sync,60000-Date.now()%60000);}
+    function sync(){if(closed)return;clearTimeout(clockTimer);clockTimer=0;updateClock();layer.classList.toggle('he-paused',document.documentElement.dataset.companyMode==='on'||reduced.matches||!visible||document.hidden||away);layer.dataset.motion=reduced.matches?'reduced':!visible||document.hidden||away?'offscreen':'active';if(visible&&!document.hidden&&!away)clockTimer=setTimeout(sync,60000-Date.now()%60000);}
     var io=root.IntersectionObserver?new IntersectionObserver(function(entries){visible=entries[0].isIntersecting;sync();},{threshold:.01}):null;if(io)io.observe(map);else visible=true;
     function hide(){away=true;sync();}function show(){away=false;warmAll();sync();}
-    function dispose(){if(closed)return;closed=true;clearTimeout(clockTimer);if(sceneOwner===map){sceneOwner=null;clockProperties.forEach(function(p){document.body.style.removeProperty(p);});}if(io)io.disconnect();life.disconnect();document.removeEventListener('visibilitychange',sync);reduced.removeEventListener('change',sync);root.removeEventListener('pagehide',hide);root.removeEventListener('pageshow',show);root.removeEventListener('online',warmAll);layer.remove();}
+    function dispose(){if(closed)return;closed=true;clearTimeout(clockTimer);if(sceneOwner===map){sceneOwner=null;clockProperties.forEach(function(p){document.body.style.removeProperty(p);});}if(io)io.disconnect();life.disconnect();document.removeEventListener('hanq:display-mode-change',sync);document.removeEventListener('visibilitychange',sync);reduced.removeEventListener('change',sync);root.removeEventListener('pagehide',hide);root.removeEventListener('pageshow',show);root.removeEventListener('online',warmAll);layer.remove();}
     var life=new MutationObserver(function(){if(!map.isConnected)dispose();});life.observe(document.body,{childList:true,subtree:true});
-    document.addEventListener('visibilitychange',sync);reduced.addEventListener('change',sync);root.addEventListener('pagehide',hide);root.addEventListener('pageshow',show);root.addEventListener('online',warmAll);warmAll();sync();
+    document.addEventListener('hanq:display-mode-change',sync);document.addEventListener('visibilitychange',sync);reduced.addEventListener('change',sync);root.addEventListener('pagehide',hide);root.addEventListener('pageshow',show);root.addEventListener('online',warmAll);warmAll();sync();
   }
   root.HanqHistoryEvening={mount:mount,daylightAt:daylightAt};
 })(window);
+
 
 

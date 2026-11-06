@@ -25,7 +25,7 @@
   }
   var sceneBuild='';try{sceneBuild=new URL(document.currentScript.src).searchParams.get('build')||'';}catch(ignore){}
   function sceneAsset(file){return 'media/'+file+(sceneBuild?'?build='+encodeURIComponent(sceneBuild):'');}
-  function eveningScene(map,chart){
+  function eveningScene(map,chart){if(document.documentElement.dataset.companyMode==='on')return;
     if(!eveningLoader)eveningLoader=new Promise(function(resolve){
       var style=document.createElement('link'),script=document.createElement('script'),settled=false,timer=setTimeout(fail,15000);
       function fail(){if(settled)return;settled=true;clearTimeout(timer);style.remove();script.remove();eveningLoader=null;resolve(null);}
@@ -37,9 +37,9 @@
     });
     eveningLoader.then(function(engine){if(engine&&map.isConnected&&chart.isConnected)engine.mount(map,chart);});
   }
-  function livingWater(chart,art,kind){
+  function livingWater(chart,art,kind){if(document.documentElement.dataset.companyMode==='on')return;
     if(!waterLoader)waterLoader=new Promise(function(resolve){var s=document.createElement('script');s.src='media/island-living-water.js?v=palace-motion-2'+(sceneBuild?'&build='+encodeURIComponent(sceneBuild):'');s.onload=function(){resolve(root.HanqLivingWater);};s.onerror=function(){waterLoader=null;resolve(null);};document.head.appendChild(s);});
-    waterLoader.then(function(engine){if(!chart.isConnected)return;if(engine){engine.mount(chart,art,kind);return;}var host=chart.parentElement;if(chart.dataset.motionRetry==='true')return;chart.dataset.motionRetry='true';var retry=document.createElement('button');retry.type='button';retry.className='harbor-motion-toggle';retry.textContent='움직임 다시 불러오기';var position=attachControl(host,retry);retry.addEventListener('click',function(){delete chart.dataset.motionRetry;position.dispose();livingWater(chart,art,kind);});});
+    waterLoader.then(function(engine){if(!chart.isConnected||document.documentElement.dataset.companyMode==='on')return;if(engine){engine.mount(chart,art,kind);return;}var host=chart.parentElement;if(chart.dataset.motionRetry==='true')return;chart.dataset.motionRetry='true';var retry=document.createElement('button');retry.type='button';retry.className='harbor-motion-toggle';retry.textContent='움직임 다시 불러오기';var position=attachControl(host,retry);retry.addEventListener('click',function(){delete chart.dataset.motionRetry;position.dispose();livingWater(chart,art,kind);});});
   }
   var stops={
     history:[{id:'homePastExams',icon:'gate',x:49,y:30,mx:52.5,my:19.75},{id:'homeFormalExams',icon:'flag',x:82.25,y:45.75,mx:75.5,my:56.5},{id:'homeWrongNotes',icon:'review',x:18.25,y:45.25,mx:20.5,my:41.75}],
@@ -71,6 +71,7 @@
     return layer;
   }
   function enhance(map){
+    if(document.documentElement.dataset.companyMode==='on')return;
     if(map.classList.contains('island-harbors'))return;
     var kind=map.classList.contains('history-travel-map')?'history':'toeic';
     var controls=Array.from(map.children).filter(function(n){return n.matches('button,a');});
@@ -122,4 +123,5 @@
   }
   root.HanqIslandHarbors={enhance:enhance,atmosphere:atmosphere,attachControl:attachControl};
 })(window);
+
 

@@ -1,6 +1,6 @@
 /* Presentation runs beside existing requests. Never grades, submits, or owns audio. */
 (function(root){'use strict';var active=new Map(),turns=new Map(),preloads=new Map(),boundApi=null,preloadOff=null;
-function reduced(){return matchMedia('(prefers-reduced-motion: reduce)').matches;}
+function reduced(){return document.documentElement.dataset.companyMode==='on'||matchMedia('(prefers-reduced-motion: reduce)').matches;}
 function seal(host,ms,label){cancelSeal(host);var box=document.createElement('section');box.className='study-seal';box.setAttribute('role','status');box.setAttribute('aria-live','polite');box.innerHTML='<span class="study-seal-icon" aria-hidden="true">◈</span><span class="study-seal-text"></span>';box.querySelector('.study-seal-text').textContent=label||'디지바이스가 답을 확인하고 있어요';host.appendChild(box);var resolve,timer,done=false,promise=new Promise(function(r){resolve=r;});function finish(){if(done)return;done=true;box.classList.add('is-waiting');box.querySelector('.study-seal-text').textContent='서버 응답을 확인하고 있어요…';resolve();}timer=setTimeout(finish,reduced()?0:ms);var task={minimum:promise,stop:function(){clearTimeout(timer);finish();box.remove();if(active.get(host)===task)active.delete(host);}};active.set(host,task);return task;}
 function cancelSeal(host){var task=active.get(host);if(task)task.stop();}
 function cancelTurn(host){var t=turns.get(host);if(!t)return;turns.delete(host);t.dead=true;t.animations.forEach(function(a){a.cancel();});t.snapshot.remove();t.note.remove();if(t.old&&t.old.isConnected)t.old.style.visibility=t.visibility;host.style.minHeight=t.minHeight;host.removeAttribute('aria-busy');if(t.pane){t.pane.style.overflowAnchor=t.anchor;t.pane.style.scrollBehavior=t.behavior;}t.resolve(false);}
@@ -12,3 +12,4 @@ function take(api,view,fallback){bindPreloads(api);var key=api.state().ownerId+'
 function clear(){Array.from(active.keys()).forEach(cancelSeal);Array.from(turns.keys()).forEach(cancelTurn);}root.addEventListener('pagehide',clear);root.addEventListener('popstate',clear);root.HanqStudyPresentation={preload:preload,take:take,seal:seal,cancel:function(host){cancelSeal(host);cancelTurn(host);},clear:clear,paper:paper,boot:boot};
 if(root.HanqApi&&root.HanqApi.onChange)root.HanqApi.onChange(function(s){if(!s.signedIn)preloads.clear();else Array.from(preloads.keys()).forEach(function(k){if(k.indexOf(s.ownerId+':')!==0)preloads.delete(k);});});
 })(window);
+

@@ -1,5 +1,13 @@
 # 변경 이력
 
+## 0.5.0-beta · 2026-11-06
+
+- Add MyPage company mode with a browser-local persistent switch and normal-mode return. No learning, account, answer, XP or backend contracts change.
+- Present navigation as repository-style lists and learning text with a restrained dark monospace/code gutter layout. Keep inputs, source images, grading, history, collection actions and modal controls.
+- Apply the opt-in style to the main app, inquiry/admin pages and all 12 standalone comic readers. Suppress map/harbor startup and scenic transitions while company mode is active.
+- Verify with local synthetic DOM and account regressions. Exact-SHA build/deploy and live visual evidence are recorded separately in the release report.
+
+
 ## 0.4.18-beta
 
 - 건의·문의의 독립 `/inquiries/` 페이지와 지도 링크 이동을 복원합니다. 제목·내용·보내기만 있는 간결한 작성 UI를 유지합니다.
