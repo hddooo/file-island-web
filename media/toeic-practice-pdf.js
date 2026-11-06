@@ -8,10 +8,16 @@
   function id(q) { return JSON.stringify([q.collectionId, q.number]); }
   function grouped(q) { return [3, 4, 6, 7].indexOf(q.part) >= 0; }
   function wrong(q) { return q.originalWrong === true || !!(q.studyHistory && q.studyHistory.wrongCount > 0) || q.originalWrong == null; }
+  function selectedParts(part) {
+    var parts = Array.isArray(part) ? part.slice() : [part];
+    if (!parts.length || parts.some(function (p) { return !Number.isInteger(p) || p < 1 || p > 7; }) || new Set(parts).size !== parts.length) throw Error('invalid_part');
+    return parts.sort(function (a, b) { return a - b; });
+  }
   function bundles(items, part) {
-    if (!Array.isArray(items) || !Number.isInteger(part) || part < 1 || part > 7) throw Error('invalid_part');
+    var parts = selectedParts(part);
+    if (!Array.isArray(items)) throw Error('invalid_questions');
     var map = new Map(), seen = new Set();
-    items.filter(function (q) { return q && q.part === part; }).forEach(function (q) {
+    items.filter(function (q) { return q && parts.indexOf(q.part) >= 0; }).sort(function (a, b) { return a.part - b.part; }).forEach(function (q) {
       if (typeof q.collectionId !== 'string' || !Number.isInteger(q.number) || !Array.isArray(q.options) || seen.has(id(q))) throw Error('invalid_questions');
       seen.add(id(q));
       var k = grouped(q) ? JSON.stringify([q.collectionId, q.part, q.groupId]) : id(q);
@@ -113,7 +119,7 @@
       }
     } catch (e) { current(options); warnings.push('저장된 해설 목록을 불러오지 못했습니다.'); }
     if (items.some(function (q) { return q.part <= 4; })) {
-      try { var player = await get('/player'); (player.items || []).forEach(function (q) { if (items.some(function (x) { return x.collectionId === q.collectionId && x.groupId === q.groupId && x.part === q.part; })) scripts.set(JSON.stringify([q.collectionId, q.groupId]), q); }); }
+      try { var player = await get('/player'); (player.items || []).forEach(function (q) { if (items.some(function (x) { return x.collectionId === q.collectionId && x.groupId === q.groupId && x.part === q.part; })) scripts.set(JSON.stringify([q.collectionId, q.part, q.groupId]), q); }); }
       catch (e) { current(options); warnings.push('일부 듣기 대본을 불러오지 못했습니다.'); }
     }
     return { reviews: reviews, scripts: scripts, warnings: Array.from(new Set(warnings)) };
@@ -152,8 +158,8 @@
     current(options);
     var mode = options.mode || 'questions';
     if (mode !== 'questions' && mode !== 'answers') throw Error('invalid_mode');
-    var answers = mode === 'answers', groups = bundles(items, part), selected = groups.flat();
-    var sheet = answers ? '정답·해설지' : '문제지', title = 'HanQ Practice - Part ' + part + ' ' + sheet;
+    var parts = selectedParts(part), partLabel = parts.join(','), answers = mode === 'answers', groups = bundles(items, parts), selected = groups.flat();
+    var sheet = answers ? '정답·해설지' : '문제지', title = 'HanQ Practice - Part ' + partLabel + ' ' + sheet;
     if (!selected.length) throw Error('empty');
     // Problem sheets never request or render answers, translations, or LC scripts.
     var extra = answers ? await supplements(selected, options) : { reviews: new Map(), scripts: new Map(), warnings: [] };
@@ -165,7 +171,7 @@
     canvas.width = Math.ceil(PAGE.width * PAGE.scale); canvas.height = Math.ceil(PAGE.height * PAGE.scale);
     var ctx = canvas.getContext('2d', { alpha: false });
     if (!ctx) throw Error('canvas');
-    var pages = [], lines = [], y, contentWidth = PAGE.width - PAGE.margin * 2, bytes = 0;
+    var pages = [], lines = [], y, photoCount = 0, contentWidth = PAGE.width - PAGE.margin * 2, bytes = 0;
     function font(size, bold) { ctx.font = (bold ? '700 ' : '400 ') + size + 'px ' + FONT; ctx.fillStyle = '#111827'; }
     function draw(text, x, baseline, size, bold, color) {
       font(size, bold); if (color) ctx.fillStyle = color;
@@ -173,13 +179,13 @@
       lines.push({ text: text, x: x, y: baseline, size: size, width: ctx.measureText(text).width });
     }
     function begin() {
-      ctx.setTransform(PAGE.scale, 0, 0, PAGE.scale, 0, 0); ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, PAGE.width, PAGE.height); lines = [];
+      ctx.setTransform(PAGE.scale, 0, 0, PAGE.scale, 0, 0); ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, PAGE.width, PAGE.height); lines = []; photoCount = 0;
       draw('HanQ  /  TOEIC PRACTICE', PAGE.margin, 31, 8, true, '#52525b');
-      draw('PART ' + part + '  ·  ' + sheet, PAGE.margin, 54, 17, true);
+      draw('PART ' + partLabel + '  ·  ' + sheet, PAGE.margin, 54, 17, true);
       ctx.strokeStyle = '#18181b'; ctx.lineWidth = 0.8; ctx.beginPath(); ctx.moveTo(PAGE.margin, 66); ctx.lineTo(PAGE.width - PAGE.margin, 66); ctx.stroke(); y = 85;
     }
     async function finish() {
-      draw('Part ' + part + ' · 개인 학습용', PAGE.margin, PAGE.height - 24, 8, false, '#52525b');
+      draw('Part ' + partLabel + ' · 개인 학습용', PAGE.margin, PAGE.height - 24, 8, false, '#52525b');
       draw(String(pages.length + 1), PAGE.width - PAGE.margin - 10, PAGE.height - 24, 8, false, '#52525b');
       var blob = await new Promise(function (resolve, reject) { canvas.toBlob(function (b) { if (b) resolve(b); else reject(Error('canvas')); }, 'image/jpeg', 0.93); });
       current(options); var data = new Uint8Array(await blob.arrayBuffer()); current(options); bytes += data.byteLength;
@@ -215,21 +221,77 @@
       for (var i = 0; i < values.length; i++) { await room((values.length - i === 2 ? 2 : 1) * leading); var line = values[i]; if (line) draw(line, x, y + size, size, style.bold, style.color); y += leading; }
       y += style.after == null ? 5 : style.after;
     }
-    async function picture(asset, label) {
-      var decoded;
+    function paragraphHeight(text, style) {
+      style = style || {}; var size = style.size || 11;
+      return wrap(text, size, style.bold, contentWidth - (style.indent || 0)).length * size * 1.5 + (style.after == null ? 5 : style.after);
+    }
+    function choiceRows(q) {
+      var size = 11, gap = 26, width = contentWidth - 12, rows = [], row = [], used = 0;
+      var horizontal = q.part === 5 || q.part === 1 && q.options.every(function (c) { return c.text === c.id; });
+      q.options.forEach(function (choice) {
+        var text = q.part <= 2 && choice.text === choice.id ? '(' + choice.id + ')' : choice.id + '. ' + choice.text;
+        var wrapped = wrap(text, size, false, width), natural = wrapped.length === 1 ? ctx.measureText(wrapped[0]).width : width;
+        if (row.length && (!horizontal || wrapped.length > 1 || used + gap + natural > width)) { rows.push(row); row = []; used = 0; }
+        var x = row.length ? used + gap : 0;
+        row.push({ lines: wrapped, x: x }); used = x + natural;
+        if (!horizontal || wrapped.length > 1) { rows.push(row); row = []; used = 0; }
+      });
+      if (row.length) rows.push(row);
+      return rows;
+    }
+    function choicesHeight(q) { return choiceRows(q).reduce(function (height, row) { return height + Math.max.apply(null, row.map(function (c) { return c.lines.length; })) * 16.5 + 2; }, 0); }
+    async function choices(q) {
+      for (var row of choiceRows(q)) {
+        var count = Math.max.apply(null, row.map(function (c) { return c.lines.length; }));
+        if (count <= 4) await room(count * 16.5);
+        for (var i = 0; i < count; i++) {
+          await room((count - i === 2 ? 2 : 1) * 16.5);
+          for (var cell of row) if (cell.lines[i]) draw(cell.lines[i], PAGE.margin + 12 + cell.x, y + 11, 11);
+          y += 16.5;
+        }
+        y += 2;
+      }
+    }
+    function imageSize(image, maxHeight) {
+      var width = Math.min(contentWidth, image.naturalWidth * 0.75), height = width * image.naturalHeight / image.naturalWidth;
+      if (height > maxHeight) { width *= maxHeight / height; height = maxHeight; }
+      return { width: width, height: height };
+    }
+    async function picture(asset, label, prepared, maxHeight) {
+      var decoded = prepared;
       try {
-        decoded = await loadImage(asset, options);
-        var image = decoded.image, width = Math.min(contentWidth, image.naturalWidth * 0.75), height = width * image.naturalHeight / image.naturalWidth;
-        // Scale an exceptionally tall scan to a full page, never crop it.
-        // A photo question needs room for its choices without cropping the source.
-        // Preserve the full photo; scaling changes neither its crop nor aspect.
-        var maxHeight = asset.part === 1 ? 260 : PAGE.bottom - 100;
-        if (height > maxHeight) { width *= maxHeight / height; height = maxHeight; }
-        await room(height + 27); current(options);
-        ctx.drawImage(image, PAGE.margin + (contentWidth - width) / 2, y, width, height); y += height + 4;
+        if (!decoded) decoded = await loadImage(asset, options);
+        var size = imageSize(decoded.image, maxHeight || PAGE.bottom - 100);
+        await room(size.height + paragraphHeight(label, { size: 8, after: 8 }) + 4); current(options);
+        ctx.drawImage(decoded.image, PAGE.margin + (contentWidth - size.width) / 2, y, size.width, size.height); y += size.height + 4;
         await paragraph(label, { size: 8, color: '#52525b', after: 8 });
       } catch (e) { current(options); throw Error('required_image'); }
-      finally { if (decoded) decoded.close(); }
+      finally { if (decoded && !prepared) decoded.close(); }
+    }
+    function questionLabel(q) {
+      var source = q.sourceIdentity;
+      return (q.displayNumber || q.number) + '  ·  ' + (source ? (source.unit ? source.unit + ' · ' : '') + source.page + ' · 원문 ' + source.questionNumber + '번' : '원문 ' + q.number + '번') + (wrong(q) ? ' · 오답' : ' · 공통지문 복습');
+    }
+    async function photoQuestion(q, label) {
+      var decoded, imageLabel = '원문 ' + q.number + '번 · 문제 사진', missing = '사진 미포함: 현재 자료에 문제 사진이 없습니다.';
+      var prompt = q.stem || '문제와 보기는 음원으로 제시됩니다.', promptStyle = { size: q.stem ? 11 : 9, color: q.stem ? undefined : '#52525b' };
+      try {
+        if (q.photoPath || q.photoUrl) {
+          try { decoded = await loadImage(q, options); } catch (e) { current(options); throw Error('required_image'); }
+        }
+        // Measure the complete block before drawing. Standard photos fit two per
+        // A4 page; longer source text moves intact instead of shrinking its type.
+        var photoHeight = decoded && decoded.image.naturalHeight > decoded.image.naturalWidth * 1.25 ? 360 : 200;
+        var height = paragraphHeight(label, { bold: true, size: 11, after: 7 }) + (q.passage ? paragraphHeight(q.passage, { size: 11, after: 10 }) : 0) +
+          (decoded ? imageSize(decoded.image, photoHeight).height + 4 + paragraphHeight(imageLabel, { size: 8, after: 8 }) : paragraphHeight(missing, { size: 9 })) +
+          paragraphHeight(questionLabel(q), { bold: true, size: 10 }) + paragraphHeight(prompt, promptStyle) + choicesHeight(q) + 25;
+        if (photoCount >= 2 || (photoCount || y > 140) && y + height > PAGE.bottom) { await finish(); begin(); }
+        await paragraph(label, { bold: true, size: 11, after: 7 });
+        if (q.passage) await paragraph(q.passage, { size: 11, after: 10 });
+        if (decoded) await picture(q, imageLabel, decoded, photoHeight); else await paragraph(missing, { size: 9, color: '#52525b' });
+        await paragraph(questionLabel(q), { bold: true, size: 10 });
+        await paragraph(prompt, promptStyle); await choices(q); y += 25; photoCount++;
+      } finally { if (decoded) decoded.close(); }
     }
     async function review(q, r) {
       if (!r) { await paragraph('해설 미포함: 이 문항의 저장된 해설을 읽기 전용으로 확인하지 못했습니다.', { size: 9, color: '#52525b' }); return; }
@@ -255,13 +317,11 @@
       await paragraph(answers ? '문제지와 같은 번호 순서입니다. 풀이를 마친 뒤 확인하세요.' : '정답·해설과 듣기 대본은 별도 해설지에서 확인하세요.', { size: 9, color: '#52525b' });
       if (answers) await paragraph('정답·해설 조회 ' + extra.reviews.size + ' / ' + selected.length + '문항', { size: 9, color: '#52525b', after: 10 });
       for (var warning of extra.warnings) await paragraph(warning, { size: 9, color: '#52525b' });
-      var groupIndex = 0;
       for (var qs of groups) {
-        // Keep each Part 1 photo and its source heading on the same fresh page.
-        if (!answers && part === 1 && groupIndex > 0) { await finish(); begin(); }
-        groupIndex++;
-        current(options); await room(90);
-        var first = qs[0], label = str(first.sourceTitle) + ' · 원문 ' + qs.map(function (q) { return q.sourceIdentity ? q.sourceIdentity.questionNumber : q.number; }).join('·') + '번';
+        current(options);
+        var first = qs[0], label = (parts.length > 1 ? 'Part ' + first.part + ' · ' : '') + str(first.sourceTitle) + ' · 원문 ' + qs.map(function (q) { return q.sourceIdentity ? q.sourceIdentity.questionNumber : q.number; }).join('·') + '번';
+        if (!answers && first.part === 1) { await photoQuestion(first, label); await pause(options); continue; }
+        await room(90);
         await paragraph(label, { bold: true, size: 11, after: 7 });
         var passages = new Set();
         if (!answers) for (var q of qs) if (q.passage && !passages.has(q.passage)) { passages.add(q.passage); await paragraph(q.passage, { size: 11, after: 10 }); }
@@ -273,17 +333,22 @@
           var membership = first.groupQuestionNumbers || [], absent = membership.filter(function (n) { return !qs.some(function (q) { return q.number === n; }); });
           if (absent.length) await paragraph('공통지문의 ' + absent.join('·') + '번 문항은 현재 자료에 없습니다.', { size: 9 });
         }
+        var questionIndex = 0;
         for (var q of qs) {
-          await room(65);
-          var source = q.sourceIdentity;
-          await paragraph((q.displayNumber || q.number) + '  ·  ' + (source ? (source.unit ? source.unit + ' · ' : '') + source.page + ' · 원문 ' + source.questionNumber + '번' : '원문 ' + q.number + '번') + (wrong(q) ? ' · 오답' : ' · 공통지문 복습'), { bold: true, size: 10 });
+          var heading = (grouped(q) ? '문항 ' + (++questionIndex) + ' / ' + qs.length + '  ·  ' : '') + questionLabel(q);
+          var questionHeight = paragraphHeight(heading, { bold: true, size: 10 }) + (q.stem ? paragraphHeight(q.stem, { size: 11 }) : 0) + choicesHeight(q) + 17;
+          // Keep an ordinary shared-passage question together, with a quiet rule
+          // and a bold numbered heading. The question and options stay regular.
+          await room(!answers && grouped(q) && questionHeight <= PAGE.bottom - 95 ? questionHeight + 10 : 65);
+          if (grouped(q)) { ctx.strokeStyle = '#d4d4d8'; ctx.lineWidth = 0.5; ctx.beginPath(); ctx.moveTo(PAGE.margin, y + 2); ctx.lineTo(PAGE.width - PAGE.margin, y + 2); ctx.stroke(); y += 10; }
+          await paragraph(heading, { bold: true, size: 10 });
           if (q.stem) await paragraph(q.stem, { size: 11 });
           else if (!answers && q.part <= 2) await paragraph('문제와 보기는 음원으로 제시됩니다.', { size: 9, color: '#52525b' });
-          if (!answers) for (var choice of q.options) await paragraph(q.part <= 2 && choice.text === choice.id ? '(' + choice.id + ')' : choice.id + '. ' + choice.text, { size: 11, indent: 12, after: 2 });
+          if (!answers) await choices(q);
           y += 7; if (answers) await review(q, extra.reviews.get(id(q))); y += 10;
         }
         if (answers && first.part <= 4) {
-          var script = extra.scripts.get(JSON.stringify([first.collectionId, first.groupId]));
+          var script = extra.scripts.get(JSON.stringify([first.collectionId, first.part, first.groupId]));
           if (!script) { var r = qs.map(function (q) { return extra.reviews.get(id(q)); }).find(function (r) { return r && r.script; }); if (r) script = r; }
           if (script && script.script) {
             await room(50); await paragraph('Script' + (script.scriptStatus === 'automatic-unverified' ? ' · 자동 전사 미검증' : script.scriptStatus === 'verified' || script.scriptStatus === 'publisher-extracted' ? ' · 확인된 대본' : ' · 검증 상태 미확인'), { bold: true, size: 11 });
@@ -294,7 +359,7 @@
       }
       await finish(); current(options);
       var result = pdf(pages, title);
-      return { blob: result, pages: pages.length, count: selected.length, wrong: wrongCount, reviews: extra.reviews.size, mode: mode, filename: 'HanQ-Practice-Part-' + part + (answers ? '-Answers' : '-Questions') + '.pdf' };
+      return { blob: result, pages: pages.length, count: selected.length, wrong: wrongCount, reviews: extra.reviews.size, mode: mode, filename: 'HanQ-Practice-Part' + (parts.length > 1 ? 's-' : '-') + parts.join('-') + (answers ? '-Answers' : '-Questions') + '.pdf' };
     } finally { canvas.width = 1; canvas.height = 1; pages.length = 0; }
   }
   function mount(host, options) {
@@ -305,17 +370,19 @@
     function restoreButtons() { buttons.forEach(function (b) { b.disabled = b.dataset.empty === 'true'; }); }
     var cancel = doc.createElement('button'); cancel.type = 'button'; cancel.className = 'tool-btn tc-pdf-cancel'; cancel.textContent = 'PDF 준비 취소'; cancel.hidden = true;
     cancel.onclick = function () { serial++; if (activeJob) activeJob.abort(); if (running === activeJob) running = null; activeJob = null; restoreButtons(); cancel.hidden = true; status.hidden = false; status.textContent = 'PDF 준비를 취소했어요.'; };
-    Array.from(new Set(options.items.map(function (q) { return q.part; }))).sort().forEach(function (part) {
+    var categories = options.parts ? [selectedParts(options.parts)] : [[1], [2], [3, 4], [5, 6], [7]].filter(function (parts) { return options.items.some(function (q) { return parts.indexOf(q.part) >= 0; }); });
+    categories.forEach(function (parts) {
+      var part = parts.join(',');
       ['questions', 'answers'].forEach(function (mode) {
       var sheet = mode === 'answers' ? '해설지' : '문제지';
-      var b = doc.createElement('button'); b.type = 'button'; b.className = 'tool-btn tc-pdf-export'; b.dataset.mode = mode; b.textContent = 'Part ' + part + ' ' + sheet + ' PDF'; b.setAttribute('aria-label', 'Part ' + part + ' ' + sheet + ' PDF 다운로드'); b.disabled = !bundles(options.items, part).length; b.dataset.empty = String(b.disabled); box.appendChild(b); buttons.push(b);
+      var b = doc.createElement('button'); b.type = 'button'; b.className = 'tool-btn tc-pdf-export'; b.dataset.mode = mode; b.textContent = 'Part ' + part + ' ' + sheet + ' PDF'; b.setAttribute('aria-label', 'Part ' + part + ' ' + sheet + ' PDF 다운로드'); b.disabled = !bundles(options.items, parts).length; b.dataset.empty = String(b.disabled); box.appendChild(b); buttons.push(b);
       b.onclick = async function () {
         if (!valid() || activeJob || b.dataset.empty === 'true') return;
         if (running) { status.hidden = false; status.textContent = '다른 파트의 PDF를 먼저 준비하고 있어요. 완료 후 다시 눌러 주세요.'; return; }
         var token = ++serial, abort = new AbortController(); activeJob = abort; running = abort; buttons.forEach(function (x) { x.disabled = true; }); cancel.hidden = false; status.hidden = false; status.textContent = 'Part ' + part + ' ' + sheet + '를 준비하고 있어요…';
         function isCurrent() { return valid() && token === serial && !abort.signal.aborted; }
         try {
-          var result = await generate(options.items, part, { api: options.api, mode: mode, signal: abort.signal, isCurrent: isCurrent, onProgress: function (text) { if (isCurrent()) status.textContent = text; } });
+          var result = await generate(options.items, parts, { api: options.api, mode: mode, signal: abort.signal, isCurrent: isCurrent, onProgress: function (text) { if (isCurrent()) status.textContent = text; } });
           if (!isCurrent()) return;
           urls.forEach(function (old) { URL.revokeObjectURL(old); }); urls = [];
           var url = URL.createObjectURL(result.blob); urls.push(url);
@@ -352,4 +419,5 @@
   }
   root.HanqToeicPracticePdf = { mount: mount, stop: stop, bundles: bundles, generate: generate };
 })(typeof window !== 'undefined' ? window : globalThis);
+
 

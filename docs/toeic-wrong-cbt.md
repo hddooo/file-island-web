@@ -78,9 +78,9 @@ Regression commands: `node scripts/test-toeic-partial-readiness.cjs`, `node scri
 
 
 
-## Part-by-part Practice PDF export (implementation candidate)
+## Practice category PDF export
 
-`media/toeic-practice-pdf.js` and `.css` add separate problem-sheet and answer-sheet PDF buttonss for each numeric part to the existing Practice part menu. Combined menu rows retain separate Part 3/4 and Part 5/6 exports. The screen's stable routes, source/display numbers, answer selection, grading, attempts and completion counts are unchanged. `toeic-cbt.js` supplies its current authenticated item snapshot and disposes the export controls on every screen/account transition. No original question corpus, images or exported PDFs are published with the frontend.
+`media/toeic-practice-pdf.js` and `.css` add one problem-sheet and one answer-sheet PDF button per existing Practice category: Part 1, Part 2, Parts 3/4, Parts 5/6 and Part 7. The two combined categories each produce a single file per sheet type, with actual-part labels inside. A category still keeps its combined label when only one member part currently has items. The screen's stable routes, source/display numbers, answer selection, grading, attempts and completion counts are unchanged. `toeic-cbt.js` supplies its current authenticated item snapshot and disposes the export controls on every screen/account transition. No original question corpus, images or exported PDFs are published with the frontend.
 
 The PDF includes wrong questions plus their supplied shared-passage siblings, preserves source text and images, and labels context-only questions separately. It does not classify context siblings as additional mistakes. Missing passages/photos are labeled when absent in the source. If a supplied required image cannot be fetched/decoded, generation fails rather than silently dropping it. In the problem sheet, Part 1/2 spoken choices remain letter placeholders. Answers, translations, explanatory notes and LC scripts are omitted from both visible pages and the searchable text layer. Only the separately requested answer sheet can display already-readable review text.
 
@@ -95,10 +95,15 @@ Checks for this candidate:
 
 This section records local candidate implementation and checks only. Exact-commit CI, publication and operating-domain verification are separate integration steps.
 
-### Part 1 pagination refinement (implementation candidate)
+### Compact problem layout (0.4.16-beta candidate)
 
-Each Part 1 photo question starts on a fresh page. Its full image is proportionally scaled to at most 260 pt high, leaving room for choices and the transcript without cropping. Short paragraphs stay together, and the final two lines of longer paragraphs are kept together to avoid a one-line overflow page. The seven-photo synthetic fixture reproduces eight pages before this change and seven after it; source headings, question numbers and the final bilingual transcript line are checked with PDF.js and Poppler. This change does not expand review API access or alter learner records. Real-account download and operating publication remain separate checks.
+Source/category titles and numbered question headings are bold. Passages, question prompts and options remain regular-weight 11 pt text. Each question in a shared passage has a light separator and a bold `문항 1 / 3`-style heading; ordinary question blocks stay together when they fit a page.
 
+Part 5 measures choices at the existing 11 pt size and places as many as fit on a row, with 26 pt gaps. Longer options wrap at the printable width and continue onto later pages if needed. Other reading parts retain vertical options. Part 1 spoken A/B/C/D placeholders also share a row.
+
+Part 1 measures the full source heading, optional passage, image, number, prompt and choices before drawing. Standard photos fit at most two questions per page, with a 200 pt image-height cap and preserved aspect ratio. Portrait scans taller than 1.25 times their width receive up to 360 pt and normally a separate page. Longer source text moves to the next page without shrinking type; exceptionally large blocks may span pages. Full photos are never cropped. The seven-standard-photo fixture uses four pages rather than seven. Required image failures still stop the export.
+
+Synthetic regression checks cover short and very long choices, unbroken tokens, portrait photos, long Part 1 source text, preservation of optional passages, and combined Part 3/4 and 5/6 files. Script lookup includes collection, actual part and group ID so the combined LC document cannot substitute another part's same-named group. Every generated text/image draw is checked against page bounds and image aspect ratios. PDF.js independently checks original text and absence of answers/scripts in problem sheets. Poppler-rendered standard/portrait photos, horizontal/wrapped choices and combined files are visually reviewed. Browser/physical-device and operating-domain checks remain separate.
 
 ### Separate problem and answer sheets (2026-11-06 candidate)
 
@@ -107,3 +112,4 @@ The default `generate` mode is `questions`; only explicit `mode: answers` reads 
 The frontend may export only already-readable reviews under the existing disclosure rules. A new read-only Practice review API is a separate unpublished candidate and is not included or assumed by this split. Real-account explanation coverage is not established by synthetic tests.
 
 Validation includes synthetic PDF generation and independent text extraction proving that answer markers, explanations, translations and LC transcript markers do not occur in problem sheets while they remain in answer sheets. Existing cancellation, account transitions, repeated downloads and bfcache resource cleanup are retained. Live browser and physical-mobile validation must be reported separately.
+
