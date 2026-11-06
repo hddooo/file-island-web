@@ -5,11 +5,13 @@
   var originalTitle=doc.title, originalIcon=null;
   try { if(root.localStorage.getItem(KEY)==='company')mode='company'; } catch (_) {}
   function enabled(){return mode==='company';}
+  function isHistory(){return doc.documentElement.hasAttribute('data-company-document')||/^#(?:history|past-exams|chapter|formal-exams|wrongnotes|exams|run|textbook|reviews?)(?:\/|$)/.test(location.hash);}
   function syncControls(){doc.querySelectorAll('[data-company-mode-toggle]').forEach(function(b){b.setAttribute('aria-pressed',String(enabled()));var label=enabled()?'회사 모드 끄기':'회사 모드 켜기';if(b.textContent!==label)b.textContent=label;});}
   function apply(value){
     mode=value==='company'?'company':'default';
     // Keep the original theme attribute untouched, especially standalone readers.
     doc.documentElement.dataset.companyMode=enabled()?'on':'off';
+    doc.documentElement.toggleAttribute('data-company-history',enabled()&&isHistory());
     var meta=doc.querySelector('meta[name="theme-color"]');if(meta)meta.content=enabled()?'#0d1117':'#050706';
     doc.title=enabled()?'Workspace · Files':originalTitle;
     var icon=doc.querySelector('link[rel="icon"]');
@@ -40,8 +42,17 @@
   function sync(){
     queued=false;var app=doc.getElementById('app')||(doc.documentElement.hasAttribute('data-company-document')?doc.body:null);if(!app)return;
     syncControls();
-    if(!enabled()){app.querySelectorAll('.company-directory,.company-codebar').forEach(function(n){n.remove();});app.querySelectorAll('[data-company-map-original]').forEach(function(n){n.removeAttribute('data-company-map-original');});return;}
+    if(!enabled()){app.removeAttribute('data-company-history');app.querySelectorAll('.company-image-note').forEach(function(n){n.remove();});app.querySelectorAll('.company-directory,.company-codebar').forEach(function(n){n.remove();});app.querySelectorAll('[data-company-map-original]').forEach(function(n){n.removeAttribute('data-company-map-original');});return;}
     var pane=app.querySelector(':scope > .device-content')||app;
+    var historyText=isHistory();
+    doc.documentElement.toggleAttribute('data-company-history',historyText);
+    if(historyText)app.setAttribute('data-company-history','');else{app.removeAttribute('data-company-history');app.querySelectorAll('.company-image-note').forEach(function(n){n.remove();});}
+    if(historyText){(doc.body||pane).querySelectorAll('img,svg:not(button svg):not(a svg),canvas,video,iframe').forEach(function(n){
+      if(n.closest('.device-crown,[data-company-map-original],.company-image-note')||n.nextElementSibling&&n.nextElementSibling.classList.contains('company-image-note'))return;
+      var alt=n.getAttribute('alt')||n.getAttribute('aria-label')||'',note=element('span','company-image-note',alt?'// image: '+alt:'// 이미지 자료 생략 · 일반 모드에서 확인');
+      n.insertAdjacentElement('afterend',note);
+    });}
+
     var map=app.querySelector('#worldMapHost'),english=app.querySelector('.toeic-travel-map'),history=app.querySelector('.history-home-hero');
     var key=map?'workspace':english?'english':history&&!app.querySelector('.toc')?'history':null;
     var current=app.querySelector('.company-directory');if(current&&current.dataset.companyDirectory!==key){current.remove();current=null;}
@@ -55,14 +66,14 @@
     if(bar.textContent!==barText)bar.textContent=barText;
     // CSS-only gutters: never replace text, controls, IDs, answers or reader ownership.
     var line=0;
-    app.querySelectorAll('p,h2,h3,h4,.bubble,.tn-word,.tg-topic-title,.tc-question-text,.mock-stem').forEach(function(n){
-      if(n.closest('.company-directory,.company-setting,.company-codebar,.device-crown,[data-company-map-original],.ac-sr,[hidden]')||!n.textContent.trim()||n.querySelector('p,h2,h3,h4'))return;
+    app.querySelectorAll('p,h2,h3,h4,.bubble,.tn-word,.tg-topic-title,.tc-question-text,.mock-stem,.textbook-source-quiz-item').forEach(function(n){
+      if(n.closest('.company-directory,.company-setting,.company-codebar,.company-image-note,.device-crown,[data-company-map-original],.ac-sr,[hidden]')||!n.textContent.trim()||n.querySelector('p,h2,h3,h4'))return;
       var value=String(++line);if(n.getAttribute('data-company-line')!==value)n.setAttribute('data-company-line',value);
     });
   }
   function schedule(){if(queued)return;queued=true;root.queueMicrotask(sync);}
   function ready(){
-    sync();var app=doc.getElementById('app')||(doc.documentElement.hasAttribute('data-company-document')?doc.body:null);if(doc.documentElement.hasAttribute('data-company-document'))doc.body.classList.add('company-document');if(app){observer=new root.MutationObserver(function(records){if(records.some(function(r){return !r.target.closest||!r.target.closest('.company-directory,.company-codebar');}))schedule();});observer.observe(app,{childList:true,subtree:true});}
+    sync();var app=doc.getElementById('app')||(doc.documentElement.hasAttribute('data-company-document')?doc.body:null);if(doc.documentElement.hasAttribute('data-company-document'))doc.body.classList.add('company-document');if(app){observer=new root.MutationObserver(function(records){if(records.some(function(r){return !r.target.closest||!r.target.closest('.company-directory,.company-codebar,.company-image-note');}))schedule();});observer.observe(doc.body||app,{childList:true,subtree:true});}
   }
   doc.addEventListener('click',function(event){if(event.target.closest&&event.target.closest('[data-company-mode-toggle]'))select(enabled()?'default':'company');});
   root.addEventListener('storage',function(event){if(event.key===KEY||event.key===null)apply(event.newValue);});
