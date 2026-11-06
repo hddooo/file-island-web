@@ -49,7 +49,8 @@
   }
   function nativeDirectory(node,path,count){if(node){var title=path+' / '+count+' files';if(node.getAttribute('data-company-native-directory')!==title)node.setAttribute('data-company-native-directory',title);}}
   function nativeDirectories(){
-    doc.querySelectorAll('#app .toc').forEach(function(list){var rows=list.querySelectorAll(':scope > .period[data-id]');nativeDirectory(list,'history / chapters',rows.length);rows.forEach(function(b,i){nativeFile(b,String(i+1).padStart(2,'0')+'-'+b.dataset.id+'.md');});});
+    doc.querySelectorAll('#app .toc:not(.hanq-rm__toc)').forEach(function(list){var rows=list.querySelectorAll(':scope > .period[data-id]');if(!rows.length)return;nativeDirectory(list,'history / chapters',rows.length);rows.forEach(function(b,i){nativeFile(b,String(i+1).padStart(2,'0')+'-'+b.dataset.id+'.md');});});
+    doc.querySelectorAll('#app .hanq-rm__toc').forEach(function(list){var rows=list.querySelectorAll(':scope > .period[data-group]');if(!rows.length)return;nativeDirectory(list,'history / reviews',rows.length);rows.forEach(function(b){nativeFile(b,b.dataset.group+'.md');});});
     doc.querySelectorAll('#app .tn-chapter-list').forEach(function(list){var rows=list.querySelectorAll(':scope > .tn-chapter-row');nativeDirectory(list,'english / vocabulary',rows.length);var index=0;rows.forEach(function(row){nativeFile(row.querySelector('.tn-chapter-open'),row.classList.contains('tn-selected-chapter')?'checked-words.md':'chapter-'+String(++index).padStart(2,'0')+'.md');nativeFile(row.querySelector('.tn-chapter-pdf'),'PDF');});});
     doc.querySelectorAll('#app .tn-recent-primary').forEach(function(list){var rows=list.querySelectorAll('.tn-recent-item');nativeDirectory(list,'vocabulary / recent',rows.length);rows.forEach(function(b,i){nativeFile(b,'entry-'+String(i+1).padStart(2,'0')+'.md');});});
     doc.querySelectorAll('#app .tn-add-note').forEach(function(b){nativeFile(b,'+ new-entry');});
@@ -59,16 +60,27 @@
     doc.querySelectorAll('.lc-track-list').forEach(function(list){var rows=list.querySelectorAll('.lc-track');nativeDirectory(list,'listening / playlist',rows.length);rows.forEach(function(b,i){nativeFile(b,'track-'+String(i+1).padStart(3,'0')+'.mp3');});});
     doc.querySelectorAll('#hallHost .hall-page > section:not(.hall-podium)').forEach(function(list){nativeDirectory(list,'ranking / members.json',list.querySelectorAll('.hall-person').length);});
     doc.querySelectorAll('#hallHost .hall-podium').forEach(function(list){nativeDirectory(list,'ranking / leaders.json',list.querySelectorAll('.hall-podium-person').length);});
+    historyDirectories();
+  }
+  function historyDirectories(){
+    var stepFiles={0:'concept.md',1:'summary.md',2:'quiz.json',3:'practice.json',4:'review.md',5:'culture.md',6:'blank-quiz.md',7:'exam-patterns.md',8:'source-quiz.md'};
+    doc.querySelectorAll('#app[data-company-history] .steps').forEach(function(list){var rows=list.querySelectorAll(':scope > .step[data-step]');if(!rows.length||list.closest('[hidden]'))return;nativeDirectory(list,'history / documents',rows.length);rows.forEach(function(b){nativeFile(b,stepFiles[b.dataset.step]||'document.md');});});
+    ['gsr','jsr'].forEach(function(prefix){['topics','modes'].forEach(function(kind){doc.querySelectorAll('#app .'+prefix+'-'+kind).forEach(function(list){if(list.closest('[hidden]'))return;var key=kind==='topics'?'topic':'mode',rows=list.querySelectorAll(':scope > button[data-'+key+']');nativeDirectory(list,'history / '+(prefix==='gsr'?'goryeo':'joseon')+' / '+kind,rows.length);rows.forEach(function(b){nativeFile(b,b.dataset[key]+'.md');});});});});
+    doc.querySelectorAll('#app .textbook-controls [role=tablist]').forEach(function(list){if(list.closest('[hidden]'))return;var rows=list.querySelectorAll(':scope > button[data-mode]');if(!rows.length)return;nativeDirectory(list,'history / source',rows.length);rows.forEach(function(b){nativeFile(b,b.dataset.mode+'.md');});});
+    doc.querySelectorAll('#app .textbook-supplement-links').forEach(function(list){var rows=list.querySelectorAll('a[href^="#textbook/"]');if(!rows.length||list.closest('[hidden]'))return;nativeDirectory(list,'history / reference',rows.length);rows.forEach(function(a){nativeFile(a,a.getAttribute('href').split('/').pop()+'.md');});});
+    doc.querySelectorAll('#formalExamHost .fe-rounds').forEach(function(list){var rows=list.querySelectorAll('.fe-round > button[data-round]');if(!rows.length)return;nativeDirectory(list,'history / exams',rows.length);rows.forEach(function(b){nativeFile(b,'round-'+b.dataset.round+'.json');});});
+    doc.querySelectorAll('#cbtWrongNotebookHost .fe-rounds').forEach(function(list){var rows=list.querySelectorAll(':scope > button[data-notebook-round]');if(!rows.length)return;nativeDirectory(list,'history / review',rows.length);rows.forEach(function(b){nativeFile(b,'round-'+b.dataset.notebookRound+'-wrong.json');});});
+    doc.querySelectorAll('#formalExamHost .fe-reviews,#cbtWrongNotebookHost .fe-reviews').forEach(function(list){var rows=list.querySelectorAll(':scope > .fe-review > details > summary');if(!rows.length)return;nativeDirectory(list,'history / questions',rows.length);rows.forEach(function(s,i){var title=Array.from(s.childNodes).filter(function(n){return n.nodeType!==1||!n.hasAttribute('data-company-added');}).map(function(n){return n.textContent;}).join('');var m=title.match(/제(\d+)회\s+(\d+)번/);nativeFile(s,m?'round-'+m[1]+'-q'+m[2].padStart(3,'0')+'.md':'question-'+String(i+1).padStart(3,'0')+'.md');});});
   }
   function clearNativeDirectories(){doc.querySelectorAll('[data-company-added]').forEach(function(n){n.remove();});doc.querySelectorAll('[data-company-native-directory],[data-company-native-row]').forEach(function(n){n.removeAttribute('data-company-native-directory');n.removeAttribute('data-company-native-row');});}
   function sync(){
     queued=false;var app=doc.getElementById('app')||(doc.documentElement.hasAttribute('data-company-document')?doc.body:null);if(!app)return;
     syncControls();
-    if(!enabled()){clearNativeDirectories();app.removeAttribute('data-company-history');app.querySelectorAll('.company-image-note').forEach(function(n){n.remove();});app.querySelectorAll('.company-directory,.company-codebar').forEach(function(n){n.remove();});app.querySelectorAll('[data-company-map-original]').forEach(function(n){n.removeAttribute('data-company-map-original');});return;}
+    if(!enabled()){clearNativeDirectories();app.removeAttribute('data-company-history');doc.querySelectorAll('.company-image-note').forEach(function(n){n.remove();});app.querySelectorAll('.company-directory,.company-codebar').forEach(function(n){n.remove();});app.querySelectorAll('[data-company-map-original]').forEach(function(n){n.removeAttribute('data-company-map-original');});return;}
     var pane=app.querySelector(':scope > .device-content')||app;
     var historyText=isHistory();
     doc.documentElement.toggleAttribute('data-company-history',historyText);
-    if(historyText)app.setAttribute('data-company-history','');else{app.removeAttribute('data-company-history');app.querySelectorAll('.company-image-note').forEach(function(n){n.remove();});}
+    if(historyText)app.setAttribute('data-company-history','');else{app.removeAttribute('data-company-history');doc.querySelectorAll('.company-image-note').forEach(function(n){n.remove();});}
     if(historyText){(doc.body||pane).querySelectorAll('img,svg:not(button svg):not(a svg),canvas,video').forEach(function(n){
       if(n.closest('.device-crown,[data-company-map-original],.company-image-note')||n.nextElementSibling&&n.nextElementSibling.classList.contains('company-image-note'))return;
       var alt=n.getAttribute('alt')||n.getAttribute('aria-label')||'',note=element('span','company-image-note',alt?'// image: '+alt:'// 이미지 자료 생략 · 일반 모드에서 확인');
