@@ -138,3 +138,6 @@ html[data-company-mode=on] body #app#app#app>.topline.device-crown .device-model
 /* Text leaves in legacy standalone readers can carry inline light backgrounds. */
 html[data-company-mode=on] body :is(p,a,span,small,mark,figcaption){background-color:transparent!important;background-image:none!important}
 html[data-company-mode=on] .company-document :is(.comic-home,nav a,.hq-read-status){background:#161b22!important;border-color:#30363d!important;border-radius:4px!important;box-shadow:none!important}
+/* Unhandled legacy labels inherit the readable foreground; explicit semantic states still win. */
+html[data-company-mode=on] :is(#app#app#app,dialog,[role=dialog],.admin-page,.company-document) :where(*){color:inherit!important}
+html[data-company-mode=on] #app#app#app :is(.ri-egg-shop-sign,.ri-wardrobe-shop){gap:8px!important;flex-wrap:wrap!important}
