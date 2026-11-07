@@ -61,7 +61,11 @@ async function save(name,result){fs.writeFileSync(path.join(out,name+'.pdf'),Buf
  // Part 6 numeric-only source prompts must not duplicate the printed number.
  items=[question(6,136,{stem:'136.',groupQuestionNumbers:[136]})];reviewData=items.map(review);renderStart=rendered.length;
  await PDF.generate(items,6,{api});await PDF.generate(items,6,{api,mode:'answers'});
- const numberDraws=rendered.slice(renderStart).flat().filter(x=>/^136\./.test(x.text||''));assert.equal(numberDraws.length,2);assert(numberDraws.every(x=>x.text==='136.'));checks+=2;
+ const numberDraws=rendered.slice(renderStart).flat().filter(x=>x.text==='136.');assert.equal(numberDraws.length,2);assert(numberDraws.every(x=>x.text==='136.'));checks+=2;
+ // The answer sheet starts with a source-separated key and keeps intact core reasons.
+ items=[question(2,16)];reviewData=items.map(review);renderStart=rendered.length;
+ await PDF.generate(items,2,{api,mode:'answers'});const keyPages=rendered.slice(renderStart),keyText=keyPages[0].filter(x=>x.text).map(x=>x.text).join(' '),detailText=keyPages.slice(1).flat().filter(x=>x.text).map(x=>x.text).join(' ');
+ assert(keyText.includes('정답표'));assert(keyText.includes('16. B*'));assert(!detailText.includes('Synthetic audio transcript'));assert(detailText.includes('원문과 일치하는 정답 근거'));checks+=4;
  // Integrate actual Practice menu: existing category exports, no side-effect writes.
  items=[question(1,1),question(3,1),question(3,2),question(4,1),question(4,2),question(5,1),question(6,1),question(6,2),question(7,1),question(7,2)].map(q=>({...q,number:q.part*100+q.number,groupQuestionNumbers:q.groupQuestionNumbers.map(n=>q.part*100+n)}));reviewData=items.map(review);
  const host=w.document.querySelector('#host');w.HanqToeicCbt.mount(host,{api,onAccount:()=>{}});await until(()=>host.querySelectorAll('.tc-pdf-export').length===8);assert.equal(host.querySelectorAll('.tc-group').length,5);checks++;

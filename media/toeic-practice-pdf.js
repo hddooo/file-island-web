@@ -310,23 +310,42 @@
         await paragraph(prompt, promptStyle); await choices(q); y += 25; photoCount++;
       } finally { if (decoded) decoded.close(); }
     }
-    async function review(q, r) {
-      if (!r) { await paragraph('해설 미포함: 이 문항의 저장된 해설을 읽기 전용으로 확인하지 못했습니다.', { size: 9, color: '#52525b' }); return; }
-      await paragraph('정답 ' + (r.correctOptionId || '자료 없음') + (r.officiallyVerified === false || q.officiallyVerified === false ? ' · AI 참고 답안 (교재 정답표 대조 전)' : ''), { bold: true, size: 10 });
-      if (q.part <= 2) {
-        if (r.stem) await paragraph(r.stem);
-        for (var choice of r.choices || []) await paragraph(choice.id + '. ' + choice.text, { indent: 12, size: 10 });
+    async function answerKey() {
+      await paragraph('정답표', { bold: true, size: 13, after: 8 });
+      await paragraph('* AI 참고 답안(교재 정답표 대조 전) · — 정답 자료 없음', { size: 9, color: '#52525b' });
+      var previous = null, row = [];
+      async function flush() {
+        if (!row.length) return;
+        await room(24);
+        row.forEach(function (entry, index) { draw(entry, PAGE.margin + index * fullWidth / 5, y + 11, 11); });
+        y += 24; row = [];
       }
-      var tutor = r.tutorExplanation || {};
-      if (!str(r.explanation).trim() && !str(tutor.answerReason).trim() && !(tutor.steps || []).length && !(tutor.options || []).some(function (o) { return str(o.explanation).trim(); })) await paragraph('해설 미포함: 원천 자료에 해설이 없습니다.', { size: 9, color: '#52525b' });
-      if (tutor.answerReason) await paragraph(tutor.answerReason, { size: 10 });
-      if (tutor.translation) await paragraph(tutor.translation, { size: 10 });
-      for (var reading of tutor.reading || []) { if (reading.chunk) await paragraph(reading.chunk, { size: 10 }); if (reading.translation) await paragraph(reading.translation, { size: 10, color: '#374151' }); }
-      for (var step of tutor.steps || []) await paragraph(step, { size: 10 });
-      for (var option of tutor.options || []) await paragraph(option.id + '. ' + option.explanation, { size: 10 });
-      for (var trap of tutor.traps || []) await paragraph('주의 · ' + trap, { size: 10 });
-      for (var check of tutor.checklist || []) await paragraph('확인 · ' + check, { size: 10 });
-      if (r.explanation && r.explanation !== tutor.answerReason) await paragraph(r.explanation, { size: 10 });
+      for (var q of selected) {
+        var source = JSON.stringify([q.collectionId, q.part]);
+        if (source !== previous) {
+          await flush(); await room(48);
+          await paragraph('Part ' + q.part + ' · ' + str(q.sourceTitle), { bold: true, size: 10, after: 6 });
+          previous = source;
+        }
+        var r = extra.reviews.get(id(q)), provisional = r && (r.officiallyVerified === false || q.officiallyVerified === false);
+        row.push(questionLabel(q) + ' ' + (r && r.correctOptionId || '—') + (provisional ? '*' : ''));
+        if (row.length === 5) await flush();
+      }
+      await flush(); await finish(); begin();
+      await paragraph('핵심 해설', { bold: true, size: 13, after: 8 });
+      await paragraph('원천 정답 근거와 정답 보기 설명만 모았습니다. 문장은 임의로 자르지 않았습니다.', { size: 9, color: '#52525b' });
+    }
+    async function review(q, r) {
+      if (!r) { await paragraph('정답·해설 미포함: 읽기 원천에서 확인하지 못했습니다.', { size: 9, color: '#52525b' }); return; }
+      await paragraph('정답 ' + (r.correctOptionId || '자료 없음') + (r.officiallyVerified === false || q.officiallyVerified === false ? ' · AI 참고 답안 (교재 정답표 대조 전)' : ''), { bold: true, size: 10 });
+      var tutor = r.tutorExplanation || {}, correct = (r.choices || []).find(function (o) { return o.id === r.correctOptionId; });
+      if (q.part <= 2 && r.stem) await paragraph(r.stem, { size: 10 });
+      if (correct && correct.text !== correct.id) await paragraph(correct.id + '. ' + correct.text, { size: 10 });
+      var option = (tutor.options || []).find(function (o) { return o.id === r.correctOptionId; });
+      var reasons = [tutor.answerReason || option && option.explanation || r.explanation].filter(function (value) { return str(value).trim(); });
+      if (!reasons.length) reasons = (tutor.steps || []).filter(function (value) { return str(value).trim(); });
+      for (var reason of new Set(reasons)) await paragraph(reason, { size: 10 });
+      if (!reasons.length) await paragraph('해설 미포함: 원천 자료에 해설이 없습니다.', { size: 9, color: '#52525b' });
     }
     begin();
     try {
@@ -335,6 +354,7 @@
       await paragraph(answers ? '문제지와 같은 번호 순서입니다. 풀이를 마친 뒤 확인하세요.' : '정답·해설과 듣기 대본은 별도 해설지에서 확인하세요.', { size: 9, color: '#52525b' });
       if (answers) await paragraph('정답·해설 조회 ' + extra.reviews.size + ' / ' + selected.length + '문항', { size: 9, color: '#52525b', after: 10 });
       for (var warning of extra.warnings) await paragraph(warning, { size: 9, color: '#52525b' });
+      if (answers) await answerKey();
       var lastSourceKey = null;
       for (var qs of groups) {
         current(options);
@@ -380,14 +400,6 @@
           if (!q.stem && !answers && q.part <= 2) await paragraph('문제와 보기는 음원으로 제시됩니다.', { size: 9, color: '#52525b' });
           if (!answers) await choices(q);
           y += 7; if (answers) await review(q, extra.reviews.get(id(q))); y += 10;
-        }
-        if (answers && first.part <= 4) {
-          var script = extra.scripts.get(JSON.stringify([first.collectionId, first.part, first.groupId]));
-          if (!script) { var r = qs.map(function (q) { return extra.reviews.get(id(q)); }).find(function (r) { return r && r.script; }); if (r) script = r; }
-          if (script && script.script) {
-            await room(50); await paragraph('Script' + (script.scriptStatus === 'automatic-unverified' ? ' · 자동 전사 미검증' : script.scriptStatus === 'verified' || script.scriptStatus === 'publisher-extracted' ? ' · 확인된 대본' : ' · 검증 상태 미확인'), { bold: true, size: 11 });
-            await paragraph(script.script, { size: 10 });
-          } else await paragraph('대본 미포함: 읽기 전용으로 확인된 대본이 없습니다.', { size: 9, color: '#52525b' });
         }
         y += 8; await pause(options);
       }

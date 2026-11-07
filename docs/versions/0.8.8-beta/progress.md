@@ -1,0 +1,2 @@
+# Answer key and concise source explanations
+Answer PDFs begin with a collection/part-separated key, preserving repeated source numbers, missing answers and provisional markers. Details prefer the intact structured answer reason, then correct-option reason, then original explanation; no sentence clipping or invented paraphrase. Full scripts/translations and other-option essays are omitted from this concise sheet. Question PDFs and stored source data are unchanged. Actual published source and deployed service response fixtures remain private/local.

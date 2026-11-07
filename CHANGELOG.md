@@ -1,3 +1,6 @@
+## 0.8.8-beta (2026-11-07)
+- Start answer PDFs with a source-separated answer key, followed by concise intact source explanations. Question PDFs unchanged.
+
 ## 0.8.7-beta (2026-11-07)
 - Avoid duplicated Part 6 question numbers when the source prompt is only the blank number.
 
