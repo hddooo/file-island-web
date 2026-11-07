@@ -6,3 +6,6 @@
 - PDF 합성3문항+공통1자료 → 2쪽. 실제 Chrome다운로드 bytes 일치, 제목/보기/쪽번호/EOF 확인. 사용자원문·답안 제출·XP변경 없음.
 - 순서형/분류형은 642문항 1532assertions 및 담당 Chrome 320/390/1440 검증통과. API수정 없음.
 - 실제 운영배포/SHA 및 사용자 시험시작·제출 동작은 아직 확인 전.
+
+- Final synthetic checks: compact round menu, Hongmungwan question/answer PDF buttons, PDF answer mapping and concise/missing explanations all passed.
+- Production API verified: private 501 images, all rounds 70-79 available, anonymous requests 401; auth preserved. No user attempt submission. Frontend release verification remains separate.
