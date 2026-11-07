@@ -19,12 +19,12 @@ function el(tag,text){var n=doc.createElement(tag);n.textContent=text;host.appen
 function current(){return alive&&host.isConnected&&life&&identity(api)===life;}
 function disable(v){buttons.forEach(function(b){b.disabled=v;});}
 var title=el('h3','섬별 오답 기록 초기화');title.id='acLearningResetTitle';host.setAttribute('aria-labelledby',title.id);
-el('p','선택한 섬의 이전 오답 항목·누적 오답·나의 기록에 표시되는 오답 풀이만 초기화합니다. XP, 일반 정답 풀이와 정답 재풀이, 원본, 단어장, 다른 섬은 보존합니다. 교재 원본 오답 분류·PDF·음원 목록은 유지됩니다.');
+el('p','선택한 섬의 이전 오답 항목·누적 오답·나의 기록에 표시되는 오답 풀이를 초기화합니다. 역사섬은 실전모의고사 점수·풀이 기록도 함께 초기화합니다. XP, 일반 개별 정답 기록, 문제 원본, 단어장, 다른 섬은 보존합니다. 원본 데이터는 삭제하지 않으며 교재 원본 오답 분류·PDF·음원 목록도 유지됩니다.');
 ['history','toeic'].forEach(function(island){var label=island==='history'?'역사섬':'영어섬',b=el('button',label+' 오답 초기화');b.type='button';b.className='tool-btn';b.disabled=true;buttons.push(b);b.onclick=async function(){
 if(!current()||!ready||busy)return;
-if(!root.confirm(label+'의 지금까지 쌓인 오답 항목·누적 오답과 나의 기록의 오답 풀이를 초기화할까요?\nXP·정답 풀이·정답 재풀이·문제 원본·단어장·다른 섬은 보존합니다. 교재 원본 오답 분류·PDF·음원 목록은 유지됩니다.\n원본을 영구 삭제하지 않지만 화면에서 되돌리기는 지원하지 않습니다.'))return;
+if(!root.confirm((island==='history'?'역사섬의 오답 기록과 실전모의고사 점수·풀이 기록을 초기화할까요?\nXP와 일반 개별 정답 기록, 문제 원본, 단어장, 다른 섬은 보존합니다. 원본 데이터는 삭제하지 않습니다.\n화면에서 되돌리기는 지원하지 않습니다.':label+'의 지금까지 쌓인 오답 항목·누적 오답과 나의 기록의 오답 풀이를 초기화할까요?\nXP·정답 풀이·정답 재풀이·문제 원본·단어장·다른 섬은 보존합니다. 교재 원본 오답 분류·PDF·음원 목록은 유지됩니다.\n원본을 영구 삭제하지 않지만 화면에서 되돌리기는 지원하지 않습니다.')))return;
 if(!current())return;busy=true;disable(true);status.textContent='초기화 결과를 확인하고 있어요.';
-try{var requestId=root.crypto&&root.crypto.randomUUID&&root.crypto.randomUUID();if(!UUID.test(requestId||''))throw Error('uuid_unavailable');var d=await api.resetLearning({island:island,confirmation:island==='history'?'RESET_HISTORY':'RESET_TOEIC',requestId:requestId});if(!current())return;if(!valid(d)||!d[island].resetAt)throw Error('invalid_response');accept(api,d);status.textContent=label+' 오답 기록을 초기화했어요. XP와 정답 기록은 그대로예요.';if(root.HanqMyRecords&&root.HanqMyRecords.refresh)root.HanqMyRecords.refresh();}
+try{var requestId=root.crypto&&root.crypto.randomUUID&&root.crypto.randomUUID();if(!UUID.test(requestId||''))throw Error('uuid_unavailable');var d=await api.resetLearning({island:island,confirmation:island==='history'?'RESET_HISTORY':'RESET_TOEIC',requestId:requestId});if(!current())return;if(!valid(d)||!d[island].resetAt)throw Error('invalid_response');accept(api,d);status.textContent=island==='history'?'역사섬 오답과 실전모의고사 점수·풀이 기록을 초기화했어요. XP와 일반 개별 정답 기록은 그대로예요.':label+' 오답 기록을 초기화했어요. XP와 정답 기록은 그대로예요.';if(root.HanqMyRecords&&root.HanqMyRecords.refresh)root.HanqMyRecords.refresh();}
 catch(_){if(current()){ready=false;status.textContent='초기화 결과를 확인하지 못했어요. 다시 누르지 말고 마이페이지를 다시 열어 상태를 확인해 주세요.';}}
 finally{busy=false;if(current())disable(!ready);}
 };});
