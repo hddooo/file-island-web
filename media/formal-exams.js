@@ -20,7 +20,7 @@ function request(fn,then,retry,want,onFailure){if(!valid()||ctx.pending)return P
 function runPath(r){return(r.kind==='review'?'/reviews/':'/runs/')+r.id;}
 function routeId(r){return(r.kind==='review'?'review-':'')+r.id;}
 function raw(method,path,body){return Promise.resolve().then(function(){return api.cbt(method,'/api/v1/cbt'+path,body,{attemptToken:path.indexOf('/runs/')===0?ctx.attemptToken:null});});}
-function call(method,path,body){return raw(method,path,body).then(function(d){return d&&d.run&&Array.isArray(d.items)?syncStars(d).then(function(){return d;}):d;});}
+function call(method,path,body){return raw(method,path,body).then(function(d){return d&&d.run&&Array.isArray(d.items)&&d.run.status!=='ready'&&d.run.status!=='incomplete'?syncStars(d).then(function(){return d;}):d;});}
 function pendingStarsKey(d){return 'hanq:cbt-stars-pending:v2:'+ctx.owner+':'+d.run.id;}
 function storedStars(d,key){var v=null;try{v=JSON.parse(root.localStorage.getItem(key));}catch(e){}return v&&v.owner===ctx.owner&&v.run===d.run.id&&v.signature===signature(d)?v:null;}
 function validStarResponse(d,v){return v&&v.signature===signature(d)&&Array.isArray(v.flags)&&v.flags.length===d.items.length&&v.flags.every(function(x){return typeof x==='boolean';});}
