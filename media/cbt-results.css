@@ -174,3 +174,5 @@ html body #formalExamHost #feImage .fe-image-pane>a{display:block!important;max-
 html body #formalExamHost #feImage img.mock-image{display:block!important;width:auto!important;height:auto!important;max-width:100%!important;max-height:clamp(220px,56vh,640px)!important;object-fit:contain!important;margin:0 auto!important}
 html body #formalExamHost #feImage figure{margin:8px 0!important;max-width:100%!important}
 @media(max-width:759px){html body #formalExamHost #feImage img.mock-image{max-height:54vh!important}}
+html body #formalExamHost #feImage img.mock-image{max-height:min(640px,56vh,max(180px,calc(100vh - 340px)))!important}
+@media(max-width:759px){html body #formalExamHost #feImage img.mock-image{max-height:min(54vh,max(180px,calc(100vh - 340px)))!important}}
