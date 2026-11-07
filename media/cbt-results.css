@@ -131,3 +131,15 @@ html[data-company-mode=on] #app#app#app #formalExamHost .fe-round-menu .fe-revie
 .cbt-wrong-notebook .cbt-notebook-round-tools{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:8px 0;border-bottom:1px solid var(--line,#354c3d)}
 .cbt-wrong-notebook .cbt-notebook-round-tools [data-notebook-round]{flex:1 1 200px;text-align:left}
 .cbt-wrong-notebook .cbt-notebook-round-tools [data-notebook-pdf]{min-height:44px;font-size:13px}
+
+/* Compact whole-row exam entry; score controls are siblings, never nested buttons. */
+.formal-exams .fe-rounds .fe-round-compact{position:relative;display:flex;flex-direction:row;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:12px 16px;min-height:62px;border-radius:12px}
+.formal-exams .fe-round-compact h3{margin:0;font-size:17px;pointer-events:none}
+.formal-exams .fe-round-compact .fe-round-hit{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:inherit;background:transparent;cursor:pointer;z-index:0}
+.formal-exams .fe-round-hit:focus-visible{outline:3px solid #477db9;outline-offset:2px}
+.formal-exams .fe-round-hit:disabled{cursor:default}
+.formal-exams .fe-round-compact .fe-recent-scores{position:relative;z-index:1;margin:0;pointer-events:none}
+.formal-exams .fe-round-compact .fe-score{min-width:44px;min-height:36px;padding:5px 8px;font-size:13px}
+.formal-exams .fe-round-compact button.fe-score{pointer-events:auto}
+.formal-exams .fe-round-compact .fe-round-retry{position:relative;z-index:1}
+.formal-exams .fe-round-compact .fe-round-status{flex-basis:100%;margin:0;pointer-events:none}
