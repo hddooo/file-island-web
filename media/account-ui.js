@@ -276,7 +276,7 @@
       '<details class="ac-more ac-settings"><summary>계정 설정</summary><div class="ac-settings-body"><dl class="ac-dl"><div><dt>이메일</dt><dd>' + esc(u.email) + '</dd></div><div><dt>가입</dt><dd>' + esc(kst(u.createdAt)) + '</dd></div></dl>' +
       (st.premium && st.premium.active ? '<form id="acNameForm" class="ac-form ac-inline"><label for="acNewName">닉네임 바꾸기</label><input id="acNewName" type="text" maxlength="40" autocomplete="nickname" value="' + esc(u.displayName) + '" required><button type="submit" class="tool-btn">닉네임 저장</button><p class="ac-err" id="acNameMsg" role="status"></p></form>' : '<p class="ac-note">닉네임 변경은 프리미엄 이용 중에 할 수 있어요.</p>') +
       '<form id="acPwForm" class="ac-form"><h3>비밀번호 바꾸기</h3><label for="acPwCur">지금 비밀번호</label><input id="acPwCur" type="password" autocomplete="current-password" maxlength="128" required><label for="acPwNew">새 비밀번호</label><input id="acPwNew" type="password" autocomplete="new-password" maxlength="128" required><button type="submit" class="tool-btn">비밀번호 바꾸기</button><p class="ac-err" id="acPwMsg" role="status"></p><p class="ac-note">비밀번호를 변경하면 다른 기기의 로그인 세션이 종료됩니다.</p></form>' +
-      '</div></details>' + syncHtml() + '<section class="ac-my-records" aria-labelledby="acRecordsTitle"><h2 id="acRecordsTitle">나의 기록</h2><div id="acMyRecordsHost"></div></section><section id="acLearningResetHost" class="ac-learning-reset"></section><section class="hq-inquiries" aria-labelledby="acInquiriesTitle"><h2 id="acInquiriesTitle">내 문의</h2><div id="acInquiriesHost"></div></section><p><a class="tool-btn" href="/inquiries/question-requests.html">사진·음원으로 문제 등록 요청</a> <a class="tool-btn" href="/inquiries/published-history.html">등록된 한국사 문제 풀기</a></p><footer id="acAdminSlot" class="ac-admin-footer"></footer></div></section>';
+      '</div></details>' + syncHtml() + '<section class="ac-my-records" aria-labelledby="acRecordsTitle"><h2 id="acRecordsTitle">나의 기록</h2><div id="acMyRecordsHost"></div></section><section id="acLearningResetHost" class="ac-learning-reset"></section><section class="hq-inquiries" aria-labelledby="acInquiriesTitle"><h2 id="acInquiriesTitle">내 문의</h2><div id="acInquiriesHost"></div></section><p><a class="tool-btn" href="/inquiries/question-requests.html">사진·음원으로 문제 등록 요청</a></p><footer id="acAdminSlot" class="ac-admin-footer"></footer></div></section>';
   }
   function fmtPoints(n) { return Number(n).toLocaleString('ko-KR'); }
   /* 이 기기 기록 자동 동기화(media/account-sync.js) 상태 한 줄 + 실패 때만 ‘다시 보내기’. 계정 표시 없는 예전·게스트 기록은 보내지 않는다는 안내 */
@@ -639,7 +639,8 @@
       if (ui.authMode === 'signup' && [...pw].length < 10) { msg.textContent = MSG.weak_password; return; }
       var form=$('#acAuthForm'),check=$('#acRememberSession'),remember=!!(check&&!check.disabled&&check.checked&&rememberSupport().enabled);
       var authRequest=ui.authMode==='signup'?api.signup(email,pw,name||undefined):api.signin(email,pw,remember);
-      withButton($('#acAuthSubmit'), msg, authRequest.catch(function(error){rememberFailure(error,form);throw error;}), function () {
+      withButton($('#acAuthSubmit'), msg, authRequest.catch(function(error){rememberFailure(error,form);throw error;}), function (result) {
+        if(result&&result.status==='pending'){ui.authMode='signin';ui.notice='가입 요청을 보냈습니다. ADMIN 승인 후 로그인해 주세요.';return renderMain();}
         ui.hist = []; ui.histCursor = null; ui.notice = ui.authMode === 'signup' ? '가입했어요. 로그인하지 않고 남긴 이 기기의 기록은 지우지 않고 그대로 둬요.' : '로그인했어요.';
         if(ui.ctx.afterLogin){ui.ctx.afterLogin();return;}
         if(root.HanqAuthSession&&root.HanqAuthSession.resume())return;

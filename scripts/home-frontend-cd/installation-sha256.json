@@ -16,12 +16,12 @@
     {
       "source": "scripts/home-frontend-cd/verify-artifact.cjs",
       "target": "verify-artifact.cjs",
-      "sha256": "c0f1e383894113bf7f566674c301a7d4c3774506459f2def2a566e051de19673"
+      "sha256": "ed282ca17d5d19f59ed8ba2cbb349fe40fa724aea622f9a763db6725f35e8544"
     },
     {
       "source": "scripts/home-frontend-cd/release.sh",
       "target": "release.sh",
-      "sha256": "3925467d60cf515b12770b177c22c04b011b45489786fc932090fe0e75a497a2"
+      "sha256": "831218269b2030542d0e72c982053ab9fc93f8616bf5e9ed793b2bb38a1f91dc"
     },
     {
       "source": "scripts/home-frontend-cd/bootstrap.sh",
@@ -48,5 +48,13 @@
       "target": "REPOSITORY:.github/workflows/home-frontend-cd.yml",
       "sha256": "37d09b422282e41617ce5b453a9e0967c2107b58b2431d04abba6976591025ca"
     }
-  ]
+  ],
+  "memberAccessPreparation": {
+    "loginFiles": [
+      "auth/login.html",
+      "auth/login.js"
+    ],
+    "health": "login HTML and version metadata hashes",
+    "runtimeGateInstalled": false
+  }
 }

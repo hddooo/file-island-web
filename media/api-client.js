@@ -368,7 +368,7 @@
       ensureSession: ensureSession,
       signup: function (email, password, displayName) {
         renewalBlocked=false;var epoch=++authEpoch;var body = { email: email, password: password }; if (displayName) body.displayName = displayName;
-        return track(cookieOperation(function () { if(epoch!==authEpoch)throw ApiError(401,'session_changed');return raw('POST', '/api/v1/auth/signup', { body: body, csrf: true, auth: false, feedback:false }); }).then(function (d) { if(epoch!==authEpoch)throw ApiError(401,'session_changed');setSession(d,'signin'); broadcastInvalidation('signin'); return api.me().catch(function () { return d; }); }), '로그인 확인 중…');
+        return track(cookieOperation(function () { if(epoch!==authEpoch)throw ApiError(401,'session_changed');return raw('POST', '/api/v1/auth/signup', { body: body, csrf: true, auth: false, feedback:false }); }).then(function (d) { if(epoch!==authEpoch)throw ApiError(401,'session_changed');if(d&&d.status==='pending')return d;setSession(d,'signin'); broadcastInvalidation('signin'); return api.me().catch(function () { return d; }); }), '로그인 확인 중…');
       },
       signin: function (email, password, rememberMe) {
         if(rememberMe===true&&(!locks||typeof locks.request!=='function'))return Promise.reject(ApiError(0,'session_coordination_unavailable'));

@@ -8,7 +8,7 @@ const { allowed, buildStatic } = require('./build-static-site.cjs');
 const root = path.resolve(__dirname, '..');
 const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'file-island-static-'));
 try {
-  for (const file of ['.env', 'docs/a.md', 'scripts/a.cjs', 'test/fixtures/a.html', 'media/a.pdf', 'media/renders/a.png', 'media/.env', 'media/private-data/a.json']) assert.equal(allowed(file), false, file);
+  for (const file of ['.env', 'docs/a.md', 'scripts/a.cjs', 'test/fixtures/a.html', 'media/a.pdf', 'media/renders/a.png', 'media/.env', 'media/private-data/a.json', 'auth/private.json', 'auth/login.html/extra']) assert.equal(allowed(file), false, file);
   assert(allowed('media/connector-summary.pdf'));
   const first = buildStatic(root, path.join(temp, 'first'));
   const second = buildStatic(root, path.join(temp, 'second'));
@@ -19,7 +19,7 @@ try {
   assert(fs.readFileSync(path.join(temp, 'first/index.html'), 'utf8').includes('content="' + sha + '"'));
   assert.deepEqual(fs.readFileSync(path.join(temp, 'first/media/api-client.js')),
     execFileSync('git', ['show', 'HEAD:media/api-client.js'], { cwd: root }), 'export canonical Git bytes across Windows and Linux');
-  for (const file of ['ops/index.html', 'inquiries/index.html', 'media/connector-summary.pdf']) assert(first.files.some(item => item.path === file), file);
+  for (const file of ['ops/index.html', 'inquiries/index.html', 'media/connector-summary.pdf', 'auth/login.html', 'auth/login.js']) assert(first.files.some(item => item.path === file), file);
   assert(first.files.every(item => allowed(item.path) || item.path === 'app-version.json'));
   assert.throws(() => buildStatic(root, path.join(temp, 'first')), /already exists/);
   assert.throws(() => buildStatic(root, root), /outside public/);
