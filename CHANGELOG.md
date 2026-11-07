@@ -1,3 +1,9 @@
+## 0.8.10-beta (2026-11-07)
+
+- Private TOEIC/history photo and audio problem requests with manually entered answers.
+- Same-origin browser OCR and highlighted question candidates, verified by the submitter.
+- ADMIN source/explanation review then clean-image (Part2 audio) review. Stops at ready_for_publish; no automatic assistant review or live question publication.
+
 ## 0.8.9-beta (2026-11-07)
 
 - Move new vocabulary entry from learner notebook to ADMIN, retaining existing server edit permissions and all records.

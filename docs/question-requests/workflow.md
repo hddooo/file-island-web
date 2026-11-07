@@ -2,7 +2,7 @@
 
 User path: /inquiries/question-requests.html (MY PAGE link). ADMIN: question review section in /ops/.
 
-TOEIC and Korean history requests keep manually entered answers. Part2 takes audio with ABC, Part1 image/audio with ABCD. Part3–7/history offer OCR stem/choice candidates. The part is selected by the user; OCR does not assert part correctness. Highlighted candidates fill editable fields, no-highlight cases require manual selection. Same-origin Tesseract.js worker/models process images in browser memory only. No external OCR/image transfer or localStorage of source images.
+TOEIC and Korean history requests keep manually entered answers. Part2 takes audio with ABC, Part1 image/audio with ABCD. Part3–7/history offer OCR stem/choice candidates. The part is selected by the user; if empty, consistent TOEIC numbers may populate a labelled part candidate that must be verified. OCR does not assert part correctness. Highlighted candidates fill editable fields, no-highlight cases require manual selection. Same-origin Tesseract.js worker/models process images in browser memory only. No external OCR/image transfer or localStorage of source images.
 
 Owner-authenticated JSON request API and bounded binary upload API store private staging assets; the frontend never puts images in Git or public static media. Text and answer are not published on submit. ADMIN content review requires original comparison and per-question explanation; second review requires a normal image (or audio-only Part2 confirmation). Backend owns all role/owner/revision/state decisions.
 
