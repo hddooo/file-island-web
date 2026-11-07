@@ -1,0 +1,16 @@
+'use strict';const fs=require('fs'),assert=require('assert/strict'),{JSDOM}=require(process.env.HANQ_JSDOM_PATH),run='10000000-0000-4000-8000-000000000001';
+const opts=[1,2,3,4,5].map(n=>({id:'choice'+n,number:n}));
+const q={questionId:'exam-80-01',version:'synthetic',exam:80,number:1,position:0,points:2,runId:run,starred:true,everWrong:false,selectedOptionId:null,options:opts,image:'/api/v1/cbt/runs/'+run+'/questions/0/image',common:null,review:{status:'unanswered',correctNumber:1,correctOptionId:'choice1'}};
+(async()=>{const dom=new JSDOM('<main></main>',{runScripts:'outside-only'}),w=dom.window,host=w.document.querySelector('main');let state={signedIn:true,ownerId:'synthetic',epoch:1},listener,reads=0,resetAt=null,revoked=0;
+w.URL.createObjectURL=()=> 'blob:synthetic';w.URL.revokeObjectURL=()=>revoked++;w.eval(fs.readFileSync('media/cbt-round-materials.js','utf8'));
+const data=()=>({scope:'exam-starred-or-ever-wrong',round:80,items:resetAt?[]:[q],hasMore:false,pendingStarCount:1,resetAt});
+const api={state:()=>state,onChange:fn=>{listener=fn;return()=>listener=null},cbt:async(method,path)=>{assert.equal(method,'GET');assert.equal(path,'/api/v1/cbt/review-materials/80');reads++;return data();},cbtImage:async()=>new Blob(['synthetic'],{type:'image/png'})};
+const before=JSON.stringify(q),ctl=w.HanqCbtRoundMaterials.mount(host,{api,round:80,onBack:()=>{}});await ctl.ready;await new Promise(r=>setImmediate(r));
+assert(host.textContent.includes('점수·XP·나의 기록·실전 기록을 남기지 않는'));assert(host.textContent.includes('완료 후 이용'));
+let buttons=()=>Array.from(host.querySelectorAll('button'));buttons().find(b=>b.textContent==='2').click();assert(!host.textContent.includes('정답 1번'));buttons().find(b=>b.textContent==='정답·해설 확인하기').click();await new Promise(r=>setImmediate(r));assert(host.textContent.includes('정답 1번 · 내 선택 2번'));assert(host.textContent.includes('원천 자료에 확인된 해설이 없어요'));
+assert.equal(JSON.stringify(q),before);assert(reads>=2);resetAt='2026-11-08T00:00:00Z';buttons().find(b=>b.textContent==='정답·해설 확인하기').click();await new Promise(r=>setImmediate(r));assert(host.textContent.includes('문제가 없어요'));assert(!host.textContent.includes('정답 1번'));
+state={signedIn:false,ownerId:null,epoch:2};listener();assert.equal(host.children.length,0);assert(revoked>0);ctl.stop();
+state={signedIn:true,ownerId:'synthetic',epoch:3};resetAt=null;let resetListener;
+w.HanqLearningReset={onChange:fn=>{resetListener=fn;return()=>resetListener=null;}};
+const ctl2=w.HanqCbtRoundMaterials.mount(host,{api,round:80,onBack:()=>{}});await ctl2.ready;resetListener();assert(host.textContent.includes('초기화 상태가 변경'));assert(!host.querySelector('img'));assert(host.textContent.includes('회차 목록'));ctl2.stop();
+const failed=w.HanqCbtRoundMaterials.mount(host,{api:{...api,cbt:async()=>{throw Error('network');}},round:80,onBack:()=>{}});await failed.ready;assert(host.textContent.includes('회차 목록'));failed.stop();dom.window.close();console.log('PASS readonly review: unanswered-star, choices/reveal, missing source, no source mutation, reset clear, owner cleanup; GET only');})().catch(e=>{console.error(e);process.exitCode=1});
