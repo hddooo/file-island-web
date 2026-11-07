@@ -244,7 +244,7 @@
     }).catch(function (error) { if (valid()) { ctx.initialized = true; loadError(error); } return {error: true}; });
     return controller;
   }
-  var exported = {mount: mount, stop: stop};
+  var exported = {mount: mount, stop: stop, normalize: normalize};
   if (typeof module !== 'undefined' && module.exports) module.exports = exported;
   if (root.document) root.HanqCbtWrongNotebook = exported;
 })(typeof window !== 'undefined' ? window : globalThis);
