@@ -271,3 +271,17 @@ html[data-hanq-theme=terminal]:not([data-company-mode=on]) body #app#app.shell.d
  html[data-hanq-theme=terminal]:not([data-company-mode=on]) body #app#app.shell.digivice-v2:not(:has(.tc-study-active))>.topline.device-crown{padding-inline:max(10px,env(safe-area-inset-left,0px)) max(10px,env(safe-area-inset-right,0px))!important}
 }
 
+
+/* A quiet translucent screen header; typography and identity colors stay intact. */
+html[data-hanq-theme=terminal]:not([data-company-mode=on]) body #app#app.shell.digivice-v2:not(:has(.tc-study-active))>.topline.device-crown{
+ background:linear-gradient(180deg,rgba(235,247,240,.92),rgba(202,226,221,.86))!important;
+ -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+}
+html body #app#app.digivice-v2>.topline.device-crown .device-model.device-home{
+ appearance:none;font-family:inherit;pointer-events:auto;cursor:pointer;
+ padding:0!important;margin:0!important;min-height:44px;min-width:44px;
+ border:0!important;border-radius:4px!important;background:transparent!important;box-shadow:none!important;
+}
+html body #app#app.digivice-v2>.topline.device-crown .device-home:focus-visible{
+ outline:2px solid #294d57!important;outline-offset:3px;
+}

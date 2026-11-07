@@ -48,6 +48,17 @@ fs.mkdirSync(out,{recursive:true});
      await p.emulateMedia({reducedMotion:'no-preference'});
     }
     await p.screenshot({path:path.join(out,width+'-'+(route.includes('toeic')?'english':'world')+'.png')});
+    if(route.includes('toeic')){
+     const home=p.getByRole('button',{name:'FILE ISLAND · 전체 지도로 이동',exact:true});
+     assert.equal(await home.count(),1);
+     await p.evaluate(()=>{Object.assign(window.HanqSemanticLibrary||(window.HanqSemanticLibrary={stop:function(){}}),{hasUnsaved:()=>true,prepareLeave:()=>Promise.reject(new Error('synthetic cancelled leave'))});});
+     await home.click();await p.waitForTimeout(50);
+     assert(p.url().endsWith('#toeic/map'),'cancelled save/leave stays on current page');
+     await p.evaluate(()=>{window.__leaveCalls=0;Object.assign(window.HanqSemanticLibrary,{hasUnsaved:()=>true,prepareLeave:()=>{window.__leaveCalls++;window.HanqSemanticLibrary.hasUnsaved=()=>false;return new Promise(resolve=>setTimeout(resolve,20));}});});
+     await home.focus();await p.keyboard.press('Enter');
+     await p.locator('.world-map').waitFor({timeout:5000}).catch(async e=>{console.error(await p.evaluate(()=>({hash:location.hash,text:document.body.innerText.slice(0,200),calls:window.__leaveCalls})),errors);throw e;});
+     assert.equal(await p.evaluate(()=>window.__leaveCalls),1,'home uses existing unsaved guard once');
+    }
     results.push({width,height,route,geometry:g});
    }
    assert.deepEqual(errors,[]);await p.close();

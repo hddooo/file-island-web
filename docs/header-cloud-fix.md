@@ -35,3 +35,13 @@ Desktop and 390px screenshots visually reviewed. Evidence generated under
 evidence/header-cloud (not committed).
 
 Parent owns integration and deployment. No index.html change is necessary.
+
+## Follow-up: translucent header and logo home button
+
+The existing font settings are retained. The crown uses a translucent pale
+sea-green gradient with blur, keeping existing dark labels/icons readable.
+FILE ISLAND is a native focusable button, routed through the same SPA
+openSubjectMenu function. The existing unsaved-workspace click guard includes
+the new button, so a cancelled leave stays on the current page.
+Keyboard Enter + asynchronous save completion is tested on all four sizes.
+index.html changes are limited to this guard selector and one home branch.
