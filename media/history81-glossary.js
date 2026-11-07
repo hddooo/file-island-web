@@ -14,6 +14,13 @@
         for(const phrase of e.match||[e.term])entries.push({id:era+'-glossary-'+e.id,era,phrase,summary:e.short,sources:e.sources.map(s=>s.url)});
       }
     }
+    const extra=root.HanqHistory81VerifiedGlossary;
+    if(extra&&extra.schema==='hanq-verified-glossary/1'&&extra.sourcePdf===pdf&&extra.sourceOpening===opening){
+      for(const e of extra.definitions||[]){
+        if(!ids[e.era]||!e.id||!e.summary||Array.from(e.summary).length>150||!Array.isArray(e.pages)||!e.pages.length||!e.pages.every(Number.isInteger)||!e.sources?.length||!e.sources.every(u=>/^https:\/\/(encykorea\.aks\.ac\.kr|contents\.history\.go\.kr)\//.test(u)))continue;
+        for(const phrase of e.aliases||[])if(typeof phrase==='string'&&phrase.trim())entries.push({id:e.id,era:e.era,phrase,summary:e.summary,sources:e.sources,pages:e.pages,followingParticles:e.followingParticles});
+      }
+    }
     return {sources,entries};
   }
   function pageEra(page){const n=page.pdfPage;return n>=8&&n<=15?'prehistory':n>=16&&n<=30?'samguk':n>=31&&n<=40?'nambuk':n>=108&&n<=125?'colonial':n>=126&&n<=139?'modern':null;}
@@ -23,7 +30,7 @@
     const doc=host.ownerDocument,marker='[data-history-source-emphasis]',undo=[];
     const blocked='a,button,input,textarea,select,img,svg,br,[role="button"],.history81-term,[data-layout-label]';
     const word=ch=>!!ch&&/[\p{L}\p{N}\p{M}_]/u.test(ch);
-    const patterns=entries.map(e=>({e,re:new RegExp(e.phrase.replace(/[.*+?^${}()|[\]\\]/g,'\\  function mount(host,era,source){return root.HanqHistory81Terms&&ids[era]?root.HanqHistory81Terms.mount(host,era,source,data()):{count:0,stop(){}};}').replace(/\s+/g,'\\s+'),'gu')})).sort((a,b)=>b.e.phrase.length-a.e.phrase.length);
+    const patterns=entries.map(e=>({e,re:new RegExp(e.phrase.replace(/[.*+?^{}$()|[\]\\]/g,ch=>'\\'+ch).replace(/\s+/g,'\\s+'),'gu')})).sort((a,b)=>b.e.phrase.length-a.e.phrase.length);
     function walk(parent){
       if(parent.nodeType!==1||parent.matches(blocked))return;
       const children=[...parent.childNodes];let i=0;
@@ -37,9 +44,13 @@
         const scope=parent.closest('td,th,li,p,.textbook-semantic-line')||parent;
         const prefix=doc.createRange();prefix.selectNodeContents(scope);prefix.setEndBefore(first);
         const before=prefix.toString(),after=scope.textContent.slice(before.length+text.length),hits=[];
-        for(const {e,re} of patterns){re.lastIndex=0;for(const m of text.matchAll(re)){
+        for(const {e,re} of patterns){
+          const pageNode=first.closest('[data-pdf-page],[data-page]'),pageNumber=pageNode&&Number(pageNode.getAttribute('data-pdf-page')||pageNode.getAttribute('data-page'));
+          if(e.pages&&(!pageNode||!e.pages.includes(pageNumber)))continue;
+          re.lastIndex=0;for(const m of text.matchAll(re)){
           const start=m.index,end=start+m[0].length,left=Array.from(before+text.slice(0,start)).at(-1),right=Array.from(text.slice(end)+after)[0];
-          if(word(left)||word(right)||hits.some(h=>start<h.end&&end>h.start))continue;
+          const tail=text.slice(end)+after,allowedParticle=e.pages&&Array.isArray(e.followingParticles)&&e.followingParticles.some(p=>typeof p==='string'&&p.length&&tail.startsWith(p)&&!word(Array.from(tail.slice(p.length))[0]));
+          if(word(left)||(word(right)&&!allowedParticle)||hits.some(h=>start<h.end&&end>h.start))continue;
           hits.push({start,end,e});
         }}
         if(!hits.length)continue;hits.sort((a,b)=>a.start-b.start);

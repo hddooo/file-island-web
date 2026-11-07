@@ -149,7 +149,7 @@ html[data-company-mode=on] #app#app#app :is(.ri-egg-shop-sign,.ri-wardrobe-shop)
 html[data-company-mode=on] :is(#app#app#app,body) :is([role=tooltip],.history81-term-tooltip) *{color:inherit!important;-webkit-text-fill-color:currentColor!important}
 html[data-company-mode=on] #app#app#app .textbook-source-quiz-input{-webkit-text-fill-color:currentColor!important;caret-color:currentColor!important}
 html[data-company-mode=on] #app#app#app .textbook-source-quiz-input::placeholder{color:#8b949e!important;-webkit-text-fill-color:currentColor!important}
-html[data-company-mode=on] body :is(.joseon-script-reader,.goryeo-script-reader) .history81-term:focus-visible{outline-color:#58a6ff!important}
+html[data-company-mode=on] body :is(.joseon-script-reader,.goryeo-script-reader,.opening-script-reader,.textbook-semantic) .history81-term:focus-visible{outline-color:#58a6ff!important}
 /* Preserve answer selection and server-confirmed grades under the company button palette. */
 html[data-company-mode=on] #app#app#app .tc .tc-answer-option[aria-checked=true]{background:#182b42!important;color:#c9d1d9!important;border-color:#58a6ff!important;box-shadow:inset 4px 0 #58a6ff!important}
 html[data-company-mode=on] #app#app#app .tc .qchoice-row.is-correct .tc-answer-option{background:#13291b!important;color:#7ee787!important;border-color:#238636!important;box-shadow:inset 4px 0 #238636!important;opacity:1!important}

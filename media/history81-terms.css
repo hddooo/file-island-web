@@ -1,6 +1,6 @@
 /* Only source-emphasized 81-edition reading phrases are decorated. Child ink is untouched. */
-html body :is(.joseon-script-reader,.goryeo-script-reader) .history81-term{display:inline;cursor:help;border-bottom:1px dotted currentColor;padding:0;margin:0;background:transparent;white-space:normal}
-html body :is(.joseon-script-reader,.goryeo-script-reader) .history81-term:focus-visible{outline:2px solid #215b88;outline-offset:3px;border-radius:2px}
+html body :is(.joseon-script-reader,.goryeo-script-reader,.opening-script-reader,.textbook-semantic) .history81-term{display:inline;cursor:help;border-bottom:1px dotted currentColor;padding:0;margin:0;background:transparent;white-space:normal}
+html body :is(.joseon-script-reader,.goryeo-script-reader,.opening-script-reader,.textbook-semantic) .history81-term:focus-visible{outline:2px solid #215b88;outline-offset:3px;border-radius:2px}
 html body div.history81-term-tooltip{position:fixed;z-index:2147483000;box-sizing:border-box;width:max-content;max-width:min(280px,calc(100vw - 24px));max-height:calc(100dvh - 24px);padding:10px 12px;border:1px solid #597260;border-radius:4px;background:#f7f5ed!important;color:#182f24!important;font:var(--history81-tooltip-font-size,12px)/1.65 system-ui,sans-serif!important;text-shadow:none!important;-webkit-text-fill-color:#182f24!important;text-align:left;white-space:normal;word-break:normal;overflow-wrap:anywhere;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;box-shadow:0 4px 16px #10251c33;pointer-events:auto}
 html body div.history81-term-tooltip[hidden]{display:none!important}
 
