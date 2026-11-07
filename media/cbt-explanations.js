@@ -22,7 +22,8 @@
   }
   function resolve(q, status) {
     if (status !== 'final') return null;
-    var data = root.HANQ_CBT_EXPLANATIONS, entry = data && data.items && q && data.items[q.questionId];
+    var data = root.HANQ_CBT_EXPLANATIONS, extra = root.HANQ_CBT_EXPLANATIONS_80;
+    var entry = q && ((data && data.items && data.items[q.questionId]) || (extra && extra.items && extra.items[q.questionId]));
     return matching(q, entry) ? entry : null;
   }
   function render(q, legacy, status) {
@@ -61,7 +62,7 @@
   // returned correct option is still required; this adapter never grades or saves an answer.
   function renderGraded(saved, selected, correctId, position, displayed) {
     var item = saved && saved.item, options = item && array(item.options), visible = displayed && displayed.item;
-    if (!item || !/^exam-7[0-9]-[0-9]{2}$/.test(item.id || '') || !optionsValid(options) || !correctId || !visible || displayed.kind !== 'mock') return '';
+    if (!item || !/^exam-(?:7[0-9]|80)-[0-9]{2}$/.test(item.id || '') || !optionsValid(options) || !correctId || !visible || displayed.kind !== 'mock') return '';
     if (displayed.questionId !== item.id || displayed.version !== item.v || visible.id !== item.id || visible.v !== item.v ||
         visible.exam !== item.exam || visible.number !== item.number || visible.points !== item.points ||
         (displayed.points != null && displayed.points !== item.points) || !optionsValid(visible.options)) return '';

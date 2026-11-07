@@ -1,0 +1,4084 @@
+{
+  "schema": 1,
+  "exam": 80,
+  "sourcePdfSha256": "e4666c9c95db6bd9f3e90eaf480ab7b761afb9b9bd2f15b25ffe989a7f439140",
+  "answerPdfSha256": "71eefccb4ad91ffeec53630bcb6df622a540e65c04fa028db9230c9bf4230f4c",
+  "reviewScope": "All 50 source questions and official answer sheet visually inspected. Historical explanations authored from the source and historical knowledge; not an official explanatory answer book. Original question/version/answer records unchanged.",
+  "items": [
+    {
+      "item": {
+        "id": "exam-80-01",
+        "exam": 80,
+        "number": 1,
+        "v": "4fc4a2a957f67ba7",
+        "points": 1,
+        "answer": 1,
+        "overview": {
+          "reason": [
+            "고인돌과 사유 재산·계급의 발생은 청동기 시대의 단서다. 청동 방울은 제사장의 권위를 나타내는 의례 도구로 사용되었다.",
+            "동굴·막집은 구석기, 가락바퀴 사용의 시작은 신석기, 철제 농기구와 중국 화폐를 통한 교역은 철기 시대에 해당한다."
+          ],
+          "answer": "정답 1번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 1,
+              "page": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-01-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": true,
+            "review": [
+              "청동 방울은 청동기 시대의 대표적 의례 도구다."
+            ]
+          },
+          {
+            "id": "exam-80-01-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "동굴이나 막집에서 살던 대표적 시기는 구석기 시대다."
+            ]
+          },
+          {
+            "id": "exam-80-01-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "오수전·화천 등 중국 화폐는 철기 시대의 교류를 보여 준다."
+            ]
+          },
+          {
+            "id": "exam-80-01-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "가락바퀴를 이용한 실 뽑기는 신석기 시대에 시작되었다."
+            ]
+          },
+          {
+            "id": "exam-80-01-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "철제 농기구는 철기 시대의 특징이다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 1쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "b3e358fca11de8ba42c4a29f810c50b3645929eb218809f5081e2e0c1ec3c039",
+      "sourcePage": 1,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-02",
+        "exam": 80,
+        "number": 2,
+        "v": "fabd439efa317a33",
+        "points": 2,
+        "answer": 2,
+        "overview": {
+          "reason": [
+            "대로·패자·고추가, 연노부와 절노부는 고구려의 관등과 지배 집단을 가리킨다. 고구려에는 혼인 뒤 사위가 처가의 작은 집에 머무르는 서옥제가 있었다.",
+            "소도는 삼한, 무천은 동예, 범금 8조는 고조선, 화백 회의는 신라의 특징이다."
+          ],
+          "answer": "정답 2번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 2,
+              "page": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-02-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "천군이 제사를 주관한 소도는 삼한에 있었다."
+            ]
+          },
+          {
+            "id": "exam-80-02-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": true,
+            "review": [
+              "서옥제는 고구려의 혼인 풍습이다."
+            ]
+          },
+          {
+            "id": "exam-80-02-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "10월 제천 행사 무천은 동예의 풍습이다."
+            ]
+          },
+          {
+            "id": "exam-80-02-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "범금 8조는 고조선의 법이다."
+            ]
+          },
+          {
+            "id": "exam-80-02-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "화백 회의는 신라의 귀족 회의다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 1쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "5c9f0efee488a220e9a005fc706a687a0e6f835d8f205d6290641500eae0c20f",
+      "sourcePage": 1,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-03",
+        "exam": 80,
+        "number": 3,
+        "v": "5a5d6c56284bc6a7",
+        "points": 2,
+        "answer": 4,
+        "overview": {
+          "reason": [
+            "무령왕릉에서 출토된 석수이므로 (가)는 백제다. ④는 백제 무왕 때 건립된 익산 미륵사지 석탑이다.",
+            "① 불국사 다보탑과 ⑤ 분황사 모전 석탑은 신라, ③ 경천사지 십층 석탑은 고려의 유산이다."
+          ],
+          "answer": "정답 4번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 3,
+              "page": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-03-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "불국사 다보탑은 통일 신라의 문화유산이다."
+            ]
+          },
+          {
+            "id": "exam-80-03-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "사진 속 벽돌탑은 백제 미륵사지 석탑이 아니다."
+            ]
+          },
+          {
+            "id": "exam-80-03-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "경천사지 십층 석탑은 고려의 문화유산이다."
+            ]
+          },
+          {
+            "id": "exam-80-03-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": true,
+            "review": [
+              "익산 미륵사지 석탑은 백제 무왕 때 세워졌다."
+            ]
+          },
+          {
+            "id": "exam-80-03-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "분황사 모전 석탑은 신라 선덕여왕 때 세워졌다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 1쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "11f88c192e1180c4d1f4ead49219387985ceb3136e3cba2ac20b4c532bb17378",
+      "sourcePage": 1,
+      "editorialLimit": "3번 보기 ② 탑의 고유 명칭은 확인하지 못해 명명하지 않음."
+    },
+    {
+      "item": {
+        "id": "exam-80-04",
+        "exam": 80,
+        "number": 4,
+        "v": "7fb07fa96103eb5b",
+        "points": 2,
+        "answer": 1,
+        "overview": {
+          "reason": [
+            "국호를 신라로 확정하고 우경을 장려한 제22대 왕은 지증왕이다. 지증왕 때 이사부가 우산국을 복속시켰다(512).",
+            "걸사표는 진평왕, 집사부 설치는 진덕여왕, 원종·애노의 난은 진성여왕 때의 일이다."
+          ],
+          "answer": "정답 1번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 4,
+              "page": 1
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-04-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": true,
+            "review": [
+              "이사부의 우산국 복속은 지증왕 때의 일이다."
+            ]
+          },
+          {
+            "id": "exam-80-04-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "불국사 삼층 석탑은 통일 신라 경덕왕 때 조성이 시작된 불국사의 석탑이다."
+            ]
+          },
+          {
+            "id": "exam-80-04-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "원광의 걸사표 작성은 진평왕 때의 일이다."
+            ]
+          },
+          {
+            "id": "exam-80-04-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "원종·애노의 봉기는 진성여왕 때 일어났다."
+            ]
+          },
+          {
+            "id": "exam-80-04-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "집사부는 진덕여왕 때 설치되었다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 1쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "7cb886acf15021f0e24165f3d2c317968f9011dab818fde839db306cb591ca6e",
+      "sourcePage": 1,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-05",
+        "exam": 80,
+        "number": 5,
+        "v": "816d9f3b7003de04",
+        "points": 3,
+        "answer": 2,
+        "overview": {
+          "reason": [
+            "당의 이적이 평양성을 함락하고 보장왕을 사로잡은 사건은 고구려 멸망(668)이다. 이후 검모잠은 안승을 왕으로 추대하며 고구려 부흥 운동을 전개하였다.",
+            "흑치상지의 임존성 항전은 백제 부흥 운동이고, 황산벌 전투는 백제 멸망 직전의 사건이다."
+          ],
+          "answer": "정답 2번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 5,
+              "page": 2
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-05-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "윤충의 대야성 함락은 고구려 멸망 이전인 642년이다."
+            ]
+          },
+          {
+            "id": "exam-80-05-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": true,
+            "review": [
+              "고구려 멸망 후 검모잠은 안승을 추대하여 부흥 운동을 일으켰다."
+            ]
+          },
+          {
+            "id": "exam-80-05-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "흑치상지는 백제 멸망 후 임존성에서 저항하였다."
+            ]
+          },
+          {
+            "id": "exam-80-05-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "계백의 황산벌 항전은 백제 멸망 직전인 660년이다."
+            ]
+          },
+          {
+            "id": "exam-80-05-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "을지문덕의 살수 대첩은 수의 침입을 막은 612년의 전투다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 2쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "66ee9d29455e841babe058137635ba2177baf84bac7491c1cf74712cefc50bdb",
+      "sourcePage": 2,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-06",
+        "exam": 80,
+        "number": 6,
+        "v": "893f7cae97b119a9",
+        "points": 3,
+        "answer": 2,
+        "overview": {
+          "reason": [
+            "즉위 원년에 김흠돌의 난 관련자를 처벌한 왕은 신문왕이다. 신문왕은 국학을 설치하여 유학 교육을 진흥하였다.",
+            "거칠부의 국사 편찬은 진흥왕, 독서삼품과는 원성왕, 노비안검법은 고려 광종의 정책이다."
+          ],
+          "answer": "정답 2번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 6,
+              "page": 2
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-06-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "대통력 도입은 고려 말 공민왕 때의 일이다."
+            ]
+          },
+          {
+            "id": "exam-80-06-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": true,
+            "review": [
+              "신문왕은 국학을 설치하여 유학 교육을 진흥하였다."
+            ]
+          },
+          {
+            "id": "exam-80-06-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "거칠부에게 국사를 편찬하게 한 왕은 진흥왕이다."
+            ]
+          },
+          {
+            "id": "exam-80-06-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "독서삼품과를 실시한 왕은 원성왕이다."
+            ]
+          },
+          {
+            "id": "exam-80-06-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "노비안검법을 시행한 왕은 고려 광종이다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 2쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "47263c75ad0240d0f640da82a5acdd2e4c64e2568f0d299c21f87490734a7b3d",
+      "sourcePage": 2,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-07",
+        "exam": 80,
+        "number": 7,
+        "v": "0154eb40469417b8",
+        "points": 2,
+        "answer": 1,
+        "overview": {
+          "reason": [
+            "장보고가 청해진을 설치한 나라는 통일 신라다. 성덕왕 때 일반 백성에게 정전이 지급되었다.",
+            "부경은 고구려의 창고, 삼한통보·해동통보는 고려의 화폐, 초량 왜관과 담배·면화의 상품 작물 재배는 조선 후기와 연결된다."
+          ],
+          "answer": "정답 1번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 7,
+              "page": 2
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-07-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": true,
+            "review": [
+              "통일 신라 성덕왕 때 정전이 지급되었다."
+            ]
+          },
+          {
+            "id": "exam-80-07-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "부경은 고구려의 집집마다 있던 작은 창고다."
+            ]
+          },
+          {
+            "id": "exam-80-07-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "삼한통보·해동통보는 고려에서 발행한 화폐다."
+            ]
+          },
+          {
+            "id": "exam-80-07-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "초량 왜관을 통한 일본 교역은 조선 후기의 일이다."
+            ]
+          },
+          {
+            "id": "exam-80-07-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "담배·면화의 상품 작물 재배 확대는 조선 후기의 특징이다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 2쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "cead9c613957d9461ccffba0ae8335d5cf52b77017b9d9ab705bf9b19b2edfd1",
+      "sourcePage": 2,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-08",
+        "exam": 80,
+        "number": 8,
+        "v": "055038ffdc27c697",
+        "points": 1,
+        "answer": 1,
+        "overview": {
+          "reason": [
+            "오소도와 왕자 대봉이 신라와 당에서의 서열을 다툰 나라는 발해다. 발해는 선왕 때 영토를 넓히고 번영하여 해동성국이라고 불렸다.",
+            "양계·병마사는 고려, 골품제는 신라, 정사암 회의는 백제에 해당한다."
+          ],
+          "answer": "정답 1번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 8,
+              "page": 2
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-08-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": true,
+            "review": [
+              "발해는 전성기에 해동성국이라고 불렸다."
+            ]
+          },
+          {
+            "id": "exam-80-08-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "양계에 병마사를 보낸 나라는 고려다."
+            ]
+          },
+          {
+            "id": "exam-80-08-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "수덕만세·정개는 궁예가 사용한 연호다."
+            ]
+          },
+          {
+            "id": "exam-80-08-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "골품제는 신라의 신분제다."
+            ]
+          },
+          {
+            "id": "exam-80-08-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "정사암 회의는 백제의 귀족 회의다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 2쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "e0b02405db0d03e29b9ca9ffc255f673d469bac0e04a248c2b1e0c21427029b2",
+      "sourcePage": 2,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-09",
+        "exam": 80,
+        "number": 9,
+        "v": "ff6c8d6690f8d43f",
+        "points": 2,
+        "answer": 5,
+        "overview": {
+          "reason": [
+            "보조선사 체징과 가지산문은 선종이 성장한 신라 하대의 단서다. 경덕왕 때 부활한 녹읍은 신라 하대 귀족의 경제적 기반이 되었으므로 녹읍을 지급받는 귀족을 볼 수 있다.",
+            "농사직설은 조선 세종, 팔만대장경은 고려 대몽 항쟁기, 곤여만국전도는 조선 후기와 연결된다."
+          ],
+          "answer": "정답 5번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 9,
+              "page": 2
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-09-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "농사직설은 조선 세종 때 편찬되었다."
+            ]
+          },
+          {
+            "id": "exam-80-09-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "팔만대장경은 고려의 대몽 항쟁기에 조판되었다."
+            ]
+          },
+          {
+            "id": "exam-80-09-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "안시성 전투는 고구려가 당의 침입을 막은 645년의 전투다."
+            ]
+          },
+          {
+            "id": "exam-80-09-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "곤여만국전도는 조선 후기에 전래되었다."
+            ]
+          },
+          {
+            "id": "exam-80-09-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": true,
+            "review": [
+              "녹읍은 경덕왕 때 부활하여 신라 하대 귀족의 경제 기반이 되었다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 2쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "21e13f7187c9dddc6640b7125ad2aea7550174f04bf1f4e84f924261aa336e06",
+      "sourcePage": 2,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-10",
+        "exam": 80,
+        "number": 10,
+        "v": "27a08768baa5be3f",
+        "points": 2,
+        "answer": 2,
+        "overview": {
+          "reason": [
+            "무진주를 기반으로 성장하여 완산주에 나라를 세운 인물은 후백제의 견훤이다. 견훤은 후당·오월에 사신을 보내 외교 관계를 맺었다.",
+            "미륵사 창건은 백제 무왕, 광평성 설치는 궁예, 정계·계백료서 작성은 고려 태조 왕건의 활동이다."
+          ],
+          "answer": "정답 2번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 10,
+              "page": 3
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-10-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "금마저의 미륵사 창건은 백제 무왕과 관련된다."
+            ]
+          },
+          {
+            "id": "exam-80-10-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": true,
+            "review": [
+              "견훤은 후당·오월에 사신을 보내 외교 관계를 맺었다."
+            ]
+          },
+          {
+            "id": "exam-80-10-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "정치도감은 고려 충목왕 때 폐정 개혁을 위해 설치되었다."
+            ]
+          },
+          {
+            "id": "exam-80-10-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "광평성 설치는 궁예의 활동이다."
+            ]
+          },
+          {
+            "id": "exam-80-10-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "정계·계백료서를 지은 왕은 고려 태조 왕건이다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 3쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "e68f4293e05678d844d1aa58ee6672abca210f0fc7b01c02b62ec39c407fa6ab",
+      "sourcePage": 3,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-11",
+        "exam": 80,
+        "number": 11,
+        "v": "49559a41842b119b",
+        "points": 3,
+        "answer": 1,
+        "overview": {
+          "reason": [
+            "최승로의 시무 28조 수용, 12목 설치, 국자감 정비는 고려 성종의 업적이다. 성종은 태조 때 설치한 흑창을 확대·개편하여 의창으로 만들고 빈민을 구제하였다.",
+            "양현고 설치는 예종, 광덕·준풍 연호는 광종, 삼국사기 편찬은 인종, 신돈의 전민변정은 공민왕 때다."
+          ],
+          "answer": "정답 1번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 11,
+              "page": 3
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-11-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": true,
+            "review": [
+              "성종은 흑창을 의창으로 확대·개편하여 빈민을 구제하였다."
+            ]
+          },
+          {
+            "id": "exam-80-11-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "양현고 설치는 예종의 관학 진흥책이다."
+            ]
+          },
+          {
+            "id": "exam-80-11-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "광덕·준풍은 광종이 사용한 연호다."
+            ]
+          },
+          {
+            "id": "exam-80-11-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "삼국사기 편찬은 인종 때의 일이다."
+            ]
+          },
+          {
+            "id": "exam-80-11-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "신돈의 전민변정 사업은 공민왕 때 이루어졌다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 3쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "d330656a396ab266758c0507d2729dabb1548be4b30cecbc8acee76c27e8bda0",
+      "sourcePage": 3,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-12",
+        "exam": 80,
+        "number": 12,
+        "v": "bb083c73f7e0cb83",
+        "points": 2,
+        "answer": 2,
+        "overview": {
+          "reason": [
+            "강조의 정변을 구실로 침략하고 개경을 함락한 국가는 거란이다. 고려는 앞서 정종 때 광군을 조직하여 거란의 침입에 대비하였다.",
+            "강화도 천도는 몽골 침입에 대한 대응이고, 철령위 문제에 따른 요동 정벌 추진은 명과의 갈등이다."
+          ],
+          "answer": "정답 2번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 12,
+              "page": 3
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-12-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "강화도 천도는 몽골 침입에 대응한 것이다."
+            ]
+          },
+          {
+            "id": "exam-80-12-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": true,
+            "review": [
+              "정종 때 거란의 침입에 대비하여 광군을 조직하였다."
+            ]
+          },
+          {
+            "id": "exam-80-12-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "동평관은 조선에서 일본 사신을 접대하던 시설이다."
+            ]
+          },
+          {
+            "id": "exam-80-12-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "철령위 문제는 명과의 갈등이다."
+            ]
+          },
+          {
+            "id": "exam-80-12-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "반전도감은 원에 가는 왕의 여비 등을 마련하던 기구다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 3쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "c442a51cecca3472c55c473b7cb3968ce912bc91672dab38f1d023bffd6ae537",
+      "sourcePage": 3,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-13",
+        "exam": 80,
+        "number": 13,
+        "v": "edda44b523ade5b0",
+        "points": 1,
+        "answer": 4,
+        "overview": {
+          "reason": [
+            "청동 표면에 가는 은선을 박아 버드나무와 물가 풍경을 표현한 고려 공예품은 ④ 청동 은입사 포류수금문 정병이다. 은입사는 금속 표면을 파서 은선을 끼워 무늬를 만드는 기법이다.",
+            "① 칠지도와 ⑤ 금동 대향로는 백제 문화유산이므로 고려 공예품이라는 조건에 맞지 않는다."
+          ],
+          "answer": "정답 4번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 13,
+              "page": 3
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-13-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "칠지도는 백제의 문화유산이다."
+            ]
+          },
+          {
+            "id": "exam-80-13-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "정병은 긴 목이 있는 물병으로, 사진의 사각형 기물과 다르다."
+            ]
+          },
+          {
+            "id": "exam-80-13-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "사진의 뚜껑 있는 둥근 그릇은 은입사 정병이 아니다."
+            ]
+          },
+          {
+            "id": "exam-80-13-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": true,
+            "review": [
+              "청동 은입사 포류수금문 정병은 고려의 은입사 금속 공예품이다."
+            ]
+          },
+          {
+            "id": "exam-80-13-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "백제 금동 대향로는 고려 공예품이 아니다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 3쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "12f559bd0f6fe34dbead21a7ae3b387a4920bf7e9937a32d3956f010b9bde48a",
+      "sourcePage": 3,
+      "editorialLimit": "13번 보기 ②·③ 유물의 고유 명칭은 확인하지 못해 외형과 정병 여부만 설명."
+    },
+    {
+      "item": {
+        "id": "exam-80-14",
+        "exam": 80,
+        "number": 14,
+        "v": "2d5cd0fa55b22404",
+        "points": 2,
+        "answer": 2,
+        "overview": {
+          "reason": [
+            "송의 사신 서긍이 방문했고 청자가 출토된 나라는 고려다. 고려에서는 서적점·다점 등 관영 상점을 운영하였다.",
+            "동시전은 신라, 당백전과 신해통공은 조선 후기, 거란도·영주도는 발해의 대외 교통로와 연결된다."
+          ],
+          "answer": "정답 2번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 14,
+              "page": 4
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-14-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "동시전은 신라 지증왕 때 설치되었다."
+            ]
+          },
+          {
+            "id": "exam-80-14-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": true,
+            "review": [
+              "고려에는 서적점·다점 등 관영 상점이 있었다."
+            ]
+          },
+          {
+            "id": "exam-80-14-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "당백전은 흥선 대원군 집권기에 발행되었다."
+            ]
+          },
+          {
+            "id": "exam-80-14-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "육의전을 제외한 금난전권 폐지는 정조 때 신해통공이다."
+            ]
+          },
+          {
+            "id": "exam-80-14-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "거란도·영주도는 발해의 대외 교통로다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 4쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "dd1699dce419a22adcefe406a8743e4ff1b6ecf42badc3180eb3d7a84ecb4dd9",
+      "sourcePage": 4,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-15",
+        "exam": 80,
+        "number": 15,
+        "v": "ab1f57f0868b6e01",
+        "points": 2,
+        "answer": 3,
+        "overview": {
+          "reason": [
+            "(가)는 경대승의 도방 설치, (나)는 최우의 정방 설치다. 그 사이인 최충헌 집권기에 만적 등이 노비 해방을 목표로 봉기를 모의하였다(1198).",
+            "묘청의 난은 무신 정변 이전이고, 일본 원정과 홍산 대첩은 최우의 정방 설치보다 뒤의 일이다."
+          ],
+          "answer": "정답 3번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 15,
+              "page": 4
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-15-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "묘청의 난은 1135년으로 경대승 집권보다 앞선다."
+            ]
+          },
+          {
+            "id": "exam-80-15-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "최영의 홍산 대첩은 1376년으로 최우 집권보다 뒤다."
+            ]
+          },
+          {
+            "id": "exam-80-15-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": true,
+            "review": [
+              "만적의 봉기 모의는 1198년으로 경대승과 최우 사이의 최충헌 집권기다."
+            ]
+          },
+          {
+            "id": "exam-80-15-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "김방경의 일본 원정은 1274년 등으로 최우 집권보다 뒤다."
+            ]
+          },
+          {
+            "id": "exam-80-15-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "이자겸의 금 사대 주장도 경대승 집권보다 앞선다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 4쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "e90e3cb8e201c7dffbfedfc82f7c8216bc141962100fd6a30603e4c4edef2070",
+      "sourcePage": 4,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-16",
+        "exam": 80,
+        "number": 16,
+        "v": "42d3c7846d926c3f",
+        "points": 3,
+        "answer": 5,
+        "overview": {
+          "reason": [
+            "강진 백련사에서 백련 결사를 조직한 원묘국사는 요세다. 요세는 법화 사상을 바탕으로 참회와 염불 수행을 강조하였다.",
+            "삼국유사는 일연, 해동고승전은 각훈, 화엄일승법계도는 의상, 보현십원가는 균여의 저술이다."
+          ],
+          "answer": "정답 5번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 16,
+              "page": 4
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-16-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "삼국유사는 일연의 저술이다."
+            ]
+          },
+          {
+            "id": "exam-80-16-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "해동고승전은 각훈이 편찬하였다."
+            ]
+          },
+          {
+            "id": "exam-80-16-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "화엄일승법계도는 의상이 지었다."
+            ]
+          },
+          {
+            "id": "exam-80-16-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "보현십원가는 균여가 지었다."
+            ]
+          },
+          {
+            "id": "exam-80-16-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": true,
+            "review": [
+              "요세는 법화 사상을 바탕으로 참회와 염불 수행을 강조하였다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 4쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "ea221cdd19bb6dd05c6e566a0d2772cebfa652fab0a31d7a9619599c06c1d102",
+      "sourcePage": 4,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-17",
+        "exam": 80,
+        "number": 17,
+        "v": "d870ff66ffcb028a",
+        "points": 1,
+        "answer": 2,
+        "overview": {
+          "reason": [
+            "고려 여성이 원에 공녀로 끌려가고 고려양이 유행한 시기는 원 간섭기다. 원의 일본 원정 준비를 계기로 설치된 정동행성은 고려 내정에도 간섭하였다.",
+            "주자감은 발해, 전환국은 개항기 조선, 별무반의 여진 정벌은 고려 숙종·예종 무렵이다."
+          ],
+          "answer": "정답 2번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 17,
+              "page": 4
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-17-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "주자감은 발해의 교육 기관이다."
+            ]
+          },
+          {
+            "id": "exam-80-17-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": true,
+            "review": [
+              "정동행성은 원 간섭기 고려에 설치되었다."
+            ]
+          },
+          {
+            "id": "exam-80-17-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "전환국은 개항기 조선의 화폐 주조 기관이다."
+            ]
+          },
+          {
+            "id": "exam-80-17-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "척화비 건립은 흥선 대원군 집권기의 일이다."
+            ]
+          },
+          {
+            "id": "exam-80-17-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "별무반의 여진 정벌은 원 간섭기보다 앞선 고려 예종 때의 일이다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 4쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "77c805faa8e4840bf18959c82e03e6374d5558abb725d15dd01b98ba9c6f55f2",
+      "sourcePage": 4,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-18",
+        "exam": 80,
+        "number": 18,
+        "v": "be669d4e7b8742f4",
+        "points": 2,
+        "answer": 1,
+        "overview": {
+          "reason": [
+            "염초 제조법을 배워 화통도감 설치를 건의한 인물은 최무선이다. 최무선은 화포를 이용하여 진포에서 왜구를 격퇴하였다(1380).",
+            "비격진천뢰를 개발한 인물은 이장손이며, 나선 정벌과 훈련도감은 조선 시대의 사실이다."
+          ],
+          "answer": "정답 1번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 18,
+              "page": 5
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-18-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": true,
+            "review": [
+              "최무선은 진포 대첩에서 화포로 왜구를 격퇴하였다."
+            ]
+          },
+          {
+            "id": "exam-80-18-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "훈련도감은 조선 임진왜란 중에 설치되었다."
+            ]
+          },
+          {
+            "id": "exam-80-18-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "비격진천뢰를 개발한 인물은 이장손이다."
+            ]
+          },
+          {
+            "id": "exam-80-18-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "나선 정벌은 조선 효종 때의 일이다."
+            ]
+          },
+          {
+            "id": "exam-80-18-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "광교산 전투에서 활약한 근왕병 지휘관은 김준룡이다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 5쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "a571ce85f22632a55a90bd55c042385c099d6723790cb8ce601168575101addf",
+      "sourcePage": 5,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-19",
+        "exam": 80,
+        "number": 19,
+        "v": "e009569ff9c938db",
+        "points": 2,
+        "answer": 5,
+        "overview": {
+          "reason": [
+            "경기 지역의 토지를 현직·산직 관료에게 18과로 나누어 지급한 법은 고려 말의 과전법이다. 과전은 원칙적으로 세습되지 않았지만 유족에게 지급된 수신전·휼양전은 예외적으로 세습되는 결과를 낳았다.",
+            "전지·시지 지급은 고려 전시과, 관청이 조세를 거두어 관료에게 지급한 것은 조선의 관수관급제다."
+          ],
+          "answer": "정답 5번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 19,
+              "page": 5
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-19-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "풍흉과 관계없이 전세를 고정한 것은 영정법이다."
+            ]
+          },
+          {
+            "id": "exam-80-19-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "관수관급제는 조선 성종 때 시행되었다."
+            ]
+          },
+          {
+            "id": "exam-80-19-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "전지·시지를 지급한 제도는 고려의 전시과다."
+            ]
+          },
+          {
+            "id": "exam-80-19-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "결작은 균역법 시행 후 재정 보충을 위해 부과하였다."
+            ]
+          },
+          {
+            "id": "exam-80-19-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": true,
+            "review": [
+              "수신전·휼양전은 과전의 예외적 세습을 초래하였다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 5쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "04ab29a73b51d7a6a55b2dd8ab8129bc6e7843d0834795f1b9234dd29c87d4cf",
+      "sourcePage": 5,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-20",
+        "exam": 80,
+        "number": 20,
+        "v": "daaffca053d37c28",
+        "points": 2,
+        "answer": 4,
+        "overview": {
+          "reason": [
+            "상대라고도 불리고 대사헌·집의·장령 등의 관직을 둔 기구는 사헌부다. 사헌부는 관리의 비리를 규찰하고 탄핵하는 업무를 맡았다.",
+            "왕명 출납은 승정원, 수도 행정은 한성부, 실록 보관·관리는 춘추관의 업무와 연결된다."
+          ],
+          "answer": "정답 4번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 20,
+              "page": 5
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-20-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "왕명 출납은 승정원의 업무다."
+            ]
+          },
+          {
+            "id": "exam-80-20-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "수도 행정·치안은 한성부의 업무다."
+            ]
+          },
+          {
+            "id": "exam-80-20-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "실록 편찬·보관은 춘추관과 관련된다."
+            ]
+          },
+          {
+            "id": "exam-80-20-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": true,
+            "review": [
+              "사헌부는 백관 규찰과 탄핵을 담당하였다."
+            ]
+          },
+          {
+            "id": "exam-80-20-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "종친의 범죄를 다루는 일은 종부시의 업무다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 5쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "e195f0ebeba84afcf8eaffd42571d3d86904a6e196bcc28f07aa8ba426670d8c",
+      "sourcePage": 5,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-21",
+        "exam": 80,
+        "number": 21,
+        "v": "2e8a2d82ff28795d",
+        "points": 2,
+        "answer": 3,
+        "overview": {
+          "reason": [
+            "국조오례의를 반포하고 악학궤범을 편찬한 왕은 성종이다. 성종은 경국대전을 완성·반포하여 조선의 기본 통치 규범을 확립하였다.",
+            "훈민정음은 세종, 무예도보통지는 정조, 구황촬요는 명종 때의 업적이다."
+          ],
+          "answer": "정답 3번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 21,
+              "page": 5
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-21-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "훈민정음 창제는 세종의 업적이다."
+            ]
+          },
+          {
+            "id": "exam-80-21-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "무예도보통지 간행은 정조의 업적이다."
+            ]
+          },
+          {
+            "id": "exam-80-21-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": true,
+            "review": [
+              "성종은 경국대전을 완성·반포하였다."
+            ]
+          },
+          {
+            "id": "exam-80-21-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "구황촬요는 명종 때 편찬·배포되었다."
+            ]
+          },
+          {
+            "id": "exam-80-21-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "탕평비 건립은 영조의 업적이다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 5쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "320f3618d29be5ca6d3f1a58b12e7a75e66b5137e674ac7baa5fb62abe0e14e8",
+      "sourcePage": 5,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-22",
+        "exam": 80,
+        "number": 22,
+        "v": "3d359627fafb9ab9",
+        "points": 2,
+        "answer": 4,
+        "overview": {
+          "reason": [
+            "도쿠가와 이에야스가 임진왜란에 대한 책임을 부정하며 조선과의 화친을 요청한 자료다. 전쟁 뒤 일본과 국교를 재개하고 제한된 교역을 허용한 기유약조(1609)의 체결 배경을 탐구할 수 있다.",
+            "삼별초는 고려 대몽 항쟁, 위화도 회군은 고려 말, 삼정이정청은 조선 철종 때 임술 농민 봉기와 관련된다."
+          ],
+          "answer": "정답 4번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 22,
+              "page": 6
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-22-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "삼별초는 고려의 대몽 항쟁과 관련된다."
+            ]
+          },
+          {
+            "id": "exam-80-22-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "위화도 회군은 고려 말의 사건이다."
+            ]
+          },
+          {
+            "id": "exam-80-22-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "영선사는 1881년 청의 근대 기술을 배우기 위해 파견되었다."
+            ]
+          },
+          {
+            "id": "exam-80-22-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": true,
+            "review": [
+              "임진왜란 후 일본과의 관계 회복은 기유약조의 배경이다."
+            ]
+          },
+          {
+            "id": "exam-80-22-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "삼정이정청은 1862년 임술 농민 봉기 후 설치되었다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 6쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "c1935a8e364385761403c322500ff7c01cd065be81e7da8ad8fce0d190b37fde",
+      "sourcePage": 6,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-23",
+        "exam": 80,
+        "number": 23,
+        "v": "9412b4293f5ed83c",
+        "points": 2,
+        "answer": 1,
+        "overview": {
+          "reason": [
+            "원자 책봉 문제를 두고 송시열을 처벌하는 내용은 숙종 때 기사환국의 상황이다. 같은 숙종 재위기에 경신환국이 일어나 허적·윤휴 등 남인이 대거 축출되었다.",
+            "조광조의 사사는 중종 때 기묘사화, 기축옥사는 선조, 신유박해는 순조 때의 일이다."
+          ],
+          "answer": "정답 1번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 23,
+              "page": 6
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-23-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": true,
+            "review": [
+              "숙종 때 경신환국으로 허적·윤휴 등 남인이 축출되었다."
+            ]
+          },
+          {
+            "id": "exam-80-23-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "조광조는 중종 때 기묘사화로 사사되었다."
+            ]
+          },
+          {
+            "id": "exam-80-23-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "윤임은 명종 때 을사사화로 제거되었다."
+            ]
+          },
+          {
+            "id": "exam-80-23-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "기축옥사는 선조 때의 사건이다."
+            ]
+          },
+          {
+            "id": "exam-80-23-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "정약용이 처벌된 신유박해는 순조 때의 일이다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 6쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "6b41ba9fe8f509d8b4e5e024609d9de71e8ce85fb771c3eeec9dc1a16c08c61a",
+      "sourcePage": 6,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-24",
+        "exam": 80,
+        "number": 24,
+        "v": "ba565ff483222d1e",
+        "points": 3,
+        "answer": 5,
+        "overview": {
+          "reason": [
+            "연경당과 주합루가 있는 궁궐은 창덕궁이다. 태종은 한양으로 다시 천도하면서 창덕궁을 건립하였다.",
+            "근정전과 정도전이 이름 붙인 주요 전각은 경복궁, 제1차 미소 공동 위원회는 덕수궁, 인목 대비의 유폐 장소는 경운궁과 연결된다."
+          ],
+          "answer": "정답 5번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 24,
+              "page": 6
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-24-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "근정전은 경복궁의 정전이다."
+            ]
+          },
+          {
+            "id": "exam-80-24-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "제1차 미소 공동 위원회는 덕수궁에서 열렸다."
+            ]
+          },
+          {
+            "id": "exam-80-24-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "인목 대비의 유폐 장소는 경운궁이다."
+            ]
+          },
+          {
+            "id": "exam-80-24-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "정도전이 주요 전각의 명칭을 정한 궁궐은 경복궁이다."
+            ]
+          },
+          {
+            "id": "exam-80-24-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": true,
+            "review": [
+              "태종은 한양으로 재천도하면서 창덕궁을 건립하였다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 6쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "4418a781151235801b537fd758a46b6c5d4d9227741db043cd532b2b3ada05be",
+      "sourcePage": 6,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-25",
+        "exam": 80,
+        "number": 25,
+        "v": "8000deeefec32a35",
+        "points": 1,
+        "answer": 2,
+        "overview": {
+          "reason": [
+            "송파장, 산대놀이의 양반 풍자, 고추 판매는 조선 후기의 생활 모습이다. 이 시기 광산에서는 물주의 자본을 받아 덕대가 채굴·운영을 담당하는 경영 방식이 나타났다.",
+            "벽란도의 송 상인은 고려, 낙랑군과 덩이쇠를 교역한 모습은 변한·가야, 경성·경원의 무역소 설치는 조선 전기와 연결된다."
+          ],
+          "answer": "정답 2번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 25,
+              "page": 6
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-25-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "벽란도에서 활동한 송 상인은 고려 시대의 모습이다."
+            ]
+          },
+          {
+            "id": "exam-80-25-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": true,
+            "review": [
+              "물주의 자본으로 덕대가 광산을 경영한 것은 조선 후기다."
+            ]
+          },
+          {
+            "id": "exam-80-25-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "낙랑군과의 덩이쇠 교역은 변한·가야의 철 생산과 관련된다."
+            ]
+          },
+          {
+            "id": "exam-80-25-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "경시서는 고려와 조선 전기에 시전을 감독한 관청이며 조선 후기 장시의 맥락과 다르다."
+            ]
+          },
+          {
+            "id": "exam-80-25-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "경성·경원 무역소 설치는 조선 전기 여진 교역과 관련된다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 6쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "330b0a5a04f4bf9317b0ce82fa7bca3736bca2a061f07b68749399d9ae6f12ab",
+      "sourcePage": 6,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-26",
+        "exam": 80,
+        "number": 26,
+        "v": "5a77c9de0f05b65b",
+        "points": 2,
+        "answer": 5,
+        "overview": {
+          "reason": [
+            "옥계시사와 위항 문학은 조선 후기 중인의 문화 활동을 보여 준다.",
+            "기술직 중인은 신분에 따른 관직 진출 제한을 없애 달라는 소청 운동을 벌였다.",
+            "장례원은 노비 관련 사무를 맡았고, 빈공과는 신라 말 유학생과 연결된다."
+          ],
+          "answer": "정답 5번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 26,
+              "page": 6
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-26-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "장례원은 노비의 호적과 소송 등 노비 관련 사무를 담당하였다."
+            ]
+          },
+          {
+            "id": "exam-80-26-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "당의 빈공과에 급제한 유학생은 최치원 등 신라 말 지식인과 연결된다."
+            ]
+          },
+          {
+            "id": "exam-80-26-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "사자·조의·선인을 거느린 것은 고구려의 대가이다."
+            ]
+          },
+          {
+            "id": "exam-80-26-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "소 주민은 고려 시대 특수 행정 구역에서 특정 수공업품 등을 생산하였다."
+            ]
+          },
+          {
+            "id": "exam-80-26-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": true,
+            "review": [
+              "중인은 신분에 따른 관직 진출 제한을 없애기 위해 소청 운동을 전개하였다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 6쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "7ec582981b505c55b97138aa203beeb2940bc7a52a788e387062c186b5f45941",
+      "sourcePage": 6,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-27",
+        "exam": 80,
+        "number": 27,
+        "v": "5f5ba64a9f3e41d3",
+        "points": 2,
+        "answer": 4,
+        "overview": {
+          "reason": [
+            "숭정제는 명의 마지막 황제이므로 (가)는 명이다.",
+            "조선은 명에 하정사·천추사 등 조천사를 보내 사대 외교를 전개하였다.",
+            "백두산정계비는 청, 보빙사는 미국, 회답 겸 쇄환사는 일본과의 관계에 해당한다."
+          ],
+          "answer": "정답 4번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 27,
+              "page": 7
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-27-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "검교태보는 후백제 견훤이 중국 오월과 교류하며 받은 관직이다."
+            ]
+          },
+          {
+            "id": "exam-80-27-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "백두산정계비는 조선과 청의 경계를 정하기 위해 1712년에 세웠다."
+            ]
+          },
+          {
+            "id": "exam-80-27-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "보빙사는 1883년 미국에 파견한 사절단이다."
+            ]
+          },
+          {
+            "id": "exam-80-27-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": true,
+            "review": [
+              "조선은 명에 하정사·천추사 등 조천사를 파견하였다."
+            ]
+          },
+          {
+            "id": "exam-80-27-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "회답 겸 쇄환사는 임진왜란 이후 일본에 파견하여 포로를 송환받았다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 7쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "526e2361efa6e38ead8517ea105878c94d1a422ddc549d533a60cab037debba3",
+      "sourcePage": 7,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-28",
+        "exam": 80,
+        "number": 28,
+        "v": "9ccdb444be1f3e0e",
+        "points": 1,
+        "answer": 5,
+        "overview": {
+          "reason": [
+            "제너럴 셔먼호 사건을 구실로 미군이 강화도를 침략한 사건은 신미양요(1871)이다.",
+            "이때 어재연 부대는 광성보에서 미군에 맞서 항전하였다.",
+            "외규장각 도서 약탈은 병인양요(1866), 대원군의 톈진 압송은 임오군란(1882) 때의 일이다."
+          ],
+          "answer": "정답 5번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 28,
+              "page": 7
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-28-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "청군의 개입으로 진압된 대표적 사건은 임오군란과 갑신정변이다."
+            ]
+          },
+          {
+            "id": "exam-80-28-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "외규장각 도서는 병인양요 때 프랑스군에 약탈되었다."
+            ]
+          },
+          {
+            "id": "exam-80-28-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "이용태는 고부 농민 봉기 수습을 위한 안핵사로 파견되었다."
+            ]
+          },
+          {
+            "id": "exam-80-28-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "흥선 대원군은 임오군란 때 청군에 의해 톈진으로 압송되었다."
+            ]
+          },
+          {
+            "id": "exam-80-28-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": true,
+            "review": [
+              "신미양요 때 어재연 부대가 광성보에서 미군에 맞서 싸웠다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 7쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "910c2d844b44aa46ee49417cd07ea35e250ed9604568786adce4693b6ce92958",
+      "sourcePage": 7,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-29",
+        "exam": 80,
+        "number": 29,
+        "v": "3536f2c786fc229f",
+        "points": 2,
+        "answer": 5,
+        "overview": {
+          "reason": [
+            "최초의 근대적 불평등 조약과 김기수의 수신사 파견은 강화도 조약(1876)을 가리킨다.",
+            "이 조약에 따라 부산 외에 원산과 인천이 차례로 개항하였다.",
+            "최혜국 대우는 조미 수호 통상 조약, 방곡령 규정은 1883년 조일 통상 장정과 연결된다."
+          ],
+          "answer": "정답 5번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 29,
+              "page": 7
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-29-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "최혜국 대우가 처음 규정된 조약은 조미 수호 통상 조약(1882)이다."
+            ]
+          },
+          {
+            "id": "exam-80-29-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "통감부 설치의 계기는 을사늑약(1905)이다."
+            ]
+          },
+          {
+            "id": "exam-80-29-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "천주교 포교를 인정하는 내용은 조불 수호 통상 조약(1886)과 연결된다."
+            ]
+          },
+          {
+            "id": "exam-80-29-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "방곡령에 관한 규정은 조일 통상 장정(1883)에 담겼다."
+            ]
+          },
+          {
+            "id": "exam-80-29-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": true,
+            "review": [
+              "강화도 조약에 따라 부산 외에 원산과 인천이 개항하였다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 7쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "f0d1ed2b4602f4c151f684490a246f11aa7b5025684cc0857d279366357bd79a",
+      "sourcePage": 7,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-30",
+        "exam": 80,
+        "number": 30,
+        "v": "85e7d5e84ed8ebf9",
+        "points": 3,
+        "answer": 4,
+        "overview": {
+          "reason": [
+            "좌원·우원을 두고 젊은 관리와 양반 자제에게 근대 과목을 가르친 관립 학교는 육영공원(1886)이다.",
+            "정부는 헐버트·길모어·벙커 등 미국인 교사를 초빙하였다.",
+            "7재는 고려 국자감, 근대 여성 교육은 이화학당, 사관 양성은 연무공원과 구별한다."
+          ],
+          "answer": "정답 4번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 30,
+              "page": 7
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-30-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "7재는 고려 예종 때 국자감에 설치한 전문 강좌이다."
+            ]
+          },
+          {
+            "id": "exam-80-30-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "최초의 근대적 여성 교육 기관은 이화학당이다."
+            ]
+          },
+          {
+            "id": "exam-80-30-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "육영공원은 1886년에 설립되어 교육입국 조서(1895)보다 앞선다."
+            ]
+          },
+          {
+            "id": "exam-80-30-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": true,
+            "review": [
+              "육영공원은 헐버트·길모어·벙커 등 미국인 교사를 초빙하였다."
+            ]
+          },
+          {
+            "id": "exam-80-30-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "서양식 군사 교육으로 사관을 양성한 기관은 연무공원이다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 7쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "2782564216c735ab64d6ed70f702512d033c7ffbbac4d27c5bfad83c34444cfb",
+      "sourcePage": 7,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-31",
+        "exam": 80,
+        "number": 31,
+        "v": "16a5bae71f960b8e",
+        "points": 2,
+        "answer": 1,
+        "overview": {
+          "reason": [
+            "명성황후 시해 이후 김홍집 내각이 추진하고 태양력을 채택한 개혁은 을미개혁이다.",
+            "을미개혁으로 건양 연호 사용, 태양력 시행, 단발령 등이 추진되었다.",
+            "공사 노비법 폐지·과부 재가 허용은 갑오개혁, 양전·지계 발급은 광무개혁이다."
+          ],
+          "answer": "정답 1번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 31,
+              "page": 8
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-31-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": true,
+            "review": [
+              "을미개혁에서 건양 연호를 정하고 태양력 등을 채택하였다."
+            ]
+          },
+          {
+            "id": "exam-80-31-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "한성 사범 학교 관제는 제2차 갑오개혁 시기에 반포되었다."
+            ]
+          },
+          {
+            "id": "exam-80-31-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "통리기무아문과 12사는 개화 정책 추진을 위해 1880년에 설치되었다."
+            ]
+          },
+          {
+            "id": "exam-80-31-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "양전 사업과 지계 발급은 대한 제국의 광무개혁에 해당한다."
+            ]
+          },
+          {
+            "id": "exam-80-31-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "공사 노비법 폐지와 과부 재가 허용은 제1차 갑오개혁의 내용이다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 8쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "10c6da601df1550283c660f466b2a739e73921023e26866363977bd571ebba24",
+      "sourcePage": 8,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-32",
+        "exam": 80,
+        "number": 32,
+        "v": "18068a37caa8af69",
+        "points": 2,
+        "answer": 3,
+        "overview": {
+          "reason": [
+            "러시아의 절영도 조차와 한러 은행을 반대한 단체는 독립협회이다.",
+            "독립협회는 만민 공동회 등을 통해 자주권 수호와 민권 신장, 정치 개혁을 주장하였다.",
+            "따라서 만민 공동회의 토의 내용을 살펴보는 활동이 적절하다."
+          ],
+          "answer": "정답 3번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 32,
+              "page": 8
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-32-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "치안 유지법은 1925년 일제가 사회주의·독립운동 등을 탄압하기 위해 제정하였다."
+            ]
+          },
+          {
+            "id": "exam-80-32-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "헤이그 특사는 1907년 고종이 을사늑약의 부당함을 알리기 위해 파견하였다."
+            ]
+          },
+          {
+            "id": "exam-80-32-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": true,
+            "review": [
+              "독립협회는 만민 공동회 등을 통해 자주권과 민권, 정치 개혁을 논의하였다."
+            ]
+          },
+          {
+            "id": "exam-80-32-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "산미 증식 계획은 1920년대 일제의 식민지 농업 정책이다."
+            ]
+          },
+          {
+            "id": "exam-80-32-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "국민 대표 회의는 1923년 대한민국 임시 정부의 활동 방향 등을 논의하기 위해 열렸다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 8쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "4901a461df8743f3650acd07e577550204b01d817426c1a89924bf514fd2ccc4",
+      "sourcePage": 8,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-33",
+        "exam": 80,
+        "number": 33,
+        "v": "5686f75d8a3f20cd",
+        "points": 3,
+        "answer": 5,
+        "overview": {
+          "reason": [
+            "경인선의 노량진~제물포 구간은 1899년에 개통하였다.",
+            "덕수궁 석조전은 1900년 착공하여 1910년 완공되었으므로 기사 이후의 모습에 해당한다.",
+            "한성순보·우정총국·별기군(교련병대)·군국기무처는 모두 1899년 이전의 일이다."
+          ],
+          "answer": "정답 5번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 33,
+              "page": 8
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-33-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "한성순보는 1883년에 창간되고 1884년에 발행이 중단되어 경인선 개통보다 앞선다."
+            ]
+          },
+          {
+            "id": "exam-80-33-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "군국기무처는 1894년 제1차 갑오개혁을 추진한 기구이다."
+            ]
+          },
+          {
+            "id": "exam-80-33-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "우정총국 개국 축하연은 1884년 갑신정변의 계기가 되었다."
+            ]
+          },
+          {
+            "id": "exam-80-33-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "교련병대는 1881년에 설치된 별기군으로, 경인선 개통보다 앞선다."
+            ]
+          },
+          {
+            "id": "exam-80-33-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": true,
+            "review": [
+              "석조전은 1900년 착공되어 1899년 경인선 개통 이후의 모습이다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 8쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "27c93b2fc771b2a8d1560fbc62043bf18ecfa68fc6664084aa4418d39018a58d",
+      "sourcePage": 8,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-34",
+        "exam": 80,
+        "number": 34,
+        "v": "21dad0872562ff50",
+        "points": 2,
+        "answer": 3,
+        "overview": {
+          "reason": [
+            "고종 강제 퇴위와 대한 제국 군대 해산은 정미의병(1907)의 배경이다.",
+            "각지 의병은 13도 창의군을 결성하고 허위 등을 중심으로 서울 진공 작전을 전개하였다.",
+            "민종식의 홍주성 점령은 1906년 을사의병, 봉오동 전투는 1920년이다."
+          ],
+          "answer": "정답 3번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 34,
+              "page": 8
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-34-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "활빈당은 1900년 무렵 활동하며 대한사민논설을 통해 사회 개혁을 주장하였다."
+            ]
+          },
+          {
+            "id": "exam-80-34-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "이만손 등이 올린 영남 만인소는 1881년 조선책략 유포 등에 반대한 위정척사 운동이다."
+            ]
+          },
+          {
+            "id": "exam-80-34-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": true,
+            "review": [
+              "정미의병 과정에서 결성된 13도 창의군은 서울 진공 작전을 전개하였다."
+            ]
+          },
+          {
+            "id": "exam-80-34-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "민종식의 홍주성 점령은 을사의병 시기인 1906년이다."
+            ]
+          },
+          {
+            "id": "exam-80-34-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "봉오동 전투는 홍범도 등이 활약한 1920년 독립군 전투이다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 8쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "39a7c6b1f1e4d3f0b7206cbb3499d0f2e3eae6105ddefbd69bfa3ac6f5b18d29",
+      "sourcePage": 8,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-35",
+        "exam": 80,
+        "number": 35,
+        "v": "1ae5d6ff179a3ad0",
+        "points": 1,
+        "answer": 2,
+        "overview": {
+          "reason": [
+            "조선 물산 공진회(1915)와 헌병 경찰 제도는 1910년대 무단 통치의 단서이다.",
+            "일제는 1910년 회사령을 공포하여 회사 설립에 조선 총독의 허가를 받도록 하였다.",
+            "미쓰야 협정·경성 제국 대학은 1920년대, 애국반·미곡 공출은 전시 동원 시기와 연결된다."
+          ],
+          "answer": "정답 2번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 35,
+              "page": 9
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-35-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "애국반은 1930년대 후반 이후 전시 동원 체제에서 주민을 통제하기 위해 조직되었다."
+            ]
+          },
+          {
+            "id": "exam-80-35-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": true,
+            "review": [
+              "회사령은 1910년 공포되어 회사 설립을 허가제로 제한하였다."
+            ]
+          },
+          {
+            "id": "exam-80-35-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "미쓰야 협정은 만주의 독립운동을 탄압하기 위해 1925년에 체결되었다."
+            ]
+          },
+          {
+            "id": "exam-80-35-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "미곡 공출제는 1930년대 말 이후 전시 수탈 정책이다."
+            ]
+          },
+          {
+            "id": "exam-80-35-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "경성 제국 대학은 1924년에 설립되었다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 9쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "5ea9339c9eb4f9905b104cfc7d88c2f5fd2992ebc4ebeaf56d161a38f12fa4d6",
+      "sourcePage": 9,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-36",
+        "exam": 80,
+        "number": 36,
+        "v": "3e5b16dbe8059d06",
+        "points": 2,
+        "answer": 3,
+        "overview": {
+          "reason": [
+            "‘내 살림 내 것으로’와 조선 사람이 만든 물품을 쓰자는 구호는 물산 장려 운동이다.",
+            "1920년대 회사령 철폐와 조선 관세령 폐지에 따른 일본 상품 유입 우려 등이 운동 확산의 배경이었다.",
+            "대한매일신보의 후원을 받은 운동은 국채 보상 운동이다."
+          ],
+          "answer": "정답 3번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 36,
+              "page": 9
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-36-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "집강소는 1894년 동학 농민군이 전라도 각지에 설치한 자치 기구이다."
+            ]
+          },
+          {
+            "id": "exam-80-36-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "대한매일신보가 후원한 대표적 민족 운동은 국채 보상 운동이다."
+            ]
+          },
+          {
+            "id": "exam-80-36-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": true,
+            "review": [
+              "물산 장려 운동은 관세 장벽 약화로 일본 상품 유입이 늘어날 우려 등을 배경으로 확산되었다."
+            ]
+          },
+          {
+            "id": "exam-80-36-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "황국 중앙 총상회는 1898년 외국 상인의 상권 침탈에 대응하여 설립되었다."
+            ]
+          },
+          {
+            "id": "exam-80-36-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "국문 연구소는 1907년에 설립된 한글 연구 기관이다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 9쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "34db7a5ad0701af9048e3a5bc578b54ae2061c9d7563e8484cc6a789bb0073ca",
+      "sourcePage": 9,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-37",
+        "exam": 80,
+        "number": 37,
+        "v": "f77211d155b1de60",
+        "points": 3,
+        "answer": 3,
+        "overview": {
+          "reason": [
+            "(가)는 청산리 전투(1920), (나)는 지청천의 한국 독립군이 활약한 쌍성보 전투(1932)이다.",
+            "대한민국 임시 정부 직할의 육군 주만 참의부는 1920년대에 편성되어 두 사건 사이에 해당한다.",
+            "대한 광복회(1915)·독립 의군부(1912)는 앞 시기, 조선 의용대(1938)는 뒤 시기이다."
+          ],
+          "answer": "정답 3번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 37,
+              "page": 9
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-37-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "대한 광복회 결성은 1915년으로 청산리 전투 이전이다."
+            ]
+          },
+          {
+            "id": "exam-80-37-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "독립 의군부 조직은 1912년으로 청산리 전투 이전이다."
+            ]
+          },
+          {
+            "id": "exam-80-37-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": true,
+            "review": [
+              "육군 주만 참의부는 1920년대 편성되어 청산리 전투와 쌍성보 전투 사이에 해당한다."
+            ]
+          },
+          {
+            "id": "exam-80-37-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "안중근의 하얼빈 의거는 1909년으로 청산리 전투 이전이다."
+            ]
+          },
+          {
+            "id": "exam-80-37-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "조선 의용대 창설은 1938년으로 쌍성보 전투 이후이다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 9쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "f2d6595378e983b9ae7fe7bef94d8297ddbbcbf12b1cdb64bc23703eb6a4fccd",
+      "sourcePage": 9,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-38",
+        "exam": 80,
+        "number": 38,
+        "v": "277f46a26745da04",
+        "points": 1,
+        "answer": 1,
+        "overview": {
+          "reason": [
+            "순종 국장일에 학생들이 전개한 만세 운동은 6·10 만세 운동(1926)이다.",
+            "이후 민족주의와 사회주의 세력이 협력한 신간회가 1927년에 창립되었다.",
+            "의열단(1919)과 대한 광복군 정부(1914)는 6·10 만세 운동 이전에 조직되었다."
+          ],
+          "answer": "정답 1번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 38,
+              "page": 9
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-38-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": true,
+            "review": [
+              "신간회는 6·10 만세 운동(1926) 이후인 1927년에 창립되었다."
+            ]
+          },
+          {
+            "id": "exam-80-38-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "만세보는 1906년에 창간되어 6·10 만세 운동보다 앞선다."
+            ]
+          },
+          {
+            "id": "exam-80-38-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "의열단은 1919년에 조직되어 6·10 만세 운동보다 앞선다."
+            ]
+          },
+          {
+            "id": "exam-80-38-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "태극 서관은 1900년대 신민회 계열의 활동으로, 6·10 만세 운동 이전이다."
+            ]
+          },
+          {
+            "id": "exam-80-38-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "대한 광복군 정부는 1914년 연해주에서 수립되었다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 9쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "aed7cc1f0d5338a334a5714814f13a3db043d0a2036439fb9ce58695e058305f",
+      "sourcePage": 9,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-39",
+        "exam": 80,
+        "number": 39,
+        "v": "9ef101b524d5746e",
+        "points": 2,
+        "answer": 5,
+        "overview": {
+          "reason": [
+            "국가 총동원법(1938)과 강제 동원은 일제의 전시 동원 체제를 가리킨다.",
+            "일제는 1941년 조선 사상범 예방 구금령으로 독립운동가 등에 대한 구금과 탄압을 강화하였다.",
+            "신문지법·화폐 정리 사업은 대한 제국기, 조선 광업령·조선 태형령은 1910년대의 정책이다."
+          ],
+          "answer": "정답 5번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 39,
+              "page": 10
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-39-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "신문지법은 1907년 대한 제국기에 제정되었다."
+            ]
+          },
+          {
+            "id": "exam-80-39-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "메가타 주도의 화폐 정리 사업은 1905년부터 실시되었다."
+            ]
+          },
+          {
+            "id": "exam-80-39-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "조선 광업령은 1915년에 공포된 광업 통제 정책이다."
+            ]
+          },
+          {
+            "id": "exam-80-39-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "조선 태형령은 1912년 시행되어 1920년에 폐지되었다."
+            ]
+          },
+          {
+            "id": "exam-80-39-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": true,
+            "review": [
+              "조선 사상범 예방 구금령(1941)은 전시 동원 체제의 독립운동 탄압 법령이다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 10쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "55a4a516bf41d9b62e06883f4bf0add291524ea1b5e49334fdf6636e0cd92f6a",
+      "sourcePage": 10,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-40",
+        "exam": 80,
+        "number": 40,
+        "v": "588d16cf0a554a15",
+        "points": 2,
+        "answer": 5,
+        "overview": {
+          "reason": [
+            "충칭으로 이동하고 산하에 한국광복군을 둔 조직은 대한민국 임시 정부이다.",
+            "임시 정부는 1941년 조소앙의 삼균주의를 바탕으로 대한민국 건국 강령을 발표하였다.",
+            "영릉가 전투는 조선 혁명군, 황무지 개간권 저지는 보안회, 신흥 강습소 설립은 서간도 독립운동과 연결된다."
+          ],
+          "answer": "정답 5번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 40,
+              "page": 10
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-40-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "영릉가 전투에서는 양세봉이 이끄는 조선 혁명군이 활약하였다."
+            ]
+          },
+          {
+            "id": "exam-80-40-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "일제의 황무지 개간권 요구를 저지한 단체는 보안회이다."
+            ]
+          },
+          {
+            "id": "exam-80-40-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "서전서숙은 이상설 등이 북간도 용정에 설립한 민족 교육 기관이다."
+            ]
+          },
+          {
+            "id": "exam-80-40-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "신흥 강습소는 서간도 독립운동 기지 건설 과정에서 설립되었다."
+            ]
+          },
+          {
+            "id": "exam-80-40-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": true,
+            "review": [
+              "대한민국 임시 정부는 1941년 삼균주의에 기초한 건국 강령을 발표하였다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 10쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "a969ede324d76af3ff53a3e7cb7486c0839eccae1361bfeb27e6b9034e137817",
+      "sourcePage": 10,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-41",
+        "exam": 80,
+        "number": 41,
+        "v": "facd13c22cbfc6af",
+        "points": 1,
+        "answer": 4,
+        "overview": {
+          "reason": [
+            "경평 축구 대항전·모던 걸·백화점은 일제 강점기 도시 생활의 변화를 보여 준다.",
+            "이 시기에는 서양식 생활을 반영한 문화 주택과 도시형 개량 한옥 등 새로운 주거 양식이 나타났다.",
+            "컬러 방송·경부 고속 철도·새마을 운동은 광복 이후의 변화이다."
+          ],
+          "answer": "정답 4번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 41,
+              "page": 10
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-41-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "노래에 대한 대대적인 금지곡 지정은 1970년대 유신 체제의 문화 통제와 연결된다."
+            ]
+          },
+          {
+            "id": "exam-80-41-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "컬러 텔레비전 방송은 1980년에 시작되었다."
+            ]
+          },
+          {
+            "id": "exam-80-41-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "경부 고속 철도는 2004년에 개통하였다."
+            ]
+          },
+          {
+            "id": "exam-80-41-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": true,
+            "review": [
+              "일제 강점기 도시에서 문화 주택과 개량 한옥 등 새로운 주거 형태가 등장하였다."
+            ]
+          },
+          {
+            "id": "exam-80-41-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "새마을 운동은 1970년부터 전개되었다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 10쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "b31615dea491b4e52062e6469c3769d50d72848fe6dfe7fa97ab43dd33cc6f02",
+      "sourcePage": 10,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-42",
+        "exam": 80,
+        "number": 42,
+        "v": "ee8b2a708fcbb32b",
+        "points": 2,
+        "answer": 4,
+        "overview": {
+          "reason": [
+            "포와라는 명칭과 사탕수수 농장 이민은 하와이를 가리킨다.",
+            "박용만 등은 하와이에서 대조선 국민군단을 조직하여 군사 훈련을 실시하였다.",
+            "경학사는 서간도, 권업회는 연해주, 중광단은 북간도, 2·8 독립 선언은 일본 도쿄와 연결된다."
+          ],
+          "answer": "정답 4번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 42,
+              "page": 10
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-42-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "경학사는 서간도 삼원보에서 설립한 한인 자치 기구이다."
+            ]
+          },
+          {
+            "id": "exam-80-42-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "권업회는 러시아 연해주 블라디보스토크에서 조직되었다."
+            ]
+          },
+          {
+            "id": "exam-80-42-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "중광단은 북간도에서 대종교 계열 인사들을 중심으로 결성되었다."
+            ]
+          },
+          {
+            "id": "exam-80-42-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": true,
+            "review": [
+              "대조선 국민군단은 하와이에서 군사 훈련을 실시하였다."
+            ]
+          },
+          {
+            "id": "exam-80-42-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "2·8 독립 선언은 일본 도쿄의 한국인 유학생들이 발표하였다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 10쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "235a9e435a0bdc8652bcd2d163afc224bae266dd322aa0125f75433a1fc09660",
+      "sourcePage": 10,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-43",
+        "exam": 80,
+        "number": 43,
+        "v": "5a36990a08ea5210",
+        "points": 2,
+        "answer": 1,
+        "overview": {
+          "reason": [
+            "신한청년당의 파리 강화 회의 대표이자 임시 정부 부주석, 좌우 합작 위원회 참여자는 김규식이다.",
+            "김규식은 1948년 김구와 함께 남북 협상에 참여하여 통일 정부 수립을 모색하였다.",
+            "백산 상회는 안희제, 서유견문은 유길준, 한국독립운동지혈사는 박은식과 연결된다."
+          ],
+          "answer": "정답 1번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 43,
+              "page": 11
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-43-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": true,
+            "review": [
+              "김규식은 김구와 함께 1948년 남북 협상에 참여하여 통일 정부 수립을 모색하였다."
+            ]
+          },
+          {
+            "id": "exam-80-43-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "백산 상회를 통해 독립운동 자금을 마련한 인물은 안희제이다."
+            ]
+          },
+          {
+            "id": "exam-80-43-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "서유견문의 저자는 유길준이다."
+            ]
+          },
+          {
+            "id": "exam-80-43-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "한국독립운동지혈사의 저자는 박은식이다."
+            ]
+          },
+          {
+            "id": "exam-80-43-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "미주 대한인 국민회의 독립운동에 관한 설명이며, 파리 강화 회의에 파견된 김규식의 활동이 아니다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 11쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "ea59543aeacc1701c0445ade5822976a0e8cf4fddc3dbae6992ec14035122e90",
+      "sourcePage": 11,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-44",
+        "exam": 80,
+        "number": 44,
+        "v": "7c3caf07ee472a4f",
+        "points": 1,
+        "answer": 1,
+        "overview": {
+          "reason": [
+            "북한군의 남침으로 시작된 전쟁은 6·25 전쟁(1950~1953)이며, ‘옳지 않은 것’을 고르는 문제이다.",
+            "애치슨 라인은 전쟁 발발 전인 1950년 1월에 발표되었으므로 전쟁 중의 사실이 아니다.",
+            "부산 임시 수도·인천 상륙 작전·다부동 전투·국민 방위군 설치법은 모두 전쟁 중의 일이다."
+          ],
+          "answer": "정답 1번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 44,
+              "page": 11
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-44-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": true,
+            "review": [
+              "애치슨 라인은 1950년 1월 발표되어 6·25 전쟁 발발 전의 일이다."
+            ]
+          },
+          {
+            "id": "exam-80-44-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "부산은 6·25 전쟁 중 임시 수도가 되었다."
+            ]
+          },
+          {
+            "id": "exam-80-44-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "인천 상륙 작전은 전쟁 중인 1950년 9월 전개되었다."
+            ]
+          },
+          {
+            "id": "exam-80-44-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "국민 방위군 설치법은 전쟁 중인 1950년 12월 제정되었다."
+            ]
+          },
+          {
+            "id": "exam-80-44-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "다부동 전투는 전쟁 중인 1950년 8월 낙동강 방어선에서 벌어졌다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 11쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "9caab68b7934540073987d8397e9b96ed7aaac9a4f359ecc1386f3b04744b0e7",
+      "sourcePage": 11,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-45",
+        "exam": 80,
+        "number": 45,
+        "v": "a64c713690144a25",
+        "points": 2,
+        "answer": 2,
+        "overview": {
+          "reason": [
+            "베트남 전쟁에 국군을 파병한 정부는 박정희 정부이다.",
+            "제2차 경제 개발 5개년 계획은 1967~1971년에 추진되었다.",
+            "3당 합당은 노태우 정부, 국가 보위 비상 대책 위원회는 1980년 신군부, 농지 개혁법은 이승만 정부 때의 일이다."
+          ],
+          "answer": "정답 2번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 45,
+              "page": 11
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-45-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "3당 합당과 민주 자유당 창당은 노태우 정부 시기인 1990년이다."
+            ]
+          },
+          {
+            "id": "exam-80-45-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": true,
+            "review": [
+              "제2차 경제 개발 5개년 계획은 박정희 정부 시기인 1967~1971년에 추진되었다."
+            ]
+          },
+          {
+            "id": "exam-80-45-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "국가 보위 비상 대책 위원회는 1980년 신군부가 설치하였다."
+            ]
+          },
+          {
+            "id": "exam-80-45-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "호주제 폐지는 노무현 정부 시기에 법 개정으로 결정되었다."
+            ]
+          },
+          {
+            "id": "exam-80-45-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "농지 개혁법은 이승만 정부 시기인 1949년에 제정되었다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 11쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "5f012116506dd43eba29c59b04b1ef5cfa4eda3ea080bdee2abaf905b450ef62",
+      "sourcePage": 11,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-46",
+        "exam": 80,
+        "number": 46,
+        "v": "58f160a7ece02ae4",
+        "points": 2,
+        "answer": 3,
+        "overview": {
+          "reason": [
+            "신군부의 비상계엄 확대와 무력 진압에 맞선 운동은 5·18 민주화 운동(1980)이다.",
+            "광주 시민들은 자발적으로 시민군을 조직하여 계엄군에 저항하였다.",
+            "김주열의 희생과 장면 내각은 4·19 혁명, 박종철 고문 치사 사건은 6월 민주 항쟁과 연결된다."
+          ],
+          "answer": "정답 3번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 46,
+              "page": 11
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-46-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "장면 내각은 1960년 4·19 혁명 이후 출범하였다."
+            ]
+          },
+          {
+            "id": "exam-80-46-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "김주열의 희생은 1960년 3·15 의거 및 4·19 혁명과 연결된다."
+            ]
+          },
+          {
+            "id": "exam-80-46-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": true,
+            "review": [
+              "5·18 민주화 운동 중 광주 시민들이 자발적으로 시민군을 조직하였다."
+            ]
+          },
+          {
+            "id": "exam-80-46-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "박종철 고문 치사 사건의 진상 규명 요구는 1987년 6월 민주 항쟁의 배경이다."
+            ]
+          },
+          {
+            "id": "exam-80-46-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "3·1 민주 구국 선언은 1976년 유신 체제에 반대한 선언이다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 11쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "eb166ce7b62f723e7e32374374095679147866ec6d8398c4ab61bfa2170d8c6d",
+      "sourcePage": 11,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-47",
+        "exam": 80,
+        "number": 47,
+        "v": "704b296e46e7c4f9",
+        "points": 2,
+        "answer": 3,
+        "overview": {
+          "reason": [
+            "옛 조선 총독부 건물 철거는 김영삼 정부의 역사 바로 세우기 정책이다.",
+            "김영삼 정부 때인 1996년에 국민학교 명칭이 초등학교로 바뀌었다.",
+            "국민 교육 헌장은 박정희 정부, 삼청 교육대와 서울 아시안 게임은 전두환 정부 시기의 일이다."
+          ],
+          "answer": "정답 3번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 47,
+              "page": 12
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-47-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "국민 교육 헌장은 박정희 정부 시기인 1968년에 제정되었다."
+            ]
+          },
+          {
+            "id": "exam-80-47-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "서울 아시안 게임은 전두환 정부 시기인 1986년에 개최되었다."
+            ]
+          },
+          {
+            "id": "exam-80-47-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": true,
+            "review": [
+              "국민학교에서 초등학교로의 명칭 변경은 김영삼 정부 시기인 1996년에 시행되었다."
+            ]
+          },
+          {
+            "id": "exam-80-47-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "친일 반민족 행위 진상 규명 위원회는 노무현 정부 시기인 2005년에 출범하였다."
+            ]
+          },
+          {
+            "id": "exam-80-47-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "삼청 교육대는 1980년 신군부가 사회 정화를 명분으로 설치하였다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 12쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "bc1a5feaafdde0488339c618daa06feb59af7c7b0f425cfce873b5be52422ce0",
+      "sourcePage": 12,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-48",
+        "exam": 80,
+        "number": 48,
+        "v": "5b89e58ad4a02c66",
+        "points": 2,
+        "answer": 3,
+        "overview": {
+          "reason": [
+            "대통령이 군사 분계선을 걸어서 넘어간 남북 정상 회담은 2007년 노무현 정부 때 열렸다.",
+            "이 회담의 결과로 남북 관계 발전과 평화 번영을 위한 10·4 남북 정상 선언이 발표되었다.",
+            "남북 기본 합의서는 노태우 정부, 최초 이산가족 고향 방문은 전두환 정부, 평창 남북 단일팀은 문재인 정부 때이다."
+          ],
+          "answer": "정답 3번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 48,
+              "page": 12
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-48-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "남북 조절 위원회는 박정희 정부의 7·4 남북 공동 성명 이후 구성되었다."
+            ]
+          },
+          {
+            "id": "exam-80-48-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "남북 기본 합의서는 노태우 정부 시기인 1991년에 채택되었다."
+            ]
+          },
+          {
+            "id": "exam-80-48-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": true,
+            "review": [
+              "10·4 남북 정상 선언은 노무현 정부의 2007년 정상 회담 결과이다."
+            ]
+          },
+          {
+            "id": "exam-80-48-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "최초 남북 이산가족 고향 방문은 전두환 정부 시기인 1985년에 성사되었다."
+            ]
+          },
+          {
+            "id": "exam-80-48-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "평창 동계 올림픽 남북 단일팀은 문재인 정부 시기인 2018년에 구성되었다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 12쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "23a4f539a136b8b28a6f2c454aa7c2212d5b1b6858b51ac458aebc624f273e38",
+      "sourcePage": 12,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-49",
+        "exam": 80,
+        "number": 49,
+        "v": "de9c009c7256ffd3",
+        "points": 3,
+        "answer": 4,
+        "overview": {
+          "reason": [
+            "IMF 구제 금융 지원 시기는 1997년 외환 위기 이후이다.",
+            "김대중 정부는 경제적 취약 계층의 생활을 보장하기 위해 국민 기초 생활 보장법을 제정하고 2000년에 시행하였다.",
+            "야간 통행 금지 해제는 1982년, 부산 APEC 정상 회의는 2005년, 다문화 가족 지원법 제정은 2008년이다."
+          ],
+          "answer": "정답 4번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 49,
+              "page": 12
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-49-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "야간 통행 금지 해제는 전두환 정부 시기인 1982년이다."
+            ]
+          },
+          {
+            "id": "exam-80-49-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "신한 공사는 미군정이 일본인 소유 농지 등을 관리하기 위해 설립하였다."
+            ]
+          },
+          {
+            "id": "exam-80-49-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "다문화 가족 지원법은 2008년에 제정되어 IMF 구제 금융 지원 시기 이후이다."
+            ]
+          },
+          {
+            "id": "exam-80-49-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": true,
+            "review": [
+              "국민 기초 생활 보장법은 김대중 정부 시기인 2000년에 시행되었다."
+            ]
+          },
+          {
+            "id": "exam-80-49-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": false,
+            "review": [
+              "부산 APEC 정상 회의는 노무현 정부 시기인 2005년에 개최되었다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 12쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "6c80ffb3054048513822e6285e94ca609af0af5d1a0b41621a730e2a6fa08b73",
+      "sourcePage": 12,
+      "editorialLimit": null
+    },
+    {
+      "item": {
+        "id": "exam-80-50",
+        "exam": 80,
+        "number": 50,
+        "v": "38a3ef9c16d735a2",
+        "points": 3,
+        "answer": 5,
+        "overview": {
+          "reason": [
+            "남강·김시민의 임진왜란 전공·형평 운동은 경남 진주를 가리킨다.",
+            "1862년 진주에서 유계춘 등이 경상 우병사 백낙신의 수탈에 맞서 봉기하였고, 이는 임술 농민 봉기의 확산과 연결된다.",
+            "강주룡의 고공 농성은 평양, 공민왕의 홍건적 피란은 안동, 전태일의 분신은 서울이다."
+          ],
+          "answer": "정답 5번",
+          "refs": [
+            {
+              "kind": "exam",
+              "exam": 80,
+              "number": 50,
+              "page": 12
+            }
+          ]
+        },
+        "options": [
+          {
+            "id": "exam-80-50-option-1",
+            "number": 1,
+            "text": "①",
+            "correct": false,
+            "review": [
+              "김헌창의 난은 웅천주, 오늘날 공주를 근거지로 일어났다."
+            ]
+          },
+          {
+            "id": "exam-80-50-option-2",
+            "number": 2,
+            "text": "②",
+            "correct": false,
+            "review": [
+              "강주룡은 평양 을밀대에서 고공 농성을 벌였다."
+            ]
+          },
+          {
+            "id": "exam-80-50-option-3",
+            "number": 3,
+            "text": "③",
+            "correct": false,
+            "review": [
+              "공민왕은 홍건적 침입 때 복주, 오늘날 안동으로 피란하였다."
+            ]
+          },
+          {
+            "id": "exam-80-50-option-4",
+            "number": 4,
+            "text": "④",
+            "correct": false,
+            "review": [
+              "전태일은 서울 평화시장 인근에서 분신하였다."
+            ]
+          },
+          {
+            "id": "exam-80-50-option-5",
+            "number": 5,
+            "text": "⑤",
+            "correct": true,
+            "review": [
+              "유계춘 등이 주도한 1862년 진주 농민 봉기는 경상 우병사의 수탈에 대한 저항이었다."
+            ]
+          }
+        ],
+        "references": [
+          {
+            "label": "제80회 공식 문제·정답 대조 · 12쪽",
+            "url": "https://www.historyexam.go.kr/pst/view.do?bbs=dat&pst_sno=1000030154"
+          }
+        ]
+      },
+      "sourceImageSha256": "ecdf3fbf8d3a8163327258ef2194f6b351ba49eeec9abf53210ba7d0fb8a5e01",
+      "sourcePage": 12,
+      "editorialLimit": null
+    }
+  ]
+}
