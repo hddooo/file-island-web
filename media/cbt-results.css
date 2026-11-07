@@ -179,3 +179,14 @@ html body #formalExamHost #feImage img.mock-image{max-height:min(640px,56vh,max(
 
 @media(min-width:900px){html body #formalExamHost .fe-exam-workspace{display:grid!important;grid-template-columns:minmax(0,1fr) 180px!important;gap:18px!important;align-items:start!important}html body #formalExamHost .fe-exam-answer-side{min-width:0;position:sticky;top:12px}html body #formalExamHost .fe-exam-answer-side .fe-answer-tools{display:flex!important;flex-direction:column!important;gap:8px!important}html body #formalExamHost .fe-exam-answer-side .fe-choices{display:grid!important;grid-template-columns:1fr!important;width:100%!important;gap:6px!important}html body #formalExamHost .fe-exam-answer-side .fe-choices button{width:100%!important;min-height:42px!important}html body #formalExamHost .fe-exam-answer-side .fe-nav{display:flex!important;flex-wrap:wrap!important;gap:6px!important}html body #formalExamHost .fe-exam-answer-side .fe-nav button{flex:1 1 auto!important;min-height:40px!important}html body #formalExamHost .fe-exam-answer-side #feSubmit{flex-basis:100%!important}}
 @media(max-width:899px){html body #formalExamHost .fe-exam-workspace{display:block!important}html body #formalExamHost .fe-exam-answer-side{margin-top:10px!important}}
+
+/* Latest preference: one natural flow, no separate right panel or inner scroll. */
+html body #formalExamHost .fe-exam-workspace{display:block!important}
+html body #formalExamHost .fe-exam-answer-side{position:static!important;margin-top:8px!important}
+html body #formalExamHost .fe-active-run>.fe-top{display:none!important}
+html body #formalExamHost .fe-active-run>h2{margin:4px 0!important;font-size:16px!important;line-height:1.4!important}
+html body #formalExamHost .fe-exam-answer-side .fe-answer-tools{display:flex!important;flex-direction:row!important;align-items:center!important;flex-wrap:wrap!important;gap:8px!important}
+html body #formalExamHost .fe-exam-answer-side .fe-choices{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;flex:1 1 240px!important;width:auto!important;gap:6px!important}
+html body #formalExamHost .fe-exam-answer-side .fe-choices button{min-width:0!important;min-height:40px!important}
+html body #formalExamHost .fe-exam-answer-side .fe-nav{display:flex!important;gap:8px!important;margin-top:8px!important}
+html body #formalExamHost #feStarStatus:empty{display:none!important}
