@@ -639,7 +639,8 @@
       if (ui.authMode === 'signup' && [...pw].length < 10) { msg.textContent = MSG.weak_password; return; }
       var form=$('#acAuthForm'),check=$('#acRememberSession'),remember=!!(check&&!check.disabled&&check.checked&&rememberSupport().enabled);
       var authRequest=ui.authMode==='signup'?api.signup(email,pw,name||undefined):api.signin(email,pw,remember);
-      withButton($('#acAuthSubmit'), msg, authRequest.catch(function(error){rememberFailure(error,form);throw error;}), function () {
+      withButton($('#acAuthSubmit'), msg, authRequest.catch(function(error){rememberFailure(error,form);throw error;}), function (result) {
+        if(result&&result.status==='pending'){ui.authMode='signin';ui.notice='가입 요청을 보냈습니다. ADMIN 승인 후 로그인해 주세요.';return renderMain();}
         ui.hist = []; ui.histCursor = null; ui.notice = ui.authMode === 'signup' ? '가입했어요. 로그인하지 않고 남긴 이 기기의 기록은 지우지 않고 그대로 둬요.' : '로그인했어요.';
         if(ui.ctx.afterLogin){ui.ctx.afterLogin();return;}
         if(root.HanqAuthSession&&root.HanqAuthSession.resume())return;
