@@ -151,3 +151,5 @@ html body #formalExamHost .fe-round-compact .fe-score{min-width:40px!important;m
 
 html body #formalExamHost .fe-round-compact .fe-pass-rate{position:relative;z-index:1;pointer-events:auto;display:block;margin-top:3px;font-size:11px;font-weight:400;line-height:1.4;color:inherit;opacity:.75;text-decoration:none}
 html body #formalExamHost .fe-pass-rate:focus-visible{outline:2px solid currentColor}
+
+@media(min-width:760px){html body #app#app#app #formalExamHost .formal-exams .fe-rounds{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}html body #app#app#app #formalExamHost .formal-exams .fe-rounds>.fe-round.fe-round-menu.fe-round-compact{min-height:60px!important;padding:8px 10px!important}html body #formalExamHost .fe-menu-note{margin-block:6px 10px!important;font-size:12px!important;line-height:1.45!important}}
