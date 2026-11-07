@@ -396,7 +396,7 @@
         } finally { if (running === abort) running = null; if (isCurrent()) { activeJob = null; cancel.hidden = true; restoreButtons(); } }
       };
       });
-      if (root.HanqToeicPracticeAudio) audioControls.push(root.HanqToeicPracticeAudio.mount(box, { items: options.items, parts: parts, api: options.api, isCurrent: valid }));
+      // Audio listening is provided by the playlist; ZIP export is no longer shown.
       if (root.HanqToeicPracticePlaylist && parts.every(function (p) { return p <= 4; })) audioControls.push(root.HanqToeicPracticePlaylist.mount(box, { items: options.items, parts: parts, api: options.api, isCurrent: valid, onListen: options.onListen }));
     });
     box.appendChild(cancel); box.appendChild(status);

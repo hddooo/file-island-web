@@ -1,3 +1,6 @@
+## 0.8.1-beta
+- Remove Practice audio ZIP buttons; preserve PDF downloads and in-site playlists.
+
 # 변경 이력
 
 ## 0.8.0-beta · 2026-11-07
