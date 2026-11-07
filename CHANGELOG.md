@@ -1,3 +1,6 @@
+## 0.8.3-beta (2026-11-07)
+- Compact Practice PDFs: Parts 2–5 in two columns, Part 6 full width; horizontal Part 2 choices and clean source-numbered prompts.
+
 ## 0.8.1-beta
 - Remove Practice audio ZIP buttons; preserve PDF downloads and in-site playlists.
 

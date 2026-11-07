@@ -172,6 +172,9 @@
     var ctx = canvas.getContext('2d', { alpha: false });
     if (!ctx) throw Error('canvas');
     var pages = [], lines = [], y, photoCount = 0, contentWidth = PAGE.width - PAGE.margin * 2, bytes = 0;
+    var fullWidth = contentWidth, contentX = PAGE.margin, column = 0, columnTop = 85, columns = false;
+    function columnMode(part) { return [2, 3, 4, 5].indexOf(part) >= 0; }
+    function setColumn(index) { column = index; contentWidth = columns ? (fullWidth - 24) / 2 : fullWidth; contentX = PAGE.margin + (columns ? index * (contentWidth + 24) : 0); }
     function font(size, bold) { ctx.font = (bold ? '700 ' : '400 ') + size + 'px ' + FONT; ctx.fillStyle = '#111827'; }
     function draw(text, x, baseline, size, bold, color) {
       font(size, bold); if (color) ctx.fillStyle = color;
@@ -182,7 +185,7 @@
       ctx.setTransform(PAGE.scale, 0, 0, PAGE.scale, 0, 0); ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, PAGE.width, PAGE.height); lines = []; photoCount = 0;
       draw('HanQ  /  TOEIC PRACTICE', PAGE.margin, 31, 8, true, '#52525b');
       draw('PART ' + partLabel + '  ·  ' + sheet, PAGE.margin, 54, 17, true);
-      ctx.strokeStyle = '#18181b'; ctx.lineWidth = 0.8; ctx.beginPath(); ctx.moveTo(PAGE.margin, 66); ctx.lineTo(PAGE.width - PAGE.margin, 66); ctx.stroke(); y = 85;
+      ctx.strokeStyle = '#18181b'; ctx.lineWidth = 0.8; ctx.beginPath(); ctx.moveTo(PAGE.margin, 66); ctx.lineTo(PAGE.width - PAGE.margin, 66); ctx.stroke(); y = 85; columnTop = 85; setColumn(0);
     }
     async function finish() {
       draw('Part ' + partLabel + ' · 개인 학습용', PAGE.margin, PAGE.height - 24, 8, false, '#52525b');
@@ -194,7 +197,17 @@
       if (options.onProgress) options.onProgress('PDF ' + pages.length + '쪽 구성 중…');
       await pause(options);
     }
-    async function room(height) { if (y + height > PAGE.bottom) { await finish(); begin(); } }
+    async function room(height) {
+      if (y + height <= PAGE.bottom) return;
+      if (columns && column === 0) { setColumn(1); y = columnTop; }
+      else { await finish(); begin(); }
+    }
+    async function layout(part) {
+      var next = columnMode(part);
+      if (next === columns) return;
+      if (columns) { await finish(); columns = next; begin(); }
+      else { columns = next; columnTop = y; setColumn(0); }
+    }
     function wrap(text, size, bold, width) {
       font(size, bold); var out = [];
       str(text).replace(/\r\n?/g, '\n').split('\n').forEach(function (paragraph) {
@@ -214,11 +227,11 @@
       return out;
     }
     async function paragraph(text, style) {
-      style = style || {}; var size = style.size || 11, leading = size * 1.5, x = PAGE.margin + (style.indent || 0);
+      style = style || {}; var size = style.size || 11, leading = size * 1.5;
       var values = wrap(text, size, style.bold, contentWidth - (style.indent || 0));
       // Keep short paragraphs together and never strand a final line by itself.
       if (values.length > 1 && values.length <= 4) await room(values.length * leading);
-      for (var i = 0; i < values.length; i++) { await room((values.length - i === 2 ? 2 : 1) * leading); var line = values[i]; if (line) draw(line, x, y + size, size, style.bold, style.color); y += leading; }
+      for (var i = 0; i < values.length; i++) { await room((values.length - i === 2 ? 2 : 1) * leading); var line = values[i]; if (line) draw(line, contentX + (style.indent || 0), y + size, size, style.bold, style.color); y += leading; }
       y += style.after == null ? 5 : style.after;
     }
     function paragraphHeight(text, style) {
@@ -227,7 +240,7 @@
     }
     function choiceRows(q) {
       var size = 11, gap = 26, width = contentWidth - 12, rows = [], row = [], used = 0;
-      var horizontal = q.part === 5 || q.part === 1 && q.options.every(function (c) { return c.text === c.id; });
+      var horizontal = q.part === 5 || q.part <= 2 && q.options.every(function (c) { return c.text === c.id; });
       q.options.forEach(function (choice) {
         var text = q.part <= 2 && choice.text === choice.id ? '(' + choice.id + ')' : choice.id + '. ' + choice.text;
         var wrapped = wrap(text, size, false, width), natural = wrapped.length === 1 ? ctx.measureText(wrapped[0]).width : width;
@@ -246,7 +259,7 @@
         if (count <= 4) await room(count * 16.5);
         for (var i = 0; i < count; i++) {
           await room((count - i === 2 ? 2 : 1) * 16.5);
-          for (var cell of row) if (cell.lines[i]) draw(cell.lines[i], PAGE.margin + 12 + cell.x, y + 11, 11);
+          for (var cell of row) if (cell.lines[i]) draw(cell.lines[i], contentX + 12 + cell.x, y + 11, 11);
           y += 16.5;
         }
         y += 2;
@@ -263,15 +276,12 @@
         if (!decoded) decoded = await loadImage(asset, options);
         var size = imageSize(decoded.image, maxHeight || PAGE.bottom - 100);
         await room(size.height + paragraphHeight(label, { size: 8, after: 8 }) + 4); current(options);
-        ctx.drawImage(decoded.image, PAGE.margin + (contentWidth - size.width) / 2, y, size.width, size.height); y += size.height + 4;
+        ctx.drawImage(decoded.image, contentX + (contentWidth - size.width) / 2, y, size.width, size.height); y += size.height + 4;
         await paragraph(label, { size: 8, color: '#52525b', after: 8 });
       } catch (e) { current(options); throw Error('required_image'); }
       finally { if (decoded && !prepared) decoded.close(); }
     }
-    function questionLabel(q) {
-      var source = q.sourceIdentity;
-      return (q.displayNumber || q.number) + '  ·  ' + (source ? (source.unit ? source.unit + ' · ' : '') + source.page + ' · 원문 ' + source.questionNumber + '번' : '원문 ' + q.number + '번') + (wrong(q) ? ' · 오답' : ' · 공통지문 복습');
-    }
+    function questionLabel(q) { return String(q.sourceIdentity && q.sourceIdentity.questionNumber || q.number) + '.'; }
     async function photoQuestion(q, label) {
       var decoded, imageLabel = '원문 ' + q.number + '번 · 문제 사진', missing = '사진 미포함: 현재 자료에 문제 사진이 없습니다.';
       var prompt = q.stem || '문제와 보기는 음원으로 제시됩니다.', promptStyle = { size: q.stem ? 11 : 9, color: q.stem ? undefined : '#52525b' };
@@ -317,12 +327,18 @@
       await paragraph(answers ? '문제지와 같은 번호 순서입니다. 풀이를 마친 뒤 확인하세요.' : '정답·해설과 듣기 대본은 별도 해설지에서 확인하세요.', { size: 9, color: '#52525b' });
       if (answers) await paragraph('정답·해설 조회 ' + extra.reviews.size + ' / ' + selected.length + '문항', { size: 9, color: '#52525b', after: 10 });
       for (var warning of extra.warnings) await paragraph(warning, { size: 9, color: '#52525b' });
+      var lastSourceKey = null;
       for (var qs of groups) {
         current(options);
+        await layout(qs[0].part);
         var first = qs[0], label = (parts.length > 1 ? 'Part ' + first.part + ' · ' : '') + str(first.sourceTitle) + ' · 원문 ' + qs.map(function (q) { return q.sourceIdentity ? q.sourceIdentity.questionNumber : q.number; }).join('·') + '번';
         if (!answers && first.part === 1) { await photoQuestion(first, label); await pause(options); continue; }
-        await room(90);
-        await paragraph(label, { bold: true, size: 11, after: 7 });
+        var sourceKey = JSON.stringify([first.collectionId, first.part]);
+        if (grouped(first) || sourceKey !== lastSourceKey) {
+          await room(90);
+          await paragraph(grouped(first) ? label : (parts.length > 1 ? 'Part ' + first.part + ' · ' : '') + str(first.sourceTitle), { bold: true, size: 11, after: 7 });
+        }
+        lastSourceKey = sourceKey;
         var passages = new Set();
         if (!answers) for (var q of qs) if (q.passage && !passages.has(q.passage)) { passages.add(q.passage); await paragraph(q.passage, { size: 11, after: 10 }); }
         var assets = new Set();
@@ -335,15 +351,14 @@
         }
         var questionIndex = 0;
         for (var q of qs) {
-          var heading = (grouped(q) ? '문항 ' + (++questionIndex) + ' / ' + qs.length + '  ·  ' : '') + questionLabel(q);
-          var questionHeight = paragraphHeight(heading, { bold: true, size: 10 }) + (q.stem ? paragraphHeight(q.stem, { size: 11 }) : 0) + choicesHeight(q) + 17;
+          var heading = questionLabel(q) + (q.stem ? ' ' + q.stem : '');
+          var questionHeight = paragraphHeight(heading, { size: 11 }) + choicesHeight(q) + 17;
           // Keep an ordinary shared-passage question together, with a quiet rule
           // and a bold numbered heading. The question and options stay regular.
-          await room(!answers && grouped(q) && questionHeight <= PAGE.bottom - 95 ? questionHeight + 10 : 65);
-          if (grouped(q)) { ctx.strokeStyle = '#d4d4d8'; ctx.lineWidth = 0.5; ctx.beginPath(); ctx.moveTo(PAGE.margin, y + 2); ctx.lineTo(PAGE.width - PAGE.margin, y + 2); ctx.stroke(); y += 10; }
-          await paragraph(heading, { bold: true, size: 10 });
-          if (q.stem) await paragraph(q.stem, { size: 11 });
-          else if (!answers && q.part <= 2) await paragraph('문제와 보기는 음원으로 제시됩니다.', { size: 9, color: '#52525b' });
+          await room(!answers && questionHeight <= PAGE.bottom - columnTop ? questionHeight + (grouped(q) ? 10 : 0) : 65);
+          if (grouped(q)) { ctx.strokeStyle = '#d4d4d8'; ctx.lineWidth = 0.5; ctx.beginPath(); ctx.moveTo(contentX, y + 2); ctx.lineTo(contentX + contentWidth, y + 2); ctx.stroke(); y += 10; }
+          await paragraph(heading, { size: 11 });
+          if (!q.stem && !answers && q.part <= 2) await paragraph('문제와 보기는 음원으로 제시됩니다.', { size: 9, color: '#52525b' });
           if (!answers) await choices(q);
           y += 7; if (answers) await review(q, extra.reviews.get(id(q))); y += 10;
         }
