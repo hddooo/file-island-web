@@ -1,6 +1,6 @@
 'use strict';
 const assert = require('node:assert/strict');
-const {mount, identity, _accept, hiddenAttempt, projectPractice} = require('../media/learning-reset.js');
+const {mount, identity, _accept, hiddenAttempt, projectPractice, restartPending} = require('../media/learning-reset.js');
 const A='11111111-1111-4111-8111-111111111111',B='22222222-2222-4222-8222-222222222222';
 function fixture(){
  const doc={createElement(tag){return {tag,attrs:{},setAttribute(k,v){this.attrs[k]=v;},textContent:''};}};
@@ -28,6 +28,10 @@ const tick=()=>new Promise(r=>setImmediate(r));
  global.confirm=()=>false;mount(active.host,active.api);await tick();let button=active.host.children.find(n=>n.tag==='button');assert.equal(button.disabled,false);await button.onclick();assert.equal(writes,0);global.confirm=()=>true;await button.onclick();assert.equal(writes,1);assert.match(active.host.children.at(-1).textContent,/초기화했/);count++;
  assert(hiddenAttempt({ownerId:A,subject:'history',correct:false,ts:ts-1}));assert(!hiddenAttempt({ownerId:A,subject:'history',correct:true,ts:ts-1}));assert(!hiddenAttempt({ownerId:B,subject:'history',correct:false,ts:ts-1}));assert(!hiddenAttempt({ownerId:A,subject:'history',correct:false,ts:ts+1}));assert(!hiddenAttempt({subject:'history',correct:false,ts:ts-1}));count++;
  _accept(active.api,{available:true,scope:'wrong_answers_only',history:{resetAt:at},toeic:{resetAt:at}});const old={star:true,attempts:3,lastOptionId:'A',wrong:true};const view=projectPractice(old,A);assert.equal(view.wrong,false);assert.equal(old.wrong,true);assert.equal(view.star,true);assert.equal(view.attempts,3);const correct={wrong:false,lastOptionId:'B',attempts:4};assert.equal(projectPractice(correct,A),correct);assert.equal(projectPractice(old,B),old);assert.equal(projectPractice({...old,lastAt:ts+1},A).wrong,true);count++;
+ const saved=new Map();global.localStorage={setItem:(k,v)=>saved.set(k,v),getItem:k=>saved.get(k)};global.confirm=()=>true;
+ for(const island of ['history','toeic']){let applied=0;const old={optionId:'A',requestKey:'old-answer',resetAt:null};assert(restartPending(active.api,island,[old],()=>applied++));assert.equal(applied,1);assert.equal(old.optionId,'A');assert([...saved.values()].some(v=>JSON.parse(v).island===island));count++;}
+ global.confirm=()=>false;let changed=0;assert(!restartPending(active.api,'toeic',[{resetAt:null}],()=>changed++));assert.equal(changed,0);global.confirm=()=>true;global.localStorage.setItem=()=>{throw Error('storage denied');};assert(!restartPending(active.api,'history',[{resetAt:null}],()=>changed++));assert.equal(changed,0);count++;
+ delete global.localStorage;
  delete global.confirm;
  console.log(`${count} reset readiness, explicit confirmation and non-destructive owner filters passed`);
 })().catch(e=>{console.error(e);process.exitCode=1;});

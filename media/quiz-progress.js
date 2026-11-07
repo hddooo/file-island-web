@@ -69,12 +69,13 @@
       return record.promise;
     }
     return {
+      restartPending:function(p){syncOwner();var map=pendingMap(),k=key(p),r=map[k];if(!r||r.promise||!root.HanqLearningReset)return false;return root.HanqLearningReset.restartPending(api,'history',[{questionKey:k,optionId:r.optionId,submissionId:r.submissionId,resetAt:r.resetAt}],function(){delete map[k];});},
       ready: ready, load: load, submit: submit, owner: syncOwner,
       /* 'owner|epoch' of the current login (null when signed out) — screens compare it to drop late results */
       identity: function () { syncOwner(); return owner ? owner + '|' + epoch : null; },
-      capturePending: function (id) { var out = {}; Object.keys(pendingByOwner[id] || {}).forEach(function (k) { var r = pendingByOwner[id][k]; out[k] = {optionId: r.optionId, submissionId: r.submissionId}; }); return out; },
-      restorePending: function (records) { syncOwner(); if (!owner || !records || typeof records !== 'object') return; var map = pendingMap(); Object.keys(records).slice(0, 1000).forEach(function (k) { var r = records[k]; if (/^[A-Za-z0-9_-]+\|[A-Za-z0-9_.-]+$/.test(k) && r && typeof r.optionId === 'string' && /^[A-Za-z0-9_-]{1,160}$/.test(r.optionId) && typeof r.submissionId === 'string' && /^[A-Za-z0-9_-]{1,160}$/.test(r.submissionId) && !map[k]) map[k] = {optionId: r.optionId, submissionId: r.submissionId, promise: null}; }); },
-      pending: function (p) { syncOwner(); var r = pendingMap()[key(p)]; return r ? { optionId: r.optionId, submissionId: r.submissionId, busy: !!r.promise } : null; }
+      capturePending: function (id) { var out = {}; Object.keys(pendingByOwner[id] || {}).forEach(function (k) { var r = pendingByOwner[id][k]; out[k] = {optionId: r.optionId, submissionId: r.submissionId, resetAt:r.resetAt}; }); return out; },
+      restorePending: function (records) { syncOwner(); if (!owner || !records || typeof records !== 'object') return; var map = pendingMap(); Object.keys(records).slice(0, 1000).forEach(function (k) { var r = records[k]; if (/^[A-Za-z0-9_-]+\|[A-Za-z0-9_.-]+$/.test(k) && r && typeof r.optionId === 'string' && /^[A-Za-z0-9_-]{1,160}$/.test(r.optionId) && typeof r.submissionId === 'string' && /^[A-Za-z0-9_-]{1,160}$/.test(r.submissionId) && !map[k]) map[k] = {optionId: r.optionId, submissionId: r.submissionId, resetAt:r.resetAt, promise: null}; }); },
+      pending: function (p) { syncOwner(); var r = pendingMap()[key(p)]; return r ? { optionId: r.optionId, submissionId: r.submissionId, resetAt:r.resetAt, busy: !!r.promise } : null; }
     };
   }
   if (typeof module !== 'undefined' && module.exports) module.exports = { create: create };

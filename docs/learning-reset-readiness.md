@@ -11,7 +11,7 @@
 
 ## 추가 확인 및 출시 제한
 - 실제 API 통합/브라우저 렌더/운영 migration 및 smoke 검증 전 완료·배포로 볼 수 없음.
-- `learning_reset_changed`로 거절된 오래된 pending은 보존되지만 현재 UI에서 이를 보존 보관함으로 옮기고 새 답안을 명시적으로 시작하는 기능은 아직 없음. 토익에는 반복 재시도 금지 원인을 표시. 한국사 기존 pending 화면도 이 별도 UX가 필요.
+- 초기화 이전 pending은 한국사 퀴즈·기출·TOEIC에 별도 새로 풀기 버튼을 제공한다. 명시 확인 후 `hanq:reset-pending-archive:v1:<owner>:<uuid>`에 저장하고 재독 검증에 성공해야 활성 대기 목록에서 제외한다. 저장 실패/취소 시 그대로 유지. 자동 제출하지 않고 새 선택을 요구하며 다음 제출은 새 ID/current resetAt을 사용한다.
 - TOEIC 로컬 aggregate는 정확한 문항별 정오답 전체 이력 구조가 아니며 기존 attempts 총수는 유지한다. 기존 정답 기록을 훼손하지 않기 위함.
 - 공유/owner 없는 `hanq:progress:v1:<view>` 및 integrated-blank는 범위 밖으로 보존. 일반 진행 초기화하지 않음.
 - 서버 날짜와 기기 lastAt 시계 차이, 오래된 열린 화면 메모리/동시 기기/오프라인 큐는 추가 통합검증 필요.
@@ -26,9 +26,11 @@
 - `my-records.js`: api.myRecords 조회 54, refresh 제공 65. 서버 wrong 필터를 사용하며 성공 후 refresh.
 
 ## 합성 검사
-- reset readiness/explicit confirm/owner isolation/non-destructive projection: 10 통과.
+- reset readiness/explicit confirm/owner isolation/non-destructive projection: 13 통과.
 - TOEIC practice controller: 54 통과.
-- quiz progress: 15 통과.
+- quiz progress: 16 통과.
 - account API: 22 통과 (jsdom 없음으로 DOM 부분 미실행).
 - practice growth: 5 통과. TOEIC real-client route/auth regression 통과.
 - JS 구문/diff whitespace 검사 통과. 실사용자 기록 변경 및 운영 POST 없음.
+- Chromium 합성 375/1280px: 확인 취소/승인/성공/계정전환 격리/조회 실패 비활성 및 가로넘침 없음 확인. 375px screenshot 시각 검수 완료. scripts/qa-learning-reset.cjs (PLAYWRIGHT_PATH 지정 가능).
+- index inline JS 2개 구문검사 통과.

@@ -19,10 +19,10 @@ function el(tag,text){var n=doc.createElement(tag);n.textContent=text;host.appen
 function current(){return alive&&host.isConnected&&life&&identity(api)===life;}
 function disable(v){buttons.forEach(function(b){b.disabled=v;});}
 var title=el('h3','섬별 오답 기록 초기화');title.id='acLearningResetTitle';host.setAttribute('aria-labelledby',title.id);
-el('p','선택한 섬의 이전 오답 항목·누적 오답·나의 기록에 표시되는 오답 풀이만 초기화합니다. XP, 일반 정답 풀이와 정답 재풀이, 원본, 단어장, 다른 섬은 보존합니다.');
+el('p','선택한 섬의 이전 오답 항목·누적 오답·나의 기록에 표시되는 오답 풀이만 초기화합니다. XP, 일반 정답 풀이와 정답 재풀이, 원본, 단어장, 다른 섬은 보존합니다. 교재 원본 오답 분류·PDF·음원 목록은 유지됩니다.');
 ['history','toeic'].forEach(function(island){var label=island==='history'?'역사섬':'영어섬',b=el('button',label+' 오답 초기화');b.type='button';b.className='tool-btn';b.disabled=true;buttons.push(b);b.onclick=async function(){
 if(!current()||!ready||busy)return;
-if(!root.confirm(label+'의 지금까지 쌓인 오답 항목·누적 오답과 나의 기록의 오답 풀이를 초기화할까요?\nXP·정답 풀이·정답 재풀이·문제 원본·단어장·다른 섬은 보존합니다.\n원본을 영구 삭제하지 않지만 화면에서 되돌리기는 지원하지 않습니다.'))return;
+if(!root.confirm(label+'의 지금까지 쌓인 오답 항목·누적 오답과 나의 기록의 오답 풀이를 초기화할까요?\nXP·정답 풀이·정답 재풀이·문제 원본·단어장·다른 섬은 보존합니다. 교재 원본 오답 분류·PDF·음원 목록은 유지됩니다.\n원본을 영구 삭제하지 않지만 화면에서 되돌리기는 지원하지 않습니다.'))return;
 if(!current())return;busy=true;disable(true);status.textContent='초기화 결과를 확인하고 있어요.';
 try{var requestId=root.crypto&&root.crypto.randomUUID&&root.crypto.randomUUID();if(!UUID.test(requestId||''))throw Error('uuid_unavailable');var d=await api.resetLearning({island:island,confirmation:island==='history'?'RESET_HISTORY':'RESET_TOEIC',requestId:requestId});if(!current())return;if(!valid(d)||!d[island].resetAt)throw Error('invalid_response');accept(api,d);status.textContent=label+' 오답 기록을 초기화했어요. XP와 정답 기록은 그대로예요.';if(root.HanqMyRecords&&root.HanqMyRecords.refresh)root.HanqMyRecords.refresh();}
 catch(_){if(current()){ready=false;status.textContent='초기화 결과를 확인하지 못했어요. 다시 누르지 말고 마이페이지를 다시 열어 상태를 확인해 주세요.';}}
@@ -32,7 +32,12 @@ var status=el('p',life?'초기화 지원 여부를 확인하고 있어요.':'로
 if(api&&api.onChange)off=api.onChange(function(){if(identity(api)!==life&&alive){alive=false;disable(true);status.textContent='계정이 바뀌었어요. 마이페이지를 다시 열어 주세요.';}});
 if(life)refresh(api).then(function(d){if(!current())return;ready=valid(d)&&d.available===true&&d.scope==='wrong_answers_only'&&typeof api.resetLearning==='function';disable(!ready);status.textContent=ready?'초기화할 섬을 선택하세요. 누르기 전에 다시 확인합니다.':describe(d);},function(){if(current())status.textContent='초기화 기능 지원 여부를 확인하지 못했어요. 기록은 변경되지 않았습니다.';});
 return function(){alive=false;if(typeof off==='function')off();};}
-var exported={token:function(id,island){var n=cutoff(id,island);return n?new Date(n).toISOString():undefined;},mount:mount,identity:identity,describe:describe,refresh:refresh,cutoff:cutoff,hiddenAttempt:hiddenAttempt,projectPractice:projectPractice,onChange:watch,_accept:accept};
+function stalePending(api,island,p){var id=owner(api),at=id&&cutoff(id,island);return !!(id&&at&&p&&(Date.parse(p.resetAt)||0)!==at);}
+function restartPending(api,island,entries,apply){var life=identity(api),id=owner(api);if(!life||!Array.isArray(entries)||!entries.length||!entries.every(function(p){return stalePending(api,island,p);}))return false;
+if(!root.confirm('초기화 이전 대기 답안을 보관하고 새로 풀까요? 기존 답안은 보관되며 자동 제출하지 않습니다. 보기를 다시 선택한 뒤 정답 확인을 눌러 주세요.'))return false;
+if(identity(api)!==life)return false;
+try{var k='hanq:reset-pending-archive:v1:'+id+':'+root.crypto.randomUUID(),v=JSON.stringify({island:island,archivedAt:new Date().toISOString(),entries:entries});root.localStorage.setItem(k,v);if(root.localStorage.getItem(k)!==v)return false;if(identity(api)!==life)return false;apply();return true;}catch(_){return false;}}
+var exported={stalePending:stalePending,restartPending:restartPending,token:function(id,island){var n=cutoff(id,island);return n?new Date(n).toISOString():undefined;},mount:mount,identity:identity,describe:describe,refresh:refresh,cutoff:cutoff,hiddenAttempt:hiddenAttempt,projectPractice:projectPractice,onChange:watch,_accept:accept};
 if(typeof module!=='undefined'&&module.exports)module.exports=exported;
 if(typeof window!=='undefined'){root.HanqLearningReset=exported;var api=root.HanqApi;if(api){var check=function(){var life=identity(api);if(life!==seen){seen=life;emit();if(life)refresh(api).catch(function(){});}};api.onChange(check);check();root.addEventListener('focus',function(){refresh(api).catch(function(){});});root.addEventListener('storage',function(e){if(e.key&&e.key.indexOf('hanq:wrong-reset:v1:')===0){delete cache[e.key.slice('hanq:wrong-reset:v1:'.length)];emit();refresh(api).catch(function(){});}});}}
 })(typeof window!=='undefined'?window:globalThis);
