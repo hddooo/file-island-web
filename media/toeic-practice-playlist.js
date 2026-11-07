@@ -21,15 +21,15 @@
     Array.from(bundles.values()).forEach(function (qs) {
       qs.sort(function (a, b) { return a.number - b.number; });
       var q = qs[0], numbers = qs.map(function (x) { return String(x.displayNumber || x.number); }).join('·');
-      if (!q.audioUrl) { missing.push('Part ' + q.part + ' · ' + numbers + '번'); return; }
-      if (!/^[0-9a-f-]{36}$/.test(q.collectionId) || typeof q.groupId !== 'string' || !q.groupId || q.groupId.length > 200 || qs.some(function (x) { return x.audioUrl !== q.audioUrl; })) throw Error('invalid_audio');
-      var url; try { url = new URL(q.audioUrl); } catch (_) { throw Error('invalid_audio'); }
+      var audioKey=root.HanqToeicAudio&&root.HanqToeicAudio.source?root.HanqToeicAudio.source(q):q.audioUrl;if (!audioKey) { missing.push('Part ' + q.part + ' · ' + numbers + '번'); return; }
+      if (!/^[0-9a-f-]{36}$/.test(q.collectionId) || typeof q.groupId !== 'string' || !q.groupId || q.groupId.length > 200 || qs.some(function (x) { return (root.HanqToeicAudio&&root.HanqToeicAudio.source?root.HanqToeicAudio.source(x):x.audioUrl) !== audioKey; })) throw Error('invalid_audio');
+      var url; try { url = q.audioPath?new URL(audioKey,'https://same-origin.invalid'):new URL(audioKey); } catch (_) { throw Error('invalid_audio'); }
       if (url.protocol !== 'https:' || url.username || url.password) throw Error('invalid_audio');
       var clip = q.audioClip || {}, start = clip.start == null ? 0 : clip.start, end = clip.end == null ? null : clip.end;
       if (!Number.isFinite(start) || start < 0 || end !== null && (!Number.isFinite(end) || end <= start) || qs.some(function (x) { var c = x.audioClip || {}; return (c.start == null ? 0 : c.start) !== start || (c.end == null ? null : c.end) !== end; })) throw Error('invalid_audio');
       var key = JSON.stringify([q.collectionId, q.part, q.groupId, q.part <= 2 ? q.number : null, start, end]);
       if (seen.has(key)) return; seen.add(key);
-      list.push({ type: 'question', id: key, url: q.audioUrl, audioVersion: q.audioVersion || q.audioETag || q.audioUpdatedAt || q.version || '', clip: { start: start, end: end }, collectionId: q.collectionId, groupId: q.groupId, questionNumber: q.number, sourceTitle: q.sourceTitle || 'Practice', part: q.part, numbers: numbers + '번', title: (q.sourceTitle || 'Practice') + ' · Part ' + q.part + ' · ' + numbers + '번', script: q.script || '', scriptStatus: q.scriptStatus, timing: q.timing || null });
+      list.push({ type: 'question', id: key, url: audioKey, privateAudio: !!q.audioPath, audioVersion: q.audioVersion || q.audioETag || q.audioUpdatedAt || q.version || '', clip: { start: start, end: end }, collectionId: q.collectionId, groupId: q.groupId, questionNumber: q.number, sourceTitle: q.sourceTitle || 'Practice', part: q.part, numbers: numbers + '번', title: (q.sourceTitle || 'Practice') + ' · Part ' + q.part + ' · ' + numbers + '번', script: q.script || '', scriptStatus: q.scriptStatus, timing: q.timing || null });
     });
     return { list: list, missing: missing.length };
   }

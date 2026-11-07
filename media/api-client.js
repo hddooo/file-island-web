@@ -449,6 +449,8 @@
       },
       growthHistory: function (cursor, limit) { if (cursor != null && cursor !== '' && !/^[A-Za-z0-9_-]{1,200}$/.test(cursor)) return Promise.reject(ApiError(400, 'invalid_cursor')); return call('GET', '/api/v1/me/growth-history' + q({ cursor: cursor, limit: limit })); },
       mockProgress: function(questions){return call('POST','/api/v1/mock/progress',{body:{questions:questions}});},
+      publishedHistory: function(after){return call('GET','/api/v1/published-history'+q({after:after,limit:20}));},
+      publishedHistoryImage: function(path){if(!/^\/api\/v1\/published-question-assets\/[0-9a-f-]{36}\/[0-9a-f-]{36}$/.test(path))return Promise.reject(ApiError(400,'invalid_path'));return call('GET',path,{binary:true,privateResponse:true,feedback:false});},
       currentQuestions: function (era, after) { return call('GET', '/api/v1/questions' + q({ kind: 'quiz', era: era, after: after, limit: 100 })); },
       quizProgress: function (questions) { return call('POST', '/api/v1/quiz/progress', { body: { questions: questions } }); },
       myRecords:function(f){return call('GET','/api/v1/me/records'+q({subject:f.subject,source:f.source,page:f.page,snapshot:f.snapshot}));},
@@ -467,7 +469,7 @@
       },
       /* CBT 결과(최종 점수 구간 보상) 뒤 등: 같은 계정·로그인일 때만 내 정보를 다시 받는다(me()가 계정·epoch를 지킴) */
       refreshProfile: function () { if (!currentOwner()) return Promise.resolve(null); return api.me().catch(function () { return null; }); },
-      toeicCbtAudio: function(id,group,signal){if(!/^[0-9a-f-]{36}$/.test(id)||!group||group.length>200)return Promise.reject(ApiError(400,'invalid_path'));return call('GET','/api/v1/toeic-cbt/collections/'+id+'/audio/'+encodeURIComponent(group),{binary:true,mediaTypes:['audio/mpeg'],timeout:70000,feedback:false,signal:signal});},
+      toeicCbtAudio: function(id,group,signal){if(!/^[0-9a-f-]{36}$/.test(id)||!group||group.length>200)return Promise.reject(ApiError(400,'invalid_path'));return call('GET','/api/v1/toeic-cbt/collections/'+id+'/audio/'+encodeURIComponent(group),{binary:true,mediaTypes:['audio/mpeg','audio/wav'],timeout:70000,feedback:false,signal:signal});},
       toeicCbtImage: function(path){if(!/^\/collections\/[0-9a-f-]{36}\/images\/[a-f0-9]{64}$/.test(path))return Promise.reject(ApiError(400,'invalid_path'));return call('GET','/api/v1/toeic-cbt'+path,{binary:true,mediaTypes:['image/png','image/jpeg','image/webp']});},
       toeicCbt: function (method, path, data) { if (!(method === 'GET' && (path === '/practice'||path === '/player'||/^\/practice-history(?:\?|$)/.test(path))) && !/^\/(?:collections|runs)(?:\/|$)/.test(path)) return Promise.reject(ApiError(400, 'invalid_path')); return call(method, '/api/v1/toeic-cbt' + path, data === undefined ? {} : {body:data}).then(function(d){if(method==='POST'&&/\/(?:answer|group-answer)$/.test(path)&&(typeof d.correct==='boolean'||d.results&&d.results.some(function(x){return typeof x.correct==='boolean';})))refreshGrowthAfterGrade();return d;}); },
       battleStream:battleStream,
