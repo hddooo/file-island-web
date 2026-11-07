@@ -6,6 +6,7 @@ const api=Api.create({base:'https://membership.example.test',storage,locks:null,
 const result=await api.signup('synthetic@example.test','synthetic-password','Synthetic');
 assert.equal(result.status,'pending');assert.equal(api.state().signedIn,false);assert.equal(calls.length,1);assert.equal(calls[0].init.headers['X-HanQ-CSRF'],'1');assert.equal(map.size,0);
 assert.equal(allowed('auth/login.html'),true);assert.equal(allowed('auth/login.js'),true);assert.equal(allowed('auth/private.json'),false);assert.equal(allowed('auth/login.html/private'),false);
+const publicPath=require('./home-frontend-cd/verify-artifact.cjs').publicPath;assert.equal(publicPath('auth/login.html'),true);assert.equal(publicPath('auth/login.js'),true);assert.equal(publicPath('auth/private.json'),false);
 const conf=fs.readFileSync(require('node:path').join(__dirname,'../deployment/member-access-nginx.conf'),'utf8');
 assert.match(conf,/auth_request \/__member_check/);assert.match(conf,/proxy_ssl_verify on/);assert.match(conf,/private, no-store/);assert.doesNotMatch(conf,/public, max-age/);
 assert.match(conf,/location = \/__member_check \{\s*internal/);assert.match(conf,/location \^~ \/media\/ \{ root \/srv\/releases\/\$asset_release;/);

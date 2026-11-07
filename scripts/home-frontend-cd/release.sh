@@ -60,11 +60,13 @@ printf '%s\n%s\n%s\n' "$previous" "releases/$sha" "$run" > "$root/deployment-jou
 ln -s "releases/$sha" "$next"
 mv -Tf "$next" "$root/current"
 switched=1
+health_path=$(cat "$control/HEALTH_PATH")
+case "$health_path" in /|/auth/login.html) ;; *) exit 7;; esac
 ok=0
 for attempt in 1 2 3; do
-  if wget -q -T 5 -O "$root/.deploy-lock/version.json" "$health/app-version.json" && cmp -s "$root/.deploy-lock/version.json" "$root/releases/$sha/app-version.json" && wget -q -T 5 -O "$root/.deploy-lock/index.html" "$health/"; then
+  if wget -q -T 5 -O "$root/.deploy-lock/version.json" "$health/app-version.json" && cmp -s "$root/.deploy-lock/version.json" "$root/releases/$sha/app-version.json" && wget -q -T 5 -O "$root/.deploy-lock/index.html" "$health$health_path"; then
     actual=$(sha256sum "$root/.deploy-lock/index.html" | cut -d ' ' -f 1)
-    if [ "$actual" = "$(cat "$control/INDEX_SHA256")" ]; then ok=1;break;fi
+    if [ "$actual" = "$(cat "$control/HEALTH_SHA256")" ]; then ok=1;break;fi
   fi
   sleep 1
 done

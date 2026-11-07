@@ -5,7 +5,7 @@ function safePath(p){
   if(typeof p!=='string'||!p||/[\\:\x00-\x1f\x7f]/.test(p)||p.startsWith('/')||p.split('/').some(x=>!x||x==='.'||x==='..'||x.startsWith('.')||/[. ]$/.test(x)||/^(con|prn|aux|nul|com[1-9]|lpt[1-9])(?:\.|$)/i.test(x)))throw Error('Unsafe artifact path');
   return p;
 }
-function publicPath(p){return ['index.html','RELEASE_VERSION','manifest.webmanifest','favicon.ico','apple-touch-icon.png','app-version.json'].includes(p)||/^(media|ops|inquiries)\//.test(p)&&!p.split('/').some(x=>['enhanced','renders','private-data','hanq-private-data','node_modules'].includes(x.toLowerCase()))&&!/\.(?:pem|key|p12|pfx|dump|sql(?:\.gz)?)$/i.test(p)&&(!/\.pdf$/i.test(p)||p==='media/connector-summary.pdf');}
+function publicPath(p){return ['index.html','RELEASE_VERSION','manifest.webmanifest','favicon.ico','apple-touch-icon.png','app-version.json','auth/login.html','auth/login.js'].includes(p)||/^(media|ops|inquiries)\//.test(p)&&!p.split('/').some(x=>['enhanced','renders','private-data','hanq-private-data','node_modules'].includes(x.toLowerCase()))&&!/\.(?:pem|key|p12|pfx|dump|sql(?:\.gz)?)$/i.test(p)&&(!/\.pdf$/i.test(p)||p==='media/connector-summary.pdf');}
 function verify(root,sha){
   if(!/^[a-f0-9]{40}$/.test(sha))throw Error('Expected exact commit SHA');
   root=path.resolve(root);if(!fs.lstatSync(root).isDirectory()||fs.lstatSync(root).isSymbolicLink())throw Error('Expected real artifact directory');
@@ -22,5 +22,5 @@ function verify(root,sha){
   entries.push({path:'build-manifest.json',sha256:digest(manifestBytes)});
   return {sha,release,bytes,entries,manifestSha256:digest(manifestBytes)};
 }
-function writeControls(root,sha,out){const r=verify(root,sha);fs.mkdirSync(out,{recursive:true});for(const file of ['FILES','SHA256SUMS','INDEX_SHA256'])if(fs.existsSync(path.join(out,file)))throw Error('Control output exists');fs.writeFileSync(path.join(out,'FILES'),r.entries.map(x=>x.path).join('\n')+'\n');fs.writeFileSync(path.join(out,'SHA256SUMS'),r.entries.map(x=>x.sha256+'  '+x.path).join('\n')+'\n');fs.writeFileSync(path.join(out,'INDEX_SHA256'),r.entries.find(x=>x.path==='index.html').sha256+'\n');return r;}
+function writeControls(root,sha,out){const r=verify(root,sha);fs.mkdirSync(out,{recursive:true});for(const file of ['FILES','SHA256SUMS','INDEX_SHA256','HEALTH_PATH','HEALTH_SHA256'])if(fs.existsSync(path.join(out,file)))throw Error('Control output exists');fs.writeFileSync(path.join(out,'FILES'),r.entries.map(x=>x.path).join('\n')+'\n');fs.writeFileSync(path.join(out,'SHA256SUMS'),r.entries.map(x=>x.sha256+'  '+x.path).join('\n')+'\n');fs.writeFileSync(path.join(out,'INDEX_SHA256'),r.entries.find(x=>x.path==='index.html').sha256+'\n');const entry=r.entries.find(x=>x.path==='auth/login.html')||r.entries.find(x=>x.path==='index.html');fs.writeFileSync(path.join(out,'HEALTH_PATH'),(entry.path==='auth/login.html'?'/auth/login.html':'/')+'\n');fs.writeFileSync(path.join(out,'HEALTH_SHA256'),entry.sha256+'\n');return r;}
 module.exports={verify,writeControls,safePath,publicPath};
