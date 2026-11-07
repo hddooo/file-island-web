@@ -21,3 +21,26 @@ html body #app .island-harbors[data-english-harbor]::before{content:'';position:
 
 /* The sign remains visible; each native building control has one English label.
    Korean scenic subtitles and browser hover tooltips are not recreated. */
+
+/* Actual moving cloud banks, distinct from the clouds painted into the cove.
+   Keep them soft, above the sky only, and non-interactive. */
+html body #app [data-english-harbor] .scene-atmosphere[data-scene=toeic] .scene-cloud{
+ width:42%;height:14%;top:1%;left:-18%;border-radius:0;opacity:.64;
+ background:radial-gradient(ellipse at 30% 58%,#ffffffc9 0 12%,transparent 36%),radial-gradient(ellipse at 48% 40%,#ffffffc2 0 16%,transparent 39%),radial-gradient(ellipse at 67% 57%,#f3fbffc4 0 14%,transparent 38%)!important;
+ animation:english-cloud-drift 48s linear infinite!important;
+}
+html body #app [data-english-harbor] .scene-atmosphere[data-scene=toeic] .scene-cloud-near{
+ top:4%;width:50%;height:17%;opacity:.46;animation-duration:67s!important;animation-delay:-34s!important;
+}
+@keyframes english-cloud-drift{
+ 0%{transform:translate3d(-55%,0,0);opacity:0}
+ 12%{opacity:.6}
+ 85%{opacity:.6}
+ 100%{transform:translate3d(300%,0,0);opacity:0}
+}
+html.world-motion-paused body #app [data-english-harbor] .scene-atmosphere .scene-cloud,
+html.world-low-power body #app [data-english-harbor] .scene-atmosphere .scene-cloud,
+html body #app [data-english-harbor] .scene-atmosphere.scene-offscreen .scene-cloud{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){
+ html body #app [data-english-harbor] .scene-atmosphere[data-scene=toeic] .scene-cloud{animation:none!important;display:none!important}
+}
