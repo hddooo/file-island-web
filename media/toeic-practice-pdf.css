@@ -41,3 +41,17 @@ html body #app .toeic-learning-page .tc.tc-simple .tc-group-exports>.tc-pdf-tool
 html body #app .toeic-learning-page .tc.tc-simple .tc-pdf-tools>.tc-audio-export{width:100%;margin:0!important;border:0!important;border-left:1px solid var(--toeic-row-line,#354c3d)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:inherit!important;font-size:12px!important;font-weight:400!important}
 html body #app .toeic-learning-page .tc.tc-simple .tc-pdf-tools>.tc-audio-export:hover:not(:disabled){background:rgba(134,205,176,.08)!important}
 html body #app .toeic-learning-page .tc.tc-simple .tc-pdf-tools>:is(.tc-audio-export-cancel,.tc-audio-download,.tc-audio-export-status){grid-column:1/-1;margin:0!important;padding:8px!important;border:0!important;border-top:1px solid var(--toeic-row-line,#354c3d)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+
+/* Three listening groups reuse the standard playlist, below the existing player. */
+.tc .tc-audio-listen{min-height:44px;max-width:100%;padding:6px 8px;font-size:12px;line-height:1.4;border:0;border-radius:0;background:transparent;color:inherit;white-space:normal;cursor:pointer}
+.tc .tc-audio-listen:disabled{cursor:default;opacity:.5}
+html body #app .toeic-learning-page .tc.tc-simple .tc-group-exports>.tc-pdf-tools.tc-has-audio-listen{grid-template-columns:repeat(4,minmax(0,1fr))}
+html body #app .toeic-learning-page .tc.tc-simple .tc-pdf-tools>.tc-audio-listen{width:100%;margin:0!important;border:0!important;border-left:1px solid var(--toeic-row-line,#354c3d)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:inherit!important;font-size:12px!important;font-weight:400!important}
+.tc .tc-audio-parts{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.tc .tc-audio-parts button{min-height:44px;flex:1}
+.tc .tc-audio-parts [aria-current]{outline:2px solid currentColor;outline-offset:-3px}
+.tc .tc-audio-page{width:100%;min-width:0}
+html body #app .tc-audio-page .lc-track-row{display:grid;grid-template-columns:minmax(0,1fr) 88px;gap:4px}
+html body #app .tc-audio-page .lc-track-practice{min-width:0;min-height:44px;margin:0;padding:8px;border:1px solid #506b7a;border-radius:8px;color:#e6f3ff;background:#152330;font:13px Arial,Helvetica,sans-serif}
+html body #app .tc-audio-page .lc-track-practice:focus-visible{outline:2px solid #80c9ff;outline-offset:-3px}
+html body #app .tc-audio-page select{font-size:16px;min-height:44px}

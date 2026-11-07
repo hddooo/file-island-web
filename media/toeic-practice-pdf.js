@@ -365,7 +365,7 @@
   function mount(host, options) {
     var doc = host.ownerDocument, alive = true, suspended = false, serial = 0, activeJob = null, urls = [], owner = identity(options.api), buttons = [], audioControls = [];
     function valid() { return alive && !suspended && host.isConnected && owner !== null && owner === identity(options.api) && (!options.isCurrent || options.isCurrent()); }
-    var box = doc.createElement('div'); box.className = 'tc-pdf-tools'; box.setAttribute('role', 'group'); box.setAttribute('aria-label', (options.label || 'Practice') + ' PDF·음원 다운로드'); host.appendChild(box);
+    var box = doc.createElement('div'); box.className = 'tc-pdf-tools'; box.setAttribute('role', 'group'); box.setAttribute('aria-label', (options.label || 'Practice') + ' PDF·음원 다운로드 및 듣기'); host.appendChild(box);
     var status = doc.createElement('p'); status.className = 'tc-pdf-status'; status.setAttribute('role', 'status'); status.setAttribute('aria-live', 'polite'); status.hidden = true;
     function restoreButtons() { buttons.forEach(function (b) { b.disabled = b.dataset.empty === 'true'; }); }
     var cancel = doc.createElement('button'); cancel.type = 'button'; cancel.className = 'tool-btn tc-pdf-cancel'; cancel.textContent = 'PDF 준비 취소'; cancel.hidden = true;
@@ -397,6 +397,7 @@
       };
       });
       if (root.HanqToeicPracticeAudio) audioControls.push(root.HanqToeicPracticeAudio.mount(box, { items: options.items, parts: parts, api: options.api, isCurrent: valid }));
+      if (root.HanqToeicPracticePlaylist && parts.every(function (p) { return p <= 4; })) audioControls.push(root.HanqToeicPracticePlaylist.mount(box, { items: options.items, parts: parts, api: options.api, isCurrent: valid, onListen: options.onListen }));
     });
     box.appendChild(cancel); box.appendChild(status);
     function release() {

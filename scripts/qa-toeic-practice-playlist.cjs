@@ -1,0 +1,30 @@
+'use strict';
+// Local frontend with a fully intercepted synthetic account/API. No production writes.
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),{chromium}=require('playwright'),{setup}=require('./qa-vocabulary-video-bar.cjs');
+const root=path.resolve(__dirname,'..'),out=process.env.ARTIFACT_DIR||path.join(root,'evidence/practice-playlist');fs.mkdirSync(out,{recursive:true});
+const cid='11111111-1111-4111-8111-111111111111',cid2='22222222-2222-4222-8222-222222222222';
+function q(part,n,extra={}){return{part,number:n,displayNumber:String(n).padStart(4,'0'),collectionId:cid,groupId:'p'+part+'q'+n,sourceTitle:'합성 TEST 1',stem:'Synthetic question '+n,options:['A','B','C','D'].map(id=>({id,text:'Synthetic choice '+id})),originalWrong:true,available:true,audioUrl:'https://synthetic.invalid/p'+part+'q'+n+'.mp3',audioClip:{start:0,end:3},...extra};}
+const items=[q(1,1),q(1,2,{collectionId:cid2,sourceTitle:'합성 TEST 2'}),q(2,7),q(2,8,{audioUrl:null}),q(3,39,{groupId:'shared',audioUrl:'https://synthetic.invalid/shared.mp3',groupQuestionNumbers:[39,40]}),q(3,40,{groupId:'shared',audioUrl:'https://synthetic.invalid/shared.mp3',groupQuestionNumbers:[39,40],originalWrong:false}),q(4,71),q(5,101,{audioUrl:null}),q(7,150,{audioUrl:null})];
+const wav=Buffer.alloc(160044);wav.write('RIFF');wav.writeUInt32LE(wav.length-8,4);wav.write('WAVEfmt ',8);wav.writeUInt32LE(16,16);wav.writeUInt16LE(1,20);wav.writeUInt16LE(1,22);wav.writeUInt32LE(8000,24);wav.writeUInt32LE(16000,28);wav.writeUInt16LE(2,32);wav.writeUInt16LE(16,34);wav.write('data',36);wav.writeUInt32LE(wav.length-44,40);
+(async()=>{const b=await chromium.launch({executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE||'/usr/bin/chromium'}),results=[];try{for(const [width,height] of [[320,900],[390,844],[1440,900],[844,390]]){
+ const {p,context,errors,writes}=await setup(b,width,root,{viewport:{width,height}});let audioReads=0;
+ await context.route('**/api/v1/toeic-cbt/practice',r=>r.fulfill({json:{items}}));
+ await context.route('**/api/v1/toeic-cbt/collections/*/audio/*',r=>{audioReads++;return r.fulfill({contentType:'audio/mpeg',body:wav});});
+ await context.route('https://synthetic.invalid/*.mp3',r=>r.fulfill({contentType:'audio/mpeg',body:wav}));
+ if(width===320)await p.emulateMedia({reducedMotion:'reduce'});
+ await p.goto('https://hanq.vercel.app/#toeic/wrongnotes');await p.locator('.tc-audio-listen').first().waitFor();assert.equal(await p.locator('.tc-audio-listen').count(),3);assert.equal(await p.locator('.tc-pdf-export').count(),10);assert.equal(await p.locator('.tc-audio-export').count(),5);
+ await p.locator('.tc-audio-listen').first().click();await p.locator('.lc-track').first().waitFor();assert.deepEqual(await p.locator('.tc-audio-parts button').allTextContents(),['Part 1','Part 2','Part 3·4']);assert.equal(await p.locator('.ha-player').count(),1);assert.equal(audioReads,0);
+ const bounds=await p.evaluate(()=>({player:document.querySelector('.ha-player').getBoundingClientRect().bottom,queue:document.querySelector('.lc-queue-panel').getBoundingClientRect().top}));assert(bounds.queue>=bounds.player,'queue must be below player');
+ await p.locator('.ha-play').click();await p.waitForFunction(()=>{const a=document.querySelector('.tc-audio-page audio');return a&&!a.paused&&a.currentTime>.1;});
+ await p.locator('.ha-play').click();const paused=await p.locator('.tc-audio-page audio').evaluate(a=>a.currentTime);await p.waitForTimeout(100);assert(Math.abs(await p.locator('.tc-audio-page audio').evaluate(a=>a.currentTime)-paused)<.1);
+ await p.locator('.ha-play').click();await p.waitForFunction(()=>document.querySelector('.lc-track-list .lc-track[aria-current]').title.includes('0002'),null,{timeout:10000});assert.equal(await p.locator('.tc-audio-page audio').count(),1);
+ await p.locator('.lc-source-filter select').selectOption(cid2);assert.equal(await p.locator('.lc-track').count(),1);await p.locator('.lc-track-practice').click();await p.locator('.tc-question').waitFor();assert((await p.locator('.tc-question').innerText()).includes('0002'));assert.equal(await p.locator('.tc-audio-page').count(),0);
+ await p.locator('.tc-topnav button').first().click();await p.locator('.lc-track').waitFor();assert.equal(await p.locator('.lc-source-filter select').inputValue(),cid2);
+ await p.locator('.tc-audio-parts button').nth(2).click();assert.equal(await p.locator('.lc-track').count(),2);assert((await p.locator('.lc-track').first().innerText()).includes('0039·0040'));
+ await p.locator('.lc-track-practice').first().click();await p.locator('.tc-group-passage').waitFor();await p.locator('.tc-topnav button').first().click();await p.locator('.lc-track').first().waitFor();
+ assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);const sizes=await p.locator('.tc-audio-parts button,.lc-track-practice,.lc-source-filter select').evaluateAll(ns=>ns.map(n=>({h:n.getBoundingClientRect().height,w:n.getBoundingClientRect().width})));assert(sizes.every(x=>x.h>=44&&x.w>=44));
+ await p.screenshot({path:path.join(out,'practice-'+width+'x'+height+'.png'),fullPage:true});
+ await p.locator('.tc-topnav button').first().click();assert.equal(await p.locator('.tc-audio-listen').count(),3);assert.equal(await p.locator('.tc-audio-page audio').count(),0);
+ await p.goBack();await p.goForward();await p.locator('.tc-audio-listen').first().waitFor();assert.equal(await p.locator('.tc-audio-page audio').count(),0);assert.deepEqual(errors,[]);assert.deepEqual(writes,[]);
+ results.push({width,height,queueBelowPlayer:true,singleEngine:true,decodedSyntheticWav:true,automaticNext:true,correctPracticeAndReturn:true,backForward:true,overflow:false,minimumTargets:true,audioReads,productionWrites:0});await context.close();
+ }}finally{await b.close();}fs.writeFileSync(path.join(out,'summary.json'),JSON.stringify({passed:true,engine:'Chromium',synthetic:true,results},null,2));console.log(JSON.stringify({passed:true,cases:results.length,productionWrites:0}));})().catch(e=>{console.error(e.stack);process.exitCode=1;});
