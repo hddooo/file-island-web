@@ -352,7 +352,7 @@
         var questionIndex = 0;
         for (var q of qs) {
           var heading = questionLabel(q) + (q.stem ? ' ' + q.stem : '');
-          var questionHeight = paragraphHeight(heading, { size: 11 }) + choicesHeight(q) + 17;
+          var questionHeight = paragraphHeight(heading, { size: 11 }) + (!q.stem && q.part <= 2 ? 18.5 : 0) + choicesHeight(q) + 17;
           // Keep an ordinary shared-passage question together, with a quiet rule
           // and a bold numbered heading. The question and options stay regular.
           await room(!answers && questionHeight <= PAGE.bottom - columnTop ? questionHeight + (grouped(q) ? 10 : 0) : 65);
