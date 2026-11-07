@@ -351,6 +351,14 @@
         }
         var questionIndex = 0;
         for (var q of qs) {
+          // Listening-only Part 2: one answer-marking row, never answer/script data.
+          if (!answers && q.part === 2 && q.options.every(function (choice) { return choice.text === choice.id; })) {
+            await room(24);
+            draw(questionLabel(q), contentX, y + 11, 11);
+            q.options.forEach(function (choice, index) { draw('(' + choice.id + ')', contentX + 60 + index * 48, y + 11, 11); });
+            y += 24;
+            continue;
+          }
           var heading = questionLabel(q) + (q.stem ? ' ' + q.stem : '');
           var questionHeight = paragraphHeight(heading, { size: 11 }) + (!q.stem && q.part <= 2 ? 18.5 : 0) + choicesHeight(q) + 17;
           // Keep an ordinary shared-passage question together, with a quiet rule
