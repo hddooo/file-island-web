@@ -58,6 +58,10 @@ async function save(name,result){fs.writeFileSync(path.join(out,name+'.pdf'),Buf
  assert.equal(compact.pages,1);assert(compactOps.some(x=>x.text==='(A)'&&x.x>300));
  const firstChoices=compactOps.filter(x=>/^\([ABC]\)$/.test(x.text||'')).slice(0,3);
  assert.equal(new Set(firstChoices.map(x=>x.y)).size,1);assert.equal(compactOps.find(x=>x.text==='1.').y,firstChoices[0].y);assert(!compactOps.some(x=>/문제와 보기는 음원/.test(x.text||'')));checks+=2;assert(!compactOps.some(x=>/원문.*오답/.test(x.text||'')));checks+=4;
+ // Part 6 numeric-only source prompts must not duplicate the printed number.
+ items=[question(6,136,{stem:'136.',groupQuestionNumbers:[136]})];reviewData=items.map(review);renderStart=rendered.length;
+ await PDF.generate(items,6,{api});await PDF.generate(items,6,{api,mode:'answers'});
+ const numberDraws=rendered.slice(renderStart).flat().filter(x=>/^136\./.test(x.text||''));assert.equal(numberDraws.length,2);assert(numberDraws.every(x=>x.text==='136.'));checks+=2;
  // Integrate actual Practice menu: existing category exports, no side-effect writes.
  items=[question(1,1),question(3,1),question(3,2),question(4,1),question(4,2),question(5,1),question(6,1),question(6,2),question(7,1),question(7,2)].map(q=>({...q,number:q.part*100+q.number,groupQuestionNumbers:q.groupQuestionNumbers.map(n=>q.part*100+n)}));reviewData=items.map(review);
  const host=w.document.querySelector('#host');w.HanqToeicCbt.mount(host,{api,onAccount:()=>{}});await until(()=>host.querySelectorAll('.tc-pdf-export').length===8);assert.equal(host.querySelectorAll('.tc-group').length,5);checks++;

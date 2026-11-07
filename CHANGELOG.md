@@ -1,3 +1,6 @@
+## 0.8.7-beta (2026-11-07)
+- Avoid duplicated Part 6 question numbers when the source prompt is only the blank number.
+
 ## 0.8.6-beta (2026-11-07)
 - Clearly mark missing original explanations in answer PDFs rather than leaving an unexplained blank.
 

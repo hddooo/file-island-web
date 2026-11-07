@@ -367,7 +367,10 @@
             y += 24;
             continue;
           }
-          var heading = questionLabel(q) + (q.stem ? ' ' + q.stem : '');
+          var prompt = str(q.stem).trim(), labelNumber = questionLabel(q).slice(0, -1);
+          // Some Part 6 source stems contain only the already displayed blank number.
+          if (q.part === 6 && prompt.replace(/[.)\s]+$/g, '') === labelNumber) prompt = '';
+          var heading = questionLabel(q) + (prompt ? ' ' + prompt : '');
           var questionHeight = paragraphHeight(heading, { size: 11 }) + (!q.stem && q.part <= 2 ? 18.5 : 0) + choicesHeight(q) + 17;
           // Keep an ordinary shared-passage question together, with a quiet rule
           // and a bold numbered heading. The question and options stay regular.
