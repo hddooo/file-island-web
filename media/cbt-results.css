@@ -128,3 +128,6 @@ html body #formalExamHost .fe-round-menu button:focus-visible{outline:2px solid 
 @media(max-width:390px){html body #formalExamHost .fe-round-menu .fe-round-heading{padding:6px 8px}html body #formalExamHost .fe-recent-scores{gap:3px}html body #formalExamHost .fe-round-menu .fe-round-actions,html body #formalExamHost .fe-round-tools{padding-inline:8px}}
 html[data-company-mode=on] #app#app#app #formalExamHost .fe-rounds>.fe-round.fe-round-menu{display:flex!important;flex-direction:column!important;gap:0!important;padding:0!important;border:1px solid #30363d!important;border-radius:5px!important}
 html[data-company-mode=on] #app#app#app #formalExamHost .fe-round-menu .fe-review-toggle{display:flex!important;flex-direction:row!important;grid-column:auto!important;grid-row:auto!important}
+.cbt-wrong-notebook .cbt-notebook-round-tools{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:8px 0;border-bottom:1px solid var(--line,#354c3d)}
+.cbt-wrong-notebook .cbt-notebook-round-tools [data-notebook-round]{flex:1 1 200px;text-align:left}
+.cbt-wrong-notebook .cbt-notebook-round-tools [data-notebook-pdf]{min-height:44px;font-size:13px}

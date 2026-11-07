@@ -4,4 +4,4 @@
 
 CBT 운영 비활성 원인은 private image mount/env 누락과 옛 Vercel fallback. 501개 기존이미지 해시 및 격리 API 이미지검증 통과, auth후 private RO overlay 대기.
 
-회차별 점수 API global100 한계는 별도 backend 보완 조율 중.
+회차별 점수 API global100 한계는 cbt.repository 단일파일 개선3c3c22a로 검증완료. 별도overlay 배포대기.

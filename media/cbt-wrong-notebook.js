@@ -180,6 +180,15 @@
         disabled.forEach(function (saved) { if (saved.element.isConnected) saved.element.disabled = saved.value; });
       });
     }
+    function downloadPdf(round, mode, status) {
+      if (!valid() || ctx.pending || !sameOwner(ctx.identity, identity(api))) return;
+      if (!root.HanqCbtWrongPdf) { status.textContent = 'PDF 기능을 불러오지 못했어요. 화면을 새로 열어 주세요.'; return; }
+      var token=ctx.identity,generation=ctx.generation,viewToken=ctx.view,disabled=[];
+      function current(){return owned(token,generation)&&ctx.view===viewToken&&status.isConnected;}
+      ctx.pending=true;status.textContent='누적 오답을 확인하고 있어요…';
+      ctx.element.querySelectorAll('[data-notebook-action]').forEach(function(el){disabled.push({element:el,value:el.disabled});el.disabled=true;});
+      root.HanqCbtWrongPdf.download({api:api,round:round,mode:mode,isCurrent:current,onProgress:function(p){if(current())status.textContent='PDF 준비 '+p.done+' / '+p.total;}}).then(function(r){if(current())status.textContent=r.count+'문제 · '+r.pages+'쪽 '+(mode==='answers'?'해설지':'문제')+' PDF를 다운로드했어요.';},function(e){if(current())status.textContent=e.code==='empty'?'이 회차에 저장된 선택 오답이 없어요.':e.code==='notebook_incomplete'?'오답 목록을 모두 확인하지 못해 PDF를 만들지 않았어요. 다시 확인해 주세요.':'PDF를 만들지 못했어요. 다시 눌러 주세요.';}).finally(function(){if(current()){ctx.pending=false;disabled.forEach(function(s){if(s.element.isConnected)s.element.disabled=s.value;});}});
+    }
     function renderList() {
       if (!valid()) return;
       var section = shell();
@@ -198,7 +207,9 @@
       select.value = ctx.round; select.addEventListener('change', function () { if (!valid() || ctx.pending) return; ctx.round = select.value; ctx.page = 0; renderList(); }); label.appendChild(select); section.appendChild(label);
       var replayActions = node('div', null, 'fe-rounds'), replayStatus = node('p'); replayStatus.setAttribute('role', 'status'); replayStatus.setAttribute('aria-live', 'polite'); replayStatus.setAttribute('data-notebook-replay-status', '');
       (ctx.round ? [Number(ctx.round)] : rounds).forEach(function (round) {
-        var replay = button('제' + round + '회 오답 다시 풀기', 'tool-btn', function () { startReview(round, replayStatus); }); replay.setAttribute('data-notebook-round', String(round)); replay.setAttribute('data-notebook-action', ''); replay.disabled = typeof options.onReview !== 'function'; replayActions.appendChild(replay);
+        var row=node('div',null,'cbt-notebook-round-tools');replayActions.appendChild(row);
+        var replay = button('제' + round + '회 오답 다시 풀기', 'tool-btn', function () { startReview(round, replayStatus); }); replay.setAttribute('data-notebook-round', String(round)); replay.setAttribute('data-notebook-action', ''); replay.disabled = typeof options.onReview !== 'function'; row.appendChild(replay);
+        [['questions','오답문제 PDF'],['answers','해설지 PDF']].forEach(function(spec){var pdf=button(spec[1],'tool-btn',function(){downloadPdf(round,spec[0],replayStatus);});pdf.setAttribute('data-notebook-pdf',spec[0]);pdf.setAttribute('data-notebook-action','');pdf.setAttribute('aria-label','제'+round+'회 '+spec[1]);row.appendChild(pdf);});
       });
       section.appendChild(replayActions); section.appendChild(replayStatus);
       var filtered = ctx.items.filter(function (item) { return !ctx.round || item.exam === Number(ctx.round); }), pages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
