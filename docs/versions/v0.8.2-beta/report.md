@@ -1,0 +1,1 @@
+Practice only: transcript and button explanations hidden. Accessible names, speed/repeat state and other-player defaults retained. 45 Practice and 17 shared-player checks passed, plus focused test and version-build test. Browser verified with synthetic fixtures. No audio, transcript or user data deleted.

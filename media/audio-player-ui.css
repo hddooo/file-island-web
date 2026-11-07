@@ -51,3 +51,6 @@ html body #app .ha-controls .ha-repeat[data-repeat=off]{color:#8495a0!important}
 html body #app .ha-controls .ha-repeat:is([data-repeat=all],[data-repeat=one]){color:#72e5ac!important}
 html body #app .ha-controls .ha-repeat::after{content:none!important}
 html body #app .ha-controls .ha-repeat[data-repeat=one]::after{content:'1'!important;position:absolute;inset:0;display:grid;place-items:center;background:none!important;box-shadow:none!important;transform:none!important;font:800 11px/1 Arial,Helvetica,sans-serif;color:inherit;pointer-events:none}
+
+/* Practice listening: preserve accessible names; show icons and playback state only. */
+html body #app#app#app #toeicSection .ha-player.ha-icon-only .ha-controls button.ha-button:not(.ha-speed-cycle){font-size:0!important}

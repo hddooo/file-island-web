@@ -62,7 +62,7 @@
         // Only one playback owner. An earlier Listening mini player must not keep playing.
         if (root.HanqLcPlayer) root.HanqLcPlayer.stop();
         if (root.HanqToeicAudio) root.HanqToeicAudio.stop();
-        player = root.HanqLcPlaylist.mount(box, [], { catalog: data, heading: label(options.parts) + ' Practice 음원', summary: '등록된 문제·지문 음원 ' + data.list.length + '개 · 회차를 선택해 차례로 들어요.' + (data.missing ? ' · 등록 음원 없는 묶음 ' + data.missing + '개 제외' : ''), initialSelection: snapshot, preferenceKey: 'hanq:lc-speed:' + options.api.state().ownerId,
+        player = root.HanqLcPlaylist.mount(box, [], { catalog: data, hideTranscript: true, iconOnlyControls: true, heading: label(options.parts) + ' Practice 음원', summary: '등록된 문제·지문 음원 ' + data.list.length + '개 · 회차를 선택해 차례로 들어요.' + (data.missing ? ' · 등록 음원 없는 묶음 ' + data.missing + '개 제외' : ''), initialSelection: snapshot, preferenceKey: 'hanq:lc-speed:' + options.api.state().ownerId,
           beforePlay: function () { if (root.HanqLcPlayer) root.HanqLcPlayer.pause(); },
           onPractice: typeof options.onPractice === 'function' ? function (track) { if (control.valid()) options.onPractice(track, player.selection()); } : null,
           loadFile: function (track, signal) { if (!control.valid()) return Promise.reject(Error('cancelled')); return options.api.toeicCbtAudio(track.collectionId, track.groupId, signal).then(function (blob) { if (!control.valid()) throw Error('cancelled'); return blob; }); }
