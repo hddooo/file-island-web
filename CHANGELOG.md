@@ -1,3 +1,8 @@
+# 0.8.14-beta
+
+- 역사섬 실전모의고사를 컴팩트 회차목록, 최근3점수, 누적오답PDF로 정리. 기록 원본은 보존.
+- 교재 순서형 쉼표 입력 안내, 분류형 보기/답칸 배치 개선.
+
 ## 0.8.13-beta (2026-11-07)
 
 - Dedicated sign-in/sign-up-request entry and ADMIN approval queue; existing members retained.
