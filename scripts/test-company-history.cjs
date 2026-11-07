@@ -91,7 +91,7 @@ test('empty, hidden and non-history steps are skipped rather than shown as empty
   other.mode.select('company'); await flush(); assertUndecorated(other.doc.querySelector('.steps'));
 });
 
-for (const [prefix, name] of [['gsr', 'goryeo'], ['jsr', 'joseon']]) {
+for (const [prefix, name] of [['gsr', 'goryeo'], ['jsr', 'joseon'], ['osr', 'opening']]) {
   test(name + ' topics and modes preserve native selection while legacy hidden toc stays untouched', async t => {
     const { doc, mode } = fixture(t, '<section class="' + name + '-script-reader"><div class="' + prefix + '-topics"><button data-topic="politics" aria-current="true">정치</button><button data-topic="culture" aria-current="false">문화</button></div><div class="' + prefix + '-modes"><button data-mode="read" data-navigation-number="1" aria-current="true">개념</button><button data-mode="blank" data-navigation-number="2" aria-current="false">빈칸</button></div><nav class="' + prefix + '-toc" style="display:none"><button data-target="legacy">기존 목차</button></nav><textarea>작성 중</textarea></section>');
     const topics = doc.querySelector('.' + prefix + '-topics'), modes = doc.querySelector('.' + prefix + '-modes'), toc = doc.querySelector('.' + prefix + '-toc');

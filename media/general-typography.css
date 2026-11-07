@@ -24,7 +24,7 @@
     .tg-summary-note, .tg-structure-notes, .cn-en,
     .textbook-semantic-text, .textbook-semantic-prompt, .textbook-source-quiz-statement,
     .textbook-source-quiz-answer, .textbook-source-quiz-events, .textbook-source-timeline-event,
-    .gsr-transcription, .jsr-transcription, .gsr-parent-context, .jsr-parent-context,
+    .gsr-transcription, .jsr-transcription, .osr-transcription, .gsr-parent-context, .jsr-parent-context, .osr-parent-context,
     .memory-sub, .bubble, .speech, .o-dialogue,
     .hq-inquiry-intro, .ac-status, .ac-growth-next
   ) { font-size: var(--hanq-reading-size) !important; }
@@ -34,7 +34,7 @@
     .qnum, .tc-position, .lr-document-title, .textbook-semantic-heading,
     .textbook-source-quiz-title, .textbook-source-quiz-subtopic,
     .textbook-joseon-heading, .textbook-joseon-subtopic,
-    .gsr-table-title, .gsr-group-subtitle, .jsr-group-subtitle,
+    .gsr-table-title, .osr-table-title, .gsr-group-subtitle, .jsr-group-subtitle, .osr-group-subtitle,
     .memory-era, .memory-topic, .ac-hero-name
   ) { font-size: var(--hanq-emphasis-size) !important; }
 
@@ -42,13 +42,13 @@
   html:not([data-company-mode=on]) :is(#app#app#app, dialog, [role=dialog], .admin-page, .company-document) :is(
     p, li, td, th, blockquote, .qtext, .mock-stem, .tc-passage,
     .tn-original, .tn-translation, .tg-en, .tg-translation,
-    .textbook-semantic-text, .textbook-source-quiz-statement, .gsr-transcription, .jsr-transcription
+    .textbook-semantic-text, .textbook-source-quiz-statement, .gsr-transcription, .jsr-transcription, .osr-transcription
   ) :is(span, em, a) { font-size: inherit !important; }
 
   html:not([data-company-mode=on]) :is(#app#app#app, dialog, [role=dialog], .admin-page, .company-document) :is(
     .tool-btn, .toeic-list-open, .toeic-list-action, .tn button, .tg button, .tc button,
     .lr-text-choices button, .lr-question-nav button, .lr-document-nav button,
-    .goryeo-script-reader button, .joseon-script-reader button,
+    .goryeo-script-reader button, .joseon-script-reader button, .opening-script-reader button,
     .textbook-source-quiz button, .hq-inquiry-card button, .hq-inquiry-dialog button
   ) { font-size: var(--hanq-reading-size) !important; }
 
@@ -56,7 +56,7 @@
     .tc-answer-option, .toeic-list-open, .lr-text-choices button
   ) :is(span, small) { font-size: inherit !important; }
 
-  html:not([data-company-mode=on]) :is(.goryeo-script-reader, .joseon-script-reader,
+  html:not([data-company-mode=on]) :is(.goryeo-script-reader, .joseon-script-reader, .opening-script-reader,
     .textbook-semantic, .textbook-source-quiz, .tg-learning, .tn, .tc,
     .history81-term-tooltip, [role=tooltip]) { font-size: var(--hanq-reading-size) !important; }
 

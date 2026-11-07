@@ -1,0 +1,14 @@
+'use strict';
+const assert=require('node:assert/strict'),crypto=require('node:crypto');
+const {create}=require('../media/api-client.js'),adapter=require('../media/opening-script-transport.js');
+const hash=x=>crypto.createHash('sha256').update(x).digest('hex'),markdown='synthetic study input',source=hash(markdown),projection={sourceSha256:source,tables:[]},bundle={schema:'hanq-opening-local/1',source:{sha256:source,bytes:Buffer.byteLength(markdown)},projectionSha256:hash(JSON.stringify(projection)),inventory:[],markdown};
+const body=JSON.stringify(bundle),structure={...projection,bundleDescriptor:{source:bundle.source},bundlePin:{bytes:Buffer.byteLength(body),sha256:hash(body)}},envelope={structure,presentation:{},workspace:{revision:'a'.repeat(64),sourceSha256:source,counts:{items:1,groups:1,slots:1}}};
+(async()=>{let mode='ok',calls=[];const api=create({base:'https://synthetic.invalid',storage:null,fetch:async(url,opts)=>{
+ if(url.endsWith('/auth/signin'))return Response.json({accessToken:'synthetic',user:{id:'synthetic'}});if(url.endsWith('/me'))return Response.json({user:{id:'synthetic'},premium:{active:false},access:{total:0},growth:{points:0}});
+ calls.push({url,opts});if(['401','403','503'].includes(mode))return Response.json({error:{code:'unavailable'}},{status:Number(mode)});
+ let text=url.endsWith('/current/structure')?JSON.stringify(envelope):body;if(mode==='tamper'&&!url.endsWith('/current/structure'))text=text.replace('synthetic','incorrect');if(mode==='projection'&&url.endsWith('/current/structure'))text=JSON.stringify({...envelope,structure:{...structure,tables:[{}]}});
+ return new Response(text,{headers:{'content-type':mode==='mime'?'text/html':'application/json','cache-control':mode==='public'?'public, max-age=60':'private, no-store'}});
+ }});await api.signin('synthetic@example.invalid','synthetic');let t=adapter.create(api);await assert.rejects(t.loadStructure());await assert.rejects(t.loadFigure('p001-01.png'));assert.deepEqual(await t.loadBundle(),bundle);assert.deepEqual(await t.loadStructure(),structure);assert.equal(t.sourceSha256,source);assert.deepEqual(t.workspace,envelope.workspace);assert(calls.every(c=>c.opts.cache==='no-store'&&c.opts.redirect==='error'&&c.opts.headers.Authorization==='Bearer synthetic'));
+ for(mode of ['tamper','projection','mime','public','403','503']){t=adapter.create(api);await assert.rejects(t.loadBundle());await assert.rejects(t.loadStructure());}
+ mode='ok';const ac=new AbortController();ac.abort();await assert.rejects(adapter.create(api).loadBundle({signal:ac.signal}));mode='401';await assert.rejects(adapter.create(api).loadBundle());assert(!api.state().signedIn);console.log('PASS synthetic current bootstrap, private headers, pin/projection tamper, auth failures, abort, unavailable state');
+})().catch(e=>{console.error(e);process.exitCode=1;});

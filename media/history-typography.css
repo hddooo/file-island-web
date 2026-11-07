@@ -5,8 +5,8 @@ html[data-history-typography] {
 }
 html[data-history-typography]:not([data-company-mode="on"]) :is(#app#app > .device-content > :not(.world-global-nav,.device-install-tip,.lc-mini-player,.footer), .company-document > main),
 html[data-history-typography]:not([data-company-mode="on"]) :is(#app#app > .device-content > :not(.world-global-nav,.device-install-tip,.lc-mini-player,.footer), .company-document > main) *,
-html[data-history-typography]:not([data-company-mode="on"]) :is(.mock-zoom, .lr-image-dialog, .gsr-image-dialog, .jsr-image-dialog, .textbook-original-dialog, .history81-term-tooltip),
-html[data-history-typography]:not([data-company-mode="on"]) :is(.mock-zoom, .lr-image-dialog, .gsr-image-dialog, .jsr-image-dialog, .textbook-original-dialog, .history81-term-tooltip) * {
+html[data-history-typography]:not([data-company-mode="on"]) :is(.mock-zoom, .lr-image-dialog, .gsr-image-dialog, .jsr-image-dialog, .osr-image-dialog, .textbook-original-dialog, .history81-term-tooltip),
+html[data-history-typography]:not([data-company-mode="on"]) :is(.mock-zoom, .lr-image-dialog, .gsr-image-dialog, .jsr-image-dialog, .osr-image-dialog, .textbook-original-dialog, .history81-term-tooltip) * {
   font-family: var(--history-font) !important;
 }
 /* Move only this introduction below its eyebrow; keep the art and text sizes. */
