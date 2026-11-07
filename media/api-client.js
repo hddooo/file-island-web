@@ -157,6 +157,7 @@
       if (opts.body !== undefined) headers['Content-Type'] = 'application/json';
       if (opts.rawBody !== undefined) headers['Content-Type'] = 'application/octet-stream';
       if (opts.csrf) headers['X-HanQ-CSRF'] = '1';
+      if(opts.cbtAttemptToken && /^[A-Za-z0-9-]{32,128}$/.test(opts.cbtAttemptToken)) headers['X-Cbt-Attempt-Token']=opts.cbtAttemptToken;
       if (opts.auth !== false && (opts.authToken || state.token)) headers.Authorization = 'Bearer ' + (opts.authToken || state.token);
       /* 마감 시간은 헤더가 아니라 본문(text/blob)을 다 받을 때까지. 헤더만 오고 본문이 멈춰도 끝나게 하고,
          AbortController를 무시하는 fetch에서도 끝나도록 마감 Promise와 경주시킨다. 연결 상태는 경주가 끝날 때 한 번만 바꾼다 —
@@ -419,8 +420,8 @@
         profileRequest = shared; profileRequestEpoch = epoch; return shared;
       },
       /* CBT는 로그인 토큰·현재 계정 확인을 공용 call()과 함께 사용. 이미지도 공개 주소로 이동하지 않고 인증된 요청으로 받는다. */
-      cbt: function(method,path,body) { if (!/^\/api\/v1\/cbt(?:\/|$)/.test(path) || /[?#]|\.\.|%/.test(path)) return Promise.reject(ApiError(400,'invalid_path')); var opts = body === undefined ? {} : {body:body}; if (method === 'POST' && /^\/api\/v1\/cbt\/(?:runs|reviews)\/[0-9a-f-]{36}\/start$/.test(path)) opts.timeout = 20000; return call(method,path,opts); },
-      cbtImage: function(path) { if (!/^\/api\/v1\/cbt\/(?:runs|reviews)\/[0-9a-f-]{36}\/questions\/(?:[0-9]|[1-4][0-9])\/(?:image|common)$/.test(path)) return Promise.reject(ApiError(400,'invalid_path')); return call('GET',path,{binary:true}); },
+      cbt: function(method,path,body,options) { if (!/^\/api\/v1\/cbt(?:\/|$)/.test(path) || /[?#]|\.\.|%/.test(path)) return Promise.reject(ApiError(400,'invalid_path')); var opts = body === undefined ? {} : {body:body}; opts.cbtAttemptToken=options&&options.attemptToken; opts.keepalive=!!(options&&options.keepalive); if (method === 'POST' && /^\/api\/v1\/cbt\/(?:runs|reviews)\/[0-9a-f-]{36}\/start$/.test(path)) opts.timeout = 20000; return call(method,path,opts); },
+      cbtImage: function(path,options) { if (!/^\/api\/v1\/cbt\/(?:runs|reviews)\/[0-9a-f-]{36}\/questions\/(?:[0-9]|[1-4][0-9])\/(?:image|common)$/.test(path)) return Promise.reject(ApiError(400,'invalid_path')); return call('GET',path,{binary:true,cbtAttemptToken:options&&options.attemptToken}); },
       questionRequests: function(method,path,body){if(!/^\/api\/v1\/(?:ops\/)?question-requests(?:\/|$|\?)/.test(path)||/\.\.|[\\#]/.test(path))return Promise.reject(ApiError(400,'invalid_path'));return call(method,path,body===undefined?{}:{body:body});},
       questionRequestUpload: function(path,file){if(!/^\/api\/v1\/(?:ops\/)?question-requests\/[0-9a-f-]{36}\/assets\?/.test(path)||/\.\.|[\\#]/.test(path)||!file||file.size>16*1024*1024)return Promise.reject(ApiError(400,'invalid_upload'));return call('POST',path,{rawBody:file,timeout:70000,feedback:false});},
       questionRequestAsset: function(path){if(!/^\/api\/v1\/(?:ops\/)?question-requests\/[0-9a-f-]{36}\/assets\/[0-9a-f-]{36}$/.test(path))return Promise.reject(ApiError(400,'invalid_path'));return call('GET',path,{binary:true,privateResponse:true,mediaTypes:['image/png','image/jpeg','image/webp','audio/mpeg','audio/wav'],timeout:70000,feedback:false});},
