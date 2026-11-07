@@ -429,6 +429,7 @@
       nicknameAvailable: function (nickname) { return raw('GET', '/api/v1/auth/nickname'+q({nickname:nickname}), {auth:false}); },
       attendance: function () { var owner=currentOwner(),epoch=authEpoch;return call('POST', '/api/v1/attendance', {body:{}}).then(function(d){if(currentOwner()!==owner||authEpoch!==epoch)throw ApiError(401,'session_changed');if(state.partners)return api.me().then(function(){return d;});state.access=d;if(d.growth&&Number.isSafeInteger(d.growth.points)&&d.growth.points>=0)state.growth={points:d.growth.points};emit();return d;}); },
       updateProfile: function (displayName) { return call('PATCH', '/api/v1/me', { body: { displayName: displayName } }).then(function (d) { sameOwner(d); state.user = d.user; emit(); return d; }); },
+      learningResets: function () { return call('GET', '/api/v1/me/learning-resets'); },
       changePassword: function (currentPassword, newPassword) { return call('POST', '/api/v1/me/password', { body: { currentPassword: currentPassword, newPassword: newPassword } }); },
       plan: function () { return raw('GET', '/api/v1/premium/plan', { auth: false }); },
       premium: function () { return call('GET', '/api/v1/premium').then(function (d) { state.premium = { active: d.active, expiresAt: d.expiresAt, serverTime: d.serverTime }; emit(); return d; }); },

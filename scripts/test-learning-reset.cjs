@@ -1,0 +1,26 @@
+'use strict';
+const assert = require('node:assert/strict');
+const {mount, identity} = require('../media/learning-reset.js');
+const A='11111111-1111-4111-8111-111111111111',B='22222222-2222-4222-8222-222222222222';
+function fixture(){
+ const doc={createElement(tag){return {tag,attrs:{},setAttribute(k,v){this.attrs[k]=v;},textContent:''};}};
+ const host={ownerDocument:doc,isConnected:true,children:[],replaceChildren(){this.children=[];},appendChild(n){this.children.push(n);},setAttribute(){}};
+ let state={signedIn:true,ownerId:A,user:{id:A},epoch:1},listener=()=>{};
+ const api={state:()=>state,onChange(fn){listener=fn;return()=>{listener=()=>{};};}};
+ return {host,api,change(s){state=s;listener(s);}};
+}
+const tick=()=>new Promise(r=>setImmediate(r));
+(async()=>{
+ let count=0;
+ for(const response of [{available:false,reason:'reset_consistency_pending'},{available:true},null]){
+  const f=fixture(); f.api.learningResets=async()=>response;
+  mount(f.host,f.api);await tick();
+  assert.equal(f.host.children.filter(n=>n.tag==='button').length,2);
+  assert(f.host.children.filter(n=>n.tag==='button').every(n=>n.disabled));count++;
+ }
+ const failed=fixture();failed.api.learningResets=()=>Promise.reject(new Error('offline'));mount(failed.host,failed.api);await tick();assert.match(failed.host.children.at(-1).textContent,/확인하지 못/);count++;
+ const pending=fixture();let resolve;pending.api.learningResets=()=>new Promise(r=>resolve=r);mount(pending.host,pending.api);await tick();pending.change({signedIn:true,ownerId:B,user:{id:B},epoch:2});resolve({available:false,reason:'reset_consistency_pending'});await tick();assert.match(pending.host.children.at(-1).textContent,/계정이 바뀌/);count++;
+ const stopped=fixture();let done;stopped.api.learningResets=()=>new Promise(r=>done=r);const stop=mount(stopped.host,stopped.api);await tick();const before=stopped.host.children.at(-1).textContent;stop();done({available:false,reason:'reset_consistency_pending'});await tick();assert.equal(stopped.host.children.at(-1).textContent,before);count++;
+ const guest=fixture();guest.change({signedIn:false});let calls=0;guest.api.learningResets=()=>{calls++;};mount(guest.host,guest.api);await tick();assert.equal(calls,0);assert.equal(identity(guest.api),null);count++;
+ console.log(`${count} reset readiness/owner isolation checks passed; no writes/storage mutations`);
+})().catch(e=>{console.error(e);process.exitCode=1;});
