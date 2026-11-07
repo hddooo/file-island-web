@@ -2,7 +2,7 @@
 (function(root){'use strict';
 var active=null,ERA={prehistory:'선사',gojoseon:'고조선·여러 나라',samguk:'삼국',nambuk:'남북국',goryeo:'고려','joseon-early':'조선 전기','joseon-late':'조선 후기',opening:'개화기',colonial:'일제강점기',modern:'현대사'};
 function esc(x){return String(x==null?'':x).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]});}
-function stop(){if(!active)return;if(active.flushOnExit)active.flushOnExit();active.alive=false;clearInterval(active.timer);clearTimeout(active.listTimer);if(active.off)active.off();if(active.recoveryOff)active.recoveryOff();root.document.removeEventListener('visibilitychange',active.wake);root.removeEventListener('pageshow',active.wake);root.removeEventListener('pagehide',active.hide);root.removeEventListener('beforeunload',active.beforeUnload);active.urls.forEach(function(u){root.URL.revokeObjectURL(u);});active=null;}
+function stop(){if(!active)return;if(active.flushOnExit)active.flushOnExit();active.alive=false;clearInterval(active.timer);clearTimeout(active.listTimer);if(active.off)active.off();if(active.resetOff)active.resetOff();if(active.recoveryOff)active.recoveryOff();root.document.removeEventListener('visibilitychange',active.wake);root.removeEventListener('pageshow',active.wake);root.removeEventListener('pagehide',active.hide);root.removeEventListener('beforeunload',active.beforeUnload);active.urls.forEach(function(u){root.URL.revokeObjectURL(u);});active=null;}
 function mount(host,o,id){stop();var api=o.api,ctx={alive:true,timer:null,off:null,urls:[],owner:null,pending:false,seq:0,data:null,key:null,round:null,refreshed:{},imageZoom:{},ready:false,draft:null,clock:null,cache:{},stars:null,starStorageError:false,starSyncError:false,starPending:false,reviewOnly:{},reviews:[],reviewListError:false};active=ctx;
 var recovery=root.HanqAuthSession;
 if(recovery&&recovery.register)ctx.recoveryOff=recovery.register('formal',{get ownerId(){return ctx.owner;},capture:function(){if(!ctx.data||!ctx.draft)return null;var a=root.document.activeElement,focus=(a&&host.contains(a)?{id:a.id,option:a.dataset&&a.dataset.option}:null)||ctx.lastFocus;return {runId:ctx.data.run.id,position:ctx.draft.position,focus:focus};}});
@@ -24,17 +24,20 @@ function call(method,path,body){return raw(method,path,body).then(function(d){re
 function pendingStarsKey(d){return 'hanq:cbt-stars-pending:v2:'+ctx.owner+':'+d.run.id;}
 function storedStars(d,key){var v=null;try{v=JSON.parse(root.localStorage.getItem(key));}catch(e){}return v&&v.owner===ctx.owner&&v.run===d.run.id&&v.signature===signature(d)?v:null;}
 function validStarResponse(d,v){return v&&v.signature===signature(d)&&Array.isArray(v.flags)&&v.flags.length===d.items.length&&v.flags.every(function(x){return typeof x==='boolean';});}
+function starEpoch(d){var local=root.HanqLearningReset&&root.HanqLearningReset.cutoff(ctx.owner,'history')||0,remote=d&&d.serverStars&&Date.parse(d.serverStars.resetAt)||0,at=Math.max(local,remote);return at?new Date(at).toISOString():null;}
+function sameStarEpoch(p,d){return (Date.parse(p&&p.resetAt)||0)===(Date.parse(starEpoch(d))||0);}
+function archiveStars(d,p){try{var key=pendingStarsKey(d)+':archive:'+(root.crypto&&root.crypto.randomUUID?root.crypto.randomUUID():Date.now()+'-'+Math.random()),value=JSON.stringify(p);root.localStorage.setItem(key,value);return root.localStorage.getItem(key)===value;}catch(_){return false;}}
 async function syncStars(d){
  var owner=ctx.owner,path=runPath(d.run)+'/stars',pending=storedStars(d,pendingStarsKey(d))||d.pendingStarChanges;
  if(!pending&&ctx.data&&ctx.data.run.id===d.run.id&&ctx.data.pendingStarChanges&&ctx.data.pendingStarChanges.owner===owner&&ctx.data.pendingStarChanges.signature===signature(d))pending=ctx.data.pendingStarChanges;
  try{
-  var server=await raw('GET',path);if(!validStarResponse(d,server))throw Error('invalid star response');
+  var server=await raw('GET',path);if(!validStarResponse(d,server))throw Error('invalid star response');d.serverStars=server;if(pending&&!sameStarEpoch(pending,d))pending=null;
   var legacy=storedStars(d,starsKey(d.run));
-  if(legacy&&Array.isArray(legacy.flags)&&legacy.flags.length===d.items.length&&legacy.flags.every(function(x){return typeof x==='boolean';})&&legacy.flags.some(Boolean))server=await raw('POST',path+'/import',{signature:signature(d),flags:legacy.flags});
-  if(pending&&pending.changes){for(var pos of Object.keys(pending.changes)){if(!/^\d+$/.test(pos)||Number(pos)>=d.items.length||typeof pending.changes[pos]!=='boolean')continue;server=await raw('POST',path,{signature:signature(d),position:Number(pos),starred:pending.changes[pos]});}}
+  if(!starEpoch(d)&&legacy&&Array.isArray(legacy.flags)&&legacy.flags.length===d.items.length&&legacy.flags.every(function(x){return typeof x==='boolean';})&&legacy.flags.some(Boolean))server=await raw('POST',path+'/import',{signature:signature(d),flags:legacy.flags});
+  if(pending&&pending.changes){for(var pos of Object.keys(pending.changes)){if(!/^\d+$/.test(pos)||Number(pos)>=d.items.length||typeof pending.changes[pos]!=='boolean')continue;server=await raw('POST',path,{signature:signature(d),position:Number(pos),starred:pending.changes[pos],resetAt:pending.resetAt||null});}}
   if(!validStarResponse(d,server))throw Error('invalid star response');
   if(current()!==owner)throw {code:'session_changed'};
-  d.serverStars=server;d.starSyncError=false;d.pendingStarChanges=null;if(pending&&pending.changes)Object.keys(pending.changes).forEach(function(p){delete pending.changes[p];});try{root.localStorage.removeItem(pendingStarsKey(d));}catch(e){}
+  d.serverStars=server;d.starSyncError=false;d.pendingStarChanges=null;if(pending&&pending.changes)Object.keys(pending.changes).forEach(function(p){delete pending.changes[p];});if(pending)try{root.localStorage.removeItem(pendingStarsKey(d));}catch(e){}
  }catch(e){if(e.status===401||e.code==='session_changed')throw e;d.starSyncError=true;d.pendingStarChanges=pending||null;}
 }
 async function migrateDeviceStars(){
@@ -45,6 +48,7 @@ async function migrateDeviceStars(){
   var state;try{state=await raw('GET','/runs/'+id+'/stars');}catch(e){if(e.status===404)continue;throw e;}
   if(current()!==owner)throw {code:'session_changed'};
   if(state.signature!==saved.signature||!Array.isArray(state.flags)||state.flags.length!==saved.flags.length)continue;
+  if(state.resetAt||(root.HanqLearningReset&&root.HanqLearningReset.cutoff(owner,'history')))continue;
   await raw('POST','/runs/'+id+'/stars/import',{signature:saved.signature,flags:saved.flags});
  }
 }
@@ -79,11 +83,12 @@ function result(d){var r=d.run,s=r.result;paint('<h2 id="feResult" tabindex="-1"
 /* Server stars are owner/question/version scoped; exact legacy device snapshots remain untouched. */
 function starsKey(run){return 'hanq:cbt-stars:v1:'+ctx.owner+':'+run.id;}
 function hydrateStars(d){var sig=signature(d),old=ctx.stars,server=validStarResponse(d,d.serverStars)?d.serverStars:null,saved=storedStars(d,starsKey(d.run)),pending=storedStars(d,pendingStarsKey(d))||d.pendingStarChanges;
- var flags=server?server.flags.slice():old&&old.owner===ctx.owner&&old.run===d.run.id&&old.signature===sig?old.flags.slice():saved&&Array.isArray(saved.flags)&&saved.flags.length===d.items.length?saved.flags.map(function(x){return x===true;}):d.items.map(function(){return false;});
+ var epoch=starEpoch(d);if(pending&&!sameStarEpoch(pending,d))pending=null;
+ var flags=server&&sameStarEpoch(server,d)?server.flags.slice():epoch?d.items.map(function(){return false;}):old&&old.owner===ctx.owner&&old.run===d.run.id&&old.signature===sig?old.flags.slice():saved&&Array.isArray(saved.flags)&&saved.flags.length===d.items.length?saved.flags.map(function(x){return x===true;}):d.items.map(function(){return false;});
  if(pending&&pending.changes)Object.keys(pending.changes).forEach(function(p){if(/^\d+$/.test(p)&&Number(p)<flags.length&&typeof pending.changes[p]==='boolean')flags[Number(p)]=pending.changes[p];});
- ctx.stars={owner:ctx.owner,run:d.run.id,signature:sig,flags:flags};ctx.starSyncError=!!d.starSyncError;ctx.starStorageError=false;
+ ctx.stars={owner:ctx.owner,run:d.run.id,signature:sig,flags:flags,resetAt:epoch};ctx.starSyncError=!!d.starSyncError;ctx.starStorageError=false;
 }
-function starred(position){return !!(ctx.stars&&ctx.stars.flags[position]);}
+function starred(position){return !!(ctx.stars&&sameStarEpoch(ctx.stars,ctx.data)&&ctx.stars.flags[position]);}
 function starCount(){return ctx.stars?ctx.stars.flags.filter(function(x){return x;}).length:0;}
 function jumpLabel(q){return q.number+'번'+(starred(q.position)?' · ★ 별표':'')+(q.selectedOptionId?' · 답함':'');}
 function starBadge(position){return starred(position)?'<span class="fe-star-label">★ 별표</span>':'';}
@@ -92,10 +97,10 @@ function starStatus(){var e=host.querySelector('#feStarStatus');if(e)e.textConte
 }
 function refreshStarDom(){var b=host.querySelector('#feStar'),pos=ctx.data.run.currentPosition;if(b){b.disabled=ctx.starPending;b.setAttribute('aria-pressed',String(starred(pos)));b.innerHTML='<span aria-hidden="true">'+(starred(pos)?'★':'☆')+'</span> 별표';}var select=host.querySelector('#feJump');if(select)ctx.data.items.forEach(function(q){select.options[q.position].textContent=jumpLabel(q);});if(ctx.data.run.status==='final')result(ctx.data);else starStatus();}
 function localStar(position){if(!valid()||ctx.pending||ctx.starPending||!ctx.stars||current()!==ctx.owner||!ctx.data.items[position])return;
- var d=ctx.data,owner=ctx.owner,sig=signature(d),saved=storedStars(d,pendingStarsKey(d))||{owner:owner,run:d.run.id,signature:sig,changes:{}};if(!saved.changes||typeof saved.changes!=='object')saved.changes={};
+ var d=ctx.data,owner=ctx.owner,sig=signature(d),saved=storedStars(d,pendingStarsKey(d))||{owner:owner,run:d.run.id,signature:sig,resetAt:starEpoch(d),changes:{}};if(!sameStarEpoch(saved,d)){if(!archiveStars(d,saved)){ctx.starStorageError=true;starStatus();return;}saved={owner:owner,run:d.run.id,signature:sig,resetAt:starEpoch(d),changes:{}};}if(!saved.changes||typeof saved.changes!=='object')saved.changes={};
  var value=!starred(position);saved.changes[position]=value;d.pendingStarChanges=saved;ctx.stars.flags[position]=value;ctx.starPending=true;ctx.starSyncError=false;
  try{root.localStorage.setItem(pendingStarsKey(d),JSON.stringify(saved));ctx.starStorageError=false;}catch(e){ctx.starStorageError=true;}refreshStarDom();
- raw('POST',runPath(d.run)+'/stars',{signature:sig,position:position,starred:value}).then(function(state){if(!valid()||current()!==owner||ctx.data!==d)return;if(!validStarResponse(d,state))throw Error('invalid stars');delete saved.changes[position];try{if(Object.keys(saved.changes).length)root.localStorage.setItem(pendingStarsKey(d),JSON.stringify(saved));else root.localStorage.removeItem(pendingStarsKey(d));}catch(e){}d.serverStars=state;d.starSyncError=false;d.pendingStarChanges=Object.keys(saved.changes).length?saved:null;ctx.starStorageError=false;ctx.stars.flags=state.flags.slice();ctx.starPending=false;ctx.starSyncError=false;refreshStarDom();}).catch(function(){if(!valid()||current()!==owner||ctx.data!==d)return;ctx.starPending=false;ctx.starSyncError=true;refreshStarDom();});
+ raw('POST',runPath(d.run)+'/stars',{signature:sig,position:position,starred:value,resetAt:saved.resetAt||null}).then(function(state){if(!valid()||current()!==owner||ctx.data!==d)return;if(!validStarResponse(d,state))throw Error('invalid stars');delete saved.changes[position];try{if(Object.keys(saved.changes).length)root.localStorage.setItem(pendingStarsKey(d),JSON.stringify(saved));else root.localStorage.removeItem(pendingStarsKey(d));}catch(e){}d.serverStars=state;d.starSyncError=false;d.pendingStarChanges=Object.keys(saved.changes).length?saved:null;ctx.starStorageError=false;ctx.stars.flags=state.flags.slice();ctx.stars.resetAt=state.resetAt||null;ctx.starPending=false;ctx.starSyncError=false;refreshStarDom();}).catch(function(){if(!valid()||current()!==owner||ctx.data!==d)return;ctx.starPending=false;ctx.starSyncError=true;refreshStarDom();});
 }
 function starredResults(d){var marked=d.items.filter(function(q){return starred(q.position);});if(!marked.length)return '';
  return '<section class="fe-starred-review" aria-labelledby="feStarredTitle"><h3 id="feStarredTitle">별표 문제 '+marked.length+'문항</h3><p>'+(ctx.starSyncError?'별표 서버 저장을 다시 확인해 주세요.':'본인 계정에 보관한 표시예요.')+'</p><nav aria-label="별표 문제 해설 바로 가기">'+marked.map(function(q){return '<button type="button" class="tool-btn" data-review-position="'+q.position+'">★ '+q.number+'번 · '+(q.review.status==='correct'?'정답':q.review.status==='wrong'?'오답':'미응답')+'</button>';}).join('')+'</nav></section>';
@@ -143,6 +148,7 @@ async function submitUninterrupted(){if(!valid()||ctx.pending||ctx.submitting||!
 function claimRun(id){ctx.attemptToken=root.crypto.randomUUID();ctx.attemptRun=id;ctx.draft=null;ctx.sessionStale=false;ctx.checkpointPending=null;ctx.checkpointQueue=Promise.resolve();ctx.submitKey=null;return request(function(){return call('POST','/runs/'+id+'/claim',{attemptToken:ctx.attemptToken});},function(d){ctx.checkpointVersion=Number(d.run.checkpointVersion)||0;accept(d);},function(){ctx.attemptRun=null;load(id);});}
 ctx.flushOnExit=function(){if(!ctx.data||ctx.data.run.kind==='review'||ctx.data.run.status!=='active'||!ctx.attemptToken||ctx.sessionStale||!ctx.draft||left()<=0)return;var body={version:++ctx.checkpointVersion,currentPosition:ctx.draft.position,answers:ctx.draft.answers.map(function(a,i){return{position:i,optionId:a};})};api.cbt('POST','/api/v1/cbt/runs/'+ctx.data.run.id+'/checkpoint',body,{attemptToken:ctx.attemptToken,keepalive:true}).catch(function(){});};
 ctx.hide=function(){ctx.flushOnExit();};ctx.beforeUnload=function(e){if(!ctx.sessionStale&&(ctx.checkpointBusy||ctx.checkpointError)){e.preventDefault();e.returnValue='';}};root.addEventListener('pagehide',ctx.hide);root.addEventListener('beforeunload',ctx.beforeUnload);
+if(root.HanqLearningReset)ctx.resetOff=root.HanqLearningReset.onChange(function(){if(valid()&&ctx.data&&!ctx.starPending){hydrateStars(ctx.data);refreshStarDom();}});
 ctx.wake=function(e){if(valid()&&(!root.document.hidden||(e&&e.type==='pageshow'))&&ctx.data&&ctx.data.run.status==='active'&&!ctx.pending)load(routeId(ctx.data.run));};root.document.addEventListener('visibilitychange',ctx.wake);root.addEventListener('pageshow',ctx.wake);if(!api||!api.enabled()){paint('<p>실전모의고사 서버 연결이 필요해요.</p>');return;}paint('<p role="status">로그인을 확인하고 있어요…</p>');ctx.off=api.onChange(function(s){if(!valid()||!ctx.ready)return;var owner=s.signedIn?s.ownerId:null;if(owner===ctx.owner)return;ctx.seq++;ctx.pending=false;ctx.attemptToken=null;ctx.data=null;ctx.key=null;ctx.round=null;ctx.reviewCreate=false;ctx.imageZoom={};ctx.draft=null;ctx.clock=null;ctx.cache={};ctx.stars=null;ctx.starStorageError=false;ctx.starSyncError=false;ctx.starPending=false;ctx.reviewOnly={};ctx.reviews=[];ctx.owner=owner;dispose();o.onRoute(null);if(owner){paint('<p role="status">회차 목록을 불러오고 있어요…</p>');list();}else login();});(api.ensureSession?api.ensureSession():api.init()).then(function(){if(!valid())return;ctx.ready=true;ctx.owner=current();if(!ctx.owner){login();return;}id?load(id):list();},function(){if(valid()){ctx.ready=true;login();}});}
 root.HanqFormalExams={mount:mount,stop:stop};
 })(typeof window!=='undefined'?window:globalThis);

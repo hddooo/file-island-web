@@ -46,7 +46,7 @@
         if (parsed && parsed.schema===1 && parsed.subject==='TOEIC' && parsed.records && typeof parsed.records==='object') {
           data.forEach(function(g) { g.questions.forEach(function(x) {
             var r=parsed.records[rid(x)];
-            if (r && typeof r.star==='boolean' && Number.isSafeInteger(r.attempts) && r.attempts>=0 && (r.lastOptionId===null || x.options.some(function(o) {return o.id===r.lastOptionId;}))) records[rid(x)]={star:r.star,attempts:r.attempts,lastOptionId:r.lastOptionId,wrong:r.attempts>0 && r.lastOptionId!==x.answerId,lastAt:Number.isFinite(r.lastAt)?r.lastAt:null,archivedWrong:Array.isArray(r.archivedWrong)?r.archivedWrong:[]};
+            if (r && typeof r.star==='boolean' && Number.isSafeInteger(r.attempts) && r.attempts>=0 && (r.lastOptionId===null || x.options.some(function(o) {return o.id===r.lastOptionId;}))) records[rid(x)]={star:r.star,starAt:Number.isFinite(r.starAt)?r.starAt:null,starResetAt:r.starResetAt||null,attempts:r.attempts,lastOptionId:r.lastOptionId,wrong:r.attempts>0 && r.lastOptionId!==x.answerId,lastAt:Number.isFinite(r.lastAt)?r.lastAt:null,archivedWrong:Array.isArray(r.archivedWrong)?r.archivedWrong:[]};
           }); });
         } else if (raw) notice='저장된 기록 형식을 읽을 수 없어 새 기록으로 시작합니다.';
       } catch (_) { notice='저장된 기록을 읽을 수 없어 새 기록으로 시작합니다.'; }
@@ -77,13 +77,13 @@
     }
     function grade() {
       if (!guard() || graded || !run[index] || !run[index].questions.every(function(x) {return selections[x.id];})) return false;
-      run[index].questions.forEach(function(x) { var r=record(x),old=rawRecord(x),archive=(old.archivedWrong||[]).slice();if(r!==old&&r.resetAt)archive.push({attempts:old.attempts,lastOptionId:old.lastOptionId,wrong:old.wrong,lastAt:old.lastAt||null,resetAt:r.resetAt});records[rid(x)]={star:r.star,attempts:r.attempts+1,lastOptionId:selections[x.id],wrong:selections[x.id]!==x.answerId,lastAt:Date.now(),archivedWrong:archive}; });
+      run[index].questions.forEach(function(x) { var r=record(x),old=rawRecord(x),archive=(old.archivedWrong||[]).slice();if(r!==old&&r.resetAt)archive.push({attempts:old.attempts,lastOptionId:old.lastOptionId,wrong:old.wrong,lastAt:old.lastAt||null,resetAt:r.resetAt});records[rid(x)]={star:old.star,starAt:old.starAt||null,starResetAt:old.starResetAt||null,attempts:r.attempts+1,lastOptionId:selections[x.id],wrong:selections[x.id]!==x.answerId,lastAt:Date.now(),archivedWrong:archive}; });
       graded=true; save(); render(); return true;
     }
     function star(qid) {
       if (!guard()) return false;
       var x=run[index] && run[index].questions.find(function(q) {return q.id===qid;}); if (!x) return false;
-      var r=rawRecord(x); r.star=!r.star; records[rid(x)]=r; save(); render(); return true;
+      var r=rawRecord(x),view=record(x);r=Object.assign({},r,{star:!view.star,starAt:Date.now(),starResetAt:root.HanqLearningReset&&api&&api.state().signedIn?root.HanqLearningReset.token(api.state().ownerId,'toeic')||null:null}); records[rid(x)]=r; save(); render(); return true;
     }
     function setMode(v) { if (!guard() || ['all','wrong','star'].indexOf(v)<0) return false; mode=v; resetRun(); render(); return true; }
     function next() { if (!guard() || !graded || index>=run.length-1) return false; index++; selections=Object.create(null); graded=false; render(); return true; }

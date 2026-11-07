@@ -34,3 +34,9 @@
 - JS 구문/diff whitespace 검사 통과. 실사용자 기록 변경 및 운영 POST 없음.
 - Chromium 합성 375/1280px: 확인 취소/승인/성공/계정전환 격리/조회 실패 비활성 및 가로넘침 없음 확인. 375px screenshot 시각 검수 완료. scripts/qa-learning-reset.cjs (PLAYWRIGHT_PATH 지정 가능).
 - index inline JS 2개 구문검사 통과.
+
+## 추가: 별표도 같은 cutoff로 표시 제외
+- 기존 resetAt을 재사용하므로 이미 초기화한 계정은 버튼을 다시 누를 필요 없음.
+- 한국사 별표 GET의 resetAt과 클릭 시 epoch를 대기 큐에 저장. 오래된 pending은 sync/표시에서 제외하고 새 표시 생성 전에 별도 archive에 보관. reset 이후 legacy import/fallback 차단. 기존 원본 유지.
+- TOEIC local 별표는 starResetAt이 현재 cutoff와 다르면 projection에서 제외. 새 클릭에 현재 epoch 기록, 정답·일반풀이·XP 보존.
+- 합성 CBT-star-reset 검증 통과, learning-reset13/TOEIC54 회귀 통과. 기존 test-cbt-stars는 최신 claim API 이전 fixture여서 첫 화면 버튼을 찾지 못하므로 새 동기화 회귀 fixture로 정책을 검사함.
