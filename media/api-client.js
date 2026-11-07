@@ -155,6 +155,7 @@
       var acceptedMediaTypes = opts.mediaTypes || [opts.mediaType || 'image/webp'];
       var headers = { 'Accept': opts.binary ? acceptedMediaTypes.join(', ') : 'application/json' };
       if (opts.body !== undefined) headers['Content-Type'] = 'application/json';
+      if (opts.rawBody !== undefined) headers['Content-Type'] = 'application/octet-stream';
       if (opts.csrf) headers['X-HanQ-CSRF'] = '1';
       if (opts.auth !== false && (opts.authToken || state.token)) headers.Authorization = 'Bearer ' + (opts.authToken || state.token);
       /* 마감 시간은 헤더가 아니라 본문(text/blob)을 다 받을 때까지. 헤더만 오고 본문이 멈춰도 끝나게 하고,
@@ -165,6 +166,7 @@
       var init = { method: method, headers: headers, credentials: 'include', mode: 'cors', cache: 'no-store', redirect: 'error' };
       if(opts.keepalive)init.keepalive=true;
       if (opts.body !== undefined) init.body = JSON.stringify(opts.body);
+      if (opts.rawBody !== undefined) init.body = opts.rawBody;
       if (ctl) init.signal = ctl.signal;
       var abortRequest=function(){if(ctl)ctl.abort();};if(opts.signal){if(opts.signal.aborted)abortRequest();else opts.signal.addEventListener('abort',abortRequest,{once:true});}
       var deadline = new Promise(function (resolve, reject) {
@@ -419,6 +421,9 @@
       /* CBT는 로그인 토큰·현재 계정 확인을 공용 call()과 함께 사용. 이미지도 공개 주소로 이동하지 않고 인증된 요청으로 받는다. */
       cbt: function(method,path,body) { if (!/^\/api\/v1\/cbt(?:\/|$)/.test(path) || /[?#]|\.\.|%/.test(path)) return Promise.reject(ApiError(400,'invalid_path')); var opts = body === undefined ? {} : {body:body}; if (method === 'POST' && /^\/api\/v1\/cbt\/(?:runs|reviews)\/[0-9a-f-]{36}\/start$/.test(path)) opts.timeout = 20000; return call(method,path,opts); },
       cbtImage: function(path) { if (!/^\/api\/v1\/cbt\/(?:runs|reviews)\/[0-9a-f-]{36}\/questions\/(?:[0-9]|[1-4][0-9])\/(?:image|common)$/.test(path)) return Promise.reject(ApiError(400,'invalid_path')); return call('GET',path,{binary:true}); },
+      questionRequests: function(method,path,body){if(!/^\/api\/v1\/(?:ops\/)?question-requests(?:\/|$|\?)/.test(path)||/\.\.|[\\#]/.test(path))return Promise.reject(ApiError(400,'invalid_path'));return call(method,path,body===undefined?{}:{body:body});},
+      questionRequestUpload: function(path,file){if(!/^\/api\/v1\/(?:ops\/)?question-requests\/[0-9a-f-]{36}\/assets\?/.test(path)||/\.\.|[\\#]/.test(path)||!file||file.size>16*1024*1024)return Promise.reject(ApiError(400,'invalid_upload'));return call('POST',path,{rawBody:file,timeout:70000,feedback:false});},
+      questionRequestAsset: function(path){if(!/^\/api\/v1\/(?:ops\/)?question-requests\/[0-9a-f-]{36}\/assets\/[0-9a-f-]{36}$/.test(path))return Promise.reject(ApiError(400,'invalid_path'));return call('GET',path,{binary:true,privateResponse:true,mediaTypes:['image/png','image/jpeg','image/webp','audio/mpeg','audio/wav'],timeout:70000,feedback:false});},
       portal: function(method,path,body,options){if(!/^\/api\/v1\/(ops|inquiries)(\/|$|\?)/.test(path))return Promise.reject(ApiError(400,'invalid_path'));var opts=body===undefined?{}:{body:body};if(options&&options.feedback===false)opts.feedback=false;return call(method,path,opts);},
       emailAvailable: function (email) { return raw('POST', '/api/v1/auth/email-availability', {auth:false,body:{email:email},feedback:false}); },
       nicknameAvailable: function (nickname) { return raw('GET', '/api/v1/auth/nickname'+q({nickname:nickname}), {auth:false}); },
