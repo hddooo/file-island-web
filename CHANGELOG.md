@@ -1,3 +1,9 @@
+## 0.8.13-beta (2026-11-07)
+
+- Dedicated sign-in/sign-up-request entry and ADMIN approval queue; existing members retained.
+- Approved-member server checks protect direct static assets, old builds and learning APIs.
+- Preserve 0.8.12 problem publication and wrong-history reset; remove the requested MyPage published-history shortcut.
+
 ## 0.8.10-beta (2026-11-07)
 
 - Private TOEIC/history photo and audio problem requests with manually entered answers.
