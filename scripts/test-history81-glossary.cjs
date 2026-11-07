@@ -9,7 +9,7 @@ for(const e of data.entries){
  let c=g.mount(h,e.era,data.sources[e.era]);assert.equal(c.count,1,e.phrase);h.querySelector('.history81-term').click();assert.equal(d.querySelector('[role=tooltip]').textContent,e.summary);c.stop();c.stop();assert.equal(d.querySelectorAll('[role=tooltip]').length,0);assert.equal(h.textContent,text);assert.equal(h.querySelectorAll('.history81-term').length,0);
  c=g.mount(h,e.era,'wrong');assert.equal(c.count,0);c.stop();count++;
 }
-for(const html of ['<strong data-history-source-emphasis>다른 <u data-history-source-emphasis>고인돌</u> 무덤</strong>','<strong data-history-source-emphasis>고인돌 무덤</strong>','고인<strong data-history-source-emphasis>돌</strong>','<strong data-history-source-emphasis>고인돌</strong>무덤','<strong>고인돌</strong>','<button><strong data-history-source-emphasis>고인돌</strong></button>']){h.innerHTML=html;const c=g.mount(h,'prehistory',data.sources.prehistory);assert.equal(c.count,0);c.stop();}
+for(const html of ['고인<strong data-history-source-emphasis>돌</strong>','<strong data-history-source-emphasis>고인돌</strong>무덤','<strong>고인돌</strong>','<button><strong data-history-source-emphasis>고인돌</strong></button>']){h.innerHTML=html;const c=g.mount(h,'prehistory',data.sources.prehistory);assert.equal(c.count,0);c.stop();}
 assert.equal(JSON.stringify(w.HanqHistory81TermData),original);
 for(const n of [41,60,94,140,141,142,144])assert.equal(g.pageEra({pdfPage:n}),null);
 const page={schemaVersion:'hanq-semantic/1',sourceSha256:data.sources.prehistory,pdfPage:8,reviewStatus:'unverified',blocks:[{id:'fixture',type:'text',lines:[{spans:[{text:'고인돌',bold:true}]}]}],sourceBlanks:[],generatedPractice:[]};

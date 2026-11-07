@@ -50,6 +50,7 @@
     return true;
   }
   function mount(host,era,source,verifiedData){
+    const marker=verifiedData&&verifiedData.boundaryPrepared?'[data-history-glossary-certified]':'[data-history-source-emphasis]';
     const data=verifiedData||root.HanqHistory81TermData,doc=host.ownerDocument,win=doc.defaultView;
     if(!data||source!==data.sources[era])return {stop(){},count:0};
     const entries=new Map(data.entries.filter(e=>e.era===era&&Array.from(e.summary).length<=150).map(e=>[normalize(e.phrase),e]));
