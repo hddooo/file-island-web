@@ -288,3 +288,6 @@ html[data-company-mode=on] body #app#app#app .tc-study-active .ha-controls .ha-b
  html body #app#app#app .tc-listening-source .tc-image{max-height:clamp(130px,24dvh,220px)!important}
 }
 
+
+/* Cumulative review is a view of the current viewer's saved history. */
+.tc .tc-review-filter{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.tc .tc-review-filter button{min-height:44px;flex:1 1 140px;white-space:normal}.tc .tc-active-review{margin:0 0 8px!important}.tc .tc-wrong-empty{padding:12px;border:1px solid var(--tc-border);border-radius:8px}
