@@ -143,3 +143,11 @@ html[data-company-mode=on] #app#app#app #formalExamHost .fe-round-menu .fe-revie
 .formal-exams .fe-round-compact button.fe-score{pointer-events:auto}
 .formal-exams .fe-round-compact .fe-round-retry{position:relative;z-index:1}
 .formal-exams .fe-round-compact .fe-round-status{flex-basis:100%;margin:0;pointer-events:none}
+html body #app#app#app #formalExamHost .formal-exams .fe-rounds>.fe-round.fe-round-menu.fe-round-compact{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;gap:8px!important;padding:10px 12px!important;min-height:64px!important;box-sizing:border-box!important}
+html body #formalExamHost .fe-round-compact>h3{flex:1 1 60px!important;width:auto!important;margin:0!important;padding:0!important;min-width:0!important;font-size:16px!important;line-height:1.4!important;pointer-events:none}
+html body #formalExamHost .fe-round-compact>.fe-recent-scores{flex:0 0 auto!important;width:auto!important;margin:0!important;gap:4px!important}
+html body #formalExamHost .fe-round-compact>.fe-round-hit{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;padding:0!important;margin:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
+html body #formalExamHost .fe-round-compact .fe-score{min-width:40px!important;min-height:36px!important;padding:5px!important;font-size:12px!important;box-sizing:border-box!important}
+
+html body #formalExamHost .fe-round-compact .fe-pass-rate{position:relative;z-index:1;pointer-events:auto;display:block;margin-top:3px;font-size:11px;font-weight:400;line-height:1.4;color:inherit;opacity:.75;text-decoration:none}
+html body #formalExamHost .fe-pass-rate:focus-visible{outline:2px solid currentColor}
