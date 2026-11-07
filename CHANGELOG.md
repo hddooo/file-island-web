@@ -1,3 +1,6 @@
+## 0.8.6-beta (2026-11-07)
+- Clearly mark missing original explanations in answer PDFs rather than leaving an unexplained blank.
+
 ## 0.8.5-beta (2026-11-07)
 - Fetch original Practice answer/explanation data for PDF export even when no completed exam run exists. No grading or history writes.
 

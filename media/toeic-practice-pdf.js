@@ -318,6 +318,7 @@
         for (var choice of r.choices || []) await paragraph(choice.id + '. ' + choice.text, { indent: 12, size: 10 });
       }
       var tutor = r.tutorExplanation || {};
+      if (!str(r.explanation).trim() && !str(tutor.answerReason).trim() && !(tutor.steps || []).length && !(tutor.options || []).some(function (o) { return str(o.explanation).trim(); })) await paragraph('해설 미포함: 원천 자료에 해설이 없습니다.', { size: 9, color: '#52525b' });
       if (tutor.answerReason) await paragraph(tutor.answerReason, { size: 10 });
       if (tutor.translation) await paragraph(tutor.translation, { size: 10 });
       for (var reading of tutor.reading || []) { if (reading.chunk) await paragraph(reading.chunk, { size: 10 }); if (reading.translation) await paragraph(reading.translation, { size: 10, color: '#374151' }); }
