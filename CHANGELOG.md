@@ -1,3 +1,6 @@
+## 0.8.5-beta (2026-11-07)
+- Fetch original Practice answer/explanation data for PDF export even when no completed exam run exists. No grading or history writes.
+
 ## 0.8.4-beta (2026-11-07)
 - Print Part 2 source numbers and A/B/C choices on a single row within the existing two-column layout.
 

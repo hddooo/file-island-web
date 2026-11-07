@@ -26,6 +26,10 @@ async function save(name,result){fs.writeFileSync(path.join(out,name+'.pdf'),Buf
  imagesFail=true;await assert.rejects(()=>PDF.generate(items,1,{api}),/required_image/);imagesFail=false;checks++;
  items=[question(7,1,{passage:('A long unchanged source passage. 원문 문장을 빠짐없이 담습니다.\n').repeat(100)+'END_OF_PASSAGE_끝'}),question(7,2,{passage:('A long unchanged source passage. 원문 문장을 빠짐없이 담습니다.\n').repeat(100)+'END_OF_PASSAGE_끝',originalWrong:false,studyHistory:{wrongCount:0}})];reviewData=[];const long=await save('part7-long',await PDF.generate(items,7,{api}));assert(long.pages>=3);assert.equal(long.wrong,1);checks+=2;
  items=[question(5,5)];reviewData=items.map(review);runMode=true;assert.equal((await save('final-run',await PDF.generate(items,5,{api,mode:'answers'}))).reviews,1);reviewData=[{...review(items[0]),stem:'MISMATCHED QUESTION'}];await assert.rejects(()=>PDF.generate(items,5,{api,mode:'answers'}),/no_reviews/);runMode=false;checks+=2;
+ // Real Practice sources may be officially verified and have no completed run.
+ items=[question(5,1),question(5,2)];let originalCalls=[];
+ const originalApi={...api,toeicCbt:async(method,route)=>{assert.equal(method,'GET');originalCalls.push(route);if(route.endsWith('/practice-reviews'))return{collectionId:collection,items:items.map(q=>({...q,review:review(q)}))};if(route==='/collections')return{collections:[{id:collection,studyAvailable:false}]};if(route==='/runs')return{runs:[]};throw Error(route);}};
+ const direct=await save('original-practice-answers',await PDF.generate(items,5,{api:originalApi,mode:'answers'}));assert.equal(direct.reviews,2);assert(originalCalls.some(x=>x.endsWith('/practice-reviews')));checks+=2;
  // A raw study question has no shared passage; its matching immutable group is enough.
  items=[question(7,1),question(7,2)];reviewData=items.map(q=>{const r=review(q);delete r.passage;return r;});assert.equal((await PDF.generate(items,7,{api,mode:'answers'})).reviews,2);checks++;
  // Different final runs may contain different questions of one collection.

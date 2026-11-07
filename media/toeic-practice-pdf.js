@@ -97,6 +97,13 @@
       if (review.correctOptionId && !target.options.some(function (o) { return o.id === review.correctOptionId; })) return;
       if (!reviews.has(id(target))) reviews.set(id(target), review);
     }
+    // Read original Practice answers without submitting/grading an attempt.
+    for (var collectionId of new Set(items.map(function (q) { return q.collectionId; }))) {
+      try {
+        var original = await get('/collections/' + encodeURIComponent(collectionId) + '/practice-reviews');
+        if (original.collectionId === collectionId) (original.items || []).forEach(function (q) { accept(collectionId, q, q.review); });
+      } catch (e) { current(options); /* Older servers can still use read-only study/run fallbacks. */ }
+    }
     try {
       var collections = await get('/collections');
       var sources = (collections.collections || []).filter(function (c) { return c.studyAvailable === true && items.some(function (q) { return q.collectionId === c.id; }); });
