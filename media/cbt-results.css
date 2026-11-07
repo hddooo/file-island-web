@@ -190,3 +190,4 @@ html body #formalExamHost .fe-exam-answer-side .fe-choices{display:grid!importan
 html body #formalExamHost .fe-exam-answer-side .fe-choices button{min-width:0!important;min-height:40px!important}
 html body #formalExamHost .fe-exam-answer-side .fe-nav{display:flex!important;gap:8px!important;margin-top:8px!important}
 html body #formalExamHost #feStarStatus:empty{display:none!important}
+html body #formalExamHost #feImage img.mock-image{max-height:min(600px,50vh,max(180px,calc(100vh - 360px)))!important}
