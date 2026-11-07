@@ -53,9 +53,9 @@
       if (!owner || !api || !api.state().signedIn) return Promise.reject(error('unauthorized'));
       var id = owner, gen = generation, k = key(pair), map = pendingMap(), record = map[k];
       if (record && record.optionId !== optionId) return Promise.reject(error('pending_answer'));
-      if (!record) record = map[k] = { optionId: optionId, submissionId: api.newSubmissionId('quiz'), promise: null };
+      if (!record) record = map[k] = { optionId: optionId, submissionId: api.newSubmissionId('quiz'), resetAt: root.HanqLearningReset && root.HanqLearningReset.token(owner,'history'), promise: null };
       if (record.promise) return record.promise;
-      record.promise = api.submitAttempt(pair.questionId, pair.version, optionId, record.submissionId).then(function (d) {
+      record.promise = api.submitAttempt(pair.questionId, pair.version, optionId, record.submissionId, record.resetAt).then(function (d) {
         same(id, gen);
         var a = d && d.attempt;
         if (!a || a.questionId !== pair.questionId || a.version !== pair.version || a.optionId !== optionId || typeof a.correct !== 'boolean') throw error('invalid_attempt');

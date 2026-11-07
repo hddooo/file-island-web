@@ -1,29 +1,34 @@
-# 섬별 풀이 초기화 준비 상태 (2026-11-07)
+# 섬별 오답 기록 초기화: FE 구현 상태 (2026-11-07)
 
-## 최신 범위 정정
-- 사용자: XP는 보존하고 오답문제 기록, 나의 기록의 해당 오답기록만 초기화. 일반 진행·정답 기록까지 초기화 범위를 확대하지 않음.
-- 아래 저장소 목록은 영향 분석 대상이며 삭제 대상 목록이 아님.
+## 구현 (운영 미배포)
+- GET/POST `/api/v1/me/learning-resets`. `available:true`와 `scope:wrong_answers_only`를 함께 확인해야 버튼 활성화.
+- 사용자·섬별 서버 resetAt 이전 incorrect만 제외. 일반 정답·과거 오답의 정답 재풀이·XP·다른 섬·문제 원본·단어장 유지.
+- POST 직전 브라우저 확인창에 섬/오답 범위/유지 범위/화면 되돌리기 미지원 표시. 취소 시 요청하지 않음. 실패 결과 불명은 재시도 독촉 없이 재확인 안내.
+- `hanq:wrong-reset:v1:<owner>`에 서버 확인 cutoff만 보관. 계정/epoch 검사, 단조증가 merge, 로그인·focus·storage 이벤트 재확인. 모든 데이터 영구 삭제 없음.
+- learning-progress `attempts()` / `wrongNotes()`에서 ownerId·subject·ts·correct=false로 필터. 기존 attempt 원본은 남김.
+- TOEIC 로컬 practice는 원본 record를 비파괴 projection으로 가림. 시각 없는 과거 wrong은 cutoff가 있으면 가림. 새 채점 lastAt 추가. 새 채점으로 대체되기 전 가려진 과거 wrong을 `archivedWrong`에 보존. 정답/별표/풀이총수 유지.
+- 한국사 quiz-progress와 index 기출 pending, TOEIC answer/group-answer pending 생성 시 resetAt 캡처. 재시도는 저장된 토큰을 그대로 전송. API-client가 전송 시 최신값으로 바꾸지 않음.
 
-## 현재 상태
-- 별도 작업트리 준비 구현만 완료. 운영 배포/실제 초기화는 하지 않음.
-- MyPage에 역사섬·영어섬 버튼을 분리하되 **항상 비활성**. GET `/api/v1/me/learning-resets`만 읽음.
-- `available:false / reset_consistency_pending`은 준비 중, 미지원/실패는 확인 불가로 표시. 알 수 없는 미래 `available:true`도 이 클라이언트에서 활성화하지 않음.
-- 실제 POST, 영구 삭제, localStorage/sessionStorage 삭제·수정, XP/문제 원본/단어장 변경 없음.
-- 계정과 인증 epoch가 바뀌거나 화면이 종료되면 이전 응답을 무시함.
+## 추가 확인 및 출시 제한
+- 실제 API 통합/브라우저 렌더/운영 migration 및 smoke 검증 전 완료·배포로 볼 수 없음.
+- `learning_reset_changed`로 거절된 오래된 pending은 보존되지만 현재 UI에서 이를 보존 보관함으로 옮기고 새 답안을 명시적으로 시작하는 기능은 아직 없음. 토익에는 반복 재시도 금지 원인을 표시. 한국사 기존 pending 화면도 이 별도 UX가 필요.
+- TOEIC 로컬 aggregate는 정확한 문항별 정오답 전체 이력 구조가 아니며 기존 attempts 총수는 유지한다. 기존 정답 기록을 훼손하지 않기 위함.
+- 공유/owner 없는 `hanq:progress:v1:<view>` 및 integrated-blank는 범위 밖으로 보존. 일반 진행 초기화하지 않음.
+- 서버 날짜와 기기 lastAt 시계 차이, 오래된 열린 화면 메모리/동시 기기/오프라인 큐는 추가 통합검증 필요.
 
-## 출시 전 반드시 해결할 범위
-1. `media/learning-progress.js`: `hanq:att:v1:<attemptId>`의 ownerId + subject + ts로 현재 사용자만 기준시점 적용. 게스트·소유자 없는 기록은 보존. `wrongNotes()`의 원본 loadAttempts 직접 사용 경로도 함께 검증.
-2. 같은 파일의 `hanq:progress:v1:<view>`에는 ownerId가 없음. 개인 초기화를 이유로 이 공유 키를 지우면 안 됨. 계정별 새 namespace/호환 경로가 필요함.
-3. `media/account-sync.js`: `hanqacct:ikey:<ownerId>`, `hanqacct:sync:<ownerId>`의 ack/import 흐름. reset 이전 미동기화 attempt를 서버에 다시 보내도 과거 풀이가 부활하지 않도록 서버 기준시점/발생시각 검증 및 경합 테스트 필요. import 키와 ack를 지워 재전송시키지 않음.
-4. `media/account-ui.js`: sessionStorage `hanqacct:pos:<ownerId>`와 `hanqacct:rundraft:<ownerId>:<runId>`, 메모리 replaySubs/runPos/replayPos. 서버 old-run 무효화와 동일 epoch가 필요. 다른 계정 데이터나 계정·메일 설정은 보존.
-5. `media/toeic-cbt.js`: localStorage `hanq:toeic-question-pending:<owner>` 대기 답안. 서버 idempotency와 reset 이전 대기 제출이 되살아나지 않도록 검증.
-6. `media/toeic-practice.js`: `hanq:toeic-practice:v1:owner:<uuid>`에는 문항별 star/attempts/lastOptionId/wrong만 있고 timestamp/epoch가 없음. 단순 cutoff 적용 불가. 별표(사용자 표시) 보존과 풀이횟수 리셋 분리 필요. guest 키는 보존.
-7. `media/integrated-blank-practice.js`: `hanq:integrated-blank:v1:<sourceSHA256>`는 owner가 없음. 공유 데이터 일괄 삭제 금지.
-8. 단어장 체크 `hanq:toeic:word-checks:v1`, 가입·로그인, 원본 collections/PDF/음원/사진, 문제등록 요청, 배틀 기록·XP는 초기화 대상에서 임의 확대하지 않음.
-9. 열린 다른 탭의 오래된 메모리/오프라인 저장, 계정 A→B→A, 두 기기 동시 풀이, GET/POST 네트워크 결과 불명, 예전 클라이언트 재접속을 각각 검사해야 함.
+## 정확한 경로
+- `learning-progress.js`: loadAttempts 121, attempts 194, wrongNotes 228. 필터는 읽기에만 적용.
+- `account-sync.js`: owner별 key/acked 관리 및 import 흐름. 오래된 incorrect import는 API reset 정책이 최종 방어.
+- `toeic-practice.js`: identity 33, load 39, save 54, record/pool/grade. 키 `hanq:toeic-practice:v1:owner:<uuid>`.
+- `toeic-cbt.js`: pending persist/restore 203/204, check/checkGroup/checkMember에서 생성 캡처. 키 `hanq:toeic-question-pending:<owner>`.
+- `quiz-progress.js`: pending record 생성과 submitAttempt 5번째 resetAt 인자.
+- `index.html`: 기출 pending 생성 1137/1180 및 제출. 일반 공유 진행 키 변경 없음.
+- `my-records.js`: api.myRecords 조회 54, refresh 제공 65. 서버 wrong 필터를 사용하며 성공 후 refresh.
 
-## 합성 검증
-- `node scripts/test-learning-reset.cjs`: 7개 통과. 미지원/준비중/예상 밖 enabled 응답에서도 비활성, API 실패, 계정전환 중 응답, stop 후 응답, 비로그인 요청 차단.
-- `node scripts/test-account-ui.cjs`: 22개 통과 (jsdom 미설치로 해당 스크립트 DOM 부분은 미실행).
-- `node --check media/{learning-reset,account-ui,api-client}.js` 통과.
-- 실사용자 기록·실서버 POST는 테스트하지 않음.
+## 합성 검사
+- reset readiness/explicit confirm/owner isolation/non-destructive projection: 10 통과.
+- TOEIC practice controller: 54 통과.
+- quiz progress: 15 통과.
+- account API: 22 통과 (jsdom 없음으로 DOM 부분 미실행).
+- practice growth: 5 통과. TOEIC real-client route/auth regression 통과.
+- JS 구문/diff whitespace 검사 통과. 실사용자 기록 변경 및 운영 POST 없음.

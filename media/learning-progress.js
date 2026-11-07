@@ -194,7 +194,7 @@
     function attempts(filter) {
       var f = filter || {};
       return loadAttempts().filter(function (a) {
-        return (!f.mode || a.mode === f.mode) && (!f.questionId || a.questionId === f.questionId) && (!f.subject || a.subject === f.subject) && (!f.source || a.source === f.source) &&
+        return !(root.HanqLearningReset && root.HanqLearningReset.hiddenAttempt(a)) && (!f.mode || a.mode === f.mode) && (!f.questionId || a.questionId === f.questionId) && (!f.subject || a.subject === f.subject) && (!f.source || a.source === f.source) &&
           (f.ownerId === undefined || (a.ownerId || null) === f.ownerId);
       });
     }
@@ -228,6 +228,7 @@
     function wrongNotes(lookup, opts) {
       var groups = dict(), order = [], onlySubject = opts && typeof opts.subject === 'string' ? opts.subject : null, anyInvalid = false;
       loadAttempts().forEach(function (a) {
+        if (root.HanqLearningReset && root.HanqLearningReset.hiddenAttempt(a)) return;
         if (onlySubject && a.subject !== onlySubject) return;
         var k = noteKey(a.subject, a.mode, a.questionId); if (!groups[k]) { groups[k] = []; order.push(k); } groups[k].push(a);
       });

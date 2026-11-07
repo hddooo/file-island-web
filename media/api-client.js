@@ -429,6 +429,7 @@
       nicknameAvailable: function (nickname) { return raw('GET', '/api/v1/auth/nickname'+q({nickname:nickname}), {auth:false}); },
       attendance: function () { var owner=currentOwner(),epoch=authEpoch;return call('POST', '/api/v1/attendance', {body:{}}).then(function(d){if(currentOwner()!==owner||authEpoch!==epoch)throw ApiError(401,'session_changed');if(state.partners)return api.me().then(function(){return d;});state.access=d;if(d.growth&&Number.isSafeInteger(d.growth.points)&&d.growth.points>=0)state.growth={points:d.growth.points};emit();return d;}); },
       updateProfile: function (displayName) { return call('PATCH', '/api/v1/me', { body: { displayName: displayName } }).then(function (d) { sameOwner(d); state.user = d.user; emit(); return d; }); },
+      resetLearning: function (data) { return call('POST', '/api/v1/me/learning-resets', { body: data }); },
       learningResets: function () { return call('GET', '/api/v1/me/learning-resets'); },
       changePassword: function (currentPassword, newPassword) { return call('POST', '/api/v1/me/password', { body: { currentPassword: currentPassword, newPassword: newPassword } }); },
       plan: function () { return raw('GET', '/api/v1/premium/plan', { auth: false }); },
@@ -456,9 +457,9 @@
       attempt: function (id) { return call('GET', '/api/v1/attempts/' + enc(id)); },
       /* 보통 퀴즈·기출 채점(서버가 저장된 정답으로 채점 · 성장점수 ±1/±5는 서버가 같은 거래에서 기록). 응답의 지금 총점(growth.points)만,
          이 요청을 보낸 계정·로그인(epoch) 그대로이고 내 정보가 이미 확인된(ready) 상태일 때 화면 상태에 반영한다(클라이언트는 점수를 계산하지 않음) */
-      submitAttempt: function (questionId, version, optionId, submissionId) {
+      submitAttempt: function (questionId, version, optionId, submissionId, resetAt) {
         var owner = currentOwner(), epoch = authEpoch;
-        return call('POST', '/api/v1/attempts', { body: { submissionId: submissionId || newId('p'), questionId: questionId, version: version, optionId: optionId } }).then(function (d) {
+        return call('POST', '/api/v1/attempts', { body: { resetAt: resetAt, submissionId: submissionId || newId('p'), questionId: questionId, version: version, optionId: optionId } }).then(function (d) {
           var at = d && d.attempt, g = at && at.questionId === questionId && at.version === version && at.optionId === optionId && typeof at.correct === 'boolean' ? d.growth : null; // 확인된 채점일 때만 총점 반영
           if (g && Number.isSafeInteger(g.points) && (g.delta === null || Number.isSafeInteger(g.delta)) && owner && currentOwner() === owner && authEpoch === epoch && state.profileStatus === 'ready' && state.growth) {
             if(state.partners){return api.me().then(function(){return d;});}state.growth = { points: g.points }; emit();

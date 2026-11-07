@@ -1134,8 +1134,8 @@
       host.querySelector('.mock-enlarge').addEventListener('click',function(event){openMockZoom(mockImages(q),event.currentTarget);});
       var check=host.querySelector('#checkMock');if(check&&state.batchLocked)check.disabled=true;if(check)check.addEventListener('click',function(){if(!state.selected||state.checked||state.inflight||state.batchLocked)return;var a=window.HanqApi;mockRead.moved=true;if(mockMode==='auth')return;
         if(mockMode==='member'){var key=memberKey(),chapter=current&&current.id,pm=mockPendingMap();if(!key||key!==mockIdentity||!pm){renderMock();return;}
-          if(!state.pending){state.pending=pm[q.id]={v:q.v,choice:state.selected,sid:state.sid+'-'+(state.tries+1)};}var pend=state.pending;state.selected=pend.choice;state.inflight=true;showMockQuestion();
-          a.submitAttempt(q.id,q.v,q.id+'-option-'+pend.choice,pend.sid).then(function(d){state.inflight=false;if(memberKey()!==key||mockIdentity!==key)return;var at=d&&d.attempt;if(!at||at.questionId!==q.id||at.version!==q.v||at.optionId!==q.id+'-option-'+pend.choice||typeof at.correct!=='boolean'){if(current&&current.id===chapter&&step===3&&currentMockKey()===q.id)showMockQuestion();return;}
+          if(!state.pending){state.pending=pm[q.id]={v:q.v,choice:state.selected,sid:state.sid+'-'+(state.tries+1),resetAt:window.HanqLearningReset&&HanqLearningReset.token(HanqApi.state().ownerId,'history')};}var pend=state.pending;state.selected=pend.choice;state.inflight=true;showMockQuestion();
+          a.submitAttempt(q.id,q.v,q.id+'-option-'+pend.choice,pend.sid,pend.resetAt).then(function(d){state.inflight=false;if(memberKey()!==key||mockIdentity!==key)return;var at=d&&d.attempt;if(!at||at.questionId!==q.id||at.version!==q.v||at.optionId!==q.id+'-option-'+pend.choice||typeof at.correct!=='boolean'){if(current&&current.id===chapter&&step===3&&currentMockKey()===q.id)showMockQuestion();return;}
             if(pm[q.id]===pend)delete pm[q.id];state.pending=null;state.checked=true;state.graded=pend.choice;state.correct=at.correct;state.tries++;state.at=Date.now();if(current&&current.id===chapter&&step===3&&currentMockKey()===q.id)showMockQuestion();},
           function(){state.inflight=false;if(memberKey()!==key||mockIdentity!==key||!current||current.id!==chapter||step!==3)return;showMockQuestion();});return;}state.checked=true;state.graded=state.selected;state.correct=state.graded===q.answer;state.tries++;state.at=Date.now();var oid=q.id+'-option-'+state.graded;
         hpRecord({mode:'mock',source:'mock',questionId:q.id,contentVersion:q.v,reviewVersion:q.rv,optionId:oid,choice:state.graded,correct:state.correct,era:q.era,chapter:current?current.id:null,submissionId:state.sid+'-'+state.tries});persistMock();
@@ -1177,9 +1177,9 @@
     }
     async function saveMockEntry(e,state,choice,c){var q=e.item,pm;
       if(c.mode==='member'){pm=mockPendingMap();if(!pm||memberKey()!==c.owner)throw new Error('session_changed');
-        if(!state.pending)state.pending=pm[q.id]={v:q.v,choice:choice,sid:state.sid+'-'+(state.tries+1)};
+        if(!state.pending)state.pending=pm[q.id]={v:q.v,choice:choice,sid:state.sid+'-'+(state.tries+1),resetAt:window.HanqLearningReset&&HanqLearningReset.token(HanqApi.state().ownerId,'history')};
         var pend=state.pending;state.selected=pend.choice;state.inflight=true;var d;
-        try{d=await HanqApi.submitAttempt(q.id,q.v,q.id+'-option-'+pend.choice,pend.sid);}finally{state.inflight=false;}
+        try{d=await HanqApi.submitAttempt(q.id,q.v,q.id+'-option-'+pend.choice,pend.sid,pend.resetAt);}finally{state.inflight=false;}
         if(memberKey()!==c.owner||mockIdentity!==c.owner)throw new Error('session_changed');var at=d&&d.attempt;
         if(!at||at.questionId!==q.id||at.version!==q.v||at.optionId!==q.id+'-option-'+pend.choice||typeof at.correct!=='boolean')throw new Error('invalid_attempt');
         if(pm[q.id]===pend)delete pm[q.id];state.pending=null;state.checked=true;state.graded=pend.choice;state.correct=at.correct;state.tries++;state.at=Date.now();
