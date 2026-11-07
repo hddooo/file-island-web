@@ -162,3 +162,9 @@ html body #app#app#app #formalExamHost .fe-score.fe-score-red{color:#ff7070!impo
 @media(max-width:759px){html body #formalExamHost .fe-round-compact .fe-preparing{margin:0!important;font-size:12px!important}}
 
 html body #formalExamHost .fe-round-compact .fe-pass-rate{pointer-events:none!important}
+
+html body #formalExamHost #feTime{display:block!important;text-align:center!important;margin:5px auto 12px!important;padding:7px 16px!important;width:max-content!important;max-width:100%!important;box-sizing:border-box!important;font-size:18px!important;font-weight:800!important;font-variant-numeric:tabular-nums;line-height:1.4!important;border:1px solid var(--line,#354c3d);border-radius:9px}
+html body #formalExamHost #feDraftStatus:empty{display:none!important}
+html body #formalExamHost .fe-question-jump{display:flex!important;align-items:center!important;gap:8px!important;margin:8px 0!important;max-width:320px}
+html body #formalExamHost .fe-question-jump label{flex:0 0 auto!important;font-size:13px!important;margin:0!important}
+html body #formalExamHost .fe-question-jump select{flex:1!important;min-width:0!important;max-width:100%!important;min-height:40px!important;padding:6px 10px!important;border-radius:8px!important;font-size:14px!important;margin:0!important}
