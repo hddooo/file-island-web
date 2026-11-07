@@ -49,8 +49,8 @@
     if(entry.id==='goryeo-gyojang')return /의천|경전|주석|속장경/.test(text);
     return true;
   }
-  function mount(host,era,source){
-    const data=root.HanqHistory81TermData,doc=host.ownerDocument,win=doc.defaultView;
+  function mount(host,era,source,verifiedData){
+    const data=verifiedData||root.HanqHistory81TermData,doc=host.ownerDocument,win=doc.defaultView;
     if(!data||source!==data.sources[era])return {stop(){},count:0};
     const entries=new Map(data.entries.filter(e=>e.era===era&&Array.from(e.summary).length<=150).map(e=>[normalize(e.phrase),e]));
     const triggers=[],offs=[];let active=null,pinned=false,timer=null,stopped=false;
@@ -94,7 +94,7 @@
           listen(trigger,'focus',()=>open(trigger,entry,false));listen(trigger,'blur',()=>{if(active===trigger){pinned=false;leave();}});
           listen(trigger,'click',()=>{if(active===trigger&&pinned)close();else open(trigger,entry,true);});
           listen(trigger,'keydown',e=>{if(e.isComposing||e.keyCode===229||scrollExplanation(e,trigger))return;if(e.key==='Enter'||e.key===' '){e.preventDefault();if(!e.repeat){if(active===trigger&&pinned)close();else open(trigger,entry,true);}}});
-        }else nodes.forEach(n=>{if(n.nodeType===1)annotate(n);});
+        }else if(!verifiedData)nodes.forEach(n=>{if(n.nodeType===1)annotate(n);});
         i=j;
       }
     }

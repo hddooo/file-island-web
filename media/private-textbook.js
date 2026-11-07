@@ -21,7 +21,7 @@
   var OLD_SOURCE = '35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442', NEW_SOURCE = 'd54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de';
   // Deployment declaration, not a server capability probe. Absent on production
   // until this API and both immutable source roots have been verified there.
-  var REVIEWED_REVISION_RELEASE='ab5bffed546f288870f7362627cd18cd4a820f63:a974f63221b7872400adc220d0ee484bec02bc89';
+  var REVIEWED_REVISION_RELEASE='8710dbe1947517068ece4aa696f6208b00e8d4ee:c5e4647053125aa21cf3b80bd309ae8706299518f7760efdd72a434830b6212e';
   function revisionRoutesReady(document, eraId, sourceRevision) {
     var flag=document&&document.querySelector('meta[name="hanq-textbook-revisions"]');
     if(!flag||flag.content!==REVIEWED_REVISION_RELEASE)return false;
@@ -31,6 +31,38 @@
     var allowed=partial.content.split(',').map(function(id){return id.trim();});
     if(!allowed.length||new Set(allowed).size!==allowed.length||allowed.some(function(id){return !eras.some(function(era){return era.id===id;});}))return false;
     return typeof eraId==='string'&&allowed.indexOf(aliases[eraId]||eraId)!==-1;
+  }
+  // Optional deployment declaration: never defaults an unverified era or a Script reader.
+  var DEFAULT_ELIGIBLE = ['prehistory','samguk','nambuk','colonial','modern','people','regions'];
+  function genericEra(id) { return DEFAULT_ELIGIBLE.indexOf(aliases[id]||id)!==-1; }
+  function defaultRevisionReady(document, eraId) {
+    var flag=document&&document.querySelector('meta[name="hanq-textbook-default-eras"]');
+    if(!flag||!genericEra(eraId))return false;
+    var list=flag.content.split(',').map(function(id){return id.trim();});
+    if(!list.length||new Set(list).size!==list.length||list.some(function(id){return DEFAULT_ELIGIBLE.indexOf(id)===-1;}))return false;
+    return list.indexOf(aliases[eraId]||eraId)!==-1&&revisionRoutesReady(document,eraId,NEW_SOURCE);
+  }
+  function defaultSourceUrl(document, eraId, href) {
+    var url=new URL(href), automatic=url.searchParams.get('textbookDefault')==='81';
+    if(automatic&&!genericEra(eraId)){
+      if(url.searchParams.get('textbookSource')===NEW_SOURCE)url.searchParams.delete('textbookSource');
+      url.searchParams.delete('textbookDefault');
+    }else if(!url.searchParams.has('textbookSource')&&defaultRevisionReady(document,eraId)){
+      url.searchParams.set('textbookSource',NEW_SOURCE);url.searchParams.set('textbookDefault','81');
+    }
+    return url;
+  }
+  function prepareDefaultRoute(document,eraId,location,history){
+    var next=defaultSourceUrl(document,eraId,location.href);
+    if(next.href!==location.href)history.replaceState(history.state,'',next.href);
+  }
+  // Explicit old-edition links use the unchanged legacy endpoint and workspace keys.
+  function transportRevision(eraId,revision){return genericEra(eraId)&&revision===OLD_SOURCE?null:revision;}
+  function selectedSourceUrl(eraId,href,revision){
+    var url=new URL(href);url.searchParams.delete('textbookDefault');
+    if(revision==null){if(genericEra(eraId))url.searchParams.set('textbookSource',OLD_SOURCE);else url.searchParams.delete('textbookSource');}
+    else url.searchParams.set('textbookSource',revision);
+    return url;
   }
   var revisedRanges = {nambuk:[31,40],goryeo:[41,58],joseon:[59,87],opening:[88,107],colonial:[108,125],modern:[126,139],people:[140,141],regions:[142,144],credits:[145,147]};
   function sourceInfo(revision) {
@@ -183,7 +215,7 @@
     }
     return { mount: mount, stop: stop };
   }
-  var out = { create:create, eras:eras, erasFor:erasFor, eraFor:eraFor, sourceInfo:sourceInfo, revisionRoutesReady:revisionRoutesReady, reviewedRevisionRelease:REVIEWED_REVISION_RELEASE, revisions:[{sha256:OLD_SOURCE,edition:'79회 대비',totalPdfPages:144},{sha256:NEW_SOURCE,edition:'81회 대비',totalPdfPages:147}], validManifest:validManifest, errorText:errorText };
+  var out = { defaultRevisionReady:defaultRevisionReady, defaultSourceUrl:defaultSourceUrl, prepareDefaultRoute:prepareDefaultRoute, transportRevision:transportRevision, selectedSourceUrl:selectedSourceUrl, create:create, eras:eras, erasFor:erasFor, eraFor:eraFor, sourceInfo:sourceInfo, revisionRoutesReady:revisionRoutesReady, reviewedRevisionRelease:REVIEWED_REVISION_RELEASE, revisions:[{sha256:OLD_SOURCE,edition:'79회 대비',totalPdfPages:144},{sha256:NEW_SOURCE,edition:'81회 대비',totalPdfPages:147}], validManifest:validManifest, errorText:errorText };
   if (typeof module !== 'undefined' && module.exports) module.exports = out;
   if (root.document) { var reader = create(); out.mount = reader.mount; out.stop = reader.stop; root.HanqPrivateTextbook = out; }
 })(typeof window !== 'undefined' ? window : globalThis);

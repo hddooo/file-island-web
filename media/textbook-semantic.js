@@ -155,6 +155,7 @@
     var article = node('article', null, 'textbook-semantic');
     article.setAttribute('data-schema-version', SCHEMA);
     article.setAttribute('data-pdf-page', String(page.pdfPage));
+    article.setAttribute('data-source-sha256', page.sourceSha256 || '');
     article.setAttribute('lang', 'ko');
     // Presentation is opt-in for the two fixed source hashes; this is not a readiness gate.
     var notesEdition = page.sourceSha256 === 'd54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de' ? '81' : page.sourceSha256 === '35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442' ? '79' : null;
@@ -249,6 +250,7 @@
           var styled=!!(style&&audit&&audit.verified===true&&typeof page.sourceSha256==='string'&&/^[a-f0-9]{64}$/.test(page.sourceSha256)&&audit.sourceRevision===page.sourceSha256);
           var bold=styled&&typeof style.bold==='boolean'?style.bold:span.bold===true;
           var piece = node(bold ? 'strong' : 'span', text, bold ? 'textbook-source-bold' : null);
+          if (bold || (styled && (style.underline === true || style.highlight || (style.ink && style.ink !== '#000000')))) piece.setAttribute('data-history-source-emphasis','');
           if(styled){
             piece.setAttribute('data-source-style','verified');
             if(style.ink)piece.setAttribute('data-source-ink',style.ink);
@@ -699,9 +701,11 @@
     exercises(page.generatedPractice, false);
     if (warnings.indexOf('unverified_glyph_mapping') !== -1) meta.appendChild(node('p', '일부 글자 변환은 검수 전이라 추출된 원문 글자로 표시해요.', 'textbook-semantic-block-warning'));
     host.replaceChildren(article);
+    var glossary=root.HanqHistory81Glossary, terms=glossary ? glossary.mount(article,glossary.pageEra(page),page.sourceSha256) : null;
     function cleanup() {
       if (!alive) return;
       alive = false;
+      if(terms)terms.stop();
       article.querySelectorAll('img').forEach(function (img) { img.removeAttribute('src'); });
       figureChildren.forEach(function (child) { child.cleanup(); }); figureChildren = [];
       objectURLs.forEach(function (url) { urlAPI.revokeObjectURL(url); });

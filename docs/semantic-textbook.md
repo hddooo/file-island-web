@@ -103,3 +103,25 @@ The renderer accepts verified same-source native blue ink and gray cell shading.
 Private Joseon preprocessing reproduced 172 questions with canonical digest `042ee684d7e9ae89cc2afd4b3964b1568806432f361dc99b39ad9f88f4d6ca5a`. Selected-page verification covers PDF59–87, 23,823 native characters and exact glyph IDs, plus unchanged available image bytes. This does not certify other eras or all source artwork. Local candidates restore native ink, exam panels and specific caption galleries. Whole-page visual review, actual API roots/member saves, release integration and deployment remain separate. Keyword explanations remain a later unit.
 
 The integrated frontend ships without `meta[name="hanq-textbook-revisions"]`. Existing no-query legacy144 reading and saves continue. Edition controls are absent; explicit source-SHA routes show a preparation notice and an explicit old-edition action without any revision API request. Both semantic and raw readers enforce this UI gate. It is a deployment declaration, not a server capability or security control. Only after the actual deployed API and both immutable roots have been verified may a follow-up reviewed frontend declare the exact `HanqPrivateTextbook.reviewedRevisionRelease` API/source pin. Tests opt in only to exercise the isolated actual ab5/a974 contract; production does not probe old987. Unknown revisions, missing APIs and missing choices still never silently fall back.
+
+## Opt-in generic-era default routing (2026-11-08 candidate)
+
+`hanq-textbook-default-eras` is a separate, absent-by-default deployment declaration.
+Only prehistory, samguk, nambuk, colonial, modern, people and regions are eligible.
+Each requested era also requires the existing exact revision release and reviewed-era gate.
+Unknown/duplicate declarations fail closed. This change does not declare a backend ready.
+
+When opted in, a missing source query selects the verified81 PDF and marks the URL
+`textbookDefault=81`. Explicit old/new/unknown source queries are not overridden.
+Leaving an automatically selected generic reader for a Script era removes only that
+automatic selection, retaining the existing Joseon/Goryeo/Opening adapters. Selecting79
+writes its explicit source hash to the URL but uses the existing null/legacy transport,
+so re-entry does not silently select81 and existing79 workspace keys remain unchanged.
+The actual source files, quiz IDs, answers, progress storage, three base tabs and existing
+optional summary consumer are untouched. No readiness meta is included in this candidate.
+
+Checks: default policy/application-hook137, summary routes80, source summary41,
+revision routing/recovery73, semantic-library81 all passed in local Node/JSDOM.
+The old private-textbook DOM harness could not run because it treats script query strings
+as part of filesystem names (`install-app.js?v=device-tip-20261023`); this is not counted
+as a pass. No operating member/API, physical-device or deployment check was performed.

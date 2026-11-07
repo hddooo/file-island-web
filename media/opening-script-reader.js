@@ -7,7 +7,7 @@
     let cursor=0, current=target; const stack=[];
     for (const m of text.matchAll(tokens)) {
       current.append(doc.createTextNode(text.slice(cursor,m.index))); cursor=m.index+m[0].length;
-      if (m[2] || m[3]) { const e=doc.createElement(m[2]?'strong':'em'); inline(doc,e,m[2]||m[3]); current.append(e); }
+      if (m[2] || m[3]) { const e=doc.createElement(m[2]?'strong':'em'); e.setAttribute('data-history-source-emphasis',''); inline(doc,e,m[2]||m[3]); current.append(e); }
       else if(m[4]) { // Preserve labels; do not auto-link private sources to public delivery URLs.
         const e=doc.createElement('span'); e.textContent=m[4]; current.append(e);
       } else {
@@ -15,11 +15,11 @@
         if(/^<\//.test(m[0])) { if(stack.length && stack[stack.length-1].tag===tag) current=stack.pop().parent; else current.append(doc.createTextNode(m[0])); }
         else if(/^<br\s*\/?\s*>$/i.test(m[0])) current.append(doc.createElement('br'));
         else if(/^(strong|u)$/.test(tag) && new RegExp('^<'+tag+'\\s*>$','i').test(m[0])) {
-          const e=doc.createElement(tag);current.append(e);stack.push({tag,parent:current});current=e;
+          const e=doc.createElement(tag);e.setAttribute('data-history-source-emphasis','');current.append(e);stack.push({tag,parent:current});current=e;
         } else if(tag==='span') {
           const match=/^<span\s+style="color:(#[0-9a-f]{6})"\s*>$/i.exec(m[0]);
           if(match && colors.has(match[1].toLowerCase())) {
-            const e=doc.createElement('span'); e.dataset.sourceColor=match[1].toLowerCase();
+            const e=doc.createElement('span'); e.dataset.sourceColor=match[1].toLowerCase();if(e.dataset.sourceColor!=='#000000')e.setAttribute('data-history-source-emphasis','');
             // Grey ink remains distinct while retaining readable contrast on paper.
             const sourceColor=match[1].toLowerCase();e.style.setProperty('color',({'#bfbfbf':'#626872','#9b9ba8':'#626872','#808080':'#626872','#ff0000':'#b51f25','#0000ff':'#2546b8','#1d9a78':'#176952','#289b6e':'#176952','#ffff00':'#765800','#ed7d31':'#995016'})[sourceColor]||sourceColor,'important');
             current.append(e);stack.push({tag,parent:current});current=e;
@@ -78,7 +78,8 @@
       const zoom=button('원래 크기로 확대',()=>{zoomed=!zoomed;img.style.maxWidth=zoomed?'none':'100%';zoom.textContent=zoomed?'화면 너비에 맞추기':'원래 크기로 확대';});
       img.src=src;img.alt=alt;d.append(close,zoom,img);doc.body.append(d);dialog={node:d,opener,release:options.acquireModalLock&&options.acquireModalLock()};win.history.pushState(Object.assign({},win.history.state,{openingImage:true}),'');d.addEventListener('cancel',e=>{e.preventDefault();closeImage();});d.addEventListener('close',()=>{if(dialog&&dialog.node===d)dismissImage();});d.addEventListener('keydown',e=>{if(e.key==='Tab'){e.preventDefault();(doc.activeElement===close?zoom:close).focus();}});try{d.showModal();close.focus();}catch(e){dismissImage();throw e;}}
     let figureAbort=null,figureQueue=[],figureActive=0;
-    function clearImages(){layoutObservers.splice(0).forEach(observer=>observer.disconnect());if(figureAbort)figureAbort.abort();figureAbort=new win.AbortController();figureQueue.splice(0).forEach(job=>job.reject(Error('aborted')));dismissImage();urls.forEach(u=>win.URL.revokeObjectURL(u));urls.clear();}
+    let glossaryTerms=null;
+    function clearImages(){if(glossaryTerms){glossaryTerms.stop();glossaryTerms=null;}layoutObservers.splice(0).forEach(observer=>observer.disconnect());if(figureAbort)figureAbort.abort();figureAbort=new win.AbortController();figureQueue.splice(0).forEach(job=>job.reject(Error('aborted')));dismissImage();urls.forEach(u=>win.URL.revokeObjectURL(u));urls.clear();}
     function pumpFigures(){while(figureActive<2&&figureQueue.length){const job=figureQueue.shift();if(job.signal.aborted){job.reject(Error('aborted'));continue;}figureActive++;Promise.resolve().then(()=>{if(job.signal.aborted)throw Error('aborted');return options.loadFigure(job.name,{signal:job.signal});}).then(job.resolve,job.reject).finally(()=>{figureActive--;pumpFigures();});}}
     function loadFigure(name,signal){return new Promise((resolve,reject)=>{figureQueue.push({name,signal,resolve,reject});pumpFigures();});}
     function figure(parent,name,alt){
@@ -128,6 +129,7 @@
       }
       if(mode==='practice')body.append(el('p','빈칸을 생각한 뒤 임시 답안을 적어 보세요. 화면을 닫으면 답안은 사라지며 기존 학습 기록에는 저장되지 않습니다.','osr-note'));
       renderSegments(t);
+      if(mode==='study'&&root.HanqHistory81Glossary)glossaryTerms=root.HanqHistory81Glossary.mount(body,'opening',bundle.source.sha256);
     }
     function renderReview(){
       if(mode==='practice'&&prepared.presentation.practiceGuidanceTopics.includes(topic))renderMarkdown(doc,body,prepared.practiceGuidance,figure);
