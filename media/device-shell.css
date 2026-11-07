@@ -245,29 +245,43 @@ html[data-hanq-theme=terminal] body.study-global-footer #app.shell.digivice-v2:n
    negative margins left a black bezel around both navigation and scene art.
    Keep the hardware border, native content scrolling and the dedicated Practice
    desk/company layouts; only remove the unused inset between their surfaces. */
-html[data-hanq-theme=terminal]:not([data-company-mode=on]) body #app.shell.digivice-v2:not(:has(.tc-study-active)){
+html[data-hanq-theme=terminal]:not([data-company-mode=on]) body #app#app.shell.digivice-v2:not(:has(.tc-study-active)){
  padding:0!important;overflow:clip!important;
 }
-html[data-hanq-theme=terminal]:not([data-company-mode=on]) body #app.shell.digivice-v2:not(:has(.tc-study-active))>.topline.device-crown{
+html[data-hanq-theme=terminal]:not([data-company-mode=on]) body #app#app.shell.digivice-v2:not(:has(.tc-study-active))>.topline.device-crown{
  /* Let the existing hardware clip this surface once, so each route's actual
     border width/radius cannot leave a second mismatched rounded outline. */
  margin:0!important;border:0!important;box-shadow:none!important;
  border-radius:0!important;
  padding:calc(8px + env(safe-area-inset-top,0px)) max(18px,env(safe-area-inset-right,0px)) 8px max(18px,env(safe-area-inset-left,0px))!important;
 }
-html[data-hanq-theme=terminal]:not([data-company-mode=on]) body #app.shell.digivice-v2:not(:has(.tc-study-active))>.device-content{
+html[data-hanq-theme=terminal]:not([data-company-mode=on]) body #app#app.shell.digivice-v2:not(:has(.tc-study-active))>.device-content{
  margin:0!important;border:0!important;
 }
 /* Scene hosts paint to the hardware edge; reading pages retain their own
    comfortable inner spacing. Do not add a rounded clip to a scroll pane. */
-html[data-hanq-theme=terminal]:not([data-company-mode=on]) body #app.shell.digivice-v2:not(:has(.tc-study-active)):is(.archipelago-shell,:has(.island-harbors),:has(.rainbow-game-host))>.device-content{
+html[data-hanq-theme=terminal]:not([data-company-mode=on]) body #app#app.shell.digivice-v2:not(:has(.tc-study-active)):is(.archipelago-shell,:has(.island-harbors),:has(.rainbow-game-host))>.device-content{
  padding:0!important;
 }
-html[data-hanq-theme=terminal]:not([data-company-mode=on]) body #app.shell.digivice-v2 .world-map,
-html[data-hanq-theme=terminal]:not([data-company-mode=on]) body #app.shell.digivice-v2 .subject-travel-map.island-harbors{
+html[data-hanq-theme=terminal]:not([data-company-mode=on]) body #app#app.shell.digivice-v2 .world-map,
+html[data-hanq-theme=terminal]:not([data-company-mode=on]) body #app#app.shell.digivice-v2 .subject-travel-map.island-harbors{
  border:0!important;border-radius:0!important;box-shadow:none!important;
 }
 @media(max-width:700px),(max-width:1000px) and (pointer:coarse){
- html[data-hanq-theme=terminal]:not([data-company-mode=on]) body #app.shell.digivice-v2:not(:has(.tc-study-active))>.topline.device-crown{padding-inline:max(10px,env(safe-area-inset-left,0px)) max(10px,env(safe-area-inset-right,0px))!important}
+ html[data-hanq-theme=terminal]:not([data-company-mode=on]) body #app#app.shell.digivice-v2:not(:has(.tc-study-active))>.topline.device-crown{padding-inline:max(10px,env(safe-area-inset-left,0px)) max(10px,env(safe-area-inset-right,0px))!important}
 }
 
+
+/* A quiet translucent screen header; typography and identity colors stay intact. */
+html[data-hanq-theme=terminal]:not([data-company-mode=on]) body #app#app.shell.digivice-v2:not(:has(.tc-study-active))>.topline.device-crown{
+ background:linear-gradient(180deg,rgba(235,247,240,.92),rgba(202,226,221,.86))!important;
+ -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+}
+html body #app#app.digivice-v2>.topline.device-crown .device-model.device-home{
+ appearance:none;font-family:inherit;pointer-events:auto;cursor:pointer;
+ padding:0!important;margin:0!important;min-height:44px;min-width:44px;
+ border:0!important;border-radius:4px!important;background:transparent!important;box-shadow:none!important;
+}
+html body #app#app.digivice-v2>.topline.device-crown .device-home:focus-visible{
+ outline:2px solid #294d57!important;outline-offset:3px;
+}

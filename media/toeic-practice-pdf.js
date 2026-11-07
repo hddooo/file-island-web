@@ -312,7 +312,7 @@
     }
     async function answerKey() {
       await paragraph('정답표', { bold: true, size: 13, after: 8 });
-      await paragraph('* AI 참고 답안(교재 정답표 대조 전) · — 정답 자료 없음', { size: 9, color: '#52525b' });
+      await paragraph('* 공식 정답표 미대조 답안 · — 정답 자료 없음', { size: 9, color: '#52525b' });
       var previous = null, row = [];
       async function flush() {
         if (!row.length) return;
@@ -337,7 +337,7 @@
     }
     async function review(q, r) {
       if (!r) { await paragraph('정답·해설 미포함: 읽기 원천에서 확인하지 못했습니다.', { size: 9, color: '#52525b' }); return; }
-      await paragraph('정답 ' + (r.correctOptionId || '자료 없음') + (r.officiallyVerified === false || q.officiallyVerified === false ? ' · AI 참고 답안 (교재 정답표 대조 전)' : ''), { bold: true, size: 10 });
+      await paragraph('정답 ' + (r.correctOptionId || '자료 없음') + (r.officiallyVerified === false || q.officiallyVerified === false ? (r.answerProvenance==='user-entered-admin-reviewed'||q.answerProvenance==='user-entered-admin-reviewed'?' · 사용자 입력·관리자 검수 (공식 정답표 미대조)':' · AI 참고 답안 (교재 정답표 대조 전)') : ''), { bold: true, size: 10 });
       var tutor = r.tutorExplanation || {}, correct = (r.choices || []).find(function (o) { return o.id === r.correctOptionId; });
       if (q.part <= 2 && r.stem) await paragraph(r.stem, { size: 10 });
       if (correct && correct.text !== correct.id) await paragraph(correct.id + '. ' + correct.text, { size: 10 });

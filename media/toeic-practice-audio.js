@@ -10,9 +10,9 @@
     bundles.forEach(function (qs) {
       var q = qs[0]; if (q.part > 4) return;
       var label = 'Part ' + q.part + ' · ' + qs.map(function (x) { return x.displayNumber || x.number; }).join('·') + '번';
-      if (!q.audioUrl) { missing.push(label); return; }
-      if (typeof q.audioUrl !== 'string' || !/^[0-9a-f-]{36}$/.test(q.collectionId) || typeof q.groupId !== 'string' || !q.groupId || q.groupId.length > 200 || qs.some(function (x) { return x.audioUrl !== q.audioUrl; })) throw Error('invalid_audio');
-      var url; try { url = new URL(q.audioUrl); } catch (_) { throw Error('invalid_audio'); }
+      var audioKey=root.HanqToeicAudio&&root.HanqToeicAudio.source?root.HanqToeicAudio.source(q):q.audioUrl;if (!audioKey) { missing.push(label); return; }
+      if (typeof audioKey !== 'string' || !/^[0-9a-f-]{36}$/.test(q.collectionId) || typeof q.groupId !== 'string' || !q.groupId || q.groupId.length > 200 || qs.some(function (x) { return (root.HanqToeicAudio&&root.HanqToeicAudio.source?root.HanqToeicAudio.source(x):x.audioUrl) !== audioKey; })) throw Error('invalid_audio');
+      var url; try { url = q.audioPath?new URL(audioKey,'https://same-origin.invalid'):new URL(audioKey); } catch (_) { throw Error('invalid_audio'); }
       if (url.protocol !== 'https:' || url.username || url.password) throw Error('invalid_audio');
       url.hash = ''; // This is an identity key only. Never fetch the source URL.
       var entry = byUrl.get(url.href), reference = { part: q.part, source: q.sourceTitle || '', numbers: qs.map(function (x) { return String(x.displayNumber || x.number); }) };
@@ -64,7 +64,7 @@
       if (options.onProgress) options.onProgress('음원 ' + (i + 1) + ' / ' + selection.tracks.length + '개 준비 중…');
       var blob = await options.api.toeicCbtAudio(track.collectionId, track.groupId, options.signal);
       current(options);
-      if (!blob || blob.type !== 'audio/mpeg' || !blob.size) throw Error('invalid_audio');
+      if (!blob || !['audio/mpeg','audio/wav'].includes(blob.type) || !blob.size) throw Error('invalid_audio');
       if (blob.size > MAX_FILE) throw Error('too_large');
       var bytes = await blob.arrayBuffer(); current(options);
       var digest = Array.from(new Uint8Array(await root.crypto.subtle.digest('SHA-256', bytes))).map(function (b) { return b.toString(16).padStart(2, '0'); }).join(''); current(options);
@@ -72,7 +72,7 @@
       if (duplicate) { duplicate.references = duplicate.references.concat(track.references); continue; }
       if (total + blob.size > MAX_TOTAL) throw Error('too_large');
       total += blob.size;
-      var ref = track.references[0], file = { name: 'Part' + ref.part + '/' + String(files.length + 1).padStart(3, '0') + '-' + safe(ref.source) + '-Q' + safe(ref.numbers.join('-')) + '.mp3', blob: blob, references: track.references.slice() };
+      var ref = track.references[0], file = { name: 'Part' + ref.part + '/' + String(files.length + 1).padStart(3, '0') + '-' + safe(ref.source) + '-Q' + safe(ref.numbers.join('-')) + (blob.type==='audio/wav'?'.wav':'.mp3'), blob: blob, references: track.references.slice() };
       files.push(file); seen.set(digest, file);
     }
     current(options);
