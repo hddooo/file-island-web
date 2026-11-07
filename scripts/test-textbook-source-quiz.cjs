@@ -89,11 +89,30 @@ function extendedFixture(){
 
 
  c.cleanup();stored=base();const partial=classificationFixture(),partialItem=partial.items[0];stored.workspace.responses[partialItem.id]={values:['없는 답','','',''],submitted:false,correct:null,checkedSlots:[true,false,false,false]};c=api.render(host,partial,opts);await c.ready;ok(host.querySelector('.textbook-source-inline-feedback').textContent.includes('정답:'),'partly checked wrong slot feedback restored');eq(host.querySelectorAll('.textbook-source-inline-feedback')[1].textContent,'','unchecked blank remains ungraded');inputs()[0].value='②,③';inputs()[0].dispatchEvent(new w.Event('input'));ok(c.hasUnsaved(),'typed change pending');await c.prepareLeave();eq(stored.workspace.status,'paused','navigation flushes current state');eq(stored.workspace.responses[partialItem.id].values[0],'②,③','navigation preserves latest input');
+
+ // Presentation changes must preserve response order and exact saved values.
+ const group=host.querySelector('.textbook-source-classification-responses'), choices=host.querySelector('.textbook-source-quiz-events');
+ ok(!!group,'classification response group exists');
+ ok(!!(choices.compareDocumentPosition(group)&w.Node.DOCUMENT_POSITION_FOLLOWING),'choices precede response fields');
+ eq([...group.querySelectorAll('[data-source-subitem-id]')].map(n=>n.dataset.sourceSubitemId),partialItem.subitems.map(s=>s.id),'subitem order unchanged');
+ for(const datum of [fixture(),extendedFixture()]){
+ c.cleanup();stored=base();c=api.render(host,datum,opts);await c.ready;
+ const seq=host.querySelector('[data-source-item-id="'+datum.items[2].id+'"]'),input=seq.querySelector('input');
+ ok(seq.textContent.includes('쉼표(,)'),'comma guidance shown with and without source arrows');
+ for(const value of ['②,①,③','2,1,3','② → ① → ③','2->1->3','213']){
+ input.value=value;input.dispatchEvent(new w.Event('input'));input.dispatchEvent(new w.Event('blur'));
+ eq(seq.querySelector('.textbook-source-inline-feedback').dataset.result,'match','supported sequence '+value);
+ }
+ for(const value of ['1,2,3','2,1','2,1,3,3','2,1,9','2,1,3junk','21.3']){
+ input.value=value;input.dispatchEvent(new w.Event('input'));input.dispatchEvent(new w.Event('blur'));
+ eq(seq.querySelector('.textbook-source-inline-feedback').dataset.result,'different','reject wrong sequence '+value);
+ }
+ }
  c.cleanup();let total=0;
  const dataRoot=path.resolve(process.argv[2]||'../api/private-textbook-semantic-data');
  for(const era of ['prehistory','ancient','nambuk','goryeo','joseon','opening','colonial','modern']){
   const d=JSON.parse(fs.readFileSync(path.join(dataRoot,'quizzes',era+'.json'))),before=JSON.stringify(d);stored=base();c=api.render(host,d,opts);await c.ready;eq(host.querySelectorAll('[data-source-item-id]').length,d.items.length,'all era questions rendered');
-  for(const item of d.items){const row=host.querySelector('[data-source-item-id="'+item.id+'"]'),slots=item.kind==='classification'?item.responseSlots:item.blanks.flatMap(b=>b.parts||[b]),nodes=[...row.querySelectorAll('.textbook-source-quiz-input')];eq(nodes.length,slots.length,'original input positions');nodes.forEach((n,i)=>{n.value=slots[i].answerIds.map(id=>item.answers.find(a=>a.id===id).text).join(item.kind==='sequence'?(item.answer.sequenceSeparator||''):', ');n.dispatchEvent(new w.Event('input'));n.dispatchEvent(new w.Event('blur'));});ok([...row.querySelectorAll('.textbook-source-inline-feedback')].every(n=>n.dataset.result==='match'),'source exact answers grade instantly');total++;}
+  for(const item of d.items){const row=host.querySelector('[data-source-item-id="'+item.id+'"]'),slots=item.kind==='classification'?item.responseSlots:item.blanks.flatMap(b=>b.parts||[b]),nodes=[...row.querySelectorAll('.textbook-source-quiz-input')];eq(nodes.length,slots.length,'original input positions');nodes.forEach((n,i)=>{n.value=slots[i].answerIds.map(id=>item.answers.find(a=>a.id===id).text).join(item.kind==='sequence'?(item.answer.sequenceSeparator||''):', ');n.dispatchEvent(new w.Event('input'));n.dispatchEvent(new w.Event('blur'));});ok([...row.querySelectorAll('.textbook-source-inline-feedback')].every(n=>n.dataset.result==='match'),'source exact answers grade instantly');if(item.kind==='sequence'){nodes.forEach((n,i)=>{n.value=slots[i].answerIds.map(id=>item.answers.find(a=>a.id===id).text.normalize('NFKC')).join(',');n.dispatchEvent(new w.Event('input'));n.dispatchEvent(new w.Event('blur'));});ok([...row.querySelectorAll('.textbook-source-inline-feedback')].every(n=>n.dataset.result==='match'),'every source sequence accepts numeric comma input');}total++;}
   eq(JSON.stringify(d),before,'source immutable');c.cleanup();
  }
  eq(total,642,'all source questions');console.log(JSON.stringify({checks,failures:0,total,scope:'whole-era inline list; local grading; IME; edit/regrade; batched writes; slow ack races; stop/resume/fail/retry; exact source validation'}));w.close();

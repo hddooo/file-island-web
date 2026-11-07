@@ -62,3 +62,8 @@
 @media(max-width:480px){.textbook-source-continuous [data-source-subitem-id] .textbook-source-quiz-input{width:100%;max-width:100%;box-sizing:border-box}.textbook-source-continuous .textbook-source-quiz-statement{line-height:1.9}}
 
 .textbook-source-quiz-instruction{font-size:20px;line-height:1.5;font-weight:700;margin:24px 0 12px;white-space:pre-wrap;overflow-wrap:anywhere;break-after:avoid}
+
+/* Classification choices precede the unchanged response slots. */
+.textbook-source-classification-responses{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px 20px;margin:12px 0}
+.textbook-source-classification-responses [data-source-subitem-id]{min-width:0;margin:0}
+.textbook-source-classification-responses .textbook-source-quiz-input{box-sizing:border-box;width:100%;max-width:100%}

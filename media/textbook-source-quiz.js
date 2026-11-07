@@ -467,22 +467,27 @@
       });
       card.appendChild(statement);
       if (item.kind === 'classification') {
+        var choicesHeading = el('p', 'textbook-source-quiz-statement', item.choicesLabelSourceText);
+        choicesHeading.id = localId + '-choices'; card.appendChild(choicesHeading);
+        var choices = el('ul', 'textbook-source-quiz-events'); choices.setAttribute('aria-labelledby', choicesHeading.id);
+        item.choices.forEach(function (choice) { choices.appendChild(el('li', '', choice.sourceText)); }); card.appendChild(choices);
+        var responseGroup = el('div', 'textbook-source-classification-responses');
+        responseGroup.setAttribute('role', 'group'); responseGroup.setAttribute('aria-label', '보기 항목별 답안');
+
         card.appendChild(el('p', 'textbook-source-quiz-help', '원문 각 항목의 콜론 뒤에 해당하는 보기 번호를 적으세요. 한 항목에 답이 여러 개면 쉼표로 구분하세요.'));
+        card.appendChild(responseGroup);
         item.subitems.forEach(function (sub, i) {
           var slot = item.responseSlots[i], row = el('p', 'textbook-source-quiz-statement');
           row.dataset.sourceSubitemId = sub.id;
           var input = responseInput(localId + '-response-' + (i + 1), '원문 ' + sub.sourceText + ' 응답');
           input.dataset.sourceResponseSlotId = slot.id;
           var prompt = el('label', '', sub.sourceText); prompt.htmlFor = input.id;
-          row.appendChild(prompt); row.appendChild(doc.createTextNode(' ')); row.appendChild(input); card.appendChild(row);
+          row.appendChild(prompt); row.appendChild(doc.createTextNode(' ')); row.appendChild(input); responseGroup.appendChild(row);
           inputs.push({node:input,answerIds:slot.answerIds,orderMatters:slot.answer.orderMatters});
         });
-        var choicesHeading = el('p', 'textbook-source-quiz-statement', item.choicesLabelSourceText);
-        choicesHeading.id = localId + '-choices'; card.appendChild(choicesHeading);
-        var choices = el('ul', 'textbook-source-quiz-events'); choices.setAttribute('aria-labelledby', choicesHeading.id);
-        item.choices.forEach(function (choice) { choices.appendChild(el('li', '', choice.sourceText)); }); card.appendChild(choices);
+
       }
-      if (item.kind === 'sequence' && item.answer.sequenceSeparator) card.appendChild(el('p', 'textbook-source-quiz-help', '교재 정답표처럼 기호 사이에 ' + item.answer.sequenceSeparator + '를 넣어 적으세요.'));
+      if (item.kind === 'sequence') card.appendChild(el('p', 'textbook-source-quiz-help', '번호를 순서대로 쉼표(,)로 구분해 적으세요. 원문자 대신 숫자로 입력해도 됩니다.'));
       if (item.answer.sequenceTokens) card.appendChild(el('p', 'textbook-source-quiz-help', '문제에서 요구한 사건 번호를 순서대로 적으세요. 교재 정답표의 연도도 정답을 볼 때 함께 표시됩니다.'));
       if (item.events && item.events.length) {
         var events = el('ul', 'textbook-source-quiz-events'); events.setAttribute('aria-label', '교재의 원문 보기');
