@@ -51,7 +51,7 @@ function fail(code){var e=new Error(code);e.code=code;return e;}
 function identity(api){var s=api&&api.state();return s&&s.signedIn&&!s.restoring&&s.ownerId!=null?String(s.ownerId)+':'+String(s.epoch||0):null;}
 async function download(options){
  options=options||{};var api=options.api,round=options.round,mode=options.mode||'questions',token=identity(api),urls=[],off=null,cancelled=false,pages=[],canvas,context,y,lines=[],count=0;
- if(!['questions','answers'].includes(mode))throw fail('invalid_mode');if(!token)throw fail('session_changed');if(!Number.isInteger(round)||round<70||round>79)throw fail('invalid_round');
+ if(!['questions','answers'].includes(mode))throw fail('invalid_mode');if(!token)throw fail('session_changed');if(!Number.isInteger(round)||round<70||round>80)throw fail('invalid_round');
  function current(){if(cancelled||options.isCurrent&&!options.isCurrent())throw fail('cancelled');if(identity(api)!==token)throw fail('session_changed');}
  if(api.onChange)off=api.onChange(function(){if(identity(api)!==token)cancelled=true;});
  function release(url){root.URL.revokeObjectURL(url);urls=urls.filter(function(x){return x!==url;});}

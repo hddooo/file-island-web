@@ -135,24 +135,23 @@
       }
       load();
     }
-    function explanation(item, container, index) {
-      var cbt = options.explanations || root.HanqCbtExplanations, review = options.review || root.HanqQuizReview, html = '';
-      try {
-        if (cbt && typeof cbt.render === 'function') html = cbt.render(item, review, 'final');
-        else if (item.review.item && review && typeof review.renderCompact === 'function') html = review.renderCompact(item.review.item, item.selectedOptionId);
-        else if (item.review.item && review && typeof review.render === 'function') html = review.render(item.review.item, item.selectedOptionId);
-      } catch (_) { html = ''; }
-      if (typeof html !== 'string' || !html) { container.appendChild(node('p', '이 문항의 저장된 해설을 아직 표시할 수 없어요.')); return; }
-      // Only established local explanation renderers produce markup. All API
-      // strings used directly by this module go through textContent.
-      container.innerHTML = html;
-      // Multiple versions of one exam question can have identical legacy DOM
-      // IDs. Scope those display IDs without changing the source item/version.
-      var ids = new Map(), suffix = '-notebook-' + ctx.serial + '-' + index;
-      container.querySelectorAll('[id]').forEach(function (el) { var old = el.id; ids.set(old, old + suffix); el.id = old + suffix; });
-      container.querySelectorAll('[aria-labelledby],[aria-describedby]').forEach(function (el) {
-        ['aria-labelledby', 'aria-describedby'].forEach(function (attribute) { if (el.hasAttribute(attribute)) el.setAttribute(attribute, el.getAttribute(attribute).split(/\s+/).map(function (id) { return ids.get(id) || id; }).join(' ')); });
-      });
+
+    function explanation(item, container) {
+      var cbt=options.explanations||root.HanqCbtExplanations,source=null;
+      try { if(cbt&&typeof cbt.resolve==='function')source=cbt.resolve(item,'final'); } catch(_) {}
+      source=source||item.review.item||{};var overview=source.overview||{},count=0,seen=new Set();
+      function line(value){if(typeof value!=='string'||!value.trim()||seen.has(value.trim()))return;seen.add(value.trim());container.appendChild(node('p',value.replace(/\*\*/g,'').trim()));count++;}
+      if(Array.isArray(overview.reason))overview.reason.forEach(line);
+      line(overview.answer);line(source.why);line(source.explanation);
+      if(Array.isArray(source.options))source.options.forEach(function(option,i){if(!option||!Array.isArray(option.review))return;var values=option.review.filter(function(v){return typeof v==='string'&&v.trim();});if(!values.length)return;seen.clear();container.appendChild(node('h4',(i+1)+'번 보기'));values.forEach(line);});
+      if(!count)container.appendChild(node('p','이 문항은 원천 자료에 확인된 해설이 없어요. 해설을 추정해 만들지 않았어요.'));
+    }
+    function pendingEraBook(section) {
+      var box=node('section',null,'cbt-notebook-era-pending');box.setAttribute('data-era-book-pending','');
+      box.appendChild(node('h2','시대별 문제집 오답'));
+      box.appendChild(node('p','문제 사진 등록 대기 · 새로 보내주실 시대별 문제집 사진은 검수 후 이곳에 연결돼요. 기존 모의고사 오답은 그대로 유지돼요.'));
+      ['오답 다시 풀기','누적 오답문제 PDF','해설 확인하기'].forEach(function(label){var b=node('button',label,'tool-btn');b.type='button';b.disabled=true;box.appendChild(b);});
+      section.appendChild(box);
     }
     function startReview(round, status) {
       if (!valid() || ctx.pending || typeof options.onReview !== 'function' || !sameOwner(ctx.identity, identity(api))) return;
@@ -192,6 +191,7 @@
     function renderList() {
       if (!valid()) return;
       var section = shell();
+      pendingEraBook(section);section.appendChild(node('h2','모의고사 오답'));
       section.appendChild(node('p', '완료한 모의고사에서 답을 골라 틀린 문제만 모았어요. 미응답과 별표만 한 문제는 포함하지 않아요.'));
       section.appendChild(node('p', '같은 문항은 최근 오답 당시의 문제와 해설로 한 번만 표시해요. 나중에 맞혀도 원래 모의고사에서 틀린 기록은 남아요.'));
       section.appendChild(node('p', '최대 ' + ctx.limit + '문항 · 현재 ' + ctx.items.length + '문항'));
@@ -227,9 +227,13 @@
           if (root.HanqLearningReader) { var source = root.HanqLearningReader.history(item, original); if (source) original = source; }
           if (item.common) image(item, original, item.common.image, true);
           image(item, original, item.image, false);
-          var selected = item.options.find(function (option) { return option.id === item.selectedOptionId; });
-          details.appendChild(node('p', '내 선택 ' + selected.number + '번 · 정답 ' + item.review.correctNumber + '번', 'fe-answer-compare'));
-          var body = node('div', null, 'fe-review-body'); details.appendChild(body); explanation(item, body, index);
+          var body=node('div',null,'fe-review-body');body.hidden=true;body.id='notebook-answer-'+ctx.serial+'-'+index;
+          var loaded=false,answerButton=button('해설 확인하기','tool-btn',function(){
+            if(!sameOwner(ctx.identity,identity(api))||!body.isConnected)return;
+            if(!loaded){var selected=item.options.find(function(option){return option.id===item.selectedOptionId;});body.appendChild(node('p','내 선택 '+selected.number+'번 · 정답 '+item.review.correctNumber+'번','fe-answer-compare'));explanation(item,body);loaded=true;}
+            body.hidden=!body.hidden;answerButton.textContent=body.hidden?'해설 확인하기':'해설 접기';answerButton.setAttribute('aria-expanded',String(!body.hidden));
+          });
+          answerButton.setAttribute('data-notebook-show-answer','');answerButton.setAttribute('aria-expanded','false');answerButton.setAttribute('aria-controls',body.id);details.appendChild(answerButton);details.appendChild(body);
         });
         row.appendChild(details); list.appendChild(row);
       });

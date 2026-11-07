@@ -5,7 +5,7 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-const { JSDOM } = require('../.test-tools/node_modules/jsdom');
+const { JSDOM } = require(process.env.HANQ_JSDOM_PATH || '../.test-tools/node_modules/jsdom');
 const code = fs.readFileSync(path.join(__dirname, '../media/cbt-wrong-notebook.js'), 'utf8');
 const RUN = '10000000-0000-4000-8000-000000000001';
 const REVIEW = '20000000-0000-4000-8000-000000000001';
@@ -28,7 +28,7 @@ function harness(config = {}) {
   for (const name of ['localStorage', 'sessionStorage']) Object.defineProperty(w, name, { configurable: true, get() { storageTouches++; throw new Error('Notebook must not read legacy/device storage'); } });
   w.URL.createObjectURL = () => { const url = 'blob:cbt-notebook-' + (made.length + 1); made.push(url); return url; };
   w.URL.revokeObjectURL = url => revoked.push(url);
-  w.HanqCbtExplanations = { render(q, legacy, status) { explanationCalls.push({ questionId: q.questionId, version: q.version, status }); return '<section id="legacy-explanation"><h4 id="legacy-heading">저장된 해설</h4><p aria-labelledby="legacy-heading">합성 시험 설명</p></section>'; } };
+  w.HanqCbtExplanations = { resolve(q, status) { explanationCalls.push({ questionId: q.questionId, version: q.version, status }); return q.review.item; } };
   const api = {
     enabled: () => config.enabled !== false,
     state: () => state,
@@ -72,6 +72,8 @@ async function open(h, selector = 'details[data-notebook-question]') { const det
     await open(h);
     same(h.images, [original.items[0].common.image, original.items[0].image], 'authenticated common and question images requested');
     same(h.host.querySelectorAll('img').length, 2, 'source and common images rendered');
+    same(h.explanationCalls.length,0,'answer explanation hidden until explicit button');
+    h.host.querySelector('[data-notebook-show-answer]').click();
     same(h.explanationCalls, [{ questionId: 'exam-79-01', version: 'saved-v1', status: 'final' }], 'saved final wrong item passed to established explanation renderer');
     ok(h.host.textContent.includes('내 선택 2번 · 정답 1번'), 'selected and correct option comparison');
     const sameDetails = h.host.querySelector('details'); sameDetails.open = false; sameDetails.open = true; sameDetails.dispatchEvent(new h.w.Event('toggle')); await settle();
@@ -225,9 +227,13 @@ async function open(h, selector = 'details[data-notebook-question]') { const det
     actual.review.correctNumber = item.answer; actual.review.correctOptionId = item.options[item.answer - 1].id; actual.selectedOptionId = item.options[item.answer % 5].id;
     h.api.cbt = async (method, endpoint) => { assert.equal(method, 'GET'); assert.equal(endpoint, '/api/v1/cbt/notebook'); return response([actual]); };
     await h.controller.ready; await open(h);
-    ok(h.host.querySelector('.fe-explanation[data-reviewed=true]'), 'real existing reviewed CBT explanation integrated');
-    same(h.host.querySelectorAll('.fe-exp-option').length, 5, 'all five reviewed option explanations retained');
-    ok(h.host.querySelector('.fe-exp-option.is-selected.is-incorrect'), 'saved chosen wrong answer preserved in reviewed explanation');
+
+    h.host.querySelector('[data-notebook-show-answer]').click();
+    const verified=h.w.HanqCbtExplanations.resolve(actual,'final');
+    ok(verified,'real existing reviewed CBT explanation resolves with exact mapping');
+    ok(h.host.querySelector('.fe-review-body').textContent.includes(verified.overview.reason[0].replace(/\*\*/g,'')),'verified source explanation retained');
+    same(h.host.querySelectorAll('.fe-review-body h4').length,5,'five option explanation groups retained');
+    ok(h.host.querySelector('.fe-answer-compare').textContent.includes('정답 '+item.answer+'번'),'saved answer mapping retained');
     h.close();
     console.log('PASS: ' + checks + ' CBT-only wrong notebook DOM/transport assertions. No live account, browser, or decoded-image QA claimed.');
   } finally { if (h) h.close(); }
