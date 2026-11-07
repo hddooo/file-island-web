@@ -10,7 +10,7 @@ function valid(){return active===ctx&&ctx.alive&&host.isConnected;}
 function current(){var s=api&&api.state();return s&&s.signedIn?s.ownerId:null;}
 function bind(sel,fn){var e=host.querySelector(sel);if(e)e.onclick=fn;}
 function dispose(){clearInterval(ctx.timer);ctx.urls.forEach(function(u){root.URL.revokeObjectURL(u);});ctx.urls=[];}
-function shell(body){return'<section class="panel formal-exams"><div class="fe-top"><h1>실전모의고사</h1><div class="fe-top-actions"><button id="feHome" class="tool-btn" type="button">메인 메뉴</button><button id="feStats" class="tool-btn" type="button">응시 분석</button></div></div>'+body+'</section>';}
+function shell(body){return'<section class="panel formal-exams"><div class="fe-top"><h1>실전모의고사</h1><div class="fe-top-actions"><button id="feStats" class="tool-btn" type="button">응시 분석</button></div></div>'+body+'</section>';}
 function paint(body){if(!valid())return;dispose();host.removeAttribute('aria-busy');host.innerHTML=shell(body);bind('#feHome',function(){stop();o.onHome();});bindStats();}
 function login(){ctx.seq++;ctx.pending=false;ctx.data=null;ctx.owner=null;paint('<p>실전모의고사는 로그인 후 이용할 수 있어요. 문제와 풀이 기록은 본인 계정에 연결돼요.</p><button type="button" class="check-one" id="feLogin">로그인하기</button>');bind('#feLogin',function(){stop();o.onAccount();});}
 function err(e,retry){var msg=e&&e.code==='review_empty'?'이 회차에 저장된 선택오답이나 별표가 아직 없어요.':e&&e.code==='asset_unavailable'?'원본 시험지 준비가 아직 끝나지 않았어요.':e&&e.code==='schema_not_ready'?'시험 기록 저장 준비가 아직 끝나지 않았어요.':e&&e.status===404?'본인의 시험 기록을 찾을 수 없어요.':'정보를 불러오거나 저장하지 못했어요. 다시 확인해 주세요.';paint('<p role="alert">'+msg+'</p><button type="button" class="tool-btn" id="feRetry">다시 확인</button>');bind('#feRetry',retry||list);}
