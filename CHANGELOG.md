@@ -1,3 +1,8 @@
+## 0.8.9-beta (2026-11-07)
+
+- Move new vocabulary entry from learner notebook to ADMIN, retaining existing server edit permissions and all records.
+- Photo/OCR question requests are not included in this release.
+
 ## 0.8.8-beta (2026-11-07)
 - Start answer PDFs with a source-separated answer key, followed by concise intact source explanations. Question PDFs unchanged.
 
