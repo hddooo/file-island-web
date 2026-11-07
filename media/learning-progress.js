@@ -194,7 +194,7 @@
     function attempts(filter) {
       var f = filter || {};
       return loadAttempts().filter(function (a) {
-        return !(root.HanqLearningReset && root.HanqLearningReset.hiddenAttempt(a)) && (!f.mode || a.mode === f.mode) && (!f.questionId || a.questionId === f.questionId) && (!f.subject || a.subject === f.subject) && (!f.source || a.source === f.source) &&
+        return (!f.mode || a.mode === f.mode) && (!f.questionId || a.questionId === f.questionId) && (!f.subject || a.subject === f.subject) && (!f.source || a.source === f.source) &&
           (f.ownerId === undefined || (a.ownerId || null) === f.ownerId);
       });
     }

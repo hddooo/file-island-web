@@ -5,7 +5,7 @@
 - 사용자·섬별 서버 resetAt 이전 incorrect만 제외. 일반 정답·과거 오답의 정답 재풀이·XP·다른 섬·문제 원본·단어장 유지.
 - POST 직전 브라우저 확인창에 섬/오답 범위/유지 범위/화면 되돌리기 미지원 표시. 취소 시 요청하지 않음. 실패 결과 불명은 재시도 독촉 없이 재확인 안내.
 - `hanq:wrong-reset:v1:<owner>`에 서버 확인 cutoff만 보관. 계정/epoch 검사, 단조증가 merge, 로그인·focus·storage 이벤트 재확인. 모든 데이터 영구 삭제 없음.
-- learning-progress `attempts()` / `wrongNotes()`에서 ownerId·subject·ts·correct=false로 필터. 기존 attempt 원본은 남김.
+- learning-progress `wrongNotes()`에서 ownerId·subject·ts·correct=false로 필터. 기존 attempt 원본은 남김.
 - TOEIC 로컬 practice는 원본 record를 비파괴 projection으로 가림. 시각 없는 과거 wrong은 cutoff가 있으면 가림. 새 채점 lastAt 추가. 새 채점으로 대체되기 전 가려진 과거 wrong을 `archivedWrong`에 보존. 정답/별표/풀이총수 유지.
 - 한국사 quiz-progress와 index 기출 pending, TOEIC answer/group-answer pending 생성 시 resetAt 캡처. 재시도는 저장된 토큰을 그대로 전송. API-client가 전송 시 최신값으로 바꾸지 않음.
 
@@ -17,7 +17,7 @@
 - 서버 날짜와 기기 lastAt 시계 차이, 오래된 열린 화면 메모리/동시 기기/오프라인 큐는 추가 통합검증 필요.
 
 ## 정확한 경로
-- `learning-progress.js`: loadAttempts 121, attempts 194, wrongNotes 228. 필터는 읽기에만 적용.
+- `learning-progress.js`: loadAttempts 121, attempts 194, wrongNotes 228. wrongNotes에만 필터 적용. 일반 attempts 목록/진행은 그대로 유지.
 - `account-sync.js`: owner별 key/acked 관리 및 import 흐름. 오래된 incorrect import는 API reset 정책이 최종 방어.
 - `toeic-practice.js`: identity 33, load 39, save 54, record/pool/grade. 키 `hanq:toeic-practice:v1:owner:<uuid>`.
 - `toeic-cbt.js`: pending persist/restore 203/204, check/checkGroup/checkMember에서 생성 캡처. 키 `hanq:toeic-question-pending:<owner>`.
