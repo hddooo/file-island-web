@@ -42,8 +42,17 @@
     if(!list.length||new Set(list).size!==list.length||list.some(function(id){return DEFAULT_ELIGIBLE.indexOf(id)===-1;}))return false;
     return list.indexOf(aliases[eraId]||eraId)!==-1&&revisionRoutesReady(document,eraId,NEW_SOURCE);
   }
+  function singleEdition(document) { return !!(document&&document.querySelector('meta[name="hanq-textbook-edition"][content="81"]')); }
+  function currentRevision(document,revision){return singleEdition(document)?NEW_SOURCE:revision;}
   function defaultSourceUrl(document, eraId, href) {
-    var url=new URL(href), automatic=url.searchParams.get('textbookDefault')==='81';
+    var url=new URL(href);
+    if(singleEdition(document)){
+      if(['goryeo','joseon','opening'].indexOf(aliases[eraId]||eraId)!==-1){url.searchParams.delete('textbookSource');url.searchParams.delete('textbookDefault');if(/\/bookquiz$/.test(url.hash))url.hash=url.hash.replace(/\/bookquiz$/,'/source-quiz');}
+      else{url.searchParams.set('textbookSource',NEW_SOURCE);url.searchParams.set('textbookDefault','81');}
+      if(url.searchParams.get('textbookOriginalSource')&&url.searchParams.get('textbookOriginalSource')!==NEW_SOURCE){url.searchParams.delete('textbookOriginal');url.searchParams.delete('textbookOriginalSource');}
+      return url;
+    }
+    var automatic=url.searchParams.get('textbookDefault')==='81';
     if(automatic&&!genericEra(eraId)){
       if(url.searchParams.get('textbookSource')===NEW_SOURCE)url.searchParams.delete('textbookSource');
       url.searchParams.delete('textbookDefault');
@@ -203,8 +212,8 @@
       host.appendChild(node('p', '회원 교재는 서버에서 로그인 세션을 확인한 뒤 불러와요. 이 기기에는 읽던 쪽 번호만 저장해요.', { 'class': 'textbook-help' }));
     }
     function mount(el, id, callbacks) {
-      stop(); rawHooks=callbacks||{};sourceRevision=rawHooks.sourceRevision==null?null:rawHooks.sourceRevision;var info=sourceInfo(sourceRevision);expectedRevision=info&&info.sha256;navigation=rawHooks.onEraChange||null;if(!el)return Promise.resolve();host=el;session=identity();era=eraFor(id,sourceRevision);if(!era){host.textContent='알 수 없는 교재 판본입니다.';return Promise.resolve();} enhanced=rawHooks.enhanced!==false;mode=rawHooks.initialMode==='page'?'page':'regions';zoom=['fit','large','readable'].indexOf(rawHooks.initialZoom)>=0?rawHooks.initialZoom:'readable';
-      if(sourceRevision!=null&&!revisionRoutesReady(doc,era.id,sourceRevision)){host.appendChild(node('p','선택한 판본은 서버 연결 검수가 끝난 뒤 열립니다. 기존 교재는 계속 이용할 수 있어요.',{role:'status'}));if(typeof rawHooks.onSourceChange==='function')host.appendChild(button('기존 79회 교재 열기',function(){rawHooks.onSourceChange(null);}));return Promise.resolve();}
+      stop(); rawHooks=callbacks||{};sourceRevision=currentRevision(doc,rawHooks.sourceRevision==null?null:rawHooks.sourceRevision);var info=sourceInfo(sourceRevision);expectedRevision=info&&info.sha256;navigation=rawHooks.onEraChange||null;if(!el)return Promise.resolve();host=el;session=identity();era=eraFor(id,sourceRevision);if(!era){host.textContent='알 수 없는 교재 판본입니다.';return Promise.resolve();} enhanced=rawHooks.enhanced!==false;mode=rawHooks.initialMode==='page'?'page':'regions';zoom=['fit','large','readable'].indexOf(rawHooks.initialZoom)>=0?rawHooks.initialZoom:'readable';
+      if(sourceRevision!=null&&!revisionRoutesReady(doc,era.id,sourceRevision)){host.appendChild(node('p','교재 서버 연결을 확인하고 있어요. 잠시 뒤 다시 시도해 주세요.',{role:'status'}));if(!singleEdition(doc)&&typeof rawHooks.onSourceChange==='function')host.appendChild(button('기존 79회 교재 열기',function(){rawHooks.onSourceChange(null);}));return Promise.resolve();}
       var g = generation, r = ++request;
       status = node('p', '', { role: 'status' }); host.appendChild(status);
       if (!session) { message('회원 교재는 로그인한 뒤 볼 수 있어요.'); host.appendChild(node('a', '로그인 화면으로', { href: '#account' })); }
@@ -215,7 +224,7 @@
     }
     return { mount: mount, stop: stop };
   }
-  var out = { defaultRevisionReady:defaultRevisionReady, defaultSourceUrl:defaultSourceUrl, prepareDefaultRoute:prepareDefaultRoute, transportRevision:transportRevision, selectedSourceUrl:selectedSourceUrl, create:create, eras:eras, erasFor:erasFor, eraFor:eraFor, sourceInfo:sourceInfo, revisionRoutesReady:revisionRoutesReady, reviewedRevisionRelease:REVIEWED_REVISION_RELEASE, revisions:[{sha256:OLD_SOURCE,edition:'79회 대비',totalPdfPages:144},{sha256:NEW_SOURCE,edition:'81회 대비',totalPdfPages:147}], validManifest:validManifest, errorText:errorText };
+  var out = { singleEdition:singleEdition,currentRevision:currentRevision, defaultRevisionReady:defaultRevisionReady, defaultSourceUrl:defaultSourceUrl, prepareDefaultRoute:prepareDefaultRoute, transportRevision:transportRevision, selectedSourceUrl:selectedSourceUrl, create:create, eras:eras, erasFor:erasFor, eraFor:eraFor, sourceInfo:sourceInfo, revisionRoutesReady:revisionRoutesReady, reviewedRevisionRelease:REVIEWED_REVISION_RELEASE, revisions:[{sha256:OLD_SOURCE,edition:'79회 대비',totalPdfPages:144},{sha256:NEW_SOURCE,edition:'81회 대비',totalPdfPages:147}], validManifest:validManifest, errorText:errorText };
   if (typeof module !== 'undefined' && module.exports) module.exports = out;
   if (root.document) { var reader = create(); out.mount = reader.mount; out.stop = reader.stop; root.HanqPrivateTextbook = out; }
 })(typeof window !== 'undefined' ? window : globalThis);

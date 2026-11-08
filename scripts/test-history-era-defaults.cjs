@@ -22,11 +22,11 @@ let calls=[],location={href:'https://test.invalid/#chapter/modern/bookquiz'},sta
 // Final activation must match the verified API/data identity and only the seven intended readers.
 const html=fs.readFileSync(path.join(__dirname,'../index.html'),'utf8');const meta=name=>html.match(new RegExp('<meta name="'+name+'" content="([^"]+)"'))?.[1];eq(meta('hanq-textbook-revisions'),cat.reviewedRevisionRelease);eq(meta('hanq-textbook-reviewed-eras'),eligible.join(','));eq(meta('hanq-textbook-default-eras'),eligible.join(','));
 for(const m of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi))if(!/\bsrc=|\btype=/.test(m[1])&&m[2].trim())new vm.Script(m[2]);
-assert.match(html,/id,textbookSourceHooks\(\{onEraChange:navigateTextbook\},id\)/);assert.match(html,/sourceRevision:HanqPrivateTextbook\.transportRevision\(sourceEra,/);assert.match(html,/\[\[0,'개념 학습'\],\[7,'시험에는 이렇게 나온다'\],\[6,'빈칸 퀴즈'\]\]/);
+assert.match(html,/id,textbookSourceHooks\(\{onEraChange:navigateTextbook\},id\)/);assert.match(html,/sourceRevision:HanqPrivateTextbook\.currentRevision\(document,HanqPrivateTextbook\.transportRevision\(sourceEra,/);assert.match(html,/\[\[0,'개념 학습'\],\[7,'시험에는 이렇게 나온다'\],\[6,'빈칸 퀴즈'\]\]/);
 // Exercise the actual application hook, not only the source policy helpers.
 const hook=html.split('\n').find(l=>l.trim().startsWith('function textbookSourceHooks('));
 let href='https://test.invalid/?textbookSource='+NEW+'&textbookDefault=81#chapter/modern/bookquiz';
-const context={URL,HanqPrivateTextbook:cat,location:{get href(){return href;}},routeId:()=> 'modern',history:{state:{depth:2},pushState(s,t,u){this.state=s;href=String(u);},replaceState(s,t,u){this.state=s;href=String(u);}}};
+const context={document:doc(),URL,HanqPrivateTextbook:cat,location:{get href(){return href;}},routeId:()=> 'modern',history:{state:{depth:2},pushState(s,t,u){this.state=s;href=String(u);},replaceState(s,t,u){this.state=s;href=String(u);}}};
 vm.createContext(context);vm.runInContext(hook,context);
 let hooks=context.textbookSourceHooks({initialMode:'quiz'});eq(hooks.sourceRevision,NEW);hooks.onSourceChange(null);
 eq(new URL(href).searchParams.get('textbookSource'),OLD);eq(new URL(href).searchParams.has('textbookDefault'),false);
