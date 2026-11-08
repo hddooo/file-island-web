@@ -1,3 +1,7 @@
+# 0.8.27-beta
+
+- File Island Study: two-second island/book logo entry animation, session skip and reduced-motion support.
+
 # 0.8.26-beta
 - Mobile history exam originals use available width rather than shrinking to a viewport-height cap.
 - Pinch/drag in the original image dialog no longer triggers accidental tap dismissal.

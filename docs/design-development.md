@@ -176,3 +176,8 @@ Vercel 빌드에 필요한 `scripts/build-app-version.cjs`만 `.vercelignore`의
 ## 건의·문의 독립 페이지 · 0.4.18-beta
 
 `inquiries/index.html`은 리다이렉트 대신 기존 same-origin API 클라이언트와 `HanqInquiries.mountPage`로 간단한 작성 폼을 표시한다. 지도 링크 가로채기는 제거하고 MY PAGE 모달·목록은 보존한다. 페이지는 모달 잠금을 획득하지 않으며, 인증 확인·계정 전환과 BFCache 복귀 때 기존 owner/epoch·불명확한 전송의 requestId 보존 규칙을 재사용한다. 페이지의 로그인·문의 확인 링크는 루트 MY PAGE를 가리킨다. 새 API·DB·메일 전송 경로는 추가하지 않는다.
+
+
+## File Island Study entry (0.8.27-beta)
+
+A decorative book/island logo appears for about two seconds on the first app entry per tab session. Refresh and navigation do not repeat it. Reduced-motion, keyboard dismissal, CSS failure-safe timeout and existing access control are preserved. See [verification](versions/v0.8.27-beta/report.md).

@@ -64,3 +64,8 @@
 ## 건의·문의 페이지 복원 · 0.4.18-beta
 
 독립 `/inquiries/` 페이지를 유지하고, 제목·내용·보내기 위에 3문장 안내를 표시한다. 7일 이내 가입한 이메일로 답변드린다는 안내는 사용자 요청 문구이며 새 자동 메일 시스템 구현을 뜻하지 않는다. MY PAGE의 문의·답변과 ADMIN 기능은 그대로 유지한다.
+
+
+## File Island Study entry (0.8.27-beta)
+
+A decorative book/island logo appears for about two seconds on the first app entry per tab session. Refresh and navigation do not repeat it. Reduced-motion, keyboard dismissal, CSS failure-safe timeout and existing access control are preserved. See [verification](versions/v0.8.27-beta/report.md).

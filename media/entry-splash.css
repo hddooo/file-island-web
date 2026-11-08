@@ -1,0 +1,17 @@
+/* Decorative only: never owns authentication, focus, scroll or loading state. */
+.fi-entry-splash{position:fixed;inset:0;z-index:2147483000;display:grid;place-items:center;overflow:hidden;pointer-events:none;background:radial-gradient(ellipse at 50% 38%,#fffdf4 0%,#f2f6e9 42%,#e2eee8 100%);color:#234a42;animation:fi-splash-exit .3s ease 1.7s forwards}
+.fi-entry-splash::before{content:"";position:absolute;width:min(80vw,580px);aspect-ratio:1;border:1px solid #769f8a22;border-radius:50%;box-shadow:0 0 0 48px #769f8a08,0 0 0 96px #769f8a05}
+.fi-entry-brand{position:relative;text-align:center;padding:24px;animation:fi-brand-in .65s cubic-bezier(.22,1,.36,1) both}
+.fi-entry-mark{display:block;width:clamp(112px,27vw,156px);height:auto;margin:0 auto 24px;overflow:visible;filter:drop-shadow(0 14px 17px #264c4020)}
+.fi-entry-mark .fi-island{transform-origin:100px 106px;animation:fi-island-rise .9s cubic-bezier(.22,1,.36,1) both}
+.fi-entry-mark .fi-sun{animation:fi-sun-in .85s ease both}
+.fi-entry-title{margin:0;font-family:Georgia,'Times New Roman',serif;font-size:clamp(35px,7.8vw,52px);line-height:1.15;letter-spacing:-1.6px;font-weight:500}
+.fi-entry-subtitle{margin:13px 0 0;font:600 11px/1.5 system-ui,sans-serif;letter-spacing:.46em;text-indent:.46em;color:#668477}
+.fi-entry-rule{width:36px;height:2px;margin:27px auto 0;background:#c2a35c;border-radius:2px;transform-origin:left;animation:fi-rule-in .7s .35s ease both}
+@keyframes fi-brand-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes fi-island-rise{from{opacity:0;transform:translateY(12px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes fi-sun-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes fi-rule-in{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes fi-splash-exit{to{opacity:0;visibility:hidden}}
+@media(prefers-reduced-motion:reduce){.fi-entry-brand,.fi-entry-mark .fi-island,.fi-entry-mark .fi-sun,.fi-entry-rule{animation:none}.fi-entry-splash{animation:fi-splash-exit .001s 1.999s forwards}}
+@media print{.fi-entry-splash{display:none!important}}

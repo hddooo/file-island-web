@@ -81,3 +81,8 @@ XP는 장착한 한 마리에게만 쌓이며 계정 합계는 보유 개체의 
 서버가 접수를 확인한 뒤에만 보냈다고 표시한다. 전송 중에는 중복 제출을 막고, 결과를 확인하지 못하면 원래 내용과 전송 번호를 유지해 같은 문의를 다시 확인한다. 문의 창이 자체 진행·결과를 표시하므로 공통 대기창을 겹쳐 띄우지 않는다. MY PAGE 모달의 취소·Escape·뒤로 이동은 창을 닫고 본문 잠금을 해제한다. 독립 페이지는 모달 잠금 없이 일반 페이지로 이동한다. 브라우저 뒤로/앞으로 캐시 복귀는 세션 확인 뒤 폼 또는 목록을 복원하며, 미확인 전송 번호는 같은 계정·로그인에서 유지한다.
 
 MY PAGE의 `내 문의`에서 보낸 제목을 20건씩 보고 펼치면 본문과 관리자 답변을 확인한다. 관리자 답변이 없으면 아직 답변이 없다고 표시한다. ADMIN의 기존 문의함과 답변 작성 경로는 유지한다. 기존 문의·추가 메시지·답변·감사 기록, 인증과 본인/관리자 접근 제한은 변경하지 않는다. 로그아웃·계정 전환 뒤의 늦은 응답은 버리고 이전 계정의 화면과 임시 입력을 지운다.
+
+
+## File Island Study entry (0.8.27-beta)
+
+A decorative book/island logo appears for about two seconds on the first app entry per tab session. Refresh and navigation do not repeat it. Reduced-motion, keyboard dismissal, CSS failure-safe timeout and existing access control are preserved. See [verification](versions/v0.8.27-beta/report.md).
