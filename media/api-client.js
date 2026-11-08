@@ -491,6 +491,7 @@
       archiveToeicNote: function (id, archived) { return call('PUT', '/api/v1/toeic-notes/' + enc(id) + '/archive', {body:{archived:archived}}); },
       saveToeicNote: function (id, note) { return call('PUT', '/api/v1/toeic-notes/' + enc(id), {body:note}); },
       mergeToeicNotes: function (id, data) { return call('POST', '/api/v1/toeic-notes/' + enc(id) + '/merge', {body:data}); },
+      hongmungwan: function(method,path,body){if(!((method==='GET'&&path==='')||(method==='POST'&&path==='/answer')||(method==='PUT'&&path==='/star')))return Promise.reject(ApiError(400,'invalid_path'));return call(method,'/api/v1/hongmungwan'+path,body===undefined?{}:{body:body});},
       wrongNotes: function (params) { return call('GET', '/api/v1/wrong-notes' + q(params)); },
       study: function () { return call('POST', '/api/v1/wrong-notes/study', { body: {} }); },
       wrongParts: function () { return call('GET', '/api/v1/wrong-notes/parts'); },
