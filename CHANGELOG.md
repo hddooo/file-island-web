@@ -1,3 +1,7 @@
+# 0.8.26-beta
+- Mobile history exam originals use available width rather than shrinking to a viewport-height cap.
+- Pinch/drag in the original image dialog no longer triggers accidental tap dismissal.
+
 ## 0.8.25-beta (2026-11-08)
 
 - 역사섬 교재 화면을 81회로 고정하고 판본 선택과 구판 fallback 버튼을 제거. 과거79 링크는81경로로 연결.
