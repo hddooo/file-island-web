@@ -1,3 +1,8 @@
+# 0.8.28-beta
+
+- Hongmungwan: eight era menus, owner-protected original questions, per-question recent three answers, stars, and independent review/PDF.
+- Preserve formal CBT records and existing private manual sources; no synthetic answers.
+
 # 0.8.27-beta
 
 - File Island Study: two-second island/book logo entry animation, session skip and reduced-motion support.
