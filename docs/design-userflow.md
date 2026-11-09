@@ -101,3 +101,6 @@ Recall retains labels such as 특징 while learners fill historical names and ev
 
 ## 0.8.48-beta
 장보고 이름과 두 설명을 구분해 읽고 김헌창의 난·법화원 용어를 눌러 뜻을 확인합니다.
+
+## 0.8.49-beta: Eight-era quality pass
+Recall excludes annotated non-answer labels without changing body facts or persistent records. Three missing historical glossary entries added. See [audit scope and limits](versions/0.8.49-beta/report.md).

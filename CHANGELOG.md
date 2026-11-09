@@ -629,3 +629,8 @@ Practice의 공통 자료 묶음에 정답 미준비 문항이 있어도, 문항
 ## 0.8.45-beta
 - Preserve recall headings/table captions and widen Korean answer fields without excessive height.
 - Remove recall bulk action buttons, retain local individual grading.
+
+## 0.8.49-beta
+- Exclude eleven non-answer labels/captions from real eight-era blank recall.
+- Add source-scoped Maesoseong, Wonjong/Aeno, and Cheongsanri tooltips.
+- Record broad source-layout audit coverage and unresolved source/mobile limitations.

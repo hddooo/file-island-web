@@ -196,3 +196,6 @@ Exact-match non-answer labels remain visible in recall. Grouped bold fragments a
 
 ## 0.8.48-beta
 Source-specific p31 nested person-cell repair retains native spans and source data. Reversible glossary note relocation.
+
+## 0.8.49-beta: Eight-era quality pass
+Recall excludes annotated non-answer labels without changing body facts or persistent records. Three missing historical glossary entries added. See [audit scope and limits](versions/0.8.49-beta/report.md).

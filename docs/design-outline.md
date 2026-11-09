@@ -84,3 +84,6 @@ Blank recall focuses on emphasized historical facts, not generic organizational 
 
 ## 0.8.48-beta
 Restore ruler-table information hierarchy and replace a long inline footnote with an accessible tooltip.
+
+## 0.8.49-beta: Eight-era quality pass
+Recall excludes annotated non-answer labels without changing body facts or persistent records. Three missing historical glossary entries added. See [audit scope and limits](versions/0.8.49-beta/report.md).
