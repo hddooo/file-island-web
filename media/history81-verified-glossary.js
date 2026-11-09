@@ -2587,6 +2587,29 @@ root.HanqHistory81VerifiedGlossary={
       "followingParticles": [
         "을"
       ]
+    },
+    {
+      "id": "verified-samguk-gwansanseong",
+      "era": "samguk",
+      "term": "관산성 전투",
+      "aliases": [
+        "관산성 전투",
+        "관산성"
+      ],
+      "followingParticles": [
+        "에서"
+      ],
+      "summary": "관산성 전투(554): 한강 하류를 차지한 신라에 맞서 백제가 공격한 전투. 백제 성왕이 전사하고 신라 진흥왕 때 김무력의 군대가 승리했다. 백제 멸망(660)과 구별한다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0004868"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        20,
+        22,
+        23,
+        25
+      ]
     }
   ]
 };
