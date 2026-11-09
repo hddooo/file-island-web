@@ -7,3 +7,5 @@
 .hongmungwan .hm-original-trim-70-03{aspect-ratio:679/675;overflow:hidden}
 .hongmungwan .hm-choice{font-size:18px;font-weight:700;min-width:52px}
 @media(max-width:560px){.hongmungwan .hm-original{margin:8px 0}.hongmungwan .hm-choices{gap:6px}.hongmungwan .hm-choice{padding:10px 12px}}
+
+.hm-pagination{display:flex;align-items:center;justify-content:center;gap:12px;margin:16px 0}.hm-pagination button{min-height:44px;min-width:60px}.hm-page-status{font-size:13px;white-space:nowrap}.hm-pagination button:disabled{opacity:.45;cursor:default}

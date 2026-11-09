@@ -1,3 +1,6 @@
+## 0.9.0-beta
+- Paginate Hongmungwan era questions ten per page; preserve full-era review and PDF exports and account boundaries.
+
 ## 0.8.42-beta
 
 ## 0.8.43-beta
