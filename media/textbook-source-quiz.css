@@ -80,9 +80,9 @@ html body #app#app#app .textbook-source-quiz :is(.textbook-source-inline-feedbac
 html body #app#app#app .textbook-source-verdict[data-result=wrong]{color:#b42318!important;-webkit-text-fill-color:currentColor!important}
 html body #app#app#app .textbook-source-quiz-input:has(+.textbook-source-inline-feedback[data-result=match]){color:#1756b1!important;-webkit-text-fill-color:currentColor!important;border-color:#1756b1!important}
 html body #app#app#app .textbook-source-quiz-input:has(+.textbook-source-inline-feedback[data-result=different]){color:#b42318!important;-webkit-text-fill-color:currentColor!important;border-color:#b42318!important}
-html body #app#app#app .textbook-source-quiz-events{background:#f7f9fc!important;color:#18212f!important;border-color:#c3cfdd!important}
+html body #app#app#app .textbook-source-quiz-events{background:transparent!important;color:#18212f!important;border:0!important}
 html body #app#app#app .textbook-source-quiz-events :is(li,span,strong,b){color:#18212f!important;-webkit-text-fill-color:currentColor!important;background:transparent!important}
-html[data-company-mode=on] body #app#app#app .textbook-source-quiz-events{background:#161b22!important;color:#c9d1d9!important;border-color:#484f58!important}
+html[data-company-mode=on] body #app#app#app .textbook-source-quiz-events{background:transparent!important;color:#c9d1d9!important;border:0!important}
 html[data-company-mode=on] body #app#app#app .textbook-source-quiz-events :is(li,span,strong,b){color:#c9d1d9!important}
 html[data-company-mode=on] body #app#app#app .textbook-source-quiz :is(.textbook-source-inline-feedback,.textbook-source-quiz-status)[data-result=match],
 html[data-company-mode=on] body #app#app#app .textbook-source-verdict[data-result=correct],
