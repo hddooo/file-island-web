@@ -222,13 +222,13 @@ test('body-level dialog image notes clear on both mode-off and non-history navig
   const image = dialog.querySelector('img'), button = dialog.querySelector('button'), before = dialog.innerHTML;
   let closes = 0; button.onclick = () => closes++;
   mode.select('company'); await flush();
-  assert.equal(doc.querySelectorAll('.company-image-note').length, 2);
-  assert.equal(image.nextElementSibling.textContent, '// image: 고려 청자 상세');
-  mode.refresh(); await flush(); assert.equal(dialog.querySelectorAll('.company-image-note').length, 1);
+  assert.equal(doc.querySelectorAll('.company-image-note').length, 0);
+  assert.equal(image.nextElementSibling, button);
+  mode.refresh(); await flush(); assert.equal(dialog.querySelectorAll('.company-image-note').length, 0);
   mode.select('default'); await flush();
   assert.equal(doc.querySelector('.company-image-note'), null); assert.equal(dialog.innerHTML, before);
   assert.equal(dialog.querySelector('img'), image); assert.equal(image.getAttribute('src'), 'dialog-source.jpg'); assert.equal(image.alt, '고려 청자 상세');
-  mode.select('company'); await flush(); assert.equal(dialog.querySelectorAll('.company-image-note').length, 1);
+  mode.select('company'); await flush(); assert.equal(dialog.querySelectorAll('.company-image-note').length, 0);
   w.location.hash = '#toeic/grammar'; await flush();
   assert.equal(doc.querySelector('.company-image-note'), null); assert.equal(doc.documentElement.hasAttribute('data-company-history'), false);
   assert.equal(dialog.innerHTML, before); assert.equal(dialog.open, true); assert.equal(dialog.querySelector('img'), image);
@@ -241,7 +241,7 @@ test('image-only figure wrappers keep raster nodes, native caption/status and in
   const canvasStyle = canvas.getAttribute('style'), partStyle = part.getAttribute('style');
   for (let i = 0; i < 3; i++) {
     mode.select('company'); await flush();
-    assert.equal(part.querySelectorAll('.company-image-note').length, 1); assert.equal(part.querySelector('img'), image);
+    assert.equal(part.querySelectorAll('.company-image-note').length, 0); assert.equal(part.querySelector('img'), image);
     assert.equal(canvas.getAttribute('style'), canvasStyle); assert.equal(part.getAttribute('style'), partStyle);
     assert.equal(status.textContent, '원본 자료 상태'); assert.equal(caption.textContent, '원문 그림 설명');
     assert.equal(canvas.contains(status), false); assert.equal(canvas.contains(caption), false);

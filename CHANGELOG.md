@@ -1,3 +1,7 @@
+# 0.8.30-beta
+
+- Company mode hides original-image blocks and loading messages without generated image labels; normal-mode source data is preserved.
+
 # 0.8.29-beta
 
 - Colored FILE ISLAND STUDY lettering appears character by character; keeps the two-second entry and reduced-motion fallback.

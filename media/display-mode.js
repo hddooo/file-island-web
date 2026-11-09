@@ -82,11 +82,8 @@
     var historyText=isHistory();
     doc.documentElement.toggleAttribute('data-company-history',historyText);
     if(historyText)app.setAttribute('data-company-history','');else{app.removeAttribute('data-company-history');doc.querySelectorAll('.company-image-note').forEach(function(n){n.remove();});}
-    if(historyText){(doc.body||pane).querySelectorAll('img,svg:not(button svg):not(a svg),canvas,video').forEach(function(n){
-      if(n.closest('.device-crown,[data-company-map-original],.company-image-note')||n.nextElementSibling&&n.nextElementSibling.classList.contains('company-image-note'))return;
-      var alt=n.getAttribute('alt')||n.getAttribute('aria-label')||'',note=element('span','company-image-note',alt?'// image: '+alt:'// 이미지 자료 생략 · 일반 모드에서 확인');
-      n.insertAdjacentElement('afterend',note);
-    });}
+    // Hide media without replacement labels; normal-mode DOM remains intact.
+    doc.querySelectorAll('.company-image-note').forEach(function(n){n.remove();});
 
     var map=app.querySelector('#worldMapHost'),english=app.querySelector('.toeic-travel-map'),history=app.querySelector('.history-home-hero');
     var key=map?'workspace':english?'english':history&&!app.querySelector('.toc')?'history':null;
