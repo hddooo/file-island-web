@@ -48,3 +48,22 @@ html[data-company-mode=on] #app#app#app .toc .era-progress-row>.period>.company-
  #app .toc .era-progress-row>.period{flex-basis:100%}
  #app .toc .era-progress-row>.era-progress-tools{max-width:none;margin-left:auto}
 }
+
+/* Stateless wrong-blank practice: answers appear only after explicit grading. */
+#eraWrongDialog .era-practice-input{box-sizing:border-box;width:clamp(110px,28vw,260px);max-width:100%;min-height:44px;padding:6px 8px;font:inherit;font-size:16px;border:1px solid #64748b;border-radius:6px;background:transparent;color:inherit}
+#eraWrongDialog .era-practice-slot{display:inline-flex;align-items:center;flex-wrap:wrap;gap:6px;max-width:100%;vertical-align:middle}
+#eraWrongDialog .era-practice-grade{min-height:44px;padding:8px 18px;margin-top:8px;font:inherit;color:inherit;background:transparent;border:1px solid #64748b;border-radius:8px;cursor:pointer}
+#eraWrongDialog .era-practice-feedback{font-size:14px;font-weight:800;white-space:normal}
+#eraWrongDialog .era-practice-feedback[hidden]{display:none!important}
+#eraWrongDialog .era-practice-feedback[data-result=correct]{color:#1755bb!important}
+#eraWrongDialog .era-practice-feedback[data-result=wrong]{color:#b42318!important}
+#eraWrongDialog .era-practice-input[data-result=wrong]{border:2px solid #b42318;font-weight:700}
+#eraWrongDialog .era-practice-classification{margin:8px 0;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+html[data-company-mode=on] #eraWrongDialog .era-practice-feedback[data-result=correct]{color:#9fc6ff!important}
+html[data-company-mode=on] #eraWrongDialog .era-practice-feedback[data-result=wrong]{color:#ff9b92!important}
+html[data-company-mode=on] #eraWrongDialog .era-practice-input[data-result=wrong]{border-color:#ff9b92}
+#eraWrongDialog#eraWrongDialog .era-practice-input{font-size:16px!important;min-height:44px!important}
+html[data-company-mode=on] #eraWrongDialog#eraWrongDialog#eraWrongDialog#eraWrongDialog .era-practice-input{font-size:16px!important;min-height:44px!important}
+html[data-company-mode=on] #eraWrongDialog#eraWrongDialog#eraWrongDialog#eraWrongDialog .era-practice-input[data-result=wrong]{border:2px solid #ff9b92!important;font-weight:700!important}
+html[data-company-mode=on] #eraWrongDialog#eraWrongDialog#eraWrongDialog#eraWrongDialog .era-practice-feedback[data-result=correct]{color:#9fc6ff!important;font-weight:800!important}
+html[data-company-mode=on] #eraWrongDialog#eraWrongDialog#eraWrongDialog#eraWrongDialog .era-practice-feedback[data-result=wrong]{color:#ff9b92!important;font-weight:800!important}

@@ -1,0 +1,16 @@
+'use strict';
+const {JSDOM}=require('jsdom'),fs=require('fs'),assert=require('assert/strict');
+const source='d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de';
+const tick=()=>new Promise(r=>setTimeout(r,30));
+(async()=>{let checks=0;const w=new JSDOM('<main></main>',{runScripts:'outside-only',url:'https://fixture.test'}).window,d=w.document;
+for(const file of ['textbook-source-quiz','era-study-progress'])w.eval(fs.readFileSync('media/'+file+'.js','utf8'));
+let state={signedIn:true,ownerId:'A',epoch:1},onChange,reads=0,writes=0;
+const item={id:'q',originalNumber:1,kind:'fill-in',verification:{status:'source-verified',textVerified:true,answerPairVerified:true},text:'합성 문제',segments:[{type:'text',text:'합성 질문 '},{type:'blank',id:'b'}],blanks:[{id:'b',answerIds:['a']}],answers:[{id:'a',text:'비밀정답'}],answer:{text:'비밀정답',orderMatters:false}};
+const result={version:'v',workspace:{responses:{q:{submitted:true,correct:false,values:['이전오답'],checkedSlots:[true]}}}},snapshot=JSON.stringify(result);
+const api={state:()=>state,onChange:f=>{onChange=f;return()=>{}},textbookSemanticQuiz:async id=>{reads++;return{id,version:'v',source:{sha256:source},items:[item]};},textbookSourceWorkspace:async()=>{reads++;return result;},saveTextbookSourceWorkspace:()=>{writes++;throw Error('no writes');},request:()=>{writes++;throw Error('no requests');}};
+const c=w.HanqEraProgress.mount(d.querySelector('main'),{api,aggregate:true});d.querySelector('button').click();await tick();
+const card=d.querySelector('.era-wrong-item'),input=card.querySelector('input'),button=card.querySelector('.era-practice-grade');assert.equal(input.value,'');assert(!d.querySelector('dialog').textContent.includes('비밀정답'));assert(!d.querySelector('dialog').textContent.includes('이전오답'));checks+=3;
+button.click();assert(!card.textContent.includes('비밀정답'));checks++;
+input.value='틀림';input.dispatchEvent(new w.CompositionEvent('compositionstart'));input.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Enter',bubbles:true,isComposing:true}));assert(!card.textContent.includes('비밀정답'));input.dispatchEvent(new w.CompositionEvent('compositionend'));button.click();assert(card.textContent.includes('비밀정답'));checks+=2;
+input.value='비밀정답';input.dispatchEvent(new w.Event('input'));assert(!card.textContent.includes('비밀정답'));button.click();assert.equal(card.querySelector('.era-practice-feedback').textContent,'✓ 정답');assert.equal(JSON.stringify(result),snapshot);assert.equal(writes,0);assert.equal(reads,16);checks+=5;
+const savedButton=button;state={signedIn:true,ownerId:'B',epoch:2};onChange();assert(!d.querySelector('dialog'));savedButton.click();assert.equal(JSON.stringify(result),snapshot);checks+=2;c.stop();w.close();console.log(JSON.stringify({checks,writes,scope:'hidden until grading, IME, retry, original immutability, owner invalidation'}));})().catch(e=>{console.error(e);process.exitCode=1;});

@@ -1,5 +1,8 @@
 ## 0.8.42-beta
 
+## 0.8.43-beta
+- 홍문관과 시대별 오답 빈칸을 답 입력 후 채점하는 일회성 재풀이로 변경. 원본 기록·XP 미변경.
+
 - Remove retired exercise fallback notice/button and first-era legacy question entrypoints from current study pages. Preserve original question data, saved records and direct legacy URL compatibility.
 - Correct saved blank-workspace lookup for the Three Kingdoms era using its canonical quiz ID.
 

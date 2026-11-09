@@ -269,6 +269,28 @@
     if(item.kind!=='sequence'&&!entry.orderMatters&&parts.length>1){var detail=multipleAnswerDetails(value,parts);if(detail.partial)return '△ 부분 정답 '+detail.matched+'/'+detail.total+' · 미완성 답 · 빠진 답: '+detail.missing.join(', ');}
     return '✕ 정답: '+(item.answer.sequenceTokens?item.answer.text:parts.join(item.kind==='sequence'?(item.answer.sequenceSeparator||''):', '));
   }
+  // Pure one-session practice helpers; never write progress or award XP.
+  function practiceSlots(item) {
+    if (!verified(item)) throw Error('unverified_practice_item');
+    var slots=item.kind==='classification'?(item.responseSlots||[]):(item.blanks||[]).reduce(function(out,b){return out.concat(b.parts||[b]);},[]);
+    if(!slots.length) throw Error('missing_practice_slots');
+    return slots.map(function(slot){
+      var ids=slot.answerIds;
+      if(!Array.isArray(ids)||!ids.length||ids.some(function(id){return !(item.answers||[]).some(function(a){return a.id===id;});}))throw Error('invalid_practice_answers');
+      return {id:slot.id,answerIds:ids.slice(),orderMatters:slot.answer?slot.answer.orderMatters:item.answer.orderMatters};
+    });
+  }
+  function gradePractice(item,values) {
+    var slots=practiceSlots(item);
+    if(!Array.isArray(values)||values.length!==slots.length||values.some(function(v){return typeof v!=='string'||v.length>2000;}))throw Error('invalid_practice_values');
+    var results=slots.map(function(entry,i){
+      var value=values[i],parts=entry.answerIds.map(function(id){return item.answers.find(function(a){return a.id===id;}).text;});
+      if(!normalize(value))return {complete:false,correct:false,feedback:'답을 입력해 주세요.'};
+      var match=!!(item.answer.sequenceTokens&&normalize(value)===normalize(item.answer.text))||compare(value,parts,entry.orderMatters,item.kind,item.answer.sequenceSeparator)==='match';
+      return {complete:true,correct:match,feedback:answerFeedback(item,{match:match,orderMatters:entry.orderMatters},value,parts)};
+    });
+    return {complete:results.every(function(r){return r.complete;}),correct:results.every(function(r){return r.complete&&r.correct;}),slots:results};
+  }
   // Presentation only. These exact source/version pins have different numbering;
   // canonical arrays, answer data, progress IDs and cursor indices stay intact.
   function joseonPresentation(data, version) {
@@ -542,5 +564,5 @@
 
     controller.ready=Promise.resolve().then(function(){if(typeof options.loadProgress!=='function'||typeof options.saveProgress!=='function')throw Error('progress_unavailable');return options.loadProgress();}).then(function(result){if(!active)return;saved=result;if(!saved.workspace||!saved.workspace.responses)throw Error('workspace_unavailable');if(checkedReview)marked=new Set(validateSelection(saved));cursor=saved.workspace.cursor;presentation=joseonPresentation(data,saved.version);var restored=restoreDraft();build();message('저장한 응답을 불러왔습니다. 채점은 즉시 반영되고 계정 저장은 묶어서 진행됩니다.');if(restored){lastFocused=Number.isInteger(restored.focusIndex)?Math.max(0,Math.min(restored.focusIndex,fields.length-1)):fields.findIndex(function(e){return e.itemIndex===cursor;});focusAt(lastFocused);if(restored.selection&&fields[lastFocused]){var n=fields[lastFocused].node;try{n.setSelectionRange(Math.min(restored.selection[0]||0,n.value.length),Math.min(restored.selection[1]||0,n.value.length));}catch(e){}}clearTimeout(timer);retry.hidden=false;message('같은 계정의 미저장 답안과 위치를 복원했습니다. 계속 풀거나 저장 다시 시도를 눌러주세요.');}else if(saved.workspace.status==='paused'&&!checkedReview)showReview();else focusAt(fields.findIndex(function(e){return e.itemIndex===cursor;}));},function(){message('계정별 풀이를 불러오지 못했습니다. 새로고침해 다시 시도해 주세요.',true);});return controller;
   }
-  root.HanqTextbookSourceQuiz=Object.freeze({render:render});
+  root.HanqTextbookSourceQuiz=Object.freeze({render:render,practiceSlots:practiceSlots,gradePractice:gradePractice});
 })(typeof window !== 'undefined' ? window : globalThis);

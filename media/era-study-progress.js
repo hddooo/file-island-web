@@ -36,17 +36,44 @@
       dialog=node('dialog','era-wrong-dialog');dialog.id='eraWrongDialog';dialog.setAttribute('aria-label',title+' 오답 다시보기');
       const head=node('header','era-wrong-head'),heading=node('h2','',title+' · 오답 다시보기'),x=node('button','era-wrong-close','닫기');x.type='button';x.onclick=()=>close(true);head.append(heading,x);const body=node('div','era-wrong-body','저장된 오답을 불러오는 중…');body.setAttribute('role','status');dialog.append(head,body);doc.body.append(dialog);const current=dialog;if(root.HanqUiLocks)lockRelease=root.HanqUiLocks.acquire(doc.querySelector('#app'));
       dialog.addEventListener('cancel',e=>{e.preventDefault();close(true);});dialog.addEventListener('click',e=>{if(e.target===current)close(true);});
-      dialog.addEventListener('keydown',e=>{if(e.key!=='Tab')return;const nodes=[...current.querySelectorAll('button,a[href],[tabindex="0"]')].filter(n=>!n.disabled);if(!nodes.length)return;const first=nodes[0],last=nodes[nodes.length-1];if(e.shiftKey&&doc.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&doc.activeElement===last){e.preventDefault();first.focus();}});
+      dialog.addEventListener('keydown',e=>{if(e.key!=='Tab')return;const nodes=[...current.querySelectorAll('button,input,a[href],[tabindex="0"]')].filter(n=>!n.disabled);if(!nodes.length)return;const first=nodes[0],last=nodes[nodes.length-1];if(e.shiftKey&&doc.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&doc.activeElement===last){e.preventDefault();first.focus();}});
       if(dialog.showModal)dialog.showModal();else dialog.setAttribute('open','');x.focus();
-      try{const records=[],failed=[];for(const era of (id==='all'?eras:[id])){try{records.push(await read(era));}catch(e){if(!valid()||dialog!==current)return;failed.push(era);}}if(!valid()||dialog!==current)return;if(id!=='all'&&records[0])paint(tools,records[0]);body.replaceChildren();body.removeAttribute('role');body.append(node('p','era-wrong-scope','현재 저장된 오답 기준입니다. 이후 맞힌 문제의 과거 오답 이력은 포함하지 않습니다.'));if(failed.length)body.append(node('p','era-wrong-error','일부 시대의 기록을 불러오지 못했습니다. 닫고 다시 시도해 주세요.'));
+      try{const records=[],failed=[];for(const era of (id==='all'?eras:[id])){try{records.push(await read(era));}catch(e){if(!valid()||dialog!==current)return;failed.push(era);}}if(!valid()||dialog!==current)return;if(id!=='all'&&records[0])paint(tools,records[0]);body.replaceChildren();body.removeAttribute('role');body.append(node('p','era-wrong-scope','현재 저장된 오답만 다시 풉니다. 재풀이 결과는 저장하지 않습니다.'));if(failed.length)body.append(node('p','era-wrong-error','일부 시대의 기록을 불러오지 못했습니다. 닫고 다시 시도해 주세요.'));
         if(!records.some(r=>r.stats.wrong.length)&&!failed.length){body.append(node('p','era-wrong-empty','저장된 오답이 없습니다.'));return;}
-        for(const record of records){if(id==='all'&&record.stats.wrong.length)body.append(node('h3','era-wrong-era',record.model.title));for(const item of record.stats.wrong){const response=record.result.workspace.responses[item.id],card=node('article','era-wrong-item');card.dataset.itemId=item.id;
-          card.append(node('h3','',String(item.originalNumberLabel||item.originalNumber||'')+' · 오답'));
-          const question=node('p','era-wrong-question',item.sourceText||item.text||(item.segments||[]).map(s=>s.type==='text'?s.text:'(　)').join(''));card.append(question);
-          if(item.events&&item.events.length){const list=node('ul','era-wrong-choices');item.events.forEach(e=>list.append(node('li','',e.sourceText)));card.append(list);}
-          if(item.choices&&item.choices.length){const list=node('ul','era-wrong-choices');item.choices.forEach(c=>list.append(node('li','',c.sourceText||c.text)));card.append(list);}
-          card.append(node('p','era-wrong-answer','내 답: '+response.values.join(' / ')),node('p','era-right-answer','정답: '+(item.answer&&item.answer.text||'')));body.append(card);
-        }}
+        for(const record of records){
+          if(id==='all'&&record.stats.wrong.length)body.append(node('h3','era-wrong-era',record.model.title));
+          for(const item of record.stats.wrong){
+            const card=node('article','era-wrong-item');card.dataset.itemId=item.id;
+            const topic=(record.model.subtopics||[]).find(t=>t.id===item.subtopicId);if(topic&&topic.title)card.append(node('p','era-practice-topic',topic.title));
+            card.append(node('h3','',String(item.originalNumberLabel||item.originalNumber||'')+' · 오답 재풀이'));
+            body.append(card);
+            const engine=root.HanqTextbookSourceQuiz;
+            let slots;try{slots=engine.practiceSlots(item);}catch(e){card.append(node('p','era-wrong-error','이 문항의 채점 정보를 확인하지 못했습니다.'));continue;}
+            const fields=[],feedback=[],question=node('div','era-wrong-question');card.append(question);
+            function field(slot,label){
+              const wrap=node('span','era-practice-slot'),input=node('input','era-practice-input'),result=node('span','era-practice-feedback');
+              input.type='text';input.maxLength=2000;input.autocomplete='off';input.spellcheck=false;input.setAttribute('aria-label',label);input.dataset.slotId=slot.id;
+              result.setAttribute('aria-live','polite');result.hidden=true;wrap.append(input,result);fields.push(input);feedback.push(result);
+              let composing=false;input.addEventListener('compositionstart',()=>{composing=true;});input.addEventListener('compositionend',()=>{composing=false;});
+              input.addEventListener('input',()=>{feedback.forEach(f=>{f.textContent='';f.hidden=true;delete f.dataset.result;});fields.forEach(f=>{delete f.dataset.result;f.removeAttribute('aria-invalid');});});
+              input.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.isComposing&&!composing&&e.keyCode!==229){e.preventDefault();grade();}});return wrap;
+            }
+            if(item.segments&&item.segments.length){
+              for(const segment of item.segments){if(segment.type==='text')question.append(doc.createTextNode(segment.text));else{
+                const blank=item.blanks.find(b=>b.id===segment.id);question.append(doc.createTextNode(' ('));
+                (blank.parts||[blank]).forEach((part,i)=>{if(i)question.append(doc.createTextNode(blank.partSeparator||', '));question.append(field(slots.find(s=>s.id===part.id),'문제 '+(item.originalNumber||'')+' 빈칸 '+(fields.length+1)));});question.append(doc.createTextNode(') '));
+              }}
+            }else question.append(doc.createTextNode(item.text||item.sourceText||''));
+            for(const collection of [item.events,item.choices])if(collection&&collection.length){const list=node('ul','era-wrong-choices');collection.forEach(c=>list.append(node('li','',c.sourceText||c.text)));card.append(list);}
+            if(item.kind==='classification')slots.forEach((slot,i)=>{const row=node('div','era-practice-classification'),label=item.subitems[i].sourceText;row.append(node('span','',label),field(slot,label));card.append(row);});
+            const button=node('button','era-practice-grade','채점');button.type='button';button.onclick=grade;card.append(button);
+            function grade(){
+              if(!valid()||dialog!==current||!card.isConnected)return;
+              const graded=engine.gradePractice(item,fields.map(f=>f.value));
+              graded.slots.forEach((r,i)=>{const f=feedback[i];f.textContent=r.feedback;f.hidden=false;f.dataset.result=r.complete?(r.correct?'correct':'wrong'):'empty';fields[i].dataset.result=f.dataset.result;fields[i].setAttribute('aria-invalid',String(r.complete&&!r.correct));});
+            }
+          }
+        }
       }catch(e){if(valid()&&dialog===current){body.replaceChildren(node('p','','오답을 불러오지 못했습니다. 닫고 다시 시도해 주세요.'));}}
     }
     if(options.aggregate){const tools=node('section','era-progress-tools era-aggregate');tools.dataset.title='시대별 학습 - 오답 빈칸 문제';const heading=node('h2','',tools.dataset.title),b=node('button','era-wrong-review','오답 다시보기');b.type='button';tools.append(heading,b);host.append(tools);owned.push(tools);b.onclick=()=>review('all',tools.dataset.title,b,tools);}
