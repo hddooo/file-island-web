@@ -23,3 +23,4 @@ html[data-company-mode=on] #app#app#app .era-progress-tools .era-wrong-review{mi
 
 html[data-company-mode=on] #eraWrongDialog#eraWrongDialog#eraWrongDialog .era-wrong-answer{color:#ff9b92!important;font-weight:800!important}
 html[data-company-mode=on] #eraWrongDialog#eraWrongDialog#eraWrongDialog .era-right-answer{color:#9fc6ff!important;font-weight:800!important}
+html:not([data-company-mode=on]) #app#app#app .era-progress-tools .era-complete{color:#16803c!important;font-weight:800!important}
