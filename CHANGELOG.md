@@ -1,3 +1,9 @@
+## 0.8.40-beta
+
+- Show green completion checks after all era blank questions are graded and account-bound saved wrong reviews.
+- Add aggregated era blank wrong review to Hongmungwan, without altering saved records or XP.
+- Add verified Baekje grain-record and Silla ox-plowing tooltips.
+
 ## 0.8.39-beta
 
 - Label Three Kingdoms exam tables with Goguryeo, Baekje, Silla and Gaya.

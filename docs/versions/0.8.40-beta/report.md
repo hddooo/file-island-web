@@ -1,5 +1,3 @@
-# 검증 결과
+# Verification
 
-- 상세 결과는 배포 완료 후 기록한다.
-- 운영 사용자 답안을 테스트 목적으로 변경하지 않는다.
-- 서버 저장 완료분만 표시하며 미저장 화면 입력과 과거 덮어쓴 오답은 포함하지 않는다.
+19 synthetic checks cover two-account separation, account switches, late responses, source digest, and Hongmungwan integration. Existing Hongmungwan and PDF regressions pass. Chrome and Edge cover 320/390/1440px in normal/company modes, modal focus/inert cleanup and overflow. No production account records changed; real two-user login was not performed. Only current server-saved wrong answers are available, not historical overwritten errors. Green check means all blanks graded, not all correct. Tooltip followup integrates 147 verified definitions. Deployment requires CI/CD SHA and runtime checksum receipt.
