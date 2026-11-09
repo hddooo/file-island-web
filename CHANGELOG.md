@@ -1,3 +1,7 @@
+## 0.8.33-beta
+- 한국사 빈칸: 정답 파랑·오답 빨강, 문장과 답칸 자연스러운 한 줄 배치.
+- 회사모드 원문 보기 배경·글자 대비 수정. 원문·채점·저장 동작 보존.
+
 # 0.8.32-beta
 
 - Era learning uses three evenly sized tabs: concept, exam examples, and blank quiz. Legacy summary URLs and source/records remain unchanged.

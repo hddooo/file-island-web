@@ -67,3 +67,26 @@
 .textbook-source-classification-responses{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px 20px;margin:12px 0}
 .textbook-source-classification-responses [data-source-subitem-id]{min-width:0;margin:0}
 .textbook-source-classification-responses .textbook-source-quiz-input{box-sizing:border-box;width:100%;max-width:100%}
+
+/* Compact fill-in prompts retain source text; whitespace wraps rather than forcing rows. */
+.textbook-source-continuous .textbook-source-quiz-statement:has(.textbook-source-quiz-blank){white-space:normal}
+.textbook-source-continuous .textbook-source-quiz-statement .textbook-source-quiz-blank{display:inline-flex;flex-wrap:wrap;vertical-align:middle}
+/* Scope answer colors and choice surfaces against the global/game reader palettes. */
+html body .textbook-source-quiz :is(.textbook-source-inline-feedback,.textbook-source-quiz-status)[data-result=match],
+html body #app#app#app .textbook-source-quiz :is(.textbook-source-inline-feedback,.textbook-source-quiz-status)[data-result=match],
+html body #app#app#app .textbook-source-verdict[data-result=correct]{color:#1756b1!important;-webkit-text-fill-color:currentColor!important}
+html body .textbook-source-quiz :is(.textbook-source-inline-feedback,.textbook-source-quiz-status)[data-result=different],
+html body #app#app#app .textbook-source-quiz :is(.textbook-source-inline-feedback,.textbook-source-quiz-status)[data-result=different],
+html body #app#app#app .textbook-source-verdict[data-result=wrong]{color:#b42318!important;-webkit-text-fill-color:currentColor!important}
+html body #app#app#app .textbook-source-quiz-input:has(+.textbook-source-inline-feedback[data-result=match]){color:#1756b1!important;-webkit-text-fill-color:currentColor!important;border-color:#1756b1!important}
+html body #app#app#app .textbook-source-quiz-input:has(+.textbook-source-inline-feedback[data-result=different]){color:#b42318!important;-webkit-text-fill-color:currentColor!important;border-color:#b42318!important}
+html body #app#app#app .textbook-source-quiz-events{background:#f7f9fc!important;color:#18212f!important;border-color:#c3cfdd!important}
+html body #app#app#app .textbook-source-quiz-events :is(li,span,strong,b){color:#18212f!important;-webkit-text-fill-color:currentColor!important;background:transparent!important}
+html[data-company-mode=on] body #app#app#app .textbook-source-quiz-events{background:#161b22!important;color:#c9d1d9!important;border-color:#484f58!important}
+html[data-company-mode=on] body #app#app#app .textbook-source-quiz-events :is(li,span,strong,b){color:#c9d1d9!important}
+html[data-company-mode=on] body #app#app#app .textbook-source-quiz :is(.textbook-source-inline-feedback,.textbook-source-quiz-status)[data-result=match],
+html[data-company-mode=on] body #app#app#app .textbook-source-verdict[data-result=correct],
+html[data-company-mode=on] body #app#app#app .textbook-source-quiz-input:has(+.textbook-source-inline-feedback[data-result=match]){color:#79b8ff!important;-webkit-text-fill-color:currentColor!important;border-color:#79b8ff!important}
+html[data-company-mode=on] body #app#app#app .textbook-source-quiz :is(.textbook-source-inline-feedback,.textbook-source-quiz-status)[data-result=different],
+html[data-company-mode=on] body #app#app#app .textbook-source-verdict[data-result=wrong],
+html[data-company-mode=on] body #app#app#app .textbook-source-quiz-input:has(+.textbook-source-inline-feedback[data-result=different]){color:#ffa198!important;-webkit-text-fill-color:currentColor!important;border-color:#ffa198!important}
