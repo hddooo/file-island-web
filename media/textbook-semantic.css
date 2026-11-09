@@ -202,3 +202,11 @@ html[data-hanq-theme] body #app .history-home-hero,html[data-hanq-theme] body #a
 @media(max-width:600px){.textbook-source-branch-graph{font-size:16px}.textbook-source-branch-graph .textbook-source-branch-list{gap:6px}.textbook-source-branch-label{padding:5px 2px}.textbook-source-branch-cause{font-size:14px}}
 
 .textbook-answer-scroll-hint{margin:8px 0;font-size:14px;line-height:1.5;font-weight:600;color:#4b473d;word-break:keep-all;overflow-wrap:anywhere}
+
+/* Audited source p31 nested person label; retain the outer rowspan context. */
+.textbook-source-person-row{display:grid;grid-template-columns:minmax(3.2em,auto) minmax(0,1fr);align-items:center;gap:.5em}
+.textbook-source-person-label{text-align:center;white-space:nowrap}
+.textbook-source-person-facts{min-width:0}
+.textbook-source-person-facts>.textbook-semantic-line{display:block}
+@media(max-width:600px){.textbook-source-nambuk-rulers>colgroup>col:first-child{width:24%!important}.textbook-source-nambuk-rulers>colgroup>col:last-child{width:76%!important}.textbook-source-nambuk-rulers td[data-source-column="0"]{padding:8px 6px}.textbook-source-nambuk-rulers td[data-source-column="0"]:not([data-source-cell="81-p031-table1-source-r11-c0"]) strong{white-space:nowrap}}
+@media(max-width:360px){.textbook-source-nambuk-rulers>colgroup>col:first-child{width:28%!important}.textbook-source-nambuk-rulers>colgroup>col:last-child{width:72%!important}}

@@ -1,0 +1,21 @@
+'use strict';
+const fs=require('fs'),assert=require('assert/strict'),{chromium}=require('playwright');
+(async()=>{const fixture=JSON.parse(fs.readFileSync(process.argv[2])),originalJSON=JSON.stringify(fixture),out=process.argv[3];fs.mkdirSync(out,{recursive:true});const source=fixture.blocks.find(b=>b.id==='81-p031-table1');fixture.blocks=[source];const browser=await chromium.launch({headless:true,executablePath:process.env.CHROME_PATH||'C:/Program Files/Google/Chrome/Application/chrome.exe'}),p=await browser.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));let cases=0;
+try{for(const width of [320,390,768,1440])for(const company of [false,true]){
+await p.setViewportSize({width,height:900});await p.setContent('<main id="app" data-company-history></main>');await p.evaluate(c=>{document.documentElement.dataset.companyMode=c?'on':'off';},company);
+for(const f of ['file-island','textbook-semantic','history81-terms','company-mode'])await p.addStyleTag({path:'media/'+f+'.css'});
+for(const f of ['glossary-data','history81-term-data','history81-terms','history81-verified-glossary','history81-glossary','textbook-semantic'])await p.addScriptTag({path:'media/'+f+'.js'});
+await p.evaluate(data=>{const host=document.querySelector('main'),mount=HanqHistory81Glossary.mount;HanqHistory81Glossary.mount=()=>({stop(){}});window.reader=HanqTextbookSemantic.render(host,data);window.plain=host.innerHTML;window.sourceData=data;window.before=JSON.stringify(data);HanqHistory81Glossary.mount=mount;window.terms=mount(host,'nambuk',data.sourceSha256);},fixture);
+const row=p.locator('[data-source-cell="81-p031-table1-source-r8-c1"]');
+assert.equal(await row.locator('.textbook-source-person-label').textContent(),'장보고');
+assert((await row.locator('.textbook-source-person-facts').textContent()).includes('청해진을 중심으로 해상무역 전개'));assert((await row.textContent()).includes('중국 산둥반도에 법화원 창건'));
+assert(!(await p.locator('main').textContent()).includes('※ 김헌창의 난:'));
+const a=await row.locator('.textbook-source-person-label').boundingBox(),b=await row.locator('.textbook-source-person-facts').boundingBox();assert(a.x+a.width<=b.x+1,'separate label column');
+for(const id of ['verified-nambuk-kim-heonchang-rebellion','verified-nambuk-beophwawon']){const t=p.locator('[data-term-id="'+id+'"]').first();assert.equal(await t.count(),1,id);await t.scrollIntoViewIfNeeded();await p.waitForTimeout(250);await t.focus();await p.keyboard.press('Enter');const tip=p.locator('[role=tooltip]');await tip.waitFor({state:'visible'});const box=await tip.boundingBox();assert(box.x>=0&&box.x+box.width<=width+1);await p.keyboard.press('Escape');}
+assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false);assert(await p.evaluate(()=>[...document.querySelectorAll('.textbook-source-nambuk-rulers td strong')].filter(n=>n.closest('td').dataset.sourceColumn==='0').every(n=>n.getBoundingClientRect().right<=n.closest('td').getBoundingClientRect().right+1)),JSON.stringify(await p.evaluate(()=>[...document.querySelectorAll('.textbook-source-nambuk-rulers td strong')].filter(n=>n.closest('td').dataset.sourceColumn==='0').map(n=>({t:n.textContent,right:n.getBoundingClientRect().right,cell:n.closest('td').getBoundingClientRect().right})))));await p.screenshot({path:out+'/'+width+'-'+company+'.png',fullPage:true});
+await p.evaluate(()=>terms.stop());assert.equal(await p.locator('main').innerHTML(),await p.evaluate(()=>plain));
+const rows=await p.evaluate(()=>[...document.querySelectorAll('tbody>tr')].map(r=>r.textContent));
+const chars=s=>s.replace(/[\s•]/g,'').split('').sort().join('');
+source.rows.slice(1).forEach((r,i)=>assert.equal(chars(rows[i]),chars(r.cells.map(c=>c.lines.map(l=>l.spans.map(s=>s.renderText||s.text).join('')).join('')).join('')),'source row '+i));
+assert(await p.evaluate(()=>JSON.stringify(sourceData)===before));await p.evaluate(()=>reader.cleanup());cases++;
+}}finally{await browser.close()}assert.deepEqual(errors,[]);console.log(JSON.stringify({cases,errors,sourceRowsPreserved:11,sourceJSONUnchanged:true,nestedLabel:true,tooltipNotes:true}));})();

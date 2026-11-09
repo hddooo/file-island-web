@@ -193,3 +193,6 @@ Recall-only grading ignores decorative quotation/bracket characters, not enclose
 
 ## 0.8.47-beta
 Exact-match non-answer labels remain visible in recall. Grouped bold fragments are visited once. Do not exempt all table cells or broad historical categories.
+
+## 0.8.48-beta
+Source-specific p31 nested person-cell repair retains native spans and source data. Reversible glossary note relocation.

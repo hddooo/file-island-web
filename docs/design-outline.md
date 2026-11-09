@@ -81,3 +81,6 @@ Reduce unnecessary punctuation typing in transient blank recall without changing
 
 ## 0.8.47-beta
 Blank recall focuses on emphasized historical facts, not generic organizational labels.
+
+## 0.8.48-beta
+Restore ruler-table information hierarchy and replace a long inline footnote with an accessible tooltip.

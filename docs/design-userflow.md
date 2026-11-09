@@ -98,3 +98,6 @@ A learner may type 왕, 신라, 서기 without the source quotation/book-title m
 
 ## 0.8.47-beta
 Recall retains labels such as 특징 while learners fill historical names and events.
+
+## 0.8.48-beta
+장보고 이름과 두 설명을 구분해 읽고 김헌창의 난·법화원 용어를 눌러 뜻을 확인합니다.

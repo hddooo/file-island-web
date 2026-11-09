@@ -443,6 +443,7 @@
         tableNode.classList.add('textbook-source-branch-table');var branchColumns=node('colgroup');[24,76].forEach(function(width){var col=node('col');col.style.width=width+'%';branchColumns.appendChild(col);});tableNode.appendChild(branchColumns);
       }
       if (block.layoutRole === 'source-illustrated-table') tableNode.classList.add('textbook-source-illustrated-table');
+      if(page.sourceSha256==='d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de'&&page.pdfPage===31&&block.id==='81-p031-table1')tableNode.classList.add('textbook-source-nambuk-rulers');
       if (block.layoutRole === 'source-illustration-gallery') tableNode.classList.add('textbook-source-gallery');
       if (block.layoutRole === 'source-exam-panel') tableNode.classList.add('textbook-source-exam-panel');
       if (block.layoutRole === 'source-rank-chart') {
@@ -549,6 +550,15 @@
               var plain=node('details',null,'textbook-source-branch-transcript');plain.appendChild(node('summary','텍스트로 보기'));
               var original=node('div');appendLines(original,cell.lines,cell.lineGroups);plain.appendChild(original);td.appendChild(plain);
             }else appendLines(td, cell.lines, cell.lineGroups);
+          }
+          // Source PDF 31 (printed 24): Jang Bogo is a nested label beside two facts.
+          // The native extraction flattened that subcell into the middle line. Reflow only this exact source.
+          if(page.sourceSha256==='d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de'&&page.pdfPage===31&&block.id==='81-p031-table1'&&cell.id==='81-p031-table1-source-r8-c1'){
+            var sourceLines=Array.from(td.children);
+            if(sourceLines.length===3&&sourceLines[1].textContent.trim()==='장보고'&&sourceLines[0].textContent.indexOf('청해진')!==-1&&sourceLines[2].textContent.indexOf('법화원')!==-1){
+              var nested=node('div',null,'textbook-source-person-row'),person=node('div',null,'textbook-source-person-label'),facts=node('div',null,'textbook-source-person-facts');
+              person.appendChild(sourceLines[1]);facts.appendChild(sourceLines[0]);facts.appendChild(sourceLines[2]);nested.append(person,facts);td.replaceChildren(nested);
+            }
           }
           tr.appendChild(td);
         });

@@ -97,6 +97,10 @@
       if(!['※ 백제가 평양성을 공격했다 / 고구려 왕을 죽였다는 표현이면 근초고왕!','+ 무덤에서 왕과 왕비의 지석, 석수 등이 출토되었다'].includes(line.textContent.trim()))continue;
       const marker=host.ownerDocument.createComment('tooltip-note');line.replaceWith(marker);undo.push(()=>{if(marker.parentNode)marker.replaceWith(line);});
     }
+    if(era==='nambuk'&&source===pdf)for(const line of host.querySelectorAll('[data-pdf-page="31"] [data-source-cell="81-p031-table1-source-r7-c1"] .textbook-semantic-line')){
+      if(line.textContent.trim()!=='※ 김헌창의 난: 김헌창이 자신의 아버지 김주원이 왕이 되지 못하자 웅천주에서 일으킨 반란')continue;
+      const marker=host.ownerDocument.createComment('tooltip-note');line.replaceWith(marker);undo.push(()=>{if(marker.parentNode)marker.replaceWith(line);});
+    }
     return ()=>undo.reverse().forEach(fn=>fn());
   }
   function examLabels(host,era,source){

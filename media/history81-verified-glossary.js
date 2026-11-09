@@ -5,6 +5,42 @@ root.HanqHistory81VerifiedGlossary={
   "sourceOpening": "255c37fb68122a329cca00ae1c15035590b6a7b21f601e4a5b5f7515fdfbf695",
   "definitions": [
     {
+      "id": "verified-nambuk-beophwawon",
+      "era": "nambuk",
+      "term": "법화원",
+      "summary": "장보고가 당나라 산둥반도 적산에 세운 불교 사찰(적산법화원). 당에 살던 신라인들이 법회에 모이는 신앙·교류의 구심점이었다.",
+      "sources": [
+        "https://contents.history.go.kr/front/hm/view.do?levelId=hm_034_0030",
+        "https://encykorea.aks.ac.kr/Article/E0048474"
+      ],
+      "verifiedOn": "2026-11-09",
+      "aliases": [
+        "적산법화원",
+        "적산 법화원",
+        "법화원"
+      ],
+      "pages": [
+        31
+      ]
+    },
+    {
+      "id": "verified-nambuk-kim-heonchang-rebellion",
+      "era": "nambuk",
+      "term": "김헌창의 난",
+      "summary": "822년(헌덕왕) 웅천주(공주) 도독 김헌창이 아버지 김주원의 왕위 계승 실패를 명분으로 일으킨 반란. 국호를 장안, 연호를 경운이라 했으나 관군에 진압되었다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/hm/view.do?levelId=hm_031_0050"
+      ],
+      "verifiedOn": "2026-11-09",
+      "aliases": [
+        "김헌창의 난",
+        "김헌창"
+      ],
+      "pages": [
+        31
+      ]
+    },
+    {
       "id": "verified-prehistory-간석기",
       "era": "prehistory",
       "term": "간석기",
