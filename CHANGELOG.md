@@ -1,3 +1,8 @@
+## 0.8.41-beta
+
+- Keep era titles and descriptions readable in one desktop row beside completion/review controls.
+- Restore company-mode filename layout after progress mounting and preserve mobile wrapping.
+
 ## 0.8.40-beta
 
 - Show green completion checks after all era blank questions are graded and account-bound saved wrong reviews.

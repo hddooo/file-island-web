@@ -16,7 +16,7 @@
 .era-aggregate{display:flex;max-width:none;justify-content:space-between;width:100%;margin:12px 0 20px;padding:12px 0;border-bottom:1px solid #64748b55}.era-aggregate h2{font-size:16px;margin:0}.era-wrong-scope{font-size:12px;color:#64748b}.era-wrong-error{color:#b42318}.era-wrong-era{margin-top:20px}
 html[data-company-mode=on] #app#app#app .toc .era-progress-row>.period{width:auto!important;flex:1;grid-template-columns:minmax(0,1fr)!important}
 html[data-company-mode=on] #app .toc .era-progress-tools{color:#e6edf3;padding-right:8px}
-@media(min-width:481px){html[data-company-mode=on] #app#app#app .toc .era-progress-row>.period{grid-template-columns:35px minmax(0,1fr)!important}}
+@media(min-width:481px){html[data-company-mode=on] #app#app#app .toc .era-progress-row>.period{grid-template-columns:minmax(0,1fr)!important}}
 html[data-company-mode=on] #app#app#app .era-progress-tools .era-complete{color:#36c674!important;font-weight:800!important}
 html[data-company-mode=on] #app#app#app .era-progress-tools .era-wrong-review{min-height:44px!important}
 
@@ -24,3 +24,27 @@ html[data-company-mode=on] #app#app#app .era-progress-tools .era-wrong-review{mi
 html[data-company-mode=on] #eraWrongDialog#eraWrongDialog#eraWrongDialog .era-wrong-answer{color:#ff9b92!important;font-weight:800!important}
 html[data-company-mode=on] #eraWrongDialog#eraWrongDialog#eraWrongDialog .era-right-answer{color:#9fc6ff!important;font-weight:800!important}
 html:not([data-company-mode=on]) #app#app#app .era-progress-tools .era-complete{color:#16803c!important;font-weight:800!important}
+
+/* Keep the era label, scope and saved-review tools in deliberate columns.
+   Company mode adds a filename before period-text, not a visible number. */
+#app .toc:has(>.era-progress-row){grid-template-columns:minmax(0,1fr)}
+#app .toc .era-progress-row>.period>.period-text{min-width:0;overflow-wrap:normal;word-break:keep-all}
+@media(min-width:1024px){
+ #app .toc .era-progress-row>.period>.period-text{display:flex;align-items:center;gap:18px}
+ #app .toc .era-progress-row>.period>.period-text strong{flex:0 0 auto}
+ #app .toc .era-progress-row>.period>.period-text small{margin:0;line-height:1.5}
+}
+html[data-company-mode=on] #app#app#app .toc:has(>.era-progress-row)::before{width:auto;height:auto;box-shadow:none}
+html[data-company-mode=on] #app#app#app .toc .era-progress-row>.period::before{display:none!important}
+html[data-company-mode=on] #app#app#app .toc .era-progress-row>.period{grid-template-columns:minmax(0,1fr)!important;gap:8px!important}
+html[data-company-mode=on] #app#app#app .toc .era-progress-row>.period>.period-text{grid-column:auto!important;grid-row:auto!important;grid-template-columns:minmax(0,1fr)!important;gap:3px!important;padding:0}
+html[data-company-mode=on] #app#app#app .toc .era-progress-row>.period>.company-native-file{width:auto!important;min-width:0;grid-column:auto!important;grid-row:auto!important}
+@media(min-width:1024px){
+ html[data-company-mode=on] #app#app#app .toc .era-progress-row>.period{grid-template-columns:164px minmax(0,1fr)!important;gap:12px!important}
+ html[data-company-mode=on] #app#app#app .toc .era-progress-row>.period>.period-text{grid-template-columns:max-content minmax(0,1fr)!important;align-items:center;gap:18px!important}
+}
+@media(max-width:700px){
+ #app .toc .era-progress-row{flex-wrap:wrap}
+ #app .toc .era-progress-row>.period{flex-basis:100%}
+ #app .toc .era-progress-row>.era-progress-tools{max-width:none;margin-left:auto}
+}
