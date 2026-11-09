@@ -89,3 +89,6 @@ A decorative book/island logo appears for about two seconds on the first app ent
 
 ## 0.8.44-beta
 Era study: 개념 학습 → 시험에는 이렇게 나온다 → 빈칸 퀴즈 → 백지 테스트. Recall is transient practice, not the saved source quiz or wrong-note workflow.
+
+## 0.8.45-beta
+백지 테스트: 제목·표 제목은 그대로 읽고 본문만 입력합니다. Tab/Enter/포커스 이동으로 개별 채점합니다. 별도 채점·다시 채우기 버튼은 없습니다.

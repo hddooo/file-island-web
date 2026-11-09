@@ -665,6 +665,9 @@
       else {
         element = node(block.type === 'heading' ? 'h' + (block.level || 2) : 'p', null, block.type === 'heading' ? 'textbook-semantic-heading' : 'textbook-semantic-text');
         appendLines(element, block.lines, block.lineGroups);
+        // The audited current source stores some titles/captions as plain text blocks.
+        var headingSpans=(block.lines||[]).reduce(function(all,line){return all.concat(line.spans||[]);},[]),headingText=headingSpans.map(function(span){return span.text||'';}).join('');
+        if(block.type==='heading'||(block.type==='text'&&page.sourceSha256==='d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de'&&(/^\s*<표\s*\d+>/.test(headingText)||headingSpans.some(function(span){return span.fontSize>=13;}))))element.setAttribute('data-blank-recall-heading','');
         var captionLink = captionLinks.get(block);
         if (captionLink) {
           element.id = captionLink.id;

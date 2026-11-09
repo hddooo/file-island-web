@@ -184,3 +184,6 @@ A decorative book/island logo appears for about two seconds on the first app ent
 
 ## 0.8.44-beta: Ephemeral concept recall
 The fourth era-study tab is 백지 테스트. Current concept bold text becomes blanks; Tab/Enter and local grading reveal mistakes in red. No wrong-note, XP, or progress persistence. Existing authenticated source and figure permissions remain unchanged.
+
+## 0.8.45-beta
+Blank recall preserves source titles/captions. Korean-aware auto-sized inputs show typed text without clipping. Recall-only bulk grade/reset controls removed; individual keyboard/blur grading retained without persistence.

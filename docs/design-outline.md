@@ -72,3 +72,6 @@ A decorative book/island logo appears for about two seconds on the first app ent
 
 ## 0.8.44-beta
 Add local-only bold-text blank recall across eight eras; preserve current source data and all account records. Add verified Gwansanseong battle tooltip to existing source mentions.
+
+## 0.8.45-beta
+Improve ephemeral recall readability: source titles retained, Korean inputs fit content, no bulk toolbar.
