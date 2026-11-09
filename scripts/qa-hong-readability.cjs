@@ -1,0 +1,12 @@
+const {chromium}=require(process.env.HANQ_PLAYWRIGHT_PATH),fs=require('fs'),assert=require('assert/strict');
+(async()=>{const browser=await chromium.launch({channel:'msedge',headless:true}),page=await browser.newPage();await page.route('https://example.test/**',r=>r.fulfill({body:'<html></html>',contentType:'text/html'}));await page.goto('https://example.test/');const image=fs.readFileSync(process.env.HANQ_TEST_ORIGINAL).toString('base64');
+for(const width of [390,1440]){
+await page.setViewportSize({width,height:900});await page.setContent('<html><style>body{margin:0;background:#f7f5f0;color:#18212f}</style><main></main></html>');
+await page.addStyleTag({path:'media/hongmungwan.css'});await page.addScriptTag({path:'media/hongmungwan.js'});
+await page.evaluate(async b64=>{window.calls=[];window.HanqHongmungwan.mount(document.querySelector('main'),{api:{state:()=>({signedIn:true,ownerId:'fixture',epoch:1}),onChange:()=>()=>{},hongmungwan:async(m)=>{calls.push(m);return {items:[{questionId:'exam-70-03',version:'c434f0be5a6561ff',era:'samguk',item:{exam:70,number:3,image:'/original.webp',options:[1,2,3,4,5].map(id=>({id:String(id)}))}}]};},hongmungwanImage:async()=>new Blob([Uint8Array.from(atob(b64),c=>c.charCodeAt(0))],{type:'image/webp'})}});},image);
+await page.waitForSelector('.hm-era:not(:disabled)');await page.locator('.hm-era:not(:disabled)').click();await page.locator('.hm-question-link').click();await page.waitForSelector('.hm-original-trim-70-03');
+let b=await page.locator('.hm-original').boundingBox();assert(Math.abs(b.height/b.width-675/679)<.01);assert(b.width>width*.85||b.width===900);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);assert.equal(await page.locator('.hm-choice').count(),5);assert.deepEqual(await page.evaluate(()=>calls),['GET']);
+await page.screenshot({path:'.artifacts/hong-'+width+'.png',fullPage:true});
+await page.locator('.hm-choice').first().click();await page.waitForSelector('.hm-original-trim-70-03');assert.equal(await page.locator('.hm-choice.selected').count(),1);
+await page.evaluate(()=>{const i=document.querySelector('.hm-original img');Object.defineProperty(i,'naturalWidth',{value:680});i.parentNode.classList.remove('hm-original-trim-70-03');i.onload();});assert.equal(await page.locator('.hm-original-trim-70-03').count(),0);
+}await browser.close();console.log('PASS responsive original, exact crop, full choices, selection rerender, dimension guard, no writes');})().catch(e=>{console.error(e);process.exit(1)});
