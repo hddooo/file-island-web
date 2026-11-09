@@ -2,7 +2,7 @@
 
 ## Candidate behavior
 
-The 18 terms are Jeonggye/Gyebaengnyoseo, Yeokbunjeon, Heukchang, Giin, Sasim-gwan, Wanggyu rebellion, Gwangdeok/Junpung, Jewibo, Chojo Daejanggyeong, Bongsa ten articles Sambyeolcho, Khitan invasions, social unrest, Gongmin reform, Byeokrando, government shops, Jeonsigwa and Nokgwajeon. Existing emphasized ink and full source notes are retained. Plain source terms gain the same keyboard/touch tooltip affordance. Notes longer than the existing 150-character contract remain visible rather than being discarded. Exam choices and recall keep their original wording.
+The 18 terms are Jeonggye/Gyebaengnyoseo, Yeokbunjeon, Heukchang, Giin, Sasim-gwan, Wanggyu rebellion, Gwangdeok/Junpung, Jewibo, Chojo Daejanggyeong, Bongsa ten articles, Sambyeolcho, Khitan invasions, social unrest, Gongmin reform, Byeokrando, government shops, Jeonsigwa and Nokgwajeon. Existing emphasized ink and full source notes are retained. Plain source terms gain the same keyboard/touch tooltip affordance. Notes longer than the existing 150-character contract remain visible rather than being discarded. Exam choices and recall keep their original wording.
 
 ## Verification and limits
 
