@@ -1,4 +1,4 @@
-/* Official-source definitions; activate only on pinned source pages and emphasized text. */
+/* Short, source-verified supplementary definitions. Original textbook data stays private and unchanged. */
 (function(root){root.HanqHistory81VerifiedGlossary={
   "schema": "hanq-verified-glossary/1",
   "sourcePdf": "d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de",
@@ -837,33 +837,37 @@
       "id": "verified-prehistory-책화",
       "era": "prehistory",
       "term": "책화",
-      "summary": "동예에서 다른 읍락의 영역을 침범하면 사람이나 소·말로 배상하게 하던 관습. 읍락별 생활 영역을 보호했다.",
+      "summary": "동예의 풍습. 읍락(마을) 사이의 산천 경계를 침범하면 노비·소·말 등으로 배상했다.",
       "sources": [
-        "https://encykorea.aks.ac.kr/Article/E0055697"
+        "https://contents.history.go.kr/mobile/hm/view.do?levelId=hm_003_0070"
       ],
-      "verifiedOn": "2026-11-08",
+      "verifiedOn": "2026-11-09",
       "aliases": [
         "책화"
       ],
       "pages": [
         12
+      ],
+      "followingParticles": [
+        "라고"
       ]
     },
     {
       "id": "verified-prehistory-민며느리제",
       "era": "prehistory",
       "term": "민며느리제",
-      "summary": "옥저의 혼인 풍습. 어린 여자아이가 장래 남편의 집에서 자란 뒤 자기 집으로 돌아가고, 남자 쪽이 혼납금을 내면 혼인했다.",
+      "summary": "옥저의 혼인 풍습. 예비 신부가 어릴 때 남자 집에서 자라고, 성인이 되어 친정에 돌아가면 남자 쪽이 재물을 주고 데려와 혼인했다.",
       "sources": [
-        "https://contents.history.go.kr/mobile/tg/view.do?ganada=&levelId=tg_001_0020&pageUnit=10&subjectCode=tg_ty_010&tabId=02"
+        "https://contents.history.go.kr/front/tg/view.do?levelId=tg_001_0020"
       ],
-      "verifiedOn": "2026-11-08",
+      "verifiedOn": "2026-11-09",
       "aliases": [
         "민며느리제"
       ],
       "pages": [
         12
-      ]
+      ],
+      "followingParticles": []
     },
     {
       "id": "verified-prehistory-형사취수제",
@@ -1699,6 +1703,103 @@
       "pages": [
         105
       ]
+    },
+    {
+      "id": "verified-prehistory-한무제",
+      "era": "prehistory",
+      "term": "한 무제",
+      "summary": "중국 한나라의 황제. 위만 조선을 공격했으며, 기원전 108년 왕검성이 함락되면서 고조선이 멸망했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0039783"
+      ],
+      "verifiedOn": "2026-11-09",
+      "aliases": [
+        "한 무제",
+        "한무제"
+      ],
+      "pages": [
+        11
+      ],
+      "followingParticles": [
+        "의"
+      ]
+    },
+    {
+      "id": "verified-prehistory-위만",
+      "era": "prehistory",
+      "term": "위만",
+      "summary": "고조선의 준왕을 몰아내고 왕이 된 인물. 위만과 그 후손이 다스린 시기를 위만 조선이라 부른다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_10&levelId=kc_n101500"
+      ],
+      "verifiedOn": "2026-11-09",
+      "aliases": [
+        "위만"
+      ],
+      "pages": [
+        11
+      ],
+      "followingParticles": [
+        "이"
+      ]
+    },
+    {
+      "id": "verified-prehistory-우거왕",
+      "era": "prehistory",
+      "term": "우거왕",
+      "summary": "위만의 손자이자 위만 조선의 마지막 왕. 한 무제의 침략에 맞섰으나 기원전 108년 나라가 멸망했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0039783"
+      ],
+      "verifiedOn": "2026-11-09",
+      "aliases": [
+        "우거왕"
+      ],
+      "pages": [
+        11
+      ],
+      "followingParticles": [
+        "이"
+      ]
+    },
+    {
+      "id": "verified-prehistory-대가",
+      "era": "prehistory",
+      "term": "대가",
+      "summary": "이 표에서는 고구려의 유력한 지배층을 뜻한다. 부여는 마가·우가·구가·저가, 고구려는 상가·고추가로 구별하자. ‘가’만 보고 나라를 단정하면 안 된다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0000005"
+      ],
+      "verifiedOn": "2026-11-09",
+      "aliases": [
+        "대가",
+        "상가",
+        "고추가"
+      ],
+      "pages": [
+        12,
+        13
+      ],
+      "followingParticles": [
+        "가"
+      ]
+    },
+    {
+      "id": "verified-prehistory-골장제",
+      "era": "prehistory",
+      "term": "골장제",
+      "summary": "옥저의 장례 풍습. 시신을 임시로 묻었다가 뼈를 추려 가족 공동의 나무곽에 안치했다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/nh/view.do?levelId=nh_004_0050_0020_0020"
+      ],
+      "verifiedOn": "2026-11-09",
+      "aliases": [
+        "골장제"
+      ],
+      "pages": [
+        12
+      ],
+      "followingParticles": []
     }
   ]
 };})(typeof window==='object'?window:globalThis);

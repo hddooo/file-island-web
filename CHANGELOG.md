@@ -1,3 +1,8 @@
+# 0.8.31-beta
+
+- 한 무제·위만·우거왕·고구려 대가·골장제 도움말 추가.
+- 서옥제·사출도·민며느리제·책화의 쉬운 설명과 구별 기준 보강. 원문·강조·학습 기록 보존.
+
 # 0.8.30-beta
 
 - Company mode hides original-image blocks and loading messages without generated image labels; normal-mode source data is preserved.

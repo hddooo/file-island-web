@@ -122,3 +122,17 @@
 
 ## 브라우저와 동작 범위
 실제Chrome에서일반36뷰(320/390/1440)와개화기4주제학습/시험24뷰를검사했고overflow·pageerror없음. 개화기도움말은기존study전용설계를유지하므로시험화면tooltip0은누락판정이아니다.시험화면에도답안힌트를자동추가하지않는다.320px실제tooltip위치·클릭·Escape·정리와4reader×2모드computedstyle/focus8검사통과.
+
+## 2026-11-09 초심자 설명 보강
+총 정의는 104개. 한 무제·위만·우거왕(PDF 11), 고구려 대가(PDF 12–13), 골장제(PDF 12) 5개 추가. 민며느리제·책화(PDF 12), 공용 사전 서옥제·사출도 설명 보강. 문자 경계와 페이지 제한 유지; 한 무제의 조사 ‘의’, 위만의 ‘이’, 우거왕의 ‘이’만 명시 허용했다. 위만조선 내부의 위만은 별도 인물로 잘라 표시하지 않는다.
+
+- 한 무제·우거왕: https://encykorea.aks.ac.kr/Article/E0039783
+- 위만: https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_10&levelId=kc_n101500
+- 대가·상가·고추가: https://encykorea.aks.ac.kr/Article/E0000005
+- 사출도: https://encykorea.aks.ac.kr/Article/E0026045
+- 서옥제: https://contents.history.go.kr/front/hm/view.do?levelId=hm_020_0010
+- 민며느리제: https://contents.history.go.kr/front/tg/view.do?levelId=tg_001_0020
+- 골장제: https://contents.history.go.kr/mobile/nh/view.do?levelId=nh_004_0050_0020_0020
+- 책화: https://contents.history.go.kr/mobile/hm/view.do?levelId=hm_003_0070
+
+‘가로 끝나면 고구려’로 일반화하지 않고, 부여의 마가·우가·구가·저가와 고구려의 상가·고추가를 문제 문맥에서 구별하도록 설명한다. 원문은 변경하지 않았다.
