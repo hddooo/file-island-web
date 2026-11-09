@@ -90,3 +90,8 @@ html[data-company-mode=on] body #app#app#app .textbook-source-quiz-input:has(+.t
 html[data-company-mode=on] body #app#app#app .textbook-source-quiz :is(.textbook-source-inline-feedback,.textbook-source-quiz-status)[data-result=different],
 html[data-company-mode=on] body #app#app#app .textbook-source-verdict[data-result=wrong],
 html[data-company-mode=on] body #app#app#app .textbook-source-quiz-input:has(+.textbook-source-inline-feedback[data-result=different]){color:#ffa198!important;-webkit-text-fill-color:currentColor!important;border-color:#ffa198!important}
+
+/* Wrong answers stand out through weight and border, not color alone. */
+html body #app#app#app .textbook-source-quiz .textbook-source-inline-feedback[data-result=different],
+html body #app#app#app .textbook-source-verdict[data-result=wrong]{font-weight:800!important}
+html body #app#app#app .textbook-source-quiz-input:has(+.textbook-source-inline-feedback[data-result=different]){font-weight:700!important;border-width:2px!important}
