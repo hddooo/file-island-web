@@ -2646,6 +2646,60 @@ root.HanqHistory81VerifiedGlossary={
         23,
         25
       ]
+    },
+    {
+      "id": "verified-samguk-maesoseong",
+      "era": "samguk",
+      "term": "매소성 전투",
+      "aliases": [
+        "매소성 전투",
+        "매소성"
+      ],
+      "summary": "675년 문무왕 때 신라가 당군을 물리친 나당 전쟁의 주요 육상 전투. 백제·고구려 멸망 뒤 당의 한반도 지배 시도에 맞선 싸움이다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0017963"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        23,
+        25
+      ]
+    },
+    {
+      "id": "verified-nambuk-wonjong-aeno",
+      "era": "nambuk",
+      "term": "원종·애노의 난",
+      "aliases": [
+        "원종과 애노의 반란",
+        "원종과 애노의 난",
+        "원종·애노의 난"
+      ],
+      "summary": "889년 진성여왕 때 사벌주(상주)에서 과중한 조세에 저항해 일어난 농민 봉기. 신라 말 전국적인 농민 봉기와 중앙 통제력 약화를 보여 준다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0040826"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        31
+      ]
+    },
+    {
+      "id": "verified-colonial-cheongsanri",
+      "era": "colonial",
+      "term": "청산리 전투",
+      "aliases": [
+        "청산리 전투",
+        "청산리 대첩",
+        "청산리대첩"
+      ],
+      "summary": "1920년 10월 김좌진의 북로군정서군·홍범도의 대한독립군 등이 청산리 일대에서 일본군을 크게 물리친 일련의 전투.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0056468"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        117
+      ]
     }
   ]
 };
