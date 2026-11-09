@@ -69,3 +69,6 @@
 ## File Island Study entry (0.8.27-beta)
 
 A decorative book/island logo appears for about two seconds on the first app entry per tab session. Refresh and navigation do not repeat it. Reduced-motion, keyboard dismissal, CSS failure-safe timeout and existing access control are preserved. See [verification](versions/v0.8.27-beta/report.md).
+
+## 0.8.44-beta
+Add local-only bold-text blank recall across eight eras; preserve current source data and all account records. Add verified Gwansanseong battle tooltip to existing source mentions.

@@ -181,3 +181,6 @@ Vercel 빌드에 필요한 `scripts/build-app-version.cjs`만 `.vercelignore`의
 ## File Island Study entry (0.8.27-beta)
 
 A decorative book/island logo appears for about two seconds on the first app entry per tab session. Refresh and navigation do not repeat it. Reduced-motion, keyboard dismissal, CSS failure-safe timeout and existing access control are preserved. See [verification](versions/v0.8.27-beta/report.md).
+
+## 0.8.44-beta: Ephemeral concept recall
+The fourth era-study tab is 백지 테스트. Current concept bold text becomes blanks; Tab/Enter and local grading reveal mistakes in red. No wrong-note, XP, or progress persistence. Existing authenticated source and figure permissions remain unchanged.

@@ -86,3 +86,6 @@ MY PAGE의 `내 문의`에서 보낸 제목을 20건씩 보고 펼치면 본문�
 ## File Island Study entry (0.8.27-beta)
 
 A decorative book/island logo appears for about two seconds on the first app entry per tab session. Refresh and navigation do not repeat it. Reduced-motion, keyboard dismissal, CSS failure-safe timeout and existing access control are preserved. See [verification](versions/v0.8.27-beta/report.md).
+
+## 0.8.44-beta
+Era study: 개념 학습 → 시험에는 이렇게 나온다 → 빈칸 퀴즈 → 백지 테스트. Recall is transient practice, not the saved source quiz or wrong-note workflow.

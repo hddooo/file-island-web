@@ -188,9 +188,9 @@ html body #goryeoScript .goryeo-script-reader .gsr-silhak-scroll:focus-visible{o
 
 /* Compact topic navigation; mode controls reuse the service's device buttons. */
 .goryeo-script-reader .gsr-header{margin-bottom:16px}
-.goryeo-script-reader .gsr-topics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin:12px 0 8px}
+.goryeo-script-reader .gsr-topics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;margin:12px 0 8px}
 .goryeo-script-reader .gsr-topics button{min-width:0;min-height:44px;padding:6px 4px;font-size:14px;line-height:1.35;word-break:keep-all;border-radius:6px}
-.goryeo-script-reader .gsr-modes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin:0;padding:0}
+.goryeo-script-reader .gsr-modes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;margin:0;padding:0}
 .goryeo-script-reader .gsr-modes button{min-width:0;min-height:52px;padding:7px 5px;font:14px/1.4 Arial,"Malgun Gothic",sans-serif;word-break:keep-all;overflow-wrap:normal}
 @media(max-width:700px){.goryeo-script-reader .gsr-modes button{font-size:14px;min-height:64px}}
 

@@ -76,9 +76,9 @@
     const header=el('header',null,'gsr-header');header.append(el('p','HISTORY / GORYEO','gsr-eyebrow'),el('h1',prepared.rootTitle));
     const orientation=el('div',null,'gsr-orientation');renderMarkdown(doc,orientation,prepared.orientationMarkdown,figure);header.append(orientation);
     const nav=el('nav',null,'gsr-topics');nav.setAttribute('aria-label','고려 학습 주제');
-    viewTopics.forEach(t=>{const b=button(t.title,()=>navigate(t.id,mode==='exam'?'exam':'study'));b.dataset.topic=t.id;nav.append(b);});header.append(nav);
+    viewTopics.forEach(t=>{const b=button(t.title,()=>navigate(t.id,mode==='exam'?'exam':mode==='recall'?'recall':'study'));b.dataset.topic=t.id;nav.append(b);});header.append(nav);
     const modes=el('nav',null,'gsr-modes');modes.setAttribute('aria-label','자료 구분');
-    [['study','개념 학습'],['exam','시험에는 이렇게 나온다'],['practice','빈칸 퀴즈']].forEach(([id,title])=>{const b=button(title,()=>navigate(topic,id));b.dataset.mode=id;b.dataset.navigationNumber=String(modes.children.length+1).padStart(2,'0');modes.append(b);});header.append(modes);shell.append(header);
+    [['study','개념 학습'],['exam','시험에는 이렇게 나온다'],['practice','빈칸 퀴즈'],['recall','백지 테스트']].forEach(([id,title])=>{const b=button(title,()=>navigate(topic,id));b.dataset.mode=id;b.dataset.navigationNumber=String(modes.children.length+1).padStart(2,'0');modes.append(b);});header.append(modes);shell.append(header);
     const layout=el('div',null,'gsr-layout'),toc=el('nav',null,'gsr-toc'),body=el('main',null,'gsr-body');toc.setAttribute('aria-label','현재 주제 목차');layout.append(toc,body);shell.append(layout);
     function dismissImage(){if(!dialog)return;const d=dialog;dialog=null;if(d.node.open)d.node.close();d.node.remove();if(d.release)d.release();if(d.opener.isConnected)d.opener.focus();}
     function closeImage(){if(win.history.state&&win.history.state.goryeoImage){win.history.back();}else dismissImage();}
@@ -122,7 +122,9 @@
       if(s.kind!=='study' || s.page<t.from || s.page>t.to)return false;
       return true;
     }
-    function render(){epoch++;clearImages();body.replaceChildren();toc.replaceChildren();
+    let recallView=null;
+    function render(){if(recallView){recallView.stop();recallView=null;}const recall=mode==='recall';if(recall)mode='study';renderContent();if(recall){mode='recall';if(termView){termView.stop();termView=null;}recallView=win.HanqBlankRecall.decorate(body);modes.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.mode==='recall')));}}
+    function renderContent(){epoch++;clearImages();body.replaceChildren();toc.replaceChildren();
       orientation.hidden=mode!=='study';nav.querySelectorAll('button').forEach(b=>{if(mode==='study'||mode==='exam')b.setAttribute('aria-current',String(b.dataset.topic===topic));else b.removeAttribute('aria-current');});
       modes.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.mode===(mode==='answers'?'practice':mode))));
       const t=viewTopics.find(t=>t.id===topic)||viewTopics[0];topic=t.id;
@@ -231,9 +233,9 @@
     }
 
     function navigate(nextTopic,nextMode){topic=nextTopic;mode=nextMode;const state={source:bundle.source.sha256,topic,mode};win.history.pushState(Object.assign({},win.history.state,{goryeoScript:state}),'',options.routeForMode?options.routeForMode(mode):undefined);render();}
-    function pop(){if(dialog&&!(win.history.state&&win.history.state.goryeoImage)){dismissImage();return;}dismissImage();const s=win.history.state&&win.history.state.goryeoScript;if(s&&s.source===bundle.source.sha256&&viewTopics.some(t=>t.id===s.topic)&&['study','exam','practice','answers'].includes(s.mode)){topic=s.topic;mode=s.mode;}else{topic=initialTopic;mode=options.modeFromLocation?options.modeFromLocation():options.initialMode||'study';}render();}
+    function pop(){if(dialog&&!(win.history.state&&win.history.state.goryeoImage)){dismissImage();return;}dismissImage();const s=win.history.state&&win.history.state.goryeoScript;if(s&&s.source===bundle.source.sha256&&viewTopics.some(t=>t.id===s.topic)&&['study','exam','practice','answers','recall'].includes(s.mode)){topic=s.topic;mode=s.mode;}else{topic=initialTopic;mode=options.modeFromLocation?options.modeFromLocation():options.initialMode||'study';}render();}
     if(!options.externalNavigation)win.addEventListener('popstate',pop);pop();
-    return {handlePopState(){if(!alive)return false;pop();return true;},stop(){alive=false;epoch++;clearImages();drafts.clear();win.removeEventListener('popstate',pop);shell.remove();}};
+    return {handlePopState(){if(!alive)return false;pop();return true;},stop(){if(recallView)recallView.stop();alive=false;epoch++;clearImages();drafts.clear();win.removeEventListener('popstate',pop);shell.remove();}};
   }
   root.HanqGoryeoScriptReader={mount,inline,renderMarkdown,prepare:bundle=>root.HanqGoryeoStructure.prepare(bundle)};
   if(typeof module==='object'&&module.exports)module.exports=root.HanqGoryeoScriptReader;

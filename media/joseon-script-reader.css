@@ -128,7 +128,7 @@ html body #joseonScript .joseon-script-reader .jsr-silhak-scroll:focus-visible{o
 .joseon-script-reader .jsr-header{margin-bottom:16px}
 .joseon-script-reader .jsr-topics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;margin:12px 0 8px}
 .joseon-script-reader .jsr-topics button{min-width:0;min-height:44px;padding:6px 4px;font-size:14px;line-height:1.35;word-break:keep-all;border-radius:6px}
-.joseon-script-reader .jsr-modes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin:0;padding:0}
+.joseon-script-reader .jsr-modes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;margin:0;padding:0}
 .joseon-script-reader .jsr-modes button{min-width:0;min-height:52px;padding:7px 5px;font:14px/1.4 Arial,"Malgun Gothic",sans-serif;word-break:keep-all;overflow-wrap:normal}
 @media(max-width:700px){.joseon-script-reader .jsr-modes button{font-size:14px;min-height:64px}}
 

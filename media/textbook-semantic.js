@@ -703,8 +703,10 @@
     exercises(page.generatedPractice, false);
     if (warnings.indexOf('unverified_glyph_mapping') !== -1) meta.appendChild(node('p', '일부 글자 변환은 검수 전이라 추출된 원문 글자로 표시해요.', 'textbook-semantic-block-warning'));
     host.replaceChildren(article);
-    var glossary=root.HanqHistory81Glossary, terms=glossary ? glossary.mount(article,glossary.pageEra(page),page.sourceSha256) : null;
+    var recall=options.blankRecall&&root.HanqBlankRecall?root.HanqBlankRecall.decorate(article):null;
+    var glossary=options.blankRecall?null:root.HanqHistory81Glossary, terms=glossary ? glossary.mount(article,glossary.pageEra(page),page.sourceSha256) : null;
     function cleanup() {
+      if(recall)recall.stop();
       if (!alive) return;
       alive = false;
       if(terms)terms.stop();

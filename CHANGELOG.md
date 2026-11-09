@@ -621,3 +621,7 @@ Practice의 공통 자료 묶음에 정답 미준비 문항이 있어도, 문항
 
 
 
+
+## 0.8.44-beta
+- Eight-era concept blank recall, local grading and keyboard entry, no saved records.
+- Verified Gwansanseong battle tooltip.

@@ -68,9 +68,9 @@
     inline(doc,header.querySelector('h1'),prepared.rootTitleMarkdown);
     const orientation=el('div',null,'osr-orientation');renderMarkdown(doc,orientation,prepared.orientationMarkdown,figure);header.append(orientation);
     const nav=el('nav',null,'osr-topics');nav.setAttribute('aria-label','개화기 학습 주제');
-    viewTopics.forEach(t=>{const b=button(t.title,()=>navigate(t.id,mode==='exam'?'exam':'study'));b.dataset.topic=t.id;nav.append(b);});header.append(nav);
+    viewTopics.forEach(t=>{const b=button(t.title,()=>navigate(t.id,mode==='exam'?'exam':mode==='recall'?'recall':'study'));b.dataset.topic=t.id;nav.append(b);});header.append(nav);
     const modes=el('nav',null,'osr-modes');modes.setAttribute('aria-label','자료 구분');
-    [['study','개념 학습'],['exam','시험에는 이렇게 나온다'],['practice','빈칸 퀴즈']].forEach(([id,title])=>{const b=button(title,()=>navigate(topic,id));b.dataset.mode=id;b.dataset.navigationNumber=String(modes.children.length+1).padStart(2,'0');modes.append(b);});header.append(modes);shell.append(header);
+    [['study','개념 학습'],['exam','시험에는 이렇게 나온다'],['practice','빈칸 퀴즈'],['recall','백지 테스트']].forEach(([id,title])=>{const b=button(title,()=>navigate(topic,id));b.dataset.mode=id;b.dataset.navigationNumber=String(modes.children.length+1).padStart(2,'0');modes.append(b);});header.append(modes);shell.append(header);
     const layout=el('div',null,'osr-layout'),toc=el('nav',null,'osr-toc'),body=el('main',null,'osr-body');toc.setAttribute('aria-label','현재 주제 목차');layout.append(toc,body);shell.append(layout);
     function dismissImage(){if(!dialog)return;const d=dialog;dialog=null;if(d.node.open)d.node.close();d.node.remove();if(d.release)d.release();if(d.opener.isConnected)d.opener.focus();}
     function closeImage(){if(win.history.state&&win.history.state.openingImage){win.history.back();}else dismissImage();}
@@ -115,7 +115,9 @@
       if(s.kind!=='study' || s.page<t.from || s.page>t.to)return false;
       return true;
     }
-    function render(){epoch++;clearImages();body.replaceChildren();toc.replaceChildren();
+    let recallView=null;
+    function render(){if(recallView){recallView.stop();recallView=null;}const recall=mode==='recall';if(recall)mode='study';renderContent();if(recall){mode='recall';if(glossaryTerms){glossaryTerms.stop();glossaryTerms=null;}recallView=win.HanqBlankRecall.decorate(body);modes.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.mode==='recall')));}}
+    function renderContent(){epoch++;clearImages();body.replaceChildren();toc.replaceChildren();
       orientation.hidden=mode!=='study';nav.querySelectorAll('button').forEach(b=>{if((mode==='practice'||mode==='answers')&&options.workspace)b.removeAttribute('aria-current');else b.setAttribute('aria-current',String(b.dataset.topic===topic));});
       modes.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.mode===(mode==='answers'?'practice':mode))));
       const t=viewTopics.find(t=>t.id===topic)||viewTopics[0];topic=t.id;
@@ -208,9 +210,9 @@
     }
 
     function navigate(nextTopic,nextMode){topic=nextTopic;mode=nextMode;const state={source:bundle.source.sha256,topic,mode};win.history.pushState(Object.assign({},win.history.state,{openingScript:state}),'',options.routeForMode?options.routeForMode(mode):undefined);render();}
-    function pop(){if(dialog&&!(win.history.state&&win.history.state.openingImage)){dismissImage();return;}dismissImage();const s=win.history.state&&win.history.state.openingScript;if(s&&s.source===bundle.source.sha256&&viewTopics.some(t=>t.id===s.topic)&&['study','exam','practice','answers'].includes(s.mode)){topic=s.topic;mode=s.mode;}else{topic=initialTopic;mode=options.modeFromLocation?options.modeFromLocation():options.initialMode||'study';}render();}
+    function pop(){if(dialog&&!(win.history.state&&win.history.state.openingImage)){dismissImage();return;}dismissImage();const s=win.history.state&&win.history.state.openingScript;if(s&&s.source===bundle.source.sha256&&viewTopics.some(t=>t.id===s.topic)&&['study','exam','practice','answers','recall'].includes(s.mode)){topic=s.topic;mode=s.mode;}else{topic=initialTopic;mode=options.modeFromLocation?options.modeFromLocation():options.initialMode||'study';}render();}
     if(!options.externalNavigation)win.addEventListener('popstate',pop);pop();
-    return {handlePopState(){if(!alive)return false;pop();return true;},stop(){alive=false;epoch++;clearImages();drafts.clear();win.removeEventListener('popstate',pop);shell.remove();}};
+    return {handlePopState(){if(!alive)return false;pop();return true;},stop(){if(recallView)recallView.stop();alive=false;epoch++;clearImages();drafts.clear();win.removeEventListener('popstate',pop);shell.remove();}};
   }
   root.HanqOpeningScriptReader={mount,inline,renderMarkdown,prepare:(bundle,data,presentation)=>root.HanqOpeningStructure.prepare(bundle,data,presentation)};
   if(typeof module==='object'&&module.exports)module.exports=root.HanqOpeningScriptReader;

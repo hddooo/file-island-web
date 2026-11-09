@@ -110,9 +110,9 @@
     function button(text,fn){const e=el('button',text);e.type='button';e.onclick=fn;return e;}
     const header=el('header',null,'jsr-header');header.append(el('p','HISTORY / JOSEON','jsr-eyebrow'),el('h1','조선, 흐름을 따라 읽기'),el('p','왕의 흐름에서 제도와 생활, 문화까지. 주제를 골라 차근차근 읽어 보세요.'));
     const nav=el('nav',null,'jsr-topics');nav.setAttribute('aria-label','조선 학습 주제');
-    bundle.topics.forEach(t=>{const b=button(t.title,()=>navigate(t.id,mode==='exam'?'exam':'study'));b.dataset.topic=t.id;nav.append(b);});header.append(nav);
+    bundle.topics.forEach(t=>{const b=button(t.title,()=>navigate(t.id,mode==='exam'?'exam':mode==='recall'?'recall':'study'));b.dataset.topic=t.id;nav.append(b);});header.append(nav);
     const modes=el('nav',null,'jsr-modes');modes.setAttribute('aria-label','자료 구분');
-    [['study','개념 학습'],['exam','시험에는 이렇게 나온다'],['practice','빈칸 퀴즈']].forEach(([id,title])=>{const b=button(title,()=>navigate(topic,id));b.dataset.mode=id;b.dataset.navigationNumber=String(modes.children.length+1).padStart(2,'0');modes.append(b);});header.append(modes);shell.append(header);
+    [['study','개념 학습'],['exam','시험에는 이렇게 나온다'],['practice','빈칸 퀴즈'],['recall','백지 테스트']].forEach(([id,title])=>{const b=button(title,()=>navigate(topic,id));b.dataset.mode=id;b.dataset.navigationNumber=String(modes.children.length+1).padStart(2,'0');modes.append(b);});header.append(modes);shell.append(header);
     const layout=el('div',null,'jsr-layout'),toc=el('nav',null,'jsr-toc'),body=el('main',null,'jsr-body');toc.setAttribute('aria-label','현재 주제 목차');layout.append(toc,body);shell.append(layout);
     function dismissImage(){if(!dialog)return;const d=dialog;dialog=null;if(d.node.open)d.node.close();d.node.remove();if(d.release)d.release();if(d.opener.isConnected)d.opener.focus();}
     function closeImage(){if(win.history.state&&win.history.state.joseonImage){win.history.back();}else dismissImage();}
@@ -158,7 +158,9 @@
       const exam=bundle.source.sha256===editorialSource&&[62,63,68,69,70,76,77,78].includes(s.page)&&/시험에는 이렇게 나온다!/.test(s.markdown);
       return mode==='exam'?exam:!exam;
     }
-    function render(){epoch++;clearImages();body.replaceChildren();toc.replaceChildren();
+    let recallView=null;
+    function render(){if(recallView){recallView.stop();recallView=null;}const recall=mode==='recall';if(recall)mode='study';renderContent();if(recall){mode='recall';if(termView){termView.stop();termView=null;}recallView=win.HanqBlankRecall.decorate(body);modes.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.mode==='recall')));}}
+    function renderContent(){epoch++;clearImages();body.replaceChildren();toc.replaceChildren();
       nav.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.topic===topic)));
       modes.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.mode===(mode==='answers'?'practice':mode))));
       const t=bundle.topics.find(t=>t.id===topic)||bundle.topics[0];topic=t.id;
@@ -447,9 +449,9 @@
       const hint=el('p','표를 좌우로 움직여 저서와 내용을 확인하세요.','jsr-silhak-hint');hint.id=article.id+'-t29-scroll-hint';hint.dataset.layoutLabel='true';wrap.setAttribute('aria-describedby',hint.id);wrap.append(table);article.replaceChildren(sourceLabel,titleBlock,note,hint,wrap);
     }
     function navigate(nextTopic,nextMode){topic=nextTopic;mode=nextMode;const state={source:bundle.source.sha256,topic,mode};win.history.pushState(Object.assign({},win.history.state,{joseonScript:state}),'',options.routeForMode?options.routeForMode(mode):undefined);render();}
-    function pop(){if(dialog&&!(win.history.state&&win.history.state.joseonImage)){dismissImage();return;}dismissImage();const s=win.history.state&&win.history.state.joseonScript;if(s&&s.source===bundle.source.sha256&&bundle.topics.some(t=>t.id===s.topic)&&['study','exam','practice','answers'].includes(s.mode)){topic=s.topic;mode=s.mode;}else{topic=initialTopic;mode=options.modeFromLocation?options.modeFromLocation():options.initialMode||'study';}render();}
+    function pop(){if(dialog&&!(win.history.state&&win.history.state.joseonImage)){dismissImage();return;}dismissImage();const s=win.history.state&&win.history.state.joseonScript;if(s&&s.source===bundle.source.sha256&&bundle.topics.some(t=>t.id===s.topic)&&['study','exam','practice','answers','recall'].includes(s.mode)){topic=s.topic;mode=s.mode;}else{topic=initialTopic;mode=options.modeFromLocation?options.modeFromLocation():options.initialMode||'study';}render();}
     if(!options.externalNavigation)win.addEventListener('popstate',pop);pop();
-    return {handlePopState(){if(!alive)return false;pop();return true;},stop(){alive=false;epoch++;clearImages();drafts.clear();win.removeEventListener('popstate',pop);shell.remove();}};
+    return {handlePopState(){if(!alive)return false;pop();return true;},stop(){if(recallView)recallView.stop();alive=false;epoch++;clearImages();drafts.clear();win.removeEventListener('popstate',pop);shell.remove();}};
   }
   root.HanqJoseonScriptReader={mount,inline,renderMarkdown,readingMarkdown};
   if(typeof module==='object'&&module.exports)module.exports=root.HanqJoseonScriptReader;

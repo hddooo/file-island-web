@@ -267,7 +267,7 @@
             data=Object.assign({},data,{blocks:data.blocks.filter(function(b){return b.studySection===callbacks.studySection;})});
           }
           var view = renderer.render(section, data, {
-            compactReviewStatus:true,
+            compactReviewStatus:true,blankRecall:!!(callbacks&&callbacks.blankRecall),
             isFigureAvailable:function (figure) { return entry.figuresAvailable !== false && Array.isArray(manifest.figures) && manifest.figures.some(function (f) { return f.id === figure.assetId; }); },
             resolveFigure:imageResolver(g,r,section)
           });
