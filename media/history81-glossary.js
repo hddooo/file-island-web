@@ -84,13 +84,25 @@
     }
     return ()=>added.forEach(restore=>restore());
   }
+  // User explicitly removed this one mnemonic; preserve and restore the original node.
+  function removeDismissedMnemonic(host,era,source){
+    const undo=[];
+    if(era==='samguk'&&source===pdf)for(const node of host.querySelectorAll('[data-history-source-emphasis]')){
+      const page=node.closest('[data-pdf-page]');
+      if(page?.getAttribute('data-pdf-page')!=='23'||node.textContent!=='(덕만까지 70보..)')continue;
+      const marker=host.ownerDocument.createComment('removed-mnemonic');node.replaceWith(marker);
+      undo.push(()=>{if(marker.parentNode)marker.replaceWith(node);});
+    }
+    return ()=>undo.reverse().forEach(fn=>fn());
+  }
   function mount(host,era,source){
     const verified=data();if(!root.HanqHistory81Terms||!ids[era]||verified.sources[era]!==source)return {count:0,stop(){}};
+    const restoreMnemonic=removeDismissedMnemonic(host,era,source);
     const restore=prepare(host,verified.entries.filter(e=>e.era===era));
     verified.boundaryPrepared=true;
-    let terms;try{terms=root.HanqHistory81Terms.mount(host,era,source,verified);}catch(e){restore();throw e;}
+    let terms;try{terms=root.HanqHistory81Terms.mount(host,era,source,verified);}catch(e){restore();restoreMnemonic();throw e;}
     const removeCapitalLabels=capitalLabels(host,era,source);
-    let stopped=false;return {count:terms.count,stop(){if(stopped)return;stopped=true;removeCapitalLabels();terms.stop();restore();}};
+    let stopped=false;return {count:terms.count,stop(){if(stopped)return;stopped=true;removeCapitalLabels();terms.stop();restore();restoreMnemonic();}};
   }
   root.HanqHistory81Glossary={mount,pageEra,data};
 })(typeof window==='object'?window:globalThis);

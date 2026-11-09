@@ -1,3 +1,7 @@
+# 0.8.38-beta
+- Add 37 source-verified novice tooltip definitions across era learning pages, including Jipsabu, Bidam rebellion, Silla institutions, independence movements and modern politics.
+- Remove the specifically dismissed page 23 mnemonic from the UI without deleting source data.
+
 ## 0.8.37-beta
 - Company-mode history hides empty image-gallery table shells, preserving source data and normal-mode artwork.
 

@@ -139,3 +139,6 @@
 
 ## 2026-11-09 삼국 전투·관제 보충
 대야성(642, 백제 윤충의 승리)·황산벌(660, 신라 김유신 승리·계백 전사), 병부·상대등·이차돈·관등·관복제 7개 정의 추가. PDF 20/22/23/25쪽의 검증된 강조 구간에만 연결한다. 대야성/황산벌의 승패와 연대를 구분하고 군사 관청과 귀족 대표 관직을 혼동하지 않는다. 출처는 각 정의의 sources에 기록했다. 20쪽 백제 수도 표의 원문 노드는 보존하면서 도시명 뒤에 위례성/웅진/사비를 보충한다. 원문 검사에서 보충 span만 제외하고 원문 글자와 스타일은 그대로 비교하며 cleanup 때 원래 markup 복구를 검증한다.
+
+## 2026-11-09 expansion (0.8.38-beta)
+32 supplementary definitions plus five Joseon definitions connected to actual rendered source. Candidates without permitted emphasized matches are withheld rather than counted as user-visible. Each entry includes its authoritative source URL. Strict source hashes, exact pages, Unicode word boundaries and reversible wrappers remain in force. Only the exact page 23 mnemonic `(덕만까지 70보..)` is omitted by explicit user request.

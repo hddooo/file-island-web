@@ -1,10 +1,10 @@
 'use strict';
 const fs=require('fs'),assert=require('assert/strict'),{JSDOM}=require('jsdom');
 const dom=new JSDOM('<main></main>',{url:'https://synthetic.invalid',runScripts:'outside-only'}),w=dom.window,d=w.document;for(const p of ['history81-term-data','history81-terms','joseon-script-reader','goryeo-script-reader'])w.eval(fs.readFileSync('media/'+p+'.js','utf8'));
-const data=w.HanqHistory81TermData,h=d.querySelector('main');assert.equal(data.entries.length,431);assert.equal(new Set(data.entries.map(e=>e.id)).size,377);
+const data=w.HanqHistory81TermData,h=d.querySelector('main');assert.equal(data.entries.length,436);assert.equal(new Set(data.entries.map(e=>e.id)).size,382);
 const previous={};require('vm').runInNewContext(require('child_process').execFileSync('git',['show','87a889f:media/history81-term-data.js'],{encoding:'utf8'}),previous);
 assert.deepEqual(JSON.parse(JSON.stringify(data.entries.slice(0,186))),JSON.parse(JSON.stringify(previous.HanqHistory81TermData.entries.map(e=>({...e,sources:e.sources.map(s=>s.includes('treeId=0100amp')?'https://contents.history.go.kr/front/tg/view.do?levelId=tg_002_0450':s.replaceAll('&amp;','&'))})))),'existing 186 entries are immutable except URL entity correction');
-const keys=new Map();for(const entry of data.entries){const key=entry.era+entry.phrase.replace(/\s+/gu,'');if(keys.has(key)){assert.equal(entry.id,keys.get(key).id);assert.equal(entry.summary,keys.get(key).summary);}keys.set(key,entry);}assert.equal(keys.size,427);
+const keys=new Map();for(const entry of data.entries){const key=entry.era+entry.phrase.replace(/\s+/gu,'');if(keys.has(key)){assert.equal(entry.id,keys.get(key).id);assert.equal(entry.summary,keys.get(key).summary);}keys.set(key,entry);}assert.equal(keys.size,432);
 const contexts={'금오':' (의금부)','과전':' 경기','회계':' 삼사','회계를 담당':' 삼사','전지':' 전시과','시지':' 전시과','제위보':' 빈민 구제','강조':' 정변','병마사':' 양계','교장':' 의천 경전'};
 const qualified={
 '이조 전랑 임명':['68','선조 김효원 심의겸'],'이조전랑 임명으로 다툼':['66–67','선조 김효원 심의겸'],
@@ -31,6 +31,6 @@ fixture('**강조** 정변','goryeo',1);fixture('**병마사** 양계','goryeo',
 fixture('**회계** 회계기준','goryeo');fixture('**전지** 배터리','goryeo');fixture('**교장** 학교','goryeo');
 for(const e of data.entries){for(const url of e.sources){assert(!/&amp;/.test(url),'URL entity leaked');assert.equal(new URL(url).protocol,'https:');}if(e.contextRequired)fixture('**'+e.phrase+'**','joseon');}
 fixture('**삼사**','joseon',1);fixture('**진주** 임진왜란','joseon');fixture('**백서** 정책','joseon');fixture('**상대** 비교','joseon');
-console.log('PASS 431 forms / 377 definition IDs / exact era / split emphasis / partial hazards / immutable text+styles / lifecycle');
+console.log('PASS 436 forms / 382 definition IDs / exact era / split emphasis / partial hazards / immutable text+styles / lifecycle');
 
 for(const e of data.entries.filter(e=>e.contextRequired)){const q=qualified[e.phrase];for(const [page,context] of [[q[0],'무관한 문맥'],['999',q[1]]]){h.replaceChildren();const p=d.createElement('p');p.dataset.page=page;h.append(p);w.HanqJoseonScriptReader.inline(d,p,'**'+e.phrase+'** '+context);const v=w.HanqHistory81Terms.mount(h,'joseon',data.sources.joseon);assert.equal(v.count,0,e.phrase+' wrong context/page');v.stop();}}

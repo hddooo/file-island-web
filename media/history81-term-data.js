@@ -4391,6 +4391,56 @@
         "https://contents.history.go.kr/front/hm/view.do?levelId=hm_077_0080"
       ],
       "contextRequired": "PDF66·68 선조 항목의 김효원·심의겸 대립 문맥에만 연결."
+    },
+    {
+      "era": "joseon",
+      "id": "joseon-muo-expansion",
+      "term": "무오사화",
+      "phrase": "무오사화: 김종직 조의제문",
+      "summary": "1498년 연산군 때, 김일손의 사초에 실린 김종직의 「조의제문」을 문제 삼아 사림 등을 처벌한 사건.",
+      "sources": [
+        "https://contents.history.go.kr/front/tg/view.do?levelId=tg_003_1030"
+      ]
+    },
+    {
+      "era": "joseon",
+      "id": "joseon-gapja-expansion",
+      "term": "갑자사화",
+      "phrase": "갑자사화: 폐비 윤씨 사사 사건",
+      "summary": "1504년 연산군이 생모인 폐비 윤씨의 폐위·죽음과 관련된 신하들을 대대적으로 처벌한 사건.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0000935"
+      ]
+    },
+    {
+      "era": "joseon",
+      "id": "joseon-eulsa-expansion",
+      "term": "을사사화",
+      "phrase": "을사사화: 윤원형, 윤임 등 외척",
+      "summary": "1545년 명종 즉위 후, 외척 윤원형의 소윤이 윤임의 대윤을 몰아내면서 사림도 피해를 입은 사건.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0042955"
+      ]
+    },
+    {
+      "era": "joseon",
+      "id": "joseon-uijeongbu-seosa-expansion",
+      "term": "의정부 서사제",
+      "phrase": "의정부 서사제 도식",
+      "summary": "6조의 업무를 의정부에서 먼저 논의한 뒤 왕에게 올려 결정하는 방식. 6조가 왕에게 직접 보고하는 6조 직계제와 구별한다.",
+      "sources": [
+        "https://contents.history.go.kr/front/tg/view.do?levelId=tg_003_0500"
+      ]
+    },
+    {
+      "era": "joseon",
+      "id": "joseon-gyunyeok-expansion",
+      "term": "균역법",
+      "phrase": "균역법",
+      "summary": "영조 때 군포 부담을 1년에 2필에서 1필로 줄인 제도. 줄어든 재정은 결작·선무군관포 등으로 보충했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0007303"
+      ]
     }
   ]
 };

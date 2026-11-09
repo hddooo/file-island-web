@@ -1858,7 +1858,8 @@
         25
       ],
       "followingParticles": [
-        "를", "와"
+        "를",
+        "와"
       ]
     },
     {
@@ -1937,6 +1938,569 @@
         20
       ],
       "followingParticles": []
+    },
+    {
+      "id": "verified-prehistory-범금8조",
+      "era": "prehistory",
+      "term": "범금 8조",
+      "aliases": [
+        "범금 8조",
+        "8조법"
+      ],
+      "summary": "고조선의 법. 살인·상해·절도 처벌에 관한 세 조항이 전해져 당시 생명·노동력·재산을 중시했음을 보여 준다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0059778"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        11
+      ]
+    },
+    {
+      "id": "verified-prehistory-읍군삼로",
+      "era": "prehistory",
+      "term": "읍군·삼로",
+      "aliases": [
+        "읍군, 삼로",
+        "읍군·삼로"
+      ],
+      "summary": "옥저·동예에서 각 읍락을 다스리던 우두머리의 이름. 여러 지역을 하나로 다스리는 왕과 구별된다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0026554"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        12
+      ]
+    },
+    {
+      "id": "verified-prehistory-동맹",
+      "era": "prehistory",
+      "term": "동맹",
+      "aliases": [
+        "동맹"
+      ],
+      "summary": "고구려가 10월에 하늘에 제사를 지내던 행사. 사람들이 함께 모여 노래와 춤을 즐겼다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0016416"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        12
+      ]
+    },
+    {
+      "id": "verified-prehistory-무천",
+      "era": "prehistory",
+      "term": "무천",
+      "aliases": [
+        "무천"
+      ],
+      "summary": "동예가 10월에 하늘에 제사를 지내던 행사. 밤낮으로 술을 마시고 노래와 춤을 즐겼다.",
+      "sources": [
+        "https://contents.history.go.kr/front/km/view.do?levelId=km_025_0030_0020"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        12
+      ]
+    },
+    {
+      "id": "verified-prehistory-단궁",
+      "era": "prehistory",
+      "term": "단궁",
+      "aliases": [
+        "단궁"
+      ],
+      "summary": "동예의 특산물인 박달나무로 만든 활. 낙랑으로 전해져 낙랑 단궁으로도 알려졌다.",
+      "sources": [
+        "https://contents.history.go.kr/front/hm/print.do?levelId=hm_005_0020"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        12,
+        13,
+        15
+      ]
+    },
+    {
+      "id": "verified-prehistory-과하마",
+      "era": "prehistory",
+      "term": "과하마",
+      "aliases": [
+        "과하마"
+      ],
+      "summary": "동예의 특산물인 작은 말. 과일나무 아래를 지나갈 만큼 작다는 뜻에서 붙은 이름이다.",
+      "sources": [
+        "https://contents.history.go.kr/front/hm/print.do?levelId=hm_005_0020"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        12,
+        13,
+        15
+      ]
+    },
+    {
+      "id": "verified-prehistory-반어피",
+      "era": "prehistory",
+      "term": "반어피",
+      "aliases": [
+        "반어피"
+      ],
+      "summary": "동예의 특산물인 바다표범 가죽. 무늬가 있는 고급 가죽으로 지배층의 옷감 등에 쓰였다.",
+      "sources": [
+        "https://contents.history.go.kr/front/hm/print.do?levelId=hm_005_0020"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        12
+      ]
+    },
+    {
+      "id": "verified-samguk-영락",
+      "era": "samguk",
+      "term": "영락",
+      "aliases": [
+        "영락"
+      ],
+      "summary": "광개토왕이 사용한 독자적인 연호. 연호는 영락 1년처럼 군주가 연도를 세기 위해 붙인 이름이다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0037005"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        17
+      ]
+    },
+    {
+      "id": "verified-samguk-살수대첩",
+      "era": "samguk",
+      "term": "살수대첩",
+      "aliases": [
+        "살수대첩",
+        "살수 대첩"
+      ],
+      "summary": "612년 고구려 을지문덕이 수나라 군대를 살수에서 크게 물리친 전투. 살수는 오늘날 청천강이다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0026415"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        17
+      ]
+    },
+    {
+      "id": "verified-samguk-안시성전투",
+      "era": "samguk",
+      "term": "안시성 전투",
+      "aliases": [
+        "안시성 전투",
+        "안시성전투"
+      ],
+      "summary": "645년 고구려가 당 태종의 군대에 맞서 안시성을 지켜 낸 전투. 당군은 성을 함락하지 못하고 철수했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0034848"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        17
+      ]
+    },
+    {
+      "id": "verified-samguk-나제동맹",
+      "era": "samguk",
+      "term": "나제동맹",
+      "aliases": [
+        "나제동맹",
+        "나·제 동맹",
+        "나제 동맹"
+      ],
+      "summary": "고구려를 견제하려고 신라와 백제가 맺은 동맹. 나(羅)는 신라, 제(濟)는 백제를 뜻한다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0011456"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        20
+      ]
+    },
+    {
+      "id": "verified-samguk-순수비",
+      "era": "samguk",
+      "term": "순수비",
+      "aliases": [
+        "순수비",
+        "진흥왕 순수비"
+      ],
+      "summary": "왕이 지방을 돌아보는 순수를 기념한 비석. 진흥왕 순수비는 신라의 영토 확장을 보여 주는 자료다.",
+      "sources": [
+        "https://contents.history.go.kr/front/tg/view.do?levelId=tg_001_0230"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        24
+      ]
+    },
+    {
+      "id": "verified-samguk-집사부",
+      "era": "samguk",
+      "term": "집사부",
+      "aliases": [
+        "집사부"
+      ],
+      "summary": "651년 진덕여왕 때 설치한 신라의 관청. 왕명을 전달하고 중요 사무를 처리했으며, 장관은 중시였다.",
+      "sources": [
+        "https://contents.history.go.kr/front/tg/view.do?levelId=tg_001_0910"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        23
+      ]
+    },
+    {
+      "id": "verified-samguk-비담과염종의난",
+      "era": "samguk",
+      "term": "비담과 염종의 난",
+      "aliases": [
+        "비담과 염종의 난",
+        "비담의 난"
+      ],
+      "summary": "647년 선덕여왕 말에 비담·염종이 일으킨 반란으로 김유신 등이 진압했다. 난 중 선덕여왕이 죽고 진덕여왕이 즉위했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0025108"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        23
+      ]
+    },
+    {
+      "id": "verified-nambuk-집사부",
+      "era": "nambuk",
+      "term": "집사부",
+      "aliases": [
+        "집사부"
+      ],
+      "summary": "신라에서 왕명을 전달하고 중요 사무를 처리한 관청. 장관은 중시였으며 경덕왕 때 시중으로 이름을 바꾸었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0053810"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        31,
+        34,
+        39
+      ],
+      "followingParticles": [
+        "를"
+      ]
+    },
+    {
+      "id": "verified-nambuk-빈공과",
+      "era": "nambuk",
+      "term": "빈공과",
+      "aliases": [
+        "빈공과"
+      ],
+      "summary": "당나라 등 중국에서 외국인을 대상으로 실시한 과거시험. 신라의 최치원과 발해 유학생도 합격했다.",
+      "sources": [
+        "https://contents.history.go.kr/front/tg/view.do?levelId=tg_001_0700"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        31
+      ]
+    },
+    {
+      "id": "verified-nambuk-시무10여조",
+      "era": "nambuk",
+      "term": "시무 10여 조",
+      "aliases": [
+        "시무 10여 조",
+        "시무 10여조",
+        "시무10여조",
+        "시무책 10여조",
+        "시무책 10여 조"
+      ],
+      "summary": "894년 최치원이 진성여왕에게 올린 신라의 사회 개혁안. 구체적인 조항은 전해지지 않는다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0032357"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        31,
+        32,
+        34,
+        37
+      ],
+      "followingParticles": [
+        "를"
+      ]
+    },
+    {
+      "id": "verified-nambuk-풍수지리설",
+      "era": "nambuk",
+      "term": "풍수지리설",
+      "aliases": [
+        "풍수지리설",
+        "풍수"
+      ],
+      "summary": "산과 물 등 땅의 형세를 인간의 운세와 연결하고 도읍·집·무덤의 위치를 정하는 데 활용한 사상.",
+      "sources": [
+        "https://contents.history.go.kr/front/ta/view.do?levelId=ta_h71_0070_0010_0010_0050"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        32
+      ]
+    },
+    {
+      "id": "verified-opening-방곡령",
+      "era": "opening",
+      "term": "방곡령",
+      "aliases": [
+        "방곡령"
+      ],
+      "summary": "식량 부족을 막으려고 곡물을 다른 지방이나 외국으로 내보내지 못하게 한 명령. 개항 뒤 일본과 외교 분쟁을 빚었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0021663"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        91
+      ]
+    },
+    {
+      "id": "verified-colonial-의열단",
+      "era": "colonial",
+      "term": "의열단",
+      "aliases": [
+        "의열단"
+      ],
+      "summary": "1919년 김원봉 등이 만주에서 조직한 독립운동단체. 일제 주요 인물과 통치기관을 대상으로 의열투쟁을 전개했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0043334"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        117,
+        120,
+        122
+      ]
+    },
+    {
+      "id": "verified-colonial-조선혁명군",
+      "era": "colonial",
+      "term": "조선혁명군",
+      "aliases": [
+        "조선혁명군",
+        "조선 혁명군"
+      ],
+      "summary": "남만주에서 활동한 독립군. 양세봉의 지휘 아래 중국 의용군과 연합하여 영릉가 전투 등에서 일본군과 싸웠다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0052267"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        118,
+        120,
+        122
+      ]
+    },
+    {
+      "id": "verified-colonial-한국독립군",
+      "era": "colonial",
+      "term": "한국독립군",
+      "aliases": [
+        "한국독립군",
+        "한국 독립군"
+      ],
+      "summary": "지청천이 지휘한 독립군. 중국군과 연합하여 1933년 대전자령 전투 등에서 일본군을 물리쳤다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0014742"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        118,
+        120,
+        122
+      ]
+    },
+    {
+      "id": "verified-colonial-봉오동전투",
+      "era": "colonial",
+      "term": "봉오동 전투",
+      "aliases": [
+        "봉오동 전투"
+      ],
+      "summary": "1920년 만주 봉오동에서 홍범도·최진동 등이 이끄는 독립군이 일본군을 유인해 크게 물리친 전투.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0023974"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        117,
+        120,
+        122
+      ]
+    },
+    {
+      "id": "verified-colonial-한인애국단",
+      "era": "colonial",
+      "term": "한인애국단",
+      "aliases": [
+        "한인애국단",
+        "한인 애국단"
+      ],
+      "summary": "1931년 김구가 상하이에서 조직한 임시정부 계열 독립운동단체. 이봉창·윤봉길의 의거를 추진했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0061905"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        110,
+        118,
+        120,
+        122
+      ]
+    },
+    {
+      "id": "verified-modern-건국준비위원회",
+      "era": "modern",
+      "term": "건국준비위원회",
+      "aliases": [
+        "조선건국준비위원회",
+        "건국준비위원회"
+      ],
+      "summary": "1945년 광복 직후 여운형 등이 조직한 건국 준비 단체. 새로운 국가 수립을 준비하며 치안과 식량 문제에 대응했다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_o500100"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        127
+      ]
+    },
+    {
+      "id": "verified-modern-통일주체국민회의",
+      "era": "modern",
+      "term": "통일주체국민회의",
+      "aliases": [
+        "통일주체국민회의",
+        "통일 주체 국민 회의"
+      ],
+      "summary": "1972년 유신헌법으로 설치된 기구. 대의원들이 대통령과 국회의원 정수의 3분의 1을 간접 선출했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0059410"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        131
+      ]
+    },
+    {
+      "id": "verified-modern-3저호황",
+      "era": "modern",
+      "term": "3저 호황",
+      "aliases": [
+        "3저 호황"
+      ],
+      "summary": "1980년대 중반 저유가·저금리·저달러 가치에 힘입어 한국 경제가 높은 성장을 이룬 호황.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i503310"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        133
+      ]
+    },
+    {
+      "id": "verified-modern-삼백산업",
+      "era": "modern",
+      "term": "삼백 산업",
+      "aliases": [
+        "삼백 산업",
+        "삼백산업"
+      ],
+      "summary": "1950년대 미국 원조를 바탕으로 성장한 제분·제당·면방직 공업. 밀가루·설탕·면직물을 생산했다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i502360"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        129
+      ]
+    },
+    {
+      "id": "verified-modern-413호헌조치",
+      "era": "modern",
+      "term": "4·13 호헌조치",
+      "aliases": [
+        "4·13 호헌조치"
+      ],
+      "summary": "1987년 전두환 정부가 개헌 논의를 중단하고 대통령 간선제를 유지하겠다고 발표한 조치. 6월 항쟁의 계기가 됐다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0073741"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        133,
+        134,
+        138
+      ]
+    },
+    {
+      "id": "verified-modern-내각책임제",
+      "era": "modern",
+      "term": "내각책임제",
+      "aliases": [
+        "내각책임제"
+      ],
+      "summary": "의회 다수 세력이 구성한 내각이 행정을 맡고 의회에 책임지는 제도. 한국에서는 제2공화국 때 시행했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0043345"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        129
+      ]
+    },
+    {
+      "id": "verified-modern-양원제",
+      "era": "modern",
+      "term": "양원제",
+      "aliases": [
+        "양원제"
+      ],
+      "summary": "국회를 상원·하원처럼 두 원으로 구성하는 제도. 제2공화국에서는 민의원과 참의원으로 구성했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0020231"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        129,
+        130,
+        138
+      ]
+    },
+    {
+      "id": "verified-modern-애치슨선언",
+      "era": "modern",
+      "term": "애치슨 선언",
+      "aliases": [
+        "애치슨 선언"
+      ],
+      "summary": "1950년 1월 미국 국무장관 애치슨이 발표한 극동 방위 구상. 한국이 미국의 방위선에서 제외됐다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0039215"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        129
+      ]
     }
   ]
-};})(typeof window==='object'?window:globalThis);
+};
+})(typeof window==='object'?window:globalThis);
+
