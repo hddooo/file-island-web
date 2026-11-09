@@ -1,3 +1,7 @@
+# 0.8.32-beta
+
+- Era learning uses three evenly sized tabs: concept, exam examples, and blank quiz. Legacy summary URLs and source/records remain unchanged.
+
 # 0.8.31-beta
 
 - 한 무제·위만·우거왕·고구려 대가·골장제 도움말 추가.
