@@ -1,3 +1,9 @@
+## 0.8.39-beta
+
+- Label Three Kingdoms exam tables with Goguryeo, Baekje, Silla and Gaya.
+- Soften source frequency percentages across history readers without changing source text.
+- Connect Salsu/Ansi exam phrases to named-battle tooltips and move two requested Baekje notes into concise contextual tooltips.
+
 # 0.8.38-beta
 - Add 37 source-verified novice tooltip definitions across era learning pages, including Jipsabu, Bidam rebellion, Silla institutions, independence movements and modern politics.
 - Remove the specifically dismissed page 23 mnemonic from the UI without deleting source data.

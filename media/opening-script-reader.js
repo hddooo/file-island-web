@@ -78,8 +78,8 @@
       const zoom=button('원래 크기로 확대',()=>{zoomed=!zoomed;img.style.maxWidth=zoomed?'none':'100%';zoom.textContent=zoomed?'화면 너비에 맞추기':'원래 크기로 확대';});
       img.src=src;img.alt=alt;d.append(close,zoom,img);doc.body.append(d);dialog={node:d,opener,release:options.acquireModalLock&&options.acquireModalLock()};win.history.pushState(Object.assign({},win.history.state,{openingImage:true}),'');d.addEventListener('cancel',e=>{e.preventDefault();closeImage();});d.addEventListener('close',()=>{if(dialog&&dialog.node===d)dismissImage();});d.addEventListener('keydown',e=>{if(e.key==='Tab'){e.preventDefault();(doc.activeElement===close?zoom:close).focus();}});try{d.showModal();close.focus();}catch(e){dismissImage();throw e;}}
     let figureAbort=null,figureQueue=[],figureActive=0;
-    let glossaryTerms=null;
-    function clearImages(){if(glossaryTerms){glossaryTerms.stop();glossaryTerms=null;}layoutObservers.splice(0).forEach(observer=>observer.disconnect());if(figureAbort)figureAbort.abort();figureAbort=new win.AbortController();figureQueue.splice(0).forEach(job=>job.reject(Error('aborted')));dismissImage();urls.forEach(u=>win.URL.revokeObjectURL(u));urls.clear();}
+    let glossaryTerms=null,restoreFrequency=null;
+    function clearImages(){if(restoreFrequency){restoreFrequency();restoreFrequency=null;}if(glossaryTerms){glossaryTerms.stop();glossaryTerms=null;}layoutObservers.splice(0).forEach(observer=>observer.disconnect());if(figureAbort)figureAbort.abort();figureAbort=new win.AbortController();figureQueue.splice(0).forEach(job=>job.reject(Error('aborted')));dismissImage();urls.forEach(u=>win.URL.revokeObjectURL(u));urls.clear();}
     function pumpFigures(){while(figureActive<2&&figureQueue.length){const job=figureQueue.shift();if(job.signal.aborted){job.reject(Error('aborted'));continue;}figureActive++;Promise.resolve().then(()=>{if(job.signal.aborted)throw Error('aborted');return options.loadFigure(job.name,{signal:job.signal});}).then(job.resolve,job.reject).finally(()=>{figureActive--;pumpFigures();});}}
     function loadFigure(name,signal){return new Promise((resolve,reject)=>{figureQueue.push({name,signal,resolve,reject});pumpFigures();});}
     function figure(parent,name,alt){
@@ -130,6 +130,7 @@
       if(mode==='practice')body.append(el('p','빈칸을 생각한 뒤 임시 답안을 적어 보세요. 화면을 닫으면 답안은 사라지며 기존 학습 기록에는 저장되지 않습니다.','osr-note'));
       renderSegments(t);
       if(mode==='study'&&root.HanqHistory81Glossary)glossaryTerms=root.HanqHistory81Glossary.mount(body,'opening',bundle.source.sha256);
+      if(mode==='exam'&&root.HanqHistory81Terms)restoreFrequency=root.HanqHistory81Terms.softenFrequency(body);
     }
     function renderReview(){
       if(mode==='practice'&&prepared.presentation.practiceGuidanceTopics.includes(topic))renderMarkdown(doc,body,prepared.practiceGuidance,figure);

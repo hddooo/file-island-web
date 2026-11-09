@@ -49,6 +49,19 @@
     if(entry.id==='goryeo-gyojang')return /의천|경전|주석|속장경/.test(text);
     return true;
   }
+  // Presentation only: retain source nodes and exact text for teardown/re-render.
+  function softenFrequency(host){
+    const doc=host.ownerDocument,undo=[],leaves=[];
+    const walker=doc.createTreeWalker(host,4);let node;
+    while((node=walker.nextNode()))if(!node.parentElement.closest('script,style,input,textarea,button,[role="tooltip"],.history81-frequency'))leaves.push(node);
+    const groups=new Map();for(const n of leaves){const scope=n.parentElement.closest('.textbook-semantic-line,p,li,td,th,h2,h3,h4')||n.parentElement;if(!groups.has(scope))groups.set(scope,[]);groups.get(scope).push(n);}
+    for(const nodes of groups.values()){
+      const text=nodes.map(n=>n.data).join(''),hits=[...text.matchAll(/★\s*\d{1,3}\s*%/gu)].map(m=>[m.index,m.index+m[0].length]);if(!hits.length)continue;
+      let offset=0;for(const n of nodes){const start=offset,end=offset+n.length;offset=end;const ranges=hits.map(([a,b])=>[Math.max(a,start)-start,Math.min(b,end)-start]).filter(([a,b])=>a<b);if(!ranges.length)continue;
+        const wrap=doc.createElement('span');wrap.dataset.historyFrequencyRun='';wrap.style.display='contents';let at=0;for(const [a,b]of ranges){wrap.append(doc.createTextNode(n.data.slice(at,a)));const mark=doc.createElement('span');mark.className='history81-frequency';mark.textContent=n.data.slice(a,b);wrap.append(mark);at=b;}wrap.append(doc.createTextNode(n.data.slice(at)));n.replaceWith(wrap);undo.push(()=>{if(wrap.parentNode)wrap.replaceWith(n);});
+      }
+    }return ()=>undo.reverse().forEach(fn=>fn());
+  }
   function mount(host,era,source,verifiedData){
     const marker=verifiedData&&verifiedData.boundaryPrepared?'[data-history-glossary-certified]':'[data-history-source-emphasis]';
     const data=verifiedData||root.HanqHistory81TermData,doc=host.ownerDocument,win=doc.defaultView;
@@ -100,12 +113,13 @@
       }
     }
     annotate(host);
+    const restoreFrequency=softenFrequency(host);
     listen(tip,'pointerenter',()=>clearTimeout(timer));listen(tip,'pointerleave',leave);
     listen(doc,'pointerdown',e=>{if(active&&!active.contains(e.target)&&!tip.contains(e.target))close();},true);
     listen(doc,'keydown',e=>{if(e.key==='Escape'&&active){e.preventDefault();close();}});
     listen(win,'scroll',e=>{if(e.target!==tip)close();},true);listen(win,'resize',close);if(win.visualViewport){listen(win.visualViewport,'resize',close);listen(win.visualViewport,'scroll',close);}
-    return {count:triggers.length,stop(){if(stopped)return;stopped=true;close();offs.forEach(off=>off());tip.remove();triggers.forEach(node=>{if(node.parentNode)node.replaceWith(...node.childNodes);});}};
+    return {count:triggers.length,stop(){if(stopped)return;stopped=true;close();restoreFrequency();offs.forEach(off=>off());tip.remove();triggers.forEach(node=>{if(node.parentNode)node.replaceWith(...node.childNodes);});}};
   }
-  root.HanqHistory81Terms={mount,normalize};
+  root.HanqHistory81Terms={mount,normalize,softenFrequency};
 })(typeof window==='object'?window:globalThis);
 

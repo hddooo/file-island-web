@@ -93,7 +93,20 @@
       const marker=host.ownerDocument.createComment('removed-mnemonic');node.replaceWith(marker);
       undo.push(()=>{if(marker.parentNode)marker.replaceWith(node);});
     }
+    if(era==='samguk'&&source===pdf)for(const line of host.querySelectorAll('[data-pdf-page="22"] .textbook-semantic-line')){
+      if(!['※ 백제가 평양성을 공격했다 / 고구려 왕을 죽였다는 표현이면 근초고왕!','+ 무덤에서 왕과 왕비의 지석, 석수 등이 출토되었다'].includes(line.textContent.trim()))continue;
+      const marker=host.ownerDocument.createComment('tooltip-note');line.replaceWith(marker);undo.push(()=>{if(marker.parentNode)marker.replaceWith(line);});
+    }
     return ()=>undo.reverse().forEach(fn=>fn());
+  }
+  function examLabels(host,era,source){
+    const added=[];if(era!=='samguk'||source!==pdf)return ()=>{};
+    const names={19:'고구려',22:'백제',25:'신라',26:'가야'};
+    for(const heading of host.querySelectorAll('h3[data-source-block]')){
+      const page=heading.closest('[data-pdf-page]'),n=Number(page?.dataset.pdfPage);
+      if(!names[n]||heading.dataset.sourceBlock!=='81-p'+String(n).padStart(3,'0')+'-vector-callout-reviewed'||heading.textContent.trim()!=='시험에는 이렇게 나온다!')continue;
+      const label=host.ownerDocument.createElement('span');label.dataset.examKingdom='';label.textContent=names[n]+' · ';heading.prepend(label);added.push(label);
+    }return ()=>added.forEach(n=>n.remove());
   }
   function mount(host,era,source){
     const verified=data();if(!root.HanqHistory81Terms||!ids[era]||verified.sources[era]!==source)return {count:0,stop(){}};
@@ -101,8 +114,8 @@
     const restore=prepare(host,verified.entries.filter(e=>e.era===era));
     verified.boundaryPrepared=true;
     let terms;try{terms=root.HanqHistory81Terms.mount(host,era,source,verified);}catch(e){restore();restoreMnemonic();throw e;}
-    const removeCapitalLabels=capitalLabels(host,era,source);
-    let stopped=false;return {count:terms.count,stop(){if(stopped)return;stopped=true;removeCapitalLabels();terms.stop();restore();restoreMnemonic();}};
+    const removeCapitalLabels=capitalLabels(host,era,source),removeExamLabels=examLabels(host,era,source);
+    let stopped=false;return {count:terms.count,stop(){if(stopped)return;stopped=true;removeExamLabels();removeCapitalLabels();terms.stop();restore();restoreMnemonic();}};
   }
   root.HanqHistory81Glossary={mount,pageEra,data};
 })(typeof window==='object'?window:globalThis);

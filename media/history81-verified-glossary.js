@@ -1,5 +1,5 @@
-/* Short, source-verified supplementary definitions. Original textbook data stays private and unchanged. */
-(function(root){root.HanqHistory81VerifiedGlossary={
+(function(root){
+root.HanqHistory81VerifiedGlossary={
   "schema": "hanq-verified-glossary/1",
   "sourcePdf": "d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de",
   "sourceOpening": "255c37fb68122a329cca00ae1c15035590b6a7b21f601e4a5b5f7515fdfbf695",
@@ -2079,15 +2079,20 @@
       "term": "살수대첩",
       "aliases": [
         "살수대첩",
-        "살수 대첩"
+        "살수 대첩",
+        "살수"
       ],
-      "summary": "612년 고구려 을지문덕이 수나라 군대를 살수에서 크게 물리친 전투. 살수는 오늘날 청천강이다.",
+      "summary": "살수대첩(612): 고구려 을지문덕이 수나라 군대를 살수에서 크게 물리친 전투. 살수는 오늘날 청천강이다.",
       "sources": [
         "https://encykorea.aks.ac.kr/Article/E0026415"
       ],
       "verifiedOn": "2026-11-09",
       "pages": [
-        17
+        17,
+        19
+      ],
+      "followingParticles": [
+        "에서"
       ]
     },
     {
@@ -2096,15 +2101,20 @@
       "term": "안시성 전투",
       "aliases": [
         "안시성 전투",
-        "안시성전투"
+        "안시성전투",
+        "안시성"
       ],
-      "summary": "645년 고구려가 당 태종의 군대에 맞서 안시성을 지켜 낸 전투. 당군은 성을 함락하지 못하고 철수했다.",
+      "summary": "안시성 전투(645): 고구려 안시성의 군사와 백성들이 당 태종의 군대에 맞서 성을 지켜 냈다. 당군은 함락하지 못하고 철수했다.",
       "sources": [
         "https://encykorea.aks.ac.kr/Article/E0034848"
       ],
       "verifiedOn": "2026-11-09",
       "pages": [
-        17
+        17,
+        19
+      ],
+      "followingParticles": [
+        "의"
       ]
     },
     {
@@ -2499,8 +2509,47 @@
       "pages": [
         129
       ]
+    },
+    {
+      "id": "verified-samguk-geunchogo-pyeongyang",
+      "era": "samguk",
+      "term": "근초고왕의 평양성 공격",
+      "aliases": [
+        "평양성을 공격"
+      ],
+      "followingParticles": [
+        "하여"
+      ],
+      "summary": "근초고왕의 평양성 공격(371): 백제가 고구려 평양성을 공격해 고국원왕을 전사시켰다. 백제의 평양성 공격·고구려 왕 전사라는 지문은 근초고왕을 가리킨다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0007465"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        22
+      ]
+    },
+    {
+      "id": "verified-samguk-muryeong-brick-tomb",
+      "era": "samguk",
+      "term": "무령왕릉",
+      "aliases": [
+        "벽돌 무덤"
+      ],
+      "followingParticles": [
+        "이"
+      ],
+      "summary": "무령왕릉: 중국 남조의 영향을 받은 백제 벽돌무덤. 왕·왕비의 지석(무덤 주인과 사망·매장 연대를 기록한 돌)과 석수(무덤을 지키는 돌짐승) 등이 출토되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0019018",
+        "https://encykorea.aks.ac.kr/Article/E0054249",
+        "https://encykorea.aks.ac.kr/Article/E0028448"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        22
+      ]
     }
   ]
 };
 })(typeof window==='object'?window:globalThis);
-
