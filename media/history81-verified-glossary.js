@@ -2549,6 +2549,44 @@ root.HanqHistory81VerifiedGlossary={
       "pages": [
         22
       ]
+    },
+    {
+      "id": "verified-samguk-jwagwandaesikgi",
+      "era": "samguk",
+      "term": "좌관대식기",
+      "aliases": [
+        "좌관대식기"
+      ],
+      "summary": "좌관대식기: 백제 관청에서 곡식을 빌려주고 원금과 이자를 거둔 내용을 적은 목간(글을 적은 나무 조각). 백제의 곡물 대여와 경제생활을 보여준다.",
+      "sources": [
+        "https://contents.history.go.kr/front/km/view.do?levelId=km_037_0030_0020_0020"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        22
+      ],
+      "followingParticles": [
+        "에"
+      ]
+    },
+    {
+      "id": "verified-samguk-ugyeong",
+      "era": "samguk",
+      "term": "우경",
+      "aliases": [
+        "우경"
+      ],
+      "summary": "우경: 소의 힘으로 쟁기를 끌어 땅을 가는 농법. 신라 지증왕이 장려하여 보급했다. 지증왕 때 한반도에서 처음 발명된 농법이라는 뜻은 아니다.",
+      "sources": [
+        "https://contents.history.go.kr/front/tg/view.do?levelId=tg_001_0060"
+      ],
+      "verifiedOn": "2026-11-09",
+      "pages": [
+        25
+      ],
+      "followingParticles": [
+        "을"
+      ]
     }
   ]
 };
