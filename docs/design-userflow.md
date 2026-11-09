@@ -95,3 +95,6 @@ Era study: 개념 학습 → 시험에는 이렇게 나온다 → 빈칸 퀴즈 
 
 ## 0.8.46-beta recall input
 A learner may type 왕, 신라, 서기 without the source quotation/book-title marks. Automatic field grading is retained.
+
+## 0.8.47-beta
+Recall retains labels such as 특징 while learners fill historical names and events.

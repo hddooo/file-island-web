@@ -78,3 +78,6 @@ Improve ephemeral recall readability: source titles retained, Korean inputs fit 
 
 ## 0.8.46-beta
 Reduce unnecessary punctuation typing in transient blank recall without changing canonical content or other quizzes.
+
+## 0.8.47-beta
+Blank recall focuses on emphasized historical facts, not generic organizational labels.

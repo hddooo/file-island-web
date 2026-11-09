@@ -190,3 +190,6 @@ Blank recall preserves source titles/captions. Korean-aware auto-sized inputs sh
 
 ## 0.8.46-beta recall normalization
 Recall-only grading ignores decorative quotation/bracket characters, not enclosed text or numeric/list punctuation. Source display and persistent records remain unchanged.
+
+## 0.8.47-beta
+Exact-match non-answer labels remain visible in recall. Grouped bold fragments are visited once. Do not exempt all table cells or broad historical categories.

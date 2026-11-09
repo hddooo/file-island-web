@@ -3,12 +3,17 @@
   'use strict';
   // Ignore presentation quotes/brackets only; keep their words and meaningful separators.
   function normalize(value){return String(value||'').normalize('NFKC').toLowerCase().replace(/[\s·ㆍ"'‘’“”「」『』〈〉《》【】〔〕［］\[\]()（）{}｛｝]/g,'').trim();}
+  // Curated non-answer labels only; never exempt a whole table or historical term.
+  var contextLabels=new Set(['특징','주요 특징','구분','분류','항목','내용','주요 내용','핵심 내용','설명','배경','원인','과정','결과','의의','목적','영향','시기','순서','정치','경제','사회','문화','교육','종교','군사','행정','외교','사회/경제','정치/경제','역사서','무덤','탑','기타','이전','이후','전성기 이전','멸망 후','전체 흐름','통일과정','연표','왕계 도식','오답 요원','명령','보고'].map(normalize));
+  function isContextLabel(answer,node,contexts){var key=normalize(answer),container=node.closest('td,th')||node.parentElement;return contextLabels.has(key)&&normalize(contexts.get(container))===key;}
   function decorate(host){
-    var doc=host.ownerDocument,slots=[],alive=true;
+    var doc=host.ownerDocument,slots=[],alive=true,visited=new Set(),contexts=new WeakMap();
+    Array.from(host.querySelectorAll('strong,b')).forEach(function(n){var c=n.closest('td,th')||n.parentElement;contexts.set(c,c.textContent);});
     Array.from(host.querySelectorAll('strong,b')).filter(function(node){return !node.parentElement.closest('strong,b')&&!node.closest('h1,h2,h3,h4,h5,h6,header,caption,summary,[role=heading],[data-blank-recall-heading],button,nav,[hidden],script,style')&&/[\p{L}\p{N}]/u.test(node.textContent);}).forEach(function(original){
-      if(!host.contains(original))return;
+      if(!host.contains(original)||visited.has(original))return;
       var originals=[original],next=original.nextSibling;while(next&&next.nodeType===1&&/^(STRONG|B)$/.test(next.tagName)){originals.push(next);next=next.nextSibling;}
-      var answer=originals.map(function(n){return n.textContent;}).join('').trim(),wrap=doc.createElement('span'),input=doc.createElement('textarea'),feedback=doc.createElement('span');
+      var answer=originals.map(function(n){return n.textContent;}).join('').trim();originals.forEach(function(n){visited.add(n);});if(isContextLabel(answer,original,contexts))return;
+      var wrap=doc.createElement('span'),input=doc.createElement('textarea'),feedback=doc.createElement('span');
       wrap.className='blank-recall-slot';input.rows=1;input.wrap='soft';input.autocomplete='off';input.spellcheck=false;input.setAttribute('aria-label','백지 테스트 빈칸 '+(slots.length+1));
       function fit(){var units=function(value){return Array.from(value).reduce(function(n,c){return n+(/[^\u0000-\u00ff]/.test(c)?1:0.65);},0);};input.style.setProperty('--blank-width',Math.max(4,units(answer),units(input.value))+1.5+'em');input.style.height='auto';var style=doc.defaultView.getComputedStyle(input);input.style.height=(Math.max(input.scrollHeight,parseFloat(style.lineHeight)||24)+(parseFloat(style.borderTopWidth)||0)+(parseFloat(style.borderBottomWidth)||0))+'px';}
       feedback.className='blank-recall-feedback';feedback.hidden=true;feedback.setAttribute('aria-live','polite');
