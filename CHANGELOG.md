@@ -1,3 +1,7 @@
+# 0.8.29-beta
+
+- Colored FILE ISLAND STUDY lettering appears character by character; keeps the two-second entry and reduced-motion fallback.
+
 # 0.8.28-beta
 
 - Hongmungwan: eight era menus, owner-protected original questions, per-question recent three answers, stars, and independent review/PDF.
