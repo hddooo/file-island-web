@@ -4,8 +4,15 @@
   // Ignore presentation quotes/brackets only; keep their words and meaningful separators.
   function normalize(value){return String(value||'').normalize('NFKC').toLowerCase().replace(/[\s·ㆍ"'‘’“”「」『』〈〉《》【】〔〕［］\[\]()（）{}｛｝]/g,'').trim();}
   // Curated non-answer labels only; never exempt a whole table or historical term.
-  var contextLabels=new Set(['특징','주요 특징','구분','분류','항목','내용','주요 내용','핵심 내용','설명','배경','원인','과정','결과','의의','목적','영향','시기','순서','정치','경제','사회','문화','교육','종교','군사','행정','외교','사회/경제','정치/경제','역사서','무덤','탑','기타','이전','이후','전성기 이전','멸망 후','전체 흐름','통일과정','연표','왕계 도식','오답 요원','명령','보고'].map(normalize));
-  function isContextLabel(answer,node,contexts){var key=normalize(answer),container=node.closest('td,th')||node.parentElement;return contextLabels.has(key)&&normalize(contexts.get(container))===key;}
+  var contextLabels=new Set(['특징','주요 특징','구분','분류','항목','내용','주요 내용','핵심 내용','설명','배경','원인','과정','결과','의의','목적','영향','시기','순서','정치','경제','사회','문화','교육','종교','군사','행정','외교','사회/경제','정치/경제','역사서','무덤','탑','기타','이전','이후','전성기 이전','멸망 후','전체 흐름','통일과정','연표','왕계 도식','오답 요원','명령','보고','정치 세력','문학','조선 전기','조선 후기','6조 직계제 도식'].map(normalize));
+  function isContextLabel(answer,node,contexts){
+    var key=normalize(answer),container=node.closest('td,th')||node.parentElement,context=String(contexts.get(container)||'');
+    // PDF captions and study encouragement are not historical recall answers.
+    if(/^[<〈《]\s*표\s*\d+\s*[>〉》]/.test(answer)||/^\d+점\s*이상이\s*목표라면/.test(answer))return true;
+    // Remove known editorial notes only, not historical content beside category words.
+    var labelContext=context.replace(/(?:\d+회\s*중요|진짜\s*중요!?|참고만\s*하자)/g,'');
+    return contextLabels.has(key)&&normalize(labelContext)===key;
+  }
   function decorate(host){
     var doc=host.ownerDocument,slots=[],alive=true,visited=new Set(),contexts=new WeakMap();
     Array.from(host.querySelectorAll('strong,b')).forEach(function(n){var c=n.closest('td,th')||n.parentElement;contexts.set(c,c.textContent);});
