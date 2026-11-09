@@ -1,3 +1,8 @@
+## 0.8.42-beta
+
+- Remove retired exercise fallback notice/button and first-era legacy question entrypoints from current study pages. Preserve original question data, saved records and direct legacy URL compatibility.
+- Correct saved blank-workspace lookup for the Three Kingdoms era using its canonical quiz ID.
+
 ## 0.8.41-beta
 
 - Keep era titles and descriptions readable in one desktop row beside completion/review controls.
