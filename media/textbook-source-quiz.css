@@ -95,3 +95,9 @@ html[data-company-mode=on] body #app#app#app .textbook-source-quiz-input:has(+.t
 html body #app#app#app .textbook-source-quiz .textbook-source-inline-feedback[data-result=different],
 html body #app#app#app .textbook-source-verdict[data-result=wrong]{font-weight:800!important}
 html body #app#app#app .textbook-source-quiz-input:has(+.textbook-source-inline-feedback[data-result=different]){font-weight:700!important;border-width:2px!important}
+
+/* Do not treat parentheses, input and feedback as one atomic flex box. */
+html body #app#app#app .textbook-source-continuous .textbook-source-quiz-statement:has(.textbook-source-quiz-blank){white-space:normal!important}
+html body #app#app#app .textbook-source-continuous .textbook-source-quiz-blank{display:inline!important;white-space:normal!important;margin-inline:3px}
+html body #app#app#app .textbook-source-continuous .textbook-source-quiz-blank>.textbook-source-quiz-input{display:inline-block!important;vertical-align:middle;margin-inline:4px}
+html body #app#app#app .textbook-source-continuous .textbook-source-quiz-blank>:is(.textbook-source-quiz-paren,.textbook-source-inline-feedback){display:inline!important;white-space:normal!important;vertical-align:baseline}
