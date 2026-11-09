@@ -65,12 +65,32 @@
     }
     walk(host);return ()=>undo.reverse().forEach(fn=>fn());
   }
+  // User-requested place-name supplements; source text nodes are kept intact.
+  function capitalLabels(host,era,source){
+    const added=[];
+    if(era!=='samguk'||source!==pdf)return ()=>{};
+    const names={'한성':'위례성','공주':'웅진','부여':'사비'};
+    for(const cell of host.querySelectorAll('[data-pdf-page="20"] td[data-source-cell]')){
+      if(!/^81-p020-table1-source-r\d+-c[01]$/.test(cell.dataset.sourceCell||''))continue;
+      for(const line of cell.querySelectorAll('.textbook-semantic-line')){
+        const match=line.textContent.trim().match(/^(한성|공주|부여)(시대)?$/);
+        if(!match||line.querySelector('[data-capital-supplement]'))continue;
+        const note=host.ownerDocument.createElement('span');note.dataset.capitalSupplement='';note.textContent='('+names[match[1]]+')';
+        note.setAttribute('aria-label','옛 지명: '+names[match[1]]);
+        const walk=host.ownerDocument.createTreeWalker(line,4);let text;while((text=walk.nextNode()))if(text.data.includes(match[1]))break;
+        if(!text)continue;const original=text.data,tail=text.splitText(text.data.indexOf(match[1])+match[1].length);tail.before(note);
+        added.push(()=>{note.remove();text.data=original;tail.remove();});
+      }
+    }
+    return ()=>added.forEach(restore=>restore());
+  }
   function mount(host,era,source){
     const verified=data();if(!root.HanqHistory81Terms||!ids[era]||verified.sources[era]!==source)return {count:0,stop(){}};
     const restore=prepare(host,verified.entries.filter(e=>e.era===era));
     verified.boundaryPrepared=true;
     let terms;try{terms=root.HanqHistory81Terms.mount(host,era,source,verified);}catch(e){restore();throw e;}
-    let stopped=false;return {count:terms.count,stop(){if(stopped)return;stopped=true;terms.stop();restore();}};
+    const removeCapitalLabels=capitalLabels(host,era,source);
+    let stopped=false;return {count:terms.count,stop(){if(stopped)return;stopped=true;removeCapitalLabels();terms.stop();restore();}};
   }
   root.HanqHistory81Glossary={mount,pageEra,data};
 })(typeof window==='object'?window:globalThis);

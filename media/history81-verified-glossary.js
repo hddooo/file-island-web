@@ -1800,6 +1800,143 @@
         12
       ],
       "followingParticles": []
+    },
+    {
+      "id": "verified-samguk-daeyaseong",
+      "era": "samguk",
+      "term": "대야성 전투",
+      "summary": "642년, 의자왕이 보낸 백제 장군 윤충이 신라의 대야성(지금의 합천)을 함락한 전투. 백제의 승리로, 신라는 백제에 맞설 외교적 지원을 구하게 되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0014594"
+      ],
+      "verifiedOn": "2026-11-09",
+      "aliases": [
+        "대야성"
+      ],
+      "pages": [
+        20,
+        22
+      ],
+      "followingParticles": [
+        "을"
+      ]
+    },
+    {
+      "id": "verified-samguk-hwangsanbeol",
+      "era": "samguk",
+      "term": "황산벌 전투",
+      "summary": "660년, 황산벌(지금의 논산)에서 백제 계백의 군대가 신라 김유신의 군대에 패하고 계백이 전사한 전투. 이후 나당 연합군이 사비성을 함락해 백제가 멸망했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0065183"
+      ],
+      "verifiedOn": "2026-11-09",
+      "aliases": [
+        "황산벌"
+      ],
+      "pages": [
+        20,
+        22
+      ],
+      "followingParticles": [
+        "에서"
+      ]
+    },
+    {
+      "id": "verified-samguk-byeongbu",
+      "era": "samguk",
+      "term": "병부",
+      "summary": "신라 법흥왕 때 설치한 군사 업무 담당 중앙 관청. 군대와 국방 관련 일을 맡았으며, 귀족회의를 이끄는 상대등과 구별한다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0023097"
+      ],
+      "verifiedOn": "2026-11-09",
+      "aliases": [
+        "병부"
+      ],
+      "pages": [
+        23,
+        25
+      ],
+      "followingParticles": [
+        "를", "와"
+      ]
+    },
+    {
+      "id": "verified-samguk-sangdaedeung",
+      "era": "samguk",
+      "term": "상대등",
+      "summary": "신라 법흥왕 때 설치한 최고 관직. 귀족을 대표하여 화백회의를 이끌고 국정을 논의했다. 군사 관청인 병부와 구별한다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0027042"
+      ],
+      "verifiedOn": "2026-11-09",
+      "aliases": [
+        "상대등"
+      ],
+      "pages": [
+        23,
+        25
+      ],
+      "followingParticles": [
+        "을"
+      ]
+    },
+    {
+      "id": "verified-samguk-ichadon",
+      "era": "samguk",
+      "term": "이차돈",
+      "summary": "신라 법흥왕 때 불교를 받아들이는 과정에서 순교한 신하. 이차돈의 순교를 계기로 신라에서 불교가 공인되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0046157"
+      ],
+      "verifiedOn": "2026-11-09",
+      "aliases": [
+        "이차돈"
+      ],
+      "pages": [
+        23,
+        25
+      ],
+      "followingParticles": [
+        "의"
+      ]
+    },
+    {
+      "id": "verified-samguk-gwangdeung",
+      "era": "samguk",
+      "term": "관등",
+      "summary": "관리의 서열을 나눈 등급. 관직이 맡은 업무나 자리를 뜻한다면, 관등은 그 관리의 지위 순서를 뜻한다. 신라는 17관등을 두었다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/hm/view.do?levelId=hm_011_0040"
+      ],
+      "verifiedOn": "2026-11-09",
+      "aliases": [
+        "관등",
+        "17관등제"
+      ],
+      "pages": [
+        20,
+        23,
+        25
+      ],
+      "followingParticles": []
+    },
+    {
+      "id": "verified-samguk-gwanbok",
+      "era": "samguk",
+      "term": "관복제",
+      "summary": "관리의 등급에 따라 입는 옷의 색과 형태 등을 구분한 제도. 관등과 함께 관리의 서열을 드러냈다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/hm/view.do?levelId=hm_011_0040"
+      ],
+      "verifiedOn": "2026-11-09",
+      "aliases": [
+        "관복제"
+      ],
+      "pages": [
+        20
+      ],
+      "followingParticles": []
     }
   ]
 };})(typeof window==='object'?window:globalThis);
