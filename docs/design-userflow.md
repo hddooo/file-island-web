@@ -92,3 +92,6 @@ Era study: 개념 학습 → 시험에는 이렇게 나온다 → 빈칸 퀴즈 
 
 ## 0.8.45-beta
 백지 테스트: 제목·표 제목은 그대로 읽고 본문만 입력합니다. Tab/Enter/포커스 이동으로 개별 채점합니다. 별도 채점·다시 채우기 버튼은 없습니다.
+
+## 0.8.46-beta recall input
+A learner may type 왕, 신라, 서기 without the source quotation/book-title marks. Automatic field grading is retained.

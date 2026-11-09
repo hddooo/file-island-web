@@ -75,3 +75,6 @@ Add local-only bold-text blank recall across eight eras; preserve current source
 
 ## 0.8.45-beta
 Improve ephemeral recall readability: source titles retained, Korean inputs fit content, no bulk toolbar.
+
+## 0.8.46-beta
+Reduce unnecessary punctuation typing in transient blank recall without changing canonical content or other quizzes.

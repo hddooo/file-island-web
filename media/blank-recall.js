@@ -1,7 +1,8 @@
 /* Ephemeral recall over rendered, authenticated concept text. No storage or API writes. */
 (function(root){
   'use strict';
-  function normalize(value){return String(value||'').normalize('NFKC').toLowerCase().replace(/[\s·ㆍ]/g,'').trim();}
+  // Ignore presentation quotes/brackets only; keep their words and meaningful separators.
+  function normalize(value){return String(value||'').normalize('NFKC').toLowerCase().replace(/[\s·ㆍ"'‘’“”「」『』〈〉《》【】〔〕［］\[\]()（）{}｛｝]/g,'').trim();}
   function decorate(host){
     var doc=host.ownerDocument,slots=[],alive=true;
     Array.from(host.querySelectorAll('strong,b')).filter(function(node){return !node.parentElement.closest('strong,b')&&!node.closest('h1,h2,h3,h4,h5,h6,header,caption,summary,[role=heading],[data-blank-recall-heading],button,nav,[hidden],script,style')&&/[\p{L}\p{N}]/u.test(node.textContent);}).forEach(function(original){

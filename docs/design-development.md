@@ -187,3 +187,6 @@ The fourth era-study tab is 백지 테스트. Current concept bold text becomes 
 
 ## 0.8.45-beta
 Blank recall preserves source titles/captions. Korean-aware auto-sized inputs show typed text without clipping. Recall-only bulk grade/reset controls removed; individual keyboard/blur grading retained without persistence.
+
+## 0.8.46-beta recall normalization
+Recall-only grading ignores decorative quotation/bracket characters, not enclosed text or numeric/list punctuation. Source display and persistent records remain unchanged.

@@ -1,0 +1,10 @@
+'use strict';
+const assert=require('assert/strict'),fs=require('fs'),{JSDOM}=require('jsdom'),{normalize}=require('../media/blank-recall');
+const equivalent=[['“왕”','왕'],['“신라”','신라'],['「서기」','서기'],['『삼국사기』','삼국사기'],['(소수림왕)','소수림왕'],['[신라]','신라'],['《국사》','국사'],['〈태학〉','태학'],['【백제】','백제'],["'한강'","한강"],['（고구려）','고구려'],['백제(무령왕릉)','백제무령왕릉'],['“1, 2, 3”','1,2,3'],['「6·25」','6·25'],['〔집사부〕','집사부']];
+const different=[['백제(무령왕릉)','백제'],['1,2,3','123'],['1,2','2,1'],['6.25','625'],['3-1','31'],['신라/법흥왕','신라진흥왕'],['왕','황제'],['신라','백제'],['14','41'],['서기','국사'],['신라,백제','신라백제'],['고구려?','고구려'],['고구려!','고구려']];
+for(const [a,b] of equivalent)assert.equal(normalize(a),normalize(b),a);
+for(const [a,b] of different)assert.notEqual(normalize(a),normalize(b),a);
+const w=new JSDOM('<main><strong>“왕”</strong> <strong>「서기」</strong> <strong>1,2,3</strong></main>',{runScripts:'outside-only'}).window;
+w.eval(fs.readFileSync('media/blank-recall.js','utf8'));const host=w.document.querySelector('main'),before=host.innerHTML,c=w.HanqBlankRecall.decorate(host),fields=host.querySelectorAll('textarea');
+fields[0].value='왕';fields[1].value='서기';fields[2].value='123';assert.equal(c.grade(),2);assert.equal(host.querySelectorAll('.is-wrong').length,1);c.stop();assert.equal(host.innerHTML,before);w.close();
+console.log(JSON.stringify({equivalent:equivalent.length,different:different.length,domGrading:true,sourcePreserved:true}));
