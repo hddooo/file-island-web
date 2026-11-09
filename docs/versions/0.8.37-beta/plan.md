@@ -1,0 +1,2 @@
+# Plan
+Collapse empty source-illustration gallery table shells only in company mode. Preserve native text, captions, IDs, source bytes and normal-mode image rendering. Verify actual source page 23, repeated toggles, loading/failure, mobile, CI and deployment.

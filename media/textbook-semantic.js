@@ -556,6 +556,8 @@
       });
       if (head) tableNode.appendChild(head);
       tableNode.appendChild(body);
+      // Collapse only empty image-gallery shells in company mode, preserving text tables.
+      if (block.layoutRole === 'source-illustration-gallery' && !tableNode.textContent.trim() && !(rowAttachments.get(block) || []).length) group.setAttribute('data-company-image-only', '');
       scroll.appendChild(tableNode);
       group.appendChild(scroll);
       if (figureGroups) {

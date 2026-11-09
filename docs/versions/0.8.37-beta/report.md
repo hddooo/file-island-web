@@ -1,0 +1,2 @@
+# Verification
+Chrome and Edge: 9 cases each at 320/390/1440px, loaded/failed/pending artwork, 27 repeated mode toggles per engine. Actual source page 23: six empty gallery groups disappear; native text and a synthetic text-bearing gallery remain. Normal mode restores the same DOM. Source JSON unchanged. Semantic DOM 118 and library 81 checks passed; existing company-image regression passed. Local screenshots in evidence/empty-gallery. No live account, API, database or iPhone testing. CI/CD and live hashes are recorded after publication, not inferred from local checks.

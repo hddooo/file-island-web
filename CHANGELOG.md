@@ -1,3 +1,6 @@
+## 0.8.37-beta
+- Company-mode history hides empty image-gallery table shells, preserving source data and normal-mode artwork.
+
 ## 0.8.36-beta
 - 삼국 대야성·황산벌, 병부·상대등 등 초심자 용어 설명 보충.
 - 백제 수도 표에 위례성·웅진·사비 괄호 보충, 원문 보존.

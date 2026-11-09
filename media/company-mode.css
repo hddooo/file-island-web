@@ -267,3 +267,6 @@ html[data-company-mode=on] #app#app#app#app :is([data-company-native-directory],
 
 /* Hide source-image wrappers, status and reserved space only in company mode. */
 html[data-company-mode=on][data-company-history] body :is(.textbook-figure-group,.textbook-semantic-figure,.goryeo-script-reader figure[data-figure],.joseon-script-reader figure[data-figure],.opening-script-reader figure[data-figure],.company-image-note){display:none!important}
+
+/* Collapse the source table shell as well when it contains only hidden artwork. */
+html[data-company-mode=on][data-company-history] body [data-company-image-only]{display:none!important}
