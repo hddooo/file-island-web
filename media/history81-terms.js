@@ -62,11 +62,72 @@
       }
     }return ()=>undo.reverse().forEach(fn=>fn());
   }
+  // Move only reviewed parenthetical notes in the pinned private Goryeo reader.
+  // Notes are read from its DOM, never copied into this public bundle. The source
+  // elements remain intact off-DOM and are restored before recall or navigation.
+  function prepareGoryeoNotes(host,era,source,entries){
+    const byNode=new WeakMap(),undo=[],doc=host.ownerDocument;
+    const result={byNode,restore(){undo.reverse().forEach(fn=>fn());}};
+    if(era!=='goryeo'||source!=='245d166b2a252293903f87654028a648772f8c78dbb8ade09c86a21a223bb5a9')return result;
+    const rules=[
+      ['table16','1:2','정계와 계백료서',[0],true],
+      ['table16','1:2','역분전',[0,1]],
+      ['table16','1:2','흑창',[0]],
+      ['table16','1:2','기인 제도',[0,1]],
+      ['table16','1:2','사심관 제도',[0]],
+      ['table16','2:2','왕규의 난',[0,1]],
+      ['table16','3:2','광덕, 준풍',[0]],
+      ['table16','3:2','제위보',[0]],
+      ['table16','6:2','초조대장경',[2]],
+      ['table18','2:2','봉사 10조',[1],true],
+      ['table21','2:2','벽란도',[0]],
+      ['table21','2:2','관영상점',[0]]
+    ];
+    function ranges(text){const out=[];let depth=0,start=-1;for(let i=0;i<text.length;i++){if(text[i]==='('){if(!depth)start=i;depth++;}else if(text[i]===')'&&depth&&!--depth)out.push({start,end:i+1,text:text.slice(start,i+1)});}return depth?[]:out;}
+    function range(node,start,end){const walk=doc.createTreeWalker(node,4),leaves=[];let n,at=0;while((n=walk.nextNode())){leaves.push({n,start:at,end:at+n.length});at+=n.length;}const a=leaves.find(t=>t.end>start),b=leaves.find(t=>t.end>=end&&t.start<end);if(!a||!b)return null;const r=doc.createRange();r.setStart(a.n,start-a.start);r.setEnd(b.n,end-b.start);return r;}
+    function replace(original,phrase,notes,remove,keepDefinition){
+      const start=original.textContent.indexOf(phrase);if(start<0||!notes.length)return;
+      const existing=entries.get(normalize(phrase)),body=notes.join(' '),summary=keepDefinition&&existing?existing.summary+' '+body:body;
+      if(Array.from(summary).length>150)return; // Never hide text that cannot fit the existing tooltip contract.
+      const clone=original.cloneNode(true);remove(clone);
+      const index=clone.textContent.indexOf(phrase),r=range(clone,index,index+phrase.length);if(!r)return;
+      const mark=doc.createElement('span');mark.dataset.historySourceEmphasis='';mark.dataset.goryeoSourceNote='';mark.append(r.extractContents());r.insertNode(mark);
+      const entry={id:existing?.id||'goryeo-source-note-'+normalize(phrase),era,phrase,summary};byNode.set(mark,entry);
+      // Isolate the note trigger from neighbouring ink so existing maximal-run
+      // matching never makes a second tooltip or swallows the preserved wording.
+      const piece=doc.createElement('span');piece.style.display='contents';mark.replaceWith(piece);piece.append(mark);
+      original.replaceWith(clone);undo.push(()=>{if(clone.parentNode)clone.replaceWith(original);});
+    }
+    for(const [table,cell,phrase,indices,definition] of rules){
+      const scope=host.querySelector('table[data-structure="'+table+'"] [data-cell="'+cell+'"]');if(!scope)continue;
+      for(const node of [...scope.querySelectorAll('li')]){
+        if(node.querySelector('li')||!node.textContent.includes(phrase))continue;
+        const groups=ranges(node.textContent),selected=indices.map(i=>groups[i]);if(selected.some(n=>!n)||selected.some(n=>n.start<node.textContent.indexOf(phrase)+phrase.length))continue;
+        replace(node,phrase,selected.map(n=>n.text),clone=>{for(const n of [...selected].reverse()){let start=n.start;while(start>0&&/\s/.test(clone.textContent[start-1]))start--;range(clone,start,n.end)?.deleteContents();}},definition);
+      }
+    }
+    // Header reminders keep their original row header and stable cell ID.
+    for(const [table,cell]of [['table16','6:1'],['table18','3:1'],['table19','2:1']]){
+      const owner=host.querySelector('table[data-structure="'+table+'"] [data-cell="'+cell+'"]'),note=owner?.querySelector('.gsr-source-note'),label=owner?.querySelector(':scope > p');
+      if(note&&label)replace(owner,label.textContent.trim(),[note.textContent.trim()],clone=>clone.querySelector('.gsr-source-note').remove());
+    }
+    // Indented explanations attach to their enclosing keyword when it exists.
+    // A note-only keyword stays visible so no source term disappears from reading.
+    for(const [table,phrase,pattern]of [['table18','삼별초',/^\s*※\s*삼별초\s*:/],['table21','전시과',/^\s*※\s*시정\s*전시과/],['table21','녹과전',/^\s*※\s*녹과전\s*:/]]){
+      const note=[...host.querySelectorAll('table[data-structure="'+table+'"] li li')].find(n=>pattern.test(n.textContent));if(!note)continue;
+      const owner=note.parentElement.closest('li'),body=note.textContent.trim();if(!owner)continue;
+      const before=owner.cloneNode(true);before.querySelectorAll('ul,ol').forEach(n=>n.remove());
+      if(before.textContent.includes(phrase))replace(owner,phrase,[body],clone=>{const n=[...clone.querySelectorAll('li')].find(n=>n.textContent.trim()===body);if(!n)return;const list=n.parentElement;n.remove();if(!list.children.length)list.remove();});
+      else replace(note,phrase,[body],clone=>{clone.textContent=phrase;});
+    }
+    return result;
+  }
   function mount(host,era,source,verifiedData){
     const marker=verifiedData&&verifiedData.boundaryPrepared?'[data-history-glossary-certified]':'[data-history-source-emphasis]';
     const data=verifiedData||root.HanqHistory81TermData,doc=host.ownerDocument,win=doc.defaultView;
     if(!data||source!==data.sources[era])return {stop(){},count:0};
     const entries=new Map(data.entries.filter(e=>e.era===era&&Array.from(e.summary).length<=150).map(e=>[normalize(e.phrase),e]));
+    const notes=verifiedData?{byNode:new WeakMap(),restore(){}}:prepareGoryeoNotes(host,era,source,entries);
     const triggers=[],offs=[];let active=null,pinned=false,timer=null,stopped=false;
     const tip=doc.createElement('div');tip.className='history81-term-tooltip';tip.id='history81-term-tip-'+(++serial);tip.setAttribute('role','tooltip');tip.hidden=true;doc.body.append(tip);
     function listen(node,event,fn,options){node.addEventListener(event,fn,options);offs.push(()=>node.removeEventListener(event,fn,options));}
@@ -98,10 +159,11 @@
       while(i<children.length){const first=children[i];if(first.nodeType!==1||!first.matches(marker)){if(first.nodeType===1)annotate(first);i++;continue;}
         const nodes=[first];let j=i+1;
         while(j<children.length){const n=children[j];if(n.nodeType===1&&n.matches(marker)){nodes.push(n);j++;continue;}if(n.nodeType===3&&!n.textContent.trim()&&children[j+1]?.nodeType===1&&children[j+1].matches(marker)){nodes.push(n,children[j+1]);j+=2;continue;}break;}
-        const text=nodes.map(n=>n.textContent).join(''),entry=entries.get(normalize(text)),context=parent.closest('td,th,li,p')||parent;
+        if(nodes.some(n=>n.nodeType===1&&n.querySelector('[data-goryeo-source-note]'))){nodes.forEach(n=>{if(n.nodeType===1)annotate(n);});i=j;continue;}
+        const text=nodes.map(n=>n.textContent).join(''),entry=notes.byNode.get(first)||entries.get(normalize(text)),context=parent.closest('td,th,li,p')||parent;
         // A partially emphasized word is not a certified phrase. Never split a maximal styled run.
         const before=children[i-1],after=children[j],particle=/^(?:으로|에서|이라고|라고|로|이|가|을|를|은|는|의|에|와|과|도|만|까지)(?=$|[^\p{L}\p{N}])/u,partial=(before?.nodeType===3&&/[\p{L}\p{N}]$/u.test(before.textContent))||(after?.nodeType===3&&/^[\p{L}\p{N}]/u.test(after.textContent)&&!particle.test(after.textContent));
-        if(entry&&!partial&&!nodes.some(n=>n.nodeType===1&&(n.matches(blocked)||n.querySelector(blocked)))&&contextAllows(entry,context)){
+        if(entry&&!partial&&!nodes.some(n=>n.nodeType===1&&(n.matches(blocked)||n.querySelector(blocked)))&&(notes.byNode.has(first)||contextAllows(entry,context))){
           const trigger=doc.createElement('span');trigger.className='history81-term';trigger.dataset.termId=entry.id;trigger.dataset.termPhrase=entry.phrase;trigger.setAttribute('role','button');trigger.tabIndex=0;trigger.setAttribute('aria-label',text+' 용어 설명');trigger.setAttribute('aria-expanded','false');parent.insertBefore(trigger,first);nodes.forEach(n=>trigger.append(n));triggers.push(trigger);
           listen(trigger,'pointerenter',e=>{if(e.pointerType!=='touch')open(trigger,entry,false);});listen(trigger,'pointerleave',leave);
           listen(trigger,'pointerdown',()=>trigger.focus({preventScroll:true}));
@@ -118,7 +180,7 @@
     listen(doc,'pointerdown',e=>{if(active&&!active.contains(e.target)&&!tip.contains(e.target))close();},true);
     listen(doc,'keydown',e=>{if(e.key==='Escape'&&active){e.preventDefault();close();}});
     listen(win,'scroll',e=>{if(e.target!==tip)close();},true);listen(win,'resize',close);if(win.visualViewport){listen(win.visualViewport,'resize',close);listen(win.visualViewport,'scroll',close);}
-    return {count:triggers.length,stop(){if(stopped)return;stopped=true;close();restoreFrequency();offs.forEach(off=>off());tip.remove();triggers.forEach(node=>{if(node.parentNode)node.replaceWith(...node.childNodes);});}};
+    return {count:triggers.length,stop(){if(stopped)return;stopped=true;close();restoreFrequency();offs.forEach(off=>off());tip.remove();triggers.forEach(node=>{if(node.parentNode)node.replaceWith(...node.childNodes);});notes.restore();}};
   }
   root.HanqHistory81Terms={mount,normalize,softenFrequency};
 })(typeof window==='object'?window:globalThis);

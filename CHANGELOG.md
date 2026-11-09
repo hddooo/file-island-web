@@ -1,3 +1,6 @@
+## 0.9.1-beta
+- Move 18 Goryeo side explanations and mnemonics into their existing term tooltips. Preserve the private source, original styling, IDs, questions, answers and recall teardown.
+
 ## 0.9.0-beta
 - Paginate Hongmungwan era questions ten per page; preserve full-era review and PDF exports and account boundaries.
 
