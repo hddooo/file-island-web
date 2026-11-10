@@ -73,12 +73,12 @@
     const shell=doc.createElement('section');shell.className='goryeo-script-reader';host.replaceChildren(shell);
     function el(tag,text,cls){const e=doc.createElement(tag);if(text)e.textContent=text;if(cls)e.className=cls;return e;}
     function button(text,fn){const e=el('button',text);e.type='button';e.onclick=fn;return e;}
-    const header=el('header',null,'gsr-header');header.append(el('p','HISTORY / GORYEO','gsr-eyebrow'),el('h1',prepared.rootTitle));
-    const orientation=el('div',null,'gsr-orientation');renderMarkdown(doc,orientation,prepared.orientationMarkdown,figure);header.append(orientation);
+    const header=el('header',null,'gsr-header');
+    const orientation=el('div',null,'gsr-orientation');renderMarkdown(doc,orientation,prepared.orientationMarkdown,figure);
     const nav=el('nav',null,'gsr-topics');nav.setAttribute('aria-label','고려 학습 주제');
     viewTopics.forEach(t=>{const b=button(t.title,()=>navigate(t.id,mode==='exam'?'exam':mode==='recall'?'recall':'study'));b.dataset.topic=t.id;nav.append(b);});header.append(nav);
-    const modes=el('nav',null,'gsr-modes');modes.setAttribute('aria-label','자료 구분');
-    [['study','개념 학습'],['exam','시험에는 이렇게 나온다'],['practice','빈칸 퀴즈'],['recall','백지 테스트']].forEach(([id,title])=>{const b=button(title,()=>navigate(topic,id));b.dataset.mode=id;b.dataset.navigationNumber=String(modes.children.length+1).padStart(2,'0');modes.append(b);});header.append(modes);shell.append(header);
+    const modes=el('nav',null,'gsr-modes steps steps-culture');modes.setAttribute('aria-label','자료 구분');
+    [['study','개념 학습'],['exam','시험에는 이렇게 나온다'],['practice','빈칸 퀴즈'],['recall','백지 테스트']].forEach(([id,title])=>{const b=button('',()=>navigate(topic,id));b.className='step';b.dataset.mode=id;b.dataset.navigationNumber=String(modes.children.length+1).padStart(2,'0');b.append(el('span',b.dataset.navigationNumber),doc.createTextNode(' '+title));modes.append(b);});host.insertBefore(modes,shell);shell.append(header);
     const layout=el('div',null,'gsr-layout'),toc=el('nav',null,'gsr-toc'),body=el('main',null,'gsr-body');toc.setAttribute('aria-label','현재 주제 목차');layout.append(toc,body);shell.append(layout);
     function dismissImage(){if(!dialog)return;const d=dialog;dialog=null;if(d.node.open)d.node.close();d.node.remove();if(d.release)d.release();if(d.opener.isConnected)d.opener.focus();}
     function closeImage(){if(win.history.state&&win.history.state.goryeoImage){win.history.back();}else dismissImage();}
@@ -123,11 +123,13 @@
       return true;
     }
     let recallView=null;
-    function render(){if(recallView){recallView.stop();recallView=null;}const recall=mode==='recall';if(recall)mode='study';renderContent();if(recall){mode='recall';if(termView){termView.stop();termView=null;}recallView=win.HanqBlankRecall.decorate(body);modes.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.mode==='recall')));}}
-    function renderContent(){epoch++;clearImages();body.replaceChildren();toc.replaceChildren();
+    function render(){if(recallView){recallView.stop();recallView=null;}const recall=mode==='recall';if(recall)mode='study';renderContent();if(recall){mode='recall';if(termView){termView.stop();termView=null;}recallView=win.HanqBlankRecall.decorate(body);updateModeButtons('recall');}}
+    function updateModeButtons(current){modes.querySelectorAll('button').forEach(b=>{const selected=b.dataset.mode===current;b.classList.toggle('current',selected);if(selected)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current');});}
+    function renderContent(){nav.hidden=mode==='practice'||mode==='answers';epoch++;clearImages();body.replaceChildren();toc.replaceChildren();
       orientation.hidden=mode!=='study';nav.querySelectorAll('button').forEach(b=>{if(mode==='study'||mode==='exam')b.setAttribute('aria-current',String(b.dataset.topic===topic));else b.removeAttribute('aria-current');});
-      modes.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.mode===(mode==='answers'?'practice':mode))));
+      updateModeButtons(mode==='answers'?'practice':mode);
       const t=viewTopics.find(t=>t.id===topic)||viewTopics[0];topic=t.id;
+      if(mode==='study')body.append(orientation);
       body.append(el('h2',mode==='study'?t.title:mode==='exam'?t.title+' · 시험에는 이렇게 나온다':mode==='practice'?'고려 빈칸 문제':'고려 교재 정답'));
       if(mode==='practice'||mode==='answers')body.append(el('p','고려 전체 공통 100문항','gsr-review-scope'));
       if(mode==='practice'&&options.workspace){const heading=body.querySelector('h2');if(heading)heading.remove();options.workspace.show(body);return;}
@@ -235,7 +237,7 @@
     function navigate(nextTopic,nextMode){topic=nextTopic;mode=nextMode;const state={source:bundle.source.sha256,topic,mode};win.history.pushState(Object.assign({},win.history.state,{goryeoScript:state}),'',options.routeForMode?options.routeForMode(mode):undefined);render();}
     function pop(){if(dialog&&!(win.history.state&&win.history.state.goryeoImage)){dismissImage();return;}dismissImage();const s=win.history.state&&win.history.state.goryeoScript;if(s&&s.source===bundle.source.sha256&&viewTopics.some(t=>t.id===s.topic)&&['study','exam','practice','answers','recall'].includes(s.mode)){topic=s.topic;mode=s.mode;}else{topic=initialTopic;mode=options.modeFromLocation?options.modeFromLocation():options.initialMode||'study';}render();}
     if(!options.externalNavigation)win.addEventListener('popstate',pop);pop();
-    return {handlePopState(){if(!alive)return false;pop();return true;},stop(){if(recallView)recallView.stop();alive=false;epoch++;clearImages();drafts.clear();win.removeEventListener('popstate',pop);shell.remove();}};
+    return {handlePopState(){if(!alive)return false;pop();return true;},stop(){if(recallView)recallView.stop();alive=false;epoch++;clearImages();drafts.clear();win.removeEventListener('popstate',pop);modes.remove();shell.remove();}};
   }
   root.HanqGoryeoScriptReader={mount,inline,renderMarkdown,prepare:bundle=>root.HanqGoryeoStructure.prepare(bundle)};
   if(typeof module==='object'&&module.exports)module.exports=root.HanqGoryeoScriptReader;

@@ -108,11 +108,11 @@
     const shell=doc.createElement('section');shell.className='joseon-script-reader';host.replaceChildren(shell);
     function el(tag,text,cls){const e=doc.createElement(tag);if(text)e.textContent=text;if(cls)e.className=cls;return e;}
     function button(text,fn){const e=el('button',text);e.type='button';e.onclick=fn;return e;}
-    const header=el('header',null,'jsr-header');header.append(el('p','HISTORY / JOSEON','jsr-eyebrow'),el('h1','조선, 흐름을 따라 읽기'),el('p','왕의 흐름에서 제도와 생활, 문화까지. 주제를 골라 차근차근 읽어 보세요.'));
+    const header=el('header',null,'jsr-header');
     const nav=el('nav',null,'jsr-topics');nav.setAttribute('aria-label','조선 학습 주제');
     bundle.topics.forEach(t=>{const b=button(t.title,()=>navigate(t.id,mode==='exam'?'exam':mode==='recall'?'recall':'study'));b.dataset.topic=t.id;nav.append(b);});header.append(nav);
-    const modes=el('nav',null,'jsr-modes');modes.setAttribute('aria-label','자료 구분');
-    [['study','개념 학습'],['exam','시험에는 이렇게 나온다'],['practice','빈칸 퀴즈'],['recall','백지 테스트']].forEach(([id,title])=>{const b=button(title,()=>navigate(topic,id));b.dataset.mode=id;b.dataset.navigationNumber=String(modes.children.length+1).padStart(2,'0');modes.append(b);});header.append(modes);shell.append(header);
+    const modes=el('nav',null,'jsr-modes steps steps-culture');modes.setAttribute('aria-label','자료 구분');
+    [['study','개념 학습'],['exam','시험에는 이렇게 나온다'],['practice','빈칸 퀴즈'],['recall','백지 테스트']].forEach(([id,title])=>{const b=button('',()=>navigate(topic,id));b.className='step';b.dataset.mode=id;b.dataset.navigationNumber=String(modes.children.length+1).padStart(2,'0');b.append(el('span',b.dataset.navigationNumber),doc.createTextNode(' '+title));modes.append(b);});host.insertBefore(modes,shell);shell.append(header);
     const layout=el('div',null,'jsr-layout'),toc=el('nav',null,'jsr-toc'),body=el('main',null,'jsr-body');toc.setAttribute('aria-label','현재 주제 목차');layout.append(toc,body);shell.append(layout);
     function dismissImage(){if(!dialog)return;const d=dialog;dialog=null;if(d.node.open)d.node.close();d.node.remove();if(d.release)d.release();if(d.opener.isConnected)d.opener.focus();}
     function closeImage(){if(win.history.state&&win.history.state.joseonImage){win.history.back();}else dismissImage();}
@@ -159,10 +159,11 @@
       return mode==='exam'?exam:!exam;
     }
     let recallView=null;
-    function render(){if(recallView){recallView.stop();recallView=null;}const recall=mode==='recall';if(recall)mode='study';renderContent();if(recall){mode='recall';if(termView){termView.stop();termView=null;}recallView=win.HanqBlankRecall.decorate(body);modes.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.mode==='recall')));}}
-    function renderContent(){epoch++;clearImages();body.replaceChildren();toc.replaceChildren();
+    function render(){if(recallView){recallView.stop();recallView=null;}const recall=mode==='recall';if(recall)mode='study';renderContent();if(recall){mode='recall';if(termView){termView.stop();termView=null;}recallView=win.HanqBlankRecall.decorate(body);updateModeButtons('recall');}}
+    function updateModeButtons(current){modes.querySelectorAll('button').forEach(b=>{const selected=b.dataset.mode===current;b.classList.toggle('current',selected);if(selected)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current');});}
+    function renderContent(){nav.hidden=mode==='practice'||mode==='answers';epoch++;clearImages();body.replaceChildren();toc.replaceChildren();
       nav.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.topic===topic)));
-      modes.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.mode===(mode==='answers'?'practice':mode))));
+      updateModeButtons(mode==='answers'?'practice':mode);
       const t=bundle.topics.find(t=>t.id===topic)||bundle.topics[0];topic=t.id;
       body.append(el('h2',mode==='study'?t.title:mode==='exam'?t.title+' · 시험에는 이렇게 나온다':mode==='practice'?'조선 빈칸 문제':'조선 교재 정답'));
       if(mode==='practice'&&options.workspace){const heading=body.querySelector('h2');if(heading)heading.remove();options.workspace.show(body);return;}
@@ -451,7 +452,7 @@
     function navigate(nextTopic,nextMode){topic=nextTopic;mode=nextMode;const state={source:bundle.source.sha256,topic,mode};win.history.pushState(Object.assign({},win.history.state,{joseonScript:state}),'',options.routeForMode?options.routeForMode(mode):undefined);render();}
     function pop(){if(dialog&&!(win.history.state&&win.history.state.joseonImage)){dismissImage();return;}dismissImage();const s=win.history.state&&win.history.state.joseonScript;if(s&&s.source===bundle.source.sha256&&bundle.topics.some(t=>t.id===s.topic)&&['study','exam','practice','answers','recall'].includes(s.mode)){topic=s.topic;mode=s.mode;}else{topic=initialTopic;mode=options.modeFromLocation?options.modeFromLocation():options.initialMode||'study';}render();}
     if(!options.externalNavigation)win.addEventListener('popstate',pop);pop();
-    return {handlePopState(){if(!alive)return false;pop();return true;},stop(){if(recallView)recallView.stop();alive=false;epoch++;clearImages();drafts.clear();win.removeEventListener('popstate',pop);shell.remove();}};
+    return {handlePopState(){if(!alive)return false;pop();return true;},stop(){if(recallView)recallView.stop();alive=false;epoch++;clearImages();drafts.clear();win.removeEventListener('popstate',pop);modes.remove();shell.remove();}};
   }
   root.HanqJoseonScriptReader={mount,inline,renderMarkdown,readingMarkdown};
   if(typeof module==='object'&&module.exports)module.exports=root.HanqJoseonScriptReader;

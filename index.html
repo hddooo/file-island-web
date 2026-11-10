@@ -331,7 +331,7 @@
     var replaySavedNavigation=false, popNavigationVersion=0;
     app.addEventListener('click',function(event){
       var library=pendingStudyWorkspace(),target=event.target.closest('.step,.device-home,#homeBrand,[data-subject],#back,#moduleHome,#mobileBack,#mobileHome,#headerLogout,#headerAccount,.first-era-legacy a,.textbook-supplement-links a');
-      if(replaySavedNavigation||!target||!library||!library.hasUnsaved||!library.hasUnsaved())return;
+      if(replaySavedNavigation||!target||target.matches('.gsr-modes [data-mode],.jsr-modes [data-mode]')||!library||!library.hasUnsaved||!library.hasUnsaved())return;
       var parentAction=target._hanqParentBack,parentControl=typeof target._hanqParentControl==='function'?target._hanqParentControl():null;
       event.preventDefault();event.stopImmediatePropagation();library.prepareLeave().then(function(){if(!target.isConnected)return;if(parentAction&&(target._hanqParentBack!==parentAction||typeof target._hanqParentControl!=='function'||target._hanqParentControl()!==parentControl))return;replaySavedNavigation=true;try{target.click();}finally{replaySavedNavigation=false;}},function(){});
     },true);

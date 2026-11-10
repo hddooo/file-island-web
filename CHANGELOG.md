@@ -1,3 +1,7 @@
+## 0.10.1-beta
+- Align the Goryeo and Joseon readers with the shared four-step navigation and reading surface while preserving source content, stable IDs and inputs.
+- Preserve unsaved answers during internal mode changes, keep real page-leave confirmation, and retain the retry/save controls introduced in 0.10.0-beta.
+
 ## 0.10.0-beta
 - Add a local draft-only Retry action beside Save / Complete for era blank quizzes. Saved responses change only after a later explicit save.
 - Remove era review checkboxes, the checked-question filter/count and checking instructions while preserving existing selections, per-question verdicts, account isolation and other-era records.
