@@ -1,3 +1,6 @@
+## 0.10.2-beta
+- Remove the three redundant era blank-quiz guidance messages while preserving keyboard grading, explicit saving, draft-only retry and actionable errors.
+
 ## 0.10.1-beta
 - Align the Goryeo and Joseon readers with the shared four-step navigation and reading surface while preserving source content, stable IDs and inputs.
 - Preserve unsaved answers during internal mode changes, keep real page-leave confirmation, and retain the retry/save controls introduced in 0.10.0-beta.
