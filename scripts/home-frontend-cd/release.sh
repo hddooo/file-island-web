@@ -44,7 +44,8 @@ mkdir "$stage"
 while IFS= read -r rel; do
   [ -n "$rel" ] || exit 6
   mkdir -p "$stage/$(dirname "$rel")"
-  cp "$source_dir/$rel" "$stage/$rel"
+  # Bounded reads avoid Windows bind-mount copy failures; checksum gate remains mandatory.
+  dd if="$source_dir/$rel" of="$stage/$rel" bs=65536 status=none
 done < "$control/FILES"
 (cd "$stage"; sha256sum -c "$control/SHA256SUMS" >/dev/null)
 if [ -e "$root/releases/$sha" ]; then
