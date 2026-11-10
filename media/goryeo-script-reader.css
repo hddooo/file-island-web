@@ -166,7 +166,13 @@ html body #goryeoScript .goryeo-script-reader .gsr-silhak-scroll:focus-visible{o
  .goryeo-script-reader :is(.gsr-ruler-grid,.gsr-exam-grid) :is(p,li){overflow-wrap:anywhere;word-break:normal}
 }
 @media(max-width:700px){.goryeo-script-reader .gsr-exam-grid .gsr-nested-label{border-left:6px solid #739bb1;padding-left:18px;background:#edf3f6}.goryeo-script-reader .gsr-exam-grid th{width:100%}}
-.goryeo-script-reader .gsr-independent-grid{min-width:1160px;table-layout:fixed}
+.goryeo-script-reader .gsr-independent-grid{min-width:0;max-width:100%;table-layout:fixed}
+.goryeo-script-reader .gsr-independent-grid :is(th,td){min-width:0;padding:8px 6px;word-break:normal;overflow-wrap:anywhere}
+.goryeo-script-reader .gsr-independent-grid :is(p,li){font-size:inherit;line-height:inherit;word-break:normal;overflow-wrap:anywhere}
+.goryeo-script-reader .gsr-independent-grid ul{padding-left:1em}
+/* Decorative code-line gutters must not consume the narrow culture labels. */
+html[data-company-mode=on] #app #goryeoScript .gsr-independent-grid [data-company-line]{padding-left:0!important}
+html[data-company-mode=on] #app #goryeoScript .gsr-independent-grid [data-company-line]::before{display:none!important}
 .goryeo-script-reader .gsr-independent-grid th:nth-child(3){border-left:3px solid #7396b0}
 .goryeo-script-reader .gsr-independent-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 .goryeo-script-reader .gsr-content-band{min-width:0}
@@ -176,10 +182,14 @@ html body #goryeoScript .goryeo-script-reader .gsr-silhak-scroll:focus-visible{o
 .goryeo-script-reader figcaption{font-size:18px;line-height:1.7;color:#263745}
 @media(max-width:700px){.goryeo-script-reader .gsr-independent-panels{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:700px){
- .goryeo-script-reader .gsr-structure-scroll[data-structure="table22"]{container-type:inline-size}
- .goryeo-script-reader .gsr-independent-grid{min-width:0;width:calc(200cqw + 196px)}
- .goryeo-script-reader .gsr-independent-grid col:nth-child(odd){width:100px!important}
- .goryeo-script-reader .gsr-independent-grid col:nth-child(even){width:calc(100cqw - 2px)!important}
+ /* Stack each category/content pair in DOM order so keyboard focus never jumps between panels. */
+ .goryeo-script-reader .gsr-independent-grid{display:block;width:100%}
+ .goryeo-script-reader .gsr-independent-grid>colgroup{display:none}
+ .goryeo-script-reader .gsr-independent-grid>thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+ .goryeo-script-reader .gsr-independent-grid>tbody{display:grid;grid-template-columns:minmax(0,24%) minmax(0,1fr);width:100%}
+ .goryeo-script-reader .gsr-independent-grid>tbody>tr{display:contents}
+ .goryeo-script-reader .gsr-independent-grid>tbody>tr>:is(th,td){display:block;width:auto;grid-column:var(--gsr-culture-column);grid-row:var(--gsr-culture-row);padding:8px 6px}
+ .goryeo-script-reader .gsr-independent-grid th:nth-child(3){border-left-width:1px}
 }
 
 /* Reading space belongs to the lesson; topic and mode navigation stay above it. */
@@ -260,7 +270,8 @@ html body #goryeoScript .goryeo-script-reader :is(h2,h3){font-size:22px;line-hei
 html body #goryeoScript .goryeo-script-reader :is(h4,h5){font-size:20px;line-height:1.5}
 html body #goryeoScript .goryeo-script-reader p{margin:8px 0 12px}
 html body #goryeoScript .gsr-body>h2:first-child{margin-top:0}
-html body #goryeoScript .goryeo-script-reader .gsr-source-card table:not(.gsr-period-grid){font-size:17px;line-height:1.7}
+html body #goryeoScript .goryeo-script-reader .gsr-source-card table:not(.gsr-period-grid):not(.gsr-independent-grid){font-size:17px;line-height:1.7}
+html body #goryeoScript .goryeo-script-reader .gsr-source-card .gsr-independent-grid{font-size:14px;line-height:1.7}
 html body #goryeoScript .goryeo-script-reader .gsr-source-card :is(th,td){border-color:#a0b3a7!important}
 html body #goryeoScript .goryeo-script-reader .gsr-source-card .gsr-table{margin:12px 0;border-radius:0}
 @media(min-width:900px){html body #goryeoScript .goryeo-script-reader{padding:32px}}

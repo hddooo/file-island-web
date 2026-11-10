@@ -1,3 +1,7 @@
+## 0.10.5-beta
+- Fit the Goryeo culture table to the reading width. Keep its four-column comparison on wider screens and stack each category/content pair in the original reading and keyboard order on phones, without sideways panning or tiny scaled text.
+- Preserve all source cells, merged spans, headers, IDs and learning records. The separate unreleased 0.10.3 candidate remains excluded.
+
 ## 0.10.4-beta
 - Replace each era-menu wrong-review button with a passive completion check based on saved progress. Preserve incomplete/error states, era navigation, saved records and aggregate wrong-answer practice.
 - This release is based on 0.10.2-beta; the separate unreleased 0.10.3 candidate is not included.

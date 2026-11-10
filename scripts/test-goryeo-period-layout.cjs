@@ -61,7 +61,7 @@ ok(rule('.goryeo-script-reader .gsr-period-grid',Array.from(mobile.cssRules)).ge
 ok(rule('.goryeo-script-reader .gsr-period-grid :is(th,td)',Array.from(mobile.cssRules)).getPropertyValue('padding')==='5px 2px','narrow layout saves horizontal padding');
 ok(rule('.goryeo-script-reader .gsr-structure-scroll').getPropertyValue('overflow-x')==='auto','overflow remains recoverable rather than hidden');
 ok(rule('.goryeo-script-reader .gsr-ruler-grid').getPropertyValue('min-width')==='900px','other source tables are unchanged');
-ok(rule('.goryeo-script-reader .gsr-independent-grid').getPropertyValue('min-width')==='1160px','table22 keeps its separate mobile contract');
+ok(rule('.goryeo-script-reader .gsr-independent-grid').getPropertyValue('min-width')==='0','table22 fits the reading width under its own responsive contract');
 const company=read('media/company-mode.css');
 ok(company.includes(':is(p,li,dt,dd,td,th,label,blockquote){font-size:13px!important;line-height:1.8!important}'),'company-mode cell and paragraph size remains 13px');
 ok(!css.match(/gsr-period-grid[^{}]*\{[^}]*font-family/),'no company font override');

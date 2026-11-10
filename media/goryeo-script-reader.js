@@ -201,7 +201,7 @@
       const caption=el('caption',null,'gsr-visually-hidden');caption.id='gs-'+t.id+'-caption';caption.textContent=title.textContent;table.append(caption);table.setAttribute('aria-labelledby',title.id);table.setAttribute('role','table');wrap.setAttribute('aria-labelledby',title.id);
       const hint=el('p','좌우로 밀어 표를 읽으세요.','gsr-scroll-hint');hint.id='gs-'+t.id+'-hint';hint.hidden=true;parent.append(hint);wrap.setAttribute('aria-describedby',hint.id);
       table.classList.add(t.id==='table15'?'gsr-period-grid':t.id==='table16'?'gsr-ruler-grid':t.id==='table22'?'gsr-independent-grid':'gsr-exam-grid');
-      const cols=el('colgroup');(t.id==='table15'?[12,17.6,17.6,17.6,17.6,17.6]:t.id==='table16'?[150,470,280]:t.columns===4?[150,430,150,430]:t.columns===3?[120,160,480]:[160,600]).forEach(width=>{const col=el('col');col.style.width=width+(t.id==='table15'?'%':'px');cols.append(col);});table.append(cols);
+      const cols=el('colgroup');(t.id==='table15'?[12,17.6,17.6,17.6,17.6,17.6]:t.id==='table22'?[13,37,13,37]:t.id==='table16'?[150,470,280]:t.columns===4?[150,430,150,430]:t.columns===3?[120,160,480]:[160,600]).forEach(width=>{const col=el('col');col.style.width=width+(['table15','table22'].includes(t.id)?'%':'px');cols.append(col);});table.append(cols);
       const rows=new Map(),head=el('thead');head.setAttribute('role','rowgroup');table.append(head);let body=null;
       if(t.headers){const tr=el('tr');t.headers.forEach((text,i)=>{const th=el('th',text);th.id='gs-'+t.id+'-column-'+(i+1);th.scope='col';tr.append(th);});head.append(tr);}
       else if(!t.headerRow){const tr=el('tr'),a=el('th','구분'),b=el('th','내용');a.id='gs-'+t.id+'-category';b.id='gs-'+t.id+'-content';a.scope='col';b.scope=t.columns>2?'colgroup':'col';b.colSpan=t.columns-1;tr.append(a,b);head.append(tr);}
@@ -217,6 +217,10 @@
         const header=(t.headerRow&&c.row===1)||c.column===1||c.isHeader,cell=el(header?'th':'td');cell.id=c.id;cell.rowSpan=c.rowspan;cell.colSpan=c.colspan;cell.dataset.cell=c.row+':'+c.column;
         cell.setAttribute('role',header?(t.headerRow&&c.row===1?'columnheader':'rowheader'):'cell');
         if(t.id==='table16')cell.style.setProperty('--gsr-mobile-row',c.figure?11:c.row===6?11+c.column:2*c.row-2+c.column);
+        if(t.id==='table22'){
+          cell.style.setProperty('--gsr-culture-column',((c.column-1)%2)+1);
+          cell.style.setProperty('--gsr-culture-row',(c.row-1)*2+Math.floor((c.column-1)/2)+1);
+        }
         if(header)cell.scope=t.headerRow&&c.row===1?'col':c.rowspan>1?'rowgroup':'row';
         else{
           const rowHeaders=t.cells.filter(h=>(t.id!=='table22'||Math.floor((h.column-1)/2)===Math.floor((c.column-1)/2))&&(h.column===1||h.isHeader)&&h.column<c.column&&h.row<=c.row+c.rowspan-1&&h.row+h.rowspan>c.row).map(h=>h.id);
