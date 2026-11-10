@@ -1524,7 +1524,7 @@
     var RPS=null;
     function rpFlows(id){var L=(window.HANQ_LECTURE&&window.HANQ_LECTURE[id])||{},FW=window.HANQ_FLOW&&window.HANQ_FLOW[id],P=FW&&FW.list?FW.list:(L.parts&&L.parts.list?L.parts.list:[]);return P.filter(function(p){return p&&typeof p.id==='string'&&p.id;}).map(function(p){return {id:p.id,name:String(p.name||'')};});}
     function rpSummary(id){if(!window.HanqRead||!HPS)return null;try{return HanqRead.summarize(HanqRead.loadManifest(HPS,id),HanqRead.loadSeen(HPS,id));}catch(err){return null;}}
-    function rpHomeBadge(id){var s=rpSummary(id);if(!s)return '';if(s.chapter.read)return '<span class="rp-home">✓ 웹툰 읽음</span>';var n=s.flows.filter(function(f){return f.read;}).length;return n?'<span class="rp-home">웹툰 흐름 '+n+' / '+s.flows.length+' 읽음</span>':'';}
+    function rpHomeBadge(id){var s=rpSummary(id);if(!s)return '';if(s.chapter.read)return '<span class="rp-home">웹툰 읽음</span>';var n=s.flows.filter(function(f){return f.read;}).length;return n?'<span class="rp-home">웹툰 흐름 '+n+' / '+s.flows.length+' 읽음</span>':'';}
     function rpPaintLesson(sum){if(!current)return;sum=sum||rpSummary(current.id);
       app.querySelectorAll('.lesson-jump[data-target]').forEach(function(b){var f=sum?sum.flows.filter(function(x){return x.id===b.getAttribute('data-target');})[0]:null,s=b.querySelector('.rp-badge');if(!s){s=document.createElement('em');s.className='rp-badge';b.appendChild(s);}
         s.textContent=!f?'':f.read?'✓ 읽음':(f.seen?'본 컷 '+f.seen+' / '+f.total:'');s.hidden=!s.textContent;b.classList.toggle('rp-read',!!(f&&f.read));});

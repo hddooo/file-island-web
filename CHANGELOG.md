@@ -1,3 +1,6 @@
+## 0.9.2-beta
+- Remove completion checkmarks beside every era in the study menu while preserving saved progress, completion status and wrong-answer review.
+
 ## 0.9.1-beta
 - Move 18 Goryeo side explanations and mnemonics into their existing term tooltips. Preserve the private source, original styling, IDs, questions, answers and recall teardown.
 
