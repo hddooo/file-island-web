@@ -1,3 +1,7 @@
+## 0.10.6-beta
+- Fit the remaining Goryeo source tables and their temporary recall fields to the reading lane with proportional columns, preserving the existing mobile stack and all source content, IDs, merged cells and grading.
+- Remove decorative company-mode line-number gutters inside these tables. The separate unreleased 0.10.3 candidate remains excluded.
+
 ## 0.10.5-beta
 - Fit the Goryeo culture table to the reading width. Keep its four-column comparison on wider screens and stack each category/content pair in the original reading and keyboard order on phones, without sideways panning or tiny scaled text.
 - Preserve all source cells, merged spans, headers, IDs and learning records. The separate unreleased 0.10.3 candidate remains excluded.

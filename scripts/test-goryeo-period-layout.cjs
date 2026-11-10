@@ -25,7 +25,7 @@ ok(table.querySelector('[data-cell="5:4"]').colSpan===2,'shared last-row cell re
 const widths=Array.from(table.querySelectorAll('col'),c=>c.style.width);
 assert.deepEqual(widths,['12%','17.6%','17.6%','17.6%','17.6%','17.6%']);checks++;
 ok(Math.abs(widths.reduce((sum,width)=>sum+parseFloat(width),0)-100)<.001,'columns share exactly the available width');
-assert.deepEqual(Array.from(current.host.querySelectorAll('.gsr-ruler-grid col'),c=>c.style.width),['150px','470px','280px']);checks++;
+assert.deepEqual(Array.from(current.host.querySelectorAll('.gsr-ruler-grid col'),c=>c.style.width),['17%','52%','31%']);checks++;
 for(const spec of current.tables){
  const rendered=current.host.querySelector('table[data-structure="'+spec.id+'"]');
  for(const cell of spec.cells){
@@ -60,7 +60,7 @@ ok(mobile,'narrow-screen rules are present');
 ok(rule('.goryeo-script-reader .gsr-period-grid',Array.from(mobile.cssRules)).getPropertyValue('font-size')==='13px','narrow layout uses readable 13px, not scaled transform');
 ok(rule('.goryeo-script-reader .gsr-period-grid :is(th,td)',Array.from(mobile.cssRules)).getPropertyValue('padding')==='5px 2px','narrow layout saves horizontal padding');
 ok(rule('.goryeo-script-reader .gsr-structure-scroll').getPropertyValue('overflow-x')==='auto','overflow remains recoverable rather than hidden');
-ok(rule('.goryeo-script-reader .gsr-ruler-grid').getPropertyValue('min-width')==='900px','other source tables are unchanged');
+ok(rule('.goryeo-script-reader :is(.gsr-ruler-grid,.gsr-exam-grid)').getPropertyValue('min-width')==='0','other source tables also fit the reading width');
 ok(rule('.goryeo-script-reader .gsr-independent-grid').getPropertyValue('min-width')==='0','table22 fits the reading width under its own responsive contract');
 const company=read('media/company-mode.css');
 ok(company.includes(':is(p,li,dt,dd,td,th,label,blockquote){font-size:13px!important;line-height:1.8!important}'),'company-mode cell and paragraph size remains 13px');

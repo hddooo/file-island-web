@@ -4,11 +4,13 @@
 .goryeo-script-reader .gsr-structure-table caption{font-size:22px;font-weight:700;text-align:left;padding:16px;background:#fffdf8;color:#163e58}
 .goryeo-script-reader .gsr-structure-table :is(th,td){border:1px solid #8aabbc;padding:14px;vertical-align:top;white-space:normal;overflow-wrap:anywhere}
 .goryeo-script-reader .gsr-structure-table th{font-weight:700;background:#e2eff7;text-align:left}
-.goryeo-script-reader .gsr-ruler-grid{min-width:900px}
-.goryeo-script-reader .gsr-ruler-grid th:first-child{width:150px}
-.goryeo-script-reader .gsr-ruler-grid td[data-owner]{width:280px;padding:8px}
-.goryeo-script-reader .gsr-exam-grid{min-width:760px}
-.goryeo-script-reader .gsr-exam-grid th{width:160px}
+/* These source tables share a 720px reading lane, including recall mode. */
+.goryeo-script-reader :is(.gsr-ruler-grid,.gsr-exam-grid){min-width:0;max-width:100%}
+.goryeo-script-reader :is(.gsr-ruler-grid,.gsr-exam-grid) th{width:auto}
+.goryeo-script-reader .gsr-ruler-grid td[data-owner]{width:auto;padding:8px}
+/* Decorative code gutters must not squeeze the category and answer columns. */
+html[data-company-mode=on] #app #goryeoScript :is(.gsr-ruler-grid,.gsr-exam-grid) [data-company-line]{padding-left:0!important}
+html[data-company-mode=on] #app #goryeoScript :is(.gsr-ruler-grid,.gsr-exam-grid) [data-company-line]::before{display:none!important}
 .goryeo-script-reader [data-content-role="supplementary"]{background:#eef0f1}
 .goryeo-script-reader .gsr-source-note{font-weight:400;margin-top:12px}
 .goryeo-script-reader .gsr-structure-table :is(p,ul){margin:6px 0}
