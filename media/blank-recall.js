@@ -3,6 +3,24 @@
   'use strict';
   // Ignore presentation quotes/brackets only; keep their words and meaningful separators.
   function normalize(value){return String(value||'').normalize('NFKC').toLowerCase().replace(/[\s·ㆍ"'‘’“”「」『』〈〉《》【】〔〕［］\[\]()（）{}｛｝]/g,'').trim();}
+  // Only verified names of the same entity are alternatives. Other parentheses
+  // can contain required dates, people or qualifiers and must remain part of the answer.
+  var answerNameGroups=[
+    ['석가탑','불국사 3층 석탑','불국사 삼층 석탑'],
+    ['촌락 문서','민정 문서'],
+    ['9산 선문','9산문'],
+    ['대조영','고왕']
+  ].map(function(group){return group.map(normalize);});
+  function matchesAnswer(value,answer){
+    var given=normalize(value),expected=normalize(answer);
+    if(!given)return false;
+    if(given===expected)return true;
+    var source=String(answer||'').normalize('NFKC').trim(),pair=source.match(/^([^()]+)\(([^()]+)\)$/);
+    var names=pair?[normalize(pair[1]),normalize(pair[2])]:[expected];
+    return answerNameGroups.some(function(group){
+      return names.every(function(name){return group.indexOf(name)>=0;})&&group.indexOf(given)>=0;
+    });
+  }
   // Curated non-answer labels only; never exempt a whole table or historical term.
   var contextLabels=new Set(['특징','주요 특징','구분','분류','항목','내용','주요 내용','핵심 내용','설명','배경','원인','과정','결과','의의','목적','영향','시기','순서','정치','경제','사회','문화','교육','종교','군사','행정','외교','사회/경제','정치/경제','역사서','무덤','탑','기타','이전','이후','전성기 이전','멸망 후','전체 흐름','통일과정','연표','왕계 도식','오답 요원','명령','보고','정치 세력','문학','조선 전기','조선 후기','6조 직계제 도식'].map(normalize));
   function isContextLabel(answer,node,contexts){
@@ -31,13 +49,13 @@
       function blur(){if(input.value.trim())check(slot);}
       input.addEventListener('blur',blur);input.addEventListener('input',clear);input.addEventListener('keydown',key);slot.fit=fit;slot.dispose=function(){input.removeEventListener('blur',blur);input.removeEventListener('input',clear);input.removeEventListener('keydown',key);};
     });
-    function check(slot){var correct=normalize(slot.input.value)===normalize(slot.answer);slot.wrap.classList.toggle('is-correct',correct);slot.wrap.classList.toggle('is-wrong',!correct);slot.input.setAttribute('aria-invalid',String(!correct));slot.feedback.textContent=correct?'✓':'✕ '+slot.answer;slot.feedback.hidden=false;slot.fit();return correct;}
+    function check(slot){var correct=matchesAnswer(slot.input.value,slot.answer);slot.wrap.classList.toggle('is-correct',correct);slot.wrap.classList.toggle('is-wrong',!correct);slot.input.setAttribute('aria-invalid',String(!correct));slot.feedback.textContent=correct?'✓':'✕ '+slot.answer;slot.feedback.hidden=false;slot.fit();return correct;}
     function gradeAll(){if(!alive)return;return slots.filter(check).length;}
     function resetAll(){slots.forEach(function(s){s.input.value='';s.fit();s.wrap.classList.remove('is-correct','is-wrong');s.input.removeAttribute('aria-invalid');s.feedback.hidden=true;s.feedback.textContent='';});if(slots[0])slots[0].input.focus();}
     host.classList.add('blank-recall');
     var win=doc.defaultView,resize=function(){slots.forEach(function(s){s.fit();});};win.addEventListener('resize',resize);host.addEventListener('toggle',resize,true);resize();
     return {count:slots.length,grade:gradeAll,reset:resetAll,stop:function(){if(!alive)return;alive=false;win.removeEventListener('resize',resize);host.removeEventListener('toggle',resize,true);slots.forEach(function(s){s.dispose();s.wrap.replaceWith.apply(s.wrap,s.originals);s.answer='';});slots.length=0;host.classList.remove('blank-recall');}};
   }
-  root.HanqBlankRecall={decorate:decorate,normalize:normalize};
+  root.HanqBlankRecall={decorate:decorate,normalize:normalize,matchesAnswer:matchesAnswer};
   if(typeof module==='object'&&module.exports)module.exports=root.HanqBlankRecall;
 })(typeof window==='object'?window:globalThis);

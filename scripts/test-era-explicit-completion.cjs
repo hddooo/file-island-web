@@ -1,0 +1,20 @@
+'use strict';
+const fs=require('node:fs'),assert=require('node:assert/strict'),{JSDOM}=require('jsdom');
+const source='d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de';
+(async()=>{
+  const dom=new JSDOM('<main><button class="period ready" data-id="prehistory"><strong>선사</strong></button></main>',{url:'https://fixture.test',runScripts:'outside-only'}),w=dom.window,d=w.document;
+  w.eval(fs.readFileSync('media/era-study-progress.js','utf8'));
+  const model={id:'prehistory',version:'v',source:{sha256:source},items:[{id:'q1',blanks:[{id:'b1'}]},{id:'q2',blanks:[{id:'b2'}]}]};
+  const result={version:'v',workspace:{status:'active',responses:{q1:{submitted:true,correct:false,checkedSlots:[true],values:['합성 오답']},q2:{submitted:false,values:['']}}}};
+  const summary=()=>w.HanqEraProgress.summary(model,result);
+  assert.equal(summary().complete,false);assert.equal(summary().done,1);assert.deepEqual(Array.from(summary().wrong,x=>x.id),['q1']);
+  result.workspace.status='completed';assert.equal(summary().complete,true);assert.equal(summary().done,1);assert.deepEqual(Array.from(summary().wrong,x=>x.id),['q1']);
+  const snapshot=JSON.stringify(result),api={state:()=>({signedIn:true,ownerId:'synthetic',epoch:1}),onChange:()=>()=>{},textbookSemanticQuiz:async()=>model,textbookSourceWorkspace:async()=>result};
+  const controller=w.HanqEraProgress.mount(d.querySelector('main'),{api});await controller.ready;
+  assert.equal(d.querySelector('.era-complete').hidden,false);assert.match(d.querySelector('.era-complete').title,/저장\/완료/);assert.match(d.querySelector('.era-complete').title,/응답 1 \/ 2문항/);assert.equal(JSON.stringify(result),snapshot);controller.stop();
+  result.workspace.responses={};assert.equal(summary().complete,true);assert.equal(summary().done,0);assert.equal(summary().wrong.length,0);
+  result.workspace.status='active';assert.equal(summary().complete,false);result.workspace.status='paused';assert.equal(summary().complete,false);
+  result.workspace.responses=Object.fromEntries(model.items.map(item=>[item.id,{submitted:true,correct:true,checkedSlots:[true],values:['합성 정답']} ]));assert.equal(summary().complete,true);assert.equal(summary().done,2);assert.equal(summary().wrong.length,0);
+  result.version='stale';assert.throws(summary,/progress_binding/);dom.window.close();
+  console.log('PASS explicit completed status with partial/zero responses; active/paused incomplete; answered counts/wrongs and legacy full completion preserved; version guard; completion tooltip; no writes');
+})().catch(error=>{console.error(error);process.exitCode=1;});

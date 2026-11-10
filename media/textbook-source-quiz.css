@@ -101,3 +101,19 @@ html body #app#app#app .textbook-source-continuous .textbook-source-quiz-stateme
 html body #app#app#app .textbook-source-continuous .textbook-source-quiz-blank{display:inline!important;white-space:normal!important;margin-inline:3px}
 html body #app#app#app .textbook-source-continuous .textbook-source-quiz-blank>.textbook-source-quiz-input{display:inline-block!important;vertical-align:middle;margin-inline:4px}
 html body #app#app#app .textbook-source-continuous .textbook-source-quiz-blank>:is(.textbook-source-quiz-paren,.textbook-source-inline-feedback){display:inline!important;white-space:normal!important;vertical-align:baseline}
+
+/* Explicit era saving keeps the score and action on one compact row. */
+.textbook-source-save-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:nowrap;margin:10px 0;min-width:0}
+.textbook-source-save-bar .textbook-source-progress{margin:0;white-space:nowrap;min-width:0;font-size:14px}
+.textbook-source-save-complete{flex:none;min-height:44px;padding:6px 12px;border:1px solid #1756b1;border-radius:6px;background:#1756b1;color:#fff;font:inherit;font-size:14px;cursor:pointer;white-space:nowrap}
+.textbook-source-save-help{font-size:13px;line-height:1.6;color:#475569;margin:6px 0}
+.textbook-source-manual-save .textbook-source-list-controls:empty{display:none}
+html[data-company-mode=on] .textbook-source-save-help{color:#c9d1d9}
+/* Era wrong-answer hints remain red and pulse gently without disappearing. */
+html body #app#app#app#app .textbook-source-manual-save .textbook-source-inline-feedback[data-result=different]{color:#b91c1c!important;-webkit-text-fill-color:currentColor!important;font-weight:800!important;animation:source-wrong-answer-pulse 2.8s ease-in-out infinite!important}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-manual-save .textbook-source-inline-feedback[data-result=different]{color:#ff5b65!important}
+@keyframes source-wrong-answer-pulse{0%,100%{opacity:1}50%{opacity:.86}}
+@media(prefers-reduced-motion:reduce){html body #app#app#app#app .textbook-source-manual-save .textbook-source-inline-feedback[data-result=different]{animation:none!important;opacity:1}}
+
+html body #app#app#app#app .textbook-source-manual-save .textbook-source-quiz-input{font-size:16px!important}
+html body #app#app#app#app .textbook-source-manual-save .textbook-source-save-complete{min-height:44px!important;height:auto!important;padding:6px 12px!important;font-size:14px!important}

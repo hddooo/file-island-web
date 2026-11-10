@@ -3,7 +3,7 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-const { JSDOM } = require('../.test-tools/node_modules/jsdom');
+const { JSDOM } = require(process.env.JSDOM_PATH || '../.test-tools/node_modules/jsdom');
 const libraryModule = require('../media/textbook-semantic-library');
 const pageRenderer = require('../media/textbook-semantic');
 let checks = 0;
@@ -70,6 +70,10 @@ function setup() {
     t.setState({signedIn:false,ownerId:null,epoch:3});ok(!t.host.querySelector('[data-reader-page]')&&!t.host.querySelector('.textbook-semantic'),'logout clears all pages synchronously');
     t.library.stop();same(t.listeners.size,0,'stop unsubscribes');same(t.host.innerHTML,'<footer>기존 요약 바로가기</footer>','unrelated footer preserved');same(t.dom.window.localStorage.length,0,'no new persistent source storage');
   } finally{t.close();}
+  t=setup();try{
+    await t.library.mount(t.host,'prehistory',{fixedMode:true,initialMode:'quiz'});same(t.host.querySelectorAll('.textbook-supplement-links').length,0,'era screen omits people and region appendix links');same(t.quizRenderOptions.at(-1).manualSave,true,'era quiz uses explicit saving');
+    await t.library.mount(t.host,'prehistory');ok(t.host.querySelector('.textbook-supplement-links'),'standalone reader keeps appendix navigation');
+  }finally{t.close();}
   t=setup();try{
     const profile={schemaVersion:'synthetic-selected-profile'},foreign={schemaVersion:'synthetic-foreign-profile'};
     t.api.textbookSemanticManifest=async()=>({...manifest(),sourcePromptStylesByQuiz:{prehistory:profile,goryeo:foreign}});

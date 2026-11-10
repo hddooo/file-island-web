@@ -110,10 +110,12 @@ function extendedFixture(){
  }
  c.cleanup();let total=0;
  const dataRoot=path.resolve(process.argv[2]||'../api/private-textbook-semantic-data');
+ // Verified against the current 81-edition manifest, including all 55 Nambuk questions.
+ const expectedSourceCounts={prehistory:37,ancient:69,nambuk:55,goryeo:100,joseon:172,opening:118,colonial:84,modern:62};
  for(const era of ['prehistory','ancient','nambuk','goryeo','joseon','opening','colonial','modern']){
-  const d=JSON.parse(fs.readFileSync(path.join(dataRoot,'quizzes',era+'.json'))),before=JSON.stringify(d);stored=base();c=api.render(host,d,opts);await c.ready;eq(host.querySelectorAll('[data-source-item-id]').length,d.items.length,'all era questions rendered');
+  const d=JSON.parse(fs.readFileSync(path.join(dataRoot,'quizzes',era+'.json'))),before=JSON.stringify(d);eq(d.source.sha256,'d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de','approved 81-edition source');eq(d.items.length,expectedSourceCounts[era],'approved question count '+era);stored=base();c=api.render(host,d,opts);await c.ready;eq(host.querySelectorAll('[data-source-item-id]').length,d.items.length,'all era questions rendered');
   for(const item of d.items){const row=host.querySelector('[data-source-item-id="'+item.id+'"]'),slots=item.kind==='classification'?item.responseSlots:item.blanks.flatMap(b=>b.parts||[b]),nodes=[...row.querySelectorAll('.textbook-source-quiz-input')];eq(nodes.length,slots.length,'original input positions');nodes.forEach((n,i)=>{n.value=slots[i].answerIds.map(id=>item.answers.find(a=>a.id===id).text).join(item.kind==='sequence'?(item.answer.sequenceSeparator||''):', ');n.dispatchEvent(new w.Event('input'));n.dispatchEvent(new w.Event('blur'));});ok([...row.querySelectorAll('.textbook-source-inline-feedback')].every(n=>n.dataset.result==='match'),'source exact answers grade instantly');if(item.kind==='sequence'){nodes.forEach((n,i)=>{n.value=slots[i].answerIds.map(id=>item.answers.find(a=>a.id===id).text.normalize('NFKC')).join(',');n.dispatchEvent(new w.Event('input'));n.dispatchEvent(new w.Event('blur'));});ok([...row.querySelectorAll('.textbook-source-inline-feedback')].every(n=>n.dataset.result==='match'),'every source sequence accepts numeric comma input');}total++;}
   eq(JSON.stringify(d),before,'source immutable');c.cleanup();
  }
- eq(total,642,'all source questions');console.log(JSON.stringify({checks,failures:0,total,scope:'whole-era inline list; local grading; IME; edit/regrade; batched writes; slow ack races; stop/resume/fail/retry; exact source validation'}));w.close();
+ eq(total,697,'all eight-era source questions');console.log(JSON.stringify({checks,failures:0,total,scope:'whole-era inline list; local grading; IME; edit/regrade; batched writes; slow ack races; stop/resume/fail/retry; exact source validation'}));w.close();
 })().catch(e=>{console.error(e);process.exitCode=1;});

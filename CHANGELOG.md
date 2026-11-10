@@ -1,3 +1,10 @@
+## 0.9.1-beta
+- Move 18 Goryeo side explanations and mnemonics into their existing term tooltips. Preserve the private source, original styling, IDs, questions, answers and recall teardown.
+
+- Accept verified alternate names in temporary history reader recall; preserve persisted quiz and API grading.
+- Grade wrong-answer practice blanks with Tab/Enter while preserving IME, focus, original answers and read-only behavior.
+- Save era blanks through an explicit Save / Complete action with acknowledged partial/empty completion and existing retry/account protections.
+- Keep narrow mobile-table recall inputs wide enough to display a Korean glyph without crossing their source cell.
 ## 0.9.0-beta
 - Paginate Hongmungwan era questions ten per page; preserve full-era review and PDF exports and account boundaries.
 

@@ -91,7 +91,7 @@
         if(g!==generation||!host||session!==identity())return;
         if(callbacks&&callbacks.onSourceChange)callbacks.onSourceChange(next);
         return mount(element,id,hooks);
-      }).catch(function(){if(g===generation){sourceChanging=false;if(editionSelect){editionSelect.disabled=false;editionSelect.value=editionValue();}setStatus('현재 판본의 답안을 저장하지 못했어요. 판본을 바꾸지 않았습니다. 저장을 다시 확인해 주세요.');}});
+      }).catch(function(error){if(g===generation){sourceChanging=false;if(error&&error.code==='leave_cancelled'){if(editionSelect){editionSelect.disabled=false;editionSelect.value=editionValue();}return;}if(editionSelect){editionSelect.disabled=false;editionSelect.value=editionValue();}setStatus('현재 판본의 답안을 저장하지 못했어요. 판본을 바꾸지 않았습니다. 저장을 다시 확인해 주세요.');}});
     }
     function buildEditionControl() {
       if(sourceCatalog.singleEdition(doc))return;
@@ -152,7 +152,7 @@
       Promise.resolve().then(function(){return child&&child.hasUnsaved&&child.hasUnsaved()?child.prepareLeave():null;}).then(function(){
         if(g!==generation||!host||session!==identity())return;
         sourceChanging=false;if(callbacks&&callbacks.onModeChange)callbacks.onModeChange(next);captureRoute();return changeMode(next);
-      }).catch(function(){if(g===generation){sourceChanging=false;setStatus('현재 답안을 저장하지 못했어요. 학습 방식을 바꾸지 않았습니다.');}});
+      }).catch(function(error){if(g===generation){sourceChanging=false;if(error&&error.code==='leave_cancelled'){if(editionSelect){editionSelect.disabled=false;editionSelect.value=editionValue();}return;}setStatus('현재 답안을 저장하지 못했어요. 학습 방식을 바꾸지 않았습니다.');}});
     }
     function changeMode(next) {
       mode = next;
@@ -185,6 +185,7 @@
         if (!renderer || typeof renderer.render !== 'function') throw new Error('semantic_renderer_unavailable');
         child = renderer.render(panel, data, {
           ownerId: api.state().ownerId,
+          manualSave: selectedMode==='quiz',
           sourceRevision:sourceSha,
           sourcePromptStyles:selectedMode==='quiz'&&manifest.sourcePromptStylesByQuiz?manifest.sourcePromptStylesByQuiz[quizId]:undefined,
           loadProgress: function () { if (!valid(g,r)) return Promise.reject(sessionError()); return api.textbookSourceWorkspace(quizId,boundRevision); },
@@ -311,6 +312,7 @@
       controls.appendChild(nav);
       shell.insertBefore(controls, status);
       panel.setAttribute('id', panelId); panel.setAttribute('role', 'tabpanel');
+      if(callbacks&&callbacks.fixedMode)return;
       var supplements = node('nav', null, 'textbook-supplement-links'); supplements.setAttribute('aria-label', '교재 부록');
       (sourceCatalog.singleEdition(doc)?[['people','인물사'],['regions','지역사·지도']]:[['front','교재 활용법·목차'],['people','인물사'],['regions','지역사·지도'],['credits','그림 출처·발행 정보']]).forEach(function (item) {
         var link = node('a', item[1]); link.href = '#textbook/' + item[0];
