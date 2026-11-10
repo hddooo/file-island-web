@@ -1,3 +1,6 @@
+## 0.10.0-beta
+- Add a local draft-only Retry action beside Save / Complete for era blank quizzes. Saved responses change only after a later explicit save.
+- Remove era review checkboxes, the checked-question filter/count and checking instructions while preserving existing selections, per-question verdicts, account isolation and other-era records.
 ## 0.9.2-beta
 - Remove completion checkmarks beside every era in the study menu while preserving saved progress, completion status and wrong-answer review.
 

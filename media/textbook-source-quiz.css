@@ -105,7 +105,11 @@ html body #app#app#app .textbook-source-continuous .textbook-source-quiz-blank>:
 /* Explicit era saving keeps the score and action on one compact row. */
 .textbook-source-save-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:nowrap;margin:10px 0;min-width:0}
 .textbook-source-save-bar .textbook-source-progress{margin:0;white-space:nowrap;min-width:0;font-size:14px}
-.textbook-source-save-complete{flex:none;min-height:44px;padding:6px 12px;border:1px solid #1756b1;border-radius:6px;background:#1756b1;color:#fff;font:inherit;font-size:14px;cursor:pointer;white-space:nowrap}
+.textbook-source-save-actions{display:flex;align-items:center;gap:6px;flex-wrap:nowrap}
+.textbook-source-save-complete,.textbook-source-restart{flex:none;min-height:44px;padding:6px 12px;border:1px solid #1756b1;border-radius:6px;background:#1756b1;color:#fff;font:inherit;font-size:14px;cursor:pointer;white-space:nowrap}
+.textbook-source-restart{background:transparent;color:#1756b1}
+.textbook-source-restart:disabled{opacity:.5;cursor:default}
+html[data-company-mode=on] .textbook-source-restart{color:#c9d1d9;border-color:#7c95b5}
 .textbook-source-save-help{font-size:13px;line-height:1.6;color:#475569;margin:6px 0}
 .textbook-source-manual-save .textbook-source-list-controls:empty{display:none}
 html[data-company-mode=on] .textbook-source-save-help{color:#c9d1d9}
@@ -116,4 +120,4 @@ html[data-company-mode=on] body #app#app#app#app .textbook-source-manual-save .t
 @media(prefers-reduced-motion:reduce){html body #app#app#app#app .textbook-source-manual-save .textbook-source-inline-feedback[data-result=different]{animation:none!important;opacity:1}}
 
 html body #app#app#app#app .textbook-source-manual-save .textbook-source-quiz-input{font-size:16px!important}
-html body #app#app#app#app .textbook-source-manual-save .textbook-source-save-complete{min-height:44px!important;height:auto!important;padding:6px 12px!important;font-size:14px!important}
+html body #app#app#app#app .textbook-source-manual-save :is(.textbook-source-save-complete,.textbook-source-restart){min-height:44px!important;height:auto!important;padding:6px 12px!important;font-size:14px!important}
