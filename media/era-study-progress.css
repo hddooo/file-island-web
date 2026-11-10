@@ -1,4 +1,4 @@
-/* Account-backed saved wrong answers in the era menu. */
+/* Account-backed completion in the era menu; aggregate wrong review is separate. */
 .era-progress-row{display:flex;align-items:center;gap:8px;min-width:0}
 .era-progress-row>.period{flex:1;min-width:0;width:auto;margin:0}
 .era-progress-tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:155px}
@@ -63,3 +63,12 @@ html[data-company-mode=on] #eraWrongDialog#eraWrongDialog#eraWrongDialog#eraWron
 html[data-company-mode=on] #eraWrongDialog#eraWrongDialog#eraWrongDialog#eraWrongDialog .era-practice-input[data-result=wrong]{border:2px solid #ff9b92!important;font-weight:700!important}
 html[data-company-mode=on] #eraWrongDialog#eraWrongDialog#eraWrongDialog#eraWrongDialog .era-practice-feedback[data-result=correct]{color:#9fc6ff!important;font-weight:800!important}
 html[data-company-mode=on] #eraWrongDialog#eraWrongDialog#eraWrongDialog#eraWrongDialog .era-practice-feedback[data-result=wrong]{color:#ff9b92!important;font-weight:800!important}
+
+/* A passive completion mark replaces each era's duplicate review button. */
+#app .toc .era-progress-row{flex-wrap:nowrap}
+#app .toc .era-progress-row>.period{flex-basis:auto}
+#app .toc .era-progress-row>.era-progress-tools{flex:0 0 48px;max-width:48px;margin-left:0;justify-content:center;padding:0}
+#app .toc .era-progress-status{display:inline-flex;align-items:center;justify-content:center;min-height:24px;white-space:nowrap}
+#app .toc .era-complete{color:#247ac4;font-size:20px;font-weight:800;line-height:1}
+html[data-company-mode=on] #app .toc .era-complete{color:#9fc6ff}
+#app .toc .era-progress-row>.era-progress-tools[data-state=ready]{flex-basis:24px;max-width:24px}

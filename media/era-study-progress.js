@@ -30,7 +30,11 @@
     win.addEventListener('popstate',back);
     if(api&&api.onChange)unsubscribe=api.onChange(()=>{if(identity()!==owner){dispose();host.querySelectorAll('.era-progress-tools').forEach(n=>n.remove());}});
     async function read(id){const quizId=id==='samguk'?'ancient':id;const model=await api.textbookSemanticQuiz(quizId,revision);if(!valid())throw Error('session_changed');const result=await api.textbookSourceWorkspace(quizId,revision);if(!valid())throw Error('session_changed');if(model.id!==quizId)throw Error('era_binding');if(!model.version){const bytes=new win.TextEncoder().encode(JSON.stringify({schema:model.schemaVersion,source:model.source,items:model.items}));model.progressVersion=Array.from(new Uint8Array(await win.crypto.subtle.digest('SHA-256',bytes))).map(x=>x.toString(16).padStart(2,'0')).join('');if(!valid())throw Error('session_changed');}return {model,result,stats:summary(model,result)};}
-    function paint(tools,record){const button=tools.querySelector('.era-wrong-review');button.disabled=false;button.textContent='오답 다시보기';button.title='저장된 오답 '+record.stats.wrong.length+'문항';button.setAttribute('aria-label',tools.dataset.title+' 오답 다시보기, '+record.stats.wrong.length+'문항');tools.querySelector('.era-progress-status').textContent='';}
+    function paint(tools,record){
+      const status=tools.querySelector('.era-progress-status');status.replaceChildren();tools.dataset.state='ready';
+      status.title=record.stats.complete?'빈칸 학습 완료':'빈칸 학습 미완료';
+      if(record.stats.complete){const check=node('span','era-complete','✓');check.setAttribute('role','img');check.setAttribute('aria-label',tools.dataset.title+' 빈칸 학습 완료');status.append(check);}
+    }
     async function review(id,title,button,tools){
       if(!valid()||dialog)return;opener=button;
       dialog=node('dialog','era-wrong-dialog');dialog.id='eraWrongDialog';dialog.setAttribute('aria-label',title+' 오답 다시보기');
@@ -95,9 +99,8 @@
       const id=card.dataset.id;if(!eras.includes(id))continue;
       const row=node('div','era-progress-row'),tools=node('div','era-progress-tools');tools.dataset.title=card.querySelector('strong')?.textContent||id;
       card.before(row);row.append(card,tools);owned.push(row);
-      const button=node('button','era-wrong-review','오답 다시보기');button.type='button';button.disabled=true;const status=node('span','era-progress-status','확인 중');status.setAttribute('role','status');tools.append(button,status);
-      button.onclick=()=>review(id,tools.dataset.title,button,tools);
-      const load=async()=>{try{const record=await read(id);if(valid())paint(tools,record);}catch(e){if(!valid())return;status.textContent='확인 실패';button.disabled=false;button.title='저장된 오답 다시 확인';}};queue.push(load);
+      const status=node('span','era-progress-status','확인 중');status.setAttribute('role','status');status.setAttribute('aria-live','polite');tools.append(status);
+      const load=async()=>{try{const record=await read(id);if(valid())paint(tools,record);}catch(e){if(!valid())return;status.replaceChildren(doc.createTextNode('확인 실패'));status.title='빈칸 학습 완료 상태를 확인하지 못했습니다.';}};queue.push(load);
     }
     async function worker(){while(valid()&&queue.length)await queue.shift()();}
     controller.ready=Promise.all([worker(),worker()]);return controller;

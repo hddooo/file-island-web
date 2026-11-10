@@ -1,3 +1,7 @@
+## 0.10.4-beta
+- Replace each era-menu wrong-review button with a passive completion check based on saved progress. Preserve incomplete/error states, era navigation, saved records and aggregate wrong-answer practice.
+- This release is based on 0.10.2-beta; the separate unreleased 0.10.3 candidate is not included.
+
 ## 0.10.2-beta
 - Remove the three redundant era blank-quiz guidance messages while preserving keyboard grading, explicit saving, draft-only retry and actionable errors.
 
