@@ -1033,3 +1033,10 @@ The isolated branch starts at deployed dcfa5bcebcdf2dd47c1181b64511190a10004619.
 - 고려 table15만 min-width1120px 및 픽셀 열 폭을 없애고 12%+17.6%×5로 배치했다. 기본14px/좁은13px, 셀 여백축소와 긴문구 줄바꿈이며, 29셀 text/강조/ID/headers/colspan 및 다른 표 계약을 보존한다. overflow를 숨기거나 축소 transform으로 글자를 찌그러뜨리지 않는다. 좁은 화면에서는 표가 세로로 길어진다.
 - 로컬 검수: tooltip279개 및 기존 상호작용 회귀, 표15 mapping/원문구조 baseline 비교·회사 CSS 규칙209개 통과. 통합 CSS 검사는 jsdom 기반이며 브라우저 실제 치수 검사로 표시하지 않는다. 독립 코드 리뷰에서 발견한 회사모드 우선순위와 clipped tooltip 키보드 접근 문제를 반영했다.
 - 실제 private 고려 bundle은 이 작업에서 확보하지 못했다. 공개 좌표 매핑과 합성 문구를 사용했고 교재 원문은 공개하지 않는다. 로컬 Chromium socket 제한과 운영 보호 라우트 로그인 미복원으로 실제 mobile/원문 시각 검수는 미실행이다. 기존 qa-goryeo-stage1의 표15 기대 font/overflow만 요청에 맞춰 갱신했으며 해당 브라우저 harness를 실행했다고 주장하지 않는다. 정확 SHA 빌드/CD 및 실제 운영 버전·변경 자산 대조는 별도로 확인한다.
+
+## 2026-11-12 · 프론트 502 재발 방지 착수
+
+- 요청: 11/11 Windows 재부팅 이후 프론트 502 재발 방지와 관련 운영 문제 점검.
+- 기준: main 3ac59babdd3b2440843eefde0543c1c026d5a9b2, 별도 fix/frontend-resilience-20261111 브랜치. 소유 범위는 scripts/home-frontend-cd의 복구 검사·Compose 및 관련 문서다. UI/API/DB·접근 정책은 변경하지 않는다.
+- 확인: Windows Update 계획 재부팅 후 프론트 restart=no, 기존 모니터의 프론트 누락. 현재 운영은 복구되어 있다. 구현·검사·운영 적용·원격 CI는 각각 검증 뒤 기록한다.
+- 구현·로컬 검사·운영 설치 완료: 프론트 무중단 restart 정책, 1분 HTTP 감시와 제한된 자동복구. 새 단위20/20, 기존 포함35 통과/1 Windows 제외, 격리 crash 및 실제 HTTP 실패 복구 시험 통과. 원격 push/정확 SHA CI·CD는 대기. [운영 기록](../../home-frontend-cd.md#2026-11-12--502-재발-방지-운영-반영).

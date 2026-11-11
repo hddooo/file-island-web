@@ -54,3 +54,28 @@
 ### Windows CI shell correction
 
 Main CI `41461786562` succeeded. Automatic CD `41464689065` failed before artifact download because the default Windows PowerShell shell dot-sourced a temporary `.ps1` while script execution is disabled. The existing `12e57783038dd4f299d2ac7a2804392dc0262985` frontend remained HTTP 200. No execution policy is changed. The two run steps now invoke an installed Node helper using the ordinary `cmd` shell; it preserves main-head checks before download and deployment, fixed GitHub API scope, UTF-8 outputs, and the installed artifact verifier/deployment controller. Automatic deployment validation remains pending until a new exact-SHA CI and CD complete.
+
+## 2026-11-12 · 502 재발 방지 운영 반영
+
+11/11 05:00~05:02 KST Windows Update의 계획된 재부팅(System 1074: MoUsoCoreWorker/TrustedInstaller) 뒤 프론트만 `restart=no`로 남아 자동 복귀하지 않았다. NPM의 09:26/09:29 로그에는 frontend DNS 해석 실패가 기록됐고 09:31 복구됐다. OOM 증거는 없으며 API/DB/NPM은 `unless-stopped`로 복귀했다.
+
+### 설치한 방어
+
+- 운영 프론트의 restart 정책을 `unless-stopped`로 갱신했다. 재생성·재시작 없이 적용하여 시작 시각과 restartCount=0을 보존했다.
+- `frontend-health.cjs`를 기존 전용 controller에 설치했다. `HanQ-Frontend-Health-Monitor`가 동일 사용자·Limited·Interactive 권한으로 로그온 및 1분 간격에 실행한다. 새 권한/비밀값/포트/접근 게이트는 만들지 않았다.
+- 프론트 컨테이너 안의 버전·로그인 HTTP를 검사한다. 3회 연속 실패하고 배포 lock/유지보수/수동중지/시작 유예에 해당하지 않을 때 검증한 동일 컨테이너 ID만 재시작한다. 재시작 결과가 불명이어도 15분 간격 제한을 먼저 기록한다. lock 확인 실패는 복구하지 않는다.
+- 로컬 NPM TLS(정상 인증서와 study.fileisland.co.kr SNI)의 로그인·버전·API도 관측한다. 외부 URL 경로 불가만으로 프론트를 재시작하지 않는다. Windows의 외부 주소 timeout은 별도 관측 한계로 기록하며 내부 성공을 외부 성공으로 바꾸어 쓰지 않는다.
+- Compose 원본과 설치본에도 재시작 정책 및 HTTP healthcheck를 기록했다. **실행 중 컨테이너는 재생성하지 않아 Docker 내장 healthcheck는 아직 없다.** 동일 검사는 설치된 호스트 감시기가 수행하며, Compose healthcheck는 이후 승인된 재생성 때 적용된다.
+
+### 검증과 남는 한계
+
+- 새 복구 단위 20/20, 기존 controller 포함 Windows 35 통과/1 Linux symlink 항목 제외. PowerShell parser와 Compose 구문 검증 통과. 정적 public artifact 1,724개 빌드 통과.
+- 네트워크/볼륨 없는 격리 컨테이너의 비정상 종료 자동 재시작을 확인했다. 별도 합성 nginx에서는 실제 HTTP 실패 → 합성 3회 검사 → 정확 컨테이너 재시작 → HTTP 정상 복구를 확인했다. 운영 장애/호스트 재부팅을 유발한 시험은 하지 않았다.
+- 실제 예약작업은 LastTaskResult=0, 프론트 healthy, NPM 로그인/버전/API=200을 확인했다. 같은 호스트의 감시는 PC 전원·회선·Docker 자체 중단 및 로그인 이전을 보장하지 않는다. 기존 Windows Update/로그인/전원/보안 정책은 변경하지 않았다.
+- 원격 커밋 CI/CD와 실제 app-version은 이번 변경 push 후 별도 확인한다. UI·API·DB·회원 접근 규칙과 릴리스 표시 버전은 그대로다.
+
+### 유지보수와 복귀
+
+운영 중 의도적으로 프론트를 중지할 때 `docker stop fileisland-web-candidate`를 사용하면 감시기가 강제 시작하지 않는다. 응답 불가 작업을 계획했다면 controller의 `frontend-health/maintenance` 파일을 먼저 만들어 복구를 중지하고, 작업 뒤 그 파일만 제거한다. 상태는 `frontend-health/latest.json`, 이력은 날짜별 JSONL이며 외부에 공개하지 않는다. 손상된 상태 파일은 자동 초기화하지 않고 확인을 요구한다.
+
+설치 진입점은 검토된 `Install-FrontendMonitor.ps1`이다. 기존 파일은 `.before-resilience-<시각>`로 보존한다. 복귀가 필요하면 해당 감시 작업을 중지·비활성화하고 보존한 원본을 복원한다. restart=no로의 복귀는 오늘과 같은 자동 복구 누락을 되살리므로 장애 예방이 필요한 동안 유지한다. 배포된 릴리스/볼륨/DB는 이 작업에서 삭제하지 않았다.

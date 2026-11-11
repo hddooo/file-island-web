@@ -26,3 +26,6 @@ assets/home-server/
 *.pfx
 *.dump
 *.sql.gz
+
+# Host-local frontend monitoring evidence
+scripts/home-frontend-cd/frontend-health/

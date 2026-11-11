@@ -41,12 +41,17 @@
     {
       "source": "scripts/home-frontend-cd/runtime/compose.yaml.disabled",
       "target": "runtime/compose.yaml.disabled",
-      "sha256": "91e833ba661ed440a636290d185b94b34174fad1cccaf0c76b9ec6f237963239"
+      "sha256": "7f30db1e2f64dae514002dbe02edb69085a7a97cd03be41c95a826bdf90583f7"
     },
     {
       "source": ".github/workflows/home-frontend-cd.yml",
       "target": "REPOSITORY:.github/workflows/home-frontend-cd.yml",
       "sha256": "37d09b422282e41617ce5b453a9e0967c2107b58b2431d04abba6976591025ca"
+    },
+    {
+      "source": "scripts/home-frontend-cd/frontend-health.cjs",
+      "target": "frontend-health.cjs",
+      "sha256": "e67f471eb622b5274ea06a32d425c0938e305592f4fd8b276249ebdcd6930e60"
     }
   ],
   "memberAccessPreparation": {
@@ -56,5 +61,13 @@
     ],
     "health": "login HTML and version metadata hashes",
     "runtimeGateInstalled": false
+  },
+  "frontendResilience": {
+    "installedAt": "2026-11-11T17:56:39Z",
+    "restartPolicy": "unless-stopped",
+    "monitorTask": "HanQ-Frontend-Health-Monitor",
+    "interval": "PT1M",
+    "installedWithoutContainerRecreation": true,
+    "dockerHealthcheck": "Configured for future recreation; current instance is checked by installed host monitor"
   }
 }
