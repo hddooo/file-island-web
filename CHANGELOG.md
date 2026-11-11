@@ -1,3 +1,7 @@
+## 0.10.7-beta
+- Show the existing Joseon late-society subtitle in parentheses below its heading, at 14px while retaining the 20px heading.
+- Preserve source data, table topology, stable IDs and recall answers. The separate unreleased tooltip candidate remains excluded.
+
 ## 0.10.6-beta
 - Fit the remaining Goryeo source tables and their temporary recall fields to the reading lane with proportional columns, preserving the existing mobile stack and all source content, IDs, merged cells and grading.
 - Remove decorative company-mode line-number gutters inside these tables. The separate unreleased 0.10.3 candidate remains excluded.

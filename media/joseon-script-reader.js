@@ -313,7 +313,7 @@
         [2,3,4].forEach(single);
         function children(name,indices){const rows=indices.map(i=>{const p=parts[i],label=p.heading.textContent.split(' — ')[1];if(label==='계속'){p.heading.remove();return {nodes:p.nodes,page:p.page};}rename(p.heading,label);return {heading:p.heading,label,nodes:p.nodes,page:p.page};});groups.push({name,rows});}
         children('외교',[5,6,7,8]);[9,10,11,12].forEach(single);children('종교',[13,14]);
-        rename(parts[15].heading,'조선후기 사회');single(15);groups[groups.length-1].subtitle='평등으로 가는 시기';children('조선후기 경제',[16,17,18]);
+        rename(parts[15].heading,'조선후기 사회');single(15);groups[groups.length-1].subtitle='(평등으로 가는 시기)';children('조선후기 경제',[16,17,18]);
         const article=build(25,pages,title,groups),cell=groups[0].rows[0].cell;
         const wrapper=Array.from(cell.children).find(n=>n.tagName==='P'&&n.textContent==='도식의 연결 관계'),list=wrapper&&wrapper.nextElementSibling;
         if(list&&list.tagName==='UL'&&list.children.length===2){Array.from(list.children).forEach((li,i)=>{const ul=el('ul');ul.append(li);description(figures[i],[ul]);});list.remove();wrapper.remove();}

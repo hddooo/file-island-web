@@ -71,7 +71,7 @@ html body #joseonScript .joseon-script-reader .jsr-row-source{color:#586875!impo
 .joseon-script-reader .jsr-outline-table h4{font-size:20px;line-height:1.6;margin:0 0 10px;padding:0;border:0;word-break:keep-all}
 .jsr-outline-table .jsr-sub-header{font-weight:400}.jsr-outline-table .jsr-sub-header p{margin:0}
 .jsr-outline-table ul{padding-left:22px;margin:0}.jsr-outline-table .jsr-transcription ul{margin:12px 0}
-.jsr-outline-table .jsr-group-subtitle{display:block;font-size:18px;font-weight:400}.jsr-parent-context{display:none}
+.jsr-outline-table .jsr-group-subtitle{display:block;font-size:14px;font-weight:400;line-height:1.5;word-break:keep-all;overflow-wrap:anywhere}.jsr-parent-context{display:none}
 .joseon-script-reader .jsr-outline-table figure{max-width:620px;margin:20px auto}.jsr-outline-table .jsr-transcription{margin:8px 0 24px}
 .jsr-outline-table .jsr-row-source{margin-top:16px}.jsr-outline-table .jsr-table table{font-size:18px}
 .jsr-outline-table .jsr-transcription summary{min-height:44px;padding:6px 0;cursor:pointer}
