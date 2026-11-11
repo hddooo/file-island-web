@@ -1,3 +1,10 @@
+## 0.10.8-beta
+- Fix missing Joseon tooltips for complete terms combined in one emphasized list and four audited sentence endings.
+- Add source-verified definitions for nine Joseon terms and the plain Uijeongbu Seosa alias. Clarify Yukjo Jikgye and Gyeyu explanations.
+- Move the explicitly requested independent diagram/note descriptions into tooltips, emphasize Uijeongbu Seosa, and remove the dismissed Jeong Do-jeon bullet from reading only. Preserve original nodes and restore them before blank recall.
+- Preserve the private source, stable IDs, answers and records. Previously blocked note-movement candidates remain excluded.
+- Local DOM and synthetic checks passed; actual browser visual QA remains unverified because the isolated browser could not start. Production deployment is tracked separately.
+
 ## 0.10.7-beta
 - Show the existing Joseon late-society subtitle in parentheses below its heading, at 14px while retaining the 20px heading.
 - Preserve source data, table topology, stable IDs and recall answers. The separate unreleased tooltip candidate remains excluded.
@@ -673,3 +680,4 @@ Practice의 공통 자료 묶음에 정답 미준비 문항이 있어도, 문항
 - Exclude eleven non-answer labels/captions from real eight-era blank recall.
 - Add source-scoped Maesoseong, Wonjong/Aeno, and Cheongsanri tooltips.
 - Record broad source-layout audit coverage and unresolved source/mobile limitations.
+

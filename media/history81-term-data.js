@@ -172,7 +172,7 @@
       "phrase": "6조 직계제",
       "id": "yukjo",
       "term": "6조 직계제",
-      "summary": "6조가 의정부를 거치지 않고 왕에게 바로 보고하는 체제",
+      "summary": "의정부를 거치지 않고 왕이 6조에 직접 명령하고, 6조의 판서가 왕에게 직접 보고하여 업무를 처리한 제도. 태종과 세조가 왕권 강화를 위해 시행했다.",
       "sources": [
         "https://encykorea.aks.ac.kr/Article/E0043379"
       ]
@@ -2091,9 +2091,10 @@
     {
       "era": "joseon",
       "phrase": "계유정난",
+      "plainText": true,
       "id": "joseon-gyeyu-coup",
       "term": "계유정난",
-      "summary": "1453년 수양대군이 김종서·황보인 등 단종을 보좌하던 대신들을 제거하고 권력을 잡은 정변. 이후 세조로 즉위하는 발판이 되었다.",
+      "summary": "1453년 단종 때 수양대군(훗날 세조)이 김종서·황보인 등 대신들을 제거하고 권력을 장악한 사건. 수양대군은 이를 기반으로 1455년 왕위에 올랐다.",
       "sources": [
         "https://encykorea.aks.ac.kr/Article/E0003220"
       ]
@@ -2762,6 +2763,7 @@
     {
       "era": "joseon",
       "phrase": "공인이 등장",
+      "followingSuffixes": ["하는"],
       "id": "gongin",
       "term": "공인",
       "summary": "대동법 뒤 관청에 필요한 물품을 사서 대던 상인",
@@ -2802,6 +2804,7 @@
     {
       "era": "joseon",
       "phrase": "북벌을 추진",
+      "followingSuffixes": ["하였다"],
       "id": "joseon-hyojong-northern-campaign",
       "term": "북벌(효종)",
       "summary": "병자호란의 치욕을 씻고 청을 정벌하자는 주장. 효종이 군사력 강화와 함께 추진했지만 실제 청 정벌로 이어지지는 못했다.",
@@ -2822,6 +2825,7 @@
     {
       "era": "joseon",
       "phrase": "금위영을 설치",
+      "followingSuffixes": ["하였다"],
       "id": "joseon-geumwiyeong",
       "term": "금위영",
       "summary": "1682년 숙종 때 정초군과 훈련별대 등을 합쳐 설치한 중앙 군영. 국왕 호위와 수도 방어를 맡았으며, 오군영 가운데 마지막으로 설치되었다.",
@@ -2882,6 +2886,7 @@
     {
       "era": "joseon",
       "phrase": "공노비 6만여 명을 해방",
+      "followingSuffixes": ["하였다"],
       "id": "joseon-public-slave-emancipation",
       "term": "공노비 해방(순조)",
       "summary": "1801년 순조 때 왕실과 중앙 관청 소속 내시노비 약 6만 6천 명을 양인으로 바꾼 조치. 모든 노비를 해방한 것은 아니다.",
@@ -4427,7 +4432,7 @@
       "id": "joseon-uijeongbu-seosa-expansion",
       "term": "의정부 서사제",
       "phrase": "의정부 서사제 도식",
-      "summary": "6조의 업무를 의정부에서 먼저 논의한 뒤 왕에게 올려 결정하는 방식. 6조가 왕에게 직접 보고하는 6조 직계제와 구별한다.",
+      "summary": "6조의 업무를 의정부가 먼저 논의해 왕에게 보고하고, 왕의 결정을 의정부를 거쳐 6조에 내려 시행한 제도. 세종 때 재시행했으며 인사·군사 등 일부 업무는 왕에게 직접 보고했다.",
       "sources": [
         "https://contents.history.go.kr/front/tg/view.do?levelId=tg_003_0500"
       ]
@@ -4441,7 +4446,117 @@
       "sources": [
         "https://encykorea.aks.ac.kr/Article/E0007303"
       ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "호패법",
+      "id": "joseon-hopae",
+      "term": "호패법",
+      "plainText": true,
+      "summary": "1413년 태종 때 시행한 제도로, 16세 이상 남자에게 신분증인 호패를 지니게 했다. 신분과 호구를 파악해 조세 징수와 군역 부과의 기반을 마련하려 했다.",
+      "sources": ["https://encykorea.aks.ac.kr/Article/E0063880"]
+    },
+    {
+      "era": "joseon",
+      "id": "joseon-uijeongbu-seosa-expansion",
+      "term": "의정부 서사제",
+      "phrase": "의정부 서사제",
+      "plainText": true,
+      "emphasize": true,
+      "summary": "6조의 업무를 의정부가 먼저 논의해 왕에게 보고하고, 왕의 결정을 의정부를 거쳐 6조에 내려 시행한 제도. 세종 때 재시행했으며 인사·군사 등 일부 업무는 왕에게 직접 보고했다.",
+      "sources": [
+        "https://contents.history.go.kr/front/hm/view.do?levelId=hm_074_0040"
+      ]
+    },
+    {
+      "era": "joseon",
+      "id": "joseon-nami",
+      "term": "남이 장군",
+      "phrase": "남이 장군",
+      "plainText": true,
+      "summary": "조선 전기의 무신. 세조 때인 1467년 이시애의 난 진압과 건주위 여진 정벌에 공을 세웠다. 1468년 예종 즉위 후 역모 혐의로 처형되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0012096"
+      ]
+    },
+    {
+      "era": "joseon",
+      "phrase": "임신약조",
+      "id": "joseon-imsin-agreement",
+      "term": "임신약조",
+      "plainText": true,
+      "summary": "1512년 중종 때 조선이 대마도주와 맺은 약조. 삼포왜란 이후 끊긴 교역을 재개하되, 세견선을 25척으로 줄이는 등 통교 조건을 이전보다 엄격히 제한했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0047522"
+      ]
+    },
+    {
+      "era": "joseon",
+      "id": "joseon-sinim-purge",
+      "term": "신임사화",
+      "phrase": "신임사화",
+      "plainText": true,
+      "summary": "1721~1722년 경종 때 왕세제 책봉과 대리청정 문제, 목호룡의 고변 등을 둘러싸고 노론이 숙청되고 소론이 집권한 사건.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0033313"
+      ]
+    },
+    {
+      "era": "joseon",
+      "id": "joseon-daegong-sumi",
+      "term": "대공수미법",
+      "phrase": "대공수미법",
+      "plainText": true,
+      "summary": "공물 대신 쌀을 거두자는 공납 개혁안. 임진왜란 중 류성룡 등이 군량 확보와 공납 폐단 개선을 위해 추진했으며 대동법의 선행 제도였다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0014026"
+      ]
+    },
+    {
+      "era": "joseon",
+      "id": "joseon-jingbirok",
+      "term": "징비록",
+      "phrase": "징비록",
+      "plainText": true,
+      "summary": "류성룡이 임진왜란의 원인과 전개, 자신의 경험을 기록한 책. 전쟁의 잘못을 돌아보고 후환을 경계하려는 뜻에서 썼다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0055088"
+      ]
+    },
+    {
+      "era": "joseon",
+      "id": "joseon-samjeondo-monument",
+      "term": "삼전도비",
+      "phrase": "삼전도비",
+      "plainText": true,
+      "summary": "병자호란 뒤 청의 요구로 1639년에 세운 청 태종의 공덕비. 조선의 항복과 청의 승리를 기념하는 내용을 담았다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0026789"
+      ]
+    },
+    {
+      "era": "joseon",
+      "id": "joseon-mandongmyo",
+      "term": "만동묘",
+      "phrase": "만동묘",
+      "plainText": true,
+      "summary": "1703년 송시열의 뜻을 이어 권상하 등이 세운 사당. 명나라 신종과 의종을 제사하며 명에 대한 의리를 드러냈다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0017568"
+      ]
+    },
+    {
+      "era": "joseon",
+      "id": "joseon-ginyeonseol",
+      "term": "기년설",
+      "phrase": "기년설",
+      "plainText": true,
+      "summary": "상복을 1년 동안 입어야 한다는 주장. 1659년 효종 사후 예송에서 송시열 등 서인은 자의대비에게 1년 상복을 적용하자고 주장했다.",
+      "sources": [
+        "https://dh.aks.ac.kr/sillokwiki/index.php/기년설(朞年說)"
+      ]
     }
   ]
 };
 })(typeof window==='object'?window:globalThis);
+

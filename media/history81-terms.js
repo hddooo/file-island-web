@@ -122,12 +122,84 @@
     }
     return result;
   }
+  // Split complete dictionary terms in a punctuation-separated emphasis list.
+  // No textbook coordinates or private source sentences are encoded here.
+  // Keep the original nodes so recall and teardown see the unchanged source.
+  function prepareJoseonTerms(host,era,entries){
+    const undo=[],doc=host.ownerDocument;
+    if(era!=='joseon')return ()=>{};
+    function slice(nodes,start,end){
+      const out=doc.createDocumentFragment();let offset=0;
+      for(const node of nodes){const length=node.textContent.length,lo=offset;offset+=length;if(end<=lo||start>=offset)continue;
+        const copy=node.cloneNode(true),from=Math.max(0,start-lo),to=Math.min(length,end-lo);
+        if(copy.nodeType===3){copy.data=copy.data.slice(from,to);out.append(copy);continue;}
+        const walk=doc.createTreeWalker(copy,4),leaves=[];let n,at=0;while((n=walk.nextNode())){leaves.push({n,at});at+=n.length;}
+        for(const {n,at}of leaves)n.data=n.data.slice(Math.max(0,from-at),Math.max(0,Math.min(n.length,to-at)));
+        for(const empty of [...copy.querySelectorAll('*')].reverse())if(!empty.textContent&&!empty.querySelector('img,svg,br'))empty.remove();
+        copy.removeAttribute('data-history-source-emphasis');copy.querySelectorAll(marker).forEach(n=>n.removeAttribute('data-history-source-emphasis'));out.append(copy);
+      }return out;
+    }
+    function walk(parent){
+      if(parent.nodeType!==1||parent.matches(blocked))return;
+      const children=[...parent.childNodes];let i=0;
+      while(i<children.length){const first=children[i];if(first.nodeType!==1||!first.matches(marker)){if(first.nodeType===1)walk(first);i++;continue;}
+        const nodes=[first];let j=i+1;while(j<children.length){const n=children[j];if(n.nodeType===1&&n.matches(marker)){nodes.push(n);j++;}else if(n.nodeType===3&&!n.textContent.trim()&&children[j+1]?.nodeType===1&&children[j+1].matches(marker)){nodes.push(n,children[j+1]);j+=2;}else break;}i=j;
+        if(nodes.some(n=>n.nodeType===1&&(n.matches(blocked)||n.querySelector(blocked+',img,svg,br')||n.id||n.querySelector('[id]'))))continue;
+        const text=nodes.map(n=>n.textContent).join('');if(entries.has(normalize(text)))continue;
+        const parts=[...text.matchAll(/[^,·ㆍ、;\/]+/gu)];if(parts.length<2)continue;
+        const context=parent.closest('td,th,li,p')||parent;
+        if(parts.some(m=>!m[0].trim()||!entries.has(normalize(m[0]))||!contextAllows(entries.get(normalize(m[0])),context)))continue;
+        const prefix=doc.createRange();prefix.selectNodeContents(context);prefix.setEndBefore(first);const offset=prefix.toString().length,whole=context.textContent,left=whole[offset-1]||'',right=whole[offset+text.length]||'';
+        if(/[\p{L}\p{N}\p{M}_]/u.test(left)||/[\p{L}\p{N}\p{M}_]/u.test(right))continue;
+        const wrap=doc.createElement('span');wrap.dataset.historyTermList='';wrap.style.display='contents';let at=0;
+        for(const m of parts){const trim=m[0].trim(),start=m.index+m[0].indexOf(trim),end=start+trim.length;if(start>at)wrap.append(slice(nodes,at,start));const piece=doc.createElement('span'),mark=doc.createElement('span');piece.style.display='contents';mark.dataset.historySourceEmphasis='';mark.append(slice(nodes,start,end));piece.append(mark);wrap.append(piece);at=end;}if(at<text.length)wrap.append(slice(nodes,at,text.length));
+        parent.insertBefore(wrap,first);nodes.forEach(n=>n.remove());undo.push(()=>{if(wrap.parentNode)wrap.replaceWith(...nodes);});
+      }
+    }
+    // The two quoted notes were explicitly moved into their public definitions.
+    const requestedNotes=[['계유정난','(김종서 축출, 수양대군(=세조)이 권력 잡음)'],['남이 장군','(세조 때 이시애의 난 평정, 건주위 여진족 정벌)']];
+    for(const [phrase,note]of requestedNotes)for(const original of [...host.querySelectorAll('li,p')]){
+      if(original.querySelector('li,p,[id],a,button,input,textarea,select,[role=button]')||!original.textContent.includes(phrase)||!original.textContent.includes(note)||entries.get(normalize(phrase))?.plainText!==true)continue;
+      const targetWalk=doc.createTreeWalker(original,4);let target,canAnnotate=false;while((target=targetWalk.nextNode())){const start=target.data.indexOf(phrase);if(start<0||target.parentElement.closest(blocked+','+marker))continue;const prefix=doc.createRange();prefix.selectNodeContents(original);prefix.setEnd(target,start);const offset=prefix.toString().length,text=original.textContent,tail=text.slice(offset+phrase.length);if(!/[\p{L}\p{N}\p{M}_]/u.test(text[offset-1]||'')&&(!/^[\p{L}\p{N}\p{M}_]/u.test(tail)||/^(?:으로|에서|이|가|을|를|은|는|의|에|와|과|도|만|로)(?=$|[^\p{L}\p{N}\p{M}_])/u.test(tail)))canAnnotate=true;}if(!canAnnotate)continue;
+      const copy=original.cloneNode(true),start=copy.textContent.indexOf(note),end=start+note.length,leaves=[],walk=doc.createTreeWalker(copy,4);let n,at=0;while((n=walk.nextNode())){leaves.push({n,start:at,end:at+n.length});at+=n.length;}
+      const a=leaves.find(t=>t.end>start),b=leaves.find(t=>t.end>=end&&t.start<end);if(!a||!b)continue;const range=doc.createRange();range.setStart(a.n,start-a.start);range.setEnd(b.n,end-b.start);range.deleteContents();original.replaceWith(copy);undo.push(()=>{if(copy.parentNode)copy.replaceWith(original);});
+    }
+    walk(host);
+    // Only individually audited dictionary entries may annotate unstyled text.
+    for(const entry of entries.values())if(entry.plainText===true){
+      const leaves=[],walk=doc.createTreeWalker(host,4);let n;while((n=walk.nextNode()))if(n.parentElement.closest('li,p')&&!n.parentElement.closest(blocked+',script,style,[role="tooltip"],'+marker))leaves.push(n);
+      for(const node of leaves){const scope=node.parentElement.closest('li,p'),prefix=doc.createRange();prefix.selectNodeContents(scope);prefix.setEnd(node,0);const offset=prefix.toString().length,text=scope.textContent;const re=new RegExp(entry.phrase.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gu'),hits=[...node.data.matchAll(re)].filter(m=>{const tail=text.slice(offset+m.index+m[0].length);return !/[\p{L}\p{N}\p{M}_]/u.test(text[offset+m.index-1]||'')&&(!/^[\p{L}\p{N}\p{M}_]/u.test(tail)||/^(?:으로|에서|이|가|을|를|은|는|의|에|와|과|도|만|로)(?=$|[^\p{L}\p{N}\p{M}_])/u.test(tail));});if(!hits.length)continue;
+        const wrap=doc.createElement('span');wrap.style.display='contents';let at=0;for(const m of hits){wrap.append(doc.createTextNode(node.data.slice(at,m.index)));const mark=doc.createElement(entry.emphasize?'strong':'span');mark.dataset.historySourceEmphasis='';mark.textContent=m[0];wrap.append(mark);at=m.index+m[0].length;}wrap.append(doc.createTextNode(node.data.slice(at)));node.replaceWith(wrap);undo.push(()=>{if(wrap.parentNode)wrap.replaceWith(node);});
+      }
+    }
+    // Remove only the dismissed short bullet within its named person's section.
+    for(const node of host.querySelectorAll('li')){if(node.textContent.trim()!=='조선 건국 주도'||node.children.length||!node.parentElement.previousElementSibling?.textContent.includes('정도전'))continue;const anchor=doc.createComment('dismissed-person-summary');node.replaceWith(anchor);undo.push(()=>{if(anchor.parentNode)anchor.replaceWith(node);});}
+    // Keep the event under Sejo as requested; its definition retains the Danjong date.
+    for(const node of host.querySelectorAll('li')){if(node.textContent.trim()!=='계유정난 발생'||node.closest('tr')?.cells[0]?.textContent.trim()!=='단종'||node.id||node.querySelector('li,[id],a,button,input'))continue;const anchor=doc.createComment('dismissed-duplicate-event');node.replaceWith(anchor);undo.push(()=>{if(anchor.parentNode)anchor.replaceWith(node);});}
+    // Emphasize the requested Sejo policy without changing its wording or recall ink.
+    for(const cell of host.querySelectorAll('tr')){if(cell.cells[0]?.textContent.trim()!=='세조')continue;const leaves=[],walk=doc.createTreeWalker(cell,4);let n;while((n=walk.nextNode()))if(!n.parentElement.closest('strong,b,'+blocked))leaves.push(n);
+      for(const node of leaves){const match=/수신전\s*(?:&|·|과)\s*휼양전(?:이)?\s*폐지/u.exec(node.data);if(!match)continue;const wrap=doc.createElement('span');wrap.style.display='contents';const strong=doc.createElement('strong');strong.dataset.historyRequestedEmphasis='';strong.textContent=match[0];wrap.append(doc.createTextNode(node.data.slice(0,match.index)),strong,doc.createTextNode(node.data.slice(match.index+match[0].length)));node.replaceWith(wrap);undo.push(()=>{if(wrap.parentNode)wrap.replaceWith(node);});}
+    }
+    // The user explicitly dismissed this redundant diagram transcription.
+    // It is restored before blank recall, which still uses the full source.
+    const diagram=['국왕 / 의정부 / 6조','국왕 → 6조, 명령','6조 → 국왕, 보고','의정부는 가운데 상자로 표시되며, 이 도식의 두 화살표는 의정부를 거치지 않는다.'];
+    for(const title of host.querySelectorAll('p')){if(title.textContent.trim()!=='6조 직계제 도식')continue;const list=title.nextElementSibling;if(list?.tagName!=='UL'||list.children.length!==diagram.length||[...list.children].some((n,i)=>n.textContent.trim()!==diagram[i])||title.id||title.querySelector('[id],input,button,a')||list.id||list.querySelector('[id],input,button')||![...host.querySelectorAll(marker)].some(n=>n.textContent==='6조 직계제'))continue;
+      const titleAnchor=doc.createComment('collapsed-term-diagram-title'),listAnchor=doc.createComment('collapsed-term-diagram-list');title.replaceWith(titleAnchor);list.replaceWith(listAnchor);undo.push(()=>{if(titleAnchor.parentNode)titleAnchor.replaceWith(title);if(listAnchor.parentNode)listAnchor.replaceWith(list);});
+    }
+    // Collapse the matching Uijeongbu diagram only when all four relations agree.
+    const relations=[['방향','관계'],['국왕 → 의정부','재가'],['의정부 → 국왕','건의'],['의정부 → 6조','명령'],['6조 → 의정부','보고']];
+    for(const title of host.querySelectorAll('p')){if(!title.textContent.trim().startsWith('의정부 서사제 도식 ·'))continue;const diagram=title.nextElementSibling,table=diagram?.querySelector('table');if(!table||title.id||title.querySelector('[id],input,button,a')||diagram.id||diagram.querySelector('[id],input,button')||[...diagram.childNodes].some(n=>n!==table&&(n.nodeType!==3||n.textContent.trim()))||![...host.querySelectorAll(marker)].some(n=>n.textContent==='의정부 서사제'))continue;const rows=[...table.rows];if(rows.length!==relations.length||rows.some((r,i)=>r.cells.length!==2||[...r.cells].some((c,j)=>c.textContent.trim()!==relations[i][j])))continue;
+      const titleAnchor=doc.createComment('collapsed-council-diagram-title'),diagramAnchor=doc.createComment('collapsed-council-diagram');title.replaceWith(titleAnchor);diagram.replaceWith(diagramAnchor);undo.push(()=>{if(titleAnchor.parentNode)titleAnchor.replaceWith(title);if(diagramAnchor.parentNode)diagramAnchor.replaceWith(diagram);});
+    }
+    return ()=>undo.reverse().forEach(fn=>fn());
+  }
   function mount(host,era,source,verifiedData){
     const marker=verifiedData&&verifiedData.boundaryPrepared?'[data-history-glossary-certified]':'[data-history-source-emphasis]';
     const data=verifiedData||root.HanqHistory81TermData,doc=host.ownerDocument,win=doc.defaultView;
     if(!data||source!==data.sources[era])return {stop(){},count:0};
     const entries=new Map(data.entries.filter(e=>e.era===era&&Array.from(e.summary).length<=150).map(e=>[normalize(e.phrase),e]));
     const notes=verifiedData?{byNode:new WeakMap(),restore(){}}:prepareGoryeoNotes(host,era,source,entries);
+    const restoreJoseon=verifiedData?()=>{}:prepareJoseonTerms(host,era,entries);
     const triggers=[],offs=[];let active=null,pinned=false,timer=null,stopped=false;
     const tip=doc.createElement('div');tip.className='history81-term-tooltip';tip.id='history81-term-tip-'+(++serial);tip.setAttribute('role','tooltip');tip.hidden=true;doc.body.append(tip);
     function listen(node,event,fn,options){node.addEventListener(event,fn,options);offs.push(()=>node.removeEventListener(event,fn,options));}
@@ -162,7 +234,7 @@
         if(nodes.some(n=>n.nodeType===1&&n.querySelector('[data-goryeo-source-note]'))){nodes.forEach(n=>{if(n.nodeType===1)annotate(n);});i=j;continue;}
         const text=nodes.map(n=>n.textContent).join(''),entry=notes.byNode.get(first)||entries.get(normalize(text)),context=parent.closest('td,th,li,p')||parent;
         // A partially emphasized word is not a certified phrase. Never split a maximal styled run.
-        const before=children[i-1],after=children[j],particle=/^(?:으로|에서|이라고|라고|로|이|가|을|를|은|는|의|에|와|과|도|만|까지)(?=$|[^\p{L}\p{N}])/u,partial=(before?.nodeType===3&&/[\p{L}\p{N}]$/u.test(before.textContent))||(after?.nodeType===3&&/^[\p{L}\p{N}]/u.test(after.textContent)&&!particle.test(after.textContent));
+        const before=children[i-1],after=children[j],suffixAllowed=entry?.followingSuffixes?.some(s=>after?.nodeType===3&&after.textContent.startsWith(s)&&!/[\p{L}\p{N}]/u.test(after.textContent[s.length]||'')),particle=/^(?:으로|에서|이라고|라고|로|이|가|을|를|은|는|의|에|와|과|도|만|까지)(?=$|[^\p{L}\p{N}])/u,partial=(before?.nodeType===3&&/[\p{L}\p{N}]$/u.test(before.textContent))||(after?.nodeType===3&&/^[\p{L}\p{N}]/u.test(after.textContent)&&!particle.test(after.textContent)&&!suffixAllowed);
         if(entry&&!partial&&!nodes.some(n=>n.nodeType===1&&(n.matches(blocked)||n.querySelector(blocked)))&&(notes.byNode.has(first)||contextAllows(entry,context))){
           const trigger=doc.createElement('span');trigger.className='history81-term';trigger.dataset.termId=entry.id;trigger.dataset.termPhrase=entry.phrase;trigger.setAttribute('role','button');trigger.tabIndex=0;trigger.setAttribute('aria-label',text+' 용어 설명');trigger.setAttribute('aria-expanded','false');parent.insertBefore(trigger,first);nodes.forEach(n=>trigger.append(n));triggers.push(trigger);
           listen(trigger,'pointerenter',e=>{if(e.pointerType!=='touch')open(trigger,entry,false);});listen(trigger,'pointerleave',leave);
@@ -180,8 +252,9 @@
     listen(doc,'pointerdown',e=>{if(active&&!active.contains(e.target)&&!tip.contains(e.target))close();},true);
     listen(doc,'keydown',e=>{if(e.key==='Escape'&&active){e.preventDefault();close();}});
     listen(win,'scroll',e=>{if(e.target!==tip)close();},true);listen(win,'resize',close);if(win.visualViewport){listen(win.visualViewport,'resize',close);listen(win.visualViewport,'scroll',close);}
-    return {count:triggers.length,stop(){if(stopped)return;stopped=true;close();restoreFrequency();offs.forEach(off=>off());tip.remove();triggers.forEach(node=>{if(node.parentNode)node.replaceWith(...node.childNodes);});notes.restore();}};
+    return {count:triggers.length,stop(){if(stopped)return;stopped=true;close();restoreFrequency();offs.forEach(off=>off());tip.remove();triggers.forEach(node=>{if(node.parentNode)node.replaceWith(...node.childNodes);});restoreJoseon();notes.restore();}};
   }
   root.HanqHistory81Terms={mount,normalize,softenFrequency};
 })(typeof window==='object'?window:globalThis);
+
 
