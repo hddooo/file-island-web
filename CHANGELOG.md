@@ -1,3 +1,9 @@
+## 0.10.15-beta
+
+- Remove every manual grade button from era wrong-answer blank practice, completing the user's requested keyboard-only flow.
+- Preserve Tab/Enter and Korean IME grading, announced results and mobile blur grading. Return focus to Close after the last blank without accidental IME dismissal.
+- Keep existing records, routes, the Uigeumbu artwork/name and the Jeong Do-jeon display unchanged.
+
 ## 0.10.14-beta
 
 - Grade the current temporary era wrong-answer blank with Tab or Enter after Korean composition commits, including native Tab focus movement and Safari-style event ordering.

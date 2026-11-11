@@ -44,6 +44,7 @@
       if(dialog.showModal)dialog.showModal();else dialog.setAttribute('open','');x.focus();
       try{const records=[],failed=[];for(const era of (id==='all'?eras:[id])){try{records.push(await read(era));}catch(e){if(!valid()||dialog!==current)return;failed.push(era);}}if(!valid()||dialog!==current)return;if(id!=='all'&&records[0])paint(tools,records[0]);body.replaceChildren();body.removeAttribute('role');const hint=node('p','era-wrong-scope','현재 저장된 오답만 다시 풉니다. Tab 또는 Enter로 채점하고 다음 빈칸으로 이동합니다. 재풀이 결과는 저장하지 않습니다.');hint.id='era-practice-hint';body.append(hint);let fieldCount=0,imeAdvanceTarget=null,imeAdvanceUntil=0,pointerVersion=0,keyVersion=0;
         current.addEventListener('pointerdown',()=>{pointerVersion++;imeAdvanceTarget=null;});
+        current.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.altKey&&!e.ctrlKey&&!e.metaKey&&(e.repeat&&e.target===x||e.target===imeAdvanceTarget&&Date.now()<imeAdvanceUntil)){e.preventDefault();e.stopPropagation();}},true);
         current.addEventListener('keyup',e=>{if(e.key==='Enter'||e.code==='Enter'){keyVersion++;imeAdvanceTarget=null;}});
         if(failed.length)body.append(node('p','era-wrong-error','일부 시대의 기록을 불러오지 못했습니다. 닫고 다시 시도해 주세요.'));
         if(!records.some(r=>r.stats.wrong.length)&&!failed.length){body.append(node('p','era-wrong-empty','저장된 오답이 없습니다.'));return;}
@@ -70,7 +71,7 @@
               }));
               function keyboardAction(key,shiftKey){
                 const nodes=[...current.querySelectorAll('button,input,a[href],[tabindex="0"]')].filter(n=>!n.disabled),step=key==='Tab'&&shiftKey?-1:1;
-                return {key,step,pointerVersion,keyVersion,nativeTarget:nodes[nodes.indexOf(input)+step]};
+                return {key,step,pointerVersion,keyVersion,nativeTarget:nodes[(nodes.indexOf(input)+step+nodes.length)%nodes.length]};
               }
               function finish(action){
                 if(!valid()||dialog!==current||!input.isConnected||composing)return;
@@ -78,7 +79,7 @@
                 // A native IME Tab may already have moved focus. Do not steal focus after a pointer move.
                 if(!action||action.pointerVersion!==pointerVersion||doc.activeElement!==input&&(action.key!=='Tab'||doc.activeElement!==action.nativeTarget))return;
                 const inputs=[...current.querySelectorAll('.era-practice-input')],next=inputs.indexOf(input)+action.step;
-                if(next<0)x.focus();else if(next<inputs.length)inputs[next].focus();else button.focus();
+                if(next<0)x.focus();else if(next<inputs.length)inputs[next].focus();else x.focus();
                 if(action.ime&&action.key==='Enter'&&action.keyVersion===keyVersion){imeAdvanceTarget=doc.activeElement;imeAdvanceUntil=Date.now()+100;}
               }
               function settleComposition(){
@@ -112,7 +113,6 @@
             }else question.append(doc.createTextNode(item.text||item.sourceText||''));
             for(const collection of [item.events,item.choices])if(collection&&collection.length){const list=node('ul','era-wrong-choices');collection.forEach(c=>list.append(node('li','',c.sourceText||c.text)));card.append(list);}
             if(item.kind==='classification')slots.forEach((slot,i)=>{const row=node('div','era-practice-classification'),label=item.subitems[i].sourceText;row.append(node('span','',label),field(slot,label));card.append(row);});
-            const button=node('button','era-practice-grade','채점');button.type='button';button.onclick=()=>grade();card.append(button);
             function grade(index){
               if(!valid()||dialog!==current||!card.isConnected)return;
               const graded=engine.gradePractice(item,fields.map(f=>f.value));

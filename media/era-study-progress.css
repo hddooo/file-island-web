@@ -45,10 +45,9 @@ html[data-company-mode=on] #app#app#app .toc .era-progress-row>.period>.company-
  #app .toc .era-progress-row>.era-progress-tools{max-width:none;margin-left:auto}
 }
 
-/* Stateless wrong-blank practice: answers appear only after explicit grading. */
+/* Stateless wrong-blank practice: answers appear after keyboard or committed-blur grading. */
 #eraWrongDialog .era-practice-input{box-sizing:border-box;width:clamp(110px,28vw,260px);max-width:100%;min-height:44px;padding:6px 8px;font:inherit;font-size:16px;border:1px solid #64748b;border-radius:6px;background:transparent;color:inherit}
 #eraWrongDialog .era-practice-slot{display:inline-flex;align-items:center;flex-wrap:wrap;gap:6px;max-width:100%;vertical-align:middle}
-#eraWrongDialog .era-practice-grade{min-height:44px;padding:8px 18px;margin-top:8px;font:inherit;color:inherit;background:transparent;border:1px solid #64748b;border-radius:8px;cursor:pointer}
 #eraWrongDialog .era-practice-feedback{font-size:14px;font-weight:800;white-space:normal}
 #eraWrongDialog .era-practice-feedback[hidden]{display:none!important}
 #eraWrongDialog .era-practice-feedback[data-result=correct]{color:#1755bb!important}

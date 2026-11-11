@@ -1,0 +1,7 @@
+# 0.10.15-beta progress
+
+The dialog now contains only its Close button and answer inputs. Each answer is graded by Tab/Enter or a completed-input blur; the manual grade control and its CSS are removed. The last input moves to Close rather than a removed control. Native IME Tab wraps within the dialog. Duplicate IME Enter suppression also covers Close, while keyup, new typing/composition or pointer interaction releases that guard.
+
+Seventy-five focused synthetic assertions cover button absence, keyboard hints, live feedback, first/last fields, Korean composition ordering, mobile blur, modifier/repeat guards, pointer interruption, reopen and account changes. The session fixture uses visual timing now that it exercises real focus rather than manual button clicks. Saved records remain byte-identical and write calls remain zero.
+
+The prior progress, source-DOM and browser harnesses are migrated to keyboard actions instead of the removed button. Event errors now fail the focused tests rather than silently printing exceptions. The manual browser regression is updated for the buttonless flow but is not executed because the existing socket restriction remains. Unchanged input CSS retains 16px text and a 44px minimum touch height in normal and company modes. These are DOM/style-contract checks, not physical-device or actual browser-layout verification. Final build/deployment evidence is recorded in the daily work log.

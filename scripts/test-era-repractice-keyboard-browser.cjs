@@ -35,7 +35,7 @@ const css=[...html.matchAll(/<link[^>]+href="\/?(media\/[^"?]+\.css)[^"]*"/g)].m
       });
       const opener=page.locator('.era-aggregate .era-wrong-review');await opener.click();
       const inputs=page.locator('.era-practice-input'),feedback=page.locator('.era-practice-feedback');
-      await inputs.last().waitFor();assert.equal(await inputs.count(),6);assert.equal(await page.locator('.era-wrong-era').count(),2);
+      await inputs.last().waitFor();assert.equal(await inputs.count(),6);assert.equal(await page.locator('.era-practice-grade').count(),0);assert.equal(await page.locator('dialog button').count(),1);assert.equal(await page.locator('.era-wrong-era').count(),2);
       assert.equal(await inputs.evaluateAll(ns=>ns.every(n=>n.value==='')),true);
       assert.equal(await feedback.evaluateAll(ns=>ns.every(n=>n.hidden&&n.textContent==='')),true);
       const active=async i=>{assert.equal(await inputs.nth(i).evaluate(n=>n===document.activeElement),true,'focus input '+i);await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(resolve)));const bounds=await inputs.nth(i).evaluate(n=>({top:n.getBoundingClientRect().top,bottom:n.getBoundingClientRect().bottom,header:document.querySelector('.era-wrong-head').getBoundingClientRect().bottom,boundary:document.querySelector('dialog').getBoundingClientRect().bottom}));assert(bounds.top>=bounds.header-1&&bounds.bottom<=bounds.boundary+1,JSON.stringify({viewport,company,index:i,bounds}));};
@@ -55,11 +55,10 @@ const css=[...html.matchAll(/<link[^>]+href="\/?(media\/[^"?]+\.css)[^"]*"/g)].m
       await inputs.nth(4).fill('1,2');await page.waitForTimeout(120);
       for(const details of [{keyCode:229},{ctrlKey:true},{altKey:true},{metaKey:true},{repeat:true}]){await inputs.nth(4).dispatchEvent('keydown',{key:'Enter',bubbles:true,cancelable:true,...details});await active(4);assert.equal(await feedback.nth(4).isVisible(),false);}
       await page.keyboard.press('Enter');await active(5);await result(4,'correct');
-      await inputs.nth(5).fill('오메가');await page.keyboard.press('Enter');await result(5,'correct');assert.equal(await page.locator('.era-practice-grade').last().evaluate(n=>n===document.activeElement),true);
-      await page.keyboard.press('Tab');assert.equal(await page.locator('.era-wrong-close').evaluate(n=>n===document.activeElement),true,'last grade button wraps to close');
+      await inputs.nth(5).fill('오메가');await page.keyboard.press('Enter');await result(5,'correct');assert.equal(await page.locator('.era-wrong-close').evaluate(n=>n===document.activeElement),true);
       await page.keyboard.press('Tab');await active(0);await page.keyboard.press('Shift+Tab');assert.equal(await page.locator('.era-wrong-close').evaluate(n=>n===document.activeElement),true,'first input returns to close without double trap');
-      await page.keyboard.press('Shift+Tab');assert.equal(await page.locator('.era-practice-grade').last().evaluate(n=>n===document.activeElement),true);
-      await inputs.nth(0).fill('알파');await inputs.nth(1).fill('베타');await page.locator('.era-practice-grade').first().click();await result(0,'correct');await result(1,'correct');await result(2,'wrong');
+      await page.keyboard.press('Shift+Tab');await active(5);
+      await inputs.nth(0).fill('알파');await page.keyboard.press('Tab');await inputs.nth(1).fill('베타');await page.keyboard.press('Enter');await result(0,'correct');await result(1,'correct');await result(2,'wrong');
       await inputs.last().focus();const rect=await inputs.last().boundingBox();assert(rect.y>=0&&rect.y+rect.height<=viewport.height,'last input is scrolled into view');
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,'page overflow');
       assert.equal(await page.locator('dialog').evaluate(n=>n.scrollWidth>n.clientWidth+1),false,'dialog overflow');
@@ -74,5 +73,5 @@ const css=[...html.matchAll(/<link[^>]+href="\/?(media\/[^"?]+\.css)[^"]*"/g)].m
     }
   } finally {await browser.close();}
   fs.writeFileSync(path.join(out,'results.json'),JSON.stringify({scope:'Synthetic browser fixtures only; no production requests or account writes',results},null,2));
-  console.log(JSON.stringify({cases:results.length,failures:0,scope:'Tab/Enter per-slot grading, multi-slot/classification/sequence, focus boundaries, IME, repeat/modifiers, manual grading, accessibility, close/reopen/back/account change, responsive/company/reduced-motion',writes:0}));
+  console.log(JSON.stringify({cases:results.length,failures:0,scope:'Tab/Enter per-slot grading, multi-slot/classification/sequence, focus boundaries, IME, repeat/modifiers, no manual grade buttons, accessibility, close/reopen/back/account change, responsive/company/reduced-motion',writes:0}));
 })().catch(error=>{console.error(error);process.exitCode=1;});
