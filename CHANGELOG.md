@@ -1,3 +1,9 @@
+## 0.10.13-beta
+
+- Structure the eight Joseon exam pages as source-preserving category/choice tables, with mobile stacking and distinct supplementary rows.
+- Keep all 42 star/rate markers indivisible and quietly readable; nest the requested subordinate under its royal category without changing source chronology.
+- Confirm the Seongjong exam cell against the exact original PDF. Synthetic and private-fixture regressions passed; real-browser visual QA remains blocked by the executor socket restriction.
+
 ## 0.10.12-beta
 - Keep only the requested Yesong and Hwanguk policy keywords in their Hyeonjong/Sukjong study rows; move their known explanations into the existing tooltips.
 - Distinguish the 1659/1674 mourning controversies and the 1680/1689/1694 political turnovers. Keep Jang Huibin's 1701 death separate and preserve the Song Si-yeol activity reminder.

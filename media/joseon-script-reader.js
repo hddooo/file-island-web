@@ -196,6 +196,7 @@
     });
       if(mode==='study'&&bundle.source.sha256===editorialSource){connectTable23();connectLaterTables();connectCulture();connectSilhak();}
       if(bundle.source.sha256===editorialSource)cleanDisplayLabels();
+      if(mode==='exam'&&bundle.source.sha256===editorialSource)connectExamTables();
       // Metadata-only source segments have no learner content after label cleanup.
       body.querySelectorAll('.jsr-source-card').forEach(article=>{if(!article.firstElementChild&&!article.textContent.trim())article.remove();});
       if(mode==='exam'&&!body.querySelector('.jsr-source-card'))body.append(el('p','이 단원에는 별도의 시험 선택지 항목이 없습니다.','jsr-note'));
@@ -205,6 +206,54 @@
       const headings=Array.from(article.querySelectorAll('h3,h4'));
       (headings.length?headings:[article]).forEach((heading,index)=>{heading.id=article.id+'-section-'+index;const a=el('button',heading===article?'학습 내용 읽기':heading.textContent);a.type='button';a.onclick=()=>{for(let node=heading.parentElement;node&&node!==body;node=node.parentElement)if(node.tagName==='DETAILS')node.open=true;heading.tabIndex=-1;heading.focus({preventScroll:true});heading.scrollIntoView({block:'start'});};group.append(a);});
     });if((mode==='study'||mode==='exam')&&win.HanqHistory81Terms)termView=win.HanqHistory81Terms.mount(body,'joseon',bundle.source.sha256);}
+    function connectExamTables(){
+      // Reparent authenticated source nodes only. No textbook prose or answers are
+      // duplicated in this public renderer; unknown structures keep the flat view.
+      const expected=new Map([[62,9],[63,3],[68,7],[69,7],[70,3],[76,3],[77,5],[78,2]]);
+      body.querySelectorAll('.jsr-source-card').forEach(article=>{
+        const count=expected.get(Number(article.dataset.page));if(!count)return;
+        const nodes=Array.from(article.children),title=nodes[0],groups=[];let group=null;
+        if(title?.tagName!=='H3')return;
+        for(const node of nodes.slice(1)){
+          if(node.tagName==='H4'){group={heading:node,runs:[]};groups.push(group);}
+          else if(group&&['P','UL'].includes(node.tagName)){
+            const role=node.tagName==='UL'?'supplementary':'numbered',last=group.runs.at(-1);
+            if(last?.role===role)last.nodes.push(node);else group.runs.push({role,nodes:[node]});
+          }else return;
+        }
+        if(groups.length!==count||groups.some(g=>!g.runs.length))return;
+        // Keep the source's person heading and both chronology-qualified lines,
+        // but place this subordinate under the preceding royal category.
+        if(article.dataset.page==='62'){
+          const index=groups.findIndex(g=>g.heading.textContent.trim()==='김종서');
+          if(index>0&&groups[index-1].heading.textContent.startsWith('세종')&&groups[index+1]?.heading.textContent.trim()==='단종'){
+            const person=groups[index];person.heading.classList.add('jsr-exam-person');person.runs[0].nodes.unshift(person.heading);groups[index-1].runs.push(...person.runs);groups.splice(index,1);
+          }
+        }
+        const table=el('table',null,'jsr-exam-table');table.dataset.structure='exam-'+article.dataset.page;table.setAttribute('role','table');
+        const caption=el('caption');caption.append(title);table.append(caption);
+        const cols=el('colgroup');cols.append(el('col'),el('col'));table.append(cols);
+        const head=el('thead'),headRow=el('tr');
+        for(const [i,label]of ['구분','선택지'].entries()){const th=el('th',label);th.scope='col';th.id=article.id+'-exam-column-'+i;th.dataset.layoutLabel='true';headRow.append(th);}
+        head.append(headRow);table.append(head);
+        groups.forEach((g,index)=>{
+          const section=el('tbody');section.dataset.examGroup=String(index);section.setAttribute('role','rowgroup');
+          const label=el('th',null,'jsr-exam-category');label.id=article.id+'-exam-group-'+index;label.scope=g.runs.length>1?'rowgroup':'row';label.rowSpan=g.runs.length;label.setAttribute('role','rowheader');label.append(g.heading);
+          g.runs.forEach((run,ri)=>{const row=el('tr'),cell=el('td');row.setAttribute('role','row');cell.setAttribute('role','cell');cell.dataset.contentRole=run.role;cell.setAttribute('headers',label.id+' '+headRow.lastElementChild.id);cell.append(...run.nodes);if(!ri)row.append(label);row.append(cell);section.append(row);});
+          table.append(section);
+        });
+        article.append(table);article.dataset.presentation='exam-table';
+        // The source represents the star and rate as two colored sibling spans.
+        // Keep their original nodes and literal spacing, but never split the pair.
+        article.querySelectorAll('span[data-source-color]').forEach(star=>{
+          if(star.textContent.trim()!=='★'||star.closest('.jsr-exam-frequency'))return;
+          const between=[];let next=star.nextSibling;
+          while(next?.nodeType===3&&!next.textContent.trim()){between.push(next);next=next.nextSibling;}
+          if(next?.nodeType!==1||next.tagName!=='SPAN'||!/^\s*\d{1,3}\s*%\s*$/.test(next.textContent)||!next.hasAttribute('data-source-color'))return;
+          const wrap=el('span',null,'jsr-exam-frequency');star.before(wrap);wrap.append(star,...between,next);
+        });
+      });
+    }
     function cleanDisplayLabels(){
       // Keep source coordinates in immutable data/DOM identifiers, never in learner-facing labels.
       // Run after structural transforms and draft-key creation so source ownership and draft keys stay stable.

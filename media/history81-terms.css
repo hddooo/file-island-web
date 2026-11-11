@@ -8,3 +8,7 @@ html body div.history81-term-tooltip[hidden]{display:none!important}
 /* Frequency is secondary to the historical fact, without removing source text. */
 html body :is(.joseon-script-reader,.goryeo-script-reader,.opening-script-reader,.textbook-semantic) .history81-frequency{color:#6b7280!important;-webkit-text-fill-color:#6b7280!important;font-weight:400!important;text-shadow:none!important}
 html[data-company-mode="on"] body #app#app#app :is(.joseon-script-reader,.goryeo-script-reader,.opening-script-reader,.textbook-semantic) .history81-frequency{color:#9ca3af!important;-webkit-text-fill-color:#9ca3af!important}
+
+/* A modest contrast lift only for grouped Joseon exam rates. */
+html body #joseonScript .jsr-exam-frequency .history81-frequency{color:#596371!important;-webkit-text-fill-color:#596371!important}
+html[data-company-mode="on"] body #app#app#app #joseonScript .jsr-exam-frequency .history81-frequency{color:#9ca3af!important;-webkit-text-fill-color:#9ca3af!important}

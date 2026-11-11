@@ -208,3 +208,32 @@ html body #joseonScript .joseon-script-reader .jsr-source-card :is(th,td){border
 html body #joseonScript .joseon-script-reader .jsr-source-card .jsr-table{margin:12px 0;border-radius:0}
 @media(min-width:900px){html body #joseonScript .joseon-script-reader{padding:32px}}
 @media(max-width:700px){#joseonScript .jsr-modes.steps{margin-inline:12px}}
+
+/* Exam reading uses the same category / numbered / supplementary hierarchy as
+   Goryeo. All text and source node order come from the authenticated bundle. */
+html body #joseonScript .jsr-exam-table{width:100%;table-layout:fixed;border-collapse:collapse}
+html body #joseonScript .jsr-exam-table col:first-child{width:22%}
+html body #joseonScript .jsr-exam-table caption{text-align:left}
+html body #joseonScript .jsr-exam-table caption h3{margin:8px 0 12px}
+html body #joseonScript .jsr-exam-table :is(th,td){padding:12px;vertical-align:top;text-align:left;border:1px solid #a0b3a7}
+html body #joseonScript .jsr-exam-table :is(thead th,.jsr-exam-category){background:#e9eff2!important}
+html body #joseonScript .jsr-exam-table [data-content-role="supplementary"]{background:#eef0f1!important}
+html body #joseonScript .jsr-exam-table h4{margin:0;padding:0;border:0;font-size:17px;line-height:1.6}
+html body #joseonScript .jsr-exam-table :is(p,ul){margin:0}
+html body #joseonScript .jsr-exam-table :is(p,ul)+:is(p,ul){margin-top:10px}
+html body #joseonScript .jsr-exam-table ul{padding-left:20px}
+html body #joseonScript .jsr-exam-table li+li{margin-top:6px}
+html body #joseonScript .jsr-exam-frequency{display:inline-block;white-space:nowrap;overflow-wrap:normal;word-break:normal;font-variant-numeric:tabular-nums}
+@media(max-width:700px){
+ html body #joseonScript .jsr-exam-table{display:block;table-layout:auto}
+ html body #joseonScript .jsr-exam-table :is(caption,tbody){display:block;width:100%}
+ html body #joseonScript .jsr-exam-table colgroup{display:none}
+ html body #joseonScript .jsr-exam-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+ html body #joseonScript .jsr-exam-table tbody>tr{display:contents}
+ html body #joseonScript .jsr-exam-table tbody>tr>:is(th,td){display:block;width:100%;min-width:0;padding:12px;overflow-wrap:anywhere}
+ html body #joseonScript .jsr-exam-table tbody+tbody{border-top:3px solid #7396b0}
+}
+html body #joseonScript .jsr-exam-table h4.jsr-exam-person{margin-bottom:8px;font-size:16px}
+/* Quieter than the main ink, while readable on both exam-cell backgrounds. */
+html[data-company-mode="on"] #app#app#app #joseonScript .jsr-exam-table [data-company-line]{padding-left:0!important}
+html[data-company-mode="on"] #app#app#app #joseonScript .jsr-exam-table [data-company-line]::before{display:none!important}
