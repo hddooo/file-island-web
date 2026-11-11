@@ -1,3 +1,8 @@
+## 0.10.12-beta
+- Keep only the requested Yesong and Hwanguk policy keywords in their Hyeonjong/Sukjong study rows; move their known explanations into the existing tooltips.
+- Distinguish the 1659/1674 mourning controversies and the 1680/1689/1694 political turnovers. Keep Jang Huibin's 1701 death separate and preserve the Song Si-yeol activity reminder.
+- Retain unknown notes, stable IDs and controls. Restore original source nodes before recall or teardown; prior deferred movements remain excluded.
+
 ## 0.10.11-beta
 - Add independently sourced tooltips for Sohak promotion, Sogyeokseo abolition, Hyangyak promotion and the Sampo disturbance.
 - Clarify Hyeollyanggwa recommendation followed by the policy examination, the merit-title cancellation, the Yangjae poster incident after the Eulsa purge, and the Eulmyo incursion and permanent Bibyeonsa.

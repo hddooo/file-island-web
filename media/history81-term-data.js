@@ -263,10 +263,13 @@
       "phrase": "환국",
       "id": "hwanguk",
       "term": "환국",
-      "summary": "집권 붕당이 한꺼번에 바뀐 정치 변동",
+      "summary": "집권 붕당 교체. 경신환국(1680)은 허적·윤휴 사사·서인 집권, 기사환국(1689)은 송시열 사사·인현왕후 폐위·남인 집권, 갑술환국(1694)은 인현왕후 복위·장희빈 강등·서인 재집권. 장희빈 사사는 1701년. 송시열은 효종·현종·숙종 때 활동.",
       "sources": [
         "https://encykorea.aks.ac.kr/Article/E0025062",
-        "https://encykorea.aks.ac.kr/Article/E0002637"
+        "https://encykorea.aks.ac.kr/Article/E0002637",
+        "https://encykorea.aks.ac.kr/Article/E0008266",
+        "https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_30&levelId=kc_i300300",
+        "https://encykorea.aks.ac.kr/Article/E0030898"
       ]
     },
     {
@@ -335,7 +338,7 @@
       "phrase": "예송",
       "id": "yesong",
       "term": "예송",
-      "summary": "왕실 상복을 얼마나 입을지를 둘러싼 서인·남인의 논쟁",
+      "summary": "인조의 계비 자의대비의 복상 기간을 둘러싼 서인·남인 논쟁. 기해예송(1659, 효종 사망)은 송시열 등 서인의 1년설이 남인의 3년설에 승리. 갑인예송(1674, 효종비 인선왕후 사망)은 남인의 1년설이 서인의 9개월설에 승리했다.",
       "sources": [
         "https://encykorea.aks.ac.kr/Article/E0037964"
       ]
@@ -2525,7 +2528,7 @@
       "phrase": "예송 논쟁",
       "id": "yesong",
       "term": "예송",
-      "summary": "왕실 상복을 얼마나 입을지를 둘러싼 서인·남인의 논쟁",
+      "summary": "인조의 계비 자의대비의 복상 기간을 둘러싼 서인·남인 논쟁. 기해예송(1659, 효종 사망)은 송시열 등 서인의 1년설이 남인의 3년설에 승리. 갑인예송(1674, 효종비 인선왕후 사망)은 남인의 1년설이 서인의 9개월설에 승리했다.",
       "sources": [
         "https://encykorea.aks.ac.kr/Article/E0037964"
       ]

@@ -158,6 +158,39 @@
         parent.insertBefore(wrap,first);nodes.forEach(n=>n.remove());undo.push(()=>{if(wrap.parentNode)wrap.replaceWith(...nodes);});
       }
     }
+    // The user requested these two royal-policy explanations in their tooltips.
+    // Match semantic rows and a closed, known set of facts; preserve unfamiliar notes.
+    function safeNote(node){return node&&!node.id&&!node.matches(blocked)&&!node.closest(blocked+',[contenteditable]')&&!node.querySelector(blocked)&&!node.querySelector('[id],a,button,input,textarea,select,[role=button],[contenteditable],img,svg,script,style,iframe,video,audio,canvas,object,embed,details,table');}
+    function markedTerm(node,phrase){const marks=[...node.querySelectorAll(marker)];return marks.length===1&&normalize(marks[0].textContent)===normalize(phrase)&&!marks[0].querySelector('br')?marks[0]:null;}
+    function collapse(node,phrase,extra){
+      const copy=node.cloneNode(true),mark=markedTerm(copy,phrase);if(!mark)return;
+      copy.replaceChildren(mark);node.replaceWith(copy);
+      const anchor=extra?doc.createComment('collapsed-policy-explanation'):null;if(extra)extra.replaceWith(anchor);
+      undo.push(()=>{if(copy.parentNode)copy.replaceWith(node);if(anchor?.parentNode)anchor.replaceWith(extra);});
+    }
+    for(const row of host.querySelectorAll('tr')){
+      const king=row.cells[0]?.textContent.trim();
+      if(king==='현종')for(const item of row.querySelectorAll('li')){
+        const entry=entries.get(normalize('예송 논쟁')),note=item.parentElement.nextElementSibling;
+        if(!entry||!['기해예송','갑인예송','1659','1674','송시열','자의대비'].every(s=>entry.summary.includes(s)))continue;
+        if(!safeNote(item)||item.querySelector('ul,ol,p')||!markedTerm(item,'예송 논쟁')||item.parentElement.tagName!=='UL'||item.parentElement.children.length!==1||note?.tagName!=='P'||!safeNote(note))continue;
+        if(normalize(item.textContent)!==normalize('예송 논쟁: 자의 대비(인조 비) 복상 문제, 서인 vs 남인')||normalize(note.textContent)!==normalize('※ 기해예송(송시열, 서인 승), 갑인예송(남인 승)'))continue;
+        collapse(item,'예송 논쟁',note);
+      }
+      if(king==='숙종')for(const item of row.querySelectorAll('li')){
+        const entry=entries.get(normalize('환국')),list=item.querySelector(':scope > ul');
+        if(!entry||!['경신환국','기사환국','갑술환국','1680','1689','1694','1701','송시열','효종','현종','숙종'].every(s=>entry.summary.includes(s)))continue;
+        if(!safeNote(item)||!markedTerm(item,'환국')||!list||list.children.length!==1||list.firstElementChild.tagName!=='LI'||item.querySelectorAll('ul,ol').length!==1)continue;
+        const head=item.cloneNode(true);head.querySelector('ul').remove();if(normalize(head.textContent)!==normalize('환국 발생(경신환국, 기사환국, 갑술환국)'))continue;
+        const child=list.firstElementChild;if(child.querySelector('ul,ol,p,br'))continue;
+        const notes=[...child.textContent.matchAll(/\(([^()]*)\)/gu)];if(notes.length>1)continue;
+        // A short activity reminder may name the same three reigns. Unknown text stays visible.
+        if(notes.length&&normalize(notes[0][1]).replace(/(?:은|는|때|다|나옴|활동)/gu,'').replace(/[·,:]/gu,'')!=='송시열효종현종숙종')continue;
+        const body=child.textContent.replace(/\([^()]*\)/gu,'');
+        if(normalize(body)!==normalize('→ 송시열 사사, 인현왕후 폐위, 장희빈 사사, 허적과 윤휴 축출'))continue;
+        collapse(item,'환국');
+      }
+    }
     // The two quoted notes were explicitly moved into their public definitions.
     const requestedNotes=[['계유정난','(김종서 축출, 수양대군(=세조)이 권력 잡음)'],['남이 장군','(세조 때 이시애의 난 평정, 건주위 여진족 정벌)']];
     for(const [phrase,note]of requestedNotes)for(const original of [...host.querySelectorAll('li,p')]){
