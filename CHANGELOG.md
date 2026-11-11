@@ -3,7 +3,8 @@
 - Grade the current temporary era wrong-answer blank with Tab or Enter after Korean composition commits, including native Tab focus movement and Safari-style event ordering.
 - Preserve saved answers, account boundaries and API contracts; prevent duplicate advancement and delayed focus theft.
 - Rename the wrong-answer area to 의금부 without changing existing routes or record keys.
-- Simplify the requested Jeong Do-jeon display label and match the surrounding royal-name presentation while retaining the source input.
+- Simplify the requested Jeong Do-jeon display label and match the surrounding royal-name presentation while retaining the source input and restoring the original recall answer slot.
+- Make only the left Uigeumbu pavilion slightly more imposing in both palace images, preserving the rest of the scene and navigation geometry.
 
 ## 0.10.13-beta
 

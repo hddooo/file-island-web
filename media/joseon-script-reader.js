@@ -308,7 +308,7 @@
         const nested=el('section',null,'jsr-subperson');subordinate.before(nested);nested.append(subordinate,sublist);
         // A requested display-only name. Use the same heading element as the kings,
         // but exclude it from the numbered TOC to retain every existing heading ID.
-        if(/^태조 이성계 → 정도전(?: · 원문 태조 이성계 병합 셀 안의 하위 셀)?$/.test(subordinate.textContent.trim())){
+        if(subordinate.textContent.trim()==='태조 이성계 → 정도전'){
           const label=el('h4','정도전','jsr-subperson-heading');subordinate.replaceWith(label);
           personLabelRestore=()=>{if(label.isConnected)label.replaceWith(subordinate);};
         }

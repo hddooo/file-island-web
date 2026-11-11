@@ -5,21 +5,44 @@
   "assets": [
     {
       "file": "history-palace-wide-v1.webp",
-      "size": [1672, 941],
+      "size": [
+        1672,
+        941
+      ],
       "prompt": "Finished 16:9 polished hand-painted anime JRPG Korean history island background. Joseon royal palace with grey giwa roofs, red columns, dancheong and central gate at 50%,28%; pavilion at 23%,45%, book pavilion at 71%,61%; connected garden stone paths, Korean blue-green mountains, pines and flowering trees. Bright sunshine. Broad jade pond across lower third, unobstructed central water and reflections. No boats, people, text, UI, portals or European ruins."
     },
     {
       "file": "history-palace-tall-v1.webp",
-      "size": [900, 1200],
+      "size": [
+        900,
+        1200
+      ],
       "prompt": "Finished 3:4 portrait polished sunny hand-painted anime JRPG Korean Joseon palace garden. Main dancheong gate at 50%,18%, giwa pavilion at 26%,42%, book pavilion at 71%,66%, connected stone paths. Pines, flowering trees, Korean blue-green mountains. Broad continuous jade pond in bottom 25%, clean open water with reflections. No boats, people, text, UI, European ruins or portal."
     },
     {
       "file": "history-pond-boat-v1.webp",
-      "size": [384, 191],
+      "size": [
+        384,
+        191
+      ],
       "alpha": true,
       "prompt": "One empty traditional Korean wooden flat-bottom rowboat, three benches and a resting wooden oar, elevated three-quarter view, bow right. Detailed sunny painterly anime JRPG game prop, warm brown wood, subtle blue bounce light. True transparent background, whole silhouette, no water, waves, people, sails, text or exterior shadow."
     }
   ],
   "englishBoatLayers": "Exact original boat pixels are clipped into runtime canvas sprites. A source-derived inpainted plate removes each baked silhouette before compositing the single bobbing boat. No duplicate boat image is overlaid on the original silhouette.",
-  "water": "Bounded GPU refraction of original water pixels, surveyed regions plus color filtering; directional waterfall flow is a separate mask channel. Land/architecture use fixed sampling coordinates."
+  "water": "Bounded GPU refraction of original water pixels, surveyed regions plus color filtering; directional waterfall flow is a separate mask channel. Land/architecture use fixed sampling coordinates.",
+  "edits": [
+    {
+      "date": "2026-11-11",
+      "files": [
+        "history-palace-wide-v1.webp",
+        "history-palace-tall-v1.webp"
+      ],
+      "generator": "built-in image_gen with localized composition",
+      "request": "Make only the left Uigeumbu pavilion subtly more imposing; preserve the central gate, right study hall and the surrounding scene.",
+      "method": "Darkened wood and eave shadows with restrained lattice details, composited inside the left-pavilion mask; original dimensions and all decoded pixels outside the mask preserved.",
+      "verification": "Full image and static 320/390px previews inspected. Normal application layout and physical-device checks are separate.",
+      "encoding": "Lossless WebP; wide 2336244 bytes, tall 1743392 bytes."
+    }
+  ]
 }
