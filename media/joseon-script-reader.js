@@ -203,7 +203,7 @@
       body.querySelectorAll('.jsr-source-card').forEach(article=>{
       const examHeadings=mode==='exam'?[...article.querySelectorAll('h4')].map(e=>e.textContent):[],examName=examHeadings.length?[examHeadings[0],examHeadings.at(-1)].filter((v,i,a)=>!i||v!==a[0]).join(' ~ '):null;
      const group=el('details'),title=article.querySelector('h3,h4'),summary=el('summary',examName||(title?title.textContent:'학습 안내'));group.append(summary);toc.append(group);
-      const headings=Array.from(article.querySelectorAll('h3,h4'));
+      const headings=Array.from(article.querySelectorAll('h3,h4:not(.jsr-subperson-heading)'));
       (headings.length?headings:[article]).forEach((heading,index)=>{heading.id=article.id+'-section-'+index;const a=el('button',heading===article?'학습 내용 읽기':heading.textContent);a.type='button';a.onclick=()=>{for(let node=heading.parentElement;node&&node!==body;node=node.parentElement)if(node.tagName==='DETAILS')node.open=true;heading.tabIndex=-1;heading.focus({preventScroll:true});heading.scrollIntoView({block:'start'});};group.append(a);});
     });if((mode==='study'||mode==='exam')&&win.HanqHistory81Terms)termView=win.HanqHistory81Terms.mount(body,'joseon',bundle.source.sha256);}
     function connectExamTables(){
@@ -304,7 +304,12 @@
       caption.append(titles[0]);['구분','내용'].forEach(text=>{const th=el('th',text);th.scope='col';headRow.append(th);});head.append(headRow);table.append(caption,head,tbody);article.append(table);pages[0].after(article);
       groups.forEach(group=>{const row=el('tr'),th=el('th'),td=el('td');th.scope='row';th.append(group.heading,el('small','PDF '+group.page,'jsr-row-source'));td.append(...group.nodes);row.append(th,td);tbody.append(row);group.cell=td;});
       const subordinate=groups[0].cell.querySelector('p'),sublist=subordinate&&subordinate.nextElementSibling;
-      if(subordinate&&sublist&&sublist.tagName==='UL'){const nested=el('section',null,'jsr-subperson');subordinate.before(nested);nested.append(subordinate,sublist);}
+      if(subordinate&&sublist&&sublist.tagName==='UL'){
+        const nested=el('section',null,'jsr-subperson');subordinate.before(nested);nested.append(subordinate,sublist);
+        // A requested display-only name. Use the same heading element as the kings,
+        // but exclude it from the numbered TOC to retain every existing heading ID.
+        if(/^태조 이성계 → 정도전(?: · 원문 태조 이성계 병합 셀 안의 하위 셀)?$/.test(subordinate.textContent.trim()))subordinate.replaceWith(el('h4','정도전','jsr-subperson-heading'));
+      }
       [1,2].forEach((rowIndex,i)=>{const cell=groups[rowIndex].cell,layout=el('div',null,'jsr-diagram-row'),copy=el('div');copy.append(...Array.from(cell.childNodes));diagrams[i].querySelector('figcaption').hidden=true;layout.append(copy,diagrams[i]);cell.append(layout);});
       badges.forEach(({figure,reference})=>{figure.classList.add('jsr-inline-figure');figure.dataset.studyLabel=reference.textContent;figure.querySelector('figcaption').hidden=true;reference.replaceWith(figure);reference.classList.add('jsr-badge-fallback');figure.prepend(reference);});
       pages[1].remove();

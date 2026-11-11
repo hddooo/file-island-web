@@ -53,7 +53,7 @@ var api=o.api,s=api.state(),owner=s.ownerId,epoch=s.epoch;
 function current(){var now=api.state();if(!now.signedIn||now.ownerId!==owner||now.epoch!==epoch||o.isCurrent&&!o.isCurrent())throw Error('session_changed');}
 current();if(!['questions','answers'].includes(o.mode))throw Error('invalid_mode');
 var data=await api.hongmungwan('GET',''),items=root.HanqHongmungwan.normalize(data).filter(function(q){return (q.era===o.era||o.era==='joseon'&&/^joseon-/.test(q.era))&&(q.source==='book-manual'||q.everWrong||q.wrongCount>0||q.starred);});current();if(!items.length)throw Error('empty');
-var title='홍문관 '+root.HanqHongmungwan.eras.find(function(e){return e[0]===o.era;})[1]+' '+(o.mode==='answers'?'정답·해설':'오답·별표 문제'),pages=[],canvas,ctx,y,lines;
+var title='의금부 '+root.HanqHongmungwan.eras.find(function(e){return e[0]===o.era;})[1]+' '+(o.mode==='answers'?'정답·해설':'오답·별표 문제'),pages=[],canvas,ctx,y,lines;
 function page(){canvas=document.createElement('canvas');canvas.width=1191;canvas.height=1684;ctx=canvas.getContext('2d');if(!ctx)throw Error('canvas');ctx.scale(2,2);ctx.fillStyle='#fff';ctx.fillRect(0,0,596,842);lines=[];y=30;line(title,12,true);y+=8;}
 function line(t,size,bold){ctx.font=(bold?'bold ':'')+size+'px Arial,sans-serif';ctx.fillStyle='#111';ctx.fillText(t,36,y);lines.push({text:t,x:36,y:y,width:ctx.measureText(t).width,size:size});y+=size+7;}
 async function finish(){current();var blob=await new Promise(function(resolve,reject){canvas.toBlob(function(b){b?resolve(b):reject(Error('canvas'));},'image/jpeg',.94);});pages.push({width:canvas.width,height:canvas.height,bytes:new Uint8Array(await blob.arrayBuffer()),lines:lines});}

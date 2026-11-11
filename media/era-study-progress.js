@@ -42,7 +42,10 @@
       dialog.addEventListener('cancel',e=>{e.preventDefault();close(true);});dialog.addEventListener('click',e=>{if(e.target===current)close(true);});
       dialog.addEventListener('keydown',e=>{if(e.defaultPrevented||e.key!=='Tab'||e.altKey||e.ctrlKey||e.metaKey)return;const nodes=[...current.querySelectorAll('button,input,a[href],[tabindex="0"]')].filter(n=>!n.disabled);if(!nodes.length)return;const first=nodes[0],last=nodes[nodes.length-1];if(e.shiftKey&&doc.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&doc.activeElement===last){e.preventDefault();first.focus();}});
       if(dialog.showModal)dialog.showModal();else dialog.setAttribute('open','');x.focus();
-      try{const records=[],failed=[];for(const era of (id==='all'?eras:[id])){try{records.push(await read(era));}catch(e){if(!valid()||dialog!==current)return;failed.push(era);}}if(!valid()||dialog!==current)return;if(id!=='all'&&records[0])paint(tools,records[0]);body.replaceChildren();body.removeAttribute('role');const hint=node('p','era-wrong-scope','현재 저장된 오답만 다시 풉니다. Tab 또는 Enter로 채점하고 다음 빈칸으로 이동합니다. 재풀이 결과는 저장하지 않습니다.');hint.id='era-practice-hint';body.append(hint);let fieldCount=0;if(failed.length)body.append(node('p','era-wrong-error','일부 시대의 기록을 불러오지 못했습니다. 닫고 다시 시도해 주세요.'));
+      try{const records=[],failed=[];for(const era of (id==='all'?eras:[id])){try{records.push(await read(era));}catch(e){if(!valid()||dialog!==current)return;failed.push(era);}}if(!valid()||dialog!==current)return;if(id!=='all'&&records[0])paint(tools,records[0]);body.replaceChildren();body.removeAttribute('role');const hint=node('p','era-wrong-scope','현재 저장된 오답만 다시 풉니다. Tab 또는 Enter로 채점하고 다음 빈칸으로 이동합니다. 재풀이 결과는 저장하지 않습니다.');hint.id='era-practice-hint';body.append(hint);let fieldCount=0,imeAdvanceTarget=null,imeAdvanceUntil=0,pointerVersion=0,keyVersion=0;
+        current.addEventListener('pointerdown',()=>{pointerVersion++;imeAdvanceTarget=null;});
+        current.addEventListener('keyup',e=>{if(e.key==='Enter'||e.code==='Enter'){keyVersion++;imeAdvanceTarget=null;}});
+        if(failed.length)body.append(node('p','era-wrong-error','일부 시대의 기록을 불러오지 못했습니다. 닫고 다시 시도해 주세요.'));
         if(!records.some(r=>r.stats.wrong.length)&&!failed.length){body.append(node('p','era-wrong-empty','저장된 오답이 없습니다.'));return;}
         for(const record of records){
           if(id==='all'&&record.stats.wrong.length)body.append(node('h3','era-wrong-era',record.model.title));
@@ -59,21 +62,46 @@
               input.type='text';input.maxLength=2000;input.autocomplete='off';input.spellcheck=false;input.setAttribute('aria-label',label);input.dataset.slotId=slot.id;input.enterKeyHint='next';
               result.id='era-practice-feedback-'+fieldCount++;input.setAttribute('aria-describedby',hint.id+' '+result.id);input.setAttribute('aria-keyshortcuts','Tab Enter');
               result.setAttribute('role','status');result.setAttribute('aria-live','polite');result.hidden=true;wrap.append(input,result);fields.push(input);feedback.push(result);
-              const index=fields.length-1;let composing=false,composedAt=0;
+              const index=fields.length-1;let composing=false,composedAt=0,pendingAction=null,completionTimer=null;
               input.addEventListener('focus',()=>win.requestAnimationFrame(()=>{
                 if(!valid()||dialog!==current||doc.activeElement!==input)return;
                 const bounds=input.getBoundingClientRect(),top=head.getBoundingClientRect().bottom+8,bottom=current.getBoundingClientRect().bottom-8;
                 if(bounds.top<top)current.scrollTop-=top-bounds.top;else if(bounds.bottom>bottom)current.scrollTop+=bounds.bottom-bottom;
               }));
-              input.addEventListener('compositionstart',()=>{composing=true;});input.addEventListener('compositionend',()=>{composing=false;composedAt=Date.now();});
-              input.addEventListener('input',()=>{result.textContent='';result.hidden=true;delete result.dataset.result;delete input.dataset.result;input.removeAttribute('aria-invalid');});
-              input.addEventListener('keydown',e=>{
-                if((e.key!=='Tab'&&e.key!=='Enter')||e.altKey||e.ctrlKey||e.metaKey||e.isComposing||composing||e.keyCode===229)return;
-                e.preventDefault();
-                if(e.repeat||(e.key==='Enter'&&Date.now()-composedAt<100)||!valid()||dialog!==current||!input.isConnected)return;
+              function keyboardAction(key,shiftKey){
+                const nodes=[...current.querySelectorAll('button,input,a[href],[tabindex="0"]')].filter(n=>!n.disabled),step=key==='Tab'&&shiftKey?-1:1;
+                return {key,step,pointerVersion,keyVersion,nativeTarget:nodes[nodes.indexOf(input)+step]};
+              }
+              function finish(action){
+                if(!valid()||dialog!==current||!input.isConnected||composing)return;
                 grade(index);
-                const inputs=[...current.querySelectorAll('.era-practice-input')],next=inputs.indexOf(input)+(e.key==='Tab'&&e.shiftKey?-1:1);
+                // A native IME Tab may already have moved focus. Do not steal focus after a pointer move.
+                if(!action||action.pointerVersion!==pointerVersion||doc.activeElement!==input&&(action.key!=='Tab'||doc.activeElement!==action.nativeTarget))return;
+                const inputs=[...current.querySelectorAll('.era-practice-input')],next=inputs.indexOf(input)+action.step;
                 if(next<0)x.focus();else if(next<inputs.length)inputs[next].focus();else button.focus();
+                if(action.ime&&action.key==='Enter'&&action.keyVersion===keyVersion){imeAdvanceTarget=doc.activeElement;imeAdvanceUntil=Date.now()+100;}
+              }
+              function settleComposition(){
+                clearTimeout(completionTimer);completionTimer=setTimeout(()=>{
+                  completionTimer=null;if(composing||!valid()||dialog!==current||!input.isConnected)return;
+                  const action=pendingAction;pendingAction=null;
+                  if(action||result.hidden&&input.value.trim())finish(action);
+                },0);
+              }
+              input.addEventListener('compositionstart',()=>{if(imeAdvanceTarget===input)imeAdvanceTarget=null;composing=true;pendingAction=null;clearTimeout(completionTimer);});
+              input.addEventListener('compositionend',()=>{composing=false;composedAt=Date.now();if(pendingAction||doc.activeElement!==input)settleComposition();});
+              input.addEventListener('input',()=>{if(imeAdvanceTarget===input)imeAdvanceTarget=null;result.textContent='';result.hidden=true;delete result.dataset.result;delete input.dataset.result;input.removeAttribute('aria-invalid');if(!composing&&(pendingAction||doc.activeElement!==input))settleComposition();});
+              input.addEventListener('blur',()=>{if(!composing&&(pendingAction||result.hidden&&input.value.trim()))settleComposition();});
+              input.addEventListener('keydown',e=>{
+                const inComposition=composing||e.isComposing,recentCommit=Date.now()-composedAt<100,key=e.key==='Tab'||e.key==='Enter'?e.key:(inComposition||recentCommit)&&(e.code==='Tab'||e.code==='Enter')?e.code:'';
+                if(!key||e.altKey||e.ctrlKey||e.metaKey)return;
+                if(key==='Enter'&&imeAdvanceTarget===input&&Date.now()<imeAdvanceUntil){e.preventDefault();return;}
+                if(inComposition){if(!e.repeat)pendingAction=Object.assign(keyboardAction(key,e.shiftKey),{ime:true});return;}
+                if(e.keyCode===229&&!recentCommit)return;
+                e.preventDefault();if(e.repeat||!valid()||dialog!==current||!input.isConnected)return;
+                const action=keyboardAction(key,e.shiftKey);
+                if(recentCommit&&(key==='Enter'||e.keyCode===229)){pendingAction=Object.assign(action,{ime:true});settleComposition();return;}
+                clearTimeout(completionTimer);pendingAction=null;finish(action);
               });return wrap;
             }
             if(item.segments&&item.segments.length){

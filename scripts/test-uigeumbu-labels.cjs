@@ -1,0 +1,10 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs'),{JSDOM}=require('jsdom');
+const html=fs.readFileSync('index.html','utf8'),entry=html.match(/function wrongNotesEntry\(\)\{return ('[^\n]+');\}/)[1];
+const w=new JSDOM('<html data-company-mode="off"><body><div class="history-travel-map"><button id="homePastExams"><strong>성균관</strong></button><button id="homeFormalExams"><strong>과장</strong></button>'+Function('return '+entry)()+'</div></body></html>',{url:'https://synthetic.invalid/',runScripts:'outside-only',pretendToBeVisual:true}).window;
+w.matchMedia=()=>({matches:false,addEventListener(){},removeEventListener(){}});
+w.eval(fs.readFileSync('media/island-harbors.js','utf8'));
+const map=w.document.querySelector('.history-travel-map'),button=w.document.getElementById('homeWrongNotes');let clicked=0;button.addEventListener('click',()=>clicked++);
+assert.equal(button.querySelector('.wn-entry-t').textContent,'3. 의금부');w.HanqIslandHarbors.enhance(map);assert.equal(button.querySelector('.wn-entry-t').textContent,'의금부');assert.equal(button.getAttribute('aria-label'),'의금부 · 오답노트');assert.equal(button.dataset.landmark,'homeWrongNotes');button.click();assert.equal(clicked,1);assert.equal(map.querySelectorAll('button').length,3);assert.equal(w.document.getElementById('homePastExams').textContent,'성균관');assert.equal(w.document.getElementById('homeFormalExams').textContent,'과장');
+assert(html.includes("view:'wrongnotes'"));assert(html.includes("'#wrongnotes'"));assert(html.includes('hongmungwanHost'));assert(html.includes('의금부 화면을 불러오지 못했어요.'));assert.equal(w.document.querySelector('picture source').srcset,'media/world-art/history-palace-tall-v1.webp');assert(w.document.querySelector('picture img').src.endsWith('media/world-art/history-palace-wide-v1.webp'));w.close();
+console.log('PASS exact 의금부 menu/accessibility label, existing route/host/control identity and other destination names');

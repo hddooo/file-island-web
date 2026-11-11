@@ -16,8 +16,10 @@ const originalIntro=oldIntro.cloneNode(true);let inTable=false;[...originalIntro
 const newIntro=after.host.querySelector('[data-page="60"]').cloneNode(true);newIntro.querySelectorAll('.jsr-transcription>summary').forEach(n=>n.remove());
 assert.equal(text(newIntro),text(originalIntro));assert.deepEqual(emphasis(newIntro),emphasis(originalIntro));
 assert.equal(after.host.querySelectorAll('.jsr-transcription:not([open])').length,2);assert.equal(after.host.querySelector('.jsr-king-table').closest('details'),null);
+// User-requested display-only name change; all other row content stays exact.
+const oldPerson=[...expected[0].querySelectorAll('p')].find(p=>p.firstElementChild?.tagName==='STRONG'&&p.firstElementChild.textContent==='태조 이성계 → 정도전');assert(oldPerson);const person=before.dom.window.document.createElement('h4');person.textContent='정도전';oldPerson.replaceWith(person);
 actual.forEach((row,i)=>{assert.equal(text(row),text(expected[i]),'Learning text/order changed in row '+i);assert.deepEqual(emphasis(row),emphasis(expected[i]),'Source emphasis changed in row '+i);assert.equal(row.querySelector('th').scope,'row');});
-assert(after.host.querySelector('.jsr-subperson').textContent.includes('태조 이성계 → 정도전'));
+assert.equal(after.host.querySelector('.jsr-subperson>h4').textContent,'정도전');
 assert.equal(after.host.querySelector('[data-figure="p060-03.png"]').closest('tr'),actual[1]);assert.equal(after.host.querySelector('[data-figure="p061-01.png"]').closest('tr'),actual[2]);
 for(const [name,index] of [['p061-03.png',7],['p061-02.png',7],['p061-04.png',8],['p061-05.png',9]]){const f=after.host.querySelector('[data-figure="'+name+'"]');assert.equal(f.closest('tr'),actual[index]);assert(f.closest('li'));assert(f.classList.contains('jsr-inline-figure'));assert(f.querySelector('figcaption').hidden);assert(f.querySelector('[data-source-color="#ed7d31"]'));}
 let figures=0;

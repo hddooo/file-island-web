@@ -50,7 +50,7 @@
   var landmarks={
     homePastExams:{name:'성균관',purpose:'시대별 학습',wide:[.34,.12,.64,.48],tall:[.26,.095,.79,.30]},
     homeFormalExams:{name:'과장',purpose:'모의고사',wide:[.66,.265,.985,.65],tall:[.52,.43,.99,.70]},
-    homeWrongNotes:{name:'홍문관',purpose:'오답노트',wide:[.065,.285,.30,.62],tall:[.025,.305,.385,.53]}
+    homeWrongNotes:{name:'의금부',purpose:'오답노트',wide:[.065,.285,.30,.62],tall:[.025,.305,.385,.53]}
   };
   // One decorative layer tree, driven by CSS time. The art and click targets never move.
   // Share WorldScene's visibility/low-power state and observe only this layer's viewport.

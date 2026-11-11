@@ -50,8 +50,9 @@ const css=[...html.matchAll(/<link[^>]+href="\/?(media\/[^"?]+\.css)[^"]*"/g)].m
       await inputs.nth(3).fill('델타');await page.keyboard.press('Enter');await active(4);await result(3,'correct');await result(2,'wrong');
       await inputs.nth(4).fill('1,2');
       await inputs.nth(4).dispatchEvent('compositionstart');await inputs.nth(4).dispatchEvent('keydown',{key:'Enter',isComposing:true,bubbles:true,cancelable:true});await active(4);assert.equal(await feedback.nth(4).isVisible(),false);
-      await inputs.nth(4).dispatchEvent('compositionend');await inputs.nth(4).dispatchEvent('keydown',{key:'Enter',bubbles:true,cancelable:true});await active(4);assert.equal(await feedback.nth(4).isVisible(),false);
-      await page.waitForTimeout(120);
+      await inputs.nth(4).dispatchEvent('compositionend');await inputs.nth(4).dispatchEvent('keydown',{key:'Enter',bubbles:true,cancelable:true});await page.waitForFunction(()=>document.querySelectorAll('.era-practice-feedback')[4].dataset.result==='correct');await active(5);await result(4,'correct');assert.equal(await feedback.nth(5).isVisible(),false,'IME commit advances once');
+      await page.evaluate(()=>document.activeElement.dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',bubbles:true,cancelable:true})));await active(5);assert.equal(await feedback.nth(5).isVisible(),false,'late commit Enter does not grade the new active blank');await page.keyboard.up('Enter');
+      await inputs.nth(4).fill('1,2');await page.waitForTimeout(120);
       for(const details of [{keyCode:229},{ctrlKey:true},{altKey:true},{metaKey:true},{repeat:true}]){await inputs.nth(4).dispatchEvent('keydown',{key:'Enter',bubbles:true,cancelable:true,...details});await active(4);assert.equal(await feedback.nth(4).isVisible(),false);}
       await page.keyboard.press('Enter');await active(5);await result(4,'correct');
       await inputs.nth(5).fill('오메가');await page.keyboard.press('Enter');await result(5,'correct');assert.equal(await page.locator('.era-practice-grade').last().evaluate(n=>n===document.activeElement),true);

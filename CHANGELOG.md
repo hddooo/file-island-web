@@ -1,3 +1,10 @@
+## 0.10.14-beta
+
+- Grade the current temporary era wrong-answer blank with Tab or Enter after Korean composition commits, including native Tab focus movement and Safari-style event ordering.
+- Preserve saved answers, account boundaries and API contracts; prevent duplicate advancement and delayed focus theft.
+- Rename the wrong-answer area to 의금부 without changing existing routes or record keys.
+- Simplify the requested Jeong Do-jeon display label and match the surrounding royal-name presentation while retaining the source input.
+
 ## 0.10.13-beta
 
 - Structure the eight Joseon exam pages as source-preserving category/choice tables, with mobile stacking and distinct supplementary rows.
