@@ -2134,7 +2134,7 @@
       "phrase": "현량과",
       "id": "joseon-hyeollyanggwa",
       "term": "현량과",
-      "summary": "1519년 중종 때 조광조 등의 건의로 시행한 특별 과거. 추천받은 인재를 시험으로 선발했으며, 기묘사화 뒤 폐지되었다.",
+      "summary": "1519년 중종 때 조광조 등의 건의로 시행한 특별 과거. 학식과 덕행이 뛰어난 사람을 추천받은 뒤, 문과에서는 정치 현안에 답하는 대책 시험으로 인재를 뽑았다.",
       "sources": [
         "https://encykorea.aks.ac.kr/Article/E0063316"
       ]
@@ -2144,7 +2144,7 @@
       "phrase": "위훈 삭제",
       "id": "joseon-false-merit-removal",
       "term": "위훈 삭제",
-      "summary": "중종반정 때 실제 공이 없는데도 공신으로 책봉된 사람들의 공훈을 취소하려 한 조치. 조광조 등이 추진해 훈구 세력의 반발을 샀다.",
+      "summary": "1519년 조광조 등이 중종반정에 공이 없는데도 공신이 된 사람들의 공신 자격을 취소하자고 한 주장. 76명의 자격이 취소되면서 훈구 세력의 반발을 불렀다.",
       "sources": [
         "https://encykorea.aks.ac.kr/Article/E0051606"
       ]
@@ -2214,7 +2214,7 @@
       "phrase": "현량과 실시",
       "id": "joseon-hyeollyanggwa",
       "term": "현량과",
-      "summary": "1519년 중종 때 조광조 등의 건의로 시행한 특별 과거. 추천받은 인재를 시험으로 선발했으며, 기묘사화 뒤 폐지되었다.",
+      "summary": "1519년 중종 때 조광조 등의 건의로 시행한 특별 과거. 학식과 덕행이 뛰어난 사람을 추천받은 뒤, 문과에서는 정치 현안에 답하는 대책 시험으로 인재를 뽑았다.",
       "sources": [
         "https://encykorea.aks.ac.kr/Article/E0063316"
       ]
@@ -2224,10 +2224,11 @@
       "phrase": "양재역 벽서 사건",
       "id": "joseon-yangjae-poster-incident",
       "term": "양재역 벽서 사건",
-      "summary": "1547년 문정왕후와 집권 세력을 비판하는 글이 양재역에서 발견된 사건. 이를 계기로 을사사화 관련 인물과 사림에 대한 처벌이 확대되었다.",
+      "summary": "1547년(명종 2) 문정왕후와 이기 등을 비판한 벽서가 양재역에서 발견된 사건. 을사사화의 여파로 대윤 잔존 세력과 사림이 다시 숙청되었으며, 정미사화라고도 한다.",
       "sources": [
         "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i304210"
-      ]
+      ],
+      "plainText": true
     },
     {
       "era": "joseon",
@@ -2763,7 +2764,9 @@
     {
       "era": "joseon",
       "phrase": "공인이 등장",
-      "followingSuffixes": ["하는"],
+      "followingSuffixes": [
+        "하는"
+      ],
       "id": "gongin",
       "term": "공인",
       "summary": "대동법 뒤 관청에 필요한 물품을 사서 대던 상인",
@@ -2804,7 +2807,9 @@
     {
       "era": "joseon",
       "phrase": "북벌을 추진",
-      "followingSuffixes": ["하였다"],
+      "followingSuffixes": [
+        "하였다"
+      ],
       "id": "joseon-hyojong-northern-campaign",
       "term": "북벌(효종)",
       "summary": "병자호란의 치욕을 씻고 청을 정벌하자는 주장. 효종이 군사력 강화와 함께 추진했지만 실제 청 정벌로 이어지지는 못했다.",
@@ -2825,7 +2830,9 @@
     {
       "era": "joseon",
       "phrase": "금위영을 설치",
-      "followingSuffixes": ["하였다"],
+      "followingSuffixes": [
+        "하였다"
+      ],
       "id": "joseon-geumwiyeong",
       "term": "금위영",
       "summary": "1682년 숙종 때 정초군과 훈련별대 등을 합쳐 설치한 중앙 군영. 국왕 호위와 수도 방어를 맡았으며, 오군영 가운데 마지막으로 설치되었다.",
@@ -2886,7 +2893,9 @@
     {
       "era": "joseon",
       "phrase": "공노비 6만여 명을 해방",
-      "followingSuffixes": ["하였다"],
+      "followingSuffixes": [
+        "하였다"
+      ],
       "id": "joseon-public-slave-emancipation",
       "term": "공노비 해방(순조)",
       "summary": "1801년 순조 때 왕실과 중앙 관청 소속 내시노비 약 6만 6천 명을 양인으로 바꾼 조치. 모든 노비를 해방한 것은 아니다.",
@@ -3059,10 +3068,12 @@
       "phrase": "을묘왜변",
       "id": "joseon-eulmyo-waebyeon",
       "term": "을묘왜변",
-      "summary": "1555년 명종 때 왜구가 전라도 남해안 일대를 침입해 약탈한 사건. 조선은 군대를 보내 왜구를 물리쳤다.",
+      "summary": "1555년(명종 10) 왜구가 전라도 남해안을 침입한 사건. 이를 계기로 군사 문제를 논의하던 비변사가 상설 기구로 정착하였다.",
       "sources": [
-        "https://encykorea.aks.ac.kr/Article/E0042945"
-      ]
+        "https://encykorea.aks.ac.kr/Article/E0042945",
+        "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_o300310"
+      ],
+      "plainText": true
     },
     {
       "era": "joseon",
@@ -4455,7 +4466,9 @@
       "plainText": true,
       "emphasize": true,
       "summary": "1413년 태종 때 시행한 제도로, 16세 이상 남자에게 신분증인 호패를 지니게 했다. 신분과 호구를 파악해 조세 징수와 군역 부과의 기반을 마련하려 했다.",
-      "sources": ["https://encykorea.aks.ac.kr/Article/E0063880"]
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0063880"
+      ]
     },
     {
       "era": "joseon",
@@ -4568,8 +4581,53 @@
       "sources": [
         "https://waks.aks.ac.kr/rsh/dir/rview.aspx?dataID=AKS-2013-CKD-1240001_DIC@00009957&rshID=AKS-2013-CKD-1240001"
       ]
+    },
+    {
+      "era": "joseon",
+      "id": "joseon-sohak-promotion",
+      "term": "소학 보급",
+      "phrase": "소학 보급",
+      "plainText": true,
+      "summary": "유교의 기본 예절과 생활 윤리를 담은 수양 교재 『소학』을 널리 알리고 배우게 한 정책. 조광조 등은 성리학적 도덕을 일상에서 실천하도록 보급을 추진했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0030333",
+        "https://contents.history.go.kr/front/tg/view.do?levelId=tg_003_0940&treeId=0100"
+      ]
+    },
+    {
+      "era": "joseon",
+      "id": "joseon-sogyeokseo-abolition",
+      "term": "소격서 혁파",
+      "phrase": "소격서 혁파",
+      "plainText": true,
+      "summary": "1518년 중종 때 조광조 등의 건의로 도교 제사를 맡던 소격서를 폐지한 조치. 성리학에 어긋나는 의례를 없애 유교 중심의 정치를 실현하려 했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0029912"
+      ]
+    },
+    {
+      "era": "joseon",
+      "id": "joseon-hyangyak-promotion",
+      "term": "향약 보급",
+      "phrase": "향약 보급",
+      "plainText": true,
+      "summary": "유교 윤리와 상부상조를 바탕으로 한 마을 규약을 확산하려 한 정책. 조광조 등 사림이 향촌 교화를 위해 추진했으나 기묘사화로 중단되었다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i306200",
+        "https://encykorea.aks.ac.kr/Article/E0062948"
+      ]
+    },
+    {
+      "era": "joseon",
+      "id": "joseon-sampo-disturbance",
+      "term": "삼포왜란",
+      "phrase": "삼포왜란",
+      "plainText": true,
+      "summary": "1510년 중종 때 부산포·제포·염포의 일본 거류민들이 조선의 통제에 반발하여 일으킨 난. 진압 뒤 대일 통교가 끊겼다가 1512년 임신약조로 재개되었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0026916"
+      ]
     }
   ]
 };
 })(typeof window==='object'?window:globalThis);
-

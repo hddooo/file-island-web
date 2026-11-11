@@ -1,3 +1,8 @@
+## 0.10.11-beta
+- Add independently sourced tooltips for Sohak promotion, Sogyeokseo abolition, Hyangyak promotion and the Sampo disturbance.
+- Clarify Hyeollyanggwa recommendation followed by the policy examination, the merit-title cancellation, the Yangjae poster incident after the Eulsa purge, and the Eulmyo incursion and permanent Bibyeonsa.
+- Connect the unstyled Yangjae/Eulmyo terms using the existing reversible runtime. Preserve source parentheticals and all deferred note-movement boundaries.
+
 ## 0.10.10-beta
 - Put the requested Sejo Susinjeon/Hyulyangjeon abolition phrase on the next line and connect its tooltip. Preserve the preceding policy explanation.
 - Explain the widow and orphan recipients and the inherited tax-collection rights, with the 1466 abolition date.

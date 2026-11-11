@@ -47,4 +47,12 @@ check('<table><tr><th>세조</th><td><p>수신전&amp;휼양전 폐지론</p></t
 check('<table><tr><th>세조</th><td><p><a href="#">수신전&amp;휼양전 폐지</a></p></td></tr></table>',0,n=>assert.equal(n.querySelector('br'),null));
 check('<table><tr><th>세조</th><td><p>다른 정책, 수신전&amp;휼양전 폐지</p></td></tr></table>',0,n=>assert.equal(n.querySelector('br'),null),'joseon','wrong');
 check('<table><tr><th>세조</th><td><p>수신전&amp;휼양전 폐지<em>론</em></p></td></tr></table>',0,n=>assert.equal(n.querySelector('br'),null));
+
+check('<p>소학 보급, 소격서 혁파, 향약 보급</p>',3);
+check('<p>삼포왜란 → 비변사 설치(기존 설명 유지)</p>',1,n=>assert(n.textContent.includes('(기존 설명 유지)')));
+check('<p>양재역 벽서 사건(기존 설명 유지)</p>',1,n=>assert(n.textContent.includes('(기존 설명 유지)')));
+check('<p>을묘왜변 → 비변사 상설기구화</p>',1,n=>assert.equal(n.textContent,'을묘왜변 → 비변사 상설기구화'));
+check('<p>신삼포왜란</p>',0);
+check('<p>삼포왜란<em>론</em></p>',0);
+check('<p><strong data-history-source-emphasis>현량과</strong>(기존 설명 유지), <strong data-history-source-emphasis>위훈 삭제</strong> 주장</p>',2,n=>assert(n.textContent.includes('(기존 설명 유지)')));
 console.log('PASS '+checks+' synthetic supplement cases: boundaries, source/era guards, styles, IDs, exact restoration, dialogs and cleanup');w.close();
