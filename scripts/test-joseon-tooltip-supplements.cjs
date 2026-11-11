@@ -14,7 +14,7 @@ check('<p><strong id="stable" data-history-source-emphasis>불씨잡변, 조선�
 check('<p><strong data-history-source-emphasis>불씨잡변, 조선경국전</strong></p>',0,null,'joseon','wrong');
 check('<p><strong data-history-source-emphasis>불씨잡변, 조선경국전</strong></p>',0,null,'goryeo');
 for(const html of ['<p>신<span>호패법</span></p>','<p><span>호패법</span><span>전</span></p>','<p>신호패법전</p>','<button><p>호패법</p></button>','<p><a href="#">호패법</a></p>','<script>호패법</script>'])check(html,0);
-check('<p>호패법 실시</p>',1);check('<p>임신약조 체결</p>',1);
+check('<p>호패법 실시</p>',1,n=>assert.equal(n.querySelector('.history81-term strong').textContent,'호패법'));check('<p>임신약조 체결</p>',1);
 check('<p>의정부 서사제 시행</p>',1,n=>assert.equal(n.querySelector('.history81-term strong').textContent,'의정부 서사제'));
 check('<p>계유정난 발생(김종서 축출, 수양대군(=세조)이 권력 잡음)</p>',1,n=>assert.equal(n.textContent,'계유정난 발생'));
 check('<p>남이 장군(세조 때 이시애의 난 평정, 건주위 여진족 정벌) 처형</p>',1,n=>assert.equal(n.textContent,'남이 장군 처형'));
@@ -37,4 +37,5 @@ check('<table><tr><th>단종</th><td><ul><li>계유정난 발생(김종서 축�
 check('<table><tr><th>세조</th><td><p>기존 설명, 수신전&amp;휼양전 폐지</p></td></tr></table>',0,n=>assert.equal(n.querySelector('[data-history-requested-emphasis]').textContent,'수신전&휼양전 폐지'));
 check('<table><tr><th>단종</th><td><p>수신전&amp;휼양전 폐지</p></td></tr></table>',0,n=>assert.equal(n.querySelector('[data-history-requested-emphasis]'),null));
 check('<table><tr><th>세조</th><td><p><strong>수신전&amp;휼양전 폐지</strong></p></td></tr></table>',0,n=>assert.equal(n.querySelectorAll('strong').length,1));
+check('<p><strong data-history-source-emphasis>연분 9등법</strong>(기존 설명 유지), 전분 6등법</p>',2,n=>{assert.equal(n.querySelector('[data-term-phrase=\"전분 6등법\"] strong').textContent,'전분 6등법');assert(n.textContent.includes('(기존 설명 유지)'));});
 console.log('PASS '+checks+' synthetic supplement cases: boundaries, source/era guards, styles, IDs, exact restoration, dialogs and cleanup');w.close();

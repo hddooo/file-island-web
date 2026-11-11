@@ -1,3 +1,8 @@
+## 0.10.9-beta
+- Emphasize the existing Hopae tooltip trigger using the same reversible presentation path as other requested terms.
+- Add an independently sourced Jeonbun six-grade land-fertility tooltip. Preserve the existing Yeonbun definition and the separately blocked note-movement boundary.
+- Keep original source text, existing tooltip definitions and blank-recall answers intact. Browser visual and physical-device verification remain unperformed.
+
 ## 0.10.8-beta
 - Fix missing Joseon tooltips for complete terms combined in one emphasized list and four audited sentence endings.
 - Add source-verified definitions for nine Joseon terms and the plain Uijeongbu Seosa alias. Clarify Yukjo Jikgye and Gyeyu explanations.

@@ -4453,6 +4453,7 @@
       "id": "joseon-hopae",
       "term": "호패법",
       "plainText": true,
+      "emphasize": true,
       "summary": "1413년 태종 때 시행한 제도로, 16세 이상 남자에게 신분증인 호패를 지니게 했다. 신분과 호구를 파악해 조세 징수와 군역 부과의 기반을 마련하려 했다.",
       "sources": ["https://encykorea.aks.ac.kr/Article/E0063880"]
     },
@@ -4554,6 +4555,18 @@
       "summary": "상복을 1년 동안 입어야 한다는 주장. 1659년 효종 사후 예송에서 송시열 등 서인은 자의대비에게 1년 상복을 적용하자고 주장했다.",
       "sources": [
         "https://dh.aks.ac.kr/sillokwiki/index.php/기년설(朞年說)"
+      ]
+    },
+    {
+      "era": "joseon",
+      "id": "joseon-jeonbun-six-grades",
+      "term": "전분 6등법",
+      "phrase": "전분 6등법",
+      "plainText": true,
+      "emphasize": true,
+      "summary": "세종 때 공법에서 토지의 비옥도를 6등급으로 나눈 기준. 등급마다 1결의 면적을 달리해 전세를 부과했다.",
+      "sources": [
+        "https://waks.aks.ac.kr/rsh/dir/rview.aspx?dataID=AKS-2013-CKD-1240001_DIC@00009957&rshID=AKS-2013-CKD-1240001"
       ]
     }
   ]
