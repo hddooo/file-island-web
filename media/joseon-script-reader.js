@@ -158,8 +158,8 @@
       const exam=bundle.source.sha256===editorialSource&&[62,63,68,69,70,76,77,78].includes(s.page)&&/시험에는 이렇게 나온다!/.test(s.markdown);
       return mode==='exam'?exam:!exam;
     }
-    let recallView=null;
-    function render(){if(recallView){recallView.stop();recallView=null;}const recall=mode==='recall';if(recall)mode='study';renderContent();if(recall){mode='recall';if(termView){termView.stop();termView=null;}recallView=win.HanqBlankRecall.decorate(body);updateModeButtons('recall');}}
+    let recallView=null,personLabelRestore=null;
+    function render(){personLabelRestore=null;if(recallView){recallView.stop();recallView=null;}const recall=mode==='recall';if(recall)mode='study';renderContent();if(recall){mode='recall';if(termView){termView.stop();termView=null;}if(personLabelRestore){personLabelRestore();personLabelRestore=null;}recallView=win.HanqBlankRecall.decorate(body);updateModeButtons('recall');}}
     function updateModeButtons(current){modes.querySelectorAll('button').forEach(b=>{const selected=b.dataset.mode===current;b.classList.toggle('current',selected);if(selected)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current');});}
     function renderContent(){nav.hidden=mode==='practice'||mode==='answers';epoch++;clearImages();body.replaceChildren();toc.replaceChildren();
       nav.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.topic===topic)));
@@ -308,7 +308,10 @@
         const nested=el('section',null,'jsr-subperson');subordinate.before(nested);nested.append(subordinate,sublist);
         // A requested display-only name. Use the same heading element as the kings,
         // but exclude it from the numbered TOC to retain every existing heading ID.
-        if(/^태조 이성계 → 정도전(?: · 원문 태조 이성계 병합 셀 안의 하위 셀)?$/.test(subordinate.textContent.trim()))subordinate.replaceWith(el('h4','정도전','jsr-subperson-heading'));
+        if(/^태조 이성계 → 정도전(?: · 원문 태조 이성계 병합 셀 안의 하위 셀)?$/.test(subordinate.textContent.trim())){
+          const label=el('h4','정도전','jsr-subperson-heading');subordinate.replaceWith(label);
+          personLabelRestore=()=>{if(label.isConnected)label.replaceWith(subordinate);};
+        }
       }
       [1,2].forEach((rowIndex,i)=>{const cell=groups[rowIndex].cell,layout=el('div',null,'jsr-diagram-row'),copy=el('div');copy.append(...Array.from(cell.childNodes));diagrams[i].querySelector('figcaption').hidden=true;layout.append(copy,diagrams[i]);cell.append(layout);});
       badges.forEach(({figure,reference})=>{figure.classList.add('jsr-inline-figure');figure.dataset.studyLabel=reference.textContent;figure.querySelector('figcaption').hidden=true;reference.replaceWith(figure);reference.classList.add('jsr-badge-fallback');figure.prepend(reference);});
@@ -506,7 +509,7 @@
     function navigate(nextTopic,nextMode){topic=nextTopic;mode=nextMode;const state={source:bundle.source.sha256,topic,mode};win.history.pushState(Object.assign({},win.history.state,{joseonScript:state}),'',options.routeForMode?options.routeForMode(mode):undefined);render();}
     function pop(){if(dialog&&!(win.history.state&&win.history.state.joseonImage)){dismissImage();return;}dismissImage();const s=win.history.state&&win.history.state.joseonScript;if(s&&s.source===bundle.source.sha256&&bundle.topics.some(t=>t.id===s.topic)&&['study','exam','practice','answers','recall'].includes(s.mode)){topic=s.topic;mode=s.mode;}else{topic=initialTopic;mode=options.modeFromLocation?options.modeFromLocation():options.initialMode||'study';}render();}
     if(!options.externalNavigation)win.addEventListener('popstate',pop);pop();
-    return {handlePopState(){if(!alive)return false;pop();return true;},stop(){if(recallView)recallView.stop();alive=false;epoch++;clearImages();drafts.clear();win.removeEventListener('popstate',pop);modes.remove();shell.remove();}};
+    return {handlePopState(){if(!alive)return false;pop();return true;},stop(){personLabelRestore=null;if(recallView)recallView.stop();alive=false;epoch++;clearImages();drafts.clear();win.removeEventListener('popstate',pop);modes.remove();shell.remove();}};
   }
   root.HanqJoseonScriptReader={mount,inline,renderMarkdown,readingMarkdown};
   if(typeof module==='object'&&module.exports)module.exports=root.HanqJoseonScriptReader;
