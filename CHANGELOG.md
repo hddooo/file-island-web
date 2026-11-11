@@ -1,3 +1,8 @@
+## 0.10.10-beta
+- Put the requested Sejo Susinjeon/Hyulyangjeon abolition phrase on the next line and connect its tooltip. Preserve the preceding policy explanation.
+- Explain the widow and orphan recipients and the inherited tax-collection rights, with the 1466 abolition date.
+- Restore exact original source nodes before recall or teardown. Previously deferred note movements remain excluded; actual visual/device checks remain unperformed.
+
 ## 0.10.9-beta
 - Emphasize the existing Hopae tooltip trigger using the same reversible presentation path as other requested terms.
 - Add an independently sourced Jeonbun six-grade land-fertility tooltip. Preserve the existing Yeonbun definition and the separately blocked note-movement boundary.

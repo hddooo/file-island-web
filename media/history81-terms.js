@@ -32,6 +32,8 @@
   function contextAllows(entry,node){
     const text=node.textContent;
     if(entry.phrase==='금오')return /의금부|조옥/.test(text);
+    // The requested Sejo policy line is identified by its semantic row, not source coordinates.
+    if(entry.id==='joseon-remaining-abolish-estates-20'&&node.closest('tr')?.cells[0]?.textContent.trim()==='세조')return true;
     if(entry.era==='joseon'&&entry.contextRequired){
       const rule=joseonContexts[entry.phrase],page=node.closest('[data-page]');
       if(!rule||!page||!rule[0].includes(page.dataset.page))return false;
@@ -176,9 +178,17 @@
     for(const node of host.querySelectorAll('li')){if(node.textContent.trim()!=='조선 건국 주도'||node.children.length||!node.parentElement.previousElementSibling?.textContent.includes('정도전'))continue;const anchor=doc.createComment('dismissed-person-summary');node.replaceWith(anchor);undo.push(()=>{if(anchor.parentNode)anchor.replaceWith(node);});}
     // Keep the event under Sejo as requested; its definition retains the Danjong date.
     for(const node of host.querySelectorAll('li')){if(node.textContent.trim()!=='계유정난 발생'||node.closest('tr')?.cells[0]?.textContent.trim()!=='단종'||node.id||node.querySelector('li,[id],a,button,input'))continue;const anchor=doc.createComment('dismissed-duplicate-event');node.replaceWith(anchor);undo.push(()=>{if(anchor.parentNode)anchor.replaceWith(node);});}
-    // Emphasize the requested Sejo policy without changing its wording or recall ink.
-    for(const cell of host.querySelectorAll('tr')){if(cell.cells[0]?.textContent.trim()!=='세조')continue;const leaves=[],walk=doc.createTreeWalker(cell,4);let n;while((n=walk.nextNode()))if(!n.parentElement.closest('strong,b,'+blocked))leaves.push(n);
-      for(const node of leaves){const match=/수신전\s*(?:&|·|과)\s*휼양전(?:이)?\s*폐지/u.exec(node.data);if(!match)continue;const wrap=doc.createElement('span');wrap.style.display='contents';const strong=doc.createElement('strong');strong.dataset.historyRequestedEmphasis='';strong.textContent=match[0];wrap.append(doc.createTextNode(node.data.slice(0,match.index)),strong,doc.createTextNode(node.data.slice(match.index+match[0].length)));node.replaceWith(wrap);undo.push(()=>{if(wrap.parentNode)wrap.replaceWith(node);});}
+    // Put the requested Sejo policy on the next line and connect its definition.
+    // Keep the preceding policy explanation intact and restore the exact original node.
+    for(const cell of host.querySelectorAll('tr')){if(cell.cells[0]?.textContent.trim()!=='세조')continue;const leaves=[],walk=doc.createTreeWalker(cell,4);let n;while((n=walk.nextNode()))if(n.parentElement.closest('li,p')&&!n.parentElement.closest('strong,b,script,style,'+blocked))leaves.push(n);
+      for(const node of leaves){const match=/수신전\s*&\s*휼양전\s*폐지/u.exec(node.data);if(!match||!entries.has(normalize(match[0])))continue;
+        const scope=node.parentElement.closest('li,p'),prefix=doc.createRange();prefix.selectNodeContents(scope);prefix.setEnd(node,match.index);const before=prefix.toString(),tail=node.data.slice(match.index+match[0].length),leading=node.data.slice(0,match.index),previous=node.previousSibling,afterBreak=leading.trim()===''&&previous?.nodeType===1&&previous.tagName==='BR';
+        if((!afterBreak&&/[\p{L}\p{N}\p{M}_]/u.test(before.at(-1)||''))||/^[\p{L}\p{N}\p{M}_]/u.test(scope.textContent.slice(before.length+match[0].length)))continue;
+        const wrap=doc.createElement('span');wrap.style.display='contents';const strong=doc.createElement('strong');strong.dataset.historyRequestedEmphasis='';strong.dataset.historySourceEmphasis='';strong.textContent=match[0];
+        wrap.append(doc.createTextNode(before.trim()?leading.replace(/,\s*$/u,''):leading));
+        if(before.trim()&&!afterBreak){const br=doc.createElement('br');br.dataset.historyRequestedBreak='';wrap.append(br);}
+        wrap.append(strong,doc.createTextNode(tail));node.replaceWith(wrap);undo.push(()=>{if(wrap.parentNode)wrap.replaceWith(node);});
+      }
     }
     // The user explicitly dismissed this redundant diagram transcription.
     // It is restored before blank recall, which still uses the full source.

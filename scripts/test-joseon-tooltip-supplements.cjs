@@ -34,8 +34,17 @@ check(council.replace('</table></div>','</table><p>별개 설명 보존</p></div
 check(council.replace('의정부 서사제 도식</strong>','의정부 서사제 도식<span id="stable"></span></strong>'),2,n=>assert(n.querySelector('#stable')));
 check('<p><strong data-history-source-emphasis>계유정난 발생</strong>(김종서 축출, 수양대군(=세조)이 권력 잡음)</p>',0,n=>assert(n.textContent.includes('김종서')));
 check('<table><tr><th>단종</th><td><ul><li>계유정난 발생(김종서 축출, 수양대군(=세조)이 권력 잡음)</li><li>다른 사건</li></ul></td></tr><tr><th>세조</th><td><ul><li><strong data-history-source-emphasis>계유정난</strong>으로 권력을 잡음</li></ul></td></tr></table>',1,n=>{assert.equal(n.querySelector('tr:first-child').textContent,'단종다른 사건');assert(n.querySelector('tr:last-child .history81-term'));});
-check('<table><tr><th>세조</th><td><p>기존 설명, 수신전&amp;휼양전 폐지</p></td></tr></table>',0,n=>assert.equal(n.querySelector('[data-history-requested-emphasis]').textContent,'수신전&휼양전 폐지'));
+check('<table><tr><th>세조</th><td><p>기존 설명, 수신전&amp;휼양전 폐지</p></td></tr></table>',1,n=>{assert.equal(n.querySelector('[data-history-requested-emphasis]').textContent,'수신전&휼양전 폐지');assert.equal(n.querySelectorAll('[data-history-requested-break]').length,1);assert.equal(n.querySelector('td').textContent,'기존 설명수신전&휼양전 폐지');});
 check('<table><tr><th>단종</th><td><p>수신전&amp;휼양전 폐지</p></td></tr></table>',0,n=>assert.equal(n.querySelector('[data-history-requested-emphasis]'),null));
 check('<table><tr><th>세조</th><td><p><strong>수신전&amp;휼양전 폐지</strong></p></td></tr></table>',0,n=>assert.equal(n.querySelectorAll('strong').length,1));
 check('<p><strong data-history-source-emphasis>연분 9등법</strong>(기존 설명 유지), 전분 6등법</p>',2,n=>{assert.equal(n.querySelector('[data-term-phrase=\"전분 6등법\"] strong').textContent,'전분 6등법');assert(n.textContent.includes('(기존 설명 유지)'));});
+
+check('<table><tr><th>세조</th><td><p>수신전&amp;휼양전 폐지</p></td></tr></table>',1,n=>assert.equal(n.querySelector('br'),null));
+check('<table><tr><th>세조</th><td><p>다른 정책<br>수신전&amp;휼양전 폐지</p></td></tr></table>',1,n=>assert.equal(n.querySelectorAll('br').length,1));
+check('<table><tr><th>세조</th><td><p>다른 정책, 수신전 &amp; 휼양전 폐지</p></td></tr></table>',1,n=>assert.equal(n.querySelectorAll('br').length,1));
+check('<table><tr><th>세조</th><td><p>신수신전&amp;휼양전 폐지</p></td></tr></table>',0,n=>assert.equal(n.querySelector('br'),null));
+check('<table><tr><th>세조</th><td><p>수신전&amp;휼양전 폐지론</p></td></tr></table>',0,n=>assert.equal(n.querySelector('br'),null));
+check('<table><tr><th>세조</th><td><p><a href="#">수신전&amp;휼양전 폐지</a></p></td></tr></table>',0,n=>assert.equal(n.querySelector('br'),null));
+check('<table><tr><th>세조</th><td><p>다른 정책, 수신전&amp;휼양전 폐지</p></td></tr></table>',0,n=>assert.equal(n.querySelector('br'),null),'joseon','wrong');
+check('<table><tr><th>세조</th><td><p>수신전&amp;휼양전 폐지<em>론</em></p></td></tr></table>',0,n=>assert.equal(n.querySelector('br'),null));
 console.log('PASS '+checks+' synthetic supplement cases: boundaries, source/era guards, styles, IDs, exact restoration, dialogs and cleanup');w.close();

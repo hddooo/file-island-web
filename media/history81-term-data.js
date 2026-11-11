@@ -4067,7 +4067,7 @@
     {
       "id": "joseon-remaining-abolish-estates-19",
       "term": "수신전·휼양전 폐지",
-      "summary": "1466년 세조 때 직전법을 시행하면서 관리의 유족에게 주던 수신전과 휼양전을 폐지했다. 토지 지급 대상을 현직 관리로 제한한 조치였다.",
+      "summary": "수신전은 사망한 관리의 아내에게 재혼하지 않는 조건으로, 휼양전은 부모를 모두 잃은 어린 자녀에게 과전의 수조권을 이어 준 제도. 1466년 세조의 직전법 시행으로 둘 다 폐지되었다.",
       "sources": [
         "https://encykorea.aks.ac.kr/Article/E0031511",
         "https://encykorea.aks.ac.kr/Article/E0065865",
@@ -4230,7 +4230,7 @@
     {
       "id": "joseon-remaining-abolish-estates-20",
       "term": "수신전·휼양전 폐지",
-      "summary": "1466년 세조 때 직전법을 시행하면서 관리의 유족에게 주던 수신전과 휼양전을 폐지했다. 토지 지급 대상을 현직 관리로 제한한 조치였다.",
+      "summary": "수신전은 사망한 관리의 아내에게 재혼하지 않는 조건으로, 휼양전은 부모를 모두 잃은 어린 자녀에게 과전의 수조권을 이어 준 제도. 1466년 세조의 직전법 시행으로 둘 다 폐지되었다.",
       "sources": [
         "https://encykorea.aks.ac.kr/Article/E0031511",
         "https://encykorea.aks.ac.kr/Article/E0065865",
