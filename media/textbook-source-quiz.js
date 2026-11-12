@@ -356,7 +356,7 @@
     var wrapper=el('section','textbook-source-quiz textbook-source-continuous'+(manualSave?' textbook-source-inline-questions':''));wrapper.appendChild(el('h2','textbook-source-quiz-title',data.title));
     var notesEdition = data.source.sha256 === 'd54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de' ? '81' : data.source.sha256 === '35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442' ? '79' : null;
     if (notesEdition) { wrapper.classList.add('history-notes-design'); wrapper.setAttribute('data-history-edition',notesEdition); }
-    if(sequential)wrapper.appendChild(el('p','textbook-source-quiz-help textbook-source-grading-notice','괄호가 있는 정답은 괄호까지 모두 입력해 주세요. 쉼표·슬래시 대체와 동의어 단독 입력은 준비 중입니다.'));
+    if(sequential)wrapper.appendChild(el('p','textbook-source-quiz-help textbook-source-grading-notice','문제의 정답을 입력하고, Enter 키를 눌러 진행하세요.'));
     if(checkedReview)wrapper.appendChild(el('p','textbook-source-quiz-help','모르는 문제 / 확실히 틀린 문제만 체크하세요. 다시보기를 통해 모르는 문제만 다시봐요 !'));
     var controls=el('div','textbook-source-list-controls'),stop=el('button','textbook-source-quiz-stop','그만하기'),retry=el('button','textbook-source-save-retry','저장 다시 시도');stop.type=retry.type='button';retry.hidden=true;if(!checkedReview&&!manualSave)controls.appendChild(stop);controls.appendChild(retry);wrapper.appendChild(controls);
     var progress=el('p','textbook-source-progress'),status=el('p','textbook-source-quiz-status','계정에 저장된 응답을 불러오는 중…');status.setAttribute('role','status');status.setAttribute('aria-live','polite');if(manualSave){wrapper.classList.add('textbook-source-manual-save');var summaryBar=el('div','textbook-source-save-bar');saveButton=el('button','textbook-source-save-complete','저장 / 완료');saveButton.type='button';saveButton.disabled=true;var summaryActions=el('div','textbook-source-save-actions');restartButton=el('button','textbook-source-restart','다시 풀기');restartButton.type='button';restartButton.disabled=true;summaryActions.appendChild(saveButton);summaryActions.appendChild(restartButton);summaryBar.appendChild(progress);summaryBar.appendChild(summaryActions);wrapper.insertBefore(summaryBar,controls);}else wrapper.appendChild(progress);wrapper.appendChild(status);
@@ -438,11 +438,11 @@
       cursor=0;lastFocused=0;if(sequential){cancelFlowTimer();flowPhase='answer';flowIndex=0;reviewHost.hidden=true;flow.layout.hidden=false;flow.dialog.hidden=true;showFlowQuestion(0,false);}updateProgress();message('');focusAt(fields.findIndex(function(e){return !e.node.disabled;}));
     }
     function paintExamCounters(done,total,rate){
-      var label='현재 정답률: '+rate+'% · '+done+' / '+total;
+      var label='현재 정답률: '+rate+'%';
       progress.setAttribute('aria-label',label);
       if(!counterState){
         progress.replaceChildren();var accuracy=el('span','textbook-source-accuracy'),caption=el('span','','현재 정답률: '),percent=el('strong','textbook-source-counter-value','0'),count=el('span','textbook-source-count'),number=el('strong','textbook-source-counter-value','0'),spoken=el('span','textbook-source-counter-spoken');
-        accuracy.setAttribute('aria-hidden','true');count.setAttribute('aria-hidden','true');accuracy.append(caption,percent,doc.createTextNode('%'));count.append(number,doc.createTextNode(' / '+total));spoken.setAttribute('role','status');spoken.setAttribute('aria-live','polite');spoken.setAttribute('aria-atomic','true');progress.append(accuracy,count,spoken);counterState={done:0,rate:0,targetDone:null,targetRate:null,number:number,percent:percent,spoken:spoken};
+        accuracy.setAttribute('aria-hidden','true');count.setAttribute('aria-hidden','true');accuracy.append(caption,percent,doc.createTextNode('%'));count.append(number,doc.createTextNode(' / '+total));spoken.setAttribute('role','status');spoken.setAttribute('aria-live','polite');spoken.setAttribute('aria-atomic','true');progress.append(accuracy,spoken);counterState={done:0,rate:0,targetDone:null,targetRate:null,number:number,percent:percent,spoken:spoken};
       }
       var state=counterState;if(state.targetDone===done&&state.targetRate===rate)return;clearTimeout(counterTimer);state.targetDone=done;state.targetRate=rate;state.spoken.textContent=label;
       var fromDone=state.done,fromRate=state.rate,start=Date.now(),reduce=doc.defaultView.matchMedia&&doc.defaultView.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -483,11 +483,16 @@
     function updateFlowActions(){
       if(!flow)return;
       var busy=!saved||!!inFlight||pausing,composing=fields.some(function(e){return e.composing;}),last=flowIndex===rows.length-1;
-      saveButton.hidden=!last||flowPhase==='statistics';saveButton.disabled=busy||composing||flowPhase!=='answer';saveButton.textContent=inFlight?'제출 중…':'제출';
+      saveButton.hidden=!last||flowPhase==='statistics';saveButton.disabled=busy||composing||(flowPhase!=='answer'&&flowPhase!=='graded');saveButton.textContent=inFlight?'제출 중…':'제출';
       restartButton.hidden=flowPhase!=='statistics';restartButton.disabled=busy||!!pending||composing;
-      flow.previous.disabled=busy||flowIndex===0||(flowPhase!=='answer'&&flowPhase!=='mistake');flow.next.disabled=busy||last||(flowPhase!=='answer'&&flowPhase!=='mistake');
-      flow.position.textContent=(flowIndex+1)+' / '+rows.length;
-      if(flowPhase==='statistics')saveButton.hidden=true;
+      flow.previous.disabled=busy||flowIndex===0||(flowPhase!=='answer'&&flowPhase!=='graded');flow.next.disabled=busy||last||(flowPhase!=='answer'&&flowPhase!=='graded');
+      paintFlowPosition();if(flowPhase==='statistics')saveButton.hidden=true;
+    }
+    function paintFlowPosition(){
+      if(!flow)return;var target=flowIndex+1;if(flow.positionTarget===target)return;
+      clearTimeout(flow.positionTimer);flow.positionTarget=target;flow.position.setAttribute('aria-label',target+' / '+rows.length);flow.positionSpoken.textContent=target+' / '+rows.length;
+      var from=flow.positionValue==null?target:flow.positionValue,start=Date.now(),reduce=doc.defaultView.matchMedia&&doc.defaultView.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function tick(){if(!active||!flow)return;var t=reduce?1:Math.min(1,(Date.now()-start)/320);flow.positionValue=Math.round(from+(target-from)*(1-Math.pow(1-t,3)));flow.positionNumber.textContent=String(flow.positionValue);if(t<1)flow.positionTimer=setTimeout(tick,16);else flow.positionTimer=null;}tick();
     }
     function paintFlowNavigation(){
       if(!flow)return;
@@ -519,23 +524,16 @@
       // The source schema carries a verified answer, but no verified explanation field.
       target.appendChild(el('p','textbook-source-explanation-note','별도 해설이 없는 문항입니다. 교재 정답을 확인해 주세요.'));
     }
-    function openFlowMistake(){
-      if(!active||!flow)return;flowPhase='mistake';flow.dialog.replaceChildren();flow.dialog.hidden=false;
-      var countdown=el('span','textbook-source-mistake-countdown'),pause=el('button','textbook-source-pause','시간 멈춤'),remaining=5,paused=false;pause.type='button';flow.dialog.appendChild(countdown);flow.dialog.appendChild(pause);
-      function tick(){if(!active||flowPhase!=='mistake'||paused)return;countdown.textContent=remaining+'초 뒤 다음 문제 · Enter로 바로 넘어가기';if(remaining<=0){advanceFlow();return;}remaining--;flowTimer=setTimeout(tick,1000);}
-      on(pause,'click',function(){paused=!paused;cancelFlowTimer();pause.textContent=paused?'자동 이동 계속':'시간 멈춤';countdown.textContent=paused?'자동 이동을 멈췄습니다.':remaining+'초 뒤 다음 문제';if(!paused)tick();});
-      tick();updateFlowActions();
-    }
     function checkFlowQuestion(){
       if(!flow||flowPhase!=='answer'||inFlight||!active)return;
       var row=rows[flowIndex],missing=row.inputs.find(function(e){return !normalize(e.node.value);});
       if(row.inputs.some(function(e){return e.composing;}))return;
       if(missing){message('모든 빈칸에 답을 입력한 뒤 채점해 주세요.');focusAt(fields.indexOf(missing));return;}
       row.inputs.forEach(function(entry){grade(row,entry);entry.node.readOnly=true;});flowPhase='drawing';updateFlowActions();
-      cancelFlowTimer();var generation=flowGeneration;flowTimer=setTimeout(function(){if(!active||generation!==flowGeneration)return;if(row.correct)advanceFlow();else openFlowMistake();},1000);
+      cancelFlowTimer();var generation=flowGeneration;flowTimer=setTimeout(function(){if(!active||generation!==flowGeneration)return;flowPhase='graded';updateFlowActions();},1000);
     }
     function submitFlow(){
-      if(!flow||flowPhase!=='answer'||flowIndex!==rows.length-1||!saved||inFlight||pausing||fields.some(function(e){return e.composing;}))return;
+      if(!flow||(flowPhase!=='answer'&&flowPhase!=='graded')||flowIndex!==rows.length-1||!saved||inFlight||pausing||fields.some(function(e){return e.composing;}))return;
       rows.forEach(function(row){row.inputs.forEach(function(entry){if(normalize(entry.node.value)||row.touched)grade(row,entry);});});
       var remaining=rows.filter(function(row){return !row.submitted;}).length;
       if(remaining&&!doc.defaultView.confirm('아직 '+remaining+'문제를 풀지 않았습니다. 미풀이를 포함해 제출할까요?'))return;
@@ -560,11 +558,11 @@
       wrapper.classList.add('textbook-source-sequential');
       var layout=el('div','textbook-source-exam-layout'),stage=el('div','textbook-source-exam-stage'),nav=el('nav','textbook-source-question-map');nav.setAttribute('aria-label','문제 번호와 정답 여부');
       wrapper.insertBefore(layout,list);layout.appendChild(stage);stage.appendChild(list);layout.appendChild(nav);
-      var actions=el('div','textbook-source-exam-actions'),previous=el('button','','이전'),next=el('button','','다음'),position=el('span','textbook-source-exam-position');
-      previous.type=next.type='button';actions.appendChild(previous);actions.appendChild(next);actions.appendChild(position);stage.appendChild(actions);stage.appendChild(saveButton);
-      var summary=el('h3','','문제'),map=el('div','textbook-source-question-map-grid');nav.appendChild(summary);nav.appendChild(map);map.style.setProperty('--source-question-rows',String(Math.ceil(rows.length/2)));
+      var actions=el('div','textbook-source-exam-actions'),previous=el('button','','이전'),next=el('button','','다음'),position=el('span','textbook-source-exam-position'),positionNumber=el('strong','','1'),positionSpoken=el('span','textbook-source-counter-spoken');
+      previous.type=next.type='button';positionNumber.setAttribute('aria-hidden','true');var fraction=el('span','',' / '+rows.length);fraction.setAttribute('aria-hidden','true');positionSpoken.setAttribute('role','status');positionSpoken.setAttribute('aria-live','polite');positionSpoken.setAttribute('aria-atomic','true');position.append(positionNumber,fraction,positionSpoken);actions.appendChild(previous);actions.appendChild(position);actions.appendChild(next);stage.appendChild(actions);stage.appendChild(saveButton);
+      var summary=el('h3','','문제'),map=el('div','textbook-source-question-map-grid');nav.appendChild(summary);nav.appendChild(map);map.style.setProperty('--source-question-rows',String(Math.ceil(rows.length/2)));map.style.setProperty('--source-question-mobile-rows',String(Math.ceil(rows.length/4)));
       var dialog=el('div','textbook-source-inline-mistake');dialog.hidden=true;stage.insertBefore(dialog,actions);
-      flow={layout:layout,stage:stage,nav:nav,map:map,buttons:[],previous:previous,next:next,position:position,dialog:dialog};
+      flow={layout:layout,stage:stage,nav:nav,map:map,buttons:[],previous:previous,next:next,position:position,positionNumber:positionNumber,positionSpoken:positionSpoken,positionTimer:null,positionValue:null,positionTarget:null,dialog:dialog};
       rows.forEach(function(row,index){var button=el('button','textbook-source-question-number');button.type='button';button.appendChild(el('span','',String(index+1)));button.appendChild(el('span','textbook-source-map-state'));button.title=(data.subtopics.find(function(t){return t.id===row.item.subtopicId;})||{title:''}).title+' · 원문 '+sourceNumber(row.item,index);button.setAttribute('aria-controls',row.card.id=prefix+'-question-'+index);on(button,'click',function(){if(!inFlight)showFlowQuestion(index);});map.appendChild(button);flow.buttons.push(button);});
       on(previous,'click',function(){showFlowQuestion(flowIndex-1);});on(next,'click',advanceFlow);
       showFlowQuestion(0,false);
@@ -702,7 +700,7 @@
           if(checkedReview){entry.node.setAttribute('aria-keyshortcuts','F2');entry.node.setAttribute('aria-description','F2로 복습 체크에 이동합니다. 체크에서 Escape를 누르면 답칸으로 돌아옵니다.');}
           if(sequential)on(entry.node,'keyup',function(e){if((e.key==='Enter'||e.code==='Enter'||e.code==='NumpadEnter')&&!e.repeat&&!e.isComposing&&!e.altKey&&!e.ctrlKey&&!e.metaKey&&!entry.composing&&(entry.pendingEnter||flowPhase==='answer'&&Date.now()-entry.composedAt<100)){entry.pendingEnter=true;commitFlowEnter(row,entry);}});
           on(entry.node,'keydown',function(e){
-            if(sequential){if((e.key==='Enter'||e.code==='Enter'||e.code==='NumpadEnter')&&!e.altKey&&!e.ctrlKey&&!e.metaKey){if(e.repeat){e.preventDefault();return;}if((flowPhase==='mistake'||flowPhase==='drawing'&&row.correct===false)&&!e.isComposing&&e.keyCode!==229&&!entry.composing){e.preventDefault();advanceFlow();return;}if(e.isComposing||e.keyCode===229||entry.composing||Date.now()-entry.composedAt<100){entry.pendingEnter=true;commitFlowEnter(row,entry);if(!e.isComposing&&e.keyCode!==229&&!entry.composing)e.preventDefault();}else{e.preventDefault();checkFlowQuestion();}}return;}
+            if(sequential){if((e.key==='Enter'||e.code==='Enter'||e.code==='NumpadEnter')&&!e.altKey&&!e.ctrlKey&&!e.metaKey){if(e.repeat){e.preventDefault();return;}if((flowPhase==='graded'||flowPhase==='drawing')&&!e.isComposing&&e.keyCode!==229&&!entry.composing){e.preventDefault();advanceFlow();return;}if(e.isComposing||e.keyCode===229||entry.composing||Date.now()-entry.composedAt<100){entry.pendingEnter=true;commitFlowEnter(row,entry);if(!e.isComposing&&e.keyCode!==229&&!entry.composing)e.preventDefault();}else{e.preventDefault();checkFlowQuestion();}}return;}
             if((checkedReview||manualSave)&&!e.isComposing&&e.keyCode!==229&&!entry.composing&&!e.altKey&&!e.ctrlKey&&!e.metaKey){
               if(checkedReview&&e.key==='F2'){e.preventDefault();row.reviewReturnEntry=entry;row.reviewCheckbox.focus();return;}
               if(e.key==='Tab'){var targetIndex=displayFields.indexOf(entry)+(e.shiftKey?-1:1);if(targetIndex>=0&&targetIndex<displayFields.length){e.preventDefault();focusAt(fields.indexOf(displayFields[targetIndex]));return;}}
@@ -716,13 +714,14 @@
       displayFields=Array.from(list.querySelectorAll('.textbook-source-quiz-input')).map(function(node){return byNode.get(node);});
       applyMarkedFilter();if(sequential)buildFlow();updateProgress();
     }
+    if(sequential)on(saveButton,'keydown',function(e){if(e.key==='Enter'&&e.repeat)e.preventDefault();});
     on(retry,'click',function(){retry.disabled=true;retrySave().then(function(){if(sequential&&flowSubmitPending&&!controller.hasUnsaved()){flowSubmitPending=false;showFlowStatistics();}}).catch(failure).finally(function(){if(active)retry.disabled=false;});});
     on(stop,'click',function(){if(pausing||!saved)return;pausing=true;clearTimeout(timer);stop.disabled=true;flush('paused').then(function(){if(active){pausing=false;stop.disabled=false;showReview();message('현재 입력과 위치를 계정에 저장했습니다.');}},function(){pausing=false;stop.disabled=false;});});
     var reviewButton=el('button','textbook-source-quiz-review-button','풀이 목록·오답 보기');reviewButton.type='button';if(!checkedReview&&!manualSave)controls.appendChild(reviewButton);on(reviewButton,'click',function(){stop.click();});
     if(restartButton)on(restartButton,'click',restart);
     if(manualSave)on(saveButton,'click',function(){if(sequential){submitFlow();return;}if(!saved||inFlight||pausing)return;if(fields.some(function(e){return e.composing;})){message('한글 입력을 마친 뒤 저장 / 완료를 눌러주세요.');return;}rows.forEach(function(row){row.inputs.forEach(function(e){if(normalize(e.node.value)||row.touched)grade(row,e);});});retrySave().catch(failure);});
     function beforeUnload(e){if(dirty.size||pending||inFlight||ackCursor!==cursorVersion||ackMarkVersion!==markVersion){e.preventDefault();e.returnValue='';}}doc.defaultView.addEventListener('beforeunload',beforeUnload);
-    function cleanup(){if(!active)return;active=false;cancelFlowTimer();clearTimeout(counterTimer);clearTimeout(statusTimer);deferredStatus=null;if(recoveryOff)recoveryOff();recoveryOff=null;clearTimeout(timer);listeners.forEach(function(x){x[0].removeEventListener(x[1],x[2]);});listeners=[];doc.defaultView.removeEventListener('beforeunload',beforeUnload);fields.forEach(function(e){e.node.value='';e.feedback.textContent='';});fields=[];displayFields=[];rows=[];dirty.clear();marked.clear();markIntents.clear();pending=null;saved=null;data=null;wrapper.replaceChildren();wrapper.remove();if(mounted.get(host)===controller)mounted.delete(host);}
+    function cleanup(){if(!active)return;active=false;cancelFlowTimer();clearTimeout(counterTimer);if(flow)clearTimeout(flow.positionTimer);clearTimeout(statusTimer);deferredStatus=null;if(recoveryOff)recoveryOff();recoveryOff=null;clearTimeout(timer);listeners.forEach(function(x){x[0].removeEventListener(x[1],x[2]);});listeners=[];doc.defaultView.removeEventListener('beforeunload',beforeUnload);fields.forEach(function(e){e.node.value='';e.feedback.textContent='';});fields=[];displayFields=[];rows=[];dirty.clear();marked.clear();markIntents.clear();pending=null;saved=null;data=null;wrapper.replaceChildren();wrapper.remove();if(mounted.get(host)===controller)mounted.delete(host);}
     var old=mounted.get(host);if(old)old.cleanup();host.replaceChildren(wrapper);var controller={element:wrapper,ready:null,cleanup:cleanup,hasUnsaved:function(){return !!(dirty.size||pending||inFlight||ackCursor!==cursorVersion||ackMarkVersion!==markVersion);},prepareLeave:function(){if(!active||!saved)return Promise.resolve();if(!controller.hasUnsaved())return Promise.resolve();if(manualSave){if(inFlight)return inFlight.then(function(){return controller.prepareLeave();});if(doc.defaultView.confirm('아직 저장하지 않은 답안이 있습니다. 저장하지 않고 나가면 변경한 답안이 사라집니다. 나가시겠어요?'))return Promise.resolve();return Promise.reject(Object.assign(Error('leave_cancelled'),{code:'leave_cancelled'}));}pausing=true;clearTimeout(timer);return flush('paused').then(function(){pausing=false;},function(e){pausing=false;throw e;});}};mounted.set(host,controller);
     var recovery=options.recovery||root.HanqAuthSession,sourceRevision=options.sourceRevision||data.source.sha256||null,recoveryKey='source:'+(sourceRevision?sourceRevision+':':'')+data.id,legacyRecoveryKey='source:'+data.id;
     if(recovery&&options.ownerId&&recovery.register)recoveryOff=recovery.register(recoveryKey,{ownerId:options.ownerId,capture:function(){if(!active||!saved||!controller.hasUnsaved())return null;var ids=new Set([...dirty.keys()]);if(pending)pending.captured.forEach(function(u){ids.add(u.itemId);});var entry=fields[lastFocused];return {sourceRevision:sourceRevision,quizId:data.id,version:saved.version,baseRevision:saved.revision,cursor:cursor,focusIndex:lastFocused,...(checkedReview&&markVersion!==ackMarkVersion?{reviewSelectionChanges:[...markIntents].map(function(x){return {itemId:x[0],selected:x[1].selected};})}:{}),selection:entry?[entry.node.selectionStart,entry.node.selectionEnd]:null,updates:rows.filter(function(row){return ids.has(row.item.id);}).map(function(row){return {itemId:row.item.id,values:answerValues(row),submitted:row.submitted,checkedSlots:row.inputs.map(function(e){return e.graded&&!e.composing;})};})};}});
