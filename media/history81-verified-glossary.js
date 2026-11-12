@@ -2717,6 +2717,480 @@ root.HanqHistory81VerifiedGlossary={
       "pages": [
         89
       ]
+    },
+    {
+      "id": "verified-opening-jogye",
+      "era": "opening",
+      "term": "조계",
+      "summary": "개항장에 외국인이 거주하며 무역하도록 따로 정한 구역. 외국의 관리 권한과 특권이 인정되어 조선의 주권을 제한했다. 불교의 조계종과는 다른 말이다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0052538"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "조계"
+      ],
+      "pages": [
+        91
+      ]
+    },
+    {
+      "id": "verified-opening-mediation",
+      "era": "opening",
+      "term": "거중조정",
+      "summary": "나라 사이 분쟁을 제3자가 평화적으로 해결하도록 돕는 외교 방식. 조미수호통상조약에도 규정됐지만 군사 원조를 보장한 것은 아니다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/hm/view.do?levelId=hm_115_0060"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "거중조정"
+      ],
+      "pages": [
+        91
+      ]
+    },
+    {
+      "id": "verified-opening-inland-trade",
+      "era": "opening",
+      "term": "내지 통상권",
+      "summary": "외국 상인이 개항장 밖 내륙에서도 상품을 거래할 수 있는 권리. 외국 상인의 활동 범위가 넓어져 조선 상인의 상권을 위협했다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/nh/view.do?levelId=nh_039_0040_0010_0010_0020"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "내지 통상권",
+        "내지통상권"
+      ],
+      "pages": [
+        91
+      ]
+    },
+    {
+      "id": "verified-opening-tariff",
+      "era": "opening",
+      "term": "관세",
+      "summary": "수출입 물품에 매기는 세금. 국가 재정을 확보하고 국내 산업을 보호하는 수단이다. 관세 자주권은 세율 등을 스스로 정할 권리로, 단순히 세금을 걷는 것과는 다르다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0004910"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "관세",
+        "관세 자주권"
+      ],
+      "pages": [
+        91
+      ]
+    },
+    {
+      "id": "verified-opening-susinsa",
+      "era": "opening",
+      "term": "수신사",
+      "summary": "강화도조약 이후 일본에 보낸 외교 사절. 김기수·김홍집 등이 일본의 정세와 문물을 살피고 통상 문제 등을 협의했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0031506"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "수신사"
+      ],
+      "pages": [
+        91
+      ]
+    },
+    {
+      "id": "verified-opening-appendix",
+      "era": "opening",
+      "term": "조일수호조규부록",
+      "summary": "1876년 강화도조약을 보충한 약정. 수호는 우호 관계, 조규는 나라 사이 약속을 정한 규정이라는 뜻이다. 일본인의 통행 범위 10리와 개항장에서 일본 화폐 사용 등을 허용했다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/hm/view.do?levelId=hm_115_0020"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "조일수호조규부록",
+        "수호조규부록"
+      ],
+      "pages": [
+        91
+      ]
+    },
+    {
+      "id": "verified-opening-trade-rules",
+      "era": "opening",
+      "term": "조일무역규칙",
+      "summary": "1876년 일본 상인의 무역 절차를 정한 규칙. 곡물 수출입을 허용했고, 체결 과정에서 사실상 무관세 무역도 인정됐다. 일본 화폐 사용은 이 규칙이 아니라 수호조규부록의 조항이다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/hm/view.do?levelId=hm_115_0020"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "조일무역규칙"
+      ],
+      "pages": [
+        91
+      ]
+    },
+    {
+      "id": "verified-opening-byeongin-persecution",
+      "era": "opening",
+      "term": "병인박해",
+      "summary": "1866년 흥선대원군 집권기에 시작된 대규모 천주교 탄압. 프랑스 선교사와 조선인 신자들이 처형되었고, 프랑스의 병인양요로 이어졌다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0023139"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "병인박해"
+      ],
+      "pages": [
+        89
+      ]
+    },
+    {
+      "id": "verified-opening-byeongin-invasion",
+      "era": "opening",
+      "term": "병인양요",
+      "summary": "1866년 프랑스가 병인박해를 구실로 강화도를 침략한 사건. 양헌수 부대가 정족산성에서 격퇴했으며, 프랑스군은 외규장각 도서를 약탈하고 물러났다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0023142"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "병인양요"
+      ],
+      "pages": [
+        89
+      ]
+    },
+    {
+      "id": "verified-opening-sinmi-invasion",
+      "era": "opening",
+      "term": "신미양요",
+      "summary": "1871년 미국이 제너럴 셔먼호 사건을 구실로 통상을 요구하며 강화도를 침략한 사건. 어재연 등이 광성보에서 항전했고, 미국은 수교하지 못한 채 철수했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0032961"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "신미양요"
+      ],
+      "pages": [
+        89
+      ]
+    },
+    {
+      "id": "verified-opening-ganghwa-treaty",
+      "era": "opening",
+      "term": "강화도 조약",
+      "summary": "1876년 운요호 사건 뒤 조선과 일본이 맺은 불평등조약. 부산 외 두 항구의 추가 개항과 일본의 해안 측량권·영사 재판권을 규정했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0001508"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "강화도 조약",
+        "강화도조약"
+      ],
+      "pages": [
+        91
+      ]
+    },
+    {
+      "id": "verified-opening-jemulpo",
+      "era": "opening",
+      "term": "제물포 조약",
+      "summary": "1882년 임오군란 뒤 조선과 일본이 맺은 조약. 배상금과 사죄 사절 파견을 요구하고, 일본 공사관 경비를 명목으로 일본군 주둔을 허용했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0051277"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "제물포 조약",
+        "제물포조약"
+      ],
+      "pages": [
+        91
+      ]
+    },
+    {
+      "id": "verified-opening-us-treaty",
+      "era": "opening",
+      "term": "조미수호통상조약",
+      "summary": "1882년 조선이 미국과 맺은 서양 국가와의 첫 수호통상조약. 거중조정·관세 규정이 있었으나 영사 재판권과 최혜국 대우를 인정한 불평등조약이었다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/hm/view.do?levelId=hm_115_0060"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "조미수호통상조약",
+        "조미 수호 통상 조약"
+      ],
+      "pages": [
+        91
+      ]
+    },
+    {
+      "id": "verified-opening-revised-trade",
+      "era": "opening",
+      "term": "개정된 통상장정",
+      "summary": "1883년 조선과 일본이 무역 조건을 고친 협정. 관세 부과와 방곡령을 인정하되 방곡령은 시행 한 달 전에 통보하게 했고, 일본에 최혜국 대우를 주었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0052539"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "개정된 통상장정"
+      ],
+      "pages": [
+        91
+      ]
+    },
+    {
+      "id": "verified-opening-qing-trade",
+      "era": "opening",
+      "term": "조청상민수륙무역장정",
+      "summary": "1882년 임오군란 뒤 조선과 청이 맺은 무역 규정. 조선을 청의 속방으로 명시하고 청 상인의 내지 통상 등을 허용하여 청의 경제적 침투를 확대했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0052637"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "조청상민수륙무역장정"
+      ],
+      "pages": [
+        91
+      ]
+    },
+    {
+      "id": "verified-opening-imo",
+      "era": "opening",
+      "term": "임오군란",
+      "summary": "1882년 차별 대우와 밀린 급료에 불만을 품은 구식 군인들의 봉기. 청군이 진압하고 흥선대원군을 청으로 데려가면서 청의 내정 간섭이 강화됐다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0047565"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "임오군란"
+      ],
+      "pages": [
+        91
+      ]
+    },
+    {
+      "id": "verified-opening-gapsin",
+      "era": "opening",
+      "term": "갑신정변",
+      "summary": "1884년 김옥균 등 급진 개화파가 우정총국 개국 축하연을 기회로 일으킨 정변. 청의 간섭을 벗어나 근대적 개혁을 추진했으나 청군 개입으로 3일 만에 실패했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0000922"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "갑신정변"
+      ],
+      "pages": [
+        91
+      ]
+    },
+    {
+      "id": "verified-opening-gabo",
+      "era": "opening",
+      "term": "갑오개혁",
+      "summary": "1894년 김홍집 정부가 군국기무처를 중심으로 추진한 근대적 제도 개혁. 신분제·과거제 폐지와 재정 일원화 등을 시행했으나 일본의 간섭을 받았다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0000925"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "갑오개혁"
+      ],
+      "pages": [
+        96
+      ]
+    },
+    {
+      "id": "verified-opening-eulmi-reform",
+      "era": "opening",
+      "term": "을미개혁",
+      "summary": "1895년 을미사변 뒤 김홍집 내각이 추진한 개혁. 단발령을 내리고 1896년부터 태양력과 건양 연호를 사용했다. 왕후 시해와 단발령에 대한 반발은 을미의병으로 이어졌다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0042947"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "을미개혁"
+      ],
+      "pages": [
+        96
+      ]
+    },
+    {
+      "id": "verified-opening-eulmi-incident",
+      "era": "opening",
+      "term": "을미사변",
+      "summary": "1895년 일본 공사 미우라의 지휘 아래 일본군과 낭인 등이 경복궁을 습격해 명성황후를 시해한 사건. 일본을 견제하려던 왕후를 제거하려는 목적이었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0042948"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "을미사변"
+      ],
+      "pages": [
+        96
+      ]
+    },
+    {
+      "id": "verified-opening-agwan",
+      "era": "opening",
+      "term": "아관파천",
+      "summary": "1896년 을미사변 뒤 신변의 위협을 느낀 고종과 왕세자가 러시아 공사관으로 거처를 옮긴 사건. 친일 김홍집 내각이 무너지고 러시아의 영향력이 커졌다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0034214"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "아관파천"
+      ],
+      "pages": [
+        96
+      ]
+    },
+    {
+      "id": "verified-opening-eulsa",
+      "era": "opening",
+      "term": "을사늑약",
+      "summary": "1905년 일본이 강압으로 체결한 조약(제2차 한일협약). 대한제국의 외교권을 빼앗고 통감을 두어 지배를 강화했으며, 고종은 조약을 인정하지 않았다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0042958"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "을사늑약"
+      ],
+      "pages": [
+        99
+      ]
+    },
+    {
+      "id": "verified-opening-jeongmi",
+      "era": "opening",
+      "term": "정미7조약",
+      "summary": "1907년 고종 강제 퇴위 뒤 일본이 강요한 협약(한일신협약). 통감의 내정 간섭과 일본인 관리 임명을 제도화했고, 별도 각서에 따라 군대도 해산됐다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0061918"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "정미7조약",
+        "정미 7조약",
+        "한일신협약"
+      ],
+      "pages": [
+        99
+      ]
+    },
+    {
+      "id": "verified-opening-protocol",
+      "era": "opening",
+      "term": "한일 의정서",
+      "summary": "1904년 러일전쟁 직후 일본이 대한제국에 강요한 협정. 일본이 군사상 필요한 지역을 사용할 수 있게 하고 내정에 간섭할 근거를 마련했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0061922"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "한일 의정서",
+        "한일의정서"
+      ],
+      "pages": [
+        99
+      ]
+    },
+    {
+      "id": "verified-opening-hague",
+      "era": "opening",
+      "term": "헤이그 특사",
+      "summary": "1907년 고종이 을사늑약의 부당함을 알리려고 보낸 이상설·이준·이위종. 헤이그 만국평화회의 참석은 막혔고, 일본은 이를 구실로 고종을 강제 퇴위시켰다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0063241"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "헤이그 특사",
+        "헤이그특사"
+      ],
+      "pages": [
+        99
+      ]
+    },
+    {
+      "id": "verified-opening-sinmin",
+      "era": "opening",
+      "term": "신민회",
+      "summary": "1907년 안창호·양기탁 등이 조직한 비밀결사. 교육·산업을 통한 실력 양성과 국외 독립운동 기지 건설을 추진했다. 105인 사건으로 탄압받았다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0032974"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "신민회"
+      ],
+      "pages": [
+        99
+      ]
+    },
+    {
+      "id": "verified-opening-boan",
+      "era": "opening",
+      "term": "보안회",
+      "summary": "1904년 일본의 황무지 개간권 요구에 반대하기 위해 조직된 단체. 민중 집회와 언론 활동으로 요구 철회를 이끌었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0023463"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "보안회"
+      ],
+      "pages": [
+        99
+      ]
+    },
+    {
+      "id": "verified-opening-jagang",
+      "era": "opening",
+      "term": "대한자강회",
+      "summary": "1906년 조직된 애국 계몽 운동 단체. 교육과 산업으로 힘을 기르는 실력 양성을 주장했고, 고종 강제 퇴위 반대 운동 뒤 일제에 의해 해산됐다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0015173"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "대한자강회"
+      ],
+      "pages": [
+        99
+      ]
+    },
+    {
+      "id": "verified-opening-merchants",
+      "era": "opening",
+      "term": "황국중앙총상회",
+      "summary": "1898년 서울 시전 상인들이 조직한 상권 수호 단체. 외국 상인의 침투에 맞서 조선 상인의 권익을 지키려 했다. 독립협회를 탄압한 황국협회와는 다른 단체다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0065074"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "황국중앙총상회"
+      ],
+      "pages": [
+        99
+      ]
     }
   ]
 };

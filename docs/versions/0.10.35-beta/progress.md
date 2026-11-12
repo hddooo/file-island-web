@@ -8,3 +8,6 @@
 - [x] Windows read-only actual source parity: 697 questions, 702 slots, 6,680 answer variants, all 46 policy bindings, original objects unchanged.
 - [ ] Exact final frontend commit, clean static build and official API/Linux image qualification.
 - [ ] API-first deployment, then exact frontend main fast-forward/CI/CD and live verification.
+
+- [x] Integrated the independently deployed tooltip main ac342b2061acfcd18bcfb632bc51358b14b62fa1 without changing the v2 matcher, legacy comparator, API contract or either retained test correction.
+- [ ] Revalidate this combined 0.10.35 candidate and bind its exact SHA to the final API qualification. No remote push or production activation occurred in this integration step.

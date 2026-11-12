@@ -112,14 +112,32 @@
       const label=host.ownerDocument.createElement('span');label.dataset.examKingdom='';label.textContent=names[n]+' · ';heading.prepend(label);added.push(label);
     }return ()=>added.forEach(n=>n.remove());
   }
+  // Explicitly audited opening terms only; never annotate unverified prose or quiz inputs.
+  function openingPlainTerms(host,era,source){
+    if(era!=='opening'||source!==opening)return ()=>{};
+    const allowed={89:["병인박해","병인양요","신미양요"],91:["조계","거중조정","조미수호통상조약","조미 수호 통상 조약"],96:["아관파천"],99:["을사늑약","정미7조약","정미 7조약","신민회","보안회","대한자강회","황국중앙총상회"]};
+    const undo=[],doc=host.ownerDocument,walker=doc.createTreeWalker(host,4),nodes=[];
+    let node;while((node=walker.nextNode()))nodes.push(node);
+    for(const n of nodes){
+      const p=n.parentElement,page=p?.closest('[data-page]');
+      if(!page||!allowed[page.dataset.page]||p.closest('a,button,input,textarea,select,script,style,[role="button"],[data-history-source-emphasis],.history81-term,[data-layout-label]'))continue;
+      const alternatives=allowed[page.dataset.page].slice().sort((a,b)=>b.length-a.length).map(t=>t.replace(/ /g,'\\s*')).join('|');
+      const re=new RegExp('(?<![\\p{L}\\p{N}_])(?:'+alternatives+')(?![\\p{L}\\p{N}_])','gu'),hits=[...n.data.matchAll(re)];if(!hits.length)continue;
+      const wrap=doc.createElement('span');wrap.style.display='contents';let at=0;
+      for(const hit of hits){wrap.append(doc.createTextNode(n.data.slice(at,hit.index)));const mark=doc.createElement('span');mark.dataset.historySourceEmphasis='';mark.textContent=hit[0];wrap.append(mark);at=hit.index+hit[0].length;}
+      wrap.append(doc.createTextNode(n.data.slice(at)));n.replaceWith(wrap);undo.push(()=>{if(wrap.parentNode)wrap.replaceWith(n);});
+    }
+    return ()=>undo.reverse().forEach(fn=>fn());
+  }
   function mount(host,era,source){
     const verified=data();if(!root.HanqHistory81Terms||!ids[era]||verified.sources[era]!==source)return {count:0,stop(){}};
     const restoreMnemonic=removeDismissedMnemonic(host,era,source);
+    const restorePlain=openingPlainTerms(host,era,source);
     const restore=prepare(host,verified.entries.filter(e=>e.era===era));
     verified.boundaryPrepared=true;
-    let terms;try{terms=root.HanqHistory81Terms.mount(host,era,source,verified);}catch(e){restore();restoreMnemonic();throw e;}
+    let terms;try{terms=root.HanqHistory81Terms.mount(host,era,source,verified);}catch(e){restore();restorePlain();restoreMnemonic();throw e;}
     const removeCapitalLabels=capitalLabels(host,era,source),removeExamLabels=examLabels(host,era,source);
-    let stopped=false;return {count:terms.count,stop(){if(stopped)return;stopped=true;removeExamLabels();removeCapitalLabels();terms.stop();restore();restoreMnemonic();}};
+    let stopped=false;return {count:terms.count,stop(){if(stopped)return;stopped=true;removeExamLabels();removeCapitalLabels();terms.stop();restore();restorePlain();restoreMnemonic();}};
   }
   root.HanqHistory81Glossary={mount,pageEra,data};
 })(typeof window==='object'?window:globalThis);
