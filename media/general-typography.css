@@ -79,3 +79,28 @@
    instead of letting the global font-synthesis:none flatten strong/b text. */
 html:not([data-company-mode=on]) body :is(.textbook-semantic,.goryeo-script-reader,.joseon-script-reader,.opening-script-reader,.textbook-source-quiz,.toc) :is(strong,b),
 html:not([data-company-mode=on]) body :is(.textbook-semantic,.goryeo-script-reader,.joseon-script-reader,.opening-script-reader,.textbook-source-quiz,.toc) :is(strong,b) *{font-synthesis:weight}
+
+/* Blue ink makes existing textbook emphasis visible on the normal-mode paper.
+   Keep this scoped to reading prose: quiz verdicts, diagrams, controls and
+   company mode retain their own semantic colors. Tooltip dotted borders stay. */
+@media screen {
+  html:not([data-company-mode=on]) body #app#app#app :is(
+    .goryeo-script-reader .gsr-source-card,
+    .joseon-script-reader .jsr-source-card,
+    .opening-script-reader .osr-source-card,
+    .history-notes-design .textbook-semantic-text,
+    .history-notes-design .textbook-semantic-table
+  ) :is(strong,b):not(.history81-frequency):not(.textbook-source-branch-label):not(.textbook-coordinate-diagram-circle *) {
+    color: #1555a0 !important;
+    -webkit-text-fill-color: currentColor !important;
+    font-weight: 750;
+    font-synthesis: weight;
+  }
+  html:not([data-company-mode=on]) body #app#app#app :is(
+    .gsr-source-card,.jsr-source-card,.osr-source-card,
+    .history-notes-design .textbook-semantic-text,.history-notes-design .textbook-semantic-table
+  ) :is(strong,b) :is(span,em,.history81-term):not(.history81-frequency):not(.textbook-coordinate-diagram-circle *) {
+    color: inherit !important;
+    -webkit-text-fill-color: currentColor !important;
+  }
+}

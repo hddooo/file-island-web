@@ -2700,6 +2700,23 @@ root.HanqHistory81VerifiedGlossary={
       "pages": [
         117
       ]
+    },
+    {
+      "id": "verified-opening-samgunbu",
+      "era": "opening",
+      "term": "삼군부",
+      "summary": "흥선대원군이 부활시킨 군사 업무 총괄 기관. 비변사 폐지 뒤 정치는 의정부, 군사는 삼군부가 맡도록 역할을 나누었다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0026487",
+        "https://contents.history.go.kr/mobile/hm/view.do?levelId=hm_101_0010"
+      ],
+      "verifiedOn": "2026-11-12",
+      "aliases": [
+        "삼군부"
+      ],
+      "pages": [
+        89
+      ]
     }
   ]
 };
