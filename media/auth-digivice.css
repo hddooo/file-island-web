@@ -1,0 +1,158 @@
+/* Auth-only presentation. Existing shell, IDs, scroll owner and API stay intact. */
+html:not([data-company-mode=on]) body.auth-digivice-active{
+ display:flex;align-items:center;justify-content:center;isolation:isolate;
+ background:#063943!important;padding:24px!important;box-sizing:border-box;
+}
+html:not([data-company-mode=on]) body.auth-digivice-active::before,
+html:not([data-company-mode=on]) body.auth-digivice-active::after,
+html:not([data-company-mode=on]) body.auth-digivice-active>.scene-backdrop{display:none!important}
+html body>.login-island-background{
+ position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;
+ background:linear-gradient(#287eb1,#65c0c0 45%,#103b4b)!important;contain:strict;
+}
+.login-island-panorama{position:absolute;inset:-3%;width:106%;height:106%;max-width:none;object-fit:cover;object-position:center;animation:auth-island-drift 36s ease-in-out infinite alternate;will-change:transform}
+html body>.login-island-background::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#062b4833,#042b4580 64%,#031c32a8),radial-gradient(ellipse at center,transparent 30%,#03233380);pointer-events:none}
+.login-island-background>i{position:absolute;display:block;pointer-events:none}
+.login-island-clouds{inset:-10% -30% 0;opacity:.48;background:radial-gradient(ellipse at 12% 28%,#fff9,transparent 26%),radial-gradient(ellipse at 78% 12%,#fff8,transparent 22%),radial-gradient(ellipse at 80% 85%,#d6fff973,transparent 20%);animation:auth-cloud-drift 38s ease-in-out infinite alternate;will-change:transform}
+.login-island-water{inset:52% -15% -30%;opacity:.28;background:repeating-radial-gradient(ellipse at 50% 0%,transparent 0 38px,#bcffff66 40px 41px,transparent 43px 66px);animation:auth-water-drift 15s ease-in-out infinite alternate;will-change:transform}
+.login-island-particles{inset:0;opacity:.7;background-image:radial-gradient(circle at 14% 20%,#d9ffbd 0 2px,transparent 3px),radial-gradient(circle at 82% 38%,#b4ffff 0 2px,transparent 3px),radial-gradient(circle at 22% 79%,#fff0ae 0 2px,transparent 3px),radial-gradient(circle at 90% 88%,#d3faff 0 3px,transparent 4px);animation:auth-data-rise 10s ease-in-out infinite alternate}
+@keyframes auth-island-drift{from{transform:scale(1) translate3d(-.5%,0,0)}to{transform:scale(1.035) translate3d(.5%,-.5%,0)}}
+@keyframes auth-cloud-drift{from{transform:translate3d(-3%,0,0)}to{transform:translate3d(3%,2%,0)}}
+@keyframes auth-water-drift{from{transform:translate3d(-1%,0,0)}to{transform:translate3d(1%,3%,0)}}
+@keyframes auth-data-rise{from{transform:translateY(15px);opacity:.35}to{transform:translateY(-18px);opacity:.75}}
+html:not([data-company-mode=on]) body #app#app#app.login-integrated{
+ --device-shell:#bdd0cb;--device-light:#eef5df;--device-shadow:#526e70;--device-rubber:#162f39;
+ position:relative;display:flex!important;flex-direction:column;flex:none;width:min(100%,1020px)!important;
+ height:auto!important;max-height:calc(var(--study-viewport-height,100dvh) - 60px)!important;min-height:0!important;
+ margin:0 auto!important;padding:12px 22px 24px!important;border:10px solid var(--device-shell)!important;
+ border-top:12px solid var(--device-light)!important;border-radius:48px!important;
+ background:linear-gradient(145deg,#25464b,#132e38)!important;
+ box-shadow:0 0 0 3px #102b38,0 0 0 7px #6a8a8b,inset 0 1px 0 #e8f9ee80,0 13px 0 #173843,0 26px 55px #001524a8!important;
+}
+html:not([data-company-mode=on]) body #app#app#app.login-integrated>.device-crown{
+ flex:none;min-height:48px;margin:0 0 12px!important;padding:4px 18px!important;
+ background:transparent!important;border:0!important;border-radius:20px!important;box-shadow:none!important;backdrop-filter:none;
+}
+html:not([data-company-mode=on]) body #app#app#app.login-integrated .device-model>span,
+html:not([data-company-mode=on]) body #app#app#app.login-integrated .device-model .device-version{color:#e8f6e6!important}
+html body #app#app#app.login-integrated .device-crown #homeBrand,
+html body #app#app#app.login-integrated .device-crown .header-menu,
+html body #app#app#app.login-integrated .module-head{display:none!important}
+html:not([data-company-mode=on]) body #app#app#app.login-integrated>.device-content{
+ flex:0 1 auto;min-height:0;padding:0!important;overflow-x:hidden;overflow-y:auto;
+ border:3px solid #0c222a!important;border-radius:23px;background:#081c20!important;
+ box-shadow:0 0 0 2px #6a8c82,inset 0 2px 12px #0008!important;scroll-padding-block:18px;
+}
+html body #app#app#app.login-integrated .login-stage{
+ display:grid!important;grid-template-columns:minmax(0,1fr) minmax(300px,1.1fr);gap:0;
+ padding:0!important;margin:0!important;min-height:460px!important;max-width:none;
+ background:#081c20!important;border:0!important;border-radius:0!important;box-shadow:none!important;
+ align-items:stretch;isolation:isolate;
+}
+html body #app#app#app.login-integrated .login-scene-copy{
+ position:relative;grid-column:1;grid-row:1;display:flex;flex-direction:column;align-items:flex-start;
+ justify-content:flex-start;text-align:left;min-width:0;overflow:hidden;padding:38px 30px!important;margin:0!important;
+ border:0;border-right:1px solid #3c6861!important;border-radius:0!important;
+ background:linear-gradient(180deg,#0c2c36e8,#163d4580 60%,#092e35e8),url('world-art/toeic-v1.webp') center/cover!important;
+}
+html body #app#app#app.login-integrated .login-eyebrow{display:block;font-size:12px;letter-spacing:.13em;color:#b4eed3!important}
+html body #app#app#app.login-integrated .login-scene-copy h2{
+ position:relative;z-index:1;padding:0!important;margin:22px 0 14px!important;background:transparent!important;
+ font-family:FileIslandMenu,monospace!important;font-size:clamp(25px,3.1vw,38px)!important;font-weight:400;
+ line-height:1.4!important;letter-spacing:-.02em;color:#f3ffdf!important;text-shadow:2px 3px #163d43;
+}
+html body #app#app#app.login-integrated .login-scene-copy p{position:relative;z-index:1;display:block!important;margin:0!important;padding:0!important;background:transparent!important;border:0!important;max-width:none;color:#d8f1ed!important;font-size:16px!important;line-height:1.65!important;text-shadow:0 2px 4px #12313c}
+html body #app#app#app.login-integrated .island-friends{position:relative;display:flex;align-items:flex-end;justify-content:center;gap:0;width:100%;height:155px;min-height:100px;flex:1;margin:10px 0 5px;background:transparent!important;filter:none}
+html body #app#app#app.login-integrated .island-friends img{position:static;grid-column:auto;grid-row:auto;width:47%;height:150px;max-height:none;object-fit:contain;filter:drop-shadow(0 8px 5px #04222ca6);pointer-events:none}
+html body #app#app#app.login-integrated .island-friends img:first-child{width:34%;height:95px}
+html body #app#app#app.login-integrated .login-world-caption{display:block;align-self:center;font-size:9px;color:#d1f0e7!important;letter-spacing:.05em;text-align:center}
+html body #app#app#app.login-integrated .login-stage #acRoot{
+ grid-column:2;grid-row:1;align-self:center;width:100%;min-width:0;max-width:none;margin:0!important;
+ padding:30px 32px!important;background:transparent!important;border:0!important;box-shadow:none!important;gap:10px;
+}
+html body #app#app#app.login-integrated .login-stage .ac-auth-screen{padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;margin:0!important;color:#e4f6ef!important}
+html body #app#app#app.login-integrated .ac-auth-heading{margin-bottom:24px;background:transparent!important}
+html body #app#app#app.login-integrated .ac-auth-kicker{display:block;font-size:11px;color:#8eccc0!important;letter-spacing:.14em}
+html body #app#app#app.login-integrated .ac-auth-heading h2{font-size:28px!important;font-weight:400;line-height:1.3;margin:7px 0 8px!important;color:#efffe7!important}
+html body #app#app#app.login-integrated .ac-auth-heading p{font-size:14px!important;line-height:1.5;margin:0;color:#a8c6be!important}
+html body #app#app#app.login-integrated .ac-form{display:grid;gap:8px;margin:0;background:transparent!important}
+html body #app#app#app.login-integrated .ac-form label{font-size:14px!important;line-height:1.5;color:#d5eae2!important;font-weight:400;margin:8px 0 0}
+html body #app#app#app.login-integrated .ac-form input:not([type=checkbox]){box-sizing:border-box;width:100%;min-width:0;height:48px;min-height:48px;margin:0;padding:10px 12px;border:1px solid #59867a!important;border-radius:6px!important;background:#051417!important;color:#f0fff4!important;font-family:FileIslandMenu,monospace!important;font-size:16px!important;line-height:1.4;box-shadow:inset 0 2px 4px #0004!important}
+html body #app#app#app.login-integrated .ac-form input::placeholder{color:#8eada5!important;opacity:1;font-size:14px}
+html body #app#app#app.login-integrated :is(.ac-email-row,.ac-name-row,.ac-password-row){display:flex;position:relative;gap:8px;align-items:stretch;min-width:0;background:transparent!important}
+html body #app#app#app.login-integrated :is(.ac-email-row,.ac-name-row) input{flex:1 1 0;width:0!important}
+html body #app#app#app.login-integrated :is(#acEmailCheck,#acNameCheck){flex:none;min-height:48px;margin:0;padding:8px 12px;background:#20473e!important;color:#e1f6df!important;border:1px solid #7baa90!important;border-radius:6px!important;box-shadow:inset 0 1px #b5e5c833,0 2px #092b26!important;font-size:14px!important;white-space:nowrap}
+html body #app#app#app.login-integrated .ac-password-row #acPw{padding-right:54px}
+.ac-password-toggle{position:absolute;right:2px;top:2px;display:grid;place-items:center;width:44px;min-height:44px;padding:10px;border:0;border-radius:4px;cursor:pointer;background:transparent!important;color:#b1d9c9!important}
+.ac-password-toggle svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round}
+.ac-password-toggle[aria-pressed=true] .ac-eye-slash{display:none}
+html body #app#app#app.login-integrated .ac-remember-id{display:flex;align-items:center;gap:8px;min-height:44px;margin:4px 0 0!important;cursor:pointer}
+html body #app#app#app.login-integrated .ac-remember-id input{flex:none;width:18px;min-height:18px;height:18px;padding:0;margin:0;accent-color:#b9e59d}
+html body #app#app#app.login-integrated :is(.ac-note,.ac-signup-hint){font-size:12px!important;line-height:1.6;margin:0 0 4px;color:#a5c7bb!important}
+html body #app#app#app.login-integrated :is(#acEmailCheckMsg,#acNameCheckMsg,#acAuthMsg){font-size:13px!important;line-height:1.55;margin:0;min-height:0}
+html body #app#app#app.login-integrated :is(#acAuthMsg,#acEmailCheckMsg,#acNameCheckMsg):empty{display:none!important}
+html body #app#app#app.login-integrated #acAuthMsg{color:#ffb8ac!important}
+html body #app#app#app.login-integrated #acAuthSubmit{
+ display:block;width:100%;min-height:52px;margin:12px 0 4px;padding:12px 16px;font-family:FileIslandMenu,monospace!important;
+ font-size:20px!important;font-weight:400;color:#17392e!important;background:linear-gradient(#e2f5b1,#b0d993)!important;
+ border:2px solid #d9ecae!important;border-radius:7px!important;box-shadow:inset 0 1px #faffdb,0 4px #496e4d!important;cursor:pointer;line-height:1.3;
+}
+html body #app#app#app.login-integrated #acAuthSubmit:hover{background:#e5fac2!important}
+html body #app#app#app.login-integrated #acAuthSubmit:active{transform:translateY(2px);box-shadow:0 2px #496e4d!important}
+html body #app#app#app.login-integrated .ac-auth-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:4px 8px;margin:20px 0 0;padding:12px 0 0;border-top:1px solid #2f5149!important;background:transparent!important}
+html body #app#app#app.login-integrated .ac-auth-footer>span{font-size:13px;color:#a5c4b8!important}
+html body #app#app#app.login-integrated .ac-auth-footer button{min-height:44px;margin:0;padding:8px 10px;border:0!important;border-radius:4px!important;background:transparent!important;box-shadow:none!important;color:#dbedb0!important;font-size:14px!important;text-decoration:underline;text-underline-offset:5px}
+html body #app#app#app.login-integrated :is(input,button):focus-visible{outline:3px solid #f6d984!important;outline-offset:3px}
+html body #app#app#app.login-integrated :is(.ac-conn,.ac-development-premium){font-size:11px!important;line-height:1.5;margin:0;padding:0;background:transparent!important;color:#91afa5!important}
+html body #app#app#app.login-integrated .ac-conn.is-on{display:none!important}
+html body #app#app#app.login-integrated .ac-development-premium{order:2;margin-top:8px;text-align:center}
+html body #app#app#app.login-integrated .device-install-tip{flex:none;margin-top:10px}
+html body #app#app#app.login-integrated [hidden]{display:none!important}
+@media(max-width:700px){
+ html:not([data-company-mode=on]) body.auth-digivice-active{padding:16px 12px!important}
+ html:not([data-company-mode=on]) body #app#app#app.login-integrated{border-width:6px!important;border-top-width:8px!important;border-radius:27px!important;padding:7px 9px 13px!important;max-height:calc(var(--study-viewport-height,100dvh) - 40px)!important}
+ html:not([data-company-mode=on]) body #app#app#app.login-integrated>.device-crown{min-height:40px;margin:0 0 8px!important;padding:2px 8px!important}
+ html:not([data-company-mode=on]) body #app#app#app.login-integrated>.device-content{border-radius:14px}
+ html body #app#app#app.login-integrated .login-stage{display:flex!important;flex-direction:column;min-height:0!important}
+ html body #app#app#app.login-integrated .login-scene-copy{flex:none;min-height:100px;padding:18px 18px!important;border-right:0!important;border-bottom:1px solid #3c6861!important;background-position:center 60%!important}
+ html body #app#app#app.login-integrated .login-eyebrow{font-size:9px}
+ html body #app#app#app.login-integrated .login-scene-copy h2{font-size:23px!important;line-height:1.3!important;margin:8px 0 0!important}
+ html body #app#app#app.login-integrated .login-scene-copy p,
+ html body #app#app#app.login-integrated .login-world-caption{display:none!important}
+ html body #app#app#app.login-integrated .island-friends{position:absolute;right:5px;bottom:4px;width:100px;height:83px;min-height:0;margin:0;opacity:.9}
+ html body #app#app#app.login-integrated .island-friends img{position:static!important;width:65%;height:85px}
+ html body #app#app#app.login-integrated .island-friends img:first-child{width:35%;height:45px}
+ html body #app#app#app.login-integrated .login-stage #acRoot{padding:22px 18px!important}
+ html body #app#app#app.login-integrated .ac-auth-heading{margin-bottom:14px}
+ html body #app#app#app.login-integrated .ac-auth-heading h2{font-size:25px!important}
+ html body #app#app#app.login-integrated .ac-auth-heading p{font-size:13px!important}
+ html body #app#app#app.login-integrated .ac-auth-footer{margin-top:15px}
+ .login-island-water{display:none!important}
+}
+@media(max-width:360px){
+ html body #app#app#app.login-integrated .login-stage #acRoot{padding:18px 12px!important}
+ html body #app#app#app.login-integrated .login-scene-copy{padding:16px 12px!important}
+ html body #app#app#app.login-integrated .login-scene-copy h2{font-size:21px!important}
+ html body #app#app#app.login-integrated .island-friends{right:0;width:75px;opacity:.7}
+ html body #app#app#app.login-integrated :is(#acEmailCheck,#acNameCheck){padding:8px;font-size:13px!important}
+ html body #app#app#app.login-integrated .ac-form input::placeholder{font-size:12px}
+}
+@media(max-height:500px) and (orientation:landscape){
+ html:not([data-company-mode=on]) body.auth-digivice-active{padding:12px 22px!important}
+ html:not([data-company-mode=on]) body #app#app#app.login-integrated{max-height:calc(var(--study-viewport-height,100dvh) - 30px)!important;padding:4px 14px 10px!important;border-radius:26px!important}
+ html:not([data-company-mode=on]) body #app#app#app.login-integrated>.device-crown{min-height:34px;margin-bottom:4px!important}
+ html body #app#app#app.login-integrated .login-stage{min-height:0!important}
+ html body #app#app#app.login-integrated .login-stage #acRoot{padding:22px!important}
+}
+.login-island-background[data-paused=true] :is(img,i){animation-play-state:paused!important;will-change:auto!important}
+html[data-company-mode=on] .login-island-background{display:none!important}
+@media(prefers-reduced-motion:reduce){.login-island-background :is(img,i){animation:none!important;will-change:auto!important}}
+/* Low landscape phones also need 16px inputs, regardless of reading-scale rules. */
+html body #app#app#app#app.login-integrated .ac-form input:not([type=checkbox]){font-size:16px!important}
+/* Opt this scenery into motion over the terminal theme's global animation reset. */
+html body .login-island-background .login-island-panorama{animation:auth-island-drift 36s ease-in-out infinite alternate!important}
+html body .login-island-background .login-island-clouds{animation:auth-cloud-drift 38s ease-in-out infinite alternate!important}
+html body .login-island-background .login-island-water{animation:auth-water-drift 15s ease-in-out infinite alternate!important}
+html body .login-island-background .login-island-particles{animation:auth-data-rise 10s ease-in-out infinite alternate!important}
+html body .login-island-background[data-paused=true] :is(img,i){animation-play-state:paused!important;will-change:auto!important}
+@media(prefers-reduced-motion:reduce){html body .login-island-background.login-island-background :is(img,i){animation:none!important;will-change:auto!important}}

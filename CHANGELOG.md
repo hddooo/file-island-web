@@ -1,3 +1,10 @@
+## 0.10.16-beta
+
+- Redesign the public membership gate and in-app auth forms as a horizontal Digivice with the existing licensed pixel font, clear input hierarchy, password visibility control, full-width login and lower signup action.
+- Add animated File Island scenery with reduced-motion, hidden-tab and low-power pauses. Keep mobile forms inside the device's scroll surface.
+- Gate the public login page's optional 90-day remember checkbox on an explicit server capability and Web Locks. Unsupported servers retain ordinary login; remember-unavailable errors require a user-initiated retry rather than silently resending credentials.
+- Keep member access rules, cookie policy, API endpoints, approval flow and existing learning/account data unchanged. Inline only existing public presentation assets on the login gate; protected /media access is not opened.
+
 ## 0.10.15-beta
 
 - Remove every manual grade button from era wrong-answer blank practice, completing the user's requested keyboard-only flow.

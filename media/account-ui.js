@@ -242,15 +242,17 @@
   }
   function authHtml() {
     var up = ui.authMode === 'signup',saved='',remember=rememberSupport();
-    return '<section class="ac-sec" aria-labelledby="acAuthTitle"><h2 id="acAuthTitle">' + (up ? '회원가입' : '로그인') + '</h2>' +
+    return '<section class="ac-sec ac-auth-screen" aria-labelledby="acAuthTitle" data-auth-mode="'+(up?'signup':'signin')+'">' +
+      '<div class="ac-auth-heading"><span class="ac-auth-kicker">'+(up?'NEW TAMER':'WELCOME BACK')+'</span><h2 id="acAuthTitle">' + (up ? '회원가입' : '로그인') + '</h2><p>'+(up?'함께 공부할 이름을 알려 주세요.':'이어서, 나만의 모험을 시작해요.')+'</p></div>' +
       (A().state().authReason === 'expired' ? '<p role="status">로그인이 만료됐어요. 같은 계정으로 다시 로그인하면 풀던 화면과 임시 입력을 이어갈 수 있어요.</p>' : '') +
       '<form id="acAuthForm" class="ac-form" novalidate>' +
-      '<label for="acEmail">이메일</label>'+(up?'<div class="ac-email-row">':'')+'<input id="acEmail" name="email" type="email" inputmode="email" autocomplete="' + (up ? 'email' : 'username') + '" value="'+esc(saved)+'" maxlength="254" required>'+(up?'<button type="button" class="tool-btn" id="acEmailCheck">중복 확인</button></div><p id="acEmailCheckMsg" role="status"></p>':'') +
-      '<label for="acPw">비밀번호' + (up ? ' (10자 이상)' : '') + '</label><input id="acPw" name="password" type="password" autocomplete="' + (up ? 'new-password' : 'current-password') + '" maxlength="128" required>' +
-      (up ? '<label for="acName">닉네임 (40자까지)</label><div class="ac-name-row"><input id="acName" name="displayName" type="text" autocomplete="nickname" maxlength="40" required><button type="button" class="tool-btn" id="acNameCheck">중복 확인</button></div><p id="acNameCheckMsg" role="status"></p>' : '') +
-      (up?'':'<label class="ac-remember-id" for="acRememberSession"><input id="acRememberSession" type="checkbox" aria-describedby="acRememberSessionHint"'+(remember.enabled?'':' disabled')+'>로그인 유지'+(remember.enabled?' (최대 90일)':'')+'</label><p class="ac-note" id="acRememberSessionHint">'+esc(remember.message)+'</p>')+
-      '<button type="submit" class="check-one" id="acAuthSubmit">' + (up ? '가입하고 로그인' : '로그인') + '</button>' +
-      '<p class="ac-err" id="acAuthMsg" role="alert"></p></form><div class="ac-auth-footer">' + (up ? '<button type="button" class="tool-btn" id="acModeIn">로그인으로 돌아가기</button>' : '<button type="button" class="tool-btn" id="acModeUp">회원가입</button>') + '</div></section>';
+      '<label for="acEmail">이메일</label>'+(up?'<div class="ac-email-row">':'')+'<input id="acEmail" name="email" type="email" inputmode="email" autocomplete="' + (up ? 'email' : 'username') + '" value="'+esc(saved)+'" placeholder="이메일을 입력해 주세요" maxlength="254" required>'+(up?'<button type="button" class="tool-btn" id="acEmailCheck">중복 확인</button></div><p id="acEmailCheckMsg" role="status"></p>':'') +
+      '<label for="acPw">비밀번호' + (up ? ' (10자 이상)' : '') + '</label><div class="ac-password-row"><input id="acPw" name="password" type="password" autocomplete="' + (up ? 'new-password' : 'current-password') + '" placeholder="비밀번호를 입력해 주세요" maxlength="128" required><button type="button" class="ac-password-toggle" id="acPwToggle" aria-label="비밀번호 표시" aria-controls="acPw" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path class="ac-eye-slash" d="m4 4 16 16"/></svg></button></div>' +
+      (up ? '<label for="acName">닉네임 (40자까지)</label><div class="ac-name-row"><input id="acName" name="displayName" type="text" autocomplete="nickname" placeholder="함께할 이름을 입력해 주세요" maxlength="40" required><button type="button" class="tool-btn" id="acNameCheck">중복 확인</button></div><p id="acNameCheckMsg" role="status"></p>' : '') +
+      (up?'<p class="ac-signup-hint">가입 요청 후 ADMIN 승인을 받으면 로그인할 수 있어요.</p>':'<label class="ac-remember-id" for="acRememberSession"><input id="acRememberSession" type="checkbox" aria-describedby="acRememberSessionHint"'+(remember.enabled?'':' disabled')+'>로그인 유지'+(remember.enabled?' (최대 90일)':'')+'</label><p class="ac-note" id="acRememberSessionHint">'+esc(remember.message)+'</p>')+
+      '<p class="ac-err" id="acAuthMsg" role="alert"></p>' +
+      '<button type="submit" class="check-one" id="acAuthSubmit">' + (up ? '가입 요청' : '로그인') + '</button></form>' +
+      '<div class="ac-auth-footer">' + (up ? '<span>이미 계정이 있나요?</span><button type="button" class="tool-btn" id="acModeIn">로그인으로 돌아가기</button>' : '<span>파일섬이 처음인가요?</span><button type="button" class="tool-btn" id="acModeUp">가입 요청</button>') + '</div></section>';
   }
   /* 마이페이지(로그인): 캐릭터 히어로(실제 진화 단계 — #acCharacter는 HanqCharacters.mount가 채움, 서버 확인 전에는 비어 있음) · 닉네임 · 지금 성장점수
      (누르면 성장점수 기록 창) → 출석 → 닫힌 ‘계정 설정’(이메일 · 닉네임 · 비밀번호 · 이 기기 기록 동기화). 프리미엄·오답노트·풀이 기록은 오답노트 화면에,
@@ -595,6 +597,7 @@
   function bindMain(st) {
     var api = A();
     [].slice.call(ui.container.querySelectorAll('.ac-study-result')).forEach(function(b){b.onclick=function(){ui.ctx.go('study/'+b.dataset.id);};});
+    on('#acPwToggle','click',function(){var input=$('#acPw'),button=$('#acPwToggle'),show=input.type==='password';input.type=show?'text':'password';button.setAttribute('aria-pressed',String(show));button.setAttribute('aria-label',show?'비밀번호 숨기기':'비밀번호 표시');});
     on('#acModeIn', 'click', function () { ui.authMode = 'signin'; renderMain().then(function () { focusFirst('#acEmail'); }); });
     on('#acModeUp', 'click', function () { ui.authMode = 'signup'; renderMain().then(function () { focusFirst('#acEmail'); }); });
     var checkedEmail='',emailCheckSeq=0,emailPending=false;
