@@ -518,12 +518,21 @@
       if(next>=rows.length){message('마지막 문제입니다. 제출을 누르면 통계와 오답을 확인할 수 있습니다.');saveButton.focus();}
     }
     function appendFlowReview(target,row,index){
-      target.appendChild(el('h4','',String(index+1)+'. '+(data.subtopics.find(function(t){return t.id===row.item.subtopicId;})||{title:''}).title));
-      var prompt=el('p','textbook-source-review-prompt');appendPromptText(prompt,row.item.sourceText||row.item.text);target.appendChild(prompt);
+      target.appendChild(el('h4','',String(index+1)+'. '+questionSection(data.subtopics.find(function(t){return t.id===row.item.subtopicId;}))));
+      // Reuse the safely rendered source structure, including emphasis and ordered choices.
+      // Replace each response slot by its own canonical answer, never a flattened answer table.
+      var prompt=el('div','textbook-source-review-prompt'),entries=new Map(row.inputs.map(function(entry){return [entry.node.id,entry];}));
+      Array.from(row.card.children).filter(function(node){return node.matches('.textbook-source-quiz-statement,.textbook-source-quiz-events,.textbook-source-classification-responses,.textbook-source-quiz-help,.textbook-source-quiz-note');}).forEach(function(node){
+        var copy=node.cloneNode(true);
+        copy.querySelectorAll('input').forEach(function(input){
+          var entry=entries.get(input.id),parts=entry.answerIds.map(function(id){return row.item.answers.find(function(answer){return answer.id===id;}).text;}),answer=el('strong','textbook-source-review-answer',row.item.answer.sequenceTokens?row.item.answer.text:parts.join(row.item.kind==='sequence'?(row.item.answer.sequenceSeparator||''):', '));
+          if(input.closest('.textbook-source-quiz-blank'))input.replaceWith(answer);
+          else{var blank=el('span','textbook-source-review-filled-blank');blank.append(doc.createTextNode('('),answer,doc.createTextNode(')'));input.replaceWith(blank);}
+        });
+        [copy].concat(Array.from(copy.querySelectorAll('*'))).forEach(function(n){n.removeAttribute('id');n.removeAttribute('for');n.removeAttribute('aria-describedby');n.removeAttribute('aria-labelledby');});
+        prompt.appendChild(copy);
+      });target.appendChild(prompt);
       target.appendChild(el('p','','내 답: '+answerValues(row).map(function(value){return value||'(미응답)';}).join(' / ')));
-      target.appendChild(el('p','textbook-source-review-answer','정답: '+row.item.answer.text));
-      // The source schema carries a verified answer, but no verified explanation field.
-      target.appendChild(el('p','textbook-source-explanation-note','별도 해설이 없는 문항입니다. 교재 정답을 확인해 주세요.'));
     }
     function checkFlowQuestion(){
       if(!flow||flowPhase!=='answer'||inFlight||!active)return;
