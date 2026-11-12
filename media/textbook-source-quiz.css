@@ -306,3 +306,13 @@ html[data-company-mode=on] body #app#app#app#app .textbook-source-history-empty,
 @media(max-width:760px){html body #app#app#app#app .textbook-source-exam-sidebar{height:auto;grid-template-rows:auto auto}html body #app#app#app#app .textbook-source-exam-sidebar .textbook-source-question-map-grid{max-height:162px}html body #app#app#app#app .textbook-source-history{max-height:180px}}
 
 html[data-company-mode=on] body #app#app#app#app .textbook-source-history-entry>small{color:#8b949e!important}
+
+/* One quiet, local celebration for a newly submitted score of at least 80%. */
+html body #app#app#app#app .textbook-source-sequential .textbook-source-review{position:relative;isolation:isolate}
+html body #app#app#app#app .textbook-source-sequential .textbook-source-review>:not(.textbook-source-goal-celebration){position:relative;z-index:1}
+html body #app#app#app#app .textbook-source-goal-celebration{position:absolute;inset:0 0 auto;height:230px;overflow:hidden;pointer-events:none!important;user-select:none;contain:layout paint;z-index:0}
+html body #app#app#app#app .textbook-source-goal-celebration>i{position:absolute;top:120px;width:5px;height:9px;border:0;border-radius:1px;background:var(--confetti-color)!important;opacity:0;pointer-events:none!important;animation:source-goal-confetti var(--confetti-duration,1600ms) cubic-bezier(.15,.55,.5,1) var(--confetti-delay,0ms) both!important}
+html body #app#app#app#app .textbook-source-goal-celebration>i:nth-child(3n){width:5px;height:5px;border-radius:50%}
+@keyframes source-goal-confetti{0%{opacity:0;transform:translate3d(0,0,0) rotate(0deg)}12%{opacity:.9}48%{opacity:.85;transform:translate3d(var(--confetti-x),var(--confetti-y),0) rotate(var(--confetti-spin))}100%{opacity:0;transform:translate3d(var(--confetti-end-x),96px,0) rotate(calc(var(--confetti-spin) * 2))}}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-goal-celebration{display:none!important}
+@media(prefers-reduced-motion:reduce){html body #app#app#app#app .textbook-source-goal-celebration{display:none!important}html body #app#app#app#app .textbook-source-goal-celebration>i{animation:none!important}}

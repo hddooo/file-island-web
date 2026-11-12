@@ -55,7 +55,7 @@ function snapshot(review){
  if(!cards.length)throw fail('empty');if(cards.length>1000)throw fail('too_many_questions');
  function runs(node){var output=[];
   function add(text,red,bold,underline){if(text)output.push({text:text,red:!!red,bold:!!bold,underline:!!underline});}
-  function walk(n,red,bold,underline){if(n.nodeType===3){add(n.nodeValue,red,bold,underline);return;}if(n.nodeType!==1||n.hidden||/^(SCRIPT|STYLE|INPUT|BUTTON|SELECT|TEXTAREA)$/.test(n.tagName))return;
+  function walk(n,red,bold,underline){if(n.nodeType===3){add(n.nodeValue,red,bold,underline);return;}if(n.nodeType!==1||n.hidden||n.classList.contains('textbook-source-review-user-answer')||/^(SCRIPT|STYLE|INPUT|BUTTON|SELECT|TEXTAREA)$/.test(n.tagName))return;
    red=red||n.classList.contains('textbook-source-review-answer');bold=bold||/^(STRONG|B)$/.test(n.tagName);underline=underline||n.tagName==='U';
    var block=/^(P|DIV|UL|OL|LI|H[1-6])$/.test(n.tagName);if(block||n.tagName==='BR')add('\n',false,false);
    Array.from(n.childNodes).forEach(function(c){walk(c,red,bold,underline);});if(block)add('\n',false,false);
@@ -65,8 +65,8 @@ function snapshot(review){
   var label=h.textContent.trim();if(!/^\d+\./.test(label))throw fail('invalid_number');
   var promptRuns=runs(prompt);while(promptRuns.length&&promptRuns[0].text==='\n')promptRuns.shift();
   var content=[{text:label+' · ',red:false,bold:true}].concat(promptRuns);
-  Array.from(card.children).filter(function(n){return n!==h&&n!==prompt;}).forEach(function(n){content.push({text:'\n',red:false,bold:false});content=content.concat(runs(n));});
-  // Whitespace is layout, never parsed as source markup. Keep all visible text and punctuation.
+  Array.from(card.children).filter(function(n){return n!==h&&n!==prompt&&!n.classList.contains('textbook-source-review-user-answer');}).forEach(function(n){content.push({text:'\n',red:false,bold:false});content=content.concat(runs(n));});
+  // Whitespace is layout, never parsed as source markup. Keep source text and punctuation; the on-screen personal-answer line is intentionally excluded.
   return {id:id,number:Number(label.match(/^\d+/)[0]),runs:content};
  });
 }
