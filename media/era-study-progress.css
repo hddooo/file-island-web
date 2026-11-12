@@ -94,3 +94,10 @@ html[data-company-mode=on] #app .toc .era-complete{color:#9fc6ff}
 }
 
 .hm-exam-heading{font-size:16px;margin:0 0 12px;line-height:1.5}
+/* Keep long era descriptions full-width on small screens; saved details sit below. */
+@media(max-width:700px){
+ #app .toc .era-progress-row:has(.era-progress-detail){flex-wrap:wrap;gap:4px}
+ #app .toc .era-progress-row:has(.era-progress-detail)>.period{flex-basis:100%;width:100%}
+ #app .toc .era-progress-row:has(.era-progress-detail)>.era-progress-tools{flex:0 1 100%;max-width:none;margin-left:auto;justify-content:flex-end}
+ #app .toc .era-progress-row:has(.era-progress-detail) .era-progress-detail{flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px 12px}
+}
