@@ -1,0 +1,9 @@
+'use strict';
+const fs=require('node:fs'),assert=require('node:assert/strict'),{JSDOM}=require('jsdom');
+const source='d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de',w=new JSDOM('<main/>',{runScripts:'outside-only',url:'https://synthetic.invalid'}).window;w.eval(fs.readFileSync('media/era-study-progress.js','utf8'));
+let checks=0;
+for(const [n,c,wrong,status,expected] of [[69,43,26,'completed',62],[172,145,27,'completed',84],[100,87,13,'completed',87],[100,0,0,'completed',0],[100,0,100,'completed',0],[100,100,0,'completed',100],[3,1,1,'completed',33],[100,69,31,'completed',69],[100,70,30,'completed',70],[100,79,21,'completed',79],[100,80,20,'completed',80]]){
+ const items=Array.from({length:n},(_,i)=>({id:'q'+i,blanks:[{}]})),responses=Object.fromEntries(items.slice(0,c+wrong).map((q,i)=>[q.id,{submitted:true,correct:i<c,values:['synthetic'],checkedSlots:[true]}])),model={source:{sha256:source},version:'v',items},result={version:'v',workspace:{status,responses}},before=JSON.stringify(result),s=w.HanqEraProgress.summary(model,result);
+ assert.equal(s.correct,c);assert.equal(s.scorePercent,expected);assert.equal(s.wrong.length,wrong);assert.equal(s.total,n);assert.equal(JSON.stringify(result),before);checks+=5;
+}
+const model={source:{sha256:source},version:'v',items:[{id:'q',blanks:[{parts:[{},{}]}]}]},r={version:'v',workspace:{status:'completed',responses:{q:{submitted:true,correct:true,values:['one',''],checkedSlots:[true,false]}}}};assert.equal(w.HanqEraProgress.summary(model,r).scorePercent,0);checks++;assert.throws(()=>w.HanqEraProgress.summary({...model,items:[]},r));checks++;assert.throws(()=>w.HanqEraProgress.summary(model,{...r,version:'old'}));checks++;w.close();console.log(JSON.stringify({checks,fullQuestionDenominator:true,integerFloor:true,sourceBinding:true,recordsUnchanged:true}));

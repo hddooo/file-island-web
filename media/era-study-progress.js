@@ -14,7 +14,7 @@
       const complete=slots>0&&r&&r.submitted===true&&typeof r.correct==='boolean'&&Array.isArray(r.values)&&r.values.length===slots&&r.values.every(v=>typeof v==='string'&&v.trim().length>0)&&(!r.checkedSlots||(r.checkedSlots.length===slots&&r.checkedSlots.every(v=>v===true)));
       if(complete){done++;if(!r.correct)wrong.push(item);}
     }
-    return {done,total:model.items.length,complete:result.workspace.status==='completed'||done===model.items.length,wrong};
+    return {done,correct:done-wrong.length,scorePercent:Math.floor((done-wrong.length)/model.items.length*100),total:model.items.length,complete:result.workspace.status==='completed'||done===model.items.length,wrong};
   }
   function mount(host,options){
     stop();options=options||{};
@@ -49,14 +49,14 @@
     async function read(id){const quizId=id==='samguk'?'ancient':id;const model=await api.textbookSemanticQuiz(quizId,revision);if(!valid())throw Error('session_changed');const result=await api.textbookSourceWorkspace(quizId,revision);if(!valid())throw Error('session_changed');if(model.id!==quizId)throw Error('era_binding');if(!model.version){const bytes=new win.TextEncoder().encode(JSON.stringify({schema:model.schemaVersion,source:model.source,items:model.items}));model.progressVersion=Array.from(new Uint8Array(await win.crypto.subtle.digest('SHA-256',bytes))).map(x=>x.toString(16).padStart(2,'0')).join('');if(!valid())throw Error('session_changed');}return {model,result,stats:summary(model,result)};}
     function paint(tools,record){
       const status=tools.querySelector('.era-progress-status');status.replaceChildren();tools.dataset.state='ready';
-      if(tools.dataset.reviewEra){status.textContent=!record.stats.finalSubmitted?'최종 제출 없음':record.stats.wrong.length?'최종 오답 '+record.stats.wrong.length+'문항':'저장된 오답 없음';return;}
+      if(tools.dataset.reviewEra){status.textContent=record.stats.finalSubmitted?' (정답률 : '+record.stats.scorePercent+'%, 오답 : '+record.stats.wrong.length+'문항)':' (기록 없음)';return;}
       status.title=record.stats.complete?'빈칸 학습 완료':'빈칸 학습 미완료';
       if(record.stats.complete){const check=node('span','era-complete','✓');check.setAttribute('role','img');check.setAttribute('aria-label',tools.dataset.title+' 빈칸 학습 완료');status.append(check);}
     }
     async function readReview(id,tools){
       const request={};reviewReads.set(tools,request);
       try{const record=await read(id);record.stats=Object.assign({},record.stats,{finalSubmitted:record.stats.complete,wrong:record.stats.complete?record.stats.wrong:[]});if(valid()&&reviewReads.get(tools)===request)paint(tools,record);return record;}
-      catch(e){if(valid()&&reviewReads.get(tools)===request){tools.dataset.state='error';tools.querySelector('.era-progress-status').textContent='기록 확인 실패';}throw e;}
+      catch(e){if(valid()&&reviewReads.get(tools)===request){tools.dataset.state='error';tools.querySelector('.era-progress-status').textContent=' (기록 확인 실패)';}throw e;}
     }
     async function review(id,title,button,tools){
       if(!valid()||dialog)return;opener=button;
@@ -69,7 +69,7 @@
         current.addEventListener('pointerdown',()=>{pointerVersion++;imeAdvanceTarget=null;});
         current.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.altKey&&!e.ctrlKey&&!e.metaKey&&(e.repeat&&e.target===x||e.target===imeAdvanceTarget&&Date.now()<imeAdvanceUntil)){e.preventDefault();e.stopPropagation();}},true);
         current.addEventListener('keyup',e=>{if(e.key==='Enter'||e.code==='Enter'){keyVersion++;imeAdvanceTarget=null;}});
-        if(!records.some(r=>r.stats.wrong.length)){body.append(node('p','era-wrong-empty',records[0].stats.finalSubmitted?title+'에 저장된 오답이 없습니다.':title+'의 최종 제출 기록이 없습니다.'));return;}
+        if(!records.some(r=>r.stats.wrong.length)){body.append(node('p','era-wrong-empty',records[0].stats.finalSubmitted?title+'에 저장된 오답이 없습니다.':title+'의 제출 기록이 없습니다.'));return;}
         for(const record of records){
           for(const item of record.stats.wrong){
             const card=node('article','era-wrong-item');card.dataset.itemId=item.id;card.dataset.era=id;
@@ -147,8 +147,8 @@
       const section=node('section','era-progress-tools era-aggregate'),heading=node('h2','','시대별 학습 - 오답 빈칸 문제'),list=node('div','era-wrong-menu');
       section.append(heading,list);host.append(section);owned.push(section);
       eras.forEach((id,index)=>{
-        const tools=node('div','era-wrong-era-row'),b=node('button','era-wrong-review',eraTitles[index]),status=node('span','era-progress-status','확인 중');
-        tools.dataset.reviewEra=id;tools.dataset.title=eraTitles[index];b.type='button';b.dataset.era=id;b.setAttribute('aria-label',eraTitles[index]+' 최종 오답 다시 풀기');status.id='era-wrong-count-'+id;status.setAttribute('role','status');status.setAttribute('aria-live','polite');b.setAttribute('aria-describedby',status.id);tools.append(b,status);list.append(tools);
+        const tools=node('div','era-wrong-era-row'),b=node('button','era-wrong-review',eraTitles[index]),status=node('span','era-progress-status',' (확인 중)');
+        tools.dataset.reviewEra=id;tools.dataset.title=eraTitles[index];b.type='button';b.dataset.era=id;b.setAttribute('aria-label',eraTitles[index]+' 오답 다시 풀기');status.id='era-wrong-count-'+id;status.setAttribute('role','status');status.setAttribute('aria-live','polite');b.setAttribute('aria-describedby',status.id);b.append(status);tools.append(b);list.append(tools);
         b.onclick=()=>review(id,tools.dataset.title,b,tools);
         queue.push(async()=>{try{await readReview(id,tools);}catch(e){/* The current request paints its own error. */}});
       });

@@ -18,7 +18,7 @@ const tick=()=>new Promise(resolve=>setTimeout(resolve,20));
   const open=async id=>{d.querySelector('.era-wrong-review[data-era="'+id+'"]').click();await tick();};
   const close=()=>d.querySelector('.era-wrong-close').click();
   assert.equal(d.querySelectorAll('.era-wrong-review').length,8);assert.equal(calls.length,16);assert(!calls.some(c=>c[1]==='samguk'));
-  assert.match(d.querySelector('[data-review-era="samguk"] .era-progress-status').textContent,/최종 오답 1문항/);
+  assert.match(d.querySelector('[data-review-era="samguk"] .era-progress-status').textContent,/정답률 : 33%, 오답 : 1문항/);
   for(const [i,id] of eras.entries()){
     const menuId=id==='ancient'?'samguk':id,previous=calls.length;await open(menuId);
     assert.deepEqual(calls.slice(previous),[['model',id],['workspace',id]],'opening reads only the selected era');
@@ -35,7 +35,7 @@ const tick=()=>new Promise(resolve=>setTimeout(resolve,20));
   // A newly acknowledged snapshot replaces the previous final wrong, never appends it.
   const partial=structuredClone(records.colonial);
   for(const status of ['active','paused']){
-    records.colonial.workspace.status=status;await open('colonial');assert.equal(d.querySelector('.era-wrong-item'),null);assert.match(d.querySelector('.era-wrong-empty').textContent,/최종 제출 기록이 없습니다/);assert.equal(d.querySelector('[data-review-era="colonial"] .era-progress-status').textContent,'최종 제출 없음');close();
+    records.colonial.workspace.status=status;await open('colonial');assert.equal(d.querySelector('.era-wrong-item'),null);assert.match(d.querySelector('.era-wrong-empty').textContent,/제출 기록이 없습니다/);assert.equal(d.querySelector('[data-review-era="colonial"] .era-progress-status').textContent,' (기록 없음)');close();
     assert.equal(w.HanqEraProgress.summary(models.colonial,records.colonial).wrong.length,1,'the existing summary contract retains partial progress');
   }
   records.colonial.workspace.status='active';records.colonial.workspace.responses['colonial-3']={submitted:true,correct:true,values:['합성 정답'],checkedSlots:[true]};
@@ -49,7 +49,7 @@ const tick=()=>new Promise(resolve=>setTimeout(resolve,20));
   controller.stop();const older=structuredClone(records.prehistory);hold={id:'prehistory',promise:new Promise(resolve=>release=resolve)};
   controller=w.HanqEraProgress.mount(host,{api,aggregate:true});await tick();hold=null;records.prehistory.workspace.responses['prehistory-2'].correct=false;
   await open('prehistory');assert.equal(d.querySelectorAll('.era-wrong-item').length,2);release(older);await controller.ready;
-  assert.match(d.querySelector('[data-review-era="prehistory"] .era-progress-status').textContent,/최종 오답 2문항/,'a late menu response cannot replace a newer modal count');close();
+  assert.match(d.querySelector('[data-review-era="prehistory"] .era-progress-status').textContent,/정답률 : 0%, 오답 : 2문항/,'a late menu response cannot replace a newer modal count');close();
   await open('joseon');state={signedIn:true,ownerId:'B',epoch:2};listener();assert.equal(d.querySelector('dialog'),null);assert.equal(d.querySelector('.era-aggregate'),null);assert.equal(d.querySelector('#app').inert,false);
   controller=w.HanqEraProgress.mount(host,{api,aggregate:true});await controller.ready;await open('joseon');assert(d.querySelector('.era-wrong-empty'));assert.equal(d.querySelector('input'),null);close();controller.stop();
   state={signedIn:true,ownerId:'A',epoch:3};await w.HanqHongmungwan.mount(host,{api}).ready;assert.equal(d.querySelectorAll('.era-wrong-review').length,8);await open('joseon');assert.equal(d.querySelector('.era-wrong-item').dataset.itemId,'joseon-2');w.HanqHongmungwan.stop();

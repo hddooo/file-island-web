@@ -1,0 +1,7 @@
+# 0.10.31-beta report
+
+The era selector now shows one combined title and score summary. The score is floor(correct submitted questions / all source questions * 100), not a slot score or an example copied from the request. Wrong count retains the existing verified submitted-wrong definition. Confirmed partial submission uses the complete question denominator; unsubmitted records show no record rather than a misleading 0%. An explicitly completed all-unanswered result correctly shows 0% and 0 wrong, consistent with the existing statistics separation of unanswered and wrong. Errors do not masquerade as empty records.
+
+Tests cover 69-question and 172-question calculations, 0/69/70/79/80/87/100 percentages, partial and invalid slots, stale source versions, eight actual source shapes totaling 697 questions with synthetic records, later re-read results and late-response/account isolation. Existing review and normal era completion regressions passed. No saved data, raw answers, API requests or grading rules changed.
+
+Sixteen isolated browser cases cover Chromium/WebKit at 320/390/1440px and 844px landscape, each in normal and company modes. The combined buttons retain 44px targets, names and live score descriptions, no horizontal clipping, keyboard review and Escape focus behavior. Mobile/PC screenshots were inspected. No user Chrome or production account writes were used. Deployment confirmation requires the exact subsequent official CI/CD and live version/asset checks.
