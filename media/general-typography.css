@@ -74,3 +74,8 @@
     }
   }
 }
+
+/* The pixel font ships only a 400 face. Retain source bold in history readers
+   instead of letting the global font-synthesis:none flatten strong/b text. */
+html:not([data-company-mode=on]) body :is(.textbook-semantic,.goryeo-script-reader,.joseon-script-reader,.opening-script-reader,.textbook-source-quiz,.toc) :is(strong,b),
+html:not([data-company-mode=on]) body :is(.textbook-semantic,.goryeo-script-reader,.joseon-script-reader,.opening-script-reader,.textbook-source-quiz,.toc) :is(strong,b) *{font-synthesis:weight}

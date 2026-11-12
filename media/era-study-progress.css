@@ -101,3 +101,10 @@ html[data-company-mode=on] #app .toc .era-complete{color:#9fc6ff}
  #app .toc .era-progress-row:has(.era-progress-detail)>.era-progress-tools{flex:0 1 100%;max-width:none;margin-left:auto;justify-content:flex-end}
  #app .toc .era-progress-row:has(.era-progress-detail) .era-progress-detail{flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px 12px}
 }
+
+/* The saved status is a sibling of the link: the shared row owns the card. */
+html:not([data-company-mode=on]) #app .toc .era-progress-row{border:1px solid var(--line,#eac7a7);border-radius:14px;background:var(--paper,#fff);box-shadow:var(--shadow);padding:0 12px 0 0;box-sizing:border-box}
+html:not([data-company-mode=on]) #app .toc .era-progress-row>.period{border:0!important;box-shadow:none!important;background:transparent!important;transform:none}
+html:not([data-company-mode=on]) #app .toc .era-progress-row>.era-progress-tools{padding:6px 0;background:transparent!important}
+html[data-hanq-theme=terminal]:not([data-company-mode=on]) body #app .toc .era-progress-row{border-color:#466455!important;border-radius:7px;background:#091610!important}
+html:not([data-company-mode=on]) #app .toc .era-progress-row:has(>.period:hover){border-color:var(--green,#247ac4)!important}
