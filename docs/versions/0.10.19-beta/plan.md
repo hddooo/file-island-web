@@ -13,4 +13,4 @@
 Preserve the existing answer-box design, source text/IDs, account identity and CAS/retry safeguards. Do not use the user's Chrome or publish private fixtures. Historical submissions are not an archive: the current API stores one latest workspace per user/quiz/source version. Entry and drafting do not change it; final submission replaces the whole run to prevent old/new answer mixing.
 
 ## Release gate
-The API single-answer grader must match the frontend before production release. Do not bypass or modify deployment hash/provenance controls. Run functional, regression and visual checks, then verify the exact frontend commit's CI/CD and live identity when this gate is resolved.
+Release the reviewed UI with the exact existing production grading rules. Defer comma/slash parenthetical alternatives and explicit-alias acceptance until the API can be deployed through its verified path. The UI explains this limitation. Do not bypass or modify deployment hash/provenance controls. Run functional, regression and visual checks, then verify the exact frontend commit's CI/CD and live identity.

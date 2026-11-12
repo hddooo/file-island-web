@@ -253,25 +253,12 @@
   var unique=Array.from(new Set(given)),matched=expected.filter(function(p){return unique.indexOf(p)>=0;}),missing=expectedParts.filter(function(p){return unique.indexOf(norm(p))<0;}),extra=unique.filter(function(p){return expected.indexOf(p)<0;}),duplicate=unique.length!==given.length;
   return {correct:!duplicate&&!extra.length&&!missing.length&&given.length===expected.length,matched:matched.length,total:expected.length,missing:missing,partial:!duplicate&&!extra.length&&matched.length>0&&missing.length>0};
 }
-  function parentheticalAnswerMatches(value, expected) {
-    // Only a complete two-keyword source answer can use an alternate separator.
-    // Keep punctuation in ordinary names, answer lists and sequences significant.
-    var parts = normalize(expected).match(/^([\p{L}\p{N}]+)\(([\p{L}\p{N}]+)\)$/u);
-    if (!parts) return false;
-    var given = value.split(/[,/]/).map(normalize);
-    return given.length === 2 && given[0] === parts[1] && given[1] === parts[2];
-  }
-  function explicitAliasMatches(value, expected) {
-    // An explicit (=alias) is an alternative; an ordinary parenthesis is not.
-    var parts = normalize(expected).match(/^([\p{L}\p{N}]+)\(=([\p{L}\p{N}]+)\)$/u);
-    return !!parts && (value === parts[1] || value === parts[2]);
-  }
   function compare(value, expectedParts, orderMatters, kind, separator) {
     var cleaned = normalize(value);
     if (!cleaned) return 'empty';
     if (kind === 'sequence') return sequenceNumbersMatch(value,expectedParts) ? 'match' : 'different';
     if (!orderMatters && expectedParts.length>1) return multipleAnswerDetails(value,expectedParts).correct?'match':'different';
-    if (expectedParts.length === 1) return cleaned === normalize(expectedParts[0]) || parentheticalAnswerMatches(value, expectedParts[0]) || explicitAliasMatches(cleaned, expectedParts[0]) ? 'match' : 'different';
+    if (expectedParts.length === 1) return cleaned === normalize(expectedParts[0]) ? 'match' : 'different';
     var given = value.split(',').map(normalize), expected = expectedParts.map(normalize);
     if (given.length !== expected.length || given.some(function (part) { return !part; })) return 'different';
     if (!orderMatters) { given.sort(); expected.sort(); }
@@ -369,6 +356,7 @@
     var wrapper=el('section','textbook-source-quiz textbook-source-continuous'+(manualSave?' textbook-source-inline-questions':''));wrapper.appendChild(el('h2','textbook-source-quiz-title',data.title));
     var notesEdition = data.source.sha256 === 'd54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de' ? '81' : data.source.sha256 === '35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442' ? '79' : null;
     if (notesEdition) { wrapper.classList.add('history-notes-design'); wrapper.setAttribute('data-history-edition',notesEdition); }
+    if(sequential)wrapper.appendChild(el('p','textbook-source-quiz-help textbook-source-grading-notice','괄호가 있는 정답은 괄호까지 모두 입력해 주세요. 쉼표·슬래시 대체와 동의어 단독 입력은 준비 중입니다.'));
     if(checkedReview)wrapper.appendChild(el('p','textbook-source-quiz-help','모르는 문제 / 확실히 틀린 문제만 체크하세요. 다시보기를 통해 모르는 문제만 다시봐요 !'));
     var controls=el('div','textbook-source-list-controls'),stop=el('button','textbook-source-quiz-stop','그만하기'),retry=el('button','textbook-source-save-retry','저장 다시 시도');stop.type=retry.type='button';retry.hidden=true;if(!checkedReview&&!manualSave)controls.appendChild(stop);controls.appendChild(retry);wrapper.appendChild(controls);
     var progress=el('p','textbook-source-progress'),status=el('p','textbook-source-quiz-status','계정에 저장된 응답을 불러오는 중…');status.setAttribute('role','status');status.setAttribute('aria-live','polite');if(manualSave){wrapper.classList.add('textbook-source-manual-save');var summaryBar=el('div','textbook-source-save-bar');saveButton=el('button','textbook-source-save-complete','저장 / 완료');saveButton.type='button';saveButton.disabled=true;var summaryActions=el('div','textbook-source-save-actions');restartButton=el('button','textbook-source-restart','다시 풀기');restartButton.type='button';restartButton.disabled=true;summaryActions.appendChild(saveButton);summaryActions.appendChild(restartButton);summaryBar.appendChild(progress);summaryBar.appendChild(summaryActions);wrapper.insertBefore(summaryBar,controls);}else wrapper.appendChild(progress);wrapper.appendChild(status);
