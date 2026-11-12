@@ -580,11 +580,12 @@
     }
     function sourceNumber(item, fallback) { return item.originalNumberLabel || (item.originalNumber===null?'번호 없는 문항':String(item.originalNumber)); }
     function topicLabel(topic) {
-      if(manualSave&&notesEdition==='81'&&data.id==='joseon'&&topic.id==='society-comparison'&&topic.title.trim()==='사회 비교')return '사회 비교 · 해당하는 시대를 쓰세요 (고려 / 조선 후기)';
+      if(manualSave&&data.id==='joseon'&&topic.id==='society-comparison')return (sequential?'':'사회 비교 · ')+'고려 / 조선 후기 중 맞는 것을 쓰세요';
       return topic.title;
     }
     function questionSection(topic){
       if(!topic)return data.title;
+      if(data.id==='joseon'&&topic.id==='society-comparison')return '사회 비교';
       var names={'early-joseon':'조선 전기','late-joseon':'조선 후기','early-goryeo':'고려 초기','aristocratic-period':'문벌귀족시기','military-rule':'무신정권기 · 대몽항쟁','yuan-interference':'원 간섭기','late-goryeo':'고려 말','unified-silla-culture':'통일신라 문화','event-sequence':'사건 순서','foreign-invasions':'거란 · 여진 · 몽골 침입','find-state':'국가 구분'};
       if(names[topic.id])return names[topic.id];var title=topicLabel(topic).split(/[:：]/)[0];return /^(설명|해당|공부)/.test(title)?data.title:title;
     }
@@ -607,7 +608,7 @@
       var groups=presentation&&!sequential?groupedContainers(list,'textbook-joseon-section'):null, instructions=new WeakMap();
       data.items.forEach(function(item,itemIndex){
       var target=groups?topicTarget(groups,itemIndex):list, topic=data.subtopics.find(function(t){return t.id===item.subtopicId;}), previous=instructions.get(target), instruction=previous&&previous.topic===item.subtopicId?previous.node:null;
-      if(!previous||previous.topic!==item.subtopicId){
+      if((sequential&&data.id==='joseon'&&item.subtopicId==='society-comparison')||!previous||previous.topic!==item.subtopicId){
         instruction=null;
         if(topic&&topic.title.trim()){
           instruction=target.dataset.sourceSubtopic===topic.id?Array.from(target.children).find(function(n){return /^H[1-6]$/.test(n.tagName)&&n.textContent===topicLabel(topic);}):null;
