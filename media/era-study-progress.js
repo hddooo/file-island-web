@@ -52,6 +52,15 @@
       if(tools.dataset.reviewEra){status.textContent=record.stats.finalSubmitted?' (정답률 : '+record.stats.scorePercent+'%, 오답 : '+record.stats.wrong.length+'문항)':' (기록 없음)';return;}
       status.title=record.stats.complete?'빈칸 학습 완료':'빈칸 학습 미완료';
       if(record.stats.complete){const check=node('span','era-complete','✓');check.setAttribute('role','img');check.setAttribute('aria-label',tools.dataset.title+' 빈칸 학습 완료');status.append(check);}
+      if(record.stats.complete){
+        const detail=node('span','era-progress-detail'),score=node('span','era-progress-score','정답률 '+record.stats.scorePercent+'%');detail.append(score);
+        const raw=record.result.updatedAt;
+        if(typeof raw==='string'&&/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(raw)&&Number.isFinite(Date.parse(raw))&&new Date(raw.slice(0,10)+'T00:00:00Z').toISOString().slice(0,10)===raw.slice(0,10)){
+          const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Seoul',year:'2-digit',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date(raw)),get=key=>parts.find(p=>p.type===key).value;
+          const time=node('time','era-progress-date','최근 저장 '+get('year')+'/'+get('month')+'/'+get('day')+' '+get('hour')+':'+get('minute'));time.dateTime=raw;detail.append(time);
+        }
+        status.append(detail);
+      }
     }
     async function readReview(id,tools){
       const request={};reviewReads.set(tools,request);
