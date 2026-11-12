@@ -78,3 +78,19 @@ html[data-company-mode=on] #eraWrongDialog#eraWrongDialog#eraWrongDialog#eraWron
 #app .toc .era-complete{color:#247ac4;font-size:20px;font-weight:800;line-height:1}
 html[data-company-mode=on] #app .toc .era-complete{color:#9fc6ff}
 #app .toc .era-progress-row>.era-progress-tools[data-state=ready]{flex-basis:24px;max-width:24px}
+
+/* Saved quiz figures are read-only; updatedAt is not a completion timestamp. */
+#app .toc .era-progress-row>.era-progress-tools,
+#app .toc .era-progress-row>.era-progress-tools[data-state=ready]{flex:0 0 auto;max-width:190px}
+#app .toc .era-progress-status{gap:8px;white-space:normal;text-align:right}
+#app .toc .era-progress-detail{display:flex;flex-direction:column;gap:3px;line-height:1.4}
+#app .toc .era-progress-score{font-size:12px;font-weight:700;color:inherit}
+#app .toc .era-progress-date{font-size:11px;white-space:nowrap;font-variant-numeric:tabular-nums}
+@media(max-width:1023px){
+ #app .toc .era-progress-row{flex-wrap:wrap;gap:2px}
+ #app .toc .era-progress-row>.period{flex-basis:100%}
+ #app .toc .era-progress-row>.era-progress-tools{margin-left:auto;margin-bottom:6px}
+ #app .toc .era-progress-detail{flex-direction:row;flex-wrap:wrap;justify-content:flex-end;gap:4px 8px}
+}
+
+.hm-exam-heading{font-size:16px;margin:0 0 12px;line-height:1.5}
