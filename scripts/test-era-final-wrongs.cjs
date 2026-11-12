@@ -1,6 +1,7 @@
 'use strict';
 // Synthetic workspaces only. Never reads or writes a real user's study records.
 const fs=require('node:fs'),assert=require('node:assert/strict'),{JSDOM}=require('jsdom');
+const v2=process.env.SOURCE_GRADING_V2==='1',version=v2?'a'.repeat(64):'v',cap={gradingVersion:2,supportedGradingVersions:[1,2],gradingStorageScope:'isolated-v2'};
 const source='d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de';
 const eras=['prehistory','ancient','nambuk','goryeo','joseon','opening','colonial','modern'];
 const tick=()=>new Promise(resolve=>setTimeout(resolve,20));
@@ -9,11 +10,12 @@ const tick=()=>new Promise(resolve=>setTimeout(resolve,20));
   w.addEventListener('error',e=>errors.push(e.message));
   for(const file of ['ui-locks','textbook-source-quiz','era-study-progress','hongmungwan'])w.eval(fs.readFileSync('media/'+file+'.js','utf8'));
   const make=(era,n)=>({id:era+'-'+n,originalNumber:n,kind:'fill-in',verification:{status:'source-verified',textVerified:true,answerPairVerified:true},segments:[{type:'text',text:'합성 <strong onclick="bad()">강조</strong> <script>bad()</script><img src="bad" onerror="bad()"> 문항 '},{type:'blank',id:'b'}],blanks:[{id:'b',answerIds:['a']}],answers:[{id:'a',text:'합성 정답'}],answer:{text:'합성 정답'}});
-  const models=Object.fromEntries(eras.map(id=>[id,{id,version:'v',source:{sha256:source},items:[1,2,3].map(n=>make(id,n))}]));
-  const records=Object.fromEntries(eras.map(id=>[id,{version:'v',workspace:{status:'completed',responses:Object.fromEntries(models[id].items.map((q,i)=>[q.id,{submitted:i!==2,correct:i===1?true:i===0?false:null,values:[i===2?'':'합성 이전 답'],checkedSlots:[i!==2]}]))}}]));
+  const models=Object.fromEntries(eras.map(id=>[id,{id,schemaVersion:'hanq-source-quiz/1',version,source:{sha256:source},items:[1,2,3].map(n=>make(id,n))}]));
+  const records=Object.fromEntries(eras.map(id=>[id,{version,workspace:{status:'completed',responses:Object.fromEntries(models[id].items.map((q,i)=>[q.id,{submitted:i!==2,correct:i===1?true:i===0?false:null,values:[i===2?'':'합성 이전 답'],checkedSlots:[i!==2]}]))}}]));
   records.modern.workspace.responses={};
   let state={signedIn:true,ownerId:'A',epoch:1},listener,writes=0,failed=null,hold=null;
-  const calls=[],api={state:()=>state,onChange:fn=>{listener=fn;return()=>{};},hongmungwan:async()=>({resetAt:null,items:[]}),textbookSemanticQuiz:async id=>{calls.push(['model',id]);assert(eras.includes(id));return models[id];},textbookSourceWorkspace:async id=>{calls.push(['workspace',id]);if(failed===id)throw Error('synthetic unavailable');if(hold?.id===id)return hold.promise;return state.ownerId==='A'?records[id]:{version:'v',workspace:{responses:{}}};},saveTextbookSourceWorkspace:()=>{writes++;throw Error('unexpected write');},request:()=>{writes++;throw Error('unexpected request');}};
+  const calls=[],api={state:()=>state,onChange:fn=>{listener=fn;return()=>{};},hongmungwan:async()=>({resetAt:null,items:[]}),textbookSemanticQuiz:async id=>{calls.push(['model',id]);assert(eras.includes(id));return models[id];},textbookSourceWorkspace:async id=>{calls.push(['workspace',id]);if(failed===id)throw Error('synthetic unavailable');if(hold?.id===id)return hold.promise;return state.ownerId==='A'?records[id]:{version,workspace:{responses:{}}};},saveTextbookSourceWorkspace:()=>{writes++;throw Error('unexpected write');},request:()=>{writes++;throw Error('unexpected request');}};
+  if(v2){d.head.insertAdjacentHTML('beforeend','<meta name="hanq-source-grading" content="2">');w.TextEncoder=TextEncoder;Object.defineProperty(w.crypto,'subtle',{value:require('node:crypto').webcrypto.subtle});for(const file of ['source-grading-v2','source-grading-v2-session'])w.eval(fs.readFileSync('media/'+file+'.js','utf8'));const load=api.textbookSourceWorkspace;api.textbookSourceWorkspaceV2=async(...args)=>({...await load(...args),...cap});api.saveTextbookSourceWorkspaceV2=()=>{writes++;throw Error('unexpected v2 write');};api.textbookSourceWorkspace=()=>{throw Error('unexpected legacy read in new wrong list');};}
   const host=d.querySelector('main');let controller=w.HanqEraProgress.mount(host,{api,aggregate:true});await controller.ready;
   const open=async id=>{d.querySelector('.era-wrong-review[data-era="'+id+'"]').click();await tick();};
   const close=()=>d.querySelector('.era-wrong-close').click();
@@ -54,5 +56,5 @@ const tick=()=>new Promise(resolve=>setTimeout(resolve,20));
   controller=w.HanqEraProgress.mount(host,{api,aggregate:true});await controller.ready;await open('joseon');assert(d.querySelector('.era-wrong-empty'));assert.equal(d.querySelector('input'),null);close();controller.stop();
   state={signedIn:true,ownerId:'A',epoch:3};await w.HanqHongmungwan.mount(host,{api}).ready;assert.equal(d.querySelectorAll('.era-wrong-review').length,8);await open('joseon');assert.equal(d.querySelector('.era-wrong-item').dataset.itemId,'joseon-2');w.HanqHongmungwan.stop();
   assert.equal(writes,0);assert.deepEqual(errors,[]);w.close();
-  console.log(JSON.stringify({eras:8,latestSnapshotOnly:true,canonicalAncient:true,emptyAndError:true,closeReopenAndLateResponse:true,ownerIsolation:true,safeEmphasis:true,writes}));
+  console.log(JSON.stringify({eras:8,gradingVersion:v2?2:1,latestSnapshotOnly:true,canonicalAncient:true,emptyAndError:true,closeReopenAndLateResponse:true,ownerIsolation:true,safeEmphasis:true,writes}));
 })().catch(error=>{console.error(error);process.exitCode=1;});

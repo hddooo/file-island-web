@@ -4,18 +4,20 @@ const assert=require('node:assert/strict'),fs=require('node:fs');
 const {JSDOM}=require(process.env.JSDOM_PATH||'jsdom');
 const {fixture:readerFixture,title}=require('./test-era-blank-test-removal.cjs');
 const {fixture:quizFixture,initial}=require('./test-era-blank-manual-save.cjs');
-const clone=x=>JSON.parse(JSON.stringify(x));
-const settle=async()=>{for(let i=0;i<35;i++)await Promise.resolve();};
+const clone=x=>JSON.parse(JSON.stringify(x)),v2=process.env.SOURCE_GRADING_V2==='1',cap={gradingVersion:2,supportedGradingVersions:[1,2],gradingStorageScope:'isolated-v2'};
+function configureV2(w,api,saved,q){if(!v2)return;w.document.head.insertAdjacentHTML('beforeend','<meta name="hanq-source-grading" content="2">');w.TextEncoder=TextEncoder;Object.defineProperty(w.crypto,'subtle',{value:require('node:crypto').webcrypto.subtle});for(const f of ['source-grading-v2','source-grading-v2-session'])w.eval(fs.readFileSync('media/'+f+'.js','utf8'));saved.version=q.version;const load=api.textbookSourceWorkspace,save=api.saveTextbookSourceWorkspace;api.textbookSourceWorkspaceV2=async()=>({...await load(),...cap});api.textbookSourceWorkspace=async()=>clone(saved);api.saveTextbookSourceWorkspaceV2=async(id,body)=>{assert.equal(body.gradingVersion,2);return {...await save(id,body),...cap};};api.saveTextbookSourceWorkspace=()=>{throw Error('legacy save forbidden');};}
+const settle=async()=>{for(let i=0;i<35;i++)await Promise.resolve();if(v2)await new Promise(r=>setTimeout(r,15));};
 const deferred=()=>{let resolve,reject;const promise=new Promise((a,b)=>{resolve=a;reject=b;});return {promise,resolve,reject};};
-function model(){const q=quizFixture();q.id='opening';q.version='fixture';q.source.scriptSha256='b'.repeat(64);q.scriptResponseGroups=q.items.map(i=>({itemId:i.id,fieldId:i.id+'-field',slotIds:i.blanks.map(b=>b.id)}));return q;}
+function model(){const q=quizFixture();q.id='opening';q.version=v2?'a'.repeat(64):'fixture';q.source.scriptSha256='b'.repeat(64);q.scriptResponseGroups=q.items.map(i=>({itemId:i.id,fieldId:i.id+'-field',slotIds:i.blanks.map(b=>b.id)}));return q;}
 function binding(q){return {revision:q.source.sha256,sourceSha256:q.source.scriptSha256,counts:{items:3,groups:3,slots:3}};}
 async function run(){
  for(const era of ['joseon','goryeo','opening']){
   const w=new JSDOM('<main></main>',{url:'https://synthetic.invalid/#chapter/'+era+'/webtoon',runScripts:'outside-only',pretendToBeVisual:true}).window;
   w.HTMLElement.prototype.scrollIntoView=function(){};w.confirm=()=>false;
   for(const f of ['textbook-source-quiz','history81-workspace',era+'-script-reader'])w.eval(fs.readFileSync('media/'+f+'.js','utf8'));
-  const data=readerFixture(era),q=model(),saved=initial();saved.workspace.status='completed';saved.workspace.responses['synthetic-0']={values:['이전 최종 답안'],submitted:true,correct:false,checkedSlots:[true]};const originalSaved=JSON.stringify(saved);let reads=0,writes=0,current=true,saveHold=null;
+  const data=readerFixture(era),q=model(),saved=initial();saved.workspace.status='completed';saved.workspace.responses['synthetic-0']={values:['이전 최종 답안'],submitted:true,correct:false,checkedSlots:[true]};if(v2)saved.version=q.version;const originalSaved=JSON.stringify(saved);let reads=0,writes=0,current=true,saveHold=null;
   const api={textbookSemanticQuiz:async()=>clone(q),textbookSourceWorkspace:async()=>{reads++;return clone(saved);},saveTextbookSourceWorkspace:async()=>{writes++;if(saveHold)return saveHold.promise;throw Error('synthetic offline');}};
+  configureV2(w,api,saved,q);
   const workspace=w.HanqHistory81Workspace.create({document:w.document,api,era:'opening',contract:binding(q),ownerId:'synthetic',isCurrent:()=>current});
   if(era!=='joseon')w['Hanq'+title(era)+'Structure']={isPrepared:x=>x===data};
   const host=w.document.querySelector('main'),controller=w['Hanq'+title(era)+'ScriptReader'].mount(host,era==='joseon'?data.bundle:data,{workspace,initialTopic:'first',initialMode:'study',routeForMode:mode=>{const u=new w.URL(w.location.href);u.hash='#chapter/'+era+'/'+(mode==='practice'?'source-quiz':mode==='exam'?'exam-lines':'webtoon');return u.href;},modeFromLocation:()=>w.location.hash.endsWith('/source-quiz')?'practice':'study'});
@@ -37,9 +39,10 @@ async function run(){
  w.HTMLElement.prototype.scrollIntoView=function(){};for(const f of ['textbook-source-quiz','history81-workspace'])w.eval(fs.readFileSync('media/'+f+'.js','utf8'));
  const q=model(),old=deferred(),saved=initial();let requests=0,renders=0,active=true,writes=0;
  const renderer={render(...args){renders++;return w.HanqTextbookSourceQuiz.render(...args);}},api={textbookSemanticQuiz:()=>++requests===1?old.promise:Promise.resolve(clone(q)),textbookSourceWorkspace:async()=>clone(saved),saveTextbookSourceWorkspace:async()=>{writes++;throw Error('unexpected write');}};
+ configureV2(w,api,saved,q);
  const workspace=w.HanqHistory81Workspace.create({document:w.document,api,era:'opening',contract:binding(q),ownerId:'synthetic',isCurrent:()=>active,renderer}),host=w.document.querySelector('main');
  const stale=workspace.show(host,{fresh:true});workspace.leave();await workspace.show(host,{fresh:true});assert.equal(renders,1);old.resolve(clone(q));await assert.rejects(stale,{message:'session_changed'});assert.equal(renders,1,'obsolete load cannot remount');assert.equal(host.querySelectorAll('.textbook-source-quiz-input').length,3);assert.equal(writes,0);
- const late=deferred();api.textbookSourceWorkspace=()=>late.promise;const pending=workspace.show(host,{fresh:true});await settle();active=false;workspace.stop();late.resolve(clone(saved));await assert.rejects(pending,{message:'session_changed'});assert.equal(host.children.length,0,'late account load does not revive private UI');assert.equal(writes,0);w.close();
- console.log(JSON.stringify({passed:true,readers:3,realWorkspaceAndRenderer:true,freshEntry:true,sameModePreserved:true,cancelAndSaveFailurePreserved:true,staleLoadsBlocked:true,navigationWrites:0}));
+ const late=deferred();api[v2?'textbookSourceWorkspaceV2':'textbookSourceWorkspace']=()=>late.promise;const pending=workspace.show(host,{fresh:true});await settle();active=false;workspace.stop();late.resolve(clone(saved));await assert.rejects(pending,{message:'session_changed'});assert.equal(host.children.length,0,'late account load does not revive private UI');assert.equal(writes,0);w.close();
+ console.log(JSON.stringify({passed:true,gradingVersion:v2?2:1,readers:3,realWorkspaceAndRenderer:true,freshEntry:true,sameModePreserved:true,cancelAndSaveFailurePreserved:true,staleLoadsBlocked:true,navigationWrites:0}));
 }
 run().catch(e=>{console.error(e);process.exitCode=1;});
