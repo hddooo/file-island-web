@@ -9,7 +9,7 @@ The source-emphasis renderer builds only safe formatting nodes, strips attribute
 
 White-sheet recall entry points are removed. Legacy links resolve to concept reading. No saved records, private source files, authentication or access settings are deleted or changed.
 
-## Verification so far
+## Completed local verification
 - Sequential functional tests: 86 assertions cover full-row grading, IME, one/five-second timing, stale timers, navigation, popup focus and pause, save/retry/conflict, account cleanup, fresh entry and whole-run submission.
 - 128 Chromium/WebKit combinations cover eight eras, 320×780, 390×844, 1440×900 and 844×320, ordinary/company modes and reduced motion. Screenshots exposed a global-theme popup-background conflict; it was fixed and an opaque-background assertion added.
 - The existing local private 81-edition fixture has 697 questions. Sequential checks: 2,837 assertions. Existing renderer checks: 1,661 assertions. The fixture includes the reported late-Joseon 36 and three culture examples; this is a regression fixture, not a claim to have read current authenticated production data.
@@ -23,4 +23,4 @@ White-sheet recall entry points are removed. Legacy links resolve to concept rea
 The matching API sourceGrade change is on API main 3da478930ceae4ce06a764f6aa664f1bbaf18ab5. Typecheck/build/lint and 325 unit tests passed; exact-SHA build run 43148624263 succeeded. Production deployment remains blocked by controller identity/provenance differences and the absence of a matching approved image manifest. Frontend production deployment is withheld to avoid storing grades inconsistent with its display. No ad-hoc route is used to bypass these controls.
 
 ## Verification limits
-No user Chrome control, real account answer mutation, physical iPhone test or authenticated production quiz end-to-end test was performed. Local private data and screenshots are not committed or deployed. Completion is not claimed until final latest-scope tests, authorized API deployment and exact frontend CI/CD/live verification succeed.
+No user Chrome control, real account answer mutation, physical iPhone test or authenticated production quiz end-to-end test was performed. Local private data and screenshots are not committed or deployed. All latest-scope local checks and the candidate artifact build passed. Production completion is not claimed until authorized API deployment and exact frontend main CI/CD/live verification succeed. The feature branch is pushed; main remains unchanged.
