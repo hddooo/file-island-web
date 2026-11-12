@@ -560,7 +560,21 @@
       var reached=rows.length>0&&correct/rows.length>=.8;reviewHost.appendChild(el('p','textbook-source-goal',reached?'목표 80% 달성! 다음 시대 학습으로 넘어가세요.':'목표는 정답률 80%입니다. 오답을 복습하고 다시 도전해 보세요.'));
       var nextEras={prehistory:'samguk',ancient:'nambuk',nambuk:'goryeo',goryeo:'joseon',joseon:'opening',opening:'colonial',colonial:'modern'},nextEra=nextEras[data.id],nextLink=el('a','textbook-source-next-era',nextEra?'다음 시대 학습':'시대별 학습 목록');nextLink.href=nextEra?'#chapter/'+nextEra+'/webtoon':'#past-exams';reviewHost.appendChild(nextLink);
       var back=el('button','textbook-source-quiz-resume','답안으로 돌아가기');back.type='button';on(back,'click',function(){showFlowQuestion(flowIndex);});reviewHost.appendChild(back);
-      reviewHost.appendChild(el('h3','','틀린 문제 다시 보기'));
+      var reviewHeader=el('div','textbook-source-review-header');reviewHeader.appendChild(el('h3','','틀린 문제 다시 보기'));reviewHost.appendChild(reviewHeader);
+      if(wrong.length){
+        var pdfButton=el('button','textbook-source-review-pdf-button','오답 PDF 저장'),pdfStatus=el('p','textbook-source-review-pdf-status'),pdfBusy=false,statisticsGeneration=flowGeneration;
+        pdfButton.type='button';pdfStatus.setAttribute('role','status');pdfStatus.setAttribute('aria-live','polite');reviewHeader.appendChild(pdfButton);reviewHost.appendChild(pdfStatus);
+        function currentStatistics(){return active&&flowPhase==='statistics'&&flowGeneration===statisticsGeneration;}
+        on(pdfButton,'click',async function(){
+          if(pdfBusy||!currentStatistics())return;pdfBusy=true;pdfButton.disabled=true;pdfButton.textContent='PDF 만드는 중…';pdfStatus.textContent='';
+          try{
+            var exporter=doc.defaultView.HanqEraQuizReviewPdf;if(!exporter||typeof exporter.download!=='function')throw Error('pdf_unavailable');
+            var result=await exporter.download({review:reviewHost,title:data.title+' 오답',isCurrent:currentStatistics,onProgress:function(p){if(currentStatistics())pdfStatus.textContent=p.done+' / '+p.total+'문항 준비 중';}});
+            if(currentStatistics())pdfStatus.textContent=result.count+'문항 · '+result.pages+'쪽 PDF 내려받기를 시작했습니다.';
+          }catch(error){if(currentStatistics())pdfStatus.textContent='PDF를 만들지 못했습니다. 다시 시도해 주세요.';}
+          finally{if(currentStatistics()){pdfBusy=false;pdfButton.disabled=false;pdfButton.textContent='오답 PDF 저장';}}
+        });
+      }
       wrong.forEach(function(row){var card=el('article','textbook-source-review-item');card.dataset.sourceReviewItemId=row.item.id;appendFlowReview(card,row,rows.indexOf(row));reviewHost.appendChild(card);});
       if(!wrong.length)reviewHost.appendChild(el('p','','틀린 문제가 없습니다.'));updateFlowActions();heading.focus();
     }

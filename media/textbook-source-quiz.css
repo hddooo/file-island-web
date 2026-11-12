@@ -279,3 +279,13 @@ html body #app#app#app#app .textbook-source-review-prompt .textbook-source-quiz-
 html body #app#app#app#app .textbook-source-review-prompt .textbook-source-review-answer{display:inline!important;white-space:pre-wrap;overflow-wrap:anywhere;font-size:inherit!important}
 html body #app#app#app#app .textbook-source-review-prompt .textbook-source-classification-responses{display:block}
 html body #app#app#app#app .textbook-source-review-prompt .textbook-source-classification-responses>.textbook-source-quiz-statement{display:block!important}
+
+/* Local-only export action on the submitted wrong-answer list. */
+html body #app#app#app#app .textbook-source-review-header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:18px 0 8px}
+html body #app#app#app#app .textbook-source-review-header>h3{margin:0}
+html body #app#app#app#app .textbook-source-review-pdf-button{min-height:44px!important;max-width:100%;padding:8px 12px;border:1px solid #1756b1;border-radius:7px;background:transparent;color:#1756b1!important;-webkit-text-fill-color:currentColor!important;font:inherit;font-size:14px!important}
+html body #app#app#app#app .textbook-source-review-pdf-button:focus-visible{outline:3px solid #1756b1;outline-offset:3px}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-review-pdf-button{color:#79b8ff!important;border-color:#79b8ff}
+html body #app#app#app#app .textbook-source-review-pdf-status{font-size:12px!important;line-height:1.5;margin:4px 0;color:#536371!important;-webkit-text-fill-color:currentColor!important}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-review-pdf-status{color:#8b949e!important}
+html body #app#app#app#app .textbook-source-review-pdf-status:empty{display:none}
