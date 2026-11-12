@@ -1,4 +1,10 @@
+## 0.10.17-beta
+
+- Emphasize the two requested Joseon event lines in the existing reader DOM while preserving their parentheticals, tooltips and source text. Do not add private source passages to the public bundle.
+- Keep the released auth presentation, protected-source access and account behavior unchanged.
+
 ## 0.10.16-beta
+
 
 - Redesign the public membership gate and in-app auth forms as a horizontal Digivice with the existing licensed pixel font, clear input hierarchy, password visibility control, full-width login and lower signup action.
 - Add animated File Island scenery with reduced-motion, hidden-tab and low-power pauses. Keep mobile forms inside the device's scroll surface.

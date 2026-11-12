@@ -207,6 +207,22 @@
         const wrap=doc.createElement('span');wrap.style.display='contents';let at=0;for(const m of hits){wrap.append(doc.createTextNode(node.data.slice(at,m.index)));const mark=doc.createElement(entry.emphasize?'strong':'span');mark.dataset.historySourceEmphasis='';mark.textContent=m[0];wrap.append(mark);at=m.index+m[0].length;}wrap.append(doc.createTextNode(node.data.slice(at)));node.replaceWith(wrap);undo.push(()=>{if(wrap.parentNode)wrap.replaceWith(node);});
       }
     }
+    // Emphasize the requested complete event lines from the rendered reader.
+    // The continuation and parenthetical stay in the private DOM, not this bundle.
+    const eventLines=[['joseon-sampo-disturbance','중종',/^→[^()]+\([^()]*\)$/u],['joseon-yangjae-poster-incident','명종',/^\([^()]*\)$/u]];
+    for(const [id,king,tail]of eventLines){
+      const entry=[...entries.values()].find(e=>e.id===id);if(!entry||!entry.plainText)continue;
+      const phrase=normalize(entry.phrase);
+      for(const node of host.querySelectorAll('li,p')){
+        if(!safeNote(node)||node.querySelector('li,p,br,ul,ol')||node.closest('[data-history-requested-emphasis]'))continue;
+        const rowKing=node.closest('tr')?.cells[0]?.textContent.trim(),text=normalize(node.textContent);
+        if((rowKing&&rowKing!==king)||!text.startsWith(phrase)||!tail.test(text.slice(phrase.length)))continue;
+        const marks=[...node.querySelectorAll(marker)];if(!marks.some(mark=>normalize(mark.textContent)===phrase))continue;
+        const strong=doc.createElement('strong');strong.dataset.historyRequestedEmphasis='event-line';
+        strong.append(...node.childNodes);node.append(strong);
+        undo.push(()=>{if(strong.parentNode)strong.replaceWith(...strong.childNodes);});
+      }
+    }
     // Remove only the dismissed short bullet within its named person's section.
     for(const node of host.querySelectorAll('li')){if(node.textContent.trim()!=='조선 건국 주도'||node.children.length||!node.parentElement.previousElementSibling?.textContent.includes('정도전'))continue;const anchor=doc.createComment('dismissed-person-summary');node.replaceWith(anchor);undo.push(()=>{if(anchor.parentNode)anchor.replaceWith(node);});}
     // Keep the event under Sejo as requested; its definition retains the Danjong date.

@@ -10,7 +10,8 @@
 - [x] Final Chromium/WebKit: 16 in-app cases and 80 public-gate cases passed, including screenshots.
 - [x] 225 authentication/account unit assertions, 36 deployment/recovery tests, and member-access harness passed.
 - [x] Generated public HTML freshness, JavaScript syntax and whitespace checks passed.
-- [ ] Exact commit build, push, CI/CD and production SHA verification.
+- [x] Exact commit build, push, CI/CD and production SHA verification: `4635ef7951951db99d4cfc0cb22af356f2cbc047`.
+- [x] Live public gate: Chromium/WebKit × desktop/mobile, 4/4 views passed; no unexpected request failures or page errors.
 
 ## Decisions
 - The actual unauthenticated entry is `/auth/login.html`; styling only `#account` would not meet the request.
