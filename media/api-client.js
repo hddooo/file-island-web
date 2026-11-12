@@ -325,7 +325,7 @@
       var prefix = '/api/v1/textbook' + (sourceRevision == null ? '' : '/revisions/' + sourceRevision);
       return call(method, prefix + suffix, opts);
     }
-    // Explicit opt-in only. These held methods never retry a version-2 request through legacy storage.
+    // Explicit opt-in only. These versioned methods never retry a version-2 request through legacy storage.
     function requireSourceGradingV2(result) {
       if (!result || result.gradingVersion !== 2 || !Array.isArray(result.supportedGradingVersions) || result.supportedGradingVersions.indexOf(2) < 0 || result.gradingStorageScope !== 'isolated-v2') throw ApiError(503, 'source_grading_unavailable');
       return result;
