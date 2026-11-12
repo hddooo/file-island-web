@@ -7,4 +7,5 @@
 - [x] Exact changed-file verification on the actual private bundle: 165 assertions across 20 views, plus 8 concept/exam teardown views.
 - [x] Only two requested list items gain full emphasis; all other DOM/text/TOC/IDs remain baseline-equivalent after removing those wrappers. Tooltip and exact node restoration pass; private bundle hash unchanged.
 - [x] 36 deployment/recovery tests, source syntax, standalone-auth freshness and whitespace checks pass.
-- [ ] Separate commit, static artifact validation, CI/CD and production verification.
+- [x] Separate commit `4b344fcba14f38cd3f40c68089a3f933c357f493`, validated static artifact, successful CI/CD and matching live app-version.
+- [x] Installed deployment controller reported 1,727 verified files and the exact local manifest hash. Protected history asset remains 401 without a member session.

@@ -8,4 +8,4 @@ Actual-bundle verification was DOM-based. Its cloud Chromium process could not o
 
 The auth redesign remains the previously deployed 0.10.16-beta implementation. No auth, account, source-data, credential or access-rule changes are included. Production login retention remains unsupported until the server declares the capability; this patch does not change that condition.
 
-This file is not deployment evidence until the exact commit, CI/CD and production result are recorded in the November 12 work log.
+Deployed at `4b344fcba14f38cd3f40c68089a3f933c357f493`: [CI success](https://github.com/hddooo/file-island-web/actions/runs/43134615913), [CD success](https://github.com/hddooo/file-island-web/actions/runs/43134670283), and live app-version.json matched 0.10.17-beta. The installed controller verified all 1,727 release files and reported manifest SHA-256 `3b5d0aa649276621a6ba17dba2fe9ad01b5ce23eb88690c0a4d570846c7c0d59`, matching the local artifact. The changed private-access runtime asset remains 401 without a member session; no authenticated production-reader pixel inspection is claimed. Final evidence was recorded in the November 12 work log.

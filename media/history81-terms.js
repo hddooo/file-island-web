@@ -162,6 +162,54 @@
     // Match semantic rows and a closed, known set of facts; preserve unfamiliar notes.
     function safeNote(node){return node&&!node.id&&!node.matches(blocked)&&!node.closest(blocked+',[contenteditable]')&&!node.querySelector(blocked)&&!node.querySelector('[id],a,button,input,textarea,select,[role=button],[contenteditable],img,svg,script,style,iframe,video,audio,canvas,object,embed,details,table');}
     function markedTerm(node,phrase){const marks=[...node.querySelectorAll(marker)];return marks.length===1&&normalize(marks[0].textContent)===normalize(phrase)&&!marks[0].querySelector('br')?marks[0]:null;}
+    // Requested reading-only edits use the existing dictionary and rendered DOM.
+    // Private explanations and quantities never become public bundle constants.
+    const entryById=id=>[...entries.values()].find(entry=>entry.id===id);
+    const injo=entryById('joseon-king-16'),restoration=entryById('joseon-injo-restoration'),tax=entryById('yeongjeong'),monument=entryById('joseon-samjeondo-monument');
+    function plainItem(node){return safeNote(node)&&!node.querySelector('li,p,br,ul,ol')&&!node.closest('[data-history-requested-emphasis]');}
+    function label(entry,nodes,start,end,kind){const mark=doc.createElement('strong');mark.dataset.historySourceEmphasis='';mark.dataset.historyRequestedEmphasis=kind;mark.append(slice(nodes,start,end));return mark;}
+    function replaceItem(original,copy){original.replaceWith(copy);undo.push(()=>{if(copy.parentNode)copy.replaceWith(original);});}
+    const warLists=new Set();
+    if(injo)for(const node of [...host.querySelectorAll('li')]){
+      if(!plainItem(node))continue;
+      const row=node.closest('tr'),heading=row?.cells[0]?.textContent.trim(),text=node.textContent,children=[...node.childNodes],colon=text.indexOf(':');
+      if(heading===injo.phrase&&colon>=0){
+        const head=text.slice(0,colon).trim(),tail=text.slice(colon+1),copy=node.cloneNode(false);
+        if(restoration&&head===restoration.phrase&&/^\s*[^:()\n]+\s*$/u.test(tail)&&tail.trim()){
+          const start=text.indexOf(restoration.phrase),end=colon+1+tail.length-tail.match(/\s*$/u)[0].length,noteStart=colon+1+tail.match(/^\s*/u)[0].length;
+          const strong=doc.createElement('strong');strong.dataset.historyRequestedEmphasis='event-line';
+          strong.append(label(restoration,children,start,start+restoration.phrase.length,'event-term'),doc.createTextNode(' ('),slice(children,noteStart,end),doc.createTextNode(')'));
+          copy.append(slice(children,0,start),strong,slice(children,end,text.length));replaceItem(node,copy);
+        }else if(tax&&head.startsWith(tax.phrase)&&normalize(head)===normalize(tax.phrase)+'제정'){
+          const parts=/^(\s*)(\S+)\s+(\S+)\s+([^()]+)\(([^()]+)\)(\s*)$/u.exec(tail);
+          if(!parts||!/^\d+(?:[~–-]\d+)?\p{L}+$/u.test(normalize(parts[5])))continue;
+          const start=text.indexOf(tax.phrase),first=colon+1+parts[1].length,firstEnd=first+parts[2].length,second=text.indexOf(parts[3],firstEnd),open=text.indexOf('(',second),close=text.lastIndexOf(')');
+          let noteEnd=open;while(noteEnd>second&&/\s/u.test(text[noteEnd-1]))noteEnd--;
+          copy.append(slice(children,0,start),label(tax,children,start,start+tax.phrase.length,'policy-term'),doc.createTextNode(' ('),slice(children,first,firstEnd),slice(children,second,noteEnd),doc.createTextNode(' '),slice(children,open+1,close),doc.createTextNode(')'),slice(children,close+1,text.length));replaceItem(node,copy);
+        }
+      }else if(monument&&node.closest('tbody')?.dataset.group===injo.phrase&&row?.dataset.subrow==='병자호란 / 청'){
+        const prefix=/^\s*항복\s*→\s*/u.exec(text);if(!prefix)continue;
+        const start=prefix[0].length,end=start+monument.phrase.length;
+        if(text.slice(start,end)!==monument.phrase||/[\p{L}\p{N}\p{M}_]/u.test(text[end]||''))continue;
+        const copy=node.cloneNode(false);copy.append(label(monument,children,start,end,'monument-term'),slice(children,end,text.length));replaceItem(node,copy);
+        if(copy.parentElement.tagName==='UL')warLists.add(copy.parentElement);
+      }
+    }
+    // Reorder the original items, retaining their markup, identity and listeners.
+    for(const list of warLists){
+      const matches=[...list.children].filter(node=>node.tagName==='LI'&&plainItem(node)&&/^김상헌\([^()]+\)vs최명길\([^()]+\)$/u.test(normalize(node.textContent)));
+      if(matches.length!==1||matches[0]===list.lastElementChild)continue;
+      const item=matches[0],anchor=doc.createComment('reading-order');item.before(anchor);list.append(item);undo.push(()=>{if(anchor.parentNode)anchor.replaceWith(item);});
+    }
+    const yeongjo=entryById('joseon-king-21'),ordered=['joseon-yi-injwa-rebellion','joseon-tangpyeong-stele','joseon-remaining-cheonggyecheon'].map(entryById);
+    if(yeongjo&&ordered.every(Boolean))for(const list of host.querySelectorAll('td > ul')){
+      if(list.closest('tr')?.cells[0]?.textContent.trim()!==yeongjo.phrase)continue;
+      const items=[...list.children],matches=ordered.map(entry=>items.filter(node=>node.tagName==='LI'&&plainItem(node)&&markedTerm(node,entry.phrase)));
+      if(matches.some(nodes=>nodes.length!==1))continue;
+      const [item,before,after]=matches.map(nodes=>nodes[0]);
+      if(items.indexOf(before)>=items.indexOf(after)||items.indexOf(item)<items.indexOf(before))continue;
+      const anchor=doc.createComment('reading-order');item.before(anchor);before.before(item);undo.push(()=>{if(anchor.parentNode)anchor.replaceWith(item);});
+    }
     function collapse(node,phrase,extra){
       const copy=node.cloneNode(true),mark=markedTerm(copy,phrase);if(!mark)return;
       copy.replaceChildren(mark);node.replaceWith(copy);

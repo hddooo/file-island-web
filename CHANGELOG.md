@@ -1,3 +1,9 @@
+## 0.10.18-beta
+
+- Refine the requested Injo event labels and emphasis in the rendered reader, preserving source data, tooltip definitions and blank/quiz records.
+- Move the requested policy-debate item to the end of its local section and place the requested Yeongjo revolt item before the related policy items.
+- Keep every display change reversible and limited to its verified source and royal context; do not publish private textbook passages.
+
 ## 0.10.17-beta
 
 - Emphasize the two requested Joseon event lines in the existing reader DOM while preserving their parentheticals, tooltips and source text. Do not add private source passages to the public bundle.
