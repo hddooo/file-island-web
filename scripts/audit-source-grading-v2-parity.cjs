@@ -1,0 +1,16 @@
+'use strict';
+// Read-only parity runner. Models and server runtime are supplied locally, never bundled or uploaded.
+const fs=require('node:fs'),crypto=require('node:crypto'),vm=require('node:vm'),assert=require('node:assert/strict');
+const fe=require('../media/source-grading-v2'),legacySource=fs.readFileSync(require.resolve('../media/textbook-source-quiz'),'utf8'),ctx={};vm.createContext(ctx);vm.runInContext("function normalize(v){return v.normalize('NFC').replace(/\\s+/g,'');}\n"+legacySource.slice(legacySource.indexOf('function sequenceNumbersMatch'),legacySource.indexOf('function answerFeedback')),ctx);
+async function audit(models,server){let items=0,slotsCount=0,cases=0,preserved=0;const versions=[];
+ for(const model of models){const version=model.version||crypto.createHash('sha256').update(JSON.stringify({schema:model.schemaVersion,source:model.source,items:model.items})).digest('hex'),matcher=await fe.prepare(model,version);versions.push({id:model.id,version,count:model.items.length});
+  for(const item of model.items){items++;const slots=server.sourceSlots(item);slotsCount+=slots.length;const canonical=slots.map(slot=>slot.answerIds.map(id=>item.answers.find(a=>a.id===id).text).join(','));const before=JSON.stringify(item);
+   const valuesToTest=[canonical];for(let i=0;i<slots.length;i++){const expected=slots[i].answerIds.map(id=>item.answers.find(a=>a.id===id).text),raw=canonical[i],tokens=raw.normalize('NFC').replace(/\s+/g,'').split(/[(),/=]/).filter(Boolean),variants=new Set([raw,raw.replace(/\s/g,''),' '+raw+' ',raw.normalize('NFD'),'','오답검수',raw+' / 잘못된추가',expected.join('/'),tokens.join(','),tokens.join('/'),tokens.slice().reverse().join('/'),tokens[0]||'',tokens.at(-1)||'',tokens.slice(0,-1).join('/'),tokens.join('/')+'/',tokens.join('/')+'/'+tokens[0]]);if(item.answer.sequenceTokens)variants.add(item.answer.text);for(const value of variants){const row=canonical.slice();row[i]=value;valuesToTest.push(row);}}
+   for(const values of valuesToTest){const input=JSON.stringify(values),actual=slots.every((slot,i)=>matcher.gradeSlot(item,{id:slot.id,answerIds:slot.answerIds.slice(),orderMatters:slot.answer?.orderMatters??item.answer.orderMatters},values[i],ctx.compare)==='match'),wanted=server.sourceGrade(item,values,2,version);assert.equal(actual,wanted,'FE/API parity '+model.id+' '+item.id);assert.equal(JSON.stringify(values),input);cases++;}assert.equal(JSON.stringify(item),before);preserved++;
+   const literalV1=server.sourceGrade(item,canonical,1,version);if(literalV1)assert(slots.every((slot,i)=>matcher.gradeSlot(item,{id:slot.id,answerIds:slot.answerIds.slice(),orderMatters:slot.answer?.orderMatters??item.answer.orderMatters},canonical[i],ctx.compare)==='match'),'valid legacy literal preserved');
+  }
+ }
+ return {eras:models.length,items,slots:slotsCount,cases,rawItemsPreserved:preserved,versions};
+}
+module.exports={audit};
+if(require.main===module)(async()=>{const [dir,runtime]=process.argv.slice(2);const models=['prehistory','ancient','nambuk','goryeo','joseon','opening','colonial','modern'].map(id=>JSON.parse(fs.readFileSync(dir+'/'+id+'.json')));console.log(JSON.stringify(await audit(models,require(require('node:path').resolve(runtime)))));})().catch(e=>{console.error(e);process.exitCode=1;});
