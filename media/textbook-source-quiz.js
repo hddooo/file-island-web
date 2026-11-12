@@ -531,7 +531,7 @@
       if(row.inputs.some(function(e){return e.composing;}))return;
       if(missing){message('모든 빈칸에 답을 입력한 뒤 채점해 주세요.');focusAt(fields.indexOf(missing));return;}
       row.inputs.forEach(function(entry){grade(row,entry);entry.node.readOnly=true;});flowPhase='drawing';updateFlowActions();
-      cancelFlowTimer();var generation=flowGeneration;flowTimer=setTimeout(function(){if(!active||generation!==flowGeneration)return;flowPhase='graded';updateFlowActions();},1000);
+      cancelFlowTimer();var generation=flowGeneration;flowTimer=setTimeout(function(){if(!active||generation!==flowGeneration)return;flowTimer=null;if(row.correct===true){advanceFlow();return;}flowPhase='graded';updateFlowActions();},1000);
     }
     function submitFlow(){
       if(!flow||(flowPhase!=='answer'&&flowPhase!=='graded')||flowIndex!==rows.length-1||!saved||inFlight||pausing||fields.some(function(e){return e.composing;}))return;
@@ -706,7 +706,7 @@
           if(checkedReview){entry.node.setAttribute('aria-keyshortcuts','F2');entry.node.setAttribute('aria-description','F2로 복습 체크에 이동합니다. 체크에서 Escape를 누르면 답칸으로 돌아옵니다.');}
           if(sequential)on(entry.node,'keyup',function(e){if((e.key==='Enter'||e.code==='Enter'||e.code==='NumpadEnter')&&!e.repeat&&!e.isComposing&&!e.altKey&&!e.ctrlKey&&!e.metaKey&&!entry.composing&&(entry.pendingEnter||flowPhase==='answer'&&Date.now()-entry.composedAt<100)){entry.pendingEnter=true;commitFlowEnter(row,entry);}});
           on(entry.node,'keydown',function(e){
-            if(sequential){if((e.key==='Enter'||e.code==='Enter'||e.code==='NumpadEnter')&&!e.altKey&&!e.ctrlKey&&!e.metaKey){if(e.repeat){e.preventDefault();return;}if((flowPhase==='graded'||flowPhase==='drawing')&&!e.isComposing&&e.keyCode!==229&&!entry.composing){e.preventDefault();advanceFlow();return;}if(e.isComposing||e.keyCode===229||entry.composing||Date.now()-entry.composedAt<100){entry.pendingEnter=true;commitFlowEnter(row,entry);if(!e.isComposing&&e.keyCode!==229&&!entry.composing)e.preventDefault();}else{e.preventDefault();checkFlowQuestion();}}return;}
+            if(sequential){if((e.key==='Enter'||e.code==='Enter'||e.code==='NumpadEnter')&&!e.altKey&&!e.ctrlKey&&!e.metaKey){if(e.repeat){e.preventDefault();return;}if((flowPhase==='graded'||flowPhase==='drawing')&&!e.isComposing&&e.keyCode!==229&&!entry.composing){e.preventDefault();if(flowPhase==='drawing'&&row.correct===true)return;advanceFlow();return;}if(e.isComposing||e.keyCode===229||entry.composing||Date.now()-entry.composedAt<100){entry.pendingEnter=true;commitFlowEnter(row,entry);if(!e.isComposing&&e.keyCode!==229&&!entry.composing)e.preventDefault();}else{e.preventDefault();checkFlowQuestion();}}return;}
             if((checkedReview||manualSave)&&!e.isComposing&&e.keyCode!==229&&!entry.composing&&!e.altKey&&!e.ctrlKey&&!e.metaKey){
               if(checkedReview&&e.key==='F2'){e.preventDefault();row.reviewReturnEntry=entry;row.reviewCheckbox.focus();return;}
               if(e.key==='Tab'){var targetIndex=displayFields.indexOf(entry)+(e.shiftKey?-1:1);if(targetIndex>=0&&targetIndex<displayFields.length){e.preventDefault();focusAt(fields.indexOf(displayFields[targetIndex]));return;}}
