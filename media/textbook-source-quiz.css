@@ -134,7 +134,7 @@ html body #app#app#app#app .textbook-source-inline-questions .textbook-source-re
 html body #app#app#app#app .textbook-source-inline-questions .textbook-source-result-line>:empty{display:none}
 
 /* Source-inspired hand-drawn O/X lives beside the number, never over the prompt. */
-html body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark{display:inline-block;width:24px;height:24px;margin:0 4px 0 0;vertical-align:-6px;overflow:visible;pointer-events:none;color:#1756b1;opacity:.86}
+html body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark{display:inline-block!important;width:24px;height:24px;margin:0 4px 0 0;vertical-align:-6px;overflow:visible;pointer-events:none;color:#1756b1;opacity:.86}
 html body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark path{display:none;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:100;stroke-dashoffset:0}
 html body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark[data-result=correct] .mark-correct,html body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark[data-result=wrong] .mark-wrong{display:block}
 html body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark .mark-texture{stroke-width:1;opacity:.4}
@@ -147,9 +147,9 @@ html body #app#app#app#app .textbook-source-inline-questions .textbook-source-ve
 @keyframes source-verdict-draw-first{0%{stroke-dashoffset:100}50%,100%{stroke-dashoffset:0}}
 @keyframes source-verdict-draw-second{0%,45%{stroke-dashoffset:100}100%{stroke-dashoffset:0}}
 @media(prefers-reduced-motion:no-preference){
-html:not([data-company-mode=on]) body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark.is-drawing .mark-correct{animation:source-verdict-draw 1s ease-out both!important}
-html:not([data-company-mode=on]) body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark.is-drawing .mark-first{animation:source-verdict-draw-first 1s ease-out both!important}
-html:not([data-company-mode=on]) body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark.is-drawing .mark-second{animation:source-verdict-draw-second 1s ease-out both!important}
+html body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark.is-drawing .mark-correct{animation:source-verdict-draw 1s ease-out both!important}
+html body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark.is-drawing .mark-first{animation:source-verdict-draw-first 1s ease-out both!important}
+html body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark.is-drawing .mark-second{animation:source-verdict-draw-second 1s ease-out both!important}
 }
 @media(prefers-reduced-motion:reduce){html body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark path{animation:none!important;stroke-dashoffset:0}}
 
@@ -165,7 +165,9 @@ html body #app#app#app#app .textbook-source-question-map h3{margin:0;font-size:1
 html body #app#app#app#app .textbook-source-map-legend{font-size:12px;margin:4px 0 10px}
 html body #app#app#app#app .textbook-source-question-map-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(44px,1fr));gap:6px;max-height:60vh;max-height:60dvh;overflow-y:auto;overscroll-behavior:contain;padding:4px}
 html body #app#app#app#app .textbook-source-sequential :is(.textbook-source-question-number,.textbook-source-exam-actions button,.textbook-source-mistake-dialog button){min-height:44px!important;height:auto!important;min-width:44px;padding:7px 10px!important;border:1px solid #8a9db0;border-radius:7px;background:transparent;color:inherit;font:inherit;font-size:14px!important;line-height:1.4;cursor:pointer}
-html body #app#app#app#app .textbook-source-sequential .textbook-source-question-number{display:flex;align-items:center;justify-content:center;gap:4px;padding:4px!important}
+html body #app#app#app#app .textbook-source-sequential .textbook-source-question-number{display:flex;align-items:center;justify-content:center;gap:2px;padding:4px!important;font-size:12px!important;line-height:1.2!important;white-space:nowrap!important;font-variant-numeric:tabular-nums}
+html body #app#app#app#app .textbook-source-sequential .textbook-source-question-number>span{flex:none;font-size:12px!important;line-height:1.2!important;white-space:nowrap!important;word-break:normal!important;overflow-wrap:normal!important;letter-spacing:0!important}
+html body #app#app#app#app .textbook-source-sequential .textbook-source-question-number>.textbook-source-map-state{font-size:10px!important}
 html body #app#app#app#app .textbook-source-question-number[aria-current=step]{outline:2px solid #1756b1;outline-offset:1px;font-weight:800}
 html body #app#app#app#app .textbook-source-question-number[data-result=correct]{color:#1756b1!important;border-color:#1756b1}
 html body #app#app#app#app .textbook-source-question-number[data-result=wrong]{color:#b91c1c!important;border-color:#b91c1c;font-weight:800}
@@ -222,3 +224,27 @@ html[data-company-mode=on] body #app#app#app#app .textbook-source-sequential .te
 html body #app#app#app#app .textbook-source-mistake-content:focus-visible{outline:2px solid #1756b1!important;outline-offset:-2px}
 html[data-company-mode=on] body #app#app#app#app .textbook-source-mistake-content:focus-visible{outline-color:#79b8ff!important}
 html body #app#app#app#app .textbook-source-sequential .textbook-source-next-era:hover{background:#1756b1!important;color:#fff!important;border-color:#1756b1!important}
+
+html body #app#app#app#app .textbook-source-inline-mistake{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:8px;font-size:12px}
+html body #app#app#app#app .textbook-source-inline-mistake[hidden]{display:none!important}
+html body #app#app#app#app .textbook-source-inline-mistake button{min-height:44px;min-width:44px;padding:6px 10px;font-size:12px;cursor:pointer}
+
+/* One-question grading mark overlays only the question, without blocking input. */
+html body #app#app#app#app .textbook-source-sequential .textbook-source-quiz-item{position:relative}
+html body #app#app#app#app .textbook-source-sequential .textbook-source-verdict-mark{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:clamp(84px,22vw,136px);height:clamp(84px,22vw,136px);margin:0;opacity:.32;z-index:1;pointer-events:none}
+
+/* Compact text-only list, down the first column then down the second. */
+html body #app#app#app#app .textbook-source-question-map-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(var(--source-question-rows,1),minmax(28px,auto));grid-auto-flow:column;gap:0 16px;background:linear-gradient(to right,transparent calc(50% - .5px),#8a9db0 calc(50% - .5px),#8a9db0 calc(50% + .5px),transparent calc(50% + .5px))!important}
+html body #app#app#app#app .textbook-source-sequential button.textbook-source-question-number{min-height:28px!important;height:28px!important;min-width:44px;justify-content:space-between;padding:0 6px!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+html body #app#app#app#app .textbook-source-question-number[aria-current=step]{outline:none;text-decoration:underline;text-underline-offset:3px}
+html body #app#app#app#app .textbook-source-question-number:focus-visible{outline:2px solid #1756b1!important;outline-offset:-2px}
+html body #app#app#app#app .textbook-source-sequential .textbook-source-save-bar{display:block;position:relative}
+html body #app#app#app#app .textbook-source-sequential .textbook-source-progress{position:relative;display:grid;grid-template-columns:1fr auto 1fr;align-items:baseline;gap:8px;width:100%;margin:0!important;padding:8px 0}
+html body #app#app#app#app .textbook-source-accuracy{grid-column:2;font-size:20px!important;line-height:1.4!important;white-space:nowrap}
+html body #app#app#app#app .textbook-source-accuracy>span{font-size:16px!important}
+html body #app#app#app#app .textbook-source-accuracy>strong{font-size:28px!important}
+html body #app#app#app#app .textbook-source-count{grid-column:3;justify-self:end;font-size:12px!important;white-space:nowrap}
+html body #app#app#app#app .textbook-source-count>strong{font-size:12px!important}
+html body #app#app#app#app .textbook-source-counter-spoken{position:absolute!important;width:1px!important;height:1px!important;margin:-1px!important;padding:0!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important}
+@media(max-width:760px),(pointer:coarse){html body #app#app#app#app .textbook-source-question-map-grid{grid-template-rows:repeat(var(--source-question-rows,1),minmax(44px,auto))}html body #app#app#app#app .textbook-source-sequential button.textbook-source-question-number{height:44px!important;min-height:44px!important}}
+@media(max-width:480px){html body #app#app#app#app .textbook-source-accuracy>span{font-size:13px!important}html body #app#app#app#app .textbook-source-accuracy>strong{font-size:23px!important}html body #app#app#app#app .textbook-source-progress{gap:4px}}
