@@ -289,3 +289,20 @@ html[data-company-mode=on] body #app#app#app#app .textbook-source-review-pdf-but
 html body #app#app#app#app .textbook-source-review-pdf-status{font-size:12px!important;line-height:1.5;margin:4px 0;color:#536371!important;-webkit-text-fill-color:currentColor!important}
 html[data-company-mode=on] body #app#app#app#app .textbook-source-review-pdf-status{color:#8b949e!important}
 html body #app#app#app#app .textbook-source-review-pdf-status:empty{display:none}
+
+/* Current saved result is read-only; unfinished attempts remain an in-memory draft. */
+html body #app#app#app#app .textbook-source-exam-sidebar{display:grid;grid-template-rows:minmax(0,1fr) minmax(0,1fr);gap:12px;min-width:0;height:clamp(300px,60dvh,560px)}
+html body #app#app#app#app .textbook-source-exam-sidebar .textbook-source-question-map{display:flex;flex-direction:column;min-height:0}
+html body #app#app#app#app .textbook-source-exam-sidebar .textbook-source-question-map-grid{flex:1;min-height:0;max-height:none}
+html body #app#app#app#app .textbook-source-history{min-width:0;min-height:0;border:1px solid #c6d0da;border-radius:12px;padding:12px;overflow-y:auto}
+html body #app#app#app#app .textbook-source-history h3{margin:0 0 8px;font-size:15px!important}
+html body #app#app#app#app .textbook-source-history-entry{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 8px;width:100%;min-height:44px!important;padding:8px 5px;border:0;border-bottom:1px solid #b7c6cc;border-radius:0;background:transparent;color:#1756b1!important;-webkit-text-fill-color:currentColor!important;font-size:12px!important;text-align:left;white-space:normal}
+html body #app#app#app#app .textbook-source-history-entry>span{white-space:nowrap}
+html body #app#app#app#app .textbook-source-history-entry>small{grid-column:1/-1;font-size:11px!important;color:#536371!important;-webkit-text-fill-color:currentColor!important}
+html body #app#app#app#app .textbook-source-history-entry:focus-visible{outline:2px solid #1756b1;outline-offset:2px}
+html body #app#app#app#app .textbook-source-history-empty,html body #app#app#app#app .textbook-source-history-caption{font-size:12px!important;line-height:1.5;color:#536371!important;-webkit-text-fill-color:currentColor!important}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-history-entry{color:#79b8ff!important;border-color:#45525d}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-history-empty,html[data-company-mode=on] body #app#app#app#app .textbook-source-history-caption{color:#8b949e!important}
+@media(max-width:760px){html body #app#app#app#app .textbook-source-exam-sidebar{height:auto;grid-template-rows:auto auto}html body #app#app#app#app .textbook-source-exam-sidebar .textbook-source-question-map-grid{max-height:162px}html body #app#app#app#app .textbook-source-history{max-height:180px}}
+
+html[data-company-mode=on] body #app#app#app#app .textbook-source-history-entry>small{color:#8b949e!important}
