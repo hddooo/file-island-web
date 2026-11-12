@@ -517,15 +517,15 @@
       target.appendChild(el('p','textbook-source-explanation-note','별도 해설이 없는 문항입니다. 교재 정답을 확인해 주세요.'));
     }
     function openFlowMistake(){
-      if(!active||!flow)return;flowPhase='mistake';flow.dialog.replaceChildren();flow.dialog.hidden=false;flow.layout.inert=true;var panel=el('div','textbook-source-mistake-panel');flow.dialog.appendChild(panel);
+      if(!active||!flow)return;flowPhase='mistake';flow.dialog.replaceChildren();flow.dialog.hidden=false;flow.layout.inert=true;var panel=el('div','textbook-source-mistake-panel');panel.tabIndex=-1;panel.setAttribute('role','document');flow.dialog.appendChild(panel);
       var title=el('h3','','오답 확인');title.id=prefix+'-mistake-title';flow.dialog.setAttribute('aria-labelledby',title.id);panel.appendChild(title);
-      var detail=el('div','textbook-source-mistake-content');appendFlowReview(detail,rows[flowIndex],flowIndex);panel.appendChild(detail);
+      var detail=el('div','textbook-source-mistake-content');detail.tabIndex=0;detail.setAttribute('aria-label','오답 문제와 정답');appendFlowReview(detail,rows[flowIndex],flowIndex);panel.appendChild(detail);
       var countdown=el('p','textbook-source-mistake-countdown'),actions=el('div','textbook-source-mistake-actions'),skip=el('button','','바로 다음 문제'),pause=el('button','','시간 멈춤'),remaining=5,paused=false;
       skip.type=pause.type='button';actions.appendChild(skip);actions.appendChild(pause);panel.appendChild(countdown);panel.appendChild(actions);
       function tick(){if(!active||flowPhase!=='mistake'||paused)return;countdown.textContent=remaining+'초 뒤 다음 문제 · Enter로 바로 넘어가기';if(remaining<=0){advanceFlow();return;}remaining--;flowTimer=setTimeout(tick,1000);}
       on(skip,'click',advanceFlow);on(pause,'click',function(){paused=!paused;cancelFlowTimer();pause.textContent=paused?'자동 이동 계속':'시간 멈춤';countdown.textContent=paused?'자동 이동을 멈췄습니다.':remaining+'초 뒤 다음 문제';if(!paused)tick();});
-      on(panel,'keydown',function(e){if(flowPhase!=='mistake')return;if(e.key==='Enter'&&!e.isComposing&&e.keyCode!==229&&!e.repeat&&e.target!==pause){e.preventDefault();advanceFlow();}else if(e.key==='Escape'){e.preventDefault();if(!paused)pause.click();}else if(e.key==='Tab'){e.preventDefault();(doc.activeElement===skip?pause:skip).focus();}});
-      tick();skip.focus();updateFlowActions();
+      on(panel,'keydown',function(e){if(flowPhase!=='mistake')return;if(e.key==='Enter'&&!e.isComposing&&e.keyCode!==229&&!e.repeat&&e.target!==pause){e.preventDefault();advanceFlow();}else if(e.key==='Escape'){e.preventDefault();if(!paused)pause.click();}else if(e.key==='Tab'){e.preventDefault();var stops=[detail,skip,pause],at=stops.indexOf(doc.activeElement),next=at<0?(e.shiftKey?stops.length-1:0):(at+(e.shiftKey?-1:1)+stops.length)%stops.length;stops[next].focus({preventScroll:true});}});
+      tick();flow.dialog.scrollTop=0;detail.scrollTop=0;detail.focus({preventScroll:true});updateFlowActions();
     }
     function checkFlowQuestion(){
       if(!flow||flowPhase!=='answer'||inFlight||!active)return;

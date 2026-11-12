@@ -19,6 +19,14 @@ White-sheet recall entry points are removed. Legacy links resolve to concept rea
 - Full-run submissions exceeding the API 256KiB JSON limit are rejected before network I/O; inputs and the previous final record stay intact. Network 413 responses can be corrected and submitted with a new mutation.
 - Deployment health, CI and artifact guards: 36 tests. Syntax and whitespace checks pass. Independent review found and verified fixes for multi-slot feedback labels and repeated-popup keyboard handlers.
 
+## Additional UI/UX review
+The later independent review used the actual Joseon/Goryeo/Opening reader hierarchy with local full-era source fixtures, rather than only a minimal quiz host. It found and verified fixes for:
+- The desktop reading-column limit made the question pane only 436px wide. Quiz practice now uses the available 1,080px shell and a 796px question pane at 1,440px; ordinary prose-reading widths and mode tabs remain intact.
+- On a 844×320 viewport, focusing the popup skip button initially scrolled its title and question start out of view. The popup now starts on keyboard-scrollable question content, while its title, countdown, pause and skip controls remain visible. PageDown, Tab/Shift+Tab, immediate Enter skip and paused reading remain available.
+- The light study-page next-era link inherited a low-contrast game color (1.15:1). Explicit normal/focus/hover colors and distinct check/submit buttons prevent that palette collision.
+
+The final actual-reader pass covers 24 Chromium/WebKit combinations (three readers, four viewport sizes), including real 172-item navigation, classification response slots, long source questions, pause/skip and final-submit access. The updated 128-combination quiz pass and six native Back/Forward lifecycle flows also pass. These are isolated desktop-engine tests, not physical mobile-device or authenticated production-account verification. Screenshot evidence stays private and outside the artifact.
+
 ## API and release gate
 The matching API sourceGrade change is on API main 3da478930ceae4ce06a764f6aa664f1bbaf18ab5. Typecheck/build/lint and 325 unit tests passed; exact-SHA build run 43148624263 succeeded. Production deployment remains blocked by controller identity/provenance differences and the absence of a matching approved image manifest. Frontend production deployment is withheld to avoid storing grades inconsistent with its display. No ad-hoc route is used to bypass these controls.
 

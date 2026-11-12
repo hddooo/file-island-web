@@ -47,7 +47,7 @@ async function setup(mutate,initialState){
  inputs()[0].dispatchEvent(new t.w.Event('compositionend'));key(inputs()[0],'Enter');eq(q('.textbook-source-verdict').textContent,'','post-composition Enter guarded');advance(101);key(inputs()[0],'Enter');
  advance(999);eq(t.position(),'1 / 3','correct drawing lasts full second');advance(1);eq(t.position(),'2 / 3','correct advances after one second');
  fill(1,'틀림');key(inputs()[1],'Enter');advance(1000);eq(q('.textbook-source-mistake-dialog').hidden,false,'wrong opens popup after drawing');
- eq(t.w.document.activeElement.textContent,'바로 다음 문제','popup initially focuses skip');eq(q('.textbook-source-mistake-dialog').textContent.includes('별도 해설이 없는'),true,'absence of explanation disclosed');
+ eq(t.w.document.activeElement,q('.textbook-source-mistake-content'),'popup starts at keyboard-scrollable question content, not the bottom buttons');eq(q('.textbook-source-mistake-dialog').textContent.includes('별도 해설이 없는'),true,'absence of explanation disclosed');
  advance(4999);eq(t.position(),'2 / 3','popup remains for five seconds');advance(1);eq(t.position(),'3 / 3','popup auto-advances');
  nav(0);fill(0,'알파');key(inputs()[0],'Enter');nav(2);advance(10000);eq(t.position(),'3 / 3','navigation cancels stale drawing timer');
  nav(1);fill(1,'틀림');key(inputs()[1],'Enter');advance(1000);const pause=[...q('.textbook-source-mistake-dialog').querySelectorAll('button')][1];pause.focus();key(pause,'Enter');eq(q('.textbook-source-mistake-dialog').hidden,false,'second popup pause Enter must not skip via stale listener');

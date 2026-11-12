@@ -202,3 +202,23 @@ html[data-company-mode=on] body #app#app#app#app .textbook-source-inline-questio
 html body #app#app#app#app .textbook-source-next-era{display:inline-flex;align-items:center;min-height:44px;margin:8px 12px 8px 0;padding:7px 12px;border:1px solid #1756b1;border-radius:7px;font-size:15px;text-decoration:none}
 html body #app#app#app#app .textbook-source-goal{font-weight:700;line-height:1.7}
 html body #app#app#app#app .textbook-source-goal-hint{font-size:13px;line-height:1.6;margin:0 0 12px}
+
+/* Quiz practice is wider than the narrow prose-reading column. */
+html body #app#app#app#app :is(.jsr-layout,.gsr-layout,.osr-layout):has(.textbook-source-sequential){max-width:1080px;width:100%}
+/* Keep the question start and timing controls visible; only long explanation content scrolls. */
+html body #app#app#app#app .textbook-source-sequential .textbook-source-mistake-dialog:not([hidden]){display:flex;overflow:hidden}
+html body #app#app#app#app .textbook-source-mistake-panel{display:flex;flex-direction:column;flex:1 1 auto;min-height:0;min-width:0;max-height:100%;overflow:hidden}
+html body #app#app#app#app .textbook-source-mistake-panel>h3{flex:none;margin-top:0}
+html body #app#app#app#app .textbook-source-mistake-content{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding-right:4px}
+html body #app#app#app#app .textbook-source-mistake-panel>:is(.textbook-source-mistake-countdown,.textbook-source-mistake-actions){flex:none}
+html body #app#app#app#app .textbook-source-mistake-panel:focus{outline:none}
+/* Explicit action colors must survive the global game palette on the light study page. */
+html body #app#app#app#app .textbook-source-sequential .textbook-source-next-era{color:#1756b1!important;-webkit-text-fill-color:currentColor!important;border-color:#1756b1!important}
+html body #app#app#app#app .textbook-source-sequential .textbook-source-next-era:focus-visible{outline:3px solid #1756b1!important;outline-offset:3px}
+html body #app#app#app#app .textbook-source-sequential :is(.textbook-source-check-current,.textbook-source-save-complete){background:#1756b1!important;color:#fff!important;-webkit-text-fill-color:currentColor!important;border-color:#1756b1!important}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-sequential .textbook-source-next-era{color:#79b8ff!important;border-color:#79b8ff!important}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-sequential .textbook-source-next-era:focus-visible{outline-color:#79b8ff!important}
+
+html body #app#app#app#app .textbook-source-mistake-content:focus-visible{outline:2px solid #1756b1!important;outline-offset:-2px}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-mistake-content:focus-visible{outline-color:#79b8ff!important}
+html body #app#app#app#app .textbook-source-sequential .textbook-source-next-era:hover{background:#1756b1!important;color:#fff!important;border-color:#1756b1!important}
