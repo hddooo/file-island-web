@@ -1,4 +1,4 @@
-# 0.10.34-beta progress
+# 0.10.35-beta progress
 
 - [x] Integrate source-bound matcher, explicit v2 client/session and quiz/menu/wrong-review adapters.
 - [x] Shared 96 vectors / 316 matcher checks; 77 client, 30 session and 34 UI separation checks.

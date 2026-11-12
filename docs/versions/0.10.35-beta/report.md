@@ -1,4 +1,4 @@
-# 0.10.34-beta report
+# 0.10.35-beta report
 
 Candidate only: this version is held on its feature branch until the API coordinator confirms qualification and deployment. The API contract is owned by the API repository; this frontend requires gradingVersion 2, supportedGradingVersions including 2 and gradingStorageScope isolated-v2 on every selected response. A stale, unsupported or malformed server response fails closed. No v1 write fallback or answer canonicalization is used.
 
