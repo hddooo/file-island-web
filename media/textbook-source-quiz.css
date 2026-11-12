@@ -258,3 +258,18 @@ html body #app#app#app#app .textbook-source-exam-actions>button:first-child{just
 html body #app#app#app#app .textbook-source-exam-actions>button:last-child{justify-self:end}
 html body #app#app#app#app .textbook-source-exam-position{grid-column:2;justify-self:center;margin:0;position:relative;font-size:13px!important}
 html body #app#app#app#app .textbook-source-exam-position>:not(.textbook-source-counter-spoken){font-size:13px!important}
+
+/* Accuracy bands transition with the 320ms numeric tween; an empty run is neutral. */
+html body #app#app#app#app .textbook-source-progress .textbook-source-accuracy{transition:color 320ms cubic-bezier(.22,.61,.36,1)!important;color:inherit!important}
+html body #app#app#app#app .textbook-source-progress .textbook-source-accuracy>*{transition:none!important;color:inherit!important}
+html body #app#app#app#app .textbook-source-progress[data-accuracy-band=neutral]{color:#536371!important}
+html body #app#app#app#app .textbook-source-progress[data-accuracy-band=high]{color:#1756b1!important}
+html body #app#app#app#app .textbook-source-progress[data-accuracy-band=middle]{color:#805800!important}
+html body #app#app#app#app .textbook-source-progress[data-accuracy-band=low]{color:#b91c1c!important}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-progress[data-accuracy-band=neutral]{color:#8b949e!important}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-progress[data-accuracy-band=high]{color:#79b8ff!important}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-progress[data-accuracy-band=middle]{color:#e3b341!important}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-progress[data-accuracy-band=low]{color:#ff5b65!important}
+html body #app#app#app#app .textbook-source-sequential .textbook-source-quiz-item-source.textbook-source-question-title{display:block!important;max-width:100%;margin:0 0 10px!important;font-size:18px!important;line-height:1.5!important;white-space:normal!important;overflow-wrap:anywhere}
+html body #app#app#app#app .textbook-source-sequential .textbook-source-quiz-instruction.textbook-source-question-guidance{font-size:12px!important;line-height:1.5!important;font-weight:400!important;margin:0 0 14px!important}
+@media(prefers-reduced-motion:reduce){html body #app#app#app#app .textbook-source-progress .textbook-source-accuracy,html body #app#app#app#app .textbook-source-progress .textbook-source-accuracy>*{transition:none!important}}

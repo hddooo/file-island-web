@@ -439,7 +439,7 @@
     }
     function paintExamCounters(done,total,rate){
       var label='현재 정답률: '+rate+'%';
-      progress.setAttribute('aria-label',label);
+      progress.setAttribute('aria-label',label);progress.dataset.accuracyBand=done===0?'neutral':rate>=80?'high':rate>=70?'middle':'low';
       if(!counterState){
         progress.replaceChildren();var accuracy=el('span','textbook-source-accuracy'),caption=el('span','','현재 정답률: '),percent=el('strong','textbook-source-counter-value','0'),count=el('span','textbook-source-count'),number=el('strong','textbook-source-counter-value','0'),spoken=el('span','textbook-source-counter-spoken');
         accuracy.setAttribute('aria-hidden','true');count.setAttribute('aria-hidden','true');accuracy.append(caption,percent,doc.createTextNode('%'));count.append(number,doc.createTextNode(' / '+total));spoken.setAttribute('role','status');spoken.setAttribute('aria-live','polite');spoken.setAttribute('aria-atomic','true');progress.append(accuracy,spoken);counterState={done:0,rate:0,targetDone:null,targetRate:null,number:number,percent:percent,spoken:spoken};
@@ -508,6 +508,7 @@
       cancelFlowTimer();flowPhase='answer';flowIndex=Math.max(0,Math.min(index,rows.length-1));cursor=flowIndex;flow.dialog.hidden=true;flow.layout.inert=false;flow.layout.hidden=false;reviewHost.hidden=true;
       rows.forEach(function(row,i){row.card.hidden=i!==flowIndex;row.inputs.forEach(function(entry){entry.node.readOnly=false;});});
       list.querySelectorAll('.textbook-source-quiz-instruction').forEach(function(n){n.hidden=n!==rows[flowIndex].instruction;});
+      var activeRow=rows[flowIndex];if(activeRow.instruction){activeRow.instruction.classList.add('textbook-source-question-guidance');activeRow.card.insertBefore(activeRow.instruction,activeRow.card.querySelector('.textbook-source-quiz-statement'));}
       displayFields=rows[flowIndex].inputs.slice();paintFlowNavigation();updateFlowActions();var current=flow.buttons[flowIndex],mapRect=flow.map.getBoundingClientRect(),buttonRect=current.getBoundingClientRect();if(buttonRect.top<mapRect.top)flow.map.scrollTop-=mapRect.top-buttonRect.top;else if(buttonRect.bottom>mapRect.bottom)flow.map.scrollTop+=buttonRect.bottom-mapRect.bottom;
       if(focus!==false){var entry=rows[flowIndex].inputs.find(function(e){return !e.node.disabled;});if(entry)focusAt(fields.indexOf(entry));}
     }
@@ -582,6 +583,11 @@
       if(manualSave&&notesEdition==='81'&&data.id==='joseon'&&topic.id==='society-comparison'&&topic.title.trim()==='사회 비교')return '사회 비교 · 해당하는 시대를 쓰세요 (고려 / 조선 후기)';
       return topic.title;
     }
+    function questionSection(topic){
+      if(!topic)return data.title;
+      var names={'early-joseon':'조선 전기','late-joseon':'조선 후기','early-goryeo':'고려 초기','aristocratic-period':'문벌귀족시기','military-rule':'무신정권기 · 대몽항쟁','yuan-interference':'원 간섭기','late-goryeo':'고려 말','unified-silla-culture':'통일신라 문화','event-sequence':'사건 순서','foreign-invasions':'거란 · 여진 · 몽골 침입','find-state':'국가 구분'};
+      if(names[topic.id])return names[topic.id];var title=topicLabel(topic).split(/[:：]/)[0];return /^(설명|해당|공부)/.test(title)?data.title:title;
+    }
     function topicTarget(groups, index) {
       var target=groups[presentation[index]],topic=data.items[index].subtopicId;
       if(topic==='early-joseon'||topic==='late-joseon')return target;
@@ -611,9 +617,9 @@
         instructions.set(target,{topic:item.subtopicId,node:instruction});
       }
       var card = el('div', 'textbook-source-quiz-item'); card.dataset.sourceItemId = item.id;
-      var localId = prefix + '-item-' + itemIndex, label = el('small', 'textbook-source-quiz-item-source',
-        sequential ? String(itemIndex+1)+'.' : manualSave ? (item.originalNumber===null?sourceNumber(item,itemIndex):String(item.originalNumber)+'.') : '문제 ' + sourceNumber(item,itemIndex));
-      label.id = localId + '-source';if(sequential)label.setAttribute('aria-label',(itemIndex+1)+'번 · 원문 '+sourceNumber(item,itemIndex)); card.setAttribute('aria-labelledby', label.id); card.appendChild(label);
+      var localId = prefix + '-item-' + itemIndex, label = el(sequential?'h3':'small', 'textbook-source-quiz-item-source'+(sequential?' textbook-source-question-title':''),
+        sequential ? questionSection(topic)+' ('+(itemIndex+1)+'번 문제)' : manualSave ? (item.originalNumber===null?sourceNumber(item,itemIndex):String(item.originalNumber)+'.') : '문제 ' + sourceNumber(item,itemIndex));
+      label.id = localId + '-source';if(sequential)label.setAttribute('aria-label',label.textContent+' · 원문 '+sourceNumber(item,itemIndex)); card.setAttribute('aria-labelledby', label.id); card.appendChild(label);
       var statement = el('span', 'textbook-source-quiz-statement'), inputs = [], isVerified = verified(item);
       statement.id = localId + '-statement';
       function responseInput(id, description) {
