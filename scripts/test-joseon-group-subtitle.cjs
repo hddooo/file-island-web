@@ -36,7 +36,7 @@ for(let cycle=0;cycle<2;cycle++)for(const topic of bundle.topics){
   views++;
  }
  const answers=[];
- for(const v of instances){click(v,'[data-mode="recall"]');const recall=v.w.HanqBlankRecall.decorate(v.host.querySelector('.jsr-body'));recall.grade();answers.push([...v.host.querySelectorAll('.blank-recall-feedback')].map(n=>n.textContent));recall.stop();}
+ for(const v of instances){click(v,'[data-mode="study"]');const recall=v.w.HanqBlankRecall.decorate(v.host.querySelector('.jsr-body'));recall.grade();answers.push([...v.host.querySelectorAll('.blank-recall-feedback')].map(n=>n.textContent));recall.stop();}
  if(before)assert.deepEqual(answers[0],answers[1],'recall answers preserved');
  if(!cycle)answerCounts.push({topic:topic.id,count:answers.at(-1).length});
 }

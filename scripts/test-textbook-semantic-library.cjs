@@ -71,7 +71,7 @@ function setup() {
     t.library.stop();same(t.listeners.size,0,'stop unsubscribes');same(t.host.innerHTML,'<footer>기존 요약 바로가기</footer>','unrelated footer preserved');same(t.dom.window.localStorage.length,0,'no new persistent source storage');
   } finally{t.close();}
   t=setup();try{
-    await t.library.mount(t.host,'prehistory',{fixedMode:true,initialMode:'quiz'});same(t.host.querySelectorAll('.textbook-supplement-links').length,0,'era screen omits people and region appendix links');same(t.quizRenderOptions.at(-1).manualSave,true,'era quiz uses explicit saving');
+    await t.library.mount(t.host,'prehistory',{fixedMode:true,initialMode:'quiz'});same(t.host.querySelectorAll('.textbook-supplement-links').length,0,'era screen omits people and region appendix links');same(t.quizRenderOptions.at(-1).manualSave,true,'era quiz uses explicit saving');same(t.quizRenderOptions.at(-1).sequential,true,'era quiz opens one question at a time');
     await t.library.mount(t.host,'prehistory');ok(t.host.querySelector('.textbook-supplement-links'),'standalone reader keeps appendix navigation');
   }finally{t.close();}
   t=setup();try{

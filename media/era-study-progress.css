@@ -12,6 +12,13 @@
 :root[data-company-mode="on"] .era-wrong-answer{color:#ff9b92}:root[data-company-mode="on"] .era-right-answer{color:#9fc6ff}
 @media(max-width:480px){.era-progress-row{gap:4px}.era-progress-tools{gap:4px;max-width:122px}.era-wrong-review{padding:6px;font-size:12px}}
 .era-aggregate{display:flex;max-width:none;justify-content:space-between;width:100%;margin:12px 0 20px;padding:12px 0;border-bottom:1px solid #64748b55}.era-aggregate h2{font-size:16px;margin:0}.era-wrong-scope{font-size:12px;color:#64748b}.era-wrong-error{color:#b42318}.era-wrong-era{margin-top:20px}
+.era-aggregate .era-wrong-menu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%;min-width:0}
+.era-aggregate .era-wrong-era-row{display:flex;flex-direction:column;align-items:stretch;gap:4px;min-width:0}
+.era-aggregate .era-wrong-review{width:100%;min-height:44px;white-space:normal;overflow-wrap:anywhere;text-align:left}
+.era-aggregate .era-progress-status{padding:0 4px;font-size:12px;line-height:1.5}
+.era-aggregate .era-wrong-review:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+@media(max-width:480px){.era-aggregate .era-wrong-menu{grid-template-columns:minmax(0,1fr)}}
+html[data-company-mode=on] .era-aggregate .era-progress-status{color:#c0ccd7}
 html[data-company-mode=on] #app#app#app .toc .era-progress-row>.period{width:auto!important;flex:1;grid-template-columns:minmax(0,1fr)!important}
 html[data-company-mode=on] #app .toc .era-progress-tools{color:#e6edf3;padding-right:8px}
 @media(min-width:481px){html[data-company-mode=on] #app#app#app .toc .era-progress-row>.period{grid-template-columns:minmax(0,1fr)!important}}

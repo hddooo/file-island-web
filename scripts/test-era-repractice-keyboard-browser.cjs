@@ -7,7 +7,7 @@ const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
 const css=[...html.matchAll(/<link[^>]+href="\/?(media\/[^"?]+\.css)[^"]*"/g)].map(m=>fs.readFileSync(path.join(root,m[1]),'utf8')).join('\n')+'\n'+[...html.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/g)].map(m=>m[1]).join('\n');
 (async()=>{
   fs.mkdirSync(out,{recursive:true});
-  const browser=await chromium.launch({channel:process.env.QA_BROWSER||'msedge',headless:true});
+  const browser=await chromium.launch({...(process.env.QA_BROWSER&&process.env.QA_BROWSER!=='chromium'?{channel:process.env.QA_BROWSER}:{}),headless:true});
   const results=[];
   try {
     for(const viewport of [{width:320,height:900},{width:390,height:844},{width:1440,height:900},{width:844,height:390}])for(const company of ['off','on']){
@@ -24,7 +24,7 @@ const css=[...html.matchAll(/<link[^>]+href="\/?(media\/[^"?]+\.css)[^"]*"/g)].m
         const sequence=make('sequence',['①','②']);sequence.kind='sequence';sequence.blanks=[{id:'b',answerIds:['a0','a1']}];sequence.answer={text:'①→②',orderMatters:true};
         const last=make('last',['오메가']);
         const models={},states={};for(const id of ['prehistory','ancient','nambuk','goryeo','joseon','opening','colonial','modern']){
-          const items=id==='prehistory'?[split,classification,sequence]:[last];
+          const items=id==='prehistory'?[split,classification,sequence,last]:[last];
           models[id]={id,title:id,version:'v',source:{sha256:source},items};
           states[id]={version:'v',workspace:{responses:(id==='prehistory'||id==='goryeo')?Object.fromEntries(items.map(item=>[item.id,{submitted:true,correct:false,values:HanqTextbookSourceQuiz.practiceSlots(item).map(()=>'합성 과거 오답'),checkedSlots:HanqTextbookSourceQuiz.practiceSlots(item).map(()=>true)}])):{}}};
         }
@@ -33,9 +33,13 @@ const css=[...html.matchAll(/<link[^>]+href="\/?(media\/[^"?]+\.css)[^"]*"/g)].m
         const api={state:()=>fixture.state,onChange:fn=>{fixture.onChange=fn;return()=>{};},hongmungwan:async method=>{if(method!=='GET')return rejectWrite();return {resetAt:null,items:[]};},textbookSemanticQuiz:async id=>{fixture.reads++;return models[id];},textbookSourceWorkspace:async id=>{fixture.reads++;return states[id];},saveTextbookSourceWorkspace:rejectWrite,request:rejectWrite};
         await HanqHongmungwan.mount(document.querySelector('main'),{api}).ready;
       });
-      const opener=page.locator('.era-aggregate .era-wrong-review');await opener.click();
+      await page.waitForFunction(()=>document.querySelectorAll('.era-wrong-era-row[data-state="ready"]').length===8);
+      const menuMetrics=await page.locator('.era-aggregate .era-wrong-review').evaluateAll(ns=>ns.map(n=>({left:n.getBoundingClientRect().left,right:n.getBoundingClientRect().right,height:n.getBoundingClientRect().height})));
+      assert.equal(menuMetrics.length,8);assert(menuMetrics.every(n=>n.left>=0&&n.right<=viewport.width&&n.height>=44),JSON.stringify({viewport,company,menuMetrics}));
+      await page.screenshot({path:path.join(out,'menu-'+company+'-'+viewport.width+'x'+viewport.height+'.png'),fullPage:true});
+      const opener=page.locator('.era-aggregate .era-wrong-review[data-era="prehistory"]');await opener.click();
       const inputs=page.locator('.era-practice-input'),feedback=page.locator('.era-practice-feedback');
-      await inputs.last().waitFor();assert.equal(await inputs.count(),6);assert.equal(await page.locator('.era-practice-grade').count(),0);assert.equal(await page.locator('dialog button').count(),1);assert.equal(await page.locator('.era-wrong-era').count(),2);
+      await inputs.last().waitFor();assert.equal(await inputs.count(),6);assert.equal(await page.locator('.era-practice-grade').count(),0);assert.equal(await page.locator('dialog button').count(),1);assert.equal(await page.locator('.era-wrong-item[data-era="prehistory"]').count(),4);
       assert.equal(await inputs.evaluateAll(ns=>ns.every(n=>n.value==='')),true);
       assert.equal(await feedback.evaluateAll(ns=>ns.every(n=>n.hidden&&n.textContent==='')),true);
       const active=async i=>{assert.equal(await inputs.nth(i).evaluate(n=>n===document.activeElement),true,'focus input '+i);await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(resolve)));const bounds=await inputs.nth(i).evaluate(n=>({top:n.getBoundingClientRect().top,bottom:n.getBoundingClientRect().bottom,header:document.querySelector('.era-wrong-head').getBoundingClientRect().bottom,boundary:document.querySelector('dialog').getBoundingClientRect().bottom}));assert(bounds.top>=bounds.header-1&&bounds.bottom<=bounds.boundary+1,JSON.stringify({viewport,company,index:i,bounds}));};

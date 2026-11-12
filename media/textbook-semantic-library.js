@@ -186,6 +186,7 @@
         child = renderer.render(panel, data, {
           ownerId: api.state().ownerId,
           manualSave: selectedMode==='quiz',
+          sequential: selectedMode==='quiz',
           sourceRevision:sourceSha,
           sourcePromptStyles:selectedMode==='quiz'&&manifest.sourcePromptStylesByQuiz?manifest.sourcePromptStylesByQuiz[quizId]:undefined,
           loadProgress: function () { if (!valid(g,r)) return Promise.reject(sessionError()); return api.textbookSourceWorkspace(quizId,boundRevision); },
@@ -268,7 +269,7 @@
             data=Object.assign({},data,{blocks:data.blocks.filter(function(b){return b.studySection===callbacks.studySection;})});
           }
           var view = renderer.render(section, data, {
-            compactReviewStatus:true,blankRecall:!!(callbacks&&callbacks.blankRecall),
+            compactReviewStatus:true,
             isFigureAvailable:function (figure) { return entry.figuresAvailable !== false && Array.isArray(manifest.figures) && manifest.figures.some(function (f) { return f.id === figure.assetId; }); },
             resolveFigure:imageResolver(g,r,section)
           });

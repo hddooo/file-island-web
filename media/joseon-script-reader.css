@@ -128,7 +128,7 @@ html body #joseonScript .joseon-script-reader .jsr-silhak-scroll:focus-visible{o
 .joseon-script-reader .jsr-header{margin-bottom:16px}
 .joseon-script-reader .jsr-topics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;margin:12px 0 8px}
 .joseon-script-reader .jsr-topics button{min-width:0;min-height:44px;padding:6px 4px;font-size:14px;line-height:1.35;word-break:keep-all;border-radius:6px}
-.joseon-script-reader .jsr-modes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;margin:0;padding:0}
+.joseon-script-reader .jsr-modes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin:0;padding:0}
 .joseon-script-reader .jsr-modes button{min-width:0;min-height:52px;padding:7px 5px;font:14px/1.4 Arial,"Malgun Gothic",sans-serif;word-break:keep-all;overflow-wrap:normal}
 @media(max-width:700px){.joseon-script-reader .jsr-modes button{font-size:14px;min-height:64px}}
 
@@ -191,7 +191,7 @@ html body #joseonScript .joseon-script-reader .textbook-source-quiz-status[hidde
    Source ink, table structure, figures and response contracts remain unchanged. */
 html body #joseonScript .joseon-script-reader{--jsr-line:#a0b3a7;--ink:#24372c;--line:#a0b3a7;box-sizing:border-box;width:100%;max-width:none;margin-inline:auto;padding:24px 20px;background:#dfe8e2!important;color:#24372c!important;font-size:17px;line-height:1.7;border:0;border-radius:0;box-shadow:none}
 html body #joseonScript .joseon-script-reader,html body #joseonScript .joseon-script-reader *{font-family:Arial,"Helvetica Neue","Apple SD Gothic Neo","Noto Sans KR",sans-serif!important;letter-spacing:normal}
-#joseonScript .jsr-modes.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:12px 0 16px;padding:0}
+#joseonScript .jsr-modes.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0 16px;padding:0}
 #joseonScript .jsr-modes.steps button{min-width:0;white-space:normal;word-break:keep-all}
 html body #joseonScript .jsr-header,html body #joseonScript .jsr-layout{width:100%;max-width:720px;margin-inline:auto}
 html body #joseonScript .jsr-header{margin-bottom:16px}

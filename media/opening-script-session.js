@@ -5,14 +5,16 @@
     let host=null,reader=null,unsubscribe=null,abort=null,generation=0,identity='',route='',canonical=null,workspace=null;
     function session(){const s=api&&api.state&&api.state();return s&&s.signedIn&&!s.restoring&&s.ownerId?String(s.ownerId)+':'+String(s.epoch):'';}
     function stop(){generation++;if(workspace)workspace.stop();workspace=null;if(abort)abort.abort();abort=null;if(unsubscribe)unsubscribe();unsubscribe=null;if(reader)reader.stop();reader=null;if(canonical)canonical.remove();canonical=null;if(host)host.replaceChildren();host=null;identity='';win.removeEventListener('hashchange',hashchange);}
-    function modeFromLocation(){const slug=win.location.hash.split('/')[2];return slug==='exam-lines'?'exam':slug==='source-quiz'?'practice':slug==='blank-test'?'recall':'study';}
+    // Keep old bookmarks readable without re-entering the removed blank test.
+    function normalizeLegacyRoute(){if(/^#chapter\/[^/]+\/blank-test$/.test(win.location.hash))win.history.replaceState(win.history.state,'',win.location.hash.replace(/\/blank-test$/,'/webtoon'));}
+    function modeFromLocation(){const slug=win.location.hash.split('/')[2];return slug==='exam-lines'?'exam':slug==='source-quiz'?'practice':'study';}
     function sameReaderRoute(href){if(!options.modeRouting||!route)return false;const from=new win.URL(route),to=new win.URL(href),a=from.hash.split('/'),b=to.hash.split('/');return from.origin===to.origin&&from.pathname===to.pathname&&from.search===to.search&&a[0]==='#chapter'&&a[0]===b[0]&&b.length===3&&a[1]===b[1]&&['webtoon','exam-lines','source-quiz','blank-test'].includes(b[2]);}
-    function routeForMode(mode){const u=new win.URL(route),parts=u.hash.split('/');parts[2]=mode==='recall'?'blank-test':mode==='exam'?'exam-lines':mode==='practice'||mode==='answers'?'source-quiz':'webtoon';u.hash=parts.join('/');route=u.href;return route;}
-    function hashchange(){if(host&&win.location.href!==route){if(sameReaderRoute(win.location.href))route=win.location.href;else if(!workspace||!workspace.hasUnsaved())stop();}}
+    function routeForMode(mode){const u=new win.URL(route),parts=u.hash.split('/');parts[2]=mode==='exam'?'exam-lines':mode==='practice'||mode==='answers'?'source-quiz':'webtoon';u.hash=parts.join('/');route=u.href;return route;}
+    function hashchange(){normalizeLegacyRoute();if(host&&win.location.href!==route){if(sameReaderRoute(win.location.href))route=win.location.href;else if(!workspace||!workspace.hasUnsaved())stop();}}
     function valid(g){return !!host&&g===generation&&identity&&session()===identity&&win.location.href===route;}
     function notice(message){if(!host)return;const p=doc.createElement('p');p.setAttribute('role','status');p.textContent=message;host.replaceChildren(p);}
     async function mount(element,transport){
-      stop();host=element;route=win.location.href;identity=session();const g=generation;
+      stop();normalizeLegacyRoute();host=element;route=win.location.href;identity=session();const g=generation;
       // No built-in endpoint or implied capability. The integration owner injects the reviewed transport.
       if(options.requireWorkspace&&typeof options.workspaceFactory!=='function'){notice('개화기 저장 기능 연결을 준비하고 있습니다.');return false;}
       if(!identity){notice('로그인 후 자료를 확인해 주세요.');return false;}
@@ -43,7 +45,7 @@
       }catch(error){if(valid(g)){const target=host,owner=identity,failedRoute=route;stop();const retryGeneration=generation;const p=doc.createElement('p');p.setAttribute('role','status');p.textContent=error&&error.status===403?'자료 이용 권한을 확인해 주세요.':'자료를 불러오지 못했습니다. 연결 상태를 확인한 뒤 다시 시도해 주세요.';const retry=doc.createElement('button');retry.type='button';retry.className='osr-bundle-retry';retry.textContent='다시 불러오기';retry.onclick=()=>{if(generation===retryGeneration&&session()===owner&&win.location.href===failedRoute&&target.isConnected)mount(target,transport);};target.replaceChildren(p,retry);}return false;}
     }
     // Call BEFORE the existing app popstate handler. Return true only for this reader's same-route history.
-    function handlePopState(){if(!host)return false;if(win.location.href!==route&&sameReaderRoute(win.location.href))route=win.location.href;if(win.location.href!==route||session()!==identity){if(session()!==identity||!workspace||!workspace.hasUnsaved())stop();return false;}return !!(reader&&reader.handlePopState());}
+    function handlePopState(){if(!host)return false;normalizeLegacyRoute();if(win.location.href!==route&&sameReaderRoute(win.location.href))route=win.location.href;if(win.location.href!==route||session()!==identity){if(session()!==identity||!workspace||!workspace.hasUnsaved())stop();return false;}return !!(reader&&reader.handlePopState());}
     return {mount,stop,handlePopState,hasUnsaved(){return !!workspace&&workspace.hasUnsaved();},restoreSourceRoute(){if(host&&identity&&session()===identity)win.history.replaceState(null,'',route);},prepareLeave(){return workspace?workspace.prepareLeave():Promise.resolve();}};
   }
   root.HanqOpeningScriptSession={create};if(typeof module==='object'&&module.exports)module.exports=root.HanqOpeningScriptSession;

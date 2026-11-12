@@ -2,6 +2,7 @@
   'use strict';
   const revision='d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de';
   const eras=['prehistory','samguk','nambuk','goryeo','joseon','opening','colonial','modern'];
+  const eraTitles=['선사시대·고조선과 여러 나라','삼국시대','남북국시대','고려시대','조선시대','개화기','일제강점기','현대'];
   let active=null;
   function summary(model,result){
     if(!model||!Array.isArray(model.items)||!model.items.length||!model.source||model.source.sha256!==revision||!result||result.version!==(model.version||model.progressVersion)||!result.workspace||!result.workspace.responses)throw Error('progress_binding');
@@ -19,10 +20,26 @@
     stop();options=options||{};
     const doc=host.ownerDocument,win=doc.defaultView,api=options.api||root.HanqApi;
     let alive=true,dialog=null,opener=null,unsubscribe=null,queue=[],owned=[],lockRelease=null;
+    const reviewReads=new WeakMap();
     const owner=identity();
     function identity(){const s=api&&api.state();return s&&s.signedIn&&!s.restoring&&s.ownerId?s.ownerId+':'+s.epoch:'';}
     function valid(){return alive&&!!owner&&identity()===owner&&host.isConnected;}
     function node(tag,cls,text){const n=doc.createElement(tag);if(cls)n.className=cls;if(text!=null)n.textContent=text;return n;}
+    function appendText(target,value){
+      // Render only formatting nodes; source attributes and executable HTML never enter the DOM.
+      const text=String(value||''),tags=/<\/?([a-z][a-z0-9:-]*)\b[^>]*>/gi,stack=[{node:target,tag:''}];let offset=0,match,blocked='';
+      while((match=tags.exec(text))){
+        if(!blocked)stack[stack.length-1].node.append(doc.createTextNode(text.slice(offset,match.index)));
+        const name=match[1].toLowerCase(),closing=/^<\//.test(match[0]);offset=tags.lastIndex;
+        if(blocked){if(closing&&name===blocked)blocked='';continue;}
+        if(/^(script|style|iframe|object|template)$/.test(name)){if(!closing)blocked=name;continue;}
+        if(/^(strong|b|em|i|u|sup|sub)$/.test(name)){
+          if(closing){for(let i=stack.length-1;i>0;i--)if(stack[i].tag===name){stack.length=i;break;}}
+          else{const n=node(name==='b'?'strong':name,'');stack[stack.length-1].node.append(n);stack.push({node:n,tag:name});}
+        }else if(/^(br|p|div|li)$/.test(name))stack[stack.length-1].node.append(doc.createTextNode(' '));
+      }
+      if(!blocked)stack[stack.length-1].node.append(doc.createTextNode(text.slice(offset)));
+    }
     function close(focus){if(dialog){if(dialog.open&&dialog.close)dialog.close();dialog.remove();dialog=null;}if(lockRelease){lockRelease();lockRelease=null;}if(focus&&opener&&opener.isConnected)opener.focus();opener=null;}
     function dispose(){alive=false;close(false);if(unsubscribe)unsubscribe();unsubscribe=null;win.removeEventListener('popstate',back);owned.forEach(n=>{if(n.classList.contains('era-progress-row')){const card=n.querySelector('.period');if(card)n.before(card);}n.remove();});owned=[];if(active===controller)active=null;}
     function back(){close(false);}
@@ -32,8 +49,14 @@
     async function read(id){const quizId=id==='samguk'?'ancient':id;const model=await api.textbookSemanticQuiz(quizId,revision);if(!valid())throw Error('session_changed');const result=await api.textbookSourceWorkspace(quizId,revision);if(!valid())throw Error('session_changed');if(model.id!==quizId)throw Error('era_binding');if(!model.version){const bytes=new win.TextEncoder().encode(JSON.stringify({schema:model.schemaVersion,source:model.source,items:model.items}));model.progressVersion=Array.from(new Uint8Array(await win.crypto.subtle.digest('SHA-256',bytes))).map(x=>x.toString(16).padStart(2,'0')).join('');if(!valid())throw Error('session_changed');}return {model,result,stats:summary(model,result)};}
     function paint(tools,record){
       const status=tools.querySelector('.era-progress-status');status.replaceChildren();tools.dataset.state='ready';
+      if(tools.dataset.reviewEra){status.textContent=!record.stats.finalSubmitted?'최종 제출 없음':record.stats.wrong.length?'최종 오답 '+record.stats.wrong.length+'문항':'저장된 오답 없음';return;}
       status.title=record.stats.complete?'빈칸 학습 완료':'빈칸 학습 미완료';
       if(record.stats.complete){const check=node('span','era-complete','✓');check.setAttribute('role','img');check.setAttribute('aria-label',tools.dataset.title+' 빈칸 학습 완료');status.append(check);}
+    }
+    async function readReview(id,tools){
+      const request={};reviewReads.set(tools,request);
+      try{const record=await read(id);record.stats=Object.assign({},record.stats,{finalSubmitted:record.stats.complete,wrong:record.stats.complete?record.stats.wrong:[]});if(valid()&&reviewReads.get(tools)===request)paint(tools,record);return record;}
+      catch(e){if(valid()&&reviewReads.get(tools)===request){tools.dataset.state='error';tools.querySelector('.era-progress-status').textContent='기록 확인 실패';}throw e;}
     }
     async function review(id,title,button,tools){
       if(!valid()||dialog)return;opener=button;
@@ -42,16 +65,14 @@
       dialog.addEventListener('cancel',e=>{e.preventDefault();close(true);});dialog.addEventListener('click',e=>{if(e.target===current)close(true);});
       dialog.addEventListener('keydown',e=>{if(e.defaultPrevented||e.key!=='Tab'||e.altKey||e.ctrlKey||e.metaKey)return;const nodes=[...current.querySelectorAll('button,input,a[href],[tabindex="0"]')].filter(n=>!n.disabled);if(!nodes.length)return;const first=nodes[0],last=nodes[nodes.length-1];if(e.shiftKey&&doc.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&doc.activeElement===last){e.preventDefault();first.focus();}});
       if(dialog.showModal)dialog.showModal();else dialog.setAttribute('open','');x.focus();
-      try{const records=[],failed=[];for(const era of (id==='all'?eras:[id])){try{records.push(await read(era));}catch(e){if(!valid()||dialog!==current)return;failed.push(era);}}if(!valid()||dialog!==current)return;if(id!=='all'&&records[0])paint(tools,records[0]);body.replaceChildren();body.removeAttribute('role');const hint=node('p','era-wrong-scope','현재 저장된 오답만 다시 풉니다. Tab 또는 Enter로 채점하고 다음 빈칸으로 이동합니다. 재풀이 결과는 저장하지 않습니다.');hint.id='era-practice-hint';body.append(hint);let fieldCount=0,imeAdvanceTarget=null,imeAdvanceUntil=0,pointerVersion=0,keyVersion=0;
+      try{const records=[await readReview(id,tools)];if(!valid()||dialog!==current)return;body.replaceChildren();body.removeAttribute('role');const hint=node('p','era-wrong-scope','마지막 제출에서 틀린 문항만 다시 풉니다. Tab 또는 Enter로 채점하고 다음 빈칸으로 이동합니다. 재풀이 결과는 저장하지 않습니다.');hint.id='era-practice-hint';body.append(hint);let fieldCount=0,imeAdvanceTarget=null,imeAdvanceUntil=0,pointerVersion=0,keyVersion=0;
         current.addEventListener('pointerdown',()=>{pointerVersion++;imeAdvanceTarget=null;});
         current.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.altKey&&!e.ctrlKey&&!e.metaKey&&(e.repeat&&e.target===x||e.target===imeAdvanceTarget&&Date.now()<imeAdvanceUntil)){e.preventDefault();e.stopPropagation();}},true);
         current.addEventListener('keyup',e=>{if(e.key==='Enter'||e.code==='Enter'){keyVersion++;imeAdvanceTarget=null;}});
-        if(failed.length)body.append(node('p','era-wrong-error','일부 시대의 기록을 불러오지 못했습니다. 닫고 다시 시도해 주세요.'));
-        if(!records.some(r=>r.stats.wrong.length)&&!failed.length){body.append(node('p','era-wrong-empty','저장된 오답이 없습니다.'));return;}
+        if(!records.some(r=>r.stats.wrong.length)){body.append(node('p','era-wrong-empty',records[0].stats.finalSubmitted?title+'에 저장된 오답이 없습니다.':title+'의 최종 제출 기록이 없습니다.'));return;}
         for(const record of records){
-          if(id==='all'&&record.stats.wrong.length)body.append(node('h3','era-wrong-era',record.model.title));
           for(const item of record.stats.wrong){
-            const card=node('article','era-wrong-item');card.dataset.itemId=item.id;
+            const card=node('article','era-wrong-item');card.dataset.itemId=item.id;card.dataset.era=id;
             const topic=(record.model.subtopics||[]).find(t=>t.id===item.subtopicId);if(topic&&topic.title)card.append(node('p','era-practice-topic',topic.title));
             card.append(node('h3','',String(item.originalNumberLabel||item.originalNumber||'')+' · 오답 재풀이'));
             body.append(card);
@@ -106,13 +127,13 @@
               });return wrap;
             }
             if(item.segments&&item.segments.length){
-              for(const segment of item.segments){if(segment.type==='text')question.append(doc.createTextNode(segment.text));else{
+              for(const segment of item.segments){if(segment.type==='text')appendText(question,segment.text);else{
                 const blank=item.blanks.find(b=>b.id===segment.id);question.append(doc.createTextNode(' ('));
                 (blank.parts||[blank]).forEach((part,i)=>{if(i)question.append(doc.createTextNode(blank.partSeparator||', '));question.append(field(slots.find(s=>s.id===part.id),'문제 '+(item.originalNumber||'')+' 빈칸 '+(fields.length+1)));});question.append(doc.createTextNode(') '));
               }}
-            }else question.append(doc.createTextNode(item.text||item.sourceText||''));
-            for(const collection of [item.events,item.choices])if(collection&&collection.length){const list=node('ul','era-wrong-choices');collection.forEach(c=>list.append(node('li','',c.sourceText||c.text)));card.append(list);}
-            if(item.kind==='classification')slots.forEach((slot,i)=>{const row=node('div','era-practice-classification'),label=item.subitems[i].sourceText;row.append(node('span','',label),field(slot,label));card.append(row);});
+            }else appendText(question,item.text||item.sourceText||'');
+            for(const collection of [item.events,item.choices])if(collection&&collection.length){const list=node('ul','era-wrong-choices');collection.forEach(c=>{const li=node('li','');appendText(li,c.sourceText||c.text);list.append(li);});card.append(list);}
+            if(item.kind==='classification')slots.forEach((slot,i)=>{const row=node('div','era-practice-classification'),label=node('span','');appendText(label,item.subitems[i].sourceText);row.append(label,field(slot,label.textContent));card.append(row);});
             function grade(index){
               if(!valid()||dialog!==current||!card.isConnected)return;
               const graded=engine.gradePractice(item,fields.map(f=>f.value));
@@ -120,9 +141,18 @@
             }
           }
         }
-      }catch(e){if(valid()&&dialog===current){body.replaceChildren(node('p','','오답을 불러오지 못했습니다. 닫고 다시 시도해 주세요.'));}}
+      }catch(e){if(valid()&&dialog===current){body.replaceChildren(node('p','era-wrong-error',title+' 오답을 불러오지 못했습니다. 닫고 다시 시도해 주세요.'));}}
     }
-    if(options.aggregate){const tools=node('section','era-progress-tools era-aggregate');tools.dataset.title='시대별 학습 - 오답 빈칸 문제';const heading=node('h2','',tools.dataset.title),b=node('button','era-wrong-review','오답 다시보기');b.type='button';tools.append(heading,b);host.append(tools);owned.push(tools);b.onclick=()=>review('all',tools.dataset.title,b,tools);}
+    if(options.aggregate){
+      const section=node('section','era-progress-tools era-aggregate'),heading=node('h2','','시대별 학습 - 오답 빈칸 문제'),list=node('div','era-wrong-menu');
+      section.append(heading,list);host.append(section);owned.push(section);
+      eras.forEach((id,index)=>{
+        const tools=node('div','era-wrong-era-row'),b=node('button','era-wrong-review',eraTitles[index]),status=node('span','era-progress-status','확인 중');
+        tools.dataset.reviewEra=id;tools.dataset.title=eraTitles[index];b.type='button';b.dataset.era=id;b.setAttribute('aria-label',eraTitles[index]+' 최종 오답 다시 풀기');status.id='era-wrong-count-'+id;status.setAttribute('role','status');status.setAttribute('aria-live','polite');b.setAttribute('aria-describedby',status.id);tools.append(b,status);list.append(tools);
+        b.onclick=()=>review(id,tools.dataset.title,b,tools);
+        queue.push(async()=>{try{await readReview(id,tools);}catch(e){/* The current request paints its own error. */}});
+      });
+    }
     for(const card of host.querySelectorAll('.period.ready[data-id]')){
       const id=card.dataset.id;if(!eras.includes(id))continue;
       const row=node('div','era-progress-row'),tools=node('div','era-progress-tools');tools.dataset.title=card.querySelector('strong')?.textContent||id;

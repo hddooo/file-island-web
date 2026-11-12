@@ -78,23 +78,23 @@ html body #app#app#app .textbook-source-verdict[data-result=correct]{color:#1756
 html body .textbook-source-quiz :is(.textbook-source-inline-feedback,.textbook-source-quiz-status)[data-result=different],
 html body #app#app#app .textbook-source-quiz :is(.textbook-source-inline-feedback,.textbook-source-quiz-status)[data-result=different],
 html body #app#app#app .textbook-source-verdict[data-result=wrong]{color:#b42318!important;-webkit-text-fill-color:currentColor!important}
-html body #app#app#app .textbook-source-quiz-input:has(+.textbook-source-inline-feedback[data-result=match]){color:#1756b1!important;-webkit-text-fill-color:currentColor!important;border-color:#1756b1!important}
-html body #app#app#app .textbook-source-quiz-input:has(+.textbook-source-inline-feedback[data-result=different]){color:#b42318!important;-webkit-text-fill-color:currentColor!important;border-color:#b42318!important}
+html body #app#app#app .textbook-source-quiz-input:is(:has(+.textbook-source-inline-feedback[data-result=match]),[data-source-result=match]){color:#1756b1!important;-webkit-text-fill-color:currentColor!important;border-color:#1756b1!important}
+html body #app#app#app .textbook-source-quiz-input:is(:has(+.textbook-source-inline-feedback[data-result=different]),[data-source-result=different]){color:#b42318!important;-webkit-text-fill-color:currentColor!important;border-color:#b42318!important}
 html body #app#app#app .textbook-source-quiz-events{background:transparent!important;color:#18212f!important;border:0!important}
 html body #app#app#app .textbook-source-quiz-events :is(li,span,strong,b){color:#18212f!important;-webkit-text-fill-color:currentColor!important;background:transparent!important}
 html[data-company-mode=on] body #app#app#app .textbook-source-quiz-events{background:transparent!important;color:#c9d1d9!important;border:0!important}
 html[data-company-mode=on] body #app#app#app .textbook-source-quiz-events :is(li,span,strong,b){color:#c9d1d9!important}
 html[data-company-mode=on] body #app#app#app .textbook-source-quiz :is(.textbook-source-inline-feedback,.textbook-source-quiz-status)[data-result=match],
 html[data-company-mode=on] body #app#app#app .textbook-source-verdict[data-result=correct],
-html[data-company-mode=on] body #app#app#app .textbook-source-quiz-input:has(+.textbook-source-inline-feedback[data-result=match]){color:#79b8ff!important;-webkit-text-fill-color:currentColor!important;border-color:#79b8ff!important}
+html[data-company-mode=on] body #app#app#app .textbook-source-quiz-input:is(:has(+.textbook-source-inline-feedback[data-result=match]),[data-source-result=match]){color:#79b8ff!important;-webkit-text-fill-color:currentColor!important;border-color:#79b8ff!important}
 html[data-company-mode=on] body #app#app#app .textbook-source-quiz :is(.textbook-source-inline-feedback,.textbook-source-quiz-status)[data-result=different],
 html[data-company-mode=on] body #app#app#app .textbook-source-verdict[data-result=wrong],
-html[data-company-mode=on] body #app#app#app .textbook-source-quiz-input:has(+.textbook-source-inline-feedback[data-result=different]){color:#ffa198!important;-webkit-text-fill-color:currentColor!important;border-color:#ffa198!important}
+html[data-company-mode=on] body #app#app#app .textbook-source-quiz-input:is(:has(+.textbook-source-inline-feedback[data-result=different]),[data-source-result=different]){color:#ffa198!important;-webkit-text-fill-color:currentColor!important;border-color:#ffa198!important}
 
 /* Wrong answers stand out through weight and border, not color alone. */
 html body #app#app#app .textbook-source-quiz .textbook-source-inline-feedback[data-result=different],
 html body #app#app#app .textbook-source-verdict[data-result=wrong]{font-weight:800!important}
-html body #app#app#app .textbook-source-quiz-input:has(+.textbook-source-inline-feedback[data-result=different]){font-weight:700!important;border-width:2px!important}
+html body #app#app#app .textbook-source-quiz-input:is(:has(+.textbook-source-inline-feedback[data-result=different]),[data-source-result=different]){font-weight:700!important;border-width:2px!important}
 
 /* Do not treat parentheses, input and feedback as one atomic flex box. */
 html body #app#app#app .textbook-source-continuous .textbook-source-quiz-statement:has(.textbook-source-quiz-blank){white-space:normal!important}
@@ -121,3 +121,84 @@ html[data-company-mode=on] body #app#app#app#app .textbook-source-manual-save .t
 
 html body #app#app#app#app .textbook-source-manual-save .textbook-source-quiz-input{font-size:16px!important}
 html body #app#app#app#app .textbook-source-manual-save :is(.textbook-source-save-complete,.textbook-source-restart){min-height:44px!important;height:auto!important;padding:6px 12px!important;font-size:14px!important}
+
+/* Era fill-ins share one text flow: number, source prompt and unchanged input.
+   Only the main prompt is inline; classification rows and source event lists stay structured. */
+html body #app#app#app#app .textbook-source-inline-questions .textbook-source-question-header{display:inline!important;min-height:0;margin:0;padding:0}
+html body #app#app#app#app .textbook-source-inline-questions .textbook-source-quiz-item-source{display:inline!important;margin:0 .45em 0 0;font-size:inherit;line-height:inherit;font-weight:700}
+html body #app#app#app#app .textbook-source-inline-questions .textbook-source-quiz-item>span.textbook-source-quiz-statement{display:inline!important;margin:0;white-space:normal!important}
+/* Keep grading below the question, small but readable; empty rows reserve no space. */
+html body #app#app#app#app .textbook-source-inline-questions .textbook-source-result-line{display:flex;flex-wrap:wrap;align-items:baseline;gap:3px 10px;margin:2px 0 0;min-width:0;max-width:100%;line-height:1.5}
+html body #app#app#app#app .textbook-source-inline-questions .textbook-source-result-line:not(:has(>:not(:empty))){display:none}
+html body #app#app#app#app .textbook-source-inline-questions .textbook-source-result-line>:is(.textbook-source-verdict,.textbook-source-inline-feedback){font-size:13px!important;line-height:1.5!important;min-width:0;margin:0;max-width:100%;overflow-wrap:anywhere}
+html body #app#app#app#app .textbook-source-inline-questions .textbook-source-result-line>:empty{display:none}
+
+/* Source-inspired hand-drawn O/X lives beside the number, never over the prompt. */
+html body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark{display:inline-block;width:24px;height:24px;margin:0 4px 0 0;vertical-align:-6px;overflow:visible;pointer-events:none;color:#1756b1;opacity:.86}
+html body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark path{display:none;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:100;stroke-dashoffset:0}
+html body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark[data-result=correct] .mark-correct,html body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark[data-result=wrong] .mark-wrong{display:block}
+html body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark .mark-texture{stroke-width:1;opacity:.4}
+html body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark .mark-wrong{stroke-width:2.1}
+html body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark[data-result=wrong]{color:#b91c1c}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark[data-result=correct]{color:#79b8ff}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark[data-result=wrong]{color:#ff5b65}
+html body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict{animation:none!important}
+@keyframes source-verdict-draw{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}
+@keyframes source-verdict-draw-first{0%{stroke-dashoffset:100}50%,100%{stroke-dashoffset:0}}
+@keyframes source-verdict-draw-second{0%,45%{stroke-dashoffset:100}100%{stroke-dashoffset:0}}
+@media(prefers-reduced-motion:no-preference){
+html:not([data-company-mode=on]) body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark.is-drawing .mark-correct{animation:source-verdict-draw 1s ease-out both!important}
+html:not([data-company-mode=on]) body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark.is-drawing .mark-first{animation:source-verdict-draw-first 1s ease-out both!important}
+html:not([data-company-mode=on]) body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark.is-drawing .mark-second{animation:source-verdict-draw-second 1s ease-out both!important}
+}
+@media(prefers-reduced-motion:reduce){html body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark path{animation:none!important;stroke-dashoffset:0}}
+
+/* One question at a time. The number sheet remains reachable on small screens. */
+html body #app#app#app#app .textbook-source-sequential .textbook-source-exam-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,260px);gap:24px;align-items:start;min-width:0}
+html body #app#app#app#app .textbook-source-sequential .textbook-source-exam-stage{min-width:0;padding:18px;border:1px solid #c6d0da;border-radius:12px}
+html body #app#app#app#app .textbook-source-sequential .textbook-source-quiz-item{min-height:150px;border:0;padding:10px 0 22px}
+html body #app#app#app#app .textbook-source-sequential .textbook-source-quiz-instruction{margin:0 0 14px;font-size:17px}
+html body #app#app#app#app .textbook-source-sequential .textbook-source-save-bar{flex-wrap:wrap;margin:10px 0 14px}
+html body #app#app#app#app .textbook-source-sequential .textbook-source-progress{white-space:normal!important;font-size:15px!important;line-height:1.6}
+html body #app#app#app#app .textbook-source-question-map{min-width:0;border:1px solid #c6d0da;border-radius:12px;padding:12px}
+html body #app#app#app#app .textbook-source-question-map h3{margin:0;font-size:16px}
+html body #app#app#app#app .textbook-source-map-legend{font-size:12px;margin:4px 0 10px}
+html body #app#app#app#app .textbook-source-question-map-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(44px,1fr));gap:6px;max-height:60vh;max-height:60dvh;overflow-y:auto;overscroll-behavior:contain;padding:4px}
+html body #app#app#app#app .textbook-source-sequential :is(.textbook-source-question-number,.textbook-source-exam-actions button,.textbook-source-mistake-dialog button){min-height:44px!important;height:auto!important;min-width:44px;padding:7px 10px!important;border:1px solid #8a9db0;border-radius:7px;background:transparent;color:inherit;font:inherit;font-size:14px!important;line-height:1.4;cursor:pointer}
+html body #app#app#app#app .textbook-source-sequential .textbook-source-question-number{display:flex;align-items:center;justify-content:center;gap:4px;padding:4px!important}
+html body #app#app#app#app .textbook-source-question-number[aria-current=step]{outline:2px solid #1756b1;outline-offset:1px;font-weight:800}
+html body #app#app#app#app .textbook-source-question-number[data-result=correct]{color:#1756b1!important;border-color:#1756b1}
+html body #app#app#app#app .textbook-source-question-number[data-result=wrong]{color:#b91c1c!important;border-color:#b91c1c;font-weight:800}
+html body #app#app#app#app .textbook-source-map-state{font-size:12px;font-weight:800}
+html body #app#app#app#app .textbook-source-exam-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:14px}
+html body #app#app#app#app .textbook-source-exam-actions .textbook-source-check-current{background:#1756b1;color:#fff;border-color:#1756b1}
+html body #app#app#app#app .textbook-source-exam-position{margin-left:auto;font-size:13px;white-space:nowrap}
+html body #app#app#app#app .textbook-source-exam-stage>.textbook-source-save-complete{margin-top:12px;width:100%}
+html body #app#app#app#app .textbook-source-sequential .textbook-source-mistake-dialog{position:fixed;inset:50% auto auto 50%;transform:translate(-50%,-50%);z-index:10020;width:min(620px,calc(100vw - 24px));max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);overflow-y:auto;overscroll-behavior:contain;padding:24px;border:2px solid #b91c1c;border-radius:14px;box-shadow:0 0 0 100vmax rgba(15,23,42,.55)!important;background:#fff!important;color:#18212f!important;border-color:#b91c1c!important}
+html body #app#app#app#app .textbook-source-mistake-dialog h3{margin:0 0 10px;font-size:20px}
+html body #app#app#app#app .textbook-source-mistake-dialog h4{margin:8px 0;font-size:16px}
+html body #app#app#app#app .textbook-source-mistake-dialog p{font-size:15px;line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere}
+html body #app#app#app#app .textbook-source-mistake-actions{display:flex;flex-wrap:wrap;gap:8px}
+html body #app#app#app#app .textbook-source-mistake-countdown,.textbook-source-explanation-note{font-size:13px!important}
+html body #app#app#app#app .textbook-source-review-answer{color:#b91c1c!important;font-weight:800}
+html body #app#app#app#app .textbook-source-statistics-score{font-size:20px;font-weight:800;line-height:1.6}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-mistake-dialog{background:#161b22!important;color:#c9d1d9!important;border-color:#ff5b65!important}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-question-number[data-result=correct]{color:#79b8ff!important;border-color:#79b8ff}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-question-number[data-result=wrong],html[data-company-mode=on] body #app#app#app#app .textbook-source-review-answer{color:#ff5b65!important;border-color:#ff5b65}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-question-number[aria-current=step]{outline-color:#79b8ff}
+@media(max-width:760px){
+html body #app#app#app#app .textbook-source-sequential .textbook-source-exam-layout{grid-template-columns:minmax(0,1fr);gap:14px}
+html body #app#app#app#app .textbook-source-sequential .textbook-source-exam-stage{padding:12px}
+html body #app#app#app#app .textbook-source-sequential .textbook-source-quiz-item{min-height:110px}
+html body #app#app#app#app .textbook-source-question-map-grid{max-height:162px}
+html body #app#app#app#app .textbook-source-sequential .textbook-source-mistake-dialog{padding:16px}
+}
+
+html body #app#app#app#app .textbook-source-mistake-dialog :is(.textbook-source-mistake-panel,.textbook-source-mistake-content,.textbook-source-mistake-actions){background:transparent!important;color:inherit!important}
+
+html[data-company-mode=on] body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark[data-result=correct] path{stroke:#79b8ff!important}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-inline-questions .textbook-source-verdict-mark[data-result=wrong] path{stroke:#ff5b65!important}
+
+html body #app#app#app#app .textbook-source-next-era{display:inline-flex;align-items:center;min-height:44px;margin:8px 12px 8px 0;padding:7px 12px;border:1px solid #1756b1;border-radius:7px;font-size:15px;text-decoration:none}
+html body #app#app#app#app .textbook-source-goal{font-weight:700;line-height:1.7}
+html body #app#app#app#app .textbook-source-goal-hint{font-size:13px;line-height:1.6;margin:0 0 12px}
