@@ -6,6 +6,7 @@ w.URL.createObjectURL=()=> 'blob:synthetic';w.URL.revokeObjectURL=()=>revoked++;
 const data=()=>({scope:'exam-starred-or-ever-wrong',round:80,items:resetAt?[]:[q],hasMore:false,pendingStarCount:1,resetAt});
 const api={state:()=>state,onChange:fn=>{listener=fn;return()=>listener=null},cbt:async(method,path)=>{assert.equal(method,'GET');assert.equal(path,'/api/v1/cbt/review-materials/80');reads++;return data();},cbtImage:async()=>new Blob(['synthetic'],{type:'image/png'})};
 const before=JSON.stringify(q),ctl=w.HanqCbtRoundMaterials.mount(host,{api,round:80,onBack:()=>{}});await ctl.ready;await new Promise(r=>setImmediate(r));
+assert(host.querySelector('img[data-company-exam-image]'));
 assert(host.textContent.includes('점수·XP·나의 기록·실전 기록을 남기지 않는'));assert(host.textContent.includes('완료 후 이용'));
 let buttons=()=>Array.from(host.querySelectorAll('button'));buttons().find(b=>b.textContent==='2').click();assert(!host.textContent.includes('정답 1번'));buttons().find(b=>b.textContent==='정답·해설 확인하기').click();await new Promise(r=>setImmediate(r));assert(host.textContent.includes('정답 1번 · 내 선택 2번'));assert(host.textContent.includes('원천 자료에 확인된 해설이 없어요'));
 assert.equal(JSON.stringify(q),before);assert(reads>=2);resetAt='2026-11-08T00:00:00Z';buttons().find(b=>b.textContent==='정답·해설 확인하기').click();await new Promise(r=>setImmediate(r));assert(host.textContent.includes('문제가 없어요'));assert(!host.textContent.includes('정답 1번'));

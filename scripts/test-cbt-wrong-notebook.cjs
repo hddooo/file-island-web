@@ -72,6 +72,7 @@ async function open(h, selector = 'details[data-notebook-question]') { const det
     await open(h);
     same(h.images, [original.items[0].common.image, original.items[0].image], 'authenticated common and question images requested');
     same(h.host.querySelectorAll('img').length, 2, 'source and common images rendered');
+    same(h.host.querySelectorAll('img[data-company-exam-image]').length, 2, 'both mounted source images carry company visibility exception');
     same(h.explanationCalls.length,0,'answer explanation hidden until explicit button');
     h.host.querySelector('[data-notebook-show-answer]').click();
     same(h.explanationCalls, [{ questionId: 'exam-79-01', version: 'saved-v1', status: 'final' }], 'saved final wrong item passed to established explanation renderer');

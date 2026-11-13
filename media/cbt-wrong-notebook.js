@@ -125,7 +125,7 @@
           currentURL = urlAPI.createObjectURL(blob); ctx.urls.add(currentURL);
           if (isCommon) figure.insertBefore(node('figcaption', '공통 자료 ' + item.common.questionNumbers.join('·') + '번'), status);
           var link = node('a'); link.href = currentURL; link.target = '_blank'; link.rel = 'noopener noreferrer'; link.setAttribute('aria-label', '제' + item.exam + '회 ' + item.number + '번 원본 크게 보기');
-          var img = node('img', null, 'mock-image'); imageNode = img;
+          var img = node('img', null, 'mock-image'); img.setAttribute('data-company-exam-image', ''); imageNode = img;
           img.alt = isCommon ? '공통 자료 ' + item.common.questionNumbers.join('·') + '번' : '제' + item.exam + '회 ' + item.number + '번 원본 문제·보기';
           img.style.width = '100%'; img.style.maxWidth = '100%'; img.style.height = 'auto';
           img.addEventListener('load', function () { if (current(attempt)) status.remove(); });
