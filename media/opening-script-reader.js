@@ -3,6 +3,9 @@
   // A data-injected reader. No endpoint, credentials, storage, grading or release-gate overrides.
   const colors = new Set(['#0070a3','#ff0000','#808080','#bfbfbf','#9b9ba8','#289b6e','#ed7d31','#000000','#ffff00','#0000ff','#1d9a78']);
   function inline(doc, target, text) {
+    // Requested emphasis only; the pinned textbook source remains unchanged.
+    text=text.replace(/\*\*조선의 관세 자주권\*\*/g,'조선의 **관세 자주권**').replace(/<strong>조선의 관세 자주권<\/strong>/g,'조선의 <strong>관세 자주권</strong>');
+    text=text.replace(/^영선사(?=\s*\(청\s*,\s*김윤식\))/, '**영선사**');
     const tokens = /(<\/?(?:span|strong|u|br)\b[^>]*>|\*\*([^*]+)\*\*|\*([^*]+)\*|\[([^\]]+)\]\(([^)]+)\))/gi;
     let cursor=0, current=target; const stack=[];
     for (const m of text.matchAll(tokens)) {
