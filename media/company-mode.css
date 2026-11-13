@@ -162,7 +162,7 @@ html[data-company-mode=on] #app#app#app [data-company-native-row]{display:flex!i
 html[data-company-mode=on] #app#app#app [data-company-native-row]:is(:hover,:focus-visible){background:#161b22!important}
 html[data-company-mode=on] #app#app#app [data-company-native-row]:focus-visible{outline:2px solid #58a6ff!important;outline-offset:-2px!important}
 html[data-company-mode=on] #app#app#app .company-native-file{display:inline-block!important;flex:0 0 184px!important;width:184px!important;color:#79c0ff!important;font:12px/1.6 var(--company-font)!important;overflow-wrap:anywhere!important}
-html[data-company-mode=on] #app#app#app .company-native-file::before{content:'▤ '!important;color:#8b949e!important}
+html[data-company-mode=on] #app#app#app .company-native-file::before{content:'�� '!important;color:#8b949e!important}
 html[data-company-mode=on] #app#app#app [data-company-native-directory] [data-company-line]{padding-left:0!important;margin:0!important}
 html[data-company-mode=on] #app#app#app [data-company-native-directory] [data-company-line]::before{display:none!important}
 html[data-company-mode=on] #app#app#app .toc .period{display:grid!important;grid-template-columns:184px minmax(0,1fr) auto!important;gap:18px!important;min-height:44px!important;padding:9px 12px!important;background:#0d1117!important}
@@ -237,7 +237,7 @@ html[data-company-mode=on] #app#app#app :is(#formalExamHost,#cbtWrongNotebookHos
 html[data-company-mode=on] #app#app#app :is(#formalExamHost,#cbtWrongNotebookHost) .fe-reviews>.fe-review>details{margin:0!important;padding:0!important;border:0!important;border-radius:0!important;background:#0d1117!important;box-shadow:none!important}
 html[data-company-mode=on] #app#app#app :is(#formalExamHost,#cbtWrongNotebookHost) .fe-review>details>summary{border:0!important;min-height:44px!important;padding:10px 12px!important;background:#0d1117!important;color:#c9d1d9!important;font:12px/1.7 var(--company-font)!important;list-style:none!important}
 html[data-company-mode=on] #app#app#app :is(#formalExamHost,#cbtWrongNotebookHost) .fe-review>details>summary::after{content:'+'!important;display:block!important;margin-left:auto!important;color:#8b949e!important}
-html[data-company-mode=on] #app#app#app :is(#formalExamHost,#cbtWrongNotebookHost) .fe-review>details[open]>summary::after{content:'−'!important}
+html[data-company-mode=on] #app#app#app :is(#formalExamHost,#cbtWrongNotebookHost) .fe-review>details[open]>summary::after{content:'?'!important}
 html[data-company-mode=on] #app#app#app :is(#formalExamHost,#cbtWrongNotebookHost) .fe-review-body{margin:0!important;padding:12px!important;border-top:1px solid #30363d!important}
 @media(max-width:600px){
  html[data-company-mode=on] #app#app#app #formalExamHost .fe-rounds>.fe-round{grid-template-columns:minmax(0,1fr)!important;padding:0!important}
@@ -270,3 +270,15 @@ html[data-company-mode=on][data-company-history] body :is(.textbook-figure-group
 
 /* Collapse the source table shell as well when it contains only hidden artwork. */
 html[data-company-mode=on][data-company-history] body [data-company-image-only]{display:none!important}
+
+/* Quiet header controls retain their native target and keyboard affordance. */
+html[data-company-mode=on] body :is(#homeBrand#homeBrand#homeBrand#homeBrand,#headerAccount,#headerLogout){background:transparent!important;border-color:transparent!important}
+html[data-company-mode=on] body :is(#homeBrand#homeBrand#homeBrand#homeBrand,#headerAccount,#headerLogout):hover{background:#161b22!important;border-color:transparent!important}
+html[data-company-mode=on] body :is(#homeBrand#homeBrand#homeBrand#homeBrand,#headerAccount,#headerLogout):focus-visible{background:#161b22!important;outline:2px solid #79c0ff!important;outline-offset:2px;border-color:transparent!important}
+/* Restore document hierarchy without scaling controls or numeric feedback. */
+html[data-company-mode=on] :is(#app#app#app#app,dialog,[role=dialog],.company-document) h1{font-size:22px!important;line-height:1.4!important}
+html[data-company-mode=on] :is(#app#app#app#app,dialog,[role=dialog],.company-document) h2{font-size:18px!important;line-height:1.5!important}
+html[data-company-mode=on] :is(#app#app#app#app,dialog,[role=dialog],.company-document) h3{font-size:16px!important;line-height:1.5!important}
+html[data-company-mode=on] :is(#app#app#app,dialog,[role=dialog],.company-document) :is(h4,h5,h6){font-size:14px!important;line-height:1.6!important}
+html[data-company-mode=on] #app#app#app :is(.gsr-source-card,.jsr-source-card,.osr-source-card,.history-notes-design .textbook-semantic-text,.history-notes-design .textbook-semantic-table) :is(strong,b):not(.history81-frequency):not(.textbook-coordinate-diagram-circle *){color:#79c0ff!important;-webkit-text-fill-color:currentColor!important;font-weight:700!important}
+html[data-company-mode=on] #app#app#app :is(.gsr-source-card,.jsr-source-card,.osr-source-card,.history-notes-design .textbook-semantic-text,.history-notes-design .textbook-semantic-table) :is(strong,b) :is(span,em,.history81-term){color:inherit!important;-webkit-text-fill-color:currentColor!important}

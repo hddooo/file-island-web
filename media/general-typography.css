@@ -104,3 +104,11 @@ html:not([data-company-mode=on]) body :is(.textbook-semantic,.goryeo-script-read
     -webkit-text-fill-color: currentColor !important;
   }
 }
+
+/* Headings lead the eye; prose and compact controls keep their established scale. */
+@media screen{
+html:not([data-company-mode=on]) :is(#app#app#app#app,dialog,[role=dialog],.company-document) h1{font-size:24px!important;line-height:1.4!important}
+html:not([data-company-mode=on]) :is(#app#app#app#app,dialog,[role=dialog],.company-document) h2{font-size:20px!important;line-height:1.5!important}
+html:not([data-company-mode=on]) :is(#app#app#app#app,dialog,[role=dialog],.company-document) h3{font-size:17px!important;line-height:1.5!important}
+html:not([data-company-mode=on]) :is(#app#app#app,dialog,[role=dialog],.company-document) :is(h4,h5,h6){font-size:15px!important;line-height:1.6!important}
+}

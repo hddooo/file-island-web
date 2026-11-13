@@ -316,3 +316,21 @@ html body #app#app#app#app .textbook-source-goal-celebration>i:nth-child(3n){wid
 @keyframes source-goal-confetti{0%{opacity:0;transform:translate3d(0,0,0) rotate(0deg)}12%{opacity:.9}48%{opacity:.85;transform:translate3d(var(--confetti-x),var(--confetti-y),0) rotate(var(--confetti-spin))}100%{opacity:0;transform:translate3d(var(--confetti-end-x),96px,0) rotate(calc(var(--confetti-spin) * 2))}}
 html[data-company-mode=on] body #app#app#app#app .textbook-source-goal-celebration{display:none!important}
 @media(prefers-reduced-motion:reduce){html body #app#app#app#app .textbook-source-goal-celebration{display:none!important}html body #app#app#app#app .textbook-source-goal-celebration>i{animation:none!important}}
+
+/* Optional mobile panels keep the active question first without losing navigation. */
+html body #app#app#app#app .textbook-source-panel-toggle{display:none!important}
+@media(max-width:760px){
+html body #app#app#app#app .textbook-source-exam-sidebar{gap:8px}
+html body #app#app#app#app :is(.textbook-source-question-map,.textbook-source-history){padding:8px 12px!important;overflow:visible;max-height:none}
+html body #app#app#app#app :is(.textbook-source-question-map,.textbook-source-history)>h3{margin:0!important}
+html body #app#app#app#app .textbook-source-panel-label{display:none!important}
+html body #app#app#app#app .textbook-source-panel-toggle{display:flex!important;align-items:center;justify-content:space-between;gap:8px;width:100%;min-height:44px!important;padding:4px 0!important;border:0!important;background:transparent!important;box-shadow:none!important;color:inherit!important;font:inherit!important;text-align:left}
+html body #app#app#app#app .textbook-source-panel-toggle::after{display:block!important;content:'+'!important;position:static!important;background:none!important;font-size:18px!important}
+html body #app#app#app#app .textbook-source-panel-toggle[aria-expanded=true]::after{content:'\2212'!important}
+html body #app#app#app#app .textbook-source-panel-toggle:focus-visible{outline:2px solid #1756b1!important;outline-offset:2px}
+html body #app#app#app#app [data-mobile-collapsed=true]>.textbook-source-question-map-grid,
+html body #app#app#app#app [data-mobile-collapsed=true]>.textbook-source-history-list{display:none!important}
+html body #app#app#app#app .textbook-source-exam-sidebar .textbook-source-question-map-grid{max-height:220px;overflow-y:auto}
+html body #app#app#app#app .textbook-source-history-list{max-height:180px;overflow-y:auto}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-panel-toggle:focus-visible{outline-color:#79c0ff!important}
+}
