@@ -3192,6 +3192,25 @@ root.HanqHistory81VerifiedGlossary={
         99
       ]
     }
+,
+    {
+      "id": "verified-opening-neutralization",
+      "era": "opening",
+      "term": "중립화론",
+      "summary": "열강의 간섭을 막으려 조선을 중립국으로 만들자는 주장. 갑신정변 이후 부들러와 유길준 등이 제기했다.",
+      "sources": [
+        "https://contents.history.go.kr/eh_kk/teach/tong/III/22.htm"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "조선 중립화론",
+        "중립화론"
+      ],
+      "pages": [
+        93,
+        106
+      ]
+    }
   ]
 };
 })(typeof window==='object'?window:globalThis);
