@@ -9,6 +9,7 @@
   function sourceInfo(revision) { return sourceCatalog && sourceCatalog.sourceInfo(revision); }
 
   function errorText(error) {
+    if(error&&error.code==='source_grading_unavailable')return '새 채점 기능을 확인하지 못했습니다. 다시 시도해 주세요. 답안은 저장되지 않았습니다.';
     if (error && (error.status === 401 || error.code === 'session_changed')) return '로그인을 확인해 주세요. 교재는 로그인한 회원 계정으로 볼 수 있어요.';
     if (error && error.status === 403) return '서버에서 교재 접근을 허용하지 않았어요. 로그인 상태와 회원 권한을 확인해 주세요.';
     if (error && (error.status === 503 || error.code === 'textbook_not_configured' || error.code === 'textbook_semantic_not_configured')) return '회원용 텍스트 교재 저장소가 아직 설정되지 않았어요.';
@@ -183,14 +184,16 @@
         if (selectedMode === 'quiz' && Array.isArray(data.items)) { quizCount = data.items.length; updateCoverage(); }
         var renderer = selectedMode === 'text' ? (options.pageRenderer || root.HanqTextbookSemantic) : selectedMode === 'choices' ? (options.choiceRenderer || root.HanqTextbookFourChoice) : (options.quizRenderer || root.HanqTextbookSourceQuiz);
         if (!renderer || typeof renderer.render !== 'function') throw new Error('semantic_renderer_unavailable');
+        var gradingRequested=selectedMode==='quiz'&&doc.querySelector('meta[name="hanq-source-grading"]'),grading=gradingRequested&&root.HanqSourceGradingV2Session&&root.HanqSourceGradingV2Session.selected(doc)?root.HanqSourceGradingV2Session.create({api:api,era:quizId,sourceRevision:boundRevision,isCurrent:function(){return valid(g,r);}}):null;if(gradingRequested&&!grading)throw new Error('source_grading_unavailable');
         child = renderer.render(panel, data, {
           ownerId: api.state().ownerId,
           manualSave: selectedMode==='quiz',
           sequential: selectedMode==='quiz',
+          gradingVersion:grading?2:1,loadLegacyProgress:grading?function(){return grading.loadLegacy();}:undefined,
           sourceRevision:sourceSha,
           sourcePromptStyles:selectedMode==='quiz'&&manifest.sourcePromptStylesByQuiz?manifest.sourcePromptStylesByQuiz[quizId]:undefined,
-          loadProgress: function () { if (!valid(g,r)) return Promise.reject(sessionError()); return api.textbookSourceWorkspace(quizId,boundRevision); },
-          saveProgress: function (body) { if (!valid(g,r)) return Promise.reject(sessionError()); return api.saveTextbookSourceWorkspace(quizId,body,boundRevision); },
+          loadProgress: function () { if (!valid(g,r)) return Promise.reject(sessionError()); return grading?grading.load():api.textbookSourceWorkspace(quizId,boundRevision); },
+          saveProgress: function (body) { if (!valid(g,r)) return Promise.reject(sessionError()); return grading?grading.save(body):api.saveTextbookSourceWorkspace(quizId,body,boundRevision); },
           isFigureAvailable: function (figure) {
             var entry = pages.find(function (p) { return p.pdfPage === n; });
             return !!(entry && entry.figuresAvailable !== false && Array.isArray(manifest.figures) && manifest.figures.some(function (f) { return f.id === figure.assetId; }));

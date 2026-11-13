@@ -18,11 +18,12 @@
     }
     async function load(g){
       current(g);const model=validate(await api.textbookSemanticQuiz(era,binding.revision));current(g);
-      const first=await api.textbookSourceWorkspace(era,binding.revision);current(g);if(first.version!==model.version)throw Error('workspace_version');let initial=first;
+      const selected=doc.querySelector('meta[name="hanq-source-grading"]'),grading=selected?(root.HanqSourceGradingV2Session&&root.HanqSourceGradingV2Session.selected(doc)?root.HanqSourceGradingV2Session.create({api,era,sourceRevision:binding.revision,isCurrent:()=>alive&&g===generation&&isCurrent()}):null):null;if(selected&&!grading)throw Error('source_grading_unavailable');
+      const first=await (grading?grading.load():api.textbookSourceWorkspace(era,binding.revision));current(g);if(first.version!==model.version)throw Error('workspace_version');let initial=first;
       const checkedReview=first.reviewSelectionAvailable===true&&Array.isArray(first.workspace?.selectedReviewQuestionIds);
-      controller=(options.renderer||root.HanqTextbookSourceQuiz).render(host,model,{ownerId,checkedReview,manualSave:true,sequential:true,sourceRevision:binding.revision,recovery:options.recovery||root.HanqAuthSession,
-        loadProgress:async()=>{current(g);const response=initial||await api.textbookSourceWorkspace(era,binding.revision);initial=null;current(g);if(response.version!==model.version)throw Error('workspace_version');return response;},
-        saveProgress:async body=>{current(g);const response=await api.saveTextbookSourceWorkspace(era,body,binding.revision);current(g);if(response.version!==model.version)throw Error('workspace_version');return response;}
+      controller=(options.renderer||root.HanqTextbookSourceQuiz).render(host,model,{ownerId,checkedReview,manualSave:true,sequential:true,gradingVersion:grading?2:1,loadLegacyProgress:grading?()=>grading.loadLegacy():undefined,sourceRevision:binding.revision,recovery:options.recovery||root.HanqAuthSession,
+        loadProgress:async()=>{current(g);const response=initial||await (grading?grading.load():api.textbookSourceWorkspace(era,binding.revision));initial=null;current(g);if(response.version!==model.version)throw Error('workspace_version');return response;},
+        saveProgress:async body=>{current(g);const response=await (grading?grading.save(body):api.saveTextbookSourceWorkspace(era,body,binding.revision));current(g);if(response.version!==model.version)throw Error('workspace_version');return response;}
       });await controller.ready;current(g);
     }
     function show(parent,entry){current();if(entry&&entry.fresh)discard();parent.append(host);if(!loading){const g=generation;host.textContent='계정별 빈칸 퀴즈를 불러오는 중입니다.';loading=load(g).catch(e=>{if(alive&&g===generation&&isCurrent()){if(controller)controller.cleanup();controller=null;host.replaceChildren();const note=doc.createElement('p');note.setAttribute('role','status');note.textContent='퀴즈를 불러오지 못했습니다. 다시 시도해 주세요.';const retry=doc.createElement('button');retry.type='button';retry.textContent='다시 시도';retry.onclick=()=>{loading=null;show(parent);};host.append(note,retry);}throw e;});loading.catch(()=>{});}return loading;}

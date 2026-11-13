@@ -46,7 +46,7 @@
     const controller={stop:dispose};active=controller;
     win.addEventListener('popstate',back);
     if(api&&api.onChange)unsubscribe=api.onChange(()=>{if(identity()!==owner){dispose();host.querySelectorAll('.era-progress-tools').forEach(n=>n.remove());}});
-    async function read(id){const quizId=id==='samguk'?'ancient':id;const model=await api.textbookSemanticQuiz(quizId,revision);if(!valid())throw Error('session_changed');const result=await api.textbookSourceWorkspace(quizId,revision);if(!valid())throw Error('session_changed');if(model.id!==quizId)throw Error('era_binding');if(!model.version){const bytes=new win.TextEncoder().encode(JSON.stringify({schema:model.schemaVersion,source:model.source,items:model.items}));model.progressVersion=Array.from(new Uint8Array(await win.crypto.subtle.digest('SHA-256',bytes))).map(x=>x.toString(16).padStart(2,'0')).join('');if(!valid())throw Error('session_changed');}return {model,result,stats:summary(model,result)};}
+    async function read(id){const quizId=id==='samguk'?'ancient':id;const model=await api.textbookSemanticQuiz(quizId,revision);if(!valid())throw Error('session_changed');const selected=doc.querySelector('meta[name="hanq-source-grading"]'),session=selected&&root.HanqSourceGradingV2Session&&root.HanqSourceGradingV2Session.selected(doc)?root.HanqSourceGradingV2Session.create({api,era:quizId,sourceRevision:revision,isCurrent:valid}):null;if(selected&&!session)throw Error('source_grading_unavailable');const result=await (session?session.load():api.textbookSourceWorkspace(quizId,revision));if(!valid())throw Error('session_changed');if(model.id!==quizId)throw Error('era_binding');if(!model.version){const bytes=new win.TextEncoder().encode(JSON.stringify({schema:model.schemaVersion,source:model.source,items:model.items}));model.progressVersion=Array.from(new Uint8Array(await win.crypto.subtle.digest('SHA-256',bytes))).map(x=>x.toString(16).padStart(2,'0')).join('');if(!valid())throw Error('session_changed');}const stats=summary(model,result);let grading;if(session){if(!root.HanqSourceGradingV2)throw Error('source_grading_unavailable');grading={gradingVersion:2,matcher:await root.HanqSourceGradingV2.prepare(model,result.version)};if(!valid())throw Error('session_changed');}return {model,result,stats,grading};}
     function paint(tools,record){
       const status=tools.querySelector('.era-progress-status');status.replaceChildren();tools.dataset.state='ready';
       if(tools.dataset.reviewEra){status.textContent=record.stats.finalSubmitted?' (정답률 : '+record.stats.scorePercent+'%, 오답 : '+record.stats.wrong.length+'문항)':' (기록 없음)';return;}
@@ -145,7 +145,7 @@
             if(item.kind==='classification')slots.forEach((slot,i)=>{const row=node('div','era-practice-classification'),label=node('span','');appendText(label,item.subitems[i].sourceText);row.append(label,field(slot,label.textContent));card.append(row);});
             function grade(index){
               if(!valid()||dialog!==current||!card.isConnected)return;
-              const graded=engine.gradePractice(item,fields.map(f=>f.value));
+              const graded=engine.gradePractice(item,fields.map(f=>f.value),record.grading);
               graded.slots.forEach((r,i)=>{if(Number.isInteger(index)&&index!==i)return;const f=feedback[i];f.textContent=r.feedback;f.hidden=false;f.dataset.result=r.complete?(r.correct?'correct':'wrong'):'empty';fields[i].dataset.result=f.dataset.result;fields[i].setAttribute('aria-invalid',String(r.complete&&!r.correct));});
             }
           }

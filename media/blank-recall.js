@@ -11,10 +11,80 @@
     ['9산 선문','9산문'],
     ['대조영','고왕']
   ].map(function(group){return group.map(normalize);});
+
+// User-approved answer shorthand, not a claim that these treaties are identical.
+const treatyAnswerAliases = [
+  [
+    [
+      "조일무역규칙 (조일통상장정)",
+      "조일무역규칙",
+      "조일통상장정"
+    ],
+    [
+      "조일"
+    ]
+  ],
+  [
+    [
+      "수호조규부록",
+      "조일수호조규부록"
+    ],
+    [
+      "조일수호조규",
+      "조일조규"
+    ]
+  ],
+  [
+    [
+      "개정된 통상장정"
+    ],
+    [
+      "개정된 조일통상장정",
+      "개정된 무역통상장정"
+    ]
+  ],
+  [
+    [
+      "조청상민수륙무역장정"
+    ],
+    [
+      "조청"
+    ]
+  ],
+  [
+    [
+      "조미수호통상조약"
+    ],
+    [
+      "조미"
+    ]
+  ],
+  [
+    [
+      "조프통상조약"
+    ],
+    [
+      "조프"
+    ]
+  ],
+  [
+    [
+      "조영통상조약"
+    ],
+    [
+      "조영"
+    ]
+  ]
+];
+function treatyAliasMatches(value,expected){
+ const clean=s=>String(s).normalize('NFC').replace(/\s+/g,'');
+ return treatyAnswerAliases.some(([keys,aliases])=>keys.some(key=>clean(key)===clean(expected))&&aliases.some(alias=>clean(alias)===clean(value)));
+}
+
   function matchesAnswer(value,answer){
     var given=normalize(value),expected=normalize(answer);
     if(!given)return false;
-    if(given===expected)return true;
+    if(given===expected||treatyAliasMatches(value,answer))return true;
     var source=String(answer||'').normalize('NFKC').trim(),pair=source.match(/^([^()]+)\(([^()]+)\)$/);
     var names=pair?[normalize(pair[1]),normalize(pair[2])]:[expected];
     return answerNameGroups.some(function(group){

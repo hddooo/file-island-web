@@ -325,6 +325,16 @@
       var prefix = '/api/v1/textbook' + (sourceRevision == null ? '' : '/revisions/' + sourceRevision);
       return call(method, prefix + suffix, opts);
     }
+    // Explicit opt-in only. These versioned methods never retry a version-2 request through legacy storage.
+    function requireSourceGradingV2(result) {
+      if (!result || result.gradingVersion !== 2 || !Array.isArray(result.supportedGradingVersions) || result.supportedGradingVersions.indexOf(2) < 0 || result.gradingStorageScope !== 'isolated-v2') throw ApiError(503, 'source_grading_unavailable');
+      return result;
+    }
+    function textbookGradingV2(method, kind, id, body, revision) {
+      if (!/^[a-z0-9-]+$/.test(id || '')) return Promise.reject(ApiError(400, 'invalid_quiz'));
+      if (method === 'PUT' && (!body || body.gradingVersion !== 2)) return Promise.reject(ApiError(400, 'invalid_grading_version'));
+      return textbookCall(method, '/semantic/' + kind + '/' + id + (method === 'GET' ? '?gradingVersion=2' : ''), method === 'PUT' ? {body:body} : undefined, revision).then(requireSourceGradingV2);
+    }
     function textbookPageAllowed(page, sourceRevision) { return Number.isInteger(page) && page >= 1 && page <= (sourceRevision === 'd54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de' ? 147 : 144); }
     var api = {
       openingScriptBundle: function(source,signal){if(!/^[a-f0-9]{64}$/.test(source||''))return Promise.reject(ApiError(400,'invalid_script_source'));return call('GET','/api/v1/textbook/scripts/opening/'+source+'/bundle',{signal:signal,privateResponse:true,responseType:'application/json',binary:true,mediaType:'application/json'});},
@@ -345,6 +355,10 @@
       saveTextbookSourceWorkspace: function (id, body, revision) { if (!/^[a-z0-9-]+$/.test(id || '')) return Promise.reject(ApiError(400, 'invalid_quiz')); return textbookCall('PUT', '/semantic/workspaces/' + id, {body:body}, revision); },
       textbookSourceProgress: function (id, revision) { if (!/^[a-z0-9-]+$/.test(id || '')) return Promise.reject(ApiError(400, 'invalid_quiz')); return textbookCall('GET', '/semantic/progress/' + id, undefined, revision); },
       saveTextbookSourceProgress: function (id, body, revision) { if (!/^[a-z0-9-]+$/.test(id || '')) return Promise.reject(ApiError(400, 'invalid_quiz')); return textbookCall('PUT', '/semantic/progress/' + id, {body:body}, revision); },
+      textbookSourceWorkspaceV2: function (id, revision) { return textbookGradingV2('GET', 'workspaces', id, undefined, revision); },
+      saveTextbookSourceWorkspaceV2: function (id, body, revision) { return textbookGradingV2('PUT', 'workspaces', id, body, revision); },
+      textbookSourceProgressV2: function (id, revision) { return textbookGradingV2('GET', 'progress', id, undefined, revision); },
+      saveTextbookSourceProgressV2: function (id, body, revision) { return textbookGradingV2('PUT', 'progress', id, body, revision); },
       textbookSemanticChoices: function (id, revision) { if (!/^[a-z0-9-]+$/.test(id || '')) return Promise.reject(ApiError(400, 'invalid_quiz')); return textbookCall('GET', '/semantic/choices/' + id, undefined, revision); },
       textbookSemanticFigure: function (id, revision) { if (!/^p[0-9]{3}-figure-[0-9]+$/.test(id || '')) return Promise.reject(ApiError(400, 'invalid_figure')); return textbookCall('GET', '/semantic/figures/' + id, {binary:true,mediaTypes:['image/jpeg','image/png']}, revision); },
       textbookManifest: function (revision) { return textbookCall('GET', '/manifest', undefined, revision); },
