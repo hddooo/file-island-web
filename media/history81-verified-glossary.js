@@ -583,11 +583,14 @@ root.HanqHistory81VerifiedGlossary={
         "통리기무아문과"
       ],
       "pages": [
-        91
+        91,
+        92,
+        93
       ],
       "followingParticles": [
         "과"
-      ]
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-군국기무처",
@@ -602,8 +605,12 @@ root.HanqHistory81VerifiedGlossary={
         "군국기무처"
       ],
       "pages": [
-        96
-      ]
+        96,
+        98,
+        99,
+        101
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-지계",
@@ -618,8 +625,11 @@ root.HanqHistory81VerifiedGlossary={
         "지계"
       ],
       "pages": [
-        96
-      ]
+        96,
+        97,
+        98
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-대한국국제",
@@ -634,8 +644,11 @@ root.HanqHistory81VerifiedGlossary={
         "대한국국제"
       ],
       "pages": [
-        96
-      ]
+        96,
+        97,
+        98
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-구본신참",
@@ -650,8 +663,13 @@ root.HanqHistory81VerifiedGlossary={
         "구본신참"
       ],
       "pages": [
-        96
-      ]
+        96,
+        97,
+        98,
+        99,
+        101
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-조사시찰단",
@@ -666,8 +684,13 @@ root.HanqHistory81VerifiedGlossary={
         "조사시찰단",
         "조사 시찰단"
       ],
-      "pages": [],
-      "inactiveReason": "Source term is plain text, not emphasized"
+      "pages": [
+        91,
+        92,
+        93
+      ],
+      "inactiveReason": "Source term is plain text, not emphasized",
+      "allowPlain": true
     },
     {
       "id": "verified-opening-영선사",
@@ -682,8 +705,12 @@ root.HanqHistory81VerifiedGlossary={
         "영선사"
       ],
       "pages": [
+        91,
+        92,
+        93,
         105
-      ]
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-보빙사",
@@ -698,8 +725,10 @@ root.HanqHistory81VerifiedGlossary={
         "보빙사"
       ],
       "pages": [
-        91
-      ]
+        91,
+        92
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-위정척사",
@@ -715,8 +744,11 @@ root.HanqHistory81VerifiedGlossary={
         "위정척사운동"
       ],
       "pages": [
-        91
-      ]
+        91,
+        92,
+        93
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-독립협회",
@@ -730,8 +762,14 @@ root.HanqHistory81VerifiedGlossary={
       "aliases": [
         "독립협회"
       ],
-      "pages": [],
-      "inactiveReason": "Source title is not an emphasized literal"
+      "pages": [
+        96,
+        98,
+        105,
+        106
+      ],
+      "inactiveReason": "Source title is not an emphasized literal",
+      "allowPlain": true
     },
     {
       "id": "verified-opening-관민공동회",
@@ -747,8 +785,10 @@ root.HanqHistory81VerifiedGlossary={
         "관민 공동회"
       ],
       "pages": [
-        96
-      ]
+        96,
+        98
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-만민공동회",
@@ -764,8 +804,10 @@ root.HanqHistory81VerifiedGlossary={
         "만민 공동회"
       ],
       "pages": [
-        96
-      ]
+        96,
+        98
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-13도창의군",
@@ -781,8 +823,10 @@ root.HanqHistory81VerifiedGlossary={
         "13도 창의군"
       ],
       "pages": [
-        99
-      ]
+        99,
+        100
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-국채보상운동",
@@ -798,8 +842,11 @@ root.HanqHistory81VerifiedGlossary={
         "국채 보상 운동"
       ],
       "pages": [
+        99,
+        100,
         105
-      ]
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-prehistory-움집",
@@ -1385,7 +1432,8 @@ root.HanqHistory81VerifiedGlossary={
       ],
       "pages": [
         89
-      ]
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-해안측량권",
@@ -1402,7 +1450,8 @@ root.HanqHistory81VerifiedGlossary={
       ],
       "pages": [
         91
-      ]
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-최혜국대우",
@@ -1418,8 +1467,10 @@ root.HanqHistory81VerifiedGlossary={
         "최혜국 대우"
       ],
       "pages": [
-        91
-      ]
+        91,
+        92
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-조선책략",
@@ -1435,8 +1486,10 @@ root.HanqHistory81VerifiedGlossary={
         "조선 책략"
       ],
       "pages": [
-        91
-      ]
+        91,
+        92
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-전주화약",
@@ -1452,8 +1505,10 @@ root.HanqHistory81VerifiedGlossary={
         "전주 화약"
       ],
       "pages": [
-        96
-      ]
+        96,
+        97
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-교정청",
@@ -1468,8 +1523,12 @@ root.HanqHistory81VerifiedGlossary={
         "교정청"
       ],
       "pages": [
-        96
-      ]
+        96,
+        97,
+        99,
+        101
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-화폐정리사업",
@@ -1485,8 +1544,10 @@ root.HanqHistory81VerifiedGlossary={
         "화폐 정리 사업"
       ],
       "pages": [
-        99
-      ]
+        99,
+        100
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-동양척식주식회사",
@@ -1502,8 +1563,10 @@ root.HanqHistory81VerifiedGlossary={
         "동양 척식 주식회사"
       ],
       "pages": [
-        99
-      ]
+        99,
+        100
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-한성순보",
@@ -1518,8 +1581,10 @@ root.HanqHistory81VerifiedGlossary={
         "한성순보"
       ],
       "pages": [
-        105
-      ]
+        105,
+        106
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-여권통문",
@@ -1536,7 +1601,8 @@ root.HanqHistory81VerifiedGlossary={
       ],
       "pages": [
         105
-      ]
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-samguk-좌평",
@@ -1638,8 +1704,12 @@ root.HanqHistory81VerifiedGlossary={
         "기기창"
       ],
       "pages": [
-        91
-      ]
+        91,
+        92,
+        105,
+        106
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-폐정개혁안",
@@ -1655,8 +1725,10 @@ root.HanqHistory81VerifiedGlossary={
         "폐정 개혁안"
       ],
       "pages": [
-        96
-      ]
+        96,
+        97
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-교육입국조서",
@@ -1672,8 +1744,13 @@ root.HanqHistory81VerifiedGlossary={
         "교육 입국 조서"
       ],
       "pages": [
-        96
-      ]
+        96,
+        98,
+        99,
+        101,
+        105
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-원수부",
@@ -1688,8 +1765,11 @@ root.HanqHistory81VerifiedGlossary={
         "원수부"
       ],
       "pages": [
-        96
-      ]
+        96,
+        97,
+        98
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-박문국",
@@ -1705,7 +1785,8 @@ root.HanqHistory81VerifiedGlossary={
       ],
       "pages": [
         105
-      ]
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-원각사",
@@ -1720,8 +1801,10 @@ root.HanqHistory81VerifiedGlossary={
         "원각사"
       ],
       "pages": [
-        105
-      ]
+        105,
+        106
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-왜양일체론",
@@ -1737,8 +1820,13 @@ root.HanqHistory81VerifiedGlossary={
         "왜양 일체론"
       ],
       "pages": [
-        105
-      ]
+        91,
+        92,
+        93,
+        105,
+        106
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-prehistory-한무제",
@@ -2315,7 +2403,8 @@ root.HanqHistory81VerifiedGlossary={
       "verifiedOn": "2026-11-09",
       "pages": [
         91
-      ]
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-colonial-의열단",
@@ -2716,7 +2805,8 @@ root.HanqHistory81VerifiedGlossary={
       ],
       "pages": [
         89
-      ]
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-jogye",
@@ -2732,7 +2822,8 @@ root.HanqHistory81VerifiedGlossary={
       ],
       "pages": [
         91
-      ]
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-mediation",
@@ -2747,8 +2838,10 @@ root.HanqHistory81VerifiedGlossary={
         "거중조정"
       ],
       "pages": [
-        91
-      ]
+        91,
+        92
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-inland-trade",
@@ -2764,8 +2857,10 @@ root.HanqHistory81VerifiedGlossary={
         "내지통상권"
       ],
       "pages": [
-        91
-      ]
+        91,
+        92
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-tariff",
@@ -2781,8 +2876,10 @@ root.HanqHistory81VerifiedGlossary={
         "관세 자주권"
       ],
       "pages": [
-        91
-      ]
+        91,
+        92
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-susinsa",
@@ -2797,8 +2894,10 @@ root.HanqHistory81VerifiedGlossary={
         "수신사"
       ],
       "pages": [
-        91
-      ]
+        91,
+        92
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-appendix",
@@ -2815,7 +2914,8 @@ root.HanqHistory81VerifiedGlossary={
       ],
       "pages": [
         91
-      ]
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-trade-rules",
@@ -2831,7 +2931,8 @@ root.HanqHistory81VerifiedGlossary={
       ],
       "pages": [
         91
-      ]
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-byeongin-persecution",
@@ -2847,7 +2948,8 @@ root.HanqHistory81VerifiedGlossary={
       ],
       "pages": [
         89
-      ]
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-byeongin-invasion",
@@ -2863,7 +2965,8 @@ root.HanqHistory81VerifiedGlossary={
       ],
       "pages": [
         89
-      ]
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-sinmi-invasion",
@@ -2879,7 +2982,8 @@ root.HanqHistory81VerifiedGlossary={
       ],
       "pages": [
         89
-      ]
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-ganghwa-treaty",
@@ -2895,8 +2999,13 @@ root.HanqHistory81VerifiedGlossary={
         "강화도조약"
       ],
       "pages": [
-        91
-      ]
+        91,
+        92,
+        93,
+        105,
+        106
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-jemulpo",
@@ -2912,8 +3021,11 @@ root.HanqHistory81VerifiedGlossary={
         "제물포조약"
       ],
       "pages": [
-        91
-      ]
+        91,
+        92,
+        93
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-us-treaty",
@@ -2929,8 +3041,10 @@ root.HanqHistory81VerifiedGlossary={
         "조미 수호 통상 조약"
       ],
       "pages": [
-        91
-      ]
+        91,
+        92
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-revised-trade",
@@ -2946,7 +3060,8 @@ root.HanqHistory81VerifiedGlossary={
       ],
       "pages": [
         91
-      ]
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-qing-trade",
@@ -2961,8 +3076,11 @@ root.HanqHistory81VerifiedGlossary={
         "조청상민수륙무역장정"
       ],
       "pages": [
-        91
-      ]
+        91,
+        92,
+        93
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-imo",
@@ -2977,8 +3095,11 @@ root.HanqHistory81VerifiedGlossary={
         "임오군란"
       ],
       "pages": [
-        91
-      ]
+        91,
+        92,
+        93
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-gapsin",
@@ -2993,8 +3114,11 @@ root.HanqHistory81VerifiedGlossary={
         "갑신정변"
       ],
       "pages": [
-        91
-      ]
+        91,
+        93,
+        105
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-gabo",
@@ -3009,8 +3133,13 @@ root.HanqHistory81VerifiedGlossary={
         "갑오개혁"
       ],
       "pages": [
-        96
-      ]
+        96,
+        98,
+        99,
+        101,
+        105
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-eulmi-reform",
@@ -3025,8 +3154,13 @@ root.HanqHistory81VerifiedGlossary={
         "을미개혁"
       ],
       "pages": [
-        96
-      ]
+        96,
+        97,
+        98,
+        99,
+        101
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-eulmi-incident",
@@ -3041,8 +3175,10 @@ root.HanqHistory81VerifiedGlossary={
         "을미사변"
       ],
       "pages": [
-        96
-      ]
+        96,
+        98
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-agwan",
@@ -3057,8 +3193,10 @@ root.HanqHistory81VerifiedGlossary={
         "아관파천"
       ],
       "pages": [
-        96
-      ]
+        96,
+        98
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-eulsa",
@@ -3073,8 +3211,12 @@ root.HanqHistory81VerifiedGlossary={
         "을사늑약"
       ],
       "pages": [
-        99
-      ]
+        99,
+        100,
+        105,
+        106
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-jeongmi",
@@ -3091,8 +3233,10 @@ root.HanqHistory81VerifiedGlossary={
         "한일신협약"
       ],
       "pages": [
-        99
-      ]
+        99,
+        100
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-protocol",
@@ -3108,8 +3252,10 @@ root.HanqHistory81VerifiedGlossary={
         "한일의정서"
       ],
       "pages": [
-        99
-      ]
+        99,
+        100
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-hague",
@@ -3125,8 +3271,10 @@ root.HanqHistory81VerifiedGlossary={
         "헤이그특사"
       ],
       "pages": [
-        99
-      ]
+        99,
+        100
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-sinmin",
@@ -3141,8 +3289,11 @@ root.HanqHistory81VerifiedGlossary={
         "신민회"
       ],
       "pages": [
-        99
-      ]
+        99,
+        101,
+        105
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-boan",
@@ -3157,8 +3308,10 @@ root.HanqHistory81VerifiedGlossary={
         "보안회"
       ],
       "pages": [
-        99
-      ]
+        99,
+        101
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-jagang",
@@ -3173,8 +3326,10 @@ root.HanqHistory81VerifiedGlossary={
         "대한자강회"
       ],
       "pages": [
-        99
-      ]
+        99,
+        101
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-opening-merchants",
@@ -3189,10 +3344,11 @@ root.HanqHistory81VerifiedGlossary={
         "황국중앙총상회"
       ],
       "pages": [
-        99
-      ]
-    }
-,
+        99,
+        101
+      ],
+      "allowPlain": true
+    },
     {
       "id": "verified-opening-neutralization",
       "era": "opening",
@@ -3207,8 +3363,540 @@ root.HanqHistory81VerifiedGlossary={
         "중립화론"
       ],
       "pages": [
+        91,
         93,
+        105,
         106
+      ],
+      "allowPlain": true
+    },
+    {
+      "id": "verified-opening-expanded-solar",
+      "era": "opening",
+      "term": "태양력",
+      "summary": "지구가 태양을 한 바퀴 도는 주기를 기준으로 만든 달력으로, 오늘날 쓰는 양력이다. 을미개혁 때 도입을 결정해 1896년 1월 1일부터 사용했다.",
+      "sources": [
+        "https://contents.history.go.kr/front/tg/view.do?levelId=tg_004_0720"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "태양력"
+      ],
+      "allowPlain": true,
+      "pages": [
+        96,
+        98,
+        99,
+        101
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-geonyang",
+      "era": "opening",
+      "term": "건양",
+      "summary": "1896년부터 사용한 고종의 연호. 태양력 시행과 함께 쓰였으며, 대한제국 선포 뒤에는 광무로 바뀌었다.",
+      "sources": [
+        "https://contents.history.go.kr/front/tg/view.do?levelId=tg_004_0720"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "건양"
+      ],
+      "allowPlain": true,
+      "pages": [
+        96,
+        98
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-chinwi",
+      "era": "opening",
+      "term": "친위대",
+      "summary": "을미개혁 때 편성한 중앙의 신식 군대. 수도와 왕실을 호위했으며 지방을 지키는 진위대와 구분한다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0006714"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "친위대"
+      ],
+      "allowPlain": true,
+      "pages": [
+        96,
+        97,
+        98
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-jinwi",
+      "era": "opening",
+      "term": "진위대",
+      "summary": "을미개혁 때 편성한 지방의 신식 군대. 지방의 치안과 방어를 담당했으며 중앙의 친위대와 구분한다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0006714"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "진위대"
+      ],
+      "allowPlain": true,
+      "pages": [
+        96,
+        97,
+        98
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-jogyo",
+      "era": "opening",
+      "term": "교조신원운동",
+      "summary": "처형된 동학 창시자 최제우의 억울함을 풀고 동학에 대한 탄압을 없애 달라고 요구한 운동. 삼례·보은 집회로 이어졌다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i401500"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "교조신원운동",
+        "교조 신원 운동",
+        "교조 신원운동",
+        "교조 신원"
+      ],
+      "allowPlain": true,
+      "pages": [
+        96,
+        97,
+        99,
+        101
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-boguk",
+      "era": "opening",
+      "term": "보국안민",
+      "summary": "나라를 돕고 백성을 편안하게 한다는 뜻. 동학농민군이 내세운 구호다.",
+      "sources": [
+        "https://contents.history.go.kr/front/tg/view.do?ganada=&levelId=tg_004_0950&pageUnit=10&treeId=0200"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "보국안민"
+      ],
+      "allowPlain": true,
+      "pages": [
+        96,
+        97
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-jepok",
+      "era": "opening",
+      "term": "제폭구민",
+      "summary": "포악한 정치를 없애고 백성을 구한다는 뜻. 동학농민군이 탐관오리의 횡포에 맞서 내세운 구호다.",
+      "sources": [
+        "https://contents.history.go.kr/front/tg/view.do?ganada=&levelId=tg_004_0950&pageUnit=10&treeId=0200"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "제폭구민"
+      ],
+      "allowPlain": true,
+      "pages": [
+        96,
+        97
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-donghak",
+      "era": "opening",
+      "term": "동학농민운동",
+      "summary": "1894년 전봉준 등을 중심으로 농민들이 부패한 정치와 외세의 침략에 맞서 일어난 운동. 2차 봉기에서는 일본군에 맞섰다.",
+      "sources": [
+        "https://contents.history.go.kr/front/tg/view.do?ganada=&levelId=tg_004_0950&pageUnit=10&treeId=0200"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "동학농민운동",
+        "동학 농민운동",
+        "동학 농민 운동"
+      ],
+      "allowPlain": true,
+      "pages": [
+        96,
+        97,
+        99,
+        101
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-samguk",
+      "era": "opening",
+      "term": "삼국간섭",
+      "summary": "1895년 러시아·프랑스·독일이 압력을 가해, 청일전쟁에서 승리한 일본이 차지했던 요동반도를 청에 돌려주게 한 사건.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/tg/view.do?ganada=&levelId=tg_004_0410&pageUnit=10&subjectCode=tg_ty_040&tabId=02"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "삼국간섭",
+        "삼국 간섭"
+      ],
+      "allowPlain": true,
+      "pages": [
+        96,
+        97,
+        98
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-shimonoseki",
+      "era": "opening",
+      "term": "시모노세키 조약",
+      "summary": "1895년 청일전쟁을 끝내며 청과 일본이 맺은 조약. 청은 일본에 요동반도·타이완 등을 넘기고 배상금을 내기로 했다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/tg/view.do?ganada=&levelId=tg_004_0410&pageUnit=10&subjectCode=tg_ty_040&tabId=02"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "시모노세키 조약",
+        "시모노세키조약"
+      ],
+      "allowPlain": true,
+      "pages": [
+        96
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-hanseong",
+      "era": "opening",
+      "term": "한성 조약",
+      "summary": "갑신정변 뒤인 1885년 조선과 일본이 맺은 조약. 조선에 배상금과 일본 공사관 신축 비용을 부담시켰다.",
+      "sources": [
+        "https://contents.history.go.kr/front/hm/print.do?levelId=hm_115_0070&treeId=010701"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "한성 조약",
+        "한성조약"
+      ],
+      "allowPlain": true,
+      "pages": [
+        91,
+        93
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-tianjin",
+      "era": "opening",
+      "term": "톈진 조약",
+      "summary": "갑신정변 뒤인 1885년 청과 일본이 맺은 조약. 양국 군대의 조선 철수와, 다시 파병할 때 서로 미리 알릴 것을 정했다.",
+      "sources": [
+        "https://contents.history.go.kr/front/hm/print.do?levelId=hm_115_0070&treeId=010701"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "톈진 조약",
+        "톈진조약"
+      ],
+      "allowPlain": true,
+      "pages": [
+        91,
+        93
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-takji",
+      "era": "opening",
+      "term": "탁지아문",
+      "summary": "1차 갑오개혁 때 국가의 세금과 재정 업무를 맡긴 중앙 관청. 여러 기관에 나뉘어 있던 재정을 한곳으로 모으려 했다.",
+      "sources": [
+        "https://contents.history.go.kr/front/ta/view.do?levelId=ta_h71_0040_0050_0020_0050"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "탁지아문"
+      ],
+      "allowPlain": true,
+      "pages": [
+        96
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-silver",
+      "era": "opening",
+      "term": "은 본위 화폐",
+      "summary": "은을 화폐 가치의 기준으로 삼는 제도. 1차 갑오개혁의 경제 개혁에 포함되었다.",
+      "sources": [
+        "https://contents.history.go.kr/front/ta/view.do?levelId=ta_h71_0040_0050_0020_0050"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "은 본위 화폐",
+        "은본위제",
+        "은 본위제"
+      ],
+      "allowPlain": true,
+      "pages": [
+        96
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-heonui",
+      "era": "opening",
+      "term": "헌의 6조",
+      "summary": "1898년 관민공동회에서 결의한 6개 개혁안. 외국에 이권을 넘길 때 신중히 하고, 국가 재정을 공개하며 민권을 보장하자는 내용이다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0015993"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "헌의 6조",
+        "헌의6조"
+      ],
+      "allowPlain": true,
+      "pages": [
+        96,
+        98
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-jungchuwon",
+      "era": "opening",
+      "term": "중추원",
+      "summary": "국정의 중요 사항을 논의하던 기구. 독립협회는 관선·민선 의관이 함께 참여하는 의회식 기구로 바꾸려 했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0015993"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "중추원"
+      ],
+      "allowPlain": true,
+      "pages": [
+        96,
+        98,
+        105,
+        106
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-jocha",
+      "era": "opening",
+      "term": "조차",
+      "summary": "다른 나라 영토의 일부를 빌려 일정 기간 통치하는 것. 단순히 땅을 임대하는 것보다 강한 지배 권한을 행사했다.",
+      "sources": [
+        "https://contents.history.go.kr/front/ta/print.do?levelId=ta_m71_0080_0030_0010_0010&whereStr="
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "조차"
+      ],
+      "allowPlain": true,
+      "pages": [
+        96,
+        98,
+        99,
+        100
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-geomundo",
+      "era": "opening",
+      "term": "거문도 사건",
+      "summary": "1885년 영국이 러시아의 남하를 견제한다는 구실로 조선의 거문도를 불법 점령한 사건.",
+      "sources": [
+        "https://contents.history.go.kr/front/ta/print.do?levelId=ta_m71_0080_0030_0010_0010&whereStr="
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "거문도 사건",
+        "거문도사건"
+      ],
+      "allowPlain": true,
+      "pages": [
+        91,
+        93
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-giyu",
+      "era": "opening",
+      "term": "기유각서",
+      "summary": "1909년 대한제국의 사법과 감옥 사무를 일본에 넘기도록 강요한 각서. 국권 침탈 과정에서 사법권 박탈과 연결된다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_n401800"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "기유각서"
+      ],
+      "allowPlain": true,
+      "pages": [
+        99,
+        100
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-case105",
+      "era": "opening",
+      "term": "105인 사건",
+      "summary": "1911년 일제가 데라우치 총독 암살 음모를 조작해 민족운동가들을 체포한 사건. 신민회 탄압에 이용되었다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i400100"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "105인 사건",
+        "105인사건"
+      ],
+      "allowPlain": true,
+      "pages": [
+        99,
+        101
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-presslaw",
+      "era": "opening",
+      "term": "신문지법",
+      "summary": "1907년 제정되어 신문 발행과 보도를 통제하는 데 이용된 법. 일제의 언론·애국계몽운동 탄압 수단이었다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i400100"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "신문지법"
+      ],
+      "allowPlain": true,
+      "pages": [
+        105
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-mint",
+      "era": "opening",
+      "term": "전환국",
+      "summary": "근대식 화폐를 만드는 관청. 무기를 만드는 기기창, 인쇄를 맡은 박문국과 역할을 구분하면 된다.",
+      "sources": [
+        "https://contents.history.go.kr/front/ta/view.do?levelId=ta_m62_0060_0030"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "전환국"
+      ],
+      "allowPlain": true,
+      "pages": [
+        105
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-dongmun",
+      "era": "opening",
+      "term": "동문학",
+      "summary": "1883년 설치한 영어 교육 기관. 외교·통상에 필요한 통역 인력을 양성했다.",
+      "sources": [
+        "https://contents.history.go.kr/front/ta/view.do?levelId=ta_m62_0060_0030"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "동문학"
+      ],
+      "allowPlain": true,
+      "pages": [
+        105
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-wonsan",
+      "era": "opening",
+      "term": "원산학사",
+      "summary": "1883년 함경도 덕원 지역의 주민과 관리들이 세운 근대적 학교. 새로운 학문과 무술 등을 가르쳤다.",
+      "sources": [
+        "https://contents.history.go.kr/front/ta/view.do?levelId=ta_m62_0060_0030"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "원산학사",
+        "원산 학사"
+      ],
+      "allowPlain": true,
+      "pages": [
+        105
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-normal",
+      "era": "opening",
+      "term": "한성사범학교",
+      "summary": "1895년 설립한 교사 양성 학교. 교육입국조서와 2차 갑오개혁의 교육 개혁에 연결된다.",
+      "sources": [
+        "https://contents.history.go.kr/front/ta/view.do?levelId=ta_m62_0060_0030"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "한성사범학교",
+        "한성 사범학교"
+      ],
+      "allowPlain": true,
+      "pages": [
+        96,
+        98,
+        105
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-daehannews",
+      "era": "opening",
+      "term": "대한매일신보",
+      "summary": "1904년 베델과 양기탁이 창간한 신문. 일제 침략을 비판하고 의병 활동과 국채보상운동을 지원했다.",
+      "sources": [
+        "https://contents.history.go.kr/front/ta/view.do?levelId=ta_m62_0060_0030"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "대한매일신보",
+        "대한 매일 신보"
+      ],
+      "allowPlain": true,
+      "pages": [
+        99,
+        100,
+        105,
+        106
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-daejun",
+      "era": "opening",
+      "term": "대전회통",
+      "summary": "1865년 편찬한 조선의 종합 법전. 기존 법전 이후의 법령을 보완해 통치 규정을 정리했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0014749"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "대전회통"
+      ],
+      "allowPlain": true,
+      "pages": [
+        89
+      ]
+    },
+    {
+      "id": "verified-opening-expanded-hospital",
+      "era": "opening",
+      "term": "광혜원",
+      "summary": "1885년 알렌의 건의로 세운 서양식 국립 병원. 곧 제중원으로 이름을 바꾸었다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/km/view.do?levelId=km_004_0060_0040_0010"
+      ],
+      "verifiedOn": "2026-11-13",
+      "aliases": [
+        "광혜원",
+        "제중원"
+      ],
+      "allowPlain": true,
+      "pages": [
+        105
       ]
     }
   ]
