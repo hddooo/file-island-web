@@ -124,3 +124,11 @@ html body .battle-island .bi-history-card.bi-history-neutral{background:#1c3035!
 .bi-weak-swipe i{display:block;width:5px;height:46px;border-radius:80% 10%;background:linear-gradient(#fffad4,#ffcc69 55%,transparent)!important;box-shadow:0 0 5px #ffdc89;transform:rotate(28deg)}
 .bi-weak-swipe[data-attacker=right] i{transform:rotate(-28deg)}
 .bi-weak-impact{width:32px;height:32px;border:3px solid #fff5cb;border-radius:50%;box-shadow:0 0 8px #ffd381}
+/* App-local full-screen question/review, without browser fullscreen permissions. */
+.battle-island.bi-in-match .bi-fullscreen-panel{position:fixed!important;inset:8px!important;inset:max(8px,env(safe-area-inset-top)) max(8px,env(safe-area-inset-right)) max(8px,env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left))!important;z-index:10020!important;width:auto!important;max-width:none!important;height:auto!important;max-height:none!important;margin:0!important;box-sizing:border-box!important;padding-top:56px!important;overscroll-behavior:contain}
+.battle-island .bi-fullscreen-toggle{position:absolute;top:8px;right:10px;z-index:2;font-size:13px;padding:6px 12px;min-height:36px}
+.battle-island .bi-fullscreen-panel .bi-question-image{width:auto;max-width:100%;max-height:none;object-fit:contain}
+.battle-island .bi-fullscreen-panel .bi-history-materials{width:min(100%,1000px);margin-inline:auto}
+.battle-island .bi-fullscreen-panel .bi-modal-time{top:12px;left:16px;right:auto}
+.battle-island .bi-review-modal.bi-fullscreen-panel{overflow:auto!important}
+.battle-island .bi-fullscreen-panel>.bi-fullscreen-toggle{position:fixed;top:max(16px,calc(env(safe-area-inset-top) + 8px));right:max(20px,calc(env(safe-area-inset-right) + 12px));z-index:10021;background:#153e40;color:#effff4}
