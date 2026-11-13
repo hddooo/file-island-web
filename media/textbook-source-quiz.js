@@ -481,6 +481,8 @@
     }
     function grade(row,entry){
       var parts=entry.answerIds.map(function(id){return row.item.answers.find(function(a){return a.id===id;}).text;}),value=entry.node.value;
+      // An empty sequential response stays unanswered, including cleared answers at submit.
+      if(sequential&&!normalize(value)){entry.graded=false;entry.match=false;entry.feedback.textContent='';feedbackResult(entry,null);entry.node.removeAttribute('aria-invalid');mark(row);return;}
       if(!normalize(value)&&!row.touched&&!row.hasResponse)return;
       entry.graded=!!normalize(value);var result=row.item.answer.sequenceTokens&&normalize(value)===normalize(row.item.answer.text)?'match':gradingVersion===2?gradingMatcher.gradeSlot(row.item,{id:entry.node.dataset.sourceResponseSlotId,answerIds:entry.answerIds,orderMatters:entry.orderMatters},value,compare):compare(value,parts,entry.orderMatters,row.item.kind,row.item.answer.sequenceSeparator);entry.match=result==='match';
       entry.feedback.textContent=result==='empty'?'':sequential&&entry.match?'✓ 정답: '+(row.item.answer.sequenceTokens?row.item.answer.text:parts.join(row.item.kind==='sequence'?(row.item.answer.sequenceSeparator||''):', ')):answerFeedback(row.item,entry,value,parts);feedbackResult(entry,result);entry.node.setAttribute('aria-invalid',String(result==='different'));mark(row);
