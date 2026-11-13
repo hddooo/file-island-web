@@ -116,6 +116,7 @@
   function openingPlainTerms(host,era,source){
     if(era!=='opening'||source!==opening)return ()=>{};
     const allowed={89:["병인박해","병인양요","신미양요"],91:["조계","거중조정","조미수호통상조약","조미 수호 통상 조약"],93:["중립화론"],106:["조선 중립화론","중립화론"],96:["아관파천"],99:["을사늑약","정미7조약","정미 7조약","신민회","보안회","대한자강회","황국중앙총상회"]};
+    for(const e of root.HanqHistory81VerifiedGlossary?.definitions||[])if(e.era==='opening'&&e.allowPlain===true)for(const page of e.pages||[])allowed[page]=[...new Set([...(allowed[page]||[]),...(e.aliases||[])])];
     const undo=[],doc=host.ownerDocument,walker=doc.createTreeWalker(host,4),nodes=[];
     let node;while((node=walker.nextNode()))nodes.push(node);
     for(const n of nodes){
