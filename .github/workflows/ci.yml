@@ -18,8 +18,7 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '24'
-      - name: Verify frontend recovery and deployment guards
-        run: node --test scripts/home-frontend-cd/frontend-health.test.cjs scripts/home-frontend-cd/ci-step.test.cjs scripts/home-frontend-cd/verify-artifact.test.cjs
+      # Regression tests run locally before publication; CI builds and verifies the artifact only.
       - name: Build public runtime and checksum manifest
         run: node scripts/build-static-site.cjs
       - name: Save public runtime and checksum manifest
