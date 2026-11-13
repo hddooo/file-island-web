@@ -135,6 +135,7 @@
   function openImage(img, trigger) {
     closeImage();
     var dialog = node('dialog', undefined, document.body, 'lr-image-dialog'); dialog.setAttribute('aria-label', '원본 이미지 확대');
+    if (img.closest('.formal-exams') || img.hasAttribute('data-company-exam-image')) dialog.setAttribute('data-company-exam', '');
     var bar = node('div', undefined, dialog, 'lr-image-toolbar'), close = node('button', '닫기', bar), fit = node('button', '화면에 맞추기', bar), original = node('a', '원본 열기', bar);
     close.type = fit.type = 'button'; original.href = img.currentSrc || img.src; original.target = '_blank'; original.rel = 'noopener noreferrer';
     var pane = node('div', undefined, dialog, 'lr-image-pan'), full = node('img', undefined, pane); full.src = original.href; full.alt = img.alt || '원본 이미지';
