@@ -9,7 +9,9 @@
     ['석가탑','불국사 3층 석탑','불국사 삼층 석탑'],
     ['촌락 문서','민정 문서'],
     ['9산 선문','9산문'],
-    ['대조영','고왕']
+    ['대조영','고왕'],
+    ['왜','일본'],
+    ['백운동서원','소수서원']
   ].map(function(group){return group.map(normalize);});
 
 // User-approved answer shorthand, not a claim that these treaties are identical.
@@ -85,6 +87,17 @@ function treatyAliasMatches(value,expected){
     var given=normalize(value),expected=normalize(answer);
     if(!given)return false;
     if(given===expected||treatyAliasMatches(value,answer))return true;
+    // Parentheses encode ordered required fields unless an explicit (=alias)
+    // or the audited same-entity groups below identifies a genuine synonym.
+    var canonical=String(answer||'').normalize('NFKC').replace(/\s+/g,''),
+        supplied=String(value||'').normalize('NFKC');
+    var explicitAlias=canonical.match(/^([\p{L}\p{N}]+)\(=([\p{L}\p{N}]+)\)$/u);
+    if(explicitAlias&&[explicitAlias[1],explicitAlias[2]].some(function(name){return normalize(name)===given;}))return true;
+    if(!/\p{N},\p{N}/u.test(canonical)&&/^[\p{L}\p{N}]+(?:\([\p{L}\p{N}]+(?:,[\p{L}\p{N}]+)*\)[\p{L}\p{N}]*)+$/u.test(canonical)){
+      var parts=canonical.replace(/[()]/g,',').split(',').filter(Boolean).map(normalize),
+          entries=supplied.split(/[,/]/).map(normalize);
+      if(entries.length===parts.length&&entries.every(function(part,index){return !!part&&part===parts[index];}))return true;
+    }
     var source=String(answer||'').normalize('NFKC').trim(),pair=source.match(/^([^()]+)\(([^()]+)\)$/);
     var names=pair?[normalize(pair[1]),normalize(pair[2])]:[expected];
     return answerNameGroups.some(function(group){
