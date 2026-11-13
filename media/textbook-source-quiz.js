@@ -803,6 +803,15 @@
       displayFields=Array.from(list.querySelectorAll('.textbook-source-quiz-input')).map(function(node){return byNode.get(node);});
       applyMarkedFilter();if(sequential)buildFlow();updateProgress();
     }
+    if(sequential)on(doc,'keydown',function(event){
+      if(!active||!flow||inFlight||pausing||event.defaultPrevented||event.repeat||event.isComposing||event.keyCode===229||event.altKey||event.ctrlKey||event.metaKey||event.shiftKey||(event.key!=='ArrowLeft'&&event.key!=='ArrowRight')||(flowPhase!=='answer'&&flowPhase!=='graded')||fields.some(function(e){return e.composing;}))return;
+      var target=event.target,focus=doc.activeElement,editing='input,textarea,select,[contenteditable]:not([contenteditable="false"]),[role="textbox"],[role="combobox"],[role="slider"],[role="spinbutton"],[role="menu"],[role="tablist"]';
+      if(target&&target.closest&&target.closest(editing)||focus&&focus.closest&&focus.closest(editing))return;
+      if(!wrapper.contains(target)&&target!==doc.body&&target!==doc.documentElement)return;
+      if(doc.querySelector('dialog[open], [role="dialog"][aria-modal="true"]:not([hidden])'))return;
+      var next=flowIndex+(event.key==='ArrowRight'?1:-1);if(next<0||next>=rows.length)return;
+      event.preventDefault();showFlowQuestion(next,false);flow.buttons[next].focus({preventScroll:true});
+    });
     if(sequential)on(doc,'visibilitychange',function(){if(doc.hidden)clearGoalCelebration();});
     if(sequential)on(saveButton,'keydown',function(e){if(e.key==='Enter'&&e.repeat)e.preventDefault();});
     on(retry,'click',function(){retry.disabled=true;retrySave().then(function(){if(sequential&&flowSubmitPending&&!controller.hasUnsaved()){flowSubmitPending=false;showFlowStatistics();}}).catch(failure).finally(function(){if(active)retry.disabled=false;});});
