@@ -183,3 +183,22 @@ html body #openingScript .opening-script-reader .textbook-source-quiz-status[hid
 
 
 @media(max-width:480px){.opening-script-reader .osr-topics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* Eulmi comparison: fit the existing three columns, without widening other tables. */
+.opening-script-reader table[data-structure="table34-nested-3"]{width:100%;min-width:0;table-layout:fixed}
+.opening-script-reader table[data-structure="table34-nested-3"] col:nth-child(1){width:24%!important}
+.opening-script-reader table[data-structure="table34-nested-3"] col:nth-child(2){width:44%!important}
+.opening-script-reader table[data-structure="table34-nested-3"] col:nth-child(3){width:32%!important}
+.opening-script-reader table[data-structure="table34-nested-3"] :is(th,td){min-width:0;padding:10px;overflow-wrap:anywhere}
+.opening-script-reader table[data-structure="table34-nested-3"] ul{padding-left:1.1em;margin:0}
+@media(max-width:700px){
+ .opening-script-reader table[data-structure="table34-nested-3"]{display:grid;grid-template-columns:minmax(0,1fr)}
+ .opening-script-reader table[data-structure="table34-nested-3"]>colgroup{display:none}
+ .opening-script-reader table[data-structure="table34-nested-3"] :is(thead,tbody,tr){display:contents}
+ .opening-script-reader table[data-structure="table34-nested-3"] :is(th,td){grid-column:1;width:auto;font-size:16px;line-height:1.65}
+ .opening-script-reader table[data-structure="table34-nested-3"] thead th:nth-child(1){grid-row:1}
+ .opening-script-reader table[data-structure="table34-nested-3"] tbody td:nth-child(1){grid-row:2}
+ .opening-script-reader table[data-structure="table34-nested-3"] thead th:nth-child(2){grid-row:3}
+ .opening-script-reader table[data-structure="table34-nested-3"] tbody td:nth-child(2){grid-row:4}
+ .opening-script-reader table[data-structure="table34-nested-3"] thead th:nth-child(3){grid-row:5}
+ .opening-script-reader table[data-structure="table34-nested-3"] tbody td:nth-child(3){grid-row:6}
+}
