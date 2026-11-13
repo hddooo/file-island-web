@@ -37,6 +37,7 @@
     var api = options.api || root.HanqApi, doc = options.document || root.document;
     var host = null, shell = null, child = null, children = [], imageObserver = null, deferredImages = new Map(), unsubscribe = null, generation = 0, request = 0, session = '';
     var eraId = null, callbacks = null, era = null, manifest = null, pages = [], quiz = null, choices = null, mode = 'text', pageNumber = null;
+    var quizScope='all';
     var status = null, coverage = null, quizCount = null, panel = null, tabs = null;
     var sourceRevision=null, sourceSha=null, editionSelect=null, sourceChanging=false, original=null, modeControls=null, originalAction=null, routeSnapshot=null, restoringRoute=null;
     var win=doc.defaultView||root;
@@ -128,7 +129,7 @@
       if (unsubscribe) unsubscribe(); unsubscribe = null;
       cleanupChild();
       if (shell) shell.remove();
-      host = null; shell = null; manifest = null; pages = []; quiz = null; choices = null; session = '';
+      quizScope='all';host = null; shell = null; manifest = null; pages = []; quiz = null; choices = null; session = '';
       status = null; coverage = null; quizCount = null; panel = null; tabs = null; pageNumber=null; modeControls=null;originalAction=null;editionSelect=null; sourceChanging=false;
     }
     function valid(g, r) { return !!shell && generation === g && request === r && !!session && session === identity(); }
@@ -187,6 +188,8 @@
         var gradingRequested=selectedMode==='quiz'&&doc.querySelector('meta[name="hanq-source-grading"]'),grading=gradingRequested&&root.HanqSourceGradingV2Session&&root.HanqSourceGradingV2Session.selected(doc)?root.HanqSourceGradingV2Session.create({api:api,era:quizId,sourceRevision:boundRevision,isCurrent:function(){return valid(g,r);}}):null;if(gradingRequested&&!grading)throw new Error('source_grading_unavailable');
         child = renderer.render(panel, data, {
           ownerId: api.state().ownerId,
+          quizScope:quizId==='joseon'&&selectedMode==='quiz'?quizScope:'all',
+          onScopeChange:function(next){var current=child;Promise.resolve(current&&current.prepareLeave?current.prepareLeave():null).then(function(){if(!valid(g,r)||child!==current)return;quizScope=next;return loadSelection();}).catch(function(error){if(error&&error.code==='leave_cancelled')return;if(valid(g,r))setStatus(errorText(error));});},
           manualSave: selectedMode==='quiz',
           sequential: selectedMode==='quiz',
           gradingVersion:grading?2:1,loadLegacyProgress:grading?function(){return grading.loadLegacy();}:undefined,

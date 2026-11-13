@@ -7,3 +7,7 @@ New quiz entries remain blank and temporary until explicit final submission. Ori
 The matcher uses 46 policies bound to source digest, item, answer, slot, order and normalized expected-answer hash. Full compound tokens remain required except for explicit alias syntax or audited context-specific optional explanations. Sequence behavior takes precedence; missing, duplicate and extraneous tokens do not become correct by stripping punctuation. Policy artifact SHA256: b58a72982f99ec2d6ffe23a0492d43f94f638abf59e21c7158ebc8c65f9f29fb.
 
 The actual-source parity result was produced read-only on Windows from the five semantic plus three scripted operational models. It checks 697 questions / 702 slots / 6,680 variants and does not substitute for final Linux image, database/HTTP integration or official six-suite qualification. Desktop Chromium/WebKit tests are not physical iPhone results. User Chrome, credentials and live account records were not touched.
+
+## 조선 범위 선택 후보
+- 구현: 전체172 / 전기·후기76 / 사회·문화96. 부분 결과는 마지막 통계만; 점수·이력 저장 없음. 기존 전체 결과·의금부 오답 보존.
+- 기능·기존 회귀·반응형 검수 구분 실행. 통합 전 후보이며 운영 배포 미완료.

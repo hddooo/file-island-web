@@ -334,3 +334,10 @@ html body #app#app#app#app .textbook-source-exam-sidebar .textbook-source-questi
 html body #app#app#app#app .textbook-source-history-list{max-height:180px;overflow-y:auto}
 html[data-company-mode=on] body #app#app#app#app .textbook-source-panel-toggle:focus-visible{outline-color:#79c0ff!important}
 }
+
+/* Section practice is independent of account-backed full results. */
+.textbook-source-scope-controls{display:flex;flex-wrap:wrap;gap:.5rem;margin:.7rem 0}
+.textbook-source-scope-button{flex:1 1 7rem;padding:.6rem .8rem;border:1px solid currentColor;border-radius:.6rem;background:transparent;color:inherit;font:inherit;font-size:.875rem;cursor:pointer}
+.textbook-source-scope-button[aria-pressed="true"]{background:#dbeafe;color:#174ca3;font-weight:700}
+.textbook-source-scope-button:focus-visible{outline:2px solid #2563eb;outline-offset:3px}
+.textbook-source-practice-notice{font-size:.8rem;opacity:.8;margin:.35rem 0}
