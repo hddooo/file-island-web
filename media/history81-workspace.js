@@ -22,7 +22,7 @@
       const first=await (grading?grading.load():api.textbookSourceWorkspace(era,binding.revision));current(g);if(first.version!==model.version)throw Error('workspace_version');let initial=first;
       const checkedReview=first.reviewSelectionAvailable===true&&Array.isArray(first.workspace?.selectedReviewQuestionIds);
       const renderer=options.renderer||root.HanqTextbookSourceQuiz;
-      const available=era==='joseon'&&typeof renderer.joseonScopes==='function'&&renderer.joseonScopes(model);
+      const available=era==='joseon'&&typeof renderer.joseonScopes==='function'&&renderer.joseonScopes(model,first.version);
       async function selectScope(scope){
         current(g);if(switching)return;
         if(scope!=='all'&&(!available||!available.some(entry=>entry.id===scope)))throw Error('invalid_quiz_scope');

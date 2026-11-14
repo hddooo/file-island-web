@@ -132,3 +132,25 @@ html body .battle-island .bi-history-card.bi-history-neutral{background:#1c3035!
 .battle-island .bi-fullscreen-panel .bi-modal-time{top:12px;left:16px;right:auto}
 .battle-island .bi-review-modal.bi-fullscreen-panel{overflow:auto!important}
 .battle-island .bi-fullscreen-panel>.bi-fullscreen-toggle{position:fixed;top:max(16px,calc(env(safe-area-inset-top) + 8px));right:max(20px,calc(env(safe-area-inset-right) + 12px));z-index:10021;background:#153e40;color:#effff4}
+
+/* History source scrolls independently; the same answer nodes stay below it. */
+.battle-island.bi-in-match{inset:auto;top:var(--bi-view-top,0);left:var(--bi-view-left,0);width:var(--bi-view-width,100vw);height:var(--bi-view-height,100dvh);padding:max(8px,env(safe-area-inset-top)) max(8px,env(safe-area-inset-right)) max(8px,env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left))}
+.battle-island.bi-in-match .bi-history-question{bottom:clamp(64px,18dvh,155px)}
+.battle-island.bi-in-match .bi-history-question.bi-fullscreen-panel{inset:auto!important;top:calc(var(--bi-view-top,0px) + max(8px,env(safe-area-inset-top)))!important;left:calc(var(--bi-view-left,0px) + max(8px,env(safe-area-inset-left)))!important;width:calc(var(--bi-view-width,100vw) - max(8px,env(safe-area-inset-left)) - max(8px,env(safe-area-inset-right)))!important;height:calc(var(--bi-view-height,100dvh) - max(8px,env(safe-area-inset-top)) - max(8px,env(safe-area-inset-bottom)))!important;padding:54px 8px 8px!important}
+.battle-island .bi-history-question.bi-fullscreen-panel>.bi-fullscreen-toggle{position:absolute;top:4px;right:8px}
+.battle-island .bi-history-question.bi-fullscreen-panel>.bi-modal-time{position:absolute;top:8px;left:12px;margin:0;padding:0;border:0;font-size:20px}
+.battle-island.bi-in-match .bi-history-round{display:flex;flex-direction:column;overflow:hidden;scrollbar-gutter:auto;min-height:0}
+.battle-island .bi-history-round>.bi-round-kicker{flex:none;margin:0;font-size:12px;line-height:18px}
+.battle-island .bi-history-round>.bi-question-content{flex:1;min-height:0;display:grid;grid-template-rows:minmax(0,1fr) auto;gap:6px;overflow:hidden}
+.battle-island .bi-history-round .bi-history-materials{min-height:0;overflow:auto;overscroll-behavior:contain;touch-action:pan-x pan-y pinch-zoom;width:100%;max-width:1100px;margin:0 auto;background:#fff;color:#152a2b;scrollbar-gutter:stable}
+.battle-island .bi-history-materials:focus-visible{outline:3px solid #79c0ff;outline-offset:-3px}
+.battle-island .bi-history-materials>h3{font-size:14px;line-height:1.5;margin:6px 8px}
+html .battle-island .bi-history-round .bi-question-image{display:block;width:100%;max-width:100%;max-height:none;height:auto;margin:0 auto 8px;object-fit:contain;background:white;filter:none}
+.battle-island .bi-history-round .bi-item{display:grid;grid-template-columns:repeat(5,minmax(44px,1fr));column-gap:6px;row-gap:0;flex:none;margin:0;padding:0;border:0;min-width:0}
+html body .battle-island .bi-history-round .bi-item legend{font-size:13px;line-height:20px;padding:0;margin:0;white-space:normal}
+html body .battle-island .bi-history-round .bi-choice{width:100%;min-width:44px;min-height:44px;height:44px;margin:0;padding:4px;line-height:1.2;font-size:18px;text-align:center;box-shadow:none}
+.battle-island .bi-history-round .bi-submit-state{grid-column:1/-1;min-height:0;margin:0;line-height:18px;overflow-wrap:anywhere}
+.battle-island .bi-history-round .bi-ready-curtain{flex:1;min-height:0;overflow:auto;padding:8px}
+.battle-island .bi-history-question>.bi-actions{flex:none;padding-top:6px;margin:6px 0 0}
+.battle-island .bi-history-question>.bi-actions button{min-height:44px;padding:6px 12px}
+@media(max-height:500px){.battle-island .bi-history-round>.bi-round-kicker{display:none}.battle-island.bi-in-match .bi-history-question:not(.bi-fullscreen-panel){top:58px;bottom:8px}.battle-island.bi-in-match .bi-history-question.bi-fullscreen-panel{padding-top:50px!important}}

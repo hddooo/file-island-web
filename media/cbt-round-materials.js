@@ -20,10 +20,10 @@ function mount(host,options){
  var api=options.api,token=identity(api),alive=true,urls=[],off,resetOff,items=[],index=0,selected={},data;
  function current(){return alive&&host.isConnected&&identity(api)===token;}
  function el(tag,text){var e=host.ownerDocument.createElement(tag);if(text!=null)e.textContent=text;return e;}
- function clear(){urls.forEach(function(u){root.URL.revokeObjectURL(u);});urls=[];host.replaceChildren();}
+ function clear(){urls.forEach(function(u){if(root.HanqLearningReader&&root.HanqLearningReader.releaseImage)root.HanqLearningReader.releaseImage(u);root.URL.revokeObjectURL(u);});urls=[];host.replaceChildren();}
  function button(label,fn){var b=el('button',label);b.type='button';b.className='tool-btn';b.onclick=function(){if(current())fn();};return b;}
  function stop(){if(!alive)return;alive=false;if(off)off();if(resetOff)resetOff();clear();}
- async function image(q,path,box,version){try{var blob=await api.cbtImage(path);if(!current()||index!==version||!box.isConnected)return;if(!blob||!/^image\/(png|jpeg|webp)$/.test(blob.type))throw Error();var u=root.URL.createObjectURL(blob);urls.push(u);var img=el('img');img.setAttribute('data-company-exam-image','');img.src=u;img.alt='제'+q.exam+'회 '+q.number+'번 원본 문제';img.style.maxWidth='100%';img.onerror=function(){if(current()&&box.isConnected)box.appendChild(el('p','원본 이미지를 표시하지 못했어요.'));};box.appendChild(img);}catch(_){if(current()&&index===version&&box.isConnected)box.appendChild(el('p','원본 이미지를 불러오지 못했어요.'));}}
+ async function image(q,path,box,version){try{var blob=await api.cbtImage(path);if(!current()||index!==version||!box.isConnected)return;if(!blob||!/^image\/(png|jpeg|webp)$/.test(blob.type))throw Error();var u=root.URL.createObjectURL(blob);urls.push(u);var img=el('img');img.className='mock-image';img.setAttribute('data-company-exam-image','');img.src=u;img.alt='제'+q.exam+'회 '+q.number+'번 원본 문제';img.style.maxWidth='100%';img.onerror=function(){if(current()&&box.isConnected)box.appendChild(el('p','제'+q.exam+'회 '+q.number+'번 원본 이미지를 표시하지 못했어요. 회차를 다시 열어 주세요. 계속 실패하면 이 문항의 원본 연결을 복구해 주세요.'));};box.appendChild(img);}catch(_){if(current()&&index===version&&box.isConnected)box.appendChild(el('p','제'+q.exam+'회 '+q.number+'번 원본 이미지를 불러오지 못했어요. 회차를 다시 열어 주세요. 계속 실패하면 이 문항의 원본 연결·접근 상태를 복구해 주세요.'));}}
  function draw(){
   if(!current())return;clear();host.appendChild(el('h2','제'+options.round+'회 오답 & 별표 문제 복습'));
   host.appendChild(el('p','점수·XP·나의 기록·실전 기록을 남기지 않는 복습입니다.'));

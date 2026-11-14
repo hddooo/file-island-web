@@ -8,7 +8,7 @@ try{
  w.eval("var R=function(){return null},SYM=['','①','②','③','④','⑤'];var esc=function(v){return String(v==null?'':v).replace(/[&<>\"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',\"'\":'&#39;'}[c]});};"+fn);
  const q=w.HANQ_EXAM_POOL.questions['exam-70-03'],order=[5,1,3,2,4].map(n=>q.id+'-option-'+n),host=w.document.querySelector('main');
  host.innerHTML=w.questionHtml({kind:'mock',questionId:q.id,version:q.v,item:q,optionOrder:order},order[1],{correctOptionId:order[0],optionId:order[1],correct:false},'fixture');await nap(40);
- assert.equal(host.querySelectorAll('.lr-choice-text').length,5);assert.deepEqual(Array.from(host.querySelectorAll('[data-option]'),x=>x.dataset.option),order);
+ assert.equal(host.querySelectorAll('.lr-choice-text,.lr-history-text').length,0);assert.equal(host.querySelectorAll('img.mock-image').length,1);assert(!host.querySelector('details.lr-history-original'));assert.deepEqual(Array.from(host.querySelectorAll('[data-option]'),x=>x.dataset.option),order);
  assert.equal(host.querySelector('[data-option="'+order[0]+'"]').getAttribute('aria-label').endsWith(' · 정답'),true);
  assert.equal(host.querySelector('[aria-checked="true"]').dataset.option,order[1]);assert.equal(host.querySelectorAll('button:disabled').length,5);
  host.innerHTML=w.questionHtml({kind:'mock',questionId:q.id,version:'stale',item:q},null,null,'stale');await nap(40);assert.equal(host.querySelectorAll('.lr-choice-text').length,0);assert(host.querySelector('.mock-image'));

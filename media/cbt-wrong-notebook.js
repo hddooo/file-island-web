@@ -48,7 +48,7 @@
     function valid() { return active === controller && ctx.alive && host.isConnected; }
     function owned(token, generation) { return valid() && generation === ctx.generation && sameOwner(token, ctx.identity) && sameOwner(token, identity(api)); }
     function node(tag, text, className) { var el = doc.createElement(tag); if (text != null) el.textContent = text; if (className) el.className = className; return el; }
-    function release(url) { if (ctx.urls.has(url)) { ctx.urls.delete(url); urlAPI.revokeObjectURL(url); } }
+    function release(url) { if (ctx.urls.has(url)) { ctx.urls.delete(url); if(root.HanqLearningReader&&root.HanqLearningReader.releaseImage)root.HanqLearningReader.releaseImage(url);urlAPI.revokeObjectURL(url); } }
     function clearView() {
       ctx.view++;
       if (ctx.element) ctx.element.querySelectorAll('img').forEach(function (img) { img.removeAttribute('src'); });
@@ -110,7 +110,7 @@
         if (!current(attempt)) return;
         if (imageNode) { imageNode.removeAttribute('src'); imageNode = null; }
         if (currentURL) { release(currentURL); currentURL = null; }
-        status.textContent = '원본 문제 이미지를 불러오지 못했어요.'; status.setAttribute('role', 'alert');
+        status.textContent = '제'+item.exam+'회 '+(isCommon?item.common.questionNumbers.join('·')+'번 공통 자료':item.number+'번')+' 원본 이미지를 불러오지 못했어요. 다시 확인 후에도 같으면 이 문항의 원본 연결·접근 상태를 복구해 주세요.'; status.setAttribute('role', 'alert');
         figure.replaceChildren(status);
         var retry = button('이미지 다시 확인', 'tool-btn', function () { load(); }); retry.setAttribute('data-notebook-image-retry', ''); figure.appendChild(retry);
       }

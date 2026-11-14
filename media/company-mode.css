@@ -288,4 +288,9 @@ html[data-company-mode=on] #app#app#app :is(.gsr-source-card,.jsr-source-card,.o
 html[data-company-mode=on][data-company-history] #app#app#app img[data-company-exam-image]:not([hidden]),
 html[data-company-mode=on] #app#app#app .formal-exams img.mock-image:not([hidden]),
 html[data-company-mode=on] #app#app#app .formal-exams .fe-original-dialog img:not([hidden]),
+html[data-company-mode=on] body .mock-zoom img[data-company-exam-image]:not([hidden]),
 html[data-company-mode=on] body .lr-image-dialog[data-company-exam] img:not([hidden]){display:block!important;visibility:visible!important;opacity:1!important;filter:none!important}
+
+/* Exam actions retain touch targets even in the compact document presentation. */
+html[data-company-mode=on] #app#app#app .bi-history-question :is(.bi-choice,.bi-submit,.bi-ready-button,.bi-fullscreen-toggle),
+html[data-company-mode=on] body .lr-image-toolbar :is(button,a){min-height:44px!important;min-width:44px!important}

@@ -45,3 +45,9 @@ html .bi-question-image{display:block;width:100%;height:auto;max-height:none;obj
  .lr-history-table-wide tbody th{font-weight:750}
  .lr-history-table-wide .lr-history-cell-label{display:block;font-size:.86em;font-weight:600;opacity:.85;line-height:1.5;margin-bottom:3px}
 }
+
+.lr-image-pan img[role=button]{cursor:zoom-out;touch-action:pan-x pan-y pinch-zoom}
+.lr-image-pan img:focus-visible{outline:3px solid #79c0ff;outline-offset:-3px}
+.lr-image-dialog{box-sizing:border-box}.lr-image-pan{box-sizing:border-box;padding-bottom:calc(16px + env(safe-area-inset-bottom))}
+.lr-image-error{font:14px/1.6 system-ui,sans-serif;overflow-wrap:anywhere}
+@media(max-height:420px){.lr-image-toolbar{flex-wrap:nowrap;padding-block:4px;gap:4px}.lr-image-toolbar button,.lr-image-toolbar a{padding:6px 8px}}

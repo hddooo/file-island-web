@@ -292,49 +292,45 @@
     });
     return {complete:results.every(function(r){return r.complete;}),correct:results.every(function(r){return r.complete&&r.correct;}),slots:results};
   }
-  // Presentation only. These exact source/version pins have different numbering;
-  // canonical arrays, answer data, progress IDs and cursor indices stay intact.
-  function joseonPresentation(data, version) {
-    var revisions = {
-      '35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442': {
-        version:'6892d35b75b9dc6580050bb950242e77ebdb0f2f40d01d13072f0ac5ea1ba3c4',
-        sizes:[24,50,14,11,14,18,33], counts:[59,14,91], centralLate:[], diplomacyLate:[3,9],
-        cultureEarly:[1,3,5,8,9,15,16,20,24,27,28,30]
-      },
-      'd54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de': {
-        version:'042ee684d7e9ae89cc2afd4b3964b1568806432f361dc99b39ad9f88f4d6ca5a',
-        sizes:[26,50,15,13,14,18,36], counts:[64,14,94], centralLate:[11], diplomacyLate:[3,4,10],
-        cultureEarly:[1,3,5,6,9,10,16,17,21,25,26,29,30,32]
-      }
-    };
-    var policy = data.source && revisions[data.source.sha256];
-    if (data.id !== 'joseon' || !policy || version !== policy.version) return null;
-    var topics=['early-joseon','late-joseon','central-offices','society-diplomacy','society-comparison','economy-comparison','culture'];
-    var common={ 'society-comparison':[3,5,8,9,11,14], 'economy-comparison':[3,5,6,8,10,13,15,18] };
-    if (new Set(data.items.map(function (item) { return item.id; })).size !== data.items.length) return null;
-    if (topics.some(function (topic, i) {
-      var numbers=data.items.filter(function (item) { return item.subtopicId===topic; }).map(function (item) { return item.originalNumber; }).sort(function(a,b){return a-b;});
-      return numbers.length!==policy.sizes[i] || numbers.some(function (n,j) { return n!==j+1; });
-    }) || data.items.length!==policy.sizes.reduce(function(a,b){return a+b;},0)) return null;
-    var groups=data.items.map(function (item) {
-      var topic=item.subtopicId, n=item.originalNumber;
-      if (topic==='early-joseon') return 'early';
-      if (topic==='late-joseon') return 'late';
-      if (topic==='central-offices') return policy.centralLate.indexOf(n)===-1?'early':'late';
-      if (topic==='society-diplomacy') return policy.diplomacyLate.indexOf(n)===-1?'early':'late';
-      if (common[topic]) return common[topic].indexOf(n)===-1?'late':'common';
+  // Source-bound metadata only: canonical topic/item IDs and grading/storage bindings stay intact.
+  var joseonTopics=['early-joseon','late-joseon','central-offices','society-diplomacy','society-comparison','economy-comparison','culture'];
+  var joseon147={sizes:[26,50,15,13,14,18,36],counts:[64,14,94],centralLate:[11],diplomacyLate:[3,4,10],cultureEarly:[1,3,5,6,9,10,16,17,21,25,26,29,30,32]};
+  var joseonProfiles=[
+    {source:'35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442',version:'6892d35b75b9dc6580050bb950242e77ebdb0f2f40d01d13072f0ac5ea1ba3c4',topics:joseonTopics,policy:{sizes:[24,50,14,11,14,18,33],counts:[59,14,91],centralLate:[],diplomacyLate:[3,9],cultureEarly:[1,3,5,8,9,15,16,20,24,27,28,30]}},
+    {source:'d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de',version:'042ee684d7e9ae89cc2afd4b3964b1568806432f361dc99b39ad9f88f4d6ca5a',topics:joseonTopics,policy:joseon147},
+    {source:'d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de',script:'8d0944e32d86985a4af3dbf28085dba4bb3f65cc0d8379907e2e4693299003a1',version:'6a9f82ac4e33bf69b9a83886aa999656deb7af094916e15ce404fb711388c7b1',topics:['group-0','group-1','group-2','group-3','group-4','group-5','group-6'],policy:joseon147}
+  ];
+  function joseonMetadata(data,version){
+    if(!data||data.id!=='joseon'||!data.source||!Array.isArray(data.items)||!Array.isArray(data.subtopics)||data.version!=null&&data.version!==version)return null;
+    var profile=joseonProfiles.find(function(p){return p.source===data.source.sha256&&p.version===version&&(!p.script||p.script===data.source.scriptSha256);});
+    if(!profile||data.subtopics.some(function(t){return !t||typeof t.id!=='string';})||data.items.some(function(i){return !i||typeof i.id!=='string'||!i.id;})||data.subtopics.length!==profile.topics.length||new Set(data.subtopics.map(function(t){return t.id;})).size!==profile.topics.length||data.subtopics.some(function(t){return profile.topics.indexOf(t.id)<0;})||new Set(data.items.map(function(i){return i.id;})).size!==data.items.length)return null;
+    if(data.items.length!==profile.policy.sizes.reduce(function(a,b){return a+b;},0)||profile.topics.some(function(topic,index){
+      var numbers=data.items.filter(function(i){return i.subtopicId===topic;}).map(function(i){return i.originalNumber;}).sort(function(a,b){return a-b;});
+      return numbers.length!==profile.policy.sizes[index]||numbers.some(function(n,j){return n!==j+1;});
+    }))return null;
+    return profile;
+  }
+  // Exact numbering and expected aggregate counts are required before applying presentation policy.
+  function joseonPresentation(data,version){
+    var metadata=joseonMetadata(data,version);if(!metadata)return null;
+    var policy=metadata.policy,common={'society-comparison':[3,5,8,9,11,14],'economy-comparison':[3,5,6,8,10,13,15,18]};
+    var groups=data.items.map(function(item){
+      var topic=joseonTopics[metadata.topics.indexOf(item.subtopicId)],n=item.originalNumber;
+      if(topic==='early-joseon')return 'early';if(topic==='late-joseon')return 'late';
+      if(topic==='central-offices')return policy.centralLate.indexOf(n)===-1?'early':'late';
+      if(topic==='society-diplomacy')return policy.diplomacyLate.indexOf(n)===-1?'early':'late';
+      if(common[topic])return common[topic].indexOf(n)===-1?'late':'common';
       return policy.cultureEarly.indexOf(n)===-1?'late':'early';
     });
-    if (['early','common','late'].some(function (group,i) { return groups.filter(function(g){return g===group;}).length!==policy.counts[i]; })) return null;
+    if(['early','common','late'].some(function(group,i){return groups.filter(function(g){return g===group;}).length!==policy.counts[i];}))return null;
     return groups;
   }
-  // Preserve canonical validation/grading binding; partial sessions never write era records.
-  function scopeIncludes(scope,item){return scope==='all'||(scope==='politics'?['early-joseon','late-joseon']:['central-offices','society-diplomacy','society-comparison','economy-comparison','culture']).indexOf(item.subtopicId)>=0;}
-  function joseonScopes(data){if(data.id!=='joseon'||data.items.some(function(i){return !scopeIncludes('politics',i)&&!scopeIncludes('society-culture',i);}))return null;return [{id:'all',label:'전체 문제'},{id:'politics',label:'전기/후기 연습'},{id:'society-culture',label:'사회/문화 연습'}].map(function(s){return Object.assign({},s,{count:data.items.filter(function(i){return scopeIncludes(s.id,i);}).length});});}
+  function scopeIncludes(scope,item,metadata){var index=metadata?metadata.topics.indexOf(item.subtopicId):-1;return scope==='all'||index>=0&&(scope==='politics'?index<2:scope==='society-culture'&&index>=2);}
+  function joseonScopes(data,version){var metadata=joseonMetadata(data,version===undefined?data&&data.version:version);if(!metadata)return null;return [{id:'all',label:'전체 문제'},{id:'politics',label:'전기/후기 연습'},{id:'society-culture',label:'사회/문화 연습'}].map(function(s){return Object.assign({},s,{count:data.items.filter(function(i){return scopeIncludes(s.id,i,metadata);}).length});});}
   function render(host, inputData, options) {
     if(!host||host.nodeType!==1||!host.ownerDocument)throw new TypeError('Source quiz requires a DOM host');
     validate(inputData);options=options||{};if(options.gradingVersion!=null&&options.gradingVersion!==1&&options.gradingVersion!==2)throw Error('source_grading_unavailable');if(options.sourceRevision!=null&&options.sourceRevision!==inputData.source.sha256)fail('source revision binding');var data=JSON.parse(JSON.stringify(inputData)),doc=host.ownerDocument,prefix='hanq-source-quiz-'+(++serial);
-    var quizScope=options.quizScope||'all',scopes=joseonScopes(data),practice=quizScope!=='all';if(practice&&(!scopes||!scopes.some(function(s){return s.id===quizScope;})))throw Error('invalid_quiz_scope');
+    var scopeMetadata=null,quizScope=options.quizScope||'all',scopes=null,practice=quizScope!=='all';if(practice&&['politics','society-culture'].indexOf(quizScope)<0)throw Error('invalid_quiz_scope');
     var promptStyles=sourcePromptStyles(options.sourcePromptStyles==null?data:Object.assign({},data,{sourcePromptStyles:JSON.parse(JSON.stringify(options.sourcePromptStyles))}));
     var gradingVersion=options.gradingVersion===2?2:1,gradingMatcher=null,legacyProgress=null,legacySavedResult=null,legacyLoadFailed=false;
     var manualSave=options.manualSave===true,sequential=manualSave&&options.sequential===true,saveButton=null,restartButton=null;if(gradingVersion===2&&!sequential)throw Error('source_grading_unavailable');if(practice&&!sequential)throw Error('invalid_quiz_scope');
@@ -360,9 +356,13 @@
       if(!blocked)stack[stack.length-1].node.appendChild(doc.createTextNode(value.slice(offset)));
     }
     var wrapper=el('section','textbook-source-quiz textbook-source-continuous'+(manualSave?' textbook-source-inline-questions':''));wrapper.appendChild(el('h2','textbook-source-quiz-title',data.title));
-    if(sequential&&scopes&&typeof options.onScopeChange==='function'){
-      var scopeControls=el('div','textbook-source-scope-controls');scopeControls.setAttribute('role','group');scopeControls.setAttribute('aria-label','조선 빈칸퀴즈 범위');
-      scopes.forEach(function(scope){var button=el('button','textbook-source-scope-button',scope.label+' · '+scope.count);button.type='button';button.dataset.quizScope=scope.id;button.setAttribute('aria-pressed',String(scope.id===quizScope));on(button,'click',function(){if(!saved||inFlight||scope.id===quizScope)return;options.onScopeChange(scope.id);});scopeControls.appendChild(button);});wrapper.appendChild(scopeControls);
+    var scopeControls=null;
+    if(sequential&&typeof options.onScopeChange==='function'){
+      scopeControls=el('div','textbook-source-scope-controls');scopeControls.hidden=true;scopeControls.setAttribute('role','group');scopeControls.setAttribute('aria-label','조선 빈칸퀴즈 범위');wrapper.appendChild(scopeControls);
+    }
+    function readyScopeControls(){
+      if(!scopeControls||!scopes)return;
+      scopes.forEach(function(scope){var button=el('button','textbook-source-scope-button',scope.label+' · '+scope.count);button.type='button';button.dataset.quizScope=scope.id;button.setAttribute('aria-pressed',String(scope.id===quizScope));on(button,'click',function(){if(!saved||inFlight||scope.id===quizScope)return;options.onScopeChange(scope.id);});scopeControls.appendChild(button);});scopeControls.hidden=false;
     }
     if(practice)wrapper.appendChild(el('p','textbook-source-practice-notice','부분 연습 · 점수·이력 저장 안 함'));
     var notesEdition = data.source.sha256 === 'd54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de' ? '81' : data.source.sha256 === '35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442' ? '79' : null;
@@ -722,7 +722,7 @@
     }
     function topicTarget(groups, index) {
       var target=groups[presentation[index]],topic=data.items[index].subtopicId;
-      if(topic==='early-joseon'||topic==='late-joseon')return target;
+      if(scopeMetadata&&scopeMetadata.topics.indexOf(topic)<2)return target;
       var existing=Array.from(target.children).find(function(n){return n.dataset.sourceSubtopic===topic;});
       if(existing)return existing;
       var section=el('section','textbook-joseon-topic'),title=data.subtopics.find(function(t){return t.id===topic;});
@@ -871,7 +871,7 @@
     function beforeUnload(e){if(dirty.size||pending||inFlight||ackCursor!==cursorVersion||ackMarkVersion!==markVersion){e.preventDefault();e.returnValue='';}}doc.defaultView.addEventListener('beforeunload',beforeUnload);
     function cleanup(){if(!active)return;active=false;cancelFlowTimer();clearTimeout(counterTimer);if(flow)clearTimeout(flow.positionTimer);clearTimeout(statusTimer);deferredStatus=null;if(recoveryOff)recoveryOff();recoveryOff=null;clearTimeout(timer);listeners.forEach(function(x){x[0].removeEventListener(x[1],x[2]);});listeners=[];doc.defaultView.removeEventListener('beforeunload',beforeUnload);fields.forEach(function(e){e.node.value='';e.feedback.textContent='';});fields=[];displayFields=[];rows=[];dirty.clear();marked.clear();markIntents.clear();pending=null;saved=null;latestSavedResult=null;legacySavedResult=null;fullAttemptGeneration++;fullAttemptBody=null;fullAttemptState=null;fullAttemptHistory=null;fullAttemptNote=null;legacyProgress=null;gradingMatcher=null;data=null;wrapper.replaceChildren();wrapper.remove();if(mounted.get(host)===controller)mounted.delete(host);}
     var old=mounted.get(host);if(old)old.cleanup();host.replaceChildren(wrapper);var controller={element:wrapper,ready:null,cleanup:cleanup,hasUnsaved:function(){return !!(dirty.size||pending||inFlight||ackCursor!==cursorVersion||ackMarkVersion!==markVersion);},prepareLeave:function(){if(!active||!saved)return Promise.resolve();if(!controller.hasUnsaved())return Promise.resolve();if(manualSave){if(inFlight)return inFlight.then(function(){return controller.prepareLeave();});if(doc.defaultView.confirm('아직 저장하지 않은 답안이 있습니다. 저장하지 않고 나가면 변경한 답안이 사라집니다. 나가시겠어요?'))return Promise.resolve();return Promise.reject(Object.assign(Error('leave_cancelled'),{code:'leave_cancelled'}));}pausing=true;clearTimeout(timer);return flush('paused').then(function(){pausing=false;},function(e){pausing=false;throw e;});}};mounted.set(host,controller);
-    var recovery=options.recovery||root.HanqAuthSession,sourceRevision=options.sourceRevision||data.source.sha256||null,recoveryKey='source:'+(sourceRevision?sourceRevision+':':'')+data.id,legacyRecoveryKey='source:'+data.id;
+    var recovery=practice?{}:options.recovery||root.HanqAuthSession,sourceRevision=options.sourceRevision||data.source.sha256||null,recoveryKey='source:'+(sourceRevision?sourceRevision+':':'')+data.id,legacyRecoveryKey='source:'+data.id;
     if(recovery&&options.ownerId&&recovery.register)recoveryOff=recovery.register(recoveryKey,{ownerId:options.ownerId,capture:function(){if(sequential||!active||!saved||!controller.hasUnsaved())return null;var ids=new Set([...dirty.keys()]);if(pending)pending.captured.forEach(function(u){ids.add(u.itemId);});var entry=fields[lastFocused];return {sourceRevision:sourceRevision,quizId:data.id,version:saved.version,baseRevision:saved.revision,cursor:cursor,focusIndex:lastFocused,...(checkedReview&&markVersion!==ackMarkVersion?{reviewSelectionChanges:[...markIntents].map(function(x){return {itemId:x[0],selected:x[1].selected};})}:{}),selection:entry?[entry.node.selectionStart,entry.node.selectionEnd]:null,updates:rows.filter(function(row){return ids.has(row.item.id);}).map(function(row){return {itemId:row.item.id,values:answerValues(row),submitted:row.submitted,checkedSlots:row.inputs.map(function(e){return e.graded&&!e.composing;})};})};}});
     function restoreDraft(){
       if(!recovery||!recovery.peekDraft||!options.ownerId)return null;var draft=recovery.peekDraft(recoveryKey,options.ownerId),draftKey=recoveryKey;if(!draft&&sourceRevision==='35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442'){draft=recovery.peekDraft(legacyRecoveryKey,options.ownerId);draftKey=legacyRecoveryKey;}if(!draft||draft.sourceRevision!=null&&draft.sourceRevision!==sourceRevision||draft.quizId!==data.id||draft.version!==saved.version||!Array.isArray(draft.updates))return null;if(sequential){if(recovery.takeDraft)recovery.takeDraft(draftKey,options.ownerId);return null;}
@@ -881,7 +881,7 @@
       if(!accepted.length&&!recoveredMarks&&!(Number.isInteger(draft.cursor)&&draft.cursor>=0&&draft.cursor<data.items.length))return null;accepted.forEach(function(u){dirty.set(u.itemId,u);});if(!manualSave&&Number.isInteger(draft.cursor)&&draft.cursor>=0&&draft.cursor<data.items.length){cursor=draft.cursor;if(cursor!==saved.workspace.cursor)cursorVersion++;}recovery.takeDraft(draftKey,options.ownerId);return draft;
     }
 
-    controller.ready=Promise.resolve().then(function(){if(typeof options.loadProgress!=='function'||typeof options.saveProgress!=='function')throw Error('progress_unavailable');return options.loadProgress();}).then(async function(result){if(!active)return;if(gradingVersion===2){if(!root.HanqSourceGradingV2Session||!root.HanqSourceGradingV2)throw Error('source_grading_unavailable');root.HanqSourceGradingV2Session.requireV2(result);gradingMatcher=await root.HanqSourceGradingV2.prepare(data,result.version);if(!active)return;if(!practice&&typeof options.loadLegacyProgress==='function'){try{var legacy=await options.loadLegacyProgress();if(!active)return;if(!legacy||legacy.version!==result.version)throw Error('workspace_version');legacyProgress=legacy;}catch(e){if(!active)return;legacyLoadFailed=true;}}}if(practice){data.items=data.items.filter(function(item){return scopeIncludes(quizScope,item);});if(!data.items.length)throw Error('empty_quiz_scope');result=Object.assign({},result,{workspace:{cursor:0,status:'active',responses:{}}});}saved=result;if(!saved.workspace||!saved.workspace.responses)throw Error('workspace_unavailable');if(checkedReview)marked=new Set(validateSelection(saved));cursor=manualSave?0:saved.workspace.cursor;presentation=joseonPresentation(data,saved.version);var restored=restoreDraft();build();message(manualSave?'':'저장한 응답을 불러왔습니다. 채점은 즉시 반영되고 계정 저장은 묶어서 진행됩니다.');if(restored&&manualSave){message(sequential?'같은 계정의 진행 중 답안을 복원했습니다. 제출 전에는 최종 기록이 바뀌지 않습니다.':'같은 계정의 미저장 답안을 복원했습니다. 계정에 반영하려면 저장 / 완료를 눌러주세요.');focusAt(0);}else if(restored){lastFocused=Number.isInteger(restored.focusIndex)?Math.max(0,Math.min(restored.focusIndex,fields.length-1)):fields.findIndex(function(e){return e.itemIndex===cursor;});focusAt(lastFocused);if(restored.selection&&fields[lastFocused]){var n=fields[lastFocused].node;try{n.setSelectionRange(Math.min(restored.selection[0]||0,n.value.length),Math.min(restored.selection[1]||0,n.value.length));}catch(e){}}clearTimeout(timer);retry.hidden=false;message('같은 계정의 미저장 답안과 위치를 복원했습니다. 계속 풀거나 저장 다시 시도를 눌러주세요.');}else if(saved.workspace.status==='paused'&&!checkedReview&&!manualSave)showReview();else focusAt(fields.findIndex(function(e){return e.itemIndex===cursor;}));}).catch(function(error){if(active)message(error&&error.code==='source_grading_unavailable'||String(error&&error.message).includes('grading')?'새 채점 기능을 확인하지 못했습니다. 다시 시도해 주세요. 답안은 저장되지 않았습니다.':'계정별 풀이를 불러오지 못했습니다. 새로고침해 다시 시도해 주세요.',true);if(gradingVersion===2)throw error;});return controller;
+    controller.ready=Promise.resolve().then(function(){if(typeof options.loadProgress!=='function'||typeof options.saveProgress!=='function')throw Error('progress_unavailable');return options.loadProgress();}).then(async function(result){if(!active)return;if(gradingVersion===2){if(!root.HanqSourceGradingV2Session||!root.HanqSourceGradingV2)throw Error('source_grading_unavailable');root.HanqSourceGradingV2Session.requireV2(result);gradingMatcher=await root.HanqSourceGradingV2.prepare(data,result.version);if(!active)return;if(!practice&&typeof options.loadLegacyProgress==='function'){try{var legacy=await options.loadLegacyProgress();if(!active)return;if(!legacy||legacy.version!==result.version)throw Error('workspace_version');legacyProgress=legacy;}catch(e){if(!active)return;legacyLoadFailed=true;}}}scopeMetadata=joseonMetadata(data,result.version);scopes=joseonScopes(data,result.version);if(practice&&(!scopes||!scopes.some(function(s){return s.id===quizScope;})))throw Error('invalid_quiz_scope');presentation=joseonPresentation(data,result.version);if(practice){if(presentation)presentation=presentation.filter(function(group,i){return scopeIncludes(quizScope,data.items[i],scopeMetadata);});data.items=data.items.filter(function(item){return scopeIncludes(quizScope,item,scopeMetadata);});if(!data.items.length)throw Error('empty_quiz_scope');result=Object.assign({},result,{workspace:{cursor:0,status:'active',responses:{}}});}saved=result;if(!saved.workspace||!saved.workspace.responses)throw Error('workspace_unavailable');readyScopeControls();if(checkedReview)marked=new Set(validateSelection(saved));cursor=manualSave?0:saved.workspace.cursor;var restored=restoreDraft();build();message(manualSave?'':'저장한 응답을 불러왔습니다. 채점은 즉시 반영되고 계정 저장은 묶어서 진행됩니다.');if(restored&&manualSave){message(sequential?'같은 계정의 진행 중 답안을 복원했습니다. 제출 전에는 최종 기록이 바뀌지 않습니다.':'같은 계정의 미저장 답안을 복원했습니다. 계정에 반영하려면 저장 / 완료를 눌러주세요.');focusAt(0);}else if(restored){lastFocused=Number.isInteger(restored.focusIndex)?Math.max(0,Math.min(restored.focusIndex,fields.length-1)):fields.findIndex(function(e){return e.itemIndex===cursor;});focusAt(lastFocused);if(restored.selection&&fields[lastFocused]){var n=fields[lastFocused].node;try{n.setSelectionRange(Math.min(restored.selection[0]||0,n.value.length),Math.min(restored.selection[1]||0,n.value.length));}catch(e){}}clearTimeout(timer);retry.hidden=false;message('같은 계정의 미저장 답안과 위치를 복원했습니다. 계속 풀거나 저장 다시 시도를 눌러주세요.');}else if(saved.workspace.status==='paused'&&!checkedReview&&!manualSave)showReview();else focusAt(fields.findIndex(function(e){return e.itemIndex===cursor;}));}).catch(function(error){if(active)message(error&&error.code==='source_grading_unavailable'||String(error&&error.message).includes('grading')?'새 채점 기능을 확인하지 못했습니다. 다시 시도해 주세요. 답안은 저장되지 않았습니다.':'계정별 풀이를 불러오지 못했습니다. 새로고침해 다시 시도해 주세요.',true);if(gradingVersion===2||error&&error.message==='invalid_quiz_scope')throw error;});return controller;
   }
   root.HanqTextbookSourceQuiz=Object.freeze({render:render,joseonScopes:joseonScopes,practiceSlots:practiceSlots,gradePractice:gradePractice});
 })(typeof window !== 'undefined' ? window : globalThis);
