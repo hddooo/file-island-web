@@ -361,3 +361,13 @@ html[data-company-mode=on] body #app#app#app#app .textbook-source-full-history-e
 html body #app#app#app#app .textbook-source-enter-guidance{margin:8px 0 0!important;font-size:12px!important;line-height:1.5!important;color:#536371!important;-webkit-text-fill-color:currentColor!important}
 html[data-company-mode="on"] body #app#app#app#app .textbook-source-enter-guidance{color:#8b949e!important}
 html body #app#app#app#app .textbook-source-goal-patamon{display:inline-block!important;width:80px!important;height:80px!important;max-width:80px!important;object-fit:contain;vertical-align:middle;margin:0 0 0 12px!important;animation:none!important}
+
+/* Combo badge (2026-11-15): consecutive correct answers in sequential blank quizzes. */
+.textbook-source-combo{display:inline-flex;align-items:center;gap:4px;margin-left:10px;padding:2px 10px;border-radius:999px;background:linear-gradient(90deg,#ff9a3c,#ff5f6d);color:#fff;font-weight:800;font-size:13px;line-height:1.6;white-space:nowrap;box-shadow:0 2px 6px rgba(255,95,109,.35)}
+.textbook-source-combo[hidden]{display:none}
+.textbook-source-combo.is-big{background:linear-gradient(90deg,#f7c948,#ff8a3c);color:#3b2400}
+.textbook-source-combo.is-legend{background:linear-gradient(90deg,#8e5cff,#ff4fd8,#ffcf3c);color:#fff}
+.textbook-source-combo.is-pop{animation:textbook-combo-pop .45s ease-out}
+@keyframes textbook-combo-pop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.18);opacity:1}100%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.textbook-source-combo.is-pop{animation:none}}
+html[data-company-mode=on] .textbook-source-combo{background:none;box-shadow:none;color:inherit;border:1px solid currentColor}
