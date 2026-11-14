@@ -14,7 +14,7 @@
       backdrop = document.createElement('div');
       backdrop.className = 'login-island-background';
       backdrop.setAttribute('aria-hidden', 'true');
-      backdrop.innerHTML = '<img class="login-island-panorama" src="media/world-map-wide-v1.png" alt="" decoding="async"><i class="login-island-clouds"></i><i class="login-island-water"></i><i class="login-island-particles"></i>';
+      backdrop.innerHTML = '<img class="login-island-panorama" src="media/world-map-wide-v1.webp" alt="" decoding="async"><i class="login-island-clouds"></i><i class="login-island-water"></i><i class="login-island-particles"></i>';
       document.body.prepend(backdrop);
     }
     if (!active && backdrop) { backdrop.remove(); backdrop = null; }

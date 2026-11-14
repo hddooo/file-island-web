@@ -16,7 +16,7 @@ html body #app .world-map .wm-hall{--plate:#544016}
 .wm-roamer[data-character="frigimon"]{--wm-roamer-wide:clamp(24px,4.1%,52px);--wm-roamer-small:clamp(18px,7.2%,34px)}
 .wm-roamer[data-character="shellmon"]{--wm-roamer-wide:clamp(28px,5%,64px);--wm-roamer-small:clamp(22px,8.7%,40px)}
 .wm-roamer[data-character="monzaemon"]{--wm-roamer-wide:clamp(30px,5.2%,66px);--wm-roamer-small:clamp(22px,9.1%,42px)}
-.wm-roamer-facing,.wm-roamer-sprite{display:block;width:100%;height:100%}.wm-roamer-sprite{background-image:url('world-map-roamers-v1.png');background-size:400% 400%;background-repeat:no-repeat}
+.wm-roamer-facing,.wm-roamer-sprite{display:block;width:100%;height:100%}.wm-roamer-sprite{background-image:url('world-map-roamers-v1.webp');background-size:400% 400%;background-repeat:no-repeat}
 .wm-water-glint{position:absolute;z-index:1;left:40%;top:40%;width:22%;height:9%;pointer-events:none;background:repeating-linear-gradient(165deg,transparent 0 10px,#b8faff 12px,transparent 14px 24px);opacity:.1;mask-image:radial-gradient(ellipse,#000,transparent 70%);mix-blend-mode:screen}
 .wm-cloud-belt{position:absolute;z-index:1;left:3%;top:4%;width:27%;height:9%;pointer-events:none;opacity:.1;background:radial-gradient(ellipse,#fff 10%,transparent 70%);filter:blur(5px)}
 .wm-asset-status:empty{display:none}.wm-asset-status{font-size:13px}
@@ -74,7 +74,7 @@ html body #app.archipelago-shell>.device-content{grid-column:1;grid-row:2}
 /* The tall layout keeps the original island pixels over an edited sea-only
    derivative. Cover is proportional: no repeated/mirrored coast fragments and
    no vertical stretching of the original main islands. Original PNGs stay intact. */
-html body #app .world-map.wm-portrait-fill{aspect-ratio:auto;background:#168dd0 url('world-map-portrait-sea-v1.png') center top / cover no-repeat!important}
+html body #app .world-map.wm-portrait-fill{aspect-ratio:auto;background:#168dd0 url('world-map-portrait-sea-v1.webp') center top / cover no-repeat!important}
 /* A stationary native scene paints the original picture exactly once. Painting
    its clipped copy again can darken antialiased coastline pixels. The layers
    remain registered for native hover lifts, mobile relocation and click masks. */
