@@ -359,6 +359,13 @@
       saveTextbookSourceWorkspaceV2: function (id, body, revision) { return textbookGradingV2('PUT', 'workspaces', id, body, revision); },
       textbookSourceProgressV2: function (id, revision) { return textbookGradingV2('GET', 'progress', id, undefined, revision); },
       saveTextbookSourceProgressV2: function (id, body, revision) { return textbookGradingV2('PUT', 'progress', id, body, revision); },
+      // Full blank-quiz runs: grading version 2 only; XP is server-decided (one reward per quiz per KST day).
+      textbookFullAttempts: function (id, revision) { if (!/^[a-z0-9-]+$/.test(id || '')) return Promise.reject(ApiError(400, 'invalid_quiz')); return textbookCall('GET', '/semantic/full-attempts/' + id + '?gradingVersion=2', undefined, revision); },
+      submitTextbookFullAttempt: function (id, body, revision) {
+        if (!/^[a-z0-9-]+$/.test(id || '')) return Promise.reject(ApiError(400, 'invalid_quiz'));
+        if (!body || body.gradingVersion !== 2 || body.mode !== 'full' || body.status !== 'completed') return Promise.reject(ApiError(400, 'invalid_source_attempt'));
+        return textbookCall('POST', '/semantic/full-attempts/' + id, {body:body}, revision).then(function (d) { if (d && d.attempt && d.attempt.xpAward > 0 && !d.replayed) refreshGrowthAfterGrade(); return d; });
+      },
       textbookSemanticChoices: function (id, revision) { if (!/^[a-z0-9-]+$/.test(id || '')) return Promise.reject(ApiError(400, 'invalid_quiz')); return textbookCall('GET', '/semantic/choices/' + id, undefined, revision); },
       textbookSemanticFigure: function (id, revision) { if (!/^p[0-9]{3}-figure-[0-9]+$/.test(id || '')) return Promise.reject(ApiError(400, 'invalid_figure')); return textbookCall('GET', '/semantic/figures/' + id, {binary:true,mediaTypes:['image/jpeg','image/png']}, revision); },
       textbookManifest: function (revision) { return textbookCall('GET', '/manifest', undefined, revision); },

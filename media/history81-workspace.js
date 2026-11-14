@@ -23,7 +23,11 @@
       const checkedReview=first.reviewSelectionAvailable===true&&Array.isArray(first.workspace?.selectedReviewQuestionIds);
       controller=(options.renderer||root.HanqTextbookSourceQuiz).render(host,model,{ownerId,checkedReview,manualSave:true,sequential:true,gradingVersion:grading?2:1,loadLegacyProgress:grading?()=>grading.loadLegacy():undefined,sourceRevision:binding.revision,recovery:options.recovery||root.HanqAuthSession,
         loadProgress:async()=>{current(g);const response=initial||await (grading?grading.load():api.textbookSourceWorkspace(era,binding.revision));initial=null;current(g);if(response.version!==model.version)throw Error('workspace_version');return response;},
-        saveProgress:async body=>{current(g);const response=await (grading?grading.save(body):api.saveTextbookSourceWorkspace(era,body,binding.revision));current(g);if(response.version!==model.version)throw Error('workspace_version');return response;}
+        saveProgress:async body=>{current(g);const response=await (grading?grading.save(body):api.saveTextbookSourceWorkspace(era,body,binding.revision));current(g);if(response.version!==model.version)throw Error('workspace_version');return response;},
+        fullAttempts:grading&&typeof api.submitTextbookFullAttempt==='function'&&typeof api.textbookFullAttempts==='function'?{
+          submit:async body=>{current(g);const response=await api.submitTextbookFullAttempt(era,body,binding.revision);current(g);return response;},
+          list:async()=>{current(g);const response=await api.textbookFullAttempts(era,binding.revision);current(g);return response;}
+        }:undefined
       });await controller.ready;current(g);
     }
     function show(parent,entry){current();if(entry&&entry.fresh)discard();parent.append(host);if(!loading){const g=generation;host.textContent='계정별 빈칸 퀴즈를 불러오는 중입니다.';loading=load(g).catch(e=>{if(alive&&g===generation&&isCurrent()){if(controller)controller.cleanup();controller=null;host.replaceChildren();const note=doc.createElement('p');note.setAttribute('role','status');note.textContent='퀴즈를 불러오지 못했습니다. 다시 시도해 주세요.';const retry=doc.createElement('button');retry.type='button';retry.textContent='다시 시도';retry.onclick=()=>{loading=null;show(parent);};host.append(note,retry);}throw e;});loading.catch(()=>{});}return loading;}

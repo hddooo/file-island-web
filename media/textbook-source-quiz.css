@@ -342,3 +342,18 @@ html[data-company-mode=on] body #app#app#app#app .textbook-source-panel-toggle:f
 .textbook-source-scope-button[aria-pressed="true"]{background:#dbeafe;color:#174ca3;font-weight:700}
 .textbook-source-scope-button:focus-visible{outline:2px solid #2563eb;outline-offset:3px}
 .textbook-source-practice-notice{font-size:.8rem;opacity:.8;margin:.35rem 0}
+/* Full-run history and XP result. Read-only summary entries; the retry is the only control. */
+html body #app#app#app#app .textbook-source-xp-result{font-size:15px!important;font-weight:700;line-height:1.6;margin:0 0 12px;color:#1f5f3f!important;-webkit-text-fill-color:currentColor!important}
+html body #app#app#app#app .textbook-source-xp-result[data-state=failed],html body #app#app#app#app .textbook-source-xp-result[data-state=unavailable]{color:#8a4b00!important}
+html body #app#app#app#app .textbook-source-xp-retry{min-height:44px!important;min-width:44px;margin-left:6px;padding:6px 12px;font-size:13px!important}
+html body #app#app#app#app .textbook-source-full-history{margin-top:10px}
+html body #app#app#app#app .textbook-source-full-history h4{margin:0 0 4px;font-size:13px!important}
+html body #app#app#app#app .textbook-source-full-history ol{list-style:none;margin:0;padding:0}
+html body #app#app#app#app .textbook-source-full-history-entry{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;padding:6px 5px;border-bottom:1px solid #b7c6cc;font-size:12px!important;color:#29404d!important;-webkit-text-fill-color:currentColor!important}
+html body #app#app#app#app .textbook-source-full-history-entry small{grid-column:1/-1;color:#536371!important}
+html body #app#app#app#app .textbook-source-full-history-entry[data-latest=true] strong{color:#1756b1!important}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-xp-result{color:#7ee2a8!important}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-xp-result[data-state=failed],html[data-company-mode=on] body #app#app#app#app .textbook-source-xp-result[data-state=unavailable]{color:#f0b35a!important}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-full-history-entry{color:#c9d1d9!important;border-color:#45525d}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-full-history-entry small{color:#8b949e!important}
+html[data-company-mode=on] body #app#app#app#app .textbook-source-full-history-entry[data-latest=true] strong{color:#79b8ff!important}

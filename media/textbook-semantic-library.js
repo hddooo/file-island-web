@@ -197,6 +197,10 @@
           sourcePromptStyles:selectedMode==='quiz'&&manifest.sourcePromptStylesByQuiz?manifest.sourcePromptStylesByQuiz[quizId]:undefined,
           loadProgress: function () { if (!valid(g,r)) return Promise.reject(sessionError()); return grading?grading.load():api.textbookSourceWorkspace(quizId,boundRevision); },
           saveProgress: function (body) { if (!valid(g,r)) return Promise.reject(sessionError()); return grading?grading.save(body):api.saveTextbookSourceWorkspace(quizId,body,boundRevision); },
+          fullAttempts: grading&&typeof api.submitTextbookFullAttempt==='function'&&typeof api.textbookFullAttempts==='function'?{
+            submit: function (body) { if (!valid(g,r)) return Promise.reject(sessionError()); return api.submitTextbookFullAttempt(quizId,body,boundRevision); },
+            list: function () { if (!valid(g,r)) return Promise.reject(sessionError()); return api.textbookFullAttempts(quizId,boundRevision); }
+          }:undefined,
           isFigureAvailable: function (figure) {
             var entry = pages.find(function (p) { return p.pdfPage === n; });
             return !!(entry && entry.figuresAvailable !== false && Array.isArray(manifest.figures) && manifest.figures.some(function (f) { return f.id === figure.assetId; }));
