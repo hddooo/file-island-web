@@ -2,14 +2,14 @@
 // Synthetic origin and browser storage only. No production requests.
 const fs = require('node:fs'), path = require('node:path'), assert = require('node:assert/strict');
 const { chromium } = require('playwright');
-const root = path.resolve(__dirname, '..'), day = 24 * 60 * 60 * 1000;
+const root = path.resolve(__dirname, '..');
 const out = process.env.ARTIFACT_DIR || path.join(root, '../evidence/study-ui-snooze');
 (async () => {
   const browser = await chromium.launch({ executablePath: process.env.CHROME_PATH });
   const results = [];
   try {
     for (const width of [320, 390, 1440]) {
-      const context = await browser.newContext({ viewport: { width, height: 900 } });
+      const context = await browser.newContext({ viewport: { width, height: 900 }, timezoneId: 'Asia/Seoul' });
       const errors = [];
       await context.addInitScript(() => { const now = Date.now; window.clockShift = 0; Date.now = () => now() + clockShift; });
       await context.route('**/*', route => {
@@ -24,15 +24,15 @@ const out = process.env.ARTIFACT_DIR || path.join(root, '../evidence/study-ui-sn
       await page.locator('.app-update:visible').waitFor();
       await page.evaluate(() => { localStorage.setItem('synthetic-learning', 'answer'); sessionStorage.setItem('synthetic-session', 'keep'); });
       await page.getByRole('button', { name: '나중에', exact: true }).click();
-      const deadline = await page.evaluate(() => localStorage.getItem('hanq:app-update:snooze-until'));
+      const deadline = await page.evaluate(() => localStorage.getItem('hanq:app-update:snooze-local-day:v1'));
       await page.reload(); await page.locator('.app-update').waitFor({ state: 'attached' });
       assert(await page.locator('.app-update').isHidden());
       const other = await context.newPage(); await other.goto('https://snooze.test/#subjects');
       await other.locator('.app-update').waitFor({ state: 'attached' }); assert(await other.locator('.app-update').isHidden());
       await page.evaluate(() => { dispatchEvent(new Event('focus')); dispatchEvent(new Event('pageshow')); document.dispatchEvent(new Event('visibilitychange')); });
       assert(await page.locator('.app-update').isHidden());
-      assert.equal(await page.evaluate(() => localStorage.getItem('hanq:app-update:snooze-until')), deadline);
-      await page.evaluate(() => { clockShift = 24 * 60 * 60 * 1000 + 1000; location.hash = '#joseon/quiz'; dispatchEvent(new Event('focus')); });
+      assert.equal(await page.evaluate(() => localStorage.getItem('hanq:app-update:snooze-local-day:v1')), deadline);
+      await page.evaluate(() => { const boundary = new Date(Date.now()); boundary.setHours(24,0,0,0); clockShift += boundary.getTime() - Date.now() + 1000; location.hash = '#joseon/quiz'; dispatchEvent(new Event('focus')); });
       await page.locator('.app-update:visible').waitFor();
       assert(await page.getByRole('button', { name: '새 버전 적용', exact: true }).isDisabled());
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
