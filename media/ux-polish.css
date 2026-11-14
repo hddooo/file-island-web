@@ -1,0 +1,14 @@
+/* 2026-11-15 site review: small, targeted layout fixes. Loaded last; company mode keeps its own layout. */
+@media (max-width:600px){
+ /* One side margin (~17px) for every screen at phone width; these three sat at 5-11px. */
+ html:not([data-company-mode=on]) body #app#app#app>.device-content>section.home-hero>.hero-copy{padding-inline:12px!important}
+ html:not([data-company-mode=on]) body #app#app#app #formalExamHost>section.panel{padding-inline:12px!important}
+ html:not([data-company-mode=on]) body #app#app#app #hongmungwanHost{padding-inline:12px!important}
+ /* Tap targets of at least 44px. */
+ html:not([data-company-mode=on]) body #app#app#app #formalExamHost .tool-btn{min-height:44px!important}
+ html:not([data-company-mode=on]) body #app#app#app a.ac-inventory-island{display:inline-flex!important;align-items:center;min-height:44px!important}
+}
+/* 행복의 마을 title stays readable over bright sky and clouds. */
+html:not([data-company-mode=on]) body #app#app#app .ri-hud>div{background:rgba(12,44,44,.42)!important;padding:6px 12px!important;border-radius:12px!important;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
+
+.era-progress-retry{white-space:nowrap;flex:0 0 auto;min-height:36px;margin-left:6px;padding:4px 10px;border:1px solid currentColor;border-radius:8px;background:transparent;color:inherit;font:inherit;font-size:13px;cursor:pointer}

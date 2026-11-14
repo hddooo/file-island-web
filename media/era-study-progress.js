@@ -88,7 +88,7 @@
     async function readReview(id,tools){
       const request={};reviewReads.set(tools,request);
       try{const record=await read(id);record.stats=Object.assign({},record.stats,{finalSubmitted:record.stats.complete,wrong:record.stats.complete?record.stats.wrong:[]});if(valid()&&reviewReads.get(tools)===request)paint(tools,record);return record;}
-      catch(e){if(valid()&&reviewReads.get(tools)===request){tools.dataset.state='error';tools.querySelector('.era-progress-status').textContent=' (기록 확인 실패)';}throw e;}
+      catch(e){if(valid()&&reviewReads.get(tools)===request){tools.dataset.state='error';tools.querySelector('.era-progress-status').textContent=' (기록을 불러오지 못했어요)';if(!tools.querySelector('.era-progress-retry')){const retry=node('button','era-progress-retry','다시 확인');retry.type='button';retry.onclick=()=>{retry.remove();tools.dataset.state='';tools.querySelector('.era-progress-status').textContent=' (확인 중)';readReview(id,tools).catch(()=>{});};tools.append(retry);}}throw e;}
     }
     async function review(id,title,button,tools){
       if(!valid()||dialog)return;opener=button;
@@ -190,7 +190,7 @@
       const row=node('div','era-progress-row'),tools=node('div','era-progress-tools');tools.dataset.title=card.querySelector('strong')?.textContent||id;
       card.before(row);row.append(card,tools);owned.push(row);
       const status=node('span','era-progress-status','확인 중');status.setAttribute('role','status');status.setAttribute('aria-live','polite');tools.append(status);
-      const load=async()=>{try{const record=await read(id);if(valid())paint(tools,record);}catch(e){if(!valid())return;status.replaceChildren(doc.createTextNode('확인 실패'));status.title='빈칸 학습 완료 상태를 확인하지 못했습니다.';}};queue.push(load);
+      const load=async()=>{try{const record=await read(id);if(valid())paint(tools,record);}catch(e){if(!valid())return;const retry=node('button','era-progress-retry','다시 확인');retry.type='button';retry.onclick=()=>{status.replaceChildren(doc.createTextNode('확인 중'));status.title='';load();};status.replaceChildren(doc.createTextNode('불러오지 못했어요 '),retry);status.title='빈칸 학습 완료 상태를 확인하지 못했습니다.';}};queue.push(load);
     }
     async function worker(){while(valid()&&queue.length)await queue.shift()();}
     controller.ready=Promise.all([worker(),worker()]);return controller;

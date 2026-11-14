@@ -130,7 +130,7 @@
     profile_incomplete: '서버가 성장 정보 일부를 보내지 않았어요. 잠시 뒤 다시 확인해 주세요.',
     test_premium_disabled: '지금은 테스트용 무료 전환을 쓸 수 없어요. 결제는 되지 않았어요.'
   };
-  function errMsg(e) { var c = e && e.code; return MSG[c] || ('요청을 처리하지 못했어요' + (c ? ' (' + esc(c) + ')' : '') + '.'); }
+  function errMsg(e) { var c = e && e.code; if (MSG[c]) return MSG[c]; if (/^http_5\d\d$/.test(c || '') || c === 'unavailable' || c === 'invalid_session_response' || c === 'network_error' || c === 'timeout') return MSG.internal_error || '서버와 연결이 잠시 원활하지 않아요. 잠시 후 다시 시도해 주세요.'; return '요청을 처리하지 못했어요. 잠시 후 다시 시도해 주세요.'; }
   var SKIP = { 'unknown-question-or-version': '지금 서버에 없는 문제이거나 예전 내용 버전', 'mode-mismatch': '문제 종류가 맞지 않음', 'unknown-option': '지금 문제에 없는 보기', 'unanswered-record': '답하지 않은 모의고사 문항', 'duplicate-in-request': '같은 기록이 두 번', 'conflicts-with-earlier-import': '예전에 가져온 기록과 맞지 않음' };
 
   function title(kind, id) {
