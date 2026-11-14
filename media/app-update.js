@@ -5,15 +5,23 @@
   var current = meta && meta.content, validId = /^[a-f0-9]{40}$/;
   if (!validId.test(current || '') || !root.fetch) return;
   var pending = null, checking = null, lastCheck = 0, applying = false;
-  var snoozeKey = 'hanq:app-update:snooze-until', snoozeDay = 24 * 60 * 60 * 1000, snoozeUntil = 0, volatileSnoozeUntil = 0, snoozeTimer = null;
+  // Store the dismissed local date; old rolling-deadline values are not reused.
+  var snoozeKey = 'hanq:app-update:snooze-local-day:v1', snoozeUntil = 0, volatileSnoozeDay = null, cachedSnoozeDay = null, snoozeTimer = null;
+  function localDay(now) {
+    var date = new Date(now);
+    return date.getFullYear() + '-' + String(date.getMonth() + 1).padStart(2, '0') + '-' + String(date.getDate()).padStart(2, '0');
+  }
+  function nextMidnight(now) { var date = new Date(now); date.setHours(24, 0, 0, 0); return date.getTime(); }
   function readSnooze() {
-    try { var value = Number(root.localStorage.getItem(snoozeKey)); snoozeUntil = Math.max(volatileSnoozeUntil, Number.isFinite(value) && value > 0 ? value : 0); }
-    catch (e) { /* Keep the in-memory deadline when browser storage is unavailable. */ }
+    var now = Date.now(), today = localDay(now), value = null;
+    try { value = root.localStorage.getItem(snoozeKey); cachedSnoozeDay = value; }
+    catch (e) { value = cachedSnoozeDay; }
+    snoozeUntil = value === today || volatileSnoozeDay === today ? nextMidnight(now) : 0;
   }
   function scheduleSnooze() {
     root.clearTimeout(snoozeTimer); snoozeTimer = null;
     var remaining = snoozeUntil - Date.now();
-    if (remaining > 0) snoozeTimer = root.setTimeout(function () { snoozeTimer = null; paint(); }, Math.min(remaining, snoozeDay));
+    if (remaining > 0) snoozeTimer = root.setTimeout(function () { snoozeTimer = null; paint(); }, remaining);
   }
   readSnooze();
   var dirty = new Set(), requests = new Set(), refreshTimer = null;
@@ -71,8 +79,8 @@
     root.location.replace(url.href);
   };
   panel.querySelector('[data-dismiss-update]').onclick = function () {
-    snoozeUntil = Date.now() + snoozeDay;
-    try { root.localStorage.setItem(snoozeKey, String(snoozeUntil)); volatileSnoozeUntil = 0; } catch (e) { volatileSnoozeUntil = snoozeUntil; }
+    var now = Date.now(), today = localDay(now); snoozeUntil = nextMidnight(now);
+    try { root.localStorage.setItem(snoozeKey, today); cachedSnoozeDay = today; volatileSnoozeDay = null; } catch (e) { volatileSnoozeDay = today; }
     scheduleSnooze(); paint();
   };
   function resume() { readSnooze(); scheduleSnooze(); paint(); check(false); }
