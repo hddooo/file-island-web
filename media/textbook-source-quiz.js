@@ -367,7 +367,6 @@
     if(practice)wrapper.appendChild(el('p','textbook-source-practice-notice','부분 연습 · 점수·이력 저장 안 함'));
     var notesEdition = data.source.sha256 === 'd54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de' ? '81' : data.source.sha256 === '35d850c6e9d9910c24cccce4b2ae37b963ee1ecd24f1926033f48d98f9de0442' ? '79' : null;
     if (notesEdition) { wrapper.classList.add('history-notes-design'); wrapper.setAttribute('data-history-edition',notesEdition); }
-    if(sequential)wrapper.appendChild(el('p','textbook-source-quiz-help textbook-source-grading-notice','문제의 정답을 입력하고, Enter 키를 눌러 진행하세요.'));
     if(checkedReview)wrapper.appendChild(el('p','textbook-source-quiz-help','모르는 문제 / 확실히 틀린 문제만 체크하세요. 다시보기를 통해 모르는 문제만 다시봐요 !'));
     var controls=el('div','textbook-source-list-controls'),stop=el('button','textbook-source-quiz-stop','그만하기'),retry=el('button','textbook-source-save-retry','저장 다시 시도');stop.type=retry.type='button';retry.hidden=true;if(!checkedReview&&!manualSave)controls.appendChild(stop);controls.appendChild(retry);wrapper.appendChild(controls);
     var progress=el('p','textbook-source-progress'),status=el('p','textbook-source-quiz-status','계정에 저장된 응답을 불러오는 중…');status.setAttribute('role','status');status.setAttribute('aria-live','polite');if(manualSave){wrapper.classList.add('textbook-source-manual-save');var summaryBar=el('div','textbook-source-save-bar');saveButton=el('button','textbook-source-save-complete','저장 / 완료');saveButton.type='button';saveButton.disabled=true;var summaryActions=el('div','textbook-source-save-actions');restartButton=el('button','textbook-source-restart','다시 풀기');restartButton.type='button';restartButton.disabled=true;summaryActions.appendChild(saveButton);summaryActions.appendChild(restartButton);summaryBar.appendChild(progress);summaryBar.appendChild(summaryActions);wrapper.insertBefore(summaryBar,controls);}else wrapper.appendChild(progress);wrapper.appendChild(status);
@@ -497,7 +496,7 @@
       if(!flow)return;
       var busy=!saved||!!inFlight||pausing,composing=fields.some(function(e){return e.composing;}),last=flowIndex===rows.length-1;
       saveButton.hidden=!last||flowPhase==='statistics';saveButton.disabled=busy||composing||(flowPhase!=='answer'&&flowPhase!=='graded');saveButton.textContent=inFlight?'제출 중…':'제출';
-      restartButton.hidden=flowPhase!=='statistics'||flow.viewingSaved;restartButton.disabled=busy||!!pending||composing;
+      restartButton.hidden=flowPhase!=='statistics';restartButton.disabled=busy||!!pending||composing;
       flow.previous.disabled=busy||flowIndex===0||(flowPhase!=='answer'&&flowPhase!=='graded');flow.next.disabled=busy||last||(flowPhase!=='answer'&&flowPhase!=='graded');
       flow.historyList.querySelectorAll('.textbook-source-history-entry').forEach(function(button){button.disabled=busy;});paintFlowPosition();if(flowPhase==='statistics')saveButton.hidden=true;
     }
@@ -531,11 +530,12 @@
       if(next>=rows.length){message('마지막 문제입니다. 제출을 누르면 통계와 오답을 확인할 수 있습니다.');saveButton.focus();}
     }
     function appendFlowReview(target,row,index){
-      target.appendChild(el('h4','',String(index+1)+'. '+questionSection(data.subtopics.find(function(t){return t.id===row.item.subtopicId;}))));
+      var officialNumber=Number.isInteger(row.item.originalNumber)&&row.item.originalNumber>0?row.item.originalNumber:index+1;
+      target.appendChild(el('h4','',String(officialNumber)+'. '+questionSection(data.subtopics.find(function(t){return t.id===row.item.subtopicId;}))));
       // Reuse the safely rendered source structure, including emphasis and ordered choices.
       // Replace each response slot by its own canonical answer, never a flattened answer table.
       var prompt=el('div','textbook-source-review-prompt'),entries=new Map(row.inputs.map(function(entry){return [entry.node.id,entry];}));
-      Array.from(row.card.children).filter(function(node){return node.matches('.textbook-source-quiz-statement,.textbook-source-quiz-events,.textbook-source-classification-responses,.textbook-source-quiz-help,.textbook-source-quiz-note');}).forEach(function(node){
+      Array.from(row.card.children).filter(function(node){return node.matches('.textbook-source-quiz-statement,.textbook-source-quiz-events,.textbook-source-classification-responses,.textbook-source-quiz-note');}).forEach(function(node){
         var copy=node.cloneNode(true);
         copy.querySelectorAll('input').forEach(function(input){
           var entry=entries.get(input.id),parts=entry.answerIds.map(function(id){return row.item.answers.find(function(answer){return answer.id===id;}).text;}),answer=el('strong','textbook-source-review-answer',row.item.answer.sequenceTokens?row.item.answer.text:parts.join(row.item.kind==='sequence'?(row.item.answer.sequenceSeparator||''):', '));
@@ -602,17 +602,16 @@
     }
     function showFlowStatistics(record){
       cancelFlowTimer();flow.viewingSaved=!!record;progress.hidden=!!record;flowPhase='statistics';flow.dialog.hidden=true;flow.layout.inert=false;flow.layout.hidden=true;reviewHost.hidden=false;reviewHost.replaceChildren();
-      var resultRows=record?record.rows:gradingVersion===2&&latestSavedResult?latestSavedResult.rows:rows,correct=resultRows.filter(function(row){return row.correct===true;}).length,wrong=resultRows.filter(function(row){return row.submitted&&row.correct===false;}),unanswered=resultRows.filter(function(row){return !row.submitted;}).length;
+      var resultRows=record?record.rows:gradingVersion===2&&latestSavedResult?latestSavedResult.rows:rows,correct=resultRows.filter(function(row){return row.correct===true;}).length,wrong=resultRows.filter(function(row){return row.submitted&&row.correct===false;});
       var heading=el('h3','textbook-source-statistics-title',practice?'부분 연습 통계':record?'저장된 풀이 통계':'시험 통계');heading.tabIndex=-1;reviewHost.appendChild(heading);if(record){var date=savedTime(record.updatedAt);reviewHost.appendChild(el('p','textbook-source-history-caption',(practice?'이 화면에서만 유지 · ':record===legacySavedResult?'이전 방식 저장 결과 · ':'')+(date?date+' (한국 시간)':'마지막 결과')));}
-      reviewHost.appendChild(el('p','textbook-source-statistics-score','전체 '+rows.length+'문제 중 '+correct+'문제 정답 · 정답률 '+(rows.length?Math.floor(correct/rows.length*100):0)+'%'));
-      reviewHost.appendChild(el('p','','오답 '+wrong.length+'문제 · 미풀이 '+unanswered+'문제'));
-      var reached=rows.length>0&&correct/rows.length>=.8;reviewHost.appendChild(el('p','textbook-source-goal',practice?(reached?'부분 연습 80% 달성! 전체 문제에 도전하세요.':'오답을 복습하고 다시 도전해 보세요.'):reached?'목표 80% 달성! 다음 시대 학습으로 넘어가세요.':'목표는 정답률 80%입니다. 오답을 복습하고 다시 도전해 보세요.'));
-      var nextEras={prehistory:'samguk',ancient:'nambuk',nambuk:'goryeo',goryeo:'joseon',joseon:'opening',opening:'colonial',colonial:'modern'},nextEra=nextEras[data.id],nextLink=el('a','textbook-source-next-era',nextEra?'다음 시대 학습':'시대별 학습 목록');nextLink.href=nextEra?'#chapter/'+nextEra+'/webtoon':'#past-exams';if(!practice)reviewHost.appendChild(nextLink);
-      var back=el('button','textbook-source-quiz-resume',record?'풀이로 돌아가기':'답안으로 돌아가기');back.type='button';on(back,'click',function(){showFlowQuestion(flowIndex);});reviewHost.appendChild(back);
+      reviewHost.appendChild(el('p','textbook-source-statistics-summary','전체 '+rows.length+'문제 중 '+correct+'문제 정답'));
+      reviewHost.appendChild(el('p','textbook-source-statistics-score','정답률 '+(rows.length?correct/rows.length*100:0).toFixed(2)+'%'));
+      var reached=rows.length>0&&correct/rows.length>=.8;reviewHost.appendChild(el('p','textbook-source-goal',reached?'목표 80% 달성!':'목표 정답률 80%'));
       var reviewHeader=el('div','textbook-source-review-header');reviewHeader.appendChild(el('h3','','틀린 문제 다시 보기'));reviewHost.appendChild(reviewHeader);
+      reviewHeader.appendChild(restartButton);
       if(wrong.length){
         var pdfButton=el('button','textbook-source-review-pdf-button','오답 PDF 저장'),pdfStatus=el('p','textbook-source-review-pdf-status'),pdfBusy=false,statisticsGeneration=flowGeneration;
-        pdfButton.type='button';pdfStatus.setAttribute('role','status');pdfStatus.setAttribute('aria-live','polite');reviewHeader.appendChild(pdfButton);reviewHost.appendChild(pdfStatus);
+        pdfButton.type='button';pdfStatus.setAttribute('role','status');pdfStatus.setAttribute('aria-live','polite');reviewHeader.insertBefore(pdfButton,restartButton);reviewHost.appendChild(pdfStatus);
         function currentStatistics(){return active&&flowPhase==='statistics'&&flowGeneration===statisticsGeneration;}
         on(pdfButton,'click',async function(){
           if(pdfBusy||!currentStatistics())return;pdfBusy=true;pdfButton.disabled=true;pdfButton.textContent='PDF 만드는 중…';pdfStatus.textContent='';
@@ -748,7 +747,7 @@
         var responseGroup = el('div', 'textbook-source-classification-responses');
         responseGroup.setAttribute('role', 'group'); responseGroup.setAttribute('aria-label', '보기 항목별 답안');
 
-        card.appendChild(el('p', 'textbook-source-quiz-help', '원문 각 항목의 콜론 뒤에 해당하는 보기 번호를 적으세요. 한 항목에 답이 여러 개면 쉼표로 구분하세요.'));
+        if(!sequential)card.appendChild(el('p', 'textbook-source-quiz-help', '원문 각 항목의 콜론 뒤에 해당하는 보기 번호를 적으세요. 한 항목에 답이 여러 개면 쉼표로 구분하세요.'));
         card.appendChild(responseGroup);
         item.subitems.forEach(function (sub, i) {
           var slot = item.responseSlots[i], row = el('p', 'textbook-source-quiz-statement');
@@ -761,8 +760,8 @@
         });
 
       }
-      if (item.kind === 'sequence') card.appendChild(el('p', 'textbook-source-quiz-help', '번호를 순서대로 쉼표(,)로 구분해 적으세요. 원문자 대신 숫자로 입력해도 됩니다.'));
-      if (item.answer.sequenceTokens) card.appendChild(el('p', 'textbook-source-quiz-help', '문제에서 요구한 사건 번호를 순서대로 적으세요. 교재 정답표의 연도도 정답을 볼 때 함께 표시됩니다.'));
+      if (!sequential && item.kind === 'sequence') card.appendChild(el('p', 'textbook-source-quiz-help', '번호를 순서대로 쉼표(,)로 구분해 적으세요. 원문자 대신 숫자로 입력해도 됩니다.'));
+      if (!sequential && item.answer.sequenceTokens) card.appendChild(el('p', 'textbook-source-quiz-help', '문제에서 요구한 사건 번호를 순서대로 적으세요. 교재 정답표의 연도도 정답을 볼 때 함께 표시됩니다.'));
       if (item.events && item.events.length) {
         var events = el('ul', 'textbook-source-quiz-events'); events.setAttribute('aria-label', '교재의 원문 보기');
         item.events.forEach(function (event) { var line=el('li','');appendPromptText(line,event.sourceText);events.appendChild(line); }); card.appendChild(events);

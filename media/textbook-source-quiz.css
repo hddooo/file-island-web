@@ -183,7 +183,8 @@ html body #app#app#app#app .textbook-source-mistake-dialog p{font-size:15px;line
 html body #app#app#app#app .textbook-source-mistake-actions{display:flex;flex-wrap:wrap;gap:8px}
 html body #app#app#app#app .textbook-source-mistake-countdown,.textbook-source-explanation-note{font-size:13px!important}
 html body #app#app#app#app .textbook-source-review-answer{color:#b91c1c!important;font-weight:800}
-html body #app#app#app#app .textbook-source-statistics-score{font-size:20px;font-weight:800;line-height:1.6}
+html body #app#app#app#app .textbook-source-statistics-summary{font-size:16px;line-height:1.6;margin:12px 0 0}
+html body #app#app#app#app .textbook-source-statistics-score{font-size:24px;font-weight:800;line-height:1.6;margin:0 0 12px;font-variant-numeric:tabular-nums}
 html[data-company-mode=on] body #app#app#app#app .textbook-source-mistake-dialog{background:#161b22!important;color:#c9d1d9!important;border-color:#ff5b65!important}
 html[data-company-mode=on] body #app#app#app#app .textbook-source-question-number[data-result=correct]{color:#79b8ff!important;border-color:#79b8ff}
 html[data-company-mode=on] body #app#app#app#app .textbook-source-question-number[data-result=wrong],html[data-company-mode=on] body #app#app#app#app .textbook-source-review-answer{color:#ff5b65!important;border-color:#ff5b65}
