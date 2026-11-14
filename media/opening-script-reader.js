@@ -56,6 +56,14 @@
       inline(doc,p,parts.join('\n'));p.style.whiteSpace='pre-wrap';host.append(p);
     }
   }
+  // Display correction for one verified study cell; never edit pinned/private content.
+  function studyCellMarkdown(sourceSha,mode,tableId,cell) {
+    const original=cell.markdown;
+    if(sourceSha!=='255c37fb68122a329cca00ae1c15035590b6a7b21f601e4a5b5f7515fdfbf695'||mode!=='study'||tableId!=='table34'||cell.id!=='os-table34-5-body'||cell.sourceId!=='대한제국(1897년) & 광무개혁'||typeof original!=='string')return original;
+    const line='- 친위대, 진위대 확대(친위대, 진위대 설치는 을미개혁 때 했음)',lines=original.split('\n');
+    if(lines.filter(value=>value===line).length!==1)return original;
+    return lines.filter(value=>value!==line).join('\n');
+  }
   function mount(host,prepared,options) {
     if(!root.HanqOpeningStructure.isPrepared(prepared))throw Error('opening_not_prepared');const bundle=prepared.bundle,viewTopics=bundle.topics;
     options=options||{};const doc=host.ownerDocument,win=doc.defaultView;
@@ -134,6 +142,16 @@
       }
       if(mode==='practice')body.append(el('p','빈칸을 생각한 뒤 임시 답안을 적어 보세요. 화면을 닫으면 답안은 사라지며 기존 학습 기록에는 저장되지 않습니다.','osr-note'));
       renderSegments(t);
+      // Presentation-only emphasis, never mutate the pinned source or projection.
+      if(mode==='study'||mode==='exam'){
+        const walker=doc.createTreeWalker(body,4),nodes=[];
+        while(walker.nextNode())if(walker.currentNode.textContent.includes('한일의정서')&&!walker.currentNode.parentElement.closest('strong,button,script,style'))nodes.push(walker.currentNode);
+        for(const node of nodes){
+          const parts=node.textContent.split('한일의정서'),fragment=doc.createDocumentFragment();
+          parts.forEach((part,index)=>{if(index){const strong=doc.createElement('strong');strong.textContent='한일의정서';strong.setAttribute('data-history-source-emphasis','');fragment.append(strong);}fragment.append(doc.createTextNode(part));});
+          node.replaceWith(fragment);
+        }
+      }
       if(mode==='study'&&root.HanqHistory81Glossary)glossaryTerms=root.HanqHistory81Glossary.mount(body,'opening',bundle.source.sha256);
       if(mode==='exam'&&root.HanqHistory81Terms)restoreFrequency=root.HanqHistory81Terms.softenFrequency(body);
     }
@@ -205,7 +223,7 @@
         if(c.contentRole)cell.dataset.contentRole=c.contentRole;
         if(c.isHeader&&c.column>1){cell.classList.add('osr-nested-label');cell.setAttribute('headers',c.owner||(!t.atomicGrid?t.cells.filter(h=>h.column<c.column&&h.isHeader&&h.row<=c.row&&h.row+h.rowspan>c.row).map(h=>h.id).join(' '):''));}
         if(c.sourceId)cell.dataset.sourceOwner=c.sourceId;
-        {if(c.label)cell.append(doc.createTextNode(c.label));if(c.insets?.length){renderMarkdown(doc,cell,c.allPartsBeforeInsets?c.markdown:c.parts[0].markdown,figure);for(const inset of c.insets){const block=el('aside',null,c.allPartsBeforeInsets?'osr-inset osr-quote-inset':'osr-inset');block.dataset.owner=c.sourceId;renderMarkdown(doc,block,inset.titleMarkdown,figure);for(const item of inset.itemsMarkdown)renderMarkdown(doc,block,item,figure);cell.append(block);}}else if(Number.isInteger(c.rankedCount)){for(let i=0;i<c.parts.length;i++){const part=el('div',null,i<c.rankedCount?'osr-ranked':'osr-supplementary');renderMarkdown(doc,part,c.parts[i].markdown,figure);cell.append(part);}}else renderMarkdown(doc,cell,c.markdown,figure);(c.nestedTables||[]).forEach(id=>renderSourceTable(cell,prepared.tables.find(t=>t.id===id)));(c.figures||[]).forEach(id=>sourceFigure(cell,id));if(c.noteMarkdown){const note=el('div',null,'osr-source-note');renderMarkdown(doc,note,c.noteMarkdown,figure);cell.append(note);}}
+        {if(c.label)cell.append(doc.createTextNode(c.label));if(c.insets?.length){renderMarkdown(doc,cell,c.allPartsBeforeInsets?c.markdown:c.parts[0].markdown,figure);for(const inset of c.insets){const block=el('aside',null,c.allPartsBeforeInsets?'osr-inset osr-quote-inset':'osr-inset');block.dataset.owner=c.sourceId;renderMarkdown(doc,block,inset.titleMarkdown,figure);for(const item of inset.itemsMarkdown)renderMarkdown(doc,block,item,figure);cell.append(block);}}else if(Number.isInteger(c.rankedCount)){for(let i=0;i<c.parts.length;i++){const part=el('div',null,i<c.rankedCount?'osr-ranked':'osr-supplementary');renderMarkdown(doc,part,c.parts[i].markdown,figure);cell.append(part);}}else renderMarkdown(doc,cell,studyCellMarkdown(bundle.source.sha256,mode,t.id,c),figure);(c.nestedTables||[]).forEach(id=>renderSourceTable(cell,prepared.tables.find(t=>t.id===id)));(c.figures||[]).forEach(id=>sourceFigure(cell,id));if(c.noteMarkdown){const note=el('div',null,'osr-source-note');renderMarkdown(doc,note,c.noteMarkdown,figure);cell.append(note);}}
         rows.get(c.row).append(cell);
       }
       wrap.append(table);parent.append(wrap);
@@ -228,6 +246,6 @@
     if(!options.externalNavigation)win.addEventListener('popstate',pop);pop();
     return {handlePopState(){if(!alive)return false;pop();return true;},stop(){alive=false;epoch++;clearImages();drafts.clear();win.removeEventListener('popstate',pop);shell.remove();}};
   }
-  root.HanqOpeningScriptReader={mount,inline,renderMarkdown,prepare:(bundle,data,presentation)=>root.HanqOpeningStructure.prepare(bundle,data,presentation)};
+  root.HanqOpeningScriptReader={mount,inline,renderMarkdown,studyCellMarkdown,prepare:(bundle,data,presentation)=>root.HanqOpeningStructure.prepare(bundle,data,presentation)};
   if(typeof module==='object'&&module.exports)module.exports=root.HanqOpeningScriptReader;
 })(typeof window==='object'?window:globalThis);

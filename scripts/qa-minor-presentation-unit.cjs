@@ -1,0 +1,10 @@
+'use strict';
+const fs=require('fs'),vm=require('vm'),assert=require('assert/strict'),path=require('path');
+const source=fs.readFileSync(path.join(__dirname,'../media/opening-script-reader.js'),'utf8'),css=fs.readFileSync(path.join(__dirname,'../media/opening-script-reader.css'),'utf8');
+const start=source.indexOf('      // Presentation-only emphasis'),end=source.indexOf("      if(mode==='study'&&root.HanqHistory81Glossary)",start);assert(start>0&&end>start);const block=source.slice(start,end);
+function run(mode){const nodes=[{textContent:'앞 한일의정서 뒤 한일의정서',blocked:false},{textContent:'한일의정서',blocked:true},{textContent:'다른 내용',blocked:false}],replacements=[];for(const n of nodes){n.parentElement={closest:()=>n.blocked};n.replaceWith=f=>replacements.push(f);}
+const doc={createTreeWalker(){let i=0;return{currentNode:null,nextNode(){this.currentNode=nodes[i++];return !!this.currentNode;}}},createDocumentFragment(){return{children:[],append(n){this.children.push(n)}}},createElement(tag){return{tag,setAttribute(){}}},createTextNode(text){return{tag:'#text',textContent:text}}};vm.runInNewContext(block,{mode,doc,body:{}});return replacements;}
+for(const mode of ['study','exam']){const r=run(mode);assert.equal(r.length,1);assert.equal(r[0].children.filter(n=>n.tag==='strong').length,2);assert.equal(r[0].children.map(n=>n.textContent).join(''),'앞 한일의정서 뒤 한일의정서');}
+for(const mode of ['practice','answers','recall'])assert.equal(run(mode).length,0);
+const added=css.slice(css.indexOf('/* Slightly tighten exam prose only;'));assert(added.includes('.osr-source-card[data-kind="exam"] p{margin:10px 0}'));assert(added.includes('.osr-source-card[data-kind="exam"] li+li{margin-top:5px}'));assert.equal((added.match(/\{/g)||[]).length,2);
+console.log('PASS emphasis study/exam preserves text and skips existing emphasis/buttons; quiz/answer/recall untouched; CSS limited to two exam-only rules (mock/static, not browser QA)');

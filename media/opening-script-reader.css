@@ -202,3 +202,7 @@ html body #openingScript .opening-script-reader .textbook-source-quiz-status[hid
  .opening-script-reader table[data-structure="table34-nested-3"] thead th:nth-child(3){grid-row:5}
  .opening-script-reader table[data-structure="table34-nested-3"] tbody td:nth-child(3){grid-row:6}
 }
+
+/* Slightly tighten exam prose only; preserve study, quizzes and table geometry. */
+.opening-script-reader .osr-source-card[data-kind="exam"] p{margin:10px 0}
+.opening-script-reader .osr-source-card[data-kind="exam"] li+li{margin-top:5px}
