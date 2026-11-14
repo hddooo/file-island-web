@@ -357,3 +357,7 @@ html[data-company-mode=on] body #app#app#app#app .textbook-source-xp-result[data
 html[data-company-mode=on] body #app#app#app#app .textbook-source-full-history-entry{color:#c9d1d9!important;border-color:#45525d}
 html[data-company-mode=on] body #app#app#app#app .textbook-source-full-history-entry small{color:#8b949e!important}
 html[data-company-mode=on] body #app#app#app#app .textbook-source-full-history-entry[data-latest=true] strong{color:#79b8ff!important}
+/* Compact keyboard guidance stays within the quiz stage. */
+html body #app#app#app#app .textbook-source-enter-guidance{margin:8px 0 0!important;font-size:12px!important;line-height:1.5!important;color:#536371!important;-webkit-text-fill-color:currentColor!important}
+html[data-company-mode="on"] body #app#app#app#app .textbook-source-enter-guidance{color:#8b949e!important}
+html body #app#app#app#app .textbook-source-goal-patamon{display:inline-block!important;width:80px!important;height:80px!important;max-width:80px!important;object-fit:contain;vertical-align:middle;margin:0 0 0 12px!important;animation:none!important}

@@ -41,12 +41,35 @@
       if(!blocked)stack[stack.length-1].node.append(doc.createTextNode(text.slice(offset)));
     }
     function close(focus){if(dialog){if(dialog.open&&dialog.close)dialog.close();dialog.remove();dialog=null;}if(lockRelease){lockRelease();lockRelease=null;}if(focus&&opener&&opener.isConnected)opener.focus();opener=null;}
-    function dispose(){alive=false;close(false);if(unsubscribe)unsubscribe();unsubscribe=null;win.removeEventListener('popstate',back);owned.forEach(n=>{if(n.classList.contains('era-progress-row')){const card=n.querySelector('.period');if(card)n.before(card);}n.remove();});owned=[];if(active===controller)active=null;}
+    function dispose(){if(!alive)return;alive=false;close(false);if(unsubscribe)unsubscribe();unsubscribe=null;win.removeEventListener('popstate',back);owned.forEach(n=>{if(n.classList.contains('era-progress-row')){const card=n.querySelector('.period');if(card)n.before(card);}n.remove();});owned=[];if(active===controller)active=null;}
     function back(){close(false);}
     const controller={stop:dispose};active=controller;
     win.addEventListener('popstate',back);
-    if(api&&api.onChange)unsubscribe=api.onChange(()=>{if(identity()!==owner){dispose();host.querySelectorAll('.era-progress-tools').forEach(n=>n.remove());}});
-    async function read(id){const quizId=id==='samguk'?'ancient':id;const model=await api.textbookSemanticQuiz(quizId,revision);if(!valid())throw Error('session_changed');const selected=doc.querySelector('meta[name="hanq-source-grading"]'),session=selected&&root.HanqSourceGradingV2Session&&root.HanqSourceGradingV2Session.selected(doc)?root.HanqSourceGradingV2Session.create({api,era:quizId,sourceRevision:revision,isCurrent:valid}):null;if(selected&&!session)throw Error('source_grading_unavailable');const result=await (session?session.load():api.textbookSourceWorkspace(quizId,revision));if(!valid())throw Error('session_changed');if(model.id!==quizId)throw Error('era_binding');if(!model.version){const bytes=new win.TextEncoder().encode(JSON.stringify({schema:model.schemaVersion,source:model.source,items:model.items}));model.progressVersion=Array.from(new Uint8Array(await win.crypto.subtle.digest('SHA-256',bytes))).map(x=>x.toString(16).padStart(2,'0')).join('');if(!valid())throw Error('session_changed');}const stats=summary(model,result);let grading;if(session){if(!root.HanqSourceGradingV2)throw Error('source_grading_unavailable');grading={gradingVersion:2,matcher:await root.HanqSourceGradingV2.prepare(model,result.version)};if(!valid())throw Error('session_changed');}return {model,result,stats,grading};}
+    if(api&&api.onChange)unsubscribe=api.onChange(()=>{if(alive&&identity()!==owner)dispose();});
+    async function read(id){
+      const quizId=id==='samguk'?'ancient':id,model=await api.textbookSemanticQuiz(quizId,revision);
+      if(!valid())throw Error('session_changed');
+      if(model.id!==quizId)throw Error('era_binding');
+      if(!model.version){
+        const bytes=new win.TextEncoder().encode(JSON.stringify({schema:model.schemaVersion,source:model.source,items:model.items}));
+        model.progressVersion=Array.from(new Uint8Array(await win.crypto.subtle.digest('SHA-256',bytes))).map(x=>x.toString(16).padStart(2,'0')).join('');
+        if(!valid())throw Error('session_changed');
+      }
+      const selected=doc.querySelector('meta[name="hanq-source-grading"]'),session=selected&&root.HanqSourceGradingV2Session&&root.HanqSourceGradingV2Session.selected(doc)?root.HanqSourceGradingV2Session.create({api,era:quizId,sourceRevision:revision,isCurrent:valid}):null;
+      if(selected&&!session)throw Error('source_grading_unavailable');
+      let result=await (session?session.load():api.textbookSourceWorkspace(quizId,revision));
+      if(!valid())throw Error('session_changed');
+      let stats=summary(model,result),useV2=!!session;
+      // Historical display only: never merge legacy answers into the isolated v2 draft.
+      // A failed read is unknown, not an empty workspace; let it reach the error UI.
+      if(session&&!stats.complete){
+        const legacy=await session.loadLegacy();
+        if(!valid())throw Error('session_changed');
+        const historical=summary(model,legacy);
+        if(historical.complete){result=legacy;stats=historical;useV2=false;}
+      }
+      return {model,result,stats,useV2};
+    }
     function paint(tools,record){
       const status=tools.querySelector('.era-progress-status');status.replaceChildren();tools.dataset.state='ready';
       if(tools.dataset.reviewEra){status.textContent=record.stats.finalSubmitted?' (정답률 : '+record.stats.scorePercent+'%, 오답 : '+record.stats.wrong.length+'문항)':' (기록 없음)';return;}
@@ -74,7 +97,7 @@
       dialog.addEventListener('cancel',e=>{e.preventDefault();close(true);});dialog.addEventListener('click',e=>{if(e.target===current)close(true);});
       dialog.addEventListener('keydown',e=>{if(e.defaultPrevented||e.key!=='Tab'||e.altKey||e.ctrlKey||e.metaKey)return;const nodes=[...current.querySelectorAll('button,input,a[href],[tabindex="0"]')].filter(n=>!n.disabled);if(!nodes.length)return;const first=nodes[0],last=nodes[nodes.length-1];if(e.shiftKey&&doc.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&doc.activeElement===last){e.preventDefault();first.focus();}});
       if(dialog.showModal)dialog.showModal();else dialog.setAttribute('open','');x.focus();
-      try{const records=[await readReview(id,tools)];if(!valid()||dialog!==current)return;body.replaceChildren();body.removeAttribute('role');const hint=node('p','era-wrong-scope','마지막 제출에서 틀린 문항만 다시 풉니다. Tab 또는 Enter로 채점하고 다음 빈칸으로 이동합니다. 재풀이 결과는 저장하지 않습니다.');hint.id='era-practice-hint';body.append(hint);let fieldCount=0,imeAdvanceTarget=null,imeAdvanceUntil=0,pointerVersion=0,keyVersion=0;
+      try{const records=[await readReview(id,tools)];if(!valid()||dialog!==current)return;for(const record of records){if(record.useV2&&record.stats.wrong.length){if(!root.HanqSourceGradingV2)throw Error('source_grading_unavailable');record.grading={gradingVersion:2,matcher:await root.HanqSourceGradingV2.prepare(record.model,record.result.version)};if(!valid()||dialog!==current)return;}}body.replaceChildren();body.removeAttribute('role');const hint=node('p','era-wrong-scope','마지막 제출에서 틀린 문항만 다시 풉니다. Tab 또는 Enter로 채점하고 다음 빈칸으로 이동합니다. 재풀이 결과는 저장하지 않습니다.');hint.id='era-practice-hint';body.append(hint);let fieldCount=0,imeAdvanceTarget=null,imeAdvanceUntil=0,pointerVersion=0,keyVersion=0;
         current.addEventListener('pointerdown',()=>{pointerVersion++;imeAdvanceTarget=null;});
         current.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.altKey&&!e.ctrlKey&&!e.metaKey&&(e.repeat&&e.target===x||e.target===imeAdvanceTarget&&Date.now()<imeAdvanceUntil)){e.preventDefault();e.stopPropagation();}},true);
         current.addEventListener('keyup',e=>{if(e.key==='Enter'||e.code==='Enter'){keyVersion++;imeAdvanceTarget=null;}});

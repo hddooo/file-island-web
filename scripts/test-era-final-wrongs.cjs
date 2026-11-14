@@ -14,10 +14,19 @@ const tick=()=>new Promise(resolve=>setTimeout(resolve,20));
   const records=Object.fromEntries(eras.map(id=>[id,{version,workspace:{status:'completed',responses:Object.fromEntries(models[id].items.map((q,i)=>[q.id,{submitted:i!==2,correct:i===1?true:i===0?false:null,values:[i===2?'':'합성 이전 답'],checkedSlots:[i!==2]}]))}}]));
   records.modern.workspace.responses={};
   let state={signedIn:true,ownerId:'A',epoch:1},listener,writes=0,failed=null,hold=null;
-  const calls=[],api={state:()=>state,onChange:fn=>{listener=fn;return()=>{};},hongmungwan:async()=>({resetAt:null,items:[]}),textbookSemanticQuiz:async id=>{calls.push(['model',id]);assert(eras.includes(id));return models[id];},textbookSourceWorkspace:async id=>{calls.push(['workspace',id]);if(failed===id)throw Error('synthetic unavailable');if(hold?.id===id)return hold.promise;return state.ownerId==='A'?records[id]:{version,workspace:{responses:{}}};},saveTextbookSourceWorkspace:()=>{writes++;throw Error('unexpected write');},request:()=>{writes++;throw Error('unexpected request');}};
-  if(v2){d.head.insertAdjacentHTML('beforeend','<meta name="hanq-source-grading" content="2">');w.TextEncoder=TextEncoder;Object.defineProperty(w.crypto,'subtle',{value:require('node:crypto').webcrypto.subtle});for(const file of ['source-grading-v2','source-grading-v2-session'])w.eval(fs.readFileSync('media/'+file+'.js','utf8'));const load=api.textbookSourceWorkspace;api.textbookSourceWorkspaceV2=async(...args)=>({...await load(...args),...cap});api.saveTextbookSourceWorkspaceV2=()=>{writes++;throw Error('unexpected v2 write');};api.textbookSourceWorkspace=()=>{throw Error('unexpected legacy read in new wrong list');};}
+  const calls=[],legacyReads=[],api={state:()=>state,onChange:fn=>{listener=fn;return()=>{};},hongmungwan:async()=>({resetAt:null,items:[]}),textbookSemanticQuiz:async id=>{calls.push(['model',id]);assert(eras.includes(id));return models[id];},textbookSourceWorkspace:async id=>{calls.push(['workspace',id]);if(failed===id)throw Error('synthetic unavailable');if(hold?.id===id)return hold.promise;return state.ownerId==='A'?records[id]:{version,workspace:{responses:{}}};},saveTextbookSourceWorkspace:()=>{writes++;throw Error('unexpected write');},request:()=>{writes++;throw Error('unexpected request');}};
+  if(v2){d.head.insertAdjacentHTML('beforeend','<meta name="hanq-source-grading" content="2">');w.TextEncoder=TextEncoder;Object.defineProperty(w.crypto,'subtle',{value:require('node:crypto').webcrypto.subtle});for(const file of ['source-grading-v2','source-grading-v2-session'])w.eval(fs.readFileSync('media/'+file+'.js','utf8'));const load=api.textbookSourceWorkspace;api.textbookSourceWorkspaceV2=async(...args)=>({...await load(...args),...cap});api.saveTextbookSourceWorkspaceV2=()=>{writes++;throw Error('unexpected v2 write');};api.textbookSourceWorkspace=async id=>{legacyReads.push(id);return {version,revision:0,updatedAt:null,gradingVersion:1,gradingStorageScope:'legacy-v1',workspace:{status:'active',responses:{}}};};}
   const host=d.querySelector('main');let controller=w.HanqEraProgress.mount(host,{api,aggregate:true});await controller.ready;
-  const open=async id=>{d.querySelector('.era-wrong-review[data-era="'+id+'"]').click();await tick();};
+  const open=async id=>{
+    d.querySelector('.era-wrong-review[data-era="'+id+'"]').click();
+    if(hold?.id===id){await tick();return;}
+    for(let i=0;i<100;i++){
+      const body=d.querySelector('.era-wrong-body');
+      if(body&&(!body.hasAttribute('role')||body.querySelector('.era-wrong-error')))return;
+      await tick();
+    }
+    assert.fail('timed out waiting for era review: '+id);
+  };
   const close=()=>d.querySelector('.era-wrong-close').click();
   assert.equal(d.querySelectorAll('.era-wrong-review').length,8);assert.equal(calls.length,16);assert(!calls.some(c=>c[1]==='samguk'));
   assert.match(d.querySelector('[data-review-era="samguk"] .era-progress-status').textContent,/정답률 : 33%, 오답 : 1문항/);
@@ -40,6 +49,7 @@ const tick=()=>new Promise(resolve=>setTimeout(resolve,20));
     records.colonial.workspace.status=status;await open('colonial');assert.equal(d.querySelector('.era-wrong-item'),null);assert.match(d.querySelector('.era-wrong-empty').textContent,/제출 기록이 없습니다/);assert.equal(d.querySelector('[data-review-era="colonial"] .era-progress-status').textContent,' (기록 없음)');close();
     assert.equal(w.HanqEraProgress.summary(models.colonial,records.colonial).wrong.length,1,'the existing summary contract retains partial progress');
   }
+  assert.deepEqual(legacyReads,v2?['colonial','colonial']:[],'only an unfinished v2 result may read legacy history');
   records.colonial.workspace.status='active';records.colonial.workspace.responses['colonial-3']={submitted:true,correct:true,values:['합성 정답'],checkedSlots:[true]};
   await open('colonial');assert.equal(d.querySelectorAll('.era-wrong-item').length,1,'legacy full completion remains reviewable');close();records.colonial=partial;
   await open('colonial');assert.equal(d.querySelectorAll('.era-wrong-item').length,1,'explicit completed partial submission remains reviewable');close();
