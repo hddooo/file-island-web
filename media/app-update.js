@@ -4,7 +4,18 @@
   var doc = root.document, meta = doc.querySelector('meta[name="hanq-app-version"]');
   var current = meta && meta.content, validId = /^[a-f0-9]{40}$/;
   if (!validId.test(current || '') || !root.fetch) return;
-  var pending = null, dismissed = null, checking = null, lastCheck = 0, applying = false;
+  var pending = null, checking = null, lastCheck = 0, applying = false;
+  var snoozeKey = 'hanq:app-update:snooze-until', snoozeDay = 24 * 60 * 60 * 1000, snoozeUntil = 0, volatileSnoozeUntil = 0, snoozeTimer = null;
+  function readSnooze() {
+    try { var value = Number(root.localStorage.getItem(snoozeKey)); snoozeUntil = Math.max(volatileSnoozeUntil, Number.isFinite(value) && value > 0 ? value : 0); }
+    catch (e) { /* Keep the in-memory deadline when browser storage is unavailable. */ }
+  }
+  function scheduleSnooze() {
+    root.clearTimeout(snoozeTimer); snoozeTimer = null;
+    var remaining = snoozeUntil - Date.now();
+    if (remaining > 0) snoozeTimer = root.setTimeout(function () { snoozeTimer = null; paint(); }, Math.min(remaining, snoozeDay));
+  }
+  readSnooze();
   var dirty = new Set(), requests = new Set(), refreshTimer = null;
   var panel = doc.createElement('aside');
   panel.className = 'app-update'; panel.hidden = true;
@@ -29,7 +40,7 @@
   }
   function paint() {
     var blocked = reason(), message = blocked || '새 버전이 있어요. 적용하면 현재 화면을 다시 엽니다.';
-    panel.hidden = !pending || dismissed === pending;
+    panel.hidden = !pending || Date.now() < snoozeUntil;
     if (status.textContent !== message) status.textContent = message;
     apply.disabled = applying || !!blocked;
   }
@@ -59,8 +70,13 @@
     // Keep the hash and all existing storage; bypass a stale HTML cache with a new URL.
     root.location.replace(url.href);
   };
-  panel.querySelector('[data-dismiss-update]').onclick = function () { dismissed = pending; paint(); };
-  function resume() { dismissed = null; paint(); check(false); }
+  panel.querySelector('[data-dismiss-update]').onclick = function () {
+    snoozeUntil = Date.now() + snoozeDay;
+    try { root.localStorage.setItem(snoozeKey, String(snoozeUntil)); volatileSnoozeUntil = 0; } catch (e) { volatileSnoozeUntil = snoozeUntil; }
+    scheduleSnooze(); paint();
+  };
+  function resume() { readSnooze(); scheduleSnooze(); paint(); check(false); }
+  root.addEventListener('storage', function (event) { if (event.key === snoozeKey || event.key === null) { readSnooze(); scheduleSnooze(); paint(); } });
   root.addEventListener('pageshow', resume);
   root.addEventListener('focus', resume);
   doc.addEventListener('visibilitychange', function () { if (!doc.hidden) resume(); });
@@ -81,5 +97,5 @@
     arrived.searchParams.delete('_hanq_update');
     root.history.replaceState(root.history.state, '', arrived.href);
   }
-  paint(); check(true);
+  scheduleSnooze(); paint(); check(true);
 })(window);

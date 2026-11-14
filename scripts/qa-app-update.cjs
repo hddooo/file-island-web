@@ -19,7 +19,7 @@ const old='a'.repeat(40),next='b'.repeat(40),results=[];
  await page.getByRole('button',{name:'나중에'}).click();assert(await page.locator('.app-update').isHidden());
  version='bad';await page.evaluate(()=>{shift+=61000;dispatchEvent(new Event('pageshow'));});await page.waitForTimeout(200);assert.equal(calls,2);assert.equal(new URL(page.url()).searchParams.has('_hanq_update'),false);
  fail=true;await page.evaluate(()=>{shift+=61000;dispatchEvent(new Event('focus'));});await page.waitForTimeout(200);assert.equal(calls,3);assert.equal(new URL(page.url()).searchParams.has('_hanq_update'),false);
- fail=false;version=next;await page.evaluate(()=>{shift+=61000;dispatchEvent(new Event('pageshow'));dispatchEvent(new Event('focus'));document.dispatchEvent(new Event('visibilitychange'));});await page.waitForTimeout(200);assert.equal(calls,4);
+ fail=false;version=next;await page.evaluate(()=>{shift+=24*60*60*1000;dispatchEvent(new Event('pageshow'));dispatchEvent(new Event('focus'));document.dispatchEvent(new Event('visibilitychange'));});await page.waitForTimeout(200);assert.equal(calls,4);
  await apply.click();await page.waitForFunction(v=>document.querySelector('meta[name="hanq-app-version"]').content===v,next);await page.waitForTimeout(150);
  const final=new URL(page.url());assert.equal(final.hash,'#subjects');assert.equal(final.searchParams.get('keep'),'1');assert.equal(final.searchParams.has('_hanq_update'),false);assert(await page.locator('.app-update').isHidden());
  assert.deepEqual(await page.evaluate(()=>[localStorage.getItem('synthetic-progress'),sessionStorage.getItem('synthetic-draft')]),['answer-B','question-3']);assert(requests.every(p=>['/','/app-version.json','/media/app-update.js','/media/app-update.css','/favicon.ico'].includes(p)));
