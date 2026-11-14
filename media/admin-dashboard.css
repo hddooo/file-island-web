@@ -68,3 +68,4 @@ body.admin-page{font-size:15px;line-height:1.65}
  .admin-page .page-heading{align-items:flex-start}
  .admin-page .timezone-label{padding-top:6px}
 }
+.membership-panel{margin-bottom:20px}.membership-row{margin:16px 0;padding-bottom:12px;border-bottom:1px solid #edf0f4}.membership-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
