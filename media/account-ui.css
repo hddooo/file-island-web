@@ -297,6 +297,22 @@ html body .world-integrated-scene{position:relative;isolation:isolate}
 html body .world-integrated-scene>.scene-atmosphere{z-index:0;bottom:auto;height:700px;max-height:100%}
 html body .world-integrated-scene>:not(.scene-atmosphere){position:relative;z-index:1}
 @media(max-width:520px){html body #app .ac-me .ac-hero.ac-sanctuary{grid-template-columns:100px minmax(0,1fr);gap:10px 12px;padding:16px 12px!important;min-height:260px}html body #app .ac-me .ac-sanctuary>.ac-hero-name{font-size:20px!important}html body #app .ac-me .ac-sanctuary .ac-pet :is(.hanq-mascot,.hanq-growth-portrait){--mascot-size:100px!important}html body #app .ac-me .ac-sanctuary .ac-pet .collection-life,html body #app .ac-me .ac-sanctuary .ac-pet .collection-life:has(.cm-blob),html body #app .ac-me .ac-sanctuary .ac-pet .collection-portrait{width:100px;height:100px}html body #app .ac-me .ac-sanctuary .ac-growth-next{font-size:15px!important}html body #app .ac-me .ac-sanctuary .ac-progress-label{font-size:10px!important}html body #app .ac-me .ac-sanctuary .ac-pet-hint{font-size:10px}html body #app .ac-me .ac-sanctuary .ac-collection-link{font-size:11px}}
+/* Every art kind (pet-life included) fits the pet column; pet-life used to keep its 180px and cover the XP column. */
+html body #app .ac-me .ac-sanctuary .ac-pet .pet-life{width:160px;height:160px;max-width:100%;margin-inline:auto}
+/* Phones: the partner is the showcase. Name, then the partner centred and large, then a full-width XP block. */
+@media(max-width:520px){
+ html body #app .ac-me .ac-hero.ac-sanctuary{grid-template-columns:minmax(0,1fr);justify-items:center;gap:6px;min-height:0;padding:16px 16px 18px!important;text-align:center}
+ html body #app .ac-me .ac-sanctuary>.ac-hero-name{justify-self:start}
+ html body #app .ac-me .ac-sanctuary .ac-pet{grid-column:1;grid-row:2;width:auto;max-width:100%;padding:0!important;gap:2px}
+ html body #app .ac-me .ac-sanctuary .ac-pet :is(.hanq-mascot,.hanq-growth-portrait){--mascot-size:150px!important}
+ html body #app .ac-me .ac-sanctuary .ac-pet :is(.pet-life,.collection-life,.collection-life:has(.cm-blob),.collection-portrait){width:min(170px,58vw);height:min(170px,58vw)}
+ html body #app .ac-me .ac-sanctuary .ac-pet-hint{font-size:11px}
+ html body #app .ac-me .ac-sanctuary .ac-growth{grid-column:1;grid-row:3;width:100%;max-width:340px;gap:8px;justify-items:stretch;text-align:center}
+ html body #app .ac-me .ac-sanctuary .ac-growth-next{align-self:center;text-align:center}
+ html body #app .ac-me .ac-sanctuary .ac-progress{height:26px;min-height:26px}
+ html body #app .ac-me .ac-sanctuary .ac-progress-label{font-size:12px!important}
+ html body #app .ac-me .ac-sanctuary .ac-collection-link{justify-self:center;font-size:12px}
+}
 @media(prefers-reduced-motion:reduce){html body #app .ac-sanctuary *{transition:none!important}}
 
 /* Activity children remain grouped; dates and navigation keep their own tracks. */

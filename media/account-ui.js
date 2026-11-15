@@ -269,7 +269,6 @@
     var loading = !!st.restoring || st.profileStatus === 'loading';
     var att = st.profileStatus === 'ready' && st.access && typeof st.access.total === 'number' && Number.isFinite(st.access.total) ? st.access : null;
     return '<section class="ac-sec ac-me" aria-labelledby="acMeTitle"><div class="ac-hero">' +
-      '<a class="tool-btn ac-hall-entry" href="#hall-of-fame">명예의 전당</a>' +
       (sure ? ''
         : loading ? '<p class="ac-hero-wait" role="status">성장 정보를 확인하고 있어요.</p>'
         : '<div class="ac-hero-wait ac-hero-fail" role="alert"><p>성장 정보를 불러오지 못했어요.</p><p>' + errMsg({ code: st.profileError || 'internal_error' }) + '</p><button type="button" class="tool-btn" id="acProfileRetry">다시 확인</button></div>') +
@@ -303,7 +302,7 @@
   }
   function premiumHtml(st, planRes, prem) {
     var plan = planRes && planRes.plan, co = planRes && planRes.checkout, active = !!(prem && prem.active);
-    if(plan&&plan.developmentOpen)return '<section class="ac-sec ac-development-premium"><h2>개발 기간 무료 프리미엄</h2><p>로그인한 모든 회원에게 프리미엄 기능을 무료로 제공합니다. 이용권 정책은 추후 안내합니다.</p></section>';
+    if(plan&&plan.developmentOpen)return '';
     var status = !st.signedIn ? '로그인하면 이용권 상태를 볼 수 있어요.' : active ? '<b class="ac-ok">이용 중</b> · ' + esc(kst(prem.expiresAt)) + '(한국 시간)까지' : (prem && prem.expiresAt ? '이용권 없음 · 지난 이용권은 ' + esc(kst(prem.expiresAt)) + '에 끝났어요' : '이용권 없음');
     var buy = '';
     if (st.signedIn) {
@@ -394,7 +393,7 @@
       var planRes = ok(r[0]), developmentOpen=!!(planRes&&planRes.plan&&planRes.plan.developmentOpen), freePass = !!(planRes && planRes.testFreePass && planRes.testFreePass.available === true);
       rememberPlan=planRes;
       var freePassBtn = freePass ? '<div class="ac-row ac-actions"><button type="button" class="tool-btn" id="acTestFreePass">테스트용 무료 전환·30일</button></div><p class="ac-err" id="acTestFreePassMsg" role="status"></p>' : '';
-      paint((ui.view==='main'&&st.signedIn&&st.status!=='offline'?'':connLine(st)) + notice + (developmentOpen?'<p class="hp-notice ac-development-premium" role="note">개발 기간 무료 프리미엄 · 로그인한 모든 회원에게 제공하며 이용권 정책은 추후 안내합니다.</p>':'') + (errs.length && st.status !== 'offline' ? '<p class="hp-notice ac-load-err" role="status">' + errMsg(errs[0].__err) + '</p>' : '') +
+      paint((ui.view==='main'&&st.signedIn&&st.status!=='offline'?'':connLine(st)) + notice +(errs.length && st.status !== 'offline' ? '<p class="hp-notice ac-load-err" role="status">' + errMsg(errs[0].__err) + '</p>' : '') +
         (ui.view === 'notes' ? (st.signedIn ? '' : authHtml()) + (st.signedIn && !(prem && prem.active) ? premiumHtml(st, ok(r[0]), prem) + freePassBtn : '') + notesHtml(st, ok(r[2]), prem, { replays: ok(r[3]) && r[3].replays, parts:ok(r[6]) }) + recordsHtml(st, r) : (st.signedIn ? profileHtml(st) : authHtml())));
       bindMain(st);
       loadAdminEntry(api, tok, owner0);
