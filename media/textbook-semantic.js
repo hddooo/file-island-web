@@ -429,6 +429,7 @@
       scroll.setAttribute('aria-label', '원문 표 · 열 순서 유지 · 좌우로 이동해 읽기');
       horizontalKeys(scroll);
       if (block.layoutRole === 'source-answer-panels' || (block.layoutRole === 'source-answer-grid' && block.columnCount > 2 && !block.sourceParentTableId)) group.appendChild(node('p', '↔ 좌우로 밀어 정답표 전체 보기', 'textbook-answer-scroll-hint'));
+      if (block.layoutRole === 'source-exam-panel' && block.columnCount > 2) group.appendChild(node('p', '↔ 좌우로 밀어 표 전체 보기', 'textbook-exam-scroll-hint'));
       var tableNode = node('table', null, 'textbook-semantic-table');
       // Reflow only an unambiguous header/body pair. Merged cells, diagrams,
       // illustrated tables and comparison matrices keep their original topology.
@@ -445,7 +446,10 @@
       if (block.layoutRole === 'source-illustrated-table') tableNode.classList.add('textbook-source-illustrated-table');
       if(page.sourceSha256==='d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de'&&page.pdfPage===31&&block.id==='81-p031-table1')tableNode.classList.add('textbook-source-nambuk-rulers');
       if (block.layoutRole === 'source-illustration-gallery') tableNode.classList.add('textbook-source-gallery');
-      if (block.layoutRole === 'source-exam-panel') tableNode.classList.add('textbook-source-exam-panel');
+      if (block.layoutRole === 'source-exam-panel') {
+        tableNode.classList.add('textbook-source-exam-panel');
+        tableNode.setAttribute('data-source-column-count', String(block.columnCount));
+      }
       if (block.layoutRole === 'source-rank-chart') {
         tableNode.classList.add('textbook-source-rank-chart');
         if (Array.isArray(block.sourceHeaderGroups)) { var rankCaption=node('caption',block.sourceHeaderGroups.join(' · ')); tableNode.appendChild(rankCaption); }

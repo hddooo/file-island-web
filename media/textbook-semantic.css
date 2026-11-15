@@ -201,7 +201,7 @@ html[data-hanq-theme] body #app .history-home-hero,html[data-hanq-theme] body #a
 .textbook-source-branch-transcript>div{white-space:pre;font-family:ui-monospace,monospace;font-size:15px;overflow-x:auto;max-width:100%}
 @media(max-width:600px){.textbook-source-branch-graph{font-size:16px}.textbook-source-branch-graph .textbook-source-branch-list{gap:6px}.textbook-source-branch-label{padding:5px 2px}.textbook-source-branch-cause{font-size:14px}}
 
-.textbook-answer-scroll-hint{margin:8px 0;font-size:14px;line-height:1.5;font-weight:600;color:#4b473d;word-break:keep-all;overflow-wrap:anywhere}
+.textbook-answer-scroll-hint,.textbook-exam-scroll-hint{margin:8px 0;font-size:14px;line-height:1.5;font-weight:600;color:#4b473d;word-break:keep-all;overflow-wrap:anywhere}
 
 /* Audited source p31 nested person label; retain the outer rowspan context. */
 .textbook-source-person-row{display:grid;grid-template-columns:minmax(3.2em,auto) minmax(0,1fr);align-items:center;gap:.5em}
