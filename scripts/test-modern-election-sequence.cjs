@@ -6,7 +6,7 @@ const SHA = 'd54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de';
 const dom = new JSDOM('<main></main>');
 const host = dom.window.document.querySelector('main');
 const split = '유엔 총회 남북한 총선거 결정';
-const official = '유엔 총회: 남북한 총선거 결의(1947) → 유엔 소총회: 남한 단독 총선거 결의(1948)';
+const official = 'UN 소총회: 남한 단독 총선거 결의(1948)';
 let checks = 0;
 const eq = (a,b) => { assert.equal(a,b); checks++; };
 function makeCell(r, c, lists, extra = {}) {

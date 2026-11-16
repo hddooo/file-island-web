@@ -265,8 +265,8 @@
       });
     }
     // Study-note correction for the two 81st-edition sequence rows, PDF pp. 127–128.
-    // 1947 General Assembly: peninsula-wide elections; 1948 Interim Committee:
-    // vote in accessible areas (South Korea). Keep the source model unchanged.
+    // The condensed sequence shows only the 1948 Interim Committee decision.
+    // The separate 1947 General Assembly source detail stays unchanged.
     // https://contents.history.go.kr/front/hm/view.do?levelId=hm_145_0030
     function correctModernElectionSequence(td, block, row, cell) {
       if (page.sourceSha256 !== 'd54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de' ||
@@ -291,7 +291,7 @@
       var plainEnding = /→총선거$/.test(text);
       if (start < 0 || text.indexOf(originalDecision, start + 1) !== -1 ||
           !/^광복→/.test(text) || !/남북협상&?제주4[·ㆍ･.]3사건→(?:5[·ㆍ･.]10)?총선거$/.test(text) ||
-          text.indexOf('유엔소총회') !== -1) return;
+          /(?:유엔|UN)소총회/.test(text)) return;
       function replace(at, length, replacement) {
         var first = offsets[at], last = offsets[at + length - 1];
         if (first.node === last.node) {
@@ -306,7 +306,7 @@
         }
       }
       if (plainEnding) replace(text.length - 3, 3, '5·10 총선거');
-      replace(start, originalDecision.length, '유엔 총회: 남북한 총선거 결의(1947) → 유엔 소총회: 남한 단독 총선거 결의(1948)');
+      replace(start, originalDecision.length, 'UN 소총회: 남한 단독 총선거 결의(1948)');
     }
     function annotateBlock(element, block) {
       if (typeof block.id === 'string') element.setAttribute('data-source-block', block.id);
