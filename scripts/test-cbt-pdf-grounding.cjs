@@ -9,6 +9,15 @@ const api=w.HanqCbtExplanations;
 const all=Object.values(w.HANQ_CBT_EXPLANATIONS.items).concat(Object.values(w.HANQ_CBT_EXPLANATIONS_80.items));
 const expectedBoard={70:'1000030012',71:'1000030032',72:'1000030043',73:'1000030052',74:'1000030069',75:'1000030080',76:'1000030098',77:'1000030110',78:'1000030119',79:'1000030131',80:'1000030154'};
 assert.equal(all.length,550);
+const round70=all.filter(item=>item.exam===70);
+assert.equal(round70.length,50);
+for(const item of round70){
+ const q=qFor(item),before=JSON.stringify(item),markup=api.render(q,null,'final');
+ assert.match(markup,/81회 대비 시대별 학습자료 · [^<]+ · PDF [\d, –]+쪽/);
+ assert(api.groundedOverview(api.resolve(q,'final')).reason.some(line=>line.trim()));
+ assert.equal(JSON.stringify(item),before);
+}
+
 for(const item of all){
  const markup=api.render(qFor(item),null,'final');
  assert.match(markup,/data-reviewed="true"/);
@@ -40,5 +49,5 @@ for(const [n,cue,reference] of [
  assert.equal(h.querySelector('.fe-exp-sources'),null);
  assert.equal(h.querySelector('[data-reviewed]').dataset.reviewed,'false');
 }
-console.log('550 exact-identity source links; first eight 70th questions grounded in current book; final-only gate passed');
+console.log('550 exact-identity source links; all 50 questions of the 70th grounded in current book; final-only gate passed');
 w.close();
