@@ -217,8 +217,14 @@ function singleAnswerMatches(value, expected) {
     return given.length === parts.length && given.every((part, i) => part === parts[i]);
 }
 
+// Directional shorthand only for a canonical decade in one ordinary fill-in.
+// This is not a year/date rule and never infers a number from an era label.
+function numericDecadeMatches(value, expected) {
+ const decade=normalized(expected).match(/^([1-9]\d{1,2}0)년대$/);
+ return !!decade&&new RegExp('^'+decade[1]+'(?:년|년도|년대)?$').test(normalized(value));
+}
 function slots(item){return item.kind==='classification'?item.responseSlots:item.blanks.flatMap(b=>b.parts||[b]);}
-function signature(item,slot){return JSON.stringify([item.id,item.kind,item.answer,item.answers,{id:slot.id,answerIds:slot.answerIds,orderMatters:slot.answer?.orderMatters??slot.orderMatters??item.answer.orderMatters}]);}
+function signature(item,slot){return JSON.stringify([item.id,item.kind,item.answer,item.answers,item.blanks,{id:slot.id,answerIds:slot.answerIds,orderMatters:slot.answer?.orderMatters??slot.orderMatters??item.answer.orderMatters}]);}
 async function prepare(model,sourceVersion){
  if(!model||model.schemaVersion!=='hanq-source-quiz/1'||!Array.isArray(model.items)||!/^[a-f0-9]{64}$/.test(sourceVersion))throw Error('invalid_grading_binding');
  const cryptoApi=root.crypto||(typeof require==='function'?require('node:crypto').webcrypto:null);
@@ -250,7 +256,9 @@ async function prepare(model,sourceVersion){
   if(expected.length>1&&separatedAnswersMatch(value,expected,ordered))return 'match';
   if(expected.length!==1)return legacy();
   if(normalized(value)===normalized(expected[0]))return 'match';
-  return (entry.policy?sourcePolicyMatches(value,expected[0],entry.policy):singleAnswerMatches(value,expected[0]))?'match':'different';
+  if(entry.policy)return sourcePolicyMatches(value,expected[0],entry.policy)?'match':'different';
+  if(item.kind==='fill-in'&&!item.answer.sequenceTokens&&item.blanks.length===1&&item.blanks[0].parts==null&&item.answers.length===1&&numericDecadeMatches(value,expected[0]))return 'match';
+  return singleAnswerMatches(value,expected[0])?'match':'different';
  }});
 }
 const api=Object.freeze({prepare});if(typeof module==='object'&&module.exports)module.exports=api;else root.HanqSourceGradingV2=api;
