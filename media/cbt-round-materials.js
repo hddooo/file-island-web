@@ -15,7 +15,7 @@ function normalize(data,round){
 }
 function identity(api){var s=api.state();return s&&s.signedIn&&!s.restoring&&s.ownerId!=null?String(s.ownerId)+':'+String(s.epoch||0):null;}
 async function load(options){var token=identity(options.api);if(!token)throw Error('session_changed');var data=await options.api.cbt('GET','/api/v1/cbt/review-materials/'+options.round);if(identity(options.api)!==token||options.isCurrent&&!options.isCurrent())throw Error('session_changed');return normalize(data,options.round);}
-function sourceLines(q){var saved=null;try{saved=root.HanqCbtExplanations&&root.HanqCbtExplanations.resolve(q,'final');}catch(_){}saved=saved||q.review.item||{};var o=saved.overview||{},lines=Array.isArray(o.reason)?o.reason.slice(0,2):[];lines=lines.concat([o.answer,saved.why,saved.explanation]).filter(function(v){return typeof v==='string'&&v.trim();});return Array.from(new Set(lines));}
+function sourceLines(q){var saved=null;try{saved=root.HanqCbtExplanations&&root.HanqCbtExplanations.resolve(q,'final');}catch(_){}var o=saved&&root.HanqCbtExplanations.groundedOverview?root.HanqCbtExplanations.groundedOverview(saved):null;saved=saved||q.review.item||{};o=o||saved.overview||{};var lines=Array.isArray(o.reason)?o.reason.slice(0,2):[];lines=lines.concat([o.answer,saved.why,saved.explanation]).filter(function(v){return typeof v==='string'&&v.trim();});return Array.from(new Set(lines));}
 function mount(host,options){
  var api=options.api,token=identity(api),alive=true,urls=[],off,resetOff,items=[],index=0,selected={},data;
  function current(){return alive&&host.isConnected&&identity(api)===token;}

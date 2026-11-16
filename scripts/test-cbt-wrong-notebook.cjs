@@ -232,7 +232,9 @@ async function open(h, selector = 'details[data-notebook-question]') { const det
     h.host.querySelector('[data-notebook-show-answer]').click();
     const verified=h.w.HanqCbtExplanations.resolve(actual,'final');
     ok(verified,'real existing reviewed CBT explanation resolves with exact mapping');
-    ok(h.host.querySelector('.fe-review-body').textContent.includes(verified.overview.reason[0].replace(/\*\*/g,'')),'verified source explanation retained');
+    const reviewed=h.w.HanqCbtExplanations.groundedOverview(verified);
+    ok(reviewed.reason[0].includes('강조의 정변'),'current textbook rationale selected for exact item');
+    ok(h.host.querySelector('.fe-review-body').textContent.includes(reviewed.reason[0].replace(/\*\*/g,'')),'verified source explanation rendered');
     same(h.host.querySelectorAll('.fe-review-body h4').length,5,'five option explanation groups retained');
     ok(h.host.querySelector('.fe-answer-compare').textContent.includes('정답 '+item.answer+'번'),'saved answer mapping retained');
     h.close();

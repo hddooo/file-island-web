@@ -9,22 +9,24 @@ const api=w.HanqCbtExplanations;
 const all=Object.values(w.HANQ_CBT_EXPLANATIONS.items).concat(Object.values(w.HANQ_CBT_EXPLANATIONS_80.items));
 const expectedBoard={70:'1000030012',71:'1000030032',72:'1000030043',73:'1000030052',74:'1000030069',75:'1000030080',76:'1000030098',77:'1000030110',78:'1000030119',79:'1000030131',80:'1000030154'};
 assert.equal(all.length,550);
-const round70=all.filter(item=>item.exam===70);
-assert.equal(round70.length,50);
-for(const item of round70){
- const q=qFor(item),before=JSON.stringify(item),markup=api.render(q,null,'final');
- assert.match(markup,/81회 대비 시대별 학습자료 · [^<]+ · PDF [\d, –]+쪽/);
+const supplementalOnly=new Set(['exam-71-30','exam-72-40','exam-73-19']);
+const roundCounts={};
+for(const item of all){
+ const q=qFor(item),before=JSON.stringify(item), markup=api.render(q,null,'final');
+ roundCounts[item.exam]=(roundCounts[item.exam]||0)+1;
+ assert.match(markup,/data-reviewed="true"/);
+ if(supplementalOnly.has(item.id)){
+  assert.doesNotMatch(markup,/81회 대비 시대별 학습자료/);
+  assert.match(markup,/보충 근거 · /);
+ }else assert.match(markup,/81회 대비 시대별 학습자료 · [^<]+ · PDF [\d, –]+쪽/);
+ assert.notEqual(api.groundedOverview(api.resolve(q,'final')).reason,item.overview.reason);
  assert(api.groundedOverview(api.resolve(q,'final')).reason.some(line=>line.trim()));
  assert.equal(JSON.stringify(item),before);
-}
-
-for(const item of all){
- const markup=api.render(qFor(item),null,'final');
- assert.match(markup,/data-reviewed="true"/);
  assert(markup.includes('https://www.historyexam.go.kr/pst/view.do?bbs=dat&amp;pst_sno='+expectedBoard[item.exam]));
  assert(markup.includes('제'+item.exam+'회 '+item.number+'번 · 공식 문제지'));
  assert.equal((markup.match(/class="fe-exp-option /g)||[]).length,5);
 }
+assert.deepEqual(Object.values(roundCounts),Array(11).fill(50));
 for(const [n,cue,reference] of [
  [1,/비파형 동검.*사유 재산·계급 발생/,/PDF 9–10쪽/],
  [2,/비교용.*단궁·과하마·반어피/,/PDF 12–13쪽/],
@@ -49,5 +51,5 @@ for(const [n,cue,reference] of [
  assert.equal(h.querySelector('.fe-exp-sources'),null);
  assert.equal(h.querySelector('[data-reviewed]').dataset.reviewed,'false');
 }
-console.log('550 exact-identity source links; all 50 questions of the 70th grounded in current book; final-only gate passed');
+console.log('550 rewritten exact-version explanations; 547 with current book pages and 3 separately labeled public-only sources; final-only gate passed');
 w.close();
