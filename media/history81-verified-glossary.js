@@ -548,9 +548,11 @@ root.HanqHistory81VerifiedGlossary={
       ],
       "pages": [
         127,
+        128,
         129,
         130
-      ]
+      ],
+      "allowPlain": true
     },
     {
       "id": "verified-modern-유신헌법",
@@ -3897,6 +3899,250 @@ root.HanqHistory81VerifiedGlossary={
       "allowPlain": true,
       "pages": [
         105
+      ]
+    },
+    {
+      "id": "verified-modern-expanded-moscow",
+      "era": "modern",
+      "term": "모스크바 3국 외상회의",
+      "summary": "1945년 12월 미국·영국·소련 외무장관 회의. 한국 임시정부 수립과 미소공동위원회 설치, 최대 5년 신탁통치 방안을 논의했다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_o500300"
+      ],
+      "verifiedOn": "2026-11-16",
+      "aliases": [
+        "모스크바 3국 외상회의",
+        "모스크바 3국 외상 회의"
+      ],
+      "allowPlain": true,
+      "pages": [
+        127,
+        128
+      ]
+    },
+    {
+      "id": "verified-modern-expanded-jeongeup",
+      "era": "modern",
+      "term": "정읍 발언",
+      "summary": "1946년 6월 이승만이 정읍에서 통일정부 수립이 어렵다면 남한만이라도 임시정부를 세우자고 주장한 발언.",
+      "sources": [
+        "https://contents.history.go.kr/front/hm/view.do?levelId=hm_144_0140"
+      ],
+      "verifiedOn": "2026-11-16",
+      "aliases": [
+        "정읍 발언",
+        "정읍발언"
+      ],
+      "allowPlain": true,
+      "pages": [
+        127,
+        128
+      ]
+    },
+    {
+      "id": "verified-modern-expanded-un-interim",
+      "era": "modern",
+      "term": "UN 소총회",
+      "summary": "1948년 2월 26일 유엔 소총회는 선거를 치를 수 있는 지역에 한해 선거를 실시하도록 결의했다. 실제 선거는 남한에서 치러졌다.",
+      "sources": [
+        "https://contents.history.go.kr/front/hm/view.do?levelId=hm_145_0030"
+      ],
+      "verifiedOn": "2026-11-16",
+      "aliases": [
+        "UN 소총회",
+        "UN소총회",
+        "유엔 소총회",
+        "유엔소총회"
+      ],
+      "allowPlain": true,
+      "pages": [
+        127,
+        128
+      ]
+    },
+    {
+      "id": "verified-modern-expanded-north-south-talks",
+      "era": "modern",
+      "term": "남북 협상",
+      "summary": "1948년 4월 김구·김규식 등이 남한 단독선거를 막고 통일정부 수립을 모색하려 평양의 남북 협상에 참가했다.",
+      "sources": [
+        "https://contents.history.go.kr/front/hm/view.do?levelId=hm_153_0110"
+      ],
+      "verifiedOn": "2026-11-16",
+      "aliases": [
+        "남북 협상",
+        "남북협상"
+      ],
+      "allowPlain": true,
+      "pages": [
+        127,
+        128
+      ]
+    },
+    {
+      "id": "verified-modern-expanded-jeju",
+      "era": "modern",
+      "term": "제주 4·3 사건",
+      "summary": "1947년 3·1절 발포를 계기로 긴장이 깊어져 1948년 4월 3일 무장봉기가 일어났다. 이후 충돌과 진압으로 많은 제주 주민이 희생됐다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/hm/view.do?levelId=hm_145_0110"
+      ],
+      "verifiedOn": "2026-11-16",
+      "aliases": [
+        "제주 4·3 사건",
+        "제주 4·3사건",
+        "제주4·3사건",
+        "제주 4.3 사건",
+        "제주도 4·3 사건"
+      ],
+      "allowPlain": true,
+      "pages": [
+        127,
+        128
+      ]
+    },
+    {
+      "id": "verified-modern-expanded-may-election",
+      "era": "modern",
+      "term": "5·10 총선거",
+      "summary": "1948년 5월 10일 유엔한국임시위원단의 참관 아래 남한에서 치른 제헌국회 의원 선거. 이 선거로 제헌국회가 구성됐다.",
+      "sources": [
+        "https://contents.history.go.kr/front/hm/view.do?levelId=hm_145_0120"
+      ],
+      "verifiedOn": "2026-11-16",
+      "aliases": [
+        "5·10 총선거",
+        "5·10총선거",
+        "5.10 총선거",
+        "5⋅10 총선거"
+      ],
+      "allowPlain": true,
+      "pages": [
+        127,
+        128,
+        129
+      ]
+    },
+    {
+      "id": "verified-modern-expanded-april-revolution",
+      "era": "modern",
+      "term": "4·19 혁명",
+      "summary": "1960년 3·15 부정선거에 반발한 학생과 시민의 민주화 운동. 이승만 대통령의 하야로 이어졌다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i500700"
+      ],
+      "verifiedOn": "2026-11-16",
+      "aliases": [
+        "4·19 혁명",
+        "4·19혁명",
+        "4.19 혁명",
+        "4⋅19 혁명"
+      ],
+      "allowPlain": true,
+      "pages": [
+        129,
+        130
+      ]
+    },
+    {
+      "id": "verified-modern-expanded-gwangju",
+      "era": "modern",
+      "term": "5·18 민주화 운동",
+      "summary": "1980년 5월 광주에서 시민들이 신군부의 비상계엄 확대와 계엄군의 진압에 맞서 민주화를 요구한 운동.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i501000"
+      ],
+      "verifiedOn": "2026-11-16",
+      "aliases": [
+        "5·18 민주화 운동",
+        "5·18 민주화운동",
+        "5·18민주화운동",
+        "5.18 민주화 운동",
+        "5·18 광주 민주화 운동"
+      ],
+      "allowPlain": true,
+      "pages": [
+        133
+      ]
+    },
+    {
+      "id": "verified-modern-expanded-basic-agreement",
+      "era": "modern",
+      "term": "남북 기본 합의서",
+      "summary": "1991년 남북이 화해·불가침·교류 협력에 합의해 채택한 문서. 1992년 발효됐다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0066313"
+      ],
+      "verifiedOn": "2026-11-16",
+      "aliases": [
+        "남북 기본 합의서",
+        "남북기본합의서",
+        "남북 기본합의서"
+      ],
+      "allowPlain": true,
+      "pages": [
+        134,
+        135
+      ]
+    },
+    {
+      "id": "verified-modern-expanded-june-declaration",
+      "era": "modern",
+      "term": "6·15 남북 공동 선언",
+      "summary": "2000년 첫 남북 정상회담에서 김대중 대통령과 김정일 국방위원장이 발표한 선언. 이산가족 문제 해결과 교류 확대에 합의했다.",
+      "sources": [
+        "https://encykorea.aks.ac.kr/Article/E0070107"
+      ],
+      "verifiedOn": "2026-11-16",
+      "aliases": [
+        "6·15 남북 공동 선언",
+        "6·15남북공동선언",
+        "6·15 남북공동선언",
+        "6.15 남북 공동 선언"
+      ],
+      "allowPlain": true,
+      "pages": [
+        135,
+        136
+      ]
+    },
+    {
+      "id": "verified-modern-expanded-economic-plans",
+      "era": "modern",
+      "term": "경제 개발 5개년 계획",
+      "summary": "산업 육성과 성장을 목표로 정부가 추진한 장기 경제 계획. 제1차 계획은 1962년에 시작됐다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i501600"
+      ],
+      "verifiedOn": "2026-11-16",
+      "aliases": [
+        "경제 개발 5개년 계획",
+        "경제개발 5개년 계획",
+        "경제개발5개년계획"
+      ],
+      "allowPlain": true,
+      "pages": [
+        131,
+        132
+      ]
+    },
+    {
+      "id": "verified-modern-expanded-real-name",
+      "era": "modern",
+      "term": "금융 실명제",
+      "summary": "김영삼 정부가 1993년에 시행한 제도. 금융기관에서 가명이나 차명이 아닌 실제 명의로 거래하도록 했다.",
+      "sources": [
+        "https://contents.history.go.kr/mobile/hm/view.do?levelId=hm_156_0020"
+      ],
+      "verifiedOn": "2026-11-16",
+      "aliases": [
+        "금융 실명제",
+        "금융실명제"
+      ],
+      "allowPlain": true,
+      "pages": [
+        134,
+        136
       ]
     }
   ]

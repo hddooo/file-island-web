@@ -130,10 +130,53 @@
     }
     return ()=>undo.reverse().forEach(fn=>fn());
   }
+  // Curated modern terms can be plain in the semantic source. Opt in by
+  // verified term and page, without touching practice inputs or other eras.
+  function modernPlainTerms(host,era,source,entries){
+    if(era!=='modern'||source!==pdf)return ()=>{};
+    const allowed=new Map(),defs=root.HanqHistory81VerifiedGlossary?.definitions||[];
+    const opted=new Set(defs.filter(e=>e.era==='modern'&&e.allowPlain===true).map(e=>e.id));
+    for(const e of entries){
+      if(e.era!=='modern'||!opted.has(e.id))continue;
+      for(const p of e.pages||[]){
+        if(p<127||p>136)continue;
+        if(!allowed.has(p))allowed.set(p,new Set());
+        allowed.get(p).add(e.phrase);
+      }
+    }
+    const undo=[],doc=host.ownerDocument,walker=doc.createTreeWalker(host,4),nodes=[],patterns=new Map();
+    const escape=t=>t.replace(/[.*+?^${}()|[\]\\]/g,ch=>'\\'+ch).replace(/\s+/g,'\\s+');
+    for(const [p,phrases] of allowed){
+      const parts=[...phrases].sort((a,b)=>b.length-a.length).map(escape).join('|');
+      patterns.set(p,new RegExp('(?<![\\p{L}\\p{N}\\p{M}_])(?:'+parts+')(?![\\p{L}\\p{N}\\p{M}_])','gu'));
+    }
+    let n;while((n=walker.nextNode()))nodes.push(n);
+    for(const text of nodes){
+      const parent=text.parentElement,line=parent?.closest('.textbook-semantic-line');
+      const page=line?.closest('[data-pdf-page]');
+      const re=page&&patterns.get(Number(page.dataset.pdfPage));
+      if(!re||page.getAttribute('data-source-sha256')!==source||
+          parent.closest('a,button,input,textarea,select,script,style,[role="button"],[contenteditable],[data-history-source-emphasis],.history81-term,.textbook-semantic-prompt,.textbook-semantic-answer,[data-layout-label]'))continue;
+      const before=doc.createRange();before.selectNodeContents(line);before.setEndBefore(text);
+      const offset=before.toString().length,whole=line.textContent;
+      const word=ch=>!!ch&&/[\p{L}\p{N}\p{M}_]/u.test(ch);
+      const hits=[...text.data.matchAll(re)].filter(m=>!word(whole[offset+m.index-1])&&!word(whole[offset+m.index+m[0].length]));
+      if(!hits.length)continue;
+      const wrap=doc.createElement('span');wrap.style.display='contents';let at=0;
+      for(const hit of hits){
+        wrap.append(doc.createTextNode(text.data.slice(at,hit.index)));
+        const mark=doc.createElement('span');mark.dataset.historySourceEmphasis='';mark.textContent=hit[0];wrap.append(mark);
+        at=hit.index+hit[0].length;
+      }
+      wrap.append(doc.createTextNode(text.data.slice(at)));text.replaceWith(wrap);
+      undo.push(()=>{if(wrap.parentNode)wrap.replaceWith(text);});
+    }
+    return ()=>undo.reverse().forEach(fn=>fn());
+  }
   function mount(host,era,source){
     const verified=data();if(!root.HanqHistory81Terms||!ids[era]||verified.sources[era]!==source)return {count:0,stop(){}};
     const restoreMnemonic=removeDismissedMnemonic(host,era,source);
-    const restorePlain=openingPlainTerms(host,era,source);
+    const restorePlain=era==='modern'?modernPlainTerms(host,era,source,verified.entries):openingPlainTerms(host,era,source);
     const restore=prepare(host,verified.entries.filter(e=>e.era===era));
     verified.boundaryPrepared=true;
     let terms;try{terms=root.HanqHistory81Terms.mount(host,era,source,verified);}catch(e){restore();restorePlain();restoreMnemonic();throw e;}
