@@ -191,6 +191,7 @@
     function renderList() {
       if (!valid()) return;
       var section = shell();
+      if(root.HanqCbtWrongPrint)section.appendChild(button('오답 선택 · 인쇄 / PDF','tool-btn',function(){root.HanqCbtWrongPrint.open({api:api,round:ctx.round?Number(ctx.round):undefined});}));
       pendingEraBook(section);section.appendChild(node('h2','모의고사 오답'));
       section.appendChild(node('p', '완료한 모의고사에서 답을 골라 틀린 문제만 모았어요. 미응답과 별표만 한 문제는 포함하지 않아요.'));
       section.appendChild(node('p', '같은 문항은 최근 오답 당시의 문제와 해설로 한 번만 표시해요. 나중에 맞혀도 원래 모의고사에서 틀린 기록은 남아요.'));
