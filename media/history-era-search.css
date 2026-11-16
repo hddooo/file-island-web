@@ -1,0 +1,37 @@
+.era-search-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 6px 8px;
+  margin: 0 0 12px;
+}
+.era-search-panel [hidden], .toc .era-search-hit[hidden] { display: none !important; }
+.era-search-panel input {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid #75818d;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 16px;
+}
+.era-search-panel button {
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+.era-search-panel p { grid-column: 1 / -1; margin: 0; font-size: .88rem; }
+.era-search-panel :is(input, button):focus-visible { outline: 2px solid #facc15; outline-offset: 2px; }
+.toc .period.era-search-match { outline: 2px solid #facc15; outline-offset: -2px; }
+.toc .period.era-search-match:focus-visible { outline-color: #38bdf8; }
+.toc .period.era-search-match mark {
+  background: #ffdf57;
+  color: #241b00;
+  border-radius: 3px;
+  padding-inline: .12em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.toc .era-search-hit { display: block; margin-top: 4px; overflow-wrap: anywhere; font-size: .85rem; }
+html[data-company-mode=on] .toc .era-search-hit { grid-column: 1 / -1; }
