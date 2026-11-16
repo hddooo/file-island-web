@@ -41,12 +41,12 @@
     data.rows.forEach(function(r){var a=element('a','company-file-row');a.href=r[1];var name=element('span','company-file-name');name.append(element('span','company-folder','▱'),element('span','',r[0]));var title=element('span','company-file-title',r[2]),desc=element('span','company-file-desc',r[3]);a.append(name,title,desc);list.append(a);});box.append(list);return box;
   }
   // Decorate native controls, never clone them or take over their routes/state.
-  function nativeFile(node,name){
+  function nativeFile(node,name,labelOnly){
     if(!node)return;
     var label=node.querySelector(':scope > [data-company-added]');
     if(!label){label=element('span','company-native-file');label.setAttribute('data-company-added','');label.setAttribute('aria-hidden','true');node.insertBefore(label,node.firstChild);}
     if(label.textContent!==name)label.textContent=name;
-    node.setAttribute('data-company-native-row','');
+    if(!labelOnly)node.setAttribute('data-company-native-row','');
   }
   function nativeDirectory(node,path,count){if(node){var title=path+' / '+count+' files';if(node.getAttribute('data-company-native-directory')!==title)node.setAttribute('data-company-native-directory',title);}}
   function nativeDirectories(){
@@ -69,7 +69,15 @@
     ['gsr','jsr'].forEach(function(prefix){['topics','modes'].forEach(function(kind){doc.querySelectorAll('#app .'+prefix+'-'+kind).forEach(function(list){if(list.closest('[hidden]'))return;var key=kind==='topics'?'topic':'mode',rows=list.querySelectorAll(':scope > button[data-'+key+']');nativeDirectory(list,'history / '+(prefix==='gsr'?'goryeo':'joseon')+' / '+kind,rows.length);rows.forEach(function(b){nativeFile(b,b.dataset[key]+'.md');});});});});
     doc.querySelectorAll('#app .textbook-controls [role=tablist]').forEach(function(list){if(list.closest('[hidden]'))return;var rows=list.querySelectorAll(':scope > button[data-mode]');if(!rows.length)return;nativeDirectory(list,'history / source',rows.length);rows.forEach(function(b){nativeFile(b,b.dataset.mode+'.md');});});
     doc.querySelectorAll('#app .textbook-supplement-links').forEach(function(list){var rows=list.querySelectorAll('a[href^="#textbook/"]');if(!rows.length||list.closest('[hidden]'))return;nativeDirectory(list,'history / reference',rows.length);rows.forEach(function(a){nativeFile(a,a.getAttribute('href').split('/').pop()+'.md');});});
-    doc.querySelectorAll('#formalExamHost .fe-rounds').forEach(function(list){var rows=list.querySelectorAll('.fe-round button[data-round]');if(!rows.length)return;nativeDirectory(list,'history / exams',rows.length);rows.forEach(function(b){nativeFile(b,'round-'+b.dataset.round+'.json');});});
+    doc.querySelectorAll('#formalExamHost .fe-rounds').forEach(function(list){var rows=list.querySelectorAll('.fe-round button[data-round]');if(!rows.length)return;nativeDirectory(list,'history / exams',rows.length);rows.forEach(function(b){
+      if(b.classList.contains('fe-round-hit')){
+        // This empty button is a whole-card hit target, not an in-flow file row.
+        // Put the decorative filename in the heading; preserve the native hitbox.
+        b.querySelectorAll(':scope > [data-company-added]').forEach(function(n){n.remove();});
+        b.removeAttribute('data-company-native-row');
+        nativeFile(b.closest('.fe-round').querySelector(':scope > h3'),'round-'+b.dataset.round+'.json',true);
+      }else nativeFile(b,'round-'+b.dataset.round+'.json');
+    });});
     doc.querySelectorAll('#cbtWrongNotebookHost .fe-rounds').forEach(function(list){var rows=list.querySelectorAll(':scope > button[data-notebook-round]');if(!rows.length)return;nativeDirectory(list,'history / review',rows.length);rows.forEach(function(b){nativeFile(b,'round-'+b.dataset.notebookRound+'-wrong.json');});});
     doc.querySelectorAll('#formalExamHost .fe-reviews,#cbtWrongNotebookHost .fe-reviews').forEach(function(list){var rows=list.querySelectorAll(':scope > .fe-review > details > summary');if(!rows.length)return;nativeDirectory(list,'history / questions',rows.length);rows.forEach(function(s,i){var title=Array.from(s.childNodes).filter(function(n){return n.nodeType!==1||!n.hasAttribute('data-company-added');}).map(function(n){return n.textContent;}).join('');var m=title.match(/제(\d+)회\s+(\d+)번/);nativeFile(s,m?'round-'+m[1]+'-q'+m[2].padStart(3,'0')+'.md':'question-'+String(i+1).padStart(3,'0')+'.md');});});
   }

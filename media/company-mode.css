@@ -294,3 +294,57 @@ html[data-company-mode=on] body .lr-image-dialog[data-company-exam] img:not([hid
 /* Exam actions retain touch targets even in the compact document presentation. */
 html[data-company-mode=on] #app#app#app .bi-history-question :is(.bi-choice,.bi-submit,.bi-ready-button,.bi-fullscreen-toggle),
 html[data-company-mode=on] body .lr-image-toolbar :is(button,a){min-height:44px!important;min-width:44px!important}
+/* Company filenames belong to the in-flow title, never the absolute hit target. */
+html[data-company-mode=on] #app#app#app #formalExamHost .fe-round-compact > .fe-round-hit,
+html[data-company-mode=on] #app#app#app #formalExamHost .fe-round-compact > .fe-round-hit:is(:hover,:focus-visible,:disabled){background:transparent!important;background-image:none!important;padding:0!important;margin:0!important;border:0!important;min-height:0!important;min-width:0!important;box-sizing:border-box!important}
+html[data-company-mode=on] #app#app#app #formalExamHost .fe-round-compact > h3{position:relative;z-index:1;margin:0!important;padding:0!important;min-width:0!important;font-size:14px!important;line-height:1.5!important;pointer-events:none}
+html[data-company-mode=on] #app#app#app #formalExamHost .fe-round-compact > h3 > .company-native-file{display:inline!important;width:auto!important;flex:none!important;margin-right:10px!important;font-size:12px!important;pointer-events:none}
+html[data-company-mode=on] #app#app#app #formalExamHost .fe-round-compact .fe-pass-rate{display:block!important;margin:2px 0 0!important;font-size:12px!important;line-height:1.5!important;pointer-events:none!important}
+
+/* Company-mode mock exams: prioritize the original question width, not a viewport-height fit. */
+html[data-company-mode=on] body #app#app#app #formalExamHost .fe-active-run #feImage img.mock-image:not([hidden]){
+ width:100%!important;height:auto!important;max-width:100%!important;max-height:none!important;
+}
+html[data-company-mode=on] body #app#app#app #formalExamHost .fe-active-run :is(h2,#feTime)[data-company-line]::before{
+ display:none!important;
+}
+
+/* The scroll area and dock take the actual device pane height, above the global menu. */
+@media(min-height:460px){
+ html[data-company-mode=on] body.study-global-footer #app#app#app.shell:has(.device-content>#formalExamHost>.fe-active-run>.fe-exam-workspace){
+  padding-bottom:0!important;margin-block-end:0!important;
+ }
+ html[data-company-mode=on] body.study-global-footer #app#app#app>.device-content:has(>#formalExamHost>.fe-active-run>.fe-exam-workspace){
+  display:flex!important;flex-direction:column!important;padding-block:0!important;overflow-y:auto!important;overflow-x:hidden!important;
+ }
+ html[data-company-mode=on] body.study-global-footer #app#app#app>.device-content>#formalExamHost:has(>.fe-active-run>.fe-exam-workspace),
+ html[data-company-mode=on] body.study-global-footer #app#app#app>.device-content>#formalExamHost>.fe-active-run:has(>.fe-exam-workspace){
+  display:flex!important;flex:1 1 0%!important;flex-direction:column!important;min-height:0!important;min-width:0!important;
+  box-sizing:border-box!important;margin:0!important;padding:0!important;
+ }
+ html[data-company-mode=on] body.study-global-footer #app#app#app #formalExamHost .fe-active-run>.fe-exam-workspace{
+  display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:0!important;align-items:stretch!important;grid-template-rows:minmax(64px,1fr) auto!important;flex:1 1 0%!important;min-height:0!important;min-width:0!important;
+ }
+ html[data-company-mode=on] body.study-global-footer #app#app#app #formalExamHost .fe-active-run .fe-exam-workspace>#feImage{
+  min-height:0!important;min-width:0!important;overflow:auto!important;overscroll-behavior-y:contain;padding:0!important;
+ }
+ html[data-company-mode=on] body.study-global-footer #app#app#app #formalExamHost .fe-active-run #feImage figure{
+  margin:0 0 8px!important;
+ }
+ html[data-company-mode=on] body.study-global-footer #app#app#app #formalExamHost .fe-active-run>.fe-omr[open]{
+  max-height:25vh;overflow:auto;
+ }
+ html[data-company-mode=on] body.study-global-footer #app#app#app #formalExamHost .fe-active-run .fe-exam-answer-side{
+  position:relative!important;top:auto!important;bottom:auto!important;margin:0!important;padding:5px 6px!important;
+ }
+ html[data-company-mode=on] body.study-global-footer #app#app#app #formalExamHost .fe-active-run .fe-exam-answer-side::after{
+  display:none!important;content:none!important;
+ }
+}
+
+/* The site's footer is hidden with a mouse on desktop; don't leave its reserved gap. */
+@media(min-width:701px) and (min-height:460px) and (hover:hover) and (pointer:fine){
+ html[data-company-mode=on] body.study-global-footer #app#app#app.shell:has(.device-content>#formalExamHost>.fe-active-run>.fe-exam-workspace){
+  height:calc(var(--study-viewport-height,100dvh) - 6px)!important;max-height:none!important;
+ }
+}
