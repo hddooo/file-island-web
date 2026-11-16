@@ -303,3 +303,84 @@ html body #formalExamHost .fe-active-run #feImage:focus-visible{outline:2px soli
   height:var(--study-viewport-height,100dvh)!important;
  }
 }
+
+/* One compact score card on a finalized full exam. Score and XP are server-owned values. */
+html body #app #formalExamHost .fe-score-card{
+ box-sizing:border-box;display:grid;justify-items:center;gap:6px;
+ width:min(100%,390px);margin:12px auto 20px;padding:16px 12px;
+ border:1px solid #648278;border-radius:12px;background:#122923;color:#effcf5;
+}
+html body #app #formalExamHost .fe-score-line{
+ display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:4px 12px;
+ margin:0!important;color:inherit!important;
+}
+html body #app #formalExamHost .fe-score-card .fe-score-number{
+ font-size:clamp(38px,9vw,62px)!important;line-height:1.07!important;font-weight:850!important;
+ font-variant-numeric:tabular-nums;color:#effcf5!important;text-shadow:none!important;
+}
+html body #app #formalExamHost .fe-score-number small{
+ margin-inline-start:2px;font-size:.43em!important;color:inherit!important;
+}
+html body #app #formalExamHost .fe-score-card .fe-score-grade{
+ margin:0!important;font-size:clamp(16px,4vw,24px)!important;font-weight:750!important;color:#d9eee4!important;
+}
+html body #app #formalExamHost .fe-score-card .fe-score-xp{
+ margin:0!important;font-size:13px!important;font-weight:700!important;color:#a8efbe!important;
+}
+html body #app #formalExamHost .fe-score-card .fe-score-xp--loss{color:#ffc1bc!important}
+html[data-company-mode=on] body #app#app#app #formalExamHost .fe-score-card{background:#161b22!important;border-color:#484f58!important;color:#e6edf3!important}
+html[data-company-mode=on] body #app#app#app #formalExamHost .fe-score-card .fe-score-number{color:#e6edf3!important}
+html[data-company-mode=on] body #app#app#app #formalExamHost .fe-score-number small{color:inherit!important}
+html[data-company-mode=on] body #app#app#app #formalExamHost .fe-score-card .fe-score-xp{font-size:13px!important;color:#a8efbe!important}
+html[data-company-mode=on] body #app#app#app #formalExamHost .fe-score-card .fe-score-xp--loss{color:#ffc1bc!important}
+
+/* Color the result label, without changing expansion, source image or explanation content. */
+html body #app#app#app #formalExamHost .fe-reviews .fe-review-status{
+ display:inline-block;padding:1px 5px;border-radius:4px;font-weight:750;line-height:1.55;
+}
+html body #app#app#app #formalExamHost .fe-review--correct .fe-review-status{
+ color:#173e83!important;background-color:#dbeafe!important;
+}
+html body #app#app#app #formalExamHost .fe-review--wrong .fe-review-status{
+ color:#8e1b27!important;background-color:#fee2e2!important;
+}
+/* The expanded explanation already has these marks; keep their meaning in both themes. */
+html body #app#app#app #formalExamHost .fe-reviews :is(.fe-correct-answer,.fe-review--correct .fe-selected-answer,.qverdict.ok){
+ color:#173e83!important;background-color:#dbeafe!important;border-color:#7aa8e7!important;
+}
+html body #app#app#app #formalExamHost .fe-reviews :is(.fe-review--wrong .fe-selected-answer,.qverdict.no){
+ color:#8e1b27!important;background-color:#fee2e2!important;border-color:#e99aa2!important;
+}
+html body #app#app#app #formalExamHost .fe-reviews .fe-answer-compare :is(.fe-correct-answer,.fe-selected-answer)>b{
+ color:inherit!important;
+}
+html body #app#app#app #formalExamHost .fe-review--unanswered .fe-selected-answer{color:#d3dce6!important;border-color:#8190a2!important}
+html[data-company-mode=on] body #app#app#app #formalExamHost :is(.fe-score-card p,.fe-era-rings h3,.fe-era-ring-note)[data-company-line]{padding-inline-start:0!important}
+html[data-company-mode=on] body #app#app#app #formalExamHost :is(.fe-score-card p,.fe-era-rings h3,.fe-era-ring-note)[data-company-line]::before{display:none!important}
+
+/* Final-result era rings. SVG survives background-image resets in company mode. */
+html body #app#app#app #formalExamHost .fe-era-rings{margin:14px 0 18px;min-width:0}
+html body #app#app#app #formalExamHost .fe-era-ring-note{margin:4px 0 10px!important;font-size:12px!important;line-height:1.5!important;color:inherit!important;opacity:.8}
+html body #app#app#app #formalExamHost .fe-era-ring-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(94px,1fr));gap:10px 8px;list-style:none;margin:0;padding:0;min-width:0}
+html body #app#app#app #formalExamHost .fe-era-ring-item{display:flex;align-items:center;flex-direction:column;gap:4px;margin:0;padding:0;min-width:0;text-align:center;font-size:12px!important}
+html body #app#app#app #formalExamHost .fe-era-ring{position:relative;display:grid;place-items:center;aspect-ratio:1;width:100%;max-width:108px;min-width:0;min-height:0;margin:0!important;padding:0!important;border:0!important;border-radius:50%!important;background:transparent!important;box-shadow:none!important;color:inherit!important;line-height:1.3!important;box-sizing:border-box}
+html body #app#app#app #formalExamHost button.fe-era-ring{cursor:pointer;touch-action:manipulation}
+html body #app#app#app #formalExamHost .fe-era-ring:focus-visible{outline:3px solid #79c0ff!important;outline-offset:3px!important}
+html body #app#app#app #formalExamHost .fe-era-ring svg{display:block!important;width:100%;height:auto;overflow:visible;pointer-events:none;filter:none!important}
+html body #app#app#app #formalExamHost .fe-era-ring circle{fill:none;stroke-width:6}
+html body #app#app#app #formalExamHost .fe-era-ring-track{stroke:#62746d;opacity:.45}
+html body #app#app#app #formalExamHost .fe-era-ring-value{stroke:#dc7066;stroke-linecap:butt}
+html body #app#app#app #formalExamHost .fe-era-ring[data-tone=unrated] .fe-era-ring-track{stroke-dasharray:3 4;opacity:.35}
+html body #app#app#app #formalExamHost .fe-era-ring[data-tone=unknown] .fe-era-ring-track{stroke-dasharray:1 4}
+html body #app#app#app #formalExamHost .fe-era-ring-copy{position:absolute;inset:18%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;min-width:0;pointer-events:none}
+html body #app#app#app #formalExamHost .fe-era-ring-copy strong{font-size:14px!important;line-height:1.25!important;overflow-wrap:anywhere;color:inherit!important}
+html body #app#app#app #formalExamHost .fe-era-ring-copy span{font-size:12px!important;line-height:1.2!important;color:inherit!important}
+html body #app#app#app #formalExamHost .fe-era-ring-copy b{font-size:18px!important;color:inherit!important}
+html body #app#app#app #formalExamHost .fe-era-ring-detail{font-size:11px!important;line-height:1.4!important;color:inherit!important;overflow-wrap:anywhere}
+@media(max-width:420px){
+ html body #app#app#app #formalExamHost .fe-era-ring-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 6px}
+ html body #app#app#app #formalExamHost .fe-era-ring{max-width:96px}
+ html body #app#app#app #formalExamHost .fe-era-ring-copy{inset:17%;gap:3px}
+ html body #app#app#app #formalExamHost .fe-era-ring-copy strong{font-size:12px!important}
+ html body #app#app#app #formalExamHost .fe-era-ring-copy b{font-size:16px!important}
+}
