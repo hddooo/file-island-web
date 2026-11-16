@@ -89,22 +89,21 @@ test('partial replays still use their original scores and list',async t=>{
  assert.match(host.querySelector('.result-score').textContent,/정답 1/);
  assert.equal(host.querySelectorAll('.fe-question-grid button').length,6);
 });
-test('result circles sort selected wrong counts and lead to the existing review',async t=>{
+test('era circles keep sorted counts and no longer open explanations when clicked',async t=>{
  const {host,w,writes}=await view(t,70,5,{company:true});
  const rings=[...host.querySelectorAll('.fe-era-ring-item')];
  assert.deepEqual(rings.slice(0,2).map(el=>el.dataset.eraKey),['joseon','goryeo']);
- assert.match(rings[0].querySelector('.fe-era-ring-copy').textContent,/오답 2/);
- assert.match(rings[1].querySelector('.fe-era-ring-copy').textContent,/오답 1/);
- assert.match(rings[1].querySelector('.fe-era-ring-detail').textContent,/미응답 1/);
+ assert.match(rings[0].querySelector('.fe-era-ring-copy').textContent,/정답률 0%/);
+ assert.match(rings[1].querySelector('.fe-era-ring-detail').textContent,/0\/2 정답.*오답 1 · 미응답 1/);
+ assert.equal(host.querySelector('.fe-score-accuracy').textContent,'전체 정답률 2% · 1/50 정답');
  const other=host.querySelector('[data-era-key="unknown"]');
- assert.match(other.querySelector('.fe-era-ring-copy').textContent,/기타.*오답 1/);
- assert.equal(other.querySelector('button').dataset.reviewPosition,'5');
- const first=rings[0].querySelector('button');
- assert.equal(first.dataset.reviewPosition,'1');
- first.click();
+ assert.match(other.textContent,/기타.*정답률 0%.*오답 1/);
+ assert.equal(host.querySelector('.fe-era-rings :is(button,a,[data-review-position],[tabindex])'),null);
+ const active=w.document.activeElement;
  const target=host.querySelector('details[data-position="1"]');
- assert.equal(target.open,true);
- assert.equal(w.document.activeElement,target.querySelector('summary'));
+ rings[0].querySelector('.fe-era-ring').click();
+ assert.equal(target.open,false);
+ assert.equal(w.document.activeElement,active);
  assert.deepEqual(writes,[]);
 });
 
