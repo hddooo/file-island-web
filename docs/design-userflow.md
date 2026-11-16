@@ -104,3 +104,12 @@ Recall retains labels such as 특징 while learners fill historical names and ev
 
 ## 0.8.49-beta: Eight-era quality pass
 Recall excludes annotated non-answer labels without changing body facts or persistent records. Three missing historical glossary entries added. See [audit scope and limits](versions/0.8.49-beta/report.md).
+
+### 종이 풀이 결과 직접 입력 (구현 후보, API 배포 후 사용)
+
+- 실전모의고사 회차 목록의 `종이로 푼 결과 입력`에서 회차와 틀린 번호를 입력한다. 1~50 정수만 허용하며 중복은 한 번만 반영한다고 미리 표시한다.
+- `50번까지 모두 풀고 직접 채점한 결과` 확인 후 저장한다. 오답이 없으면 별도로 `50문제 모두 정답`을 선택해야 한다. 빈 입력을 자동 100점으로 처리하지 않는다.
+- `/api/v1/cbt/paper-results` 조회가 성공한 경우에만 저장한다. 서버의 공식 배점 결과만 표시하고 온라인 선택 답·응시시간·XP를 생성하지 않는다.
+- 종이 기록은 `종이 풀이 · 직접 입력` 배지와 **기록한 시각**을 표시한다. 온라인 응시 이력과 별도로 보관한다.
+- 응답 유실 시 같은 계정의 이 탭에 요청 본문/멱등 키를 유지하고 같은 요청으로만 확인한다. 결과 불명 중 입력을 변경하거나 새 저장 키를 발급하지 않는다. 계정/로그인 세대 변경·페이지 이동·닫기 후 늦은 응답은 화면에 반영하지 않는다.
+- 이 후보는 입력·기록 화면만 포함한다. 종이 오답의 기존 오답노트/PDF 통합은 별도 연결 검증 전까지 포함한다고 표시하지 않는다. 운영 반영 여부는 통합 배포 검증 결과를 따른다.
