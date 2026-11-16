@@ -84,9 +84,16 @@ function eraWeaknessRings(a){
   a=a||{};
   var count=function(n){return Number.isSafeInteger(n)&&n>=0?n:null;};
   var sourceRows=Array.isArray(a.rows)?a.rows.filter(function(r){return r&&['correct','wrong','unanswered'].indexOf(r.status)!==-1;}):null;
-  var excluded=sourceRows?sourceRows.filter(function(r){return r.era==='unknown';}).length:0;
-  var eras=(Array.isArray(a.eras)?a.eras:[]).filter(function(e){if(e&&e.key==='unknown'){if(!sourceRows)excluded+=count(e.total)||0;return false;}return !!e;}).map(function(e,index){
-    var rows=sourceRows&&sourceRows.filter(function(r){return r.era===e.key;}),total=rows?rows.length:count(e.total)||0;
+  var groups=(Array.isArray(a.eras)?a.eras:[]).filter(Boolean);
+  var other=groups.find(function(e){return e.key==='unknown';});
+  var normal=groups.filter(function(e){return e.key!=='unknown';});
+  var knownKeys=new Set(normal.map(function(e){return e.key;}));
+  var otherRows=sourceRows&&sourceRows.filter(function(r){return !knownKeys.has(r.era);});
+  if(otherRows?otherRows.length:(other&&count(other.total)>0)){
+    normal.push(Object.assign({},other,{key:'unknown',label:'기타'}));
+  }
+  var eras=normal.map(function(e,index){
+    var rows=sourceRows&&(e.key==='unknown'?otherRows:sourceRows.filter(function(r){return r.era===e.key;})),total=rows?rows.length:count(e.total)||0;
     var unanswered=rows?rows.filter(function(r){return r.status==='unanswered';}).length:count(e.unanswered);
     var wrong=rows?rows.filter(function(r){return r.status==='wrong';}).length:count(e.actualWrong);
     if(!rows&&wrong===null&&count(e.wrong)!==null&&unanswered!==null)wrong=Math.max(0,e.wrong-unanswered);
@@ -94,7 +101,7 @@ function eraWeaknessRings(a){
     var first=rows&&rows.filter(function(r){return r.status==='wrong'&&Number.isSafeInteger(r.position)&&r.position>=0;}).sort(function(x,y){return x.number-y.number||x.position-y.position;})[0];
     return{key:e.key,label:e.label||e.key,total:total,wrong:wrong,unanswered:unanswered,first:first,index:index};
   }).sort(function(x,y){return (y.wrong===null?-1:y.wrong)-(x.wrong===null?-1:x.wrong)||x.index-y.index;});
-  if(!eras.length)return excluded?'<p class="fe-era-ring-note">시대 미분류 '+excluded+'문항은 시대별 비교에서 제외했어요.</p>':'';
+  if(!eras.length)return '';
   var html='<section class="fe-era-rings" aria-labelledby="feEraRingsTitle"><h3 id="feEraRingsTitle">나의 약점 · 시대별 오답</h3><p class="fe-era-ring-note">오답 개수가 많은 순서 · 미응답 제외 · 원을 누르면 첫 오답으로 이동</p><ol class="fe-era-ring-list">';
   html+=eras.map(function(e){
     var tested=e.total>0,known=e.wrong!==null,tone=!tested?'unrated':!known?'unknown':e.wrong?'wrong':'clear';
@@ -107,7 +114,6 @@ function eraWeaknessRings(a){
   }).join('');
   html+='</ol>';
   if(eras.some(function(e){return e.total>0;})&&eras.every(function(e){return e.wrong===0;}))html+='<p class="fe-era-ring-note">선택한 답의 오답이 없어요.</p>';
-  if(excluded)html+='<p class="fe-era-ring-note">시대 미분류 '+excluded+'문항은 시대별 비교에서 제외했어요.</p>';
   return html+'</section>';
 }
 function analysisHtml(d){if(d.run.kind==='review'){var R=root.HanqCbtResultAnalysis,a=R?R.analyze(d.items):null;return '<h3>문항별 결과 · 시대</h3><div class="fe-question-grid">'+d.items.map(function(q){var row=a&&a.rows.find(function(x){return x.position===q.position;});return '<button type="button" class="fe-question fe-question--'+q.review.status+'" data-review-position="'+q.position+'"><b>'+q.number+'번 - '+esc(row?row.eraLabel:'분류 확인 필요')+'</b></button>';}).join('')+'</div>';}var A=root.HanqCbtResultAnalysis;
