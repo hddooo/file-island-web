@@ -69,7 +69,7 @@ async function download(options){
  async function answers(items){await textLine('정답 한눈에 보기',13,true);
   for(var i=0;i<items.length;i+=6){await textLine(items.slice(i,i+6).map(function(q){return q.number+'. '+q.review.correctNumber;}).join('     |     '),11,true);}
   y+=16;await textLine('간결 해설',13,true);
-  for(var q of items){current();var verified=root.HanqCbtExplanations&&root.HanqCbtExplanations.resolve(q,'final'),saved=verified||q.review.item||{},overview=saved.overview||{},parts=[];
+  for(var q of items){current();var verified=root.HanqCbtExplanations&&root.HanqCbtExplanations.resolve(q,'final'),saved=verified||q.review.item||{},overview=verified&&root.HanqCbtExplanations.groundedOverview?root.HanqCbtExplanations.groundedOverview(verified):saved.overview||{},parts=[];
    if(Array.isArray(overview.reason))parts=overview.reason.map(clean).filter(Boolean).slice(0,2);
    var answer=clean(overview.answer);if(answer&&parts.indexOf(answer)<0)parts.push(answer);
    if(!parts.length&&Array.isArray(saved.options)){var correct=saved.options[q.review.correctNumber-1];if(correct&&Array.isArray(correct.review))parts=correct.review.map(clean).filter(Boolean).slice(0,2);}
