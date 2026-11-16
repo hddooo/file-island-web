@@ -264,6 +264,50 @@
         (groupNode || parent).appendChild(lineNode);
       });
     }
+    // Study-note correction for the two 81st-edition sequence rows, PDF pp. 127–128.
+    // 1947 General Assembly: peninsula-wide elections; 1948 Interim Committee:
+    // vote in accessible areas (South Korea). Keep the source model unchanged.
+    // https://contents.history.go.kr/front/hm/view.do?levelId=hm_145_0030
+    function correctModernElectionSequence(td, block, row, cell) {
+      if (page.sourceSha256 !== 'd54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de' ||
+          (page.pdfPage !== 127 && page.pdfPage !== 128) || block.columnCount !== 2 ||
+          cell.columnIndex !== 1 || row.cells.length !== 2 || cell.sourceTranscriptBlockId) return;
+      var labelCell = row.cells.find(function (c) { return c.columnIndex === 0; });
+      if (!labelCell) return;
+      var compact = function (s) { return s.replace(/[\s\u200b]/g, ''); };
+      var label = compact(labelCell.lines.map(function (line) {
+        return line.spans.map(function (span) { return span.text; }).join('');
+      }).join(''));
+      if (page.pdfPage === 127 ? !/^순서★?$/.test(label) : !/^전체순서★?$/.test(label)) return;
+      var walker = doc.createTreeWalker(td, 4), offsets = [], text = '', part;
+      while ((part = walker.nextNode())) {
+        for (var i = 0; i < part.data.length; i++) {
+          if (!compact(part.data[i])) continue;
+          text += part.data[i];
+          offsets.push({node: part, offset: i});
+        }
+      }
+      var originalDecision = '유엔총회남북한총선거결정', start = text.indexOf(originalDecision);
+      var plainEnding = /→총선거$/.test(text);
+      if (start < 0 || text.indexOf(originalDecision, start + 1) !== -1 ||
+          !/^광복→/.test(text) || !/남북협상&?제주4[·ㆍ･.]3사건→(?:5[·ㆍ･.]10)?총선거$/.test(text) ||
+          text.indexOf('유엔소총회') !== -1) return;
+      function replace(at, length, replacement) {
+        var first = offsets[at], last = offsets[at + length - 1];
+        if (first.node === last.node) {
+          first.node.replaceData(first.offset, last.offset - first.offset + 1, replacement);
+          return;
+        }
+        for (var pos = at + length - 1; pos >= at;) {
+          var end = offsets[pos], begin = end;
+          while (pos > at && offsets[pos - 1].node === end.node) begin = offsets[--pos];
+          begin.node.replaceData(begin.offset, end.offset - begin.offset + 1, pos === at ? replacement : '');
+          pos--;
+        }
+      }
+      if (plainEnding) replace(text.length - 3, 3, '5·10 총선거');
+      replace(start, originalDecision.length, '유엔 총회: 남북한 총선거 결의(1947) → 유엔 소총회: 남한 단독 총선거 결의(1948)');
+    }
     function annotateBlock(element, block) {
       if (typeof block.id === 'string') element.setAttribute('data-source-block', block.id);
       if (block.reviewStatus != null) {
@@ -564,6 +608,7 @@
               person.appendChild(sourceLines[1]);facts.appendChild(sourceLines[0]);facts.appendChild(sourceLines[2]);nested.append(person,facts);td.replaceChildren(nested);
             }
           }
+          correctModernElectionSequence(td, block, row, cell);
           tr.appendChild(td);
         });
         (head && ri < block.headerRowCount ? head : body).appendChild(tr);
