@@ -8,7 +8,7 @@ const source = fs.readFileSync(require.resolve('../media/formal-exams.js'), 'utf
 const analysis = fs.readFileSync(require.resolve('../media/cbt-result-analysis.js'), 'utf8');
 const styles = fs.readFileSync(require.resolve('../media/cbt-results.css'), 'utf8');
 const resultId = '00000000-0000-4000-8000-000000000001';
-async function view(t, score, xp, { kind, withAnalysis = true, company = false, maxScore = 100 } = {}) {
+async function view(t, score, xp, { kind, withAnalysis = true, company = false, maxScore = 100, withStar = false } = {}) {
  const d = new JSDOM('<!doctype html><html'+(company?' data-company-mode="on"':'')+'><body><main id="app"><div id="formalExamHost"></div></main></body></html>',
   { url: 'https://fixture.test', runScripts: 'outside-only' });
  const w = d.window, host = w.document.querySelector('#formalExamHost');
@@ -33,7 +33,7 @@ async function view(t, score, xp, { kind, withAnalysis = true, company = false, 
  const api = { enabled:()=>true, state:()=>({signedIn:true,ownerId:'fixture'}), init:async()=>{}, onChange:()=>()=>{},
   cbt:async(method,path)=>{
    if(method!=='GET')writes.push([method,path]);
-   if(path.endsWith('/stars'))return{signature,flags:items.map(()=>false)};
+   if(path.endsWith('/stars'))return{signature,flags:items.map((_,i)=>withStar&&i===0)};
    return {run,items};
   },
   cbtImage:async()=>new w.Blob(['synthetic'],{type:'image/png'})
@@ -105,5 +105,15 @@ test('result circles sort selected wrong counts and lead to the existing review'
  const target=host.querySelector('details[data-position="1"]');
  assert.equal(target.open,true);
  assert.equal(w.document.activeElement,target.querySelector('summary'));
+ assert.deepEqual(writes,[]);
+});
+
+test('full result omits overview links and chart captions without removing saved stars',async t=>{
+ const {host,writes}=await view(t,80,10,{withStar:true});
+ assert.equal(host.querySelector('#feWrongNotes'),null);
+ assert.equal(host.querySelector('.fe-starred-review'),null);
+ assert.doesNotMatch(host.textContent,/오답 개수가 많은 순서|원을 누르면|시대별 비교에서 제외|별표 문제 \d+문항/);
+ assert.match(host.querySelector('[data-era-key="unknown"]').textContent,/기타.*오답 1/);
+ assert.equal(host.querySelector('[data-toggle-star="0"]').getAttribute('aria-pressed'),'true');
  assert.deepEqual(writes,[]);
 });
