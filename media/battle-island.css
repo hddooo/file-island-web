@@ -154,3 +154,14 @@ html body .battle-island .bi-history-round .bi-choice{width:100%;min-width:44px;
 .battle-island .bi-history-question>.bi-actions{flex:none;padding-top:6px;margin:6px 0 0}
 .battle-island .bi-history-question>.bi-actions button{min-height:44px;padding:6px 12px}
 @media(max-height:500px){.battle-island .bi-history-round>.bi-round-kicker{display:none}.battle-island.bi-in-match .bi-history-question:not(.bi-fullscreen-panel){top:58px;bottom:8px}.battle-island.bi-in-match .bi-history-question.bi-fullscreen-panel{padding-top:50px!important}}
+
+/* The active history source uses the battle viewport, whose global footer is hidden.
+   Keep the original proportional image in one wide scroller and native answers below.
+   App-local fullscreen and every TOEIC/English panel retain their existing layouts. */
+html body .battle-island.bi-in-match .bi-history-question:not(.bi-fullscreen-panel){left:0;right:0;bottom:0;min-width:0;min-height:0;padding:6px;box-sizing:border-box}
+html body .battle-island.bi-in-match .bi-history-question:not(.bi-fullscreen-panel)>.bi-history-round{flex:1 1 0%;width:100%;min-width:0;min-height:0;overflow:hidden}
+html body .battle-island.bi-in-match .bi-history-question:not(.bi-fullscreen-panel)>.bi-history-round>.bi-question-content:not([hidden]){flex:1 1 0%;min-width:0;min-height:0;grid-template-rows:minmax(0,1fr) auto;align-content:stretch}
+html body .battle-island.bi-in-match .bi-history-question:not(.bi-fullscreen-panel) .bi-history-materials{width:100%;max-width:none;min-width:0;min-height:0;margin:0;overflow:auto;box-sizing:border-box}
+html body .battle-island.bi-in-match .bi-history-question:not(.bi-fullscreen-panel) .bi-history-materials>.bi-question-image{display:block;width:100%;max-width:100%;height:auto;max-height:none;object-fit:contain;margin:0 0 8px}
+html body .battle-island.bi-in-match .bi-history-question:not(.bi-fullscreen-panel) .bi-item{min-width:0;min-height:0;align-self:end}
+html body .battle-island.bi-in-match .bi-history-question:not(.bi-fullscreen-panel)>.bi-actions{flex:0 0 auto;position:relative;z-index:2;margin:0;padding-top:6px}

@@ -256,3 +256,50 @@ html[data-company-mode=on] body #formalExamHost :is(.fe-omr,.fe-omr-cell){backgr
 html[data-company-mode=on] body #formalExamHost .fe-omr-cell.is-answered{background:#21262d;border-color:#8b949e}
 html[data-company-mode=on] body #formalExamHost .fe-exam-answer-side .fe-choices button[aria-pressed=true]{background:#30363d!important;color:#fff!important;border-color:#8b949e!important;box-shadow:none!important}
 @media(prefers-reduced-motion:reduce){html body #formalExamHost .fe-omr>summary::before{transition:none}}
+
+/* Formal mocks in both themes: the original question scrolls above a shared answer dock. */
+html body #app#app#app #formalExamHost .fe-active-run #feImage img.mock-image:not([hidden]){
+ width:100%!important;height:auto!important;max-width:100%!important;max-height:none!important;
+}
+html body #formalExamHost .fe-active-run #feImage:focus-visible{outline:2px solid currentColor;outline-offset:-2px}
+
+/* The scroll area and dock take the actual device pane height, above the global menu. */
+@media(min-height:460px){
+ html body.study-global-footer #app#app#app.shell:has(.device-content>#formalExamHost>.fe-active-run>.fe-exam-workspace){
+  height:calc(var(--study-viewport-height,100dvh) - var(--study-footer-height,76px))!important;
+  max-height:none!important;padding-bottom:0!important;margin-block:0!important;
+ }
+ html body.study-global-footer #app#app#app>.device-content:has(>#formalExamHost>.fe-active-run>.fe-exam-workspace){
+  display:flex!important;flex-direction:column!important;padding-block:0!important;overflow-y:auto!important;overflow-x:hidden!important;
+ }
+ html body.study-global-footer #app#app#app>.device-content>#formalExamHost:has(>.fe-active-run>.fe-exam-workspace),
+ html body.study-global-footer #app#app#app>.device-content>#formalExamHost>.fe-active-run:has(>.fe-exam-workspace){
+  display:flex!important;flex:1 1 0%!important;flex-direction:column!important;min-height:0!important;min-width:0!important;
+  box-sizing:border-box!important;margin:0!important;padding:0!important;
+ }
+ html body.study-global-footer #app#app#app #formalExamHost .fe-active-run>.fe-exam-workspace{
+  display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:0!important;align-items:stretch!important;grid-template-rows:minmax(64px,1fr) auto!important;flex:1 1 0%!important;min-height:0!important;min-width:0!important;
+ }
+ html body.study-global-footer #app#app#app #formalExamHost .fe-active-run .fe-exam-workspace>#feImage{
+  min-height:0!important;min-width:0!important;overflow:auto!important;overscroll-behavior-y:contain;padding:0!important;
+ }
+ html body.study-global-footer #app#app#app #formalExamHost .fe-active-run #feImage figure{
+  margin:0 0 8px!important;
+ }
+ html body.study-global-footer #app#app#app #formalExamHost .fe-active-run>.fe-omr[open]{
+  max-height:25vh;overflow:auto;
+ }
+ html body.study-global-footer #app#app#app #formalExamHost .fe-active-run .fe-exam-answer-side{
+  position:relative!important;top:auto!important;bottom:auto!important;margin:0!important;padding:5px 6px!important;
+ }
+ html body.study-global-footer #app#app#app #formalExamHost .fe-active-run .fe-exam-answer-side::after{
+  display:none!important;content:none!important;
+ }
+}
+
+/* The site's footer is hidden with a mouse on desktop; don't leave its reserved gap. */
+@media(min-width:701px) and (min-height:460px) and (hover:hover) and (pointer:fine){
+ html body.study-global-footer #app#app#app.shell:has(.device-content>#formalExamHost>.fe-active-run>.fe-exam-workspace){
+  height:var(--study-viewport-height,100dvh)!important;
+ }
+}

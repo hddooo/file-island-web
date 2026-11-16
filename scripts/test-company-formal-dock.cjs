@@ -4,10 +4,10 @@ const assert = require('node:assert/strict');
 const { readFileSync } = require('node:fs');
 const { JSDOM } = require('jsdom');
 const cbt = readFileSync(require.resolve('../media/cbt-results.css'), 'utf8');
-const css = readFileSync(require.resolve('../media/company-mode.css'), 'utf8');
-const start = css.indexOf('/* Company-mode mock exams:');
+const js = readFileSync(require.resolve('../media/formal-exams.js'), 'utf8');
+const start = cbt.indexOf('/* Formal mocks in both themes:');
 assert(start >= 0);
-const fix = css.slice(start).replace(/\/\*[\s\S]*?\*\//g, '');
+const fix = cbt.slice(start).replace(/\/\*[\s\S]*?\*\//g, '');
 const d = new JSDOM(`<!doctype html><html data-company-mode="on">
 <body class="study-global-footer"><main id="app" class="shell"><div class="device-content">
 <section id="formalExamHost"><section class="panel fe-active-run">
@@ -25,7 +25,7 @@ assert.deepEqual([...doc.querySelectorAll(sel)].map(e => e.id), ['question']);
 assert.match(img, /width:100%!important;height:auto!important/);
 assert.match(img, /max-height:none!important/);
 doc.documentElement.removeAttribute('data-company-mode');
-assert.equal(doc.querySelectorAll(sel).length, 0);
+assert.deepEqual([...doc.querySelectorAll(sel)].map(e => e.id), ['question']);
 doc.documentElement.setAttribute('data-company-mode', 'on');
 doc.querySelector('.fe-active-run').classList.remove('fe-active-run');
 assert.equal(doc.querySelectorAll(sel).length, 0);
@@ -36,6 +36,8 @@ assert.match(rule('.fe-exam-workspace>#feImage')[1], /overflow:auto!important/);
 assert.match(rule('.fe-active-run .fe-exam-answer-side')[1], /position:relative!important;top:auto!important;bottom:auto!important/);
 assert.match(rule('.fe-exam-answer-side::after')[1], /display:none!important/);
 assert.match(cbt, /\.fe-exam-answer-side\{position:sticky!important;bottom:0;/);
+assert.match(fix, /var\(--study-footer-height,76px\)/);
+assert.match(js, /id="feImage" role="region"[^>]+tabindex="0"/);
 assert.equal(doc.querySelector('#feImage').nextElementSibling.querySelectorAll('button').length, 3);
 d.window.close();
-console.log('company formal mock dock: 13 layout boundary checks passed');
+console.log('formal mock dock in both themes: layout boundary checks passed');
