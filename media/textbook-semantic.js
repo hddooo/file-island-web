@@ -463,6 +463,34 @@
         appendLines(label,n.lineIndices.map(function(i){return cell.lines[i];}));canvas.appendChild(label);
       });if(block.sourceCaptionLines){var caption=node('p',null,'textbook-coordinate-diagram-caption');appendLines(caption,block.sourceCaptionLines);region.appendChild(caption);}return region;
     }
+    // User-requested study grouping, not a mutation of the source PDF/cell IDs.
+    // 81st edition, p129: constituent assembly's anti-collaboration and land-reform tasks.
+    function groupModernAssemblyTable(tableNode, block) {
+      if (page.sourceSha256 !== 'd54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de' ||
+          page.pdfPage !== 129 || block.id !== '81-p129-table1' || block.columnCount !== 2) return;
+      var rows = Array.from(tableNode.rows);
+      var first = rows.find(function (row) { return row.querySelector('[data-source-cell="81-p129-table1-source-r2-c0"]'); });
+      var second = rows.find(function (row) { return row.querySelector('[data-source-cell="81-p129-table1-source-r3-c0"]'); });
+      if (!first || !second || first.nextElementSibling !== second ||
+          rows.some(function (row) { return row.cells.length !== 2 || Array.from(row.cells).some(function (cell) { return cell.rowSpan !== 1 || cell.colSpan !== 1; }); })) return;
+      var compact = function (value) { return value.replace(/[\s\u200b]/g, ''); };
+      if (!compact(first.cells[0].textContent).startsWith('반민족행위특별조사위원회') ||
+          !compact(second.cells[0].textContent).startsWith('농지개혁')) return;
+      tableNode.removeAttribute('data-history-label-content');
+      tableNode.classList.add('textbook-constituent-assembly');
+      Array.from(tableNode.querySelectorAll('colgroup')).forEach(function (columns) { columns.remove(); });
+      var columns = node('colgroup');
+      [14, 24, 62].forEach(function (width) { var col = node('col'); col.style.width = width + '%'; columns.appendChild(col); });
+      tableNode.insertBefore(columns, tableNode.firstChild);
+      rows.forEach(function (row) {
+        if (row !== first && row !== second) row.cells[0].colSpan = 2;
+      });
+      var label = node('th', '제헌국회', 'textbook-constituent-assembly-label');
+      label.rowSpan = 2;
+      label.setAttribute('scope', 'rowgroup');
+      label.setAttribute('data-study-group', 'constituent-assembly');
+      first.insertBefore(label, first.firstChild);
+    }
     function table(block) {
       var diagram=coordinateDiagram(block);if(diagram)return diagram;
       if (block.sourceTimeline) return sourceTimeline(block);
@@ -615,6 +643,7 @@
       });
       if (head) tableNode.appendChild(head);
       tableNode.appendChild(body);
+      groupModernAssemblyTable(tableNode, block);
       // Collapse only empty image-gallery shells in company mode, preserving text tables.
       if (block.layoutRole === 'source-illustration-gallery' && !tableNode.textContent.trim() && !(rowAttachments.get(block) || []).length) group.setAttribute('data-company-image-only', '');
       scroll.appendChild(tableNode);
