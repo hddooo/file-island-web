@@ -714,6 +714,11 @@
     }
     function sourceNumber(item, fallback) { return item.originalNumberLabel || (item.originalNumber===null?'번호 없는 문항':String(item.originalNumber)); }
     function topicLabel(topic) {
+      // The printed examples are not an exhaustive answer list. Clarify only
+      // this modern-government instruction; original answers and IDs stay intact.
+      if(data.id==='modern'&&data.source.sha256==='d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de'&&
+          topic.id==='government'&&topic.title==='해당되는 정부를 쓰세요(ex: 이승만/ 전두환/ 김대중)')return '각 항목에 해당하는 정부를 쓰세요.';
+
       if(manualSave&&data.id==='joseon'&&topic.id==='society-comparison')return (sequential?'':'사회 비교 · ')+'고려 / 조선 후기 중 맞는 것을 쓰세요';
       return topic.title;
     }

@@ -6,3 +6,8 @@
 - 검증: node scripts/test-history-assembly-group.cjs; 기존 scripts/test-textbook-semantic.cjs --dom (118 checks). 기존 설치된 jsdom/playwright를 재사용했다.
 - private p129 fixture와 screenshot은 로컬 .artifacts/assembly-qa에만 두고 공개 배포하지 않는다.
 - 운영 배포는 exact SHA 및 실제 도메인 자산 확인 후 별도 보고.
+
+## 운영 확인 (2026-11-17)
+
+- SHA 403f944c8ef3e489abb877ce6fa4c8e7743f9ad2, build 44030393159 / deploy 44030455310 모두 성공.
+- CD는 서비스 내부 app-version.json과 HTML hash를 배포 artifact와 대조했다. 통합 담당이 외부 HTTPS app-version.json의 동일 SHA / 0.11.3-beta도 확인했다.
