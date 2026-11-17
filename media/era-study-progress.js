@@ -68,7 +68,8 @@
         const historical=summary(model,legacy);
         if(historical.complete){result=legacy;stats=historical;useV2=false;}
       }
-      return {model,result,stats,useV2};
+      // Historical score selection is separate from grading a new, unsaved retry.
+      return {model,result,stats,useV2,practiceV2:!!session};
     }
     function paint(tools,record){
       const status=tools.querySelector('.era-progress-status');status.replaceChildren();tools.dataset.state='ready';
@@ -97,7 +98,7 @@
       dialog.addEventListener('cancel',e=>{e.preventDefault();close(true);});dialog.addEventListener('click',e=>{if(e.target===current)close(true);});
       dialog.addEventListener('keydown',e=>{if(e.defaultPrevented||e.key!=='Tab'||e.altKey||e.ctrlKey||e.metaKey)return;const nodes=[...current.querySelectorAll('button,input,a[href],[tabindex="0"]')].filter(n=>!n.disabled);if(!nodes.length)return;const first=nodes[0],last=nodes[nodes.length-1];if(e.shiftKey&&doc.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&doc.activeElement===last){e.preventDefault();first.focus();}});
       if(dialog.showModal)dialog.showModal();else dialog.setAttribute('open','');x.focus();
-      try{const records=[await readReview(id,tools)];if(!valid()||dialog!==current)return;for(const record of records){if(record.useV2&&record.stats.wrong.length){if(!root.HanqSourceGradingV2)throw Error('source_grading_unavailable');record.grading={gradingVersion:2,matcher:await root.HanqSourceGradingV2.prepare(record.model,record.result.version)};if(!valid()||dialog!==current)return;}}body.replaceChildren();body.removeAttribute('role');const hint=node('p','era-wrong-scope','마지막 제출에서 틀린 문항만 다시 풉니다. Tab 또는 Enter로 채점하고 다음 빈칸으로 이동합니다. 재풀이 결과는 저장하지 않습니다.');hint.id='era-practice-hint';body.append(hint);let fieldCount=0,imeAdvanceTarget=null,imeAdvanceUntil=0,pointerVersion=0,keyVersion=0;
+      try{const records=[await readReview(id,tools)];if(!valid()||dialog!==current)return;for(const record of records){if(record.practiceV2&&record.stats.wrong.length){if(!root.HanqSourceGradingV2)throw Error('source_grading_unavailable');record.grading={gradingVersion:2,matcher:await root.HanqSourceGradingV2.prepare(record.model,record.result.version)};if(!valid()||dialog!==current)return;}}body.replaceChildren();body.removeAttribute('role');const hint=node('p','era-wrong-scope','마지막 제출에서 틀린 문항만 다시 풉니다. Tab 또는 Enter로 채점하고 다음 빈칸으로 이동합니다. 재풀이 결과는 저장하지 않습니다.');hint.id='era-practice-hint';body.append(hint);let fieldCount=0,imeAdvanceTarget=null,imeAdvanceUntil=0,pointerVersion=0,keyVersion=0;
         current.addEventListener('pointerdown',()=>{pointerVersion++;imeAdvanceTarget=null;});
         current.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.altKey&&!e.ctrlKey&&!e.metaKey&&(e.repeat&&e.target===x||e.target===imeAdvanceTarget&&Date.now()<imeAdvanceUntil)){e.preventDefault();e.stopPropagation();}},true);
         current.addEventListener('keyup',e=>{if(e.key==='Enter'||e.code==='Enter'){keyVersion++;imeAdvanceTarget=null;}});
