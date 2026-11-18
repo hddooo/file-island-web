@@ -428,11 +428,20 @@ function mount(host,options){
   table.appendChild(actions);
   host.appendChild(table);heading.focus();
  }
- function draw(focus,preservedImage){
+ function drawVerdict(correct,animate){
+  var doc=host.ownerDocument,svg=doc.createElementNS('http://www.w3.org/2000/svg','svg');
+  svg.setAttribute('class','fe-round-review-hand-mark'+(animate?' is-drawing':''));
+  svg.setAttribute('viewBox','0 0 32 32');svg.setAttribute('aria-hidden','true');svg.setAttribute('focusable','false');
+  svg.setAttribute('data-result',correct?'correct':'wrong');
+  [['mark-correct','M 25 8 C 19 2 9 3 5 12 C 1 22 10 29 21 25 C 29 22 30 11 23 6 C 17 2 8 5 5 12 C 2 21 13 29 28 27'],['mark-correct mark-texture','M 23 6 C 16 3 8 7 6 14 M 7 23 C 13 28 23 26 27 20'],['mark-wrong mark-first','M 6 6 C 12 10 18 20 26 26'],['mark-wrong mark-second','M 26 6 C 21 12 12 20 6 26']].forEach(function(spec){var p=doc.createElementNS(svg.namespaceURI,'path');p.setAttribute('class',spec[0]);p.setAttribute('d',spec[1]);p.setAttribute('pathLength','100');svg.appendChild(p);});
+  return svg;
+ }
+ function draw(focus,preservedImage,freshGrade){
   if(!current())return;clear(preservedImage);header();
   if(!items.length){host.appendChild(el('p',markedOnly?'쌍별로 표시한 문제가 없어요.':'이 회차에 이용할 수 있는 오답·별표 문제가 없어요.'));return;}
   var q=items[index],at=index,chosen=selected[q.questionId],box=preservedImage||el('div'),heading=section('h3','fe-round-practice-position',(index+1)+'/'+items.length);
   heading.tabIndex=-1;heading.setAttribute('aria-label',(index+1)+'번째 / '+items.length+'문항 · 제'+q.exam+'회 '+q.number+'번');
+  if(chosen)heading.prepend(drawVerdict(chosen===q.review.correctOptionId,freshGrade));
   var mark=button('',function(){
    if(marks.has(q.questionId))marks.delete(q.questionId);else marks.add(q.questionId);
    saveMarks();updateMark();
@@ -531,7 +540,7 @@ function mount(host,options){
   function rightAction(){
    if(chosen){index++;save();draw(true);return;}
    if(!drafts[q.questionId])return;
-   check(function(){grade();save();draw(false,box);var result=host.querySelector('.fe-round-review-feedback');if(result)result.focus();});
+   check(function(){grade();save();draw(false,box,true);var result=host.querySelector('.fe-round-review-feedback');if(result)result.focus();});
   }
   nextButton=control(button(chosen?'›':'확인',rightAction),false);
   nextButton.classList.add('fe-round-review-right');nextButton.dataset.roundReviewAction=chosen?'next':'check';

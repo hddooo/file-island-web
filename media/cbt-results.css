@@ -449,6 +449,20 @@ html body #app#app#app #formalExamHost .fe-era-ring-detail{display:grid;gap:1px;
 }
 #feRoundMaterials .fe-round-review-choices>button{min-width:0;min-height:44px;margin:0;padding-inline:0}
 #feRoundMaterials .fe-round-review-choices>button[aria-pressed=true]{outline:2px solid currentColor;outline-offset:-3px;opacity:1}
+/* Match the source-quiz hand-drawn verdict without covering the question. */
+#feRoundMaterials .fe-round-practice-position{display:flex;align-items:center;gap:3px}
+#feRoundMaterials .fe-round-review-hand-mark{display:block;flex:none;width:28px;height:28px;overflow:visible;pointer-events:none;color:#b91c1c}
+html[data-company-mode=on] #feRoundMaterials .fe-round-review-hand-mark{color:#ff5b65}
+#feRoundMaterials .fe-round-review-hand-mark path{display:none;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:100;stroke-dashoffset:0}
+#feRoundMaterials .fe-round-review-hand-mark[data-result=correct] .mark-correct,
+#feRoundMaterials .fe-round-review-hand-mark[data-result=wrong] .mark-wrong{display:block}
+#feRoundMaterials .fe-round-review-hand-mark .mark-texture{stroke-width:1;opacity:.4}
+#feRoundMaterials .fe-round-review-hand-mark .mark-wrong{stroke-width:2.1}
+@media(prefers-reduced-motion:no-preference){
+ #feRoundMaterials .fe-round-review-hand-mark.is-drawing .mark-correct{animation:source-verdict-draw 1s ease-out both}
+ #feRoundMaterials .fe-round-review-hand-mark.is-drawing .mark-first{animation:source-verdict-draw-first 1s ease-out both}
+ #feRoundMaterials .fe-round-review-hand-mark.is-drawing .mark-second{animation:source-verdict-draw-second 1s ease-out both}
+}
 #feRoundMaterials .fe-round-review-feedback{font-weight:800}
 #feRoundMaterials .fe-round-review-feedback:empty{display:none}
 #feRoundMaterials .fe-round-review-result{margin-top:16px;padding:12px;border:1px solid currentColor;border-radius:12px}
