@@ -13,6 +13,7 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  const nav=()=>[...host.querySelectorAll('nav > button')].map(b=>b.textContent);
  const jump=n=>host.querySelectorAll('.fe-round-practice-grid>button')[n-1].click();
  const check=async()=>{btn('확인').click();await tick();};
+ assert.equal(host.querySelector('.fe-round-practice-accuracy').textContent,'정답률 —');assert(!host.querySelector('progress'));assert(host.querySelector('#feRoundPracticeList').hidden);btn('문제 목록').click();assert(!host.querySelector('#feRoundPracticeList').hidden);
  assert.deepEqual(nav(),['‹','확인']);assert(btn('이전').disabled&&btn('확인').disabled);assert(!btn('최종 제출'));
  assert.equal(host.querySelector('.fe-round-review-choices').children.length,6);assert.equal(host.querySelector('nav').children[1].className,'fe-round-review-choices');assert(host.querySelector('.fe-round-review-choices').lastElementChild.classList.contains('fe-round-review-mark'));
  const beforePickReads=reads;
@@ -21,7 +22,7 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  ctl.stop();ctl=w.HanqCbtRoundMaterials.mount(host,{api,round:80});await ctl.ready;
  assert.equal(btn('2').getAttribute('aria-pressed'),'true');assert(!btn('2').disabled);
  assert(host.querySelector('.fe-round-practice-grid button').textContent.includes('선택'));
- await check();assert(host.textContent.includes('X 오답 · 내 선택 2번 · 정답 1번'));assert(host.textContent.includes('1 / 3'));
+ await check();assert(host.textContent.includes('X 오답 · 내 선택 2번 · 정답 1번'));assert(host.textContent.includes('1/3'));
  assert(btn('1').disabled&&btn('2').getAttribute('aria-pressed')==='true');
  assert.equal(host.querySelectorAll('.fe-round-review-option-notes li').length,5);assert(host.textContent.includes('확인된 해설 없음'));
  assert.equal(host.querySelectorAll('.fe-round-review-option-notes li')[0].lastElementChild.tagName,'STRONG');assert.equal(host.querySelectorAll('.fe-round-review-option-notes li')[1].lastElementChild.tagName,'SPAN');
@@ -30,12 +31,12 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  assert.equal(mark().querySelectorAll('.fe-round-double-star>span').length,2);mark().click();assert.equal(mark().getAttribute('aria-pressed'),'true');
  btn('다음').click();btn('1').click();await tick();assert(!host.textContent.includes('정답 1번'));
  btn('이전').click();assert(host.textContent.includes('X 오답'));btn('다음').click();assert.equal(btn('1').getAttribute('aria-pressed'),'true');assert(!btn('1').disabled);
- await check();assert(host.textContent.includes('O 정답'));assert(host.textContent.includes('2 / 3'));
- btn('다음').click();assert(host.textContent.includes('3 / 3'));
- ctl.stop();ctl=w.HanqCbtRoundMaterials.mount(host,{api,round:80});await ctl.ready;assert(host.textContent.includes('3 / 3'));
- filter().click();assert(host.textContent.includes('1 / 1 · 원문 1번'));assert.equal(mark().getAttribute('aria-pressed'),'true');
- ctl.stop();ctl=w.HanqCbtRoundMaterials.mount(host,{api,round:80});await ctl.ready;assert(host.textContent.includes('1 / 1 · 원문 1번'));
- filter().click();assert(host.textContent.includes('3 / 3'));
+ await check();assert(host.textContent.includes('O 정답'));assert(host.textContent.includes('2/3'));assert.equal(host.querySelector('.fe-round-practice-accuracy').textContent,'정답률 50%');
+ btn('다음').click();assert(host.textContent.includes('3/3'));
+ ctl.stop();ctl=w.HanqCbtRoundMaterials.mount(host,{api,round:80});await ctl.ready;assert(host.textContent.includes('3/3'));
+ filter().click();assert(host.textContent.includes('1/1'));assert.equal(mark().getAttribute('aria-pressed'),'true');
+ ctl.stop();ctl=w.HanqCbtRoundMaterials.mount(host,{api,round:80});await ctl.ready;assert(host.textContent.includes('1/1'));
+ filter().click();assert(host.textContent.includes('3/3'));
  assert.deepEqual(nav(),['‹','확인']);assert(btn('확인').disabled);assert(!btn('최종 제출').closest('nav'));
  btn('최종 제출').click();await tick();assert(host.textContent.includes('정답률 33.33%'));assert(host.textContent.includes('정답 1 · 오답 1 · 미풀이 1 · 전체 3'));assert.equal(host.querySelectorAll('.fe-round-review-breakdown li').length,3);assert.equal(w.HanqCbtRoundMaterials.latest('synthetic',80).right,1);assert.equal(w.HanqCbtRoundMaterials.latest('synthetic',80).total,3);assert.equal(w.HanqCbtRoundMaterials.latest('synthetic',79),null);assert.equal(w.HanqCbtRoundMaterials.latest('other-account',80),null);
  assert.equal(JSON.stringify(items),before);assert(reads>=4);
@@ -47,7 +48,7 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  w.HanqLearningReset={cutoff:(_,scope)=>{assert.equal(scope,'history');return historyCutoff;},onChange:fn=>{resetListener=fn;return()=>resetListener=null;}};
  const ctl2=w.HanqCbtRoundMaterials.mount(host,{api,round:80,onBack:()=>{}});await ctl2.ready;
  jump(3);assert(btn('최종 제출').disabled,'blank submission does not show a score');
- resetListener();resetListener();assert(host.textContent.includes('3 / 3'));assert(!host.textContent.includes('초기화 상태가 변경'));
+ resetListener();resetListener();assert(host.textContent.includes('3/3'));assert(!host.textContent.includes('초기화 상태가 변경'));
  resetAt='2026-11-08T00:00:00Z';historyCutoff=Date.parse(resetAt);resetListener();await tick();assert(!host.textContent.includes('초기화 상태가 변경'));assert(!host.querySelector('img'));assert(host.textContent.includes('문제가 없어요'));ctl2.stop();historyCutoff=0;resetAt=null;
  items=Array.from({length:10},(_,i)=>fixture(i+1));state={signedIn:true,ownerId:'threshold',epoch:4};
  let advanced=0;
@@ -57,7 +58,7 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  state={signedIn:true,ownerId:'retry',epoch:5};
  const retry=w.HanqCbtRoundMaterials.mount(host,{api,round:80});await retry.ready;
  for(let i=0;i<10;i++){if(i<8){btn('1').click();if(i!==0)await check();}if(i<9)jump(i+2);}
- btn('최종 제출').click();await tick();assert(host.textContent.includes('정답률 80%'));btn('다시 풀기').click();assert(host.textContent.includes('1 / 10'));assert.equal(host.querySelectorAll('[aria-pressed=true]').length,0);retry.stop();
+ btn('최종 제출').click();await tick();assert(host.textContent.includes('정답률 80%'));btn('다시 풀기').click();assert(host.textContent.includes('1/10'));assert.equal(host.querySelectorAll('[aria-pressed=true]').length,0);retry.stop();
  host.removeAttribute('id');const routedHost=w.document.createElement('section');w.document.body.append(routedHost);
  w.eval(fs.readFileSync('media/formal-exams.js','utf8'));
  w.HanqFormalExams.mount(routedHost,{api:{...api,enabled:()=>true,ensureSession:()=>Promise.resolve()},onRoute:()=>{}},'materials-80');
@@ -81,9 +82,9 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  w.HanqFormalExams.mount(routedHost,{api:allAPI,onRoute:value=>route=value});
  await tick();assert.equal(routedHost.querySelector('#feWrongPrint').nextElementSibling.id,'feAllWrongPractice');
  routedHost.querySelector('#feAllWrongPractice').click();await tick();
- assert.equal(route,'materials-all');assert(routedHost.textContent.includes('1 / 3 · 제74회 3번'));
+ assert.equal(route,'materials-all');assert(routedHost.querySelector('.fe-round-practice-position').getAttribute('aria-label').includes('제74회 3번'));
  const allFilter=routedHost.querySelector('[data-round-star-filter]');allFilter.click();
- assert(routedHost.textContent.includes('1 / 1 · 제80회 1번'),'round star appears in aggregate');
+ assert(routedHost.querySelector('.fe-round-practice-position').getAttribute('aria-label').includes('제80회 1번'),'round star appears in aggregate');
  w.HanqFormalExams.stop();
  await assert.rejects(w.HanqCbtRoundMaterials.load({api:{...allAPI,cbt:async()=>({scope:'finalized-exam-selected-wrong',items:wrongItems,hasMore:true})},round:'all'}));
  assert.equal((fs.readFileSync('index.html','utf8').match(/materials-\(\?:7\[0-9\]\|80\|all\)/g)||[]).length,2,'initial and back/forward route handlers accept the practice URL');

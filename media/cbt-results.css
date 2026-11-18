@@ -517,3 +517,14 @@ html body #app#app#app #formalExamHost .fe-era-ring-detail{display:grid;gap:1px;
 #feRoundMaterials .fe-round-review-dock .fe-round-review-mark .fe-round-double-star{
  display:block;flex:0 0 1.25em;transform:translateY(-.08em);
 }
+
+#feRoundMaterials .fe-round-practice-toolbar{
+ display:grid;grid-template-columns:minmax(57px,1fr) auto minmax(57px,1fr);
+ align-items:center;column-gap:5px;margin:5px 0 9px;
+}
+#feRoundMaterials .fe-round-practice-position{font-size:12px!important;margin:0!important;line-height:1.2;font-variant-numeric:tabular-nums}
+#feRoundMaterials .fe-round-practice-accuracy{text-align:center;white-space:nowrap;font-size:13px;margin:0!important;font-variant-numeric:tabular-nums}
+#feRoundMaterials .fe-round-practice-list-toggle{
+ justify-self:end;min-height:38px;margin:0!important;padding:3px 6px!important;font-size:11px!important;white-space:nowrap;
+}
+#feRoundMaterials .fe-round-practice-list[hidden]{display:none!important}
