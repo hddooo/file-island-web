@@ -504,3 +504,16 @@ html body #app#app#app #formalExamHost .fe-era-ring-detail{display:grid;gap:1px;
 #feRoundMaterials .fe-round-review-dock .fe-round-review-nav .fe-round-review-prev,
 #feRoundMaterials .fe-round-review-dock .fe-round-review-nav [data-round-review-action=next]{font-size:24px}
 #feRoundMaterials .fe-round-review-dock .fe-round-review-nav [data-round-review-action=check]{font-size:13px;white-space:nowrap}
+
+/* The compact answer group breathes without lowering the touch height. */
+#feRoundMaterials .fe-round-review-dock .fe-round-review-nav{gap:clamp(4px,1.3vw,8px)}
+#feRoundMaterials .fe-round-review-dock .fe-round-review-nav [data-review-choice],
+#feRoundMaterials .fe-round-review-dock .fe-round-review-nav .fe-round-review-mark{
+ width:calc(100% - 4px);min-width:24px;max-width:38px;justify-self:center;
+}
+#feRoundMaterials .fe-round-review-dock .fe-round-review-nav .fe-round-review-mark{
+ display:flex!important;align-items:center!important;justify-content:center!important;
+}
+#feRoundMaterials .fe-round-review-dock .fe-round-review-mark .fe-round-double-star{
+ display:block;flex:0 0 1.25em;transform:translateY(-.08em);
+}

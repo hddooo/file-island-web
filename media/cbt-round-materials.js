@@ -26,6 +26,56 @@ async function load(options){
  return {items:n.items.slice().sort(function(a,b){return a.exam-b.exam||a.number-b.number;}),resetAt:data.resetAt||reset||null};
 }
 function sourceLines(q){var saved=null;try{saved=root.HanqCbtExplanations&&root.HanqCbtExplanations.resolve(q,'final');}catch(_){}var o=saved&&root.HanqCbtExplanations.groundedOverview?root.HanqCbtExplanations.groundedOverview(saved):null;saved=saved||q.review.item||{};o=o||saved.overview||{};var lines=Array.isArray(o.reason)?o.reason.slice(0,2):[];lines=lines.concat([o.answer,saved.why,saved.explanation]).filter(function(v){return typeof v==='string'&&v.trim();});return Array.from(new Set(lines));}
+// Curated associations from era-full-summary-data.js (samguk/nambuk/goryeo/
+// opening/colonial), textbook-notes.js (joseon-late), and lecture-flow-joseon.js.
+// These enrich a resolved display subject only, never the official answer.
+// Daejonggyo: AKS E0014791; Geumwiyeong: AKS E0007930;
+// Choryang Waegwan: NIKH nh_032_0060_0020_0030_0020_0020.
+var choiceAssociations=Object.create(null);
+[
+ ['소수림왕|고구려 소수림왕',['율령','태학','불교 수용']],
+ ['광개토왕|고구려 광개토왕',['영락','신라 구원']],
+ ['장수왕|고구려 장수왕',['평양 천도','남진','한성 함락']],
+ ['근초고왕|백제 근초고왕',['고국원왕 전사','고흥의 서기','칠지도']],
+ ['무령왕|백제 무령왕',['22담로','왕족 파견','벽돌무덤']],
+ ['성왕|백제 성왕',['사비 천도','남부여','관산성 전사']],
+ ['지증왕|신라 지증왕',['국호 신라','동시전','우산국 복속']],
+ ['법흥왕|신라 법흥왕',['율령','불교 공인','건원']],
+ ['진흥왕|신라 진흥왕',['화랑 정비','한강 차지','대가야 정복']],
+ ['문무왕|신라 문무왕',['나당 전쟁','매소성','기벌포']],
+ ['신문왕|통일 신라 신문왕',['김흠돌의 난','관료전','녹읍 폐지']],
+ ['고려 태조|고려 태조 왕건',['훈요 10조','역분전','흑창']],
+ ['고려 광종|광종',['노비안검법','과거제','광덕·준풍']],
+ ['고려 성종',['최승로 시무 28조','12목','국자감']],
+ ['고려 숙종',['해동통보','별무반','서적포']],
+ ['고려 예종',['7재','양현고','동북 9성']],
+ ['고려 공민왕|공민왕',['기철 숙청','반원 정책','전민변정도감']],
+ ['태종|조선 태종',['6조 직계제','호패법','사간원']],
+ ['세종|조선 세종',['훈민정음','집현전','4군 6진']],
+ ['조선 성종',['경국대전','홍문관','악학궤범']],
+ ['세조|조선 세조',['직전법','간경도감','이시애의 난']],
+ ['숙종|조선 숙종',['환국','금위영','초량왜관']],
+ ['영조|조선 영조',['탕평비','균역법']],
+ ['정조|조선 정조',['규장각','초계문신제','장용영']],
+ ['흥선 대원군|흥선대원군',['호포제','사창제','경복궁 중건']],
+ ['대종교',['나철','단군 숭배']],
+ ['천도교',['손병희','만세보']],
+ ['김원봉',['의열단','조선의용대']],
+ ['지청천',['한국독립군','한국광복군']],
+ ['박상진',['대한광복회','공화정']],
+ ['박은식',['한국통사','한국독립운동지혈사']],
+ ['신채호',['조선상고사','조선 혁명 선언']],
+ ['서재필',['독립신문','독립협회']]
+].forEach(function(row){row[0].split('|').forEach(function(name){choiceAssociations[name]=row[1];});});
+function associatedChoiceNote(facts){
+ var parts=facts.split(' — '),subject=parts.length===2?parts[1].trim():null;
+ var hints=subject&&choiceAssociations[subject],line=facts.replace(/ — /g,' · ');
+ if(!hints)return line;
+ // Whitespace-insensitive exclusion avoids repeating a clue already on this line.
+ var compact=line.replace(/\s/g,'');
+ hints=hints.filter(function(hint){return compact.indexOf(hint.replace(/\s/g,''))<0;}).slice(0,3);
+ return line+(hints.length?' · '+hints.join(', '):'');
+}
 function choiceNotes(q){
  var entry=null;try{entry=root.HanqCbtExplanations&&root.HanqCbtExplanations.resolve(q,'final');}catch(_){}
  var opts=(entry||q.review.item||{}).options||[];
@@ -35,7 +85,7 @@ function choiceNotes(q){
   var facts=raw.replace(/\*\*/g,'').replace(/\s+/g,' ').trim(),colon=facts.indexOf(': ');
   if(colon>0)facts=facts.slice(0,colon);
   else facts=facts.split(/[.!?](?: |$)/)[0];
-  return facts.replace(/ — /g,' · ');
+  return associatedChoiceNote(facts);
  });
 }
 function progressKey(owner,round){return owner==null?null:'hanq:round-material-rehearsal:v1:'+encodeURIComponent(String(owner))+':'+round;}
@@ -254,7 +304,7 @@ function mount(host,options){
    answer.appendChild(el('strong','보기별 해설'));
    var notes=section('ol','fe-round-review-option-notes');
    choiceNotes(q).forEach(function(text,i){
-    var line=el('li');line.append(el('strong','①②③④⑤'[i]),el('span',text));notes.appendChild(line);
+    var line=el('li');line.append(el('strong','①②③④⑤'[i]),el(q.options[i].id===q.review.correctOptionId?'strong':'span',text));notes.appendChild(line);
    });
    answer.appendChild(notes);
    host.appendChild(answer);

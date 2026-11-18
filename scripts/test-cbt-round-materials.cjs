@@ -24,7 +24,8 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  await check();assert(host.textContent.includes('X 오답 · 내 선택 2번 · 정답 1번'));assert(host.textContent.includes('1 / 3'));
  assert(btn('1').disabled&&btn('2').getAttribute('aria-pressed')==='true');
  assert.equal(host.querySelectorAll('.fe-round-review-option-notes li').length,5);assert(host.textContent.includes('확인된 해설 없음'));
- assert.deepEqual(Array.from(w.HanqCbtRoundMaterials.choiceNotes({...items[0],review:{item:{options:opts.map((o,i)=>({...o,review:i===0?['**평양 천도** — 장수왕: 427년 사건으로 확인됩니다.']:[]}))}}})).slice(0,2),['평양 천도 · 장수왕','확인된 해설 없음']);
+ assert.equal(host.querySelectorAll('.fe-round-review-option-notes li')[0].lastElementChild.tagName,'STRONG');assert.equal(host.querySelectorAll('.fe-round-review-option-notes li')[1].lastElementChild.tagName,'SPAN');
+ assert.deepEqual(Array.from(w.HanqCbtRoundMaterials.choiceNotes({...items[0],review:{item:{options:opts.map((o,i)=>({...o,review:i===0?['**평양 천도** — 장수왕: 427년 사건으로 확인됩니다.']:[]}))}}})).slice(0,2),['평양 천도 · 장수왕 · 남진, 한성 함락','확인된 해설 없음']);
  const mark=()=>host.querySelector('.fe-round-review-mark'),filter=()=>host.querySelector('[data-round-star-filter]');
  assert.equal(mark().querySelectorAll('.fe-round-double-star>span').length,2);mark().click();assert.equal(mark().getAttribute('aria-pressed'),'true');
  btn('다음').click();btn('1').click();await tick();assert(!host.textContent.includes('정답 1번'));
