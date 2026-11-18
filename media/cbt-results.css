@@ -433,3 +433,48 @@ html body #app#app#app #formalExamHost .fe-era-ring-detail{display:grid;gap:1px;
  html body #app#app#app #formalExamHost .fe-era-ring-copy strong{font-size:12px!important}
  html body #app#app#app #formalExamHost .fe-era-ring-copy b{font-size:14px!important}
 }
+
+
+/* Round wrong/starred review stays separate from the timed CBT dock. */
+#feRoundMaterials .fe-round-review-nav{
+ display:flex!important;flex-flow:row nowrap!important;justify-content:center;
+ gap:clamp(16px,5vw,24px);align-items:center;margin:12px 0 0;padding:8px 0;
+}
+#feRoundMaterials .fe-round-review-nav>button{
+ flex:0 1 112px;min-width:0;min-height:44px;margin:0;white-space:nowrap;
+ border-radius:999px;
+}
+#feRoundMaterials .fe-round-review-choices{
+ display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin:10px 0;
+}
+#feRoundMaterials .fe-round-review-choices>button{min-width:0;min-height:44px;margin:0;padding-inline:0}
+#feRoundMaterials .fe-round-review-choices>button[aria-pressed=true]{outline:2px solid currentColor;outline-offset:-3px;opacity:1}
+#feRoundMaterials .fe-round-review-feedback{font-weight:800}
+#feRoundMaterials .fe-round-review-feedback:empty{display:none}
+#feRoundMaterials .fe-round-review-result{margin-top:16px;padding:12px;border:1px solid currentColor;border-radius:12px}
+#feRoundMaterials .fe-round-review-result>p:first-of-type{font-size:1.55rem;font-weight:800}
+#feRoundMaterials .fe-round-review-breakdown{display:grid;grid-template-columns:repeat(auto-fit,minmax(6rem,1fr));gap:6px;list-style:none;padding:0}
+#feRoundMaterials .fe-round-review-breakdown>li{display:flex;justify-content:space-between;gap:4px;padding:6px;border:1px solid currentColor;border-radius:6px}
+
+#feRoundMaterials .fe-round-review-result-actions{display:flex;flex-wrap:wrap;gap:8px}
+#feRoundMaterials .fe-round-review-top-actions,
+#feRoundMaterials .fe-round-review-heading{display:flex;align-items:center;gap:8px}
+#feRoundMaterials .fe-round-review-top-actions{flex-wrap:wrap}
+#feRoundMaterials .fe-round-review-heading{justify-content:space-between}
+#feRoundMaterials .fe-round-review-mark{display:grid;place-items:center;flex:0 0 44px;width:44px;min-height:44px;padding:0}
+#feRoundMaterials .fe-round-double-star{display:inline-block;position:relative;width:1.25em;height:1.1em;line-height:1;vertical-align:middle}
+#feRoundMaterials .fe-round-double-star>span{position:absolute;left:.25em;top:0;font-size:.86em;opacity:.8}
+#feRoundMaterials .fe-round-double-star>span+span{left:0;top:.27em;font-size:.95em;opacity:1;text-shadow:1px -1px 0 #0e2018}
+#feRoundMaterials .fe-round-review-mark[aria-pressed="true"]{color:#ffd878!important;border-color:currentColor!important}
+#feRoundMaterials .fe-round-review-option-notes{list-style:none;padding:0;margin:8px 0;display:grid;gap:4px}
+#feRoundMaterials .fe-round-review-option-notes>li{display:grid;grid-template-columns:1.4em minmax(0,1fr);gap:5px;align-items:baseline}
+#feRoundMaterials .fe-round-review-quest{display:flex;align-items:center;gap:8px;font-size:12px;margin:0 0 8px}
+#feRoundMaterials .fe-round-review-quest>progress{flex:1;max-width:110px;min-width:0;height:8px;accent-color:#67bdff}
+#feRoundMaterials .fe-round-review-goal{display:flex;align-items:center;gap:8px;margin:8px 0;font-weight:750}
+#feRoundMaterials .fe-round-review-goal>span{font-size:1.4rem}
+#feRoundMaterials .fe-round-review-goal.is-reached{color:#8acbff}
+#formalExamHost .fe-round-practice-latest{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 5px;font-size:11px;line-height:1.35;margin:3px 0 6px;pointer-events:none}
+#formalExamHost .fe-round-practice-latest.is-passed{color:#8acbff!important}
+#formalExamHost .fe-round-practice-latest.is-retry{color:#ff9a9a!important}
+#formalExamHost .fe-wrong-top-tools{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+#feRoundMaterials .fe-round-review-breakdown{max-height:46vh;overflow:auto}
