@@ -86,7 +86,7 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  w.HanqFormalExams.mount(routedHost,{api:readAPI,onRoute:()=>{}});
  await tick();
  const card=routedHost.querySelector('#feRound80').parentNode,summary=card.querySelector('.fe-round-practice-latest');
- assert.equal(card.querySelector('.fe-round-material-actions').firstElementChild,summary);assert(summary.querySelector('.fe-round-rate-orange'));assert(summary.textContent.includes('70%'));assert(summary.querySelector('time').dateTime);
+ assert.equal(card.querySelector('.fe-round-material-actions').firstElementChild,summary);assert(summary.querySelector('.fe-round-rate-orange'));assert.equal(summary.children.length,2);assert.equal(summary.firstElementChild.textContent,'복습 정답률 : 70%');assert.equal(summary.lastElementChild.tagName,'TIME');assert(summary.lastElementChild.dateTime);assert.match(summary.lastElementChild.textContent,/^\d{2}\.\d{2} \([일월화수목금토]\)$/u);assert.equal(summary.dataset.materialAction,'history');
  w.HanqFormalExams.stop();
  state={...state,ownerId:'threshold'};
  w.HanqFormalExams.mount(routedHost,{api:readAPI,onRoute:()=>{}});await tick();
