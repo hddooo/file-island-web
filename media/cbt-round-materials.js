@@ -294,12 +294,51 @@ function choiceNotes(q){
 function progressKey(owner,round){return owner==null?null:'hanq:round-material-rehearsal:v1:'+encodeURIComponent(String(owner))+':'+round;}
 var GOAL_PERCENT=80;
 function goalReached(right,total){return total>0&&right*100>=total*GOAL_PERCENT;}
+// Completed rehearsal snapshots only. Never sends selected answers, attempts or XP.
+var resultGenerations=Object.create(null);
+function resultGeneration(value){return value==null?0:Date.parse(value);}
+function resultCutoff(owner){var r=root.HanqLearningReset,local=r&&r.cutoff?r.cutoff(String(owner),'history')||0:0;return Math.max(local,resultGenerations[String(owner)]||0);}
+function validResult(r,round,requireRows){
+ if(!r||!Number.isInteger(round)||round<70||round>80||r.round!=null&&r.round!==round||!Number.isInteger(r.right)||!Number.isInteger(r.total)||r.total<1||r.total>50||r.right<0||r.right>r.total||typeof r.marked!=='boolean'||typeof r.at!=='string'||!Number.isFinite(Date.parse(r.at))||r.resetAt!=null&&(typeof r.resetAt!=='string'||!Number.isFinite(Date.parse(r.resetAt))))return false;
+ if(!requireRows&&r.rows==null)return true;
+ var seen=new Set();return Array.isArray(r.rows)&&r.rows.length===r.total&&r.rows.every(function(row){
+  if(!row||row.exam!==round||!Number.isInteger(row.number)||row.number<1||row.number>50||row.questionId!=='exam-'+round+'-'+String(row.number).padStart(2,'0')||typeof row.version!=='string'||!row.version||row.version.length>200||seen.has(row.questionId)||!['correct','wrong','empty'].includes(row.status))return false;
+  seen.add(row.questionId);return true;
+ })&&r.rows.filter(function(row){return row.status==='correct';}).length===r.right;
+}
+function storedResult(owner,round,suffix){try{return JSON.parse(root.localStorage.getItem(progressKey(owner,round)+suffix)||'null');}catch(_){return null;}}
 function latest(owner,round){
- var key=progressKey(owner,round),r;
- try{r=key&&JSON.parse(root.localStorage.getItem(key+':latest')||'null');}catch(_){return null;}
- if(!r||!Number.isInteger(r.right)||!Number.isInteger(r.total)||r.total<1||r.total>50||r.right<0||r.right>r.total||typeof r.marked!=='boolean'||!Number.isFinite(Date.parse(r.at)))return null;
- var cutoff=root.HanqLearningReset&&root.HanqLearningReset.cutoff&&root.HanqLearningReset.cutoff(String(owner),'history');
- return cutoff&&(Date.parse(r.resetAt)||0)<cutoff?null:r;
+ if(owner==null)return null;var cutoff=resultCutoff(owner),records=[':server-latest',':latest'].map(function(suffix){return storedResult(owner,round,suffix);}).filter(function(r){return validResult(r,round,false)&&resultGeneration(r.resetAt)===cutoff;});
+ records.sort(function(a,b){return Date.parse(b.at)-Date.parse(a.at);});return records[0]||null;
+}
+function resultPayload(r,round){return {round:round,right:r.right,total:r.total,marked:r.marked,at:r.at,resetAt:r.resetAt||null,rows:r.rows.map(function(row){return {questionId:row.questionId,version:row.version,exam:row.exam,number:row.number,status:row.status};})};}
+async function syncLatest(api){
+ var token=identity(api);if(!token)return false;var owner=String(api.state().ownerId),generation=resultCutoff(owner),verifiedGeneration=false;
+ function current(){return identity(api)===token&&resultCutoff(owner)===generation;}
+ function accept(r,round){
+  if(!current()||!validResult(r,round,false)||resultGeneration(r.resetAt)!==generation)return;
+  var prior=storedResult(owner,round,':server-latest');
+  if(validResult(prior,round,false)&&resultGeneration(prior.resetAt)===generation&&Date.parse(prior.at)>Date.parse(r.at))return;
+  try{root.localStorage.setItem(progressKey(owner,round)+':server-latest',JSON.stringify(r));}catch(_){}
+ }
+ try{
+  if(!current())return false;
+  var response=await api.cbt('GET','/api/v1/cbt/rehearsal-results');if(!current())return false;
+  // This endpoint's reset generation is authoritative for importing old local records.
+  if(response&&(response.resetAt===null||typeof response.resetAt==='string'&&Number.isFinite(Date.parse(response.resetAt)))){
+   var remoteGeneration=resultGeneration(response.resetAt);if(remoteGeneration<generation)return false;
+   generation=remoteGeneration;resultGenerations[owner]=generation;verifiedGeneration=true;
+  }
+  if(!response||!Array.isArray(response.results)||response.results.length>11)return false;
+  var remote=new Map();for(var r of response.results){if(!validResult(r,r&&r.round,false)||remote.has(r.round))return false;remote.set(r.round,r);}
+  remote.forEach(function(r,round){accept(r,round);});
+  if(!verifiedGeneration)return true;
+  await Promise.all(Array.from({length:11},function(_,i){return i+70;}).map(async function(round){
+   var local=storedResult(owner,round,':latest'),server=remote.get(round);
+   if(!current()||!validResult(local,round,true)||resultGeneration(local.resetAt)!==generation||server&&resultGeneration(server.resetAt)===generation&&Date.parse(server.at)>=Date.parse(local.at))return;
+   try{var reply=await api.cbt('PUT','/api/v1/cbt/rehearsal-results/'+round,resultPayload(local,round));if(current()&&reply)accept(reply.result,round);}catch(_){/* Original phone record stays available for next-visit retry. */}
+  }));return current();
+ }catch(_){return false;}
 }
 function mount(host,options){
  var api=options.api,token=identity(api),alive=true,urls=[],off,resetOff,allItems=[],items=[],index=0,selected={},drafts={},data,submitted=false,storageFailed=false,markedOnly=false,marks=new Set(),refreshing=false,historyView=options.history===true,freshRequested=options.restart===true;
@@ -401,6 +440,7 @@ function mount(host,options){
   return Number.isFinite(at)?at:0;
  }
  function resetChanged(){
+  if(current()&&historyView){showHistory();return;}
   if(current()&&data&&!refreshing&&knownReset()>(Date.parse(data.resetAt)||0))refreshMaterials();
  }
  function reset(fresh){
@@ -440,6 +480,7 @@ function mount(host,options){
  function saveLatest(){
   if(!current()||!key||all)return;
   try{root.localStorage.setItem(key+':latest',JSON.stringify({right:countRight(),total:items.length,marked:markedOnly,at:new Date().toISOString(),resetAt:data.resetAt,rows:items.map(function(q){var chosen=selected[q.questionId];return {questionId:q.questionId,version:q.version,exam:q.exam,number:q.number,status:!chosen?'empty':chosen===q.review.correctOptionId?'correct':'wrong'};})}));}catch(_){storageFailed=true;}
+  syncLatest(api);
  }
  // A replay replaces only editable practice state, never the latest submitted result.
  function restartPractice(){
@@ -466,7 +507,7 @@ function mount(host,options){
    if(valid){var list=section('ul','fe-round-review-breakdown');rows.forEach(function(r){var row=section('li',r.status==='empty'?'is-empty':r.status==='correct'?'is-correct':'is-wrong');row.append(el('span',(all?'제'+r.exam+'회 ':'')+r.number+'번'),el('strong',r.status==='empty'?'미풀이':r.status==='correct'?'O 정답':'X 오답'));list.appendChild(row);});panel.appendChild(list);}
    else panel.appendChild(el('p','이전 기록은 정답률과 제출일만 남아 있어요. 문항별 결과는 새로 제출한 기록부터 표시돼요.'));
   }
-  panel.appendChild(button('다시 풀기',function(){markedOnly=record?record.marked:false;restartPractice();}));host.appendChild(panel);
+  panel.appendChild(button('다시 풀기',function(){if(!data){historyView=false;freshRequested=true;refreshMaterials();return;}markedOnly=record?record.marked:false;restartPractice();}));host.appendChild(panel);
  }
  function currentAccuracy(){
   var n=items.reduce(function(total,q){return total+(selected[q.questionId]?1:0);},0);
@@ -652,8 +693,8 @@ function mount(host,options){
  }
  off=api.onChange?api.onChange(function(){if(!current())stop();}):null;
  resetOff=root.HanqLearningReset&&root.HanqLearningReset.onChange?root.HanqLearningReset.onChange(resetChanged):null;
- var ready=refreshMaterials();
+ var ready=historyView?syncLatest(api).then(function(){if(current())showHistory();}):refreshMaterials();
  return {ready:ready,stop:stop,restart:restartPractice};
 }
-root.HanqCbtRoundMaterials={normalize:normalize,load:load,mount:mount,sourceLines:sourceLines,choiceNotes:choiceNotes,latest:latest,goalReached:goalReached};
+root.HanqCbtRoundMaterials={normalize:normalize,load:load,mount:mount,sourceLines:sourceLines,choiceNotes:choiceNotes,latest:latest,syncLatest:syncLatest,goalReached:goalReached};
 })(window);
