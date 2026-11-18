@@ -7,7 +7,8 @@ function question(item){
  return {questionId:item.id,version:item.v,exam:80,number:item.number,points:item.points,options:copy(old.options),review:{status:'unanswered',correctNumber:item.answer,correctOptionId:item.options[item.answer-1].id,item:old,options:copy(old.options)}};
 }
 const data=window.HANQ_CBT_EXPLANATIONS_80.items,notes=window.HanqCbtRoundMaterials.choiceNotes;
-let total=0,memos=0,correct=0,questions=0;
+const governmentMemos=JSON.parse(fs.readFileSync('media/cbt-round-materials.js','utf8').match(/var choiceGovernmentMemos=(\{[\s\S]*?\});/)[1]);
+let total=0,memos=0,correct=0,questions=0,governments=0;
 for(const item of Object.values(data)){
  const q=question(item),before=JSON.stringify(q),original=JSON.stringify(item);
  assert(window.HanqCbtExplanations.resolve(q,'final'));const lines=notes(q);assert.equal(lines.length,5);
@@ -19,6 +20,8 @@ for(const item of Object.values(data)){
    const base=o.studyMemo.clue+' · '+o.studyMemo.subject;
    assert(lines[i].startsWith(base+' · '),o.id+': '+lines[i]);
    const extras=lines[i].slice(base.length+3).split(', ');assert(extras.length>=1&&extras.length<=3);assert.equal(new Set(extras).size,extras.length);
+  }else if(governmentMemos[o.id]){
+   const m=governmentMemos[o.id];assert.equal(lines[i],m[2]+' · '+m[1]+' · '+m[3]);governments++;
   }else assert.equal(lines[i],o.review[0].replace(/\*\*/g,'').replace(/\s+/g,' ').trim().split(/[.!?](?: |$)/)[0],o.id+' untouched prose');
  });
  questions+=Number(matched);
@@ -35,5 +38,5 @@ assert.equal(notes(question(data['exam-80-27']))[1],'백두산정계비(1712)·�
 assert.equal(notes(question(data['exam-80-42']))[2],'북간도 중광단 조직 · 대종교 · 나철, 단군 숭배');
 assert.equal(notes(question(data['exam-80-06']))[1],'국학 설치 · 신문왕 · 김흠돌의 난, 관료전, 녹읍 폐지');
 assert.equal(notes(question(data['exam-80-11']))[2],'광덕·준풍 · 고려 광종 · 노비안검법, 과거제');
-assert.equal(total,250);assert.equal(memos,28);assert(correct>0&&correct<memos);
-console.log('PASS actual 80th resolver fixtures: '+memos+'/'+total+' memo choices ('+correct+' correct, '+(memos-correct)+' wrong), '+questions+'/50 questions; '+(total-memos)+' untouched prose; exact identity guards and immutable original data.');
+assert.equal(governments,31);assert.equal(total,250);assert.equal(memos,28);assert(correct>0&&correct<memos);
+console.log('PASS actual 80th resolver fixtures: '+memos+'/'+total+' memo choices ('+correct+' correct, '+(memos-correct)+' wrong), '+questions+'/50 questions; '+governments+' government memos; '+(total-memos-governments)+' untouched prose; exact identity guards and immutable original data.');
