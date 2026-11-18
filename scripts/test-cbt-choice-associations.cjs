@@ -17,10 +17,10 @@ assert.equal(note('단서 — 숙종: 설명'),'단서 · 고려 숙종 · 해�
 delete window.HanqCbtExplanations;
 // Check all curated aliases: bounded additions, no source mutation, useful coverage.
 const script=fs.readFileSync('media/cbt-round-materials.js','utf8');
-const rows=script.match(/\['[^'\n]+',\[[^\n]+\]\]/g).filter(x=>x.includes("'],")||x.endsWith(']]'));
-assert(rows.length>=25);
+const rows=script.match(/\['[^'\n]+',\s*\[[^\n]+\]\]/g).filter(x=>x.includes("'],")||x.endsWith(']]'));
+assert.equal(rows.length,77);
 for(const row of rows){const [aliases,hints]=vm.runInNewContext(row);for(const alias of aliases.split('|')){
  const raw='연결 단서 — '+alias+': 설명';
- assert.equal(note(raw),'연결 단서 · '+alias+' · '+hints.join(', '));assert(hints.length>=1&&hints.length<=3);assert.equal(new Set(hints).size,hints.length);
+ const extra=hints.filter(h=>!alias.replace(/\s/g,'').includes(h.replace(/\s/g,'')));assert.equal(note(raw),'연결 단서 · '+alias+(extra.length?' · '+extra.join(', '):''));assert(hints.length>=1&&hints.length<=3);assert.equal(new Set(hints).size,hints.length);
 }}
 console.log('PASS exact-subject associations, no fallback guesses, dedupe, correct/wrong parity, '+rows.length+' entity groups');

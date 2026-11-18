@@ -65,11 +65,59 @@ var choiceAssociations=Object.create(null);
  ['박상진',['대한광복회','공화정']],
  ['박은식',['한국통사','한국독립운동지혈사']],
  ['신채호',['조선상고사','조선 혁명 선언']],
- ['서재필',['독립신문','독립협회']]
+ ['서재필',['독립신문','독립협회']],
+ ['구석기|구석기 시대', ['뗀석기', '이동 생활', '동굴·막집']],
+ ['신석기|신석기 시대', ['농경·목축', '빗살무늬토기', '가락바퀴']],
+ ['청동기|청동기 시대', ['고인돌', '비파형 동검', '계급 발생']],
+ ['철기|철기 시대', ['철제 농기구', '세형 동검', '중국 화폐']],
+ ['부여', ['사출도', '영고', '1책 12법']],
+ ['옥저', ['민며느리제', '골장제']],
+ ['동예', ['무천', '책화', '단궁·과하마·반어피']],
+ ['삼한', ['천군·소도', '신지·읍차', '5월·10월 제사']],
+ ['고조선', ['단군왕검', '범금 8조', '왕검성']],
+ ['원효|통일 신라 원효', ['일심', '화쟁', '무애가']],
+ ['의상|통일 신라 의상', ['화엄 사상', '부석사', '화엄일승법계도']],
+ ['설총|통일 신라 설총', ['이두 정리', '화왕계']],
+ ['장보고|통일 신라 장보고', ['청해진', '완도', '적산 법화원']],
+ ['지눌|고려 지눌', ['수선사 결사', '정혜쌍수', '돈오점수']],
+ ['의천|고려 의천', ['천태종', '교관겸수', '교장']],
+ ['최충헌|최충헌 집권기', ['교정도감', '봉사 10조']],
+ ['조선 선조', ['임진왜란', '훈련도감', '동인·서인 분화']],
+ ['광해군|조선 광해군', ['중립외교', '기유약조', '경기 대동법']],
+ ['인조|조선 인조', ['정묘호란', '병자호란', '영정법']],
+ ['효종|조선 효종', ['북벌', '나선 정벌']],
+ ['조선 현종', ['예송', '서인·남인']],
+ ['조광조|조선 조광조', ['현량과', '위훈 삭제', '기묘사화']],
+ ['조선 중종', ['조광조 개혁', '현량과', '기묘사화']],
+ ['제1차 갑오개혁', ['군국기무처', '과거제 폐지', '공사 노비제 폐지']],
+ ['제2차 갑오개혁', ['홍범 14조', '교육입국조서', '23부']],
+ ['광무개혁|대한제국 광무개혁', ['구본신참', '원수부', '지계']],
+ ['독립협회', ['서재필', '만민 공동회', '헌의 6조']],
+ ['신민회', ['대성학교·오산학교', '태극서관', '105인 사건']],
+ ['을미개혁', ['단발령', '건양', '태양력']],
+ ['대한민국 임시 정부', ['연통제', '교통국', '독립 공채']],
+ ['의열단', ['김원봉', '조선 혁명 선언']],
+ ['한국광복군', ['충칭', '지청천', '국내 진공 작전']],
+ ['조선 의용대|조선의용대', ['김원봉', '우한', '1938년']],
+ ['신간회', ['정우회 선언', '민족 협동 전선', '광주 학생 항일운동 지원']],
+ ['한국 독립군|지청천의 한국 독립군', ['지청천', '쌍성보', '대전자령']],
+ ['조선 혁명군|양세봉의 조선 혁명군', ['양세봉', '영릉가', '흥경성']],
+ ['이승만 정부|이승만 정부 시기', ['농지 개혁', '발췌 개헌', '사사오입 개헌']],
+ ['박정희 정부|박정희 정부 시기', ['한일기본조약', '경부고속도로', '유신헌법']],
+ ['전두환 정부|전두환 정부 시기', ['야간 통행금지 해제', '4·13 호헌조치', '6월 민주항쟁']],
+ ['노태우 정부|노태우 정부 시기', ['북방외교', '남북기본합의서', '유엔 동시 가입']],
+ ['김영삼 정부|김영삼 정부 시기', ['금융실명제', '하나회 해체', '지방자치 전면 시행']],
+ ['김대중 정부|김대중 정부 시기', ['6·15 남북공동선언', '국민기초생활보장법', '국가인권위원회']],
+ ['노무현 정부|노무현 정부 시기', ['호주제 폐지', '10·4 남북정상선언', '개성공단 착공']],
+ ['문재인 정부|문재인 정부 시기', ['평창 동계올림픽', '판문점 정상회담']]
 ].forEach(function(row){row[0].split('|').forEach(function(name){choiceAssociations[name]=row[1];});});
 function associatedChoiceNote(facts){
  var parts=facts.split(' — '),subject=parts.length===2?parts[1].trim():null;
- var hints=subject&&choiceAssociations[subject],line=facts.replace(/ — /g,' · ');
+ var line=facts.replace(/ — /g,' · ');
+ return appendChoiceAssociations(line,subject);
+}
+function appendChoiceAssociations(line,subject){
+ var hints=subject&&choiceAssociations[subject];
  if(!hints)return line;
  // Whitespace-insensitive exclusion avoids repeating a clue already on this line.
  var compact=line.replace(/\s/g,'');
@@ -218,7 +266,7 @@ var choiceGovernmentMemos={
 };
 function governmentChoiceNote(entry,option){
  var memo=entry&&choiceGovernmentMemos[option.id];
- return memo&&memo[0]===entry.v?memo[2]+' · '+memo[1]+' · '+memo[3]:null;
+ return memo&&memo[0]===entry.v?appendChoiceAssociations(memo[2]+' · '+memo[1]+' · '+memo[3],memo[1]):null;
 }
 function choiceNotes(q){
  var entry=null;try{entry=root.HanqCbtExplanations&&root.HanqCbtExplanations.resolve(q,'final');}catch(_){}
@@ -333,9 +381,7 @@ function mount(host,options){
  }
  function header(){
   host.appendChild(el('h2',all?'전체 오답 다시 풀기':'제'+options.round+'회 오답 & 별표 문제 복습'));
-  host.appendChild(el('p','XP와 실전 점수는 바뀌지 않아요. 풀이와 결과는 이 기기에만 저장돼요.'));
   if(storageFailed)host.appendChild(el('p','이 기기에 저장하지 못했어요. 화면을 닫기 전까지는 계속 풀 수 있어요.'));
-  host.appendChild(el('p',all?'완료한 실전모의고사에서 실제로 틀린 문제만 모았어요.':'완료한 실전모의고사 자료만 이용할 수 있어요. 진행 중 시험의 별표는 실전모의고사 완료 후 이용할 수 있어요.'));
   var tools=section('div','fe-round-review-top-actions');
   tools.appendChild(button('회차 목록',function(){stop();if(options.onBack)options.onBack();}));
   if(allItems.length){

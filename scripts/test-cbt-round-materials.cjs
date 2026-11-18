@@ -9,7 +9,7 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  const tick=()=>new Promise(r=>setImmediate(r)),btn=t=>[...host.querySelectorAll('button')].find(b=>b.textContent===t||b.getAttribute('aria-label')===t+' 문제'||b.getAttribute('aria-label')?.startsWith(t+'번 · 내 선택'));
  const before=JSON.stringify(items);let ctl=w.HanqCbtRoundMaterials.mount(host,{api,round:80,onBack:()=>{}});await ctl.ready;await tick();
  const img=host.querySelector('img[data-company-exam-image]');assert(img);
- assert(host.textContent.includes('XP와 실전 점수는 바뀌지 않아요'));assert(host.textContent.includes('완료 후 이용'));
+ assert(!host.textContent.includes('XP와 실전 점수는 바뀌지 않아요'));assert(!host.textContent.includes('완료 후 이용'));
  const nav=()=>[...host.querySelectorAll('nav > button')].map(b=>b.textContent);
  const jump=n=>host.querySelectorAll('.fe-round-practice-grid>button')[n-1].click();
  const check=async()=>{btn('확인').click();await tick();};

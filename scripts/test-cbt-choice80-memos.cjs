@@ -1,6 +1,9 @@
 'use strict';
 const fs=require('fs'),vm=require('vm'),assert=require('assert/strict');
 const window={};for(const f of ['cbt-explanation-data','cbt-explanation80-data','cbt-explanations','cbt-round-materials'])vm.runInNewContext(fs.readFileSync('media/'+f+'.js','utf8'),{window});
+const associationRows=vm.runInNewContext('['+fs.readFileSync('media/cbt-round-materials.js','utf8').split('var choiceAssociations=Object.create(null);')[1].split('].forEach')[0].trim().slice(1)+']'),associationMap={};
+associationRows.forEach(([names,hints])=>names.split('|').forEach(name=>associationMap[name]=hints));
+function withHints(line,subject){const compact=line.replace(/\s/g,'');const hints=(associationMap[subject]||[]).filter(h=>!compact.includes(h.replace(/\s/g,''))).slice(0,3);return line+(hints.length?' · '+hints.join(', '):'');}
 const copy=x=>JSON.parse(JSON.stringify(x));
 function question(item){
  const old=copy(item);old.options.forEach(o=>{delete o.studyMemo;});
@@ -21,7 +24,7 @@ for(const item of Object.values(data)){
    assert(lines[i].startsWith(base+' · '),o.id+': '+lines[i]);
    const extras=lines[i].slice(base.length+3).split(', ');assert(extras.length>=1&&extras.length<=3);assert.equal(new Set(extras).size,extras.length);
   }else if(governmentMemos[o.id]){
-   const m=governmentMemos[o.id];assert.equal(lines[i],m[2]+' · '+m[1]+' · '+m[3]);governments++;
+   const m=governmentMemos[o.id];assert.equal(lines[i],withHints(m[2]+' · '+m[1]+' · '+m[3],m[1]));governments++;
   }else assert.equal(lines[i],o.review[0].replace(/\*\*/g,'').replace(/\s+/g,' ').trim().split(/[.!?](?: |$)/)[0],o.id+' untouched prose');
  });
  questions+=Number(matched);
