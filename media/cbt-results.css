@@ -478,3 +478,12 @@ html body #app#app#app #formalExamHost .fe-era-ring-detail{display:grid;gap:1px;
 #formalExamHost .fe-round-practice-latest.is-retry{color:#ff9a9a!important}
 #formalExamHost .fe-wrong-top-tools{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 #feRoundMaterials .fe-round-review-breakdown{max-height:46vh;overflow:auto}
+#feRoundMaterials .fe-round-practice-list{margin:0 0 8px}
+#feRoundMaterials .fe-round-practice-list>summary{font-size:13px;font-weight:750;cursor:pointer;min-height:34px;line-height:34px}
+#feRoundMaterials .fe-round-practice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(94px,1fr));gap:5px;max-height:40vh;overflow:auto}
+#feRoundMaterials .fe-round-practice-grid>button{font-size:12px;min-height:38px;margin:0;padding:4px}
+
+#feRoundMaterials .fe-round-review-dock{margin-top:10px}
+#feRoundMaterials .fe-round-review-dock .fe-round-review-choices{grid-template-columns:repeat(6,minmax(0,1fr));margin:0}
+#feRoundMaterials .fe-round-review-dock .fe-round-review-mark{width:100%;min-width:0}
+#feRoundMaterials .fe-round-review-dock .fe-round-review-nav{justify-content:space-between;margin:0}
