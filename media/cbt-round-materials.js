@@ -289,6 +289,8 @@ function choiceNotes(q){
  });
 }
 function progressKey(owner,round){return owner==null?null:'hanq:round-material-rehearsal:v1:'+encodeURIComponent(String(owner))+':'+round;}
+var GOAL_PERCENT=80;
+function goalReached(right,total){return total>0&&right*100>=total*GOAL_PERCENT;}
 function latest(owner,round){
  var key=progressKey(owner,round),r;
  try{r=key&&JSON.parse(root.localStorage.getItem(key+':latest')||'null');}catch(_){return null;}
@@ -449,11 +451,11 @@ function mount(host,options){
   });
   var percent=String(Number((right/items.length*100).toFixed(2)));
   table.append(el('p','정답률 '+percent+'%'),el('p','정답 '+right+' · 오답 '+wrong+' · 미풀이 '+empty+' · 전체 '+items.length),list);
-  var reached=right*10>=items.length*9;
+  var reached=goalReached(right,items.length);
   var goal=section('div','fe-round-review-goal '+(reached?'is-reached':'is-retry'));
   if(reached){var badge=el('span','🏆');badge.setAttribute('aria-hidden','true');goal.appendChild(badge);}
   else{var patamon=el('img');patamon.src='/media/characters/patamon-crying-v1.webp';patamon.alt='';patamon.width=40;patamon.height=40;goal.appendChild(patamon);}
-  goal.appendChild(el('p',reached?(all?'목표 90% 달성! 전체 오답 복습을 마쳤어요.':'목표 90% 달성! 다음 회차로 넘어가도 돼요.'):'목표 90% 미달. 같은 문제를 다시 풀어요.'));table.appendChild(goal);
+  goal.appendChild(el('p',reached?(all?'목표 '+GOAL_PERCENT+'% 달성! 전체 오답 복습을 마쳤어요.':'목표 '+GOAL_PERCENT+'% 달성! 다음 회차로 넘어가도 돼요.'):'목표 '+GOAL_PERCENT+'% 미달. 같은 문제를 다시 풀어요.'));table.appendChild(goal);
   var actions=section('div','fe-round-review-result-actions');
   actions.appendChild(button(reached?(all?'회차 목록으로':'다음 회차 선택'):'다시 풀기',function(){
    if(reached){stop();if(options.onBack)options.onBack();return;}
@@ -590,5 +592,5 @@ function mount(host,options){
  var ready=refreshMaterials();
  return {ready:ready,stop:stop};
 }
-root.HanqCbtRoundMaterials={normalize:normalize,load:load,mount:mount,sourceLines:sourceLines,choiceNotes:choiceNotes,latest:latest};
+root.HanqCbtRoundMaterials={normalize:normalize,load:load,mount:mount,sourceLines:sourceLines,choiceNotes:choiceNotes,latest:latest,goalReached:goalReached};
 })(window);

@@ -62,7 +62,7 @@ function scoreBand(r){if(!cbtScore(r))return '';return r.score<60?'red':r.score<
 function roundPracticeLatest(round){
  var entry=root.HanqCbtRoundMaterials&&root.HanqCbtRoundMaterials.latest&&root.HanqCbtRoundMaterials.latest(ctx.owner,round);
  if(!entry)return '';
- var date=new Date(entry.at),rate=Number((entry.right/entry.total*100).toFixed(2)),tone=entry.right*10>=entry.total*9?'is-passed':'is-retry';
+ var date=new Date(entry.at),rate=Number((entry.right/entry.total*100).toFixed(2)),tone=root.HanqCbtRoundMaterials.goalReached(entry.right,entry.total)?'is-passed':'is-retry';
  var short=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',month:'2-digit',day:'2-digit'}).format(date);
  var full=new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',dateStyle:'long'}).format(date);
  return '<p class="fe-round-practice-latest '+tone+'"><span>'+ (entry.marked?'최근 쌍별 복습':'최근 오답 복습')+'</span> <b>'+rate+'%</b> <time title="'+esc(full)+'" datetime="'+esc(entry.at)+'">'+esc(short)+'</time></p>';

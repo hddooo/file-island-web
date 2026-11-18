@@ -58,7 +58,7 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  assert.deepEqual(nav(),['‹','확인']);assert(btn('확인').disabled);assert(!btn('최종 제출').closest('nav'));
  btn('최종 제출').click();await tick();assert(host.textContent.includes('정답률 33.33%'));assert(host.textContent.includes('정답 1 · 오답 1 · 미풀이 1 · 전체 3'));assert.equal(host.querySelectorAll('.fe-round-review-breakdown li').length,3);assert.equal(w.HanqCbtRoundMaterials.latest('synthetic',80).right,1);assert.equal(w.HanqCbtRoundMaterials.latest('synthetic',80).total,3);assert.equal(w.HanqCbtRoundMaterials.latest('synthetic',79),null);assert.equal(w.HanqCbtRoundMaterials.latest('other-account',80),null);
  assert.equal(JSON.stringify(items),before);assert(reads>=4);
- ctl.stop();ctl=w.HanqCbtRoundMaterials.mount(host,{api,round:80});await ctl.ready;assert(host.textContent.includes('목표 90% 미달'));assert(btn('다시 풀기'));
+ ctl.stop();ctl=w.HanqCbtRoundMaterials.mount(host,{api,round:80});await ctl.ready;assert(host.textContent.includes('목표 80% 미달'));assert(btn('다시 풀기'));
  btn('풀이 돌아보기').click();assert(host.textContent.includes('X 오답'));jump(3);
  resetAt='2026-11-08T00:00:00Z';btn('최종 제출').click();await tick();assert(host.textContent.includes('문제가 없어요'));assert(!host.querySelector('.fe-round-review-result'));
  state={signedIn:false,ownerId:null,epoch:2};listener();assert.equal(host.children.length,0);assert(revoked>0);ctl.stop();
@@ -71,12 +71,12 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  items=Array.from({length:10},(_,i)=>fixture(i+1));state={signedIn:true,ownerId:'threshold',epoch:4};
  let advanced=0;
  const cutoff=w.HanqCbtRoundMaterials.mount(host,{api,round:80,onBack:()=>advanced++});await cutoff.ready;
- for(let i=0;i<10;i++){btn(i<9?'1':'2').click();await check();if(i<9)btn('다음').click();}
- btn('최종 제출').click();await tick();assert(host.textContent.includes('정답률 90%'));assert(!btn('다시 풀기'));assert(host.querySelector('.fe-round-review-goal.is-reached'));assert.equal(w.HanqCbtRoundMaterials.latest('threshold',80).right,9);btn('다음 회차 선택').click();assert.equal(advanced,1);
+ for(let i=0;i<10;i++){btn(i<8?'1':'2').click();await check();if(i<9)btn('다음').click();}
+ btn('최종 제출').click();await tick();assert(host.textContent.includes('정답률 80%'));assert(!btn('다시 풀기'));assert(host.querySelector('.fe-round-review-goal.is-reached'));assert.equal(w.HanqCbtRoundMaterials.latest('threshold',80).right,8);btn('다음 회차 선택').click();assert.equal(advanced,1);
  state={signedIn:true,ownerId:'retry',epoch:5};
  const retry=w.HanqCbtRoundMaterials.mount(host,{api,round:80});await retry.ready;
- for(let i=0;i<10;i++){if(i<8){btn('1').click();if(i!==0)await check();}if(i<9)jump(i+2);}
- btn('최종 제출').click();await tick();assert(host.textContent.includes('정답률 80%'));btn('다시 풀기').click();assert(host.textContent.includes('1/10'));assert.equal(host.querySelectorAll('[aria-pressed=true]').length,0);retry.stop();
+ for(let i=0;i<10;i++){if(i<7){btn('1').click();if(i!==0)await check();}if(i<9)jump(i+2);}
+ btn('최종 제출').click();await tick();assert(host.textContent.includes('정답률 70%'));btn('다시 풀기').click();assert(host.textContent.includes('1/10'));assert.equal(host.querySelectorAll('[aria-pressed=true]').length,0);retry.stop();
  host.removeAttribute('id');const routedHost=w.document.createElement('section');w.document.body.append(routedHost);
  w.eval(fs.readFileSync('media/formal-exams.js','utf8'));
  w.HanqFormalExams.mount(routedHost,{api:{...api,enabled:()=>true,ensureSession:()=>Promise.resolve()},onRoute:()=>{}},'materials-80');
@@ -86,7 +86,12 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  w.HanqFormalExams.mount(routedHost,{api:readAPI,onRoute:()=>{}});
  await tick();
  const card=routedHost.querySelector('#feRound80').parentNode,summary=card.querySelector('.fe-round-practice-latest');
- assert.equal(card.querySelector('.fe-recent-scores').nextElementSibling,summary);assert(summary.classList.contains('is-retry'));assert(summary.textContent.includes('80%'));assert(summary.querySelector('time').dateTime);
+ assert.equal(card.querySelector('.fe-recent-scores').nextElementSibling,summary);assert(summary.classList.contains('is-retry'));assert(summary.textContent.includes('70%'));assert(summary.querySelector('time').dateTime);
+ w.HanqFormalExams.stop();
+ state={...state,ownerId:'threshold'};
+ w.HanqFormalExams.mount(routedHost,{api:readAPI,onRoute:()=>{}});await tick();
+ assert(routedHost.querySelector('#feRound80').parentNode.querySelector('.fe-round-practice-latest.is-passed').textContent.includes('80%'));
+ assert(!w.HanqCbtRoundMaterials.goalReached(7999,10000));
  w.HanqFormalExams.stop();
  w.eval(fs.readFileSync('media/cbt-wrong-notebook.js','utf8'));
  state={signedIn:true,ownerId:'synthetic',epoch:6};
