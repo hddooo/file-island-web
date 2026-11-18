@@ -14,13 +14,14 @@ const basenames=['three-kingdoms','opening-era','constitution-reform'];
 for(let i=0;i<cards.length;i++){
  const card=cards[i],prefix='media/history-weakness/'+basenames[i],pic=card.querySelector('.history-weakness-preview a, a.history-weakness-preview'),image=card.querySelector('img');
  assert.equal(pic.getAttribute('href'),prefix+'.png');assert.equal(pic.target,'_blank');assert.equal(image.getAttribute('src'),prefix+'.png');assert.equal(image.getAttribute('loading'),'lazy');
- const pdfs=[...card.querySelectorAll('.history-weakness-links a')];assert.equal(pdfs.length,2);assert(pdfs.every(a=>a.getAttribute('href')===prefix+'.pdf'));assert.equal(pdfs[0].target,'_blank');assert(pdfs[1].download.endsWith('.pdf'));
- assert(allowed(prefix+'.png'));assert(allowed(prefix+'.pdf'));
- if(!process.argv.includes('--structure-only')){
-  assert.equal(fs.readFileSync(prefix+'.pdf').subarray(0,5).toString(),'%PDF-');assert.equal(fs.readFileSync(prefix+'.png').subarray(0,8).toString('hex'),'89504e470d0a1a0a');
- }
+ const pdfs=[...card.querySelectorAll('.history-weakness-links button')];
+ assert.deepEqual(pdfs.map(b=>b.dataset.chartPdf),['open','save']);assert(pdfs.every(b=>b.type==='button'));
+ assert.equal(card.querySelector('[role=status]').hidden,true);
+ assert(allowed(prefix+'.png'));assert(!allowed(prefix+'.pdf'));
+ assert.equal(fs.readFileSync(prefix+'.png').subarray(0,8).toString('hex'),'89504e470d0a1a0a');
 }
 assert(!allowed('media/history-weakness/unreviewed.pdf'));assert(!allowed('media/private-data/not-for-web.pdf'));assert(!allowed('docs/history-weakness/three-kingdoms.pdf'));
+assert(allowed('media/history-weakness-pdf.js'));assert(index.includes('media/history-weakness-pdf.js?v='));
 assert(index.includes('id="homeHistoryWeakness"'));assert.equal((index.match(/location.hash==='#history\/weakness'/g)||[]).length,2);assert(css.includes('minmax(min(100%,235px),1fr)'));
 app.querySelector('#historyWeaknessBack').click();assert.equal(route,'#history');assert.equal(homeCalls,1);
-console.log('PASS weakness menu route, signed-in guard, 3 preview/PDF actions, exact PDF allowlist, return to history');
+console.log('PASS weakness menu route, signed-in guard, 3 preview/PDF actions, PNG-only deployment, return to history');

@@ -7,16 +7,10 @@ const { build } = require('./build-app-version.cjs');
 
 // Deliberately narrower than a repository upload: tracked public runtime files only.
 const entries = ['index.html', 'RELEASE_VERSION', 'manifest.webmanifest', 'favicon.ico', 'apple-touch-icon.png', 'media', 'inquiries', 'ops', 'auth/login.html', 'auth/login.js'];
-const approvedStudyPdfs = new Set([
-  'media/connector-summary.pdf',
-  'media/history-weakness/three-kingdoms.pdf',
-  'media/history-weakness/opening-era.pdf',
-  'media/history-weakness/constitution-reform.pdf',
-]);
 function allowed(file) {
   return entries.some(entry => file === entry || (!entry.includes('.') && file.startsWith(entry + '/'))) &&
     !file.split('/').some(part => part.startsWith('.') || ['enhanced', 'renders', 'private-data', 'hanq-private-data', 'node_modules'].includes(part)) &&
-    (!/\.pdf$/i.test(file) || approvedStudyPdfs.has(file));
+    (!/\.pdf$/i.test(file) || file === 'media/connector-summary.pdf');
 }
 function buildStatic(root, out) {
   root = path.resolve(root); out = path.resolve(out);

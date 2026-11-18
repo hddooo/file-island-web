@@ -48,7 +48,8 @@
 <link rel="stylesheet" href="media/toeic-cbt.css?v=number-progress-20261026-single-explanation-20261025"><link rel="stylesheet" href="media/toeic-history.css"><link rel="stylesheet" href="media/toeic-audio.css"><link rel="stylesheet" href="media/lc-playlist.css?v=world-navigation-20261023b">
   <link rel="stylesheet" href="media/review-menu.css">
   <link rel="stylesheet" href="media/cbt-results.css?v=round-group-20261118">
-  <link rel="stylesheet" href="media/history-weakness.css?v=20261118">
+  <link rel="stylesheet" href="media/history-weakness.css?v=20261118-pdf">
+  <script defer src="media/history-weakness-pdf.js?v=20261118"></script>
   <link rel="stylesheet" href="media/era-culture.css"><link rel="stylesheet" href="media/quiz-resources.css">
   <link rel="stylesheet" href="media/joseon-core-review.css">
   <link rel="stylesheet" href="media/mixed-review-quiz.css">
@@ -426,14 +427,15 @@
       ];
       var base='media/history-weakness/';
       var cards=materials.map(function(row,i){
-        var img=base+row[0]+'.png',pdf=base+row[0]+'.pdf',name=row[1],title=(i+1)+'. '+name;
+        var img=base+row[0]+'.png',name=row[1],title=(i+1)+'. '+name;
         return '<article class="history-weakness-card"><h2>'+title+'</h2><p>'+row[2]+'</p>'+
           '<a class="history-weakness-preview" href="'+img+'" target="_blank" rel="noopener" aria-label="'+name+' 확대해서 보기"><img loading="lazy" decoding="async" src="'+img+'" alt="'+name+' 미리 보기"></a>'+
-          '<div class="history-weakness-links"><a href="'+pdf+'" target="_blank" rel="noopener" aria-label="'+name+' PDF 열기">PDF 열기</a>'+
-          '<a href="'+pdf+'" download="'+name+'.pdf" aria-label="'+name+' PDF 저장">PDF 저장</a></div></article>';
+          '<div class="history-weakness-links"><button type="button" data-chart-pdf="open" aria-label="'+name+' PDF 열기">PDF 열기</button>'+
+          '<button type="button" data-chart-pdf="save" aria-label="'+name+' PDF 저장">PDF 저장</button></div><p role="status" hidden></p></article>';
       }).join('');
       app.innerHTML=header()+'<section class="panel history-weakness" aria-labelledby="historyWeaknessTitle"><header class="history-weakness-header"><h1 id="historyWeaknessTitle" tabindex="-1">약점 보완</h1><button type="button" class="tool-btn" id="historyWeaknessBack">역사섬으로</button></header><p class="history-weakness-intro">표를 누르면 크게 볼 수 있어요. PDF는 자료마다 따로 열거나 저장할 수 있어요.</p><div class="history-weakness-grid">'+cards+'</div></section>';
       app.querySelector('#historyWeaknessBack').onclick=function(){subjectRoute('#history',false);home(true);};
+      if(window.HanqHistoryWeaknessPdf)window.HanqHistoryWeaknessPdf.mount(app);
       app.querySelector('#historyWeaknessTitle').focus();window.scrollTo({top:0,behavior:'auto'});
     }
     function openFormalExams(silent,id){if(requireStudyLogin())return;stopLearningResources();clearAutoAdvance();rcStopTimer();current=null;wnOpen=false;step=0;app.classList.remove('lesson-active');var route=function(runId){var hash='#formal-exams'+(runId?'/'+runId:'');if(location.hash!==hash){var d=history.state&&history.state.depth||0;history.pushState({hanq:true,view:'formal-exams',runId:runId||null,depth:d+1},'',hash);}};if(!silent)route(id);app.innerHTML=header()+'<section id="formalExamHost"></section>';HanqFormalExams.mount(app.querySelector('#formalExamHost'),{api:window.HanqApi,review:window.HanqQuizBriefFeedback||HanqQuizReview,onRoute:route,onHome:function(){home();},onAccount:function(){openAccount('main');},onNotes:function(){openAccount('notes');},onLearn:function(era,review){openChapter(era,false,review?4:0);}},id);window.scrollTo({top:0,behavior:'auto'});}
