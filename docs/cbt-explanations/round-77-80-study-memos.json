@@ -1,0 +1,2075 @@
+{
+  "schema": "hanq-choice-study-memos-v1",
+  "rounds": [
+    77,
+    78,
+    79,
+    80
+  ],
+  "basis": "Exact authored option text and established File Island associations; offline manually reviewed IDs; no runtime subject inference.",
+  "items": {
+    "exam-77-14-option-3": {
+      "questionId": "exam-77-14",
+      "version": "e87d5fdf0ff12fca",
+      "clue": "골품제·일상생활 제한",
+      "subject": "신라",
+      "associations": [
+        "화백 회의",
+        "화랑도"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "14",
+        "option": 3,
+        "original": "골품제·일상생활 제한 — 신라: 혈연 신분에 따라 관직 진출과 집·옷 등의 범위를 제한했어요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "화백 회의",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "화랑도",
+          "path": "docs/cbt-explanations/round-70.json"
+        }
+      ]
+    },
+    "exam-77-17-option-1": {
+      "questionId": "exam-77-17",
+      "version": "a9b7c2e2c466889f",
+      "clue": "(가) 묘청의 난 진압",
+      "subject": "김부식",
+      "associations": [
+        "삼국사기",
+        "기전체"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "17",
+        "option": 1,
+        "original": "(가) 묘청의 난 진압 — 김부식: 인종 때 서경의 반란을 진압하고 이후 삼국사기 편찬을 총괄했어요. 기전체 삼국사기의 편찬자와 일치해요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "삼국사기",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "기전체",
+          "path": "docs/cbt-explanations/round-73.json"
+        }
+      ]
+    },
+    "exam-77-26-option-3": {
+      "questionId": "exam-77-26",
+      "version": "0f687cc9b283c8c4",
+      "clue": "역대 명필·추사체",
+      "subject": "김정희",
+      "associations": [
+        "세한도",
+        "북한산비 고증"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "26",
+        "option": 3,
+        "original": "역대 명필·추사체 — 김정희: 서예와 금석학을 연구해 독창적 글씨체를 이루었어요. 북학의 저자 박제가와 구별해요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "세한도",
+          "path": "media/textbook-notes.js"
+        },
+        {
+          "term": "북한산비 고증",
+          "path": "docs/cbt-explanations/round-70.json"
+        }
+      ]
+    },
+    "exam-77-31-option-1": {
+      "questionId": "exam-77-31",
+      "version": "204f6313d545f8e7",
+      "clue": "김옥균 등 개화파 주도",
+      "subject": "갑신정변",
+      "associations": [
+        "1884년",
+        "급진 개화파",
+        "한성 조약"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "31",
+        "option": 1,
+        "original": "김옥균 등 개화파 주도 — 갑신정변: 급진 개화파가 새 정부를 세우려 한 정변이에요. 구식 군인의 봉기로 시작한 임오군란과 달라요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "1884년",
+          "path": "docs/cbt-explanations/round-70.json"
+        },
+        {
+          "term": "급진 개화파",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "한성 조약",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-77-33-option-1": {
+      "questionId": "exam-77-33",
+      "version": "0a736a91ef0099f6",
+      "clue": "청의 알선",
+      "subject": "조미 수호 통상 조약",
+      "associations": [
+        "1882년",
+        "최혜국 대우",
+        "거중 조정"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "33",
+        "option": 1,
+        "original": "청의 알선 — 조미 수호 통상 조약: 청이 러시아를 견제하려 조선과 미국의 수교를 중개했어요. 중명전에서 강요된 을사늑약과 달라요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "1882년",
+          "path": "docs/cbt-explanations/round-70.json"
+        },
+        {
+          "term": "최혜국 대우",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "거중 조정",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-77-33-option-2": {
+      "questionId": "exam-77-33",
+      "version": "0a736a91ef0099f6",
+      "clue": "통감부 설치",
+      "subject": "을사늑약",
+      "associations": [
+        "1905년",
+        "외교권 박탈"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "33",
+        "option": 2,
+        "original": "통감부 설치 — 을사늑약: 외교권을 빼앗은 일본이 통감을 두어 대한 제국을 지배·감독했어요. 민영환의 자결·자신회의 오적 처단 시도와 연결돼요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "1905년",
+          "path": "docs/cbt-explanations/round-73.json"
+        },
+        {
+          "term": "외교권 박탈",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-77-33-option-3": {
+      "questionId": "exam-77-33",
+      "version": "0a736a91ef0099f6",
+      "clue": "천주교 포교 허용",
+      "subject": "조불 수호 통상 조약",
+      "associations": [
+        "1886년"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "33",
+        "option": 3,
+        "original": "천주교 포교 허용 — 조불 수호 통상 조약: 프랑스와의 수교를 통해 선교 활동의 근거가 마련됐어요. 외교권 박탈을 정한 을사늑약과 구별해요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "1886년",
+          "path": "docs/cbt-explanations/round-71.json"
+        }
+      ]
+    },
+    "exam-77-33-option-4": {
+      "questionId": "exam-77-33",
+      "version": "0a736a91ef0099f6",
+      "clue": "스티븐스·외교 고문",
+      "subject": "제1차 한일 협약",
+      "associations": [
+        "1904년",
+        "메가타"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "33",
+        "option": 4,
+        "original": "스티븐스·외교 고문 — 제1차 한일 협약: 일본이 추천하는 고문을 통해 내정·외교에 간섭했어요. 을사늑약보다 앞선 고문 정치예요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "1904년",
+          "path": "docs/cbt-explanations/round-71.json"
+        },
+        {
+          "term": "메가타",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-77-38-option-4": {
+      "questionId": "exam-77-38",
+      "version": "4abba905c3aa24c9",
+      "clue": "순종 인산일·만세 운동",
+      "subject": "6·10 만세 운동",
+      "associations": [
+        "1926년"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "38",
+        "option": 4,
+        "original": "순종 인산일·만세 운동 — 6·10 만세 운동: 학생과 민족·사회주의 계열이 독립 시위를 준비했어요. 신간회 결성 이전의 민족 협력 움직임이에요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "1926년",
+          "path": "docs/cbt-explanations/round-70.json"
+        }
+      ]
+    },
+    "exam-77-42-option-5": {
+      "questionId": "exam-77-42",
+      "version": "81c32ccb026b3210",
+      "clue": "김원봉 등과 민족 혁명당 결성",
+      "subject": "조소앙",
+      "associations": [
+        "삼균주의",
+        "대한민국 건국 강령"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "42",
+        "option": 5,
+        "original": "김원봉 등과 민족 혁명당 결성 — 조소앙: 난징에서 독립운동 세력을 통합한 정당 결성에 참여했어요. 대동단결 선언·삼균주의 건국 강령을 이어 주는 행적이에요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "삼균주의",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "대한민국 건국 강령",
+          "path": "docs/cbt-explanations/round-70.json"
+        }
+      ]
+    },
+    "exam-77-02-option-2": {
+      "questionId": "exam-77-02",
+      "version": "9bc619fbab945979",
+      "clue": "정사암·국가 중대사",
+      "subject": "백제",
+      "associations": [
+        "정사암 회의",
+        "22담로",
+        "6좌평"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "02",
+        "option": 2,
+        "original": "정사암·국가 중대사 — 백제: 귀족들이 정사암에 모여 재상을 선출하고 국사를 논의했어요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "정사암 회의",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "22담로",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "6좌평",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-77-02-option-4": {
+      "questionId": "exam-77-02",
+      "version": "9bc619fbab945979",
+      "clue": "욕살·처려근지",
+      "subject": "고구려",
+      "associations": [
+        "제가 회의",
+        "서옥제",
+        "동맹"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "02",
+        "option": 4,
+        "original": "욕살·처려근지 — 고구려: 지방의 큰 성 등을 다스리던 지방관이에요. 고조선의 관직과 구별해요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "제가 회의",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "서옥제",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "동맹",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-77-03-option-4": {
+      "questionId": "exam-77-03",
+      "version": "c2ee6ee37ef14435",
+      "clue": "화백 회의",
+      "subject": "신라",
+      "associations": [
+        "골품제",
+        "화랑도"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "03",
+        "option": 4,
+        "original": "화백 회의 — 신라: 귀족들이 중대사를 만장일치로 결정했어요. 동예의 읍군·삼로 중심 사회와 달라요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "골품제",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "화랑도",
+          "path": "docs/cbt-explanations/round-70.json"
+        }
+      ]
+    },
+    "exam-77-04-option-1": {
+      "questionId": "exam-77-04",
+      "version": "b4110ef441174989",
+      "clue": "금동 대향로",
+      "subject": "백제",
+      "associations": [
+        "정사암 회의",
+        "22담로",
+        "6좌평"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "04",
+        "option": 1,
+        "original": "금동 대향로 — 백제: 부여 능산리에서 발견된 향로로 불교와 도교 요소가 함께 표현돼 있어요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "정사암 회의",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "22담로",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "6좌평",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-77-04-option-2": {
+      "questionId": "exam-77-04",
+      "version": "b4110ef441174989",
+      "clue": "칠지도",
+      "subject": "백제",
+      "associations": [
+        "정사암 회의",
+        "22담로",
+        "6좌평"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "04",
+        "option": 2,
+        "original": "칠지도 — 백제: 칼날 양옆에 가지 모양 날을 낸 철검으로 백제와 왜의 교류를 보여 줘요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "정사암 회의",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "22담로",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "6좌평",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-77-04-option-4": {
+      "questionId": "exam-77-04",
+      "version": "b4110ef441174989",
+      "clue": "천마총 금제 관식",
+      "subject": "신라",
+      "associations": [
+        "화백 회의",
+        "골품제",
+        "화랑도"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "04",
+        "option": 4,
+        "original": "천마총 금제 관식 — 신라: 새 날개 모양의 금판에 달개를 매달아 관모를 꾸몄어요. 천마총·금령총이 있는 경주의 금속 공예와 연결돼요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "화백 회의",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "골품제",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "화랑도",
+          "path": "docs/cbt-explanations/round-70.json"
+        }
+      ]
+    },
+    "exam-77-04-option-5": {
+      "questionId": "exam-77-04",
+      "version": "b4110ef441174989",
+      "clue": "연가7년명 금동여래입상",
+      "subject": "고구려",
+      "associations": [
+        "제가 회의",
+        "서옥제",
+        "동맹"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "04",
+        "option": 5,
+        "original": "연가7년명 금동여래입상 — 고구려: 뒷면의 명문으로 제작 배경을 알 수 있는 불상이에요. 신라의 금제 관 장식과 나라·용도가 달라요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "제가 회의",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "서옥제",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "동맹",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-77-05-option-1": {
+      "questionId": "exam-77-05",
+      "version": "91fc10f8974d4f7b",
+      "clue": "금마저·미륵사",
+      "subject": "백제 무왕",
+      "associations": [
+        "익산 미륵사",
+        "미륵사지 석탑"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "05",
+        "option": 1,
+        "original": "금마저·미륵사 — 백제 무왕: 익산 지역에 대규모 사찰을 세웠어요. 무령왕보다 뒤의 백제 왕이에요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "익산 미륵사",
+          "path": "docs/cbt-explanations/round-72.json"
+        },
+        {
+          "term": "미륵사지 석탑",
+          "path": "docs/cbt-explanations/round-71.json"
+        }
+      ]
+    },
+    "exam-77-06-option-1": {
+      "questionId": "exam-77-06",
+      "version": "e9d6d541ea0a533b",
+      "clue": "을지문덕·살수 대첩",
+      "subject": "고구려 영양왕",
+      "associations": [
+        "신집 5권"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "06",
+        "option": 1,
+        "original": "을지문덕·살수 대첩 — 612년 고구려가 수의 군대를 물리친 전투예요. (가)의 백제 공격 준비(660)보다 앞서요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "신집 5권",
+          "path": "docs/cbt-explanations/round-70.json"
+        }
+      ]
+    },
+    "exam-77-06-option-3": {
+      "questionId": "exam-77-06",
+      "version": "e9d6d541ea0a533b",
+      "clue": "윤충·대야성 함락",
+      "subject": "백제 의자왕",
+      "associations": [
+        "황산벌 전투",
+        "백제 멸망"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "06",
+        "option": 3,
+        "original": "윤충·대야성 함락 — 642년 백제 의자왕 때 신라를 공격한 사건이에요. 백제가 멸망하기 전의 일이라 두 자료 사이에 들어가지 않아요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "황산벌 전투",
+          "path": "docs/cbt-explanations/round-78.json"
+        },
+        {
+          "term": "백제 멸망",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-77-07-option-2": {
+      "questionId": "exam-77-07",
+      "version": "e8889f5479b68219",
+      "clue": "주자감·인재 양성",
+      "subject": "발해",
+      "associations": [
+        "대조영",
+        "3성 6부",
+        "해동성국"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "07",
+        "option": 2,
+        "original": "주자감·인재 양성 — 발해: 유학을 교육하는 국립 교육 기관을 두었어요. 신라의 국학, 고려의 국자감과 함께 구별해요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "대조영",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "3성 6부",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "해동성국",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-77-07-option-3": {
+      "questionId": "exam-77-07",
+      "version": "e8889f5479b68219",
+      "clue": "9서당 10정",
+      "subject": "신문왕",
+      "associations": [
+        "김흠돌의 난",
+        "관료전",
+        "녹읍 폐지"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "07",
+        "option": 3,
+        "original": "9서당 10정 — 통일 신라: 중앙군과 지방군을 정비한 군사 조직이에요. 발해의 지방 제도 5경 15부와 다르죠."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "김흠돌의 난",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "관료전",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "녹읍 폐지",
+          "path": "media/cbt-round-materials.js"
+        }
+      ]
+    },
+    "exam-77-07-option-5": {
+      "questionId": "exam-77-07",
+      "version": "e8889f5479b68219",
+      "clue": "부여씨·8성 귀족",
+      "subject": "백제",
+      "associations": [
+        "정사암 회의",
+        "22담로",
+        "6좌평"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "07",
+        "option": 5,
+        "original": "부여씨·8성 귀족 — 백제: 왕실과 유력 귀족의 지배층 구성이에요. 발해의 대씨 왕실과 구별해요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "정사암 회의",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "22담로",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "6좌평",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-77-08-option-3": {
+      "questionId": "exam-77-08",
+      "version": "c168b9c7908ce463",
+      "clue": "부경·집집마다 창고",
+      "subject": "고구려",
+      "associations": [
+        "제가 회의",
+        "서옥제",
+        "동맹"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "08",
+        "option": 3,
+        "original": "부경·집집마다 창고 — 고구려: 곡식 등을 보관하는 창고를 갖추었어요. 국내성·돌무지무덤·영락 명문의 나라와 같아요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "제가 회의",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "서옥제",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "동맹",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-77-08-option-5": {
+      "questionId": "exam-77-08",
+      "version": "c168b9c7908ce463",
+      "clue": "풍흉·9등급 전세",
+      "subject": "세종",
+      "associations": [
+        "훈민정음",
+        "집현전",
+        "4군 6진"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "08",
+        "option": 5,
+        "original": "풍흉·9등급 전세 — 조선 세종의 연분 9등법: 해마다 풍년·흉년 정도에 따라 전세를 차등 부과했어요. 고려의 전시과와도 구별해요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "훈민정음",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "집현전",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "4군 6진",
+          "path": "media/cbt-round-materials.js"
+        }
+      ]
+    },
+    "exam-77-09-option-2": {
+      "questionId": "exam-77-09",
+      "version": "87c198a853c59a3b",
+      "clue": "광평성",
+      "subject": "궁예",
+      "associations": [
+        "후고구려",
+        "마진·태봉"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-77.json",
+        "question": "09",
+        "option": 2,
+        "original": "광평성 — 궁예: 국정을 총괄하는 중앙 정치 기구를 마련했어요. 왕건에게 나주를 맡기고 송악에서 철원으로 옮긴 인물과 같아요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "후고구려",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "마진·태봉",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-78-14-option-1": {
+      "questionId": "exam-78-14",
+      "version": "b3a91a9c4d5b8171",
+      "clue": "① 부여 정림사지 오층 석탑",
+      "subject": "백제",
+      "associations": [
+        "정사암 회의",
+        "22담로",
+        "6좌평"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "14",
+        "option": 1,
+        "original": "**① 부여 정림사지 오층 석탑** — 백제: 얇고 넓은 지붕돌과 기둥 모양에서 목조 건축을 본뜬 모습을 볼 수 있어요. 사비 시기의 백제 석탑이에요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "정사암 회의",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "22담로",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "6좌평",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-78-14-option-2": {
+      "questionId": "exam-78-14",
+      "version": "b3a91a9c4d5b8171",
+      "clue": "② 영광탑",
+      "subject": "발해",
+      "associations": [
+        "대조영",
+        "3성 6부",
+        "해동성국"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "14",
+        "option": 2,
+        "original": "**② 영광탑** — 발해: 벽돌로 쌓은 전탑이에요. 흥덕사에서 직지를 간행한 고려의 석탑과 나라·재료가 달라요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "대조영",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "3성 6부",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "해동성국",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-78-15-option-1": {
+      "questionId": "exam-78-15",
+      "version": "865bb405e29ac39c",
+      "clue": "주자감에서 공부",
+      "subject": "발해",
+      "associations": [
+        "대조영",
+        "3성 6부",
+        "해동성국"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "15",
+        "option": 1,
+        "original": "**주자감에서 공부** — 발해: 유학 교육을 담당한 교육 기관이에요. 고려의 대표적인 국립 교육 기관은 국자감이에요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "대조영",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "3성 6부",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "해동성국",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-78-15-option-3": {
+      "questionId": "exam-78-15",
+      "version": "865bb405e29ac39c",
+      "clue": "동시전·시장 감독",
+      "subject": "신라",
+      "associations": [
+        "화백 회의",
+        "골품제",
+        "화랑도"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "15",
+        "option": 3,
+        "original": "**동시전·시장 감독** — 신라: 수도의 동시를 관리하던 관청이에요. 고려에서는 경시서가 시전의 상행위를 감독했어요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "화백 회의",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "골품제",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "화랑도",
+          "path": "docs/cbt-explanations/round-70.json"
+        }
+      ]
+    },
+    "exam-78-26-option-1": {
+      "questionId": "exam-78-26",
+      "version": "dbd8caadbb3e41f2",
+      "clue": "달밤에 만난 남녀·월하정인",
+      "subject": "신윤복",
+      "associations": [
+        "풍속화"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "26",
+        "option": 1,
+        "original": "**달밤에 만난 남녀·월하정인** — 신윤복: 인물의 만남과 정서를 섬세하게 그린 풍속화예요. 김정희의 세한도와 달리 남녀의 생활 장면이 중심이에요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "풍속화",
+          "path": "media/textbook-notes.js"
+        }
+      ]
+    },
+    "exam-78-26-option-3": {
+      "questionId": "exam-78-26",
+      "version": "dbd8caadbb3e41f2",
+      "clue": "절벽 아래 나룻배·산수인물도",
+      "subject": "김홍도",
+      "associations": [
+        "풍속화",
+        "씨름",
+        "서당"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "26",
+        "option": 3,
+        "original": "**절벽 아래 나룻배·산수인물도** — 김홍도: 절벽·나무와 배 탄 인물을 함께 담은 산수화예요. 풍속화로도 유명한 김홍도가 산수화도 그렸음을 보여 줘요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "풍속화",
+          "path": "media/textbook-notes.js"
+        },
+        {
+          "term": "씨름",
+          "path": "docs/cbt-explanations/round-70.json"
+        },
+        {
+          "term": "서당",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-78-26-option-5": {
+      "questionId": "exam-78-26",
+      "version": "dbd8caadbb3e41f2",
+      "clue": "간결한 집과 상록수·세한도",
+      "subject": "김정희",
+      "associations": [
+        "추사체",
+        "북한산비 고증"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "26",
+        "option": 5,
+        "original": "**간결한 집과 상록수·세한도** — 김정희: 제주 유배 중 그린 문인화로, 추위에도 푸른 나무에 변함없는 의리의 뜻을 담았어요. 불이선란도와 작가가 같아요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "추사체",
+          "path": "media/textbook-notes.js"
+        },
+        {
+          "term": "북한산비 고증",
+          "path": "docs/cbt-explanations/round-70.json"
+        }
+      ]
+    },
+    "exam-78-28-option-1": {
+      "questionId": "exam-78-28",
+      "version": "1d860b1fae8a1483",
+      "clue": "천주교 포교 허용",
+      "subject": "조불 수호 통상 조약",
+      "associations": [
+        "1886년"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "28",
+        "option": 1,
+        "original": "**천주교 포교 허용** — 조불 수호 통상 조약: 프랑스와의 조약이 천주교 선교 활동을 인정받는 근거가 되었어요. 강화도 조약의 내용이 아니에요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "1886년",
+          "path": "docs/cbt-explanations/round-71.json"
+        }
+      ]
+    },
+    "exam-78-28-option-2": {
+      "questionId": "exam-78-28",
+      "version": "1d860b1fae8a1483",
+      "clue": "일본의 해안 측량권",
+      "subject": "강화도 조약",
+      "associations": [
+        "1876년",
+        "치외법권"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "28",
+        "option": 2,
+        "original": "**일본의 해안 측량권** — 강화도 조약: 일본이 조선 해안을 측량할 수 있게 한 조항으로, 운요호 사건 이후 체결된 조약과 일치해요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "1876년",
+          "path": "docs/cbt-explanations/round-71.json"
+        },
+        {
+          "term": "치외법권",
+          "path": "docs/cbt-explanations/round-78.json"
+        }
+      ]
+    },
+    "exam-78-29-option-4": {
+      "questionId": "exam-78-29",
+      "version": "dfb8455f33d2cdd7",
+      "clue": "흥선 대원군이 청에 납치",
+      "subject": "임오군란",
+      "associations": [
+        "1882년",
+        "구식 군인",
+        "제물포 조약"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "29",
+        "option": 4,
+        "original": "**흥선 대원군이 청에 납치** — 임오군란: 1882년 청이 군대를 보내 군란을 진압하고 대원군을 데려갔어요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "1882년",
+          "path": "docs/cbt-explanations/round-70.json"
+        },
+        {
+          "term": "구식 군인",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "제물포 조약",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-78-38-option-4": {
+      "questionId": "exam-78-38",
+      "version": "b55c7e56d9125b10",
+      "clue": "신간회 결성에 영향",
+      "subject": "6·10 만세 운동",
+      "associations": [
+        "1926년",
+        "순종 인산일"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "38",
+        "option": 4,
+        "original": "**신간회 결성에 영향** — 6·10 만세 운동: 민족주의·사회주의 세력이 함께 항일운동을 추진한 경험이 민족 협동 전선 형성에 힘을 보탰어요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "1926년",
+          "path": "docs/cbt-explanations/round-70.json"
+        },
+        {
+          "term": "순종 인산일",
+          "path": "docs/cbt-explanations/round-72.json"
+        }
+      ]
+    },
+    "exam-78-03-option-3": {
+      "questionId": "exam-78-03",
+      "version": "c77d5ba5d73f0d49",
+      "clue": "(나) 위화부·영객부",
+      "subject": "신라",
+      "associations": [
+        "화백 회의",
+        "골품제",
+        "화랑도"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "03",
+        "option": 3,
+        "original": "**(나) 위화부·영객부** — 신라: 인사 업무와 외국 사신 접대 등을 맡은 관청이에요. 부여의 관청으로 연결하면 틀려요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "화백 회의",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "골품제",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "화랑도",
+          "path": "docs/cbt-explanations/round-70.json"
+        }
+      ]
+    },
+    "exam-78-03-option-4": {
+      "questionId": "exam-78-03",
+      "version": "c77d5ba5d73f0d49",
+      "clue": "(나) 상가·대로·패자",
+      "subject": "고구려",
+      "associations": [
+        "제가 회의",
+        "서옥제",
+        "동맹"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "03",
+        "option": 4,
+        "original": "**(나) 상가·대로·패자** — 고구려: 고구려의 관등 명칭이에요. 부여에서는 마가·우가·저가·구가와 사출도를 연결해요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "제가 회의",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "서옥제",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "동맹",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-78-04-option-3": {
+      "questionId": "exam-78-04",
+      "version": "edf4b8f89055e1c4",
+      "clue": "익산 미륵사 창건",
+      "subject": "백제 무왕",
+      "associations": [
+        "미륵사지 석탑"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "04",
+        "option": 3,
+        "original": "**익산 미륵사 창건** — 무왕: 익산 지역의 대규모 사찰 조성과 연결해요. 성왕의 사비 천도와 구별해야 해요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "미륵사지 석탑",
+          "path": "docs/cbt-explanations/round-71.json"
+        }
+      ]
+    },
+    "exam-78-05-option-2": {
+      "questionId": "exam-78-05",
+      "version": "8c2579b2dd611a79",
+      "clue": "태학·경당·유교 경전",
+      "subject": "고구려",
+      "associations": [
+        "제가 회의",
+        "서옥제",
+        "동맹"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "05",
+        "option": 2,
+        "original": "**태학·경당·유교 경전** — 고구려: 태학은 중앙의 교육 기관이고 경당은 지방 청소년에게 경전과 무예를 가르친 곳이에요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "제가 회의",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "서옥제",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "동맹",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-78-06-option-1": {
+      "questionId": "exam-78-06",
+      "version": "e4c5575a6b0b9bb1",
+      "clue": "서옥제",
+      "subject": "고구려",
+      "associations": [
+        "제가 회의",
+        "동맹"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "06",
+        "option": 1,
+        "original": "**서옥제** — 고구려: 혼인 뒤 신랑이 신부 집의 작은 집에 머물다가 자녀가 자라면 돌아가는 풍습이에요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "제가 회의",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "동맹",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-78-06-option-3": {
+      "questionId": "exam-78-06",
+      "version": "e4c5575a6b0b9bb1",
+      "clue": "골품·신분에 따른 생활 규제",
+      "subject": "신라",
+      "associations": [
+        "화백 회의",
+        "골품제",
+        "화랑도"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "06",
+        "option": 3,
+        "original": "**골품·신분에 따른 생활 규제** — 신라: 골품에 따라 관직 진출과 집·옷 등 생활 범위에 차등을 두었어요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "화백 회의",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "골품제",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "화랑도",
+          "path": "docs/cbt-explanations/round-70.json"
+        }
+      ]
+    },
+    "exam-78-06-option-4": {
+      "questionId": "exam-78-06",
+      "version": "e4c5575a6b0b9bb1",
+      "clue": "6좌평·달솔",
+      "subject": "백제",
+      "associations": [
+        "정사암 회의",
+        "22담로"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "06",
+        "option": 4,
+        "original": "**6좌평·달솔** — 백제: 6좌평은 최고위 관직 체계, 달솔은 16관등 가운데 하나예요. 사비 도읍지에서 나온 목간의 국가와 일치해요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "정사암 회의",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "22담로",
+          "path": "media/cbt-round-materials.js"
+        }
+      ]
+    },
+    "exam-78-07-option-1": {
+      "questionId": "exam-78-07",
+      "version": "e57089e5bcfef8e4",
+      "clue": "대가야 정복",
+      "subject": "진흥왕",
+      "associations": [
+        "화랑 정비",
+        "한강 차지"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "07",
+        "option": 1,
+        "original": "**대가야 정복** — 신라 진흥왕, 562년: 가야 연맹의 마지막 세력을 병합했어요. 대야성 함락보다 앞선 영토 확장이에요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "화랑 정비",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "한강 차지",
+          "path": "media/cbt-round-materials.js"
+        }
+      ]
+    },
+    "exam-78-07-option-2": {
+      "questionId": "exam-78-07",
+      "version": "e57089e5bcfef8e4",
+      "clue": "이사부·우산국 복속",
+      "subject": "지증왕",
+      "associations": [
+        "국호 신라",
+        "동시전"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "07",
+        "option": 2,
+        "original": "**이사부·우산국 복속** — 신라 지증왕, 512년: 울릉도 지역의 우산국을 복속시켰어요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "국호 신라",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "동시전",
+          "path": "media/cbt-round-materials.js"
+        }
+      ]
+    },
+    "exam-78-07-option-3": {
+      "questionId": "exam-78-07",
+      "version": "e57089e5bcfef8e4",
+      "clue": "을지문덕·살수 대첩",
+      "subject": "고구려 영양왕",
+      "associations": [
+        "신집 5권"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "07",
+        "option": 3,
+        "original": "**을지문덕·살수 대첩** — 고구려, 612년: 수 양제의 침입군을 격파했어요. 김춘추의 고구려 방문보다 앞서요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "신집 5권",
+          "path": "docs/cbt-explanations/round-70.json"
+        }
+      ]
+    },
+    "exam-78-07-option-5": {
+      "questionId": "exam-78-07",
+      "version": "e57089e5bcfef8e4",
+      "clue": "광개토 대왕·신라에 침입한 왜 격퇴",
+      "subject": "광개토왕",
+      "associations": [
+        "영락",
+        "신라 구원"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "07",
+        "option": 5,
+        "original": "**광개토 대왕·신라에 침입한 왜 격퇴** — 400년: 고구려가 신라를 지원한 사건이에요. 김춘추가 지원을 요청한 7세기의 사건과 구별해요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "영락",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "신라 구원",
+          "path": "media/cbt-round-materials.js"
+        }
+      ]
+    },
+    "exam-78-08-option-1": {
+      "questionId": "exam-78-08",
+      "version": "b91e06dd0ee10e7f",
+      "clue": "비담·염종의 반란",
+      "subject": "선덕여왕",
+      "associations": [
+        "첨성대",
+        "분황사 모전 석탑",
+        "황룡사 구층 목탑"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "08",
+        "option": 1,
+        "original": "**비담·염종의 반란** — 선덕 여왕 말, 647년: 여왕의 통치를 비판하며 일어났고 진덕 여왕 때 진압되었어요. 신라 하대보다 앞선 일이에요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "첨성대",
+          "path": "docs/cbt-explanations/round-75.json"
+        },
+        {
+          "term": "분황사 모전 석탑",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "황룡사 구층 목탑",
+          "path": "docs/cbt-explanations/round-70.json"
+        }
+      ]
+    },
+    "exam-78-08-option-2": {
+      "questionId": "exam-78-08",
+      "version": "b91e06dd0ee10e7f",
+      "clue": "김흠돌의 난",
+      "subject": "신문왕",
+      "associations": [
+        "관료전",
+        "녹읍 폐지"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "08",
+        "option": 2,
+        "original": "**김흠돌의 난** — 신문왕, 681년: 진압 뒤 진골 귀족을 숙청하고 왕권을 강화했어요. 통일 신라 중대의 전제 왕권 확립과 연결해요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "관료전",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "녹읍 폐지",
+          "path": "media/cbt-round-materials.js"
+        }
+      ]
+    },
+    "exam-78-09-option-1": {
+      "questionId": "exam-78-09",
+      "version": "1c080cd766837be4",
+      "clue": "연가 7년명 금동여래입상",
+      "subject": "고구려",
+      "associations": [
+        "제가 회의",
+        "서옥제",
+        "동맹"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "09",
+        "option": 1,
+        "original": "**연가 7년명 금동여래입상** — 고구려: 서 있는 불상 뒤 광배에 고구려의 독자적 연호인 연가가 새겨져 있어요. 발해의 보력·건흥과 구별해요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "제가 회의",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "서옥제",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "동맹",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-78-09-option-3": {
+      "questionId": "exam-78-09",
+      "version": "1c080cd766837be4",
+      "clue": "이불병좌상",
+      "subject": "발해",
+      "associations": [
+        "대조영",
+        "3성 6부",
+        "해동성국"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-78.json",
+        "question": "09",
+        "option": 3,
+        "original": "**이불병좌상** — 발해: 한 광배 안에 두 부처가 나란히 앉아 있어요. 발해의 불교 신앙과 조각 문화를 보여 주므로 묘지의 국가와 연결돼요."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "대조영",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "3성 6부",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "해동성국",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-79-12-option-1": {
+      "questionId": "exam-79-12",
+      "version": "0aa63a75e3382588",
+      "clue": "솔빈부·말",
+      "subject": "발해",
+      "associations": [
+        "대조영",
+        "3성 6부",
+        "해동성국"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-79.json",
+        "question": "12",
+        "option": 1,
+        "original": "솔빈부·말 — 발해: 솔빈부의 말은 발해의 대표 특산물. 해동통보·삼한통보를 주조한 고려와 구분한다."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "대조영",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "3성 6부",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "해동성국",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-79-13-option-1": {
+      "questionId": "exam-79-13",
+      "version": "9c9a647d59473930",
+      "clue": "초조대장경 조판",
+      "subject": "고려 현종",
+      "associations": [
+        "귀주대첩",
+        "개경 나성"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-79.json",
+        "question": "13",
+        "option": 1,
+        "original": "초조대장경 조판 — 고려 현종: 거란의 침입을 물리치려 불력에 기대어 대장경을 새기기 시작했다. 강조의 정변·나주 몽진·귀주 대첩이 가리키는 현종의 재위 중이다."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "귀주대첩",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "개경 나성",
+          "path": "docs/cbt-explanations/round-70.json"
+        }
+      ]
+    },
+    "exam-79-02-option-3": {
+      "questionId": "exam-79-02",
+      "version": "e593a68c2d5b5dc6",
+      "clue": "제가 회의",
+      "subject": "고구려",
+      "associations": [
+        "서옥제",
+        "동맹"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-79.json",
+        "question": "02",
+        "option": 3,
+        "original": "제가 회의 — 고구려: 제가 회의는 여러 가의 귀족 회의. (나) 동예의 책화·족외혼과 구분한다."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "서옥제",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "동맹",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-79-04-option-2": {
+      "questionId": "exam-79-04",
+      "version": "0ebcd19f5f0aec93",
+      "clue": "부경",
+      "subject": "고구려",
+      "associations": [
+        "제가 회의",
+        "서옥제",
+        "동맹"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-79.json",
+        "question": "04",
+        "option": 2,
+        "original": "부경 — 고구려: 부경은 집마다 둔 작은 창고. 가야의 철 수출이 아니라 고구려의 생활·경제 용어다."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "제가 회의",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "서옥제",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "동맹",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-79-07-option-1": {
+      "questionId": "exam-79-07",
+      "version": "056b162419a76a62",
+      "clue": "골품·관직 승진 제한",
+      "subject": "신라",
+      "associations": [
+        "화백 회의",
+        "골품제",
+        "화랑도"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-79.json",
+        "question": "07",
+        "option": 1,
+        "original": "골품·관직 승진 제한 — 신라: 골품에 따라 관직 승진·생활을 제한했다. 발해의 5경·독자 연호와 다른 국가의 신분제다."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "화백 회의",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "골품제",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "화랑도",
+          "path": "docs/cbt-explanations/round-70.json"
+        }
+      ]
+    },
+    "exam-79-07-option-2": {
+      "questionId": "exam-79-07",
+      "version": "056b162419a76a62",
+      "clue": "정사암",
+      "subject": "백제",
+      "associations": [
+        "정사암 회의",
+        "22담로",
+        "6좌평"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-79.json",
+        "question": "07",
+        "option": 2,
+        "original": "정사암 — 백제: 정사암 회의에서 귀족이 나라의 중대사를 의논했다. 발해의 중앙 정치 기구와 구분한다."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "정사암 회의",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "22담로",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "6좌평",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-79-07-option-3": {
+      "questionId": "exam-79-07",
+      "version": "056b162419a76a62",
+      "clue": "인안·대흥",
+      "subject": "발해",
+      "associations": [
+        "대조영",
+        "3성 6부",
+        "해동성국"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-79.json",
+        "question": "07",
+        "option": 3,
+        "original": "인안·대흥 — 발해: 무왕은 인안, 문왕은 대흥 연호를 사용했다. 5경·상경 용천부라는 지문과 같은 국가의 자주성이다."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "대조영",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "3성 6부",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "해동성국",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-79-08-option-3": {
+      "questionId": "exam-79-08",
+      "version": "79000d62ece0d56c",
+      "clue": "전문 강좌·7재",
+      "subject": "고려 예종",
+      "associations": [
+        "양현고",
+        "동북 9성"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-79.json",
+        "question": "08",
+        "option": 3,
+        "original": "전문 강좌·7재 — 고려 예종의 국자감: 전문 강좌를 설치해 관학을 진흥했다. 통일 신라 신문왕의 국학 설치와 시대·기관을 구분한다."
+      },
+      "associationSource": "media/cbt-round-materials.js existing curated map, or related exact authored facts across rounds 70–73",
+      "associationEvidence": [
+        {
+          "term": "양현고",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "동북 9성",
+          "path": "media/cbt-round-materials.js"
+        }
+      ]
+    },
+    "exam-80-01-option-1": {
+      "questionId": "exam-80-01",
+      "version": "4fc4a2a957f67ba7",
+      "clue": "청동 방울",
+      "subject": "청동기",
+      "associations": [
+        "고인돌",
+        "비파형 동검",
+        "계급 발생"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-80-supplement.json",
+        "question": "01",
+        "option": 1,
+        "itemIndex": 0,
+        "original": "청동 방울은 청동기 시대의 대표적 의례 도구다."
+      },
+      "associationSource": "Existing File Island exact curated groups and authored source facts",
+      "associationEvidence": [
+        {
+          "term": "고인돌",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "비파형 동검",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "계급 발생",
+          "path": "media/cbt-round-materials.js"
+        }
+      ]
+    },
+    "exam-80-01-option-2": {
+      "questionId": "exam-80-01",
+      "version": "4fc4a2a957f67ba7",
+      "clue": "동굴·막집",
+      "subject": "구석기",
+      "associations": [
+        "뗀석기",
+        "이동 생활"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-80-supplement.json",
+        "question": "01",
+        "option": 2,
+        "itemIndex": 0,
+        "original": "동굴이나 막집에서 살던 대표적 시기는 구석기 시대다."
+      },
+      "associationSource": "Existing File Island exact curated groups and authored source facts",
+      "associationEvidence": [
+        {
+          "term": "뗀석기",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "이동 생활",
+          "path": "media/cbt-round-materials.js"
+        }
+      ]
+    },
+    "exam-80-01-option-3": {
+      "questionId": "exam-80-01",
+      "version": "4fc4a2a957f67ba7",
+      "clue": "오수전·화천",
+      "subject": "철기 시대",
+      "associations": [
+        "철제 농기구",
+        "세형 동검",
+        "중국 화폐"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-80-supplement.json",
+        "question": "01",
+        "option": 3,
+        "itemIndex": 0,
+        "original": "오수전·화천 등 중국 화폐는 철기 시대의 교류를 보여 준다."
+      },
+      "associationSource": "Existing File Island exact curated groups and authored source facts",
+      "associationEvidence": [
+        {
+          "term": "철제 농기구",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "세형 동검",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "중국 화폐",
+          "path": "media/cbt-round-materials.js"
+        }
+      ]
+    },
+    "exam-80-01-option-4": {
+      "questionId": "exam-80-01",
+      "version": "4fc4a2a957f67ba7",
+      "clue": "가락바퀴",
+      "subject": "신석기",
+      "associations": [
+        "농경·목축",
+        "빗살무늬토기"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-80-supplement.json",
+        "question": "01",
+        "option": 4,
+        "itemIndex": 0,
+        "original": "가락바퀴를 이용한 실 뽑기는 신석기 시대에 시작되었다."
+      },
+      "associationSource": "Existing File Island exact curated groups and authored source facts",
+      "associationEvidence": [
+        {
+          "term": "농경·목축",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "빗살무늬토기",
+          "path": "media/cbt-round-materials.js"
+        }
+      ]
+    },
+    "exam-80-01-option-5": {
+      "questionId": "exam-80-01",
+      "version": "4fc4a2a957f67ba7",
+      "clue": "철제 농기구",
+      "subject": "철기 시대",
+      "associations": [
+        "세형 동검",
+        "중국 화폐"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-80-supplement.json",
+        "question": "01",
+        "option": 5,
+        "itemIndex": 0,
+        "original": "철제 농기구는 철기 시대의 특징이다."
+      },
+      "associationSource": "Existing File Island exact curated groups and authored source facts",
+      "associationEvidence": [
+        {
+          "term": "세형 동검",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "중국 화폐",
+          "path": "media/cbt-round-materials.js"
+        }
+      ]
+    },
+    "exam-80-02-option-1": {
+      "questionId": "exam-80-02",
+      "version": "fabd439efa317a33",
+      "clue": "소도·천군",
+      "subject": "삼한",
+      "associations": [
+        "천군·소도",
+        "신지·읍차",
+        "5월·10월 제사"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-80-supplement.json",
+        "question": "02",
+        "option": 1,
+        "itemIndex": 1,
+        "original": "천군이 제사를 주관한 소도는 삼한에 있었다."
+      },
+      "associationSource": "Existing File Island exact curated groups and authored source facts",
+      "associationEvidence": [
+        {
+          "term": "천군·소도",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "신지·읍차",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "5월·10월 제사",
+          "path": "media/cbt-round-materials.js"
+        }
+      ]
+    },
+    "exam-80-02-option-2": {
+      "questionId": "exam-80-02",
+      "version": "fabd439efa317a33",
+      "clue": "서옥제",
+      "subject": "고구려",
+      "associations": [
+        "제가 회의",
+        "동맹"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-80-supplement.json",
+        "question": "02",
+        "option": 2,
+        "itemIndex": 1,
+        "original": "서옥제는 고구려의 혼인 풍습이다."
+      },
+      "associationSource": "Existing File Island exact curated groups and authored source facts",
+      "associationEvidence": [
+        {
+          "term": "제가 회의",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "동맹",
+          "path": "media/era-full-summary-data.js"
+        }
+      ]
+    },
+    "exam-80-02-option-3": {
+      "questionId": "exam-80-02",
+      "version": "fabd439efa317a33",
+      "clue": "10월 무천",
+      "subject": "동예",
+      "associations": [
+        "책화",
+        "단궁·과하마·반어피"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-80-supplement.json",
+        "question": "02",
+        "option": 3,
+        "itemIndex": 1,
+        "original": "10월 제천 행사 무천은 동예의 풍습이다."
+      },
+      "associationSource": "Existing File Island exact curated groups and authored source facts",
+      "associationEvidence": [
+        {
+          "term": "책화",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "단궁·과하마·반어피",
+          "path": "media/cbt-round-materials.js"
+        }
+      ]
+    },
+    "exam-80-02-option-4": {
+      "questionId": "exam-80-02",
+      "version": "fabd439efa317a33",
+      "clue": "범금 8조",
+      "subject": "고조선",
+      "associations": [
+        "단군왕검",
+        "왕검성"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-80-supplement.json",
+        "question": "02",
+        "option": 4,
+        "itemIndex": 1,
+        "original": "범금 8조는 고조선의 법이다."
+      },
+      "associationSource": "Existing File Island exact curated groups and authored source facts",
+      "associationEvidence": [
+        {
+          "term": "단군왕검",
+          "path": "media/cbt-round-materials.js"
+        },
+        {
+          "term": "왕검성",
+          "path": "media/cbt-round-materials.js"
+        }
+      ]
+    },
+    "exam-80-02-option-5": {
+      "questionId": "exam-80-02",
+      "version": "fabd439efa317a33",
+      "clue": "화백 회의",
+      "subject": "신라",
+      "associations": [
+        "골품제",
+        "화랑도"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-80-supplement.json",
+        "question": "02",
+        "option": 5,
+        "itemIndex": 1,
+        "original": "화백 회의는 신라의 귀족 회의다."
+      },
+      "associationSource": "Existing File Island exact curated groups and authored source facts",
+      "associationEvidence": [
+        {
+          "term": "골품제",
+          "path": "media/era-full-summary-data.js"
+        },
+        {
+          "term": "화랑도",
+          "path": "docs/cbt-explanations/round-70.json"
+        }
+      ]
+    },
+    "exam-80-03-option-5": {
+      "questionId": "exam-80-03",
+      "version": "5a5d6c56284bc6a7",
+      "clue": "분황사 모전 석탑",
+      "subject": "선덕여왕",
+      "associations": [
+        "첨성대",
+        "황룡사 구층 목탑"
+      ],
+      "source": {
+        "path": "docs/cbt-explanations/round-80-supplement.json",
+        "question": "03",
+        "option": 5,
+        "itemIndex": 2,
+        "original": "분황사 모전 석탑은 신라 선덕여왕 때 세워졌다."
+      },
+      "associationSource": "Existing File Island exact curated groups and authored source facts",
+      "associationEvidence": [
+        {
+          "term": "첨성대",
+          "path": "docs/cbt-explanations/round-75.json"
+        },
+        {
+          "term": "황룡사 구층 목탑",
+          "path": "docs/cbt-explanations/round-70.json"
+        }
+      ]
+    }
+  }
+}
