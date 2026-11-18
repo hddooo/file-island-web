@@ -32,6 +32,15 @@ const tick=()=>new Promise(r=>setImmediate(r));
   assert(p?.stem.length>0,item.id);assert(p?.conclusion,item.id);
   assert.equal(parts(q,'active'),null,item.id);
  }
+ // A second historical clue must not appear under the conclusion heading.
+ for(const [id,count,last,conclusion] of [
+  ['exam-72-14',3,/개경 환도/,/\(나\) → \(다\) → \(가\)/],
+  ['exam-72-30',2,/관세와 방곡령.*조일 통상 장정/,/1882년 조미 수호 통상 조약.*사이/],
+  ['exam-72-47',2,/과전법.*세조의 직전법/,/\(가\)→\(나\)→\(다\)→\(라\)/],
+ ]){
+  const q=request(book[id]),p=parts(q);
+  assert.equal(p.stem.length,count,id);assert.match(p.stem.at(-1),last,id);assert.match(p.conclusion,conclusion,id);
+ }
  assert.equal(parts(legacy),null);
  const wrongOption=request(book['exam-71-22']);wrongOption.options[0].id='different';assert.equal(parts(wrongOption),null);
  const full=w.document.createElement('div');full.innerHTML=w.HanqCbtExplanations.render(initial,null,'final');
