@@ -1,0 +1,12 @@
+'use strict';
+const fs=require('node:fs'),assert=require('node:assert/strict');
+const {JSDOM}=require(process.env.HANQ_JSDOM_PATH||'jsdom');
+const css=fs.readFileSync('media/cbt-results.css','utf8');
+const labels=['100%','82.61%','0%','85.71%'];
+const dom=new JSDOM('<style>'+css+'</style><div id="formalExamHost">'+labels.map((rate,i)=>'<div class="fe-round-material-actions"><button class="tool-btn fe-round-practice-latest"><span class="fe-round-practice-rate">'+(i===3?'쌍별':'복습')+' 정답률 : <b class="fe-round-rate-green">'+rate+'</b></span><time>11.18 (수)</time></button></div>').join('')+'</div>');
+const w=dom.window,buttons=[...w.document.querySelectorAll('button')];
+const dimensions=buttons.map(b=>{const s=w.getComputedStyle(b);return [s.width,s.height,s.minHeight,s.maxHeight,s.flexBasis,s.boxSizing];});
+dimensions.forEach(d=>assert.deepEqual(d,['148px','34px','34px','34px','148px','border-box']));
+buttons.forEach(b=>{const text=w.getComputedStyle(b.firstElementChild),date=w.getComputedStyle(b.lastElementChild);assert.equal(text.whiteSpace,'nowrap');assert.equal(text.fontSize,'11px');assert.equal(date.fontSize,'10px');assert.equal(date.lineHeight,'10px');assert.equal(w.getComputedStyle(b).maxWidth,'100%');});
+for(const tone of ['green','orange','yellow','red'])assert(css.includes('.fe-round-rate-'+tone+'{color:'));
+dom.window.close();console.log('PASS uniform accuracy badge CSS: 100%, 82.61%, 0%, marked, date, bounded width, original tones');

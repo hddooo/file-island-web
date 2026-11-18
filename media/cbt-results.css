@@ -507,10 +507,13 @@ html[data-company-mode=on] #feRoundMaterials .fe-round-review-hand-mark{color:#f
 #formalExamHost .fe-round-material-actions{align-items:center;flex-wrap:wrap}
 html body #formalExamHost .fe-round-material-actions .fe-round-practice-latest{
  display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;
- text-align:center;line-height:1.2;min-height:44px!important;
+ box-sizing:border-box;flex:0 0 148px;width:148px;max-width:100%;
+ height:34px!important;min-height:34px!important;max-height:34px!important;
+ text-align:center;font-size:11px!important;line-height:12px;
  margin:0 auto 0 0!important;cursor:pointer;
 }
-#formalExamHost .fe-round-practice-latest time{font-size:10px;white-space:nowrap}
+#formalExamHost .fe-round-practice-latest .fe-round-practice-rate{white-space:nowrap;font-size:11px;line-height:12px;font-variant-numeric:tabular-nums}
+#formalExamHost .fe-round-practice-latest time{font-size:10px;line-height:10px;white-space:nowrap}
 #formalExamHost .fe-round-rate-green{color:#6fe0a2!important}
 #formalExamHost .fe-round-rate-orange{color:#ffb46b!important}
 #formalExamHost .fe-round-rate-yellow{color:#f4d35e!important}
