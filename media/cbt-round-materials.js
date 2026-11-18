@@ -602,12 +602,32 @@ function mount(host,options){
    var correct=chosen===q.review.correctOptionId,option=q.options.find(function(o){return o.id===chosen;});
    status.classList.add(correct?'is-correct':'is-wrong');
    status.textContent=(correct?'O 정답':'X 오답')+' · 내 선택 '+option.number+'번 · 정답 '+q.review.correctNumber+'번';
-   answer.appendChild(el('strong','보기별 해설'));
+   answer.className='fe-round-review-explanation';
+   var explanations=root.HanqCbtExplanations,parts=explanations&&explanations.reviewParts?explanations.reviewParts(q,'final'):null;
+   function markedText(tag,text){
+    var node=el(tag);
+    String(text).split(/(\*\*[^*]+\*\*)/).forEach(function(piece,i){
+     if(piece)node.appendChild(i%2?el('strong',piece.slice(2,-2)):host.ownerDocument.createTextNode(piece));
+    });
+    return node;
+   }
+   var stem=section('section','fe-round-review-stem');
+   stem.appendChild(el('h4','지문 해설'));
+   if(parts&&parts.stem.length){
+    var lines=el('ul');parts.stem.forEach(function(line){lines.appendChild(markedText('li',line));});stem.appendChild(lines);
+   }else stem.appendChild(el('p','이 문항의 지문 해설을 확인하지 못했어요.'));
+   answer.appendChild(stem);
+   var optionArea=section('section','fe-round-review-options');
+   optionArea.appendChild(el('h4','보기별 해설'));
    var notes=section('ol','fe-round-review-option-notes');
    choiceNotes(q).forEach(function(text,i){
     var line=el('li');line.append(el('strong','①②③④⑤'[i]),el(q.options[i].id===q.review.correctOptionId?'strong':'span',text));notes.appendChild(line);
    });
-   answer.appendChild(notes);
+   optionArea.appendChild(notes);answer.appendChild(optionArea);
+   var conclusion=section('section','fe-round-review-conclusion');
+   conclusion.append(el('h4','결론'),el('strong','정답 '+'①②③④⑤'[q.review.correctNumber-1]));
+   if(parts&&(parts.conclusion||parts.answer))conclusion.appendChild(markedText('p',parts.conclusion||parts.answer));
+   answer.appendChild(conclusion);
    host.appendChild(answer);
   }
   var dock=section('div','fe-round-review-dock');

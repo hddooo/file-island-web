@@ -139,6 +139,10 @@
     function explanation(item, container) {
       var cbt=options.explanations||root.HanqCbtExplanations,source=null;
       try { if(cbt&&typeof cbt.resolve==='function')source=cbt.resolve(item,'final'); } catch(_) {}
+      if(source&&typeof cbt.render==='function'){
+        var html=cbt.render(item,null,'final');
+        if(html){container.insertAdjacentHTML('beforeend',html);return;}
+      }
       var overview=source&&typeof cbt.groundedOverview==='function'?cbt.groundedOverview(source):null;source=source||item.review.item||{};overview=overview||source.overview||{};var count=0,seen=new Set();
       function line(value){if(typeof value!=='string'||!value.trim()||seen.has(value.trim()))return;seen.add(value.trim());container.appendChild(node('p',value.replace(/\*\*/g,'').trim()));count++;}
       if(Array.isArray(overview.reason))overview.reason.forEach(line);

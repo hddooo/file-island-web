@@ -116,7 +116,7 @@
     'exam-71-19':{version:"1de108826367cfc6",answer:4,"pages":"60, 62","printed":"53, 55","topic":"태조와 제1차 왕자의 난","reason":["새 왕조의 도읍을 찾으면서 조준·김사형과 의논한 임금은 조선 태조예요.","태조 재위 중 왕위 계승을 둘러싼 제1차 왕자의 난이 일어났으므로 ④가 맞고 훈민정음 반포는 세종 때예요."]},
     'exam-71-20':{version:"10b7f5d1b9ac766a",answer:2,"pages":"61, 63, 73, 89","printed":"54, 56, 66, 82","topic":"비변사의 변화","reason":["변방 군사 문제를 논의한 임시 기구이자 비국·주사로도 불린 기관은 비변사예요.","비변사는 상설화·확대를 거친 뒤 흥선 대원군 때 폐지됐으므로 ②가 맞고 국왕 직속 사법 기관은 의금부예요."]},
     'exam-71-21':{version:"114b53d1709b4d2b",answer:3,"pages":"61, 63","printed":"54, 56","topic":"을사사화","reason":["윤임을 중심으로 한 대윤이 소윤과의 갈등으로 탄압받고 뒤이어 양재역 벽서 사건이 일어났으므로 을사사화예요.","명종 즉위 무렵 왕실 외척 사이의 권력 다툼에서 비롯됐으므로 ③이 맞고 조의제문은 무오사화의 발단이에요."]},
-    'exam-71-22':{version:"52d035403b1b5df6",answer:5,"pages":"66, 68","printed":"59, 61","topic":"이괄의 난과 병자호란","reason":["이괄의 난으로 임금이 피란한 때와 소현 세자가 청에 인질로 머문 때 사이에는 병자호란이 있어요.","이 전쟁에서 김상헌은 남한산성에서 화의에 반대하고 항전을 주장했으므로 ⑤가 맞으며 훈련도감 설치는 앞선 임진왜란 때예요."]},
+    'exam-71-22':{version:"52d035403b1b5df6",answer:5,"pages":"66, 68","printed":"59, 61","topic":"이괄의 난과 병자호란","stemLines":2,"reason":["(가) **이괄이 군사를 일으켜 수도가 함락** → 이괄의 난(1624), 인조가 공주로 피란했어요.","(나) **심양에 있는 소현 세자** → 병자호란이 끝난 뒤 소현 세자가 청에 인질로 머물던 때예요.","두 지문 사이에 일어난 **병자호란(1636~1637)** 때, 김상헌은 남한산성에서 화의를 반대하고 항전을 주장했어요(척화론)."],"supplemental":[{"label":"국사편찬위원회: 이괄의 난과 인조의 공주 피란","url":"https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i305000"},{"label":"국사편찬위원회: 병자호란 이후 소현 세자의 심양 체류","url":"https://contents.history.go.kr/mobile/nh/view.do?levelId=nh_032_0060_0010_0020"}]},
     'exam-71-23':{version:"a5e8a4bc5b161349",answer:3,"pages":"67, 69","printed":"60, 62","topic":"신해통공의 배경","reason":["채제공의 보고는 시전 상인이 금난전권을 이용해 경쟁 상인의 영업을 막고 물가를 올린 폐단을 보여 줘요.","정조가 시전의 특권을 줄이는 신해통공을 시행한 배경과 연결되므로 ③이 맞고 결작은 균역법의 재정 보완책이에요."]},
     'exam-71-24':{version:"1b9103116925acca",answer:4,"pages":"67, 69","printed":"60, 62","topic":"숙종의 정치","reason":["청과 국경을 정하면서 세운 백두산정계비는 숙종 때의 일이에요.","숙종 재위 중에는 경신·기사·갑술환국으로 집권 세력이 급격히 바뀌었으므로 ④가 맞고 장용영은 정조의 친위 부대예요."]},
     'exam-71-25':{version:"972f777428da636f",answer:2,"pages":"82","printed":"75","topic":"김정희의 금석학","reason":["제주 유배 중 세한도를 그렸고 독창적인 서체로 유명한 인물은 추사 김정희예요.","김정희는 북한산비를 진흥왕 순수비로 고증했으므로 ②가 맞고 강화학파는 정제두와 연결돼요."]},
@@ -172,7 +172,7 @@
     'exam-72-26':{version:"36f25cb12340aff5",answer:1,"pages":"67, 69, 80–82","printed":"60, 62, 73–75","topic":"송시열과 기해예송","reason":["기축봉사와 희빈 장씨 소생의 원자 책봉 반대는 송시열의 단서이다.","송시열은 기해예송에서 기년설을 주장했으므로 ①이 맞다.","의산문답은 홍대용, 강화학파는 정제두, 추사체는 김정희, 양반전은 박지원이다."]},
     'exam-72-27':{version:"45cb8f80935bc933",answer:1,"pages":"53–54, 75, 78","printed":"46–47, 68, 71","topic":"조선 후기 경제와 고려 화폐","reason":["도고의 독점과 시전 문제는 조선 후기 상업의 상황이다.","건원중보는 고려 성종 때의 화폐이므로 그 시대 경제와 맞지 않는 ①을 고른다.","상품 작물·보부상·모내기 확대·설점수세제는 조선 후기 경제와 연결한다."]},
     'exam-72-28':{version:"c68f0ff2dd7b3ad2",answer:4,"pages":"61, 67, 69, 75–76, 79, 89","printed":"54, 60, 62, 68–69, 72, 82","topic":"정조의 문화·군사 정책","reason":["무예도보통지와 장용영은 정조의 정책이다.","정조는 규장각 검서관에 서얼 출신 학자들을 기용했으므로 ④가 맞다.","백두산정계비는 숙종, 삼군부 부활은 흥선대원군, 속대전은 영조, 칠정산은 세종이다."]},
-    'exam-72-29':{version:"4addf89e5928a0b5",answer:1,"pages":"105, 123","printed":"98, 116","topic":"개화기 신문의 특징","reason":["한성순보는 정부가 발행한 순한문 신문이므로 ㄱ이 맞다.","독립신문은 서재필의 주도로 창간되었으므로 ㄴ도 맞다.","상업 광고의 첫 게재는 한성주보이며, 손기정 사진의 일장기 삭제를 황성신문에 연결한 ㄷ은 맞지 않는다."]},
+    'exam-72-29':{version:"4addf89e5928a0b5",answer:1,"pages":"105, 123","printed":"98, 116","topic":"개화기 신문의 특징","stemLines":2,"reason":["한성순보는 정부가 발행한 순한문 신문이므로 ㄱ이 맞다.","독립신문은 서재필의 주도로 창간되었으므로 ㄴ도 맞다.","옳은 설명은 한성순보의 ㄱ과 독립신문의 ㄴ이에요.","상업 광고의 첫 게재는 한성주보이며, 손기정 사진의 일장기 삭제를 황성신문에 연결한 ㄷ은 맞지 않는다."]},
     'exam-72-30':{version:"e7ef71989a98f4fc",answer:1,"pages":"91–93, 97, 99","printed":"84–86, 90, 92","topic":"개항 이후 조약의 순서","reason":["무관세와 양곡 유출 허용을 담은 첫 자료는 개항 초기 조일 무역 규칙이다.","관세와 방곡령 조항을 담은 뒤 자료는 개정 조일 통상 장정이다.","1882년 조미 수호 통상 조약이 두 조약 사이에 놓이므로 ①이 맞다."]},
     'exam-72-31':{version:"3a06fa42a14dcb50",answer:4,"pages":"67, 69, 75, 89","printed":"60, 62, 68, 82","topic":"제너럴 셔먼호 사건 이후의 신미양요","reason":["대동강의 미국 상선이 불타 버린 사건은 제너럴 셔먼호 사건이다.","그 뒤 신미양요 때 어재연이 광성보에서 전사했으므로 ④가 맞다.","나선 정벌은 효종 때이며 홍경래·임술 봉기·황사영 백서 사건도 제너럴 셔먼호 사건보다 앞이다."]},
     'exam-72-32':{version:"632070f56eb1bcda",answer:5,"pages":"89, 92–93, 96–98","printed":"82, 85–86, 89–91","topic":"2차 갑오개혁","reason":["박영효가 내무대신으로 참여한 내각 뒤, 단발령 시행 앞의 시기를 찾는다.","2차 갑오개혁 때 교육 입국 조서가 반포되었으므로 ⑤가 맞다.","과거제 폐지는 1차 갑오개혁, 호포제는 대원군, 교정청은 전주화약, 5군영의2영 통합은1880년대 개화 정책이다."]},
@@ -586,7 +586,7 @@
     'exam-80-41':{version:"facd13c22cbfc6af",answer:4,"pages":"124","printed":"117","topic":"일제강점기 도시 생활","reason":["경평 축구와 모던 걸·백화점은 일제강점기 도시 생활의 변화를 보여 준다.","문화 주택과 개량 한옥도 당시 등장한 새로운 주거 양식이다."]},
     'exam-80-42':{version:"ee8b2a708fcbb32b",answer:4,"pages":"116, 119","printed":"109, 112","topic":"하와이의 독립운동","reason":["포와로 이주하여 사탕수수 농장에서 일했다는 설명은 하와이를 가리킨다.","하와이에서는 박용만이 대조선 국민 군단을 조직하여 군사 훈련을 실시했다."]},
     'exam-80-43':{version:"5a36990a08ea5210",answer:1,"pages":"116, 127–128","printed":"109, 120–121","topic":"김규식과 남북 협상","reason":["파리 강화 회의 파견과 좌우 합작 참여라는 단서로 김규식을 찾는다.","김규식은 김구와 함께 통일 정부 수립을 위한 남북 협상을 추진했다."]},
-    'exam-80-44':{version:"7c3caf07ee472a4f",answer:1,"pages":"129–130","printed":"122–123","topic":"6·25전쟁 전후의 구별","reason":["옳지 않은 것을 고르므로 전쟁 이전에 이루어진 사건을 찾아야 한다.","애치슨 라인 발표는 전쟁 전이어서 전쟁 중의 사실로 묶을 수 없다."]},
+    'exam-80-44':{version:"7c3caf07ee472a4f",answer:1,"pages":"129–130","printed":"122–123","topic":"6·25전쟁 전후의 구별","reason":["**북한군의 남침**으로 시작된 전쟁은 **6·25 전쟁(1950~1953)**이에요. 여기서는 전쟁 중 일이 **아닌 것**을 찾아야 해요.","**애치슨 라인 발표(1950년 1월)**는 6·25 전쟁이 시작되기 전 일이에요."]},
     'exam-80-45':{version:"a64c713690144a25",answer:2,"pages":"131–132","printed":"124–125","topic":"박정희 정부의 경제 개발","reason":["베트남 파병을 추진한 정부는 박정희 정부다.","같은 정부 시기에 제2차 경제 개발5개년 계획이 추진되었다."]},
     'exam-80-46':{version:"58f160a7ece02ae4",answer:3,"pages":"133, 138","printed":"126, 131","topic":"5·18민주화 운동","reason":["신군부의 비상계엄 확대와 폭력 진압에 맞선 운동은5·18민주화 운동이다.","전개 과정에서 시민들이 자발적으로 시민군을 조직하여 저항했다."]},
     'exam-80-47':{version:"704b296e46e7c4f9",answer:3,"pages":"134, 136, 138","printed":"127, 129, 131","topic":"김영삼 정부의 역사 바로 세우기","reason":["옛 조선 총독부 건물 철거를 말한 연설은 김영삼 정부의 역사 바로 세우기 정책과 연결된다.","김영삼 정부 때 국민학교의 명칭을 초등학교로 바꾸었다."]},
@@ -608,6 +608,19 @@
     var reason=note.reason.slice(),pair=reason.length===1&&reason[0].match(/^(.+?[.!?])\s+(.+)$/);
     if(pair)reason=[pair[1],pair[2]];
     return Object.assign({},overview,{reason:reason});
+  }
+  // Reviewed reasons start with the passage clue and then the answer link.
+  // For a multi-part stem, the checked note can dedicate a line to each passage.
+  function explanationParts(overview, note) {
+    var reason=lines(overview.reason), cut=note&&note.stemLines||1;
+    return {stem:reason.slice(0,cut),conclusion:reason[cut]||'',extra:reason.slice(cut+1),answer:typeof overview.answer==='string'?overview.answer.trim():''};
+  }
+  function reviewParts(q, status) {
+    if(status!=='final'||!q||!q.review)return null;
+    var entry=resolve(q,status), saved=q.review.item;
+    if(!entry&&!matching(q,saved))return null;
+    var item=entry||saved;
+    return explanationParts(entry?groundedOverview(entry):item.overview||{},bookNoteFor(entry));
   }
   function reviewedReferences(entry, note) {
     var base=array(entry.references).slice(), archived=examArchive[entry.exam];
@@ -631,25 +644,26 @@
       try { return legacy && legacy.render ? legacy.render(item, q.selectedOptionId || null) : ''; } catch (e) { return ''; }
     }
     var key = 'fe-exp-' + String(q.exam) + '-' + String(q.position).replace(/[^a-z0-9_-]/gi, ''), selected = q.selectedOptionId || null;
-    var bookNote = bookNoteFor(entry), reason = lines(o.reason), extra = reason.slice(3).concat(lines(o.context));
+    var bookNote = bookNoteFor(entry), parts=explanationParts(o,bookNote), extra=parts.extra.concat(lines(o.context));
     var html = '<article class="fe-explanation" data-reviewed="' + (entry ? 'true' : 'false') + '">' +
-      '<section class="fe-stem-analysis" aria-labelledby="' + key + '-stem"><h4 id="' + key + '-stem">지문 분석</h4>' +
-      '<div class="fe-exp-meaning">' + list(reason.slice(0, 1)) + '</div>' +
-      (reason.length > 1 ? '<div class="fe-exp-core">' + list(reason.slice(1, 3)) + '</div>' : '') +
-      '<p class="fe-exp-answer"><b>정답 연결</b> ' + md(o.answer) + '</p>' +
+      '<section class="fe-stem-analysis" aria-labelledby="' + key + '-stem"><h4 id="' + key + '-stem">지문 해설</h4>' +
+      '<div class="fe-exp-meaning">' + list(parts.stem) + '</div>' +
       (lines(o.contrast).length ? '<div class="fe-exp-contrast"><b>헷갈림 구분</b>' + list(lines(o.contrast).slice(0, 1)) + '</div>' : '') +
       '<details class="fe-exp-context"><summary>핵심어·배경 더 보기</summary>' +
       (lines(o.clue).length ? '<p class="fe-exp-keywords"><b>결정 단서</b> ' + lines(o.clue).map(function(s) { return '<span>' + md(s) + '</span>'; }).join(' ') + '</p>' : '') +
       (lines(o.memory).length ? '<p class="fe-exp-keywords"><b>함께 외울 말</b> ' + lines(o.memory).map(function(s) { return '<span>' + md(s) + '</span>'; }).join(' ') + '</p>' : '') +
       list(extra.concat(lines(o.contrast).slice(1))) + '</details></section>' +
-      '<section class="fe-option-analysis" aria-labelledby="' + key + '-options"><h4 id="' + key + '-options">보기 분석</h4><ol>';
+      '<section class="fe-option-analysis" aria-labelledby="' + key + '-options"><h4 id="' + key + '-options">보기별 해설</h4><ol>';
     html += opts.map(function(p, i) {
       var good = p.correct === true, chosen = p.id === selected;
       return '<li class="fe-exp-option ' + (good ? 'is-correct' : 'is-incorrect') + (chosen ? ' is-selected' : '') + '" data-option-id="' + esc(p.id) + '">' +
         '<p class="fe-exp-option-heading"><b>' + '①②③④⑤'[i] + '</b><span>' + (good ? '정답' : '오답 보기') + (chosen ? ' · 내가 고른 답' : '') + '</span></p>' + list(lines(p.review).slice(0, 1)) +
         (lines(p.review).length > 1 ? '<details class="fe-exp-context"><summary>설명 더 보기</summary>' + list(lines(p.review).slice(1)) + '</details>' : '') + '</li>';
     }).join('');
-    html += '</ol></section>';
+    html += '</ol></section>' +
+      '<section class="fe-exp-conclusion" aria-labelledby="' + key + '-conclusion"><h4 id="' + key + '-conclusion">결론</h4>' +
+      '<p class="fe-exp-answer"><b>' + md(parts.answer || ('정답 ' + q.review.correctNumber + '번')) + '</b>' +
+      (parts.conclusion ? '<br>' + md(parts.conclusion) : '') + '</p></section>';
     var references=entry?reviewedReferences(entry,bookNote):[];
     if (references.length) html += '<details class="fe-exp-sources"><summary>해설 근거</summary><ul>' + references.map(function(r) {
       return '<li>' + (/^https:\/\/[^\s/]+\//.test(r.url || '') ? '<a href="' + esc(r.url) + '" target="_blank" rel="noopener noreferrer">' + esc(r.label) + '</a>' : esc(r.label)) + '</li>';
@@ -675,5 +689,5 @@
         correctNumber:number, correctOptionId:correctId, options:options} };
     return resolve(q, 'final') ? render(q, null, 'final') : '';
   }
-  root.HanqCbtExplanations = { resolve: resolve, render: render, renderGraded: renderGraded, groundedOverview: groundedOverview };
+  root.HanqCbtExplanations = { resolve: resolve, render: render, renderGraded: renderGraded, groundedOverview: groundedOverview, reviewParts: reviewParts };
 })(window);

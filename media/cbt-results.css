@@ -32,7 +32,7 @@
 .fe-explanation h4{font-size:19px;margin:0 0 12px;color:#172b42}
 .fe-explanation ul{padding-left:22px;margin:8px 0}
 .fe-explanation li+li{margin-top:8px}
-.fe-stem-analysis,.fe-option-analysis{margin:16px 0;padding:16px;background:#fff;border:1px solid #d2dbe1;border-radius:10px}
+.fe-stem-analysis,.fe-option-analysis,.fe-exp-conclusion{margin:16px 0;padding:16px;background:#fff;border:1px solid #d2dbe1;border-radius:10px}
 .fe-exp-keywords{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px;margin:10px 0}
 .fe-exp-keywords>span{padding:1px 7px;background:#edf2f8;border-radius:5px}
 .fe-exp-answer{color:#244e82;border-left:3px solid #315f95;padding:8px 12px;background:#eef4fb}
@@ -47,7 +47,7 @@
 .fe-exp-context>summary,.fe-exp-sources>summary{min-height:44px;display:list-item;cursor:pointer;padding:8px 0}
 .fe-exp-sources{font-size:14px;color:#465568;margin:10px 0}
 .fe-explanation a{color:#244e82;text-decoration:underline}
-@media(max-width:600px){.fe-stem-analysis,.fe-option-analysis{padding:12px}.fe-explanation .fe-exp-option{padding:8px}.fe-explanation ul{padding-left:18px}}
+@media(max-width:600px){.fe-stem-analysis,.fe-option-analysis,.fe-exp-conclusion{padding:12px}.fe-explanation .fe-exp-option{padding:8px}.fe-explanation ul{padding-left:18px}}
 
 .fe-explanation strong{display:inline}.fe-exp-meaning,.fe-exp-core{margin:14px 0}.fe-exp-meaning>b,.fe-exp-core>b{display:block;margin-bottom:4px}
 
@@ -489,6 +489,15 @@ html[data-company-mode=on] #feRoundMaterials .fe-round-review-hand-mark{color:#f
 #feRoundMaterials .fe-round-double-star>span{position:absolute;left:.25em;top:0;font-size:.86em;opacity:.8}
 #feRoundMaterials .fe-round-double-star>span+span{left:0;top:.27em;font-size:.95em;opacity:1;text-shadow:1px -1px 0 #0e2018}
 #feRoundMaterials .fe-round-review-mark[aria-pressed="true"]{color:#ffd878!important;border-color:currentColor!important}
+#feRoundMaterials .fe-round-review-explanation{display:grid;gap:10px;font-size:14px;line-height:1.55;overflow-wrap:anywhere}
+#feRoundMaterials .fe-round-review-explanation h4{font-size:14px;margin:0 0 4px}
+#feRoundMaterials .fe-round-review-stem,
+#feRoundMaterials .fe-round-review-conclusion{padding:9px 11px;border:1px solid #507b7c;border-radius:8px;background:#122526;color:#f0fbfc}
+#feRoundMaterials .fe-round-review-stem ul{margin:0;padding-inline-start:1.2em}
+#feRoundMaterials .fe-round-review-stem li+li{margin-top:3px}
+#feRoundMaterials .fe-round-review-stem p,
+#feRoundMaterials .fe-round-review-conclusion p{margin:0}
+#feRoundMaterials .fe-round-review-conclusion>strong{color:#a0e7b3}
 #feRoundMaterials .fe-round-review-option-notes{list-style:none;padding:0;margin:8px 0;display:grid;gap:4px}
 #feRoundMaterials .fe-round-review-option-notes>li{display:grid;grid-template-columns:1.4em minmax(0,1fr);gap:5px;align-items:baseline}
 #feRoundMaterials .fe-round-review-quest{display:flex;align-items:center;gap:8px;font-size:12px;margin:0 0 8px}

@@ -235,7 +235,8 @@ async function open(h, selector = 'details[data-notebook-question]') { const det
     const reviewed=h.w.HanqCbtExplanations.groundedOverview(verified);
     ok(reviewed.reason[0].includes('강조의 정변'),'current textbook rationale selected for exact item');
     ok(h.host.querySelector('.fe-review-body').textContent.includes(reviewed.reason[0].replace(/\*\*/g,'')),'verified source explanation rendered');
-    same(h.host.querySelectorAll('.fe-review-body h4').length,5,'five option explanation groups retained');
+    same(h.host.querySelectorAll('.fe-review-body .fe-exp-option').length,5,'five option explanation groups retained');
+    same([...h.host.querySelectorAll('.fe-review-body .fe-explanation > section > h4')].map(x=>x.textContent),['지문 해설','보기별 해설','결론'],'notebook uses the same explanation order');
     ok(h.host.querySelector('.fe-answer-compare').textContent.includes('정답 '+item.answer+'번'),'saved answer mapping retained');
     h.close();
     console.log('PASS: ' + checks + ' CBT-only wrong notebook DOM/transport assertions. No live account, browser, or decoded-image QA claimed.');
