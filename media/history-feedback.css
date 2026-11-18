@@ -1,8 +1,8 @@
 /* History answer explanations: preserve source image pixels and clear O/X labels. */
 body[data-island=history] .fe-explanation{color:#f3f6f5}
 body[data-island=history] .fe-explanation h4{color:#fff}
-body[data-island=history] :is(.fe-stem-analysis,.fe-option-analysis,.fe-exp-contrast){background:#102722;border-color:#577d6f;color:#f3f6f5}
-body[data-island=history] .fe-exp-answer{background:#16382a;color:#a4ffbd;border-color:#83e6a4}
+body[data-island=history] .fe-option-analysis{background:#102722;border-color:#577d6f;color:#f3f6f5}
+body[data-island=history] .fe-exp-answer{color:#a4ffbd}
 body[data-island=history] .fe-exp-keywords>span{background:#233c34;color:#e9fff0}
 body[data-island=history] .fe-explanation .fe-exp-option{background:#142822;color:#f4f6f5;border-color:#648577}
 body[data-island=history] .fe-explanation .fe-exp-option.is-correct{background:#153b29;color:#a4ffbd;border-color:#83e6a4}

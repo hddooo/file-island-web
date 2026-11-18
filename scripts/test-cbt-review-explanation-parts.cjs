@@ -44,12 +44,24 @@ const tick=()=>new Promise(r=>setImmediate(r));
  assert.equal(parts(legacy),null);
  const wrongOption=request(book['exam-71-22']);wrongOption.options[0].id='different';assert.equal(parts(wrongOption),null);
  const full=w.document.createElement('div');full.innerHTML=w.HanqCbtExplanations.render(initial,null,'final');
+ const style=w.document.createElement('style');
+ style.textContent=['cbt-results','history-feedback'].map(n=>fs.readFileSync('media/'+n+'.css','utf8')).join('\n');
+ w.document.head.appendChild(style);w.document.body.dataset.island='history';w.document.body.appendChild(full);
+ function noBox(element){
+  const css=w.getComputedStyle(element);
+  assert.equal(css.backgroundColor,'rgba(0, 0, 0, 0)');
+  assert(!css.borderTopStyle||css.borderTopStyle==='none');
+  assert(!css.borderLeftStyle||css.borderLeftStyle==='none');
+ }
+ for(const selector of ['.fe-stem-analysis','.fe-exp-conclusion','.fe-exp-answer'])noBox(full.querySelector(selector));
+ assert.notEqual(w.getComputedStyle(full.querySelector('.fe-exp-option.is-correct')).backgroundColor,'rgba(0, 0, 0, 0)');
  assert.deepEqual(headings(full.querySelector('.fe-explanation')),expected);
  assert.match(full.querySelector('.fe-exp-conclusion').textContent,/김상헌.*척화론/);
  const replay=w.HanqCbtRoundMaterials.mount(host,{api,round:71});await replay.ready;
  assert.equal(display(),null);choice(4).click();assert.equal(display(),null);
  control('check').click();await tick();
  let box=display();assert.deepEqual(headings(box),expected);
+ noBox(box.querySelector('.fe-round-review-stem'));noBox(box.querySelector('.fe-round-review-conclusion'));
  const stem=[...box.querySelectorAll('.fe-round-review-stem li')];
  assert.equal(stem.length,2);assert.match(stem[0].textContent,/^\(가\).*이괄의 난\(1624\).*인조/);
  assert.match(stem[1].textContent,/^\(나\).*심양.*소현 세자.*인질/);assert(stem.every(x=>x.querySelector('strong')));
