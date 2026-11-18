@@ -351,7 +351,42 @@ function mount(host,options){
  function clear(keep){if(!keep){urls.forEach(function(u){if(root.HanqLearningReader&&root.HanqLearningReader.releaseImage)root.HanqLearningReader.releaseImage(u);root.URL.revokeObjectURL(u);});urls=[];}host.replaceChildren();}
  function button(label,fn){var b=el('button',label);b.type='button';b.className='tool-btn';b.onclick=function(){if(current())fn();};return b;}
  function stop(){if(!alive)return;alive=false;if(off)off();if(resetOff)resetOff();clear();}
- async function image(q,path,box,version){try{var blob=await api.cbtImage(path);if(!current()||index!==version||!box.isConnected)return;if(!blob||!/^image\/(png|jpeg|webp)$/.test(blob.type))throw Error();var u=root.URL.createObjectURL(blob);urls.push(u);var img=el('img');img.className='mock-image';img.setAttribute('data-company-exam-image','');img.src=u;img.alt='제'+q.exam+'회 '+q.number+'번 원본 문제';img.style.maxWidth='100%';img.onerror=function(){if(current()&&box.isConnected)box.appendChild(el('p','제'+q.exam+'회 '+q.number+'번 원본 이미지를 표시하지 못했어요. 회차를 다시 열어 주세요. 계속 실패하면 이 문항의 원본 연결을 복구해 주세요.'));};box.appendChild(img);}catch(_){if(current()&&index===version&&box.isConnected)box.appendChild(el('p','제'+q.exam+'회 '+q.number+'번 원본 이미지를 불러오지 못했어요. 회차를 다시 열어 주세요. 계속 실패하면 이 문항의 원본 연결·접근 상태를 복구해 주세요.'));}}
+ // Scan every column of small bottom strips. Leave original image/zoom bytes unchanged.
+ function bottomContentRow(rgba,width,rows){
+  for(var y=rows-1;y>=0;y--)for(var x=0;x<width;x++){
+   var i=(y*width+x)*4,alpha=rgba[i+3];
+   if(alpha&&Math.min(rgba[i],rgba[i+1],rgba[i+2])<252)return y;
+  }
+  return -1;
+ }
+ function trimQuestionBottom(img,box){
+  var w=img.naturalWidth,h=img.naturalHeight,strip=24;
+  if(w<16||w>4096||h<40)return;
+  var canvas=host.ownerDocument.createElement('canvas');
+  try{
+   canvas.width=w;canvas.height=strip;
+   var ctx=canvas.getContext('2d',{willReadFrequently:true});
+   if(!ctx)return;
+   // Only search the trailing margin; keep the full image if it looks empty.
+   for(var end=h;end>h/2;){
+    var start=Math.max(Math.floor(h/2),end-strip),rows=end-start;
+    ctx.clearRect(0,0,w,strip);ctx.drawImage(img,0,start,w,rows,0,0,w,rows);
+    var y=bottomContentRow(ctx.getImageData(0,0,w,rows).data,w,rows);
+    if(y>=0){
+     var height=start+y+2;
+     if(h-height<12)return;
+     var clip=section('div','fe-round-question-clip');
+     clip.style.aspectRatio=w+' / '+height;
+     img.replaceWith(clip);clip.appendChild(img);
+     box.classList.add('has-trimmed-bottom');
+     return;
+    }
+    end=start;
+   }
+  }catch(_){/* Canvas unavailable: keep the original instead of guessing. */}
+  finally{canvas.width=1;canvas.height=1;}
+ }
+ async function image(q,path,box,version,trim){try{var blob=await api.cbtImage(path);if(!current()||index!==version||!box.isConnected)return;if(!blob||!/^image\/(png|jpeg|webp)$/.test(blob.type))throw Error();var u=root.URL.createObjectURL(blob);urls.push(u);var img=el('img');img.className='mock-image';img.setAttribute('data-company-exam-image','');if(trim)img.onload=function(){if(current()&&index===version&&box.isConnected)trimQuestionBottom(img,box);};img.src=u;img.alt='제'+q.exam+'회 '+q.number+'번 원본 문제';img.style.maxWidth='100%';img.onerror=function(){if(current()&&box.isConnected)box.appendChild(el('p','제'+q.exam+'회 '+q.number+'번 원본 이미지를 표시하지 못했어요. 회차를 다시 열어 주세요. 계속 실패하면 이 문항의 원본 연결을 복구해 주세요.'));};box.appendChild(img);}catch(_){if(current()&&index===version&&box.isConnected)box.appendChild(el('p','제'+q.exam+'회 '+q.number+'번 원본 이미지를 불러오지 못했어요. 회차를 다시 열어 주세요. 계속 실패하면 이 문항의 원본 연결·접근 상태를 복구해 주세요.'));}}
  function section(tag,cls,text){var e=el(tag,text);e.className=cls;return e;}
  function knownReset(){
   var resets=root.HanqLearningReset,at=resets&&resets.cutoff?resets.cutoff(String(owner),'history'):0;
@@ -456,7 +491,7 @@ function mount(host,options){
   var toolbar=section('div','fe-round-practice-toolbar');toolbar.append(heading,currentAccuracy());host.append(toolbar,box);updateMark();
   if(!preservedImage){
    if(q.common){var commonBox=el('div');box.appendChild(commonBox);image(q,q.common.image,commonBox,index);}
-   var questionBox=el('div');box.appendChild(questionBox);image(q,q.image,questionBox,index);
+   var questionBox=section('div','fe-round-question-image');box.appendChild(questionBox);image(q,q.image,questionBox,index,true);
   }
   var choices=section('div','fe-round-review-choices'),status=section('p','fe-round-review-feedback'),answer=el('div'),controls=[];
   choices.setAttribute('role','group');choices.setAttribute('aria-label','답 선택');status.setAttribute('role','status');status.tabIndex=-1;answer.hidden=!chosen;

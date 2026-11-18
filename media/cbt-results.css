@@ -463,6 +463,10 @@ html[data-company-mode=on] #feRoundMaterials .fe-round-review-hand-mark{color:#f
  #feRoundMaterials .fe-round-review-hand-mark.is-drawing .mark-first{animation:source-verdict-draw-first 1s ease-out both}
  #feRoundMaterials .fe-round-review-hand-mark.is-drawing .mark-second{animation:source-verdict-draw-second 1s ease-out both}
 }
+/* The question preview only: source/zoom and shared stems remain uncropped. */
+#feRoundMaterials .fe-round-question-clip{width:100%;overflow:hidden}
+#feRoundMaterials .fe-round-question-clip>img.mock-image{display:block;width:100%;height:auto;max-height:none;margin:0}
+#feRoundMaterials .fe-round-question-image.has-trimmed-bottom{padding-bottom:5px}
 #feRoundMaterials .fe-round-review-feedback{font-weight:800}
 #feRoundMaterials .fe-round-review-feedback:empty{display:none}
 #feRoundMaterials .fe-round-review-result{margin-top:16px;padding:12px;border:1px solid currentColor;border-radius:12px}

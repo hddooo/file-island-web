@@ -9,6 +9,21 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  const tick=()=>new Promise(r=>setImmediate(r)),btn=t=>[...host.querySelectorAll('button')].find(b=>b.textContent===t||b.getAttribute('aria-label')===t+' 문제'||b.getAttribute('aria-label')?.startsWith(t+'번 · 내 선택'));
  const before=JSON.stringify(items);let ctl=w.HanqCbtRoundMaterials.mount(host,{api,round:80,onBack:()=>{}});await ctl.ready;await tick();
  const img=host.querySelector('img[data-company-exam-image]');assert(img);
+ Object.defineProperties(img,{naturalWidth:{value:80},naturalHeight:{value:120}});
+ const zoomSrc=img.src;let origin=0;
+ w.HTMLCanvasElement.prototype.getContext=()=>({
+  clearRect(){},drawImage(_,sx,sy){origin=sy;},
+  getImageData(_,__,width,rows){
+   const data=new Uint8ClampedArray(width*rows*4).fill(255),bottomChoice=76;
+   if(bottomChoice>=origin&&bottomChoice<origin+rows){const at=((bottomChoice-origin)*width+(width-1))*4;data[at]=30;data[at+1]=30;data[at+2]=30;}
+   return {data};
+  }
+ });
+ img.onload();assert.equal(img.parentElement.className,'fe-round-question-clip');
+ assert.equal(img.parentElement.style.aspectRatio,'80 / 78');
+ assert.equal(img.src,zoomSrc);assert(img.closest('.fe-round-question-image.has-trimmed-bottom'));
+ assert(fs.readFileSync('media/cbt-results.css','utf8').includes('has-trimmed-bottom{padding-bottom:5px}'));
+
  assert(!host.textContent.includes('XP와 실전 점수는 바뀌지 않아요'));assert(!host.textContent.includes('완료 후 이용'));
  const nav=()=>[...host.querySelectorAll('nav > button')].map(b=>b.textContent);
  const jump=n=>host.querySelectorAll('.fe-round-practice-grid>button')[n-1].click();
