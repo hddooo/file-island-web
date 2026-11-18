@@ -22,6 +22,17 @@ const assert=require('assert/strict'),fs=require('fs'),{JSDOM}=require(process.e
  await mount();fresh();
  // A later wrong attempt replaces only the latest submitted archive on final submit.
  pick(2).click();btn('확인').click();await tick();assert.equal(archive(),submitted);btn('›').click();pick(2).click();btn('확인').click();await tick();btn('최종 제출').click();await tick();assert.equal(JSON.parse(archive()).right,0);assert(JSON.parse(archive()).rows.every(r=>r.status==='wrong'));
+ // Joined history -> load -> retry: saved marked set, not this device's stars/pool.
+ const ordinaryArchive=archive(),marked={...JSON.parse(archive()),marked:true,total:1,right:0,rows:[JSON.parse(archive()).rows[1]]};
+ w.localStorage.setItem(key+':latest',JSON.stringify(marked));const markedArchive=archive();
+ w.localStorage.removeItem('hanq:round-material-rehearsal:v1:synthetic:all:shared-double-stars');
+ await mount({history:true});btn('다시 풀기').click();await tick();await tick();fresh();
+ assert(host.textContent.includes('1/1'));assert.equal(host.querySelector('.fe-round-practice-position').getAttribute('aria-label').includes('2번'),true);assert.equal(archive(),markedArchive);
+ assert.equal(host.querySelector('[data-round-star-filter]').getAttribute('aria-pressed'),'true');
+ await mount({restart:true});fresh();assert(host.textContent.includes('1/2'),'ordinary replay uses fresh full pool');
+ items=items.slice(0,1);await mount({history:true});btn('다시 풀기').click();await tick();await tick();
+ assert(host.textContent.includes('같은 문제로 다시 풀 수 없어요'));assert(!host.querySelector('[data-review-choice]'));assert.equal(archive(),markedArchive);
+ w.localStorage.setItem(key+':latest',ordinaryArchive);
  // Snapshot remains readable even when source material set no longer matches.
  const last=archive();items=[];await mount({history:true});assert(host.textContent.includes('정답률 0%'));assert.equal(host.querySelectorAll('.fe-round-review-breakdown li').length,2);assert.equal(archive(),last);
  // Pre-upgrade aggregate must never borrow current draft answers to invent details.
