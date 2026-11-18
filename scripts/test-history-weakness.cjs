@@ -9,11 +9,11 @@ let logged=false,route='',homeCalls=0;
 const open=Function('app','window','requireStudyLogin','subjectRoute','header','home',body+'\nreturn openHistoryWeakness;')(app,{scrollTo(){}},()=>!logged,(hash)=>{route=hash;},()=>'<div class="known-header"></div>',()=>{homeCalls++;});
 open(false);assert(!app.children.length);
 logged=true;open(false);assert.equal(route,'#history/weakness');assert.equal(app.querySelector('h1').textContent,'약점 보완');
-const cards=[...app.querySelectorAll('.history-weakness-card')];assert.equal(cards.length,4);
-const basenames=['three-kingdoms','opening-era','constitution-reform','money-history'];
+const cards=[...app.querySelectorAll('.history-weakness-card')];assert.equal(cards.length,5);
+const basenames=['three-kingdoms','opening-era','constitution-reform','money-history','opening-colonial-timeline'];
 for(let i=0;i<cards.length;i++){
  const card=cards[i],prefix='media/history-weakness/'+basenames[i],pic=card.querySelector('.history-weakness-preview a, a.history-weakness-preview'),image=card.querySelector('img');
- const imageUrl=prefix+'.png'+(basenames[i]==='money-history'?'?v=20261118b':'');assert.equal(pic.getAttribute('href'),imageUrl);assert.equal(pic.target,'_blank');assert.equal(image.getAttribute('src'),imageUrl);assert.equal(image.getAttribute('loading'),'lazy');
+ const imageUrl=prefix+'.png'+(basenames[i]==='money-history'?'?v=20261118b':basenames[i]==='opening-colonial-timeline'?'?v=20261118a':'');assert.equal(pic.getAttribute('href'),imageUrl);assert.equal(pic.target,'_blank');assert.equal(image.getAttribute('src'),imageUrl);assert.equal(image.getAttribute('loading'),'lazy');
  const pdfs=[...card.querySelectorAll('.history-weakness-links button')];
  assert.deepEqual(pdfs.map(b=>b.dataset.chartPdf),['open','save']);assert(pdfs.every(b=>b.type==='button'));
  assert.equal(card.querySelector('[role=status]').hidden,true);
@@ -23,5 +23,12 @@ for(let i=0;i<cards.length;i++){
 assert(!allowed('media/history-weakness/unreviewed.pdf'));assert(!allowed('media/private-data/not-for-web.pdf'));assert(!allowed('docs/history-weakness/three-kingdoms.pdf'));
 assert(allowed('media/history-weakness-pdf.js'));assert(index.includes('media/history-weakness-pdf.js?v='));
 assert(index.includes('id="homeHistoryWeakness"'));assert.equal((index.match(/location.hash==='#history\/weakness'/g)||[]).length,2);assert(css.includes('minmax(min(100%,235px),1fr)'));assert(css.includes('repeat(2,minmax(0,1fr))'));assert(css.includes('repeat(4,minmax(0,1fr))'));assert.equal(cards[3].querySelector('h2').textContent,'4. 시대별 돈의 흐름');
+assert.equal(cards[4].querySelector('h2').textContent,'5. 개화기와 일제강점기 한 장 연표');
+assert.deepEqual(cards.map(card=>card.classList.contains('history-weakness-wide')),[false,false,false,false,true]);
+assert(css.includes('.history-weakness-wide{grid-column:span 2}'));
+const studyPng=fs.readFileSync('media/history-weakness/opening-colonial-timeline.png');
+assert.equal(studyPng.readUInt32BE(16),4000);assert.equal(studyPng.readUInt32BE(20),2829);
+assert(studyPng.length<650000,'PNG optimized for mobile and within common iOS canvas dimensions');
+
 app.querySelector('#historyWeaknessBack').click();assert.equal(route,'#history');assert.equal(homeCalls,1);
-console.log('PASS weakness menu route, signed-in guard, 4 preview/PDF actions, PNG-only deployment, return to history');
+console.log('PASS weakness menu route, signed-in guard, 5 preview/PDF actions, PNG-only deployment, return to history');

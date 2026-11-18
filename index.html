@@ -48,7 +48,7 @@
 <link rel="stylesheet" href="media/toeic-cbt.css?v=number-progress-20261026-single-explanation-20261025"><link rel="stylesheet" href="media/toeic-history.css"><link rel="stylesheet" href="media/toeic-audio.css"><link rel="stylesheet" href="media/lc-playlist.css?v=world-navigation-20261023b">
   <link rel="stylesheet" href="media/review-menu.css">
   <link rel="stylesheet" href="media/cbt-results.css?v=review-explanation-parts-20261118">
-  <link rel="stylesheet" href="media/history-weakness.css?v=20261118-money">
+  <link rel="stylesheet" href="media/history-weakness.css?v=opening-colonial-20261118">
   <script defer src="media/history-weakness-pdf.js?v=20261118"></script>
   <link rel="stylesheet" href="media/era-culture.css"><link rel="stylesheet" href="media/quiz-resources.css">
   <link rel="stylesheet" href="media/joseon-core-review.css">
@@ -424,12 +424,13 @@
         ['three-kingdoms','삼국시대 연표','고구려·백제·신라·가야의 왕과 전투 흐름'],
         ['opening-era','개화기 순차 구분 표','세 파트로 정리한 개화기 주요 사건과 문화'],
         ['constitution-reform','헌법 개정과 민주화 운동 표','대통령·정부별 개헌과 그 시기의 민주화 운동'],
-        ['money-history','시대별 돈의 흐름','관료전에서 직전법까지 · 토지 수조권과 시장 화폐를 나란히 비교']
+        ['money-history','시대별 돈의 흐름','관료전에서 직전법까지 · 토지 수조권과 시장 화폐를 나란히 비교'],
+        ['opening-colonial-timeline','개화기와 일제강점기 한 장 연표','개화기와 일제강점기의 주요 사건을 시대순으로 한눈에 비교']
       ];
       var base='media/history-weakness/';
       var cards=materials.map(function(row,i){
-        var img=base+row[0]+'.png'+(row[0]==='money-history'?'?v=20261118b':''),name=row[1],title=(i+1)+'. '+name;
-        return '<article class="history-weakness-card"><h2>'+title+'</h2><p>'+row[2]+'</p>'+
+        var img=base+row[0]+'.png'+(row[0]==='money-history'?'?v=20261118b':row[0]==='opening-colonial-timeline'?'?v=20261118a':''),name=row[1],title=(i+1)+'. '+name;
+        return '<article class="history-weakness-card'+(row[0]==='opening-colonial-timeline'?' history-weakness-wide':'')+'"><h2>'+title+'</h2><p>'+row[2]+'</p>'+
           '<a class="history-weakness-preview" href="'+img+'" target="_blank" rel="noopener" aria-label="'+name+' 확대해서 보기"><img loading="lazy" decoding="async" src="'+img+'" alt="'+name+' 미리 보기"></a>'+
           '<div class="history-weakness-links"><button type="button" data-chart-pdf="open" aria-label="'+name+' PDF 열기">PDF 열기</button>'+
           '<button type="button" data-chart-pdf="save" aria-label="'+name+' PDF 저장">PDF 저장</button></div><p role="status" hidden></p></article>';
