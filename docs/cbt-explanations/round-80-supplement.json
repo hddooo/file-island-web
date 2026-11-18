@@ -279,7 +279,11 @@
             "correct": true,
             "review": [
               "이사부의 우산국 복속은 지증왕 때의 일이다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "이사부의 우산국 복속",
+              "subject": "신라 지증왕"
+            }
           },
           {
             "id": "exam-80-04-option-2",
@@ -441,7 +445,11 @@
             "correct": false,
             "review": [
               "대통력 도입은 고려 말 공민왕 때의 일이다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "대통력 도입",
+              "subject": "고려 공민왕"
+            }
           },
           {
             "id": "exam-80-06-option-2",
@@ -450,7 +458,11 @@
             "correct": true,
             "review": [
               "신문왕은 국학을 설치하여 유학 교육을 진흥하였다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "국학 설치",
+              "subject": "신문왕"
+            }
           },
           {
             "id": "exam-80-06-option-3",
@@ -459,7 +471,11 @@
             "correct": false,
             "review": [
               "거칠부에게 국사를 편찬하게 한 왕은 진흥왕이다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "거칠부의 국사 편찬",
+              "subject": "신라 진흥왕"
+            }
           },
           {
             "id": "exam-80-06-option-4",
@@ -477,7 +493,11 @@
             "correct": false,
             "review": [
               "노비안검법을 시행한 왕은 고려 광종이다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "노비안검법",
+              "subject": "고려 광종"
+            }
           }
         ],
         "references": [
@@ -684,7 +704,11 @@
             "correct": false,
             "review": [
               "농사직설은 조선 세종 때 편찬되었다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "농사직설 편찬",
+              "subject": "조선 세종"
+            }
           },
           {
             "id": "exam-80-09-option-2",
@@ -801,7 +825,11 @@
             "correct": false,
             "review": [
               "정계·계백료서를 지은 왕은 고려 태조 왕건이다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "정계·계백료서",
+              "subject": "고려 태조 왕건"
+            }
           }
         ],
         "references": [
@@ -846,7 +874,11 @@
             "correct": true,
             "review": [
               "성종은 흑창을 의창으로 확대·개편하여 빈민을 구제하였다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "흑창을 의창으로 개편",
+              "subject": "고려 성종"
+            }
           },
           {
             "id": "exam-80-11-option-2",
@@ -855,7 +887,11 @@
             "correct": false,
             "review": [
               "양현고 설치는 예종의 관학 진흥책이다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "양현고 설치",
+              "subject": "고려 예종"
+            }
           },
           {
             "id": "exam-80-11-option-3",
@@ -864,7 +900,11 @@
             "correct": false,
             "review": [
               "광덕·준풍은 광종이 사용한 연호다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "광덕·준풍",
+              "subject": "고려 광종"
+            }
           },
           {
             "id": "exam-80-11-option-4",
@@ -882,7 +922,11 @@
             "correct": false,
             "review": [
               "신돈의 전민변정 사업은 공민왕 때 이루어졌다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "신돈의 전민변정 사업",
+              "subject": "고려 공민왕"
+            }
           }
         ],
         "references": [
@@ -1089,7 +1133,11 @@
             "correct": false,
             "review": [
               "동시전은 신라 지증왕 때 설치되었다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "동시전 설치",
+              "subject": "신라 지증왕"
+            }
           },
           {
             "id": "exam-80-14-option-2",
@@ -1107,7 +1155,11 @@
             "correct": false,
             "review": [
               "당백전은 흥선 대원군 집권기에 발행되었다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "당백전 발행",
+              "subject": "흥선 대원군"
+            }
           },
           {
             "id": "exam-80-14-option-4",
@@ -1116,7 +1168,11 @@
             "correct": false,
             "review": [
               "육의전을 제외한 금난전권 폐지는 정조 때 신해통공이다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "신해통공·육의전 외 금난전권 폐지",
+              "subject": "조선 정조"
+            }
           },
           {
             "id": "exam-80-14-option-5",
@@ -1359,7 +1415,11 @@
             "correct": false,
             "review": [
               "척화비 건립은 흥선 대원군 집권기의 일이다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "척화비 건립",
+              "subject": "흥선 대원군"
+            }
           },
           {
             "id": "exam-80-17-option-5",
@@ -1368,7 +1428,11 @@
             "correct": false,
             "review": [
               "별무반의 여진 정벌은 원 간섭기보다 앞선 고려 예종 때의 일이다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "원 간섭기 이전 별무반의 여진 정벌",
+              "subject": "고려 예종"
+            }
           }
         ],
         "references": [
@@ -1503,7 +1567,11 @@
             "correct": false,
             "review": [
               "관수관급제는 조선 성종 때 시행되었다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "관수관급제",
+              "subject": "조선 성종"
+            }
           },
           {
             "id": "exam-80-19-option-3",
@@ -1656,7 +1724,11 @@
             "correct": false,
             "review": [
               "훈민정음 창제는 세종의 업적이다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "훈민정음 창제",
+              "subject": "조선 세종"
+            }
           },
           {
             "id": "exam-80-21-option-2",
@@ -1665,7 +1737,11 @@
             "correct": false,
             "review": [
               "무예도보통지 간행은 정조의 업적이다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "무예도보통지 간행",
+              "subject": "조선 정조"
+            }
           },
           {
             "id": "exam-80-21-option-3",
@@ -1674,7 +1750,11 @@
             "correct": true,
             "review": [
               "성종은 경국대전을 완성·반포하였다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "경국대전 완성·반포",
+              "subject": "조선 성종"
+            }
           },
           {
             "id": "exam-80-21-option-4",
@@ -1692,7 +1772,11 @@
             "correct": false,
             "review": [
               "탕평비 건립은 영조의 업적이다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "탕평비 건립",
+              "subject": "조선 영조"
+            }
           }
         ],
         "references": [
@@ -1818,7 +1902,11 @@
             "correct": true,
             "review": [
               "숙종 때 경신환국으로 허적·윤휴 등 남인이 축출되었다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "경신환국·남인 축출",
+              "subject": "조선 숙종"
+            }
           },
           {
             "id": "exam-80-23-option-2",
@@ -1935,7 +2023,11 @@
             "correct": true,
             "review": [
               "태종은 한양으로 재천도하면서 창덕궁을 건립하였다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "한양 재천도·창덕궁 건립",
+              "subject": "조선 태종"
+            }
           }
         ],
         "references": [
@@ -2153,7 +2245,11 @@
             "correct": false,
             "review": [
               "백두산정계비는 조선과 청의 경계를 정하기 위해 1712년에 세웠다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "백두산정계비(1712)·조청 경계",
+              "subject": "숙종"
+            }
           },
           {
             "id": "exam-80-27-option-3",
@@ -2390,7 +2486,11 @@
             "correct": false,
             "review": [
               "7재는 고려 예종 때 국자감에 설치한 전문 강좌이다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "국자감 7재",
+              "subject": "고려 예종"
+            }
           },
           {
             "id": "exam-80-30-option-2",
@@ -3392,7 +3492,11 @@
             "correct": false,
             "review": [
               "중광단은 북간도에서 대종교 계열 인사들을 중심으로 결성되었다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "북간도 중광단 조직",
+              "subject": "대종교"
+            }
           },
           {
             "id": "exam-80-42-option-4",
@@ -3483,7 +3587,11 @@
             "correct": false,
             "review": [
               "한국독립운동지혈사의 저자는 박은식이다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "한국독립운동지혈사",
+              "subject": "박은식"
+            }
           },
           {
             "id": "exam-80-43-option-5",
@@ -4048,7 +4156,11 @@
             "correct": false,
             "review": [
               "공민왕은 홍건적 침입 때 복주, 오늘날 안동으로 피란하였다."
-            ]
+            ],
+            "studyMemo": {
+              "clue": "홍건적 침입·복주(안동) 피란",
+              "subject": "고려 공민왕"
+            }
           },
           {
             "id": "exam-80-50-option-4",

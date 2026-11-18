@@ -82,6 +82,12 @@ function choiceNotes(q){
  return q.options.map(function(option,i){
   var ref=opts[i],raw=ref&&ref.id===option.id&&Array.isArray(ref.review)&&ref.review.find(function(x){return typeof x==='string'&&x.trim();});
   if(!raw)return '확인된 해설 없음';
+  // Structured memos are authored display metadata, trusted only on the exact
+  // version/options entry accepted by resolve. Never infer a subject from prose.
+  var memo=entry&&ref.studyMemo;
+  if(memo&&typeof memo.clue==='string'&&memo.clue.trim()&&typeof memo.subject==='string'&&choiceAssociations[memo.subject]){
+   return associatedChoiceNote(memo.clue.trim()+' — '+memo.subject);
+  }
   var facts=raw.replace(/\*\*/g,'').replace(/\s+/g,' ').trim(),colon=facts.indexOf(': ');
   if(colon>0)facts=facts.slice(0,colon);
   else facts=facts.split(/[.!?](?: |$)/)[0];
