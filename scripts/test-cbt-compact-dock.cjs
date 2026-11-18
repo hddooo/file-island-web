@@ -3,8 +3,9 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),css=require('cs
 const text=fs.readFileSync('media/cbt-results.css','utf8');const source=text.slice(text.indexOf('/* Full CBT only:'),text.indexOf('/* Final-result era rings.'));
 const errors=[];const ast=css.parse(source,{onParseError:e=>errors.push(e)});assert.deepEqual(errors,[]);
 css.walk(ast,{visit:'Rule',enter(r){r.prelude.children.forEach(s=>assert(css.generate(s).includes('#formalExamHost .fe-full-answer-dock')));}});
-assert(source.includes('grid-template-columns:repeat(7,minmax(0,1fr)) minmax(54px,1.4fr)'));
-assert(source.includes('min-height:44px!important'));assert(source.includes('grid-column:1 / -1'));assert(source.includes('display:contents!important'));
-// At a 280px available dock width, fixed padding/gaps + q50 label leave positive tracks, no forced 44px widths.
-assert((280-8-7*3-54)/7>0);assert(source.includes('min-width:0!important'));
-console.log('PASS scoped full-only CSS syntax, single row, touch height, full-width errors/confirmation, narrow-track sizing');
+assert(source.includes('grid-template-columns:minmax(34px,1fr) minmax(0,218px) minmax(42px,1fr)'));
+assert(source.includes('grid-template-columns:repeat(6,minmax(0,1fr))'));
+assert(source.includes('min-height:44px!important'));
+assert(source.includes('#feSubmit'));
+assert((280-8-8*2-34-42-3*5)/6>24);
+console.log('PASS scoped CBT row, clustered answers/star, 44px touch height, separate final submit');

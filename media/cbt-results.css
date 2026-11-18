@@ -377,37 +377,25 @@ html body #app#app#app #formalExamHost .fe-original-dialog--result>.fe-original-
 
 html body #app#app#app #formalExamHost .fe-score-accuracy{font-size:13px!important;line-height:1.4!important;margin:4px 0 0!important;color:inherit!important}
 
-/* Full CBT only: one answer row, never the site footer or partial review. */
-html body #app#app#app #formalExamHost .fe-full-answer-dock{
- display:grid!important;grid-template-columns:1fr repeat(6,minmax(0,min(44px,calc((100% - 109px)/6)))) 1fr!important;
- align-items:center!important;padding:4px!important;gap:3px!important;
+/* Full CBT only: same compact review row, final submission stays separate. */
+html body #app#app#app #formalExamHost .fe-full-answer-dock{padding:4px!important;min-width:0}
+html body #app#app#app #formalExamHost .fe-full-answer-dock .fe-full-answer-row{
+ display:grid!important;grid-template-columns:minmax(34px,1fr) minmax(0,218px) minmax(42px,1fr);
+ column-gap:clamp(8px,2.5vw,14px);align-items:center;max-width:370px;margin:0 auto;padding:6px 0;
 }
-html body #app#app#app #formalExamHost .fe-full-answer-dock .fe-answer-tools,
-html body #app#app#app #formalExamHost .fe-full-answer-dock .fe-choices,
-html body #app#app#app #formalExamHost .fe-full-answer-dock .fe-nav{display:contents!important}
-html body #app#app#app #formalExamHost .fe-full-answer-dock button{
+html body #app#app#app #formalExamHost .fe-full-answer-dock .fe-choices{
+ display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:3px!important;min-width:0!important;margin:0!important;
+}
+html body #app#app#app #formalExamHost .fe-full-answer-dock .fe-full-answer-row button{
  box-sizing:border-box!important;width:100%!important;min-width:0!important;min-height:44px!important;
- margin:0!important;padding:4px 1px!important;line-height:1.25!important;font-size:16px!important;
+ margin:0!important;padding:0 1px!important;line-height:1.15!important;font-size:15px!important;border-radius:8px;
 }
-/* Equal outer tracks keep answers and star centered; ends remain at the edges. */
-html body #app#app#app #formalExamHost .fe-full-answer-dock button{max-width:44px!important;justify-self:center}
-html body #app#app#app #formalExamHost .fe-full-answer-dock #fePrev{order:-1;font-size:24px!important;justify-self:start}
-html body #app#app#app #formalExamHost .fe-full-answer-dock #feNext{order:2;font-size:24px!important;white-space:nowrap;justify-self:end}
-/* Reserve symmetric 58px ends for the final submit label, including at 320px. */
-html body #app#app#app #formalExamHost .fe-full-answer-dock.fe-full-answer-dock--last{
- grid-template-columns:1fr repeat(6,minmax(0,min(44px,calc((100% - 137px)/6)))) 1fr!important;
-}
-html body #app#app#app #formalExamHost .fe-full-answer-dock--last #feNext{max-width:64px!important;font-size:13px!important}
-html body #app#app#app #formalExamHost .fe-full-answer-dock #feStarStatus,
-html body #app#app#app #formalExamHost .fe-full-answer-dock #feConfirm{
- grid-column:1 / -1;order:3;min-width:0;box-sizing:border-box;overflow-wrap:anywhere;
-}
-html body #app#app#app #formalExamHost .fe-full-answer-dock #feStarStatus:empty,
-html body #app#app#app #formalExamHost .fe-full-answer-dock #feConfirm:empty{display:none!important}
-html body #app#app#app #formalExamHost .fe-full-answer-dock #feConfirm button{max-width:none!important;width:auto!important;min-height:44px!important;padding:6px 10px!important}
-@media(min-width:701px) and (hover:hover) and (pointer:fine){
- html body #app#app#app #formalExamHost .fe-full-answer-dock button{min-height:36px!important;font-size:14px!important}
-}
+html body #app#app#app #formalExamHost .fe-full-answer-dock #feStar{display:flex!important;justify-content:center;align-items:center}
+html body #app#app#app #formalExamHost .fe-full-answer-dock #fePrev{max-width:46px;justify-self:start;font-size:24px!important}
+html body #app#app#app #formalExamHost .fe-full-answer-dock #feNext{max-width:48px;justify-self:end;font-size:24px!important}
+html body #app#app#app #formalExamHost .fe-full-answer-dock .fe-full-answer-submit{text-align:right;margin:4px auto;max-width:370px}
+html body #app#app#app #formalExamHost .fe-full-answer-dock #feSubmit{display:inline-block;width:auto;margin:0;min-height:44px}
+html body #app#app#app #formalExamHost .fe-full-answer-dock :is(#feStarStatus,#feConfirm):empty{display:none!important}
 
 /* Final-result era rings. SVG survives background-image resets in company mode. */
 html body #app#app#app #formalExamHost .fe-era-rings{margin:14px 0 18px;min-width:0}
@@ -491,9 +479,17 @@ html[data-company-mode=on] #feRoundMaterials .fe-round-review-hand-mark{color:#f
 #feRoundMaterials .fe-round-review-goal{display:flex;align-items:center;gap:8px;margin:8px 0;font-weight:750}
 #feRoundMaterials .fe-round-review-goal>span{font-size:1.4rem}
 #feRoundMaterials .fe-round-review-goal.is-reached{color:#8acbff}
-#formalExamHost .fe-round-practice-latest{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 5px;font-size:11px;line-height:1.35;margin:3px 0 6px;pointer-events:none}
-#formalExamHost .fe-round-practice-latest.is-passed{color:#8acbff!important}
-#formalExamHost .fe-round-practice-latest.is-retry{color:#ff9a9a!important}
+#formalExamHost .fe-round-material-actions{align-items:center;flex-wrap:wrap}
+html body #formalExamHost .fe-round-material-actions .fe-round-practice-latest{
+ display:inline-flex;align-items:baseline;gap:4px;font-size:11px;line-height:1.35;
+ margin:0 auto 0 0!important;padding-inline:4px;cursor:pointer;
+}
+#formalExamHost .fe-round-practice-latest time{white-space:nowrap}
+#formalExamHost .fe-round-rate-green{color:#6fe0a2!important}
+#formalExamHost .fe-round-rate-orange{color:#ffb46b!important}
+#formalExamHost .fe-round-rate-yellow{color:#f4d35e!important}
+#formalExamHost .fe-round-rate-red{color:#ff7070!important}
+
 #formalExamHost .fe-wrong-top-tools{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 #feRoundMaterials .fe-round-review-breakdown{max-height:46vh;overflow:auto}
 #feRoundMaterials .fe-round-practice-list{margin:0 0 8px}

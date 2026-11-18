@@ -299,16 +299,16 @@ function latest(owner,round){
  return cutoff&&(Date.parse(r.resetAt)||0)<cutoff?null:r;
 }
 function mount(host,options){
- var api=options.api,token=identity(api),alive=true,urls=[],off,resetOff,allItems=[],items=[],index=0,selected={},drafts={},data,submitted=false,storageFailed=false,markedOnly=false,marks=new Set(),refreshing=false;
+ var api=options.api,token=identity(api),alive=true,urls=[],off,resetOff,allItems=[],items=[],index=0,selected={},drafts={},data,submitted=false,storageFailed=false,markedOnly=false,marks=new Set(),refreshing=false,historyView=options.history===true,freshRequested=options.restart===true;
  var owner=api.state()&&api.state().ownerId,key=progressKey(owner,options.round);
  var marksKey=key&&progressKey(owner,'all')+':shared-double-stars',all=options.round==='all';
  function questionSet(rows){return JSON.stringify((rows||items).map(function(q){return [q.questionId,q.version,q.options.map(function(o){return o.id;})];}));}
  function save(){
-  if(!current()||!key||!items.length)return;
+  if(!current()||historyView||!key||!items.length)return;
   try{root.localStorage.setItem(key+(markedOnly?':double-star-practice':''),JSON.stringify({resetAt:data.resetAt,questionSet:questionSet(),index:index,selected:selected,drafts:drafts,submitted:submitted}));storageFailed=false;}catch(_){storageFailed=true;}
  }
  function restore(){
-  if(!current()||!key||!items.length)return;
+  if(!current()||historyView||!key||!items.length)return;
   try{
    var saved=JSON.parse(root.localStorage.getItem(key+(markedOnly?':double-star-practice':''))||'null');
    if(!saved||saved.resetAt!==data.resetAt||saved.questionSet!==questionSet())return;
@@ -399,7 +399,10 @@ function mount(host,options){
  }
  function reset(fresh){
   if(knownReset()>(Date.parse(fresh.resetAt)||0))throw Error('materials_stale');
-  data=fresh;allItems=fresh.items;loadMarks();showMode();
+  data=fresh;allItems=fresh.items;loadMarks();
+  if(historyView){showHistory();return;}
+  if(freshRequested){freshRequested=false;markedOnly=false;restartPractice();return;}
+  showMode();
  }
  function refreshMaterials(){
   if(!current()||refreshing)return Promise.resolve();
@@ -421,7 +424,7 @@ function mount(host,options){
   if(storageFailed)host.appendChild(el('p','이 기기에 저장하지 못했어요. 화면을 닫기 전까지는 계속 풀 수 있어요.'));
   var tools=section('div','fe-round-review-top-actions');
   tools.appendChild(button('회차 목록',function(){stop();if(options.onBack)options.onBack();}));
-  if(allItems.length){
+  if(allItems.length&&!historyView){
    var filter=button(markedOnly?'전체 다시 보기':'쌍별만 다시 보기 ('+marks.size+')',function(){save();markedOnly=!markedOnly;saveMarks();showMode();});
    filter.dataset.roundStarFilter='';filter.setAttribute('aria-pressed',String(markedOnly));if(!markedOnly)filter.prepend(icon());tools.appendChild(filter);
   }
@@ -430,7 +433,34 @@ function mount(host,options){
  function countRight(){return items.reduce(function(n,q){return n+(selected[q.questionId]===q.review.correctOptionId?1:0);},0);}
  function saveLatest(){
   if(!current()||!key||all)return;
-  try{root.localStorage.setItem(key+':latest',JSON.stringify({right:countRight(),total:items.length,marked:markedOnly,at:new Date().toISOString(),resetAt:data.resetAt}));}catch(_){storageFailed=true;}
+  try{root.localStorage.setItem(key+':latest',JSON.stringify({right:countRight(),total:items.length,marked:markedOnly,at:new Date().toISOString(),resetAt:data.resetAt,rows:items.map(function(q){var chosen=selected[q.questionId];return {questionId:q.questionId,version:q.version,exam:q.exam,number:q.number,status:!chosen?'empty':chosen===q.review.correctOptionId?'correct':'wrong'};})}));}catch(_){storageFailed=true;}
+ }
+ // A replay replaces only editable practice state, never the latest submitted result.
+ function restartPractice(){
+  if(!current()||!data)return;
+  historyView=false;freshRequested=false;selected={};drafts={};submitted=false;index=0;
+  var mode=markedOnly;
+  markedOnly=false;items=allItems;save();
+  markedOnly=true;items=allItems.filter(function(q){return marks.has(q.questionId);});save();
+  // An empty marked set must not resurrect an old marked workspace later.
+  if(!items.length&&key)try{root.localStorage.setItem(key+':double-star-practice',JSON.stringify({resetAt:data.resetAt,questionSet:questionSet(),index:0,selected:{},drafts:{},submitted:false}));}catch(_){storageFailed=true;}
+  markedOnly=mode;items=markedOnly?allItems.filter(function(q){return marks.has(q.questionId);}):allItems;
+  saveMarks();save();draw(true);
+ }
+ function showHistory(){
+  if(!current())return;clear();header();
+  var record=latest(owner,options.round),panel=section('section','fe-round-review-result');
+  panel.appendChild(el('h3','최근 제출한 복습 결과'));
+  if(!record){panel.appendChild(el('p','아직 제출한 복습 기록이 없어요.'));}
+  else{
+   panel.append(el('p','정답률 '+Number((record.right/record.total*100).toFixed(2))+'%'),el('p','정답 '+record.right+' · 전체 '+record.total),el('p','제출일 '+new Date(record.at).toLocaleString('ko-KR',{timeZone:'Asia/Seoul'})));
+   var rows=record.rows,seen=new Set(),valid=Array.isArray(rows)&&rows.length===record.total&&rows.every(function(r){
+    if(!r||typeof r.questionId!=='string'||typeof r.version!=='string'||seen.has(r.questionId)||!Number.isInteger(r.exam)||!Number.isInteger(r.number)||r.number<1||r.number>50||!['correct','wrong','empty'].includes(r.status))return false;seen.add(r.questionId);return true;
+   })&&rows.filter(function(r){return r.status==='correct';}).length===record.right;
+   if(valid){var list=section('ul','fe-round-review-breakdown');rows.forEach(function(r){var row=section('li',r.status==='empty'?'is-empty':r.status==='correct'?'is-correct':'is-wrong');row.append(el('span',(all?'제'+r.exam+'회 ':'')+r.number+'번'),el('strong',r.status==='empty'?'미풀이':r.status==='correct'?'O 정답':'X 오답'));list.appendChild(row);});panel.appendChild(list);}
+   else panel.appendChild(el('p','이전 기록은 정답률과 제출일만 남아 있어요. 문항별 결과는 새로 제출한 기록부터 표시돼요.'));
+  }
+  panel.appendChild(button('다시 풀기',function(){markedOnly=record?record.marked:false;restartPractice();}));host.appendChild(panel);
  }
  function currentAccuracy(){
   var n=items.reduce(function(total,q){return total+(selected[q.questionId]?1:0);},0);
@@ -457,10 +487,8 @@ function mount(host,options){
   else{var patamon=el('img');patamon.src='/media/characters/patamon-crying-v1.webp';patamon.alt='';patamon.width=40;patamon.height=40;goal.appendChild(patamon);}
   goal.appendChild(el('p',reached?(all?'목표 '+GOAL_PERCENT+'% 달성! 전체 오답 복습을 마쳤어요.':'목표 '+GOAL_PERCENT+'% 달성! 다음 회차로 넘어가도 돼요.'):'목표 '+GOAL_PERCENT+'% 미달. 같은 문제를 다시 풀어요.'));table.appendChild(goal);
   var actions=section('div','fe-round-review-result-actions');
-  actions.appendChild(button(reached?(all?'회차 목록으로':'다음 회차 선택'):'다시 풀기',function(){
-   if(reached){stop();if(options.onBack)options.onBack();return;}
-   selected={};drafts={};submitted=false;index=0;save();draw(true);
-  }));
+  if(reached)actions.appendChild(button(all?'회차 목록으로':'다음 회차 선택',function(){stop();if(options.onBack)options.onBack();}));
+  actions.appendChild(button('다시 풀기',restartPractice));
   actions.appendChild(button('풀이 돌아보기',function(){submitted=false;index=0;save();draw(true);}));
   table.appendChild(actions);
   host.appendChild(table);heading.focus();
@@ -590,7 +618,7 @@ function mount(host,options){
  off=api.onChange?api.onChange(function(){if(!current())stop();}):null;
  resetOff=root.HanqLearningReset&&root.HanqLearningReset.onChange?root.HanqLearningReset.onChange(resetChanged):null;
  var ready=refreshMaterials();
- return {ready:ready,stop:stop};
+ return {ready:ready,stop:stop,restart:restartPractice};
 }
 root.HanqCbtRoundMaterials={normalize:normalize,load:load,mount:mount,sourceLines:sourceLines,choiceNotes:choiceNotes,latest:latest,goalReached:goalReached};
 })(window);

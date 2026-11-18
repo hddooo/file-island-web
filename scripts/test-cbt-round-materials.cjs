@@ -72,7 +72,7 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  let advanced=0;
  const cutoff=w.HanqCbtRoundMaterials.mount(host,{api,round:80,onBack:()=>advanced++});await cutoff.ready;
  for(let i=0;i<10;i++){btn(i<8?'1':'2').click();await check();if(i<9)btn('다음').click();}
- btn('최종 제출').click();await tick();assert(host.textContent.includes('정답률 80%'));assert(!btn('다시 풀기'));assert(host.querySelector('.fe-round-review-goal.is-reached'));assert.equal(w.HanqCbtRoundMaterials.latest('threshold',80).right,8);btn('다음 회차 선택').click();assert.equal(advanced,1);
+ btn('최종 제출').click();await tick();assert(host.textContent.includes('정답률 80%'));assert(btn('다시 풀기'));assert(host.querySelector('.fe-round-review-goal.is-reached'));assert.equal(w.HanqCbtRoundMaterials.latest('threshold',80).right,8);btn('다음 회차 선택').click();assert.equal(advanced,1);
  state={signedIn:true,ownerId:'retry',epoch:5};
  const retry=w.HanqCbtRoundMaterials.mount(host,{api,round:80});await retry.ready;
  for(let i=0;i<10;i++){if(i<7){btn('1').click();if(i!==0)await check();}if(i<9)jump(i+2);}
@@ -86,11 +86,11 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  w.HanqFormalExams.mount(routedHost,{api:readAPI,onRoute:()=>{}});
  await tick();
  const card=routedHost.querySelector('#feRound80').parentNode,summary=card.querySelector('.fe-round-practice-latest');
- assert.equal(card.querySelector('.fe-recent-scores').nextElementSibling,summary);assert(summary.classList.contains('is-retry'));assert(summary.textContent.includes('70%'));assert(summary.querySelector('time').dateTime);
+ assert.equal(card.querySelector('.fe-round-material-actions').firstElementChild,summary);assert(summary.querySelector('.fe-round-rate-orange'));assert(summary.textContent.includes('70%'));assert(summary.querySelector('time').dateTime);
  w.HanqFormalExams.stop();
  state={...state,ownerId:'threshold'};
  w.HanqFormalExams.mount(routedHost,{api:readAPI,onRoute:()=>{}});await tick();
- assert(routedHost.querySelector('#feRound80').parentNode.querySelector('.fe-round-practice-latest.is-passed').textContent.includes('80%'));
+ assert(routedHost.querySelector('#feRound80').parentNode.querySelector('.fe-round-practice-latest .fe-round-rate-green').textContent.includes('80%'));
  assert(!w.HanqCbtRoundMaterials.goalReached(7999,10000));
  w.HanqFormalExams.stop();
  w.eval(fs.readFileSync('media/cbt-wrong-notebook.js','utf8'));
@@ -110,7 +110,7 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  assert(routedHost.querySelector('.fe-round-practice-position').getAttribute('aria-label').includes('제80회 1번'),'round star appears in aggregate');
  w.HanqFormalExams.stop();
  await assert.rejects(w.HanqCbtRoundMaterials.load({api:{...allAPI,cbt:async()=>({scope:'finalized-exam-selected-wrong',items:wrongItems,hasMore:true})},round:'all'}));
- assert.equal((fs.readFileSync('index.html','utf8').match(/materials-\(\?:7\[0-9\]\|80\|all\)/g)||[]).length,2,'initial and back/forward route handlers accept the practice URL');
+ assert.equal((fs.readFileSync('index.html','utf8').match(/materials-\(\?:7\[0-9\]\|80\|all\|history-/g)||[]).length,2,'initial and back/forward route handlers accept the practice URL');
  const failed=w.HanqCbtRoundMaterials.mount(host,{api:{...api,cbt:async()=>{throw Error('network');}},round:80,onBack:()=>{}});await failed.ready;assert(host.textContent.includes('회차 목록'));failed.stop();dom.window.close();
  console.log('PASS round review: hand-drawn O/X on new grade, no replay or spoilers, nav only, draft changes without grading, explicit check, then next, final commits draft, image preserved, final percent/blank counts, readonly, reset and owner isolation');
 })().catch(e=>{console.error(e);process.exitCode=1});
