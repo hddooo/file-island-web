@@ -31,11 +31,12 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  btn('풀이 돌아보기').click();assert(host.textContent.includes('X 오답'));btn('다음').click();btn('다음').click();
  resetAt='2026-11-08T00:00:00Z';btn('최종 제출').click();await tick();assert(host.textContent.includes('문제가 없어요'));assert(!host.querySelector('.fe-round-review-result'));
  state={signedIn:false,ownerId:null,epoch:2};listener();assert.equal(host.children.length,0);assert(revoked>0);ctl.stop();
- state={signedIn:true,ownerId:'other-account',epoch:3};resetAt=null;let resetListener;
- w.HanqLearningReset={onChange:fn=>{resetListener=fn;return()=>resetListener=null;}};
+ state={signedIn:true,ownerId:'other-account',epoch:3};resetAt=null;let resetListener,historyCutoff=0;
+ w.HanqLearningReset={cutoff:(_,scope)=>{assert.equal(scope,'history');return historyCutoff;},onChange:fn=>{resetListener=fn;return()=>resetListener=null;}};
  const ctl2=w.HanqCbtRoundMaterials.mount(host,{api,round:80,onBack:()=>{}});await ctl2.ready;
  btn('다음').click();btn('다음').click();assert(btn('최종 제출').disabled,'blank submission does not show a score');
- resetListener();assert(host.textContent.includes('초기화 상태가 변경'));assert(!host.querySelector('img'));assert(host.textContent.includes('회차 목록'));ctl2.stop();
+ resetListener();resetListener();assert(host.textContent.includes('3 / 3'));assert(!host.textContent.includes('초기화 상태가 변경'));
+ historyCutoff=Date.parse('2026-11-08T00:00:00Z');resetListener();assert(host.textContent.includes('초기화 상태가 변경'));assert(!host.querySelector('img'));assert(host.textContent.includes('회차 목록'));ctl2.stop();historyCutoff=0;
  items=Array.from({length:10},(_,i)=>fixture(i+1));state={signedIn:true,ownerId:'threshold',epoch:4};
  let advanced=0;
  const cutoff=w.HanqCbtRoundMaterials.mount(host,{api,round:80,onBack:()=>advanced++});await cutoff.ready;

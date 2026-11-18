@@ -102,11 +102,22 @@ function mount(host,options){
  function stop(){if(!alive)return;alive=false;if(off)off();if(resetOff)resetOff();clear();}
  async function image(q,path,box,version){try{var blob=await api.cbtImage(path);if(!current()||index!==version||!box.isConnected)return;if(!blob||!/^image\/(png|jpeg|webp)$/.test(blob.type))throw Error();var u=root.URL.createObjectURL(blob);urls.push(u);var img=el('img');img.className='mock-image';img.setAttribute('data-company-exam-image','');img.src=u;img.alt='제'+q.exam+'회 '+q.number+'번 원본 문제';img.style.maxWidth='100%';img.onerror=function(){if(current()&&box.isConnected)box.appendChild(el('p','제'+q.exam+'회 '+q.number+'번 원본 이미지를 표시하지 못했어요. 회차를 다시 열어 주세요. 계속 실패하면 이 문항의 원본 연결을 복구해 주세요.'));};box.appendChild(img);}catch(_){if(current()&&index===version&&box.isConnected)box.appendChild(el('p','제'+q.exam+'회 '+q.number+'번 원본 이미지를 불러오지 못했어요. 회차를 다시 열어 주세요. 계속 실패하면 이 문항의 원본 연결·접근 상태를 복구해 주세요.'));}}
  function section(tag,cls,text){var e=el(tag,text);e.className=cls;return e;}
- function reset(fresh){data=fresh;allItems=fresh.items;loadMarks();showMode();}
+ function resetChanged(){
+  if(!current()||!data)return false;
+  var resets=root.HanqLearningReset;
+  var known=resets&&resets.cutoff?resets.cutoff(String(owner),'history'):0;
+  // onChange also fires when focus/session hydration re-reads the same cutoff.
+  if(!Number.isFinite(known)||known<=(Date.parse(data.resetAt)||0))return false;
+  stop();host.appendChild(el('p','초기화 상태가 변경되어 복습을 닫았어요. 회차를 다시 선택해 주세요.'));
+  var back=el('button','회차 목록');back.type='button';back.className='tool-btn';
+  back.onclick=function(){if(options.onBack)options.onBack();};host.appendChild(back);
+  return true;
+ }
+ function reset(fresh){data=fresh;if(resetChanged())return;allItems=fresh.items;loadMarks();showMode();}
  async function currentMaterials(){
   var fresh=await load({api:api,round:options.round,isCurrent:current});
   if(!current())return false;
-  if(fresh.resetAt!==data.resetAt||questionSet(fresh.items)!==questionSet(allItems)){reset(fresh);return false;}
+  if((Date.parse(fresh.resetAt)||0)!==(Date.parse(data.resetAt)||0)||questionSet(fresh.items)!==questionSet(allItems)){reset(fresh);return false;}
   return true;
  }
  function header(){
@@ -217,7 +228,7 @@ function mount(host,options){
  }
  clear();host.appendChild(el('p','오답·별표 자료를 확인하고 있어요…'));
  off=api.onChange?api.onChange(function(){if(!current())stop();}):null;
- resetOff=root.HanqLearningReset&&root.HanqLearningReset.onChange?root.HanqLearningReset.onChange(function(){if(!current())return;stop();host.appendChild(el('p','초기화 상태가 변경되어 복습을 닫았어요. 회차를 다시 선택해 주세요.'));var back=el('button','회차 목록');back.type='button';back.className='tool-btn';back.onclick=function(){if(options.onBack)options.onBack();};host.appendChild(back);}):null;
+ resetOff=root.HanqLearningReset&&root.HanqLearningReset.onChange?root.HanqLearningReset.onChange(resetChanged):null;
  var ready=load({api:api,round:options.round,isCurrent:current}).then(function(r){if(current()){reset(r);}return r;},function(){if(current()){clear();host.appendChild(el('p','자료를 모두 확인하지 못했어요. 다시 열어 주세요.'));host.appendChild(button('회차 목록',function(){stop();if(options.onBack)options.onBack();}));}});
  return {ready:ready,stop:stop};
 }
