@@ -13,7 +13,7 @@ const cards=[...app.querySelectorAll('.history-weakness-card')];assert.equal(car
 const basenames=['three-kingdoms','opening-era','constitution-reform','money-history'];
 for(let i=0;i<cards.length;i++){
  const card=cards[i],prefix='media/history-weakness/'+basenames[i],pic=card.querySelector('.history-weakness-preview a, a.history-weakness-preview'),image=card.querySelector('img');
- assert.equal(pic.getAttribute('href'),prefix+'.png');assert.equal(pic.target,'_blank');assert.equal(image.getAttribute('src'),prefix+'.png');assert.equal(image.getAttribute('loading'),'lazy');
+ const imageUrl=prefix+'.png'+(basenames[i]==='money-history'?'?v=20261118b':'');assert.equal(pic.getAttribute('href'),imageUrl);assert.equal(pic.target,'_blank');assert.equal(image.getAttribute('src'),imageUrl);assert.equal(image.getAttribute('loading'),'lazy');
  const pdfs=[...card.querySelectorAll('.history-weakness-links button')];
  assert.deepEqual(pdfs.map(b=>b.dataset.chartPdf),['open','save']);assert(pdfs.every(b=>b.type==='button'));
  assert.equal(card.querySelector('[role=status]').hidden,true);

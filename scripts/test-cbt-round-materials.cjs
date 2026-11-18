@@ -56,7 +56,7 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  ctl.stop();ctl=w.HanqCbtRoundMaterials.mount(host,{api,round:80});await ctl.ready;assert(host.textContent.includes('1/1'));
  filter().click();assert(host.textContent.includes('3/3'));
  assert.deepEqual(nav(),['‹','확인']);assert(btn('확인').disabled);assert(!btn('최종 제출').closest('nav'));
- btn('최종 제출').click();await tick();assert(host.textContent.includes('정답률 33.33%'));assert(host.textContent.includes('정답 1 · 오답 1 · 미풀이 1 · 전체 3'));assert.equal(host.querySelectorAll('.fe-round-review-breakdown li').length,3);assert.equal(w.HanqCbtRoundMaterials.latest('synthetic',80).right,1);assert.equal(w.HanqCbtRoundMaterials.latest('synthetic',80).total,3);assert.equal(w.HanqCbtRoundMaterials.latest('synthetic',79),null);assert.equal(w.HanqCbtRoundMaterials.latest('other-account',80),null);
+ btn('최종 제출').click();await tick();assert(host.textContent.includes('정답률 33.33%'));assert(host.textContent.includes('정답 1 · 오답 1 · 미풀이 1 · 전체 3'));assert.equal(host.querySelectorAll('.fe-round-review-all-results li').length,3);const summaryCard=host.querySelector('.fe-round-review-summary'),missesSection=summaryCard.nextElementSibling;assert(summaryCard.classList.contains('is-retry'));assert.equal(summaryCard.querySelector('.fe-round-review-percent strong').textContent,'33.33%');assert.equal(summaryCard.querySelector('.fe-round-review-goal-text strong').textContent,'다시 풀기');assert.equal(missesSection.querySelector('h4').textContent,'오답 목록');assert.deepEqual([...missesSection.querySelectorAll('li')].map(li=>li.querySelector('span').textContent),['1번']);assert.equal(host.querySelector('.fe-round-review-all-details').open,false);assert.equal(w.HanqCbtRoundMaterials.latest('synthetic',80).right,1);assert.equal(w.HanqCbtRoundMaterials.latest('synthetic',80).total,3);assert.equal(w.HanqCbtRoundMaterials.latest('synthetic',79),null);assert.equal(w.HanqCbtRoundMaterials.latest('other-account',80),null);
  assert.equal(JSON.stringify(items),before);assert(reads>=4);
  ctl.stop();ctl=w.HanqCbtRoundMaterials.mount(host,{api,round:80});await ctl.ready;assert(host.textContent.includes('목표 80% 미달'));assert(btn('다시 풀기'));
  btn('풀이 돌아보기').click();assert(host.textContent.includes('X 오답'));jump(3);
@@ -72,7 +72,7 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  let advanced=0;
  const cutoff=w.HanqCbtRoundMaterials.mount(host,{api,round:80,onBack:()=>advanced++});await cutoff.ready;
  for(let i=0;i<10;i++){btn(i<8?'1':'2').click();await check();if(i<9)btn('다음').click();}
- btn('최종 제출').click();await tick();assert(host.textContent.includes('정답률 80%'));assert(btn('다시 풀기'));assert(host.querySelector('.fe-round-review-goal.is-reached'));assert.equal(w.HanqCbtRoundMaterials.latest('threshold',80).right,8);btn('다음 회차 선택').click();assert.equal(advanced,1);
+ btn('최종 제출').click();await tick();assert(host.textContent.includes('정답률 80%'));assert(btn('다시 풀기'));assert(host.querySelector('.fe-round-review-goal.is-reached'));assert.equal(host.querySelector('.fe-round-review-goal.is-reached strong').textContent,'목표 달성!');assert.equal(w.HanqCbtRoundMaterials.latest('threshold',80).right,8);btn('다음 회차 선택').click();assert.equal(advanced,1);
  state={signedIn:true,ownerId:'retry',epoch:5};
  const retry=w.HanqCbtRoundMaterials.mount(host,{api,round:80});await retry.ready;
  for(let i=0;i<10;i++){if(i<7){btn('1').click();if(i!==0)await check();}if(i<9)jump(i+2);}

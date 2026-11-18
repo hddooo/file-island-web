@@ -476,27 +476,36 @@ function mount(host,options){
  }
  function score(){
   if(!current()||!items.length)return;clear();header();
-  var right=0,wrong=0,empty=0,table=section('section','fe-round-review-result');
-  var heading=el('h3','복습 결과');heading.tabIndex=-1;table.appendChild(heading);
-  var list=section('ul','fe-round-review-breakdown');
+  var right=0,wrong=0,empty=0,table=section('section','fe-round-review-result fe-round-review-final');
+  var misses=section('ul','fe-round-review-breakdown fe-round-review-misses');
+  var list=section('ul','fe-round-review-breakdown fe-round-review-all-results');
   items.forEach(function(q){
    var chosen=selected[q.questionId],ok=chosen===q.review.correctOptionId;
    if(!chosen)empty++;else if(ok)right++;else wrong++;
    var row=section('li',!chosen?'is-empty':ok?'is-correct':'is-wrong');
    row.append(el('span',(all?'제'+q.exam+'회 ':'')+q.number+'번'),el('strong',!chosen?'미풀이':ok?'O 정답':'X 오답'));list.appendChild(row);
+   if(chosen&&!ok)misses.appendChild(row.cloneNode(true));
   });
-  var percent=String(Number((right/items.length*100).toFixed(2)));
-  table.append(el('p','정답률 '+percent+'%'),el('p','정답 '+right+' · 오답 '+wrong+' · 미풀이 '+empty+' · 전체 '+items.length),list);
-  var reached=goalReached(right,items.length);
+  var reached=goalReached(right,items.length),percent=String(Number((right/items.length*100).toFixed(2)));
+  var summary=section('section','fe-round-review-summary '+(reached?'is-reached':'is-retry'));
+  var heading=el('h3','복습 결과');heading.tabIndex=-1;summary.appendChild(heading);
+  var pct=section('p','fe-round-review-percent');pct.append(el('span','정답률 '),el('strong',percent+'%'));summary.appendChild(pct);
   var goal=section('div','fe-round-review-goal '+(reached?'is-reached':'is-retry'));
-  if(reached){var badge=el('span','🏆');badge.setAttribute('aria-hidden','true');goal.appendChild(badge);}
-  else{var patamon=el('img');patamon.src='/media/characters/patamon-crying-v1.webp';patamon.alt='';patamon.width=40;patamon.height=40;goal.appendChild(patamon);}
-  goal.appendChild(el('p',reached?(all?'목표 '+GOAL_PERCENT+'% 달성! 전체 오답 복습을 마쳤어요.':'목표 '+GOAL_PERCENT+'% 달성! 다음 회차로 넘어가도 돼요.'):'목표 '+GOAL_PERCENT+'% 미달. 같은 문제를 다시 풀어요.'));table.appendChild(goal);
+  var caption=section('p','fe-round-review-goal-text');
+  caption.append(el('strong',reached?'목표 달성!':'다시 풀기'),
+   el('small',reached?(all?'목표 '+GOAL_PERCENT+'% 달성 · 전체 오답 복습 완료':'목표 '+GOAL_PERCENT+'% 달성 · 다음 회차로 넘어가도 돼요.'):
+    '목표 '+GOAL_PERCENT+'% 미달 · 같은 문제를 다시 풀어요.'));
+  goal.appendChild(caption);summary.appendChild(goal);
+  summary.appendChild(section('p','fe-round-review-counts','정답 '+right+' · 오답 '+wrong+' · 미풀이 '+empty+' · 전체 '+items.length));
   var actions=section('div','fe-round-review-result-actions');
   if(reached)actions.appendChild(button(all?'회차 목록으로':'다음 회차 선택',function(){stop();if(options.onBack)options.onBack();}));
   actions.appendChild(button('다시 풀기',restartPractice));
   actions.appendChild(button('풀이 돌아보기',function(){submitted=false;index=0;save();draw(true);}));
-  table.appendChild(actions);
+  summary.appendChild(actions);table.appendChild(summary);
+  var errors=section('section','fe-round-review-errors');errors.appendChild(el('h4','오답 목록'));
+  if(wrong)errors.appendChild(misses);else errors.appendChild(el('p','틀린 문제가 없어요.'));
+  table.appendChild(errors);
+  var details=section('details','fe-round-review-all-details');details.append(el('summary','전체 문항 결과'),list);table.appendChild(details);
   host.appendChild(table);heading.focus();
  }
  function drawVerdict(correct,animate){
