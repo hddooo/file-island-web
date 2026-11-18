@@ -487,3 +487,20 @@ html body #app#app#app #formalExamHost .fe-era-ring-detail{display:grid;gap:1px;
 #feRoundMaterials .fe-round-review-dock .fe-round-review-choices{grid-template-columns:repeat(6,minmax(0,1fr));margin:0}
 #feRoundMaterials .fe-round-review-dock .fe-round-review-mark{width:100%;min-width:0}
 #feRoundMaterials .fe-round-review-dock .fe-round-review-nav{justify-content:space-between;margin:0}
+
+#feRoundMaterials .fe-round-review-dock .fe-round-review-nav{
+ display:grid!important;grid-template-columns:minmax(34px,1.05fr) repeat(6,minmax(0,1fr)) minmax(44px,1.25fr);
+ grid-auto-flow:column;grid-template-rows:1fr;align-items:stretch;gap:clamp(2px,1vw,5px);
+ max-width:510px;margin:0 auto;padding:6px 0;
+}
+#feRoundMaterials .fe-round-review-dock .fe-round-review-nav .fe-round-review-choices{display:contents}
+#feRoundMaterials .fe-round-review-dock .fe-round-review-nav button{
+ box-sizing:border-box;width:100%;min-width:0;min-height:44px;margin:0;padding:0 1px;
+ font-size:15px;line-height:1.15;border-radius:8px;
+}
+#feRoundMaterials .fe-round-review-dock .fe-round-review-nav [data-review-choice][aria-pressed="true"]{
+ outline:2px solid #83bcff;outline-offset:-3px;
+}
+#feRoundMaterials .fe-round-review-dock .fe-round-review-nav .fe-round-review-prev,
+#feRoundMaterials .fe-round-review-dock .fe-round-review-nav [data-round-review-action=next]{font-size:24px}
+#feRoundMaterials .fe-round-review-dock .fe-round-review-nav [data-round-review-action=check]{font-size:13px;white-space:nowrap}

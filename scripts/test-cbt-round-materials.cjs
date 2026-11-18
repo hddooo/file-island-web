@@ -6,15 +6,15 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  w.URL.createObjectURL=()=> 'blob:synthetic';w.URL.revokeObjectURL=()=>revoked++;w.eval(fs.readFileSync('media/cbt-round-materials.js','utf8'));
  let items=[fixture(1),fixture(2),fixture(3)];const data=()=>({scope:'exam-starred-or-ever-wrong',round:80,items:resetAt?[]:items,hasMore:false,pendingStarCount:1,resetAt});
  const api={state:()=>state,onChange:fn=>{listener=fn;return()=>listener=null},cbt:async(method,path)=>{assert.equal(method,'GET');assert.equal(path,'/api/v1/cbt/review-materials/80');reads++;return data();},cbtImage:async()=>new Blob(['synthetic'],{type:'image/png'})};
- const tick=()=>new Promise(r=>setImmediate(r)),btn=t=>[...host.querySelectorAll('button')].find(b=>b.textContent===t);
+ const tick=()=>new Promise(r=>setImmediate(r)),btn=t=>[...host.querySelectorAll('button')].find(b=>b.textContent===t||b.getAttribute('aria-label')===t+' 문제');
  const before=JSON.stringify(items);let ctl=w.HanqCbtRoundMaterials.mount(host,{api,round:80,onBack:()=>{}});await ctl.ready;await tick();
  const img=host.querySelector('img[data-company-exam-image]');assert(img);
  assert(host.textContent.includes('XP와 실전 점수는 바뀌지 않아요'));assert(host.textContent.includes('완료 후 이용'));
- const nav=()=>[...host.querySelectorAll('nav button')].map(b=>b.textContent);
+ const nav=()=>[...host.querySelectorAll('nav > button')].map(b=>b.textContent);
  const jump=n=>host.querySelectorAll('.fe-round-practice-grid>button')[n-1].click();
  const check=async()=>{btn('확인').click();await tick();};
- assert.deepEqual(nav(),['이전','확인']);assert(btn('이전').disabled&&btn('확인').disabled);assert(!btn('최종 제출'));
- assert.equal(host.querySelector('.fe-round-review-choices').children.length,6);assert(host.querySelector('.fe-round-review-choices').lastElementChild.classList.contains('fe-round-review-mark'));
+ assert.deepEqual(nav(),['‹','확인']);assert(btn('이전').disabled&&btn('확인').disabled);assert(!btn('최종 제출'));
+ assert.equal(host.querySelector('.fe-round-review-choices').children.length,6);assert.equal(host.querySelector('nav').children[1].className,'fe-round-review-choices');assert(host.querySelector('.fe-round-review-choices').lastElementChild.classList.contains('fe-round-review-mark'));
  const beforePickReads=reads;
  btn('1').click();btn('2').click();await tick();assert(!host.textContent.includes('X 오답'));assert(!host.textContent.includes('O 정답'));assert.equal(reads,beforePickReads);assert.equal(host.querySelector('img'),img);
  assert(!btn('1').disabled&&btn('2').getAttribute('aria-pressed')==='true');
@@ -35,7 +35,7 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  filter().click();assert(host.textContent.includes('1 / 1 · 원문 1번'));assert.equal(mark().getAttribute('aria-pressed'),'true');
  ctl.stop();ctl=w.HanqCbtRoundMaterials.mount(host,{api,round:80});await ctl.ready;assert(host.textContent.includes('1 / 1 · 원문 1번'));
  filter().click();assert(host.textContent.includes('3 / 3'));
- assert.deepEqual(nav(),['이전','확인']);assert(btn('확인').disabled);assert(!btn('최종 제출').closest('nav'));
+ assert.deepEqual(nav(),['‹','확인']);assert(btn('확인').disabled);assert(!btn('최종 제출').closest('nav'));
  btn('최종 제출').click();await tick();assert(host.textContent.includes('정답률 33.33%'));assert(host.textContent.includes('정답 1 · 오답 1 · 미풀이 1 · 전체 3'));assert.equal(host.querySelectorAll('.fe-round-review-breakdown li').length,3);assert.equal(w.HanqCbtRoundMaterials.latest('synthetic',80).right,1);assert.equal(w.HanqCbtRoundMaterials.latest('synthetic',80).total,3);assert.equal(w.HanqCbtRoundMaterials.latest('synthetic',79),null);assert.equal(w.HanqCbtRoundMaterials.latest('other-account',80),null);
  assert.equal(JSON.stringify(items),before);assert(reads>=4);
  ctl.stop();ctl=w.HanqCbtRoundMaterials.mount(host,{api,round:80});await ctl.ready;assert(host.textContent.includes('목표 90% 미달'));assert(btn('다시 풀기'));

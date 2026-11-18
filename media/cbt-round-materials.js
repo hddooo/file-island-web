@@ -259,20 +259,24 @@ function mount(host,options){
    answer.appendChild(notes);
    host.appendChild(answer);
   }
-  var dock=section('div','fe-round-review-dock');dock.appendChild(choices);
+  var dock=section('div','fe-round-review-dock');
   if(index===items.length-1){
    submit=control(button('최종 제출',function(){check(function(){items.forEach(function(item){var draft=drafts[item.questionId];if(!selected[item.questionId]&&draft)selected[item.questionId]=draft;});drafts={};submitted=true;save();saveLatest();score();});}),false);
    dock.appendChild(submit);
   }
   var nav=section('nav','fe-round-review-nav');
-  nav.setAttribute('aria-label','복습 문제 이동');
+  nav.setAttribute('aria-label','복습 답 선택과 문제 이동');
   function rightAction(){
    if(chosen){index++;save();draw(true);return;}
    if(!drafts[q.questionId])return;
    check(function(){grade();save();draw(false,box);var result=host.querySelector('.fe-round-review-feedback');if(result)result.focus();});
   }
-  nextButton=control(button(chosen?'다음':'확인',rightAction),false);
-  nav.append(control(button('이전',function(){index--;save();draw(true);}),index===0),nextButton);
+  nextButton=control(button(chosen?'›':'확인',rightAction),false);
+  nextButton.classList.add('fe-round-review-right');nextButton.dataset.roundReviewAction=chosen?'next':'check';
+  nextButton.setAttribute('aria-label',chosen?'다음 문제':'선택한 답 확인');
+  var previous=control(button('‹',function(){index--;save();draw(true);}),index===0);
+  previous.classList.add('fe-round-review-prev');previous.setAttribute('aria-label','이전 문제');
+  nav.append(previous,choices,nextButton);
   dock.insertBefore(nav,submit);host.appendChild(dock);refreshChoice();if(focus)heading.focus();
  }
  off=api.onChange?api.onChange(function(){if(!current())stop();}):null;
