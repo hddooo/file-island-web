@@ -6,7 +6,7 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  w.URL.createObjectURL=()=> 'blob:synthetic';w.URL.revokeObjectURL=()=>revoked++;w.eval(fs.readFileSync('media/cbt-round-materials.js','utf8'));
  let items=[fixture(1),fixture(2),fixture(3)];const data=()=>({scope:'exam-starred-or-ever-wrong',round:80,items:resetAt?[]:items,hasMore:false,pendingStarCount:1,resetAt});
  const api={state:()=>state,onChange:fn=>{listener=fn;return()=>listener=null},cbt:async(method,path)=>{assert.equal(method,'GET');assert.equal(path,'/api/v1/cbt/review-materials/80');reads++;return data();},cbtImage:async()=>new Blob(['synthetic'],{type:'image/png'})};
- const tick=()=>new Promise(r=>setImmediate(r)),btn=t=>[...host.querySelectorAll('button')].find(b=>b.textContent===t||b.getAttribute('aria-label')===t+' 문제');
+ const tick=()=>new Promise(r=>setImmediate(r)),btn=t=>[...host.querySelectorAll('button')].find(b=>b.textContent===t||b.getAttribute('aria-label')===t+' 문제'||b.getAttribute('aria-label')?.startsWith(t+'번 · 내 선택'));
  const before=JSON.stringify(items);let ctl=w.HanqCbtRoundMaterials.mount(host,{api,round:80,onBack:()=>{}});await ctl.ready;await tick();
  const img=host.querySelector('img[data-company-exam-image]');assert(img);
  assert(host.textContent.includes('XP와 실전 점수는 바뀌지 않아요'));assert(host.textContent.includes('완료 후 이용'));
@@ -18,12 +18,12 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  assert.equal(host.querySelector('.fe-round-review-choices').children.length,6);assert.equal(host.querySelector('nav').children[1].className,'fe-round-review-choices');assert(host.querySelector('.fe-round-review-choices').lastElementChild.classList.contains('fe-round-review-mark'));
  const beforePickReads=reads;
  btn('1').click();btn('2').click();await tick();assert(!host.textContent.includes('X 오답'));assert(!host.textContent.includes('O 정답'));assert.equal(reads,beforePickReads);assert.equal(host.querySelector('img'),img);
- assert(!btn('1').disabled&&btn('2').getAttribute('aria-pressed')==='true');
+ assert(!btn('1').disabled&&btn('2').getAttribute('aria-pressed')==='true');assert(!host.querySelector('[data-review-mark]'));
  ctl.stop();ctl=w.HanqCbtRoundMaterials.mount(host,{api,round:80});await ctl.ready;
  assert.equal(btn('2').getAttribute('aria-pressed'),'true');assert(!btn('2').disabled);
  assert(host.querySelector('.fe-round-practice-grid button').textContent.includes('선택'));
  await check();assert(host.textContent.includes('X 오답 · 내 선택 2번 · 정답 1번'));assert(host.textContent.includes('1/3'));
- assert(btn('1').disabled&&btn('2').getAttribute('aria-pressed')==='true');
+ assert(btn('1').disabled&&btn('2').getAttribute('aria-pressed')==='true');assert.equal(btn('2').querySelector('.fe-round-choice-indicator').textContent,'X');assert.equal(host.querySelectorAll('[data-review-mark]').length,1);
  assert.equal(host.querySelectorAll('.fe-round-review-option-notes li').length,5);assert(host.textContent.includes('확인된 해설 없음'));
  assert.equal(host.querySelectorAll('.fe-round-review-option-notes li')[0].lastElementChild.tagName,'STRONG');assert.equal(host.querySelectorAll('.fe-round-review-option-notes li')[1].lastElementChild.tagName,'SPAN');
  assert.deepEqual(Array.from(w.HanqCbtRoundMaterials.choiceNotes({...items[0],review:{item:{options:opts.map((o,i)=>({...o,review:i===0?['**평양 천도** — 장수왕: 427년 사건으로 확인됩니다.']:[]}))}}})).slice(0,2),['평양 천도 · 장수왕 · 남진, 한성 함락','확인된 해설 없음']);
@@ -31,7 +31,7 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  assert.equal(mark().querySelectorAll('.fe-round-double-star>span').length,2);mark().click();assert.equal(mark().getAttribute('aria-pressed'),'true');
  btn('다음').click();btn('1').click();await tick();assert(!host.textContent.includes('정답 1번'));
  btn('이전').click();assert(host.textContent.includes('X 오답'));btn('다음').click();assert.equal(btn('1').getAttribute('aria-pressed'),'true');assert(!btn('1').disabled);
- await check();assert(host.textContent.includes('O 정답'));assert(host.textContent.includes('2/3'));assert.equal(host.querySelector('.fe-round-practice-accuracy').textContent,'정답률 50%');
+ await check();assert(host.textContent.includes('O 정답'));assert(host.textContent.includes('2/3'));assert.equal(btn('1').querySelector('.fe-round-choice-indicator').textContent,'O');assert.equal(host.querySelector('.fe-round-practice-accuracy').textContent,'정답률 50%');
  btn('다음').click();assert(host.textContent.includes('3/3'));
  ctl.stop();ctl=w.HanqCbtRoundMaterials.mount(host,{api,round:80});await ctl.ready;assert(host.textContent.includes('3/3'));
  filter().click();assert(host.textContent.includes('1/1'));assert.equal(mark().getAttribute('aria-pressed'),'true');

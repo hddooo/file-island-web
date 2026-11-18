@@ -306,7 +306,15 @@ function mount(host,options){
   }
   q.options.forEach(function(o){
    var b=button(String(o.number),function(){pick(o.id);});
-   b.dataset.reviewChoice='';choices.appendChild(control(b,!!chosen));
+   b.dataset.reviewChoice='';
+   if(chosen===o.id){
+    var ok=o.id===q.review.correctOptionId;
+    b.dataset.reviewMark=ok?'correct':'wrong';
+    b.setAttribute('aria-label',o.number+'번 · 내 선택 · '+(ok?'정답':'오답'));
+    var indicator=section('span','fe-round-choice-indicator',ok?'O':'X');
+    indicator.setAttribute('aria-hidden','true');b.appendChild(indicator);
+   }
+   choices.appendChild(control(b,!!chosen));
   });
   choices.appendChild(mark);host.appendChild(status);
   if(chosen){

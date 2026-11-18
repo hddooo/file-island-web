@@ -528,3 +528,32 @@ html body #app#app#app #formalExamHost .fe-era-ring-detail{display:grid;gap:1px;
  justify-self:end;min-height:38px;margin:0!important;padding:3px 6px!important;font-size:11px!important;white-space:nowrap;
 }
 #feRoundMaterials .fe-round-practice-list[hidden]{display:none!important}
+
+
+/* One compact cluster, with distinct space before and after it. */
+#feRoundMaterials .fe-round-review-dock .fe-round-review-nav{
+ grid-template-columns:minmax(34px,1fr) minmax(0,218px) minmax(42px,1fr);
+ column-gap:clamp(8px,2.5vw,14px);max-width:370px;
+}
+#feRoundMaterials .fe-round-review-dock .fe-round-review-nav .fe-round-review-choices{
+ display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr));gap:3px;min-width:0;
+}
+#feRoundMaterials .fe-round-review-dock .fe-round-review-nav .fe-round-review-choices>button{
+ width:100%;min-width:0;max-width:none;
+}
+#feRoundMaterials .fe-round-review-dock .fe-round-review-nav .fe-round-review-prev{
+ max-width:46px;justify-self:start;
+}
+#feRoundMaterials .fe-round-review-dock .fe-round-review-nav .fe-round-review-right{
+ max-width:48px;justify-self:end;
+}
+#feRoundMaterials .fe-round-review-dock .fe-round-review-nav [data-review-mark]{
+ display:flex!important;flex-direction:column;justify-content:center;align-items:center;gap:1px;opacity:1!important;
+}
+#feRoundMaterials .fe-round-review-dock .fe-round-review-nav [data-review-mark=correct]{
+ color:#9bf0af!important;outline-color:#9bf0af!important;
+}
+#feRoundMaterials .fe-round-review-dock .fe-round-review-nav [data-review-mark=wrong]{
+ color:#ffabab!important;outline-color:#ffabab!important;
+}
+#feRoundMaterials .fe-round-choice-indicator{font-size:12px;font-weight:900;line-height:1}
