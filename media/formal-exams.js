@@ -58,7 +58,7 @@ function reviewHistory(){return '<section class="fe-review-history"><h2>오답·
 function restoreRoundButtons(){(ctx.disabledControls||[]).forEach(function(s){var e=s.element;if(host.contains(e))e.disabled=e.hasAttribute('data-round')?e.dataset.available!=='1':s.disabled;});ctx.disabledControls=[];}
 function roundReady(round,imagesConfigured){return !!(round&&round.available&&imagesConfigured);}
 function roundStatus(round,imagesConfigured){return roundReady(round,imagesConfigured)?'응시 가능':!imagesConfigured?'문제 이미지 준비 확인 필요':round.checkState==='check-delayed'?'확인 지연 · 다시 확인해 주세요':'준비 확인 필요';}
-var officialPassRates={"80":["45.50","000000066240"],"70":["46.76","000000015505"],"71":["46.80","000000015670"],"72":["55.22","000000015859"],"73":["66.15","000000020130"],"74":["40.11","000000028020"],"75":["61.95","000000032850"],"76":["49.26","000000038520"],"77":["61.18","000000046560"],"78":["55.41","000000054930"],"79":["63.60","000000059850"]};
+var officialPassRates={"67":["49.16","000000014983"],"68":["59.35","000000015070"],"69":["54.59","000000015223"],"80":["45.50","000000066240"],"70":["46.76","000000015505"],"71":["46.80","000000015670"],"72":["55.22","000000015859"],"73":["66.15","000000020130"],"74":["40.11","000000028020"],"75":["61.95","000000032850"],"76":["49.26","000000038520"],"77":["61.18","000000046560"],"78":["55.41","000000054930"],"79":["63.60","000000059850"]};
 function scoreBand(r){if(!cbtScore(r))return '';return r.score<60?'red':r.score<70?'yellow':r.score<80?'orange':r.score<90?'green':'blue';}
 function roundPracticeLatest(round){
  var entry=root.HanqCbtRoundMaterials&&root.HanqCbtRoundMaterials.latest&&root.HanqCbtRoundMaterials.latest(ctx.owner,round);
