@@ -158,3 +158,16 @@ html[data-company-mode=on][data-company-history] #app#app#app .history-weakness 
 .hw-exam-aid li+li{margin-top:8px}
 .hw-exam-aid a{color:var(--hw-accent)}
 @media print{.hw-exam-aid li{break-inside:avoid}}
+
+/* Member result labels only annotate verbatim source fragments. */
+.history-weakness-study .hw-result-tools{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;padding:0 0 10px}
+.history-weakness-study .hw-result-tools p{margin:0;color:var(--hw-muted);font-size:.88rem}
+.history-weakness-study .hw-result-mark{padding:0 .08em;color:inherit;border-radius:.14em;background:#ffe3e2;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.history-weakness-study .hw-result-mark[data-hw-result-mark=star]{background:#ffe59f}
+.history-weakness-study .hw-result-label{display:inline-block;vertical-align:baseline;margin-inline:.24em;padding:0 .28em;border:1px solid currentColor;border-radius:.24em;color:#9f2a25;font-size:.72em;font-weight:700;line-height:1.45;white-space:normal}
+.history-weakness-study .hw-result-label[data-hw-result-label=star]{color:#7b4e00}
+html[data-company-mode=on] .history-weakness-study .hw-result-mark{background:#573433}
+html[data-company-mode=on] .history-weakness-study .hw-result-mark[data-hw-result-mark=star]{background:#534220}
+html[data-company-mode=on] .history-weakness-study .hw-result-label{color:#ffb7b4}
+html[data-company-mode=on] .history-weakness-study .hw-result-label[data-hw-result-label=star]{color:#ffe093}
+@media print{.history-weakness-study .hw-result-tools{display:none!important}}

@@ -1,0 +1,51 @@
+'use strict';
+const fs=require('node:fs'),assert=require('node:assert/strict'),{JSDOM}=require(process.env.HANQ_JSDOM_PATH||'jsdom');
+const d=new JSDOM('<main id="host"></main>',{runScripts:'outside-only'});
+const w=d.window,host=w.document.querySelector('main');
+w.eval(fs.readFileSync('media/history-weakness-content.js','utf8'));
+const h=w.HanqWeaknessStudyContent.highlights,uuid='ab100000-0000-4000-8000-000000000001',older='ab100000-0000-4000-8000-000000000002';
+const round=74,finalAt='2026-11-19T00:00:00.000Z',oldAt='2026-11-18T00:00:00.000Z',sourceSha='a'.repeat(64);
+const line=(text,extra)=>({era:'modern',round,number:6,text,page:126,block:'t1',sourceSha,...extra});
+const mappings=[line('핵심 구절',{anchor:'연결어',cell:'c1'}),line('관련사건',{number:7}),line('과거사건',{number:8}),line('모호한 단어',{number:9}),line('어떤사건',{number:10}),line('존재하지 않음',{number:11}),line('관련사건',{number:12,sourceSha:'b'.repeat(64)})];
+const items=Array.from({length:50},(_,position)=>({position,exam:round,number:position+1,questionId:'exam-'+round+'-'+String(position+1).padStart(2,'0'),version:'canonical',options:Array.from({length:5},(_,i)=>({id:'a'+i})),review:{status:position===6||position===7?'correct':position===9?'unanswered':'wrong'}}));
+const run={id:uuid,round,status:'final',finalAt},olderRun={...run,id:older,finalAt:oldAt};
+const stars={signature:JSON.stringify(items.map(q=>[q.questionId,q.version,q.options.map(o=>o.id)])),flags:items.map(q=>[6,7,10].includes(q.number))};
+let alive=true,calls=[],reset=0,invalidStars=false;
+w.HanqLearningReset={cutoff:()=>reset};
+const api={async cbt(method,path){assert.equal(method,'GET');calls.push(path);
+ if(path.endsWith('/runs'))return {runs:[olderRun,{...run,status:'active'},run]};
+ if(path.endsWith('/stars'))return invalidStars?{...stars,signature:'unrelated'}:stars;
+ return {run,items};
+}};
+(async()=>{
+ const evidence=await h.readResults(api,mappings,'synthetic-account',()=>alive);
+ assert.deepEqual(Array.from(evidence,x=>Array.from(x)),[['74:6','wrong'],['74:7','star'],['74:9','wrong'],['74:11','wrong'],['74:12','wrong']]);
+ assert.deepEqual(calls,['/api/v1/cbt/runs','/api/v1/cbt/runs/'+uuid,'/api/v1/cbt/runs/'+uuid+'/stars']);
+ host.innerHTML='<section data-source-era="modern"><div data-hw-pdf-page="126" data-hw-source-sha="'+sourceSha+'"><table data-source-block="t1"><tr><td data-source-cell="c1"><b>핵심</b> 구절 · 연결어 이어짐</td><td data-source-cell="other">핵심 구절 · 연결어</td><td>관련사건</td><td>과거사건</td><td>모호한 단어 모호한 단어</td><td>어떤사건</td></tr></table><table data-source-block="t2"><tr><td>핵심 구절 · 연결어</td></tr></table></div></section>';
+ const original=host.innerHTML;
+ const result=h.render(host,mappings,evidence);
+ assert.equal(result.matches,2);assert.equal(result.labels,2);
+ assert.deepEqual([...host.querySelectorAll('[data-hw-result-label]')].map(x=>x.textContent),['오답 · 74회 6번','★ 정답·별표 · 74회 7번']);
+ assert.deepEqual([...host.querySelectorAll('mark')].map(x=>x.textContent),['핵심',' 구절','관련사건']);
+ assert(host.querySelector('b>mark'));assert.equal(h.render(host,mappings,evidence).labels,2);
+ h.clear(host);assert.equal(host.innerHTML,original);
+ const verified=h.verifiedMappings;
+ const pages=new Map();
+ for(const m of verified){
+   const key=m.era+':'+m.page;let slot=pages.get(key);
+   if(!slot){slot={era:m.era,page:m.page,sha:m.sourceSha,cells:{}};pages.set(key,slot);}
+   (slot.cells[m.cell]||=([])).push(m.text);
+ }
+ host.innerHTML=[...pages.values()].map(slot=>'<section data-source-era="'+slot.era+'"><div data-hw-pdf-page="'+slot.page+'" data-hw-source-sha="'+slot.sha+'"><table data-source-block="81-p'+String(slot.page).padStart(3,'0')+'-table1"><tr>'+Object.entries(slot.cells).map(([id,words])=>'<td '+(slot.era==='opening'?'id':'data-source-cell')+'="'+id+'">'+words.join(' (의거) · ')+'</td><td>'+words.join(' · ')+'</td>').join('')+'</tr></table></div></section>').join('');
+ const sourceEvidence=new Map(verified.map(m=>[m.round+':'+m.number,m.number===3&&m.round===75||m.number===35?'star':'wrong']));
+ assert.equal(h.render(host,verified,sourceEvidence).labels,verified.length);
+ assert.equal(host.querySelectorAll('[data-hw-result-label=star]').length,2);
+ assert.equal(host.querySelectorAll('[data-source-cell] mark, [data-source-era=opening] td[id] mark').length,verified.length);
+ assert.equal(host.querySelectorAll('td:not([data-source-cell]):not([id]) mark').length,0);
+ invalidStars=true;assert(!(await h.readResults(api,mappings,'synthetic-account',()=>true)).has('74:7'));
+ const stale=await h.readResults({cbt:async()=>{alive=false;return {runs:[run]};}},mappings,'synthetic-account',()=>alive);
+ assert.equal(stale.size,0);
+ reset=Date.parse(finalAt);assert.equal((await h.readResults(api,mappings,'synthetic-account',()=>true)).size,0);
+ assert.equal((await h.readResults({cbt(){throw Error('nothing should be requested');}},[],'synthetic-account',()=>true)).size,0);
+ console.log('PASS scoped final runs, frontend GET only, reset/session guards, exact canonical match, ambiguous rows skipped, wrong vs correct-star, cleanup restores original markup');
+})().catch(e=>{console.error(e);process.exitCode=1;});
