@@ -41,6 +41,8 @@ const cases=['absent','disabled','malformed','wrong-days','enabled','no-locks','
    await page.waitForFunction(()=>!document.querySelector('#submit').disabled);
    await page.waitForTimeout(180);
    const supported=['enabled','unavailable','generic-failure','signup'].includes(mode);
+   assert.equal(await page.locator('#rememberLabel').isVisible(),supported,mode+' capability visibility');
+   assert.equal(await page.locator('#rememberHint').isVisible(),supported,mode+' capability hint visibility');
    assert.equal(await page.locator('#remember').isEnabled(),supported,mode+' capability gate');
    assert.equal(await page.locator('#remember').isChecked(),false,'explicit opt-in only');
    assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,'no horizontal overflow');
@@ -79,6 +81,7 @@ const cases=['absent','disabled','malformed','wrong-days','enabled','no-locks','
     if(['unavailable','generic-failure'].includes(mode)){
      await page.waitForFunction(()=>!document.querySelector('#submit').disabled);
      await page.waitForTimeout(180);assert.equal(posts.length,1,'no automatic credential replay');
+     assert.equal(await page.locator('#rememberLabel').isVisible(),mode!=='unavailable');
      assert.equal(await page.locator('#remember').isEnabled(),mode!=='unavailable');
      assert.equal(await page.locator('#remember').isChecked(),mode!=='unavailable');
      assert.equal(await page.locator('#email').inputValue(),'fixture@example.test');

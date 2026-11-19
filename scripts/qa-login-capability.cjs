@@ -37,7 +37,8 @@ const cases=['legacy','disabled','enabled-default','enabled-optin','rejected','g
    await p.goto(origin+'/#rainbow');await p.locator('#acAuthForm').waitFor();
    assert.equal(new URL(p.url()).hash,'#account');assert.equal(await p.locator('.rainbow-island').count(),0);
    const enabled=['enabled-default','enabled-optin','rejected','generic-failure'].includes(mode),optin=['enabled-optin','rejected','generic-failure'].includes(mode);
-   assert.equal(await p.locator('#acRememberSession').isEnabled(),enabled);assert.equal(await p.locator('#acRememberSession').isChecked(),false);
+   assert.equal(await p.locator('#acRememberSession').count(),enabled?1:0);
+   if(enabled){assert.equal(await p.locator('#acRememberSession').isEnabled(),true);assert.equal(await p.locator('#acRememberSession').isChecked(),false);}
    if(optin)await p.locator('#acRememberSession').check();
    await p.locator('#acEmail').fill('fixture@example.test');await p.locator('#acPw').fill('synthetic-password');
    await p.locator('#acAuthSubmit').scrollIntoViewIfNeeded();
@@ -49,8 +50,8 @@ const cases=['legacy','disabled','enabled-default','enabled-optin','rejected','g
    if(['rejected','generic-failure'].includes(mode)){
     await p.waitForFunction(()=>{const msg=document.querySelector('#acAuthMsg');return msg&&msg.textContent&&!msg.textContent.includes('처리 중');});
     await p.waitForTimeout(250);assert.equal(requests.length,1,'never retry credentials automatically');
-    assert.equal(await p.locator('#acRememberSession').isEnabled(),mode!=='rejected');
-    assert.equal(await p.locator('#acRememberSession').isChecked(),mode!=='rejected');
+    if(mode==='rejected')assert.equal(await p.locator('#acRememberOption').count(),0);
+    else {assert.equal(await p.locator('#acRememberSession').isEnabled(),true);assert.equal(await p.locator('#acRememberSession').isChecked(),true);}
     assert.equal(await p.locator('.rainbow-island').count(),0);
     await p.screenshot({path:out+'/'+engine+'-'+width+'-'+mode+'-error.png'});
     if(mode==='rejected')assert.match(await p.locator('#acAuthSubmit').innerText(),/일반 로그인/);

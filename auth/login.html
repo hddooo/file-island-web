@@ -163,6 +163,25 @@ html body .login-island-background .login-island-particles{animation:auth-data-r
 html body .login-island-background[data-paused=true] :is(img,i){animation-play-state:paused!important;will-change:auto!important}
 @media(prefers-reduced-motion:reduce){html body .login-island-background.login-island-background :is(img,i){animation:none!important;will-change:auto!important}}
 
+/* Fit the primary auth actions before adding decorative height. Keep one scroll owner. */
+@media(min-width:701px) and (max-height:850px){
+html body #app#app#app.login-integrated .login-stage{min-height:400px!important}
+html body #app#app#app.login-integrated .login-stage #acRoot{padding:18px 28px!important;gap:6px}
+html body #app#app#app.login-integrated .ac-auth-heading{margin-bottom:12px}
+html body #app#app#app.login-integrated .ac-auth-footer{margin-top:10px;padding-top:6px}
+html body #app#app#app.login-integrated .login-scene-copy{padding:24px!important}
+html body #app#app#app.login-integrated .island-friends{height:110px;min-height:80px}
+}
+@media(max-width:700px){
+html body #app#app#app.login-integrated .login-scene-copy{min-height:68px;padding:10px 16px!important}
+html body #app#app#app.login-integrated .login-stage #acRoot{padding:16px!important}
+html body #app#app#app.login-integrated .ac-auth-heading{margin-bottom:8px}
+html body #app#app#app.login-integrated .ac-auth-heading h2{margin:4px 0!important}
+html body #app#app#app.login-integrated .ac-auth-footer{margin-top:8px;padding-top:4px}
+html body #app#app#app.login-integrated .island-friends{height:60px}
+html body #app#app#app.login-integrated .island-friends img{height:60px}
+}
+
 /* Standalone gate uses the same form styling without loading protected /media. */
 html body #app#app#app.login-integrated #message{font-size:13px!important;line-height:1.55;margin:4px 0;color:#ffc5b8!important;overflow-wrap:anywhere}
 html body #app#app#app.login-integrated #nicknameLabel{margin-top:8px}
@@ -179,7 +198,7 @@ html body #app#app#app.login-integrated #rememberLabel[hidden]{display:none!impo
 <form id="form" class="ac-form"><label for="email">이메일</label><input id="email" type="email" maxlength="254" autocomplete="username" inputmode="email" placeholder="이메일을 입력해 주세요" required>
 <label for="password">비밀번호</label><div class="ac-password-row"><input id="password" type="password" maxlength="256" autocomplete="current-password" placeholder="비밀번호를 입력해 주세요" required><button type="button" class="ac-password-toggle" id="passwordToggle" aria-label="비밀번호 표시" aria-controls="password" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path class="ac-eye-slash" d="m4 4 16 16"/></svg></button></div>
 <label id="nicknameLabel" for="nickname" hidden>닉네임<input id="nickname" maxlength="40" autocomplete="nickname" placeholder="함께할 이름을 입력해 주세요"></label>
-<label id="rememberLabel" for="remember"><input id="remember" type="checkbox" aria-describedby="rememberHint" disabled>로그인 유지</label><p id="rememberHint" class="ac-note">로그인 유지 지원 여부를 확인하고 있어요.</p>
+<label id="rememberLabel" for="remember" hidden><input id="remember" type="checkbox" aria-describedby="rememberHint" disabled>로그인 유지</label><p id="rememberHint" class="ac-note" hidden>최대 90일 유지돼요. 공용 기기에서는 선택하지 마세요. 앱과 브라우저는 각각 로그인해야 해요.</p>
 <p id="signupHint" class="ac-signup-hint" hidden>가입 요청 후 ADMIN 승인을 받으면 로그인할 수 있어요.</p>
 <p id="message" role="status" aria-live="polite"></p><button id="submit" type="submit">로그인</button></form>
 <div class="ac-auth-footer"><span id="toggleHint">파일섬이 처음인가요?</span><button id="toggle" type="button" class="tool-btn">가입 요청</button></div>

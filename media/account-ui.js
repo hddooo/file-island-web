@@ -226,18 +226,14 @@
   var rememberPlan=null,rememberRejected=null;
   function rememberSupport(){
     var capability=rememberPlan&&rememberPlan.auth&&rememberPlan.auth.rememberMe;
-    if(rememberRejected==='remember_unavailable'||capability&&capability.available===false)return {enabled:false,message:'지금은 로그인 유지를 사용할 수 없어요. 일반 로그인은 가능해요.'};
-    if(rememberRejected==='session_coordination_unavailable'||!root.navigator||!root.navigator.locks||typeof root.navigator.locks.request!=='function')return {enabled:false,message:'이 브라우저에서는 안전한 로그인 유지를 지원하지 않아요. 일반 로그인은 가능해요.'};
-    if(!capability||capability.available!==true||capability.maxDays!==90)return {enabled:false,message:'로그인 유지 지원을 확인하지 못해 선택할 수 없어요. 일반 로그인은 가능해요.'};
-    return {enabled:true,message:'공용 기기에서는 선택하지 마세요. 로그아웃하면 종료돼요. 앱과 브라우저에서는 각각 로그인해야 할 수 있어요.'};
+    return !rememberRejected && !!(root.navigator&&root.navigator.locks&&typeof root.navigator.locks.request==='function'&&capability&&capability.available===true&&capability.maxDays===90);
   }
   function rememberFailure(error,form){
     if(!error||['remember_unavailable','session_coordination_unavailable'].indexOf(error.code)<0)return;
     rememberRejected=error.code;
     if(!form.isConnected||$('#acAuthForm')!==form)return;
-    var check=$('#acRememberSession'),hint=$('#acRememberSessionHint'),button=$('#acAuthSubmit');
-    if(check){check.checked=false;check.disabled=true;}
-    if(hint)hint.textContent=rememberSupport().message;
+    var option=$('#acRememberOption'),button=$('#acAuthSubmit');
+    if(option)option.remove();
     if(button)button.textContent='일반 로그인으로 다시 시도';
   }
   function authHtml() {
@@ -249,7 +245,7 @@
       '<label for="acEmail">이메일</label>'+(up?'<div class="ac-email-row">':'')+'<input id="acEmail" name="email" type="email" inputmode="email" autocomplete="' + (up ? 'email' : 'username') + '" value="'+esc(saved)+'" placeholder="이메일을 입력해 주세요" maxlength="254" required>'+(up?'<button type="button" class="tool-btn" id="acEmailCheck">중복 확인</button></div><p id="acEmailCheckMsg" role="status"></p>':'') +
       '<label for="acPw">비밀번호' + (up ? ' (10자 이상)' : '') + '</label><div class="ac-password-row"><input id="acPw" name="password" type="password" autocomplete="' + (up ? 'new-password' : 'current-password') + '" placeholder="비밀번호를 입력해 주세요" maxlength="128" required><button type="button" class="ac-password-toggle" id="acPwToggle" aria-label="비밀번호 표시" aria-controls="acPw" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path class="ac-eye-slash" d="m4 4 16 16"/></svg></button></div>' +
       (up ? '<label for="acName">닉네임 (40자까지)</label><div class="ac-name-row"><input id="acName" name="displayName" type="text" autocomplete="nickname" placeholder="함께할 이름을 입력해 주세요" maxlength="40" required><button type="button" class="tool-btn" id="acNameCheck">중복 확인</button></div><p id="acNameCheckMsg" role="status"></p>' : '') +
-      (up?'<p class="ac-signup-hint">가입 요청 후 ADMIN 승인을 받으면 로그인할 수 있어요.</p>':'<label class="ac-remember-id" for="acRememberSession"><input id="acRememberSession" type="checkbox" aria-describedby="acRememberSessionHint"'+(remember.enabled?'':' disabled')+'>로그인 유지'+(remember.enabled?' (최대 90일)':'')+'</label><p class="ac-note" id="acRememberSessionHint">'+esc(remember.message)+'</p>')+
+      (up?'<p class="ac-signup-hint">가입 요청 후 ADMIN 승인을 받으면 로그인할 수 있어요.</p>':remember?'<div id="acRememberOption"><label class="ac-remember-id" for="acRememberSession"><input id="acRememberSession" type="checkbox" aria-describedby="acRememberSessionHint">로그인 유지 (최대 90일)</label><p class="ac-note" id="acRememberSessionHint">공용 기기에서는 선택하지 마세요. 로그아웃하면 종료돼요. 앱과 브라우저에서는 각각 로그인해야 할 수 있어요.</p></div>':'')+
       '<p class="ac-err" id="acAuthMsg" role="alert"></p>' +
       '<button type="submit" class="check-one" id="acAuthSubmit">' + (up ? '가입 요청' : '로그인') + '</button></form>' +
       '<div class="ac-auth-footer">' + (up ? '<span>이미 계정이 있나요?</span><button type="button" class="tool-btn" id="acModeIn">로그인으로 돌아가기</button>' : '<span>파일섬이 처음인가요?</span><button type="button" class="tool-btn" id="acModeUp">가입 요청</button>') + '</div></section>';
@@ -639,7 +635,7 @@
       if (ui.authMode === 'signup' && checkedEmail!==emailKey()) { msg.textContent='이메일 중복 확인을 해 주세요.'; return; }
       if (ui.authMode === 'signup' && (!name || checkedName!==name)) { msg.textContent='닉네임 중복 확인을 해 주세요.'; return; }
       if (ui.authMode === 'signup' && [...pw].length < 10) { msg.textContent = MSG.weak_password; return; }
-      var form=$('#acAuthForm'),check=$('#acRememberSession'),remember=!!(check&&!check.disabled&&check.checked&&rememberSupport().enabled);
+      var form=$('#acAuthForm'),check=$('#acRememberSession'),remember=!!(check&&!check.disabled&&check.checked&&rememberSupport());
       var authRequest=ui.authMode==='signup'?api.signup(email,pw,name||undefined):api.signin(email,pw,remember);
       withButton($('#acAuthSubmit'), msg, authRequest.catch(function(error){rememberFailure(error,form);throw error;}), function (result) {
         if(result&&result.status==='pending'){ui.authMode='signin';ui.notice='가입 요청을 보냈습니다. ADMIN 승인 후 로그인해 주세요.';return renderMain();}
