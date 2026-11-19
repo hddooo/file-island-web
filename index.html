@@ -48,8 +48,8 @@
 <link rel="stylesheet" href="media/toeic-cbt.css?v=number-progress-20261026-single-explanation-20261025"><link rel="stylesheet" href="media/toeic-history.css"><link rel="stylesheet" href="media/toeic-audio.css"><link rel="stylesheet" href="media/lc-playlist.css?v=world-navigation-20261023b">
   <link rel="stylesheet" href="media/review-menu.css">
   <link rel="stylesheet" href="media/cbt-results.css?v=review-plain-sections-20261118">
-  <link rel="stylesheet" href="media/history-weakness.css?v=opening-colonial-20261118">
-  <script defer src="media/history-weakness-pdf.js?v=20261118"></script>
+  <link rel="stylesheet" href="media/history-weakness.css?v=priority-20261119">
+  <script defer src="media/history-weakness-pdf.js?v=priority-20261119"></script>
   <link rel="stylesheet" href="media/era-culture.css"><link rel="stylesheet" href="media/quiz-resources.css">
   <link rel="stylesheet" href="media/joseon-core-review.css">
   <link rel="stylesheet" href="media/mixed-review-quiz.css">
@@ -421,21 +421,20 @@
     function openHistoryWeakness(silent){
       if(requireStudyLogin())return;subjectRoute('#history/weakness',silent);
       var materials=[
-        ['three-kingdoms','삼국시대 연표','고구려·백제·신라·가야의 왕과 전투 흐름'],
-        ['opening-era','개화기 순차 구분 표','세 파트로 정리한 개화기 주요 사건과 문화'],
-        ['constitution-reform','헌법 개정과 민주화 운동 표','대통령·정부별 개헌과 그 시기의 민주화 운동'],
-        ['money-history','시대별 돈의 흐름','관료전에서 직전법까지 · 토지 수조권과 시장 화폐를 나란히 비교'],
-        ['opening-colonial-timeline','개화기와 일제강점기 한 장 연표','개화기와 일제강점기의 주요 사건을 시대순으로 한눈에 비교']
+        ['1순위 약점 보완 · 대한민국','지문 단서로 정부 찾기 · 헌법 개정과 민주화 운동 비교'],
+        ['2순위 약점 보완 · 고대사','유물 사진 구별 · 관산성 전투와 대야성 전투 사이 사건'],
+        ['3순위 약점 보완 · 개화기·일제강점기','시기부터 나누고 사건 순서 잡기 · 독립군 지역과 전투 연결']
       ];
-      var base='media/history-weakness/';
+      var base='media/history-weakness/weakness-priority-';
+      var company=window.HanqDisplayMode&&window.HanqDisplayMode.current()==='company';
       var cards=materials.map(function(row,i){
-        var img=base+row[0]+'.png'+(row[0]==='money-history'?'?v=20261118b':row[0]==='opening-colonial-timeline'?'?v=20261118a':''),name=row[1],title=(i+1)+'. '+name;
-        return '<article class="history-weakness-card'+(row[0]==='opening-colonial-timeline'?' history-weakness-wide':'')+'"><h2>'+title+'</h2><p>'+row[2]+'</p>'+
-          '<a class="history-weakness-preview" href="'+img+'" target="_blank" rel="noopener" aria-label="'+name+' 확대해서 보기"><img loading="lazy" decoding="async" src="'+img+'" alt="'+name+' 미리 보기"></a>'+
+        var light=base+(i+1)+'.webp',dark=base+(i+1)+'-dark.webp',img=company?dark:light,name=row[0];
+        return '<article class="history-weakness-card"><h2>'+name+'</h2><p>'+row[1]+'</p>'+
+          '<a class="history-weakness-preview" href="'+img+'" target="_blank" rel="noopener" aria-label="'+name+' 확대해서 보기"><img loading="lazy" decoding="async" src="'+img+'" data-chart-light="'+light+'" data-chart-dark="'+dark+'" alt="'+name+' 미리 보기"></a>'+
           '<div class="history-weakness-links"><button type="button" data-chart-pdf="open" aria-label="'+name+' PDF 열기">PDF 열기</button>'+
           '<button type="button" data-chart-pdf="save" aria-label="'+name+' PDF 저장">PDF 저장</button></div><p role="status" hidden></p></article>';
       }).join('');
-      app.innerHTML=header()+'<section class="panel history-weakness" aria-labelledby="historyWeaknessTitle"><header class="history-weakness-header"><h1 id="historyWeaknessTitle" tabindex="-1">약점 보완</h1><button type="button" class="tool-btn" id="historyWeaknessBack">역사섬으로</button></header><p class="history-weakness-intro">표를 누르면 크게 볼 수 있어요. PDF는 자료마다 따로 열거나 저장할 수 있어요.</p><div class="history-weakness-grid">'+cards+'</div></section>';
+      app.innerHTML=header()+'<section class="panel history-weakness" aria-labelledby="historyWeaknessTitle"><header class="history-weakness-header"><h1 id="historyWeaknessTitle" tabindex="-1">약점 보완</h1><button type="button" class="tool-btn" id="historyWeaknessBack">역사섬으로</button></header><p class="history-weakness-intro">표를 누르면 크게 볼 수 있어요. PDF는 전체 또는 자료마다 저장할 수 있어요.</p><div class="history-weakness-all"><button type="button" class="tool-btn" data-chart-pdf="save-all">전체 PDF 다운로드</button><p role="status" hidden></p></div><div class="history-weakness-grid">'+cards+'</div></section>';
       app.querySelector('#historyWeaknessBack').onclick=function(){subjectRoute('#history',false);home(true);};
       if(window.HanqHistoryWeaknessPdf)window.HanqHistoryWeaknessPdf.mount(app);
       app.querySelector('#historyWeaknessTitle').focus();window.scrollTo({top:0,behavior:'auto'});
