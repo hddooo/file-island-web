@@ -1,24 +1,60 @@
-/* Study charts are isolated from the CBT and history unit layouts. */
-.history-weakness{container-type:inline-size;min-width:0;margin:14px auto 24px;max-width:980px;padding:clamp(12px,3vw,24px)}
-.history-weakness-header{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-.history-weakness-header h1{margin:0}
-.history-weakness-intro{margin:7px 0 16px;font-size:14px;line-height:1.55}
-.history-weakness-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,235px),1fr));gap:12px}
-@container(min-width:490px){.history-weakness-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@container(min-width:730px){.history-weakness-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-.history-weakness-card{display:flex;flex-direction:column;min-width:0;padding:12px;gap:9px;border:1px solid #54806c;border-radius:14px;background:#152c25;color:#eef8f2}
-.history-weakness-card h2{font-size:16px;margin:0;line-height:1.5}
-.history-weakness-card p{font-size:13px;line-height:1.45;margin:0;color:#d2e0d8}
-.history-weakness-card :is(a,button):focus-visible{outline:2px solid #c0e8ff;outline-offset:3px}
-.history-weakness-preview{min-width:0;display:grid;place-items:center;background:#f7f1e2;aspect-ratio:210/297;border-radius:8px;overflow:hidden}
-.history-weakness-preview img{display:block;width:100%;height:100%;max-height:100%;object-fit:contain}
-.history-weakness-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
-.history-weakness-links button{background:transparent;cursor:pointer;flex:1 1 max-content;display:grid;place-items:center;min-height:44px;padding:0 10px;box-sizing:border-box;border-radius:8px;border:1px solid #658676;color:#effcf3;text-decoration:none;text-align:center;font-size:13px}
-.history-weakness-links button[data-chart-pdf="save"]{background:#29624a}
-
-/* These study images are the learning material, not decorative scene art. */
-html[data-company-mode=on][data-company-history] #app#app#app .history-weakness .history-weakness-preview img:not([hidden]){display:block!important;visibility:visible!important;opacity:1!important;filter:none!important}
-html[data-company-mode=on] .history-weakness-preview{background:#0d1117}
-.history-weakness-all{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 12px}
-.history-weakness-all button{min-height:44px}
-.history-weakness-all [role=status]{margin:0}
+.history-weakness{--hw-border:#cbd5e1;--hw-surface:#fff;--hw-soft:#f2f6fb;--hw-text:#253349;--hw-muted:#52627a;--hw-accent:#075e56;--hw-focus:#1a776a;--hw-hit:#d2f3ee;--hw-mark:#963d20;color:var(--hw-text);max-width:1080px;margin-inline:auto}
+html[data-company-mode=on] .history-weakness{--hw-border:#54637a;--hw-surface:#191c22;--hw-soft:#222832;--hw-text:#e3ebf8;--hw-muted:#c0cce0;--hw-accent:#8be4d3;--hw-focus:#8be4d3;--hw-hit:#20443f;--hw-mark:#ffb99d}
+.history-weakness [hidden]{display:none!important}
+.history-weakness-header,.history-weakness-all{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.history-weakness-all{margin-block:6px 16px}
+.history-weakness :is(button[data-chart-pdf],button[data-weakness-start],button[data-wp-action]){min-height:44px;padding:8px 12px;border:1px solid var(--hw-border);border-radius:8px;background:var(--hw-surface);color:var(--hw-text);font:inherit;cursor:pointer}
+.history-weakness :is(button[data-chart-pdf],button[data-weakness-start],button[data-wp-action=submit],button[data-wp-action=finalize]){font-weight:750;border-color:var(--hw-focus);color:var(--hw-accent)}
+.history-weakness button:focus-visible{outline:2px solid var(--hw-focus);outline-offset:2px}
+.history-weakness button:disabled{opacity:.55;cursor:default}
+.history-weakness-materials{display:grid;gap:18px}
+.weakness-material{min-width:0;border:1px solid var(--hw-border);border-radius:14px;background:var(--hw-surface);padding:clamp(14px,4vw,30px);overflow-wrap:break-word}
+.weakness-material header{margin-bottom:18px;position:relative}
+.weakness-material :is(h2,h3,h4,p,ul,figure){margin-block:0}
+.weakness-material h2{font-size:clamp(22px,4vw,33px);line-height:1.25;margin-block:3px 5px}
+.weakness-material h3{color:var(--hw-accent);font-size:clamp(16px,3vw,20px);margin-top:23px}
+.weakness-material .material-priority,.weakness-material .material-reference{color:var(--hw-muted);font-size:.83rem;font-weight:750}
+.weakness-material .material-reference{margin-block:3px 8px}
+.weakness-material .material-row{display:grid;grid-template-columns:minmax(6rem,10rem) minmax(0,1fr);gap:4px 12px;background:var(--hw-soft);padding:8px 12px;margin-bottom:4px;border-radius:6px}
+.weakness-material li{line-height:1.55}
+.weakness-material ul{padding-left:1.1rem}
+.weakness-material .material-card-group{display:flex;flex-wrap:wrap;gap:8px;margin-block:10px}
+.weakness-material .material-card{flex:1 1 190px;border-top:2px solid var(--hw-focus);background:var(--hw-soft);border-radius:5px;padding:10px}
+.weakness-material figure{margin-block:12px}
+.weakness-material figure img,.wp-question-image{max-width:100%;width:auto;max-height:350px;object-fit:contain;border-radius:8px}
+.weakness-material figcaption{font-size:.85rem;color:var(--hw-muted)}
+.weakness-material .timeline-events{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(108px,1fr);gap:7px;overflow-x:auto;list-style:none;padding:0 0 12px;margin-block:8px}
+.weakness-material .timeline-event{position:relative;min-width:0;border-top:3px solid var(--hw-border);background:var(--hw-soft);padding:9px 7px;border-radius:4px}
+.weakness-material .timeline-event:not(:last-child)::after{content:"›";position:absolute;font-weight:bold;right:-6px;top:-15px;color:var(--hw-accent)}
+.weakness-material .timeline-event[data-position=기준점]{border-color:var(--hw-mark)}
+.weakness-material .timeline-event.timeline-answer{border-color:var(--hw-focus);background:var(--hw-hit)}
+.weakness-material .timeline-zone{font-size:.7rem;color:var(--hw-muted)}
+.weakness-material .timeline-conclusion{margin:6px 0;color:var(--hw-accent)}
+.weakness-material .material-controls{margin-top:14px;display:flex;justify-content:end}
+html[data-company-mode=on][data-company-history] #app#app#app .history-weakness img[data-weakness-study-image]:not([hidden]){display:block!important;visibility:visible!important}
+.weakness-practice{max-width:800px;margin:0 auto}
+.wp-bar,.wp-dock,.wp-actions{display:flex;align-items:center;justify-content:space-between;gap:9px;flex-wrap:wrap}
+.wp-bar{padding:6px 0;border-bottom:1px solid var(--hw-border)}
+.wp-bar span{font-size:.9rem;color:var(--hw-muted)}
+.wp-list{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:5px;margin:10px 0}
+.wp-list button[data-wp-action]{padding:4px;min-width:0}
+.wp-list button[aria-current=step],.wp-dock-options button[aria-pressed=true],.wp-choices button[aria-pressed=true]{background:var(--hw-hit);border-color:var(--hw-focus);font-weight:750}
+.wp-paper{background:var(--hw-surface);padding:clamp(10px,4vw,24px);margin:6px 0 5px;border:1px solid var(--hw-border);border-radius:12px;overflow-wrap:break-word}
+.wp-kicker{color:var(--hw-accent);font-size:.86rem;font-weight:750;margin-block:0 10px}
+.wp-paper h2{font-size:clamp(20px,4vw,28px);line-height:1.38;margin:0 0 15px}
+.wp-choices,.wp-explain ol{list-style:none;padding:0;margin:0;display:grid;gap:7px}
+.wp-choices button{width:100%;text-align:left;line-height:1.45;white-space:normal;overflow-wrap:break-word}
+.wp-choices button strong{font-size:.8rem;margin-left:8px;color:var(--hw-accent)}
+.wp-choices button:disabled{opacity:1}
+.wp-choices button.wp-right{background:var(--hw-hit);border-color:var(--hw-focus)}
+.wp-dock{display:grid;grid-template-columns:auto minmax(0,1fr) auto;position:sticky;bottom:0;z-index:2;background:var(--hw-surface);border-block:1px solid var(--hw-border);padding:8px 0 calc(8px + env(safe-area-inset-bottom,0px))}
+.wp-dock .wp-dock-options{display:flex;justify-content:center;gap:4px;min-width:0}
+.wp-dock .wp-dock-options button{padding:4px 8px;min-width:36px}
+.wp-final-actions{justify-content:space-between;margin:5px 0}
+.wp-score{background:var(--hw-soft);border-radius:8px;padding:16px;text-align:center}
+.wp-score strong{display:block;font-size:clamp(25px,8vw,49px);color:var(--hw-accent)}
+.wp-confirm{background:var(--hw-soft);padding:12px;margin-top:10px;border:1px solid var(--hw-border);border-radius:8px}
+.wp-explain{margin:15px 0 6px}
+.wp-explain h3{font-size:.96rem;color:var(--hw-accent);margin:12px 0 5px}
+.wp-explain li{padding:4px 7px;border-radius:4px;background:var(--hw-soft)}
+@media(max-width:600px){.weakness-material .material-row{grid-template-columns:minmax(0,1fr)}.wp-list{grid-template-columns:repeat(5,minmax(0,1fr))}.wp-dock{gap:4px}.wp-dock-options button[data-wp-action]{min-width:32px;padding-inline:6px}.wp-paper{padding:12px}}

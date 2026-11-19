@@ -43,8 +43,7 @@
     try{return await attempt(7200);}catch(_){return await attempt(4096);}
   }
   function mount(scope){
-    var cache=new Map(),doc=root.document,cards=Array.from(scope.querySelectorAll('.history-weakness-card'));
-    var previews=cards.map(function(card){return card.querySelector('img');});
+    var cache=new Map(),doc=root.document,previews=Array.from(scope.querySelectorAll('[data-weakness-pdf-page][data-chart-light][data-chart-dark]'));
     function page(src){
       var job=cache.get(src);
       if(!job){job=render(src).catch(function(error){cache.delete(src);throw error;});cache.set(src,job);}
@@ -59,7 +58,8 @@
           status.hidden=false;status.textContent='PDF 만드는 중…';
           var url;
           try{
-            var sources=images.map(function(image){return image.src;}),pages=[];
+            var dark=root.HanqDisplayMode&&root.HanqDisplayMode.current()==='company';
+            var sources=images.map(function(record){return dark?record.dataset.chartDark:record.dataset.chartLight;}),pages=[];
             // Build pages in visual order; do not hold several large canvases open at once.
             for(var i=0;i<sources.length;i++)pages.push(await page(sources[i]));
             url=URL.createObjectURL(pdf(pages));
@@ -82,20 +82,8 @@
         });
       });
     }
-    cards.forEach(function(card,i){
-      var preview=previews[i];
-      bind(card.querySelectorAll('button[data-chart-pdf]'),card.querySelector('[role=status]'),[preview],preview.alt.replace(' 미리 보기',''));
-    });
     var all=scope.querySelector('.history-weakness-all');
     if(all&&previews.length)bind(all.querySelectorAll('button[data-chart-pdf]'),all.querySelector('[role=status]'),previews,'한능검 약점 보완 전체');
   }
-  root.document.addEventListener('hanq:display-mode-change',function(event){
-    var dark=event.detail&&event.detail.mode==='company';
-    root.document.querySelectorAll('.history-weakness-preview img[data-chart-light][data-chart-dark]').forEach(function(img){
-      var src=dark?img.dataset.chartDark:img.dataset.chartLight;
-      img.setAttribute('src',src);
-      img.closest('a').setAttribute('href',src);
-    });
-  });
   root.HanqHistoryWeaknessPdf={mount:mount};
 }(window));

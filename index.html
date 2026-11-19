@@ -48,8 +48,11 @@
 <link rel="stylesheet" href="media/toeic-cbt.css?v=number-progress-20261026-single-explanation-20261025"><link rel="stylesheet" href="media/toeic-history.css"><link rel="stylesheet" href="media/toeic-audio.css"><link rel="stylesheet" href="media/lc-playlist.css?v=world-navigation-20261023b">
   <link rel="stylesheet" href="media/review-menu.css">
   <link rel="stylesheet" href="media/cbt-results.css?v=review-plain-sections-20261118">
-  <link rel="stylesheet" href="media/history-weakness.css?v=priority-20261119">
-  <script defer src="media/history-weakness-pdf.js?v=priority-20261119"></script>
+  <link rel="stylesheet" href="media/history-weakness.css?v=practice-20261119">
+  <script defer src="media/history-weakness-pdf.js?v=practice-20261119"></script>
+<script defer src="media/history-weakness-content.js?v=practice-20261119"></script>
+<script defer src="media/history-weakness-bank.js?v=practice-20261119"></script>
+<script defer src="media/history-weakness-practice.js?v=practice-20261119"></script>
   <link rel="stylesheet" href="media/era-culture.css"><link rel="stylesheet" href="media/quiz-resources.css">
   <link rel="stylesheet" href="media/joseon-core-review.css">
   <link rel="stylesheet" href="media/mixed-review-quiz.css">
@@ -420,22 +423,27 @@
     function home(silent,catalog){if(requireStudyLogin())return;stopLearningResources();if(window.HanqFormalExams)HanqFormalExams.stop();silent=silent===true;var wasInLesson=!!current||!!location.hash;clearAutoAdvance();wnOpen=false;current=null;step=0;app.classList.remove('lesson-active');if(!silent&&wasInLesson)saveRoute(false);var cards=chapters.filter(function(c){return !c.hidden;}).map(function(c,i){return '<button class="period '+(c.active?'ready':'')+'" style="--card-order:'+i+'" data-id="'+c.id+'"><span class="number">'+String(i+1).padStart(2,'0')+'</span><span class="period-text"><strong>'+c.title+'</strong><small>'+c.desc+'</small></span>'+(c.active?'':'<span class="state">준비 중</span>')+''+(c.active?rpHomeBadge(c.id):'')+''+'</button>';}).join('');app.innerHTML=header()+'<section class="home-hero history-home-hero"><div class="hero-copy"><div class="hero-stamp"><b>史</b> 한 시대씩 천천히</div><h1>시간의 숲을 따라<br>역사의 문을 열어요</h1><p>시대를 골라 기록을 읽고, 문제를 풀며 지나온 길을 복습해요.</p></div><div class="hero-art">'+heroIllustration()+'</div></section>' +(catalog?'<div class="section-title home-section-title"><h2>시대별 학습</h2></div><div class="era-search-panel" data-era-search><input type="text" inputmode="search" enterkeyhint="search" maxlength="80" autocomplete="off" aria-label="시대별 학습 키워드 검색" placeholder="인물·사건·제도로 검색"><button type="button" aria-label="검색어 지우기" hidden>지우기</button><p role="status" aria-live="polite" hidden></p></div><section class="toc">'+cards+'</section>':'<nav aria-label="메인 메뉴"><button type="button" class="wn-entry" id="homePastExams"><span class="wn-entry-t">1. 시대별로 학습하기</span><span class="wn-entry-n">시대별 목차에서 학습을 시작해요</span></button>'+'<button type="button" class="wn-entry" id="homeFormalExams"><span class="wn-entry-t">2. 실전모의고사</span><span class="wn-entry-n">제79~70회 · 회차별 50문항 · 80분</span></button>'+wrongNotesEntry()+'<button type="button" class="wn-entry" id="homeHistoryWeakness"><span class="wn-entry-t">4. 약점 보완</span><span class="wn-entry-n">삼국·개화기·헌법·돈의 흐름 · PDF</span></button></nav>')+'';var weak=app.querySelector('#homeHistoryWeakness');if(weak)weak.addEventListener('click',function(){openHistoryWeakness(false);});var hw=app.querySelector('#homeWrongNotes');if(hw)hw.addEventListener('click',function(){openWrongNotes();});var ht=app.querySelector('#homeToeicNotes');if(ht)ht.addEventListener('click',function(){openToeic();});var hp=app.querySelector('#homePastExams');if(hp)hp.addEventListener('click',function(){openEraMenu();});var hf=app.querySelector('#homeFormalExams');if(hf)hf.addEventListener('click',function(){openFormalExams();});var hc=app.querySelector('#homeConfusion');if(hc)hc.addEventListener('click',function(){openConfusionReview();});var hr=app.querySelector('#homeReviews');if(hr)hr.addEventListener('click',function(){openReviews();});var ha=app.querySelector('#homeAccount');if(ha)ha.addEventListener('click',function(){openAccount('main');});app.querySelectorAll('.period.ready').forEach(function(b){b.addEventListener('click',function(){HanqAdventure.enterEra(b,function(){openChapter(b.dataset.id,false,0);});});});if(catalog&&window.HanqHistoryEraSearch)HanqHistoryEraSearch.mount(app,chapters);if(catalog&&window.HanqEraProgress)HanqEraProgress.mount(app.querySelector('.toc'));stBind();closeMockZoom(true);window.scrollTo({top:0,behavior:'smooth'});}
     function openHistoryWeakness(silent){
       if(requireStudyLogin())return;subjectRoute('#history/weakness',silent);
-      var materials=[
-        ['1순위 약점 보완 · 대한민국','지문 단서로 정부 찾기 · 헌법 개정과 민주화 운동 비교'],
-        ['2순위 약점 보완 · 고대사','유물 사진 구별 · 관산성부터 대야성까지 기출 화살표 연표'],
-        ['3순위 약점 보완 · 개화기·일제강점기','시기부터 나누고 사건 순서 잡기 · 독립군 지역과 전투 연결']
-      ];
+      var material=window.HanqWeaknessStudyContent||'';
       var base='media/history-weakness/weakness-priority-';
-      var company=window.HanqDisplayMode&&window.HanqDisplayMode.current()==='company';
-      var cards=materials.map(function(row,i){
-        var part=base+(i+1)+(i===1?'-timeline':''),light=part+'.webp',dark=part+'-dark.webp',img=company?dark:light,name=row[0];
-        return '<article class="history-weakness-card"><h2>'+name+'</h2><p>'+row[1]+'</p>'+
-          '<a class="history-weakness-preview" href="'+img+'" target="_blank" rel="noopener" aria-label="'+name+' 확대해서 보기"><img loading="lazy" decoding="async" src="'+img+'" data-chart-light="'+light+'" data-chart-dark="'+dark+'" alt="'+name+' 미리 보기"></a>'+
-          '<div class="history-weakness-links"><button type="button" data-chart-pdf="open" aria-label="'+name+' PDF 열기">PDF 열기</button>'+
-          '<button type="button" data-chart-pdf="save" aria-label="'+name+' PDF 저장">PDF 저장</button></div><p role="status" hidden></p></article>';
-      }).join('');
-      app.innerHTML=header()+'<section class="panel history-weakness" aria-labelledby="historyWeaknessTitle"><header class="history-weakness-header"><h1 id="historyWeaknessTitle" tabindex="-1">약점 보완</h1><button type="button" class="tool-btn" id="historyWeaknessBack">역사섬으로</button></header><p class="history-weakness-intro">표를 누르면 크게 볼 수 있어요. PDF는 전체 또는 자료마다 저장할 수 있어요.</p><div class="history-weakness-all"><button type="button" class="tool-btn" data-chart-pdf="save-all">전체 PDF 다운로드</button><p role="status" hidden></p></div><div class="history-weakness-grid">'+cards+'</div></section>';
+      var printPages=['1','2-timeline','3'].map(function(k){return '<span hidden data-weakness-pdf-page data-chart-light="'+base+k+'.webp" data-chart-dark="'+base+k+'-dark.webp"></span>';}).join('');
+      app.innerHTML=header()+'<section class="panel history-weakness history-weakness-study" aria-labelledby="historyWeaknessTitle"><header class="history-weakness-header"><h1 id="historyWeaknessTitle" tabindex="-1">약점 보완</h1><button type="button" class="tool-btn" id="historyWeaknessBack">역사섬으로</button></header><div class="history-weakness-all"><button type="button" data-chart-pdf="save-all">PDF 다운로드</button><p role="status" hidden></p></div>'+printPages+'<div id="historyWeaknessPracticeHost" hidden></div><div class="history-weakness-materials" id="historyWeaknessMaterials">'+material+'</div><p id="historyWeaknessPracticeStatus" role="status" hidden></p></section>';
+      var main=app.querySelector('.history-weakness-study'),materialHost=app.querySelector('#historyWeaknessMaterials'),quiz=app.querySelector('#historyWeaknessPracticeHost'),pdf=main.querySelector('.history-weakness-all'),status=app.querySelector('#historyWeaknessPracticeStatus');
+      var owner=function(){var api=window.HanqApi,state=api&&api.state&&api.state();return state&&state.signedIn?state.ownerId:null;};
+      var startButton=null;
+      function restore(){quiz.hidden=true;quiz.innerHTML='';materialHost.hidden=false;pdf.hidden=false;if(startButton&&startButton.isConnected){startButton.focus();}else{app.querySelector('#historyWeaknessTitle').focus();}}
       app.querySelector('#historyWeaknessBack').onclick=function(){subjectRoute('#history',false);home(true);};
+      Array.from(materialHost.querySelectorAll('[data-weakness-part]')).forEach(function(article){
+        var part=article.dataset.weaknessPart,button=article.querySelector('[data-weakness-start]');
+        if(!button||!window.HanqWeaknessPractice)return;
+        button.onclick=function(){
+          if(requireStudyLogin())return;
+          startButton=button;status.hidden=true;quiz.hidden=false;materialHost.hidden=true;pdf.hidden=true;
+          var changed=window.HanqApi&&window.HanqApi.onChange;
+          var accepted=window.HanqWeaknessPractice.mount(quiz,{part:part,owner:owner,onAccountChange:changed?function(fn){return window.HanqApi.onChange(fn);}:null,back:restore});
+          if(!accepted){restore();status.textContent='점검 문제를 열지 못했어요. 페이지를 다시 열어 주세요.';status.hidden=false;return;}
+          window.scrollTo({top:0,behavior:'auto'});
+        };
+      });
       if(window.HanqHistoryWeaknessPdf)window.HanqHistoryWeaknessPdf.mount(app);
       app.querySelector('#historyWeaknessTitle').focus();window.scrollTo({top:0,behavior:'auto'});
     }
@@ -928,7 +936,7 @@
     function clearQuizRead(){if(quizRead.slowTimer){clearTimeout(quizRead.slowTimer);quizRead.slowTimer=null;}}
     function quizLocalDone(){var rows=HPS?HPS.attempts({subject:'history'}):[];quizDone={};rows.forEach(function(a){var item=QC.questions[a.questionId];if(a.mode==='quiz'&&a.optionId&&item&&a.contentVersion===item.v)quizDone[a.questionId]=true;});Object.keys(quizStore).forEach(function(k){if(quizStore[k].checked)quizDone[k]=true;});}
 
-    function stopLearningResources(){if(window.HanqEraProgress)HanqEraProgress.stop();if(window.HanqHongmungwan)HanqHongmungwan.stop();if(window.HanqOpeningScriptApp)HanqOpeningScriptApp.stop();if(window.HanqGoryeoScriptApp)HanqGoryeoScriptApp.stop();if(window.HanqJoseonScriptApp)HanqJoseonScriptApp.stop();if(window.HanqRainbow)HanqRainbow.stop();if(window.HanqBattle)HanqBattle.stop();if(window.HanqStudyPresentation)HanqStudyPresentation.clear();if(window.HanqStudyTransition)HanqStudyTransition.clear();if(window.HanqLcPlayer)HanqLcPlayer.park();if(window.HanqToeicGrammarPractice)HanqToeicGrammarPractice.stop();if(window.HanqToeicHistory)HanqToeicHistory.stop();if(window.HanqGradeFeedback)HanqGradeFeedback.clear();if(window.HanqToeicGrammar)HanqToeicGrammar.stop();if(window.HanqToeicCbt)HanqToeicCbt.stop();if(window.HanqToeicNotes)HanqToeicNotes.stop();if(window.HanqEraCulture)HanqEraCulture.stop();if(window.HanqCbtWrongNotebook)HanqCbtWrongNotebook.stop();if(window.HanqToeicPractice)HanqToeicPractice.stop();if(window.HanqPrivateTextbook)HanqPrivateTextbook.stop();if(window.HanqSemanticLibrary)HanqSemanticLibrary.stop();if(window.HanqSourceSummary)HanqSourceSummary.stop();if(window.HanqQuizResources)HanqQuizResources.stop();if(window.HanqReviewMenu)HanqReviewMenu.stop();if(window.HanqReviewPlayer)HanqReviewPlayer.stop();}
+    function stopLearningResources(){if(window.HanqWeaknessPractice)HanqWeaknessPractice.stop();if(window.HanqEraProgress)HanqEraProgress.stop();if(window.HanqHongmungwan)HanqHongmungwan.stop();if(window.HanqOpeningScriptApp)HanqOpeningScriptApp.stop();if(window.HanqGoryeoScriptApp)HanqGoryeoScriptApp.stop();if(window.HanqJoseonScriptApp)HanqJoseonScriptApp.stop();if(window.HanqRainbow)HanqRainbow.stop();if(window.HanqBattle)HanqBattle.stop();if(window.HanqStudyPresentation)HanqStudyPresentation.clear();if(window.HanqStudyTransition)HanqStudyTransition.clear();if(window.HanqLcPlayer)HanqLcPlayer.park();if(window.HanqToeicGrammarPractice)HanqToeicGrammarPractice.stop();if(window.HanqToeicHistory)HanqToeicHistory.stop();if(window.HanqGradeFeedback)HanqGradeFeedback.clear();if(window.HanqToeicGrammar)HanqToeicGrammar.stop();if(window.HanqToeicCbt)HanqToeicCbt.stop();if(window.HanqToeicNotes)HanqToeicNotes.stop();if(window.HanqEraCulture)HanqEraCulture.stop();if(window.HanqCbtWrongNotebook)HanqCbtWrongNotebook.stop();if(window.HanqToeicPractice)HanqToeicPractice.stop();if(window.HanqPrivateTextbook)HanqPrivateTextbook.stop();if(window.HanqSemanticLibrary)HanqSemanticLibrary.stop();if(window.HanqSourceSummary)HanqSourceSummary.stop();if(window.HanqQuizResources)HanqQuizResources.stop();if(window.HanqReviewMenu)HanqReviewMenu.stop();if(window.HanqReviewPlayer)HanqReviewPlayer.stop();}
     function clearAutoAdvance(){}
     /* 시대마다 원래와 같은 방식으로 20문항을 고른다(통합 장은 각 부분의 20문항을 그대로 이어 붙임) — 카탈로그의 기본 20(core)도 같은 규칙으로 만든다 */
     function sampleIndexes(len){var count=Math.min(20,len);return Array.from({length:count},function(_,i){return Math.floor(i*len/count);});}
