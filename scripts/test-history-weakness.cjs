@@ -3,7 +3,8 @@ const fs=require('node:fs'),assert=require('node:assert/strict'),{JSDOM}=require
 const {allowed}=require('./build-static-site.cjs');
 const index=fs.readFileSync('index.html','utf8'),start=index.indexOf('    function openHistoryWeakness('),end=index.indexOf('    function openFormalExams(',start);
 const dom=new JSDOM('<main id="app"></main>',{url:'https://weakness.test/#history',runScripts:'outside-only'}),w=dom.window,d=w.document,app=d.querySelector('main');
-let owner=null,company=false,route='',home=0,listener=null;
+let owner=null,company=false,route='',home=0,listener=null,readyState='complete';
+Object.defineProperty(d,'readyState',{get:()=>readyState});
 w.scrollTo=()=>{};
 w.HanqDisplayMode={current:()=>company?'company':'default'};
 const hooks=new Set();
@@ -27,14 +28,39 @@ w.HanqOpeningScriptTransport={fromDocument:()=>({loadBundle:async()=>({}),loadSt
 w.HanqOpeningScriptReader={prepare:async()=>({bundle:{topics:[{id:'opening1',title:'개항기 단원'}]}}),mount(host,p,opts){assert(opts.studyTablesOnly&&opts.externalNavigation);host.innerHTML='<table><tbody><tr><td>개화기 원래 표</td></tr></tbody></table>';return {ready:Promise.resolve(),stop(){host.replaceChildren();}};}};
 w.eval(fs.readFileSync('media/textbook-semantic.js','utf8'));
 for(const f of ['timeline','content','bank','practice'])w.eval(fs.readFileSync('media/history-weakness-'+f+'.js','utf8'));
-const open=Function('app','window','document','requireStudyLogin','subjectRoute','header','home',index.slice(start,end)+'\nreturn openHistoryWeakness;')(app,w,d,()=>!owner,(hash)=>{route=hash;w.HanqWeaknessPractice.stop();w.HanqWeaknessStudyContent.stop();},()=>'<div class="known-header"></div>',()=>{home++;});
+const open=Function('app','window','document','requireStudyLogin','subjectRoute','header','home',index.slice(start,end)+'\nreturn openHistoryWeakness;')(app,w,d,()=>!owner,(hash)=>{route=hash;w.history.replaceState({},'',hash);w.HanqWeaknessPractice?.stop();w.HanqWeaknessStudyContent?.stop();},()=>'<div class="known-header"></div>',()=>{home++;});
 const find=s=>app.querySelector(s),a=(x,v)=>find('[data-wp-action="'+x+'"]'+(v==null?'':'[data-wp-value="'+v+'"]'));
 const part=x=>find('[data-weakness-part="'+x+'"] [data-weakness-start]');
 const tick=()=>new Promise(r=>setImmediate(r));
 async function until(predicate){for(let i=0;i<40;i++){if(predicate())return;await tick();} assert(predicate(),'condition timed out');}
 (async()=>{
  open(false);assert(!app.children.length);
- owner='alpha';open(false);
+ owner='alpha';
+ const names=['HanqWeaknessTimeline','HanqWeaknessStudyContent','HanqWeaknessPracticeBank','HanqWeaknessPractice'];
+ const assets=names.map(n=>w[n]);
+ const fill=()=>names.forEach((n,i)=>{w[n]=assets[i];});
+ const empty=()=>names.forEach(n=>{delete w[n];});
+ readyState='interactive';empty();w.history.replaceState({},'','#history/weakness');
+ open(true);
+ assert.match(find('[data-weakness-entry-status]').textContent,/불러오는 중/);
+ assert(find('[data-weakness-reload]').hidden);
+ fill();d.dispatchEvent(new w.Event('DOMContentLoaded'));
+ assert(!find('[data-weakness-entry-status]'));
+ await until(()=>!find('[data-chart-pdf]').disabled);
+ requestCount=0;
+ empty();open(false);assert.equal(route,'#history/weakness');
+ find('#historyWeaknessBack').click();assert.equal(route,'#history');assert.equal(home,1);
+ fill();d.dispatchEvent(new w.Event('DOMContentLoaded'));w.dispatchEvent(new w.Event('load'));
+ assert.equal(w.location.hash,'#history');
+ assert(!find('[data-weakness-part]'));
+ empty();open(false);
+ d.dispatchEvent(new w.Event('DOMContentLoaded'));
+ assert(find('[data-weakness-reload]').hidden);
+ readyState='complete';w.dispatchEvent(new w.Event('load'));
+ assert.match(find('[role=alert]').textContent,/불러오지 못했어요/);
+ assert(!find('[data-weakness-reload]').hidden);
+ empty();open(true);assert(!find('[data-weakness-reload]').hidden);
+ fill();open(false);
  assert.equal(route,'#history/weakness');
  assert.deepEqual([...app.querySelectorAll('article h2')].map(x=>x.textContent),['대한민국','고대사','개화기·일제강점기']);
  assert.equal(app.querySelectorAll('button[data-chart-pdf]').length,1);
@@ -58,10 +84,19 @@ async function until(predicate){for(let i=0;i<40;i++){if(predicate())return;awai
  assert.match(find('.hw-concept-table table').textContent,/이승만 정부.*근거 \*\* 원문 그대로.*둘째 행/);
  find('[data-chart-pdf]').click();assert.equal(printCalls,1);
  company=true;find('[data-chart-pdf]').click();assert.equal(printCalls,2);
- assert.deepEqual([...app.querySelectorAll('.hw-time-star')].map(x=>x.textContent.slice(2)).sort(),['소수림왕','광개토왕','근초고왕','장수왕','무령왕','성왕','지증왕','법흥왕','진흥왕','선덕여왕','의자왕','문무왕'].sort());
+ assert.deepEqual([...new Set([...app.querySelectorAll('.hw-ruler-core,.hw-time-star')].map(x=>x.textContent.replace(/^★ /,'')))].sort(),['소수림왕','광개토왕','근초고왕','장수왕','무령왕','성왕','지증왕','법흥왕','진흥왕','선덕여왕','의자왕','문무왕'].sort());
+ assert.deepEqual([...app.querySelectorAll('.hw-time-spine thead th')].map(x=>x.textContent),['시점 ↓','고구려','백제','신라','가야']);
+ const sameTime=(date)=>[...find('.hw-time-rulers[data-event-time="'+date+'"]').querySelectorAll('td')].map(x=>x.dataset.ruler);
+ assert.deepEqual(sameTime('551년'),['양원왕','성왕','진흥왕','대가야 존속']);
+ assert.deepEqual(sameTime('554년'),['양원왕','성왕','진흥왕','대가야 존속']);
+ assert.deepEqual(sameTime('562년'),['평원왕','위덕왕','진흥왕','대가야 멸망']);
+ assert.deepEqual(sameTime('642년 음력 8월'),['영류왕','의자왕','선덕여왕','신라 편입 후']);
+ assert.deepEqual(sameTime('642년 음력 10월'),['영류왕 → 보장왕','의자왕','선덕여왕','신라 편입 후']);
+ assert.deepEqual(sameTime('475년'),['장수왕','개로왕 → 문주왕','자비왕','대가야 성장']);
+ assert.equal(app.querySelectorAll('.hw-time-rulers').length,35);
  assert([...app.querySelectorAll('.hw-time-event')].every(x=>x.querySelector('.hw-time-when strong')&&x.querySelector('.hw-time-body h5')&&x.querySelector('.hw-time-parties')&&x.querySelectorAll('.hw-time-body p').length===2));
  assert.match([...app.querySelectorAll('.hw-time-key')][1].textContent,/562년.*② 정답.*대가야/);
- const dated=[...app.querySelectorAll('.hw-time-when strong')].map(x=>x.textContent);
+ const dated=[...app.querySelectorAll('.hw-time-rulers')].map(x=>x.dataset.eventTime);
  for(const sequence of [['433년','475년','493년'],['538년','551년','553년','554년','562년','612년','634년','639년','642년 음력 8월','642년 음력 10월','645년','648년','660년','663년','668년','674년','675년','676년']]){
    const indices=sequence.map(x=>dated.indexOf(x));
    assert(indices.every((n,i)=>n>=0&&(i===0||n>indices[i-1])),sequence.join(' < '));
@@ -104,6 +139,6 @@ async function until(predicate){for(let i=0;i<40;i++){if(predicate())return;awai
  }
  owner='beta';open(true);part('modern').click();assert.equal(a('select',1).getAttribute('aria-pressed'),'false');
  owner=null;listener();assert(find('#historyWeaknessPracticeHost').hidden);assert(!find('.hw-concept-table'));
- owner='gamma';open(false);find('#historyWeaknessBack').click();assert.equal(route,'#history');assert.equal(home,1);
- console.log('PASS login/owner isolation, 4 concept sources + opening, exact rows and section fences, print, failure/retry, 3 priorities, all three independent 50-question sessions, resume, no early grading, submit/results/answer explanations, restart');
+ owner='gamma';open(false);find('#historyWeaknessBack').click();assert.equal(route,'#history');assert.equal(home,2);
+ console.log('PASS interactive direct entry, Back before defer scripts, missing assets fallback, login/owner isolation, 4 concept sources + opening, exact rows and section fences, print, failure/retry, 3 priorities, all three independent 50-question sessions, resume, no early grading, submit/results/answer explanations, restart');
 })().catch(e=>{console.error(e);process.exitCode=1;});

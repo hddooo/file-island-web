@@ -2,7 +2,7 @@
 (function (root) {
 'use strict';
 var periods=[
-['초기 국가와 성장 · 기원전~3세기',[
+['건국 전승과 나라의 성장',[
  ['기원전 18년','백제 건국 전승','백제 온조왕','한성 위례성을 기반으로 성장했다.'],
  ['3년','국내성 천도','고구려 유리왕','도읍을 국내성으로 옮겼다.'],
  ['42년','금관가야 건국 전승','가야 수로왕','전기 가야의 중심으로 철 생산·교역이 활발했다.'],
@@ -11,7 +11,7 @@ var periods=[
  ['244년','관구검의 고구려 침입','위 관구검 → 고구려','고구려 환도성이 함락됐다.'],
  ['3세기','관등·관복 정비','백제 고이왕','백제의 국가 체제를 정비했다.']
 ]],
-['백제의 전성기와 고구려의 팽창 · 4~5세기',[
+['백제의 전성기와 고구려의 남진',[
  ['371년','평양성 전투','백제 근초고왕 → 고구려 고국원왕','백제가 이기고 고국원왕이 전사했다. 근초고왕 때 마한 진출·고흥의 『서기』·칠지도도 연결한다.','★ 근초고왕'],
  ['372~373년','불교 수용·태학 설립·율령 반포','고구려 소수림왕','372년 불교·태학, 373년 율령으로 체제를 정비했다.','★ 소수림왕'],
  ['4세기 후반','김씨 왕위 세습','신라 내물왕','김씨 왕위 세습이 확립됐다.'],
@@ -22,15 +22,15 @@ var periods=[
  ['5세기 후반','대가야의 성장','고령 대가야','후기 가야의 중심이다. 고령 지산동 고분군과 연결한다.'],
  ['493년','백제와 신라의 혼인 동맹','백제 동성왕 ↔ 신라 소지왕','혼인으로 두 나라의 동맹을 강화했다.']
 ]],
-['신라의 체제 정비와 한강 쟁탈 · 6세기',[
- ['6세기 초','신라 국호·왕 칭호 사용','신라 지증왕','순장을 금지하고 동시전을 설치했다. 512년에는 이사부가 우산국을 복속했다.','★ 지증왕'],
+['신라의 성장과 한강 쟁탈',[
+ ['503·512년','지증왕: 신라 국호와 우산국','신라 지증왕','순장을 금지하고 동시전을 설치했다. 512년에는 이사부가 우산국을 복속했다.','★ 지증왕'],
  ['6세기 초','22담로에 왕족 파견','백제 무령왕','웅진 시기 백제 왕권을 강화했다. 무령왕릉은 중국 남조 영향을 받은 벽돌무덤이다.','★ 무령왕'],
- ['6세기 전반','법흥왕의 체제 정비','신라 법흥왕','율령·병부·상대등, 건원 연호, 이차돈과 불교 공인을 함께 기억한다.','★ 법흥왕'],
+ ['520년','법흥왕의 체제 정비','신라 법흥왕','520년 율령 반포. 병부·상대등, 건원 연호, 이차돈과 불교 공인도 법흥왕 때다.','★ 법흥왕'],
  ['532년','금관가야가 신라에 항복','금관가야 구해왕 → 신라 법흥왕','금관가야가 신라에 편입됐다. 562년 대가야와 구분한다.'],
  ['538년','사비 천도','백제 성왕','사비(부여)로 옮기고 국호를 남부여로 바꿨다.','★ 성왕','앞 · ①'],
  ['551년','나제 연합이 한강 유역 공격','백제 성왕·신라 진흥왕 → 고구려 양원왕','백제는 한강 하류, 신라는 상류를 확보했다.','★ 진흥왕'],
  ['553년','신라의 한강 하류 확보','신라 진흥왕 → 백제 성왕','신라가 한강 하류를 차지하고 신주를 설치하면서 나제 동맹이 무너졌다.','', '앞 · ⑤'],
- ['554년','관산성 전투','백제 성왕 → 신라 진흥왕','신라가 이기고 성왕이 전사했다.','', '구간 시작'],
+ ['554년','관산성 전투','백제 성왕 → 신라 진흥왕','신라가 이겼다. 성왕이 전사하고 위덕왕이 뒤를 이었다.','', '구간 시작'],
  ['562년','신라가 대가야를 복속','신라 진흥왕 → 대가야','고령 대가야가 신라에 편입됐다. 진흥왕은 화랑 정비·순수비도 연결한다.','', '사이 · ② 정답']
 ]],
 ['수·당의 침입과 나라 사이의 동맹 · 7세기 전반',[
@@ -45,18 +45,67 @@ var periods=[
  ['648년','나당 동맹','신라 진덕여왕·김춘추 ↔ 당','김춘추가 당과 동맹을 맺었다.','', '뒤 · ④']
 ]],
 ['삼국의 멸망과 나당 전쟁 · 7세기 후반',[
- ['660년','황산벌 전투·백제 멸망','신라 무열왕·김유신 → 백제 의자왕·계백','신라군이 황산벌에서 이겼고 나당 연합군이 사비를 함락했다.','', '뒤 · ③'],
+ ['660년','황산벌 전투·백제 멸망','신라 무열왕·김유신 → 백제 의자왕·계백','신라군이 황산벌에서 이겼고 나당 연합군이 사비를 함락해 백제가 멸망했다.','', '뒤 · ③'],
  ['663년','백강 전투','나당 연합군 → 백제 부흥군·왜','왜 지원군이 패배했다. 백제 부흥 운동은 복신·도침·부여풍과 연결한다.'],
  ['668년','고구려 멸망','신라 문무왕·당 → 고구려','연개소문 사후 내부 분열 속에 나당 연합군이 평양성을 함락했다.','★ 문무왕'],
  ['674년','안승을 보덕국 왕에 봉함','신라 문무왕·고구려 부흥 세력','고구려 부흥 운동은 검모잠·안승과 연결한다.'],
  ['675년','매소성 전투','신라 → 당','신라가 당군을 육지에서 격퇴했다. 상대는 가야가 아니라 당이다.'],
  ['676년','기벌포 전투','신라 → 당','신라가 해전에서 당군을 격퇴했다. 문무왕 때 당 세력을 몰아내고 삼국 통일을 완성했다.']
 ]]];
+
+/* Same-year rulers from the Samguk sagi chronological tables. Source-dependent
+   dates and year-only transitions remain explicit; broad context has its own row. */
+var contemporaries={
+ '기원전 18년':['유리왕','온조왕','박혁거세','건국 전승 전'],
+ '3년':['유리왕','온조왕','박혁거세','건국 전승 전'],
+ '42년':['대무신왕','다루왕','유리 이사금','수로왕'],
+ '194년':['고국천왕','초고왕','벌휴 이사금','금관가야 중심'],
+ '244년':['동천왕','고이왕','조분 이사금','금관가야 중심'],
+ '371년':[['고국원왕','소수림왕'],'근초고왕','내물왕','금관가야 중심'],
+ '372~373년':['소수림왕','근초고왕','내물왕','금관가야 중심'],
+ '400년':['광개토왕','아신왕','내물왕','가야 연맹'],
+ '427년':['장수왕',['구이신왕','비유왕'],'눌지왕','가야 연맹'],
+ '433년':['장수왕','비유왕','눌지왕','가야 연맹'],
+ '475년':['장수왕',['개로왕','문주왕'],'자비왕','대가야 성장'],
+ '493년':['문자명왕','동성왕','소지왕','대가야 중심'],
+ '503·512년':['문자명왕','무령왕','지증왕','대가야 중심'],
+ '520년':['안장왕','무령왕','법흥왕','대가야 중심'],
+ '532년':['안원왕','성왕','법흥왕',['금관가야 편입','대가야 존속']],
+ '538년':['안원왕','성왕','법흥왕','대가야 존속'],
+ '551년':['양원왕','성왕','진흥왕','대가야 존속'],
+ '553년':['양원왕','성왕','진흥왕','대가야 존속'],
+ '554년':['양원왕','성왕','진흥왕','대가야 존속'],
+ '562년':['평원왕','위덕왕','진흥왕','대가야 멸망'],
+ '612년':['영양왕','무왕','진평왕','신라 편입 후'],
+ '634년':['영류왕','무왕','선덕여왕','신라 편입 후'],
+ '639년':['영류왕','무왕','선덕여왕','신라 편입 후'],
+ '642년 음력 8월':['영류왕','의자왕','선덕여왕','신라 편입 후'],
+ '642년 음력 10월':[['영류왕','보장왕'],'의자왕','선덕여왕','신라 편입 후'],
+ '645년':['보장왕','의자왕','선덕여왕','신라 편입 후'],
+ '647년':['보장왕','의자왕',['선덕여왕','진덕여왕'],'신라 편입 후'],
+ '648년':['보장왕','의자왕','진덕여왕','신라 편입 후'],
+ '660년':['보장왕','의자왕','무열왕','신라 편입 후'],
+ '663년':['보장왕','멸망 후','문무왕','신라 편입 후'],
+ '668년':['보장왕','멸망 후','문무왕','신라 편입 후'],
+ '674년':['멸망 후','멸망 후','문무왕','신라 편입 후'],
+ '675년':['멸망 후','멸망 후','문무왕','신라 편입 후'],
+ '676년':['멸망 후','멸망 후','문무왕','신라 편입 후']
+};
+var starred=new Set(['소수림왕','광개토왕','장수왕','근초고왕','무령왕','성왕','의자왕','지증왕','법흥왕','진흥왕','선덕여왕','문무왕']);
 function event(row) {
- var date=row[0], title=row[1], parties=row[2], outcome=row[3], star=row[4], pos=row[5];
- var highlight=pos&&(/구간|정답/.test(pos))?' hw-time-key':'';
- return '<li class="hw-time-event'+highlight+'"><div class="hw-time-when"><strong>'+date+'</strong>'+(pos?'<span class="hw-time-badge">'+pos+'</span>':'')+'</div><div class="hw-time-body"><h5>'+title+'</h5><p class="hw-time-parties">'+parties+'</p><p>'+outcome+'</p>'+(star?'<span class="hw-time-star">'+star+'</span>':'')+'</div></li>';
+ var date=row[0], title=row[1], parties=row[2], outcome=row[3], star=row[4], pos=row[5], rulers=contemporaries[date];
+ var zone=pos&&(/구간|정답/.test(pos))?' hw-time-key':pos==='사이'?' hw-time-between':'';
+ var badge=pos?'<span class="hw-time-badge">'+pos+'</span>':'';
+ var info='<h5>'+title+'</h5>'+badge+'<p class="hw-time-parties">'+parties+'</p><p>'+outcome+'</p>';
+ var dateCell='<th scope="row" class="hw-time-when"><strong>'+date.replace('기원전 18년','기원전<br>18년').replace(/ 음력 (\d+월)/,'<small>음력 $1</small>')+'</strong></th>';
+ var tr='<tr class="hw-time-rulers" data-event-time="'+date+'">'+dateCell+rulers?.map(function(value,i){
+   var name=Array.isArray(value)?value.join(' → '):value;
+   var label=Array.isArray(value)?value.join(i===3?'<br>':'<small>↓</small>'):value;
+   return '<td data-ruler="'+name+'" class="'+(i===3?'hw-ruler-gaya':!Array.isArray(value)&&starred.has(value)?'hw-ruler-core':value==='멸망 후'?'hw-ruler-ended':'')+'">'+label+'</td>';
+ }).join('')+'</tr>';
+ return '<tbody class="hw-time-event'+zone+'">'+(rulers?tr+'<tr><td class="hw-time-continuation" aria-hidden="true"></td><td colspan="4" class="hw-time-body">'+info+'</td></tr>':'<tr class="hw-time-context">'+dateCell+'<td colspan="4" class="hw-time-body">'+info+(star?'<span class="hw-time-star">'+star+'</span>':'')+'</td></tr>')+'</tbody>';
 }
-var timeline=periods.map(function(period){return '<li class="hw-time-period"><h4>'+period[0]+'</h4><ol>'+period[1].map(event).join('')+'</ol></li>';}).join('');
-root.HanqWeaknessTimeline="<section class=\"hw-timeflow\" aria-labelledby=\"hw-timeflow-title\"><header><h3 id=\"hw-timeflow-title\">삼국·가야 사건 순서</h3><p>위에서 아래로, 오래된 사건부터 읽어요. 세기만 적힌 항목은 대략적인 흐름이에요.</p><p id=\"ancient-timeline-caption\"><strong>74회 4번:</strong> 554년 관산성 전투와 642년 대야성 전투 사이의 사건 찾기. 아래 연표에 구간의 시작과 끝, 그리고 보기 번호를 표시했어요.</p></header><ol class=\"hw-time-spine\" aria-label=\"삼국·가야 사건을 오래된 순서부터\">"+timeline+"</ol><p class=\"timeline-conclusion\"><strong>74회 4번 정답: ② 진흥왕의 대가야 복속(562년)</strong></p><footer>날짜 교차 확인: <a href=\"https://contents.history.go.kr/front/hm/view.do?levelId=hm_009_0120\">관구검</a> · <a href=\"https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i101100\">관산성</a> · <a href=\"https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_10&amp;levelId=kc_i101220\">매소성·기벌포</a>.  · <a href=\"https://db.history.go.kr/ancient/level.do?levelId=sg_026r_0060_0190\">551~554년 한강 쟁탈</a> · <a href=\"https://db.history.go.kr/item/compareViewer.do?levelId=sg_028_0020_0060\">대야성</a> · <a href=\"https://db.history.go.kr/item/compareViewer.do?levelId=sg_020r_0030_0240\">연개소문 정변</a></footer></section><figure class=\"material-artifact\"><img data-weakness-study-image=\"\" src=\"media/history-weakness/cheonnado-museum-ii.jpg\" alt=\"갈색의 가로로 긴 말다래 바탕에 흰 말이 그려진 천마그림 말다래Ⅱ\" loading=\"eager\"><figcaption>천마그림 말다래Ⅱ · 국립경주박물관 · 공공누리 제1유형(출처표시). <a href=\"https://gyeongju.museum.go.kr/kor/html/sub02/0202.html?d_mng_no=193&amp;mng_no=299&amp;mode=V\">박물관 소장품 원문</a></figcaption></figure>";
+var timeline=periods.map(function(period){return '<tbody class="hw-time-period"><tr><th colspan="5" scope="rowgroup">'+period[0]+'</th></tr></tbody>'+period[1].map(event).join('');}).join('');
+root.HanqWeaknessTimeline='<section class="hw-timeflow" aria-labelledby="hw-timeflow-title"><header><h3 id="hw-timeflow-title">같은 때, 삼국과 가야는?</h3><p>위에서 아래로 시간순, 같은 줄은 같은 시점이에요. 진하게 표시된 왕은 핵심 암기 대상이에요.</p><p id="ancient-timeline-caption"><strong>74회 4번:</strong> 554년 관산성부터 642년 대야성까지, 같은 줄에서 삼국 왕과 가야가 어떻게 바뀌는지 보세요.</p></header><table class="hw-time-spine" aria-labelledby="hw-timeflow-title"><colgroup><col class="hw-time-date-col"><col span="4"></colgroup><thead><tr><th scope="col">시점 ↓</th><th scope="col">고구려</th><th scope="col">백제</th><th scope="col">신라</th><th scope="col">가야</th></tr></thead>'+timeline+'</table>'+
+"<p class=\"timeline-conclusion\"><strong>74회 4번 정답: ② 진흥왕의 대가야 복속(562년)</strong></p><footer>동시 재위는 국사편찬위원회 『삼국사기』 연표 기준. 초기 건국·왕대는 전승을 따르며, 사건에 맞춰 당시 왕을 표시했고, 같은 해에 두 왕을 표시하는 경우에는 ↓로 이었어요. 날짜가 특정되지 않은 설명은 나라별 칸 없이 보충했어요.<br>날짜 교차 확인: <a href=\"https://db.history.go.kr/ancient/level.do?levelId=sg_029r_0030\">기원전 57년~274년</a> · <a href=\"https://db.history.go.kr/ancient/level.do?levelId=sg_030r_0020\">275~608년</a> · <a href=\"https://db.history.go.kr/ancient/level.do?levelId=sg_031r_0020\">609년 이후</a> · <a href=\"https://contents.history.go.kr/front/hm/view.do?levelId=hm_009_0120\">관구검</a> · <a href=\"https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i101100\">관산성</a> · <a href=\"https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_10&amp;levelId=kc_i101220\">매소성·기벌포</a>.  · <a href=\"https://db.history.go.kr/ancient/level.do?levelId=sg_026r_0060_0190\">551~554년 한강 쟁탈</a> · <a href=\"https://db.history.go.kr/item/compareViewer.do?levelId=sg_028_0020_0060\">대야성</a> · <a href=\"https://db.history.go.kr/item/compareViewer.do?levelId=sg_020r_0030_0240\">연개소문 정변</a></footer></section><figure class=\"material-artifact\"><img data-weakness-study-image=\"\" src=\"media/history-weakness/cheonnado-museum-ii.jpg\" alt=\"갈색의 가로로 긴 말다래 바탕에 흰 말이 그려진 천마그림 말다래Ⅱ\" loading=\"eager\"><figcaption>천마그림 말다래Ⅱ · 국립경주박물관 · 공공누리 제1유형(출처표시). <a href=\"https://gyeongju.museum.go.kr/kor/html/sub02/0202.html?d_mng_no=193&amp;mng_no=299&amp;mode=V\">박물관 소장품 원문</a></figcaption></figure>";
 }(window));
