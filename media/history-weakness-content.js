@@ -23,15 +23,6 @@ function render(){
  return section(1,'modern','대한민국',modern+slot('modern'))+section(2,'ancient','고대사',(root.HanqWeaknessTimeline||'')+ancient+slot('samguk')+slot('nambuk'))+section(3,'opening-colonial','개화기·일제강점기',opening+slot('opening')+slot('colonial'));
 }
 function el(doc,tag,text,cls){var x=doc.createElement(tag);if(text)x.textContent=text;if(cls)x.className=cls;return x;}
-function sourceLocation(doc,era,label,source){
- var place=el(doc,'p',null,'hw-source-location'),a=el(doc,'a','시대별 학습 › '+titles[era]);
- a.setAttribute('href','#chapter/'+era+'/webtoon');place.append(a,doc.createTextNode(' › 개념 학습'+(label?' › '+label:'')));
- if(source){
-   var url=new URL(doc.defaultView.location.href);url.searchParams.set('textbookOriginal',String(source.page));url.searchParams.set('textbookOriginalSource',source.sha);url.hash='#chapter/'+era+'/webtoon';
-   var original=el(doc,'a','해당 쪽 열기');original.href=url.href;original.target='_blank';original.rel='noopener';place.append(doc.createTextNode(' · '),original);
- }
- return place;
-}
 function headingWords(lines){return (lines||[]).map(function(line){return (line.runs||line.spans||[]).map(function(run){return run.text||'';}).join('')||line.text||'';}).join(' ').trim();}
 function tableWords(block){return (block.rows||[]).map(function(row){return (row.cells||[]).map(function(cell){return headingWords(cell.lines);}).join(' ');}).join(' ');}
 function select(page,era,title){
@@ -95,7 +86,7 @@ function mount(host,pdf){
        result.parts.forEach(function(part){
          var wrapper=el(doc,'section',null,'hw-source'),paper=el(doc,'div',null,'hw-concept-table textbook-semantic-library history-notes-design');
          paper.dataset.historyEdition=meta.edition.startsWith('81')?'81':'79';
-         wrapper.append(sourceLocation(doc,era,(part.label?part.label+' · ':'')+meta.edition+' PDF '+result.page.pdfPage+'쪽',{page:result.page.pdfPage,sha:meta.sha256}),paper);target.append(wrapper);
+         wrapper.append(paper);target.append(wrapper);
          var shown=root.HanqTextbookSemantic.render(paper,Object.assign({},result.page,{blocks:part.blocks,sourceBlanks:[],generatedPractice:[]}),{
            compactReviewStatus:true,isFigureAvailable:function(f){return (m.figures||[]).some(function(x){return x.id===f.assetId;});},
            resolveFigure:function(f){if(!runIsCurrent(g))return Promise.reject(Error('account changed'));return api.textbookSemanticFigure(f.assetId,revision).then(function(b){if(!runIsCurrent(g))throw Error('account changed');return b;});}
@@ -118,7 +109,7 @@ function mount(host,pdf){
    var count=0,assets=[];
    prep.bundle.topics.forEach(function(topic){
       var frame=el(doc,'section',null,'hw-source hw-opening-source');
-      var paper=el(doc,'div');frame.append(sourceLocation(doc,'opening',topic.title),paper);target.append(frame);
+      var paper=el(doc,'div');frame.append(paper);target.append(frame);
       var shown=reader.mount(paper,prep,{initialTopic:topic.id,studyTablesOnly:true,externalNavigation:true,loadFigure:function(name,options){
         if(!runIsCurrent(g))return Promise.reject(Error('account changed'));
         return transport.loadFigure(name,options);

@@ -67,8 +67,6 @@ html[data-company-mode=on][data-company-history] #app#app#app .history-weakness 
 .weakness-material h2{scroll-margin-block-start:18px}
 .hw-source{min-width:0;margin:13px 0 19px}
 .hw-source .hw-section-heading{margin-top:10px}
-.hw-source-location{margin-block:0 5px!important;color:var(--hw-muted);font-size:.8rem;line-height:1.5}
-.hw-source-location a{color:var(--hw-accent);text-decoration:underline;text-underline-offset:2px}
 .hw-source-table-scroll{max-width:100%;min-width:0;overflow-x:auto;border:1px solid var(--hw-border);border-radius:8px;overscroll-behavior-inline:contain}
 .hw-source-table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:1rem;color:var(--hw-text)}
 .hw-source-table :is(th,td){text-align:start;vertical-align:top;padding:.65em .75em;line-height:1.55;overflow-wrap:anywhere;word-break:normal;border-bottom:1px solid var(--hw-border)}
@@ -92,7 +90,7 @@ html[data-company-mode=on][data-company-history] #app#app#app .history-weakness 
   .history-weakness-materials{display:block}
   .weakness-material{display:block;box-shadow:none;border:0;padding:0;border-radius:0;break-inside:auto}
   .weakness-material + .weakness-material{break-before:page}
-  .weakness-material :is(h2,h3,h4,figcaption,.hw-source-location){break-after:avoid}
+  .weakness-material :is(h2,h3,h4,figcaption){break-after:avoid}
   .weakness-material :is(.hw-source-table-scroll,.textbook-semantic-table-scroll){overflow:visible!important;border-radius:0}
   .weakness-material .hw-source-table{min-width:0!important;max-width:100%!important;font-size:10pt}
   .weakness-material table thead{display:table-header-group}

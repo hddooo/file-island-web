@@ -52,9 +52,10 @@ async function until(predicate){for(let i=0;i<40;i++){if(predicate())return;awai
  assert.equal(app.querySelectorAll('[data-source-block$="-exam"]').length,0);
  assert(!app.textContent.includes('숨겨진 답안 섹션'));
  assert.equal(app.querySelectorAll('.hw-concept-table table tr').length,8);
+ assert.equal(app.querySelectorAll('.hw-source-location,a[href*=textbookOriginal]').length,0);
+ assert(!app.textContent.includes('해당 쪽 열기'));
+ assert.match(find('.hw-opening-source table').textContent,/개화기 원래 표/);
  assert.match(find('.hw-concept-table table').textContent,/이승만 정부.*근거 \*\* 원문 그대로.*둘째 행/);
- assert.match(find('.hw-source-location').textContent,/시대별 학습 › 광복과 대한민국 › 개념 학습 › 이승만 정부 · 81회 대비 PDF 126쪽/);
- assert.match(find('.hw-opening-source .hw-source-location').textContent,/개항기 단원/);
  find('[data-chart-pdf]').click();assert.equal(printCalls,1);
  company=true;find('[data-chart-pdf]').click();assert.equal(printCalls,2);
  assert.deepEqual([...app.querySelectorAll('.hw-time-star')].map(x=>x.textContent.slice(2)).sort(),['소수림왕','광개토왕','근초고왕','장수왕','무령왕','성왕','지증왕','법흥왕','진흥왕','선덕여왕','의자왕','문무왕'].sort());
@@ -69,7 +70,6 @@ async function until(predicate){for(let i=0;i<40;i++){if(predicate())return;awai
  assert.match(find('.hw-time-spine').textContent,/금관가야가 신라에 항복/);
  assert.equal(app.querySelectorAll('.hw-exam-aid').length,3);
  assert.match(app.querySelector('.hw-exam-aid').textContent,/노사정 위원회/);
- const link=find('.hw-source-location a:last-child');assert.equal(new URL(link.href).searchParams.get('textbookOriginal'),'126');
  const pid='parent',nested=table(16,'concept');nested.id='nested';nested.sourceParentTableId=pid;
  const grouped=w.HanqWeaknessStudyContent.select({blocks:[{...table(16,'concept'),id:pid,rows:[{cells:[cell(0,0,'구분'),cell(0,1,'일반')]}]},nested,
  {id:'figure-a',type:'figure',studySection:'concept',caption:'고구려 고분',assetId:'p016-figure-1'},
