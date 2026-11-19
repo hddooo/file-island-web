@@ -3,8 +3,8 @@ const fs=require('node:fs'),assert=require('node:assert/strict'),{JSDOM}=require
 const dom=new JSDOM('<main id="feRoundMaterials"></main>',{url:'https://review.test',runScripts:'outside-only'});
 const w=dom.window,host=w.document.querySelector('main');
 w.URL.createObjectURL=()=> 'blob:isolated';w.URL.revokeObjectURL=()=>{};
-for(const m of ['cbt-explanation-data','cbt-explanation80-data','cbt-explanations','cbt-round-materials','cbt-wrong-notebook'])w.eval(fs.readFileSync('media/'+m+'.js','utf8'));
-const book={...w.HANQ_CBT_EXPLANATIONS.items,...w.HANQ_CBT_EXPLANATIONS_80.items};
+for(const m of ['cbt-explanation-data','cbt-explanation80-data','cbt-explanation67-69-data','cbt-explanations','cbt-round-materials','cbt-wrong-notebook'])w.eval(fs.readFileSync('media/'+m+'.js','utf8'));
+const book={...w.HANQ_CBT_EXPLANATIONS.items,...w.HANQ_CBT_EXPLANATIONS_80.items,...w.HANQ_CBT_EXPLANATIONS_67_69.items};
 const runId='10000000-0000-4000-8000-000000000001';
 function request(item){
  const position=item.number-1, options=item.options.map(x=>({id:x.id,number:x.number}));
@@ -26,7 +26,7 @@ const choice=number=>host.querySelectorAll('[data-review-choice]')[number-1];
 const display=()=>host.querySelector('.fe-round-review-explanation');
 const tick=()=>new Promise(r=>setImmediate(r));
 (async()=>{
- assert.equal(Object.keys(book).length,550);
+ assert.equal(Object.keys(book).length,700);
  for(const item of Object.values(book)){
   const q=request(item),p=parts(q);
   assert(p?.stem.length>0,item.id);assert(p?.conclusion,item.id);
@@ -73,5 +73,5 @@ const tick=()=>new Promise(r=>setImmediate(r));
  assert.match(box.querySelector('.fe-round-review-stem').textContent,/확인하지 못했어요/);
  assert.equal(box.querySelector('.fe-round-review-conclusion p'),null);
  assert.equal(JSON.stringify(data),saved);replay.stop();
- console.log('PASS all 550 exact CBT passages, requested section order in final and round review, 71-22 separate source clues, correct emphasis, no spoilers, mismatch fallback, GET only and source immutability');
+ console.log('PASS all 700 exact CBT passages, requested section order in final and round review, 71-22 separate source clues, correct emphasis, no spoilers, mismatch fallback, GET only and source immutability');
 })().catch(e=>{console.error(e);process.exitCode=1;});

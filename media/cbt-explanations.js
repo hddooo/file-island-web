@@ -22,12 +22,12 @@
   }
   function resolve(q, status) {
     if (status !== 'final') return null;
-    var data = root.HANQ_CBT_EXPLANATIONS, extra = root.HANQ_CBT_EXPLANATIONS_80;
-    var entry = q && ((data && data.items && data.items[q.questionId]) || (extra && extra.items && extra.items[q.questionId]));
+    var data = root.HANQ_CBT_EXPLANATIONS, extra = root.HANQ_CBT_EXPLANATIONS_80, previous = root.HANQ_CBT_EXPLANATIONS_67_69;
+    var entry = q && ((data && data.items && data.items[q.questionId]) || (extra && extra.items && extra.items[q.questionId]) || (previous && previous.items && previous.items[q.questionId]));
     return matching(q, entry) ? entry : null;
   }
   // Official question and answer-sheet archival pages; not third-party explanatory PDFs.
-  var examArchive={70:'1000030012',71:'1000030032',72:'1000030043',73:'1000030052',74:'1000030069',75:'1000030080',76:'1000030098',77:'1000030110',78:'1000030119',79:'1000030131',80:'1000030154'};
+  var examArchive={67:'1000029978',68:'1000029984',69:'1000029997',70:'1000030012',71:'1000030032',72:'1000030043',73:'1000030052',74:'1000030069',75:'1000030080',76:'1000030098',77:'1000030110',78:'1000030119',79:'1000030131',80:'1000030154'};
   // Independently checked against the current 81st-edition learning material and original crops.
   // Textbook PDF SHA-256: d54c1aa5d5816eeb73a2e82da0ec699555c2cbf1e7cb717a3b84420ed18296de
   var currentBookNotes={
@@ -613,6 +613,9 @@
   // For a multi-part stem, the checked note can dedicate a line to each passage.
   function explanationParts(overview, note) {
     var reason=lines(overview.reason), cut=note&&note.stemLines||1;
+    if(typeof overview.conclusion==='string'&&overview.conclusion.trim()) {
+      return {stem:reason,conclusion:overview.conclusion.trim(),extra:[],answer:typeof overview.answer==='string'?overview.answer.trim():''};
+    }
     return {stem:reason.slice(0,cut),conclusion:reason[cut]||'',extra:reason.slice(cut+1),answer:typeof overview.answer==='string'?overview.answer.trim():''};
   }
   function reviewParts(q, status) {
@@ -674,7 +677,7 @@
   // returned correct option is still required; this adapter never grades or saves an answer.
   function renderGraded(saved, selected, correctId, position, displayed) {
     var item = saved && saved.item, options = item && array(item.options), visible = displayed && displayed.item;
-    if (!item || !/^exam-(?:7[0-9]|80)-[0-9]{2}$/.test(item.id || '') || !optionsValid(options) || !correctId || !visible || displayed.kind !== 'mock') return '';
+    if (!item || !/^exam-(?:6[7-9]|7[0-9]|80)-[0-9]{2}$/.test(item.id || '') || !optionsValid(options) || !correctId || !visible || displayed.kind !== 'mock') return '';
     if (displayed.questionId !== item.id || displayed.version !== item.v || visible.id !== item.id || visible.v !== item.v ||
         visible.exam !== item.exam || visible.number !== item.number || visible.points !== item.points ||
         (displayed.points != null && displayed.points !== item.points) || !optionsValid(visible.options)) return '';

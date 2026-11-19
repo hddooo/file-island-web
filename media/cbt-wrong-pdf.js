@@ -51,7 +51,7 @@ function fail(code){var e=new Error(code);e.code=code;return e;}
 function identity(api){var s=api&&api.state();return s&&s.signedIn&&!s.restoring&&s.ownerId!=null?String(s.ownerId)+':'+String(s.epoch||0):null;}
 // Use exactly the reviewed public-exam versions already bundled with the study app.
 function fullRoundItems(round){
- var renderer=root.HanqCbtExplanations,source=round===80?root.HANQ_CBT_EXPLANATIONS_80:root.HANQ_CBT_EXPLANATIONS;
+ var renderer=root.HanqCbtExplanations,source=round<70?root.HANQ_CBT_EXPLANATIONS_67_69:round===80?root.HANQ_CBT_EXPLANATIONS_80:root.HANQ_CBT_EXPLANATIONS;
  if(!renderer||typeof renderer.reviewParts!=='function'||typeof renderer.resolve!=='function'||!source||!source.items)throw fail('explanations_incomplete');
  return Array.from({length:50},function(_,i){
   var n=i+1,id='exam-'+round+'-'+String(n).padStart(2,'0'),item=source.items[id];
@@ -67,7 +67,7 @@ function fullRoundItems(round){
 }
 async function download(options){
  options=options||{};var api=options.api,round=options.round,mode=options.mode||'questions',material=options.source==='review-materials',full=options.source==='full-round',token=identity(api),urls=[],off=null,cancelled=false,pages=[],canvas,context,y,lines=[],count=0;
- if(!['questions','answers'].includes(mode)||full&&mode!=='answers')throw fail('invalid_mode');if(!token)throw fail('session_changed');if(!Number.isInteger(round)||round<70||round>80)throw fail('invalid_round');
+ if(!['questions','answers'].includes(mode)||full&&mode!=='answers')throw fail('invalid_mode');if(!token)throw fail('session_changed');if(!Number.isInteger(round)||round<67||round>80)throw fail('invalid_round');
  function current(){if(cancelled||options.isCurrent&&!options.isCurrent())throw fail('cancelled');if(identity(api)!==token)throw fail('session_changed');}
  if(api.onChange)off=api.onChange(function(){if(identity(api)!==token)cancelled=true;});
  function release(url){root.URL.revokeObjectURL(url);urls=urls.filter(function(x){return x!==url;});}

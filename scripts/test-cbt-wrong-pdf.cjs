@@ -18,20 +18,20 @@ a=setup(material);r=await a.win.HanqCbtWrongPdf.download({api:a.api,round:79,sou
 a=setup(material);let read=0;a.api.cbt=async()=>({...material,resetAt:++read===1?null:'2026-11-08T00:00:00Z'});await assert.rejects(a.win.HanqCbtWrongPdf.download({api:a.api,round:79,source:'review-materials',mode:'answers'}),e=>e.code==='notebook_incomplete');assert.equal(a.downloads.length,0);
 a=setup({...material,items:[...material.items,...material.items]});await assert.rejects(a.win.HanqCbtWrongPdf.download({api:a.api,round:79,source:'review-materials'}),e=>e.code==='notebook_incomplete');
 const full=setup(fixture([]));
-for(const f of ['media/cbt-explanation-data.js','media/cbt-explanation80-data.js'])vm.runInContext(fs.readFileSync(f,'utf8'),full.win);
-for(let round=70;round<=80;round++){
+for(const f of ['media/cbt-explanation-data.js','media/cbt-explanation80-data.js','media/cbt-explanation67-69-data.js'])vm.runInContext(fs.readFileSync(f,'utf8'),full.win);
+for(let round=67;round<=80;round++){
  const progress=[];r=await full.win.HanqCbtWrongPdf.download({api:full.api,round,source:'full-round',mode:'answers',onProgress:x=>progress.push(x)});
  assert.equal(r.count,50);assert.equal(r.filename,'한국사_'+round+'회_전체_해설지.pdf');assert.equal(progress.length,50);assert.equal(progress[49].done,50);assert.equal(progress[49].total,50);
  const file=await full.downloads.at(-1).blob.text();
  for(const section of ['지문 해설','보기별 해설','결론'])assert.equal(file.split('FEFF'+hex(section)).length-1,50,round+' '+section);
- const catalogue=(round===80?full.win.HANQ_CBT_EXPLANATIONS_80:full.win.HANQ_CBT_EXPLANATIONS).items;
+ const catalogue=(round<70?full.win.HANQ_CBT_EXPLANATIONS_67_69:round===80?full.win.HANQ_CBT_EXPLANATIONS_80:full.win.HANQ_CBT_EXPLANATIONS).items;
  for(let n=1;n<=50;n++)assert(file.includes('FEFF'+hex(n+'번 · 정답 '+catalogue['exam-'+round+'-'+String(n).padStart(2,'0')].answer+'번')),round+' question '+n);
 }
-assert.equal(full.calls.length,0);assert.equal(full.images,0);assert.equal(full.downloads.length,11);assert.equal(full.listener,null);
+assert.equal(full.calls.length,0);assert.equal(full.images,0);assert.equal(full.downloads.length,14);assert.equal(full.listener,null);
 delete full.win.HANQ_CBT_EXPLANATIONS.items['exam-75-50'];
 await assert.rejects(full.win.HanqCbtWrongPdf.download({api:full.api,round:75,source:'full-round',mode:'answers'}),e=>e.code==='explanations_incomplete');
 await assert.rejects(full.win.HanqCbtWrongPdf.download({api:full.api,round:75,source:'full-round',mode:'questions'}),e=>e.code==='invalid_mode');
 await assert.rejects(full.win.HanqCbtWrongPdf.download({api:full.api,round:80,source:'full-round',mode:'answers',isCurrent:()=>false}),e=>e.code==='cancelled');
-assert.equal(full.downloads.length,11);assert.equal(full.calls.length,0);
-console.log('70–80 full-round PDFs: 550 exact answer headings · all 3 sections per item · no attempts/images/API · no partial download');
+assert.equal(full.downloads.length,14);assert.equal(full.calls.length,0);
+console.log('67–80 full-round PDFs: 700 exact answer headings · all 3 sections per item · no attempts/images/API · no partial download');
 console.log('CBT wrong PDF: answers/mapping/verified-fallback/missing-explanation/no-image/invalid-mode;  dedup/common-image/PDF/GET-only/empty/incomplete/untrusted-image/owner/navigation/image-failure checks passed');})().catch(e=>{console.error(e);process.exitCode=1});
