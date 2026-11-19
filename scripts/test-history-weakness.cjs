@@ -39,7 +39,11 @@ async function until(predicate){for(let i=0;i<40;i++){if(predicate())return;awai
  assert.deepEqual([...app.querySelectorAll('article h2')].map(x=>x.textContent),['대한민국','고대사','개화기·일제강점기']);
  assert.equal(app.querySelectorAll('button[data-chart-pdf]').length,1);
  assert.match(find('#ancient-timeline-caption').textContent,/554년.*642년/);
- assert.equal(app.querySelectorAll('article .timeline-event').length,11);
+ assert.equal(app.querySelectorAll('.hw-time-spine').length,1);
+ assert.equal(app.querySelectorAll('.hw-time-period').length,5);
+ assert.equal(app.querySelectorAll('.hw-time-event').length,40);
+ assert.equal(app.querySelectorAll('.material-timeline,.hw-triangle').length,0);
+ assert.deepEqual([...app.querySelectorAll('.hw-time-key .hw-time-badge')].map(x=>x.textContent),['구간 시작','사이 · ② 정답','구간 끝']);
  assert(allowed(find('[data-weakness-study-image]').getAttribute('src')));
  assert(!find('#historyWeaknessMaterials').hidden);assert(find('#historyWeaknessPracticeHost').hidden);
  await until(()=>!find('[data-chart-pdf]').disabled);
@@ -53,10 +57,16 @@ async function until(predicate){for(let i=0;i<40;i++){if(predicate())return;awai
  assert.match(find('.hw-opening-source .hw-source-location').textContent,/개항기 단원/);
  find('[data-chart-pdf]').click();assert.equal(printCalls,1);
  company=true;find('[data-chart-pdf]').click();assert.equal(printCalls,2);
- assert.equal(app.querySelectorAll('.hw-triangle .king.star').length,12);
- assert.deepEqual([...app.querySelectorAll('.hw-triangle .era')].find(x=>x.querySelector('.era-head b').textContent==='5C').querySelector('.links').textContent.match(/433|475|493/g),['433','475','493']);
- assert.match(find('.hw-triangle').textContent,/551.*한강 유역 공격.*553.*관산성/);
- assert.match(find('.hw-triangle').textContent,/금관가야 구해왕◇ 항복/);
+ assert.deepEqual([...app.querySelectorAll('.hw-time-star')].map(x=>x.textContent.slice(2)).sort(),['소수림왕','광개토왕','근초고왕','장수왕','무령왕','성왕','지증왕','법흥왕','진흥왕','선덕여왕','의자왕','문무왕'].sort());
+ assert([...app.querySelectorAll('.hw-time-event')].every(x=>x.querySelector('.hw-time-when strong')&&x.querySelector('.hw-time-body h5')&&x.querySelector('.hw-time-parties')&&x.querySelectorAll('.hw-time-body p').length===2));
+ assert.match([...app.querySelectorAll('.hw-time-key')][1].textContent,/562년.*② 정답.*대가야/);
+ const dated=[...app.querySelectorAll('.hw-time-when strong')].map(x=>x.textContent);
+ for(const sequence of [['433년','475년','493년'],['538년','551년','553년','554년','562년','612년','634년','639년','642년 음력 8월','642년 음력 10월','645년','648년','660년','663년','668년','674년','675년','676년']]){
+   const indices=sequence.map(x=>dated.indexOf(x));
+   assert(indices.every((n,i)=>n>=0&&(i===0||n>indices[i-1])),sequence.join(' < '));
+ }
+ assert.match(find('.hw-time-spine').textContent,/551.*한강 유역 공격.*553.*관산성/);
+ assert.match(find('.hw-time-spine').textContent,/금관가야가 신라에 항복/);
  assert.equal(app.querySelectorAll('.hw-exam-aid').length,3);
  assert.match(app.querySelector('.hw-exam-aid').textContent,/노사정 위원회/);
  const link=find('.hw-source-location a:last-child');assert.equal(new URL(link.href).searchParams.get('textbookOriginal'),'126');
@@ -66,7 +76,8 @@ async function until(predicate){for(let i=0;i<40;i++){if(predicate())return;awai
  {id:'figure-b',type:'figure',studySection:'exam',caption:'고구려 고분',assetId:'p016-figure-2'}]},'samguk','기타');
  assert.equal(grouped.map(x=>x.blocks.map(b=>b.id).join(',')).join('|'),'parent,nested|figure-a');
 
- assert.match(find('.hw-triangle').textContent,/매소성 전투.*당/);
+ assert.match(find('.hw-time-spine').textContent,/매소성 전투.*당.*기벌포 전투.*문무왕.*삼국 통일/);
+ assert.match(find('.hw-time-spine').textContent,/연개소문 정변.*삼국사기.*다른 사료/);
  failEra=true;open(true);await until(()=>find('[data-source-era=colonial] button'));
  assert(find('[data-chart-pdf]').disabled);find('[data-chart-pdf]').click();assert.equal(printCalls,2);
  failEra=false;find('[data-source-era=colonial] button').click();await until(()=>!find('[data-chart-pdf]').disabled);
