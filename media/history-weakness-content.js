@@ -1,2 +1,156 @@
-/* HanQ 시대별 학습 자료와 약점 보완 기존 자료를 바탕으로 구성. */
-window.HanqWeaknessStudyContent="<!-- Semantic content fragment. Source: weakpro-timeline/render_embedded.py (modern, ancient, opening). Integration supplies responsive CSS and resolves the verified image URL. -->\n<article class=\"weakness-material\" data-weakness-part=\"modern\" id=\"weakness-part-1\" aria-labelledby=\"weakness-part-1-title\">\n<header><p class=\"material-priority\">1순위 약점 보완</p><h2 id=\"weakness-part-1-title\">대한민국</h2><p>기출 판별 · 정부부터 특정한 뒤, 같은 정부의 사건을 고르기</p></header><div class=\"material-controls\"><button type=\"button\" data-weakness-start>점검하기 · 50문항</button></div>\n<h3>01 지문 단서 → 정부 → 정답 연결</h3><p class=\"material-reference\">최우선</p>\n<section class=\"material-row\"><h4>75-46</h4><ul><li>부산 계엄·발췌개헌 → 이승만 정부</li><li>연결할 사건: 정전 뒤 체결한 한미 상호 방위 조약</li></ul></section>\n<section class=\"material-row\"><h4>75-47</h4><ul><li>동일방직·YH → 박정희 유신기</li><li>같은 시기의 사건: 3·1 민주구국선언</li></ul></section>\n<section class=\"material-row\"><h4>73-48</h4><ul><li>5·18 민주화 운동 → 광주 → 시민군</li></ul></section>\n<section class=\"material-row\"><h4>72-46</h4><ul><li>6월 민주항쟁 → 대통령 직선제·5년 단임</li></ul></section>\n<h3>02 정부별로 한 묶음씩 회상하기</h3><p class=\"material-reference\">비교표</p>\n<section class=\"material-row\"><h4>이승만</h4><ul><li>반민특위·농지개혁(유상 매수·유상 분배)·6·25</li><li>발췌개헌 → 정전·한미 상호 방위 조약 → 사사오입</li><li>3·15 부정선거 → 4·19 혁명</li></ul></section>\n<section class=\"material-row\"><h4>장면</h4><ul><li>의원내각제·양원제 / 앞: 4·19 혁명 / 뒤: 5·16 군사 정변</li></ul></section>\n<section class=\"material-row\"><h4>박정희</h4><ul><li>5·16 → 6·3 시위·한일기본조약 → 3선 개헌</li><li>7·4 남북 공동성명 → 유신(통일주체국민회의·긴급조치)</li><li>3·1 민주구국선언·동일방직·YH·부마항쟁 / 경제개발 5개년·경부고속도로</li></ul></section>\n<section class=\"material-row\"><h4>신군부·전두환</h4><ul><li>5·18 → 7년 단임 간선제 / 삼청교육대·보도지침·3저 호황</li><li>4·13 호헌 → 6월 민주항쟁 → 5년 단임 직선제</li></ul></section>\n<section class=\"material-row\"><h4>노태우</h4><ul><li>7·7 선언·서울올림픽·3당 합당</li><li>남북 유엔 동시 가입·남북 기본합의서</li></ul></section>\n<section class=\"material-row\"><h4>김영삼</h4><ul><li>하나회 해체·금융실명제·OECD 가입</li></ul></section>\n<section class=\"material-row\"><h4>김대중 ↔ 노무현</h4><ul><li>김대중: 6·15 공동선언·외환위기 극복·국가인권위원회</li><li>노무현: 10·4 선언·호주제 폐지</li></ul></section>\n<h3>03 정부부터 가르고 보기로 돌려보기</h3><p class=\"material-reference\">연결 연습</p>\n<section class=\"material-row\"><h4>71-48 · 70-49</h4><ul><li>서울 올림픽 개최 → 노태우 → 3당 합당</li><li>한일 월드컵 개최 → 김대중 → 국가 인권 위원회</li></ul></section>\n<section class=\"material-row\"><h4>74-48 · 경제</h4><ul><li>외환 위기 발생 = 김영삼 / 구제 금융 조기 상환 = 김대중</li></ul></section>\n<div class=\"material-card-group\">\n<section class=\"material-card\"><h4>5·18 · 1980</h4><ul><li>광주 → 시민군</li><li>군사 정권에 맞선 민주화 운동</li></ul></section>\n<section class=\"material-card\"><h4>6월 항쟁 · 1987</h4><ul><li>4·13 호헌 반대 → 직선제 개헌</li><li>결과: 대통령 직선제·5년 단임</li></ul></section>\n</div>\n<div class=\"material-card-group\">\n<section class=\"material-card\"><h4>유신 헌법</h4><ul><li>통일주체국민회의 · 6년</li></ul></section>\n<section class=\"material-card\"><h4>제5공화국</h4><ul><li>대통령 선거인단 · 7년</li></ul></section>\n<section class=\"material-card\"><h4>제9차 개헌</h4><ul><li>국민 직선 · 5년</li></ul></section>\n</div>\n<footer><p>근거: 파일섬 시대별 학습 · 연습 예제: 실전모의고사 70–75회</p></footer></article>\n\n<article class=\"weakness-material\" data-weakness-part=\"ancient\" id=\"weakness-part-2\" aria-labelledby=\"weakness-part-2-title\">\n<header><p class=\"material-priority\">2순위 약점 보완</p><h2 id=\"weakness-part-2-title\">고대사</h2><p>그림으로 국가 판별 · 사건의 앞뒤 · 수도와 유적</p></header><div class=\"material-controls\"><button type=\"button\" data-weakness-start>점검하기 · 50문항</button></div>\n<h3>01 그림 → 국가 → 정답 유물</h3><p class=\"material-reference\">75-03</p>\n<section class=\"material-row\"><h4>문제의 실제 단서</h4><ul><li>금관총 금관 사진 + 경주·금관총·황남대총 → 신라</li><li>그 나라의 문화유산을 고르기 → ⑤ 천마도</li></ul></section>\n<figure class=\"material-artifact\"><img data-weakness-study-image src=\"media/history-weakness/cheonnado-museum-ii.jpg\" alt=\"갈색의 가로로 긴 말다래 바탕에 흰 말이 그려진 천마그림 말다래Ⅱ\" loading=\"lazy\"><figcaption>천마그림 말다래Ⅱ · 국립경주박물관 · 공공누리 제1유형(출처표시). <a href=\"https://gyeongju.museum.go.kr/kor/html/sub02/0202.html?d_mng_no=193&amp;mng_no=299&amp;mode=V\">박물관 소장품 원문</a></figcaption></figure>\n<section class=\"material-row\"><h4>천마도 ≠ 천마총</h4><ul><li>천마도: 말다래에 그린 흰 말 그림</li><li>천마총: 천마도가 나온 신라 무덤</li><li>갈색 가로 바탕 + 흰 말 → 천마도</li><li>기마인물형 토기: 말 탄 사람의 입체 토기</li></ul></section>\n<h3>02 관산성 전투부터 대야성 전투까지</h3><p class=\"material-reference\">74-04</p>\n<figure class=\"material-timeline\" aria-labelledby=\"ancient-timeline-caption\"><figcaption id=\"ancient-timeline-caption\">554년 관산성 전투 → 642년 대야성 전투: 두 기준점 사이의 사건 고르기</figcaption><ol class=\"timeline-events\" tabindex=\"0\" aria-label=\"가로로 볼 수 있는 사건 순서\">\n<li class=\"timeline-event\" data-position=\"앞\"><p><strong>538년</strong> <span class=\"timeline-zone\">앞</span></p><p>① 사비 천도·남부여</p></li>\n<li class=\"timeline-event\" data-position=\"앞\"><p><strong>553년</strong> <span class=\"timeline-zone\">앞</span></p><p>⑤ 한강 하류·신주</p></li>\n<li class=\"timeline-event\" data-position=\"기준점\"><p><strong>554년</strong> <span class=\"timeline-zone\">기준점</span></p><p>관산성 전투</p><p>성왕 전사</p></li>\n<li class=\"timeline-event timeline-answer\" data-position=\"사이 · 정답\"><p><strong>562년</strong> <span class=\"timeline-zone\">사이 · 정답</span></p><p>② 진흥왕의 대가야 복속</p></li>\n<li class=\"timeline-event\" data-position=\"사이\"><p><strong>612년</strong> <span class=\"timeline-zone\">사이</span></p><p>살수 대첩</p></li>\n<li class=\"timeline-event\" data-position=\"사이\"><p><strong>634년</strong> <span class=\"timeline-zone\">사이</span></p><p>분황사 창건</p></li>\n<li class=\"timeline-event\" data-position=\"사이\"><p><strong>639년</strong> <span class=\"timeline-zone\">사이</span></p><p>미륵사지 서탑 사리 봉안</p></li>\n<li class=\"timeline-event\" data-position=\"기준점\"><p><strong>642년</strong> <span class=\"timeline-zone\">기준점</span></p><p>대야성 전투</p><p>의자왕 때 윤충이 대야성 함락</p></li>\n<li class=\"timeline-event\" data-position=\"뒤\"><p><strong>645년</strong> <span class=\"timeline-zone\">뒤</span></p><p>안시성 전투</p></li>\n<li class=\"timeline-event\" data-position=\"뒤\"><p><strong>648년</strong> <span class=\"timeline-zone\">뒤</span></p><p>④ 나당 동맹</p></li>\n<li class=\"timeline-event\" data-position=\"뒤\"><p><strong>660년</strong> <span class=\"timeline-zone\">뒤</span></p><p>③ 황산벌 전투</p></li>\n</ol><p class=\"timeline-conclusion\"><strong>74회 4번: 두 기준점 사이에 들어가는 선지는 ② 진흥왕의 대가야 복속입니다.</strong></p><p>시간 간격이 아니라 사건 순서 기준입니다. 같은 642년의 연개소문 정변은 연도만으로 앞뒤를 가르지 않습니다.</p></figure>\n<h3>03 백제 유적은 도시부터 나누기</h3><p class=\"material-reference\">72-04 · 75-09</p>\n<section class=\"material-row\"><h4>공주 · 웅진</h4><ul><li>공산성·송산리 / 무령왕릉 = 벽돌무덤</li></ul></section>\n<section class=\"material-row\"><h4>부여 · 사비</h4><ul><li>관북리·부소산성·정림사지·능산리·나성 → 성왕의 새 도읍</li></ul></section>\n<section class=\"material-row\"><h4>익산</h4><ul><li>왕궁리 오층석탑 / “사비 ↔ 왕궁리” 연결은 틀림</li></ul></section>\n<h3>04 원인과 결과를 거꾸로 고르지 않기</h3><p class=\"material-reference\">70-03</p>\n<section class=\"material-row\"><h4>순서 고정</h4><ul><li>장수왕 평양 천도(427) → 한성 함락·개로왕 죽음(475)</li><li>문주왕 웅진 천도 → 동성왕 혼인 동맹(493)</li></ul></section>\n<h3>05 무덤의 구조는 그림의 층으로 구별</h3><p class=\"material-reference\">구조 비교</p>\n<div class=\"material-card-group\">\n<section class=\"material-card\"><h4>장군총 · 고구려 돌무지무덤</h4><ul><li>노출된 계단식 돌쌓기</li></ul></section>\n<section class=\"material-card\"><h4>천마총 · 신라 돌무지덧널무덤</h4><ul><li>흙 봉분 → 돌층 → 나무 덧널</li></ul></section>\n</div>\n<p>구조 비교입니다. 둥근 봉분의 겉모습만으로 무덤 형식을 단정하지 않습니다.</p>\n<footer><p>근거: 파일섬 시대별 학습 · 연습 예제: 실전모의고사 70–75회</p></footer></article>\n\n<article class=\"weakness-material\" data-weakness-part=\"opening-colonial\" id=\"weakness-part-3\" aria-labelledby=\"weakness-part-3-title\">\n<header><p class=\"material-priority\">3순위 약점 보완</p><h2 id=\"weakness-part-3-title\">개화기·일제강점기</h2><p>기출 판별 · 날짜 기준점 찾기 / 연대 계산 / 독립군 이름 짝 맞추기</p></header><div class=\"material-controls\"><button type=\"button\" data-weakness-start>점검하기 · 50문항</button></div>\n<h3>01 개화기는 “기준 연도”에 꽂아 넣기</h3><p class=\"material-reference\">74-34 · 74-35</p>\n<section class=\"material-row\"><h4>74-35 · 구간</h4><ul><li>용암포·러시아 삼림회사 → 1903년</li><li>1896 아관 파천 → 1903 용암포 → 1904 러일 전쟁</li><li>정답: 아관 파천과 러일 전쟁 사이</li></ul></section>\n<section class=\"material-row\"><h4>74-34 · 이미 발생</h4><ul><li>경부선 개통·관부연락선 정기 운항 → 1905년</li><li>1904 대한매일신보 창간 → 1905 경부선 개통</li><li>물음: 그때 이미 창간한 신문 → 대한매일신보</li></ul></section>\n<section class=\"material-row\"><h4>74-29 · 인물</h4><ul><li>김홍집: 수신사·조선책략 / 민영익: 보빙사</li></ul></section>\n<h3>02 사건과 개혁은 덩어리로 나누기</h3><p class=\"material-reference\">순서 고정</p>\n<section class=\"material-row\"><h4>조약·사건</h4><ul><li>강화도(일) → 조미 → 임오: 제물포·조청장정</li><li>갑신: 한성·톈진 → 거문도(영)</li></ul></section>\n<section class=\"material-row\"><h4>개혁·국권</h4><ul><li>1차 갑오: 군국기무처·과거 폐지 → 2차: 홍범 14조 → 을미: 단발령</li><li>광무: 원수부·지계·대한국 국제</li><li>외교권(을사) → 군대 해산(1907) → 사법권(기유) → 병합(1910)</li></ul></section>\n<h3>03 일제강점기: 연대별 단서 + 계산</h3><p class=\"material-reference\">75-35</p>\n<section class=\"material-row\"><h4>1910 → 1920</h4><ul><li>1910년대: 헌병경찰·태형·토지조사</li><li>1920년대: 문화통치·산미증식·치안유지법</li></ul></section>\n<section class=\"material-row\"><h4>“재작년” 계산</h4><ul><li>1923 관동 대지진 → 1924 경성제국대학 → 1925</li><li>관동 대지진이 재작년 = 1923 + 2 → 1925년, 1920년대</li></ul></section>\n<section class=\"material-row\"><h4>1930년대 이후</h4><ul><li>농촌진흥·남면북양 / 1937년 이후: 황국 신민 서사·국가 총동원법·애국반</li></ul></section>\n<h3>04 독립운동은 인물·부대·전투를 세트로</h3><p class=\"material-reference\">74-42 · 73-43</p>\n<section class=\"material-row\"><h4>북만주 ↔ 남만주</h4><ul><li>지청천·대전자령 → 한국독립군(한국독립당의 군사 조직)</li><li>양세봉·영릉가 → 조선혁명군</li></ul></section>\n<section class=\"material-row\"><h4>김원봉</h4><ul><li>의열단 → 1938년 우한·조선의용대 / 광복군: 충칭·OSS</li></ul></section>\n<section class=\"material-row\"><h4>무장 투쟁 순서</h4><ul><li>봉오동 → 청산리 → 간도 참변 → 자유시 참변</li></ul></section>\n<section class=\"material-row\"><h4>73-43 · 소속</h4><ul><li>1938 우한·김원봉 → 조선의용대 → 조선 민족 전선 연맹 산하</li></ul></section>\n<div class=\"material-card-group\">\n<section class=\"material-card\"><h4>1910년대</h4><ul><li>헌병경찰·태형</li></ul></section>\n<section class=\"material-card\"><h4>1920년대</h4><ul><li>문화통치·산미증식</li></ul></section>\n<section class=\"material-card\"><h4>1930년대 이후</h4><ul><li>농촌진흥 → 전시 동원</li></ul></section>\n</div>\n<div class=\"material-card-group\">\n<section class=\"material-card\"><h4>북만주 · 지청천</h4><ul><li>한국독립군 ↔ 대전자령</li></ul></section>\n<section class=\"material-card\"><h4>남만주 · 양세봉</h4><ul><li>조선혁명군 ↔ 영릉가</li></ul></section>\n</div>\n<footer><p>근거: 파일섬 시대별 학습 · 연습 예제: 실전모의고사 70–75회</p></footer></article>";
+/* Reuse existing access-controlled concept tables. No textbook bytes are bundled or persisted here. */
+(function (root) {
+'use strict';
+var titles={modern:'광복과 대한민국',samguk:'삼국시대',nambuk:'남북국시대',opening:'개항기와 대한제국',colonial:'일제 강점기와 독립운동'};
+var scopes={
+ modern:/정부|헌법|개헌|민주|남북|정전|전쟁|부정|경제|올림픽|국회|외환|광복|수립/,
+ samguk:/무덤|고분|천마|돌무지|석실|벽돌|모줄임|한성|웅진|사비|수도|금관|문화|고구려|백제|신라|가야/,
+ nambuk:/신문왕|원성왕|독서삼품|국학|통일|신라|발해|문화|유적/,
+ colonial:/통치|독립|무장|연합|의열|의용|광복|운동|민족|임시|만주|결사|수탈|이민/
+};
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(x){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x];});}
+function section(id,key,title,body){return '<article class="weakness-material" data-weakness-part="'+key+'" id="weakness-part-'+id+'" aria-labelledby="weakness-part-'+id+'-title"><header><p class="material-priority">'+id+'순위 약점 보완</p><h2 tabindex="-1" id="weakness-part-'+id+'-title">'+title+'</h2></header><div class="material-controls"><button type="button" data-weakness-start>점검하기 · 50문항</button></div>'+body+'</article>';}
+function slot(era){return '<section class="hw-source-section" data-source-era="'+era+'" aria-label="'+titles[era]+' 원래 표"><h3>'+titles[era]+' · 시대별 학습 표</h3><p role="status">시대별 학습에서 표를 불러오는 중이에요.</p></section>';}
+function examAid(items){
+ return '<aside class="hw-exam-aid"><h3>기출에서 다시 볼 연결</h3><ul>'+items.map(function(item){
+   return '<li><strong>'+esc(item[1])+'</strong><p>'+esc(item[2])+'</p><small><a href="#formal-exams/materials-'+item[0].split('-')[0]+'">'+esc(item[0].replace('-','회 ')+'번 해설')+'</a></small></li>';
+ }).join('')+'</ul></aside>';
+}
+function render(){
+ var modern=examAid([['74-48','같은 외환 위기라도 정부를 구분','김영삼 정부 말 외환 위기 발생 → 김대중 정부에서 노사정 위원회 출범과 IMF 구제 금융 조기 상환.']]);
+ var ancient=examAid([['75-03','천마총은 무덤, 천마도는 그림','천마총·금관총·황남대총 → 신라의 돌무지덧널무덤. 천마도는 천마총에서 나온 말다래 그림.'],['74-50','신문왕과 원성왕을 한 묶음으로 외우지 않기','신문왕은 국학 설치와 9주 5소경·9서당 10정 정비. 원성왕은 독서삼품과 실시.']]);
+ var opening=examAid([['75-38','서로 다른 시대를 넘는 순서','중추원 관제 개편(1898) → 대한국 국제(1899) → 대동단결 선언(1917) → 제헌 헌법(1948).'],['75-35','지문에 나온 ‘재작년’부터 계산','관동 대지진(1923)이 재작년이라면 지문은 1925년. 1924년에 문을 연 경성 제국 대학 예과 학생은 볼 수 있어요.'],['74-38','의열단은 인물과 표적을 짝으로','박재혁 → 부산 경찰서, 김익상 → 조선 총독부, 김상옥 → 종로 경찰서.']]);
+ return section(1,'modern','대한민국',modern+slot('modern'))+section(2,'ancient','고대사',(root.HanqWeaknessTimeline||'')+ancient+slot('samguk')+slot('nambuk'))+section(3,'opening-colonial','개화기·일제강점기',opening+slot('opening')+slot('colonial'));
+}
+function el(doc,tag,text,cls){var x=doc.createElement(tag);if(text)x.textContent=text;if(cls)x.className=cls;return x;}
+function sourceLocation(doc,era,label,source){
+ var place=el(doc,'p',null,'hw-source-location'),a=el(doc,'a','시대별 학습 › '+titles[era]);
+ a.setAttribute('href','#chapter/'+era+'/webtoon');place.append(a,doc.createTextNode(' › 개념 학습'+(label?' › '+label:'')));
+ if(source){
+   var url=new URL(doc.defaultView.location.href);url.searchParams.set('textbookOriginal',String(source.page));url.searchParams.set('textbookOriginalSource',source.sha);url.hash='#chapter/'+era+'/webtoon';
+   var original=el(doc,'a','해당 쪽 열기');original.href=url.href;original.target='_blank';original.rel='noopener';place.append(doc.createTextNode(' · '),original);
+ }
+ return place;
+}
+function headingWords(lines){return (lines||[]).map(function(line){return (line.runs||line.spans||[]).map(function(run){return run.text||'';}).join('')||line.text||'';}).join(' ').trim();}
+function tableWords(block){return (block.rows||[]).map(function(row){return (row.cells||[]).map(function(cell){return headingWords(cell.lines);}).join(' ');}).join(' ');}
+function select(page,era,title){
+ // Select whole original tables, including nested text, cells and visual
+ // attachments. Keep a separate original heading/figure only when it has a
+ // concrete visual-study cue, without rewriting source captions.
+ var source=page.blocks.filter(function(b){return b.studySection==='concept';}),near=title||'',picked=[];
+ var visual={samguk:/무덤|고분|천마|덧널|석실|벽돌|모줄임|한성|웅진|사비|수도|금관|경주|익산|장군총|고령|문화재|지도/,nambuk:/무덤|고분|석탑|불상|유적|지도|문화재|신라촌락|정혜|정효/,colonial:/독립군|광복군|무장.*투쟁|전투|국외.*기지|한중.*작전/}[era];
+ function descendants(id){
+   var ids=new Set([id]),n=0;
+   while(n!==ids.size){n=ids.size;source.forEach(function(b){if(ids.has(b.sourceParentTableId))ids.add(b.id);});}
+   return source.filter(function(b){return ids.has(b.id);});
+ }
+ source.forEach(function(b){
+   if(b.type==='heading'){near=headingWords(b.lines)||near;return;}
+   if(b.sourceParentTableId||b.sourceTargetCellId)return;
+   if(b.type==='table'){
+     var blocks=descendants(b.id),label=headingWords(b.sourceCaptionLines)||near;
+     var text=blocks.map(function(x){return x.type==='table'?tableWords(x):headingWords(x.lines);}).join(' ');
+     if(era==='modern'||era==='colonial'||scopes[era].test(label+' '+text))picked.push({label:label,blocks:blocks});
+   }else if(b.type==='figure'&&visual&&!/^(?:decorative-|fragmented-cover-raster|full-page-raster)/.test(b.classification||'')){
+     var caption=(b.caption||'')+' '+(b.alt||'');
+     if(visual.test(caption)||visual.test(near)&&!(/^원문 그림(?: · .*)?$/.test(caption.trim())&&!b.assetId))
+       picked.push({label:near||title||'원문 그림',blocks:[b]});
+   }
+ });
+ return picked;
+}
+function mount(host,pdf){
+ stop();
+ var doc=host.ownerDocument,api=root.HanqApi,w=doc.defaultView,button=pdf.querySelector('button'),status=pdf.querySelector('[role=status]');
+ var initial=api&&api.state&&api.state(),catalog=root.HanqPrivateTextbook,owns=function(){var x=api&&api.state&&api.state();return x&&initial&&x.signedIn&&!x.restoring&&x.ownerId&&x.ownerId===initial.ownerId&&x.epoch===initial.epoch;};
+ var generation=0,children=[],aborts=[],unsubscribe=null,active=true;
+ var runIsCurrent=function(g){return active&&generation===g&&owns()&&host.isConnected;};
+ function destroyViews(){children.splice(0).forEach(function(x){if(x.cleanup)x.cleanup();else if(x.stop)x.stop();});aborts.splice(0).forEach(function(x){x.abort();});}
+ cleanup=function(){active=false;generation++;destroyViews();if(unsubscribe)unsubscribe();};
+ if(api&&api.onChange)unsubscribe=api.onChange(function(){if(!owns()){stop();host.querySelectorAll('[data-source-era]').forEach(function(t){while(t.children.length>1)t.lastElementChild.remove();});button.disabled=true;status.hidden=false;status.textContent='계정이 바뀌었어요. 약점 보완을 다시 열어 주세요.';}});
+ function message(t,value){while(t.children.length>1)t.lastElementChild.remove();var p=el(doc,'p',value);p.setAttribute('role','status');t.append(p);}
+ function generic(target,era,g,manifestPromise,revision){
+   return manifestPromise.then(async function(m){
+     if(!runIsCurrent(g))return;
+     if(!catalog.revisionRoutesReady(doc,era,revision))throw Error('manifest pin unavailable');
+     var range=catalog.eraFor(era,revision),meta=catalog.sourceInfo(revision);
+     if(!root.HanqSemanticLibrary?.validManifest(m,meta.sha256))throw Error('invalid manifest');
+     var entries=m.pages.filter(function(p){return Number.isInteger(p.pdfPage)&&p.pdfPage>=range.from&&p.pdfPage<=range.to&&p.studySectionCounts&&p.studySectionCounts.concept>0;}).sort(function(a,b){return a.pdfPage-b.pdfPage;});
+     var results=[];
+     for(var offset=0;offset<entries.length;offset+=2){
+       if(!runIsCurrent(g))return;
+       var chunk=await Promise.all(entries.slice(offset,offset+2).map(async function(entry){
+         var p=await api.textbookSemanticPage(entry.pdfPage,revision);
+         if(p.pdfPage!==entry.pdfPage||p.sourceSha256!==meta.sha256||p.studySectionPartition?.schemaVersion!=='hanq-study-sections/1'||!Array.isArray(p.blocks))throw Error('invalid source page');
+         return {page:p,parts:select(p,era,entry.title)};
+       }));
+       results.push.apply(results,chunk);
+     }
+     if(!runIsCurrent(g))return;
+     if(!results.some(function(x){return x.parts.some(function(p){return p.blocks.some(function(b){return b.type==='table'&&!b.sourceParentTableId;});});}))throw Error('missing tables');
+     while(target.children.length>1)target.lastElementChild.remove();
+     var promises=[];
+     results.forEach(function(result){
+       result.parts.forEach(function(part){
+         var wrapper=el(doc,'section',null,'hw-source'),paper=el(doc,'div',null,'hw-concept-table textbook-semantic-library history-notes-design');
+         paper.dataset.historyEdition=meta.edition.startsWith('81')?'81':'79';
+         wrapper.append(sourceLocation(doc,era,(part.label?part.label+' · ':'')+meta.edition+' PDF '+result.page.pdfPage+'쪽',{page:result.page.pdfPage,sha:meta.sha256}),paper);target.append(wrapper);
+         var shown=root.HanqTextbookSemantic.render(paper,Object.assign({},result.page,{blocks:part.blocks,sourceBlanks:[],generatedPractice:[]}),{
+           compactReviewStatus:true,isFigureAvailable:function(f){return (m.figures||[]).some(function(x){return x.id===f.assetId;});},
+           resolveFigure:function(f){if(!runIsCurrent(g))return Promise.reject(Error('account changed'));return api.textbookSemanticFigure(f.assetId,revision).then(function(b){if(!runIsCurrent(g))throw Error('account changed');return b;});}
+         });children.push(shown);promises.push(shown.ready.then(async function(){
+           var imgs=Array.from(paper.querySelectorAll('img'));
+           await Promise.all(imgs.map(function(img){img.loading='eager';return img.decode?img.decode().catch(function(){}):Promise.resolve();}));
+         }));
+       });
+     });
+     await Promise.all(promises);
+   });
+ }
+ async function opening(target,g){
+   var transport=root.HanqOpeningScriptTransport?.fromDocument(doc,api);if(!transport)throw Error('opening source unavailable');
+   var abort=new w.AbortController();aborts.push(abort);
+   var input=await transport.loadBundle({signal:abort.signal});
+   var reader=root.HanqOpeningScriptReader,prep=await reader.prepare(input,await transport.loadStructure({signal:abort.signal}),transport.presentation);
+   if(!runIsCurrent(g))return;
+   while(target.children.length>1)target.lastElementChild.remove();
+   var count=0,assets=[];
+   prep.bundle.topics.forEach(function(topic){
+      var frame=el(doc,'section',null,'hw-source hw-opening-source');
+      var paper=el(doc,'div');frame.append(sourceLocation(doc,'opening',topic.title),paper);target.append(frame);
+      var shown=reader.mount(paper,prep,{initialTopic:topic.id,studyTablesOnly:true,externalNavigation:true,loadFigure:function(name,options){
+        if(!runIsCurrent(g))return Promise.reject(Error('account changed'));
+        return transport.loadFigure(name,options);
+      }});
+      count+=frame.querySelectorAll('table').length;children.push(shown);assets.push(shown.ready);
+   });
+   if(!count)throw Error('missing opening tables');
+   await Promise.all(assets);
+ }
+ async function load(){
+   var g=++generation;destroyViews();button.disabled=true;status.hidden=false;status.textContent='자료를 불러오는 중이에요.';
+   var targets=Array.from(host.querySelectorAll('[data-source-era]'));
+   targets.forEach(function(t){message(t,'시대별 학습에서 표를 불러오는 중이에요.');});
+   var rev=catalog?catalog.currentRevision(doc,null):null,m;
+   if(owns()&&catalog&&api.textbookSemanticManifest)m=Promise.resolve().then(function(){return api.textbookSemanticManifest(rev);});
+   else m=Promise.resolve(null);
+   var ready=0;
+   await Promise.all(targets.map(async function(t){
+     var era=t.dataset.sourceEra;
+     try{await (era==='opening'?opening(t,g):generic(t,era,g,m,rev));if(runIsCurrent(g))ready++;}
+     catch(e){if(runIsCurrent(g)){message(t,'이 구간의 원래 표를 불러오지 못했어요.');var a=el(doc,'button','자료 다시 불러오기','tool-btn');a.type='button';a.onclick=load;t.append(a);}}
+   }));
+   if(!runIsCurrent(g))return;
+   button.disabled=ready!==targets.length;
+   var imageProblem=host.querySelector('[data-figure-unavailable],figure[data-error],.textbook-semantic-figure-status');
+   status.textContent=button.disabled?'빠진 자료가 있어요. 다시 불러오면 PDF로 저장할 수 있어요.':imageProblem?'일부 원문 그림이 아직 보이지 않아요. 표시된 자료는 PDF로 저장할 수 있어요.':'인쇄 화면에서 PDF로 저장할 수 있어요.';
+   if(!button.disabled&&imageProblem){var retry=el(doc,'button','원문 그림 다시 불러오기','tool-btn');retry.type='button';retry.onclick=load;status.append(doc.createTextNode(' '),retry);}
+ }
+ button.onclick=function(){if(!button.disabled&&owns()&&host.isConnected&&!host.hidden)w.print();};
+ load();
+}
+var cleanup=null;
+function stop(){if(cleanup){var f=cleanup;cleanup=null;f();}}
+root.HanqWeaknessStudyContent={render:render,mount:mount,stop:stop,select:select};
+}(window));

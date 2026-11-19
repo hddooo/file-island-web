@@ -89,7 +89,7 @@
     function showImage(src,alt,opener){dismissImage();const d=el('dialog',null,'osr-image-dialog');d.setAttribute('aria-label',alt);const close=button('이미지 닫기',closeImage),img=el('img');let zoomed=false;
       const zoom=button('원래 크기로 확대',()=>{zoomed=!zoomed;img.style.maxWidth=zoomed?'none':'100%';zoom.textContent=zoomed?'화면 너비에 맞추기':'원래 크기로 확대';});
       img.src=src;img.alt=alt;d.append(close,zoom,img);doc.body.append(d);dialog={node:d,opener,release:options.acquireModalLock&&options.acquireModalLock()};win.history.pushState(Object.assign({},win.history.state,{openingImage:true}),'');d.addEventListener('cancel',e=>{e.preventDefault();closeImage();});d.addEventListener('close',()=>{if(dialog&&dialog.node===d)dismissImage();});d.addEventListener('keydown',e=>{if(e.key==='Tab'){e.preventDefault();(doc.activeElement===close?zoom:close).focus();}});try{d.showModal();close.focus();}catch(e){dismissImage();throw e;}}
-    let figureAbort=null,figureQueue=[],figureActive=0;
+    let figureAbort=null,figureQueue=[],figureActive=0;const printFigures=[];
     let glossaryTerms=null,restoreFrequency=null;
     function clearImages(){if(restoreFrequency){restoreFrequency();restoreFrequency=null;}if(glossaryTerms){glossaryTerms.stop();glossaryTerms=null;}layoutObservers.splice(0).forEach(observer=>observer.disconnect());if(figureAbort)figureAbort.abort();figureAbort=new win.AbortController();figureQueue.splice(0).forEach(job=>job.reject(Error('aborted')));dismissImage();urls.forEach(u=>win.URL.revokeObjectURL(u));urls.clear();}
     function pumpFigures(){while(figureActive<2&&figureQueue.length){const job=figureQueue.shift();if(job.signal.aborted){job.reject(Error('aborted'));continue;}figureActive++;Promise.resolve().then(()=>{if(job.signal.aborted)throw Error('aborted');return options.loadFigure(job.name,{signal:job.signal});}).then(job.resolve,job.reject).finally(()=>{figureActive--;pumpFigures();});}}
@@ -121,7 +121,7 @@
           status.textContent=code==='timeout'?'그림 전송 시간이 초과되었습니다.':code==='image_decode'?'그림을 표시하지 못했습니다.':'그림을 불러오지 못했습니다.';retry.hidden=false;
         }finally{pending=false;}
       }
-      attempt();
+      const firstImage=attempt();if(options.studyTablesOnly)printFigures.push(firstImage);
     }
     function selected(s,t){
       if(s.kind!=='study' || s.page<t.from || s.page>t.to)return false;
@@ -185,13 +185,14 @@
       if(mode==='study')for(const heading of segment.headings)renderMarkdown(doc,article,heading,figure);
       for(const id of segment.items){
         if(prepared.presentation.hiddenItems.includes(id)||examItems.has(id)!==(mode==='exam'))continue;
-        if(prepared.presentation.itemKinds[id]==='timeline'){const f=prepared.figures.find(f=>f.events.length);const block=el('section',null,'osr-timeline');block.dataset.owner=f.owner;figure(block,f.name,prepared.presentation.timelineAlt);const list=el('ol');for(const e of f.events){const li=el('li');renderMarkdown(doc,li,e.dateMarkdown+' '+e.eventMarkdown,figure);list.append(li);}const details=el('details');details.append(el('summary','사건 순서 읽기'),list);block.append(details);article.append(block);}
+        if(prepared.presentation.itemKinds[id]==='timeline')renderStudyTimeline(article,false);
         else if(prepared.presentation.itemKinds[id]==='photos'){for(const f of prepared.figures.filter(f=>f.owner===prepared.presentation.photoOwners[id]))sourceFigure(article,f.id);}
         else if(prepared.presentation.itemKinds[id]==='gallery'){const gallery=el('div',null,'osr-gallery');for(const row of [...new Set(prepared.figures.filter(f=>f.owner===id).map(f=>f.galleryRow))]){const group=el('div',null,'osr-gallery-row');group.style.setProperty('--osr-gallery-columns',prepared.figures.filter(f=>f.owner===id&&f.galleryRow===row).length);for(const f of prepared.figures.filter(f=>f.owner===id&&f.galleryRow===row))sourceFigure(group,f.id);gallery.append(group);}article.append(gallery);}
         else if(prepared.blocks.some(b=>b.id===id))renderMarkdown(doc,article,prepared.blocks.find(b=>b.id===id).markdown,figure);
         else renderSourceTable(article,prepared.tables.find(t=>t.id===id));
       }
     }
+    function renderStudyTimeline(article,open){const f=prepared.figures.find(f=>f.events.length);const block=el('section',null,'osr-timeline');block.dataset.owner=f.owner;figure(block,f.name,prepared.presentation.timelineAlt);const list=el('ol');for(const e of f.events){const li=el('li');renderMarkdown(doc,li,e.dateMarkdown+' '+e.eventMarkdown,figure);list.append(li);}const details=el('details');details.open=open;details.append(el('summary','사건 순서 읽기'),list);block.append(details);article.append(block);}
     function sourceFigure(parent,id){const f=prepared.figures.find(x=>x.id===id);if(!f)throw Error('opening_figure_missing');const holder=el('div');holder.dataset.owner=f.owner;parent.append(holder);figure(holder,f.name,f.captionMarkdown.trim().replace(/^[-+]\s+/,''));}
     function renderSourceTable(parent,t){
       const block=el('section',null,'osr-table-block');parent.append(block);parent=block;const toolbar=el('div',null,'osr-table-toolbar');if(t.nested)toolbar.classList.add('osr-nested-toolbar');parent.append(toolbar);
@@ -242,6 +243,23 @@
       const nextTopic=valid?s.topic:initialTopic,nextMode=valid?s.mode:options.modeFromLocation?options.modeFromLocation():options.initialMode||'study';
       if(mode==='practice'&&nextMode!=='practice'&&options.workspace?.hasUnsaved?.()){if(options.routeForMode)options.routeForMode(mode);win.history.replaceState(currentHistory,'',currentHref);}
       transition(nextTopic,nextMode,()=>{if(options.routeForMode)options.routeForMode(nextMode);win.history.replaceState(targetHistory,'',targetHref);});
+    }
+    if(options.studyTablesOnly){
+      // Render the existing study tables verbatim without mounting workspace,
+      // changing routes, entering exam mode, or copying any source into bundles.
+      shell.classList.add('osr-weakness-tables');header.remove();toc.remove();
+      mode='study';clearImages();
+      const t=viewTopics.find(x=>x.id===initialTopic),seen=new Set();
+      const label=el('h4',t.title);body.append(label);
+      for(const segment of prepared.segments.filter(s=>selected(s,t))){
+        const items=segment.items.filter(id=>!examItems.has(id)&&!prepared.presentation.hiddenItems.includes(id)&&!seen.has(id));
+        const project=items.map(id=>({id,table:prepared.tables.find(x=>x.id===id&&!x.nested),timeline:prepared.presentation.itemKinds?.[id]==='timeline'})).filter(x=>x.table||x.timeline);
+        if(!project.length)continue;
+        const card=el('section',null,'osr-source-card');card.dataset.page=segment.page;
+        card.append(el('p','개념 학습 · PDF '+segment.page+'쪽','hw-source-location'));
+        project.forEach(function(x){seen.add(x.id);if(x.timeline)renderStudyTimeline(card,true);else renderSourceTable(card,x.table);});body.append(card);
+      }
+      return {ready:Promise.all(printFigures),stop(){alive=false;epoch++;clearImages();shell.remove();}};
     }
     if(!options.externalNavigation)win.addEventListener('popstate',pop);pop();
     return {handlePopState(){if(!alive)return false;pop();return true;},stop(){alive=false;epoch++;clearImages();drafts.clear();win.removeEventListener('popstate',pop);shell.remove();}};

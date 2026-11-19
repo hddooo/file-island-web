@@ -6,28 +6,32 @@ const dom=new JSDOM('<main id="app"></main>',{url:'https://weakness.test/#histor
 let owner=null,company=false,route='',home=0,listener=null;
 w.scrollTo=()=>{};
 w.HanqDisplayMode={current:()=>company?'company':'default'};
-w.HanqApi={state:()=>({signedIn:!!owner,ownerId:owner}),onChange:fn=>{listener=fn;return()=>{listener=null;}}};
-const images=[],blobs=[],downloads=[];
-class ImageStub{set src(src){images.push(src);this.naturalWidth=1500;this.naturalHeight=2121;queueMicrotask(()=>this.onload());}}
-w.URL.createObjectURL=b=>{blobs.push(b);return 'blob:https://weakness.test/'+blobs.length;};
-w.URL.revokeObjectURL=()=>{};w.setTimeout=()=>{};
-w.HTMLAnchorElement.prototype.click=function(){downloads.push(this.download);};
-w.HTMLCanvasElement.prototype.getContext=()=>({fillRect(){},drawImage(){}});
-w.HTMLCanvasElement.prototype.toBlob=cb=>cb(new Blob([Uint8Array.of(255,216,255,217)],{type:'image/jpeg'}));
-w.Blob=Blob;w.TextEncoder=TextEncoder;w.Image=ImageStub;
-for(const f of ['content','bank','practice','pdf'])w.eval(fs.readFileSync('media/history-weakness-'+f+'.js','utf8'));
-const open=Function('app','window','requireStudyLogin','subjectRoute','header','home',index.slice(start,end)+'\nreturn openHistoryWeakness;')(app,w,()=>!owner,(hash)=>{route=hash;w.HanqWeaknessPractice.stop();},()=>'<div class="known-header"></div>',()=>{home++;});
+const hooks=new Set();
+w.HanqApi={state:()=>({signedIn:!!owner,ownerId:owner}),onChange:fn=>{hooks.add(fn);return()=>hooks.delete(fn);}};
+listener=()=>[...hooks].forEach(fn=>fn());
+let printCalls=0,requestCount=0,failEra=false,hold=null;
+w.print=()=>{printCalls++;};
+const sha='fixture-pinned-revision';
+const ranges={modern:126,samguk:16,nambuk:31,colonial:108};
+const cell=(rowIndex,columnIndex,text,extra={})=>({rowIndex,columnIndex,lines:[{spans:[{text}]}],...extra});
+const head={126:'이승만 정부',16:'삼국 고분',31:'통일 신라',108:'독립운동'};
+const table=(p,studySection)=>({id:'p'+p+'-'+studySection,type:'table',studySection,columnCount:2,rows:[
+ {cells:[cell(0,0,head[p],{header:true,scope:'row'}),cell(0,1,'근거 ** 원문 그대로')]},
+ {cells:[cell(1,0,'둘째 행',{header:true,scope:'row'}),cell(1,1,'둘째 행 내용')]}]});
+w.HanqPrivateTextbook={currentRevision:()=>sha,revisionRoutesReady:()=>true,eraFor:era=>({from:ranges[era],to:ranges[era]}),sourceInfo:()=>({sha256:sha,edition:'81회 대비'})};
+w.HanqSemanticLibrary={validManifest:(m,s)=>m.source.sha256===s};
+w.HanqApi.textbookSemanticManifest=async()=>({source:{sha256:sha},pages:Object.values(ranges).map(n=>({pdfPage:n,title:head[n],studySectionCounts:{concept:2}}))});
+w.HanqApi.textbookSemanticPage=async(p,rev)=>{requestCount++;if(hold)await hold;assert.equal(rev,sha);if(p===108&&failEra)throw Error('simulated');
+ return {schemaVersion:'hanq-semantic/1',pdfPage:p,sourceSha256:sha,studySectionPartition:{schemaVersion:'hanq-study-sections/1'},blocks:[table(p,'concept'),table(p,'exam')],sourceBlanks:[{displayText:'숨겨진 답안 섹션'}]};};
+w.HanqOpeningScriptTransport={fromDocument:()=>({loadBundle:async()=>({}),loadStructure:async()=>({}),presentation:{}})};
+w.HanqOpeningScriptReader={prepare:async()=>({bundle:{topics:[{id:'opening1',title:'개항기 단원'}]}}),mount(host,p,opts){assert(opts.studyTablesOnly&&opts.externalNavigation);host.innerHTML='<table><tbody><tr><td>개화기 원래 표</td></tr></tbody></table>';return {ready:Promise.resolve(),stop(){host.replaceChildren();}};}};
+w.eval(fs.readFileSync('media/textbook-semantic.js','utf8'));
+for(const f of ['timeline','content','bank','practice'])w.eval(fs.readFileSync('media/history-weakness-'+f+'.js','utf8'));
+const open=Function('app','window','document','requireStudyLogin','subjectRoute','header','home',index.slice(start,end)+'\nreturn openHistoryWeakness;')(app,w,d,()=>!owner,(hash)=>{route=hash;w.HanqWeaknessPractice.stop();w.HanqWeaknessStudyContent.stop();},()=>'<div class="known-header"></div>',()=>{home++;});
 const find=s=>app.querySelector(s),a=(x,v)=>find('[data-wp-action="'+x+'"]'+(v==null?'':'[data-wp-value="'+v+'"]'));
 const part=x=>find('[data-weakness-part="'+x+'"] [data-weakness-start]');
 const tick=()=>new Promise(r=>setImmediate(r));
-async function pdfAfter(){
- const n=blobs.length;find('[data-chart-pdf="save-all"]').click();
- for(let i=0;i<30&&blobs.length===n;i++)await tick();
- assert.equal(blobs.length,n+1);
- const pdf=await blobs.at(-1).text();
- assert(pdf.startsWith('%PDF-1.4'));assert(pdf.includes('/Count 3'));assert.equal((pdf.match(/Subtype \/Image/g)||[]).length,3);assert(!pdf.includes('/Font'));
- assert.equal(downloads.at(-1),'한능검 약점 보완 전체.pdf');
-}
+async function until(predicate){for(let i=0;i<40;i++){if(predicate())return;await tick();} assert(predicate(),'condition timed out');}
 (async()=>{
  open(false);assert(!app.children.length);
  owner='alpha';open(false);
@@ -37,9 +41,35 @@ async function pdfAfter(){
  assert.match(find('#ancient-timeline-caption').textContent,/554년.*642년/);
  assert.equal(app.querySelectorAll('article .timeline-event').length,11);
  assert(allowed(find('[data-weakness-study-image]').getAttribute('src')));
- assert(!find('#historyWeaknessMaterials').hidden);assert.equal(images.length,0);assert(find('#historyWeaknessPracticeHost').hidden);
- await pdfAfter();assert.deepEqual(images.slice(-3),['1','2-timeline','3'].map(x=>'media/history-weakness/weakness-priority-'+x+'.webp'));
- company=true;await pdfAfter();assert.deepEqual(images.slice(-3),['1','2-timeline','3'].map(x=>'media/history-weakness/weakness-priority-'+x+'-dark.webp'));
+ assert(!find('#historyWeaknessMaterials').hidden);assert(find('#historyWeaknessPracticeHost').hidden);
+ await until(()=>!find('[data-chart-pdf]').disabled);
+ assert.equal(requestCount,4);
+ assert.equal(app.querySelectorAll('.hw-concept-table table').length,4);
+ assert.equal(app.querySelectorAll('[data-source-block$="-exam"]').length,0);
+ assert(!app.textContent.includes('숨겨진 답안 섹션'));
+ assert.equal(app.querySelectorAll('.hw-concept-table table tr').length,8);
+ assert.match(find('.hw-concept-table table').textContent,/이승만 정부.*근거 \*\* 원문 그대로.*둘째 행/);
+ assert.match(find('.hw-source-location').textContent,/시대별 학습 › 광복과 대한민국 › 개념 학습 › 이승만 정부 · 81회 대비 PDF 126쪽/);
+ assert.match(find('.hw-opening-source .hw-source-location').textContent,/개항기 단원/);
+ find('[data-chart-pdf]').click();assert.equal(printCalls,1);
+ company=true;find('[data-chart-pdf]').click();assert.equal(printCalls,2);
+ assert.equal(app.querySelectorAll('.hw-triangle .king.star').length,12);
+ assert.deepEqual([...app.querySelectorAll('.hw-triangle .era')].find(x=>x.querySelector('.era-head b').textContent==='5C').querySelector('.links').textContent.match(/433|475|493/g),['433','475','493']);
+ assert.match(find('.hw-triangle').textContent,/551.*한강 유역 공격.*553.*관산성/);
+ assert.match(find('.hw-triangle').textContent,/금관가야 구해왕◇ 항복/);
+ assert.equal(app.querySelectorAll('.hw-exam-aid').length,3);
+ assert.match(app.querySelector('.hw-exam-aid').textContent,/노사정 위원회/);
+ const link=find('.hw-source-location a:last-child');assert.equal(new URL(link.href).searchParams.get('textbookOriginal'),'126');
+ const pid='parent',nested=table(16,'concept');nested.id='nested';nested.sourceParentTableId=pid;
+ const grouped=w.HanqWeaknessStudyContent.select({blocks:[{...table(16,'concept'),id:pid,rows:[{cells:[cell(0,0,'구분'),cell(0,1,'일반')]}]},nested,
+ {id:'figure-a',type:'figure',studySection:'concept',caption:'고구려 고분',assetId:'p016-figure-1'},
+ {id:'figure-b',type:'figure',studySection:'exam',caption:'고구려 고분',assetId:'p016-figure-2'}]},'samguk','기타');
+ assert.equal(grouped.map(x=>x.blocks.map(b=>b.id).join(',')).join('|'),'parent,nested|figure-a');
+
+ assert.match(find('.hw-triangle').textContent,/매소성 전투.*당/);
+ failEra=true;open(true);await until(()=>find('[data-source-era=colonial] button'));
+ assert(find('[data-chart-pdf]').disabled);find('[data-chart-pdf]').click();assert.equal(printCalls,2);
+ failEra=false;find('[data-source-era=colonial] button').click();await until(()=>!find('[data-chart-pdf]').disabled);
  for(const p of ['modern','ancient','opening-colonial']){
   const book=w.HanqWeaknessPracticeBank[p];assert.equal(book.length,50);assert.equal(new Set(book.map(q=>q.id)).size,50);
   part(p).click();assert(find('#historyWeaknessMaterials').hidden);assert(find('.history-weakness-all').hidden);
@@ -48,7 +78,7 @@ async function pdfAfter(){
   assert(!find('.wp-score'));assert(a('prev').disabled);
   a('select',book[0].answer).click();assert(!find('.wp-explain'));assert.equal(a('select',book[0].answer).getAttribute('aria-pressed'),'true');
   a('next').click();assert.equal(find('#wpHeading').textContent,book[1].prompt);
-  a('back').click();assert(!find('#historyWeaknessMaterials').hidden);assert.equal(listener,null);
+  a('back').click();assert(!find('#historyWeaknessMaterials').hidden);assert.equal(hooks.size,1);
   open(true);part(p).click();assert.equal(find('#wpHeading').textContent,book[1].prompt);
   a('list').click();assert.equal(app.querySelectorAll('#wpList button').length,50);a('jump',0).click();
   assert(a('select',book[0].answer).getAttribute('aria-pressed')==='true');
@@ -62,7 +92,7 @@ async function pdfAfter(){
   a('select',1).click();a('back').click();
  }
  owner='beta';open(true);part('modern').click();assert.equal(a('select',1).getAttribute('aria-pressed'),'false');
- owner=null;listener();assert(find('#historyWeaknessPracticeHost').hidden);
+ owner=null;listener();assert(find('#historyWeaknessPracticeHost').hidden);assert(!find('.hw-concept-table'));
  owner='gamma';open(false);find('#historyWeaknessBack').click();assert.equal(route,'#history');assert.equal(home,1);
- console.log('PASS login/owner isolation, 3 semantic study sections, 1 PDF in both modes, all three independent 50-question sessions, resume, no early grading, submit/results/answer explanations, restart');
+ console.log('PASS login/owner isolation, 4 concept sources + opening, exact rows and section fences, print, failure/retry, 3 priorities, all three independent 50-question sessions, resume, no early grading, submit/results/answer explanations, restart');
 })().catch(e=>{console.error(e);process.exitCode=1;});
