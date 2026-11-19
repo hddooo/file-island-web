@@ -22,7 +22,7 @@ w.HTMLCanvasElement.prototype.toBlob=function(cb){cb(new Blob([Uint8Array.of(255
 Function('window','Image','URL','document',script)(w,TestImage,w.URL,d);
 const open=Function('app','window','requireStudyLogin','subjectRoute','header','home',index.slice(start,end)+'\nreturn openHistoryWeakness;')(app,w,()=>!logged,(hash)=>{route=hash;},()=>'<div class="known-header"></div>',()=>{homeCalls++;});
 const titles=['1순위 약점 보완 · 대한민국','2순위 약점 보완 · 고대사','3순위 약점 보완 · 개화기·일제강점기'];
-const path=(i,theme)=>'media/history-weakness/weakness-priority-'+(i+1)+(theme==='company'?'-dark':'')+'.webp';
+const path=(i,theme)=>'media/history-weakness/weakness-priority-'+(i+1)+(i===1?'-timeline':'')+(theme==='company'?'-dark':'')+'.webp';
 function assertCards(theme){
   const cards=[...app.querySelectorAll('.history-weakness-card')];assert.equal(cards.length,3);
   assert.deepEqual(cards.map(c=>c.querySelector('h2').textContent),titles);

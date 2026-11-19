@@ -422,13 +422,13 @@
       if(requireStudyLogin())return;subjectRoute('#history/weakness',silent);
       var materials=[
         ['1순위 약점 보완 · 대한민국','지문 단서로 정부 찾기 · 헌법 개정과 민주화 운동 비교'],
-        ['2순위 약점 보완 · 고대사','유물 사진 구별 · 관산성 전투와 대야성 전투 사이 사건'],
+        ['2순위 약점 보완 · 고대사','유물 사진 구별 · 관산성부터 대야성까지 기출 화살표 연표'],
         ['3순위 약점 보완 · 개화기·일제강점기','시기부터 나누고 사건 순서 잡기 · 독립군 지역과 전투 연결']
       ];
       var base='media/history-weakness/weakness-priority-';
       var company=window.HanqDisplayMode&&window.HanqDisplayMode.current()==='company';
       var cards=materials.map(function(row,i){
-        var light=base+(i+1)+'.webp',dark=base+(i+1)+'-dark.webp',img=company?dark:light,name=row[0];
+        var part=base+(i+1)+(i===1?'-timeline':''),light=part+'.webp',dark=part+'-dark.webp',img=company?dark:light,name=row[0];
         return '<article class="history-weakness-card"><h2>'+name+'</h2><p>'+row[1]+'</p>'+
           '<a class="history-weakness-preview" href="'+img+'" target="_blank" rel="noopener" aria-label="'+name+' 확대해서 보기"><img loading="lazy" decoding="async" src="'+img+'" data-chart-light="'+light+'" data-chart-dark="'+dark+'" alt="'+name+' 미리 보기"></a>'+
           '<div class="history-weakness-links"><button type="button" data-chart-pdf="open" aria-label="'+name+' PDF 열기">PDF 열기</button>'+
