@@ -98,11 +98,26 @@
       inline(doc,p,parts.join('\n'));p.style.whiteSpace='pre-wrap';host.append(p);
     }
   }
+  function topicView(sourceTopics,merge) {
+    const groups=[['politics','조선 전기·후기',['early','late']],['society-culture','사회·문화',['society','culture']]];
+    const replacements=new Map(),aliases=new Map();
+    if(merge)for(const [id,title,members] of groups){
+      const ranges=members.map(id=>sourceTopics.find(t=>t.id===id));
+      if(ranges.some(t=>!t))continue;
+      const combined={id,title,ranges};
+      replacements.set(members[0],combined);
+      members.forEach(key=>aliases.set(key,id));
+    }
+    return {topics:sourceTopics.flatMap(t=>replacements.has(t.id)?[replacements.get(t.id)]:aliases.has(t.id)?[]:[t]),
+      normalize:id=>aliases.get(id)||id};
+  }
   function mount(host,bundle,options) {
     options=options||{};const doc=host.ownerDocument,win=doc.defaultView;
     if(!bundle || bundle.schema!=='hanq-joseon-script/1' || !/^[a-f0-9]{64}$/.test(bundle.source.sha256) || !Array.isArray(bundle.segments) || !Array.isArray(bundle.topics))throw Error('Invalid private study bundle');
     if(bundle.segments.some(s=>!['study','practice','answers','metadata'].includes(s.kind)||typeof s.markdown!=='string'))throw Error('Invalid source segments');
-    const initialTopic=bundle.topics.some(t=>t.id===options.initialTopic)?options.initialTopic:'early';
+    const {topics,normalize}=topicView(bundle.topics,options.mergeTopics);
+    const requestedTopic=normalize(options.initialTopic||'early');
+    const initialTopic=topics.some(t=>t.id===requestedTopic)?requestedTopic:topics[0]?.id;
     let termView=null;
     let alive=true,epoch=0,topic=initialTopic,mode=options.initialMode||'study',dialog=null;const urls=new Set(),drafts=new Map();
     let renderedMode=null,freshPractice=false,navigationVersion=0,currentHref=win.location.href,currentHistory=win.history.state;
@@ -111,7 +126,8 @@
     function button(text,fn){const e=el('button',text);e.type='button';e.onclick=fn;return e;}
     const header=el('header',null,'jsr-header');
     const nav=el('nav',null,'jsr-topics');nav.setAttribute('aria-label','조선 학습 주제');
-    bundle.topics.forEach(t=>{const b=button(t.title,()=>navigate(t.id,mode==='exam'?'exam':'study'));b.dataset.topic=t.id;nav.append(b);});header.append(nav);
+    if(topics.length===2&&topics.every(t=>t.ranges))nav.classList.add('jsr-topics-merged');
+    topics.forEach(t=>{const b=button(t.title,()=>navigate(t.id,mode==='exam'?'exam':'study'));b.dataset.topic=t.id;nav.append(b);});header.append(nav);
     const modes=el('nav',null,'jsr-modes steps steps-culture');modes.setAttribute('aria-label','자료 구분');
     [['study','개념 학습'],['exam','시험에는 이렇게 나온다'],['practice','빈칸 퀴즈']].forEach(([id,title])=>{const b=button('',()=>navigate(topic,id));b.className='step';b.dataset.mode=id;b.dataset.navigationNumber=String(modes.children.length+1).padStart(2,'0');b.append(el('span',b.dataset.navigationNumber),doc.createTextNode(' '+title));modes.append(b);});host.insertBefore(modes,shell);shell.append(header);
     const layout=el('div',null,'jsr-layout'),toc=el('nav',null,'jsr-toc'),body=el('main',null,'jsr-body');toc.setAttribute('aria-label','현재 주제 목차');layout.append(toc,body);shell.append(layout);
@@ -155,7 +171,7 @@
     }
     function selected(s,t){
       if(mode==='answers'||mode==='practice')return s.kind===mode; // Source groups retained; no invented canonical question mapping.
-      if(s.kind!=='study' || s.page<t.from || s.page>t.to)return false;
+      if(s.kind!=='study' || !(t.ranges||[t]).some(r=>s.page>=r.from&&s.page<=r.to))return false;
       const exam=bundle.source.sha256===editorialSource&&[62,63,68,69,70,76,77,78].includes(s.page)&&/시험에는 이렇게 나온다!/.test(s.markdown);
       return mode==='exam'?exam:!exam;
     }
@@ -165,7 +181,7 @@
     function renderContent(){nav.hidden=mode==='practice'||mode==='answers';epoch++;clearImages();body.replaceChildren();toc.replaceChildren();
       nav.querySelectorAll('button').forEach(b=>b.setAttribute('aria-current',String(b.dataset.topic===topic)));
       updateModeButtons(mode==='answers'?'practice':mode);
-      const t=bundle.topics.find(t=>t.id===topic)||bundle.topics[0];topic=t.id;
+      const t=topics.find(t=>t.id===topic)||topics[0];topic=t.id;
       body.append(el('h2',mode==='study'?t.title:mode==='exam'?t.title+' · 시험에는 이렇게 나온다':mode==='practice'?'조선 빈칸 문제':'조선 교재 정답'));
       if(mode==='practice'&&options.workspace){const heading=body.querySelector('h2');if(heading)heading.remove();options.workspace.show(body,{fresh:freshPractice});return;}
       if(mode==='practice'||mode==='answers')body.append(button(mode==='answers'?'빈칸 퀴즈로 돌아가기':'교재 정답 보기',()=>navigate(topic,mode==='answers'?'practice':'answers')));
@@ -515,8 +531,8 @@
     function navigate(nextTopic,nextMode){transition(nextTopic,nextMode,()=>{const state={source:bundle.source.sha256,topic:nextTopic,mode:nextMode};win.history.pushState(Object.assign({},win.history.state,{joseonScript:state}),'',options.routeForMode?options.routeForMode(nextMode):undefined);});}
     function pop(){
       if(dialog&&!(win.history.state&&win.history.state.joseonImage)){dismissImage();return;}dismissImage();
-      const targetHref=win.location.href,targetHistory=win.history.state,s=targetHistory&&targetHistory.joseonScript,valid=s&&s.source===bundle.source.sha256&&bundle.topics.some(t=>t.id===s.topic)&&['study','exam','practice','answers','recall'].includes(s.mode);
-      const nextTopic=valid?s.topic:initialTopic,nextMode=valid?s.mode:options.modeFromLocation?options.modeFromLocation():options.initialMode||'study';
+      const targetHref=win.location.href,targetHistory=win.history.state,s=targetHistory&&targetHistory.joseonScript,valid=s&&s.source===bundle.source.sha256&&topics.some(t=>t.id===normalize(s.topic))&&['study','exam','practice','answers','recall'].includes(s.mode);
+      const nextTopic=valid?normalize(s.topic):initialTopic,nextMode=valid?s.mode:options.modeFromLocation?options.modeFromLocation():options.initialMode||'study';
       if(mode==='practice'&&nextMode!=='practice'&&options.workspace?.hasUnsaved?.()){if(options.routeForMode)options.routeForMode(mode);win.history.replaceState(currentHistory,'',currentHref);}
       transition(nextTopic,nextMode,()=>{if(options.routeForMode)options.routeForMode(nextMode);win.history.replaceState(targetHistory,'',targetHref);});
     }
