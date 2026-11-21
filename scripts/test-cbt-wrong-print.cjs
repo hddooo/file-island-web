@@ -1,53 +1,118 @@
 'use strict';
-const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),{JSDOM}=require('jsdom'),css=require('css-tree');
-const source=fs.readFileSync('media/cbt-wrong-print.js','utf8'),materials=fs.readFileSync('media/cbt-round-materials.js','utf8');
-const runId='11111111-1111-4111-8111-111111111111';
-function q(exam,number){const questionId=`exam-${exam}-${String(number).padStart(2,'0')}`,options=Array.from({length:5},(_,i)=>({id:`o${i+1}`,number:i+1}));return{questionId,version:'v1',exam,number,runId,position:number-1,points:2,selectedOptionId:'o2',image:`/api/v1/cbt/runs/${runId}/questions/${number-1}/image`,common:null,options,review:{status:'wrong',correct:false,correctNumber:1,correctOptionId:'o1',explanation:'SECRET EXPLANATION',options:[{selected:true,correct:false}]}};}
-const newer='11111111-1111-4111-8111-111111111112',older='11111111-1111-4111-8111-111111111113';
-const runs=[{id:newer,round:69,status:'final',finalAt:'2026-11-20T00:00:00.000Z'},{id:older,round:69,status:'final',finalAt:'2026-11-19T00:00:00.000Z'}];
-function detail(run){
- return {run,items:Array.from({length:50},(_,i)=>{
-  const item=q(run.round,i+1),blank=run.id===older&&i===3,wrong=run.id===older&&i===1;
-  item.image='/api/v1/cbt/runs/'+run.id+'/questions/'+i+'/image';
-  item.selectedOptionId=blank?null:wrong?'o2':'o1';
-  item.review.status=blank?'unanswered':wrong?'wrong':'correct';
-  item.review.correct=!blank&&!wrong;
-  return item;
- })};
+const nodeTest=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),{JSDOM}=require('jsdom');
+const code=process.env.WORKSHEET_SOURCE||fs.readFileSync('media/cbt-wrong-print.js','utf8');
+const uuid='11111111-1111-4111-8111-111111111111';
+function question(r,n,{star=false,blank=false}={}){
+ const options=Array.from({length:5},(_,i)=>({id:'a'+i,number:i+1}));
+ return {questionId:'exam-'+r+'-'+String(n).padStart(2,'0'),version:'frozen',exam:r,number:n,position:n-1,runId:uuid,source:'exam',starred:star,everWrong:!star,selectedOptionId:blank?null:star?'a1':'a3',image:'/api/v1/cbt/runs/'+uuid+'/questions/'+(n-1)+'/image',options,review:{item:{arbitrary:'legacy nested shape not needed for print'},status:blank?'unanswered':star?'correct':'wrong',correctNumber:2,correctOptionId:'a1'}};
 }
-function fixture(){const dom=new JSDOM('<main></main>',{url:'https://fixture.test/#history',runScripts:'outside-only',pretendToBeVisual:true}),w=dom.window;w.HTMLDialogElement.prototype.showModal=function(){this.open=true;};let state={signedIn:true,ownerId:'a',epoch:1},handlers=[],calls=[],deferred=null,revoked=[],serial=0,custom=null;w.URL.createObjectURL=()=>`blob:fixture-${++serial}`;w.URL.revokeObjectURL=x=>revoked.push(x);w.eval(materials);w.eval(source);
- const api={state:()=>state,onChange(fn){handlers.push(fn);return()=>handlers=handlers.filter(x=>x!==fn);},async cbt(method,p){calls.push([method,p]);if(deferred)await deferred;
-  if(custom)return custom(method,p);if(p.endsWith('/runs'))return {runs};if(p.includes('/review-materials/')){const r=Number(p.split('/').pop()),s=q(r,2);s.starred=true;s.everWrong=r===69;if(!s.everWrong){s.selectedOptionId='o1';s.review.status='correct';s.review.correct=true;}
-    return {scope:'exam-starred-or-ever-wrong',round:r,hasMore:false,pendingStarCount:0,items:[s]};}
-  const run=runs.find(x=>p.endsWith(x.id));if(run)return detail(run);throw Error('Unexpected API path');
- }, cbtImage:async(...a)=>{calls.push(['IMAGE',...a]);return new w.Blob(['image'],{type:'image/png'});}};
- return{w,dom,api,calls,revoked,respond(fn){custom=fn;},delay(p){deferred=p;},switch(){state={signedIn:true,ownerId:'b',epoch:2};handlers.slice().forEach(f=>f(state));},close(){w.HanqCbtWrongPrint.open&&w.document.querySelector('dialog .wp-controls button')?.click();dom.window.close();}};}
-const tick=async()=>{for(let i=0;i<100;i++)await Promise.resolve();await new Promise(r=>setImmediate(r));};
-function click(w,text){const b=Array.from(w.document.querySelectorAll('button')).find(b=>b.textContent===text);assert(b,text);b.click();}
-test('round-only entry defaults to all and print is immediately actionable; 69 + 78 combined into one frame',async()=>{const f=fixture();try{
- const c=f.w.HanqCbtWrongPrint.open({api:f.api});await c.ready;const d=f.w.document;
- assert.equal(d.querySelectorAll('fieldset input').length,14);assert.equal(d.querySelectorAll('fieldset input:checked').length,14);
- assert.equal(d.querySelector('iframe'),null);assert.equal(f.calls.length,0);
- click(f.w,'선택 해제');assert([...d.querySelectorAll('button')].find(b=>b.textContent==='인쇄 / PDF 저장').disabled);
- d.querySelector('input[value="69"]').click();d.querySelector('input[value="78"]').click();
- const opened=[];Object.defineProperty(f.w.HTMLIFrameElement.prototype,'contentWindow',{get(){return {focus(){},print(){opened.push(1);}};}});
- f.w.Image=function(){return{naturalWidth:600,naturalHeight:600,set src(_){Promise.resolve().then(()=>this.onload());}};};
- Object.defineProperty(f.w.HTMLImageElement.prototype,'decode',{value(){return Promise.resolve();}}); // iframe has separate realm; decoded synthetic images below
- const append=f.w.HTMLElement.prototype.appendChild;
- f.w.HTMLElement.prototype.appendChild=function(e){const r=append.call(this,e);if(e.tagName==='IFRAME'){Object.defineProperty(e.contentDocument.defaultView.HTMLImageElement.prototype,'decode',{value(){return Promise.resolve();}});}return r;};
- click(f.w,'인쇄 / PDF 저장');await tick();
- const frame=d.querySelector('iframe');assert(frame);assert.equal(opened.length,1);
- assert.deepEqual([...frame.contentDocument.querySelectorAll('.wp-question h2')].map(x=>x.textContent),['1','2','3']);
- assert.deepEqual([...frame.contentDocument.querySelectorAll('.wp-question-origin')].map(x=>x.textContent),['(69회-2번)','(69회-4번)','(78회-2번)']);assert.deepEqual([...frame.contentDocument.querySelectorAll('.wp-answer-cell span')].map(x=>x.textContent),['1번 ','2번 ','3번 ']);assert.equal(frame.contentDocument.querySelectorAll('.wp-answer-cell').length,3);assert.equal(frame.contentDocument.querySelectorAll('.wp-answer-sheet').length,1);
- assert(f.calls.every(x=>x[0]==='GET'||x[0]==='IMAGE'));assert(f.calls.some(x=>x.includes('/api/v1/cbt/runs/'+older)));
- }finally{f.close();}});
-test('full-history union keeps older blank despite later correct, stored starred correct, deduplicates wrong+star',async()=>{const f=fixture();try{
- const a=await f.w.HanqCbtWrongPrint.collect(f.api,[69,78],()=>{});assert.deepEqual(Array.from(a,x=>x.questionId),['exam-69-02','exam-69-04','exam-78-02']);
- f.respond(()=>({runs:Array(100).fill(runs[0])}));await assert.rejects(f.w.HanqCbtWrongPrint.collect(f.api,[69],()=>{}),e=>e.code==='history_limit');
- }finally{f.close();}});
-test('account change closes dialog and discards in-flight snapshot; no print after signout',async()=>{const f=fixture();try{let resolve;f.delay(new Promise(r=>resolve=r));const c=f.w.HanqCbtWrongPrint.open({api:f.api});await c.ready;click(f.w,'인쇄 / PDF 저장');f.switch();resolve();await tick();assert.equal(f.w.document.querySelector('dialog'),null);assert.equal(f.calls.length,1);}finally{f.close();}});
-test('question pages only contain original images and unmarked choices; ALL answers on last single page',()=>{const f=fixture();try{const d=f.w.document.implementation.createHTMLDocument(),items=[q(70,1),q(71,2)];items[0].common={image:'/common',questionNumbers:[1,2]};const pics=new Map(items.map(x=>[x.image,{url:'blob:original',ratio:1}]));pics.set('/common',{url:'blob:common',ratio:.5});const last=f.w.HanqCbtWrongPrint.renderSheet(d,items,pics);assert.equal(d.querySelectorAll('.wp-question').length,2);assert.equal(d.querySelectorAll('.wp-answer-sheet').length,1);assert.equal(d.body.lastElementChild,last);assert.equal(last.querySelectorAll('.wp-answer-cell').length,2);for(const page of d.querySelectorAll('.wp-question')){assert(!page.textContent.includes('정답'));assert(!page.textContent.includes('SECRET'));assert(!page.innerHTML.includes('o2'));assert(page.textContent.includes('①   ②   ③   ④   ⑤'));}assert.equal(d.querySelectorAll('img').length,3);assert(!d.querySelector('script'));assert(!d.body.innerHTML.includes('SECRET'));assert(!source.includes('FontDescriptor'));assert(!source.includes('localStorage'));}finally{f.close();}});
-test('all700 answer items are preserved after questions, answer sections paginate on A4',()=>{const f=fixture();try{const items=[];for(let r=67;r<=80;r++)for(let n=1;n<=50;n++)items.push(q(r,n));const d=f.w.document.implementation.createHTMLDocument(),pics=new Map(items.map(x=>[x.image,{url:'blob:original',ratio:1}]));f.w.HanqCbtWrongPrint.renderSheet(d,items,pics);assert.equal(d.querySelectorAll('.wp-answer-cell').length,700);assert.equal(d.querySelectorAll('.wp-answer-group').length,14);assert.equal(d.querySelectorAll('.wp-answer-sheet').length,2);assert.equal(d.querySelectorAll('.wp-answer-sheet ~ .wp-question-page').length,0);assert(d.querySelector('style').textContent.includes('grid-template-columns:repeat(3'));assert(d.querySelector('style').textContent.includes('font-size:8pt'));}finally{f.close();}});
-test('mobile CSS parses with44px controls; print uses native system fonts and no outside requests',()=>{const text=fs.readFileSync('media/cbt-wrong-print.css','utf8');const errors=[];css.parse(text,{onParseError:e=>errors.push(e)});assert.deepEqual(errors,[]);assert(text.includes('min-height:44px'));assert(text.includes('@media(max-width:400px)'));assert(!source.includes("api.cbt('POST'"));assert(!source.includes('https://'));assert(source.includes('frame.contentWindow.print()'));assert(source.includes("querySelector('.fe-active-run')"));assert(source.includes("root.addEventListener('hashchange',stop)"));});
-test('compact packing keeps blocks whole, common context once per page, repeats on later page',()=>{const f=fixture();try{const items=[1,2,3,4,5,6].map(n=>q(70,n));for(const x of items)x.common={image:'/common',questionNumbers:[1,2,3,4,5,6]};const pics=new Map(items.map(x=>[x.image,{url:'blob:original',ratio:.8}]));pics.set('/common',{url:'blob:common',ratio:.4});const d=f.w.document.implementation.createHTMLDocument();f.w.HanqCbtWrongPrint.renderSheet(d,items,pics);assert(d.querySelectorAll('.wp-question-page').length<items.length);for(const page of d.querySelectorAll('.wp-question-page')){assert.equal(page.querySelectorAll('img[alt="공통 자료"]').length,1);assert(page.querySelectorAll('.wp-question').length>=1);}assert.equal(d.querySelectorAll('.wp-question').length,6);assert(d.querySelector('.wp-common-ref'));}finally{f.close();}});
-test('account change during image decoding revokes private blobs and never opens a print frame',async()=>{const f=fixture();try{f.w.Image=function(){return{naturalWidth:600,naturalHeight:600,set src(v){const self=this;f.switch();Promise.resolve().then(()=>self.onload());}};};const c=f.w.HanqCbtWrongPrint.open({api:f.api});await c.ready;click(f.w,'인쇄 / PDF 저장');await tick();assert.equal(f.w.document.querySelector('dialog'),null);assert.equal(f.w.document.querySelector('iframe'),null);assert(f.revoked.length>=1);assert(f.calls.every(x=>x[0]==='GET'||x[0]==='IMAGE'));}finally{f.close();}});
+function response(round,items=[],pending=0,resetAt=null){return{scope:'exam-starred-or-ever-wrong',includesUnanswered:true,round,hasMore:false,pendingStarCount:pending,items,resetAt};}
+function harness(){
+ const d=new JSDOM('<main></main>',{url:'https://fixture.test',runScripts:'outside-only',pretendToBeVisual:true}),w=d.window,doc=w.document,requests=[],prints=[],images=[],handlers=[];
+ let owner='x',fetchOverride=null,missing=null;
+ w.HTMLDialogElement.prototype.showModal=function(){this.open=true;};
+ w.URL.createObjectURL=()=> 'blob:synthetic-'+images.length;
+ w.URL.revokeObjectURL=()=>{};
+ w.Image=function(){return {naturalWidth:600,naturalHeight:600,set src(_){Promise.resolve().then(()=>this.onload());}};};
+ Object.defineProperty(w.HTMLIFrameElement.prototype,'contentWindow',{get(){return {focus(){},print(){prints.push(1);}};}});
+ const append=w.HTMLElement.prototype.appendChild;
+ w.HTMLElement.prototype.appendChild=function(e){const x=append.call(this,e);if(e.tagName==='IFRAME')Object.defineProperty(e.contentDocument.defaultView.HTMLImageElement.prototype,'decode',{value(){return Promise.resolve();}});return x;};
+ w.HanqCbtExplanations={reviewParts:q=>q.exam===69?{stem:['검증된 지문'],conclusion:'검증된 결론'}:null,resolve:q=>q.exam===69?{options:q.options.map((_,i)=>({review:['검증 보기 '+(i+1)]}))}:null};
+ w.eval(code);
+ const api={state:()=>({signedIn:true,ownerId:owner,epoch:1}),onChange:f=>{handlers.push(f);return()=>{};},async cbt(m,p){
+  assert.equal(m,'GET');requests.push(p);assert.match(p,/^\/api\/v1\/cbt\/worksheet-materials\/\d{2}$/);
+  if(fetchOverride)return fetchOverride(p);
+  const round=Number(p.split('/').pop());
+  return response(round,round===69?[question(69,20,{blank:true})]:round===78?[question(78,4,{star:true})]:[],round===78?1:0);
+ },async cbtImage(p){images.push(p);if(missing)throw Object.assign(new Error('missing'),missing);return new w.Blob(['x'],{type:'image/webp'});}};
+ const click=(label)=>{const b=[...doc.querySelectorAll('button')].find(x=>x.textContent===label);assert(b,label);b.click();return b;};
+ function select(){click('선택 해제');doc.querySelector('input[value="69"]').click();doc.querySelector('input[value="78"]').click();}
+ return {d,w,doc,requests,prints,images,api,click,select,missing(status=404,code){missing={status,code};},override(fn){fetchOverride=fn;},logout(){owner='y';handlers.forEach(f=>f());},close(){doc.querySelector('.wp-controls button')?.click();w.close();}};
+}
+const settle=async()=>{for(let i=0;i<3;i++)await new Promise(r=>setImmediate(r));};
+nodeTest('real entry flow treats 69 blanks and 78 saved stars as eligible and prints two separate files with matching numbering',async ()=>{
+ const h=harness();try{
+  const {w,doc,requests,images,prints}=h;w.HanqCbtWrongPrint.open({api:h.api});assert.equal(doc.querySelectorAll('input:checked').length,14);h.select();
+  h.click('문제지 PDF');await settle();let f=doc.querySelector('iframe').contentDocument;
+  assert.deepEqual([...f.querySelectorAll('.wp-question h2')].map(x=>x.textContent),['1','2']);
+  assert.deepEqual([...f.querySelectorAll('.wp-question-origin')].map(x=>x.textContent),['(69회-20번)','(78회-4번)']);
+  assert(!f.querySelector('.wp-answer-grid'));assert(!f.body.textContent.includes('검증된 지문'));assert.equal(images.length,2);
+  assert.match(doc.querySelector('[role=status]').textContent,/별표 1개는 제출 후/);
+  h.click('해설지 PDF');await settle();f=doc.querySelector('iframe').contentDocument;
+  assert.equal(f.querySelectorAll('.wp-question,img').length,0);
+  assert.equal(f.querySelectorAll('.wp-answer-sheet').length,1);
+  assert.equal(f.body.firstElementChild.className,'wp-page wp-answer-sheet');
+  assert.deepEqual([...f.querySelectorAll('.wp-answer-entry')].map(x=>x.textContent),['1②','2②']);
+  assert.deepEqual([...f.querySelectorAll('.wp-explanation h2')].map(x=>x.textContent),['1','2']);
+  assert.match(f.querySelector('.wp-explanations').textContent,/검증된 지문.*검증 보기 1.*검증된 결론.*확인된 해설이 없습니다/);
+  assert.equal(prints.length,2);assert.equal(images.length,2);
+  assert.equal(requests.length,2,'same immutable selected-set snapshot for both PDFs');
+ }finally{h.close();}
+});
+nodeTest('all 700 answers fit declared A4 dimensions in one continuous sheet',()=>{
+ const h=harness();try{
+ const items=Array.from({length:700},(_,i)=>question(67+Math.floor(i/50),1+i%50));
+ const doc=h.doc.implementation.createHTMLDocument();h.w.HanqCbtWrongPrint.renderSheet(doc,items,new Map(),'explanations');
+ const grid=doc.querySelector('.wp-answer-grid');const cols=Number(grid.style.getPropertyValue('--cols'));
+ assert.equal(cols,20);assert.equal(doc.querySelectorAll('.wp-answer-sheet').length,1);
+ assert(Math.ceil(items.length/cols)*7+12<267);assert.equal(grid.children.length,700);assert.equal(grid.lastElementChild.textContent,'700②');
+ assert.equal(doc.querySelectorAll('.wp-explanation').length,700);
+ }finally{h.close();}
+});
+nodeTest('missing old-route compatibility marker and mixed reset epochs refuse incomplete downloads',async ()=>{
+ const h=harness();try{
+  h.override(()=>({...response(69,[question(69,1)]),includesUnanswered:false}));
+  await assert.rejects(h.w.HanqCbtWrongPrint.collect(h.api,[69],()=>{}),e=>e.code==='materials_shape');
+  h.override(p=>{const n=Number(p.split('/').pop());return response(n,[],0,n===69?null:'2026-11-21T00:00:00Z');});
+  await assert.rejects(h.w.HanqCbtWrongPrint.collect(h.api,[69,78],()=>{}),e=>e.code==='changed');
+  const q=question(69,20);assert.throws(()=>h.w.HanqCbtWrongPrint.worksheetRows(response(69,[q,q]),69));
+  assert.throws(()=>h.w.HanqCbtWrongPrint.worksheetRows(response(69,[{...q,image:'https://offsite.invalid/x'}]),69));
+ }finally{h.close();}
+});
+nodeTest('original 404 tells exact affected question, nothing silently skipped, explanation still works',async ()=>{
+ const h=harness();try{h.w.HanqCbtWrongPrint.open({api:h.api});h.select();h.missing();h.click('문제지 PDF');await settle();
+ assert.equal(h.prints.length,0);assert.equal(h.doc.querySelector('iframe'),null);assert.match(h.doc.querySelector('[role=status]').textContent,/제(?:69회 20|78회 4)번 원본/);
+ h.click('해설지 PDF');await settle();assert.equal(h.prints.length,1);assert.equal(h.doc.querySelector('iframe').contentDocument.querySelectorAll('.wp-answer-entry').length,2);
+ }finally{h.close();}
+});
+nodeTest('sign out during reads discards pending data',async ()=>{
+ const h=harness();try{let resume;h.override(()=>new Promise(r=>{resume=r;}));h.w.HanqCbtWrongPrint.open({api:h.api,round:69});h.click('문제지 PDF');h.logout();resume(response(69,[question(69,20,{blank:true})]));await settle();assert.equal(h.doc.querySelector('dialog'),null);assert.equal(h.prints.length,0);assert.equal(h.images.length,0);
+ }finally{h.close();}
+});
+
+nodeTest('canonical hashed public original rescues protected asset_unavailable but not other 503 errors', async()=>{
+ const h=harness();try{
+  const crypto=require('node:crypto'),b=Buffer.from('synthetic WebP body'),hash=crypto.createHash('sha256').update(b).digest('hex'),requests=[];
+  Object.defineProperty(h.w.crypto,'subtle',{value:crypto.webcrypto.subtle});
+  h.w.HANQ_CBT_EXPLANATIONS_67_69={items:{'exam-69-20':{exam:69,number:20,answer:2,v:'frozen'}}};
+  h.w.fetch=async function(path){
+   requests.push(path);
+   return path.endsWith('manifest.json')?{ok:true,json:async()=>({files:{'69-20.webp':hash}})}:{ok:true,headers:{get:()=> 'image/webp'},arrayBuffer:async()=>b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength)};
+  };
+  h.missing(503,'asset_unavailable');h.w.HanqCbtWrongPrint.open({api:h.api,round:69});h.click('문제지 PDF');await settle();
+  assert.deepEqual(requests,['media/cbt-originals/manifest.json','media/cbt-originals/69-20.webp']);assert.equal(h.prints.length,1);
+ }finally{h.close();}
+ const denied=harness();try{denied.missing(503,'other');let fallbackAttempts=0;denied.w.fetch=async()=>{fallbackAttempts++;throw Error('unexpected fallback')};denied.w.HanqCbtWrongPrint.open({api:denied.api,round:69});denied.click('문제지 PDF');await settle();assert.equal(denied.prints.length,0);assert.equal(fallbackAttempts,0);}finally{denied.close();}
+});
+
+nodeTest('validated finalized review routes keep their image and common origin and reject mismatched routes',()=>{
+ const h=harness();try{
+  const q=question(72,47),path='/api/v1/cbt/reviews/'+uuid+'/questions/46',review={...q,source:'review',image:path+'/image',common:{image:path+'/common',questionNumbers:[47,48]}};
+  assert.equal(h.w.HanqCbtWrongPrint.worksheetRows(response(72,[review]),72)[0].image,path+'/image');
+  assert.throws(()=>h.w.HanqCbtWrongPrint.worksheetRows(response(72,[{...review,source:'exam'}]),72));
+  assert.throws(()=>h.w.HanqCbtWrongPrint.worksheetRows(response(72,[{...review,common:{...review.common,image:q.image.replace('/image','/common')}}]),72));
+ }finally{h.close();}
+});
+nodeTest('problem pages keep shared source once on a page, no answer content ever',()=>{
+ const h=harness();try{
+ const items=Array.from({length:6},(_,i)=>question(72,i+1)),pics=new Map();
+ for(const item of items){item.common={image:'/common',questionNumbers:[1,2,3,4,5,6]};pics.set(item.image,{url:'blob:test',ratio:.8});}
+ pics.set('/common',{url:'blob:common',ratio:.4});
+ const doc=h.doc.implementation.createHTMLDocument();h.w.HanqCbtWrongPrint.renderSheet(doc,items,pics,'questions');
+ assert.equal(doc.querySelectorAll('.wp-question').length,6);
+ assert(doc.querySelector('.wp-common-ref'));
+ for(const page of doc.querySelectorAll('.wp-question-page'))assert.equal(page.querySelectorAll('img[alt="공통 자료"]').length,1);
+ assert(!doc.querySelector('.wp-answer-sheet,.wp-explanations'));
+ const css=require('css-tree'),errors=[];css.parse(doc.querySelector('style').textContent,{onParseError:e=>errors.push(e.message)});assert.deepEqual(errors,[]);
+ }finally{h.close();}
+});
