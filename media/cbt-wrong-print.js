@@ -1,6 +1,19 @@
 /* Owner-private, GET-only print worksheet. Native print uses OS fonts; no PDF fonts or remote renderers. */
 (function(root){'use strict';
 var active=null;
+var earlyExplanationLoad=null;
+function loadEarlyExplanations(){
+ if(root.HANQ_CBT_EXPLANATIONS_67_69?.items)return Promise.resolve(true);
+ if(!earlyExplanationLoad)earlyExplanationLoad=new Promise(function(resolve){
+  var doc=root.document,script=doc.createElement('script'),settled=false;
+  function done(){if(settled)return;settled=true;clearTimeout(timer);script.remove();var loaded=!!root.HANQ_CBT_EXPLANATIONS_67_69?.items;if(!loaded)earlyExplanationLoad=null;resolve(loaded);}
+  var timer=setTimeout(done,4000);
+  script.src='media/cbt-explanation67-69-data.js?v=official-67-69-20261119';
+  script.onload=script.onerror=done;
+  doc.head.appendChild(script);
+ });
+ return earlyExplanationLoad;
+}
 function session(api){var s=api.state();return s&&s.signedIn&&!s.restoring&&s.ownerId!=null?String(s.ownerId)+':'+String(s.epoch||0):null;}
 function error(code){var e=new Error(code);e.code=code;return e;}
 var FIRST=67,LAST=80,UUID=/^[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}$/i;
@@ -88,7 +101,7 @@ function renderExplanations(doc,items){
 }
 function open(options){
  options=options||{};if(active)active.stop();var api=options.api,owner=session(api);if(!owner)return Promise.reject(error('session_changed'));if(root.document.querySelector('.fe-active-run'))return Promise.reject(error('active_exam'));
- var doc=root.document,dialog=node(doc,'dialog',null,'cbt-wrong-print'),alive=true,off=null,offReset=null,urls=[],selected=new Set(),frame=null,busy=false,lastFocus=doc.activeElement,token=0,frameMode=null,selectionSnapshot=null;
+ var doc=root.document,dialog=node(doc,'dialog',null,'cbt-wrong-print'),alive=true,off=null,offReset=null,urls=[],selected=new Set(),frame=null,busy=false,lastFocus=doc.activeElement,token=0,frameMode=null,selectionSnapshot=null, snapshotHasEarly=false;
  var rounds=Array.from({length:LAST-FIRST+1},function(_,i){return LAST-i;});
  var controls=node(doc,'div',null,'wp-controls'),list=node(doc,'fieldset',null,'wp-selection'),preview=node(doc,'div',null,'wp-preview'),status=node(doc,'p'),title=node(doc,'h2','오답·별표 문제지 인쇄 / PDF'),close=button(doc,'닫기',stop),problem=button(doc,'문제지 PDF',function(){printNow('questions');}),explanation=button(doc,'해설지 PDF',function(){printNow('explanations');});
  dialog.setAttribute('aria-label','오답·별표 문제지 인쇄 / PDF');status.setAttribute('role','status');
@@ -141,6 +154,7 @@ function open(options){
    status.textContent='선택한 회차의 기록을 확인하고 있어요…';
    var completed=false;
    try{
+     if(Array.from(selected).some(function(r){return r<70;})&&!snapshotHasEarly){var nowLoaded=await loadEarlyExplanations();valid(g);if(nowLoaded){selectionSnapshot=null;snapshotHasEarly=true;}}
      var material=selectionSnapshot||await collect({state:api.state.bind(api),cbt:function(){return bounded(api.cbt.apply(api,arguments));}},Array.from(selected),function(){valid(g);});valid(g);selectionSnapshot=material;
      var choice=material.items,pending=material.pendingCount?' 완료 기록이 없는 별표 '+material.pendingCount+'개는 제출 후 이용할 수 있어요.':'';
      if(!choice.length){status.textContent='선택한 회차에 인쇄할 문제 기록이 없어요.'+pending;return;}

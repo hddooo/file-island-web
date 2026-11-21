@@ -18,6 +18,8 @@ function harness(){
  const append=w.HTMLElement.prototype.appendChild;
  w.HTMLElement.prototype.appendChild=function(e){const x=append.call(this,e);if(e.tagName==='IFRAME')Object.defineProperty(e.contentDocument.defaultView.HTMLImageElement.prototype,'decode',{value(){return Promise.resolve();}});return x;};
  w.HanqCbtExplanations={reviewParts:q=>q.exam===69?{stem:['검증된 지문'],conclusion:'검증된 결론'}:null,resolve:q=>q.exam===69?{options:q.options.map((_,i)=>({review:['검증 보기 '+(i+1)]}))}:null};
+ const loadHead=doc.head.appendChild.bind(doc.head);
+ doc.head.appendChild=function(e){const x=loadHead(e); if(e.tagName==='SCRIPT')queueMicrotask(()=>e.onerror?.());return x;};
  w.eval(code);
  const api={state:()=>({signedIn:true,ownerId:owner,epoch:1}),onChange:f=>{handlers.push(f);return()=>{};},async cbt(m,p){
   assert.equal(m,'GET');requests.push(p);assert.match(p,/^\/api\/v1\/cbt\/worksheet-materials\/\d{2}$/);
@@ -76,21 +78,51 @@ nodeTest('original 404 tells exact affected question, nothing silently skipped, 
  }finally{h.close();}
 });
 nodeTest('sign out during reads discards pending data',async ()=>{
- const h=harness();try{let resume;h.override(()=>new Promise(r=>{resume=r;}));h.w.HanqCbtWrongPrint.open({api:h.api,round:69});h.click('문제지 PDF');h.logout();resume(response(69,[question(69,20,{blank:true})]));await settle();assert.equal(h.doc.querySelector('dialog'),null);assert.equal(h.prints.length,0);assert.equal(h.images.length,0);
+ const h=harness();try{let resume;h.override(()=>new Promise(r=>{resume=r;}));h.w.HanqCbtWrongPrint.open({api:h.api,round:69});h.click('문제지 PDF');await settle();h.logout();resume(response(69,[question(69,20,{blank:true})]));await settle();assert.equal(h.doc.querySelector('dialog'),null);assert.equal(h.prints.length,0);assert.equal(h.images.length,0);
  }finally{h.close();}
 });
 
 nodeTest('canonical hashed public original rescues protected asset_unavailable but not other 503 errors', async()=>{
  const h=harness();try{
-  const crypto=require('node:crypto'),b=Buffer.from('synthetic WebP body'),hash=crypto.createHash('sha256').update(b).digest('hex'),requests=[];
+  const crypto=require('node:crypto'),requests=[];
+  const index='index.html';
+  const entry=new JSDOM(fs.readFileSync(index,'utf8'));
+  const scriptPaths=[...entry.window.document.scripts].map(s=>s.getAttribute('src')?.split('?')[0]);
+  entry.window.close();
+  const path='media/cbt-explanation67-69-data.js',renderer=scriptPaths.indexOf('media/cbt-explanations.js');
+  assert(renderer>=0 && scriptPaths.includes('media/cbt-wrong-print.js'));
+  const before=h.w.Node.prototype.appendChild.bind(h.doc.head);
+  const actualData=fs.readFileSync(path,'utf8');
+  let loads=0;
+  h.doc.head.appendChild=function(script){const node=before(script);if(script.tagName==='SCRIPT'){
+   assert.equal(script.getAttribute('src').split('?')[0],path);loads++;
+   queueMicrotask(()=>{h.w.eval(actualData);script.onload();});
+  }return node;};
   Object.defineProperty(h.w.crypto,'subtle',{value:crypto.webcrypto.subtle});
-  h.w.HANQ_CBT_EXPLANATIONS_67_69={items:{'exam-69-20':{exam:69,number:20,answer:2,v:'frozen'}}};
+  const fixtureWindow={};require('node:vm').runInNewContext(actualData,{window:fixtureWindow});
+  h.w.eval(fs.readFileSync(scriptPaths[renderer],'utf8'));
+  const reviewed=fixtureWindow.HANQ_CBT_EXPLANATIONS_67_69.items['exam-69-20'];
+  assert.equal(reviewed.v,'c4c24f614a398167');
+  const q=question(69,20,{blank:true});
+  Object.assign(q,{version:reviewed.v,points:reviewed.points,options:reviewed.options.map(({id,number})=>({id,number}))});
+  Object.assign(q.review,{item:reviewed,options:reviewed.options,correctNumber:reviewed.answer,correctOptionId:reviewed.options[reviewed.answer-1].id});
+  assert.equal(h.w.HanqCbtExplanations.resolve(q,'active'),null);
+  assert.equal(h.w.HanqCbtExplanations.resolve({...q,version:'legacy'},'final'),null);
+  assert.equal(h.w.HanqCbtExplanations.resolve(q,'final'),null);
+  h.override(()=>response(69,[q]));
   h.w.fetch=async function(path){
    requests.push(path);
-   return path.endsWith('manifest.json')?{ok:true,json:async()=>({files:{'69-20.webp':hash}})}:{ok:true,headers:{get:()=> 'image/webp'},arrayBuffer:async()=>b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength)};
+   return path.endsWith('manifest.json')?{ok:true,json:async()=>JSON.parse(fs.readFileSync(path,'utf8'))}:{ok:true,headers:{get:()=> 'image/webp'},arrayBuffer:async()=>{const b=fs.readFileSync(path);return b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength);}};
   };
-  h.missing(503,'asset_unavailable');h.w.HanqCbtWrongPrint.open({api:h.api,round:69});h.click('문제지 PDF');await settle();
+  h.missing(503,'asset_unavailable');h.w.HanqCbtWrongPrint.open({api:h.api,round:69});h.click('문제지 PDF');
+  for(let i=0;i<20&&!h.prints.length;i++)await settle();
   assert.deepEqual(requests,['media/cbt-originals/manifest.json','media/cbt-originals/69-20.webp']);assert.equal(h.prints.length,1);
+  assert.equal(h.w.HanqCbtExplanations.resolve(q,'final').v,reviewed.v);
+  assert.equal(loads,1);
+  h.click('해설지 PDF');await settle();
+  const pdf=h.doc.querySelector('iframe').contentDocument;
+  assert.match(pdf.querySelector('.wp-answer-entry').textContent,/1⑤/);
+  assert(!pdf.body.textContent.includes('확인된 해설이 없습니다'));
  }finally{h.close();}
  const denied=harness();try{denied.missing(503,'other');let fallbackAttempts=0;denied.w.fetch=async()=>{fallbackAttempts++;throw Error('unexpected fallback')};denied.w.HanqCbtWrongPrint.open({api:denied.api,round:69});denied.click('문제지 PDF');await settle();assert.equal(denied.prints.length,0);assert.equal(fallbackAttempts,0);}finally{denied.close();}
 });
