@@ -12,7 +12,7 @@
   function pageTitle(page) { return page.title + (page.page === 8 ? ' ①' : page.page === 9 ? ' ②' : ''); }
 
   function fetchPages() {
-    if (!request) request = root.fetch(assetRoot + 'pages-v49.json', { credentials: 'same-origin' })
+    if (!request) request = root.fetch(assetRoot + 'pages-v49.json?v=2', { credentials: 'same-origin' })
       .then(function (response) {
         if (!response.ok) throw Error('summary_unavailable');
         return response.json();
@@ -30,6 +30,13 @@
     var doc = host.ownerDocument;
     var route = options.page;
     function current() { return host.isConnected && options.isCurrent(); }
+
+    function useRealm(node, sectionTitle) {
+      if (route !== 1 && route !== 8 && route !== 9) return;
+      var realm = { '고구려': 'goguryeo', '백제': 'baekje', '신라': 'silla',
+        '신라·통일신라': 'silla', '고려': 'goryeo', '조선': 'joseon' }[sectionTitle];
+      if (realm) node.dataset.realm = realm;
+    }
 
     function add(tag, parent, value, className) {
       var node = doc.createElement(tag);
@@ -58,6 +65,7 @@
       var grid = add('div', parent, null, 'hsr-cards');
       entries.forEach(function (card, i) {
         var box = add('section', grid, null, 'hsr-card');
+        if (route === 1 && card.title === '고구려의 수·당 전쟁') box.dataset.event = 'battle';
         var safeImage = typeof card.image === 'string' && /^(?:images\/p[89]-[0-9]{2,3}\.(?:webp|jpg|jpeg|png)|\.\.\/culture-photos\/[a-z0-9-]+\.png)$/.test(card.image);
         if (safeImage) {
           box.classList.add('hsr-photo-card');
@@ -88,6 +96,7 @@
         var cells = row.filter(function (value) { return typeof value === 'string' && value.trim(); });
         if (!cells.length) return;
         var box = add('section', rows, null, 'hsr-row');
+        if (route === 1) box.dataset.event = cells.some(function (cell) { return /동맹/.test(cell); }) ? 'alliance' : 'battle';
         var first = row.indexOf(cells[0]);
         var name = add('h4', box, cells[0]);
         if (first > 0 && heading && heading[first]) name.prepend(doc.createTextNode(heading[first] + ' · '));
@@ -111,6 +120,7 @@
         var columns = add('div', parent, null, 'hsr-columns');
         section.columns.forEach(function (column) {
           var group = add('section', columns, null, 'hsr-column');
+          useRealm(group, column.title);
           content(group, column, 'h4');
         });
       }
@@ -144,7 +154,9 @@
         if (route >= 8 && page.sections.some(function(section){return (section.cards || []).some(function(card){return !card.image;});}))
           add('p', article, '통합본 사진을 옮겼어요. 일부 유물은 기존 공개 사진이나 글만 표시해요.', 'hsr-gallery-note');
         page.sections.forEach(function (section) {
-          content(add('section', article, null, 'hsr-section'), section, 'h2');
+          var block = add('section', article, null, 'hsr-section');
+          useRealm(block, section.title);
+          content(block, section, 'h2');
         });
         var foot = add('nav', host, null, 'hsr-footer');
         foot.setAttribute('aria-label', '암기표 쪽 이동');

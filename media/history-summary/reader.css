@@ -45,3 +45,15 @@ html body .hsr,html body .hsr *{font-family:system-ui,-apple-system,BlinkMacSyst
 
 .hsr-credit{color:#c3e5ff;font-size:inherit;text-underline-offset:.18em}
 .hsr-gallery-note{color:#c3d9ef}
+
+/* Kingdom and event use distinct visual codes; original photo colors are untouched. */
+.hsr [data-realm="goguryeo"]{--realm-ink:#ffb5b3;--realm-panel:#382530;--realm-line:#cc7679}
+.hsr [data-realm="baekje"]{--realm-ink:#abd8ff;--realm-panel:#1e354b;--realm-line:#72a5d6}
+.hsr [data-realm="silla"]{--realm-ink:#ffdc87;--realm-panel:#392e23;--realm-line:#bf9d50}
+.hsr [data-realm="goryeo"]{--realm-ink:#b3e5ce;--realm-panel:#203830;--realm-line:#77ad95}
+.hsr [data-realm="joseon"]{--realm-ink:#dcc8fb;--realm-panel:#332946;--realm-line:#a88ccb}
+.hsr [data-realm]{border-color:var(--realm-line);border-inline-start-width:4px;background:var(--realm-panel)}
+.hsr [data-realm]>:is(h2,h4),.hsr [data-realm] .hsr-card>h4{color:var(--realm-ink)}
+.hsr [data-event="battle"]{border-inline-start:4px double #73d9cb;background:#153839}
+.hsr [data-event="battle"]>h4{color:#b1f5e7!important}
+.hsr [data-event="alliance"]{border-inline-start:4px dashed #a6bbd1}
