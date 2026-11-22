@@ -17,9 +17,12 @@
     var match = /^exam-(\d+)-(\d{2})$/.exec(item.questionId);
     if (!match || !Number.isInteger(item.exam) || item.exam !== Number(match[1]) || !Number.isInteger(item.number) || item.number !== Number(match[2]) || item.number < 1 || item.number > 50 || !Number.isInteger(item.position) || item.position < 0 || item.position > 49) return false;
     var review = item.review, options = item.options;
-    if (!review || review.status !== 'wrong' || review.correct === true || typeof item.selectedOptionId !== 'string' || !item.selectedOptionId || typeof review.correctOptionId !== 'string' || review.correctOptionId === item.selectedOptionId) return false;
+    if (!review || typeof review.correctOptionId !== 'string') return false;
+    var paperWrong = item.paperImported === true && item.selectedOptionId === null && review.status === 'wrong' && review.correct === false;
+    if (item.paperImported === true && !paperWrong) return false;
+    if (!paperWrong && (review.status !== 'wrong' || review.correct === true || typeof item.selectedOptionId !== 'string' || !item.selectedOptionId || review.correctOptionId === item.selectedOptionId)) return false;
     if (!Array.isArray(options) || options.length !== 5 || options.some(function (o, i) { return !o || typeof o.id !== 'string' || !o.id || o.number !== i + 1; }) || new Set(options.map(function (o) { return o.id; })).size !== 5) return false;
-    if (!options.some(function (o) { return o.id === item.selectedOptionId; }) || !options.some(function (o) { return o.id === review.correctOptionId && o.number === review.correctNumber; })) return false;
+    if ((!paperWrong && !options.some(function (o) { return o.id === item.selectedOptionId; })) || !options.some(function (o) { return o.id === review.correctOptionId && o.number === review.correctNumber; })) return false;
     var saved = review.item;
     if (saved && (saved.id !== item.questionId || saved.v !== item.version || saved.exam !== item.exam || saved.number !== item.number || saved.points !== item.points || saved.answer !== review.correctNumber || !Array.isArray(saved.options) || saved.options.length !== 5 || saved.options.some(function (option, index) { return !option || option.id !== options[index].id; }))) return false;
     var base = '/api/v1/cbt/runs/' + item.runId + '/questions/' + item.position;
@@ -197,7 +200,7 @@
       var section = shell();
       if(root.HanqCbtWrongPrint)section.appendChild(button('오답 선택 · 인쇄 / PDF','tool-btn',function(){root.HanqCbtWrongPrint.open({api:api,round:ctx.round?Number(ctx.round):undefined});}));
       pendingEraBook(section);section.appendChild(node('h2','모의고사 오답'));
-      section.appendChild(node('p', '완료한 모의고사에서 답을 골라 틀린 문제만 모았어요. 미응답과 별표만 한 문제는 포함하지 않아요.'));
+      section.appendChild(node('p', '완료한 모의고사는 답을 골라 틀린 문제만, 종이풀이는 등록한 오답을 모았어요. 모의고사 미응답과 별표만 한 문제는 포함하지 않아요.'));
       section.appendChild(node('p', '같은 문항은 최근 오답 당시의 문제와 해설로 한 번만 표시해요. 나중에 맞혀도 원래 모의고사에서 틀린 기록은 남아요.'));
       section.appendChild(node('p', '최대 ' + ctx.limit + '문항 · 현재 ' + ctx.items.length + '문항'));
       if (ctx.hasMore) { var more = node('p', '표시 한도를 넘어 일부 오답 기록이 이 목록에 나오지 않아요.'); more.setAttribute('role', 'status'); more.setAttribute('data-notebook-has-more', ''); section.appendChild(more); }
@@ -235,7 +238,7 @@
           var body=node('div',null,'fe-review-body');body.hidden=true;body.id='notebook-answer-'+ctx.serial+'-'+index;
           var loaded=false,answerButton=button('해설 확인하기','tool-btn',function(){
             if(!sameOwner(ctx.identity,identity(api))||!body.isConnected)return;
-            if(!loaded){var selected=item.options.find(function(option){return option.id===item.selectedOptionId;});body.appendChild(node('p','내 선택 '+selected.number+'번 · 정답 '+item.review.correctNumber+'번','fe-answer-compare'));explanation(item,body);loaded=true;}
+            if(!loaded){var selected=item.options.find(function(option){return option.id===item.selectedOptionId;});body.appendChild(node('p',(selected?'내 선택 '+selected.number+'번':'오답 · 선택 번호 미기록')+' · 정답 '+item.review.correctNumber+'번','fe-answer-compare'));explanation(item,body);loaded=true;}
             body.hidden=!body.hidden;answerButton.textContent=body.hidden?'해설 확인하기':'해설 접기';answerButton.setAttribute('aria-expanded',String(!body.hidden));
           });
           answerButton.setAttribute('data-notebook-show-answer','');answerButton.setAttribute('aria-expanded','false');answerButton.setAttribute('aria-controls',body.id);details.appendChild(answerButton);details.appendChild(body);
