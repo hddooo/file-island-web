@@ -161,29 +161,33 @@ function open(options){
  if(rounds.includes(options.round)){selectRound(options.round,true);update();}else update();
  var publicManifest=null;
  function officialName(meta){
-   var q=meta.q,source=q.exam<70?root.HANQ_CBT_EXPLANATIONS_67_69:q.exam===80?root.HANQ_CBT_EXPLANATIONS_80:root.HANQ_CBT_EXPLANATIONS;
-   var pinned=source?.items?.[q.questionId];
-   if(!pinned||pinned.v!==q.version||pinned.exam!==q.exam||pinned.number!==q.number||pinned.answer!==q.review.correctNumber)return null;
-   if(meta.common){var ns=q.common.questionNumbers;if(q.exam!==72||ns.join(',')!=='47,48')return null;return '72-common47-48.webp';}
+   // The owned finalized API run/review image route derives the asset from
+   // the same canonical round/question integers, independent of the answer revision.
+   // worksheetRows already validated those integers, the item ID and protected path.
+   var q=meta.q;
+   if(meta.common){
+     var ns=q.common.questionNumbers;
+     if(q.exam!==72||ns.join(',')!=='47,48')return null;
+     return '72-common47-48.webp';
+   }
    return q.exam+'-'+String(q.number).padStart(2,'0')+'.webp';
  }
  async function readPublicOriginal(meta,g){
    // An authenticated finalized record gates this lookup; accept only the exact
-   // published exam version and checksum-verified same-origin official crop.
+   // published checksum-verified same-origin official crop.
    var name=officialName(meta),crypto=root.crypto?.subtle;
    if(!name||!crypto||typeof root.fetch!=='function')throw error('image');
-   if(!publicManifest)publicManifest=bounded(root.fetch('media/cbt-originals/manifest.json',{redirect:'error',cache:'no-store'})).then(function(r){if(!r.ok)throw error('image');return bounded(r.json());}).catch(function(e){publicManifest=null;throw e;});
+   if(!publicManifest)publicManifest=bounded(root.fetch('media/cbt-originals/manifest.json',{redirect:'error',cache:'no-store'})).then(function(r){if(r.status===401||r.status===403)throw Object.assign(error('login'),{status:r.status});if(!r.ok)throw error('image');return bounded(r.json());}).catch(function(e){publicManifest=null;throw e;});
    var m=await publicManifest,expected=m?.files?.[name];valid(g);if(!/^[a-f0-9]{64}$/.test(expected||''))throw error('image');
-   var response=await bounded(root.fetch('media/cbt-originals/'+name,{redirect:'error'}));valid(g);
+   var response=await bounded(root.fetch('media/cbt-originals/'+name,{redirect:'error',cache:'no-store'}));valid(g);
+   if(response.status===401||response.status===403)throw Object.assign(error('login'),{status:response.status});
    if(!response.ok||(response.headers.get('content-type')||'').split(';')[0]!=='image/webp')throw error('image');
    var bytes=await bounded(response.arrayBuffer());valid(g);
+   if(bytes.byteLength<12||bytes.byteLength>8*1024*1024)throw error('image');
+   var head=new Uint8Array(bytes,0,12);if([82,73,70,70,87,69,66,80].some(function(n,i){return head[i+(i>=4?4:0)]!==n;}))throw error('image');
    var digest=Array.from(new Uint8Array(await crypto.digest('SHA-256',bytes)),function(x){return x.toString(16).padStart(2,'0');}).join('');
    if(digest!==expected)throw error('image');
    return new root.Blob([bytes],{type:'image/webp'});
- }
- function mayRecover(e){
-   if(e?.status===401||e?.status===403)return false;
-   return [404,502,504].includes(e?.status)||e?.code==='invalid_image_response'||e?.code==='image_decode'||e?.code==='timeout'||e?.status===503&&['asset_unavailable','asset_check_timeout'].includes(e?.code);
  }
  async function decoded(blob,g){
    if(!blob||!/^image\/(png|jpeg|webp)$/.test(blob.type)||!blob.size)throw error('image_decode');
@@ -195,8 +199,11 @@ function open(options){
    }catch(e){root.URL.revokeObjectURL(url);urls=urls.filter(function(v){return v!==url;});throw e;}
  }
  async function loadPicture(path,meta,g){
-   try{var b=await bounded(api.cbtImage(path));valid(g);return await decoded(b,g);}
-   catch(e){valid(g);if(!mayRecover(e))throw e;var fallback=await readPublicOriginal(meta,g);return decoded(fallback,g);}
+   if(meta.q.exam<80){
+     try{var original=await readPublicOriginal(meta,g);return await decoded(original,g);}
+     catch(e){valid(g);if(e?.status===401||e?.status===403)throw e;}
+   }
+   var protectedImage=await bounded(api.cbtImage(path));valid(g);return decoded(protectedImage,g);
  }
  async function printNow(mode){
    if(busy||!current()||!ready())return;
@@ -204,7 +211,7 @@ function open(options){
    status.textContent='선택한 회차의 기록을 확인하고 있어요…';
    var completed=false;
    try{
-     if(Array.from(selected).some(function(r){return r<70;})){await loadEarlyExplanations();valid(g);}
+     if(mode==='explanations'&&Array.from(selected).some(function(r){return r<70;})){await loadEarlyExplanations();valid(g);}
      var material=await collect(api,Array.from(selected),function(){valid(g);},function(r){return snapshots.get(r);});valid(g);
      var choice=material.items,pending=material.pendingCount?' 완료 기록이 없는 별표 '+material.pendingCount+'개는 제출 후 이용할 수 있어요.':'';
      if(!choice.length){status.textContent='선택한 회차에 PDF로 받을 문제 기록이 없어요.'+pending;return;}
