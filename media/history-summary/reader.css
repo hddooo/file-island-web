@@ -1,0 +1,47 @@
+*{box-sizing:border-box}
+html{scrollbar-gutter:stable}
+body{margin:0;padding:clamp(8px,2vw,24px);background:#0c1522;color:#eef5ff;font-family:system-ui,-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif}
+body:has(.hsr-toc) .hsr{margin-block:0}
+.hsr{border:1px solid #435c70;border-radius:16px}
+
+.hsr{width:min(100%,960px);box-sizing:border-box;padding:clamp(12px,3vw,24px);margin:14px auto;color:#eef5ff;background:#111c28;line-height:1.58;font-size:16px;overflow-wrap:anywhere}
+.hsr *{box-sizing:border-box;min-width:0}
+.hsr h1,.hsr h2,.hsr h3,.hsr h4,.hsr p{margin:0}
+.hsr h1{color:#fff;font-size:clamp(23px,4vw,33px);line-height:1.25;margin-top:14px}
+.hsr h2{font-size:clamp(19px,3vw,23px);line-height:1.35;color:#f3f8ff}
+.hsr h3,.hsr h4{font-size:17px;color:#bfe3ff;line-height:1.45}
+.hsr-head{padding:0 0 16px}
+.hsr-kicker,.hsr-footer{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.hsr-kicker{justify-content:space-between}
+.hsr-counter{color:#bdd4e8}
+.hsr-control,.hsr-toc-link{display:flex;align-items:center;justify-content:center;min-height:44px;border-radius:9px;border:1px solid #4f7390;background:#20364d;color:#eef7ff;padding:8px 13px;font:inherit;font-weight:680;text-decoration:none;cursor:pointer;touch-action:manipulation}
+.hsr-control:hover,.hsr-toc-link:hover{background:#2a4862;color:white}
+.hsr :focus-visible{outline:3px solid #9bd8ff;outline-offset:3px}
+.hsr-toc ol,.hsr-article,.hsr-rows{display:grid;gap:10px;padding:0;margin:0}
+.hsr-toc ol{list-style:none;grid-template-columns:repeat(auto-fit,minmax(min(100%,235px),1fr))}
+.hsr-toc-link{justify-content:flex-start;gap:12px;min-height:60px;margin:0}
+.hsr-toc-number{font-variant-numeric:tabular-nums;color:#9ec9e9}
+.hsr-section{display:grid;gap:12px;padding:clamp(10px,2vw,18px);border-radius:12px;border:1px solid #435c70;background:#172536}
+.hsr-columns,.hsr-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,245px),1fr));gap:10px}
+.hsr-column,.hsr-card,.hsr-row{display:grid;align-content:start;gap:7px;background:#203247;border-radius:9px;border:1px solid #3b5770;padding:11px}
+.hsr-column .hsr-cards{grid-template-columns:1fr}
+.hsr-list{margin:0;padding-inline-start:1.2em}
+.hsr-list li+li{margin-top:.3em}
+.hsr-details{margin:0;display:grid;gap:5px}
+.hsr-detail{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.hsr-detail dt,.hsr-tag{color:#b3cee4;font-weight:650}
+.hsr-detail dd{margin:0}
+.hsr-photo-card img{display:block;width:100%;height:clamp(150px,29vw,285px);object-fit:contain;border-radius:7px;background:#f0f2f4}
+.hsr-footer{justify-content:center;padding-top:16px}
+.hsr-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(max-width:500px){.hsr-photo-card img{height:220px}.hsr-toc ol,.hsr-columns,.hsr-cards{grid-template-columns:1fr}}
+/* Keep the native study scale inside this reader, even under shared typography. */
+.hsr{--hanq-reading-size:16px;--hanq-emphasis-size:17px;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Noto Sans KR',sans-serif}
+html body .hsr h4{font-size:17px!important}
+html body .hsr,html body .hsr *{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Noto Sans KR',sans-serif!important}
+.hsr-toc-number{flex:0 0 2.25ch;white-space:nowrap}
+.hsr-toc-link>span+span{flex:1 1 auto;word-break:keep-all}
+@media(max-width:500px){.hsr-toc ol{gap:7px}.hsr-toc-link{min-height:50px}}
+
+.hsr-credit{color:#c3e5ff;font-size:inherit;text-underline-offset:.18em}
+.hsr-gallery-note{color:#c3d9ef}

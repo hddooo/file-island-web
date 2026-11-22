@@ -156,3 +156,8 @@ html body #app .island-harbors[data-scene-fit=contain]{background:radial-gradien
 html body #app .world-inquiry-desk>nav>a{background:#082229a8!important;border:1px solid #8cb3a566;text-decoration:underline;text-underline-offset:4px}
 html body #app .world-inquiry-desk #content>p{width:fit-content;padding:8px 10px;border-radius:6px;background:#082229d9!important}
 
+
+/* Readable launch above the pond boat, keeping other landmarks untouched. */
+html body #app .island-harbors .history-book-stop{z-index:12!important;min-height:44px!important;height:auto!important}
+html body #app .island-harbors .history-book-stop .harbor-sign{padding:6px 12px!important;background:#15394f!important;border-color:#a5d8fb!important}
+html body #app .island-harbors .history-book-stop .harbor-sign .wn-entry-t{font-size:15px!important;font-weight:790!important;color:#f5fbff!important}

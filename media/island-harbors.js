@@ -42,7 +42,7 @@
     waterLoader.then(function(engine){if(!chart.isConnected||document.documentElement.dataset.companyMode==='on')return;if(engine){engine.mount(chart,art,kind);return;}var host=chart.parentElement;if(chart.dataset.motionRetry==='true')return;chart.dataset.motionRetry='true';var retry=document.createElement('button');retry.type='button';retry.className='harbor-motion-toggle';retry.textContent='움직임 다시 불러오기';var position=attachControl(host,retry);retry.addEventListener('click',function(){delete chart.dataset.motionRetry;position.dispose();livingWater(chart,art,kind);});});
   }
   var stops={
-    history:[{id:'homePastExams',icon:'gate',x:49,y:30,mx:52.5,my:19.75},{id:'homeFormalExams',icon:'flag',x:82.25,y:45.75,mx:75.5,my:56.5},{id:'homeWrongNotes',icon:'review',x:18.25,y:45.25,mx:20.5,my:41.75}],
+    history:[{id:'homePastExams',icon:'gate',x:49,y:30,mx:52.5,my:19.75},{id:'homeFormalExams',icon:'flag',x:82.25,y:45.75,mx:75.5,my:56.5},{id:'homeWrongNotes',icon:'review',x:18.25,y:45.25,mx:20.5,my:41.75},{id:'homeHistoryWeakness',icon:'notes',x:61,y:80,mx:37,my:86,aboveBoat:true}],
     toeic:[{id:'notebook',icon:'book',x:84,y:21,mx:26,my:17},{id:'wrongnotes',icon:'review',x:27,y:55,mx:26,my:52},{id:'grammar',icon:'notes',x:57,y:33,mx:73,my:34},{id:'player',icon:'audio',x:80,y:55,mx:73,my:70}]
   };
   // Source-coordinate building silhouettes: one existing native destination
@@ -86,7 +86,7 @@
     controls.forEach(function(control,i){
       var key=control.dataset.toeicView||control.id,stop=stops[kind].find(function(s){return s.id===key;});
       if(!stop)return;
-      control.classList.add('harbor-stop');control.style.setProperty('--pin-x',stop.x);control.style.setProperty('--pin-y',stop.y);control.style.setProperty('--mobile-x',stop.mx);control.style.setProperty('--mobile-y',stop.my);
+      control.classList.add('harbor-stop');if(stop.aboveBoat)control.classList.add('history-book-stop');control.style.setProperty('--pin-x',stop.x);control.style.setProperty('--pin-y',stop.y);control.style.setProperty('--mobile-x',stop.mx);control.style.setProperty('--mobile-y',stop.my);
       var label=control.querySelector('strong,.wn-entry-t'),place=control.querySelector('.world-place-name');
       if(kind==='history'&&landmarks[key]){var landmark=landmarks[key];control.classList.add('history-landmark');control.dataset.landmark=key;control.setAttribute('aria-label',landmark.name+' · '+landmark.purpose);control.removeAttribute('title');if(!label){label=document.createElement('strong');}label.textContent=landmark.name;if(place)place.textContent=landmark.purpose;}
       if(label){label.id='harbor-'+kind+'-'+key+'-label';if(!control.hasAttribute('aria-label'))control.setAttribute('aria-labelledby',label.id);}
@@ -100,7 +100,7 @@
     // and keep text plaques inside the viewport while retaining the larger touch controls.
     function fitScene(){
       if(!map.isConnected)return;
-      var w=map.clientWidth,h=map.clientHeight,mobile=matchMedia(kind==='history'?'(max-width:700px) and (orientation:portrait)':'(max-width:700px)').matches,nativeWidth=mobile?900:kind==='toeic'?1671:1672,nativeHeight=mobile?1200:941,points=stops[kind],xs=points.map(function(p){return mobile?p.mx:p.x;}),ys=points.map(function(p){return mobile?p.my:p.y;}),cx=(Math.min.apply(null,xs)+Math.max.apply(null,xs))/200,cy=(Math.min.apply(null,ys)+Math.max.apply(null,ys))/200;
+      var w=map.clientWidth,h=map.clientHeight,mobile=matchMedia(kind==='history'?'(max-width:700px) and (orientation:portrait)':'(max-width:700px)').matches,nativeWidth=mobile?900:kind==='toeic'?1671:1672,nativeHeight=mobile?1200:941,points=stops[kind],cameraPoints=points.filter(function(p){return !p.aboveBoat;}),xs=cameraPoints.map(function(p){return mobile?p.mx:p.x;}),ys=cameraPoints.map(function(p){return mobile?p.my:p.y;}),cx=(Math.min.apply(null,xs)+Math.max.apply(null,xs))/200,cy=(Math.min.apply(null,ys)+Math.max.apply(null,ys))/200;
       // Very short landscape windows retain the pond and boat instead of
       // cropping every moving part out of the visible camera.
       var coverScale=Math.max(w/nativeWidth,h/nativeHeight),roofY=mobile ? .095 : .12,boatBottom=mobile ? .928 : .889,contain=kind==='history'&&(h-8)<(boatBottom-roofY)*nativeHeight*coverScale,scale=contain?Math.min(w/nativeWidth,h/nativeHeight):coverScale,iw=nativeWidth*scale,ih=nativeHeight*scale,ox=contain?(w-iw)/2:Math.max(w-iw,Math.min(0,w/2-iw*cx)),oy=contain?(h-ih)/2:Math.max(h-ih,Math.min(0,(h-66)/2-ih*cy));
@@ -113,7 +113,7 @@
           var width=Math.max(44,right-left),height=Math.max(44,bottom-top);left=Math.min(w-width-4,Math.max(4,left));top=Math.min(h-height-4,Math.max(4,top));
           control.style.setProperty('left',left+'px','important');control.style.setProperty('top',top+'px','important');control.style.setProperty('width',width+'px','important');control.style.setProperty('height',height+'px','important');
         }else{
-          var halfControl=control.offsetWidth/2,x=Math.max(halfControl+4,Math.min(w-halfControl-4,ox+iw*(mobile?stop.mx:stop.x)/100)),y=Math.max(4,Math.min(h-control.offsetHeight-4,oy+ih*(mobile?stop.my:stop.y)/100));control.style.setProperty('left',x+'px','important');control.style.setProperty('top',y+'px','important');var sign=control.querySelector('.harbor-sign');if(sign){var half=sign.offsetWidth/2,signLeft=x-half,signRight=x+half,shift=signLeft<4?4-signLeft:signRight>w-4?w-4-signRight:0;sign.style.transform='translateX('+shift+'px)';}
+          var halfControl=control.offsetWidth/2,x=Math.max(halfControl+4,Math.min(w-halfControl-4,ox+iw*(mobile?stop.mx:stop.x)/100)),y=Math.max(4,Math.min(h-control.offsetHeight-4,oy+ih*(mobile?stop.my:stop.y)/100-(stop.aboveBoat?control.offsetHeight+9:0)));control.style.setProperty('left',x+'px','important');control.style.setProperty('top',y+'px','important');var sign=control.querySelector('.harbor-sign');if(sign){var half=sign.offsetWidth/2,signLeft=x-half,signRight=x+half,shift=signLeft<4?4-signLeft:signRight>w-4?w-4-signRight:0;sign.style.transform='translateX('+shift+'px)';}
         }
       });
       if(kind==='history'&&contain&&!mobile){var ordered=controls.filter(function(n){return n.classList.contains('history-landmark');}).sort(function(a,b){return parseFloat(a.style.left)-parseFloat(b.style.left);}),edge=4;ordered.forEach(function(n){var left=Math.max(edge,parseFloat(n.style.left));n.style.setProperty('left',left+'px','important');edge=left+parseFloat(n.style.width)+5;});var excess=edge-5-(w-4);if(excess>0)ordered.forEach(function(n){n.style.setProperty('left',(parseFloat(n.style.left)-excess)+'px','important');});}
