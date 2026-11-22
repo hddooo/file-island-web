@@ -89,35 +89,47 @@
       page('문제지');
       ctx.imageSmoothingQuality = 'high';
       const columnWidth = (W - 2 * margin - 36) / 2;
-      let col = 0, y = top;
-      for (const [i, q] of items.entries()) {
+      const available = bottom - top;
+      const layout = items.map(q => {
         const paths = q.common ? [q.common.image, q.image] : [q.image];
         const ratios = paths.map(path => pictures.get(path)?.ratio);
         if (ratios.some(r => !Number.isFinite(r) || r <= 0)) throw Error('Invalid image ratio');
-        const total = ratios.reduce((a, b) => a + b);
-        const overhead = 139 + 10 * paths.length;
-        const width = Math.min(columnWidth, (bottom - top - overhead) / total);
-        const height = overhead + width * total;
-        if (y > top && y + height > bottom) {
-          if (col === 1) { await save(); page('문제지'); }
-          col = 1 - col;
-          y = top;
+        return {paths, ratios, ratio: ratios.reduce((a, b) => a + b, 0),
+          overhead: 87 + 10 * paths.length};
+      });
+      let i = 0;
+      while (i < items.length) {
+        for (let col = 0; col < 2 && i < items.length; col++) {
+          let len = 1, width = 0, ratio = 0, overhead = 0;
+          for (let n = 0; i + n < items.length && n < 3; n++) {
+            const row = layout[i + n];
+            ratio += row.ratio;
+            overhead += row.overhead;
+            const fit = Math.min(columnWidth, (available - overhead) / ratio);
+            // Preserve legibility: do not squeeze tall originals just to hit a fixed count.
+            if (n && fit < columnWidth * 0.9) break;
+            len = n + 1;
+            width = fit;
+          }
+          const x = margin + col * (columnWidth + 36);
+          let y = top;
+          for (let n = 0; n < len; n++, i++) {
+            const q = items[i], {paths, ratios} = layout[i];
+            font(32, true);
+            ctx.fillText(String(i + 1), x, y);
+            y += 36;
+            font(23);
+            ctx.fillText('(' + q.exam + '회-' + q.number + '번)', x, y);
+            y += 41;
+            for (const [part, path] of paths.entries()) {
+              await draw(path, x, y, width);
+              y += width * ratios[part] + 10;
+            }
+            y += 10;
+            count++;
+          }
         }
-        const x = margin + col * (columnWidth + 36);
-        font(32, true);
-        ctx.fillText(String(i + 1), x, y);
-        y += 36;
-        font(23);
-        ctx.fillText('(' + q.exam + '회-' + q.number + '번)', x, y);
-        y += 41;
-        for (const [n, path] of paths.entries()) {
-          await draw(path, x, y, width);
-          y += width * ratios[n] + 10;
-        }
-        font(28);
-        ctx.fillText('내 답   ①    ②    ③    ④    ⑤', x, y);
-        y += 62;
-        count++;
+        if (i < items.length) { await save(); page('문제지'); }
       }
     }
     async function explanations() {

@@ -1,8 +1,9 @@
 // Run with node cbt-worksheet-pdf.test.cjs. No DOM or image codec required.
 const assert = require('node:assert/strict');
 const pages = [];
-let labels = [], cells = 0;
+let labels = [], cells = 0, draws = [], pageDraws = [];
 const ctx = {
+  drawImage(img, x, y, width, height) { draws.push([img.src, x, y, width, height]); },
   fillRect() {}, strokeRect() { cells++; },
   measureText(s) { return {width: s.length * 30}; },
   fillText(s) { labels.push(s); }
@@ -11,11 +12,14 @@ const canvas = {
   getContext: () => ctx,
   toBlob(done) {
     pages.push(labels);
+    pageDraws.push(draws);
+    draws = [];
     labels = [];
     done(new Blob([Uint8Array.of(255, 216, 255, 217)], {type: 'image/jpeg'}));
   }
 };
-global.window = {Blob, document: {createElement: () => canvas}};
+class Image {set src(value) {this.url = value; this.naturalWidth = this.naturalHeight = 1; this.onload();} get src() {return this.url;}}
+global.window = {Blob, Image, document: {createElement: () => canvas}};
 if(process.env.HANQ_PDF_WRITER)require('node:vm').runInThisContext(process.env.HANQ_PDF_WRITER);else require('../media/cbt-worksheet-pdf.js');
 
 (async () => {
@@ -44,5 +48,23 @@ if(process.env.HANQ_PDF_WRITER)require('node:vm').runInThisContext(process.env.H
     const end = match.index + match[0].length + Number(match[1]);
     assert.match(bytes.slice(end), /^\n?endstream/);
   }
-  process.stdout.write('PDF structure and 700-entry pagination passed\n');
+  pages.length = pageDraws.length = 0;
+  const ratios = [1.44, 1.12, 1.04, 1.44, 0.81, 0.89, 1.01, 1.15, 1.19];
+  const questions = ratios.map((_, i) => ({exam: 76, number: i + 1, image: 'q' + i}));
+  questions.push({exam: 72, number: 47, image: 'tall', common: {image: 'common'}});
+  const pictures = new Map([...ratios.map((r, i) => ['q' + i, {url: 'blob:q' + i, ratio: r}]),
+    ['tall', {url: 'blob:tall', ratio: 2}], ['common', {url: 'blob:common', ratio: 1.5}]]);
+  await window.HanqCbtWorksheetPdf.create(window, questions, pictures, 'questions');
+  assert.ok(pages.every(page => page[0] === '문제지' && page.every(s => !s.includes('내 답'))));
+  assert.deepEqual(pages.flat().filter(s => /^\d+$/.test(s)).map(Number), questions.map((_,i) => i + 1));
+  assert.ok(pages[0].includes('(76회-1번)') && pages.at(-1).includes('(72회-47번)'));
+  assert.ok(pages.slice(0, 2).every(page => [4, 5].includes(page.filter(s => /^\d+$/.test(s)).length)));
+  assert.deepEqual(pageDraws.flat().map(row => row[0]),
+    [...ratios.map((_,i) => 'blob:q'+i), 'blob:common', 'blob:tall']);
+  for (const [url, x, y, width, height] of pageDraws.flat()) {
+    assert.ok(x >= 90 && x + width <= 1590 && y + height <= 2286);
+    assert.equal(height, width * pictures.get(url.slice(5)).ratio);
+    if (url.startsWith('blob:q')) assert.ok(width >= 732 * 0.9);
+  }
+  process.stdout.write('PDF structure, 700-entry answer pagination, and question layout passed\n');
 })().catch(e => { console.error(e); process.exitCode = 1; });
