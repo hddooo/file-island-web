@@ -1,150 +1,84 @@
 'use strict';
-const nodeTest=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),{JSDOM}=require('jsdom');
-const code=process.env.WORKSHEET_SOURCE||fs.readFileSync('media/cbt-wrong-print.js','utf8');
-const uuid='11111111-1111-4111-8111-111111111111';
-function question(r,n,{star=false,blank=false}={}){
- const options=Array.from({length:5},(_,i)=>({id:'a'+i,number:i+1}));
- return {questionId:'exam-'+r+'-'+String(n).padStart(2,'0'),version:'frozen',exam:r,number:n,position:n-1,runId:uuid,source:'exam',starred:star,everWrong:!star,selectedOptionId:blank?null:star?'a1':'a3',image:'/api/v1/cbt/runs/'+uuid+'/questions/'+(n-1)+'/image',options,review:{item:{arbitrary:'legacy nested shape not needed for print'},status:blank?'unanswered':star?'correct':'wrong',correctNumber:2,correctOptionId:'a1'}};
+const fs=require('node:fs'),assert=require('node:assert/strict'),test=require('node:test'),{JSDOM}=require('jsdom'),crypto=require('node:crypto');
+const code=process.env.HANQ_PRINT31_CODE||fs.readFileSync('media/cbt-wrong-print.js','utf8');
+const base=process.env.HANQ_QUESTION_ASSETS||'media';
+const manifest=JSON.parse(fs.readFileSync(base+'/cbt-originals/manifest.json','utf8'));
+const examSource=fs.readFileSync(base+'/cbt-explanation-data.js','utf8');
+const id='f1d810cd-0000-4000-8000-111111111111',selects=[1,2,3,4,5].map(i=>({id:'a'+i,number:i}));
+const settle=async()=>{for(let i=0;i<7;i++)await new Promise(r=>setTimeout(r,1));};
+function row(round,number,override){
+ const questionId='exam-'+round+'-'+String(number).padStart(2,'0'),position=number-1;
+ return {questionId,version:'fixture',exam:round,number,position,runId:id,source:'exam',starred:true,everWrong:true,selectedOptionId:null,paperImported:true,image:'/api/v1/cbt/runs/'+id+'/questions/'+position+'/image',options:selects,review:{status:'wrong',correctNumber:2,correctOptionId:'a2'},...override};
 }
-function response(round,items=[],pending=0,resetAt=null){return{scope:'exam-starred-or-ever-wrong',includesUnanswered:true,round,hasMore:false,pendingStarCount:pending,items,resetAt};}
+function raw(round,items=[],resetAt=null){return {scope:'exam-starred-or-ever-wrong',includesUnanswered:true,round,hasMore:false,pendingStarCount:0,items,resetAt};}
 function harness(){
- const d=new JSDOM('<main></main>',{url:'https://fixture.test',runScripts:'outside-only',pretendToBeVisual:true}),w=d.window,doc=w.document,requests=[],prints=[],images=[],handlers=[];
- let owner='x',fetchOverride=null,missing=null;
+ const d=new JSDOM('<main/>',{url:'https://fixture.invalid',runScripts:'outside-only',pretendToBeVisual:true}),w=d.window,doc=w.document;
+ const handlers=[],requests=[],images=[],downloads=[],writerCalls=[],http=[],urls=new Map(),revocations=[],scriptLoads=[];
+ let owner=0,serial=0,reply=(_n,q)=>q(),imageReply=()=>new w.Blob(['protected-valid'],{type:'image/webp'}),publicBytes=fs.readFileSync(base+'/cbt-originals/76-27.webp');
  w.HTMLDialogElement.prototype.showModal=function(){this.open=true;};
- w.URL.createObjectURL=()=> 'blob:synthetic-'+images.length;
- w.URL.revokeObjectURL=()=>{};
- w.Image=function(){return {naturalWidth:600,naturalHeight:600,set src(_){Promise.resolve().then(()=>this.onload());}};};
- Object.defineProperty(w.HTMLIFrameElement.prototype,'contentWindow',{get(){return {focus(){},print(){prints.push(1);}};}});
- const append=w.HTMLElement.prototype.appendChild;
- w.HTMLElement.prototype.appendChild=function(e){const x=append.call(this,e);if(e.tagName==='IFRAME')Object.defineProperty(e.contentDocument.defaultView.HTMLImageElement.prototype,'decode',{value(){return Promise.resolve();}});return x;};
- w.HanqCbtExplanations={reviewParts:q=>q.exam===69?{stem:['검증된 지문'],conclusion:'검증된 결론'}:null,resolve:q=>q.exam===69?{options:q.options.map((_,i)=>({review:['검증 보기 '+(i+1)]}))}:null};
- const loadHead=doc.head.appendChild.bind(doc.head);
- doc.head.appendChild=function(e){const x=loadHead(e); if(e.tagName==='SCRIPT')queueMicrotask(()=>e.onerror?.());return x;};
+ w.HTMLAnchorElement.prototype.click=function(){downloads.push({url:this.href,name:this.download});};
+ w.URL.createObjectURL=b=>{const key='blob:test-'+(++serial);urls.set(key,b);return key;};w.URL.revokeObjectURL=u=>{revocations.push(u);urls.delete(u);};
+ w.Image=function(){return {naturalWidth:657,naturalHeight:1077,set src(u){queueMicrotask(()=>{if(urls.get(u)?.size===7)this.onerror();else this.onload();});}};};
+ Object.defineProperty(w.crypto,'subtle',{value:crypto.webcrypto.subtle});
+ w.eval(examSource);
+ const pin=w.HANQ_CBT_EXPLANATIONS.items['exam-76-27'];
+ assert(pin&&pin.id==='exam-76-27');
+ const actual=row(76,27,{version:pin.v,review:{status:'wrong',correctNumber:pin.answer,correctOptionId:'a'+pin.answer}});
+ w.HanqCbtExplanations={reviewParts:r=>({stem:['검증 단서'],conclusion:'결론'}),resolve:()=>null};
+ const append=doc.head.appendChild.bind(doc.head);
+ doc.head.appendChild=function(s){const child=append(s);scriptLoads.push(s.getAttribute('src'));queueMicrotask(()=>{
+   if(s.getAttribute('src').includes('worksheet-pdf')){w.HanqCbtWorksheetPdf={create:async(_w,rows,pics,mode,guard)=>{guard();writerCalls.push({rows,pics,mode});return new w.Blob(['%PDF-1.4\nfixture'],{type:'application/pdf'});}};s.onload();}
+   else s.onerror();
+ });return child;};
+ w.fetch=async function(path){http.push(path);
+  if(path.endsWith('manifest.json'))return {ok:true,json:async()=>manifest};
+  return {ok:true,headers:{get:()=> 'image/webp'},arrayBuffer:async()=>publicBytes.buffer.slice(publicBytes.byteOffset,publicBytes.byteOffset+publicBytes.byteLength)};
+ };
  w.eval(code);
- const api={state:()=>({signedIn:true,ownerId:owner,epoch:1}),onChange:f=>{handlers.push(f);return()=>{};},async cbt(m,p){
-  assert.equal(m,'GET');requests.push(p);assert.match(p,/^\/api\/v1\/cbt\/worksheet-materials\/\d{2}$/);
-  if(fetchOverride)return fetchOverride(p);
-  const round=Number(p.split('/').pop());
-  return response(round,round===69?[question(69,20,{blank:true})]:round===78?[question(78,4,{star:true})]:[],round===78?1:0);
- },async cbtImage(p){images.push(p);if(missing)throw Object.assign(new Error('missing'),missing);return new w.Blob(['x'],{type:'image/webp'});}};
- const click=(label)=>{const b=[...doc.querySelectorAll('button')].find(x=>x.textContent===label);assert(b,label);b.click();return b;};
- function select(){click('선택 해제');doc.querySelector('input[value="69"]').click();doc.querySelector('input[value="78"]').click();}
- return {d,w,doc,requests,prints,images,api,click,select,missing(status=404,code){missing={status,code};},override(fn){fetchOverride=fn;},logout(){owner='y';handlers.forEach(f=>f());},close(){doc.querySelector('.wp-controls button')?.click();w.close();}};
+ const api={state:()=>({signedIn:true,ownerId:owner,epoch:1}),onChange(f){handlers.push(f);return()=>{};},async cbt(m,p){assert.equal(m,'GET');requests.push(p);const round=Number(p.split('/').at(-1));return reply(round,()=>raw(round,round===76?[actual]:[]));},async cbtImage(p){images.push(p);return imageReply(p);}};
+ const check=r=>doc.querySelector('input[value="'+r+'"]'),count=r=>check(r).parentNode.textContent;
+ const button=label=>[...doc.querySelectorAll('button')].find(e=>e.textContent===label);
+ return {w,doc,requests,images,http,downloads,writerCalls,revocations,scriptLoads,actual,open(round){return w.HanqCbtWrongPrint.open({api,round});},check,count,button,reply(f){reply=f;},imageReply(f){imageReply=f;},bytes(b){publicBytes=b;},logout(){owner++;handlers.forEach(f=>f());},close(){button('닫기')?.click();w.close();}};
 }
-const settle=async()=>{for(let i=0;i<3;i++)await new Promise(r=>setImmediate(r));};
-nodeTest('real entry flow treats 69 blanks and 78 saved stars as eligible and prints two separate files with matching numbering',async ()=>{
+test('generic opens empty; material loads on selection only; two independent true download paths',async()=>{const h=harness();try{h.open();assert.equal(h.requests.length,0);assert.equal(h.scriptLoads.length,0);h.check(76).click();await settle();assert.match(h.count(76),/1문항/);assert.equal(h.images.length,0);assert.equal(h.scriptLoads.length,0);
+ h.button('문제지 PDF').click();await settle();assert.equal(h.images.length,1);assert.equal(h.writerCalls[0].mode,'questions');assert.equal(h.writerCalls[0].pics.size,1);assert.match(h.downloads[0].name,/문제지.pdf$/);assert(h.doc.querySelector('a[download]'));
+ h.button('해설지 PDF').click();await settle();assert.equal(h.images.length,1);assert.equal(h.writerCalls[1].mode,'explanations');assert.equal(h.writerCalls[1].pics.size,0);assert.match(h.downloads[1].name,/해설지.pdf$/);assert.equal(h.requests.length,1);assert(h.revocations.includes(h.downloads[0].url));
+ }finally{h.close();}});
+test('real 76-27 crop fallback handles timeout/gateway/corrupt success without allowing auth or hash mismatch',async()=>{
+ for(const failure of [{status:503,code:'asset_check_timeout'},{status:503,code:'asset_unavailable'},{status:0,code:'timeout'},{status:502},{status:504},'corrupt',{status:401},{status:403},'hash-mismatch','version-mismatch']){
  const h=harness();try{
-  const {w,doc,requests,images,prints}=h;w.HanqCbtWrongPrint.open({api:h.api});assert.equal(doc.querySelectorAll('input:checked').length,14);h.select();
-  h.click('문제지 PDF');await settle();let f=doc.querySelector('iframe').contentDocument;
-  assert.deepEqual([...f.querySelectorAll('.wp-question h2')].map(x=>x.textContent),['1','2']);
-  assert.deepEqual([...f.querySelectorAll('.wp-question-origin')].map(x=>x.textContent),['(69회-20번)','(78회-4번)']);
-  assert(!f.querySelector('.wp-answer-grid'));assert(!f.body.textContent.includes('검증된 지문'));assert.equal(images.length,2);
-  assert.match(doc.querySelector('[role=status]').textContent,/별표 1개는 제출 후/);
-  h.click('해설지 PDF');await settle();f=doc.querySelector('iframe').contentDocument;
-  assert.equal(f.querySelectorAll('.wp-question,img').length,0);
-  assert.equal(f.querySelectorAll('.wp-answer-sheet').length,1);
-  assert.equal(f.body.firstElementChild.className,'wp-page wp-answer-sheet');
-  assert.deepEqual([...f.querySelectorAll('.wp-answer-entry')].map(x=>x.textContent),['1②','2②']);
-  assert.deepEqual([...f.querySelectorAll('.wp-explanation h2')].map(x=>x.textContent),['1','2']);
-  assert.match(f.querySelector('.wp-explanations').textContent,/검증된 지문.*검증 보기 1.*검증된 결론.*확인된 해설이 없습니다/);
-  assert.equal(prints.length,2);assert.equal(images.length,2);
-  assert.equal(requests.length,2,'same immutable selected-set snapshot for both PDFs');
+  if(failure==='corrupt')h.imageReply(()=>new h.w.Blob(['corrupt'],{type:'image/webp'}));
+  else if(failure==='hash-mismatch'){h.bytes(Buffer.from('different'));h.imageReply(()=>{throw {status:404};});}
+  else if(failure==='version-mismatch'){h.reply(r=>raw(r,[{...h.actual,version:'legacy'}]));h.imageReply(()=>{throw {status:404};});}
+  else h.imageReply(()=>{throw failure;});
+  h.open(76);await settle();h.button('문제지 PDF').click();for(let i=0;i<30&&!h.downloads.length&&!/불러오지|로그인/.test(h.doc.querySelector('[role=status]').textContent);i++)await settle();
+  if(failure.status===401||failure.status===403||failure==='version-mismatch'){assert.equal(h.downloads.length,0);assert.equal(h.http.length,0);}
+  else if(failure==='hash-mismatch'){assert.equal(h.downloads.length,0);assert.match(h.doc.querySelector('[role=status]').textContent,/76회 27번 원본/);}
+  else{assert.equal(h.downloads.length,1,JSON.stringify(failure));assert.deepEqual(h.http,['media/cbt-originals/manifest.json','media/cbt-originals/76-27.webp']);}
  }finally{h.close();}
-});
-nodeTest('all 700 answers fit declared A4 dimensions in one continuous sheet',()=>{
- const h=harness();try{
- const items=Array.from({length:700},(_,i)=>question(67+Math.floor(i/50),1+i%50));
- const doc=h.doc.implementation.createHTMLDocument();h.w.HanqCbtWrongPrint.renderSheet(doc,items,new Map(),'explanations');
- const grid=doc.querySelector('.wp-answer-grid');const cols=Number(grid.style.getPropertyValue('--cols'));
- assert.equal(cols,20);assert.equal(doc.querySelectorAll('.wp-answer-sheet').length,1);
- assert(Math.ceil(items.length/cols)*7+12<267);assert.equal(grid.children.length,700);assert.equal(grid.lastElementChild.textContent,'700②');
- assert.equal(doc.querySelectorAll('.wp-explanation').length,700);
- }finally{h.close();}
-});
-nodeTest('missing old-route compatibility marker and mixed reset epochs refuse incomplete downloads',async ()=>{
- const h=harness();try{
-  h.override(()=>({...response(69,[question(69,1)]),includesUnanswered:false}));
-  await assert.rejects(h.w.HanqCbtWrongPrint.collect(h.api,[69],()=>{}),e=>e.code==='materials_shape');
-  h.override(p=>{const n=Number(p.split('/').pop());return response(n,[],0,n===69?null:'2026-11-21T00:00:00Z');});
-  await assert.rejects(h.w.HanqCbtWrongPrint.collect(h.api,[69,78],()=>{}),e=>e.code==='changed');
-  const q=question(69,20);assert.throws(()=>h.w.HanqCbtWrongPrint.worksheetRows(response(69,[q,q]),69));
-  assert.throws(()=>h.w.HanqCbtWrongPrint.worksheetRows(response(69,[{...q,image:'https://offsite.invalid/x'}]),69));
- }finally{h.close();}
-});
-nodeTest('original 404 tells exact affected question, nothing silently skipped, explanation still works',async ()=>{
- const h=harness();try{h.w.HanqCbtWrongPrint.open({api:h.api});h.select();h.missing();h.click('문제지 PDF');await settle();
- assert.equal(h.prints.length,0);assert.equal(h.doc.querySelector('iframe'),null);assert.match(h.doc.querySelector('[role=status]').textContent,/제(?:69회 20|78회 4)번 원본/);
- h.click('해설지 PDF');await settle();assert.equal(h.prints.length,1);assert.equal(h.doc.querySelector('iframe').contentDocument.querySelectorAll('.wp-answer-entry').length,2);
- }finally{h.close();}
-});
-nodeTest('sign out during reads discards pending data',async ()=>{
- const h=harness();try{let resume;h.override(()=>new Promise(r=>{resume=r;}));h.w.HanqCbtWrongPrint.open({api:h.api,round:69});h.click('문제지 PDF');await settle();h.logout();resume(response(69,[question(69,20,{blank:true})]));await settle();assert.equal(h.doc.querySelector('dialog'),null);assert.equal(h.prints.length,0);assert.equal(h.images.length,0);
- }finally{h.close();}
-});
-
-nodeTest('canonical hashed public original rescues protected asset_unavailable but not other 503 errors', async()=>{
- const h=harness();try{
-  const crypto=require('node:crypto'),requests=[];
-  const index='index.html';
-  const entry=new JSDOM(fs.readFileSync(index,'utf8'));
-  const scriptPaths=[...entry.window.document.scripts].map(s=>s.getAttribute('src')?.split('?')[0]);
-  entry.window.close();
-  const path='media/cbt-explanation67-69-data.js',renderer=scriptPaths.indexOf('media/cbt-explanations.js');
-  assert(renderer>=0 && scriptPaths.includes('media/cbt-wrong-print.js'));
-  const before=h.w.Node.prototype.appendChild.bind(h.doc.head);
-  const actualData=fs.readFileSync(path,'utf8');
-  let loads=0;
-  h.doc.head.appendChild=function(script){const node=before(script);if(script.tagName==='SCRIPT'){
-   assert.equal(script.getAttribute('src').split('?')[0],path);loads++;
-   queueMicrotask(()=>{h.w.eval(actualData);script.onload();});
-  }return node;};
-  Object.defineProperty(h.w.crypto,'subtle',{value:crypto.webcrypto.subtle});
-  const fixtureWindow={};require('node:vm').runInNewContext(actualData,{window:fixtureWindow});
-  h.w.eval(fs.readFileSync(scriptPaths[renderer],'utf8'));
-  const reviewed=fixtureWindow.HANQ_CBT_EXPLANATIONS_67_69.items['exam-69-20'];
-  assert.equal(reviewed.v,'c4c24f614a398167');
-  const q=question(69,20,{blank:true});
-  Object.assign(q,{version:reviewed.v,points:reviewed.points,options:reviewed.options.map(({id,number})=>({id,number}))});
-  Object.assign(q.review,{item:reviewed,options:reviewed.options,correctNumber:reviewed.answer,correctOptionId:reviewed.options[reviewed.answer-1].id});
-  assert.equal(h.w.HanqCbtExplanations.resolve(q,'active'),null);
-  assert.equal(h.w.HanqCbtExplanations.resolve({...q,version:'legacy'},'final'),null);
-  assert.equal(h.w.HanqCbtExplanations.resolve(q,'final'),null);
-  h.override(()=>response(69,[q]));
-  h.w.fetch=async function(path){
-   requests.push(path);
-   return path.endsWith('manifest.json')?{ok:true,json:async()=>JSON.parse(fs.readFileSync(path,'utf8'))}:{ok:true,headers:{get:()=> 'image/webp'},arrayBuffer:async()=>{const b=fs.readFileSync(path);return b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength);}};
-  };
-  h.missing(503,'asset_unavailable');h.w.HanqCbtWrongPrint.open({api:h.api,round:69});h.click('문제지 PDF');
-  for(let i=0;i<20&&!h.prints.length;i++)await settle();
-  assert.deepEqual(requests,['media/cbt-originals/manifest.json','media/cbt-originals/69-20.webp']);assert.equal(h.prints.length,1);
-  assert.equal(h.w.HanqCbtExplanations.resolve(q,'final').v,reviewed.v);
-  assert.equal(loads,1);
-  h.click('해설지 PDF');await settle();
-  const pdf=h.doc.querySelector('iframe').contentDocument;
-  assert.match(pdf.querySelector('.wp-answer-entry').textContent,/1⑤/);
-  assert(!pdf.body.textContent.includes('확인된 해설이 없습니다'));
- }finally{h.close();}
- const denied=harness();try{denied.missing(503,'other');let fallbackAttempts=0;denied.w.fetch=async()=>{fallbackAttempts++;throw Error('unexpected fallback')};denied.w.HanqCbtWrongPrint.open({api:denied.api,round:69});denied.click('문제지 PDF');await settle();assert.equal(denied.prints.length,0);assert.equal(fallbackAttempts,0);}finally{denied.close();}
-});
-
-nodeTest('validated finalized review routes keep their image and common origin and reject mismatched routes',()=>{
- const h=harness();try{
-  const q=question(72,47),path='/api/v1/cbt/reviews/'+uuid+'/questions/46',review={...q,source:'review',image:path+'/image',common:{image:path+'/common',questionNumbers:[47,48]}};
-  assert.equal(h.w.HanqCbtWrongPrint.worksheetRows(response(72,[review]),72)[0].image,path+'/image');
-  assert.throws(()=>h.w.HanqCbtWrongPrint.worksheetRows(response(72,[{...review,source:'exam'}]),72));
-  assert.throws(()=>h.w.HanqCbtWrongPrint.worksheetRows(response(72,[{...review,common:{...review.common,image:q.image.replace('/image','/common')}}]),72));
- }finally{h.close();}
-});
-nodeTest('problem pages keep shared source once on a page, no answer content ever',()=>{
- const h=harness();try{
- const items=Array.from({length:6},(_,i)=>question(72,i+1)),pics=new Map();
- for(const item of items){item.common={image:'/common',questionNumbers:[1,2,3,4,5,6]};pics.set(item.image,{url:'blob:test',ratio:.8});}
- pics.set('/common',{url:'blob:common',ratio:.4});
- const doc=h.doc.implementation.createHTMLDocument();h.w.HanqCbtWrongPrint.renderSheet(doc,items,pics,'questions');
- assert.equal(doc.querySelectorAll('.wp-question').length,6);
- assert(doc.querySelector('.wp-common-ref'));
- for(const page of doc.querySelectorAll('.wp-question-page'))assert.equal(page.querySelectorAll('img[alt="공통 자료"]').length,1);
- assert(!doc.querySelector('.wp-answer-sheet,.wp-explanations'));
- const css=require('css-tree'),errors=[];css.parse(doc.querySelector('style').textContent,{onParseError:e=>errors.push(e.message)});assert.deepEqual(errors,[]);
- }finally{h.close();}
-});
+ }});
+test('all rounds explicit limits metadata concurrency; lost selection/auth invalidates outstanding result',async()=>{const h=harness();try{
+ let active=0,peak=0;const waiting=[];
+ h.reply(r=>new Promise(resolve=>{active++;peak=Math.max(peak,active);waiting.push(()=>{active--;resolve(raw(r,[row(r,27)]));});}));
+ h.open();h.button('전체 회차 선택').click();assert.equal(h.requests.length,4);assert.equal(h.images.length,0);
+ for(let i=0;i<14;i++){while(!waiting.length)await settle();waiting.shift()();await settle();}
+ assert.equal(peak,4);assert.equal(h.requests.length,14);assert.equal(h.images.length,0);
+ h.button('해설지 PDF').click();await settle();assert.equal(h.writerCalls[0].rows.length,14);assert.deepEqual(Array.from(h.writerCalls[0].rows,x=>x.exam),Array.from({length:14},(_,i)=>67+i));assert.equal(h.images.length,0);
+ h.open();h.check(76).click();h.check(76).click();waiting.shift()();await settle();assert.doesNotMatch(h.count(76),/문항/);
+ h.check(78).click();h.logout();waiting.shift()();await settle();assert.equal(h.doc.querySelector('dialog'),null);
+ }finally{h.close();}});
+test('failed count cannot create partial PDF; account switch during download suppresses files',async()=>{const h=harness();try{
+ let fail=true;h.reply((r,q)=>{if(r===78&&fail)throw Error('incomplete');return q();});h.open();h.check(76).click();h.check(78).click();await settle();
+ assert.match(h.count(78),/조회 실패/);assert(h.button('문제지 PDF').disabled);assert.equal(h.downloads.length,0);
+ fail=false;h.doc.querySelector('[aria-label="제78회 다시 시도"]').click();await settle();assert.match(h.count(78),/0문항/);
+ let release;h.imageReply(()=>new Promise(r=>{release=r;}));h.button('문제지 PDF').click();await settle();assert.equal(h.images.length,1);h.logout();release(new h.w.Blob(['protected-valid'],{type:'image/webp'}));await settle();assert.equal(h.downloads.length,0);
+ }finally{h.close();}});
+test('rejects duplicate ids, invalid protected origin and mixed history-reset snapshots',async()=>{const h=harness();try{
+ const w=h.w.HanqCbtWrongPrint,q=h.actual;
+ assert.throws(()=>w.worksheetRows(raw(76,[q,q]),76));
+ assert.throws(()=>w.worksheetRows(raw(76,[{...q,source:'review'}]),76));
+ const review={...q,source:'review',image:q.image.replace('/runs/','/reviews/')};
+ assert.equal(w.worksheetRows(raw(76,[review]),76).length,1);
+ h.reply(r=>raw(r,[row(r,27)],r===78?'2026-11-22T00:00:00Z':null));h.open();h.check(76).click();h.check(78).click();await settle();
+ h.button('해설지 PDF').click();await settle();assert.equal(h.downloads.length,0);assert.match(h.doc.querySelector('[role=status]').textContent,/기록 상태가 바뀌었어요/);
+ }finally{h.close();}});
