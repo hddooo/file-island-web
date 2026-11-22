@@ -12,7 +12,7 @@
   function pageTitle(page) { return page.title + (page.page === 8 ? ' ①' : page.page === 9 ? ' ②' : ''); }
 
   function fetchPages() {
-    if (!request) request = root.fetch(assetRoot + 'pages-v49.json?v=2', { credentials: 'same-origin' })
+    if (!request) request = root.fetch(assetRoot + 'pages-v49.json?v=3', { credentials: 'same-origin' })
       .then(function (response) {
         if (!response.ok) throw Error('summary_unavailable');
         return response.json();
