@@ -142,7 +142,7 @@
         var article = add('article', host, null, 'hsr-article');
         article.setAttribute('aria-labelledby', title.id);
         if (route >= 8 && page.sections.some(function(section){return (section.cards || []).some(function(card){return !card.image;});}))
-          add('p', article, '공개 이용이 확인된 사진만 표시해요. 사진이 없는 유물도 이름과 핵심 단서는 볼 수 있어요.', 'hsr-gallery-note');
+          add('p', article, '통합본 사진을 옮겼어요. 일부 유물은 기존 공개 사진이나 글만 표시해요.', 'hsr-gallery-note');
         page.sections.forEach(function (section) {
           content(add('section', article, null, 'hsr-section'), section, 'h2');
         });

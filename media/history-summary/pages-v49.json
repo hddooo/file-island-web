@@ -859,7 +859,8 @@
                 "title": "이색",
                 "items": [
                   "목은 · 성균관 대사성",
-                  "정몽주 등 학관 천거"
+                  "정몽주 등 학관 천거",
+                  "이곡의 아들 · 《목은집》"
                 ]
               }
             ],
@@ -1592,37 +1593,61 @@
             "title": "장군총",
             "items": [
               "계단식 돌무지무덤"
-            ]
+            ],
+            "image": "images/p8-01.webp",
+            "width": 276,
+            "height": 178,
+            "imageOrigin": "master"
           },
           {
             "title": "천추총 / 영락 기와",
             "items": [
               "국내성 · 영락"
-            ]
+            ],
+            "image": "images/p8-02.webp",
+            "width": 319,
+            "height": 96,
+            "imageOrigin": "master"
           },
           {
             "title": "광개토대왕릉비",
             "items": [
               "장수왕 건립 · 4면 1,700여 자"
-            ]
+            ],
+            "image": "images/p8-03.webp",
+            "width": 222,
+            "height": 339,
+            "imageOrigin": "master"
           },
           {
             "title": "호우명 그릇",
             "items": [
               "광개토왕 명문 · 경주 출토"
-            ]
+            ],
+            "image": "images/p8-04.webp",
+            "width": 102,
+            "height": 100,
+            "imageOrigin": "master"
           },
           {
             "title": "강서대묘 사신도(현무도)",
             "items": [
               "현무 · 도교"
-            ]
+            ],
+            "image": "images/p8-05.webp",
+            "width": 145,
+            "height": 91,
+            "imageOrigin": "master"
           },
           {
             "title": "안악 3호분·쌍영총 벽화",
             "items": [
               "고분 벽화 · 개마 무사"
-            ]
+            ],
+            "image": "images/p8-06.webp",
+            "width": 317,
+            "height": 200,
+            "imageOrigin": "master"
           },
           {
             "title": "연가 7년명 금동불",
@@ -1630,12 +1655,9 @@
               "고구려 승려 · 광배 뒷면 명문"
             ],
             "image": "images/p8-07.webp",
-            "width": 676,
-            "height": 900,
-            "source": {
-              "url": "https://www.museum.go.kr/MUSEUM/contents/M0502000000.do?relicId=1955&schM=view",
-              "label": "국립중앙박물관 · 연가칠년명 금동불입상 · 공공누리 1유형"
-            }
+            "width": 226,
+            "height": 282,
+            "imageOrigin": "master"
           }
         ]
       },
@@ -1646,13 +1668,21 @@
             "title": "무령왕릉 석수",
             "items": [
               "웅진(공주) · 벽돌무덤"
-            ]
+            ],
+            "image": "images/p8-08.webp",
+            "width": 202,
+            "height": 177,
+            "imageOrigin": "master"
           },
           {
             "title": "동하총·송산리 6호분",
             "items": [
               "사비(부여) · 웅진(공주)"
-            ]
+            ],
+            "image": "images/p8-09.webp",
+            "width": 470,
+            "height": 315,
+            "imageOrigin": "master"
           },
           {
             "title": "산수무늬 벽돌",
@@ -1660,18 +1690,19 @@
               "부여 · 도교"
             ],
             "image": "images/p8-10.webp",
-            "width": 900,
-            "height": 708,
-            "source": {
-              "url": "https://www.museum.go.kr/MUSEUM/contents/M0502000000.do?relicId=856&schM=view",
-              "label": "국립중앙박물관 · 산수무늬 벽돌 · 공공누리 1유형"
-            }
+            "width": 117,
+            "height": 191,
+            "imageOrigin": "master"
           },
           {
             "title": "백제 금동 대향로",
             "items": [
               "부여 능산리 · 도교"
-            ]
+            ],
+            "image": "images/p8-11.webp",
+            "width": 110,
+            "height": 160,
+            "imageOrigin": "master"
           },
           {
             "title": "부여 정림사지 오층 석탑",
@@ -1679,40 +1710,57 @@
               "소정방 글"
             ],
             "image": "images/p8-12.webp",
-            "width": 828,
-            "height": 1200,
-            "source": {
-              "url": "https://encykorea.aks.ac.kr/Article/E0022355",
-              "label": "[부여 정림사지 오층석탑] 한국민족문화대백과사전 · 공공누리 1유형"
-            }
+            "width": 120,
+            "height": 193,
+            "imageOrigin": "master"
           },
           {
             "title": "익산 미륵사지 석탑",
             "items": [
               "무왕 · 목탑 양식"
-            ]
+            ],
+            "image": "images/p8-13.webp",
+            "width": 195,
+            "height": 197,
+            "imageOrigin": "master"
           },
           {
             "title": "칠지도",
             "items": [
               "왜와 교류"
-            ]
+            ],
+            "image": "images/p8-14.webp",
+            "width": 69,
+            "height": 263,
+            "imageOrigin": "master"
           },
           {
             "title": "쌍북리 목간(좌관대식기)",
             "items": [
               "곡식 대여"
-            ]
+            ],
+            "image": "images/p8-15.webp",
+            "width": 459,
+            "height": 314,
+            "imageOrigin": "master"
           },
           {
             "title": "왕궁리 금동 여래 입상",
             "items": [
               "익산 왕궁리"
-            ]
+            ],
+            "image": "images/p8-16.webp",
+            "width": 133,
+            "height": 146,
+            "imageOrigin": "master"
           },
           {
             "title": "서산 마애여래삼존상",
-            "items": []
+            "items": [],
+            "image": "images/p8-17.webp",
+            "width": 98,
+            "height": 140,
+            "imageOrigin": "master"
           }
         ]
       },
@@ -1723,7 +1771,11 @@
             "title": "신라 금관",
             "items": [
               "나뭇가지 장식 · 곡옥"
-            ]
+            ],
+            "image": "images/p8-18.webp",
+            "width": 105,
+            "height": 165,
+            "imageOrigin": "master"
           },
           {
             "title": "천마총 천마도",
@@ -1731,16 +1783,21 @@
               "천마총 출토 · 말다래"
             ],
             "image": "images/p8-19.webp",
-            "width": 900,
-            "height": 666,
+            "width": 470,
+            "height": 348,
             "source": {
               "url": "https://gyeongju.museum.go.kr/kor/html/sub02/0202.html?d_mng_no=193&mng_no=299&mode=V",
               "label": "국립경주박물관 · 천마그림 말다래Ⅱ · 공공누리 1유형"
-            }
+            },
+            "imageOrigin": "master"
           },
           {
             "title": "천마총 금제 관식",
-            "items": []
+            "items": [],
+            "image": "images/p8-20.webp",
+            "width": 141,
+            "height": 157,
+            "imageOrigin": "master"
           },
           {
             "title": "기마 인물형 토기",
@@ -1748,12 +1805,9 @@
               "신라 토기"
             ],
             "image": "images/p8-21.webp",
-            "width": 900,
-            "height": 721,
-            "source": {
-              "url": "https://www.museum.go.kr/MUSEUM/contents/M0502000000.do?relicId=3802&schM=view&searchId=search",
-              "label": "국립중앙박물관 · 기마 인물형 토기 · 공공누리 1유형"
-            }
+            "width": 158,
+            "height": 141,
+            "imageOrigin": "master"
           },
           {
             "title": "북한산 진흥왕 순수비",
@@ -1761,68 +1815,105 @@
               "김정희 고증"
             ],
             "image": "images/p8-22.webp",
-            "width": 676,
-            "height": 900,
-            "source": {
-              "url": "https://www.museum.go.kr/MUSEUM/contents/M0502000000.do?relicId=2483&schM=view&searchId=search",
-              "label": "국립중앙박물관 · 북한산 신라 진흥왕 순수비 · 공공누리 1유형"
-            }
+            "width": 143,
+            "height": 231,
+            "imageOrigin": "master"
           },
           {
             "title": "포항 중성리 신라비",
-            "items": []
+            "items": [],
+            "image": "images/p8-23.webp",
+            "width": 133,
+            "height": 162,
+            "imageOrigin": "master"
           },
           {
             "title": "분황사 모전석탑",
             "items": [
               "선덕 여왕 · 벽돌 모양의 돌"
-            ]
+            ],
+            "image": "images/p8-24.webp",
+            "width": 170,
+            "height": 228,
+            "imageOrigin": "master"
           },
           {
             "title": "감은사지 삼층석탑",
             "items": [
               "문무왕이 시작 · 신문왕이 완성"
-            ]
+            ],
+            "image": "images/p8-25.webp",
+            "width": 170,
+            "height": 228,
+            "imageOrigin": "master"
           },
           {
             "title": "불국사 석가탑·다라니경",
             "items": [
               "무구정광대다라니경"
-            ]
+            ],
+            "image": "images/p8-26.webp",
+            "width": 148,
+            "height": 196,
+            "imageOrigin": "master"
           },
           {
             "title": "불국사 다보탑",
             "items": [
               "불국사 동쪽 · 돌 난간"
-            ]
+            ],
+            "image": "images/p8-27.webp",
+            "width": 145,
+            "height": 193,
+            "imageOrigin": "master"
           },
           {
             "title": "화엄사 사사자 삼층 석탑",
             "items": [
               "사자 4마리 · 기단"
-            ]
+            ],
+            "image": "images/p8-28.webp",
+            "width": 125,
+            "height": 166,
+            "imageOrigin": "master"
           },
           {
             "title": "양양 진전사지 삼층 석탑",
             "items": [
               "기단과 탑신의 불교 부조"
-            ]
+            ],
+            "image": "images/p8-29.webp",
+            "width": 125,
+            "height": 180,
+            "imageOrigin": "master"
           },
           {
             "title": "쌍봉사 철감선사탑",
             "items": [
               "신라 말 선종 · 승려 사리탑"
-            ]
+            ],
+            "image": "images/p8-30.webp",
+            "width": 171,
+            "height": 228,
+            "imageOrigin": "master"
           },
           {
             "title": "성주사지 낭혜화상탑비",
             "items": [
               "최치원 비문 · 성주산문"
-            ]
+            ],
+            "image": "images/p8-31.webp",
+            "width": 261,
+            "height": 366,
+            "imageOrigin": "master"
           },
           {
             "title": "구황동 금제 여래 입상",
-            "items": []
+            "items": [],
+            "image": "images/p8-32.webp",
+            "width": 100,
+            "height": 170,
+            "imageOrigin": "master"
           },
           {
             "title": "석굴암 본존불",
@@ -1830,34 +1921,47 @@
               "경주 · 통일신라"
             ],
             "image": "images/p8-33.webp",
-            "width": 1134,
-            "height": 1200,
-            "source": {
-              "url": "https://encykorea.aks.ac.kr/Article/E0051529",
-              "label": "[석굴암 본존불] 한국민족문화대백과사전 · 공공누리 1유형"
-            }
+            "width": 138,
+            "height": 143,
+            "imageOrigin": "master"
           },
           {
             "title": "신라 촌락 문서",
             "items": [
               "일본 쇼소인 소장 · 인구·토지·가축 기록"
-            ]
+            ],
+            "image": "images/p8-34.webp",
+            "width": 302,
+            "height": 150,
+            "imageOrigin": "master"
           },
           {
             "title": "장흥 보림사 철조 비로자나불좌상",
             "items": [
               "신라 말 · 가지산문"
-            ]
+            ],
+            "image": "images/p8-35.webp",
+            "width": 259,
+            "height": 284,
+            "imageOrigin": "master"
           },
           {
             "title": "경주 포석정지",
             "items": [
               "견훤이 경애왕 습격"
-            ]
+            ],
+            "image": "images/p8-36.webp",
+            "width": 327,
+            "height": 241,
+            "imageOrigin": "master"
           },
           {
             "title": "팔공산 갓바위",
-            "items": []
+            "items": [],
+            "image": "images/p8-37.webp",
+            "width": 96,
+            "height": 139,
+            "imageOrigin": "master"
           }
         ]
       },
@@ -1882,28 +1986,37 @@
               "은진미륵"
             ],
             "image": "images/p9-01.webp",
-            "width": 749,
-            "height": 1200,
-            "source": {
-              "url": "https://encykorea.aks.ac.kr/Article/E0051529",
-              "label": "[논산 관촉사 석조미륵보살입상] 한국민족문화대백과사전 · 공공누리 1유형"
-            }
+            "width": 106,
+            "height": 190,
+            "imageOrigin": "master"
           },
           {
             "title": "청자 인물형 주전자",
             "items": [
               "상형 청자 · 비색"
-            ]
+            ],
+            "image": "images/p9-02.webp",
+            "width": 148,
+            "height": 158,
+            "imageOrigin": "master"
           },
           {
             "title": "청자 주전자",
             "items": [
               "상감 청자"
-            ]
+            ],
+            "image": "images/p9-03.webp",
+            "width": 130,
+            "height": 152,
+            "imageOrigin": "master"
           },
           {
             "title": "청자 원숭이 연적",
-            "items": []
+            "items": [],
+            "image": "images/p9-04.webp",
+            "width": 110,
+            "height": 116,
+            "imageOrigin": "master"
           },
           {
             "title": "청자 상감운학문 매병",
@@ -1937,12 +2050,9 @@
               "투각 · 칠보무늬"
             ],
             "image": "images/p9-07.webp",
-            "width": 900,
-            "height": 600,
-            "source": {
-              "url": "https://www.museum.go.kr/MUSEUM/contents/M0505000000.do?relicId=1227&schM=view&searchId=search",
-              "label": "국립중앙박물관 · 청자 투각 칠보무늬 향로 · 공공누리 1유형"
-            }
+            "width": 140,
+            "height": 165,
+            "imageOrigin": "master"
           },
           {
             "title": "청동 은입사 정병",
@@ -1950,18 +2060,19 @@
               "청동에 은선을 박음"
             ],
             "image": "images/p9-08.webp",
-            "width": 600,
-            "height": 900,
-            "source": {
-              "url": "https://vcm.museum.go.kr/MUSEUM/contents/M0504000000.do?relicId=372&schM=view",
-              "label": "국립중앙박물관 · 청동 은입사 물가풍경무늬 정병 · 공공누리 1유형"
-            }
+            "width": 227,
+            "height": 267,
+            "imageOrigin": "master"
           },
           {
             "title": "나전 국화 넝쿨무늬 합",
             "items": [
               "자개 · 옻칠"
-            ]
+            ],
+            "image": "images/p9-09.webp",
+            "width": 100,
+            "height": 82,
+            "imageOrigin": "master"
           },
           {
             "title": "수월관음도",
@@ -1975,12 +2086,9 @@
               "대리석 · 원의 영향"
             ],
             "image": "images/p9-11.webp",
-            "width": 785,
-            "height": 1200,
-            "source": {
-              "url": "https://encykorea.aks.ac.kr/Article/E0002965",
-              "label": "[개성 경천사지 십층석탑 정면] 한국민족문화대백과사전 · 공공누리 1유형"
-            }
+            "width": 161,
+            "height": 470,
+            "imageOrigin": "master"
           },
           {
             "title": "월정사 팔각 구층 석탑",
@@ -2001,12 +2109,9 @@
               "배흘림기둥 · 주심포"
             ],
             "image": "images/p9-13.webp",
-            "width": 1200,
-            "height": 539,
-            "source": {
-              "url": "https://encykorea.aks.ac.kr/Article/E0024295",
-              "label": "[영주 부석사 무량수전 정면] 한국민족문화대백과사전 · 공공누리 1유형"
-            }
+            "width": 131,
+            "height": 87,
+            "imageOrigin": "master"
           },
           {
             "title": "봉정사 극락전",
@@ -2031,27 +2136,47 @@
             "title": "단산오옥명 먹",
             "items": [
               "서긍 · 묵소"
-            ]
+            ],
+            "image": "images/p9-16.webp",
+            "width": 53,
+            "height": 125,
+            "imageOrigin": "master"
           },
           {
             "title": "다인철소 유적 출토 솥단지",
             "items": [
               "철 생산 · 특수 구역 ‘소’"
-            ]
+            ],
+            "image": "images/p9-17.webp",
+            "width": 95,
+            "height": 77,
+            "imageOrigin": "master"
           },
           {
             "title": "용미리 마애이불입상",
-            "items": []
+            "items": [],
+            "image": "images/p9-18.webp",
+            "width": 98,
+            "height": 139,
+            "imageOrigin": "master"
           },
           {
             "title": "이천동 마애여래입상",
-            "items": []
+            "items": [],
+            "image": "images/p9-19.webp",
+            "width": 96,
+            "height": 141,
+            "imageOrigin": "master"
           },
           {
             "title": "청자 상감 모란무늬 항아리",
             "items": [
               "강진 · 상감"
-            ]
+            ],
+            "image": "images/p9-20.webp",
+            "width": 239,
+            "height": 148,
+            "imageOrigin": "master"
           },
           {
             "title": "수덕사 대웅전",
@@ -2111,7 +2236,11 @@
             "title": "청화백자 물고기 연적",
             "items": [
               "흰 바탕 · 푸른 무늬"
-            ]
+            ],
+            "image": "images/p9-26.webp",
+            "width": 150,
+            "height": 162,
+            "imageOrigin": "master"
           },
           {
             "title": "분청사기",
@@ -2125,12 +2254,9 @@
               "강희안 · 물 보는 선비"
             ],
             "image": "images/p9-28.webp",
-            "width": 600,
-            "height": 900,
-            "source": {
-              "url": "https://www.museum.go.kr/MUSEUM/contents/M0502000000.do?relicId=373&schM=view",
-              "label": "국립중앙박물관 · 물을 바라보는 선비(강희안) · 공공누리 1유형"
-            }
+            "width": 160,
+            "height": 228,
+            "imageOrigin": "master"
           },
           {
             "title": "몽유도원도",
@@ -2161,37 +2287,61 @@
             "title": "파적도",
             "items": [
               "김득신 · 풍속화"
-            ]
+            ],
+            "image": "images/p9-32.webp",
+            "width": 159,
+            "height": 133,
+            "imageOrigin": "master"
           },
           {
             "title": "월하정인",
             "items": [
               "신윤복 · 풍속화"
-            ]
+            ],
+            "image": "images/p9-33.webp",
+            "width": 157,
+            "height": 133,
+            "imageOrigin": "master"
           },
           {
             "title": "영통동구도",
             "items": [
               "강세황"
-            ]
+            ],
+            "image": "images/p9-34.webp",
+            "width": 218,
+            "height": 145,
+            "imageOrigin": "master"
           },
           {
             "title": "연소답청",
             "items": [
               "신윤복 · 풍속화"
-            ]
+            ],
+            "image": "images/p9-35.webp",
+            "width": 204,
+            "height": 154,
+            "imageOrigin": "master"
           },
           {
             "title": "삼부연도",
             "items": [
               "정선 · 진경산수화"
-            ]
+            ],
+            "image": "images/p9-36.webp",
+            "width": 212,
+            "height": 270,
+            "imageOrigin": "master"
           },
           {
             "title": "불이선란도",
             "items": [
               "김정희 · 추사체"
-            ]
+            ],
+            "image": "images/p9-37.webp",
+            "width": 164,
+            "height": 273,
+            "imageOrigin": "master"
           },
           {
             "title": "세한도",
@@ -2210,13 +2360,21 @@
             "title": "천상열차분야지도",
             "items": [
               "태조 때 권근·유방택"
-            ]
+            ],
+            "image": "images/p9-39.webp",
+            "width": 135,
+            "height": 187,
+            "imageOrigin": "master"
           },
           {
             "title": "추사 고택",
             "items": [
               "김정희 · 금석과안록 · 북한산 순수비 고증"
-            ]
+            ],
+            "image": "images/p9-40.webp",
+            "width": 94,
+            "height": 93,
+            "imageOrigin": "master"
           }
         ]
       },
