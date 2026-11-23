@@ -3,9 +3,9 @@
 var active=null,scrollMode=null,sessions=Object.create(null);
 function el(tag,text,parent){var n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(parent)parent.appendChild(n);return n;}
 function button(text,parent,fn){var b=el('button',text,parent);b.type='button';b.onclick=fn;return b;}
-function stop(){if(root.HanqWeaknessPractice)root.HanqWeaknessPractice.stop();if(scrollMode!==null){history.scrollRestoration=scrollMode;scrollMode=null;}if(root.HanqGradeFeedback)root.HanqGradeFeedback.clear();if(active)active();active=null;}
+function stop(){if(root.HanqToeicWeaknessPractice)root.HanqToeicWeaknessPractice.stop();if(scrollMode!==null){history.scrollRestoration=scrollMode;scrollMode=null;}if(root.HanqGradeFeedback)root.HanqGradeFeedback.clear();if(active)active();active=null;}
 function mount(host,opts){
- stop();if(root.HanqWeaknessPractice&&root.HanqWeaknessPractice.isBank(opts&&opts.bankId))return root.HanqWeaknessPractice.mount(host,opts);scrollMode=history.scrollRestoration;history.scrollRestoration='manual';opts=opts||{};var bankId=opts.bankId==='connectors-100'?'connectors-100':'positions-100',data=bankId==='connectors-100'?root.HANQ_TOEIC_CONNECTOR_PRACTICE:root.HANQ_TOEIC_POSITION_PRACTICE,session=sessions[bankId]||(sessions[bankId]={position:1,answers:Object.create(null)}),alive=true,anticipation=null;
+ stop();if(root.HanqToeicWeaknessPractice&&root.HanqToeicWeaknessPractice.isBank(opts&&opts.bankId))return root.HanqToeicWeaknessPractice.mount(host,opts);scrollMode=history.scrollRestoration;history.scrollRestoration='manual';opts=opts||{};var bankId=opts.bankId==='connectors-100'?'connectors-100':'positions-100',data=bankId==='connectors-100'?root.HANQ_TOEIC_CONNECTOR_PRACTICE:root.HANQ_TOEIC_POSITION_PRACTICE,session=sessions[bankId]||(sessions[bankId]={position:1,answers:Object.create(null)}),alive=true,anticipation=null;
  host.replaceChildren();host.className='tg tg-drill';host.dataset.bankId=bankId;
  if(!data||!Array.isArray(data.questions)||data.questions.length!==100){el('p','문제를 불러오지 못했어요. 문법노트 목차에서 다시 열어 주세요.',host);return;}
  var number=Number(opts.number)||session.position;number=Math.min(100,Math.max(1,Math.floor(number)));session.position=number;
