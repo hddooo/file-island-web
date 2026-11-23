@@ -424,20 +424,6 @@ html body #app#app#app #formalExamHost .fe-era-ring-detail{display:grid;gap:1px;
 }
 
 
-/* Round wrong/starred review stays separate from the timed CBT dock. */
-#feRoundMaterials .fe-round-review-nav{
- display:flex!important;flex-flow:row nowrap!important;justify-content:center;
- gap:clamp(16px,5vw,24px);align-items:center;margin:12px 0 0;padding:8px 0;
-}
-#feRoundMaterials .fe-round-review-nav>button{
- flex:0 1 112px;min-width:0;min-height:44px;margin:0;white-space:nowrap;
- border-radius:999px;
-}
-#feRoundMaterials .fe-round-review-choices{
- display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin:10px 0;
-}
-#feRoundMaterials .fe-round-review-choices>button{min-width:0;min-height:44px;margin:0;padding-inline:0}
-#feRoundMaterials .fe-round-review-choices>button[aria-pressed=true]{outline:2px solid currentColor;outline-offset:-3px;opacity:1}
 /* Match the source-quiz hand-drawn verdict without covering the question. */
 #feRoundMaterials .fe-round-practice-position{display:flex;align-items:center;gap:3px}
 #feRoundMaterials .fe-round-review-hand-mark{display:block;flex:none;width:28px;height:28px;overflow:visible;pointer-events:none;color:#b91c1c}
@@ -526,41 +512,6 @@ html body #formalExamHost .fe-round-material-actions .fe-round-practice-latest{
 #feRoundMaterials .fe-round-practice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(94px,1fr));gap:5px;max-height:40vh;overflow:auto}
 #feRoundMaterials .fe-round-practice-grid>button{font-size:12px;min-height:38px;margin:0;padding:4px}
 
-#feRoundMaterials .fe-round-review-dock{margin-top:10px}
-#feRoundMaterials .fe-round-review-dock .fe-round-review-choices{grid-template-columns:repeat(6,minmax(0,1fr));margin:0}
-#feRoundMaterials .fe-round-review-dock .fe-round-review-mark{width:100%;min-width:0}
-#feRoundMaterials .fe-round-review-dock .fe-round-review-nav{justify-content:space-between;margin:0}
-
-#feRoundMaterials .fe-round-review-dock .fe-round-review-nav{
- display:grid!important;grid-template-columns:minmax(34px,1.05fr) repeat(6,minmax(0,1fr)) minmax(44px,1.25fr);
- grid-auto-flow:column;grid-template-rows:1fr;align-items:stretch;gap:clamp(2px,1vw,5px);
- max-width:510px;margin:0 auto;padding:6px 0;
-}
-#feRoundMaterials .fe-round-review-dock .fe-round-review-nav .fe-round-review-choices{display:contents}
-#feRoundMaterials .fe-round-review-dock .fe-round-review-nav button{
- box-sizing:border-box;width:100%;min-width:0;min-height:44px;margin:0;padding:0 1px;
- font-size:15px;line-height:1.15;border-radius:8px;
-}
-#feRoundMaterials .fe-round-review-dock .fe-round-review-nav [data-review-choice][aria-pressed="true"]{
- outline:2px solid #83bcff;outline-offset:-3px;
-}
-#feRoundMaterials .fe-round-review-dock .fe-round-review-nav .fe-round-review-prev,
-#feRoundMaterials .fe-round-review-dock .fe-round-review-nav [data-round-review-action=next]{font-size:24px}
-#feRoundMaterials .fe-round-review-dock .fe-round-review-nav [data-round-review-action=check]{font-size:13px;white-space:nowrap}
-
-/* The compact answer group breathes without lowering the touch height. */
-#feRoundMaterials .fe-round-review-dock .fe-round-review-nav{gap:clamp(4px,1.3vw,8px)}
-#feRoundMaterials .fe-round-review-dock .fe-round-review-nav [data-review-choice],
-#feRoundMaterials .fe-round-review-dock .fe-round-review-nav .fe-round-review-mark{
- width:calc(100% - 4px);min-width:24px;max-width:38px;justify-self:center;
-}
-#feRoundMaterials .fe-round-review-dock .fe-round-review-nav .fe-round-review-mark{
- display:flex!important;align-items:center!important;justify-content:center!important;
-}
-#feRoundMaterials .fe-round-review-dock .fe-round-review-mark .fe-round-double-star{
- display:block;flex:0 0 1.25em;transform:translateY(-.08em);
-}
-
 #feRoundMaterials .fe-round-practice-toolbar{
  display:grid;grid-template-columns:minmax(57px,1fr) auto minmax(57px,1fr);
  align-items:center;column-gap:5px;margin:5px 0 9px;
@@ -573,22 +524,62 @@ html body #formalExamHost .fe-round-material-actions .fe-round-practice-latest{
 #feRoundMaterials .fe-round-practice-list[hidden]{display:none!important}
 
 
-/* One compact cluster, with distinct space before and after it. */
-#feRoundMaterials .fe-round-review-dock .fe-round-review-nav{
- grid-template-columns:minmax(34px,1fr) minmax(0,218px) minmax(42px,1fr);
- column-gap:clamp(8px,2.5vw,14px);max-width:370px;
+/* The existing wrong-question paths share the real mock's single answer row. */
+html body #app#app#app #formalExamHost #feRoundMaterials .fe-full-answer-dock .fe-choices{
+ grid-template-columns:repeat(5,minmax(0,1fr))!important;
 }
-#feRoundMaterials .fe-round-review-dock .fe-round-review-nav .fe-round-review-choices{
- display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr));gap:3px;min-width:0;
+html body #app#app#app #formalExamHost #feRoundMaterials .fe-full-answer-dock .fe-round-review-prev{
+ max-width:46px;justify-self:start;font-size:24px!important;
 }
-#feRoundMaterials .fe-round-review-dock .fe-round-review-nav .fe-round-review-choices>button{
- width:100%;min-width:0;max-width:none;
+html body #app#app#app #formalExamHost #feRoundMaterials .fe-full-answer-dock .fe-round-review-right{
+ max-width:48px;justify-self:end;font-size:24px!important;
 }
-#feRoundMaterials .fe-round-review-dock .fe-round-review-nav .fe-round-review-prev{
- max-width:46px;justify-self:start;
+html body #app#app#app #formalExamHost #feRoundMaterials .fe-full-answer-dock [data-round-review-action=check]{
+ font-size:14px!important;white-space:nowrap;
 }
-#feRoundMaterials .fe-round-review-dock .fe-round-review-nav .fe-round-review-right{
- max-width:48px;justify-self:end;
+#feRoundMaterials .fe-round-practice-tools{display:flex;justify-self:end;align-items:center;gap:4px;min-width:0}
+#feRoundMaterials .fe-round-practice-tools .fe-round-review-mark{min-height:38px;min-width:38px;flex:0 0 38px;width:38px;margin:0!important}
+#feRoundMaterials .fe-round-review-scroll{min-height:0;min-width:0;overflow:auto;overscroll-behavior-y:contain}
+#feRoundMaterials .fe-round-review-scroll img.mock-image[data-company-exam-image]{display:block;width:100%!important;height:auto!important;max-width:100%!important;max-height:none!important;margin-inline:auto}
+#feRoundMaterials .fe-round-review-scroll:focus-visible{outline:2px solid currentColor;outline-offset:-2px}
+#feRoundMaterials .fe-round-review-dock .fe-full-answer-submit>button{width:auto!important;margin:0!important}
+#feRoundMaterials:has(>.fe-round-review-workspace)>h2{font-size:16px!important;line-height:1.35!important;margin:4px 0!important}
+#feRoundMaterials:has(>.fe-round-review-workspace)>.fe-round-practice-toolbar{margin:3px 0 4px}
+#feRoundMaterials:has(>.fe-round-review-workspace) .fe-round-practice-grid{max-height:min(25vh,180px)}
+html body #formalExamHost>.formal-exams:has(>#feRoundMaterials>.fe-round-review-workspace)>.fe-top{display:none!important}
+html body #app#app#app #formalExamHost #feRoundMaterials>.fe-round-review-workspace{
+ display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:minmax(64px,1fr) auto!important;
+ gap:0!important;align-items:stretch!important;min-width:0!important;min-height:0!important;
+}
+html body #app#app#app #formalExamHost #feRoundMaterials .fe-round-review-workspace>.fe-round-review-dock{
+ position:relative!important;top:auto!important;bottom:auto!important;margin:0!important;
+}
+html body #app#app#app #formalExamHost #feRoundMaterials .fe-round-review-workspace>.fe-round-review-dock::after{display:none!important;content:none!important}
+html body #app#app#app #formalExamHost #feRoundMaterials:has(>.fe-round-review-workspace){
+ display:flex;flex-direction:column;min-width:0;min-height:0;
+}
+html body #app#app#app #formalExamHost #feRoundMaterials>.fe-round-review-workspace{
+ flex:1 1 0%;min-height:min(180px,40dvh)!important;
+}
+/* Same height/scroll ownership as .fe-active-run; activated only while solving. */
+html body.study-global-footer #app#app#app.shell:has(.device-content>#formalExamHost>.formal-exams>#feRoundMaterials>.fe-round-review-workspace){
+ height:calc(var(--study-viewport-height,100dvh) - var(--study-footer-height,76px))!important;
+ max-height:none!important;padding-bottom:0!important;margin-block:0!important;
+}
+html body.study-global-footer #app#app#app>.device-content:has(>#formalExamHost>.formal-exams>#feRoundMaterials>.fe-round-review-workspace){
+ display:flex!important;flex-direction:column!important;padding-block:0!important;overflow-y:auto!important;overflow-x:hidden!important;
+}
+html body.study-global-footer #app#app#app>.device-content>#formalExamHost:has(>.formal-exams>#feRoundMaterials>.fe-round-review-workspace),
+html body.study-global-footer #app#app#app>.device-content>#formalExamHost>.formal-exams:has(>#feRoundMaterials>.fe-round-review-workspace),
+html body.study-global-footer #app#app#app>.device-content>#formalExamHost>.formal-exams>#feRoundMaterials:has(>.fe-round-review-workspace){
+ display:flex!important;flex-direction:column!important;flex:1 1 0%!important;min-width:0!important;min-height:0!important;
+ box-sizing:border-box!important;margin:0!important;padding:0!important;
+}
+html body:not(.study-global-footer) #app#app#app #formalExamHost #feRoundMaterials>.fe-round-review-workspace{
+ height:calc(100dvh - 135px);
+}
+@media(min-width:701px) and (min-height:460px) and (hover:hover) and (pointer:fine){
+ html body.study-global-footer #app#app#app.shell:has(.device-content>#formalExamHost>.formal-exams>#feRoundMaterials>.fe-round-review-workspace){height:var(--study-viewport-height,100dvh)!important}
 }
 #feRoundMaterials .fe-round-review-dock .fe-round-review-nav [data-review-mark]{
  display:flex!important;flex-direction:column;justify-content:center;align-items:center;gap:1px;opacity:1!important;
@@ -603,7 +594,7 @@ html body #formalExamHost .fe-round-material-actions .fe-round-practice-latest{
 
 /* Match the timed exam's single-row answer dock without changing review actions. */
 html body #app #formalExamHost #feRoundMaterials .fe-round-review-dock .fe-round-review-nav button{
- box-sizing:border-box!important;min-height:44px!important;padding-inline:1px!important;
+ box-sizing:border-box!important;height:44px!important;min-height:44px!important;padding:0 1px!important;
 }
 #feRoundMaterials .fe-round-review-dock .fe-round-review-choices [data-review-choice]{
  display:flex!important;flex-direction:column;justify-content:center;align-items:center;
