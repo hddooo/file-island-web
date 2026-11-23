@@ -69,3 +69,6 @@ body.admin-page{font-size:15px;line-height:1.65}
  .admin-page .timezone-label{padding-top:6px}
 }
 .membership-panel{margin-bottom:20px}.membership-row{margin:16px 0;padding-bottom:12px;border-bottom:1px solid #edf0f4}.membership-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.admin-xp-equipment{margin:.75rem 0 1rem;padding:.65rem .85rem;border:1px solid currentColor;border-radius:.5rem}
+.admin-xp-equipment p{margin:.25rem 0 0}
+.admin-xp-projection{font-weight:700;margin:.45rem 0 .85rem}
