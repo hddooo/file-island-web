@@ -165,3 +165,9 @@ html body .battle-island.bi-in-match .bi-history-question:not(.bi-fullscreen-pan
 html body .battle-island.bi-in-match .bi-history-question:not(.bi-fullscreen-panel) .bi-history-materials>.bi-question-image{display:block;width:100%;max-width:100%;height:auto;max-height:none;object-fit:contain;margin:0 0 8px}
 html body .battle-island.bi-in-match .bi-history-question:not(.bi-fullscreen-panel) .bi-item{min-width:0;min-height:0;align-self:end}
 html body .battle-island.bi-in-match .bi-history-question:not(.bi-fullscreen-panel)>.bi-actions{flex:0 0 auto;position:relative;z-index:2;margin:0;padding-top:6px}
+
+/* Emphasize the live clock without moving the question or answer controls. */
+html body .battle-island.bi-in-match .bi-question>.bi-modal-time{align-self:center;flex:none;margin:0 0 6px;padding:2px 10px;border:1px solid #eac26f;border-radius:7px;background:#192838!important;color:#ffeaad!important;font-size:26px!important;font-weight:850;line-height:1.12;font-variant-numeric:tabular-nums;white-space:nowrap}
+html body .battle-island.bi-in-match .bi-history-question.bi-fullscreen-panel>.bi-modal-time{left:50%;top:8px;transform:translateX(-50%);font-size:24px!important;margin:0}
+.battle-island .bi-final-countdown{display:none}
+html body .battle-island.bi-in-match>.bi-final-countdown:not([hidden]){position:fixed;z-index:10022;left:calc(var(--bi-view-left,0px) + var(--bi-view-width,100vw)/2);top:calc(var(--bi-view-top,0px) + var(--bi-view-height,100vh)/2);transform:translate(-50%,-50%);display:grid;place-items:center;width:1.25em;height:1.25em;border:2px solid #fff0c666;border-radius:.18em;background:#14223582!important;color:#fff4dc!important;font:bold clamp(74px,17vw,144px)/1 system-ui,sans-serif!important;font-variant-numeric:tabular-nums;text-shadow:0 2px 7px #040b15;pointer-events:none;user-select:none}
