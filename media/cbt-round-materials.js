@@ -586,13 +586,14 @@ function mount(host,options){
    return place+' · '+(draft===q.review.correctOptionId?'O 정답':'X 오답 · 정답 '+q.review.correctNumber+'번');
   }
   q.options.forEach(function(o){
-   var b=button(String(o.number),function(){pick(o.id);});
+   var b=button('',function(){pick(o.id);});
    b.dataset.reviewChoice='';
+   b.appendChild(section('span','fe-round-choice-number',String(o.number)));
    if(chosen===o.id){
     var ok=o.id===q.review.correctOptionId;
     b.dataset.reviewMark=ok?'correct':'wrong';
     b.setAttribute('aria-label',o.number+'번 · 내 선택 · '+(ok?'정답':'오답'));
-    var indicator=section('span','fe-round-choice-indicator',ok?'O':'X');
+    var indicator=section('span','fe-round-choice-indicator',ok?'✓':'×');
     indicator.setAttribute('aria-hidden','true');b.appendChild(indicator);
    }
    choices.appendChild(control(b,!!chosen));

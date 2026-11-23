@@ -41,7 +41,7 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  assert(host.querySelector('.fe-round-practice-grid button').textContent.includes('선택'));
  await check();assert(host.textContent.includes('X 오답 · 내 선택 2번 · 정답 1번'));assert(host.textContent.includes('1/3'));
  assert.equal(handMark().getAttribute('data-result'),'wrong');assert.equal(handMark().getAttribute('aria-hidden'),'true');assert(handMark().classList.contains('is-drawing'));assert.equal(handMark().querySelectorAll('.mark-wrong').length,2);
- assert(btn('1').disabled&&btn('2').getAttribute('aria-pressed')==='true');assert.equal(btn('2').querySelector('.fe-round-choice-indicator').textContent,'X');assert.equal(host.querySelectorAll('[data-review-mark]').length,1);
+ assert(btn('1').disabled&&btn('2').getAttribute('aria-pressed')==='true');assert.equal(btn('2').querySelector('.fe-round-choice-indicator').textContent,'×');assert.equal(host.querySelectorAll('[data-review-mark]').length,1);
  assert.equal(host.querySelectorAll('.fe-round-review-option-notes li').length,5);assert(host.textContent.includes('확인된 해설 없음'));
  assert.equal(host.querySelectorAll('.fe-round-review-option-notes li')[0].lastElementChild.tagName,'STRONG');assert.equal(host.querySelectorAll('.fe-round-review-option-notes li')[1].lastElementChild.tagName,'SPAN');
  assert.deepEqual(Array.from(w.HanqCbtRoundMaterials.choiceNotes({...items[0],review:{item:{options:opts.map((o,i)=>({...o,review:i===0?['**평양 천도** — 장수왕: 427년 사건으로 확인됩니다.']:[]}))}}})).slice(0,2),['평양 천도 · 장수왕 · 남진, 한성 함락','확인된 해설 없음']);
@@ -49,7 +49,7 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  assert.equal(mark().querySelectorAll('.fe-round-double-star>span').length,2);mark().click();assert.equal(mark().getAttribute('aria-pressed'),'true');
  btn('다음').click();btn('1').click();await tick();assert(!host.textContent.includes('정답 1번'));
  btn('이전').click();assert(host.textContent.includes('X 오답'));assert.equal(handMark().getAttribute('data-result'),'wrong');assert(!handMark().classList.contains('is-drawing'));btn('다음').click();assert.equal(handMark(),null);assert.equal(btn('1').getAttribute('aria-pressed'),'true');assert(!btn('1').disabled);
- await check();assert.equal(handMark().getAttribute('data-result'),'correct');assert(handMark().classList.contains('is-drawing'));assert(host.textContent.includes('O 정답'));assert(host.textContent.includes('2/3'));assert.equal(btn('1').querySelector('.fe-round-choice-indicator').textContent,'O');assert.equal(host.querySelector('.fe-round-practice-accuracy').textContent,'정답률 50%');
+ await check();assert.equal(handMark().getAttribute('data-result'),'correct');assert(handMark().classList.contains('is-drawing'));assert(host.textContent.includes('O 정답'));assert(host.textContent.includes('2/3'));assert.equal(btn('1').querySelector('.fe-round-choice-indicator').textContent,'✓');assert.equal(host.querySelector('.fe-round-practice-accuracy').textContent,'정답률 50%');
  btn('다음').click();assert(host.textContent.includes('3/3'));
  ctl.stop();ctl=w.HanqCbtRoundMaterials.mount(host,{api,round:80});await ctl.ready;assert(host.textContent.includes('3/3'));
  filter().click();assert(host.textContent.includes('1/1'));assert.equal(mark().getAttribute('aria-pressed'),'true');
@@ -110,7 +110,7 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  assert(routedHost.querySelector('.fe-round-practice-position').getAttribute('aria-label').includes('제80회 1번'),'round star appears in aggregate');
  w.HanqFormalExams.stop();
  await assert.rejects(w.HanqCbtRoundMaterials.load({api:{...allAPI,cbt:async()=>({scope:'finalized-exam-selected-wrong',items:wrongItems,hasMore:true})},round:'all'}));
- assert.equal((fs.readFileSync('index.html','utf8').match(/materials-\(\?:7\[0-9\]\|80\|all\|history-/g)||[]).length,2,'initial and back/forward route handlers accept the practice URL');
+ assert.equal((fs.readFileSync('index.html','utf8').match(/materials-\(\?:6\[7-9\]\|7\[0-9\]\|80\|all\|history-/g)||[]).length,2,'initial and back/forward route handlers accept the practice URL');
  const failed=w.HanqCbtRoundMaterials.mount(host,{api:{...api,cbt:async()=>{throw Error('network');}},round:80,onBack:()=>{}});await failed.ready;assert(host.textContent.includes('회차 목록'));failed.stop();dom.window.close();
  console.log('PASS round review: hand-drawn O/X on new grade, no replay or spoilers, nav only, draft changes without grading, explicit check, then next, final commits draft, image preserved, final percent/blank counts, readonly, reset and owner isolation');
 })().catch(e=>{console.error(e);process.exitCode=1});

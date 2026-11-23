@@ -600,3 +600,19 @@ html body #formalExamHost .fe-round-material-actions .fe-round-practice-latest{
  color:#ffabab!important;outline-color:#ffabab!important;
 }
 #feRoundMaterials .fe-round-choice-indicator{font-size:12px;font-weight:900;line-height:1}
+
+/* Match the timed exam's single-row answer dock without changing review actions. */
+html body #app #formalExamHost #feRoundMaterials .fe-round-review-dock .fe-round-review-nav button{
+ box-sizing:border-box!important;min-height:44px!important;padding-inline:1px!important;
+}
+#feRoundMaterials .fe-round-review-dock .fe-round-review-choices [data-review-choice]{
+ display:flex!important;flex-direction:column;justify-content:center;align-items:center;
+ gap:1px;white-space:nowrap;
+}
+#feRoundMaterials .fe-round-choice-number{
+ display:block;flex:none;font-size:20px!important;font-weight:900!important;
+ line-height:1!important;font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+#feRoundMaterials .fe-round-choice-indicator{
+ display:block;flex:none;font-size:11px!important;line-height:1!important;white-space:nowrap;
+}
