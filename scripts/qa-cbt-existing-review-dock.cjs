@@ -19,10 +19,14 @@ function fixtures(){
   image:'/api/v1/cbt/runs/'+id+'/questions/'+(n-1)+'/image',common:{image:'/api/v1/cbt/runs/'+id+'/questions/'+(n-1)+'/common',questionNumbers:[47,48]},
   review:{status:'wrong',correct:false,correctNumber:1,correctOptionId:'choice1'}});
  const wrong=[one(47),one(48)], routes=[];
+ const sourceStar={...one(47),questionId:'exam-69-11',exam:69,number:11,position:10,
+  paperImported:true,starred:true,everWrong:false,selectedOptionId:null,common:null,image:'/api/v1/cbt/runs/'+id+'/questions/10/image',
+  review:{status:'correct',correct:true,correctNumber:2,correctOptionId:'choice2'}};
  w.HanqCbtExplanations={reviewParts:()=>({stem:[text,text,text],conclusion:text})};
  const api={...base,state:()=>({signedIn:true,ownerId:'fixture',epoch:1}),
-  cbtImage:p=>fetch('/media/cbt-originals/'+(p.endsWith('/common')?'72-common47-48.webp':p.includes('/questions/47/')?'72-48.webp':'72-47.webp')).then(r=>r.blob()),
+  cbtImage:p=>fetch('/media/cbt-originals/'+(p.endsWith('/common')?'72-common47-48.webp':p.includes('/questions/47/')?'72-48.webp':p.includes('/questions/10/')?'69-11.webp':'72-47.webp')).then(r=>r.blob()),
   cbt:(m,p,b,o)=>{
+   if(p.endsWith('/review-materials/69'))return Promise.resolve({scope:'exam-starred-or-ever-wrong',round:69,items:[sourceStar],hasMore:false,pendingStarCount:0,resetAt:null});
    if(p.endsWith('/review-materials/72'))return Promise.resolve({scope:'exam-starred-or-ever-wrong',round:72,items:wrong,hasMore:false,pendingStarCount:0,resetAt:null});
    if(p.endsWith('/notebook'))return Promise.resolve({scope:'finalized-exam-selected-wrong',limit:500,items:wrong,hasMore:false,resetAt:null});
    if(p.endsWith('/rounds'))return Promise.resolve({imagesConfigured:true,rounds:Array.from({length:14},(_,i)=>({round:67+i,available:true}))});
@@ -33,7 +37,7 @@ function fixtures(){
  w.mountReview=(route)=>w.HanqFormalExams.mount(host,config,route);
  w.realFixture=real;w.reviewRoutes=routes;
 }
-const page=()=> '<!doctype html><html data-hanq-theme="terminal"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'+styles.join('')+'</head><body class="study-global-footer"><main id="app" class="shell digivice-v2"><div class="device-content"><div id="formalExamHost"></div></div></main><nav id="fixtureGlobal" style="position:fixed;bottom:0;left:0;right:0;height:76px;pointer-events:none" aria-hidden="true"></nav>'+['scripts/fixtures/cbt-stars-fixture.js','media/formal-exams.js','media/cbt-wrong-notebook.js','media/cbt-round-materials.js'].map(f=>'<script src="/'+f+'"></script>').join('')+'<script>('+fixtures.toString()+')();</script></body></html>';
+const page=()=> '<!doctype html><html data-hanq-theme="terminal"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'+styles.join('')+'</head><body class="study-global-footer"><main id="app" class="shell digivice-v2"><div class="device-content"><div id="formalExamHost"></div></div></main><nav id="fixtureGlobal" style="position:fixed;bottom:0;left:0;right:0;height:76px;pointer-events:none" aria-hidden="true"></nav>'+['scripts/fixtures/cbt-stars-fixture.js','media/formal-exams.js','media/cbt-wrong-notebook.js','media/grade-feedback.js','media/cbt-round-materials.js'].map(f=>'<script src="/'+f+'"></script>').join('')+'<script>('+fixtures.toString()+')();</script></body></html>';
 const server=http.createServer((req,res)=>{
  const url=new URL(req.url,'http://localhost');
  if(url.pathname==='/'){res.writeHead(200,{'Content-Type':'text/html; charset=utf-8'});return res.end(page());}
@@ -77,7 +81,7 @@ function cdp(url){
     await ready('document.querySelector("'+query+' img")?.naturalHeight===766 && document.querySelector(".fe-round-question-image img")?.naturalWidth>0');
     const pre=await metric(dock,query);
     if(process.env.DEBUG_DOCK)console.error(JSON.stringify(await value('(()=>({view:[innerWidth,innerHeight,visualViewport.height], vars:getComputedStyle(document.documentElement).getPropertyValue("--study-viewport-height"),dims:["body","#app",".device-content","#formalExamHost","#feRoundMaterials",".fe-round-review-workspace",".fe-round-review-scroll",".fe-round-review-dock"].map(s=>{const n=document.querySelector(s),c=getComputedStyle(n),r=n.getBoundingClientRect();return [s,r.top,r.bottom,c.height,c.minHeight,c.maxHeight,c.display,c.flex,c.position,c.marginTop,c.paddingTop,c.overflowY,c.boxSizing]}),styles:[...document.styleSheets].map(s=>s.href).filter(u=>u?.includes("cbt-results"))}))()')));
-    assert.deepEqual(pre.children.map(x=>x.text),['‹','1','2','3','4','5','확인']);
+    assert.deepEqual(pre.children.map(x=>x.text),['‹','1','2','3','4','5','★★','확인']);
     assert(pre.available>60,JSON.stringify({label,width,pre}));
     assert(pre.children.every(x=>x.height>=43&&x.left>=0&&x.right<=width&&Math.abs(x.top-pre.children[0].top)<1));
     assert(pre.a.bottom<=height&&pre.a.bottom>=height-(mobile?118:46),JSON.stringify({label,width,pre}));
@@ -86,7 +90,10 @@ function cdp(url){
     await click('[data-review-choice]:nth-child(2)');
     assert.equal(await value('!!document.querySelector(".fe-round-review-explanation")'),false);
     await click('[data-round-review-action=check]');
-    await ready('document.querySelector(".fe-round-review-feedback")?.textContent.includes("X 오답")');
+    await ready('document.querySelector(".fe-round-review-feedback")?.textContent.includes("오답")');
+    const g=await value('(()=>{const overlay=document.querySelector(".fe-round-review-stage>.is-review-centered.is-wrong"),pane=document.querySelector(".fe-round-review-scroll"),svg=overlay.querySelector("svg"),a=pane.getBoundingClientRect(),b=svg.getBoundingClientRect();return {dx:Math.abs((b.left+b.right-a.left-a.right)/2),dy:Math.abs((b.top+b.bottom-a.top-a.bottom)/2),width:b.width,pointer:getComputedStyle(overlay).pointerEvents,pen:getComputedStyle(svg.querySelector(".hgf-first")).animationName};})()');
+    assert.ok(g.dx<=2&&g.dy<=2&&g.width>=84&&g.width<=136&&g.pointer==='none'&&g.pen===(company?'none':'hgf-first'),JSON.stringify({width,company,g}));
+    assert.equal(await value('document.querySelector(".fe-round-practice-position svg")'),null);
     const after=await metric(dock,query);
     assert.equal(after.children.at(-1).text,'›');assert.deepEqual(after.a,pre.a,JSON.stringify({label,width,company,after,pre}));
     assert(after.scrolled>60&&after.available>pre.available);assert.equal(after.outside,pre.outside);
@@ -96,12 +103,27 @@ function cdp(url){
     await ready('document.querySelector(".fe-round-practice-position")?.textContent==="2/2"');
     assert.equal(await value('document.querySelector("'+query+'").scrollTop'),0);
     await click('[data-review-choice]:nth-child(1)');await click('[data-round-review-action=check]');
-    await ready('document.querySelector(".fe-round-review-feedback")?.textContent.includes("O 정답")');
+    await ready('document.querySelector(".fe-round-review-feedback")?.textContent.includes("정답")');
+    assert.equal(await value('document.querySelector(".fe-round-review-stage>.hanq-grade-burst")?.classList.contains("is-right")'),true);
+    assert.equal(await value('getComputedStyle(document.querySelector(".fe-round-review-stage .hgf-correct")).animationName'),company?'none':'hgf-pen');
     await value('Array.from(document.querySelectorAll(".fe-full-answer-submit button")).find(b=>b.textContent==="최종 제출").click();true');
     await ready('document.querySelector(".fe-round-review-percent strong")?.textContent==="50%"');
     cases.push({width,company,label,dockBottom:pre.a.bottom,questionScroll:down.scrolled,expandedScroll:bottom.scrolled});
    }
    await parityRoute('회차별',()=>click('[data-material-round="72"][data-material-action="review"]'));
+   await value('mountReview("materials-69");true');
+   await ready('document.querySelector(".fe-round-question-image img")?.naturalWidth>0');
+   const mark='.fe-round-review-dock .fe-round-review-mark';
+   assert.equal(await value('document.querySelector(".fe-round-saved-star")?.textContent'),'★ 원본 별표');
+   assert.equal(await value('document.querySelector('+JSON.stringify(mark)+').getAttribute("aria-pressed")'),'false');
+   await click(mark);
+   await value('mountReview("materials-69");true');
+   await ready('!!document.querySelector(".fe-round-saved-star")');
+   assert.equal(await value('document.querySelector('+JSON.stringify(mark)+').getAttribute("aria-pressed")'),'true');
+   await click(mark);
+   await value('mountReview("materials-69");true');
+   await ready('!!document.querySelector(".fe-round-saved-star")');
+   assert.equal(await value('document.querySelector('+JSON.stringify(mark)+').getAttribute("aria-pressed")'),'false');
    await value('mountReview();true');await ready('!!document.querySelector("#feAllWrongPractice")');
    await parityRoute('전체',()=>click('#feAllWrongPractice'));
    await value('mountReview();true');await ready('!!document.querySelector('+JSON.stringify('[data-material-round="72"][data-material-action="history"]')+')');
@@ -110,11 +132,11 @@ function cdp(url){
    assert.equal(await value('!!document.querySelector(".fe-round-review-dock")'),false);
    await value('Array.from(document.querySelectorAll("#feRoundMaterials button")).find(b=>b.textContent==="다시 풀기").click();true');
    await ready('!!document.querySelector(".fe-round-review-dock")');
-   if(await value('document.querySelector(".fe-round-practice-tools .fe-round-review-mark").getAttribute("aria-pressed")==="false"'))await click('.fe-round-practice-tools .fe-round-review-mark');
+   if(await value('document.querySelector(".fe-round-review-dock .fe-round-review-mark").getAttribute("aria-pressed")==="false"'))await click('.fe-round-review-dock .fe-round-review-mark');
    await click('[data-round-star-filter]');
    await ready('document.querySelector(".fe-round-practice-position")?.textContent==="1/1"');
-   assert.equal(await value('document.querySelector(".fe-round-practice-tools .fe-round-review-mark").getAttribute("aria-pressed")'),'true');
-   assert.equal((await metric('.fe-round-review-dock','.fe-round-review-scroll')).children.length,7);
+   assert.equal(await value('document.querySelector(".fe-round-review-dock .fe-round-review-mark").getAttribute("aria-pressed")'),'true');
+   assert.equal((await metric('.fe-round-review-dock','.fe-round-review-scroll')).children.length,8);
    await value('mountReview(realFixture);true');await ready('!!document.querySelector(".fe-active-run .fe-full-answer-dock")');
    const formal=await metric('.fe-active-run .fe-full-answer-dock','#feImage');
    assert.deepEqual(formal.children.map(x=>x.text),['‹','1','2','3','4','5','☆','›']);

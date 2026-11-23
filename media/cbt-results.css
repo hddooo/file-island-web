@@ -424,25 +424,17 @@ html body #app#app#app #formalExamHost .fe-era-ring-detail{display:grid;gap:1px;
 }
 
 
-/* Match the source-quiz hand-drawn verdict without covering the question. */
-#feRoundMaterials .fe-round-practice-position{display:flex;align-items:center;gap:3px}
-#feRoundMaterials .fe-round-review-hand-mark{display:block;flex:none;width:28px;height:28px;overflow:visible;pointer-events:none;color:#b91c1c}
-html[data-company-mode=on] #feRoundMaterials .fe-round-review-hand-mark{color:#ff5b65}
-#feRoundMaterials .fe-round-review-hand-mark path{display:none;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:100;stroke-dashoffset:0}
-#feRoundMaterials .fe-round-review-hand-mark[data-result=correct] .mark-correct,
-#feRoundMaterials .fe-round-review-hand-mark[data-result=wrong] .mark-wrong{display:block}
-#feRoundMaterials .fe-round-review-hand-mark .mark-texture{stroke-width:1;opacity:.4}
-#feRoundMaterials .fe-round-review-hand-mark .mark-wrong{stroke-width:2.1}
-@media(prefers-reduced-motion:no-preference){
- #feRoundMaterials .fe-round-review-hand-mark.is-drawing .mark-correct{animation:source-verdict-draw 1s ease-out both}
- #feRoundMaterials .fe-round-review-hand-mark.is-drawing .mark-first{animation:source-verdict-draw-first 1s ease-out both}
- #feRoundMaterials .fe-round-review-hand-mark.is-drawing .mark-second{animation:source-verdict-draw-second 1s ease-out both}
+/* Draw the shared pen mark over the middle of the visible review pane. */
+#feRoundMaterials .fe-round-review-stage{position:relative;display:grid;grid-template-rows:minmax(0,1fr);min-height:0;min-width:0;isolation:isolate}
+#feRoundMaterials .fe-round-review-stage>.hanq-grade-burst.is-review-centered{
+ position:absolute;inset:0;padding:0;align-items:center;z-index:2;pointer-events:none!important;
 }
+#feRoundMaterials .fe-round-review-stage>.is-review-centered svg{width:clamp(84px,22vw,136px)}
 /* The question preview only: source/zoom and shared stems remain uncropped. */
 #feRoundMaterials .fe-round-question-clip{width:100%;overflow:hidden}
 #feRoundMaterials .fe-round-question-clip>img.mock-image{display:block;width:100%;height:auto;max-height:none;margin:0}
 #feRoundMaterials .fe-round-question-image.has-trimmed-bottom{padding-bottom:5px}
-#feRoundMaterials .fe-round-review-feedback{font-weight:800}
+#feRoundMaterials .fe-round-review-feedback{font-weight:800;text-align:center}
 #feRoundMaterials .fe-round-review-feedback:empty{display:none}
 #feRoundMaterials .fe-round-review-result{margin-top:16px;padding:12px;border:1px solid currentColor;border-radius:12px}
 #feRoundMaterials .fe-round-review-result>p:first-of-type{font-size:1.55rem;font-weight:800}
@@ -526,7 +518,7 @@ html body #formalExamHost .fe-round-material-actions .fe-round-practice-latest{
 
 /* The existing wrong-question paths share the real mock's single answer row. */
 html body #app#app#app #formalExamHost #feRoundMaterials .fe-full-answer-dock .fe-choices{
- grid-template-columns:repeat(5,minmax(0,1fr))!important;
+ grid-template-columns:repeat(6,minmax(0,1fr))!important;
 }
 html body #app#app#app #formalExamHost #feRoundMaterials .fe-full-answer-dock .fe-round-review-prev{
  max-width:46px;justify-self:start;font-size:24px!important;
@@ -538,7 +530,8 @@ html body #app#app#app #formalExamHost #feRoundMaterials .fe-full-answer-dock [d
  font-size:14px!important;white-space:nowrap;
 }
 #feRoundMaterials .fe-round-practice-tools{display:flex;justify-self:end;align-items:center;gap:4px;min-width:0}
-#feRoundMaterials .fe-round-practice-tools .fe-round-review-mark{min-height:38px;min-width:38px;flex:0 0 38px;width:38px;margin:0!important}
+#feRoundMaterials .fe-round-saved-star{display:inline-block;color:#a56800!important;font-size:clamp(10px,2.85vw,13px);font-weight:800;line-height:1;white-space:nowrap}
+html[data-company-mode=on] #feRoundMaterials .fe-round-saved-star{color:#ffd878!important}
 #feRoundMaterials .fe-round-review-scroll{min-height:0;min-width:0;overflow:auto;overscroll-behavior-y:contain}
 #feRoundMaterials .fe-round-review-scroll img.mock-image[data-company-exam-image]{display:block;width:100%!important;height:auto!important;max-width:100%!important;max-height:none!important;margin-inline:auto}
 #feRoundMaterials .fe-round-review-scroll:focus-visible{outline:2px solid currentColor;outline-offset:-2px}
