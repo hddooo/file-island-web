@@ -640,3 +640,10 @@ html body #app #formalExamHost :is(.fe-study-explanation,.fe-round-review-explan
 html body #app #formalExamHost :is(.fe-study-explanation,.fe-round-review-explanation) .fe-study-flow{margin:4px 0 0!important;line-height:1.7}
 html body #app #formalExamHost :is(.fe-study-explanation,.fe-round-review-explanation) .fe-study-source{margin:6px 0 0!important;font-size:12px;opacity:.7}
 html body #app #formalExamHost .fe-study-explanation .fe-study-keyword{margin:2px 0 0!important}
+#feRoundMaterials .fe-round-review-option-notes .fe-study-option-body{min-width:0}
+#feRoundMaterials .fe-round-review-option-notes .fe-study-option-body>p{margin:0}
+#feRoundMaterials .fe-round-review-option-notes .fe-study-verdict{font-size:.85em;font-weight:800;padding:0 5px;border-radius:6px;border:1px solid currentColor;opacity:.85}
+#feRoundMaterials .fe-round-review-option-notes li.is-correct .fe-study-verdict{color:#1756b1}
+#feRoundMaterials .fe-round-review-option-notes li.is-incorrect .fe-study-verdict{color:#c81e1e}
+html[data-company-mode=on] #feRoundMaterials .fe-round-review-option-notes li.is-correct .fe-study-verdict{color:#58a6ff!important}
+html[data-company-mode=on] #feRoundMaterials .fe-round-review-option-notes li.is-incorrect .fe-study-verdict{color:#ff5b65!important}

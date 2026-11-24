@@ -640,8 +640,10 @@ function mount(host,options){
    optionArea.appendChild(el('h4',studied?'보기 분석':'보기별 해설'));
    var notes=section('ol','fe-round-review-option-notes');
    if(studied)studied.options.forEach(function(o,i){
-    var line=el('li'),good=o.number===studied.answer;line.className=good?'is-correct':'is-incorrect';line.append(el('strong','①②③④⑤'[i]),el('span',good?' 정답 ':' 오답 '),markedText('span',o.keyword||''));
-    if(o.memo){var memo=markedText('p',o.memo);memo.className='fe-study-memo';line.appendChild(memo);}notes.appendChild(line);
+    // Two grid columns (number | body): keep the verdict, keyword and memo together in the body cell.
+    var line=el('li'),good=o.number===studied.answer,body=section('div','fe-study-option-body'),head=el('p'),tag=el('span',good?'정답':'오답');line.className=good?'is-correct':'is-incorrect';
+    tag.className='fe-study-verdict';head.className='fe-study-keyword';head.append(tag,host.ownerDocument.createTextNode(' '),markedText('span',o.keyword||''));body.appendChild(head);
+    if(o.memo){var memo=markedText('p',o.memo);memo.className='fe-study-memo';body.appendChild(memo);}line.append(el('strong','①②③④⑤'[i]),body);notes.appendChild(line);
    });
    else choiceNotes(q).forEach(function(text,i){
     var line=el('li');line.append(el('strong','①②③④⑤'[i]),el(q.options[i].id===q.review.correctOptionId?'strong':'span',text));notes.appendChild(line);
