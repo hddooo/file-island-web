@@ -55,6 +55,15 @@ html body #app#app#app #formalExamHost .uig .fe-choices button[data-review-mark=
 #formalExamHost .uig .uig-stat-cards p{margin:0;padding:10px;border:1px solid rgba(127,127,127,.35);border-radius:10px;text-align:center;display:grid;gap:2px}
 #formalExamHost .uig .uig-stat-cards b{font-size:22px}
 #formalExamHost .uig .uig-stat-cards span{font-size:12px;opacity:.8}
+#formalExamHost .uig .uig-weak-open{display:grid;gap:2px;width:100%;margin:10px 0 0;text-align:center}
+#formalExamHost .uig .uig-weak-open small{font-size:12px;font-weight:400;opacity:.8}
+#formalExamHost .uig .uig-weak-rank{list-style:none;margin:0 0 12px;padding:0;display:grid;gap:4px;counter-reset:wr}
+#formalExamHost .uig .uig-weak-rank li{counter-increment:wr}
+#formalExamHost .uig .uig-weak-jump{display:grid;grid-template-columns:1.8em 1fr auto;gap:8px;align-items:center;width:100%;padding:8px 10px;border:1px solid rgba(127,127,127,.35);border-radius:10px;background:transparent;color:inherit;font:inherit;text-align:left;cursor:pointer}
+#formalExamHost .uig .uig-weak-jump::before{content:counter(wr);font-weight:700;color:#d93a3a}
+#formalExamHost .uig .uig-weak-name{font-weight:700;word-break:keep-all;line-height:1.35}
+#formalExamHost .uig .uig-weak-count{font-size:12px;opacity:.8;white-space:nowrap}
+#formalExamHost .uig .uig-weak-more{width:100%;margin:6px 0 0}
 #formalExamHost .uig .uig-era-sub{font-size:15px;margin:14px 0 6px}
 #formalExamHost .uig .uig-era-list{list-style:none;margin:0;padding:0;display:grid;gap:2px}
 #formalExamHost .uig .uig-era-row{display:grid;grid-template-columns:minmax(5.5em,8.5em) 1fr 4.2em;align-items:center;gap:10px;padding:7px 2px;border-bottom:1px solid rgba(127,127,127,.2);font-variant-numeric:tabular-nums}

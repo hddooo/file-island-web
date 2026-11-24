@@ -30,9 +30,10 @@ function mount(host,o){
    return '<li class="uig-round"><button type="button" class="uig-row uig-row-open" data-open="'+esc(r.id)+'" aria-label="'+r.sequence+'회차 상세 보기"><span class="uig-row-label">'+r.sequence+'회차 ('+scopeLabel(r.scope)+') · '+esc(kstDate(r.finalAt))+'</span><b class="uig-row-score">'+score(r.correct,r.total)+'</b></button>'+
     '<div class="uig-round-actions"><button type="button" class="tool-btn" data-review="'+esc(r.id)+'"'+(r.missed?'':' title="오답이 없으면 별표 문항만 다시 풀어요"')+'>오답·별표 다시 풀기</button><button type="button" class="tool-btn" data-pdf="questions" data-id="'+esc(r.id)+'" data-seq="'+r.sequence+'"'+(r.missed?'':' disabled')+'>오답 문제지 PDF</button><button type="button" class="tool-btn" data-pdf="answers" data-id="'+esc(r.id)+'" data-seq="'+r.sequence+'"'+(r.missed?'':' disabled')+'>오답 해설지 PDF</button></div>'+
     (r.reviews.length?'<ul class="uig-reviews" aria-label="'+r.sequence+'회차 복습 기록">'+r.reviews.map(function(v){return '<li><button type="button" class="uig-row uig-row-open" data-open="'+esc(v.id)+'"><span class="uig-row-label">복습 · '+esc(kstDate(v.finalAt))+'</span><b class="uig-row-score">'+score(v.correct,v.total)+'</b></button></li>';}).join('')+'</ul>':'')+'</li>';}).join('')+'</ol>';
-  paint('<p class="uig-lead">실전모의고사에서 틀린 문제만 모아 맞힐 때까지 다시 풀어요. 시간 제한은 없어요.</p>'+resume+'<div class="uig-start-area">'+start+'</div>'+'<p id="uigStatus" role="status">'+esc(ctx.flash||'')+'</p><section class="uig-history"><h2>제출 기록 <small>최근 10회</small></h2>'+rounds+'</section>');
+  paint('<p class="uig-lead">실전모의고사에서 틀린 문제만 모아 맞힐 때까지 다시 풀어요. 시간 제한은 없어요.</p>'+resume+'<div class="uig-start-area">'+start+'</div>'+'<button type="button" class="check-one uig-weak-open" id="uigWeak">내 약점 개념 숙지<small>실전모의고사·의금부에서 많이 틀린 개념부터</small></button>'+'<p id="uigStatus" role="status">'+esc(ctx.flash||'')+'</p><section class="uig-history"><h2>제출 기록 <small>최근 10회</small></h2>'+rounds+'</section>');
   bind('#uigStart',function(){drawMenu(true);var b=host.querySelector('#uigAll:not([disabled]),#uigLast:not([disabled]),#uigClose');if(b)b.focus();});
   bind('#uigClose',function(){drawMenu(false);var b=host.querySelector('#uigStart');if(b)b.focus();});
+  bind('#uigWeak',weakness);
   bind('#uigAll',function(){create('all');});bind('#uigLast',function(){create('last-wrong');});
   bind('#uigResume',function(){open(act.id);});ctx.flash='';
   bind('#uigStarReset',function(){var box=host.querySelector('#uigStarConfirm');box.innerHTML='<div role="alertdialog" aria-labelledby="uigStarTitle"><p id="uigStarTitle">의금부 3별 '+s.tripleStars+'개를 모두 해제할까요? 되돌릴 수 없어요.</p><button type="button" class="check-one" id="uigStarYes">3별 모두 해제</button><button type="button" class="tool-btn" id="uigStarNo">취소</button></div>';
@@ -125,19 +126,43 @@ function mount(host,o){
  }
  /* 같은 개념 묶음 안에서는 흐름을 하나(가장 단계가 많은 것)만, 메모는 처음 나온 것만 보여 준다. */
  function flowSteps(f){return String(f||'').split('→').length;}
- function noteGroup(items){
+ function noteGroup(items,tagOf){
   var byTopicFlow={},order=[],seenMemo={},sources=[];
   items.forEach(function(q){var e=studyOf(q);if(!e||!e.flow)return;var k=topicOf(q);if(!byTopicFlow[k]){byTopicFlow[k]=e.flow;order.push(k);}else if(flowSteps(e.flow)>flowSteps(byTopicFlow[k]))byTopicFlow[k]=e.flow;if(e.source&&sources.indexOf(e.source)<0)sources.push(e.source);});
   var flows=order.length?'<div class="uig-note-flows"><p class="uig-note-flows-title">핵심 흐름</p>'+order.map(function(k){return '<p class="uig-note-flow">'+md(byTopicFlow[k])+'</p>';}).join('')+'</div>':'';
   var rows=items.map(function(q){
-   var e=studyOf(q),st=statusOf(q),mine=chosenNo(q),tags=(st==='wrong'?'<span class="uig-tag is-wrong">오답</span>':st==='unanswered'?'<span class="uig-tag is-empty">미응답</span>':'')+(q.tripleStarred?'<span class="uig-tag is-triple">3별</span>':'');
+   var e=studyOf(q),st=statusOf(q),mine=chosenNo(q),tags=tagOf?tagOf(q):((st==='wrong'?'<span class="uig-tag is-wrong">오답</span>':st==='unanswered'?'<span class="uig-tag is-empty">미응답</span>':'')+(q.tripleStarred?'<span class="uig-tag is-triple">3별</span>':''));
    var body;
-   if(e){var right=e.options[e.answer-1]||{},pick=mine&&mine!==e.answer?e.options[mine-1]:null,memo=right.memo&&!seenMemo[right.memo]?right.memo:'';if(memo)seenMemo[memo]=1;
+   if(e){var right=e.options[e.answer-1]||{},pick=mine&&mine!==e.answer?e.options[mine-1]:null,mk=String(right.memo||'').replace(/\*\*|\s/g,''),memo=right.memo&&!seenMemo[mk]?right.memo:'';if(memo)seenMemo[mk]=1;
     body='<p class="uig-note-key"><b>정답 '+CIRCLED[e.answer-1]+'</b> '+md(right.keyword||'')+'</p>'+(memo?'<p class="uig-note-memo">'+md(memo)+'</p>':'')+
      (pick?'<p class="uig-note-mine"><b>내가 고른 '+CIRCLED[mine-1]+'</b> '+md(pick.keyword||'')+'</p>':'');}
    else{var o=q.review&&q.review.item&&q.review.item.overview||{};body='<p class="uig-note-key"><b>정답 '+(q.review?CIRCLED[q.review.correctNumber-1]:'')+'</b> '+md(o.answer||'')+'</p>';}
    return '<li class="uig-note"><p class="uig-note-head">'+esc(label(q))+' '+tags+'</p>'+body+'</li>';}).join('');
   return flows+'<ol class="uig-note-list">'+rows+'</ol>'+(sources.length?'<p class="uig-note-src">근거: 성균관 시대별 학습 · '+esc(sources.join(', '))+'</p>':'');
+ }
+ /* ---------- 내 약점 개념 숙지: 실제로 틀린 횟수를 개념별로 더해 많이 틀린 개념부터 ---------- */
+ function weakness(){
+  ctx.data={kind:'weakness'};paint('<p role="status">내 오답 기록을 모으는 중…</p>');
+  var ex=root.HanqCbtExplanations;
+  run(function(){return call('GET','/weakness').then(function(w){var rounds=(w.items||[]).map(function(q){return q.exam;});return Promise.resolve(ex&&ex.loadStudy?ex.loadStudy(api,rounds):null).catch(function(){}).then(function(){return w;});});},function(w){ctx.data={kind:'weakness'};drawWeakness(w.items||[],false);},menu);
+ }
+ function drawWeakness(items,all){
+  if(!items.length){paint('<h2>내 약점 개념 숙지</h2><p>아직 틀린 문제가 없어요. 실전모의고사를 풀면 많이 틀린 개념부터 여기에 모여요.</p>');return;}
+  var groups={},order=[];
+  items.forEach(function(q){var k=topicOf(q);if(!groups[k]){groups[k]={label:k,items:[],misses:0,eras:[]};order.push(k);}var g=groups[k];g.items.push(q);g.misses+=q.misses||0;var n=eraName(q);if(g.eras.indexOf(n)<0)g.eras.push(n);});
+  var list=order.map(function(k){var g=groups[k];g.items.sort(function(a,b){return (b.misses||0)-(a.misses||0)||a.exam-b.exam||a.number-b.number;});return g;})
+   .sort(function(a,b){return b.misses-a.misses||b.items.length-a.items.length;});
+  var LIMIT=12,shown=all?list:list.slice(0,LIMIT);
+  var tagOf=function(q){return (q.misses?'<span class="uig-tag is-wrong">'+q.misses+'회 틀림</span>':'')+(q.tripleStarred?'<span class="uig-tag is-triple">3별</span>':'');};
+  var rank='<ol class="uig-weak-rank">'+list.slice(0,10).map(function(g,i){return '<li><button type="button" class="uig-weak-jump" data-jump="'+i+'"><span class="uig-weak-name">'+esc(g.label)+'</span><span class="uig-weak-count">'+g.misses+'회 · '+g.items.length+'문항</span></button></li>';}).join('')+'</ol>';
+  paint('<section class="uig-weakness" aria-labelledby="uigWeakTitle"><h2 id="uigWeakTitle" tabindex="-1">내 약점 개념 숙지</h2>'+
+   '<p class="uig-notes-lead">실전모의고사·의금부에서 실제로 틀린 횟수를 개념별로 더했어요. 많이 틀린 개념부터 핵심 흐름을 한 번 보고, 아래 문항별 정답 키워드로 다시 확인하세요.</p>'+
+   '<h3 class="uig-era-sub">많이 틀린 개념 TOP '+Math.min(10,list.length)+'</h3>'+rank+
+   shown.map(function(g,i){return '<section class="uig-note-era" id="uigWeak'+i+'"><h3>'+(i+1)+'. '+esc(g.label)+' <small>'+g.misses+'회 틀림 · '+g.items.length+'문항 · '+esc(g.eras.join('·'))+'</small></h3>'+noteGroup(g.items,tagOf)+'</section>';}).join('')+
+   (!all&&list.length>LIMIT?'<button type="button" class="tool-btn uig-weak-more" id="uigWeakMore">나머지 개념 '+(list.length-LIMIT)+'개 더 보기</button>':'')+'</section>');
+  host.querySelectorAll('[data-jump]').forEach(function(b){b.onclick=function(){var t=host.querySelector('#uigWeak'+b.dataset.jump);if(t){t.scrollIntoView({behavior:'smooth',block:'start'});var h=t.querySelector('h3');if(h){h.tabIndex=-1;h.focus({preventScroll:true});}}};});
+  bind('#uigWeakMore',function(){drawWeakness(items,true);var t=host.querySelector('#uigWeak'+LIMIT);if(t)t.scrollIntoView({block:'start'});});
+  if(!all){var h=host.querySelector('#uigWeakTitle');if(h)h.focus({preventScroll:true});}
  }
  function pdf(id,seq,mode,button,loaded){var P=root.HanqCbtWrongPdf;if(!P||!P.downloadItems){note('PDF 도구를 불러오지 못했어요. 새로고침해 주세요.',true);return;}if(ctx.pdfBusy)return;ctx.pdfBusy=true;if(button)button.disabled=true;note('PDF를 만드는 중이에요…');
   Promise.resolve(loaded||call('GET','/sessions/'+id)).then(function(d){if(!valid())return;var items=d.items.filter(function(q){return q.review&&q.review.status!=='correct';}).sort(function(a,b){return a.exam-b.exam||a.number-b.number;});if(!items.length)throw {code:'empty'};
