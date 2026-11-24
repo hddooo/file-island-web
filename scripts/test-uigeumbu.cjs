@@ -21,7 +21,7 @@ assert.equal(host.querySelector('.uig-reviews .uig-row-label').textContent,'복�
 assert.equal(host.querySelectorAll('[data-review]').length,2);
 assert.equal(host.querySelectorAll('[data-pdf="questions"]:disabled').length,1,'a round without mistakes has no wrong-answer PDF');
 host.querySelector('#uigStart').click();
-assert.match(host.querySelector('#uigAll').textContent,/모든 문제 다시 풀기.*전체 오답·별표 42문항/);assert.match(host.querySelector('#uigLast').textContent,/직전 회차 오답 다시 풀기.*2회차 오답 3문항/);
+assert.match(host.querySelector('#uigAll').textContent,/모든 문제 다시 풀기.*전체 오답·3별 42문항/);assert.match(host.querySelector('#uigLast').textContent,/직전 회차 오답 다시 풀기.*2회차 오답 3문항/);
 host.querySelector('#uigLast').click();await new Promise(r=>setTimeout(r,20));
 assert.equal(JSON.stringify(calls.at(-1)),JSON.stringify(['POST','/api/v1/cbt/uigeumbu/sessions',{scope:'last-wrong',idempotencyKey:'uigeumbu-0123456789'}]));
 assert.match(host.querySelector('[role=alert]').textContent,/다시 풀 오답이 없어요/);
