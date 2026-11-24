@@ -73,6 +73,7 @@ function mount(host,o){
  function statusOf(q){return q.review?q.review.status:'unanswered';}
  function focusOf(d){return d.items.filter(function(q){return statusOf(q)!=='correct'||q.tripleStarred;});}
  function eraKey(q){var e=studyOf(q);return e&&ERA[e.era]?e.era:ERA[q.era]?q.era:'other';}
+ function eraName(q){return ERA[eraKey(q)]||'기타';}
  /* 시대로 묶이지 않는 주제별 통합 문항(지역사·문화유산·화폐 제도 등)은 유형별로 따로 센다. */
  function byEra(list){var groups={},subs=[];list.forEach(function(q){var k=eraKey(q),e;if(k==='comprehensive'){e=studyOf(q);var sub=e&&e.topic?e.topic:'기타';k='comprehensive:'+sub;if(subs.indexOf(k)<0)subs.push(k);}(groups[k]=groups[k]||[]).push(q);});subs.sort(function(a,b){return groups[b].length-groups[a].length;});return ERA_ORDER.filter(function(k){return k!=='comprehensive';}).concat(subs,['other']).filter(function(k){return groups[k];}).map(function(k){return {key:k,label:k.indexOf('comprehensive:')===0?'통합 · '+k.slice(14):ERA[k]||'기타',items:groups[k]};});}
  function topicOf(q){var e=studyOf(q);if(e&&e.topic)return e.topic;var f=e&&e.flow?String(e.flow).split(':')[0].replace(/\*\*/g,'').replace(/\s*흐름$/,'').trim():'';return f&&f.length<=20?f:eraName(q);}
@@ -98,12 +99,15 @@ function mount(host,o){
  }
  function statsHtml(d,focus){
   var triple=d.items.filter(function(q){return q.tripleStarred;}).length,groups=byEra(d.items);
-  var rows=groups.map(function(g){var ok=g.items.filter(function(q){return statusOf(q)==='correct';}).length,pct=Math.round(ok/g.items.length*100);return '<tr><th scope="row">'+esc(g.label)+'</th><td>'+ok+' / '+g.items.length+'</td><td><span class="uig-bar" aria-hidden="true"><i style="width:'+pct+'%"></i></span> '+pct+'%</td></tr>';}).join('');
+  function row(g){var ok=g.items.filter(function(q){return statusOf(q)==='correct';}).length,pct=Math.round(ok/g.items.length*100),lvl=pct<70?'low':pct<85?'mid':'high',name=g.key.indexOf('comprehensive:')===0?g.key.slice(14):g.label;
+   return '<li class="uig-era-row is-'+lvl+'"><span class="uig-era-name">'+esc(name)+'</span><span class="uig-bar" aria-hidden="true"><i style="width:'+pct+'%"></i></span><span class="uig-era-pct"><b>'+pct+'%</b><small>'+ok+'/'+g.items.length+'</small></span></li>';}
+  var eraRows=groups.filter(function(g){return g.key.indexOf('comprehensive:')!==0;}),mixRows=groups.filter(function(g){return g.key.indexOf('comprehensive:')===0;});
+  var rows='<ul class="uig-era-list" aria-label="시대별 정답률">'+eraRows.map(row).join('')+'</ul>'+(mixRows.length?'<h3 class="uig-era-sub">주제별 통합 문항</h3><ul class="uig-era-list" aria-label="주제별 통합 문항 정답률">'+mixRows.map(row).join('')+'</ul>':'');
   var weak=groups.map(function(g){return {g:g,pct:g.items.filter(function(q){return statusOf(q)==='correct';}).length/g.items.length};}).filter(function(x){return x.g.items.length>=2;}).sort(function(a,b){return a.pct-b.pct;})[0];
   return '<div class="uig-stat-cards"><p><b>'+d.items.length+'</b><span>전체 문항</span></p><p><b>'+focus.length+'</b><span>틀린 문제·3별</span></p><p><b>'+triple+'</b><span>3별</span></p></div>'+
-   (weak&&weak.pct<1?'<p class="uig-weak">가장 약한 영역: <b>'+esc(weak.g.label)+'</b> ('+Math.round(weak.pct*100)+'%)</p>':'')+
+   (weak&&weak.pct<1?'<p class="uig-weak">가장 약한 영역: <b>'+esc(weak.g.label)+'</b> '+Math.round(weak.pct*100)+'%</p>':'')+
    (function(){var top=byTopic(focus).filter(function(g){return g.items.length>=2;}).slice(0,5);return top.length?'<div class="uig-top-topics"><h3>자주 틀린 개념</h3><ol>'+top.map(function(g){return '<li><b>'+esc(g.label)+'</b> <span>'+g.items.length+'문항 · '+esc(g.eras.join('·'))+'</span></li>';}).join('')+'</ol></div>':'';})()+
-   '<table class="uig-era-table"><thead><tr><th scope="col">시대·유형</th><th scope="col">정답 / 문항</th><th scope="col">정답률</th></tr></thead><tbody>'+rows+'</tbody></table>';
+   '<h3 class="uig-era-sub">시대별 정답률</h3>'+rows;
  }
  function logHtml(d){
   var only=ctx.logFilter!=='all',list=only?focusOf(d):d.items;
@@ -116,16 +120,24 @@ function mount(host,o){
   if(!focus.length)return '<p>틀린 문제와 3별 문제가 없어요. 이 회차는 다 맞혔어요.</p>';
   var mode=ctx.noteMode==='era'?'era':'topic',groups=mode==='era'?byEra(focus):byTopic(focus);
   var switcher='<div class="uig-log-filter" role="group" aria-label="암기 노트 묶음"><button type="button" class="tool-btn" data-note-mode="topic" aria-pressed="'+(mode==='topic')+'">개념별</button><button type="button" class="tool-btn" data-note-mode="era" aria-pressed="'+(mode==='era')+'">시대별</button></div>';
-  return switcher+'<p class="uig-notes-lead">'+(mode==='era'?'틀린 문제와 3별 문제의 핵심을 시대별로 모았어요.':'같은 개념을 묻는 틀린 문제·3별 문제를 묶었어요. 많이 틀린 개념부터 보여요.')+'</p>'+groups.map(function(g){
-   return '<section class="uig-note-era"><h3>'+esc(g.label)+' <small>'+g.items.length+'문항'+(mode==='topic'?' · '+esc(g.eras.join('·')):'')+'</small></h3>'+g.items.map(function(q){
-    var e=studyOf(q),st=statusOf(q),mine=chosenNo(q),tags=(st==='wrong'?'<span class="uig-tag is-wrong">오답</span>':st==='unanswered'?'<span class="uig-tag is-empty">미응답</span>':'')+(q.tripleStarred?'<span class="uig-tag is-triple">3별</span>':'');
-    var bodyHtml;
-    if(e){var right=e.options[e.answer-1]||{},pick=mine&&mine!==e.answer?e.options[mine-1]:null;
-     bodyHtml='<p class="uig-note-key"><b>정답 '+CIRCLED[e.answer-1]+'</b> '+md(right.keyword||'')+'</p>'+(right.memo?'<p class="uig-note-memo">'+md(right.memo)+'</p>':'')+
-      (pick?'<p class="uig-note-mine"><b>내가 고른 '+CIRCLED[mine-1]+'</b> '+md(pick.keyword||'')+(pick.memo?'<br><span>'+md(pick.memo)+'</span>':'')+'</p>':'')+
-      (e.flow?'<p class="uig-note-flow">'+md(e.flow)+'</p>':'')+(e.source?'<p class="uig-note-src">근거: 성균관 시대별 학습 · '+esc(e.source)+'</p>':'');}
-    else{var o=q.review&&q.review.item&&q.review.item.overview||{};bodyHtml='<p class="uig-note-key"><b>정답 '+(q.review?CIRCLED[q.review.correctNumber-1]:'')+'</b> '+md(o.answer||'')+'</p>';}
-    return '<article class="uig-note"><h4>'+esc(label(q))+' '+tags+'</h4>'+bodyHtml+'</article>';}).join('')+'</section>';}).join('');
+  return switcher+'<p class="uig-notes-lead">'+(mode==='era'?'시대마다 핵심 흐름을 한 번만 보여 주고, 아래에 틀린 문제·3별의 정답 키워드만 모았어요.':'같은 개념은 핵심 흐름을 한 번만 보여 주고, 아래에 문항별 정답 키워드만 모았어요. 많이 틀린 개념부터 보여요.')+'</p>'+groups.map(function(g){
+   return '<section class="uig-note-era"><h3>'+esc(g.label)+' <small>'+g.items.length+'문항'+(mode==='topic'?' · '+esc(g.eras.join('·')):'')+'</small></h3>'+noteGroup(g.items)+'</section>';}).join('');
+ }
+ /* 같은 개념 묶음 안에서는 흐름을 하나(가장 단계가 많은 것)만, 메모는 처음 나온 것만 보여 준다. */
+ function flowSteps(f){return String(f||'').split('→').length;}
+ function noteGroup(items){
+  var byTopicFlow={},order=[],seenMemo={},sources=[];
+  items.forEach(function(q){var e=studyOf(q);if(!e||!e.flow)return;var k=topicOf(q);if(!byTopicFlow[k]){byTopicFlow[k]=e.flow;order.push(k);}else if(flowSteps(e.flow)>flowSteps(byTopicFlow[k]))byTopicFlow[k]=e.flow;if(e.source&&sources.indexOf(e.source)<0)sources.push(e.source);});
+  var flows=order.length?'<div class="uig-note-flows"><p class="uig-note-flows-title">핵심 흐름</p>'+order.map(function(k){return '<p class="uig-note-flow">'+md(byTopicFlow[k])+'</p>';}).join('')+'</div>':'';
+  var rows=items.map(function(q){
+   var e=studyOf(q),st=statusOf(q),mine=chosenNo(q),tags=(st==='wrong'?'<span class="uig-tag is-wrong">오답</span>':st==='unanswered'?'<span class="uig-tag is-empty">미응답</span>':'')+(q.tripleStarred?'<span class="uig-tag is-triple">3별</span>':'');
+   var body;
+   if(e){var right=e.options[e.answer-1]||{},pick=mine&&mine!==e.answer?e.options[mine-1]:null,memo=right.memo&&!seenMemo[right.memo]?right.memo:'';if(memo)seenMemo[memo]=1;
+    body='<p class="uig-note-key"><b>정답 '+CIRCLED[e.answer-1]+'</b> '+md(right.keyword||'')+'</p>'+(memo?'<p class="uig-note-memo">'+md(memo)+'</p>':'')+
+     (pick?'<p class="uig-note-mine"><b>내가 고른 '+CIRCLED[mine-1]+'</b> '+md(pick.keyword||'')+'</p>':'');}
+   else{var o=q.review&&q.review.item&&q.review.item.overview||{};body='<p class="uig-note-key"><b>정답 '+(q.review?CIRCLED[q.review.correctNumber-1]:'')+'</b> '+md(o.answer||'')+'</p>';}
+   return '<li class="uig-note"><p class="uig-note-head">'+esc(label(q))+' '+tags+'</p>'+body+'</li>';}).join('');
+  return flows+'<ol class="uig-note-list">'+rows+'</ol>'+(sources.length?'<p class="uig-note-src">근거: 성균관 시대별 학습 · '+esc(sources.join(', '))+'</p>':'');
  }
  function pdf(id,seq,mode,button,loaded){var P=root.HanqCbtWrongPdf;if(!P||!P.downloadItems){note('PDF 도구를 불러오지 못했어요. 새로고침해 주세요.',true);return;}if(ctx.pdfBusy)return;ctx.pdfBusy=true;if(button)button.disabled=true;note('PDF를 만드는 중이에요…');
   Promise.resolve(loaded||call('GET','/sessions/'+id)).then(function(d){if(!valid())return;var items=d.items.filter(function(q){return q.review&&q.review.status!=='correct';}).sort(function(a,b){return a.exam-b.exam||a.number-b.number;});if(!items.length)throw {code:'empty'};
