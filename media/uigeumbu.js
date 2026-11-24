@@ -67,15 +67,16 @@ function mount(host,o){
  }
 
  /* ---------- 회차 상세: 통계 · 풀이 내역 · 오답 개념 숙지 ---------- */
- var ERA={prehistory:'선사',gojoseon:'고조선·여러 나라',samguk:'삼국',nambuk:'남북국',goryeo:'고려',joseon:'조선','joseon-early':'조선 전기','joseon-late':'조선 후기',opening:'개항기',colonial:'일제강점기',modern:'현대',islands:'독도·간도',comprehensive:'통합·지역사'};
+ var ERA={prehistory:'선사',gojoseon:'고조선·여러 나라',samguk:'삼국',nambuk:'남북국',goryeo:'고려',joseon:'조선','joseon-early':'조선 전기','joseon-late':'조선 후기',opening:'개항기',colonial:'일제강점기',modern:'현대',islands:'독도·간도',comprehensive:'주제별 통합'};
  var ERA_ORDER=Object.keys(ERA);
  function md(x){return esc(x).replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');}
  function statusOf(q){return q.review?q.review.status:'unanswered';}
  function focusOf(d){return d.items.filter(function(q){return statusOf(q)!=='correct'||q.tripleStarred;});}
- function eraName(q){return ERA[q.era]||'기타';}
- function byEra(list){var groups={};list.forEach(function(q){var k=ERA[q.era]?q.era:'other';(groups[k]=groups[k]||[]).push(q);});return ERA_ORDER.concat(['other']).filter(function(k){return groups[k];}).map(function(k){return {key:k,label:ERA[k]||'기타',items:groups[k]};});}
+ function eraKey(q){var e=studyOf(q);return e&&ERA[e.era]?e.era:ERA[q.era]?q.era:'other';}
+ /* 시대로 묶이지 않는 주제별 통합 문항(지역사·문화유산·화폐 제도 등)은 유형별로 따로 센다. */
+ function byEra(list){var groups={},subs=[];list.forEach(function(q){var k=eraKey(q),e;if(k==='comprehensive'){e=studyOf(q);var sub=e&&e.topic?e.topic:'기타';k='comprehensive:'+sub;if(subs.indexOf(k)<0)subs.push(k);}(groups[k]=groups[k]||[]).push(q);});subs.sort(function(a,b){return groups[b].length-groups[a].length;});return ERA_ORDER.filter(function(k){return k!=='comprehensive';}).concat(subs,['other']).filter(function(k){return groups[k];}).map(function(k){return {key:k,label:k.indexOf('comprehensive:')===0?'통합 · '+k.slice(14):ERA[k]||'기타',items:groups[k]};});}
  function topicOf(q){var e=studyOf(q);if(e&&e.topic)return e.topic;var f=e&&e.flow?String(e.flow).split(':')[0].replace(/\*\*/g,'').replace(/\s*흐름$/,'').trim():'';return f&&f.length<=20?f:eraName(q);}
- function byTopic(list){var groups={},order=[];list.forEach(function(q){var k=topicOf(q);if(!groups[k]){groups[k]=[];order.push(k);}groups[k].push(q);});return order.map(function(k){var eras=[];groups[k].forEach(function(q){var n=eraName(q);if(eras.indexOf(n)<0)eras.push(n);});return {label:k,items:groups[k],eras:eras,first:ERA_ORDER.indexOf(groups[k][0].era)};}).sort(function(a,b){return b.items.length-a.items.length||a.first-b.first;});}
+ function byTopic(list){var groups={},order=[];list.forEach(function(q){var k=topicOf(q);if(!groups[k]){groups[k]=[];order.push(k);}groups[k].push(q);});return order.map(function(k){var eras=[];groups[k].forEach(function(q){var n=eraName(q);if(eras.indexOf(n)<0)eras.push(n);});return {label:k,items:groups[k],eras:eras,first:ERA_ORDER.indexOf(eraKey(groups[k][0]))};}).sort(function(a,b){return b.items.length-a.items.length||a.first-b.first;});}
  function studyOf(q){var ex=root.HanqCbtExplanations;return ex&&ex.studyFor?ex.studyFor(q):null;}
  function chosenNo(q){var o=q.selectedOptionId&&q.options.filter(function(x){return x.id===q.selectedOptionId;})[0];return o?o.number:null;}
  function result(d,tab){
@@ -100,9 +101,9 @@ function mount(host,o){
   var rows=groups.map(function(g){var ok=g.items.filter(function(q){return statusOf(q)==='correct';}).length,pct=Math.round(ok/g.items.length*100);return '<tr><th scope="row">'+esc(g.label)+'</th><td>'+ok+' / '+g.items.length+'</td><td><span class="uig-bar" aria-hidden="true"><i style="width:'+pct+'%"></i></span> '+pct+'%</td></tr>';}).join('');
   var weak=groups.map(function(g){return {g:g,pct:g.items.filter(function(q){return statusOf(q)==='correct';}).length/g.items.length};}).filter(function(x){return x.g.items.length>=2;}).sort(function(a,b){return a.pct-b.pct;})[0];
   return '<div class="uig-stat-cards"><p><b>'+d.items.length+'</b><span>전체 문항</span></p><p><b>'+focus.length+'</b><span>틀린 문제·3별</span></p><p><b>'+triple+'</b><span>3별</span></p></div>'+
-   (weak&&weak.pct<1?'<p class="uig-weak">가장 약한 시대: <b>'+esc(weak.g.label)+'</b> ('+Math.round(weak.pct*100)+'%)</p>':'')+
+   (weak&&weak.pct<1?'<p class="uig-weak">가장 약한 영역: <b>'+esc(weak.g.label)+'</b> ('+Math.round(weak.pct*100)+'%)</p>':'')+
    (function(){var top=byTopic(focus).filter(function(g){return g.items.length>=2;}).slice(0,5);return top.length?'<div class="uig-top-topics"><h3>자주 틀린 개념</h3><ol>'+top.map(function(g){return '<li><b>'+esc(g.label)+'</b> <span>'+g.items.length+'문항 · '+esc(g.eras.join('·'))+'</span></li>';}).join('')+'</ol></div>':'';})()+
-   '<table class="uig-era-table"><thead><tr><th scope="col">시대</th><th scope="col">정답 / 문항</th><th scope="col">정답률</th></tr></thead><tbody>'+rows+'</tbody></table>';
+   '<table class="uig-era-table"><thead><tr><th scope="col">시대·유형</th><th scope="col">정답 / 문항</th><th scope="col">정답률</th></tr></thead><tbody>'+rows+'</tbody></table>';
  }
  function logHtml(d){
   var only=ctx.logFilter!=='all',list=only?focusOf(d):d.items;
