@@ -30,14 +30,14 @@ function mount(host,o){
    return '<li class="uig-round"><button type="button" class="uig-row uig-row-open" data-open="'+esc(r.id)+'" aria-label="'+r.sequence+'회차 상세 보기"><span class="uig-row-label">'+r.sequence+'회차 ('+scopeLabel(r.scope)+') · '+esc(kstDate(r.finalAt))+'</span><b class="uig-row-score">'+score(r.correct,r.total)+'</b></button>'+
     '<div class="uig-round-actions"><button type="button" class="tool-btn" data-review="'+esc(r.id)+'"'+(r.missed?'':' title="오답이 없으면 별표 문항만 다시 풀어요"')+'>오답·별표 다시 풀기</button><button type="button" class="tool-btn" data-pdf="questions" data-id="'+esc(r.id)+'" data-seq="'+r.sequence+'"'+(r.missed?'':' disabled')+'>오답 문제지 PDF</button><button type="button" class="tool-btn" data-pdf="answers" data-id="'+esc(r.id)+'" data-seq="'+r.sequence+'"'+(r.missed?'':' disabled')+'>오답 해설지 PDF</button></div>'+
     (r.reviews.length?'<ul class="uig-reviews" aria-label="'+r.sequence+'회차 복습 기록">'+r.reviews.map(function(v){return '<li><button type="button" class="uig-row uig-row-open" data-open="'+esc(v.id)+'"><span class="uig-row-label">복습 · '+esc(kstDate(v.finalAt))+'</span><b class="uig-row-score">'+score(v.correct,v.total)+'</b></button></li>';}).join('')+'</ul>':'')+'</li>';}).join('')+'</ol>';
-  paint('<p class="uig-lead">실전모의고사에서 틀린 문제만 모아 맞힐 때까지 다시 풀어요. 시간 제한은 없어요.</p>'+resume+'<div class="uig-start-area">'+start+'</div>'+((s.stars||0)+(s.tripleStars||0)?'<div class="uig-star-tools"><button type="button" class="tool-btn" id="uigStarReset">별표 초기화 (3별 '+(s.tripleStars||0)+' · 별표 '+(s.stars||0)+')</button><div id="uigStarConfirm"></div></div>':'')+'<p id="uigStatus" role="status">'+esc(ctx.flash||'')+'</p><section class="uig-history"><h2>제출 기록 <small>최근 10회</small></h2>'+rounds+'</section>');
+  paint('<p class="uig-lead">실전모의고사에서 틀린 문제만 모아 맞힐 때까지 다시 풀어요. 시간 제한은 없어요.</p>'+resume+'<div class="uig-start-area">'+start+'</div>'+(s.tripleStars?'<div class="uig-star-tools"><button type="button" class="tool-btn" id="uigStarReset">3별 초기화 ('+s.tripleStars+'개)</button><div id="uigStarConfirm"></div></div>':'')+'<p id="uigStatus" role="status">'+esc(ctx.flash||'')+'</p><section class="uig-history"><h2>제출 기록 <small>최근 10회</small></h2>'+rounds+'</section>');
   bind('#uigStart',function(){drawMenu(true);var b=host.querySelector('#uigAll:not([disabled]),#uigLast:not([disabled]),#uigClose');if(b)b.focus();});
   bind('#uigClose',function(){drawMenu(false);var b=host.querySelector('#uigStart');if(b)b.focus();});
   bind('#uigAll',function(){create('all');});bind('#uigLast',function(){create('last-wrong');});
   bind('#uigResume',function(){open(act.id);});ctx.flash='';
-  bind('#uigStarReset',function(){var box=host.querySelector('#uigStarConfirm');box.innerHTML='<div role="alertdialog" aria-labelledby="uigStarTitle"><p id="uigStarTitle">의금부 3별 '+(s.tripleStars||0)+'개와 별표 '+(s.stars||0)+'개를 모두 해제할까요? 실전모의고사·오답풀이에서 표시한 별표도 함께 지워지고, 별표만 있던 문제는 \'모든 문제 다시 풀기\'에서 빠져요. 되돌릴 수 없어요.</p><button type="button" class="check-one" id="uigStarYes">별표 모두 해제</button><button type="button" class="tool-btn" id="uigStarNo">취소</button></div>';
+  bind('#uigStarReset',function(){var box=host.querySelector('#uigStarConfirm');box.innerHTML='<div role="alertdialog" aria-labelledby="uigStarTitle"><p id="uigStarTitle">의금부 3별 '+s.tripleStars+'개를 모두 해제할까요? 되돌릴 수 없어요.</p><button type="button" class="check-one" id="uigStarYes">3별 모두 해제</button><button type="button" class="tool-btn" id="uigStarNo">취소</button></div>';
    bind('#uigStarNo',function(){box.replaceChildren();var b=host.querySelector('#uigStarReset');if(b)b.focus();});
-   bind('#uigStarYes',function(){run(function(){return call('POST','/stars/reset',{confirmation:'RESET_STARS',resetAt:s.resetAt||null});},function(r){ctx.flash='3별 '+(r&&r.tripleStars||0)+'개 · 별표 '+(r&&r.stars||0)+'개를 해제했어요.';menu();},menu);});
+   bind('#uigStarYes',function(){run(function(){return call('POST','/triple-stars/reset',{confirmation:'RESET_TRIPLE_STARS',resetAt:s.resetAt||null});},function(r){ctx.flash='3별 '+(r&&r.tripleStars||0)+'개를 해제했어요.';menu();},menu);});
    host.querySelector('#uigStarYes').focus();});
   host.querySelectorAll('[data-review]').forEach(function(b){b.onclick=function(){review(b.dataset.review);};});
   host.querySelectorAll('[data-open]').forEach(function(b){b.onclick=function(){ctx.detailTab='stats';ctx.logFilter='focus';open(b.dataset.open);};});
@@ -74,6 +74,8 @@ function mount(host,o){
  function focusOf(d){return d.items.filter(function(q){return statusOf(q)!=='correct'||q.tripleStarred;});}
  function eraName(q){return ERA[q.era]||'기타';}
  function byEra(list){var groups={};list.forEach(function(q){var k=ERA[q.era]?q.era:'other';(groups[k]=groups[k]||[]).push(q);});return ERA_ORDER.concat(['other']).filter(function(k){return groups[k];}).map(function(k){return {key:k,label:ERA[k]||'기타',items:groups[k]};});}
+ function topicOf(q){var e=studyOf(q);if(e&&e.topic)return e.topic;var f=e&&e.flow?String(e.flow).split(':')[0].replace(/\*\*/g,'').replace(/\s*흐름$/,'').trim():'';return f&&f.length<=20?f:eraName(q);}
+ function byTopic(list){var groups={},order=[];list.forEach(function(q){var k=topicOf(q);if(!groups[k]){groups[k]=[];order.push(k);}groups[k].push(q);});return order.map(function(k){var eras=[];groups[k].forEach(function(q){var n=eraName(q);if(eras.indexOf(n)<0)eras.push(n);});return {label:k,items:groups[k],eras:eras,first:ERA_ORDER.indexOf(groups[k][0].era)};}).sort(function(a,b){return b.items.length-a.items.length||a.first-b.first;});}
  function studyOf(q){var ex=root.HanqCbtExplanations;return ex&&ex.studyFor?ex.studyFor(q):null;}
  function chosenNo(q){var o=q.selectedOptionId&&q.options.filter(function(x){return x.id===q.selectedOptionId;})[0];return o?o.number:null;}
  function result(d,tab){
@@ -89,6 +91,7 @@ function mount(host,o){
   bind('#uigBack',function(){ctx.detail=null;ctx.detailTab=null;menu();});bind('#uigReviewNow',function(){review(s.id);});bind('#uigPdfQ',function(e){pdf(s.id,s.sequence,'questions',e.currentTarget,d);});bind('#uigPdfA',function(e){pdf(s.id,s.sequence,'answers',e.currentTarget,d);});
   host.querySelectorAll('[data-tab]').forEach(function(b){b.onclick=function(){result(d,b.dataset.tab);var n=host.querySelector('[data-tab="'+b.dataset.tab+'"]');if(n)n.focus();};});
   host.querySelectorAll('[data-log-filter]').forEach(function(b){b.onclick=function(){ctx.logFilter=b.dataset.logFilter;result(d,'log');};});
+  host.querySelectorAll('[data-note-mode]').forEach(function(b){b.onclick=function(){ctx.noteMode=b.dataset.noteMode;result(d,'notes');};});
   host.querySelectorAll('details[data-pos]').forEach(function(dt){dt.addEventListener('toggle',function(){if(!dt.open||dt.dataset.filled)return;dt.dataset.filled='1';var q=d.items[Number(dt.dataset.pos)],box=dt.querySelector('.uig-log-body'),html='';try{html=ex&&ex.render?ex.render(q,null,'final'):'';}catch(_){}box.innerHTML=html||'<p>이 문항의 해설을 불러오지 못했어요.</p>';});});
   if(tab==='stats'){var h=host.querySelector('#uigResultTitle');if(h)h.focus({preventScroll:true});}
  }
@@ -98,6 +101,7 @@ function mount(host,o){
   var weak=groups.map(function(g){return {g:g,pct:g.items.filter(function(q){return statusOf(q)==='correct';}).length/g.items.length};}).filter(function(x){return x.g.items.length>=2;}).sort(function(a,b){return a.pct-b.pct;})[0];
   return '<div class="uig-stat-cards"><p><b>'+d.items.length+'</b><span>전체 문항</span></p><p><b>'+focus.length+'</b><span>틀린 문제·3별</span></p><p><b>'+triple+'</b><span>3별</span></p></div>'+
    (weak&&weak.pct<1?'<p class="uig-weak">가장 약한 시대: <b>'+esc(weak.g.label)+'</b> ('+Math.round(weak.pct*100)+'%)</p>':'')+
+   (function(){var top=byTopic(focus).filter(function(g){return g.items.length>=2;}).slice(0,5);return top.length?'<div class="uig-top-topics"><h3>자주 틀린 개념</h3><ol>'+top.map(function(g){return '<li><b>'+esc(g.label)+'</b> <span>'+g.items.length+'문항 · '+esc(g.eras.join('·'))+'</span></li>';}).join('')+'</ol></div>':'';})()+
    '<table class="uig-era-table"><thead><tr><th scope="col">시대</th><th scope="col">정답 / 문항</th><th scope="col">정답률</th></tr></thead><tbody>'+rows+'</tbody></table>';
  }
  function logHtml(d){
@@ -109,8 +113,10 @@ function mount(host,o){
  }
  function notesHtml(d,focus){
   if(!focus.length)return '<p>틀린 문제와 3별 문제가 없어요. 이 회차는 다 맞혔어요.</p>';
-  return '<p class="uig-notes-lead">틀린 문제와 3별 문제의 핵심만 시대별로 모았어요.</p>'+byEra(focus).map(function(g){
-   return '<section class="uig-note-era"><h3>'+esc(g.label)+' <small>'+g.items.length+'문항</small></h3>'+g.items.map(function(q){
+  var mode=ctx.noteMode==='era'?'era':'topic',groups=mode==='era'?byEra(focus):byTopic(focus);
+  var switcher='<div class="uig-log-filter" role="group" aria-label="암기 노트 묶음"><button type="button" class="tool-btn" data-note-mode="topic" aria-pressed="'+(mode==='topic')+'">개념별</button><button type="button" class="tool-btn" data-note-mode="era" aria-pressed="'+(mode==='era')+'">시대별</button></div>';
+  return switcher+'<p class="uig-notes-lead">'+(mode==='era'?'틀린 문제와 3별 문제의 핵심을 시대별로 모았어요.':'같은 개념을 묻는 틀린 문제·3별 문제를 묶었어요. 많이 틀린 개념부터 보여요.')+'</p>'+groups.map(function(g){
+   return '<section class="uig-note-era"><h3>'+esc(g.label)+' <small>'+g.items.length+'문항'+(mode==='topic'?' · '+esc(g.eras.join('·')):'')+'</small></h3>'+g.items.map(function(q){
     var e=studyOf(q),st=statusOf(q),mine=chosenNo(q),tags=(st==='wrong'?'<span class="uig-tag is-wrong">오답</span>':st==='unanswered'?'<span class="uig-tag is-empty">미응답</span>':'')+(q.tripleStarred?'<span class="uig-tag is-triple">3별</span>':'');
     var bodyHtml;
     if(e){var right=e.options[e.answer-1]||{},pick=mine&&mine!==e.answer?e.options[mine-1]:null;
