@@ -1,0 +1,45 @@
+/* 의금부 첫 화면·기록. 풀이 화면은 #formalExamHost의 실전모의고사 스타일(cbt-results.css)을 그대로 쓴다. */
+#formalExamHost .uig .uig-lead{margin:4px 0 12px}
+#formalExamHost .uig .uig-start-area{display:flex;justify-content:center;margin:22px 0 18px}
+#formalExamHost .uig .uig-start{min-width:min(260px,80%);min-height:60px;font-size:21px;font-weight:800;border-radius:16px;width:100%;max-width:420px;background:#1f6f4a!important;color:#fff!important;border:2px solid #79e5a0!important;box-shadow:0 6px 18px rgba(31,111,74,.35)}
+#formalExamHost .uig .uig-options{display:grid;gap:10px;width:min(420px,100%)}
+#formalExamHost .uig .uig-options .check-one{display:flex;flex-direction:column;align-items:center;gap:2px;min-height:64px;font-size:17px;font-weight:800;width:100%;margin:0}
+#formalExamHost .uig .uig-options .check-one small{font-size:13px;font-weight:600;opacity:.85}
+#formalExamHost .uig .uig-options .check-one:disabled{opacity:.5;cursor:not-allowed}
+#formalExamHost .uig .uig-resume{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;margin:0 0 6px;font-weight:700}
+#formalExamHost .uig .uig-history h2{display:flex;align-items:baseline;gap:8px;font-size:18px;margin:18px 0 8px}
+#formalExamHost .uig .uig-history h2 small{font-size:13px;font-weight:600;opacity:.75}
+#formalExamHost .uig .uig-rounds{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+#formalExamHost .uig .uig-round{border:1px solid rgba(127,127,127,.35);border-radius:12px;padding:10px 12px}
+#formalExamHost .uig .uig-row{display:flex;align-items:center;justify-content:space-between;gap:10px;min-width:0}
+#formalExamHost .uig .uig-row-label{min-width:0;overflow-wrap:anywhere}
+#formalExamHost .uig .uig-row-score{white-space:nowrap;font-variant-numeric:tabular-nums}
+#formalExamHost .uig .uig-round-actions{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+#formalExamHost .uig .uig-round-actions button{flex:1 1 auto;min-height:40px}
+#formalExamHost .uig .uig-reviews{list-style:none;margin:8px 0 0;padding:6px 0 0 10px;border-top:1px dashed rgba(127,127,127,.35);display:grid;gap:4px;font-size:14px}
+#formalExamHost .uig .uig-toolbar{display:flex!important;align-items:center;gap:10px;flex-wrap:wrap}
+#formalExamHost .uig .uig-exit{min-height:36px;padding:4px 10px}
+#formalExamHost .uig .uig-progress{margin:0;font-weight:700}
+#formalExamHost .uig .uig-progress b{font-size:18px}
+#formalExamHost .uig .uig-stage{position:relative;isolation:isolate;min-width:0}
+#formalExamHost .uig .uig-stage>.hanq-grade-burst.is-review-centered{position:absolute;inset:0;padding:0;align-items:center;z-index:2;pointer-events:none!important}
+#formalExamHost .uig .uig-stage>.is-review-centered svg{width:clamp(84px,22vw,136px)}
+#formalExamHost .uig .uig-feedback{font-weight:800;text-align:center;margin:8px 0}
+#formalExamHost .uig .uig-feedback.is-correct{color:#1f9d55}
+#formalExamHost .uig .uig-feedback.is-wrong{color:#d64545}
+html body #app#app#app #formalExamHost .uig .fe-choices button[data-review-mark=correct]{background:#1f9d55!important;color:#fff!important;opacity:1!important}
+html body #app#app#app #formalExamHost .uig .fe-choices button[data-review-mark=wrong]{background:#d64545!important;color:#fff!important;opacity:1!important}
+#formalExamHost .uig .fe-omr-cell.is-correct{outline:2px solid #1f9d55}
+#formalExamHost .uig .fe-omr-cell.is-wrong{outline:2px solid #d64545}
+#formalExamHost .uig .uig-omr .fe-omr-grid{grid-template-columns:repeat(auto-fill,minmax(52px,1fr))}
+#formalExamHost .uig .uig-explain{margin:10px 0;line-height:1.6}
+#formalExamHost .uig .uig-explain h3{font-size:15px;margin:10px 0 4px}
+#formalExamHost .uig .uig-option-notes{list-style:none;padding:0;margin:0;display:grid;gap:4px}
+#formalExamHost .uig .uig-result-score b{font-size:30px}
+#formalExamHost .uig .uig-breakdown{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:4px}
+#formalExamHost .uig .uig-breakdown li{display:flex;justify-content:space-between;gap:8px}
+#formalExamHost .uig .uig-breakdown .is-correct strong{color:#1f9d55}
+#formalExamHost .uig .uig-breakdown .is-wrong strong,#formalExamHost .uig .uig-breakdown .is-empty strong{color:#d64545}
+#formalExamHost .uig .uig-burst-stage{position:fixed!important;inset:0!important;pointer-events:none!important;z-index:30;background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;margin:0!important;min-height:0!important}
+#formalExamHost .uig .uig-burst-stage>.hanq-grade-burst.is-review-centered{position:absolute;inset:0;padding:0;align-items:center;justify-content:center;pointer-events:none!important}
+#formalExamHost .uig .uig-burst-stage>.is-review-centered svg{width:clamp(96px,26vw,150px)}
