@@ -30,11 +30,15 @@ function mount(host,o){
    return '<li class="uig-round"><div class="uig-row"><span class="uig-row-label">'+r.sequence+'회차 ('+scopeLabel(r.scope)+') · '+esc(kstDate(r.finalAt))+'</span><b class="uig-row-score">'+score(r.correct,r.total)+'</b></div>'+
     '<div class="uig-round-actions"><button type="button" class="tool-btn" data-review="'+esc(r.id)+'"'+(r.missed?'':' title="오답이 없으면 별표 문항만 다시 풀어요"')+'>오답·별표 다시 풀기</button><button type="button" class="tool-btn" data-pdf="questions" data-id="'+esc(r.id)+'" data-seq="'+r.sequence+'"'+(r.missed?'':' disabled')+'>오답 문제지 PDF</button><button type="button" class="tool-btn" data-pdf="answers" data-id="'+esc(r.id)+'" data-seq="'+r.sequence+'"'+(r.missed?'':' disabled')+'>오답 해설지 PDF</button></div>'+
     (r.reviews.length?'<ul class="uig-reviews" aria-label="'+r.sequence+'회차 복습 기록">'+r.reviews.map(function(v){return '<li class="uig-row"><span class="uig-row-label">복습 · '+esc(kstDate(v.finalAt))+'</span><b class="uig-row-score">'+score(v.correct,v.total)+'</b></li>';}).join('')+'</ul>':'')+'</li>';}).join('')+'</ol>';
-  paint('<p class="uig-lead">실전모의고사에서 틀린 문제만 모아 맞힐 때까지 다시 풀어요. 시간 제한은 없어요.</p>'+resume+'<div class="uig-start-area">'+start+'</div><p id="uigStatus" role="status"></p><section class="uig-history"><h2>제출 기록 <small>최근 10회</small></h2>'+rounds+'</section>');
+  paint('<p class="uig-lead">실전모의고사에서 틀린 문제만 모아 맞힐 때까지 다시 풀어요. 시간 제한은 없어요.</p>'+resume+'<div class="uig-start-area">'+start+'</div>'+(s.stars?'<div class="uig-star-tools"><button type="button" class="tool-btn" id="uigStarReset">별표 초기화 ('+s.stars+'개)</button><div id="uigStarConfirm"></div></div>':'')+'<p id="uigStatus" role="status">'+esc(ctx.flash||'')+'</p><section class="uig-history"><h2>제출 기록 <small>최근 10회</small></h2>'+rounds+'</section>');
   bind('#uigStart',function(){drawMenu(true);var b=host.querySelector('#uigAll:not([disabled]),#uigLast:not([disabled]),#uigClose');if(b)b.focus();});
   bind('#uigClose',function(){drawMenu(false);var b=host.querySelector('#uigStart');if(b)b.focus();});
   bind('#uigAll',function(){create('all');});bind('#uigLast',function(){create('last-wrong');});
-  bind('#uigResume',function(){open(act.id);});
+  bind('#uigResume',function(){open(act.id);});ctx.flash='';
+  bind('#uigStarReset',function(){var box=host.querySelector('#uigStarConfirm');box.innerHTML='<div role="alertdialog" aria-labelledby="uigStarTitle"><p id="uigStarTitle">별표 '+s.stars+'개를 모두 해제할까요? 실전모의고사·오답풀이·의금부에서 표시한 별표가 함께 지워지고, 별표만 있던 문제는 \'모든 문제 다시 풀기\'에서 빠져요. 되돌릴 수 없어요.</p><button type="button" class="check-one" id="uigStarYes">별표 모두 해제</button><button type="button" class="tool-btn" id="uigStarNo">취소</button></div>';
+   bind('#uigStarNo',function(){box.replaceChildren();var b=host.querySelector('#uigStarReset');if(b)b.focus();});
+   bind('#uigStarYes',function(){run(function(){return call('POST','/stars/reset',{confirmation:'RESET_STARS',resetAt:s.resetAt||null});},function(r){ctx.flash='별표 '+(r&&r.cleared||0)+'개를 해제했어요.';menu();},menu);});
+   host.querySelector('#uigStarYes').focus();});
   host.querySelectorAll('[data-review]').forEach(function(b){b.onclick=function(){review(b.dataset.review);};});
   host.querySelectorAll('[data-pdf]').forEach(function(b){b.onclick=function(){pdf(b.dataset.id,Number(b.dataset.seq),b.dataset.pdf,b);};});
  }

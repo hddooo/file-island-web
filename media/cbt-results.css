@@ -627,3 +627,9 @@ html[data-company-mode=on] body #app#app#app #formalExamHost #feRoundMaterials s
 html[data-company-mode=on] body #app#app#app #formalExamHost #feRoundMaterials svg.fe-round-verdict-mark{filter:none!important;opacity:.45!important}
 html[data-company-mode=on] body #app#app#app #formalExamHost #feRoundMaterials svg.fe-round-verdict-mark[data-result=correct] path{stroke:#1f6feb!important}
 html[data-company-mode=on] body #app#app#app #formalExamHost #feRoundMaterials svg.fe-round-verdict-mark[data-result=wrong] path{stroke:#e5484d!important}
+/* The terminal theme and company mode switch every animation off with !important; like the blank quiz, the O/X draw wins with higher specificity (reduced motion still respected). */
+html body #app#app#app#app #formalExamHost #feRoundMaterials .fe-round-verdict-mark path{stroke-dasharray:100!important}
+html body #app#app#app#app #formalExamHost #feRoundMaterials .fe-round-verdict-mark.is-drawing .mark-correct{animation:fe-verdict-draw 1s ease-out both!important}
+html body #app#app#app#app #formalExamHost #feRoundMaterials .fe-round-verdict-mark.is-drawing .mark-first{animation:fe-verdict-draw-first 1s ease-out both!important}
+html body #app#app#app#app #formalExamHost #feRoundMaterials .fe-round-verdict-mark.is-drawing .mark-second{animation:fe-verdict-draw-second 1s ease-out both!important}
+@media(prefers-reduced-motion:reduce){html body #app#app#app#app #formalExamHost #feRoundMaterials .fe-round-verdict-mark path{animation:none!important;stroke-dashoffset:0!important}}
