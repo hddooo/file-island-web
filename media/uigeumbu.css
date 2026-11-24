@@ -46,3 +46,44 @@ html body #app#app#app #formalExamHost .uig .fe-choices button[data-review-mark=
 #formalExamHost .uig .uig-star-tools{display:grid;justify-items:center;gap:8px;margin:-6px 0 12px}
 #formalExamHost .uig .uig-star-tools [role=alertdialog]{display:grid;gap:8px;max-width:420px;text-align:center}
 #formalExamHost .uig #uigStarYes{min-height:48px;border-radius:12px;background:#8a2020!important;color:#fff!important;border:2px solid #e5484d!important;font-weight:800}
+/* 회차 상세 */
+#formalExamHost .uig .uig-row-open{width:100%;background:none;border:0;padding:4px 0;color:inherit;font:inherit;text-align:left;cursor:pointer}
+#formalExamHost .uig .uig-row-open:hover .uig-row-label{text-decoration:underline}
+#formalExamHost .uig .uig-tabs{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 10px}
+#formalExamHost .uig .uig-tab[aria-selected=true]{background:#1f6f4a!important;color:#fff!important;border-color:#79e5a0!important}
+#formalExamHost .uig .uig-stat-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 0 10px}
+#formalExamHost .uig .uig-stat-cards p{margin:0;padding:10px;border:1px solid rgba(127,127,127,.35);border-radius:10px;text-align:center;display:grid;gap:2px}
+#formalExamHost .uig .uig-stat-cards b{font-size:22px}
+#formalExamHost .uig .uig-stat-cards span{font-size:12px;opacity:.8}
+#formalExamHost .uig .uig-era-table{width:100%;border-collapse:collapse}
+#formalExamHost .uig .uig-era-table :is(th,td){padding:6px 4px;border-bottom:1px solid rgba(127,127,127,.25);text-align:left;font-variant-numeric:tabular-nums}
+#formalExamHost .uig .uig-bar{display:inline-block;width:70px;height:8px;border-radius:4px;background:rgba(127,127,127,.3);vertical-align:middle;overflow:hidden}
+#formalExamHost .uig .uig-bar i{display:block;height:100%;background:#2fb36d}
+#formalExamHost .uig .uig-weak{margin:4px 0 8px}
+#formalExamHost .uig .uig-log-filter{display:flex;gap:6px;margin:0 0 8px}
+#formalExamHost .uig .uig-log-filter [aria-pressed=true]{background:#1f6f4a!important;color:#fff!important}
+#formalExamHost .uig .uig-log{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+#formalExamHost .uig .uig-log summary{display:grid;grid-template-columns:1.4em minmax(0,1fr);gap:2px 6px;cursor:pointer;padding:8px;border:1px solid rgba(127,127,127,.3);border-radius:10px}
+#formalExamHost .uig .uig-log-answer{grid-column:2;font-size:13px;opacity:.85}
+#formalExamHost .uig .uig-log-mark{font-weight:900}
+#formalExamHost .uig .is-correct .uig-log-mark{color:#1756b1}
+#formalExamHost .uig :is(.is-wrong,.is-unanswered) .uig-log-mark{color:#c81e1e}
+#formalExamHost .uig .uig-log-body{padding:6px 2px 10px}
+#formalExamHost .uig .uig-triple{color:#f5c518;letter-spacing:-2px;font-size:12px}
+#formalExamHost .uig .uig-notes-lead{margin:0 0 8px}
+#formalExamHost .uig .uig-note-era h3{font-size:16px;margin:14px 0 6px}
+#formalExamHost .uig .uig-note-era h3 small{font-size:12px;opacity:.75}
+#formalExamHost .uig .uig-note{border:1px solid rgba(127,127,127,.3);border-radius:10px;padding:8px 10px;margin:0 0 8px;line-height:1.6}
+#formalExamHost .uig .uig-note h4{margin:0 0 4px;font-size:14px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+#formalExamHost .uig .uig-note p{margin:2px 0}
+#formalExamHost .uig .uig-note-memo{padding-left:1em;opacity:.9}
+#formalExamHost .uig .uig-note-mine{color:#c81e1e}
+#formalExamHost .uig .uig-note-mine span{opacity:.9}
+#formalExamHost .uig .uig-note-flow{padding:4px 8px;border-left:3px solid #2fb36d;margin-top:4px!important}
+#formalExamHost .uig .uig-note-src{font-size:12px;opacity:.7}
+#formalExamHost .uig .uig-tag{font-size:11px;font-weight:800;padding:0 6px;border-radius:6px;border:1px solid currentColor}
+#formalExamHost .uig .uig-tag.is-wrong,#formalExamHost .uig .uig-tag.is-empty{color:#c81e1e}
+#formalExamHost .uig .uig-tag.is-triple{color:#d4a20a}
+html[data-company-mode=on] #formalExamHost .uig :is(.uig-note-mine,.uig-tag.is-wrong,.uig-tag.is-empty,.is-wrong .uig-log-mark,.is-unanswered .uig-log-mark){color:#ff5b65!important}
+html[data-company-mode=on] #formalExamHost .uig .is-correct .uig-log-mark{color:#58a6ff!important}
+#formalExamHost .uig .uig-row-open .uig-row-score::after{content:' ›';opacity:.7}
