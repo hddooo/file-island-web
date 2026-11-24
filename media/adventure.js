@@ -26,7 +26,7 @@
     var context = map || island === 'world' ? 'world' : island;
     document.body.classList.toggle('study-global-footer', signedIn && !login);
     if (!signedIn || login) { if (globalNav) globalNav.hidden = true; viewport(); return; }
-    var links = context === 'toeic' ? [['▤','Vocabulary','#toeic/notebook'],['✓','Practice','#toeic/wrongnotes'],['▦','Grammar','#toeic/grammar'],['♫','Listening','#toeic/player']] : context === 'history' ? [['▤','시대학습','#past-exams'],['▦','모의고사','#formal-exams'],['✓','오답','#wrongnotes']] : [['▤','한국사','#history'],['⌘','토익','#toeic/map'],['◉','My','#account']];
+    var links = context === 'toeic' ? [['▤','Vocabulary','#toeic/notebook'],['✓','Practice','#toeic/wrongnotes'],['▦','Grammar','#toeic/grammar'],['♫','Listening','#toeic/player']] : context === 'history' ? [['▤','시대학습','#past-exams'],['▦','모의고사','#formal-exams'],['✓','의금부','#wrongnotes']] : [['▤','한국사','#history'],['⌘','토익','#toeic/map'],['◉','My','#account']];
     if (!globalNav) { globalNav = document.createElement('nav'); globalNav.className='world-global-nav'; globalNav.setAttribute('aria-label','글로벌 학습 메뉴'); document.body.appendChild(globalNav);if(root.ResizeObserver){navResize=new ResizeObserver(viewport);navResize.observe(globalNav);} }
     var key = context + ':' + location.hash;
     if (globalNav.dataset.route !== key) {

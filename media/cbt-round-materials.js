@@ -303,13 +303,16 @@ function latest(owner,round){
 }
 function mount(host,options){
  var api=options.api,token=identity(api),alive=true,urls=[],off,resetOff,allItems=[],items=[],index=0,selected={},drafts={},data,submitted=false,storageFailed=false,markedOnly=false,marks=new Set(),refreshing=false,historyView=options.history===true,freshRequested=options.restart===true;
- var owner=api.state()&&api.state().ownerId,key=progressKey(owner,options.round);
- var marksKey=key&&progressKey(owner,'all')+':shared-double-stars',all=options.round==='all';
+ // provider: a server session (의금부) drives the same UI; it owns loading, answer checks, stars and submission.
+ var provider=options.provider||null;
+ var owner=api.state()&&api.state().ownerId,key=provider?null:progressKey(owner,options.round);
+ var marksKey=key&&progressKey(owner,'all')+':shared-double-stars',all=provider?true:options.round==='all';
  function questionSet(rows){return JSON.stringify((rows||items).map(function(q){return [q.questionId,q.version,q.options.map(function(o){return o.id;})];}));}
  function save(){
   if(!current()||historyView||!key||!items.length)return;
   try{root.localStorage.setItem(key+(markedOnly?':double-star-practice':''),JSON.stringify({resetAt:data.resetAt,questionSet:questionSet(),index:index,selected:selected,drafts:drafts,submitted:submitted}));storageFailed=false;}catch(_){storageFailed=true;}
  }
+ function moved(){if(provider&&provider.move)provider.move(index);}
  function restore(){
   if(!current()||historyView||!key||!items.length)return;
   try{
@@ -345,7 +348,9 @@ function mount(host,options){
  }
  function showMode(){
   items=markedOnly?allItems.filter(function(q){return marks.has(q.questionId);}):allItems;
-  index=0;selected={};drafts={};submitted=false;restore();if(submitted)score();else draw();
+  index=0;selected={};drafts={};submitted=false;restore();
+  if(provider){items.forEach(function(q){if(q.checked&&q.selectedOptionId)selected[q.questionId]=q.selectedOptionId;});var start=Number(provider.position)||0;index=Math.max(0,Math.min(start,items.length-1));}
+  if(submitted)score();else draw();
  }
  function icon(){
   var pair=section('span','fe-round-double-star');
@@ -413,12 +418,13 @@ function mount(host,options){
  function refreshMaterials(){
   if(!current()||refreshing)return Promise.resolve();
   refreshing=true;clear();var status=el('p','오답·별표 자료를 확인하고 있어요…');status.setAttribute('role','status');host.appendChild(status);
-  return load({api:api,round:options.round,isCurrent:current}).then(function(r){if(current())reset(r);return r;}).catch(function(){
+  return (provider?Promise.resolve(provider.load()):load({api:api,round:options.round,isCurrent:current})).then(function(r){if(current())reset(r);return r;}).catch(function(){
    if(!current())return;clear();host.appendChild(el('p','복습 자료를 다시 불러오지 못했어요.'));
    host.appendChild(button('다시 불러오기',refreshMaterials));host.appendChild(button('회차 목록',function(){stop();if(options.onBack)options.onBack();}));
   }).finally(function(){refreshing=false;});
  }
  async function currentMaterials(){
+  if(provider)return current();
   var fresh=await load({api:api,round:options.round,isCurrent:current});
   if(!current())return false;
   if(knownReset()>(Date.parse(fresh.resetAt)||0)){refreshMaterials();return false;}
@@ -426,11 +432,11 @@ function mount(host,options){
   return true;
  }
  function header(){
-  host.appendChild(el('h2',all?'전체 오답 다시 풀기':'제'+options.round+'회 오답 & 별표 문제 복습'));
+  host.appendChild(el('h2',provider?provider.title:all?'전체 오답 다시 풀기':'제'+options.round+'회 오답 & 별표 문제 복습'));
   if(storageFailed)host.appendChild(el('p','이 기기에 저장하지 못했어요. 화면을 닫기 전까지는 계속 풀 수 있어요.'));
   var tools=section('div','fe-round-review-top-actions');
-  tools.appendChild(button('회차 목록',function(){stop();if(options.onBack)options.onBack();}));
-  if(allItems.length&&!historyView){
+  tools.appendChild(button(provider?provider.backLabel||'의금부':'회차 목록',function(){stop();if(options.onBack)options.onBack();}));
+  if(allItems.length&&!historyView&&!provider){
    var filter=button(markedOnly?'전체 다시 보기':'쌍별만 다시 보기 ('+marks.size+')',function(){save();markedOnly=!markedOnly;saveMarks();showMode();});
    filter.dataset.roundStarFilter='';filter.setAttribute('aria-pressed',String(markedOnly));if(!markedOnly)filter.prepend(icon());tools.appendChild(filter);
   }
@@ -514,11 +520,13 @@ function mount(host,options){
   var q=items[index],at=index,chosen=selected[q.questionId],box=preservedImage||el('div'),heading=section('h3','fe-round-practice-position',(index+1)+'/'+items.length);
   heading.tabIndex=-1;heading.setAttribute('aria-label',(index+1)+'번째 / '+items.length+'문항 · 제'+q.exam+'회 '+q.number+'번');
   var mark=button('',function(){
+   if(provider){var want=!q.starred;mark.disabled=true;Promise.resolve(provider.star(q,want)).then(function(){q.starred=want;},function(){status.textContent='별표를 저장하지 못했어요. 다시 눌러 주세요.';}).then(function(){if(current()){mark.disabled=false;updateMark();}});return;}
    if(marks.has(q.questionId))marks.delete(q.questionId);else marks.add(q.questionId);
    saveMarks();updateMark();
   });
-  mark.classList.add('fe-round-review-mark');mark.appendChild(icon());
+  mark.classList.add('fe-round-review-mark');mark.appendChild(provider?section('span','fe-round-single-star','☆'):icon());
   function updateMark(){
+   if(provider){var star=!!q.starred,text=itemName(q)+' 별표 '+(star?'해제':'표시');mark.setAttribute('aria-label',text);mark.setAttribute('aria-pressed',String(star));mark.title=text;mark.firstChild.textContent=star?'★':'☆';return;}
    var on=marks.has(q.questionId),label=(all?'제'+q.exam+'회 ':'')+q.number+'번 쌍별 '+(on?'해제':'표시');
    mark.setAttribute('aria-label',label);mark.setAttribute('aria-pressed',String(on));mark.title=label;
    var filter=host.querySelector('[data-round-star-filter]');
@@ -528,7 +536,7 @@ function mount(host,options){
   var workspace=section('div','fe-exam-workspace fe-round-review-workspace'),stage=section('div','fe-round-review-stage'),scroll=section('div','fe-round-review-scroll');
   scroll.setAttribute('role','region');scroll.setAttribute('aria-label','원본 문제 이미지와 해설 · 세로 스크롤');scroll.tabIndex=0;
   toolbar.append(heading,currentAccuracy(),tools);
-  if(q.starred){
+  if(q.starred&&!provider){
    var savedStar=section('span','fe-round-saved-star','★ 원본 별표');
    savedStar.setAttribute('role','img');savedStar.setAttribute('aria-label','실전모의에서 저장된 별표');
    savedStar.title='실전모의에서 저장된 별표';tools.appendChild(savedStar);
@@ -565,7 +573,7 @@ function mount(host,options){
   });
   listToggle.classList.add('fe-round-practice-list-toggle');listToggle.setAttribute('aria-controls',list.id);listToggle.setAttribute('aria-expanded','false');tools.appendChild(listToggle);
   items.forEach(function(item,i){
-   var cell=control(button('',function(){if(i!==index){index=i;save();draw(true);}}),i===index);
+   var cell=control(button('',function(){if(i!==index){index=i;save();moved();draw(true);}}),i===index);
    cell.setAttribute('aria-current',i===index?'step':'false');listCells.push(cell);updateCell(i);grid.appendChild(cell);
   });
   list.appendChild(grid);host.insertBefore(list,workspace);
@@ -634,20 +642,21 @@ function mount(host,options){
   }
   var dock=section('div','fe-round-review-dock fe-exam-answer-side fe-full-answer-dock');
   if(index===items.length-1){
-   submit=control(button('최종 제출',function(){check(function(){items.forEach(function(item){var draft=drafts[item.questionId];if(!selected[item.questionId]&&draft)selected[item.questionId]=draft;});drafts={};submitted=true;save();saveLatest();score();});}),false);
+   submit=control(button('최종 제출',function(){if(provider){disable(true);var pending=items.filter(function(it){return !selected[it.questionId]&&drafts[it.questionId];});pending.reduce(function(p,it){return p.then(function(){return provider.answer(it,drafts[it.questionId]);}).then(function(){selected[it.questionId]=drafts[it.questionId];delete drafts[it.questionId];});},Promise.resolve()).then(function(){return provider.submit();}).then(function(result){if(!current())return;stop();if(provider.done)provider.done(result);},function(){if(current()){status.textContent='제출하지 못했어요. 다시 눌러 주세요.';disable(false);}});return;}check(function(){items.forEach(function(item){var draft=drafts[item.questionId];if(!selected[item.questionId]&&draft)selected[item.questionId]=draft;});drafts={};submitted=true;save();saveLatest();score();});}),false);
    var submitRow=section('div','fe-full-answer-submit');submitRow.appendChild(submit);dock.appendChild(submitRow);
   }
   var nav=section('nav','fe-round-review-nav fe-full-answer-row');
   nav.setAttribute('aria-label','복습 답 선택과 문제 이동');
   function rightAction(){
-   if(chosen){index++;save();draw(true);return;}
+   if(chosen){index++;save();moved();draw(true);return;}
    if(!drafts[q.questionId])return;
+   if(provider){disable(true);Promise.resolve(provider.answer(q,drafts[q.questionId])).then(function(){if(!current()||index!==at||!heading.isConnected)return;grade();draw(false,box,true);var result=host.querySelector('.fe-round-review-feedback');if(result)result.focus({preventScroll:true});},function(){if(current()&&heading.isConnected){status.textContent='답을 확인하지 못했어요. 다시 눌러 주세요.';disable(false);}});return;}
    check(function(){grade();save();draw(false,box,true);var result=host.querySelector('.fe-round-review-feedback');if(result)result.focus({preventScroll:true});});
   }
   nextButton=control(button(chosen?'›':'확인',rightAction),false);
   nextButton.classList.add('fe-round-review-right');nextButton.dataset.roundReviewAction=chosen?'next':'check';
   nextButton.setAttribute('aria-label',chosen?'다음 문제':'선택한 답 확인');
-  var previous=control(button('‹',function(){index--;save();draw(true);}),index===0);
+  var previous=control(button('‹',function(){index--;save();moved();draw(true);}),index===0);
   previous.classList.add('fe-round-review-prev');previous.setAttribute('aria-label','이전 문제');
   nav.append(previous,choices,nextButton);
   dock.prepend(nav);workspace.appendChild(dock);refreshChoice();if(preservedImage)scroll.scrollTop=scrollTop;if(chosen&&freshGrade)root.HanqGradeFeedback?.show(host,chosen===q.review.correctOptionId,{key:q.questionId+':'+q.version,centeredIn:stage});if(focus)heading.focus({preventScroll:true});
