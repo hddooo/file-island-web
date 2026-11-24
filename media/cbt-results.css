@@ -635,3 +635,8 @@ html body #app#app#app#app #formalExamHost #feRoundMaterials .fe-round-verdict-m
 @media(prefers-reduced-motion:reduce){html body #app#app#app#app #formalExamHost #feRoundMaterials .fe-round-verdict-mark path{animation:none!important;stroke-dashoffset:0!important}}
 html body #app #formalExamHost #feRoundMaterials .fe-round-review-mark .fe-round-triple-star{font-size:12px;letter-spacing:-2px;line-height:1;white-space:nowrap}
 html body #app #formalExamHost #feRoundMaterials .fe-round-review-mark[aria-pressed=true] .fe-round-triple-star{color:#f5c518}
+/* 2026-11-24: study-grounded explanations (지문 분석 · 보기 분석 · 결론) */
+html body #app #formalExamHost :is(.fe-study-explanation,.fe-round-review-explanation) :is(.fe-study-memo){margin:2px 0 0 1.4em!important;font-size:.92em;opacity:.85}
+html body #app #formalExamHost :is(.fe-study-explanation,.fe-round-review-explanation) .fe-study-flow{margin:4px 0 0!important;line-height:1.7}
+html body #app #formalExamHost :is(.fe-study-explanation,.fe-round-review-explanation) .fe-study-source{margin:6px 0 0!important;font-size:12px;opacity:.7}
+html body #app #formalExamHost .fe-study-explanation .fe-study-keyword{margin:2px 0 0!important}

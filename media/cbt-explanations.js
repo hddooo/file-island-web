@@ -20,6 +20,39 @@
         opts[i].text === o.text && opts[i].correct === o.correct && graded[i].id === o.id && graded[i].number === i + 1 && graded[i].correct === o.correct;
     });
   }
+  // Study-grounded explanations (지문 분석 · 보기 분석 · 결론) from the era study material, loaded per round for signed-in members.
+  var study = {}, studyRounds = {};
+  function studyFor(q) {
+    var e = q && q.questionId && study[q.questionId];
+    if (!e || !Array.isArray(e.options) || e.options.length !== 5 || !Array.isArray(e.passage)) return null;
+    var n = q.review && q.review.correctNumber;
+    return n && e.answer !== n ? null : e;
+  }
+  function loadStudy(api, rounds) {
+    if (!api || !api.cbt) return Promise.resolve();
+    var need = (rounds || []).filter(function (r, i, a) { return Number.isInteger(r) && r >= 67 && r <= 99 && a.indexOf(r) === i && !studyRounds[r]; });
+    return Promise.all(need.map(function (r) {
+      studyRounds[r] = Promise.resolve(api.cbt('GET', '/api/v1/cbt/study-explanations/' + r)).then(function (d) {
+        (d && Array.isArray(d.items) ? d.items : []).forEach(function (e) { if (e && typeof e.id === 'string') study[e.id] = e; });
+      }, function () { delete studyRounds[r]; });
+      return studyRounds[r];
+    }));
+  }
+  function renderStudy(q, e) {
+    var key = 'fe-exp-' + String(q.exam) + '-' + String(q.position).replace(/[^a-z0-9_-]/gi, ''), selected = q.selectedOptionId || null, ids = (q.options || []).map(function (o) { return o.id; });
+    var html = '<article class="fe-explanation fe-study-explanation" data-reviewed="true">' +
+      '<section class="fe-stem-analysis" aria-labelledby="' + key + '-stem"><h4 id="' + key + '-stem">지문 분석</h4>' + list(lines(e.passage)) + '</section>' +
+      '<section class="fe-option-analysis" aria-labelledby="' + key + '-options"><h4 id="' + key + '-options">보기 분석</h4><ol>';
+    html += e.options.map(function (p, i) {
+      var good = p.number === e.answer, chosen = ids[i] && ids[i] === selected;
+      return '<li class="fe-exp-option ' + (good ? 'is-correct' : 'is-incorrect') + (chosen ? ' is-selected' : '') + '">' +
+        '<p class="fe-exp-option-heading"><b>' + '①②③④⑤'[i] + '</b><span>' + (good ? '정답' : '오답') + (chosen ? ' · 내가 고른 답' : '') + '</span></p>' +
+        '<p class="fe-study-keyword">' + md(p.keyword || '') + '</p>' + (p.memo ? '<p class="fe-study-memo">' + md(p.memo) + '</p>' : '') + '</li>';
+    }).join('');
+    return html + '</ol></section><section class="fe-exp-conclusion" aria-labelledby="' + key + '-conclusion"><h4 id="' + key + '-conclusion">결론</h4>' +
+      '<p class="fe-exp-answer"><b>정답 ' + '①②③④⑤'[e.answer - 1] + '</b></p>' + (e.flow ? '<p class="fe-study-flow">' + md(e.flow) + '</p>' : '') +
+      (e.source ? '<p class="fe-study-source">근거: 성균관 시대별 학습 · ' + esc(e.source) + '</p>' : '') + '</section></article>';
+  }
   function resolve(q, status) {
     if (status !== 'final') return null;
     var data = root.HANQ_CBT_EXPLANATIONS, extra = root.HANQ_CBT_EXPLANATIONS_80, previous = root.HANQ_CBT_EXPLANATIONS_67_69;
@@ -620,6 +653,8 @@
   }
   function reviewParts(q, status) {
     if(status!=='final'||!q||!q.review)return null;
+    var studied=studyFor(q);
+    if(studied)return {stem:lines(studied.passage),conclusion:studied.flow||'',extra:[],answer:'정답 '+'①②③④⑤'[studied.answer-1],study:studied};
     var entry=resolve(q,status), saved=q.review.item;
     if(!entry&&!matching(q,saved))return null;
     var item=entry||saved;
@@ -641,6 +676,8 @@
   }
   function render(q, legacy, status) {
     if (status !== 'final' || !q || !q.review) return '';
+    var studied = studyFor(q);
+    if (studied) return renderStudy(q, studied);
     var entry = resolve(q, status), item = entry || q.review.item || {}, o = entry ? groundedOverview(entry) : item.overview || {}, opts = array(item.options);
     // Unknown/old schemas keep the established renderer; never substitute another question.
     if (!lines(o.reason).length || !optionsValid(opts)) {
@@ -692,5 +729,5 @@
         correctNumber:number, correctOptionId:correctId, options:options} };
     return resolve(q, 'final') ? render(q, null, 'final') : '';
   }
-  root.HanqCbtExplanations = { resolve: resolve, render: render, renderGraded: renderGraded, groundedOverview: groundedOverview, reviewParts: reviewParts };
+  root.HanqCbtExplanations = { resolve: resolve, render: render, renderGraded: renderGraded, groundedOverview: groundedOverview, reviewParts: reviewParts, studyFor: studyFor, loadStudy: loadStudy };
 })(window);

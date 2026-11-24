@@ -424,7 +424,7 @@ function mount(host,options){
  function refreshMaterials(){
   if(!current()||refreshing)return Promise.resolve();
   refreshing=true;clear();var status=el('p','오답·별표 자료를 확인하고 있어요…');status.setAttribute('role','status');host.appendChild(status);
-  return (provider?Promise.resolve(provider.load()):load({api:api,round:options.round,isCurrent:current})).then(function(r){if(current())reset(r);return r;}).catch(function(){
+  return (provider?Promise.resolve(provider.load()):load({api:api,round:options.round,isCurrent:current})).then(function(r){var ex=root.HanqCbtExplanations;return Promise.resolve(ex&&ex.loadStudy?ex.loadStudy(api,(r.items||[]).map(function(q){return q.exam;})):null).catch(function(){}).then(function(){return r;});}).then(function(r){if(current())reset(r);return r;}).catch(function(){
    if(!current())return;clear();host.appendChild(el('p','복습 자료를 다시 불러오지 못했어요.'));
    host.appendChild(button('다시 불러오기',refreshMaterials));host.appendChild(button('회차 목록',function(){stop();if(options.onBack)options.onBack();}));
   }).finally(function(){refreshing=false;});
@@ -629,22 +629,28 @@ function mount(host,options){
     });
     return node;
    }
+   var studied=parts&&parts.study;
    var stem=section('section','fe-round-review-stem');
-   stem.appendChild(el('h4','지문 해설'));
+   stem.appendChild(el('h4',studied?'지문 분석':'지문 해설'));
    if(parts&&parts.stem.length){
     var lines=el('ul');parts.stem.forEach(function(line){lines.appendChild(markedText('li',line));});stem.appendChild(lines);
    }else stem.appendChild(el('p','이 문항의 지문 해설을 확인하지 못했어요.'));
    answer.appendChild(stem);
    var optionArea=section('section','fe-round-review-options');
-   optionArea.appendChild(el('h4','보기별 해설'));
+   optionArea.appendChild(el('h4',studied?'보기 분석':'보기별 해설'));
    var notes=section('ol','fe-round-review-option-notes');
-   choiceNotes(q).forEach(function(text,i){
+   if(studied)studied.options.forEach(function(o,i){
+    var line=el('li'),good=o.number===studied.answer;line.className=good?'is-correct':'is-incorrect';line.append(el('strong','①②③④⑤'[i]),el('span',good?' 정답 ':' 오답 '),markedText('span',o.keyword||''));
+    if(o.memo){var memo=markedText('p',o.memo);memo.className='fe-study-memo';line.appendChild(memo);}notes.appendChild(line);
+   });
+   else choiceNotes(q).forEach(function(text,i){
     var line=el('li');line.append(el('strong','①②③④⑤'[i]),el(q.options[i].id===q.review.correctOptionId?'strong':'span',text));notes.appendChild(line);
    });
    optionArea.appendChild(notes);answer.appendChild(optionArea);
    var conclusion=section('section','fe-round-review-conclusion');
    conclusion.append(el('h4','결론'),el('strong','정답 '+'①②③④⑤'[q.review.correctNumber-1]));
-   if(parts&&(parts.conclusion||parts.answer))conclusion.appendChild(markedText('p',parts.conclusion||parts.answer));
+   if(studied){if(studied.flow){var flow=markedText('p',studied.flow);flow.className='fe-study-flow';conclusion.appendChild(flow);}if(studied.source){var src=el('p','근거: 성균관 시대별 학습 · '+studied.source);src.className='fe-study-source';conclusion.appendChild(src);}}
+   else if(parts&&(parts.conclusion||parts.answer))conclusion.appendChild(markedText('p',parts.conclusion||parts.answer));
    answer.appendChild(conclusion);
    scroll.appendChild(answer);
   }
