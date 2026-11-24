@@ -401,6 +401,12 @@ function mount(host,options){
  }
  async function image(q,path,box,version,trim){try{var blob=await api.cbtImage(path);if(!current()||index!==version||!box.isConnected)return;if(!blob||!/^image\/(png|jpeg|webp)$/.test(blob.type))throw Error();var u=root.URL.createObjectURL(blob);urls.push(u);var img=el('img');img.className='mock-image';img.setAttribute('data-company-exam-image','');if(trim)img.onload=function(){if(current()&&index===version&&box.isConnected)trimQuestionBottom(q,img,box);};img.src=u;img.alt='제'+q.exam+'회 '+q.number+'번 원본 문제';img.style.maxWidth='100%';img.onerror=function(){if(current()&&box.isConnected)box.appendChild(el('p','제'+q.exam+'회 '+q.number+'번 원본 이미지를 표시하지 못했어요. 회차를 다시 열어 주세요. 계속 실패하면 이 문항의 원본 연결을 복구해 주세요.'));};box.appendChild(img);}catch(_){if(current()&&index===version&&box.isConnected)box.appendChild(el('p','제'+q.exam+'회 '+q.number+'번 원본 이미지를 불러오지 못했어요. 회차를 다시 열어 주세요. 계속 실패하면 이 문항의 원본 연결·접근 상태를 복구해 주세요.'));}}
  function section(tag,cls,text){var e=el(tag,text);e.className=cls;return e;}
+ // Same hand-drawn O/X as the blank (빈칸) quiz: drawn once on a fresh check, then kept semi-transparent over the question.
+ function verdictMark(correct){
+  var doc=host.ownerDocument,svg=doc.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('class','fe-round-verdict-mark');svg.setAttribute('viewBox','0 0 32 32');svg.setAttribute('aria-hidden','true');svg.setAttribute('focusable','false');svg.dataset.result=correct?'correct':'wrong';
+  (correct?[['mark-correct','M 25 8 C 19 2 9 3 5 12 C 1 22 10 29 21 25 C 29 22 30 11 23 6 C 17 2 8 5 5 12 C 2 21 13 29 28 27'],['mark-correct mark-texture','M 23 6 C 16 3 8 7 6 14 M 7 23 C 13 28 23 26 27 20']]:[['mark-wrong mark-first','M 6 6 C 12 10 18 20 26 26'],['mark-wrong mark-second','M 26 6 C 21 12 12 20 6 26']]).forEach(function(spec){var p=doc.createElementNS(svg.namespaceURI,'path');p.setAttribute('class',spec[0]);p.setAttribute('d',spec[1]);p.setAttribute('pathLength','100');svg.appendChild(p);});
+  return svg;
+ }
  function knownReset(){
   var resets=root.HanqLearningReset,at=resets&&resets.cutoff?resets.cutoff(String(owner),'history'):0;
   return Number.isFinite(at)?at:0;
@@ -563,8 +569,10 @@ function mount(host,options){
   function itemName(item){return (all?'제'+item.exam+'회 ':'')+item.number+'번';}
   function updateCell(i){
    var item=items[i],cell=listCells[i],answer=selected[item.questionId],draft=drafts[item.questionId];
-   var state=answer?(answer===item.review.correctOptionId?'O':'X'):draft?'선택':'미풀이';
-   cell.textContent=itemName(item)+' · '+state;
+   var state=answer?(answer===item.review.correctOptionId?'correct':'wrong'):draft?'draft':'empty';
+   cell.dataset.state=state;cell.replaceChildren(host.ownerDocument.createTextNode(itemName(item)+' '));
+   var tag=section('span','fe-round-cell-mark',state==='correct'?'○':state==='wrong'?'×':state==='draft'?'선택':'미풀이');cell.appendChild(tag);
+   cell.setAttribute('aria-label',itemName(item)+' · '+(state==='correct'?'정답':state==='wrong'?'오답':state==='draft'?'선택함':'미풀이'));
   }
   var list=section('div','fe-round-practice-list'),grid=section('div','fe-round-practice-grid');
   list.id='feRoundPracticeList';list.hidden=true;
@@ -659,7 +667,7 @@ function mount(host,options){
   var previous=control(button('‹',function(){index--;save();moved();draw(true);}),index===0);
   previous.classList.add('fe-round-review-prev');previous.setAttribute('aria-label','이전 문제');
   nav.append(previous,choices,nextButton);
-  dock.prepend(nav);workspace.appendChild(dock);refreshChoice();if(preservedImage)scroll.scrollTop=scrollTop;if(chosen&&freshGrade)root.HanqGradeFeedback?.show(host,chosen===q.review.correctOptionId,{key:q.questionId+':'+q.version,centeredIn:stage});if(focus)heading.focus({preventScroll:true});
+  dock.prepend(nav);workspace.appendChild(dock);refreshChoice();if(preservedImage)scroll.scrollTop=scrollTop;var questionArea=box.querySelector('.fe-round-question-image');if(questionArea){var oldMark=questionArea.querySelector('.fe-round-verdict-mark');if(oldMark)oldMark.remove();if(chosen){var verdict=verdictMark(chosen===q.review.correctOptionId);questionArea.appendChild(verdict);if(freshGrade){void verdict.getBoundingClientRect();verdict.classList.add('is-drawing');}}}if(focus)heading.focus({preventScroll:true});
  }
  off=api.onChange?api.onChange(function(){if(!current())stop();}):null;
  resetOff=root.HanqLearningReset&&root.HanqLearningReset.onChange?root.HanqLearningReset.onChange(resetChanged):null;

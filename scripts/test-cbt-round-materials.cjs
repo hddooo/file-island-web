@@ -28,7 +28,7 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  const nav=()=>[...host.querySelectorAll('nav > button')].map(b=>b.textContent);
  const jump=n=>host.querySelectorAll('.fe-round-practice-grid>button')[n-1].click();
  const check=async()=>{btn('확인').click();await tick();};
- const handMark=()=>host.querySelector('.fe-round-review-stage > .hanq-grade-burst.is-review-centered');
+ const handMark=()=>host.querySelector('.fe-round-question-image > .fe-round-verdict-mark');
  const css=fs.readFileSync('media/cbt-results.css','utf8');assert(css.includes('.hanq-grade-burst.is-review-centered')&&fs.readFileSync('media/grade-feedback.css','utf8').includes('prefers-reduced-motion:reduce'));
  assert.equal(host.querySelector('.fe-round-practice-accuracy').textContent,'정답률 —');assert(!host.querySelector('progress'));assert(host.querySelector('#feRoundPracticeList').hidden);btn('문제 목록').click();assert(!host.querySelector('#feRoundPracticeList').hidden);
  assert.deepEqual(nav(),['‹','확인']);assert(btn('이전').disabled&&btn('확인').disabled);assert(!btn('최종 제출'));
@@ -40,7 +40,7 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  assert.equal(btn('2').getAttribute('aria-pressed'),'true');assert(!btn('2').disabled);
  assert(host.querySelector('.fe-round-practice-grid button').textContent.includes('선택'));
  await check();assert(host.textContent.includes('오답 · 내 선택 2번 · 정답 1번'));assert(host.textContent.includes('1/3'));
- assert(handMark().classList.contains('is-wrong'));assert.equal(handMark().getAttribute('aria-hidden'),'true');assert.equal(handMark().querySelectorAll('.hgf-first,.hgf-second').length,2);
+ assert.equal(handMark().dataset.result,'wrong');assert(handMark().classList.contains('is-drawing'));assert.equal(handMark().getAttribute('aria-hidden'),'true');assert.equal(handMark().querySelectorAll('.mark-first,.mark-second').length,2);
  assert(btn('1').disabled&&btn('2').getAttribute('aria-pressed')==='true');assert.equal(btn('2').querySelector('.fe-round-choice-indicator').textContent,'×');assert.equal(host.querySelectorAll('[data-review-mark]').length,1);
  assert.equal(host.querySelectorAll('.fe-round-review-option-notes li').length,5);assert(host.textContent.includes('확인된 해설 없음'));
  assert.equal(host.querySelectorAll('.fe-round-review-option-notes li')[0].lastElementChild.tagName,'STRONG');assert.equal(host.querySelectorAll('.fe-round-review-option-notes li')[1].lastElementChild.tagName,'SPAN');
@@ -48,8 +48,8 @@ const fixture=(number)=>({questionId:'exam-80-'+String(number).padStart(2,'0'),v
  const mark=()=>host.querySelector('.fe-round-review-mark'),filter=()=>host.querySelector('[data-round-star-filter]');
  assert.equal(mark().querySelectorAll('.fe-round-double-star>span').length,2);mark().click();assert.equal(mark().getAttribute('aria-pressed'),'true');
  btn('다음').click();btn('1').click();await tick();assert(!host.textContent.includes('정답 1번'));
- btn('이전').click();assert.match(host.querySelector('.fe-round-review-feedback').textContent,/^오답 · 내 선택/);assert.equal(handMark(),null);btn('다음').click();assert.equal(handMark(),null);assert.equal(btn('1').getAttribute('aria-pressed'),'true');assert(!btn('1').disabled);
- await check();assert(handMark().classList.contains('is-right'));assert.equal(handMark().querySelectorAll('.hgf-correct').length,2);assert.match(host.querySelector('.fe-round-review-feedback').textContent,/^정답 · 내 선택/);assert(host.textContent.includes('2/3'));assert.equal(btn('1').querySelector('.fe-round-choice-indicator').textContent,'✓');assert.equal(host.querySelector('.fe-round-practice-accuracy').textContent,'정답률 50%');
+ btn('이전').click();assert.match(host.querySelector('.fe-round-review-feedback').textContent,/^오답 · 내 선택/);assert.equal(handMark().dataset.result,'wrong','a checked question keeps its mark');assert(!handMark().classList.contains('is-drawing'),'revisiting does not redraw');btn('다음').click();assert.equal(handMark(),null);assert.equal(btn('1').getAttribute('aria-pressed'),'true');assert(!btn('1').disabled);
+ await check();assert.equal(handMark().dataset.result,'correct');assert.equal(handMark().querySelectorAll('.mark-correct').length,2);assert.match(host.querySelector('.fe-round-review-feedback').textContent,/^정답 · 내 선택/);assert(host.textContent.includes('2/3'));assert.equal(btn('1').querySelector('.fe-round-choice-indicator').textContent,'✓');assert.equal(host.querySelector('.fe-round-practice-accuracy').textContent,'정답률 50%');
  btn('다음').click();assert(host.textContent.includes('3/3'));
  ctl.stop();ctl=w.HanqCbtRoundMaterials.mount(host,{api,round:80});await ctl.ready;assert(host.textContent.includes('3/3'));
  filter().click();assert(host.textContent.includes('1/1'));assert.equal(mark().getAttribute('aria-pressed'),'true');

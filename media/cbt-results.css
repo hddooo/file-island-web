@@ -600,3 +600,30 @@ html body #app #formalExamHost #feRoundMaterials .fe-round-review-dock .fe-round
 #feRoundMaterials .fe-round-choice-indicator{
  display:block;flex:none;font-size:11px!important;line-height:1!important;white-space:nowrap;
 }
+
+/* 2026-11-24: O/X over the question, the same hand-drawn mark as the blank quiz. Blue O correct, red X wrong. */
+#feRoundMaterials .fe-round-question-image{position:relative}
+#feRoundMaterials .fe-round-verdict-mark{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:clamp(120px,42%,240px);height:auto;aspect-ratio:1/1;margin:0;opacity:.36;z-index:3;pointer-events:none;overflow:visible}
+#feRoundMaterials .fe-round-verdict-mark path{fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:100;stroke-dashoffset:0}
+#feRoundMaterials .fe-round-verdict-mark .mark-texture{stroke-width:1;opacity:.45}
+#feRoundMaterials .fe-round-verdict-mark[data-result=correct]{color:#1756b1}
+#feRoundMaterials .fe-round-verdict-mark[data-result=wrong]{color:#c81e1e}
+@keyframes fe-verdict-draw{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}
+@keyframes fe-verdict-draw-first{0%{stroke-dashoffset:100}50%,100%{stroke-dashoffset:0}}
+@keyframes fe-verdict-draw-second{0%,45%{stroke-dashoffset:100}100%{stroke-dashoffset:0}}
+#feRoundMaterials .fe-round-verdict-mark.is-drawing .mark-correct{animation:fe-verdict-draw 1s ease-out both}
+#feRoundMaterials .fe-round-verdict-mark.is-drawing .mark-first{animation:fe-verdict-draw-first 1s ease-out both}
+#feRoundMaterials .fe-round-verdict-mark.is-drawing .mark-second{animation:fe-verdict-draw-second 1s ease-out both}
+@media(prefers-reduced-motion:reduce){#feRoundMaterials .fe-round-verdict-mark path{animation:none!important;stroke-dashoffset:0}}
+html[data-company-mode=on] #feRoundMaterials .fe-round-verdict-mark[data-result=correct]{color:#58a6ff!important}
+html[data-company-mode=on] #feRoundMaterials .fe-round-verdict-mark[data-result=wrong]{color:#ff5b65!important}
+html body #app #formalExamHost #feRoundMaterials .fe-round-practice-grid .fe-round-cell-mark{font-weight:900;margin-left:2px}
+html body #app #formalExamHost #feRoundMaterials .fe-round-practice-grid [data-state=correct] .fe-round-cell-mark{color:#1756b1!important;font-size:1.25em}
+html body #app #formalExamHost #feRoundMaterials .fe-round-practice-grid [data-state=wrong] .fe-round-cell-mark{color:#c81e1e!important;font-size:1.25em}
+html body #app #formalExamHost #feRoundMaterials .fe-round-practice-grid :is([data-state=draft],[data-state=empty]) .fe-round-cell-mark{font-weight:600;opacity:.75}
+html[data-company-mode=on] body #app #formalExamHost #feRoundMaterials .fe-round-practice-grid [data-state=correct] .fe-round-cell-mark{color:#58a6ff!important}
+html[data-company-mode=on] body #app #formalExamHost #feRoundMaterials .fe-round-practice-grid [data-state=wrong] .fe-round-cell-mark{color:#ff5b65!important}
+html[data-company-mode=on] body #app#app#app #formalExamHost #feRoundMaterials svg.fe-round-verdict-mark,html[data-company-mode=on][data-company-history] body #app#app#app #feRoundMaterials svg.fe-round-verdict-mark{display:block!important;visibility:visible!important}
+html[data-company-mode=on] body #app#app#app #formalExamHost #feRoundMaterials svg.fe-round-verdict-mark{filter:none!important;opacity:.45!important}
+html[data-company-mode=on] body #app#app#app #formalExamHost #feRoundMaterials svg.fe-round-verdict-mark[data-result=correct] path{stroke:#1f6feb!important}
+html[data-company-mode=on] body #app#app#app #formalExamHost #feRoundMaterials svg.fe-round-verdict-mark[data-result=wrong] path{stroke:#e5484d!important}
