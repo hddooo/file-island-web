@@ -633,3 +633,5 @@ html body #app#app#app#app #formalExamHost #feRoundMaterials .fe-round-verdict-m
 html body #app#app#app#app #formalExamHost #feRoundMaterials .fe-round-verdict-mark.is-drawing .mark-first{animation:fe-verdict-draw-first 1s ease-out both!important}
 html body #app#app#app#app #formalExamHost #feRoundMaterials .fe-round-verdict-mark.is-drawing .mark-second{animation:fe-verdict-draw-second 1s ease-out both!important}
 @media(prefers-reduced-motion:reduce){html body #app#app#app#app #formalExamHost #feRoundMaterials .fe-round-verdict-mark path{animation:none!important;stroke-dashoffset:0!important}}
+html body #app #formalExamHost #feRoundMaterials .fe-round-review-mark .fe-round-triple-star{font-size:12px;letter-spacing:-2px;line-height:1;white-space:nowrap}
+html body #app #formalExamHost #feRoundMaterials .fe-round-review-mark[aria-pressed=true] .fe-round-triple-star{color:#f5c518}
