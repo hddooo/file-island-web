@@ -647,3 +647,7 @@ html body #app #formalExamHost .fe-study-explanation .fe-study-keyword{margin:2p
 #feRoundMaterials .fe-round-review-option-notes li.is-incorrect .fe-study-verdict{color:#c81e1e}
 html[data-company-mode=on] #feRoundMaterials .fe-round-review-option-notes li.is-correct .fe-study-verdict{color:#58a6ff!important}
 html[data-company-mode=on] #feRoundMaterials .fe-round-review-option-notes li.is-incorrect .fe-study-verdict{color:#ff5b65!important}
+
+/* 최근 점수 아래 풀이 날짜(11/25): 작게 회색으로 */
+html body #app#app#app #formalExamHost .fe-recent-scores button.fe-score{flex-direction:column!important;gap:1px!important;line-height:1.15!important}
+html body #app#app#app #formalExamHost .fe-recent-scores .fe-score .fe-score-date{display:block;font-size:10px!important;font-weight:400!important;color:#8b949e!important;letter-spacing:0}
