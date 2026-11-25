@@ -6,9 +6,8 @@ function esc(x){return String(x==null?'':x).replace(/[&<>"']/g,function(c){retur
 /* 한국 시간 2026/11/23 (월) */
 function kstDate(iso){var t=Date.parse(iso);if(!Number.isFinite(t))return '';var d=new Date(t+9*3600e3),p=function(n){return String(n).padStart(2,'0');};return d.getUTCFullYear()+'/'+p(d.getUTCMonth()+1)+'/'+p(d.getUTCDate())+' ('+WEEK[d.getUTCDay()]+')';}
 function score(correct,total){return total>0?Math.round(correct/total*100)+'% ('+correct+'/'+total+')':'0% (0/0)';}
-/* 최근 실전모의고사 한 회의 오답(미응답 포함)+그 시험에서 친 별표 */
-function mockButton(m){var d=m&&m.finalAt?new Date(m.finalAt):null,day=d&&Number.isFinite(d.getTime())?new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',month:'numeric',day:'numeric'}).formatToParts(d).reduce(function(o,p){o[p.type]=p.value;return o;},{}):null;
- return '<button type="button" class="check-one" id="uigMock"'+(m&&m.total?'':' disabled')+'>최근 실전모의고사 오답·별표 다시 풀기<small>'+(m?'제'+m.round+'회'+(day?' ('+day.month+'/'+day.day+')':'')+' · 오답 '+m.wrong+' · 별표 '+m.starred+' → '+m.total+'문항':'제출한 실전모의고사가 아직 없어요')+'</small></button>';}
+/* 실전모의고사 회차마다 가장 최근에 본 시험의 오답(미응답 포함)+그 시험에서 친 별표 */
+function mockButton(m){return '<button type="button" class="check-one" id="uigMock"'+(m&&m.total?'':' disabled')+'>실전모의고사 회차별 최근 오답 다시 풀기<small>'+(m?m.rounds+'개 회차의 최근 시험 · 오답 '+m.wrong+(m.starred?' · 별표 '+m.starred:'')+' → '+m.total+'문항':'제출한 실전모의고사가 아직 없어요')+'</small></button>';}
 function scopeLabel(s){return s==='last-wrong'?'직전오답':s==='mock-wrong'?'실전오답':s==='round-review'?'복습':'전체';}
 function stop(){if(!active)return;var c=active;active=null;c.alive=false;clearTimeout(c.posTimer);if(c.materials){c.materials.stop();c.materials=null;}c.urls.forEach(function(u){root.URL.revokeObjectURL(u);});if(c.host)c.host.onkeydown=null;if(root.HanqGradeFeedback)root.HanqGradeFeedback.clear(c.host);}
 function mount(host,o){
@@ -20,7 +19,7 @@ function mount(host,o){
  function paint(body,extra){if(!valid())return;if(ctx.materials){var m=ctx.materials;ctx.materials=null;m.stop();}release();host.onkeydown=null;host.innerHTML='<section class="panel formal-exams uig'+(extra?' '+extra:'')+'"><div class="fe-top"><h1>의금부</h1><div class="fe-top-actions">'+(ctx.data?'<button type="button" class="tool-btn" id="uigMenu">의금부 처음으로</button>':o.onHome?'<button type="button" class="tool-btn" id="uigHome">⌂ 메인 메뉴</button>':'')+'</div></div>'+body+'</section>';bind('#uigMenu',menu);bind('#uigHome',function(){stop();o.onHome();});}
  function bind(sel,fn){var e=host.querySelector(sel);if(e)e.onclick=fn;}
  function note(text,alert){var e=host.querySelector('#uigStatus');if(e){e.textContent=text||'';e.setAttribute('role',alert?'alert':'status');}}
- function fail(e,retry){if(!valid())return;var code=e&&e.code,msg=code==='review_empty'?'다시 풀 오답이 없어요. 실전모의고사를 풀고 오면 틀린 문제가 여기에 모여요.':code==='no_previous_round'?'아직 제출한 의금부 회차가 없어요. 먼저 모든 문제 다시 풀기로 한 회차를 풀어 주세요.':code==='no_mock_round'?'아직 제출한 실전모의고사가 없어요. 실전모의고사를 한 회 풀고 오면 그 회차의 오답·별표로 풀 수 있어요.':code==='schema_not_ready'?'의금부 기록 저장 준비가 아직 끝나지 않았어요. 잠시 후 다시 열어 주세요.':code==='asset_unavailable'?'원본 문제 이미지를 확인하지 못했어요. 잠시 후 다시 시도해 주세요.':code==='session_closed'?'이미 제출한 회차예요.':e&&e.status===404?'의금부 기록을 찾지 못했어요.':'불러오거나 저장하지 못했어요. 다시 확인해 주세요.';paint('<p role="alert">'+esc(msg)+'</p><button type="button" class="tool-btn" id="uigRetry">다시 확인</button>');bind('#uigRetry',retry||menu);}
+ function fail(e,retry){if(!valid())return;var code=e&&e.code,msg=code==='review_empty'?'다시 풀 오답이 없어요. 실전모의고사를 풀고 오면 틀린 문제가 여기에 모여요.':code==='no_previous_round'?'아직 제출한 의금부 회차가 없어요. 먼저 모든 문제 다시 풀기로 한 회차를 풀어 주세요.':code==='no_mock_round'?'아직 제출한 실전모의고사가 없어요. 실전모의고사를 풀고 오면 회차마다 최근 시험의 오답으로 풀 수 있어요.':code==='schema_not_ready'?'의금부 기록 저장 준비가 아직 끝나지 않았어요. 잠시 후 다시 열어 주세요.':code==='asset_unavailable'?'원본 문제 이미지를 확인하지 못했어요. 잠시 후 다시 시도해 주세요.':code==='session_closed'?'이미 제출한 회차예요.':e&&e.status===404?'의금부 기록을 찾지 못했어요.':'불러오거나 저장하지 못했어요. 다시 확인해 주세요.';paint('<p role="alert">'+esc(msg)+'</p><button type="button" class="tool-btn" id="uigRetry">다시 확인</button>');bind('#uigRetry',retry||menu);}
  function run(fn,then,retry){if(ctx.busy||!valid())return;ctx.busy=true;host.setAttribute('aria-busy','true');return Promise.resolve().then(fn).then(function(d){ctx.busy=false;host.removeAttribute('aria-busy');if(valid())then(d);},function(e){ctx.busy=false;host.removeAttribute('aria-busy');if(!valid())return;if(e&&e.status===401){paint('<p>로그인한 계정으로 다시 열어 주세요.</p>');return;}fail(e,retry);});}
 
  /* ---------- 첫 화면 ---------- */
@@ -58,7 +57,7 @@ function mount(host,o){
  function practice(d){
   var s=d.session,M=root.HanqCbtRoundMaterials;paint('<div id="feRoundMaterials"></div>');var target=host.querySelector('#feRoundMaterials');
   if(!M){target.textContent='풀이 화면을 불러오지 못했어요. 새로고침해 주세요.';return;}
-  var title=s.scope==='round-review'?'회차 복습 · 오답·별표':s.scope==='last-wrong'?'직전 회차 오답 다시 풀기':s.scope==='mock-wrong'?'최근 실전모의고사 오답·별표 다시 풀기':'모든 문제 다시 풀기 · 오답·별표';
+  var title=s.scope==='round-review'?'회차 복습 · 오답·별표':s.scope==='last-wrong'?'직전 회차 오답 다시 풀기':s.scope==='mock-wrong'?'실전모의고사 회차별 최근 오답 다시 풀기':'모든 문제 다시 풀기 · 오답·별표';
   var submitKey=key();
   ctx.materials=M.mount(target,{api:api,onBack:function(){Promise.resolve(ctx.queue).then(menu,menu);},provider:{title:title,backLabel:'의금부',position:(function(){var open=d.items.findIndex(function(q){return !q.checked;});return open<0?s.currentPosition:open;})(),
    starLabel:'3별',
