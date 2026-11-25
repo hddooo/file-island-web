@@ -9,6 +9,7 @@ function fixture(handler,signedIn=true,detail=null){
  Object.defineProperty(w.crypto,'subtle',{value:require('node:crypto').webcrypto.subtle});w.TextEncoder=TextEncoder;
  w.HTMLDialogElement.prototype.showModal=function(){this.open=true;};w.HTMLDialogElement.prototype.close=function(){this.open=false;};
  const api={enabled:()=>true,state:()=>state,ensureSession:async()=>{},onChange(f){observers.push(f);return()=>{};},cbt:async function(method,path,body){
+  if(method==='POST'&&path.endsWith('/delete')){posts.push({deletePath:path,body:JSON.parse(JSON.stringify(body))});runs.length=0;return {deleted:true};}
   if(method==='POST'){assert.equal(path,endpoint);posts.push(JSON.parse(JSON.stringify(body)));return handler(body,runs);}
   reads.push(path);
   if(detail&&path==='/api/v1/cbt/runs/'+detail.run.id)return detail;
@@ -34,7 +35,7 @@ test('ordinary formal exams list opens, parses fullwidth and duplicates, persist
  assert.match(f.posts[0].idempotencyKey,/^[a-f0-9-]{36}$/);
  const {idempotencyKey,...rest}=f.posts[0];assert.deepEqual(rest,{round:69,wrongQuestionNumbers:[5,20],starredQuestionNumbers:[5,50]});
  assert.match(f.doc.querySelector('#feMaterialStatus').textContent,/제69회 82점.*내 기록에 추가/);assert.equal(f.reads.filter(x=>x.endsWith('/runs')).length,2);assert(!f.get('Dialog').open);
- assert.match(f.doc.querySelector('[data-run]').getAttribute('data-run'),/^11111111/);assert.equal(f.doc.querySelector('[data-run]').textContent,'82점');
+ assert.match(f.doc.querySelector('[data-run]').getAttribute('data-run'),/^11111111/);assert.equal(f.doc.querySelector('[data-run] .fe-score-num').textContent,'82점');
  }finally{f.close();}
 });
 test('invalid inputs, unavailable round, distinct empty lists, and cancellation do not make unexpected writes',async()=>{
@@ -82,6 +83,20 @@ test('paper results show wrong and no chosen number, and paper misses enter the 
  const unavailable={...reviewPayload,items:reviewPayload.items.map(({paperImported,...q})=>q)};
  assert.throws(()=>f.w.HanqCbtRoundMaterials.normalize(unavailable,69));
  }finally{f.close();}
+});
+test('only a paper result offers delete; it asks first, then removes the record and returns to the list',async()=>{
+ const id='22222222-2222-4222-8222-222222222222',options=Array.from({length:5},(_,i)=>({id:'x'+(i+1),number:i+1}));
+ const item={questionId:'exam-68-1',version:'pinned',number:1,exam:68,runId:id,position:0,points:2,options,selectedOptionId:null,paperWrong:true,image:'/api/v1/cbt/runs/'+id+'/questions/0/image',review:{status:'wrong',correct:false,earned:0,correctNumber:2,correctOptionId:'x2'}};
+ const paper={run:{id,status:'final',round:68,finalAt:'2026-11-25T14:36:56.000Z',result:{paperImported:true,paperWrongCount:13,score:70,maxScore:100,correct:37,total:50,growthReward:0}},items:[item]};
+ const f=fixture(()=>{throw Error('unexpected write');},true,paper);
+ try{await settle();const b=f.doc.querySelector('#feDeleteRun');assert(b,'paper result has a delete button');
+  let asked='';f.w.confirm=m=>{asked=m;return false;};b.click();await settle();assert.match(asked,/제68회 종이 입력 기록\(70점 · 11\/25\)/);assert.equal(f.posts.length,0,'cancel sends nothing');
+  f.w.confirm=()=>true;f.doc.querySelector('#feDeleteRun').click();for(let i=0;i<10&&!f.doc.querySelector('.fe-round');i++)await settle();
+  assert.deepEqual(f.posts,[{deletePath:'/api/v1/cbt/runs/'+id+'/delete',body:{}}]);assert(f.doc.querySelector('.fe-round'),'back on the round list');assert.equal(f.doc.querySelector('#feDeleteRun'),null);
+ }finally{f.close();}
+ const real={run:{...paper.run,result:{score:70,maxScore:100,correct:37,total:50,growthReward:5}},items:[{...item,paperWrong:undefined}]};
+ const g=fixture(()=>{throw Error('unexpected write');},true,real);
+ try{await settle();assert(g.doc.querySelector('.fe-score-card'));assert.equal(g.doc.querySelector('#feDeleteRun'),null,'real exams cannot be deleted');}finally{g.close();}
 });
 test('lost response survives a remount, retries original opaque UUID, isolates account and clears after success',async()=>{
  let call=0;

@@ -650,4 +650,7 @@ html[data-company-mode=on] #feRoundMaterials .fe-round-review-option-notes li.is
 
 /* 최근 점수 아래 풀이 날짜(11/25): 작게 회색으로 */
 html body #app#app#app #formalExamHost .fe-recent-scores button.fe-score{flex-direction:column!important;gap:1px!important;line-height:1.15!important}
+#formalExamHost .fe-delete-run{margin-top:24px;padding-top:12px;border-top:1px solid rgba(139,148,158,.35)}
+#formalExamHost .fe-delete-run p{font-size:13px;color:#8b949e;margin:0 0 8px}
+#formalExamHost .fe-delete-run .fe-delete-run-btn{color:#e5534b;border-color:#e5534b}
 html body #app#app#app #formalExamHost .fe-recent-scores .fe-score .fe-score-date{display:block;font-size:10px!important;font-weight:400!important;color:#8b949e!important;letter-spacing:0}
