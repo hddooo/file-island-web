@@ -41,7 +41,8 @@
   function renderStudy(q, e) {
     var key = 'fe-exp-' + String(q.exam) + '-' + String(q.position).replace(/[^a-z0-9_-]/gi, ''), selected = q.selectedOptionId || null, ids = (q.options || []).map(function (o) { return o.id; });
     var html = '<article class="fe-explanation fe-study-explanation" data-reviewed="true">' +
-      '<section class="fe-stem-analysis" aria-labelledby="' + key + '-stem"><h4 id="' + key + '-stem">지문 분석</h4>' + list(lines(e.passage)) + '</section>' +
+      '<section class="fe-stem-analysis" aria-labelledby="' + key + '-stem"><h4 id="' + key + '-stem">지문 분석</h4>' + list(lines(e.passage)) +
+      (typeof e.gist === 'string' && e.gist.trim() ? '<p class="fe-study-gist"><b>핵심 요지</b> ' + md(e.gist) + '</p>' : '') + '</section>' +
       '<section class="fe-option-analysis" aria-labelledby="' + key + '-options"><h4 id="' + key + '-options">보기 분석</h4><ol>';
     html += e.options.map(function (p, i) {
       var good = p.number === e.answer, chosen = ids[i] && ids[i] === selected;
@@ -49,8 +50,11 @@
         '<p class="fe-exp-option-heading"><b>' + '①②③④⑤'[i] + '</b><span>' + (good ? '정답' : '오답') + (chosen ? ' · 내가 고른 답' : '') + '</span></p>' +
         '<p class="fe-study-keyword">' + md(p.keyword || '') + '</p>' + (p.memo ? '<p class="fe-study-memo">' + md(p.memo) + '</p>' : '') + '</li>';
     }).join('');
-    return html + '</ol></section><section class="fe-exp-conclusion" aria-labelledby="' + key + '-conclusion"><h4 id="' + key + '-conclusion">결론</h4>' +
-      '<p class="fe-exp-answer"><b>정답 ' + '①②③④⑤'[e.answer - 1] + '</b></p>' + (e.flow ? '<p class="fe-study-flow">' + md(e.flow) + '</p>' : '') +
+    // 2차 보완 해설은 결론 자리에 Tip(관련 개념을 시대별 학습 볼드 기준으로 정리)을 보여 준다. tips가 없으면 예전처럼 결론.
+    var tips = lines(e.tips);
+    return html + '</ol></section><section class="fe-exp-conclusion' + (tips.length ? ' fe-study-tip' : '') + '" aria-labelledby="' + key + '-conclusion"><h4 id="' + key + '-conclusion">' + (tips.length ? 'Tip' : '결론') + '</h4>' +
+      '<p class="fe-exp-answer"><b>정답 ' + '①②③④⑤'[e.answer - 1] + '</b></p>' + (tips.length ? '<ul class="fe-study-tips">' + tips.map(function (t) { return '<li>' + md(t) + '</li>'; }).join('') + '</ul>' : '') +
+      (e.flow ? '<p class="fe-study-flow">' + (tips.length ? '<b>흐름</b> ' : '') + md(e.flow) + '</p>' : '') +
       (e.source ? '<p class="fe-study-source">근거: 성균관 시대별 학습 · ' + esc(e.source) + '</p>' : '') + '</section></article>';
   }
   function resolve(q, status) {

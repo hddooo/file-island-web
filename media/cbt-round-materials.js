@@ -597,6 +597,7 @@ function mount(host,options){
    if(parts&&parts.stem.length){
     var lines=el('ul');parts.stem.forEach(function(line){lines.appendChild(markedText('li',line));});stem.appendChild(lines);
    }else stem.appendChild(el('p','이 문항의 지문 해설을 확인하지 못했어요.'));
+   if(studied&&typeof studied.gist==='string'&&studied.gist.trim()){var gist=el('p');gist.className='fe-study-gist';gist.append(el('b','핵심 요지'),host.ownerDocument.createTextNode(' '),markedText('span',studied.gist));stem.appendChild(gist);}
    answer.appendChild(stem);
    var optionArea=section('section','fe-round-review-options');
    optionArea.appendChild(el('h4',studied?'보기 분석':'보기별 해설'));
@@ -612,7 +613,9 @@ function mount(host,options){
    });
    optionArea.appendChild(notes);answer.appendChild(optionArea);
    var conclusion=section('section','fe-round-review-conclusion');
-   conclusion.append(el('h4','결론'),el('strong','정답 '+'①②③④⑤'[q.review.correctNumber-1]));
+   var tips=studied&&Array.isArray(studied.tips)?studied.tips.filter(function(t){return typeof t==='string'&&t.trim();}):[];
+   conclusion.append(el('h4',tips.length?'Tip':'결론'),el('strong','정답 '+'①②③④⑤'[q.review.correctNumber-1]));
+   if(tips.length){var tipList=el('ul');tipList.className='fe-study-tips';tips.forEach(function(t){tipList.appendChild(markedText('li',t));});conclusion.appendChild(tipList);}
    if(studied){if(studied.flow){var flow=markedText('p',studied.flow);flow.className='fe-study-flow';conclusion.appendChild(flow);}if(studied.source){var src=el('p','근거: 성균관 시대별 학습 · '+studied.source);src.className='fe-study-source';conclusion.appendChild(src);}}
    else if(parts&&(parts.conclusion||parts.answer))conclusion.appendChild(markedText('p',parts.conclusion||parts.answer));
    answer.appendChild(conclusion);

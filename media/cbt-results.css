@@ -640,6 +640,11 @@ html body #app #formalExamHost :is(.fe-study-explanation,.fe-round-review-explan
 html body #app #formalExamHost :is(.fe-study-explanation,.fe-round-review-explanation) .fe-study-flow{margin:4px 0 0!important;line-height:1.7}
 html body #app #formalExamHost :is(.fe-study-explanation,.fe-round-review-explanation) .fe-study-source{margin:6px 0 0!important;font-size:12px;opacity:.7}
 html body #app #formalExamHost .fe-study-explanation .fe-study-keyword{margin:2px 0 0!important}
+/* 2차 보완 해설: 핵심 요지 한 줄, Tip(관련 개념 정리) 목록 */
+html body #app #formalExamHost :is(.fe-study-explanation,.fe-round-review-explanation) .fe-study-gist{margin:6px 0 0!important;line-height:1.6}
+html body #app #formalExamHost :is(.fe-study-explanation,.fe-round-review-explanation) .fe-study-gist>b{margin-right:4px}
+html body #app #formalExamHost :is(.fe-study-explanation,.fe-round-review-explanation) .fe-study-tips{margin:6px 0 0!important;padding-left:1.2em;line-height:1.7}
+html body #app #formalExamHost :is(.fe-study-explanation,.fe-round-review-explanation) .fe-study-tips>li{margin:3px 0}
 #feRoundMaterials .fe-round-review-option-notes .fe-study-option-body{min-width:0}
 #feRoundMaterials .fe-round-review-option-notes .fe-study-option-body>p{margin:0}
 #feRoundMaterials .fe-round-review-option-notes .fe-study-verdict{font-size:.85em;font-weight:800;padding:0 5px;border-radius:6px;border:1px solid currentColor;opacity:.85}
