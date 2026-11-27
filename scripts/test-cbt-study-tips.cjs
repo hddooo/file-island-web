@@ -25,7 +25,8 @@ assert.equal(d.querySelector('.fe-exp-conclusion h4').textContent,'결론','olde
 assert.equal(d.querySelector('.fe-study-tips'),null);assert.equal(d.querySelector('.fe-study-gist'),null);
 // The answer-sheet PDF prints the same parts.
 const pdf=fs.readFileSync('media/cbt-wrong-pdf.js','utf8');
-assert.ok(pdf.includes("'핵심 요지: '+studied.gist")&&pdf.includes("await textLine('Tip',10,true)"),'PDF answer sheet prints 핵심 요지 and Tip');
+assert.ok(pdf.includes("'핵심 요지: '+studied.gist")&&pdf.includes("await textLine('Tip',8.5,true)"),'PDF answer sheet prints 핵심 요지 and Tip');
+assert.ok(/function startColumns\(\)/.test(pdf)&&pdf.includes("else{startColumns();var shared")&&pdf.includes("'해설':'간결 해설',13,true);startColumns();"),'wrong-answer PDFs use the two-column exam layout');
 assert.ok(pdf.includes("src.split('**')")&&pdf.includes("'#1555a0'"),'PDF keeps **keywords** as bold blue ink');
 // The pixel font has only a 400 face and the app sets font-synthesis:none, so explanations must opt back into synthesized bold.
 const css=fs.readFileSync('media/cbt-results.css','utf8');
