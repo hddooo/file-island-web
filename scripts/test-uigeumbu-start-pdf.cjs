@@ -6,7 +6,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),{JSDOM}=require
 const w=new JSDOM('<main id="formalExamHost"></main>',{url:'https://synthetic.invalid/',runScripts:'outside-only',pretendToBeVisual:true}).window;
 w.eval(fs.readFileSync('media/uigeumbu.js','utf8'));
 const item=(exam,number)=>({position:0,questionId:'exam-'+exam+'-'+String(number).padStart(2,'0'),version:'v',exam,number,image:'/api/v1/cbt/uigeumbu/preview/all/questions/exam-'+exam+'-'+String(number).padStart(2,'0')+'/image',common:null,review:{status:'unanswered',correctNumber:2,correctOptionId:'o2',item:{}}});
-const summary={resetAt:null,pool:{all:2,hasMore:false},last:{id:'00000000-0000-4000-8000-000000000002',sequence:2,wrong:1},active:null,rounds:[],mock:null};
+const summary={resetAt:null,pool:{all:2,hasMore:false},last:{id:'00000000-0000-4000-8000-000000000002',sequence:2,wrong:0,starred:1,total:1},active:null,rounds:[],mock:null};
 const calls=[],pdfs=[];
 const api={state:()=>({signedIn:true,ownerId:'owner-1'}),newSubmissionId:p=>p+'-0123456789',cbt:(m,p,b)=>{calls.push([m,p,b]);
  if(m==='GET'&&p==='/api/v1/cbt/uigeumbu')return Promise.resolve(summary);
@@ -20,7 +20,8 @@ assert.equal(host.querySelectorAll('[data-start-pdf]').length,0,'PDF buttons sit
 host.querySelector('#uigStart').click();
 const btn=(scope,mode)=>host.querySelector('[data-start-pdf="'+mode+'"][data-scope="'+scope+'"]');
 for(const scope of ['all','last-wrong','mock-wrong'])for(const mode of ['questions','answers'])assert.ok(btn(scope,mode),scope+' '+mode+' button');
-assert.equal(btn('all','questions').disabled,false);assert.equal(btn('last-wrong','answers').disabled,false);
+assert.equal(btn('all','questions').disabled,false);assert.equal(btn('last-wrong','answers').disabled,false,'a last round with only ★★★ questions still prints');
+assert.match(host.querySelector('#uigLast').textContent,/2회차 오답 0 · 별표 1 → 1문항/);assert.equal(host.querySelector('#uigLast').disabled,false);
 assert.equal(btn('mock-wrong','questions').disabled,true,'no submitted mock exam → disabled');assert.equal(btn('mock-wrong','answers').disabled,true);
 btn('all','questions').click();await new Promise(r=>setTimeout(r,20));
 assert.deepEqual(calls.at(-1),['GET','/api/v1/cbt/uigeumbu/preview/all',undefined]);
