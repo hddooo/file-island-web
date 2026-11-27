@@ -78,9 +78,15 @@ async function download(options){
  async function draw(img,label){var width=PAGE.width-PAGE.margin*2,height=width*img.naturalHeight/img.naturalWidth,max=PAGE.bottom-64;if(height>max){width*=max/height;height=max;}if(y+height+22>PAGE.bottom&&y>46){await finishPage();newPage();}context.fillStyle='#111';context.font='bold 10px Arial, sans-serif';context.fillText(label,PAGE.margin,y+11);lines.push({text:label,x:PAGE.margin,y:y+11,width:context.measureText(label).width,size:10});y+=18;context.drawImage(img,PAGE.margin,y,width,height);y+=height+12;}
 
  function clean(value){return typeof value==='string'?value.replace(/\*\*/g,'').replace(/\s+/g,' ').trim():'';}
- async function textLine(value,size,bold){current();value=clean(value);if(!value)return;context.font=(bold?'bold ':'')+size+'px Arial, sans-serif';var width=PAGE.width-PAGE.margin*2,buffer='';
-  for(var ch of value){if(context.measureText(buffer+ch).width>width&&buffer){await emit(buffer);buffer='';}buffer+=ch;}if(buffer)await emit(buffer);
-  async function emit(t){if(y+size+6>PAGE.bottom){await finishPage();newPage();}context.fillStyle='#111';context.font=(bold?'bold ':'')+size+'px Arial, sans-serif';y+=size+5;context.fillText(t,PAGE.margin,y);lines.push({text:t,x:PAGE.margin,y:y,width:context.measureText(t).width,size:size});}
+ // **키워드** 는 해설 화면처럼 굵은 파란 글씨로 찍는다(줄 전체가 굵은 줄이면 검정 굵게). 짝이 안 맞으면 기호만 지운다.
+ async function textLine(value,size,bold){current();if(typeof value!=='string')return;var src=value.replace(/\s+/g,' ').trim();if(!clean(src))return;
+  var segs=(src.match(/\*\*/g)||[]).length%2?[{t:clean(src),b:!!bold}]:src.split('**').map(function(t,i){return {t:t,b:!!bold||i%2===1,k:!bold&&i%2===1};}).filter(function(s){return s.t;});
+  var width=PAGE.width-PAGE.margin*2,line=[],lineW=0;function font(b){return (b?'bold ':'')+size+'px Arial, sans-serif';}
+  for(var s of segs){for(var ch of s.t){context.font=font(s.b);var w=context.measureText(ch).width;if(lineW+w>width&&line.length){await emit(line);line=[];lineW=0;if(ch===' ')continue;}var last=line[line.length-1];if(last&&last.b===s.b&&last.k===s.k)last.t+=ch;else line.push({t:ch,b:s.b,k:s.k});lineW+=w;}}
+  if(line.length)await emit(line);
+  async function emit(parts){if(y+size+6>PAGE.bottom){await finishPage();newPage();}y+=size+5;var x=PAGE.margin,text='';
+   for(var p of parts){context.font=font(p.b);context.fillStyle=p.k?'#1555a0':'#111';context.fillText(p.t,x,y);x+=context.measureText(p.t).width;text+=p.t;}
+   context.fillStyle='#111';lines.push({text:text,x:PAGE.margin,y:y,width:x-PAGE.margin,size:size});}
  }
  async function answers(items){await textLine('정답 한눈에 보기',13,true);
   for(var i=0;i<items.length;i+=(itemsMode?4:6)){await textLine(items.slice(i,i+(itemsMode?4:6)).map(function(q){return lab(q)+' '+(itemsMode?'①②③④⑤'[q.review.correctNumber-1]:q.review.correctNumber);}).join(itemsMode?'   |   ':'     |     '),11,true);}

@@ -645,6 +645,13 @@ html body #app #formalExamHost :is(.fe-study-explanation,.fe-round-review-explan
 html body #app #formalExamHost :is(.fe-study-explanation,.fe-round-review-explanation) .fe-study-gist>b{margin-right:4px}
 html body #app #formalExamHost :is(.fe-study-explanation,.fe-round-review-explanation) .fe-study-tips{margin:6px 0 0!important;padding-left:1.2em;line-height:1.7}
 html body #app #formalExamHost :is(.fe-study-explanation,.fe-round-review-explanation) .fe-study-tips>li{margin:3px 0}
+/* 도트 글꼴은 400 굵기만 있고 전역 font-synthesis:none 이라 해설의 볼드가 굵게 보이지 않았다.
+   시대별 학습 본문과 같게 굵기 합성 + 파란 잉크로 키워드를 보이게 한다(보기 줄은 정답/오답 색 유지). */
+html:not([data-company-mode=on]) body #app #formalExamHost :is(.fe-study-explanation,.fe-round-review-explanation,.uig-note,.uig-note-flows),
+html:not([data-company-mode=on]) body #app #formalExamHost :is(.fe-study-explanation,.fe-round-review-explanation,.uig-note,.uig-note-flows) *{font-synthesis:weight}
+html:not([data-company-mode=on]) body #app #formalExamHost :is(.fe-study-explanation,.fe-round-review-explanation,.uig-note,.uig-note-flows) :is(strong,b){font-weight:750}
+html:not([data-company-mode=on]) body #app #formalExamHost :is(.fe-study-explanation,.fe-round-review-explanation) :is(.fe-stem-analysis li,.fe-study-gist,.fe-study-tips li,.fe-study-flow) strong,
+html:not([data-company-mode=on]) body #app #formalExamHost :is(.uig-note-flows,.uig-note-memo) strong{color:#1555a0;-webkit-text-fill-color:currentColor}
 #feRoundMaterials .fe-round-review-option-notes .fe-study-option-body{min-width:0}
 #feRoundMaterials .fe-round-review-option-notes .fe-study-option-body>p{margin:0}
 #feRoundMaterials .fe-round-review-option-notes .fe-study-verdict{font-size:.85em;font-weight:800;padding:0 5px;border-radius:6px;border:1px solid currentColor;opacity:.85}

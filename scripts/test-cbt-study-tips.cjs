@@ -26,5 +26,10 @@ assert.equal(d.querySelector('.fe-study-tips'),null);assert.equal(d.querySelecto
 // The answer-sheet PDF prints the same parts.
 const pdf=fs.readFileSync('media/cbt-wrong-pdf.js','utf8');
 assert.ok(pdf.includes("'핵심 요지: '+studied.gist")&&pdf.includes("await textLine('Tip',10,true)"),'PDF answer sheet prints 핵심 요지 and Tip');
+assert.ok(pdf.includes("src.split('**')")&&pdf.includes("'#1555a0'"),'PDF keeps **keywords** as bold blue ink');
+// The pixel font has only a 400 face and the app sets font-synthesis:none, so explanations must opt back into synthesized bold.
+const css=fs.readFileSync('media/cbt-results.css','utf8');
+assert.ok(/:is\(\.fe-study-explanation,\.fe-round-review-explanation,\.uig-note,\.uig-note-flows\) \*\{font-synthesis:weight\}/.test(css),'explanations synthesize bold');
+assert.ok(css.includes('.fe-study-tips li,.fe-study-flow) strong')&&css.includes('color:#1555a0'),'keywords use the 시대별 학습 blue ink');
 w.close();console.log('PASS 해설 2차 보완: 지문 분석 + 핵심 요지 · 보기 분석 · Tip (예전 해설은 결론 유지)');
 })().catch(e=>{console.error(e);process.exit(1);});
