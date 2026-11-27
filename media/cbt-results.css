@@ -431,8 +431,8 @@ html body #app#app#app #formalExamHost .fe-era-ring-detail{display:grid;gap:1px;
 }
 #feRoundMaterials .fe-round-review-stage>.is-review-centered svg{width:clamp(84px,22vw,136px)}
 /* The question preview only: source/zoom and shared stems remain uncropped. */
-#feRoundMaterials .fe-round-question-clip{width:100%;overflow:hidden}
-#feRoundMaterials .fe-round-question-clip>img.mock-image{display:block;width:100%;height:auto;max-height:none;margin:0}
+.fe-round-question-clip{display:block;width:100%;overflow:hidden}
+.fe-round-question-clip>img.mock-image{display:block;width:100%!important;height:auto!important;max-height:none!important;margin:0 auto}
 #feRoundMaterials .fe-round-question-image.has-trimmed-bottom{padding-bottom:5px}
 #feRoundMaterials .fe-round-review-feedback{font-weight:800;text-align:center}
 #feRoundMaterials .fe-round-review-feedback:empty{display:none}

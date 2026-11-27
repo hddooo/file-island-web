@@ -3,7 +3,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),{JSDOM}=require
 (async()=>{
  const dom=new JSDOM('<main id="feRoundMaterials"></main>',{runScripts:'outside-only',url:'https://review.test'}),w=dom.window,host=w.document.querySelector('main');
  w.URL.createObjectURL=()=> 'blob:fixture';w.URL.revokeObjectURL=()=>{};
- w.eval(fs.readFileSync('media/cbt-round-materials.js','utf8'));
+ w.eval(fs.readFileSync('media/cbt-question-preview.js','utf8'));w.eval(fs.readFileSync('media/cbt-round-materials.js','utf8'));
  const run='10000000-0000-4000-8000-000000000001';
  const opts=[1,2,3,4,5].map(n=>({id:'choice'+n,number:n}));
  const make=(n,version)=>({questionId:'exam-72-'+n,version,exam:72,number:n,position:n-1,points:2,runId:run,

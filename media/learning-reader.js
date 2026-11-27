@@ -129,6 +129,12 @@
       // Only connected exam assets receive the company-mode exception.
       if (/^media\/exam(?:-expanded)?\/\d{2}-(?:\d{2}|common\d{2}-\d{2})\.webp$/.test(img.getAttribute('src') || '')) img.setAttribute('data-company-exam-image','');
       if (img.dataset.lrZoom) return; img.dataset.lrZoom = '1';
+      var question = /^media\/exam(?:-expanded)?\/(\d{2})-(\d{2})\.webp$/.exec(img.getAttribute('src') || '');
+      if (question && img.classList.contains('mock-image') && !img.closest('dialog,.mock-zoom')) {
+        function trimStatic() { root.HanqQuestionPreview?.apply(img, {exam:+question[1], number:+question[2]}); }
+        if (img.complete && img.naturalWidth) trimStatic();
+        else img.addEventListener('load', trimStatic, {once:true});
+      }
       if (img.closest('.mock-zoom')) { tapToClose(img, function () { if (root.HanqImageViewer) root.HanqImageViewer.close(); }); return; }
       var link = img.closest('a');
       if (!link) { img.tabIndex = 0; img.setAttribute('role', 'button'); img.setAttribute('aria-label', (img.alt || '원본 이미지') + ' · 확대 보기'); img.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopImmediatePropagation(); openImage(img); } }, true); }

@@ -131,7 +131,7 @@
           var img = node('img', null, 'mock-image'); img.setAttribute('data-company-exam-image', ''); imageNode = img;
           img.alt = isCommon ? '공통 자료 ' + item.common.questionNumbers.join('·') + '번' : '제' + item.exam + '회 ' + item.number + '번 원본 문제·보기';
           img.style.width = '100%'; img.style.maxWidth = '100%'; img.style.height = 'auto';
-          img.addEventListener('load', function () { if (current(attempt)) status.remove(); });
+          img.addEventListener('load', function () { if (current(attempt)) { status.remove(); if (!isCommon) root.HanqQuestionPreview?.apply(img, item, blob); } });
           img.addEventListener('error', function () { failed(attempt); });
           link.appendChild(img); link.appendChild(node('span', '원본 크게 보기', 'fe-image-open')); figure.insertBefore(link, status); img.src = currentURL;
         }).catch(function () { failed(attempt); });

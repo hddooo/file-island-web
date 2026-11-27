@@ -361,45 +361,7 @@ function mount(host,options){
  function clear(keep){root.HanqGradeFeedback?.clear(host);if(!keep){urls.forEach(function(u){if(root.HanqLearningReader&&root.HanqLearningReader.releaseImage)root.HanqLearningReader.releaseImage(u);root.URL.revokeObjectURL(u);});urls=[];}host.replaceChildren();}
  function button(label,fn){var b=el('button',label);b.type='button';b.className='tool-btn';b.onclick=function(){if(current())fn();};return b;}
  function stop(){if(!alive)return;alive=false;if(off)off();if(resetOff)resetOff();clear();}
- // Scan every column of small bottom strips. Leave original image/zoom bytes unchanged.
- function bottomContentRow(rgba,width,rows){
-  for(var y=rows-1;y>=0;y--)for(var x=0;x<width;x++){
-   var i=(y*width+x)*4,alpha=rgba[i+3];
-   if(alpha&&Math.min(rgba[i],rgba[i+1],rgba[i+2])<252)return y;
-  }
-  return -1;
- }
- // Visually verified source boundaries: 47 has a bottom margin over half the
- // bitmap; 48 has a clipped page-number box at the lower right after its choices.
- var reviewedBottomCuts={
-  'exam-72-47':['c37aabe163a2bede',657,632,273],
-  'exam-72-48':['f2013ab3f0b2b180',657,430,353]
- };
- function showQuestionCrop(img,box,w,height){
-  var clip=section('div','fe-round-question-clip');clip.style.aspectRatio=w+' / '+height;
-  img.replaceWith(clip);clip.appendChild(img);box.classList.add('has-trimmed-bottom');
- }
- function trimQuestionBottom(q,img,box){
-  var w=img.naturalWidth,h=img.naturalHeight,strip=24,revised=reviewedBottomCuts[q.questionId];
-  if(revised&&q.version===revised[0]&&w===revised[1]&&h===revised[2]){showQuestionCrop(img,box,w,revised[3]);return;}
-  if(w<16||w>4096||h<40||h>4096)return;
-  var canvas=host.ownerDocument.createElement('canvas');
-  try{
-   canvas.width=w;canvas.height=strip;
-   var ctx=canvas.getContext('2d',{willReadFrequently:true});
-   if(!ctx)return;
-   // Scan the entire trailing margin; a completely blank image is left alone.
-   for(var end=h;end>0;){
-    var start=Math.max(0,end-strip),rows=end-start;
-    ctx.clearRect(0,0,w,strip);ctx.drawImage(img,0,start,w,rows,0,0,w,rows);
-    var y=bottomContentRow(ctx.getImageData(0,0,w,rows).data,w,rows);
-    if(y>=0){var height=start+y+2;if(h-height>=12)showQuestionCrop(img,box,w,height);return;}
-    end=start;
-   }
-  }catch(_){/* Canvas unavailable: keep the original instead of guessing. */}
-  finally{canvas.width=1;canvas.height=1;}
- }
- async function image(q,path,box,version,trim){try{var blob=await api.cbtImage(path);if(!current()||index!==version||!box.isConnected)return;if(!blob||!/^image\/(png|jpeg|webp)$/.test(blob.type))throw Error();var u=root.URL.createObjectURL(blob);urls.push(u);var img=el('img');img.className='mock-image';img.setAttribute('data-company-exam-image','');if(trim)img.onload=function(){if(current()&&index===version&&box.isConnected)trimQuestionBottom(q,img,box);};img.src=u;img.alt='제'+q.exam+'회 '+q.number+'번 원본 문제';img.style.maxWidth='100%';img.onerror=function(){if(current()&&box.isConnected)box.appendChild(el('p','제'+q.exam+'회 '+q.number+'번 원본 이미지를 표시하지 못했어요. 회차를 다시 열어 주세요. 계속 실패하면 이 문항의 원본 연결을 복구해 주세요.'));};box.appendChild(img);}catch(_){if(current()&&index===version&&box.isConnected)box.appendChild(el('p','제'+q.exam+'회 '+q.number+'번 원본 이미지를 불러오지 못했어요. 회차를 다시 열어 주세요. 계속 실패하면 이 문항의 원본 연결·접근 상태를 복구해 주세요.'));}}
+ async function image(q,path,box,version,trim){try{var blob=await api.cbtImage(path);if(!current()||index!==version||!box.isConnected)return;if(!blob||!/^image\/(png|jpeg|webp)$/.test(blob.type))throw Error();var u=root.URL.createObjectURL(blob);urls.push(u);var img=el('img');img.className='mock-image';img.setAttribute('data-company-exam-image','');if(trim)img.onload=function(){if(current()&&index===version&&box.isConnected)root.HanqQuestionPreview?.apply(img,q,blob,box);};img.src=u;img.alt='제'+q.exam+'회 '+q.number+'번 원본 문제';img.style.maxWidth='100%';img.onerror=function(){if(current()&&box.isConnected)box.appendChild(el('p','제'+q.exam+'회 '+q.number+'번 원본 이미지를 표시하지 못했어요. 회차를 다시 열어 주세요. 계속 실패하면 이 문항의 원본 연결을 복구해 주세요.'));};box.appendChild(img);}catch(_){if(current()&&index===version&&box.isConnected)box.appendChild(el('p','제'+q.exam+'회 '+q.number+'번 원본 이미지를 불러오지 못했어요. 회차를 다시 열어 주세요. 계속 실패하면 이 문항의 원본 연결·접근 상태를 복구해 주세요.'));}}
  function section(tag,cls,text){var e=el(tag,text);e.className=cls;return e;}
  // Same hand-drawn O/X as the blank (빈칸) quiz: drawn once on a fresh check, then kept semi-transparent over the question.
  function verdictMark(correct){
