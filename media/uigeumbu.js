@@ -7,7 +7,10 @@ function esc(x){return String(x==null?'':x).replace(/[&<>"']/g,function(c){retur
 function kstDate(iso){var t=Date.parse(iso);if(!Number.isFinite(t))return '';var d=new Date(t+9*3600e3),p=function(n){return String(n).padStart(2,'0');};return d.getUTCFullYear()+'/'+p(d.getUTCMonth()+1)+'/'+p(d.getUTCDate())+' ('+WEEK[d.getUTCDay()]+')';}
 function score(correct,total){return total>0?Math.round(correct/total*100)+'% ('+correct+'/'+total+')':'0% (0/0)';}
 /* 실전모의고사 회차마다 가장 최근에 본 시험의 오답(미응답 포함)+그 시험에서 친 별표 */
-function mockButton(m){return '<button type="button" class="check-one" id="uigMock"'+(m&&m.total?'':' disabled')+'>실전모의고사 회차별 최근 오답 다시 풀기<small>'+(m?m.rounds+'개 회차의 최근 시험 · 오답 '+m.wrong+(m.starred?' · 별표 '+m.starred:'')+' → '+m.total+'문항':'제출한 실전모의고사가 아직 없어요')+'</small></button>';}
+function mockButton(m){return '<button type="button" class="check-one" id="uigMock"'+(m&&m.total?'':' disabled')+'>실전모의고사 회차별 최근 오답 다시 풀기<small>'+(m?m.rounds+'개 회차의 최근 시험 · 오답 '+m.wrong+(m.starred?' · 별표 '+m.starred:'')+' → '+m.total+'문항':'제출한 실전모의고사가 아직 없어요')+'</small></button>'+pdfRow('mock-wrong',m&&m.total);}
+/* 시작 메뉴마다 세션을 만들지 않고 같은 문항으로 문제지·해설지 PDF를 받는다. */
+var SCOPE_NAME={all:'모든 문제','last-wrong':'직전 회차 오답','mock-wrong':'실전 회차별 최근 오답'};
+function pdfRow(scope,on){return '<div class="uig-round-actions uig-start-pdf" role="group" aria-label="'+SCOPE_NAME[scope]+' PDF"><button type="button" class="tool-btn" data-start-pdf="questions" data-scope="'+scope+'"'+(on?'':' disabled')+'>'+SCOPE_NAME[scope]+' 문제지 PDF</button><button type="button" class="tool-btn" data-start-pdf="answers" data-scope="'+scope+'"'+(on?'':' disabled')+'>'+SCOPE_NAME[scope]+' 해설지 PDF</button></div>';}
 function scopeLabel(s){return s==='last-wrong'?'직전오답':s==='mock-wrong'?'실전오답':s==='round-review'?'복습':'전체';}
 function stop(){if(!active)return;var c=active;active=null;c.alive=false;clearTimeout(c.posTimer);if(c.materials){c.materials.stop();c.materials=null;}c.urls.forEach(function(u){root.URL.revokeObjectURL(u);});if(c.host)c.host.onkeydown=null;if(root.HanqGradeFeedback)root.HanqGradeFeedback.clear(c.host);}
 function mount(host,o){
@@ -26,7 +29,7 @@ function mount(host,o){
  function menu(){ctx.data=null;paint('<p role="status">불러오는 중…</p>');run(function(){return call('GET','');},function(s){ctx.summary=s;drawMenu(false);},menu);}
  function drawMenu(expanded){
   var s=ctx.summary,last=s.last,act=s.active;
-  var start=expanded?'<div class="uig-options" role="group" aria-label="풀이 방식 선택"><button type="button" class="check-one" id="uigAll"'+(s.pool.all?'':' disabled')+'>모든 문제 다시 풀기<small>실전모의고사 전체 오답·3별 '+s.pool.all+'문항</small></button><button type="button" class="check-one" id="uigLast"'+(last&&last.wrong?'':' disabled')+'>직전 회차 오답 다시 풀기<small>'+(last?last.sequence+'회차 오답 '+last.wrong+'문항':'제출한 회차가 아직 없어요')+'</small></button>'+mockButton(s.mock)+'<button type="button" class="tool-btn" id="uigClose">닫기</button></div>':'<button type="button" class="check-one uig-start" id="uigStart">시작하기</button>';
+  var start=expanded?'<div class="uig-options" role="group" aria-label="풀이 방식 선택"><button type="button" class="check-one" id="uigAll"'+(s.pool.all?'':' disabled')+'>모든 문제 다시 풀기<small>실전모의고사 전체 오답·3별 '+s.pool.all+'문항</small></button>'+pdfRow('all',s.pool.all)+'<button type="button" class="check-one" id="uigLast"'+(last&&last.wrong?'':' disabled')+'>직전 회차 오답 다시 풀기<small>'+(last?last.sequence+'회차 오답 '+last.wrong+'문항':'제출한 회차가 아직 없어요')+'</small></button>'+pdfRow('last-wrong',last&&last.wrong)+mockButton(s.mock)+'<button type="button" class="tool-btn" id="uigClose">닫기</button></div>':'<button type="button" class="check-one uig-start" id="uigStart">시작하기</button>';
   var resume=act?'<p class="uig-resume">풀던 '+(act.scope==='round-review'?'복습':scopeLabel(act.scope)+' 회차')+'가 있어요 · '+act.answered+' / '+act.total+'문항 <button type="button" class="tool-btn" id="uigResume">이어서 풀기</button></p>':'';
   var rounds=!s.rounds.length?'<p>아직 제출한 기록이 없어요.</p>':'<ol class="uig-rounds">'+s.rounds.map(function(r){
    return '<li class="uig-round"><button type="button" class="uig-row uig-row-open" data-open="'+esc(r.id)+'" aria-label="'+r.sequence+'회차 상세 보기"><span class="uig-row-label">'+r.sequence+'회차 ('+scopeLabel(r.scope)+') · '+esc(kstDate(r.finalAt))+'</span><b class="uig-row-score">'+score(r.correct,r.total)+'</b></button>'+
@@ -45,6 +48,7 @@ function mount(host,o){
   host.querySelectorAll('[data-review]').forEach(function(b){b.onclick=function(){review(b.dataset.review);};});
   host.querySelectorAll('[data-open]').forEach(function(b){b.onclick=function(){ctx.detailTab='stats';ctx.logFilter='focus';open(b.dataset.open);};});
   host.querySelectorAll('[data-pdf]').forEach(function(b){b.onclick=function(){pdf(b.dataset.id,Number(b.dataset.seq),b.dataset.pdf,b);};});
+  host.querySelectorAll('[data-start-pdf]').forEach(function(b){b.onclick=function(){startPdf(b.dataset.scope,b.dataset.startPdf,b);};});
  }
  function key(){return api.newSubmissionId('uigeumbu');}
  function create(scope){var k=key();run(function(){return call('POST','/sessions',{scope:scope,idempotencyKey:k});},show,menu);}
@@ -170,6 +174,12 @@ function mount(host,o){
   Promise.resolve(loaded||call('GET','/sessions/'+id)).then(function(d){if(!valid())return;var items=d.items.filter(function(q){return q.review&&q.review.status!=='correct';}).sort(function(a,b){return a.exam-b.exam||a.number-b.number;});if(!items.length)throw {code:'empty'};
    var name=seq+'회차';return P.downloadItems({api:api,items:items,mode:mode,isCurrent:valid,title:'의금부 '+name+' 오답 '+(mode==='answers'?'해설지':'문제지'),filename:'의금부_'+name+'_오답_'+(mode==='answers'?'해설지':'문제지')+'.pdf',onProgress:function(p){note('PDF를 만드는 중이에요… '+p.done+' / '+p.total);}});})
   .then(function(out){ctx.pdfBusy=false;if(button)button.disabled=false;if(out&&valid())note(out.filename+' 저장을 시작했어요 · '+out.count+'문항 · '+out.pages+'쪽');},function(e){ctx.pdfBusy=false;if(button)button.disabled=false;if(valid())note(e&&e.code==='empty'?'이 회차에는 틀린 문제가 없어요.':'PDF를 만들지 못했어요. 다시 시도해 주세요.',true);});}
+ /* 시작 메뉴 PDF: GET /preview/:scope (세션·기록을 만들지 않음) → 같은 PDF 도구로 문제지/해설지 */
+ function startPdf(scope,mode,button){var P=root.HanqCbtWrongPdf;if(!P||!P.downloadItems){note('PDF 도구를 불러오지 못했어요. 새로고침해 주세요.',true);return;}if(ctx.pdfBusy||!SCOPE_NAME[scope])return;ctx.pdfBusy=true;if(button)button.disabled=true;note('PDF를 만드는 중이에요…');
+  var name=SCOPE_NAME[scope],kind=mode==='answers'?'해설지':'문제지';
+  call('GET','/preview/'+scope).then(function(d){if(!valid())return;var items=(d&&d.items||[]).slice();if(!items.length)throw {code:'empty'};
+   return P.downloadItems({api:api,items:items,mode:mode,isCurrent:valid,title:'의금부 '+name+' '+kind+(d.hasMore?' (앞 '+items.length+'문항)':''),filename:'의금부_'+name.replace(/\s+/g,'_')+'_'+kind+'.pdf',onProgress:function(p){note('PDF를 만드는 중이에요… '+p.done+' / '+p.total);}});})
+  .then(function(out){ctx.pdfBusy=false;if(button)button.disabled=false;if(out&&valid())note(out.filename+' 저장을 시작했어요 · '+out.count+'문항 · '+out.pages+'쪽');},function(e){ctx.pdfBusy=false;if(button)button.disabled=false;if(!valid())return;var c=e&&e.code;note(c==='empty'||c==='review_empty'?'PDF로 만들 문제가 없어요.':c==='no_previous_round'?'아직 제출한 의금부 회차가 없어요.':c==='no_mock_round'?'아직 제출한 실전모의고사가 없어요.':'PDF를 만들지 못했어요. 다시 시도해 주세요.',true);});}
  menu();
 }
 root.HanqUigeumbu={mount:mount,stop:stop,kstDate:kstDate,score:score};

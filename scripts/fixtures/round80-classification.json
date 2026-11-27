@@ -1,0 +1,507 @@
+{
+  "schema": 1,
+  "round": 80,
+  "basis": "원본 문제·공식 정답의 주된 학습 대상을 기준으로 수동 분류. 부정형은 틀린 선지 시대 대신 질문 대상 시대, 복합 시대는 정답 핵심을 기준으로 한다.",
+  "items": [
+    {
+      "number": 1,
+      "questionId": "exam-80-01",
+      "version": "4fc4a2a957f67ba7",
+      "era": "ancient",
+      "part": "사회",
+      "topic": "청동기 생활·의례 도구",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 2,
+      "questionId": "exam-80-02",
+      "version": "fabd439efa317a33",
+      "era": "ancient",
+      "part": "사회",
+      "topic": "고구려 제가 회의·서옥제",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 3,
+      "questionId": "exam-80-03",
+      "version": "5a5d6c56284bc6a7",
+      "era": "ancient",
+      "part": "문화",
+      "topic": "백제 무령왕릉 석수·미륵사지 석탑",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 4,
+      "questionId": "exam-80-04",
+      "version": "7fb07fa96103eb5b",
+      "era": "ancient",
+      "part": "정치",
+      "topic": "신라 지증왕·우산국 복속",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 5,
+      "questionId": "exam-80-05",
+      "version": "816d9f3b7003de04",
+      "era": "ancient",
+      "part": "정치",
+      "topic": "고구려 멸망·부흥 운동",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 6,
+      "questionId": "exam-80-06",
+      "version": "893f7cae97b119a9",
+      "era": "ancient",
+      "part": "정치",
+      "topic": "통일 신라 신문왕·국학",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 7,
+      "questionId": "exam-80-07",
+      "version": "0154eb40469417b8",
+      "era": "ancient",
+      "part": "경제",
+      "topic": "통일 신라 정전·청해진",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 8,
+      "questionId": "exam-80-08",
+      "version": "055038ffdc27c697",
+      "era": "ancient",
+      "part": "정치",
+      "topic": "발해 해동성국",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 9,
+      "questionId": "exam-80-09",
+      "version": "ff6c8d6690f8d43f",
+      "era": "ancient",
+      "part": "사회",
+      "topic": "신라 하대 선종·녹읍",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 10,
+      "questionId": "exam-80-10",
+      "version": "27a08768baa5be3f",
+      "era": "goryeo",
+      "part": "정치",
+      "topic": "후백제 견훤",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 11,
+      "questionId": "exam-80-11",
+      "version": "49559a41842b119b",
+      "era": "goryeo",
+      "part": "정치",
+      "topic": "고려 성종 시무 28조·의창",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 12,
+      "questionId": "exam-80-12",
+      "version": "bb083c73f7e0cb83",
+      "era": "goryeo",
+      "part": "대외관계",
+      "topic": "거란 2차 침입·광군",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 13,
+      "questionId": "exam-80-13",
+      "version": "edda44b523ade5b0",
+      "era": "goryeo",
+      "part": "문화",
+      "topic": "고려 은입사 공예",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 14,
+      "questionId": "exam-80-14",
+      "version": "2d5cd0fa55b22404",
+      "era": "goryeo",
+      "part": "경제",
+      "topic": "고려 경제·관영 상점",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 15,
+      "questionId": "exam-80-15",
+      "version": "ab1f57f0868b6e01",
+      "era": "goryeo",
+      "part": "정치",
+      "topic": "무신 정권 도방·정방·만적",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 16,
+      "questionId": "exam-80-16",
+      "version": "42d3c7846d926c3f",
+      "era": "goryeo",
+      "part": "문화",
+      "topic": "요세 백련 결사",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 17,
+      "questionId": "exam-80-17",
+      "version": "d870ff66ffcb028a",
+      "era": "goryeo",
+      "part": "대외관계",
+      "topic": "원 간섭기 공녀·정동행성",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 18,
+      "questionId": "exam-80-18",
+      "version": "be669d4e7b8742f4",
+      "era": "goryeo",
+      "part": "대외관계",
+      "topic": "최무선 화포·왜구 격퇴",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 19,
+      "questionId": "exam-80-19",
+      "version": "e009569ff9c938db",
+      "era": "goryeo",
+      "part": "경제",
+      "topic": "과전법",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 20,
+      "questionId": "exam-80-20",
+      "version": "daaffca053d37c28",
+      "era": "joseon",
+      "part": "정치",
+      "topic": "사헌부",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 21,
+      "questionId": "exam-80-21",
+      "version": "2e8a2d82ff28795d",
+      "era": "joseon",
+      "part": "정치",
+      "topic": "조선 성종 경국대전",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 22,
+      "questionId": "exam-80-22",
+      "version": "3d359627fafb9ab9",
+      "era": "joseon",
+      "part": "대외관계",
+      "topic": "임진왜란 후 대일 국교 재개·기유약조",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 23,
+      "questionId": "exam-80-23",
+      "version": "9412b4293f5ed83c",
+      "era": "joseon",
+      "part": "정치",
+      "topic": "숙종 환국",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 24,
+      "questionId": "exam-80-24",
+      "version": "ba565ff483222d1e",
+      "era": "joseon",
+      "part": "문화",
+      "topic": "창덕궁",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 25,
+      "questionId": "exam-80-25",
+      "version": "8000deeefec32a35",
+      "era": "joseon",
+      "part": "경제",
+      "topic": "조선 후기 상업·덕대",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 26,
+      "questionId": "exam-80-26",
+      "version": "5a77c9de0f05b65b",
+      "era": "joseon",
+      "part": "사회",
+      "topic": "조선 후기 중인",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 27,
+      "questionId": "exam-80-27",
+      "version": "5f5ba64a9f3e41d3",
+      "era": "joseon",
+      "part": "대외관계",
+      "topic": "명과의 사대 관계",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 28,
+      "questionId": "exam-80-28",
+      "version": "9ccdb444be1f3e0e",
+      "era": "opening",
+      "part": "대외관계",
+      "topic": "신미양요",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 29,
+      "questionId": "exam-80-29",
+      "version": "3536f2c786fc229f",
+      "era": "opening",
+      "part": "대외관계",
+      "topic": "강화도 조약",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 30,
+      "questionId": "exam-80-30",
+      "version": "85e7d5e84ed8ebf9",
+      "era": "opening",
+      "part": "문화",
+      "topic": "육영 공원",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 31,
+      "questionId": "exam-80-31",
+      "version": "16a5bae71f960b8e",
+      "era": "opening",
+      "part": "정치",
+      "topic": "을미개혁",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 32,
+      "questionId": "exam-80-32",
+      "version": "18068a37caa8af69",
+      "era": "opening",
+      "part": "정치",
+      "topic": "독립 협회",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 33,
+      "questionId": "exam-80-33",
+      "version": "5686f75d8a3f20cd",
+      "era": "opening",
+      "part": "문화",
+      "topic": "근대 시설 1899~1910",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 34,
+      "questionId": "exam-80-34",
+      "version": "21dad0872562ff50",
+      "era": "opening",
+      "part": "국권 수호",
+      "topic": "정미의병",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 35,
+      "questionId": "exam-80-35",
+      "version": "1ae5d6ff179a3ad0",
+      "era": "colonial",
+      "part": "통치정책",
+      "topic": "1910년대 무단 통치·회사령",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 36,
+      "questionId": "exam-80-36",
+      "version": "3e5b16dbe8059d06",
+      "era": "colonial",
+      "part": "독립운동",
+      "topic": "물산 장려 운동",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 37,
+      "questionId": "exam-80-37",
+      "version": "f77211d155b1de60",
+      "era": "colonial",
+      "part": "독립운동",
+      "topic": "1920년대 만주 무장 투쟁",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 38,
+      "questionId": "exam-80-38",
+      "version": "277f46a26745da04",
+      "era": "colonial",
+      "part": "독립운동",
+      "topic": "6·10 만세 운동·신간회",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 39,
+      "questionId": "exam-80-39",
+      "version": "9ef101b524d5746e",
+      "era": "colonial",
+      "part": "통치정책",
+      "topic": "전시 동원 체제",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 40,
+      "questionId": "exam-80-40",
+      "version": "588d16cf0a554a15",
+      "era": "colonial",
+      "part": "독립운동",
+      "topic": "대한민국 임시 정부 충칭 시기",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 41,
+      "questionId": "exam-80-41",
+      "version": "facd13c22cbfc6af",
+      "era": "colonial",
+      "part": "사회",
+      "topic": "일제 강점기 도시 생활",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 42,
+      "questionId": "exam-80-42",
+      "version": "ee8b2a708fcbb32b",
+      "era": "colonial",
+      "part": "독립운동",
+      "topic": "하와이 독립운동",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 43,
+      "questionId": "exam-80-43",
+      "version": "5a36990a08ea5210",
+      "era": "modern",
+      "part": "정치",
+      "topic": "김규식·남북 협상",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 44,
+      "questionId": "exam-80-44",
+      "version": "7c3caf07ee472a4f",
+      "era": "modern",
+      "part": "정치",
+      "topic": "6·25 전쟁",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 45,
+      "questionId": "exam-80-45",
+      "version": "a64c713690144a25",
+      "era": "modern",
+      "part": "경제",
+      "topic": "박정희 정부 경제 개발",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 46,
+      "questionId": "exam-80-46",
+      "version": "58f160a7ece02ae4",
+      "era": "modern",
+      "part": "민주화",
+      "topic": "5·18 민주화 운동",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 47,
+      "questionId": "exam-80-47",
+      "version": "704b296e46e7c4f9",
+      "era": "modern",
+      "part": "정치",
+      "topic": "김영삼 정부 역사 바로 세우기",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 48,
+      "questionId": "exam-80-48",
+      "version": "5b89e58ad4a02c66",
+      "era": "modern",
+      "part": "통일",
+      "topic": "노무현 정부 10·4 남북 정상 선언",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 49,
+      "questionId": "exam-80-49",
+      "version": "de9c009c7256ffd3",
+      "era": "modern",
+      "part": "사회",
+      "topic": "김대중 정부 국민 기초 생활 보장법",
+      "note": "",
+      "verified": true
+    },
+    {
+      "number": 50,
+      "questionId": "exam-80-50",
+      "version": "38a3ef9c16d735a2",
+      "era": "joseon",
+      "part": "사회",
+      "topic": "지역사 진주·임술 농민 봉기",
+      "note": "여러 시대를 다루는 지역사 문항으로 정답 핵심(1862 진주 농민 봉기)을 기준으로 분류합니다.",
+      "verified": true
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 'use strict';
 const fs=require('fs'),path=require('path'),root=path.resolve(__dirname,'..');
 const rounds={};
-for(let round=70;round<=78;round++){
+for(const round of [70,71,72,73,74,75,76,77,78,80]){
  const file=path.join(__dirname,`fixtures/round${round}-classification.json`);
  if(!fs.existsSync(file))continue;
  const data=JSON.parse(fs.readFileSync(file));
